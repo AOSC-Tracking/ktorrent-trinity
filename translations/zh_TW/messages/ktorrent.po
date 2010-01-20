@@ -1,0 +1,5052 @@
+# translation of ktorrent.po to Chinese Traditional
+#
+# Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktorrent\n"
+"POT-Creation-Date: 2008-04-18 19:40+0200\n"
+"PO-Revision-Date: 2006-08-28 14:39+0800\n"
+"Last-Translator: Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv "
+"dot tw>\n"
+"Language-Team: Chinese Traditional <zh-l10n@linux.org.tw>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: apps/ktorrent/ktorrent.cpp:167
+msgid "No incoming connections (possibly firewalled)"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 42
+#: apps/ktorrent/ktorrent.cpp:184 rc.cpp:345 rc.cpp:383 rc.cpp:1019
+#, no-c-format
+msgid "Info"
+msgstr "資訊"
+
+#: apps/ktorrent/ktorrent.cpp:185
+msgid "Data transferred during the current session"
+msgstr "目前連線已傳送的資料"
+
+#: apps/ktorrent/ktorrent.cpp:186
+msgid "Current speed of all torrents combined"
+msgstr "所有 torrents 組合的目前速度"
+
+#: apps/ktorrent/groups/groupview.cpp:76 apps/ktorrent/ktorrent.cpp:215
+msgid "Groups"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:515 apps/ktorrent/ktorrentviewmenu.cpp:41
+msgid ""
+"_: to start\n"
+"Start"
+msgstr "開始"
+
+#: apps/ktorrent/ktorrent.cpp:519 apps/ktorrent/ktorrentviewmenu.cpp:37
+msgid ""
+"_: to stop\n"
+"Stop"
+msgstr "停止"
+
+#: apps/ktorrent/ktorrent.cpp:527 apps/ktorrent/ktorrent.cpp:530
+msgid ""
+"_: to start all\n"
+"Start All"
+msgstr "全部開始"
+
+#: apps/ktorrent/ktorrent.cpp:533 apps/ktorrent/ktorrent.cpp:536
+msgid ""
+"_: to stop all\n"
+"Stop All"
+msgstr "全部停止"
+
+#: apps/ktorrent/ktorrent.cpp:539
+msgid ""
+"_: to paste torrent URL\n"
+"Paste Torrent URL..."
+msgstr "貼上 Torrent 網址..."
+
+#: apps/ktorrent/ktorrent.cpp:543
+msgid ""
+"_: to open Queue Manager\n"
+"Open Queue Manager..."
+msgstr "開啟佇列管理者..."
+
+#: apps/ktorrent/ktorrent.cpp:548 apps/ktorrent/ktorrentviewmenu.cpp:53
+msgid "Enqueue/Dequeue"
+msgstr "加入/移出佇列"
+
+#: apps/ktorrent/ktorrent.cpp:553
+msgid "IPFilter"
+msgstr "IP 過濾器"
+
+#: apps/ktorrent/ktorrent.cpp:558 apps/ktorrent/ktorrentviewmenu.cpp:96
+msgid "Check Data Integrity"
+msgstr "檢查資料完整性"
+
+#: apps/ktorrent/ktorrent.cpp:571
+msgid "Set max upload rate"
+msgstr "設定最大上傳速率"
+
+#: apps/ktorrent/ktorrent.cpp:574
+msgid "Set max download rate"
+msgstr "設定最大下載速率"
+
+#: apps/ktorrent/ktorrent.cpp:626
+msgid "Torrent Files"
+msgstr "Torrent 檔案"
+
+#: apps/ktorrent/ktorrent.cpp:626
+msgid "All Files"
+msgstr "所有檔案"
+
+#: apps/ktorrent/ktorrent.cpp:627
+msgid "Open Location"
+msgstr "開啟位置"
+
+#: apps/ktorrent/ktorrent.cpp:793
+#, fuzzy
+msgid "Speed down: %1 / up: %2"
+msgstr "速度：上傳 %1/下載 %2"
+
+#: apps/ktorrent/ktorrent.cpp:799
+#, fuzzy
+msgid "Transferred down: %1 / up: %2"
+msgstr "已傳輸：上傳 %1/下載 %2"
+
+#: apps/ktorrent/ktorrent.cpp:819
+msgid "DHT: %1 nodes, %2 tasks"
+msgstr "DHT：%1 個節點，%2 個工作"
+
+#: apps/ktorrent/ktorrent.cpp:823
+msgid "DHT: off"
+msgstr "DHT：關閉"
+
+#: apps/ktorrent/fileselectdlg.cpp:284 apps/ktorrent/groups/allgroup.cpp:26
+#: apps/ktorrent/groups/groupmanager.h:54 apps/ktorrent/ktorrent.cpp:962
+#, fuzzy
+msgid "All Torrents"
+msgstr "Torrent"
+
+#: apps/ktorrent/filterbar.cpp:52
+msgid "Find:"
+msgstr ""
+
+#: apps/ktorrent/filterbar.cpp:65
+msgid "Case sensitive"
+msgstr ""
+
+#: apps/ktorrent/newui/ddockwindow.cpp:88
+#, fuzzy
+msgid "Move to left dock"
+msgstr "上移(&O)"
+
+#: apps/ktorrent/newui/ddockwindow.cpp:89
+#, fuzzy
+msgid "Move to right dock"
+msgstr "上移(&O)"
+
+#: apps/ktorrent/newui/ddockwindow.cpp:90
+#, fuzzy
+msgid "Move to bottom dock"
+msgstr "上移(&O)"
+
+#: apps/ktorrent/newui/button.cpp:58
+msgid "Assign Accelerator..."
+msgstr ""
+
+#: apps/ktorrent/newui/button.cpp:60
+msgid "Clear Accelerator"
+msgstr ""
+
+#: apps/ktorrent/newui/button.cpp:319
+msgid "Change Button Number"
+msgstr ""
+
+#: apps/ktorrent/newui/button.cpp:319
+msgid "New accelerator number:"
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidget.cpp:72
+msgid ""
+"You must enter IP in format 'XXX.XXX.XXX.XXX'. You can also use wildcards for "
+"ranges like '127.0.0.*'."
+msgstr "您必須以 'XXX.XXX.XXX.XXX' 格式輸入 IP。您可以用萬用字元，如 '127.0.0.*'。"
+
+#: apps/ktorrent/ipfilterwidget.cpp:88
+#: plugins/scheduler/bwsprefpagewidget.cpp:129
+msgid "Choose a file"
+msgstr "選擇一個檔案"
+
+#: apps/ktorrent/ipfilterwidget.cpp:100
+#: plugins/scheduler/bwsprefpagewidget.cpp:119
+msgid "Choose a filename to save under"
+msgstr "選擇要儲存的檔案名稱"
+
+#: apps/ktorrent/pastedialog.cpp:56 plugins/infowidget/trackerview.cpp:78
+#: plugins/search/searchprefpage.cpp:131
+msgid "Malformed URL."
+msgstr "不正確的網址"
+
+#. i18n: file ./apps/ktorrent/ktorrentui.rc line 9
+#: apps/ktorrent/groups/downloadgroup.cpp:27
+#: apps/ktorrent/groups/groupmanager.h:57 apps/ktorrent/pref.cpp:147
+#: apps/ktorrent/viewmanager.cpp:62 rc.cpp:138 rc.cpp:342
+#, no-c-format
+msgid "Downloads"
+msgstr "下載"
+
+#: apps/ktorrent/groups/groupmanager.h:60
+#: apps/ktorrent/groups/uploadgroup.cpp:27 apps/ktorrent/viewmanager.cpp:63
+msgid "Uploads"
+msgstr "上傳"
+
+#: apps/ktorrent/ktorrentcore.cpp:115
+#, fuzzy
+msgid ""
+"Specified port (%1) is unavailable or in use by another application. KTorrent "
+"is now using port %2."
+msgstr "指定的連接埠（%1）無法使用，或是正被其他的應用程式使用中。KTorrent 改使用連接埠 %2。"
+
+#: apps/ktorrent/ktorrentcore.cpp:124
+msgid ""
+"KTorrent is unable to accept connections because the ports %1 to %2 are already "
+"in use by another program."
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:767
+#, c-format
+msgid "Cannot create torrent: %1"
+msgstr "無法建立 torrent：%1"
+
+#: apps/ktorrent/ktorrentcore.cpp:1028
+#, fuzzy
+msgid ""
+"Several data files of the torrent \"%1\" are missing, do you want to recreate "
+"them, or do you want to not download them?"
+msgstr "有些 torrent %1 的資料檔不見了。您要重新建立資料檔，還是您不打算下載了？"
+
+#: apps/ktorrent/ktorrentcore.cpp:1031 apps/ktorrent/ktorrentcore.cpp:1069
+msgid "Recreate"
+msgstr "重建"
+
+#: apps/ktorrent/ktorrentcore.cpp:1031 plugins/infowidget/fileview.cpp:61
+msgid "Do Not Download"
+msgstr "不下載"
+
+#: apps/ktorrent/ktorrentcore.cpp:1041
+#, fuzzy, c-format
+msgid "Cannot recreate missing files: %1"
+msgstr "無法重建檔案：%1"
+
+#: apps/ktorrent/ktorrentcore.cpp:1042 apps/ktorrent/ktorrentcore.cpp:1056
+#: apps/ktorrent/ktorrentcore.cpp:1062
+msgid "Data files are missing"
+msgstr "資料檔已遺失"
+
+#: apps/ktorrent/ktorrentcore.cpp:1055
+#, fuzzy, c-format
+msgid "Cannot deselect missing files: %1"
+msgstr "無法取消選取檔案：%1"
+
+#: apps/ktorrent/ktorrentcore.cpp:1068
+#, fuzzy
+msgid ""
+"The file where the data is saved of the torrent \"%1\" is missing, do you want "
+"to recreate it?"
+msgstr "torrent %1 要儲存資料的檔案已遺失。要重建嗎？"
+
+#: apps/ktorrent/ktorrentcore.cpp:1069
+#, fuzzy
+msgid "Do Not Recreate"
+msgstr "重建"
+
+#: apps/ktorrent/ktorrentcore.cpp:1078
+#, fuzzy, c-format
+msgid "Cannot recreate data file: %1"
+msgstr "無法重建資料檔：%1"
+
+#: apps/ktorrent/ktorrentcore.cpp:1079 apps/ktorrent/ktorrentcore.cpp:1085
+msgid "Data file is missing"
+msgstr "資料檔已遺失"
+
+#: apps/ktorrent/ktorrentcore.cpp:1135
+msgid "Checking Data Integrity"
+msgstr "檢查資料完整性"
+
+#: apps/ktorrent/ktorrentviewitem.cpp:153
+#: apps/ktorrent/ktorrentviewitem.cpp:159
+msgid "infinity"
+msgstr "無限制"
+
+#: apps/ktorrent/ktorrentviewitem.cpp:255 plugins/infowidget/fileview.cpp:189
+#: plugins/infowidget/iwfiletreeitem.cpp:95
+msgid "%1 %"
+msgstr "%1 %"
+
+#: apps/ktorrent/scandialog.cpp:70
+#, fuzzy, c-format
+msgid "Error scanning data: %1"
+msgstr "掃描資料時發生錯誤：%1"
+
+#: apps/ktorrent/scandialog.cpp:77
+#, fuzzy
+msgid "Scanning data of <b>%1</b> :"
+msgstr "掃描區塊資料中："
+
+#: apps/ktorrent/main.cpp:76
+msgid "A BitTorrent program for KDE"
+msgstr "KDE 的 BitTorrent 軟體"
+
+#: apps/ktorrent/main.cpp:108
+msgid "Debug mode"
+msgstr "除錯模式"
+
+#: apps/ktorrent/main.cpp:109
+msgid "Silently save torrent given on URL"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:110
+msgid "Document to open"
+msgstr "要開啟的文件"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 59
+#: apps/ktorrent/main.cpp:120 rc.cpp:553
+#, no-c-format
+msgid "KTorrent"
+msgstr "KTorrent"
+
+#: apps/ktorrent/main.cpp:125
+#, fuzzy
+msgid "RSS Plugin"
+msgstr "外掛程式"
+
+#: apps/ktorrent/main.cpp:126
+#, fuzzy
+msgid "Webinterface Plugin"
+msgstr "一般選項"
+
+#: apps/ktorrent/main.cpp:127
+msgid "Statistics Plugin"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:130
+msgid "Application icon and a couple of others"
+msgstr "應用程式圖示和一些其他的"
+
+#: apps/ktorrent/main.cpp:131
+msgid "The downloads icon"
+msgstr "下載圖示"
+
+#: apps/ktorrent/main.cpp:134
+msgid "1.0 application icon"
+msgstr "1.0 應用程式圖示"
+
+#: apps/ktorrent/main.cpp:139
+msgid "ChunkBar's tooltip and IWFileTreeItem sorting"
+msgstr "區塊列的工具提示及 IWFileTreeItem 排序"
+
+#: apps/ktorrent/main.cpp:143
+msgid ""
+"Country locator for InfoWidget plugin (This product includes GeoLite data "
+"created by MaxMind, available from http://www.maxmind.com/). "
+msgstr ""
+
+#: apps/ktorrent/main.cpp:144
+#, fuzzy
+msgid "Country flags"
+msgstr "國家"
+
+#: apps/ktorrent/main.cpp:145
+msgid "File prioritization"
+msgstr "檔案優先權"
+
+#: apps/ktorrent/main.cpp:146
+msgid "Miniupnp was used as an example for our own UPnP implementation"
+msgstr "Miniupnp 是做為我們自己的 UPnP 實作的範例"
+
+#: apps/ktorrent/main.cpp:147
+msgid "Global max share ratio patch"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:148 apps/ktorrent/main.cpp:149
+msgid "Zeroconf enhancements"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:150
+msgid "Coldmilk webgui"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:151
+msgid "IDEAl code from KDevelop"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:152
+msgid "Conversion speed improvement in ipfilter plugin"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:153
+msgid "Discovered 2 security vulnerabilities (both are fixed)"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:154
+msgid "Patch to load silently with a save location"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:155
+msgid "Fixes in PHP code of webinterface"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:156
+msgid "XFS specific disk preallocation"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:157
+msgid "Patch to not show very low speeds"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:158
+msgid "Patch to show potentially firewalled status"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:159
+#, fuzzy
+msgid "Several patches"
+msgstr "資料夾 1 路徑"
+
+#: apps/ktorrent/main.cpp:160
+msgid "Patch to hide the menubar"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:161
+msgid "Patch to modify file priorities in the webgui"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:162
+#, fuzzy
+msgid "Several webgui patches"
+msgstr "資料夾 1 路徑"
+
+#: apps/ktorrent/main.cpp:163
+#, fuzzy
+msgid "Filterbar patch"
+msgstr "資料夾 1 路徑"
+
+#: apps/ktorrent/main.cpp:164
+msgid "Non threaded fileview update patch"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:165
+msgid "Optimization to SHA1 hash generation"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:166
+msgid "Patch to fix free diskspace calculation on FreeBSD"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:167
+#, fuzzy
+msgid "Patch to load torrents silently from the command line"
+msgstr "是否要安靜地開啟 torrent。"
+
+#: apps/ktorrent/torrentcreatordlg.cpp:64
+msgid "You must select a file or a folder."
+msgstr "您必須選擇檔案或資料夾。"
+
+#: apps/ktorrent/torrentcreatordlg.cpp:71
+#, fuzzy
+msgid ""
+"You have not added a tracker, are you sure you want to create this torrent ?"
+msgstr "若是您取消選擇檔案。您將失去所有檔案中的資料。您確定要這樣做嗎？"
+
+#: apps/ktorrent/torrentcreatordlg.cpp:79
+#, fuzzy
+msgid "You must add at least one node."
+msgstr "您必須至少加入一個追蹤器。"
+
+#: apps/ktorrent/torrentcreatordlg.cpp:98
+msgid "Torrent Files (*.torrent)"
+msgstr "Torrent 檔案 （*.torrent）"
+
+#: apps/ktorrent/torrentcreatordlg.cpp:99
+msgid "Choose File to Save Torrent"
+msgstr "選擇要儲存 Torrent 的檔案"
+
+#: apps/ktorrent/torrentcreatordlg.cpp:108
+msgid "Creating %1..."
+msgstr "建立 %1 中..."
+
+#: apps/ktorrent/groups/groupview.cpp:107
+#, fuzzy
+msgid "Custom Groups"
+msgstr "自訂 IP"
+
+#: apps/ktorrent/groups/groupview.cpp:138
+msgid "New Group"
+msgstr ""
+
+#: apps/ktorrent/groups/groupview.cpp:141
+#, fuzzy
+msgid "Edit Name"
+msgstr "名稱"
+
+#: apps/ktorrent/groups/groupview.cpp:144
+#, fuzzy
+msgid "Remove Group"
+msgstr "移除追蹤器"
+
+#: apps/ktorrent/groups/groupview.cpp:147
+msgid "Open Tab"
+msgstr ""
+
+#: apps/ktorrent/groups/groupview.cpp:159
+msgid "Please enter the group name."
+msgstr ""
+
+#: apps/ktorrent/groups/groupview.cpp:166
+#: apps/ktorrent/groups/groupview.cpp:217
+msgid "The group %1 already exists."
+msgstr ""
+
+#: apps/ktorrent/groups/groupview.cpp:207
+msgid "Please enter the new group name."
+msgstr ""
+
+#: apps/ktorrent/groups/activeuploadsgroup.cpp:29
+#: apps/ktorrent/groups/groupmanager.h:90
+#, fuzzy
+msgid "Active uploads"
+msgstr "上傳"
+
+#: apps/ktorrent/groups/groupmanager.h:66
+#: apps/ktorrent/groups/queueduploadsgroup.cpp:29
+#, fuzzy
+msgid "Queued uploads"
+msgstr "已送進佇列"
+
+#: apps/ktorrent/groups/groupmanager.h:63
+#: apps/ktorrent/groups/queueddownloadsgroup.cpp:29
+#, fuzzy
+msgid "Queued downloads"
+msgstr "下載圖示"
+
+#: apps/ktorrent/groups/groupmanager.h:69
+#: apps/ktorrent/groups/userdownloadsgroup.cpp:29
+#, fuzzy
+msgid "User downloads"
+msgstr "下載："
+
+#: apps/ktorrent/groups/groupmanager.h:72
+#: apps/ktorrent/groups/useruploadsgroup.cpp:29
+#, fuzzy
+msgid "User uploads"
+msgstr "上傳"
+
+#: apps/ktorrent/groups/groupmanager.h:75
+#: apps/ktorrent/groups/inactivegroup.cpp:29
+#, fuzzy
+msgid "Inactive torrents"
+msgstr "建立 Torrent"
+
+#: apps/ktorrent/groups/groupmanager.h:78
+#: apps/ktorrent/groups/inactivedownloadsgroup.cpp:29
+#, fuzzy
+msgid "Inactive downloads"
+msgstr "下載："
+
+#: apps/ktorrent/groups/groupmanager.h:81
+#: apps/ktorrent/groups/inactiveuploadsgroup.cpp:29
+#, fuzzy
+msgid "Inactive uploads"
+msgstr "上傳"
+
+#: apps/ktorrent/groups/activegroup.cpp:29
+#: apps/ktorrent/groups/groupmanager.h:84
+#, fuzzy
+msgid "Active torrents"
+msgstr "Torrent"
+
+#: apps/ktorrent/groups/activedownloadsgroup.cpp:28
+#: apps/ktorrent/groups/groupmanager.h:87
+#, fuzzy
+msgid "Active downloads"
+msgstr "下載："
+
+#: apps/ktorrent/ktorrentview.cpp:397 apps/ktorrent/ktorrentviewmenu.cpp:45
+#, fuzzy
+msgid "Remove Torrent"
+msgstr "建立 Torrent"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:49
+#, fuzzy
+msgid "Remove Torrent and Data"
+msgstr "建立 Torrent"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:59
+#, fuzzy
+msgid "Add Peers"
+msgstr "新增端點："
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:63
+msgid "Additional Peer Sources"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:64
+msgid "Torrent Peer Sources:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 85
+#: apps/ktorrent/ktorrentviewmenu.cpp:66 plugins/infowidget/peerview.cpp:221
+#: rc.cpp:77 rc.cpp:1256 rc.cpp:1307
+#, no-c-format
+msgid "DHT"
+msgstr "DHT"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:67
+msgid "Peer Exchange"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:72
+msgid "Manual Announce"
+msgstr "手動宣告"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:76 plugins/infowidget/fileview.cpp:50
+msgid "Preview"
+msgstr "預覽"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:81
+msgid "Open Directory"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:82
+msgid "Data Directory"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:84
+msgid "Temporary Directory"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:87
+#, fuzzy
+msgid "Set Download Location"
+msgstr "下載圖示"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:90
+msgid "Remove From Group"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:93
+#, fuzzy
+msgid "Add to Group"
+msgstr "自訂 IP"
+
+#. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 16
+#: apps/ktorrent/ktorrentviewmenu.cpp:100 rc.cpp:147
+#, fuzzy, no-c-format
+msgid "Speed Limits"
+msgstr "速度限制，以 KB/s 為單位"
+
+#: apps/ktorrent/addpeerwidget.cpp:67
+msgid "Torrent does not exist. Report this bug to KTorrent developers."
+msgstr ""
+
+#: apps/ktorrent/addpeerwidget.cpp:102
+msgid "Potential peer added."
+msgstr ""
+
+#: apps/ktorrent/addpeerwidget.cpp:106
+#, fuzzy
+msgid "Malformed IP address."
+msgstr "端點 IP 位址"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 311
+#: apps/ktorrent/pref.cpp:58 rc.cpp:282
+#, no-c-format
+msgid "Preferences"
+msgstr "喜好設定"
+
+#: apps/ktorrent/pref.cpp:147
+msgid "Download Options"
+msgstr "下載選項"
+
+#: apps/ktorrent/pref.cpp:179 apps/ktorrent/pref.cpp:294
+#, fuzzy
+msgid "The DHT port needs to be different from the UDP tracker port!"
+msgstr "DHT 連接埠需要跟 UDP 追蹤器的連接埠不同。"
+
+#: apps/ktorrent/pref.cpp:216
+msgid "General"
+msgstr "一般"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 16
+#: apps/ktorrent/pref.cpp:216 rc.cpp:57
+#, no-c-format
+msgid "General Options"
+msgstr "一般選項"
+
+#: apps/ktorrent/pref.cpp:283
+msgid ""
+"Cannot lookup %1: %2\n"
+"Please provide a valid IP address or hostname."
+msgstr ""
+"無法找到 %1：%2。\n"
+"請提供合法的 IP 位址或主機名稱。"
+
+#: apps/ktorrent/pref.cpp:411
+msgid "Advanced"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 27
+#: apps/ktorrent/pref.cpp:411 rc.cpp:540
+#, fuzzy, no-c-format
+msgid "Advanced Options"
+msgstr "掃描資料夾選項"
+
+#: apps/ktorrent/ktorrentview.cpp:132
+msgid "Visible columns"
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 16
+#: apps/ktorrent/ktorrentview.cpp:135
+#: plugins/infowidget/infowidgetplugin.cpp:76 rc.cpp:1016
+#, no-c-format
+msgid "Status"
+msgstr "狀態"
+
+#: apps/ktorrent/ktorrentview.cpp:136 plugins/infowidget/peerview.cpp:225
+msgid "Downloaded"
+msgstr "已下載"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 149
+#: apps/ktorrent/ktorrentview.cpp:137 plugins/infowidget/fileview.cpp:48
+#: rc.cpp:24
+#, no-c-format
+msgid "Size"
+msgstr "大小"
+
+#: apps/ktorrent/ktorrentview.cpp:138 plugins/infowidget/peerview.cpp:226
+msgid "Uploaded"
+msgstr "已上傳"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 313
+#: apps/ktorrent/ktorrentview.cpp:139 plugins/infowidget/peerview.cpp:216
+#: rc.cpp:1010
+#, no-c-format
+msgid "Down Speed"
+msgstr "下載速度"
+
+#: apps/ktorrent/ktorrentview.cpp:140 plugins/infowidget/peerview.cpp:217
+msgid "Up Speed"
+msgstr "上傳速度"
+
+#: apps/ktorrent/ktorrentview.cpp:141
+msgid "Time Left"
+msgstr "剩餘時間"
+
+#: apps/ktorrent/ktorrentview.cpp:142
+#, fuzzy
+msgid "Seeders"
+msgstr "傳送者："
+
+#: apps/ktorrent/ktorrentview.cpp:143
+#, fuzzy
+msgid "Leechers"
+msgstr "接收者："
+
+#: apps/ktorrent/ktorrentview.cpp:144 plugins/infowidget/fileview.cpp:51
+msgid "% Complete"
+msgstr "% 完成"
+
+#: apps/ktorrent/ktorrentview.cpp:145
+#, fuzzy
+msgid "Share Ratio"
+msgstr "分享比例："
+
+#: apps/ktorrent/ktorrentview.cpp:146
+#, fuzzy
+msgid "Time Downloaded"
+msgstr "已下載"
+
+#: apps/ktorrent/ktorrentview.cpp:147
+#, fuzzy
+msgid "Time Seeded"
+msgstr "剩餘時間"
+
+#: apps/ktorrent/ktorrentview.cpp:203 apps/ktorrent/ktorrentview.cpp:551
+#: apps/ktorrent/ktorrentview.cpp:877
+#, fuzzy
+msgid "All Torrents %1/%2"
+msgstr "Torrent"
+
+#: apps/ktorrent/ktorrentview.cpp:283
+#, c-format
+msgid ""
+"_n: Cannot start more than 1 download, \n"
+"Cannot start more than %n downloads, "
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:285
+#, fuzzy, c-format
+msgid ""
+"_n: and 1 seed. \n"
+"and %n seeds. "
+msgstr "%n 個端點"
+
+#: apps/ktorrent/ktorrentview.cpp:286 apps/ktorrent/trayicon.cpp:258
+msgid "Go to Settings -> Configure KTorrent, if you want to change the limits."
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:375
+msgid ""
+"The torrent %1 has not finished downloading, do you want to delete the "
+"incomplete data, too?"
+msgstr "Torrent %1 尚未完成下載，您要同時刪除未完成的資料嗎？"
+
+#: apps/ktorrent/ktorrentview.cpp:378
+msgid "Remove Download"
+msgstr "移除下載"
+
+#: apps/ktorrent/ktorrentview.cpp:379
+#, fuzzy
+msgid "Delete Data"
+msgstr "載入後刪除(&G)"
+
+#: apps/ktorrent/ktorrentview.cpp:379
+msgid "Keep Data"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:395
+#, fuzzy
+msgid ""
+"You will lose all the downloaded data. Are you sure you want to do this?"
+msgstr "若是您取消選擇檔案。您將失去所有檔案中的資料。您確定要這樣做嗎？"
+
+#: apps/ktorrent/ktorrentview.cpp:631
+#, fuzzy
+msgid "You are already checking the data of the torrent %1 !"
+msgstr "您要下載還是儲存此 torrent？"
+
+#: apps/ktorrent/ktorrentview.cpp:751
+#, fuzzy, c-format
+msgid "Choose download location for %1"
+msgstr "下載圖示"
+
+#: apps/ktorrent/fileselectdlg.cpp:120
+msgid ""
+"You have deselected the following existing files. You will lose all data in "
+"these files, are you sure you want to do this ?"
+msgstr "您已取消選擇以下的檔案。您將失去所有這些檔案的資料。您確定要這樣做嗎？"
+
+#: apps/ktorrent/fileselectdlg.cpp:124
+msgid "Yes, delete the files"
+msgstr "是的，請刪除這些檔案"
+
+#: apps/ktorrent/fileselectdlg.cpp:125
+msgid "No, keep the files"
+msgstr "不要，請保留這些檔案"
+
+#: apps/ktorrent/fileselectdlg.cpp:220
+msgid " short!"
+msgstr ""
+
+#: apps/ktorrent/queuedialog.cpp:73
+msgid "User"
+msgstr "使用者"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 24
+#: apps/ktorrent/queuedialog.cpp:75 rc.cpp:249
+#, no-c-format
+msgid "Queue Manager"
+msgstr "佇列管理員"
+
+#: apps/ktorrent/queuedialog.cpp:305 apps/ktorrent/queuedialog.cpp:326
+msgid "No (private torrent)"
+msgstr "無（私密 Torrent）"
+
+#: apps/ktorrent/trayicon.cpp:90
+#, fuzzy
+msgid ""
+"<table cellpadding='2' cellspacing='2' align='center'>"
+"<tr>"
+"<td><b>Speed:</b></td>"
+"<td></td></tr>"
+"<tr>"
+"<td>Download: <font color='#1c9a1c'>%1</font></td>"
+"<td>Upload: <font color='#990000'>%2</font></td></tr>"
+"<tr>"
+"<td><b>Transfer:</b></td>"
+"<td></td></tr>"
+"<tr>"
+"<td>Download: <font color='#1c9a1c'>%3</font></td>"
+"<td>Upload: <font color='#990000'>%4</font></td></tr></table>"
+msgstr ""
+"<center><b>KTorrent</b></center><table cellpadding='2' cellspacing='2' "
+"align='center'>"
+"<tr>"
+"<td><b>速度：</b></td>"
+"<td></td></tr>"
+"<tr>"
+"<td>下載：<font color='#1c9a1c'>%1</font></td>"
+"<td>上傳：<font color='#990000'>%2</font></td></tr>"
+"<tr>"
+"<td><b>傳輸：</b></td>"
+"<td></td></tr>"
+"<tr>"
+"<td>下載：<font color='#1c9a1c'>%3</font></td>"
+"<td>上傳：<font color='#990000'>%4</font></td></tr></table>"
+
+#: apps/ktorrent/trayicon.cpp:147
+msgid "<b>%1</b> has completed downloading.<br>Average speed: %2 DL / %3 UL."
+msgstr "<b>%1</b> 已完成下載。<br>平均速度：%2 下載/%3 上傳。"
+
+#: apps/ktorrent/trayicon.cpp:153 libktorrent/torrent/torrentcontrol.cpp:1366
+msgid "Download completed"
+msgstr "已完成下載"
+
+#: apps/ktorrent/trayicon.cpp:165
+msgid ""
+"<b>%1</b> has reached its maximum share ratio of %2 and has been stopped."
+"<br>Uploaded %3 at an average speed of %4."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:172 apps/ktorrent/trayicon.cpp:191
+#: libktorrent/torrent/torrentcontrol.cpp:1368
+#, fuzzy
+msgid "Seeding completed"
+msgstr "已完成下載"
+
+#: apps/ktorrent/trayicon.cpp:184
+msgid ""
+"<b>%1</b> has reached its maximum seed time of %2 hours and has been stopped."
+"<br>Uploaded %3 at an average speed of %4."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:200
+msgid "<b>%1</b> has been stopped with the following error: <br>%2"
+msgstr "<b>%1</b> 已停止，因為發生錯誤：<br>%2"
+
+#: apps/ktorrent/trayicon.cpp:212
+msgid ""
+"Corrupted data has been found in the torrent <b>%1</b>"
+"<br>It would be a good idea to do a data integrity check on the torrent."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:229
+msgid ""
+"<b>%1</b> has reached its maximum share ratio of %2 and cannot be enqueued. "
+"Remove the limit manually if you want to continue seeding."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:232
+msgid ""
+"<b>%1</b> has reached its maximum seed time of %2 hours and cannot be enqueued. "
+"Remove the limit manually if you want to continue seeding."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:235
+msgid "Torrent cannot be enqueued."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:243
+#, fuzzy
+msgid "Cannot start <b>%1</b> : <br>"
+msgstr "掃描區塊資料中："
+
+#: apps/ktorrent/trayicon.cpp:251
+#, c-format
+msgid ""
+"_n: Cannot seed more than 1 torrent. "
+"<br>\n"
+"Cannot seed more than %n torrents. "
+"<br>"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:256
+#, c-format
+msgid ""
+"_n: Cannot download more than 1 torrent. "
+"<br>\n"
+"Cannot download more than %n torrents. "
+"<br>"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:259 apps/ktorrent/trayicon.cpp:263
+msgid "Torrent cannot be started"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:262
+msgid "There is not enough diskspace available."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:277
+msgid ""
+"Your disk is running out of space.<br /><b>%1</b> is being downloaded to '%2'."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:280
+msgid "Torrent has been stopped.<br />"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:282
+msgid "Device running out of space"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:301
+msgid "Speed limit in KB/s"
+msgstr "速度限制，以 KB/s 為單位"
+
+#: apps/ktorrent/trayicon.cpp:304 apps/ktorrent/trayicon.cpp:306
+#: apps/ktorrent/trayicon.cpp:359
+msgid "Unlimited"
+msgstr "沒有限制"
+
+#: apps/ktorrent/speedlimitsdlg.cpp:36
+#, fuzzy
+msgid "Speed limits for <b>%1</b>:"
+msgstr "速度限制，以 KB/s 為單位"
+
+#: apps/ktupnptest/main.cpp:35
+msgid "A KDE KPart Application"
+msgstr "KDE KPart 應用程式"
+
+#: apps/ktupnptest/main.cpp:51
+msgid "KTUPnPTest"
+msgstr "KTUPnPTest"
+
+#: apps/ktcachecheck/cachechecker.cpp:47 apps/ktcachecheck/cachechecker.cpp:76
+#: libktorrent/torrent/chunkmanager.cpp:207
+#: libktorrent/torrent/chunkmanager.cpp:432
+msgid "Cannot open index file %1 : %2"
+msgstr "無法開啟索引檔 %1：%2"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Frank Weng (a.k.a. Franklin)"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "franklin at goodhorse dot idv dot tw"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 16
+#: rc.cpp:3
+#, no-c-format
+msgid "Select Which Files You Want to Download"
+msgstr "選擇您要下載的檔案"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 35
+#: rc.cpp:6
+#, fuzzy, no-c-format
+msgid "Download to:"
+msgstr "下載"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 74
+#: rc.cpp:9
+#, no-c-format
+msgid "Group:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 97
+#: rc.cpp:12
+#, fuzzy, no-c-format
+msgid "&User controlled"
+msgstr "使用者控制(&U)"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 116
+#: rc.cpp:15
+#, fuzzy, no-c-format
+msgid "Start torrent"
+msgstr "開始 Torrent(&G)"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 160
+#: plugins/infowidget/fileview.cpp:49 rc.cpp:27 rc.cpp:1244 rc.cpp:1259
+#: rc.cpp:1349 rc.cpp:1439
+#, no-c-format
+msgid "Download"
+msgstr "下載"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 181
+#: rc.cpp:30
+#, no-c-format
+msgid "Select &All"
+msgstr "全選(&A)"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 189
+#: rc.cpp:33
+#, no-c-format
+msgid "Select &None"
+msgstr "全不選(&N)"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 197
+#: rc.cpp:36
+#, no-c-format
+msgid "Invert Selection"
+msgstr "反向選擇"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 224
+#: rc.cpp:39
+#, no-c-format
+msgid "Disk space"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 260
+#: rc.cpp:42
+#, no-c-format
+msgid "Required disk space:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 268
+#: rc.cpp:45
+#, no-c-format
+msgid "Free disk space:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 276
+#: rc.cpp:48
+#, fuzzy, no-c-format
+msgid "After download:"
+msgstr "下載："
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 44
+#: rc.cpp:60
+#, no-c-format
+msgid "Encryption"
+msgstr "加密"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 58
+#: rc.cpp:64 rc.cpp:787
+#, no-c-format
+msgid "Use protocol encryption"
+msgstr "使用協定加密"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 64
+#: rc.cpp:68
+#, no-c-format
+msgid ""
+"Protocol encryption is used to prevent ISP's from slowing down bittorrent "
+"connections."
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 72
+#: rc.cpp:71 rc.cpp:790
+#, no-c-format
+msgid "Allow unencrypted connections"
+msgstr "允許未加密的連線"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 75
+#: rc.cpp:74
+#, no-c-format
+msgid ""
+"If unchecked, you'll be able to connect only to clients supporting encryption."
+msgstr "如果取消勾選的話，您就只能與支援加密的客戶端連線。"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 88
+#: rc.cpp:80
+#, no-c-format
+msgid ""
+"<b>D</b>istributed <b>H</b>ash <b>T</b>able protocol."
+"<br>Decentralized peers exchange protocol. See manual for more info."
+msgstr ""
+"分散雜湊表（<b>D</b>istributed <b>H</b>ash <b>T</b>able）協定。"
+"<br> 分散式端點交換協定。詳情請參考手冊。"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 99
+#: rc.cpp:83
+#, no-c-format
+msgid "&Use DHT to get additional peers"
+msgstr "使用 DHT 取得額外的端點(&U)"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 118
+#: rc.cpp:87
+#, no-c-format
+msgid "UDP port for DHT communication:"
+msgstr "DHT 溝通使用的 UDP 連接埠："
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 161
+#: rc.cpp:90
+#, no-c-format
+msgid "Custom IP"
+msgstr "自訂 IP"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 172
+#: rc.cpp:93
+#, fuzzy, no-c-format
+msgid "Se&nd the tracker a custom IP address or hostname"
+msgstr "傳送自訂 IP 或主機名稱給追蹤器(&N)"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 188
+#: rc.cpp:96
+#, fuzzy, no-c-format
+msgid "Custom IP address or hostname:"
+msgstr "自訂 IP 或主機名稱："
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 205
+#: rc.cpp:99
+#, fuzzy, no-c-format
+msgid "System Tray Icon"
+msgstr "顯示系統匣圖示(&Y)"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 216
+#: rc.cpp:102
+#, no-c-format
+msgid "Show s&ystem tray icon"
+msgstr "顯示系統匣圖示(&Y)"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 224
+#: rc.cpp:105
+#, fuzzy, no-c-format
+msgid "Show speed &bar in tray icon"
+msgstr "顯示系統匣圖示(&Y)"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 232
+#: rc.cpp:108
+#, fuzzy, no-c-format
+msgid "Show system tray popup messages"
+msgstr "顯示系統匣圖示(&Y)"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 251
+#: rc.cpp:112
+#, no-c-format
+msgid "Upload bandwidth (in KB/sec):"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 276
+#: rc.cpp:115
+#, no-c-format
+msgid "Download bandwidth (in KB/sec):"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 305
+#: rc.cpp:118
+#, no-c-format
+msgid "Folders"
+msgstr "資料夾"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 324
+#: rc.cpp:121
+#, no-c-format
+msgid "Folder to store temporary files:"
+msgstr "儲存暫存檔的資料夾："
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 342
+#: rc.cpp:124
+#, fuzzy, no-c-format
+msgid "Move completed downloads to:"
+msgstr "不要下載"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 353
+#: rc.cpp:128
+#, no-c-format
+msgid "&Automatically save downloads to:"
+msgstr "自動儲存下載到(&A)："
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 395
+#: rc.cpp:131
+#, fuzzy, no-c-format
+msgid "Copy .torrent files to:"
+msgstr "torrent 檔案"
+
+#. i18n: file ./apps/ktorrent/ktorrentui.rc line 34
+#: rc.cpp:144
+#, no-c-format
+msgid "Download Toolbar"
+msgstr "下載工具列"
+
+#. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 27
+#: rc.cpp:150
+#, fuzzy, no-c-format
+msgid "Set the speed limits for torrent"
+msgstr "開始 Torrent(&G)"
+
+#. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 51
+#: rc.cpp:153
+#, fuzzy, no-c-format
+msgid "Max upload rate:"
+msgstr "最大上傳速率："
+
+#. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 59
+#: rc.cpp:156
+#, fuzzy, no-c-format
+msgid "Max download rate:"
+msgstr "最大下載速率："
+
+#. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 97
+#: rc.cpp:159 rc.cpp:162
+#, fuzzy, no-c-format
+msgid "KB/s (0 is no limit)"
+msgstr "KB/秒（0 表示不限制）"
+
+#. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 16
+#: rc.cpp:171
+#, no-c-format
+msgid "Add potential peer"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 35
+#: rc.cpp:174
+#, fuzzy, no-c-format
+msgid "Peer IP:"
+msgstr "端點"
+
+#. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 43
+#: rc.cpp:177 rc.cpp:208
+#, no-c-format
+msgid "127.0.0.1"
+msgstr "127.0.0.1"
+
+#. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 51
+#: rc.cpp:180 rc.cpp:288 rc.cpp:525 rc.cpp:931
+#, no-c-format
+msgid "Port:"
+msgstr "連接埠："
+
+#. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 100
+#: rc.cpp:183
+#, no-c-format
+msgid "Enter peer IP and port."
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 16
+#: rc.cpp:193
+#, no-c-format
+msgid "KTorrent Blacklist"
+msgstr "KTorrent 黑名單"
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 30
+#: rc.cpp:196
+#, no-c-format
+msgid ""
+"Note: Blacklist applies to current session only. Use save/open to save your "
+"entries or use IPFilter plugin (PeerGuardian)."
+msgstr "注意：黑名單只會套用到目前的工作階段。用「儲存」來儲存，或是用 IPFilter 外掛程式（PeerGuardian）。"
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 41
+#: rc.cpp:199
+#, no-c-format
+msgid "Banned Peers"
+msgstr "被拒的端點"
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 50
+#: rc.cpp:202
+#, no-c-format
+msgid "Peer IP address"
+msgstr "端點 IP 位址"
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 96
+#: rc.cpp:205
+#, no-c-format
+msgid "Add peer:"
+msgstr "新增端點："
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 134
+#: rc.cpp:215
+#, no-c-format
+msgid "Adds a peer to blacklist"
+msgstr "將端點加入黑名單"
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 168
+#: rc.cpp:222
+#, no-c-format
+msgid "Removes selected peer from blacklist"
+msgstr "從黑名單中移除所選的端點"
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 176
+#: rc.cpp:225
+#, no-c-format
+msgid "C&lear"
+msgstr "清除(&L)"
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 182
+#: rc.cpp:228
+#, no-c-format
+msgid "Clears this list"
+msgstr "清除此清單"
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 218
+#: rc.cpp:234
+#, no-c-format
+msgid "Save &As..."
+msgstr "另存為(&A)..."
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 224
+#: rc.cpp:237
+#, no-c-format
+msgid "Save this blacklist to use with KTorrent IPFilter plugin"
+msgstr "儲存此黑名單，以便在 KTorrent IPFilter 外掛程式中使用"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 59
+#: rc.cpp:252
+#, no-c-format
+msgid "Maximum downloads:"
+msgstr "最大下載數："
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 86
+#: rc.cpp:255
+#, no-c-format
+msgid "Maximum seeds:"
+msgstr "最大 seed 數："
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 94
+#: rc.cpp:258
+#, no-c-format
+msgid "Start download on low disk space :"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 102
+#: rc.cpp:261
+#, fuzzy, no-c-format
+msgid "Minimum disk space:"
+msgstr "配置磁碟空間"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 140
+#: rc.cpp:264
+#, fuzzy, no-c-format
+msgid "Don't start"
+msgstr "未開始"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 145
+#: rc.cpp:267
+#, no-c-format
+msgid "Always ask"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 150
+#: rc.cpp:270
+#, fuzzy, no-c-format
+msgid "Force start"
+msgstr "未開始"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 208
+#: rc.cpp:273
+#, no-c-format
+msgid "MB"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 236
+#: rc.cpp:276 rc.cpp:279 rc.cpp:312 rc.cpp:315 rc.cpp:324
+#, no-c-format
+msgid "(0 is no limit)"
+msgstr "（0 表示不限制）"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 330
+#: rc.cpp:285
+#, no-c-format
+msgid "Maximum download rate:"
+msgstr "最大下載速率："
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 346
+#: rc.cpp:291
+#, fuzzy, no-c-format
+msgid "Global connection limit:"
+msgstr "全域連線限制"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 354
+#: rc.cpp:294
+#, fuzzy, no-c-format
+msgid "Max seed time:"
+msgstr "分享比例："
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 370
+#: rc.cpp:297
+#, no-c-format
+msgid "Maximum connections per torrent:"
+msgstr "每個 torrent 最大連線數："
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 397
+#: rc.cpp:300
+#, no-c-format
+msgid "Number of upload slots:"
+msgstr "上傳槽的數量："
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 405
+#: rc.cpp:303
+#, no-c-format
+msgid "UDP tracker port:"
+msgstr "UDP 追蹤器連接埠："
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 413
+#: rc.cpp:306
+#, fuzzy, no-c-format
+msgid "Max share ratio:"
+msgstr "分享比例："
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 421
+#: rc.cpp:309
+#, no-c-format
+msgid "Maximum upload rate:"
+msgstr "最大上傳速率："
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 576
+#: rc.cpp:318 rc.cpp:321
+#, no-c-format
+msgid "KB/sec (0 is no limit)"
+msgstr "KB/秒（0 表示不限制）"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 651
+#: rc.cpp:327
+#, fuzzy, no-c-format
+msgid "Hours (0 is no limit)"
+msgstr "（0 表示不限制）"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 663
+#: rc.cpp:330
+#, no-c-format
+msgid "&Keep seeding after download is finished"
+msgstr "下載完成後仍保留 seed(&K)"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 674
+#: rc.cpp:333
+#, no-c-format
+msgid "Attention"
+msgstr "注意"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 685
+#: rc.cpp:336
+#, fuzzy, no-c-format
+msgid ""
+"The above ports must also be forwarded if you are behind a router. The UPnP "
+"plugin can do this for you."
+msgstr "若您在路由器後面，則以上的連接埠必須經過轉接。UPnP 外掛程式可以為您做這個工作。"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 16
+#: rc.cpp:339
+#, no-c-format
+msgid "KT Queue Dialog"
+msgstr "KT 佇列對話框"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 69
+#: rc.cpp:348 rc.cpp:386 rc.cpp:1107
+#, no-c-format
+msgid "Status:"
+msgstr "狀態："
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 85
+#: rc.cpp:351 rc.cpp:389 rc.cpp:1808
+#, no-c-format
+msgid "Tracker:"
+msgstr "追蹤器："
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 93
+#: rc.cpp:354 rc.cpp:392 rc.cpp:1805
+#, no-c-format
+msgid "DHT:"
+msgstr "DHT："
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 109
+#: rc.cpp:357 rc.cpp:395 rc.cpp:1061
+#, no-c-format
+msgid "Share ratio:"
+msgstr "分享比例："
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 117
+#: rc.cpp:360
+#, no-c-format
+msgid "Bytes left:"
+msgstr "剩餘位元組："
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 177
+#: rc.cpp:368 rc.cpp:377
+#, no-c-format
+msgid "Torrent"
+msgstr "Torrent"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 188
+#: rc.cpp:371 rc.cpp:380
+#, no-c-format
+msgid "Controlled by"
+msgstr "控制者："
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 214
+#: rc.cpp:374
+#, no-c-format
+msgid "Upload&s"
+msgstr "上傳(&S)"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 333
+#: rc.cpp:398
+#, no-c-format
+msgid "Uploaded:"
+msgstr "已上傳："
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 486
+#: rc.cpp:406
+#, no-c-format
+msgid "M&ove up"
+msgstr "上移(&O)"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 494
+#: rc.cpp:409
+#, no-c-format
+msgid "Move dow&n"
+msgstr "下移(&N)"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 519
+#: rc.cpp:412
+#, fuzzy, no-c-format
+msgid "Move to top"
+msgstr "上移(&O)"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 530
+#: rc.cpp:416
+#, no-c-format
+msgid "Move to &bottom"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 555
+#: rc.cpp:419
+#, no-c-format
+msgid "&QM Controlled"
+msgstr "佇列管理員控制(&Q)"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 563
+#: rc.cpp:422
+#, no-c-format
+msgid "&User Controlled"
+msgstr "使用者控制(&U)"
+
+#. i18n: file ./apps/ktorrent/pastedlgbase.ui line 30
+#: rc.cpp:434
+#, no-c-format
+msgid "Paste URL"
+msgstr "貼上網址"
+
+#. i18n: file ./apps/ktorrent/pastedlgbase.ui line 52
+#: rc.cpp:437 rc.cpp:1104 rc.cpp:1919
+#, no-c-format
+msgid "URL:"
+msgstr "網址："
+
+#. i18n: file ./apps/ktorrent/pastedlgbase.ui line 106
+#: rc.cpp:440
+#, no-c-format
+msgid "O&K"
+msgstr "確定(&K)"
+
+#. i18n: file ./apps/ktorrent/pastedlgbase.ui line 114
+#: rc.cpp:443 rc.cpp:675 rc.cpp:1176
+#, no-c-format
+msgid "C&ancel"
+msgstr "取消(&A)"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 16
+#: rc.cpp:446
+#, no-c-format
+msgid "Create Torrent"
+msgstr "建立 Torrent"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 38
+#: rc.cpp:449
+#, no-c-format
+msgid "The file or folder of which you want to create a torrent:"
+msgstr "您要建立 Torrent 的檔案或資料夾："
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 53
+#: rc.cpp:452
+#, fuzzy, no-c-format
+msgid "You must add at least one tracker or node."
+msgstr "您必須至少加入一個追蹤器。"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 61
+#: rc.cpp:455
+#, no-c-format
+msgid "File Options"
+msgstr "檔案選項"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 80
+#: rc.cpp:458
+#, no-c-format
+msgid "Size of each chunk:"
+msgstr "區塊大小："
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 86
+#: rc.cpp:461
+#, no-c-format
+msgid "32"
+msgstr "32"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 91
+#: rc.cpp:464
+#, no-c-format
+msgid "64"
+msgstr "64"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 96
+#: rc.cpp:467
+#, no-c-format
+msgid "128"
+msgstr "128"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 101
+#: rc.cpp:470
+#, no-c-format
+msgid "256"
+msgstr "256"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 106
+#: rc.cpp:473
+#, no-c-format
+msgid "512"
+msgstr "512"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 111
+#: rc.cpp:476
+#, no-c-format
+msgid "1024"
+msgstr "1024"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 116
+#: rc.cpp:479
+#, no-c-format
+msgid "2048"
+msgstr "2048"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 121
+#: rc.cpp:482
+#, no-c-format
+msgid "4096"
+msgstr "4096"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 126
+#: rc.cpp:485
+#, no-c-format
+msgid "8192"
+msgstr "8192"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 138
+#: rc.cpp:488 rc.cpp:633
+#, no-c-format
+msgid "KB"
+msgstr "KB"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 165
+#: rc.cpp:491
+#, no-c-format
+msgid "Start seedin&g the torrent"
+msgstr "開始 Torrent(&G)"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 176
+#: rc.cpp:494
+#, no-c-format
+msgid "Decentrali&zed (DHT only)"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 184
+#: rc.cpp:497
+#, no-c-format
+msgid "Private torrent (DHT not allowed)"
+msgstr "私密 Torrent（不允許 DHT）"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 202
+#: rc.cpp:500
+#, no-c-format
+msgid "Comments:"
+msgstr "註解："
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 248
+#: rc.cpp:503
+#, fuzzy, no-c-format
+msgid "&Create"
+msgstr "建立(&A)"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 262
+#: rc.cpp:506 rc.cpp:1325
+#, no-c-format
+msgid "Ca&ncel"
+msgstr "取消(&N)"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 275
+#: plugins/infowidget/infowidgetplugin.cpp:214 rc.cpp:509 rc.cpp:1101
+#, no-c-format
+msgid "Trackers"
+msgstr "追蹤器"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 283
+#: rc.cpp:512
+#, no-c-format
+msgid "DHT nodes"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 333
+#: rc.cpp:522
+#, fuzzy, no-c-format
+msgid "Node:"
+msgstr "無"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 385
+#: rc.cpp:528
+#, fuzzy, no-c-format
+msgid "IP or hostname"
+msgstr "自訂 IP 或主機名稱："
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 396
+#: rc.cpp:531 rc.cpp:718 rc.cpp:721
+#, no-c-format
+msgid "Port"
+msgstr "連接埠"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 437
+#: rc.cpp:534
+#, no-c-format
+msgid ""
+"NOTE: Some known good DHT nodes are already inserted. You should probably "
+"insert your own IP address and port too if you plan to seed this torrent."
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 16
+#: rc.cpp:537
+#, fuzzy, no-c-format
+msgid "Advanced Preferences"
+msgstr "搜尋喜好設定"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 46
+#: rc.cpp:543
+#, no-c-format
+msgid "Time left estimation algorithm:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 53
+#: rc.cpp:546 rc.cpp:568
+#, no-c-format
+msgid ""
+"<b>KTorrent algorithm:</b> Default algorithm using combination of other "
+"algorithms based on our tests."
+"<br>\n"
+"<b>Current speed algorithm:</b> Simplest algorithm - BytesLeft/CurrentSpeed"
+"<br>\n"
+"<b>Global average speed algorithm:</b> BytesLeft/AverageSpeed"
+"<br>\n"
+"<b>Window of X algorithm:</b> ET calculated from X speed samples"
+"<br>\n"
+"<b>Moving average algorithm:</b> Moving average speed calculated from X samples"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 64
+#: rc.cpp:556
+#, fuzzy, no-c-format
+msgid "Current speed"
+msgstr "目前的搜尋引擎"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 69
+#: rc.cpp:559
+#, no-c-format
+msgid "Global average speed"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 74
+#: rc.cpp:562
+#, no-c-format
+msgid "Window of X"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 79
+#: rc.cpp:565
+#, no-c-format
+msgid "Moving average"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 98
+#: rc.cpp:575
+#, no-c-format
+msgid "(takes effect after restart)"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 125
+#: rc.cpp:578
+#, no-c-format
+msgid "Disa&ble diskspace preallocation"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 141
+#: rc.cpp:581
+#, no-c-format
+msgid "F&ully preallocate diskspace (avoids fragmentation)"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 147
+#: rc.cpp:584
+#, no-c-format
+msgid "Basic (slow)"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 152
+#: rc.cpp:587
+#, no-c-format
+msgid "Filesystem specific"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 174
+#: rc.cpp:590
+#, fuzzy, no-c-format
+msgid "Performance"
+msgstr "喜好設定"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 193
+#: rc.cpp:593
+#, no-c-format
+msgid "Memory usage:"
+msgstr "記憶體用量："
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 199
+#: rc.cpp:596
+#, no-c-format
+msgid "Low"
+msgstr "低"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 204
+#: rc.cpp:599
+#, no-c-format
+msgid "Medium"
+msgstr "中"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 209
+#: rc.cpp:602
+#, no-c-format
+msgid "High"
+msgstr "高"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 248
+#: rc.cpp:605
+#, no-c-format
+msgid "GUI update interval:"
+msgstr "GUI 更新間隔："
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 254
+#: rc.cpp:608
+#, no-c-format
+msgid "500ms"
+msgstr "500ms"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 259
+#: rc.cpp:611
+#, no-c-format
+msgid "1s"
+msgstr "1s"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 264
+#: rc.cpp:614
+#, no-c-format
+msgid "2s"
+msgstr "2s"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 269
+#: rc.cpp:617
+#, no-c-format
+msgid "5s"
+msgstr "5s"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 308
+#: rc.cpp:620
+#, no-c-format
+msgid "Fast CPU"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 342
+#: rc.cpp:624
+#, no-c-format
+msgid "Slow CPU"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 354
+#: rc.cpp:627
+#, fuzzy, no-c-format
+msgid "Data Checking"
+msgstr "檢查資料中"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 373
+#: rc.cpp:630
+#, no-c-format
+msgid "During uploading, do &not recheck chunks bigger than"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 430
+#: rc.cpp:636
+#, no-c-format
+msgid "Do a data integrit&y check after"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 449
+#: rc.cpp:639
+#, no-c-format
+msgid "corrupted chunks"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 478
+#: rc.cpp:642
+#, no-c-format
+msgid "Networking"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 505
+#: rc.cpp:645
+#, fuzzy, no-c-format
+msgid "Maximum number of connection setups:"
+msgstr "每個 torrent 的最大連線數（0 表示不限制）"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 527
+#: rc.cpp:648
+#, no-c-format
+msgid "DSCP for IP packets:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 570
+#: rc.cpp:651
+#, no-c-format
+msgid "Do not use the KDE pro&xy settings for HTTP tracker connections"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 586
+#: rc.cpp:654
+#, fuzzy, no-c-format
+msgid "HTTP tracker proxy:"
+msgstr "UDP 追蹤器連接埠："
+
+#. i18n: file ./apps/ktorrent/scandlgbase.ui line 24
+#: rc.cpp:657
+#, no-c-format
+msgid "Scanning data"
+msgstr "掃描資料中"
+
+#. i18n: file ./apps/ktorrent/scandlgbase.ui line 38
+#: rc.cpp:660
+#, fuzzy, no-c-format
+msgid "Scanning data of torrent :"
+msgstr "掃描區塊資料中："
+
+#. i18n: file ./apps/ktorrent/scandlgbase.ui line 62
+#: rc.cpp:663
+#, no-c-format
+msgid "Number of chunks found :"
+msgstr "找到的區塊數："
+
+#. i18n: file ./apps/ktorrent/scandlgbase.ui line 70
+#: rc.cpp:666
+#, no-c-format
+msgid "Number of chunks failed / not downloaded :"
+msgstr "失敗/未下載的區塊數："
+
+#. i18n: file ./apps/ktorrent/scandlgbase.ui line 97
+#: rc.cpp:669 rc.cpp:672
+#, no-c-format
+msgid "0"
+msgstr "0"
+
+#. i18n: file ./apps/ktupnptest/mainwidget.ui line 54
+#: rc.cpp:678
+#, no-c-format
+msgid "Test"
+msgstr "測試"
+
+#. i18n: file ./libktorrent/labelviewitembase.ui line 49
+#: rc.cpp:685
+#, no-c-format
+msgid "textLabel2"
+msgstr ""
+
+#. i18n: file ./libktorrent/labelviewitembase.ui line 65
+#: rc.cpp:688
+#, no-c-format
+msgid "textLabel3"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 10
+#: rc.cpp:691
+#, no-c-format
+msgid "Maximum number of downloads (0 = no limit)"
+msgstr "最大下載數（0 表示不限制）"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 15
+#: rc.cpp:694
+#, no-c-format
+msgid "Maximum number of seeds (0 = no limit)"
+msgstr "最大 seed 數（0 表示不限制）"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 20
+#: rc.cpp:697
+#, no-c-format
+msgid "Start downloads on low disk space?"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 24
+#: rc.cpp:700
+#, no-c-format
+msgid "Maximum number of connections per torrent (0 = no limit)"
+msgstr "每個 torrent 的最大連線數（0 表示不限制）"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 29
+#: rc.cpp:703
+#, no-c-format
+msgid "Maximum number of connections for all torrents (0 = no limit) "
+msgstr "所有 torrent 的最大連線數（0 表示不限制）"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 34
+#: rc.cpp:706
+#, no-c-format
+msgid "Maximum upload speed in KB/sec (0 = no limit)"
+msgstr "最大上傳速度，以 KB/秒 為單位（0 表示不限制）"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 39
+#: rc.cpp:709
+#, no-c-format
+msgid "Maximum download speed in KB/sec (0 = no limit)"
+msgstr "最大下載速度，以 KB/秒為單位（0 表示不限制）"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 44
+#: rc.cpp:712
+#, fuzzy, no-c-format
+msgid "Maximum share ratio(0 = no limit)"
+msgstr "已達到最大分享比例限制。"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 49
+#: rc.cpp:715
+#, fuzzy, no-c-format
+msgid "Maximum seed time in hours (0 = no limit)"
+msgstr "已達到最大分享比例限制。"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 66
+#: rc.cpp:724
+#, no-c-format
+msgid "Show a system tray icon"
+msgstr "顯示系統匣圖示"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 70
+#: rc.cpp:727
+#, fuzzy, no-c-format
+msgid "Show speed bar in tray icon"
+msgstr "顯示系統匣圖示(&Y)"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 74
+#: rc.cpp:730
+#, no-c-format
+msgid "Download bandwidth (in kb/s):"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 80
+#: rc.cpp:733
+#, no-c-format
+msgid "Upload bandwidth (in kb/s):"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 86
+#: rc.cpp:736
+#, no-c-format
+msgid "Show popup messages when torrent is finished."
+msgstr "Torrent 完成時顯示彈出訊息。"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 90
+#: rc.cpp:739
+#, no-c-format
+msgid "Keep seeding after download has finished"
+msgstr "下載完成後仍保留 seed"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 94
+#: rc.cpp:742
+#, no-c-format
+msgid "Folder to store temporary files"
+msgstr "暫存檔案的資料夾"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 98
+#: rc.cpp:745
+#, no-c-format
+msgid "Whether to automatically save downloads to saveDir"
+msgstr "是否要自動儲存下載到資料夾"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 102
+#: rc.cpp:748
+#, no-c-format
+msgid "Folder to store downloaded files"
+msgstr "儲存下載檔案的資料夾"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 106
+#: rc.cpp:751
+#, fuzzy, no-c-format
+msgid "Whether to automatically move completed downloads to completedDir"
+msgstr "是否要自動儲存下載到資料夾"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 110
+#: rc.cpp:754
+#, fuzzy, no-c-format
+msgid "Folder to move completed downloaded files to"
+msgstr "儲存下載檔案的資料夾"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 114
+#: rc.cpp:757
+#, fuzzy, no-c-format
+msgid "Whether to automatically copy .torrent files to torrentCopyDir"
+msgstr "是否要自動儲存下載到資料夾"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 118
+#: rc.cpp:760
+#, fuzzy, no-c-format
+msgid "Folder to copy .torrent files to"
+msgstr "暫存檔案的資料夾"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 122
+#: rc.cpp:763
+#, no-c-format
+msgid "Whether to use a custom IP to pass to the tracker"
+msgstr "是否要將自定 IP 傳送給追蹤器"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 126
+#: rc.cpp:766
+#, no-c-format
+msgid "Directory which was used as the last save directory"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 130
+#: rc.cpp:769
+#, no-c-format
+msgid "IP to pass to the tracker"
+msgstr "要傳送給追蹤器的 IP"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 134
+#: rc.cpp:772
+#, no-c-format
+msgid "Memory usage"
+msgstr "記憶體用量"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 138
+#: rc.cpp:775
+#, no-c-format
+msgid "GUI update interval"
+msgstr "GUI 更新間隔"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 142
+#: rc.cpp:778
+#, no-c-format
+msgid "Support for DHT"
+msgstr "支援 DHT"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 146
+#: rc.cpp:781
+#, no-c-format
+msgid "DHT port"
+msgstr "DHT 連接埠"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 152
+#: rc.cpp:784
+#, no-c-format
+msgid "Number of upload slots"
+msgstr "上傳槽的數量"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 196
+#: rc.cpp:793
+#, no-c-format
+msgid "Columns shown in KTorrentView"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 205
+#: rc.cpp:796
+#, no-c-format
+msgid "ET algorithm"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 227
+#: rc.cpp:799
+#, no-c-format
+msgid ""
+"When there's no space left to complete download and free diskspace is less than "
+"minDiskSpace, torrent will be stopped."
+msgstr ""
+
+#. i18n: file ./libktorrent/pluginmanagerwidget.ui line 16
+#: rc.cpp:802
+#, no-c-format
+msgid "Plugin Manager"
+msgstr "外掛程式管理器"
+
+#. i18n: file ./libktorrent/pluginmanagerwidget.ui line 48
+#: rc.cpp:805
+#, no-c-format
+msgid "Load"
+msgstr "載入"
+
+#. i18n: file ./libktorrent/pluginmanagerwidget.ui line 56
+#: rc.cpp:808
+#, no-c-format
+msgid "U&nload"
+msgstr "卸載(&N)"
+
+#. i18n: file ./libktorrent/pluginmanagerwidget.ui line 64
+#: rc.cpp:811
+#, fuzzy, no-c-format
+msgid "Load &All"
+msgstr "全部載入"
+
+#. i18n: file ./libktorrent/pluginmanagerwidget.ui line 72
+#: rc.cpp:814
+#, fuzzy, no-c-format
+msgid "&Unload All"
+msgstr "全部卸載"
+
+#. i18n: file ./plugins/upnp/ktupnpplugin.kcfg line 10
+#: rc.cpp:817
+#, no-c-format
+msgid "Default UPnP device to use"
+msgstr "預設使用的 UPnP 裝置"
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 16
+#: plugins/upnp/upnpplugin.cpp:46 plugins/upnp/upnpprefpage.cpp:31 rc.cpp:820
+#, no-c-format
+msgid "UPnP"
+msgstr "UPnP"
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 35
+#: rc.cpp:823
+#, no-c-format
+msgid "Detected devices:"
+msgstr "偵測到的裝置："
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 41
+#: rc.cpp:826
+#, no-c-format
+msgid "Device"
+msgstr "裝置"
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 52
+#: rc.cpp:829
+#, no-c-format
+msgid "Ports Forwarded"
+msgstr "轉接的連接埠"
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 63
+#: rc.cpp:832
+#, fuzzy, no-c-format
+msgid "WAN Connection"
+msgstr "連線："
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 91
+#: rc.cpp:835
+#, fuzzy, no-c-format
+msgid "Forw&ard Ports"
+msgstr "轉接連接埠"
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 99
+#: rc.cpp:838
+#, no-c-format
+msgid "Undo Port Forwarding"
+msgstr "復原轉接連接埠"
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 124
+#: rc.cpp:841
+#, no-c-format
+msgid "Rescan"
+msgstr "重新掃描"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 9
+#: rc.cpp:844
+#, no-c-format
+msgid "Enable scanning of folder1?"
+msgstr "要開啟掃描資料夾 1 嗎？"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 14
+#: rc.cpp:847
+#, no-c-format
+msgid "Enable scanning of folder2?"
+msgstr "要開啟掃描資料夾 2 嗎？"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 19
+#: rc.cpp:850
+#, no-c-format
+msgid "Enable scanning of folder3?"
+msgstr "要開啟掃描資料夾 3 嗎？"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 24
+#: rc.cpp:853
+#, no-c-format
+msgid "Folder1 path"
+msgstr "資料夾 1 路徑"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 29
+#: rc.cpp:856
+#, no-c-format
+msgid "Folder2 path"
+msgstr "資料夾 2 路徑"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 34
+#: rc.cpp:859
+#, no-c-format
+msgid "Folder3 path"
+msgstr "資料夾 3 路徑"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 39
+#: rc.cpp:862
+#, no-c-format
+msgid "Whether to open torrent silently or not."
+msgstr "是否要安靜地開啟 torrent。"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 44
+#: rc.cpp:865
+#, no-c-format
+msgid "Delete action checked."
+msgstr "刪除勾選的動作。"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 49
+#: rc.cpp:868
+#, no-c-format
+msgid "Move action checked."
+msgstr "移動勾選的動作。"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 16
+#: rc.cpp:871
+#, no-c-format
+msgid "ScanFolder Preferences"
+msgstr "資料夾掃描喜好設定"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 35
+#: rc.cpp:874
+#, no-c-format
+msgid "Scan folder &1"
+msgstr "掃描資料夾 1(&1)"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 38
+#: rc.cpp:877 rc.cpp:1480
+#, no-c-format
+msgid "Alt+1"
+msgstr "Alt+1"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 46
+#: rc.cpp:880
+#, no-c-format
+msgid "Scan folder &2"
+msgstr "掃描資料夾 2(&2)"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 49
+#: rc.cpp:883 rc.cpp:1471 rc.cpp:1495
+#, no-c-format
+msgid "Alt+2"
+msgstr "Alt+2"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 57
+#: rc.cpp:886
+#, no-c-format
+msgid "Scan folder &3"
+msgstr "掃描資料夾 3(&3)"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 60
+#: rc.cpp:889 rc.cpp:1465
+#, no-c-format
+msgid "Alt+3"
+msgstr "Alt+3"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 81
+#: rc.cpp:895
+#, no-c-format
+msgid "Move to \"loaded\" directory &after loading"
+msgstr "載入後移動到「已載入」目錄"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 84
+#: rc.cpp:898
+#, no-c-format
+msgid "Move torrent to \"loaded\" directory after loading it"
+msgstr "載入 torrent 後將 torrent 移動到「已載入」目錄"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 92
+#: rc.cpp:901
+#, no-c-format
+msgid "Open torrents silentl&y"
+msgstr "安靜地開啟 torrent(&Y)"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 95
+#: rc.cpp:904
+#, fuzzy, no-c-format
+msgid "Do not show 'Select files to download' dialog"
+msgstr "不要顯示「選擇要下載的檔案」對話框"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 103
+#: rc.cpp:907
+#, no-c-format
+msgid "Delete after loadin&g"
+msgstr "載入後刪除(&G)"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 106
+#: rc.cpp:910
+#, no-c-format
+msgid "Deletes torrent after loading"
+msgstr "載入 torrent 後刪除之"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 116
+#: rc.cpp:913
+#, no-c-format
+msgid "Folders to scan"
+msgstr "要掃描的資料夾"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 151
+#: rc.cpp:916
+#, no-c-format
+msgid "Folder 1:"
+msgstr "資料夾 1："
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 162
+#: rc.cpp:919
+#, no-c-format
+msgid "Folder 2:"
+msgstr "資料夾 2："
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 173
+#: rc.cpp:922
+#, no-c-format
+msgid "Folder 3:"
+msgstr "資料夾 3："
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 30
+#: rc.cpp:925 rc.cpp:1895
+#, no-c-format
+msgid "Search Preferences"
+msgstr "搜尋喜好設定"
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 41
+#: rc.cpp:928
+#, no-c-format
+msgid "Web Server"
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 82
+#: rc.cpp:934
+#, fuzzy, no-c-format
+msgid "Forward port"
+msgstr "轉接連接埠"
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 107
+#: rc.cpp:937
+#, no-c-format
+msgid "Session TTL (in sec):"
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 142
+#: rc.cpp:940
+#, fuzzy, no-c-format
+msgid "Select interface:"
+msgstr "全不選(&N)"
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 173
+#: rc.cpp:943
+#, fuzzy, no-c-format
+msgid "Username:"
+msgstr "使用者"
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 188
+#: rc.cpp:946
+#, no-c-format
+msgid "Change password ..."
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 206
+#: rc.cpp:949
+#, no-c-format
+msgid "Php executable path:"
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 10
+#: rc.cpp:953
+#, no-c-format
+msgid "Port number"
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 15
+#: rc.cpp:956
+#, fuzzy, no-c-format
+msgid "forward Port"
+msgstr "轉接連接埠"
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 20
+#: rc.cpp:959
+#, no-c-format
+msgid "Session time to live"
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 24
+#: rc.cpp:962
+#, fuzzy, no-c-format
+msgid "interface skin"
+msgstr "一般選項"
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 28
+#: rc.cpp:965
+#, no-c-format
+msgid "php executable path"
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 33
+#: rc.cpp:968
+#, no-c-format
+msgid "username"
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 37
+#: rc.cpp:971
+#, no-c-format
+msgid "password"
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 16
+#: plugins/infowidget/infowidgetplugin.cpp:194 rc.cpp:974 rc.cpp:1046
+#, no-c-format
+msgid "Chunks"
+msgstr "區塊"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 43
+#: rc.cpp:977
+#, no-c-format
+msgid "Total:"
+msgstr "總計："
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 81
+#: rc.cpp:981
+#, no-c-format
+msgid "Currently downloading:"
+msgstr "目前下載："
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 119
+#: rc.cpp:985
+#, no-c-format
+msgid "Downloaded:"
+msgstr "已下載："
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 157
+#: rc.cpp:989
+#, no-c-format
+msgid "Excluded:"
+msgstr "已排除："
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 195
+#: rc.cpp:993
+#, no-c-format
+msgid "Left:"
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 233
+#: rc.cpp:997
+#, no-c-format
+msgid "Size:"
+msgstr "大小："
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 280
+#: rc.cpp:1001
+#, no-c-format
+msgid "Chunk"
+msgstr "區塊"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 291
+#: rc.cpp:1004
+#, no-c-format
+msgid "Progress"
+msgstr "進度"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 302
+#: rc.cpp:1007
+#, no-c-format
+msgid "Peer"
+msgstr "端點"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 324
+#: rc.cpp:1013
+#, no-c-format
+msgid "Assigned Peers"
+msgstr "指定的端點"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 63
+#: rc.cpp:1022
+#, no-c-format
+msgid "Seeders:"
+msgstr "傳送者："
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 71
+#: rc.cpp:1025
+#, no-c-format
+msgid "Leechers:"
+msgstr "接收者："
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 129
+#: rc.cpp:1030
+#, no-c-format
+msgid "Average Down Speed:"
+msgstr "平均下載速度："
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 177
+#: rc.cpp:1035
+#, no-c-format
+msgid "Average Up Speed:"
+msgstr "平均上傳速度："
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 195
+#: rc.cpp:1038 rc.cpp:1111
+#, no-c-format
+msgid "Next update in:"
+msgstr "下次更新時間："
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 203
+#: rc.cpp:1041
+#, no-c-format
+msgid "Tracker Status:"
+msgstr "追蹤器狀態："
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 332
+#: rc.cpp:1049
+#, no-c-format
+msgid "Parts of the torrent which have been downloaded:"
+msgstr "已下載的 torrent 部份："
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 367
+#: rc.cpp:1052
+#, no-c-format
+msgid "Parts of the torrent which are available:"
+msgstr "可用的 torrent 部份："
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 457
+#: rc.cpp:1055
+#, no-c-format
+msgid "Sharing"
+msgstr "分享"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 487
+#: rc.cpp:1058
+#, no-c-format
+msgid ""
+"Your upload will stop when share ratio gets to this value. Zero means no limit."
+msgstr "您的上傳在分享比例大於此值時會停止。0 表示不限制。"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 525
+#: rc.cpp:1064
+#, fuzzy, no-c-format
+msgid "Your upload will stop when you have uploaded for this many hours."
+msgstr "您的上傳在分享比例大於此值時會停止。0 表示不限制。"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 533
+#: rc.cpp:1067
+#, no-c-format
+msgid "Hours"
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 543
+#: rc.cpp:1070
+#, fuzzy, no-c-format
+msgid "Ratio limit:"
+msgstr "全域連線限制"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 549
+#: rc.cpp:1074
+#, no-c-format
+msgid "Limit works only in seed mode"
+msgstr "限制在 seed 模式下工作"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 557
+#: rc.cpp:1077
+#, fuzzy, no-c-format
+msgid "Time &limit:"
+msgstr "要限制嗎？(&U)"
+
+#. i18n: file ./plugins/infowidget/trackerviewbase.ui line 37
+#: rc.cpp:1081
+#, fuzzy, no-c-format
+msgid "&Update Tracker"
+msgstr "更新追蹤器(&A)"
+
+#. i18n: file ./plugins/infowidget/trackerviewbase.ui line 40
+#: rc.cpp:1084
+#, no-c-format
+msgid "Minimum update interval - 60 seconds"
+msgstr "最小更新間隔─60 秒"
+
+#. i18n: file ./plugins/infowidget/trackerviewbase.ui line 48
+#: rc.cpp:1087
+#, fuzzy, no-c-format
+msgid "Add Trac&ker"
+msgstr "新增追蹤器(&R)"
+
+#. i18n: file ./plugins/infowidget/trackerviewbase.ui line 64
+#: rc.cpp:1090
+#, no-c-format
+msgid "Remove Tracker"
+msgstr "移除追蹤器"
+
+#. i18n: file ./plugins/infowidget/trackerviewbase.ui line 75
+#: rc.cpp:1094
+#, fuzzy, no-c-format
+msgid "Ch&ange Tracker"
+msgstr "變更追蹤器(&N)"
+
+#. i18n: file ./plugins/infowidget/trackerviewbase.ui line 100
+#: rc.cpp:1097
+#, no-c-format
+msgid "Restore Defaults"
+msgstr "還原預設值"
+
+#. i18n: file ./plugins/infowidget/ktinfowidgetplugin.kcfg line 10
+#: rc.cpp:1115
+#, no-c-format
+msgid "Show peer view tab in main window"
+msgstr "在主視窗顯示端點檢視表"
+
+#. i18n: file ./plugins/infowidget/ktinfowidgetplugin.kcfg line 14
+#: rc.cpp:1118
+#, no-c-format
+msgid "Show chunk download view tab in main window"
+msgstr "在主視窗顯示區塊檢視表"
+
+#. i18n: file ./plugins/infowidget/ktinfowidgetplugin.kcfg line 18
+#: rc.cpp:1121
+#, no-c-format
+msgid "Show trackers view tab in main window"
+msgstr "在主視窗顯示追蹤器檢視表"
+
+#. i18n: file ./plugins/infowidget/iwpref.ui line 24
+#: rc.cpp:1124
+#, no-c-format
+msgid "Show list of peers"
+msgstr "顯示端點清單"
+
+#. i18n: file ./plugins/infowidget/iwpref.ui line 35
+#: rc.cpp:1128
+#, no-c-format
+msgid "Show list of chunks currentl&y downloading"
+msgstr "顯示目前下載的區塊清單(&Y)"
+
+#. i18n: file ./plugins/infowidget/iwpref.ui line 60
+#: rc.cpp:1131
+#, no-c-format
+msgid "Show list of trackers"
+msgstr "顯示追蹤器清單"
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 16
+#: rc.cpp:1135
+#, no-c-format
+msgid "IPBlocking Preferences"
+msgstr "IPBlocking 喜好設定"
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 47
+#: rc.cpp:1138
+#, fuzzy, no-c-format
+msgid "Select PeerGuardian Filter File "
+msgstr "選擇 PeerGuardian 過濾器檔案"
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 58
+#: rc.cpp:1141
+#, no-c-format
+msgid "Use PeerGuardian filter?"
+msgstr "要使用 PeerGuardian 過濾器嗎？"
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 77
+#: rc.cpp:1145
+#, no-c-format
+msgid "IP filter file:"
+msgstr "IP 過濾器檔案："
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 85
+#: rc.cpp:1148
+#, no-c-format
+msgid "http://www.bluetack.co.uk/modules.php?name=Downloads&d_op=getit&lid=8"
+msgstr "http://www.bluetack.co.uk/modules.php?name=Downloads&d_op=getit&lid=8"
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 123
+#: rc.cpp:1151
+#, no-c-format
+msgid "Dow&nload/Convert"
+msgstr "下載/轉換(&N)"
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 134
+#: rc.cpp:1154
+#, no-c-format
+msgid ""
+"Download PeerGuardian filter from bluetack.co.uk or blocklist.org.\n"
+"NOTE: ZIP file from bluetack.co.uk is supported."
+msgstr ""
+"從 bluetack.co.uk 或 blocklist.org 下載 PeerGuardian 過濾器。\n"
+"注意：支援從 bluetack.co.uk 下載 ZIP 檔。"
+
+#. i18n: file ./plugins/ipfilter/ktipfilterplugin.kcfg line 10
+#: rc.cpp:1159
+#, no-c-format
+msgid "Level1 filter url"
+msgstr "第一級過濾器網址"
+
+#. i18n: file ./plugins/ipfilter/ktipfilterplugin.kcfg line 14
+#: rc.cpp:1162
+#, no-c-format
+msgid "Use level1 filter?"
+msgstr "要使用第一級過濾器嗎？"
+
+#. i18n: file ./plugins/ipfilter/convert_dlg.ui line 24
+#: plugins/ipfilter/convertdialog.cpp:155 rc.cpp:1165
+#, no-c-format
+msgid "Converting..."
+msgstr "轉換中..."
+
+#. i18n: file ./plugins/ipfilter/convert_dlg.ui line 41
+#: rc.cpp:1168
+#, fuzzy, no-c-format
+msgid ""
+"Click on the 'convert' button to start converting antip2p file. NOTE: This "
+"process could take a while even on fast machines and during that time you will "
+"not be able to use KTorrent."
+msgstr "按下「轉換」鍵開始轉換 antip2p 檔。注意：即使在快的機器上，這個過程可能也要一陣子，而這段時間您將無法使用 KTorrent。"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 27
+#: rc.cpp:1179
+#, no-c-format
+msgid "Update"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 46
+#: rc.cpp:1182 rc.cpp:1268
+#, no-c-format
+msgid "Update charts every"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 71
+#: rc.cpp:1185
+#, fuzzy, no-c-format
+msgid "GUI updates"
+msgstr "GUI 更新間隔"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 92
+#: rc.cpp:1188 rc.cpp:1271
+#, no-c-format
+msgid "Gather data every"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 120
+#: rc.cpp:1191
+#, no-c-format
+msgid "miliseconds"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 135
+#: rc.cpp:1194
+#, fuzzy, no-c-format
+msgid "Maximum"
+msgstr "最大 seed 數："
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 154
+#: rc.cpp:1197
+#, fuzzy, no-c-format
+msgid "Maximum speed scale mode:"
+msgstr "最大 seed 數："
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 165
+#: rc.cpp:1203
+#, no-c-format
+msgid "Exact"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 175
+#: rc.cpp:1206
+#, no-c-format
+msgid "See 'What's this' for more help"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 180
+#: rc.cpp:1209
+#, no-c-format
+msgid ""
+"Set maximum value on OY scale as:\n"
+"- Top: Globally achieved maximum speed\n"
+"- Exact: Maximum achieved speed visible on chart"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 192
+#: rc.cpp:1214 rc.cpp:1247
+#, fuzzy, no-c-format
+msgid "Peers speed"
+msgstr "端點"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 211
+#: rc.cpp:1217
+#, fuzzy, no-c-format
+msgid "Peers speed:"
+msgstr "端點"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 222
+#: rc.cpp:1220
+#, no-c-format
+msgid "update every"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 244
+#: rc.cpp:1223
+#, no-c-format
+msgid "chart data updates"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 254
+#: rc.cpp:1226
+#, no-c-format
+msgid "Gathering data about many connected peers can be CPU consuming."
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 267
+#: rc.cpp:1229
+#, fuzzy, no-c-format
+msgid "Peers connections"
+msgstr "連線："
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 270
+#: rc.cpp:1232
+#, no-c-format
+msgid "Large values can obscure charts of connected peers"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 289
+#: rc.cpp:1235
+#, fuzzy, no-c-format
+msgid "Show seeders in swarms"
+msgstr "顯示系統匣圖示(&Y)"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 297
+#: rc.cpp:1238
+#, no-c-format
+msgid "Show leechers in swarms"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 309
+#: rc.cpp:1241
+#, no-c-format
+msgid "Measurements count"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 392
+#: rc.cpp:1250 rc.cpp:1265
+#, fuzzy, no-c-format
+msgid "Upload"
+msgstr "上傳"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 424
+#: rc.cpp:1253
+#, fuzzy, no-c-format
+msgid "Connections"
+msgstr "連線："
+
+#. i18n: file ./plugins/stats/statsspdwgt.ui line 40
+#: plugins/infowidget/infowidgetplugin.cpp:173 rc.cpp:1262 rc.cpp:1304
+#, no-c-format
+msgid "Peers"
+msgstr "端點"
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 18
+#: rc.cpp:1274
+#, no-c-format
+msgid "Toggle peers speed charts"
+msgstr ""
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 22
+#: rc.cpp:1277
+#, no-c-format
+msgid "Interval between getting data about peers speed"
+msgstr ""
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 26
+#: rc.cpp:1280
+#, no-c-format
+msgid "Toggle drawing of leechers in swarms"
+msgstr ""
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 30
+#: rc.cpp:1283
+#, no-c-format
+msgid "Toggle drawing of seeders in swarms"
+msgstr ""
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 35
+#: rc.cpp:1286
+#, fuzzy, no-c-format
+msgid "Download mesurments count"
+msgstr "下載 torrent"
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 39
+#: rc.cpp:1289
+#, no-c-format
+msgid "Peers speed mesurments count"
+msgstr ""
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 43
+#: rc.cpp:1292
+#, no-c-format
+msgid "Upload mesurments count"
+msgstr ""
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 47
+#: rc.cpp:1295
+#, fuzzy, no-c-format
+msgid "Connections mesurments count"
+msgstr "連線訊息旗標"
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 51
+#: rc.cpp:1298
+#, no-c-format
+msgid "DHT mesurments count"
+msgstr ""
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 56
+#: rc.cpp:1301
+#, no-c-format
+msgid "OY axis max mode"
+msgstr ""
+
+#. i18n: file ./plugins/partfileimport/importdlgbase.ui line 16
+#: rc.cpp:1310
+#, no-c-format
+msgid "Import an existing download"
+msgstr "匯入已存在的下載"
+
+#. i18n: file ./plugins/partfileimport/importdlgbase.ui line 49
+#: rc.cpp:1313
+#, no-c-format
+msgid "Torrent:"
+msgstr "Torrent："
+
+#. i18n: file ./plugins/partfileimport/importdlgbase.ui line 63
+#: rc.cpp:1316
+#, no-c-format
+msgid "Data:"
+msgstr "資料："
+
+#. i18n: file ./plugins/partfileimport/importdlgbase.ui line 95
+#: rc.cpp:1319
+#, no-c-format
+msgid ""
+"Please specify the torrent and the data already downloaded for that torrent."
+msgstr "請指定 torrent 及該 torrent 已下載的資料。"
+
+#. i18n: file ./plugins/partfileimport/importdlgbase.ui line 133
+#: rc.cpp:1322
+#, no-c-format
+msgid "&Import"
+msgstr "匯入(&I)"
+
+#. i18n: file ./plugins/rssfeed/ktrssfeedplugin.kcfg line 10
+#: rc.cpp:1328
+#, fuzzy, no-c-format
+msgid "default"
+msgstr "新增預設(&L)"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 18
+#: rc.cpp:1331
+#, no-c-format
+msgid "Rss Feeds"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 36
+#: rc.cpp:1334
+#, fuzzy, no-c-format
+msgid "Feeds"
+msgstr "傳送者："
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 78
+#: rc.cpp:1337
+#, no-c-format
+msgid "De&lete"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 86
+#: rc.cpp:1340 rc.cpp:1382 rc.cpp:1392
+#, no-c-format
+msgid "&New"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 117
+#: rc.cpp:1343
+#, fuzzy, no-c-format
+msgid "&URL"
+msgstr "網址"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 139
+#: rc.cpp:1346
+#, no-c-format
+msgid "Articles"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 216
+#: rc.cpp:1353
+#, no-c-format
+msgid "Auto&refresh"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 242
+#: rc.cpp:1356
+#, no-c-format
+msgid "I&gnore TTL"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 270
+#: rc.cpp:1359
+#, no-c-format
+msgid "Refresh"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 299
+#: rc.cpp:1363 rc.cpp:1395
+#, no-c-format
+msgid "&Title"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 323
+#: rc.cpp:1366
+#, no-c-format
+msgid "Keep Articles (days)"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 347
+#: rc.cpp:1369 rc.cpp:1398
+#, no-c-format
+msgid "&Active"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 362
+#: rc.cpp:1372
+#, fuzzy, no-c-format
+msgid "Filters"
+msgstr "IP 過濾器"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 389
+#: rc.cpp:1375
+#, fuzzy, no-c-format
+msgid "Accept Filters"
+msgstr "所有檔案"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 440
+#: rc.cpp:1385
+#, no-c-format
+msgid "Reject Filters"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 557
+#: rc.cpp:1401
+#, no-c-format
+msgid "Regular Expressions"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 587
+#: rc.cpp:1404
+#, no-c-format
+msgid "Treat as &Series"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 624
+#: rc.cpp:1407
+#, fuzzy, no-c-format
+msgid "Process"
+msgstr "進度"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 643
+#: rc.cpp:1411
+#, no-c-format
+msgid "Series Criteria"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 679
+#: rc.cpp:1414
+#, no-c-format
+msgid "Match Without Episode"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 713
+#: rc.cpp:1418
+#, no-c-format
+msgid "Max Episode"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 739
+#: rc.cpp:1421
+#, fuzzy, no-c-format
+msgid "Max Season"
+msgstr "最大比例："
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 758
+#: rc.cpp:1424
+#, no-c-format
+msgid "Min Season"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 782
+#: rc.cpp:1427
+#, no-c-format
+msgid "Min Episode"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 814
+#: rc.cpp:1430
+#, no-c-format
+msgid "Test te&xt"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 840
+#: rc.cpp:1433
+#, fuzzy, no-c-format
+msgid "Te&st"
+msgstr "測試"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 858
+#: rc.cpp:1436
+#, fuzzy, no-c-format
+msgid "Filter Matches"
+msgstr "資料夾 1 路徑"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 28
+#: rc.cpp:1447
+#, no-c-format
+msgid "Bandwidth scheduler"
+msgstr "頻寬排程器"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 50
+#: rc.cpp:1450
+#, no-c-format
+msgid "Left click category"
+msgstr "左邊點擊類別"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 61
+#: rc.cpp:1453
+#, no-c-format
+msgid "Categor&y 1"
+msgstr "類別 1(&Y)"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 157
+#: rc.cpp:1456 rc.cpp:1483
+#, no-c-format
+msgid "T&urn off"
+msgstr "關閉(&U)"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 165
+#: rc.cpp:1459 rc.cpp:1486
+#, no-c-format
+msgid "&Normal"
+msgstr "一般(&N)"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 195
+#: rc.cpp:1462
+#, no-c-format
+msgid "Category &3"
+msgstr "類別 3(&3)"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 206
+#: rc.cpp:1468 rc.cpp:1492
+#, no-c-format
+msgid "Category &2"
+msgstr "類別 2(&2)"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 219
+#: rc.cpp:1474
+#, no-c-format
+msgid "Right click category"
+msgstr "右邊點擊類別"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 230
+#: rc.cpp:1477
+#, no-c-format
+msgid "Category &1"
+msgstr "類別 1(&1)"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 367
+#: rc.cpp:1489
+#, no-c-format
+msgid "&Category 3"
+msgstr "類別 3(&C)"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 390
+#: rc.cpp:1498
+#, no-c-format
+msgid "Categories"
+msgstr "類別"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 401
+#: rc.cpp:1501
+#, no-c-format
+msgid "<b>1. Category</b>"
+msgstr "<b>1. 類別</b>"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 409
+#: rc.cpp:1504
+#, no-c-format
+msgid "<b>3. Category</b>"
+msgstr "<b>3. 類別</b>"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 425
+#: rc.cpp:1507 rc.cpp:1516 rc.cpp:1525
+#, no-c-format
+msgid "download:"
+msgstr "下載："
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 441
+#: rc.cpp:1510 rc.cpp:1519 rc.cpp:1528
+#, no-c-format
+msgid "upload:"
+msgstr "上傳："
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 457
+#: rc.cpp:1513 rc.cpp:1522 rc.cpp:1531
+#, no-c-format
+msgid "KB/s *"
+msgstr "KB/秒 *"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 567
+#: rc.cpp:1534
+#, no-c-format
+msgid "<b>2. Category</b>"
+msgstr "<b>2. 類別</b>"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 626
+#: rc.cpp:1538
+#, no-c-format
+msgid "* zero means no limit"
+msgstr "* 0 表示不限制"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 672
+#: rc.cpp:1541
+#, no-c-format
+msgid "Save to file"
+msgstr "儲存至檔案"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 680
+#: rc.cpp:1544
+#, no-c-format
+msgid "&Load from file"
+msgstr "從檔案載入(&L)"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 688
+#: rc.cpp:1547
+#, no-c-format
+msgid "Reset schedule"
+msgstr "重設排程"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 751
+#: rc.cpp:1550
+#, no-c-format
+msgid "O&k"
+msgstr "確定(&K)"
+
+#. i18n: file ./plugins/scheduler/schedulerpage.ui line 16
+#: rc.cpp:1559
+#, no-c-format
+msgid "Scheduler Plugin Pref Page"
+msgstr "排程外掛程式喜好設定"
+
+#. i18n: file ./plugins/scheduler/schedulerpage.ui line 27
+#: rc.cpp:1562
+#, no-c-format
+msgid "Use &bandwidth scheduler?"
+msgstr "要使用頻寬排程器嗎？(&B)"
+
+#. i18n: file ./plugins/scheduler/schedulerpage.ui line 35
+#: plugins/scheduler/schedulerplugin.cpp:59 rc.cpp:1565
+#, no-c-format
+msgid "Bandwidth Scheduler"
+msgstr "頻寬排程器"
+
+#. i18n: file ./plugins/scheduler/schedulerpage.ui line 46
+#: rc.cpp:1568
+#, no-c-format
+msgid "Use colors instead of pi&xmaps?"
+msgstr "要使用顏色取代像素圖嗎？(&X)"
+
+#. i18n: file ./plugins/scheduler/schedulerpage.ui line 54
+#: rc.cpp:1571
+#, no-c-format
+msgid "(Recommended for slower systems)"
+msgstr "（在較慢的系統上建議使用）"
+
+#. i18n: file ./plugins/scheduler/schedulerpage.ui line 62
+#: rc.cpp:1574
+#, no-c-format
+msgid "Edit s&chedule"
+msgstr "編輯排程(&C)"
+
+#. i18n: file ./plugins/scheduler/ktschedulerplugin.kcfg line 10
+#: rc.cpp:1577
+#, no-c-format
+msgid "Enable bandwidth scheduler?"
+msgstr "要開啟頻寬排程器嗎？"
+
+#. i18n: file ./plugins/scheduler/ktschedulerplugin.kcfg line 14
+#: rc.cpp:1580
+#, no-c-format
+msgid "Use colors instead of pixmaps?"
+msgstr "要使用顏色取代像素圖嗎？"
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 10
+#: rc.cpp:1583
+#, no-c-format
+msgid "Use rich log text"
+msgstr "使用 rich text 紀錄"
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 15
+#: rc.cpp:1586
+#, no-c-format
+msgid "General info messages flag"
+msgstr "一般資訊訊息旗標"
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 19
+#: rc.cpp:1589
+#, no-c-format
+msgid "Connections messages flag"
+msgstr "連線訊息旗標"
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 23
+#: rc.cpp:1592
+#, no-c-format
+msgid "DHT messages flag"
+msgstr "DHT 訊息旗標"
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 27
+#: rc.cpp:1595
+#, no-c-format
+msgid "Tracker info messages flag"
+msgstr "追蹤器訊息旗標"
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 31
+#: rc.cpp:1598
+#, no-c-format
+msgid "Disk IO info messages flag"
+msgstr "磁碟 IO 資訊訊息旗標"
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 35
+#: rc.cpp:1601
+#, no-c-format
+msgid "IPFilter plugin messages flag"
+msgstr "IP 過濾器外掛程式訊息旗標"
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 39
+#: rc.cpp:1604
+#, no-c-format
+msgid "Search plugin messages flag"
+msgstr "搜尋外掛程式訊息旗標"
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 43
+#: rc.cpp:1607
+#, no-c-format
+msgid "PartFileImport plugin messages flag"
+msgstr "PartFileImport 外掛程式訊息旗標"
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 47
+#: rc.cpp:1610
+#, no-c-format
+msgid "InfoWidget plugin messages flag"
+msgstr "資訊元件外掛程式訊息旗標"
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 51
+#: rc.cpp:1613
+#, no-c-format
+msgid "UPnP plugin messages flag"
+msgstr "UPnp 外掛程式訊息旗標"
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 55
+#: rc.cpp:1616
+#, no-c-format
+msgid "ScanFolder plugin messages flag"
+msgstr "掃描資料夾外掛程式訊息旗標"
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 59
+#: rc.cpp:1619
+#, no-c-format
+msgid "Scheduler plugin messages flag"
+msgstr "排程器外掛程式訊息旗標"
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 63
+#: rc.cpp:1622
+#, fuzzy, no-c-format
+msgid "RSS plugin messages flag"
+msgstr "搜尋外掛程式訊息旗標"
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 67
+#: rc.cpp:1625
+#, fuzzy, no-c-format
+msgid "WebInterface plugin messages flag"
+msgstr "IP 過濾器外掛程式訊息旗標"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 16
+#: plugins/logviewer/logprefpage.cpp:31 rc.cpp:1628
+#, no-c-format
+msgid "LogViewer Options"
+msgstr "紀錄顯示器選項"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 44
+#: libktorrent/pluginmanagerprefpage.cpp:63 rc.cpp:1631
+#, no-c-format
+msgid "Plugins"
+msgstr "外掛程式"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 53
+#: rc.cpp:1634 rc.cpp:1652 rc.cpp:1670 rc.cpp:1691 rc.cpp:1706 rc.cpp:1724
+#: rc.cpp:1745 rc.cpp:1763 rc.cpp:1778 rc.cpp:1811 rc.cpp:1826 rc.cpp:1841
+#: rc.cpp:1859 rc.cpp:1874
+#, no-c-format
+msgid "All"
+msgstr "全部"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 58
+#: rc.cpp:1637 rc.cpp:1655 rc.cpp:1673 rc.cpp:1694 rc.cpp:1709 rc.cpp:1727
+#: rc.cpp:1748 rc.cpp:1766 rc.cpp:1781 rc.cpp:1814 rc.cpp:1829 rc.cpp:1844
+#: rc.cpp:1862 rc.cpp:1877
+#, no-c-format
+msgid "Debug"
+msgstr "除錯"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 63
+#: rc.cpp:1640 rc.cpp:1658 rc.cpp:1676 rc.cpp:1697 rc.cpp:1712 rc.cpp:1730
+#: rc.cpp:1751 rc.cpp:1769 rc.cpp:1784 rc.cpp:1817 rc.cpp:1832 rc.cpp:1847
+#: rc.cpp:1865 rc.cpp:1880
+#, no-c-format
+msgid "Notice"
+msgstr "注意"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 68
+#: rc.cpp:1643 rc.cpp:1661 rc.cpp:1679 rc.cpp:1700 rc.cpp:1715 rc.cpp:1733
+#: rc.cpp:1754 rc.cpp:1772 rc.cpp:1787 rc.cpp:1820 rc.cpp:1835 rc.cpp:1850
+#: rc.cpp:1868 rc.cpp:1883
+#, no-c-format
+msgid "Important"
+msgstr "重要"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 73
+#: rc.cpp:1646 rc.cpp:1664 rc.cpp:1682 rc.cpp:1703 rc.cpp:1718 rc.cpp:1736
+#: rc.cpp:1757 rc.cpp:1775 rc.cpp:1790 rc.cpp:1823 rc.cpp:1838 rc.cpp:1853
+#: rc.cpp:1871 rc.cpp:1886
+#, no-c-format
+msgid "None"
+msgstr "無"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 85
+#: rc.cpp:1649
+#, no-c-format
+msgid "IPFilter:"
+msgstr "IP 過濾器："
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 126
+#: rc.cpp:1667
+#, no-c-format
+msgid "Search:"
+msgstr "搜尋："
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 167
+#: rc.cpp:1685
+#, no-c-format
+msgid "UPnP:"
+msgstr "UPnP："
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 178
+#: rc.cpp:1688
+#, no-c-format
+msgid "ScanFolder:"
+msgstr "掃描資料夾："
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 249
+#: rc.cpp:1721
+#, no-c-format
+msgid "Scheduler:"
+msgstr "排程器："
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 290
+#: rc.cpp:1739
+#, no-c-format
+msgid "PartFileImport:"
+msgstr "PartFileImport："
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 301
+#: rc.cpp:1742
+#, no-c-format
+msgid "InfoWidget:"
+msgstr "資訊元件："
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 342
+#: rc.cpp:1760
+#, no-c-format
+msgid "RSS plugin:"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 413
+#: rc.cpp:1793
+#, fuzzy, no-c-format
+msgid "WebInterface plugin:"
+msgstr "一般選項"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 426
+#: rc.cpp:1796
+#, no-c-format
+msgid "System"
+msgstr "系統"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 437
+#: rc.cpp:1799
+#, no-c-format
+msgid "General:"
+msgstr "一般："
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 445
+#: rc.cpp:1802
+#, no-c-format
+msgid "Connections:"
+msgstr "連線："
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 559
+#: rc.cpp:1856
+#, no-c-format
+msgid "Disk I/O:"
+msgstr "磁碟 I/O："
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 640
+#: rc.cpp:1892
+#, no-c-format
+msgid "Use rich te&xt for log"
+msgstr "使用 rich text 來紀錄(&X)"
+
+#. i18n: file ./plugins/search/searchpref.ui line 41
+#: rc.cpp:1898
+#, no-c-format
+msgid "External Browser"
+msgstr ""
+
+#. i18n: file ./plugins/search/searchpref.ui line 52
+#: rc.cpp:1901
+#, no-c-format
+msgid "Open searches in external browser"
+msgstr ""
+
+#. i18n: file ./plugins/search/searchpref.ui line 60
+#: rc.cpp:1904 rc.cpp:1955
+#, no-c-format
+msgid "Use default browser"
+msgstr ""
+
+#. i18n: file ./plugins/search/searchpref.ui line 79
+#: rc.cpp:1908
+#, fuzzy, no-c-format
+msgid "Custom browser path:"
+msgstr "自訂 IP"
+
+#. i18n: file ./plugins/search/searchpref.ui line 116
+#: rc.cpp:1912
+#, no-c-format
+msgid "Search Engines"
+msgstr "搜尋引擎"
+
+#. i18n: file ./plugins/search/searchpref.ui line 143
+#: rc.cpp:1916
+#, no-c-format
+msgid "Search engine name:"
+msgstr "搜尋引擎名稱："
+
+#. i18n: file ./plugins/search/searchpref.ui line 187
+#: rc.cpp:1922
+#, no-c-format
+msgid "&Add"
+msgstr "新增(&A)"
+
+#. i18n: file ./plugins/search/searchpref.ui line 195
+#: rc.cpp:1925
+#, no-c-format
+msgid "Engines"
+msgstr "引擎"
+
+#. i18n: file ./plugins/search/searchpref.ui line 206
+#: rc.cpp:1928
+#, no-c-format
+msgid "URL"
+msgstr "網址"
+
+#. i18n: file ./plugins/search/searchpref.ui line 257
+#: rc.cpp:1934
+#, no-c-format
+msgid "R&emove All"
+msgstr "全部移除(&E)"
+
+#. i18n: file ./plugins/search/searchpref.ui line 282
+#: rc.cpp:1937
+#, no-c-format
+msgid "Add Defau&lt"
+msgstr "新增預設(&L)"
+
+#. i18n: file ./plugins/search/searchpref.ui line 290
+#: rc.cpp:1940
+#, fuzzy, no-c-format
+msgid "Update From Internet"
+msgstr "從網際網路更新"
+
+#. i18n: file ./plugins/search/searchbar.ui line 53
+#: plugins/search/searchplugin.cpp:50 plugins/search/searchtab.cpp:48
+#: rc.cpp:1946
+#, no-c-format
+msgid "Search"
+msgstr "搜尋"
+
+#. i18n: file ./plugins/search/searchbar.ui line 78
+#: rc.cpp:1949
+#, no-c-format
+msgid "Search engine:"
+msgstr "搜尋引擎："
+
+#. i18n: file ./plugins/search/ktsearchplugin.kcfg line 10
+#: rc.cpp:1952
+#, no-c-format
+msgid "Current search engine"
+msgstr "目前的搜尋引擎"
+
+#. i18n: file ./plugins/search/ktsearchplugin.kcfg line 19
+#: rc.cpp:1958
+#, no-c-format
+msgid "Use custom browser"
+msgstr ""
+
+#. i18n: file ./plugins/search/ktsearchplugin.kcfg line 23
+#: rc.cpp:1961
+#, no-c-format
+msgid "Custom browser executable path"
+msgstr ""
+
+#: libktorrent/interfaces/functions.cpp:35
+msgid "%1 GB"
+msgstr "%1 GB"
+
+#: libktorrent/interfaces/functions.cpp:37
+msgid "%1 MB"
+msgstr "%1 MB"
+
+#: libktorrent/interfaces/functions.cpp:39
+msgid "%1 KB"
+msgstr "%1 KB"
+
+#: libktorrent/interfaces/functions.cpp:41
+msgid "%1 B"
+msgstr "%1 B"
+
+#: libktorrent/interfaces/functions.cpp:47
+msgid "%1 KB/s"
+msgstr "%1 KB/秒"
+
+#: libktorrent/interfaces/functions.cpp:58
+#, c-format
+msgid ""
+"_n: 1 day \n"
+"%n days "
+msgstr "%n 天"
+
+#: libktorrent/interfaces/filetreeitem.cpp:77
+#: plugins/infowidget/iwfiletreediritem.cpp:148
+#: plugins/infowidget/iwfiletreeitem.cpp:120
+msgid "Yes, First"
+msgstr "是的，優先"
+
+#: libktorrent/interfaces/filetreeitem.cpp:80
+#: plugins/infowidget/iwfiletreediritem.cpp:152
+#: plugins/infowidget/iwfiletreeitem.cpp:123
+msgid "Yes, Last"
+msgstr "是的，最後"
+
+#: libktorrent/util/log.cpp:103
+msgid "Cannot open log file %1 : %2"
+msgstr "無法開啟紀錄檔 %1：%2"
+
+#: libktorrent/util/file.cpp:87
+msgid "Cannot write to %1 : %2"
+msgstr "無法寫入 %1：%2"
+
+#: libktorrent/util/file.cpp:101
+#, c-format
+msgid "Cannot read from %1"
+msgstr "無法從 %1 讀取"
+
+#: libktorrent/util/fileops.cpp:78
+msgid "Cannot create directory %1: %2"
+msgstr "無法建立目錄 %1：%2"
+
+#: libktorrent/util/fileops.cpp:92
+msgid "Cannot symlink %1 to %2: %3"
+msgstr "無法建立指向 %2 的符號連結 %1：%3"
+
+#: libktorrent/util/fileops.cpp:108
+msgid "Cannot move %1 to %2: %3"
+msgstr "無法將 %1 移動到 %2：%3"
+
+#: libktorrent/util/fileops.cpp:124 libktorrent/util/fileops.cpp:140
+msgid "Cannot copy %1 to %2: %3"
+msgstr "無法將 %1 複製到 %2：%3"
+
+#: libktorrent/util/fileops.cpp:232
+msgid "Cannot delete %1: %2"
+msgstr "無法刪除 %1：%2"
+
+#: libktorrent/util/fileops.cpp:251
+msgid "Cannot create %1: %2"
+msgstr "無法建立 %1： %2"
+
+#: libktorrent/util/fileops.cpp:272
+msgid "Cannot calculate the filesize of %1: %2"
+msgstr "無法計算 %1 的檔案大小：%2"
+
+#: libktorrent/util/fileops.cpp:289
+#, c-format
+msgid "Cannot calculate the filesize : %2"
+msgstr "無法計算檔案大小：%2"
+
+#: libktorrent/torrent/cachefile.cpp:95 libktorrent/util/fileops.cpp:317
+#: libktorrent/util/fileops.cpp:346 libktorrent/util/fileops.cpp:405
+#: plugins/partfileimport/importdialog.cpp:257
+msgid "Cannot open %1 : %2"
+msgstr "無法開啟 %1：%2"
+
+#: libktorrent/util/fileops.cpp:367 libktorrent/util/fileops.cpp:373
+#: libktorrent/util/fileops.cpp:376 libktorrent/util/fileops.cpp:391
+#, c-format
+msgid "Cannot expand file : %1"
+msgstr "無法展開檔案：%1"
+
+#: libktorrent/util/fileops.cpp:393
+#, fuzzy
+msgid "Cannot expand file"
+msgstr "無法展開檔案 %1"
+
+#: libktorrent/util/fileops.cpp:426
+#, c-format
+msgid "Cannot seek in file : %1"
+msgstr "無法在檔案內尋找（seek）：%1"
+
+#: libktorrent/util/mmapfile.cpp:166
+msgid "Cannot write beyond end of the mmap buffer!"
+msgstr "無法寫到 mmap 暫存器之外！"
+
+#: libktorrent/pluginmanagerprefpage.cpp:54
+msgid "%1<br>Status: <b>%2</b><br>Author: %3"
+msgstr ""
+
+#: libktorrent/pluginmanagerprefpage.cpp:55
+msgid "Loaded"
+msgstr "已載入"
+
+#: libktorrent/pluginmanagerprefpage.cpp:55
+msgid "Not loaded"
+msgstr "未載入"
+
+#: libktorrent/pluginmanagerprefpage.cpp:63
+msgid "Plugin Options"
+msgstr "外掛程式選項"
+
+#: libktorrent/migrate/ccmigrate.cpp:119 libktorrent/migrate/ccmigrate.cpp:125
+#: libktorrent/torrent/multifilecache.cpp:595
+#: libktorrent/torrent/multifilecache.cpp:673
+msgid "Cannot open file %1 : %2"
+msgstr "無法開啟檔案 %1：%2"
+
+#: libktorrent/migrate/migrate.cpp:45
+msgid "The directory %1 does not exist"
+msgstr "目錄 %1 不存在"
+
+#: libktorrent/torrent/bdecoder.cpp:62
+#, c-format
+msgid "Illegal token: %1"
+msgstr "不合法的記號：%1"
+
+#: libktorrent/torrent/bdecoder.cpp:83
+msgid "Decode error"
+msgstr "解碼錯誤"
+
+#: libktorrent/torrent/bdecoder.cpp:144 libktorrent/torrent/bdecoder.cpp:189
+msgid "Unexpected end of input"
+msgstr "非預期的輸入結束"
+
+#: libktorrent/torrent/bdecoder.cpp:164 libktorrent/torrent/bdecoder.cpp:198
+msgid "Cannot convert %1 to an int"
+msgstr "無法轉換 %1 成整數"
+
+#: libktorrent/torrent/bdecoder.cpp:203
+msgid "Torrent is incomplete!"
+msgstr "Torrent 不完整！"
+
+#: libktorrent/torrent/torrent.cpp:63 libktorrent/torrent/torrent.cpp:116
+#: libktorrent/torrent/torrent.cpp:139 libktorrent/torrent/torrent.cpp:147
+#: libktorrent/torrent/torrent.cpp:154 libktorrent/torrent/torrent.cpp:158
+#: libktorrent/torrent/torrent.cpp:165 libktorrent/torrent/torrent.cpp:178
+#: libktorrent/torrent/torrent.cpp:182 libktorrent/torrent/torrent.cpp:195
+#: libktorrent/torrent/torrent.cpp:204 libktorrent/torrent/torrent.cpp:216
+#: libktorrent/torrent/torrent.cpp:223 libktorrent/torrent/torrent.cpp:229
+#: libktorrent/torrent/torrent.cpp:236 libktorrent/torrent/torrent.cpp:242
+#: libktorrent/torrent/torrent.cpp:258 libktorrent/torrent/torrent.cpp:304
+#: libktorrent/torrent/torrent.cpp:310 libktorrent/torrent/torrent.cpp:313
+#: libktorrent/torrent/torrent.cpp:316
+msgid "Corrupted torrent!"
+msgstr "已損毀的 Torrent！"
+
+#: libktorrent/torrent/torrent.cpp:76
+msgid "Torrent has no announce or nodes field"
+msgstr "Torrent 中沒有宣告或節點的欄位"
+
+#: libktorrent/torrent/torrent.cpp:103
+msgid " Unable to open torrent file %1 : %2"
+msgstr "無法開啟 Torrent 檔案 %1：%2"
+
+#: libktorrent/torrent/announcelist.cpp:58
+#: libktorrent/torrent/announcelist.cpp:64 libktorrent/torrent/torrent.cpp:281
+#: libktorrent/torrent/torrent.cpp:287
+msgid "Parse Error"
+msgstr "剖析錯誤"
+
+#: libktorrent/torrent/torrentcontrol.cpp:508
+#, fuzzy, c-format
+msgid ""
+"An error occurred while loading the torrent. The torrent is probably corrupt or "
+"is not a torrent file.\n"
+"%1"
+msgstr "載入 torrent 時發生錯誤。Torrent 可能已損毀，或不是 torrent 檔案。"
+
+#: libktorrent/torrent/torrentcontrol.cpp:537
+msgid ""
+"An error occurred while loading the torrent. The torrent is probably corrupt or "
+"is not a torrent file."
+msgstr "載入 torrent 時發生錯誤。Torrent 可能已損毀，或不是 torrent 檔案。"
+
+#: libktorrent/torrent/torrentcontrol.cpp:546
+#, fuzzy
+msgid "Unable to create %1 : %2"
+msgstr "無法開啟 Torrent 檔案 %1：%2"
+
+#: libktorrent/torrent/torrentcontrol.cpp:562
+#, fuzzy
+msgid ""
+"You are already downloading this torrent %1, the list of trackers of both "
+"torrents has been merged."
+msgstr "您已經下載此 torrent，兩個 torrent 的追蹤器清單已合併。"
+
+#: libktorrent/torrent/torrentcontrol.cpp:566
+#, fuzzy, c-format
+msgid "You are already downloading the torrent %1"
+msgstr "您要下載還是儲存此 torrent？"
+
+#: libktorrent/torrent/torrentcontrol.cpp:672
+msgid "Cannot migrate %1 : %2"
+msgstr "無法移動 %1：%2"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1273
+msgid ""
+"The torrent %1 was started with a previous version of KTorrent. To make sure "
+"this torrent still works with this version of KTorrent, we will migrate this "
+"torrent. You will be asked for a location to save the torrent to. If you press "
+"cancel, we will select your home directory."
+msgstr ""
+"Torrent %1 已由前一個版本的 KTorrent 啟動。為了確定此 torrent 在目前版本仍可運作，我們將會移動此 "
+"torrent。您將會被詢問要把此 torrent 儲存到哪個位置。如果您按下「取消」，我們會使用您的家目錄。"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1278
+msgid "Select Folder to Save To"
+msgstr "選擇要儲存到哪個資料夾"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1364
+msgid "Not started"
+msgstr "未開始"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1370
+msgid "Seeding"
+msgstr "傳送中"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1372
+msgid "Downloading"
+msgstr "下載中"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1374
+msgid "Stalled"
+msgstr "暫停"
+
+#: libktorrent/torrent/peersourcemanager.cpp:152
+#: libktorrent/torrent/torrentcontrol.cpp:1376
+msgid "Stopped"
+msgstr "已停止"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1378
+msgid "Error: "
+msgstr "錯誤："
+
+#: libktorrent/torrent/torrentcontrol.cpp:1380
+msgid "Allocating diskspace"
+msgstr "配置磁碟空間"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1382
+msgid "Queued"
+msgstr "已送進佇列"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1384
+msgid "Checking data"
+msgstr "檢查資料中"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1386
+msgid "Stopped. No space left on device."
+msgstr ""
+
+#: libktorrent/torrent/queuemanager.cpp:135
+#, fuzzy
+msgid ""
+"You don't have enough disk space to download this torrent. Are you sure you "
+"want to continue?"
+msgstr "若是您取消選擇檔案。您將失去所有檔案中的資料。您確定要這樣做嗎？"
+
+#: libktorrent/torrent/queuemanager.cpp:135
+#, fuzzy, c-format
+msgid "Insufficient disk space for %1"
+msgstr "配置磁碟空間"
+
+#: libktorrent/torrent/queuemanager.cpp:157
+msgid ""
+"Torrent \"%1\" has reached its maximum share ratio. Ignore the limit and start "
+"seeding anyway?"
+msgstr "Torrent %1 已達到最大分享比例。要忽略此限制並開始傳送嗎？"
+
+#: libktorrent/torrent/queuemanager.cpp:157
+msgid "Maximum share ratio limit reached."
+msgstr "已達到最大分享比例限制。"
+
+#: libktorrent/torrent/queuemanager.cpp:236
+#: libktorrent/torrent/queuemanager.cpp:760
+msgid "Error stopping torrent %1 : %2"
+msgstr "停止 torrent %1 時發生錯誤：%2"
+
+#: libktorrent/torrent/queuemanager.cpp:742
+msgid "Error starting torrent %1 : %2"
+msgstr "啟動 torrent %1 時發生錯誤：%2"
+
+#: libktorrent/torrent/peersourcemanager.cpp:458
+msgid "Announcing"
+msgstr ""
+
+#: libktorrent/torrent/peerid.cpp:203
+msgid "Unknown client"
+msgstr "未知的客戶端"
+
+#: libktorrent/torrent/chunkdownload.cpp:339
+#, c-format
+msgid ""
+"_n: 1 peer\n"
+"%n peers"
+msgstr "%n 個端點"
+
+#: libktorrent/torrent/dndfile.cpp:108
+msgid "Cannot create file %1 : %2"
+msgstr "無法建立檔案 %1：%2"
+
+#: libktorrent/torrent/dndfile.cpp:175
+#, c-format
+msgid "Failed to write first chunk to DND file : %1"
+msgstr "寫入第一個區塊到 DND 檔時失敗：%1"
+
+#: libktorrent/torrent/dndfile.cpp:233
+#, c-format
+msgid "Failed to write last chunk to DND file : %1"
+msgstr "寫入最後一個區塊到 DND 檔時失敗：%1"
+
+#: libktorrent/torrent/cachefile.cpp:121 libktorrent/torrent/cachefile.cpp:220
+#: libktorrent/torrent/cachefile.cpp:382 libktorrent/torrent/cachefile.cpp:448
+msgid "Cannot open %1 for writing : readonly filesystem"
+msgstr ""
+
+#: libktorrent/torrent/cachefile.cpp:240
+#, fuzzy
+msgid "Cannot expand file %1 : %2"
+msgstr "無法展開檔案：%1"
+
+#: libktorrent/torrent/cachefile.cpp:242
+#, fuzzy
+msgid "Cannot expand file %1 : incomplete write"
+msgstr "無法展開檔案 %1"
+
+#: libktorrent/torrent/cachefile.cpp:255
+#, c-format
+msgid "Cannot expand file %1"
+msgstr "無法展開檔案 %1"
+
+#: libktorrent/torrent/cachefile.cpp:351
+#, c-format
+msgid "Error : Reading past the end of the file %1"
+msgstr "錯誤：讀取超過檔案 %1 的尾端"
+
+#: libktorrent/torrent/cachefile.cpp:361
+#, c-format
+msgid "Error reading from %1"
+msgstr "從 %1 讀取時發生錯誤"
+
+#: libktorrent/torrent/cachefile.cpp:403
+msgid "Error writing to %1 : %2"
+msgstr "寫入 %1 時發生錯誤：%2"
+
+#: libktorrent/torrent/cachefile.cpp:407
+#, c-format
+msgid "Error writing to %1"
+msgstr "寫入 %1 時發生錯誤"
+
+#: libktorrent/torrent/cachefile.cpp:475
+#: libktorrent/torrent/multifilecache.cpp:657
+#, c-format
+msgid "Cannot preallocate diskspace : %1"
+msgstr "無法預先配置磁碟空間：%1"
+
+#: libktorrent/torrent/udptrackersocket.cpp:62
+msgid "Cannot bind to udp port %1 or the 10 following ports."
+msgstr "無法使用 UDP 連接埠 %1 或接下來的十個連接埠。"
+
+#: libktorrent/torrent/httptracker.cpp:260
+#: libktorrent/torrent/httptracker.cpp:280
+#: libktorrent/torrent/httptracker.cpp:320
+#: libktorrent/torrent/httptracker.cpp:399
+#, fuzzy
+msgid "Invalid response from tracker"
+msgstr "不合法的回應"
+
+#: libktorrent/torrent/httptracker.cpp:273
+#, fuzzy
+msgid "Invalid data from tracker"
+msgstr "不合法的回應"
+
+#: libktorrent/torrent/httptracker.cpp:415
+#, fuzzy
+msgid "Invalid tracker URL"
+msgstr "不合法的回應"
+
+#: libktorrent/torrent/torrentcreator.cpp:123
+#: libktorrent/torrent/torrentcreator.cpp:239
+#: libktorrent/torrent/torrentcreator.cpp:277
+msgid "Cannot open file %1: %2"
+msgstr "無法開啟檔案 %1：%2"
+
+#: libktorrent/torrent/torrentcreator.cpp:339
+#, c-format
+msgid "Cannot create index file: %1"
+msgstr "無法建立索引檔：%1"
+
+#: libktorrent/datachecker/singledatachecker.cpp:50
+msgid "Cannot open file : %1 : %2"
+msgstr "無法開啟檔案 %1：%2"
+
+#: plugins/upnp/upnpplugin.cpp:46
+msgid "Uses UPnP to automatically forward ports on your router"
+msgstr "使用 UPnP 自動轉接路由器上的連接埠"
+
+#: plugins/upnp/upnprouter.cpp:418 plugins/upnp/upnprouter.cpp:431
+msgid "Cannot find port forwarding service in the device's description!"
+msgstr "在裝置描述中無法找到連接埠轉接服務。"
+
+#: plugins/upnp/upnpprefpage.cpp:31
+msgid "UPnP Devices"
+msgstr "UPnP 裝置"
+
+#: plugins/scanfolder/scanfolderplugin.cpp:49
+msgid "Automatically scans directories for torrent files and loads them."
+msgstr "自動掃描目錄中的 torrent 檔並載入。"
+
+#: plugins/scanfolder/scanfolderplugin.cpp:52
+#, fuzzy
+msgid "Scan Folder"
+msgstr "掃描資料夾"
+
+#: plugins/scanfolder/scanfolderprefpage.cpp:34
+msgid "ScanFolder"
+msgstr "掃描資料夾"
+
+#: plugins/scanfolder/scanfolderprefpage.cpp:34
+msgid "ScanFolder Options"
+msgstr "掃描資料夾選項"
+
+#: plugins/scanfolder/scanfolder.cpp:150 plugins/scanfolder/scanfolder.cpp:188
+#: plugins/scanfolder/scanfolder.cpp:189
+msgid "loaded"
+msgstr "已載入"
+
+#: plugins/scanfolder/scanfolderprefpagewidget.cpp:73
+#, fuzzy
+msgid ""
+"ScanFolder - Folder %1: Invalid URL or folder does not exist. Please, choose a "
+"valid directory."
+msgstr "資料夾掃描 - 資料夾 %1：不合法的資料夾名稱，或資料夾可能不存在。請選擇一個正確的目錄。"
+
+#: plugins/webinterface/webinterfaceprefpage.cpp:27
+msgid "WebInterface"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefpage.cpp:27
+#, fuzzy
+msgid "WebInterface Options"
+msgstr "一般選項"
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:70
+msgid "Php executable is not in default path, please enter the path manually"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:106
+msgid "Please enter a new password for the web interface."
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:116
+msgid "%1 exists and it is executable"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:120
+#, fuzzy
+msgid "%1 does not exist"
+msgstr "目錄 %1 不存在"
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:124
+msgid "%1 is not executable"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:128
+msgid "%1 is a directory"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:132
+msgid "%1 is not php executable path"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceplugin.cpp:44
+#, fuzzy
+msgid "Web Interface"
+msgstr "一般選項"
+
+#: plugins/webinterface/webinterfaceplugin.cpp:44
+msgid "Allow to control ktorrent through browser"
+msgstr ""
+
+#: plugins/infowidget/fileview.cpp:57
+msgid "Download First"
+msgstr "優先下載"
+
+#: plugins/infowidget/fileview.cpp:58
+msgid "Download Normally"
+msgstr "正常下載"
+
+#: plugins/infowidget/fileview.cpp:59
+msgid "Download Last"
+msgstr "最後下載"
+
+#: plugins/infowidget/fileview.cpp:62
+#, fuzzy
+msgid "Delete File(s)"
+msgstr "所有檔案"
+
+#: plugins/infowidget/fileview.cpp:204
+#: plugins/infowidget/iwfiletreeitem.cpp:71
+#: plugins/infowidget/iwfiletreeitem.cpp:103
+msgid "Available"
+msgstr "可使用"
+
+#: plugins/infowidget/fileview.cpp:206
+#: plugins/infowidget/iwfiletreeitem.cpp:75
+#: plugins/infowidget/iwfiletreeitem.cpp:107
+msgid "Pending"
+msgstr "未定"
+
+#: plugins/infowidget/fileview.cpp:343
+#, fuzzy
+msgid ""
+"_n: You will lose all data in this file, are you sure you want to do this ?\n"
+"You will lose all data in these files, are you sure you want to do this ?"
+msgstr "您已取消選擇以下的檔案。您將失去所有這些檔案的資料。您確定要這樣做嗎？"
+
+#: plugins/infowidget/statustab.cpp:55
+#, fuzzy
+msgid "No limit"
+msgstr "要限制嗎？(&U)"
+
+#: plugins/infowidget/infowidgetplugin.cpp:51
+#: plugins/infowidget/infowidgetprefpage.cpp:34
+msgid "Info Widget"
+msgstr "資訊元件"
+
+#: plugins/infowidget/infowidgetplugin.cpp:52
+msgid ""
+"Shows additional information about a download. Like which chunks have been "
+"downloaded, how many seeders and leechers ..."
+msgstr "顯示關於下載的額外資訊。例如哪些區塊已下載，有多少傳送者與接受者等等。"
+
+#: plugins/infowidget/trackerview.cpp:71
+msgid "Cannot add a tracker to a private torrent."
+msgstr "無法在私密 torrent 中加入追蹤器"
+
+#: plugins/infowidget/trackerview.cpp:96
+msgid "Cannot remove torrent default tracker."
+msgstr "無法移除 torrent 預設追蹤器。"
+
+#: plugins/infowidget/trackerview.cpp:214
+msgid "You cannot add trackers to a private torrent"
+msgstr "您無法在私密 torrent 中加入追蹤器"
+
+#: plugins/infowidget/peerview.cpp:213
+msgid "IP"
+msgstr "IP"
+
+#: plugins/infowidget/peerview.cpp:214
+msgid "Country"
+msgstr "國家"
+
+#: plugins/infowidget/peerview.cpp:215
+msgid "Client"
+msgstr "客戶端"
+
+#: plugins/infowidget/peerview.cpp:218
+msgid "Choked"
+msgstr "已阻塞"
+
+#: plugins/infowidget/peerview.cpp:219
+msgid "Snubbed"
+msgstr "已停止"
+
+#: plugins/infowidget/peerview.cpp:220
+msgid "Availability"
+msgstr "可用性"
+
+#: plugins/infowidget/peerview.cpp:222
+msgid "Score"
+msgstr "分數"
+
+#: plugins/infowidget/peerview.cpp:223
+msgid "Upload Slot"
+msgstr "上傳槽"
+
+#: plugins/infowidget/peerview.cpp:224
+msgid "Requests"
+msgstr "要求"
+
+#: plugins/infowidget/peerview.cpp:249
+msgid ""
+"_: to kick\n"
+"Kick peer"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:250
+#, fuzzy
+msgid ""
+"_: to ban\n"
+"Ban peer"
+msgstr "阻擋端點"
+
+#: plugins/infowidget/availabilitychunkbar.cpp:32
+msgid ""
+"<img src=\"available_color\">&nbsp; - Available Chunks"
+"<br><img src=\"unavailable_color\">&nbsp; - Unavailable Chunks"
+"<br><img src=\"excluded_color\">&nbsp; - Excluded Chunks"
+msgstr ""
+"<img src=\"available_color\">&nbsp; 可用的區塊"
+"<br><img src=\"unavailable_color\">&nbsp; 不可用的區塊"
+"<br><img src=\"excluded_color\">&nbsp; 被排除的區塊"
+
+#: plugins/infowidget/infowidgetprefpage.cpp:34
+msgid "Information Widget Options"
+msgstr "資訊元件選項"
+
+#: plugins/infowidget/chunkbar.cpp:98
+msgid ""
+"<img src=\"available_color\">&nbsp; - Downloaded Chunks"
+"<br><img src=\"unavailable_color\">&nbsp; - Chunks to Download"
+"<br><img src=\"excluded_color\">&nbsp; - Excluded Chunks"
+msgstr ""
+"<img src=\"available_color\">&nbsp; 已下載的區塊"
+"<br><img src=\"unavailable_color\">&nbsp; 要下載的區塊"
+"<br><img src=\"excluded_color\">&nbsp; 被排除的區塊"
+
+#: plugins/ipfilter/convertdialog.cpp:81
+msgid "Convert"
+msgstr "轉換"
+
+#: plugins/ipfilter/convertdialog.cpp:102
+msgid "Loading txt file..."
+msgstr "載入文字檔中..."
+
+#: plugins/ipfilter/convertdialog.cpp:103
+msgid "Please wait..."
+msgstr "請稍候..."
+
+#: plugins/ipfilter/convertdialog.cpp:194
+msgid "File converted."
+msgstr "檔案已轉換。"
+
+#: plugins/ipfilter/convertdialog.cpp:199
+msgid "Could not load filter:"
+msgstr "無法載入過濾器："
+
+#: plugins/ipfilter/convertdialog.cpp:199
+msgid "Bad filter file. It may be corrupted or has a bad format."
+msgstr "壞掉的過濾器檔案。也許已損毀，或格式不正確。"
+
+#: plugins/ipfilter/ipfilterplugin.cpp:43
+msgid "Filters out unwanted peers based on their IP address"
+msgstr ""
+
+#: plugins/ipfilter/ipfilterplugin.cpp:46
+#, fuzzy
+msgid "IP Filter"
+msgstr "IP 過濾器"
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:70
+#: plugins/ipfilter/ipblockingprefpage.cpp:94
+msgid "Status: Loaded and running."
+msgstr "狀態：已載入並執行中。"
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:76
+#: plugins/ipfilter/ipblockingprefpage.cpp:99
+msgid "Status: Not loaded."
+msgstr "狀態：未載入。"
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:96
+msgid ""
+"Status: <font color=\"#ff0000\">Filter file not found.</font> "
+"Download and convert filter file."
+msgstr "狀態：<font color=\"#ff0000\">找不到過濾器檔案。</font>下載並轉換過濾器檔案。"
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:117
+msgid "Selected file already exists, do you want to download it again?"
+msgstr "選擇的檔案已存在，您要再下載一次嗎？"
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:117
+#: plugins/ipfilter/ipblockingprefpage.cpp:194
+msgid "File Exists"
+msgstr "檔案已存在"
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:194
+msgid ""
+"Filter file (level1.dat) already exists, do you want to convert it again?"
+msgstr "過濾器檔案（level1.dat）已存在。您要再轉換一次嗎？"
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:223
+msgid "IPBlocking Filter"
+msgstr "IPBlocking 過濾器"
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:223
+msgid "IPBlocking Filter Options"
+msgstr "IPBlocking 過濾器選項"
+
+#: plugins/stats/StatsPluginPrefs.cc:25 plugins/stats/statsplugin.cc:29
+#, fuzzy
+msgid "Statistics"
+msgstr "狀態"
+
+#: plugins/stats/StatsPluginPrefs.cc:25
+msgid "Statistics options"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:49
+#, fuzzy
+msgid "Leechers connected"
+msgstr "連線："
+
+#: plugins/stats/StatsCon.cc:50
+#, fuzzy
+msgid "Leechers in swarms"
+msgstr "顯示系統匣圖示(&Y)"
+
+#: plugins/stats/StatsCon.cc:51
+#, fuzzy
+msgid "Seeders connected"
+msgstr "連線："
+
+#: plugins/stats/StatsCon.cc:52
+#, fuzzy
+msgid "Seeders in swarms"
+msgstr "顯示系統匣圖示(&Y)"
+
+#: plugins/stats/StatsCon.cc:53
+#, fuzzy
+msgid "Average connected leechers per torrent"
+msgstr "每個 torrent 最大連線數："
+
+#: plugins/stats/StatsCon.cc:54
+#, fuzzy
+msgid "Average connected seeders per torrent"
+msgstr "每個 torrent 最大連線數："
+
+#: plugins/stats/StatsCon.cc:55
+msgid "Average connected leechers per running torrent"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:56
+msgid "Average connected seeders per running torrent"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:61
+#, fuzzy
+msgid "Nodes"
+msgstr "無"
+
+#: plugins/stats/StatsCon.cc:62
+#, fuzzy
+msgid "Tasks"
+msgstr "追蹤器"
+
+#: plugins/stats/statsplugin.cc:29
+msgid "Shows transfers statistics"
+msgstr ""
+
+#: plugins/stats/statsplugin.cc:67
+#, fuzzy
+msgid "Speed statistics"
+msgstr "速度限制，以 KB/s 為單位"
+
+#: plugins/stats/statsplugin.cc:68
+#, fuzzy
+msgid "Connection statistics"
+msgstr "連線："
+
+#: plugins/stats/StatsSpd.cc:57 plugins/stats/StatsSpd.cc:58
+#, fuzzy
+msgid "Current"
+msgstr "Torrent"
+
+#: plugins/stats/StatsSpd.cc:60 plugins/stats/StatsSpd.cc:61
+msgid "Average"
+msgstr ""
+
+#: plugins/stats/StatsSpd.cc:63 plugins/stats/StatsSpd.cc:64
+#, fuzzy
+msgid "Limit"
+msgstr "要限制嗎？(&U)"
+
+#: plugins/stats/StatsSpd.cc:71
+#, fuzzy
+msgid "Average from leecher"
+msgstr "平均下載速度："
+
+#: plugins/stats/StatsSpd.cc:72
+#, fuzzy
+msgid "Average to leecher"
+msgstr "平均下載速度："
+
+#: plugins/stats/StatsSpd.cc:73
+#, fuzzy
+msgid "Average from seeder"
+msgstr "平均下載速度："
+
+#: plugins/stats/StatsSpd.cc:74
+#, fuzzy
+msgid "From leechers"
+msgstr "接收者："
+
+#: plugins/stats/StatsSpd.cc:75
+#, fuzzy
+msgid "From seeders"
+msgstr "資料夾"
+
+#: plugins/stats/ChartDrawer.cc:419
+msgid "Legend"
+msgstr ""
+
+#: plugins/partfileimport/importdialog.cpp:50
+msgid "Torrent files"
+msgstr "Torrent 檔案"
+
+#: plugins/partfileimport/importdialog.cpp:50
+msgid "All files"
+msgstr "所有檔案"
+
+#: plugins/partfileimport/importdialog.cpp:100
+#, c-format
+msgid "Cannot verify data : %1"
+msgstr "無法檢查資料：%1"
+
+#: plugins/partfileimport/importdialog.cpp:207
+#: plugins/partfileimport/importdialog.cpp:243
+#, c-format
+msgid "Cannot load the torrent file : %1"
+msgstr "無法載入 torrent 檔案：%1"
+
+#: plugins/partfileimport/partfileimportplugin.cpp:43
+msgid "Imports partially or fully downloaded torrents from other clients"
+msgstr "從其他客戶端匯入部份或全部的已下載 torrent"
+
+#: plugins/partfileimport/partfileimportplugin.cpp:56
+msgid "Import existing download"
+msgstr "匯入已存在的下載"
+
+#: plugins/rssfeed/rss/testlibrss.cpp:14
+msgid "URL of feed"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedplugin.cpp:48
+#, fuzzy
+msgid ""
+"Automatically scans RSS feeds for torrent matching regular expressions and "
+"loads them."
+msgstr "自動掃描目錄中的 torrent 檔並載入。"
+
+#: plugins/rssfeed/rssfeedplugin.cpp:51 plugins/rssfeed/rssfeedplugin.cpp:68
+msgid "RSS Feeds"
+msgstr ""
+
+#: plugins/rssfeed/rsslinkdownloader.cpp:45
+#: plugins/rssfeed/rsslinkdownloader.cpp:183
+#, c-format
+msgid "Failed to find and download a valid torrent for %1"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:78
+msgid "Title"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:78
+msgid "Description"
+msgstr "描述"
+
+#: plugins/rssfeed/rssfeedmanager.cpp:78 plugins/rssfeed/rssfeedmanager.cpp:87
+msgid "Link"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:87
+#, fuzzy
+msgid "Season"
+msgstr "最大比例："
+
+#: plugins/rssfeed/rssfeedmanager.cpp:87
+msgid "Episode"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:87
+#, fuzzy
+msgid "Time"
+msgstr "剩餘時間"
+
+#: plugins/scheduler/schedulerprefpage.cpp:35
+msgid "Scheduler"
+msgstr "排程器"
+
+#: plugins/scheduler/schedulerprefpage.cpp:35
+msgid "Scheduler plugin options"
+msgstr "排程器外掛程式選項"
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "MON"
+msgstr "週一"
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "TUE"
+msgstr "週二"
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "WED"
+msgstr "週三"
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "THU"
+msgstr "週四"
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "FRI"
+msgstr "週五"
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "SAT"
+msgstr "週六"
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "SUN"
+msgstr "週日"
+
+#: plugins/scheduler/bwsprefpagewidget.cpp:165
+msgid "Schedule saved."
+msgstr "排程已儲存。"
+
+#: plugins/scheduler/bwsprefpagewidget.cpp:174
+msgid "File not found."
+msgstr "找不到檔案。"
+
+#: plugins/scheduler/bwsprefpagewidget.cpp:208
+msgid "Schedule loaded."
+msgstr "排程已載入。"
+
+#: plugins/scheduler/schedulerplugin.cpp:56
+msgid "Bandwidth scheduling plugin"
+msgstr "頻寬排程外掛程式"
+
+#: plugins/scheduler/schedulerplugin.cpp:97
+#: plugins/scheduler/schedulerplugin.cpp:137
+msgid "Open Bandwidth Scheduler"
+msgstr "開啟頻寬排程器"
+
+#: plugins/scheduler/schedulerplugin.cpp:130
+msgid ""
+"Bandwidth scheduler is disabled. Go to Preferences->Scheduler to enable it."
+msgstr "頻寬排程器已關閉。請到「喜好設定」＞「排程器」來開啟。"
+
+#: plugins/logviewer/logprefpage.cpp:31
+msgid "LogViewer"
+msgstr "紀錄檢視器"
+
+#: plugins/logviewer/logviewerplugin.cpp:44
+#: plugins/logviewer/logviewerplugin.cpp:58
+#, fuzzy
+msgid "Log Viewer"
+msgstr "紀錄檢視器"
+
+#: plugins/logviewer/logviewerplugin.cpp:45
+msgid "Displays ktorrent logging output"
+msgstr ""
+
+#: plugins/search/searchprefpage.cpp:52
+#, fuzzy
+msgid ""
+"Use your web browser to search for the string %1 (capital letters) on the "
+"search engine you want to add. "
+"<br> Then copy the URL in the addressbar after the search is finished, and "
+"paste it here."
+"<br>"
+"<br>Searching for %1 on Google for example, will result in "
+"http://www.google.com/search?q=FOOBAR&ie=UTF-8&oe=UTF-8. "
+"<br> If you add this URL here, ktorrent can search using Google."
+msgstr ""
+"使用您的瀏覽器，在您要新增的搜尋引擎上搜尋字串 %1（大寫）。然後將網址列中的網址複製過來並貼到這裡。"
+"<br> 例如，在 Google 上搜尋 %2，會變成 "
+"http://www.google.com/search?q=FOOBAR&ie=UTF-8&oe=UTF-8 。如果您將此網址貼到這裡，KTorrent "
+"就可以使用 Google 搜尋。"
+
+#: plugins/search/searchprefpage.cpp:57
+msgid ""
+"Use your web browser to search for the string %1 (capital letters) on the "
+"search engine you want to add. Use the resulting URL below."
+msgstr ""
+
+#: plugins/search/searchprefpage.cpp:124
+msgid "You must enter the search engine's name and URL"
+msgstr "您必須輸入搜尋引擎的名稱與網址。"
+
+#: plugins/search/searchprefpage.cpp:137
+msgid ""
+"A search engine with the same name already exists. Please use a different name."
+msgstr "此搜尋引擎已存在。請用不同的名稱。"
+
+#: plugins/search/searchprefpage.cpp:146
+msgid ""
+"Bad URL. You should search for FOOBAR with your Internet browser and copy/paste "
+"the exact URL here."
+msgstr "錯誤的網址。您應該在您的瀏覽器上搜尋 FOOBAR 並剪貼網址到這裡。"
+
+#: plugins/search/searchprefpage.cpp:247
+msgid ""
+"_: a noun\n"
+"Search"
+msgstr "搜尋"
+
+#: plugins/search/searchprefpage.cpp:247
+msgid "Search Engine Options"
+msgstr "搜尋引擎選項"
+
+#: plugins/search/searchwidget.cpp:178
+msgid "Searching for %1..."
+msgstr "搜尋 %1 中..."
+
+#: plugins/search/searchwidget.cpp:209
+msgid "torrent files"
+msgstr "torrent 檔案"
+
+#: plugins/search/searchwidget.cpp:267
+msgid "Search finished"
+msgstr "搜尋完成"
+
+#: plugins/search/searchtab.cpp:65
+#, fuzzy
+msgid " Engine: "
+msgstr "引擎"
+
+#: plugins/search/searchplugin.cpp:51
+msgid "Search for torrents on several popular torrent search engines"
+msgstr "在幾個常用的 torrent 搜尋引擎中搜尋 torrents"
+
+#: plugins/search/htmlpart.cpp:165
+msgid "Do you want to download or save the torrent?"
+msgstr "您要下載還是儲存此 torrent？"
+
+#: plugins/search/htmlpart.cpp:166
+msgid "Download Torrent"
+msgstr "下載 torrent"
+
+#: plugins/search/htmlpart.cpp:167
+msgid ""
+"_: to download\n"
+"Download"
+msgstr "下載"
+
+#: plugins/zeroconf/zeroconfplugin.cpp:41
+msgid "Zeroconf"
+msgstr ""
+
+#: plugins/zeroconf/zeroconfplugin.cpp:41
+msgid ""
+"Finds peers running ktorrent on the local network to share torrents with"
+msgstr ""
+
+#~ msgid "Cannot load chunk %1"
+#~ msgstr "無法載入區塊 %1"
+
+#, fuzzy
+#~ msgid "Alt+X"
+#~ msgstr "Alt+1"
+
+#, fuzzy
+#~ msgid "TrackerViewBase"
+#~ msgstr "追蹤器"
+
+#, fuzzy
+#~ msgid "Alt+N"
+#~ msgstr "Alt+1"
+
+#, fuzzy
+#~ msgid "Alt+S"
+#~ msgstr "Alt+1"
+
+#~ msgid "Country locator for InfoWidget plugin. Flags are taken from http://flags.blogpotato.de/ so thanks to them too."
+#~ msgstr "資訊元件外掛程式的國家定位器。國旗是參考 http://flags.blogpotato.de/ 在此一併致謝。"
+
+#~ msgid "You must add at least one tracker."
+#~ msgstr "您必須至少加入一個追蹤器。"
+
+#, fuzzy
+#~ msgid "DownloadPref"
+#~ msgstr "已下載"
+
+#, fuzzy
+#~ msgid "Alt+K"
+#~ msgstr "Alt+1"
+
+#, fuzzy
+#~ msgid "Alt+B"
+#~ msgstr "Alt+1"
+
+#, fuzzy
+#~ msgid "Alt+U"
+#~ msgstr "Alt+1"
+
+#, fuzzy
+#~ msgid "Alt+A"
+#~ msgstr "Alt+1"
+
+#, fuzzy
+#~ msgid "Alt+L"
+#~ msgstr "Alt+1"
+
+#~ msgid "Max ratio:"
+#~ msgstr "最大比例："
+
+#~ msgid "Name"
+#~ msgstr "名稱"
+
+#~ msgid "Author"
+#~ msgstr "作者"
+
+#~ msgid "IP filter plugin, filters out unwanted peers"
+#~ msgstr "IP 過濾器外掛程式，過濾不要的端點"
+
+#~ msgid "Shows logging output in a widget"
+#~ msgstr "顯示紀錄輸出。"
+
+#, fuzzy
+#~ msgid "Download \"Proper\" ReReleases"
+#~ msgstr "已完成下載"
+
+#~ msgid "Tracker URL:"
+#~ msgstr "追蹤器網址："
+
+#~ msgid "Tracker status:"
+#~ msgstr "追蹤器狀態："
+
+#~ msgid "Specified udp port (%1) is unavailable or in use by another application. KTorrent is bound to port %2."
+#~ msgstr "指定的 UDP 連接埠（%1）無法使用，或是正被其他的應用程式使用中。KTorrent 改使用連接埠 %2。"
+
+#, fuzzy
+#~ msgid "Select folder for data of %1"
+#~ msgstr "選擇要儲存到哪個資料夾"
+
+#~ msgid "Downloads %1/%2"
+#~ msgstr "下載 %1/%2"
+
+#~ msgid "Uploads %1/%2"
+#~ msgstr "上傳 %1/%2"
+
+#, fuzzy
+#~ msgid "Search Engine:"
+#~ msgstr "搜尋引擎"
+
+#, fuzzy
+#~ msgid "Torrents"
+#~ msgstr "Torrent"
+
+#~ msgid "Tracker"
+#~ msgstr "追蹤器"
+
+#, fuzzy
+#~ msgid "St&atus"
+#~ msgstr "狀態"
+
+#~ msgid "You need to have default save directory selected to load torrents silently."
+#~ msgstr "您必須選擇預設的儲存目錄才能安靜地載入 torrent。"
+
+#, fuzzy
+#~ msgid "Alt+Y"
+#~ msgstr "Alt+1"
+
+#, fuzzy
+#~ msgid "InfoWidgetBase"
+#~ msgstr "資訊元件："
+
+#~ msgid "Show \"torrent finished\" popup messages"
+#~ msgstr "顯示「Torrent 已完成」的訊息嗎"
+
+#~ msgid "Secure connection with other clients. May also help if your ISP is shaping your traffic."
+#~ msgstr "與其它客戶端進行安全連線。如果您的 ISP 在「整頓」您的交通時可能有幫助。"
+
+#, fuzzy
+#~ msgid "Tracker request timed out"
+#~ msgstr "追蹤器狀態："
+
+#, fuzzy
+#~ msgid "Alt+G"
+#~ msgstr "Alt+1"
+
+#, fuzzy
+#~ msgid "Alt+Z"
+#~ msgstr "Alt+1"
+
+#~ msgid "finished"
+#~ msgstr "已完成"
+
+#~ msgid "Cannot bind to port %1 or the 10 following ports."
+#~ msgstr "無法使用連接埠 %1 或是接下來的十個連接埠。"
+
+#, fuzzy
+#~ msgid "You will lose all data in the deselected file(s), are you sure you want to do this ?"
+#~ msgstr "若是您取消選擇檔案。您將失去所有檔案中的資料。您確定要這樣做嗎？"
+
+#, fuzzy
+#~ msgid "Search engines"
+#~ msgstr "搜尋引擎"
+
+#, fuzzy
+#~ msgid "Download Completed"
+#~ msgstr "已完成下載"
+
+#, fuzzy
+#~ msgid "Seeding Completed"
+#~ msgstr "已完成下載"
+
+#~ msgid "Completed"
+#~ msgstr "已完成"
+
+#~ msgid "If you deselect a directory, you will lose all the data off all files in this directory. Are you sure you want to do this ?"
+#~ msgstr "若是您取消選取目錄，您將失去目錄中所有檔案的資料。您確定要這樣做嗎？"
+
+#~ msgid "Torrent moved to download panel"
+#~ msgstr "Torrent 已移到下載面板"
+
+#~ msgid "<b>%1</b> torrent has been moved to download panel."
+#~ msgstr "<b>%1</b> torrent 已被移到下載面板。"
+
+#, fuzzy
+#~ msgid "Alt+C"
+#~ msgstr "Alt+1"
+
+#~ msgid "Unreachable"
+#~ msgstr "無法到達"
+
+#~ msgid "Parse error"
+#~ msgstr "剖析錯誤"
+
+#, fuzzy
+#~ msgid "SearchBar"
+#~ msgstr "搜尋"
+
+#~ msgid ""
+#~ "_n: Cannot start more than 1 download. Go to Settings -> Configure KTorrent, if you want to change the limit.\n"
+#~ "Cannot start more than %n downloads. Go to Settings -> Configure KTorrent, if you want to change the limit."
+#~ msgstr "無法啟動 %n 個以上的下載工作。請到「設定」＞「設定 KTorrent」中改變此限制。"
+
+#~ msgid ""
+#~ "_n: Cannot start more than 1 seed. Go to Settings -> Configure KTorrent, if you want to change the limit.\n"
+#~ "Cannot start more than %n seeds. Go to Settings -> Configure KTorrent, if you want to change the limit."
+#~ msgstr "無法啟動 %n 個以上的 seed。請到「設定」＞「設定 KTorrent」中改變此限制。"

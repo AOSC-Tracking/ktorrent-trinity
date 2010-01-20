@@ -1,0 +1,5003 @@
+# translation of ktorrent.po into Russian
+#
+# Nick Shaforostoff <shafff@ukr.net>, 2005-2007.
+# Gregory Mokhin <mok@kde.ru>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktorrent\n"
+"POT-Creation-Date: 2008-04-18 19:40+0200\n"
+"PO-Revision-Date: 2007-07-25 02:25+0300\n"
+"Last-Translator: Nick Shaforostoff\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KAider 0.1\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>"
+"=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: apps/ktorrent/ktorrent.cpp:167
+msgid "No incoming connections (possibly firewalled)"
+msgstr "Нет входящих соединений (возможно их блокирует брандмауэр)."
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 42
+#: apps/ktorrent/ktorrent.cpp:184 rc.cpp:345 rc.cpp:383 rc.cpp:1019
+#, no-c-format
+msgid "Info"
+msgstr "Сведения"
+
+#: apps/ktorrent/ktorrent.cpp:185
+msgid "Data transferred during the current session"
+msgstr "Данные, переданные за текущий сеанс"
+
+#: apps/ktorrent/ktorrent.cpp:186
+msgid "Current speed of all torrents combined"
+msgstr "Текущая общая скорость"
+
+#: apps/ktorrent/groups/groupview.cpp:76 apps/ktorrent/ktorrent.cpp:215
+msgid "Groups"
+msgstr "Группы"
+
+#: apps/ktorrent/ktorrent.cpp:515 apps/ktorrent/ktorrentviewmenu.cpp:41
+msgid ""
+"_: to start\n"
+"Start"
+msgstr "Запустить"
+
+#: apps/ktorrent/ktorrent.cpp:519 apps/ktorrent/ktorrentviewmenu.cpp:37
+msgid ""
+"_: to stop\n"
+"Stop"
+msgstr "Остановить"
+
+#: apps/ktorrent/ktorrent.cpp:527 apps/ktorrent/ktorrent.cpp:530
+msgid ""
+"_: to start all\n"
+"Start All"
+msgstr "Запустить все"
+
+#: apps/ktorrent/ktorrent.cpp:533 apps/ktorrent/ktorrent.cpp:536
+msgid ""
+"_: to stop all\n"
+"Stop All"
+msgstr "Остановить все"
+
+#: apps/ktorrent/ktorrent.cpp:539
+msgid ""
+"_: to paste torrent URL\n"
+"Paste Torrent URL..."
+msgstr "Вставить URL торрента..."
+
+#: apps/ktorrent/ktorrent.cpp:543
+msgid ""
+"_: to open Queue Manager\n"
+"Open Queue Manager..."
+msgstr "Открыть менеджер очереди..."
+
+#: apps/ktorrent/ktorrent.cpp:548 apps/ktorrent/ktorrentviewmenu.cpp:53
+msgid "Enqueue/Dequeue"
+msgstr "В очередь/Из очереди"
+
+#: apps/ktorrent/ktorrent.cpp:553
+msgid "IPFilter"
+msgstr "Фильтр IP"
+
+#: apps/ktorrent/ktorrent.cpp:558 apps/ktorrent/ktorrentviewmenu.cpp:96
+msgid "Check Data Integrity"
+msgstr "Проверить целостность данных"
+
+#: apps/ktorrent/ktorrent.cpp:571
+msgid "Set max upload rate"
+msgstr "Ограничить скорость отдачи"
+
+#: apps/ktorrent/ktorrent.cpp:574
+msgid "Set max download rate"
+msgstr "Ограничить скорость приёма"
+
+#: apps/ktorrent/ktorrent.cpp:626
+msgid "Torrent Files"
+msgstr "Файлы Torrent"
+
+#: apps/ktorrent/ktorrent.cpp:626
+msgid "All Files"
+msgstr "Все файлы"
+
+#: apps/ktorrent/ktorrent.cpp:627
+msgid "Open Location"
+msgstr "Открыть расположение"
+
+#: apps/ktorrent/ktorrent.cpp:793
+#, fuzzy
+msgid "Speed down: %1 / up: %2"
+msgstr "Отдача: %1 / Приём: %2"
+
+#: apps/ktorrent/ktorrent.cpp:799
+msgid "Transferred down: %1 / up: %2"
+msgstr "Отдано: %1 / Принято: %2"
+
+#: apps/ktorrent/ktorrent.cpp:819
+msgid "DHT: %1 nodes, %2 tasks"
+msgstr "DHT: %1 узлов, %2 задач"
+
+#: apps/ktorrent/ktorrent.cpp:823
+msgid "DHT: off"
+msgstr "DHT: выкл"
+
+#: apps/ktorrent/fileselectdlg.cpp:284 apps/ktorrent/groups/allgroup.cpp:26
+#: apps/ktorrent/groups/groupmanager.h:54 apps/ktorrent/ktorrent.cpp:962
+msgid "All Torrents"
+msgstr "Все торренты"
+
+#: apps/ktorrent/filterbar.cpp:52
+msgid "Find:"
+msgstr ""
+
+#: apps/ktorrent/filterbar.cpp:65
+msgid "Case sensitive"
+msgstr ""
+
+#: apps/ktorrent/newui/ddockwindow.cpp:88
+msgid "Move to left dock"
+msgstr "Передвинуть к левому краю"
+
+#: apps/ktorrent/newui/ddockwindow.cpp:89
+msgid "Move to right dock"
+msgstr "Передвинуть к правому краю"
+
+#: apps/ktorrent/newui/ddockwindow.cpp:90
+msgid "Move to bottom dock"
+msgstr "Передвинуть к верхнему краю"
+
+#: apps/ktorrent/newui/button.cpp:58
+msgid "Assign Accelerator..."
+msgstr "Назначить комбинацию клавиш..."
+
+#: apps/ktorrent/newui/button.cpp:60
+msgid "Clear Accelerator"
+msgstr "Удалить комбинацию клавиш"
+
+#: apps/ktorrent/newui/button.cpp:319
+msgid "Change Button Number"
+msgstr "Сменить номер кнопки"
+
+#: apps/ktorrent/newui/button.cpp:319
+msgid "New accelerator number:"
+msgstr "Новый номер акселератора:"
+
+#: apps/ktorrent/ipfilterwidget.cpp:72
+msgid ""
+"You must enter IP in format 'XXX.XXX.XXX.XXX'. You can also use wildcards for "
+"ranges like '127.0.0.*'."
+msgstr ""
+"IP должен иметь формат \"XXX.XXX.XXX.XXX\". Можно также использовать * для "
+"диапазонов вида \"127.0.0*\"."
+
+#: apps/ktorrent/ipfilterwidget.cpp:88
+#: plugins/scheduler/bwsprefpagewidget.cpp:129
+msgid "Choose a file"
+msgstr "Выберите файл"
+
+#: apps/ktorrent/ipfilterwidget.cpp:100
+#: plugins/scheduler/bwsprefpagewidget.cpp:119
+#, fuzzy
+msgid "Choose a filename to save under"
+msgstr "Выберите имя сохраняемого файла"
+
+#: apps/ktorrent/pastedialog.cpp:56 plugins/infowidget/trackerview.cpp:78
+#: plugins/search/searchprefpage.cpp:131
+msgid "Malformed URL."
+msgstr "Неправильный URL."
+
+#. i18n: file ./apps/ktorrent/ktorrentui.rc line 9
+#: apps/ktorrent/groups/downloadgroup.cpp:27
+#: apps/ktorrent/groups/groupmanager.h:57 apps/ktorrent/pref.cpp:147
+#: apps/ktorrent/viewmanager.cpp:62 rc.cpp:138 rc.cpp:342
+#, no-c-format
+msgid "Downloads"
+msgstr "Загрузки"
+
+#: apps/ktorrent/groups/groupmanager.h:60
+#: apps/ktorrent/groups/uploadgroup.cpp:27 apps/ktorrent/viewmanager.cpp:63
+msgid "Uploads"
+msgstr "Раздачи"
+
+#: apps/ktorrent/ktorrentcore.cpp:115
+#, fuzzy
+msgid ""
+"Specified port (%1) is unavailable or in use by another application. KTorrent "
+"is now using port %2."
+msgstr ""
+"Указанный порт (%1) недоступен или используется другим приложением. KTorrent "
+"переключается на порт %2."
+
+#: apps/ktorrent/ktorrentcore.cpp:124
+msgid ""
+"KTorrent is unable to accept connections because the ports %1 to %2 are already "
+"in use by another program."
+msgstr ""
+"Не удалось получить в использование порты с %1 по %2 так как они уже заняты."
+
+#: apps/ktorrent/ktorrentcore.cpp:767
+#, fuzzy, c-format
+msgid "Cannot create torrent: %1"
+msgstr "Не удалось создать торрент %1: %2"
+
+#: apps/ktorrent/ktorrentcore.cpp:1028
+msgid ""
+"Several data files of the torrent \"%1\" are missing, do you want to recreate "
+"them, or do you want to not download them?"
+msgstr ""
+"Некоторые файлы из торрента \"%1\" отсутствуют. Создать их или запретить их "
+"загрузку?"
+
+#: apps/ktorrent/ktorrentcore.cpp:1031 apps/ktorrent/ktorrentcore.cpp:1069
+msgid "Recreate"
+msgstr "Пересоздать"
+
+#: apps/ktorrent/ktorrentcore.cpp:1031 plugins/infowidget/fileview.cpp:61
+msgid "Do Not Download"
+msgstr "Не загружать"
+
+#: apps/ktorrent/ktorrentcore.cpp:1041
+#, fuzzy, c-format
+msgid "Cannot recreate missing files: %1"
+msgstr "Не удаётся пересоздать недостающие файлы: %1"
+
+#: apps/ktorrent/ktorrentcore.cpp:1042 apps/ktorrent/ktorrentcore.cpp:1056
+#: apps/ktorrent/ktorrentcore.cpp:1062
+msgid "Data files are missing"
+msgstr "Файлы данных отсутствуют"
+
+#: apps/ktorrent/ktorrentcore.cpp:1055
+#, fuzzy, c-format
+msgid "Cannot deselect missing files: %1"
+msgstr "Не удаётся отменить загрузку недостающих файлов: %1"
+
+#: apps/ktorrent/ktorrentcore.cpp:1068
+msgid ""
+"The file where the data is saved of the torrent \"%1\" is missing, do you want "
+"to recreate it?"
+msgstr "Файл хранящий данные торрента \"%1\" отсутствует. Пересоздать его?"
+
+#: apps/ktorrent/ktorrentcore.cpp:1069
+#, fuzzy
+msgid "Do Not Recreate"
+msgstr "Пересоздать"
+
+#: apps/ktorrent/ktorrentcore.cpp:1078
+#, fuzzy, c-format
+msgid "Cannot recreate data file: %1"
+msgstr "Не удаётся пересоздать файл данных: %1"
+
+#: apps/ktorrent/ktorrentcore.cpp:1079 apps/ktorrent/ktorrentcore.cpp:1085
+msgid "Data file is missing"
+msgstr "Отсутствует файл данных"
+
+#: apps/ktorrent/ktorrentcore.cpp:1135
+msgid "Checking Data Integrity"
+msgstr "Проверка целостности данных"
+
+#: apps/ktorrent/ktorrentviewitem.cpp:153
+#: apps/ktorrent/ktorrentviewitem.cpp:159
+msgid "infinity"
+msgstr "бесконечно"
+
+#: apps/ktorrent/ktorrentviewitem.cpp:255 plugins/infowidget/fileview.cpp:189
+#: plugins/infowidget/iwfiletreeitem.cpp:95
+msgid "%1 %"
+msgstr "%1 %"
+
+#: apps/ktorrent/scandialog.cpp:70
+#, fuzzy, c-format
+msgid "Error scanning data: %1"
+msgstr "Ошибка при сканировании данных: %1"
+
+#: apps/ktorrent/scandialog.cpp:77
+msgid "Scanning data of <b>%1</b> :"
+msgstr "Сканирование данных <b>%1</b>:"
+
+#: apps/ktorrent/main.cpp:76
+msgid "A BitTorrent program for KDE"
+msgstr "Клиент BitTorrent для KDE"
+
+#: apps/ktorrent/main.cpp:108
+msgid "Debug mode"
+msgstr "Режим отладки"
+
+#: apps/ktorrent/main.cpp:109
+msgid "Silently save torrent given on URL"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:110
+msgid "Document to open"
+msgstr "Открыть файл"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 59
+#: apps/ktorrent/main.cpp:120 rc.cpp:553
+#, no-c-format
+msgid "KTorrent"
+msgstr "KTorrent"
+
+#: apps/ktorrent/main.cpp:125
+msgid "RSS Plugin"
+msgstr "Модуль RSS"
+
+#: apps/ktorrent/main.cpp:126
+msgid "Webinterface Plugin"
+msgstr "Модуль Веб-интерфейса"
+
+#: apps/ktorrent/main.cpp:127
+msgid "Statistics Plugin"
+msgstr "Модуль статистики"
+
+#: apps/ktorrent/main.cpp:130
+msgid "Application icon and a couple of others"
+msgstr "Значок приложения и не только"
+
+#: apps/ktorrent/main.cpp:131
+msgid "The downloads icon"
+msgstr "Значок загрузки"
+
+#: apps/ktorrent/main.cpp:134
+msgid "1.0 application icon"
+msgstr "Значок для 1.0"
+
+#: apps/ktorrent/main.cpp:139
+msgid "ChunkBar's tooltip and IWFileTreeItem sorting"
+msgstr ""
+"Визуальное представление загруженных частей и отображение загружаемых файлов в "
+"виде древовидной структуры."
+
+#: apps/ktorrent/main.cpp:143
+msgid ""
+"Country locator for InfoWidget plugin (This product includes GeoLite data "
+"created by MaxMind, available from http://www.maxmind.com/). "
+msgstr ""
+
+#: apps/ktorrent/main.cpp:144
+#, fuzzy
+msgid "Country flags"
+msgstr "Страна"
+
+#: apps/ktorrent/main.cpp:145
+msgid "File prioritization"
+msgstr "Приоритеты файлов"
+
+#: apps/ktorrent/main.cpp:146
+msgid "Miniupnp was used as an example for our own UPnP implementation"
+msgstr "Miniupnp использовался как пример для нашей реализации UPnP"
+
+#: apps/ktorrent/main.cpp:147
+msgid "Global max share ratio patch"
+msgstr "Возможность ограничения глобального коэффициента отдачи"
+
+#: apps/ktorrent/main.cpp:148 apps/ktorrent/main.cpp:149
+msgid "Zeroconf enhancements"
+msgstr "Дополнения Zeroconf"
+
+#: apps/ktorrent/main.cpp:150
+msgid "Coldmilk webgui"
+msgstr "Веб-интерфейс Coldmilk"
+
+#: apps/ktorrent/main.cpp:151
+msgid "IDEAl code from KDevelop"
+msgstr "IDEAI код из KDevelop"
+
+#: apps/ktorrent/main.cpp:152
+msgid "Conversion speed improvement in ipfilter plugin"
+msgstr "Увеличение скорости в модуле IPFilter"
+
+#: apps/ktorrent/main.cpp:153
+msgid "Discovered 2 security vulnerabilities (both are fixed)"
+msgstr "Обнаружены 2 уязвимости (обе исправлены)"
+
+#: apps/ktorrent/main.cpp:154
+msgid "Patch to load silently with a save location"
+msgstr "Патч для загрузки в стандартное место сохранения."
+
+#: apps/ktorrent/main.cpp:155
+msgid "Fixes in PHP code of webinterface"
+msgstr "Исправление PHP кода Веб-интерфейса."
+
+#: apps/ktorrent/main.cpp:156
+msgid "XFS specific disk preallocation"
+msgstr "Резервирование дискового пространства в XFS"
+
+#: apps/ktorrent/main.cpp:157
+msgid "Patch to not show very low speeds"
+msgstr "Патч, исправляющий отображение очень низких скоростей"
+
+#: apps/ktorrent/main.cpp:158
+msgid "Patch to show potentially firewalled status"
+msgstr "Патч для обнаружения включенного брандмауэра."
+
+#: apps/ktorrent/main.cpp:159
+msgid "Several patches"
+msgstr "Несколько патчей."
+
+#: apps/ktorrent/main.cpp:160
+msgid "Patch to hide the menubar"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:161
+msgid "Patch to modify file priorities in the webgui"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:162
+#, fuzzy
+msgid "Several webgui patches"
+msgstr "Несколько патчей."
+
+#: apps/ktorrent/main.cpp:163
+#, fuzzy
+msgid "Filterbar patch"
+msgstr "Путь Folder1"
+
+#: apps/ktorrent/main.cpp:164
+msgid "Non threaded fileview update patch"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:165
+msgid "Optimization to SHA1 hash generation"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:166
+msgid "Patch to fix free diskspace calculation on FreeBSD"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:167
+#, fuzzy
+msgid "Patch to load torrents silently from the command line"
+msgstr "Патч для загрузки в стандартное место сохранения."
+
+#: apps/ktorrent/torrentcreatordlg.cpp:64
+msgid "You must select a file or a folder."
+msgstr "Выберите файл или папку."
+
+#: apps/ktorrent/torrentcreatordlg.cpp:71
+msgid ""
+"You have not added a tracker, are you sure you want to create this torrent ?"
+msgstr "Вы не указали трекер. Создать торрент без трекера?"
+
+#: apps/ktorrent/torrentcreatordlg.cpp:79
+#, fuzzy
+msgid "You must add at least one node."
+msgstr "Добавьте хотя бы один трекер."
+
+#: apps/ktorrent/torrentcreatordlg.cpp:98
+msgid "Torrent Files (*.torrent)"
+msgstr "Файлы Torrent (*.torrent)"
+
+#: apps/ktorrent/torrentcreatordlg.cpp:99
+msgid "Choose File to Save Torrent"
+msgstr "Выберите имя файла"
+
+#: apps/ktorrent/torrentcreatordlg.cpp:108
+msgid "Creating %1..."
+msgstr "Создание %1 ..."
+
+#: apps/ktorrent/groups/groupview.cpp:107
+#, fuzzy
+msgid "Custom Groups"
+msgstr "Свои Группы"
+
+#: apps/ktorrent/groups/groupview.cpp:138
+msgid "New Group"
+msgstr "Создать группу"
+
+#: apps/ktorrent/groups/groupview.cpp:141
+msgid "Edit Name"
+msgstr "Изменить имя"
+
+#: apps/ktorrent/groups/groupview.cpp:144
+msgid "Remove Group"
+msgstr "Удалить группу"
+
+#: apps/ktorrent/groups/groupview.cpp:147
+msgid "Open Tab"
+msgstr "Открыть вкладку"
+
+#: apps/ktorrent/groups/groupview.cpp:159
+msgid "Please enter the group name."
+msgstr "Введите имя группы."
+
+#: apps/ktorrent/groups/groupview.cpp:166
+#: apps/ktorrent/groups/groupview.cpp:217
+msgid "The group %1 already exists."
+msgstr "Группа \"%1\" уже существует."
+
+#: apps/ktorrent/groups/groupview.cpp:207
+msgid "Please enter the new group name."
+msgstr "Введите новое имя группы."
+
+#: apps/ktorrent/groups/activeuploadsgroup.cpp:29
+#: apps/ktorrent/groups/groupmanager.h:90
+msgid "Active uploads"
+msgstr "Текущие раздачи"
+
+#: apps/ktorrent/groups/groupmanager.h:66
+#: apps/ktorrent/groups/queueduploadsgroup.cpp:29
+msgid "Queued uploads"
+msgstr "Раздачи в очереди"
+
+#: apps/ktorrent/groups/groupmanager.h:63
+#: apps/ktorrent/groups/queueddownloadsgroup.cpp:29
+msgid "Queued downloads"
+msgstr "Загрузки в очереди"
+
+#: apps/ktorrent/groups/groupmanager.h:69
+#: apps/ktorrent/groups/userdownloadsgroup.cpp:29
+#, fuzzy
+msgid "User downloads"
+msgstr "Ваши загрузки"
+
+#: apps/ktorrent/groups/groupmanager.h:72
+#: apps/ktorrent/groups/useruploadsgroup.cpp:29
+#, fuzzy
+msgid "User uploads"
+msgstr "Ваши раздачи"
+
+#: apps/ktorrent/groups/groupmanager.h:75
+#: apps/ktorrent/groups/inactivegroup.cpp:29
+msgid "Inactive torrents"
+msgstr "Неактивные торренты"
+
+#: apps/ktorrent/groups/groupmanager.h:78
+#: apps/ktorrent/groups/inactivedownloadsgroup.cpp:29
+msgid "Inactive downloads"
+msgstr "Неактивные загрузки"
+
+#: apps/ktorrent/groups/groupmanager.h:81
+#: apps/ktorrent/groups/inactiveuploadsgroup.cpp:29
+msgid "Inactive uploads"
+msgstr "Неактивные раздачи"
+
+#: apps/ktorrent/groups/activegroup.cpp:29
+#: apps/ktorrent/groups/groupmanager.h:84
+msgid "Active torrents"
+msgstr "Активные торренты"
+
+#: apps/ktorrent/groups/activedownloadsgroup.cpp:28
+#: apps/ktorrent/groups/groupmanager.h:87
+msgid "Active downloads"
+msgstr "Активные загрузки"
+
+#: apps/ktorrent/ktorrentview.cpp:397 apps/ktorrent/ktorrentviewmenu.cpp:45
+msgid "Remove Torrent"
+msgstr "Удалить торрент"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:49
+msgid "Remove Torrent and Data"
+msgstr "Удалить торрент и данные"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:59
+#, fuzzy
+msgid "Add Peers"
+msgstr "Добавить адреса источников..."
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:63
+msgid "Additional Peer Sources"
+msgstr "Дополнительные источники"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:64
+#, fuzzy
+msgid "Torrent Peer Sources:"
+msgstr "Торрентов на источники:"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 85
+#: apps/ktorrent/ktorrentviewmenu.cpp:66 plugins/infowidget/peerview.cpp:221
+#: rc.cpp:77 rc.cpp:1256 rc.cpp:1307
+#, no-c-format
+msgid "DHT"
+msgstr "DHT"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:67
+msgid "Peer Exchange"
+msgstr "Обмен источниками"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:72
+msgid "Manual Announce"
+msgstr "Принудительное объявление"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:76 plugins/infowidget/fileview.cpp:50
+msgid "Preview"
+msgstr "Просмотр"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:81
+#, fuzzy
+msgid "Open Directory"
+msgstr "Открыть папку..."
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:82
+msgid "Data Directory"
+msgstr "Папка с данными"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:84
+msgid "Temporary Directory"
+msgstr "Временная папка"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:87
+#, fuzzy
+msgid "Set Download Location"
+msgstr "Каталог загрузки..."
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:90
+msgid "Remove From Group"
+msgstr "Удалить из группы"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:93
+msgid "Add to Group"
+msgstr "Добавить в группу"
+
+#. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 16
+#: apps/ktorrent/ktorrentviewmenu.cpp:100 rc.cpp:147
+#, no-c-format
+msgid "Speed Limits"
+msgstr "Ограничение скорости"
+
+#: apps/ktorrent/addpeerwidget.cpp:67
+msgid "Torrent does not exist. Report this bug to KTorrent developers."
+msgstr "Торрент не существует. Сообщите об ошибке разработчикам KTorrent."
+
+#: apps/ktorrent/addpeerwidget.cpp:102
+msgid "Potential peer added."
+msgstr "Потенциальный источник добавлен."
+
+#: apps/ktorrent/addpeerwidget.cpp:106
+msgid "Malformed IP address."
+msgstr "Неверный IP-адрес."
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 311
+#: apps/ktorrent/pref.cpp:58 rc.cpp:282
+#, no-c-format
+msgid "Preferences"
+msgstr "Параметры"
+
+#: apps/ktorrent/pref.cpp:147
+msgid "Download Options"
+msgstr "Параметры загрузки"
+
+#: apps/ktorrent/pref.cpp:179 apps/ktorrent/pref.cpp:294
+msgid "The DHT port needs to be different from the UDP tracker port!"
+msgstr "Порт DHT должен отличаться от порта UDP."
+
+#: apps/ktorrent/pref.cpp:216
+msgid "General"
+msgstr "Общие"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 16
+#: apps/ktorrent/pref.cpp:216 rc.cpp:57
+#, no-c-format
+msgid "General Options"
+msgstr "Общие параметры"
+
+#: apps/ktorrent/pref.cpp:283
+msgid ""
+"Cannot lookup %1: %2\n"
+"Please provide a valid IP address or hostname."
+msgstr ""
+"Не удалось связаться с %1: %2\n"
+"Введите действительный IP-адрес или имя хоста."
+
+#: apps/ktorrent/pref.cpp:411
+msgid "Advanced"
+msgstr "Дополнительно"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 27
+#: apps/ktorrent/pref.cpp:411 rc.cpp:540
+#, no-c-format
+msgid "Advanced Options"
+msgstr "Дополнительные настройки"
+
+#: apps/ktorrent/ktorrentview.cpp:132
+msgid "Visible columns"
+msgstr "Видимые столбцы"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 16
+#: apps/ktorrent/ktorrentview.cpp:135
+#: plugins/infowidget/infowidgetplugin.cpp:76 rc.cpp:1016
+#, no-c-format
+msgid "Status"
+msgstr "Статус"
+
+#: apps/ktorrent/ktorrentview.cpp:136 plugins/infowidget/peerview.cpp:225
+msgid "Downloaded"
+msgstr "Получено"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 149
+#: apps/ktorrent/ktorrentview.cpp:137 plugins/infowidget/fileview.cpp:48
+#: rc.cpp:24
+#, no-c-format
+msgid "Size"
+msgstr "Размер"
+
+#: apps/ktorrent/ktorrentview.cpp:138 plugins/infowidget/peerview.cpp:226
+msgid "Uploaded"
+msgstr "Передано"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 313
+#: apps/ktorrent/ktorrentview.cpp:139 plugins/infowidget/peerview.cpp:216
+#: rc.cpp:1010
+#, no-c-format
+msgid "Down Speed"
+msgstr "Скорость приёма"
+
+#: apps/ktorrent/ktorrentview.cpp:140 plugins/infowidget/peerview.cpp:217
+msgid "Up Speed"
+msgstr "Скорость передачи"
+
+#: apps/ktorrent/ktorrentview.cpp:141
+msgid "Time Left"
+msgstr "Осталось"
+
+#: apps/ktorrent/ktorrentview.cpp:142
+msgid "Seeders"
+msgstr "Полные источники"
+
+#: apps/ktorrent/ktorrentview.cpp:143
+msgid "Leechers"
+msgstr "Загружающие"
+
+#: apps/ktorrent/ktorrentview.cpp:144 plugins/infowidget/fileview.cpp:51
+msgid "% Complete"
+msgstr "% выполнено"
+
+#: apps/ktorrent/ktorrentview.cpp:145
+msgid "Share Ratio"
+msgstr "Коэффициент отдачи"
+
+#: apps/ktorrent/ktorrentview.cpp:146
+msgid "Time Downloaded"
+msgstr "Время загрузки"
+
+#: apps/ktorrent/ktorrentview.cpp:147
+msgid "Time Seeded"
+msgstr "Время отдачи"
+
+#: apps/ktorrent/ktorrentview.cpp:203 apps/ktorrent/ktorrentview.cpp:551
+#: apps/ktorrent/ktorrentview.cpp:877
+msgid "All Torrents %1/%2"
+msgstr "Все торренты %1/%2"
+
+#: apps/ktorrent/ktorrentview.cpp:283
+#, c-format
+msgid ""
+"_n: Cannot start more than 1 download, \n"
+"Cannot start more than %n downloads, "
+msgstr ""
+"Не удалось запустить больше %n загрузки, \n"
+"Не удалось запустить больше %n загрузок, \n"
+"Не удалось запустить больше %n загрузок, "
+
+#: apps/ktorrent/ktorrentview.cpp:285
+#, c-format
+msgid ""
+"_n: and 1 seed. \n"
+"and %n seeds. "
+msgstr ""
+"и %n полный источник\n"
+"и %n полных источника\n"
+"и %n полных источников"
+
+#: apps/ktorrent/ktorrentview.cpp:286 apps/ktorrent/trayicon.cpp:258
+msgid "Go to Settings -> Configure KTorrent, if you want to change the limits."
+msgstr "Изменить ограничения: Настройки -> Настроить KTorrent "
+
+#: apps/ktorrent/ktorrentview.cpp:375
+msgid ""
+"The torrent %1 has not finished downloading, do you want to delete the "
+"incomplete data, too?"
+msgstr "Торрент %1 не был загружен. Удалить также неполные данные?"
+
+#: apps/ktorrent/ktorrentview.cpp:378
+msgid "Remove Download"
+msgstr "Удалить загрузку"
+
+#: apps/ktorrent/ktorrentview.cpp:379
+msgid "Delete Data"
+msgstr "Удалить данные"
+
+#: apps/ktorrent/ktorrentview.cpp:379
+msgid "Keep Data"
+msgstr "Оставить данные"
+
+#: apps/ktorrent/ktorrentview.cpp:395
+msgid ""
+"You will lose all the downloaded data. Are you sure you want to do this?"
+msgstr "Вы потеряете ВСЕ загруженные данные. Вы уверены?"
+
+#: apps/ktorrent/ktorrentview.cpp:631
+msgid "You are already checking the data of the torrent %1 !"
+msgstr "Данные торрента %1 уже проверяются."
+
+#: apps/ktorrent/ktorrentview.cpp:751
+#, c-format
+msgid "Choose download location for %1"
+msgstr "Выберите путь для сохранения %1"
+
+#: apps/ktorrent/fileselectdlg.cpp:120
+msgid ""
+"You have deselected the following existing files. You will lose all data in "
+"these files, are you sure you want to do this ?"
+msgstr ""
+"Вы сняли отметки с существующих файлов. Это пиведёт к потере всех данных в этих "
+"файлах. Продолжить?"
+
+#: apps/ktorrent/fileselectdlg.cpp:124
+msgid "Yes, delete the files"
+msgstr "Да, удалить файлы"
+
+#: apps/ktorrent/fileselectdlg.cpp:125
+msgid "No, keep the files"
+msgstr "Нет, оставить файлы"
+
+#: apps/ktorrent/fileselectdlg.cpp:220
+msgid " short!"
+msgstr ""
+
+#: apps/ktorrent/queuedialog.cpp:73
+msgid "User"
+msgstr "Пользователь"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 24
+#: apps/ktorrent/queuedialog.cpp:75 rc.cpp:249
+#, no-c-format
+msgid "Queue Manager"
+msgstr "Управление очередью"
+
+#: apps/ktorrent/queuedialog.cpp:305 apps/ktorrent/queuedialog.cpp:326
+msgid "No (private torrent)"
+msgstr "Нет (частный торрент)"
+
+#: apps/ktorrent/trayicon.cpp:90
+msgid ""
+"<table cellpadding='2' cellspacing='2' align='center'>"
+"<tr>"
+"<td><b>Speed:</b></td>"
+"<td></td></tr>"
+"<tr>"
+"<td>Download: <font color='#1c9a1c'>%1</font></td>"
+"<td>Upload: <font color='#990000'>%2</font></td></tr>"
+"<tr>"
+"<td><b>Transfer:</b></td>"
+"<td></td></tr>"
+"<tr>"
+"<td>Download: <font color='#1c9a1c'>%3</font></td>"
+"<td>Upload: <font color='#990000'>%4</font></td></tr></table>"
+msgstr ""
+"<table cellpadding='2' cellspacing='2' align='center'>"
+"<tr>"
+"<td><b>Скорость:</b></td>"
+"<td></td></tr>"
+"<tr>"
+"<td>Загружено: <font color='#1c9a1c'>%1</font></td>"
+"<td>Отдано: <font color='#990000'>%2</font></td></tr>"
+"<tr>"
+"<td><b>Загрузка:</b></td>"
+"<td></td></tr>"
+"<tr>"
+"<td>Загружено: <font color='#1c9a1c'>%3</font></td>"
+"<td>Отдано: <font color='#990000'>%4</font></td></tr></table>"
+
+#: apps/ktorrent/trayicon.cpp:147
+msgid "<b>%1</b> has completed downloading.<br>Average speed: %2 DL / %3 UL."
+msgstr "<b>Загрузка %1 завершена.</b><br>Средняя скорость: %2 В. / %3 Исх."
+
+#: apps/ktorrent/trayicon.cpp:153 libktorrent/torrent/torrentcontrol.cpp:1366
+msgid "Download completed"
+msgstr "Загрузка завершена"
+
+#: apps/ktorrent/trayicon.cpp:165
+msgid ""
+"<b>%1</b> has reached its maximum share ratio of %2 and has been stopped."
+"<br>Uploaded %3 at an average speed of %4."
+msgstr ""
+"Коэффициент отдачи <b>%1</b> достиг максимального уровня %2 и отдача былы "
+"остановлена."
+"<br>Средняя скорость загрузки %3: %4."
+
+#: apps/ktorrent/trayicon.cpp:172 apps/ktorrent/trayicon.cpp:191
+#: libktorrent/torrent/torrentcontrol.cpp:1368
+msgid "Seeding completed"
+msgstr "Сидирование завершено"
+
+#: apps/ktorrent/trayicon.cpp:184
+msgid ""
+"<b>%1</b> has reached its maximum seed time of %2 hours and has been stopped."
+"<br>Uploaded %3 at an average speed of %4."
+msgstr ""
+"<b>%1</b> достиг максимального времени сидирования в %2 часа(ов) и был "
+"остановлен."
+"<br>%3 раздавался на средней скорости в %4."
+
+#: apps/ktorrent/trayicon.cpp:200
+msgid "<b>%1</b> has been stopped with the following error: <br>%2"
+msgstr "<b>Загрузка %1</b> был остановлена, ошибка: <br>%2"
+
+#: apps/ktorrent/trayicon.cpp:212
+msgid ""
+"Corrupted data has been found in the torrent <b>%1</b>"
+"<br>It would be a good idea to do a data integrity check on the torrent."
+msgstr ""
+"Были найдены повреждённые данные <b>%1</b>"
+"<br>Следует проверить целостность данных."
+
+#: apps/ktorrent/trayicon.cpp:229
+msgid ""
+"<b>%1</b> has reached its maximum share ratio of %2 and cannot be enqueued. "
+"Remove the limit manually if you want to continue seeding."
+msgstr ""
+"Коэффициент отдачи <b>%1</b> достиг максимального уровня %2 и добавление в "
+"очередь невозможно. Снимите ограничение для продолжения сидирования."
+
+#: apps/ktorrent/trayicon.cpp:232
+msgid ""
+"<b>%1</b> has reached its maximum seed time of %2 hours and cannot be enqueued. "
+"Remove the limit manually if you want to continue seeding."
+msgstr ""
+"<b>%1</b> достиг своего максимального времени сидирования в %2 час(а|ов) и не "
+"может быть поставлен в очередь. Удалите ограничение если хотите продолжить "
+"сидирование."
+
+#: apps/ktorrent/trayicon.cpp:235
+msgid "Torrent cannot be enqueued."
+msgstr "Торрент не может быть поставлен в очередь."
+
+#: apps/ktorrent/trayicon.cpp:243
+msgid "Cannot start <b>%1</b> : <br>"
+msgstr "Не удалось запустить <b>%1</b> : <br>"
+
+#: apps/ktorrent/trayicon.cpp:251
+#, c-format
+msgid ""
+"_n: Cannot seed more than 1 torrent. "
+"<br>\n"
+"Cannot seed more than %n torrents. "
+"<br>"
+msgstr ""
+"Невозможно раздавать больше %n торрента. "
+"<br>\n"
+"Невозможно раздавать больше %n торрентов. "
+"<br>\n"
+"Невозможно раздавать больше %n торрентов. "
+"<br>"
+
+#: apps/ktorrent/trayicon.cpp:256
+#, c-format
+msgid ""
+"_n: Cannot download more than 1 torrent. "
+"<br>\n"
+"Cannot download more than %n torrents. "
+"<br>"
+msgstr ""
+"Невозможно загружать больше %n торрента. "
+"<br>\n"
+"Невозможно загружать больше %n торрентов. "
+"<br>\n"
+"Невозможно загружать больше %n торрентов. "
+"<br>"
+
+#: apps/ktorrent/trayicon.cpp:259 apps/ktorrent/trayicon.cpp:263
+msgid "Torrent cannot be started"
+msgstr "Торрент не может быть запущен."
+
+#: apps/ktorrent/trayicon.cpp:262
+msgid "There is not enough diskspace available."
+msgstr "Недостаточно места на диске."
+
+#: apps/ktorrent/trayicon.cpp:277
+msgid ""
+"Your disk is running out of space.<br /><b>%1</b> is being downloaded to '%2'."
+msgstr "Не хватает места на жёстком диске.<br /><b>%1</b> загружается в '%2'."
+
+#: apps/ktorrent/trayicon.cpp:280
+msgid "Torrent has been stopped.<br />"
+msgstr "Torrent был остановлен.<br />"
+
+#: apps/ktorrent/trayicon.cpp:282
+msgid "Device running out of space"
+msgstr "На устройстве заканчивается свободное место."
+
+#: apps/ktorrent/trayicon.cpp:301
+msgid "Speed limit in KB/s"
+msgstr "Ограничение скорости, КБ/с"
+
+#: apps/ktorrent/trayicon.cpp:304 apps/ktorrent/trayicon.cpp:306
+#: apps/ktorrent/trayicon.cpp:359
+msgid "Unlimited"
+msgstr "Отсутствует"
+
+#: apps/ktorrent/speedlimitsdlg.cpp:36
+msgid "Speed limits for <b>%1</b>:"
+msgstr "Ограничение скорости для <b>%1</b>:"
+
+#: apps/ktupnptest/main.cpp:35
+msgid "A KDE KPart Application"
+msgstr "KDE KPart"
+
+#: apps/ktupnptest/main.cpp:51
+msgid "KTUPnPTest"
+msgstr "KTUPnPTest"
+
+#: apps/ktcachecheck/cachechecker.cpp:47 apps/ktcachecheck/cachechecker.cpp:76
+#: libktorrent/torrent/chunkmanager.cpp:207
+#: libktorrent/torrent/chunkmanager.cpp:432
+msgid "Cannot open index file %1 : %2"
+msgstr "Не удалось открыть файл индекса %1: %2"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Николай Шафоростов,Станислав Ланин"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "shafff@ukr.net,SSTL@inbox.ru"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 16
+#: rc.cpp:3
+#, no-c-format
+msgid "Select Which Files You Want to Download"
+msgstr "Выберите файлы, которые вы хотите загрузить"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 35
+#: rc.cpp:6
+#, no-c-format
+msgid "Download to:"
+msgstr "Загрузить в:"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 74
+#: rc.cpp:9
+#, no-c-format
+msgid "Group:"
+msgstr "Группа:"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 97
+#: rc.cpp:12
+#, fuzzy, no-c-format
+msgid "&User controlled"
+msgstr "&Управляется пользователем"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 116
+#: rc.cpp:15
+#, no-c-format
+msgid "Start torrent"
+msgstr "Запустить торрент"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 160
+#: plugins/infowidget/fileview.cpp:49 rc.cpp:27 rc.cpp:1244 rc.cpp:1259
+#: rc.cpp:1349 rc.cpp:1439
+#, no-c-format
+msgid "Download"
+msgstr "Загрузка"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 181
+#: rc.cpp:30
+#, no-c-format
+msgid "Select &All"
+msgstr "Выбрать &все"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 189
+#: rc.cpp:33
+#, no-c-format
+msgid "Select &None"
+msgstr "Очистить &выбор"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 197
+#: rc.cpp:36
+#, no-c-format
+msgid "Invert Selection"
+msgstr "Обратить выбор"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 224
+#: rc.cpp:39
+#, no-c-format
+msgid "Disk space"
+msgstr "Место на диске"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 260
+#: rc.cpp:42
+#, no-c-format
+msgid "Required disk space:"
+msgstr "Необходимое место на диске:"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 268
+#: rc.cpp:45
+#, no-c-format
+msgid "Free disk space:"
+msgstr "Свободное место:"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 276
+#: rc.cpp:48
+#, no-c-format
+msgid "After download:"
+msgstr "После загрузки:"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 44
+#: rc.cpp:60
+#, no-c-format
+msgid "Encryption"
+msgstr "Шифрование"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 58
+#: rc.cpp:64 rc.cpp:787
+#, no-c-format
+msgid "Use protocol encryption"
+msgstr "Использовать шифрование протокола"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 64
+#: rc.cpp:68
+#, no-c-format
+msgid ""
+"Protocol encryption is used to prevent ISP's from slowing down bittorrent "
+"connections."
+msgstr ""
+"Шифрование протокола используется для защиты от замедления torrent-соединений "
+"провайдерами."
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 72
+#: rc.cpp:71 rc.cpp:790
+#, no-c-format
+msgid "Allow unencrypted connections"
+msgstr "Разрешить нешифрованные соединения."
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 75
+#: rc.cpp:74
+#, no-c-format
+msgid ""
+"If unchecked, you'll be able to connect only to clients supporting encryption."
+msgstr ""
+"Если не отмечено, то вы сможете соединяться только с клиентами поддерживающими "
+"шифрование."
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 88
+#: rc.cpp:80
+#, no-c-format
+msgid ""
+"<b>D</b>istributed <b>H</b>ash <b>T</b>able protocol."
+"<br>Decentralized peers exchange protocol. See manual for more info."
+msgstr ""
+"Протокол <b>D</b>istributed <b>H</b>ash <b>T</b>able."
+"<br>Протокол нецентрализированного обмена данными между участниками сети. См. "
+"руководство для подробностей"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 99
+#: rc.cpp:83
+#, no-c-format
+msgid "&Use DHT to get additional peers"
+msgstr "&Использовать DHT для получения дополнительных источников."
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 118
+#: rc.cpp:87
+#, no-c-format
+msgid "UDP port for DHT communication:"
+msgstr "Порт UDP для DHT коммуникаций:"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 161
+#: rc.cpp:90
+#, no-c-format
+msgid "Custom IP"
+msgstr "Указать IP вручную"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 172
+#: rc.cpp:93
+#, no-c-format
+msgid "Se&nd the tracker a custom IP address or hostname"
+msgstr "Посылать трекеру указанный вручную IP-адрес или имя хоста."
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 188
+#: rc.cpp:96
+#, fuzzy, no-c-format
+msgid "Custom IP address or hostname:"
+msgstr "Особый IP или имя хоста:"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 205
+#: rc.cpp:99
+#, no-c-format
+msgid "System Tray Icon"
+msgstr "Значок в системном лотке"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 216
+#: rc.cpp:102
+#, no-c-format
+msgid "Show s&ystem tray icon"
+msgstr "Значок в системном лотке"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 224
+#: rc.cpp:105
+#, no-c-format
+msgid "Show speed &bar in tray icon"
+msgstr "Выводить &индикатор скорости в системном лотке"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 232
+#: rc.cpp:108
+#, no-c-format
+msgid "Show system tray popup messages"
+msgstr "Показвать всплывающие сообщения."
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 251
+#: rc.cpp:112
+#, no-c-format
+msgid "Upload bandwidth (in KB/sec):"
+msgstr "Скорость отдачи (в КБ/с):"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 276
+#: rc.cpp:115
+#, no-c-format
+msgid "Download bandwidth (in KB/sec):"
+msgstr "Скорость загрузки (в КБ/с):"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 305
+#: rc.cpp:118
+#, no-c-format
+msgid "Folders"
+msgstr "Папки"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 324
+#: rc.cpp:121
+#, no-c-format
+msgid "Folder to store temporary files:"
+msgstr "Каталог для временных файлов:"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 342
+#: rc.cpp:124
+#, no-c-format
+msgid "Move completed downloads to:"
+msgstr "Перемещать завершённые загрузки в:"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 353
+#: rc.cpp:128
+#, no-c-format
+msgid "&Automatically save downloads to:"
+msgstr "&Автоматически сохранять загрузки в:"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 395
+#: rc.cpp:131
+#, no-c-format
+msgid "Copy .torrent files to:"
+msgstr "Копировать файлы .torrent в:"
+
+#. i18n: file ./apps/ktorrent/ktorrentui.rc line 34
+#: rc.cpp:144
+#, no-c-format
+msgid "Download Toolbar"
+msgstr "Панель загрузок"
+
+#. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 27
+#: rc.cpp:150
+#, no-c-format
+msgid "Set the speed limits for torrent"
+msgstr "Ограничить скорость торрента"
+
+#. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 51
+#: rc.cpp:153
+#, no-c-format
+msgid "Max upload rate:"
+msgstr "Максимальная скорость передачи:"
+
+#. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 59
+#: rc.cpp:156
+#, no-c-format
+msgid "Max download rate:"
+msgstr "Максимальная скорость приема:"
+
+#. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 97
+#: rc.cpp:159 rc.cpp:162
+#, no-c-format
+msgid "KB/s (0 is no limit)"
+msgstr "КБ/с (0 - без ограничений)"
+
+#. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 16
+#: rc.cpp:171
+#, no-c-format
+msgid "Add potential peer"
+msgstr "Добавить потенциальный источник"
+
+#. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 35
+#: rc.cpp:174
+#, no-c-format
+msgid "Peer IP:"
+msgstr "IP источника:"
+
+#. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 43
+#: rc.cpp:177 rc.cpp:208
+#, no-c-format
+msgid "127.0.0.1"
+msgstr "127.0.0.1"
+
+#. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 51
+#: rc.cpp:180 rc.cpp:288 rc.cpp:525 rc.cpp:931
+#, no-c-format
+msgid "Port:"
+msgstr "Порт:"
+
+#. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 100
+#: rc.cpp:183
+#, no-c-format
+msgid "Enter peer IP and port."
+msgstr "Введите IP адрес источника и порт."
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 16
+#: rc.cpp:193
+#, no-c-format
+msgid "KTorrent Blacklist"
+msgstr "Чёрный список Ktorrent"
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 30
+#: rc.cpp:196
+#, no-c-format
+msgid ""
+"Note: Blacklist applies to current session only. Use save/open to save your "
+"entries or use IPFilter plugin (PeerGuardian)."
+msgstr ""
+"Заметка: Чёрный список применяется только к текущему сеансу. Используйте "
+"Сохранить/Открыть для сохранения или используйте модуль IPFilter."
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 41
+#: rc.cpp:199
+#, no-c-format
+msgid "Banned Peers"
+msgstr "Забаненные клиенты"
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 50
+#: rc.cpp:202
+#, no-c-format
+msgid "Peer IP address"
+msgstr "IP-адрес клиента"
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 96
+#: rc.cpp:205
+#, no-c-format
+msgid "Add peer:"
+msgstr "Добавить источник:"
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 134
+#: rc.cpp:215
+#, no-c-format
+msgid "Adds a peer to blacklist"
+msgstr "Добавить источники в чёрный список:"
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 168
+#: rc.cpp:222
+#, no-c-format
+msgid "Removes selected peer from blacklist"
+msgstr "Удалить выбранные источники из чёрного списка"
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 176
+#: rc.cpp:225
+#, no-c-format
+msgid "C&lear"
+msgstr "Очистить"
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 182
+#: rc.cpp:228
+#, no-c-format
+msgid "Clears this list"
+msgstr "Очистить список"
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 218
+#: rc.cpp:234
+#, no-c-format
+msgid "Save &As..."
+msgstr "Сохранить как..."
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 224
+#: rc.cpp:237
+#, no-c-format
+msgid "Save this blacklist to use with KTorrent IPFilter plugin"
+msgstr "Сохранить этот список для использования в модуле IPFilter"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 59
+#: rc.cpp:252
+#, no-c-format
+msgid "Maximum downloads:"
+msgstr "Максимальное количество загрузок:"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 86
+#: rc.cpp:255
+#, no-c-format
+msgid "Maximum seeds:"
+msgstr "Максимум полных источников:"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 94
+#: rc.cpp:258
+#, no-c-format
+msgid "Start download on low disk space :"
+msgstr "Начинать загрузку при нехватке места:"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 102
+#: rc.cpp:261
+#, no-c-format
+msgid "Minimum disk space:"
+msgstr "Минимальный объём дискового пространства:"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 140
+#: rc.cpp:264
+#, no-c-format
+msgid "Don't start"
+msgstr "Не начинать"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 145
+#: rc.cpp:267
+#, no-c-format
+msgid "Always ask"
+msgstr "Спрашивать"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 150
+#: rc.cpp:270
+#, no-c-format
+msgid "Force start"
+msgstr "Всегда начинать"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 208
+#: rc.cpp:273
+#, no-c-format
+msgid "MB"
+msgstr "МБ"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 236
+#: rc.cpp:276 rc.cpp:279 rc.cpp:312 rc.cpp:315 rc.cpp:324
+#, no-c-format
+msgid "(0 is no limit)"
+msgstr "(0 - без ограничений)"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 330
+#: rc.cpp:285
+#, no-c-format
+msgid "Maximum download rate:"
+msgstr "Ограничение скорости приёма:"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 346
+#: rc.cpp:291
+#, no-c-format
+msgid "Global connection limit:"
+msgstr "Общее ограничение на число соединений:"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 354
+#: rc.cpp:294
+#, no-c-format
+msgid "Max seed time:"
+msgstr "Максимальное время раздачи:"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 370
+#: rc.cpp:297
+#, no-c-format
+msgid "Maximum connections per torrent:"
+msgstr "Максимум соединений на один торрент:"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 397
+#: rc.cpp:300
+#, no-c-format
+msgid "Number of upload slots:"
+msgstr "Количество слотов отдачи:"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 405
+#: rc.cpp:303
+#, no-c-format
+msgid "UDP tracker port:"
+msgstr "Порт трекера UDP:"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 413
+#: rc.cpp:306
+#, no-c-format
+msgid "Max share ratio:"
+msgstr "Максимальный коэффициент отдачи:"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 421
+#: rc.cpp:309
+#, no-c-format
+msgid "Maximum upload rate:"
+msgstr "Ограничение скорости отдачи:"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 576
+#: rc.cpp:318 rc.cpp:321
+#, no-c-format
+msgid "KB/sec (0 is no limit)"
+msgstr "КБ/с (0 - без ограничений)"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 651
+#: rc.cpp:327
+#, no-c-format
+msgid "Hours (0 is no limit)"
+msgstr "ч (0 - без ограничений)"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 663
+#: rc.cpp:330
+#, no-c-format
+msgid "&Keep seeding after download is finished"
+msgstr "&Продолжать раздачу после завершения загрузки"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 674
+#: rc.cpp:333
+#, no-c-format
+msgid "Attention"
+msgstr "Внимание"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 685
+#: rc.cpp:336
+#, fuzzy, no-c-format
+msgid ""
+"The above ports must also be forwarded if you are behind a router. The UPnP "
+"plugin can do this for you."
+msgstr ""
+"Ели вы работаете через маршрутизатор, указанные порты должны быть "
+"перенаправлены, .Это может выполнить автоматически модуль UPnP."
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 16
+#: rc.cpp:339
+#, no-c-format
+msgid "KT Queue Dialog"
+msgstr "Диалог очереди KT"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 69
+#: rc.cpp:348 rc.cpp:386 rc.cpp:1107
+#, no-c-format
+msgid "Status:"
+msgstr "Статус:"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 85
+#: rc.cpp:351 rc.cpp:389 rc.cpp:1808
+#, no-c-format
+msgid "Tracker:"
+msgstr "Трекер:"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 93
+#: rc.cpp:354 rc.cpp:392 rc.cpp:1805
+#, no-c-format
+msgid "DHT:"
+msgstr "DHT:"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 109
+#: rc.cpp:357 rc.cpp:395 rc.cpp:1061
+#, no-c-format
+msgid "Share ratio:"
+msgstr "Коэффициент передачи:"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 117
+#: rc.cpp:360
+#, no-c-format
+msgid "Bytes left:"
+msgstr "Осталось байт:"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 177
+#: rc.cpp:368 rc.cpp:377
+#, no-c-format
+msgid "Torrent"
+msgstr "Торрент"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 188
+#: rc.cpp:371 rc.cpp:380
+#, no-c-format
+msgid "Controlled by"
+msgstr "Управляется"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 214
+#: rc.cpp:374
+#, no-c-format
+msgid "Upload&s"
+msgstr "О&тдачи"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 333
+#: rc.cpp:398
+#, no-c-format
+msgid "Uploaded:"
+msgstr "Отдано:"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 486
+#: rc.cpp:406
+#, no-c-format
+msgid "M&ove up"
+msgstr "&Вверх"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 494
+#: rc.cpp:409
+#, no-c-format
+msgid "Move dow&n"
+msgstr "В&низ"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 519
+#: rc.cpp:412
+#, no-c-format
+msgid "Move to top"
+msgstr "В начало"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 530
+#: rc.cpp:416
+#, no-c-format
+msgid "Move to &bottom"
+msgstr "В конец"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 555
+#: rc.cpp:419
+#, fuzzy, no-c-format
+msgid "&QM Controlled"
+msgstr "&Управляется автоматически"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 563
+#: rc.cpp:422
+#, no-c-format
+msgid "&User Controlled"
+msgstr "&Управляется пользователем"
+
+#. i18n: file ./apps/ktorrent/pastedlgbase.ui line 30
+#: rc.cpp:434
+#, no-c-format
+msgid "Paste URL"
+msgstr "Вставить URL"
+
+#. i18n: file ./apps/ktorrent/pastedlgbase.ui line 52
+#: rc.cpp:437 rc.cpp:1104 rc.cpp:1919
+#, no-c-format
+msgid "URL:"
+msgstr "URL:"
+
+#. i18n: file ./apps/ktorrent/pastedlgbase.ui line 106
+#: rc.cpp:440
+#, no-c-format
+msgid "O&K"
+msgstr "O&K"
+
+#. i18n: file ./apps/ktorrent/pastedlgbase.ui line 114
+#: rc.cpp:443 rc.cpp:675 rc.cpp:1176
+#, no-c-format
+msgid "C&ancel"
+msgstr "&Отмена"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 16
+#: rc.cpp:446
+#, no-c-format
+msgid "Create Torrent"
+msgstr "Создать торрент"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 38
+#: rc.cpp:449
+#, no-c-format
+msgid "The file or folder of which you want to create a torrent:"
+msgstr "Файл или папка, для которой требуется создать торрент:"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 53
+#: rc.cpp:452
+#, no-c-format
+msgid "You must add at least one tracker or node."
+msgstr "Добавьте хотя бы один трекер или узел."
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 61
+#: rc.cpp:455
+#, no-c-format
+msgid "File Options"
+msgstr "Параметры файлов"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 80
+#: rc.cpp:458
+#, no-c-format
+msgid "Size of each chunk:"
+msgstr "Размер части:"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 86
+#: rc.cpp:461
+#, no-c-format
+msgid "32"
+msgstr "32"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 91
+#: rc.cpp:464
+#, no-c-format
+msgid "64"
+msgstr "64"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 96
+#: rc.cpp:467
+#, no-c-format
+msgid "128"
+msgstr "128"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 101
+#: rc.cpp:470
+#, no-c-format
+msgid "256"
+msgstr "256"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 106
+#: rc.cpp:473
+#, no-c-format
+msgid "512"
+msgstr "512"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 111
+#: rc.cpp:476
+#, no-c-format
+msgid "1024"
+msgstr "1024"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 116
+#: rc.cpp:479
+#, no-c-format
+msgid "2048"
+msgstr "2048"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 121
+#: rc.cpp:482
+#, no-c-format
+msgid "4096"
+msgstr "4096"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 126
+#: rc.cpp:485
+#, no-c-format
+msgid "8192"
+msgstr "8192"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 138
+#: rc.cpp:488 rc.cpp:633
+#, no-c-format
+msgid "KB"
+msgstr "КБ"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 165
+#: rc.cpp:491
+#, no-c-format
+msgid "Start seedin&g the torrent"
+msgstr "Начать &сидирование"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 176
+#: rc.cpp:494
+#, no-c-format
+msgid "Decentrali&zed (DHT only)"
+msgstr "Децентрализованно (только DHT)"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 184
+#: rc.cpp:497
+#, no-c-format
+msgid "Private torrent (DHT not allowed)"
+msgstr "Частный торрент (DHT запрещён)"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 202
+#: rc.cpp:500
+#, no-c-format
+msgid "Comments:"
+msgstr "Комментарии:"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 248
+#: rc.cpp:503
+#, fuzzy, no-c-format
+msgid "&Create"
+msgstr "&Создать"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 262
+#: rc.cpp:506 rc.cpp:1325
+#, no-c-format
+msgid "Ca&ncel"
+msgstr "&Отменить"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 275
+#: plugins/infowidget/infowidgetplugin.cpp:214 rc.cpp:509 rc.cpp:1101
+#, no-c-format
+msgid "Trackers"
+msgstr "Трекеры"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 283
+#: rc.cpp:512
+#, no-c-format
+msgid "DHT nodes"
+msgstr "Узлы DHT"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 333
+#: rc.cpp:522
+#, no-c-format
+msgid "Node:"
+msgstr "Узел:"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 385
+#: rc.cpp:528
+#, no-c-format
+msgid "IP or hostname"
+msgstr "IP или имя хоста:"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 396
+#: rc.cpp:531 rc.cpp:718 rc.cpp:721
+#, no-c-format
+msgid "Port"
+msgstr "Порт"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 437
+#: rc.cpp:534
+#, no-c-format
+msgid ""
+"NOTE: Some known good DHT nodes are already inserted. You should probably "
+"insert your own IP address and port too if you plan to seed this torrent."
+msgstr ""
+"ЗАМЕТКА: Некоторые хорошо известные узлы DHT уже добавлены. Вам необходимо "
+"ввести свой IP-адрес и порт, если вы хотите распространять этот торрент."
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 16
+#: rc.cpp:537
+#, no-c-format
+msgid "Advanced Preferences"
+msgstr "Дополнительные параметры"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 46
+#: rc.cpp:543
+#, no-c-format
+msgid "Time left estimation algorithm:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 53
+#: rc.cpp:546 rc.cpp:568
+#, fuzzy, no-c-format
+msgid ""
+"<b>KTorrent algorithm:</b> Default algorithm using combination of other "
+"algorithms based on our tests."
+"<br>\n"
+"<b>Current speed algorithm:</b> Simplest algorithm - BytesLeft/CurrentSpeed"
+"<br>\n"
+"<b>Global average speed algorithm:</b> BytesLeft/AverageSpeed"
+"<br>\n"
+"<b>Window of X algorithm:</b> ET calculated from X speed samples"
+"<br>\n"
+"<b>Moving average algorithm:</b> Moving average speed calculated from X samples"
+msgstr ""
+"<b>Стандартный метод:</b> алгоритм по-умолчанию, использующий эмпирическую "
+"комбинацию нескольких методов"
+"<br>\n"
+"<b>Вычисление по текущей скорости:</b> отношение оставшегося размера и текущей "
+"скорости. "
+"<br>\n"
+"<b>Вычисление по общей средней скорости:</b> отношение оставшегося размера и "
+"средней скорости. "
+"<br>\n"
+"<b>Window of X алгоритм:</b> ET вычисленный из X образцов скорости. "
+"<br>\n"
+"<b>Усредненная скорость перемещения:</b> Вычисленная усредненная скорость из X "
+"образцов."
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 64
+#: rc.cpp:556
+#, no-c-format
+msgid "Current speed"
+msgstr "По текущей скорости"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 69
+#: rc.cpp:559
+#, no-c-format
+msgid "Global average speed"
+msgstr "По общей средней скорости"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 74
+#: rc.cpp:562
+#, no-c-format
+msgid "Window of X"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 79
+#: rc.cpp:565
+#, no-c-format
+msgid "Moving average"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 98
+#: rc.cpp:575
+#, no-c-format
+msgid "(takes effect after restart)"
+msgstr "(вступает в силу при следующем запуске)"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 125
+#: rc.cpp:578
+#, no-c-format
+msgid "Disa&ble diskspace preallocation"
+msgstr "Отключить резервирование пространства"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 141
+#: rc.cpp:581
+#, no-c-format
+msgid "F&ully preallocate diskspace (avoids fragmentation)"
+msgstr "Полностью резервировать пространство (для избежания фрагментирования)"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 147
+#: rc.cpp:584
+#, no-c-format
+msgid "Basic (slow)"
+msgstr "Стандартное (медленно)"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 152
+#: rc.cpp:587
+#, no-c-format
+msgid "Filesystem specific"
+msgstr "Конкретный для каждой файловой системы"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 174
+#: rc.cpp:590
+#, no-c-format
+msgid "Performance"
+msgstr "Производительность"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 193
+#: rc.cpp:593
+#, no-c-format
+msgid "Memory usage:"
+msgstr "Использование памяти:"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 199
+#: rc.cpp:596
+#, no-c-format
+msgid "Low"
+msgstr "Низкое"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 204
+#: rc.cpp:599
+#, no-c-format
+msgid "Medium"
+msgstr "Среднее"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 209
+#: rc.cpp:602
+#, no-c-format
+msgid "High"
+msgstr "Высокое"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 248
+#: rc.cpp:605
+#, no-c-format
+msgid "GUI update interval:"
+msgstr "Интервал обновления графиков:"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 254
+#: rc.cpp:608
+#, no-c-format
+msgid "500ms"
+msgstr "500 мс"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 259
+#: rc.cpp:611
+#, no-c-format
+msgid "1s"
+msgstr "1 с"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 264
+#: rc.cpp:614
+#, no-c-format
+msgid "2s"
+msgstr "2 с"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 269
+#: rc.cpp:617
+#, no-c-format
+msgid "5s"
+msgstr "5 с"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 308
+#: rc.cpp:620
+#, no-c-format
+msgid "Fast CPU"
+msgstr "Быстрый процессор"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 342
+#: rc.cpp:624
+#, no-c-format
+msgid "Slow CPU"
+msgstr "Медленный процессор"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 354
+#: rc.cpp:627
+#, no-c-format
+msgid "Data Checking"
+msgstr "Проверка данных"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 373
+#: rc.cpp:630
+#, no-c-format
+msgid "During uploading, do &not recheck chunks bigger than"
+msgstr "Во время раздачи не проверять части больше чем"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 430
+#: rc.cpp:636
+#, no-c-format
+msgid "Do a data integrit&y check after"
+msgstr "Выполнять проверку данных после"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 449
+#: rc.cpp:639
+#, no-c-format
+msgid "corrupted chunks"
+msgstr "повреждённых частей"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 478
+#: rc.cpp:642
+#, no-c-format
+msgid "Networking"
+msgstr "Сеть"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 505
+#: rc.cpp:645
+#, fuzzy, no-c-format
+msgid "Maximum number of connection setups:"
+msgstr ""
+"Максимальное количество соединений на один торрент (0 - без ограничений)"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 527
+#: rc.cpp:648
+#, no-c-format
+msgid "DSCP for IP packets:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 570
+#: rc.cpp:651
+#, no-c-format
+msgid "Do not use the KDE pro&xy settings for HTTP tracker connections"
+msgstr ""
+"Не использовать параметры прокси-сервера KDE для HTTP-соединений с трекером"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 586
+#: rc.cpp:654
+#, no-c-format
+msgid "HTTP tracker proxy:"
+msgstr "Прокси для HTTP трекера:"
+
+#. i18n: file ./apps/ktorrent/scandlgbase.ui line 24
+#: rc.cpp:657
+#, no-c-format
+msgid "Scanning data"
+msgstr "Сканирование данных"
+
+#. i18n: file ./apps/ktorrent/scandlgbase.ui line 38
+#: rc.cpp:660
+#, no-c-format
+msgid "Scanning data of torrent :"
+msgstr "Сканирование данных торрента:"
+
+#. i18n: file ./apps/ktorrent/scandlgbase.ui line 62
+#: rc.cpp:663
+#, no-c-format
+msgid "Number of chunks found :"
+msgstr "Количество найденных частей:"
+
+#. i18n: file ./apps/ktorrent/scandlgbase.ui line 70
+#: rc.cpp:666
+#, no-c-format
+msgid "Number of chunks failed / not downloaded :"
+msgstr "Количество испорченных/незагруженных частей:"
+
+#. i18n: file ./apps/ktorrent/scandlgbase.ui line 97
+#: rc.cpp:669 rc.cpp:672
+#, no-c-format
+msgid "0"
+msgstr "0"
+
+#. i18n: file ./apps/ktupnptest/mainwidget.ui line 54
+#: rc.cpp:678
+#, no-c-format
+msgid "Test"
+msgstr "Проверка"
+
+#. i18n: file ./libktorrent/labelviewitembase.ui line 49
+#: rc.cpp:685
+#, no-c-format
+msgid "textLabel2"
+msgstr ""
+
+#. i18n: file ./libktorrent/labelviewitembase.ui line 65
+#: rc.cpp:688
+#, no-c-format
+msgid "textLabel3"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 10
+#: rc.cpp:691
+#, no-c-format
+msgid "Maximum number of downloads (0 = no limit)"
+msgstr "Максимальное количество загрузок (0 - без ограничений)"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 15
+#: rc.cpp:694
+#, no-c-format
+msgid "Maximum number of seeds (0 = no limit)"
+msgstr "Максимальное количество полных источников (0 - без ограничений)"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 20
+#: rc.cpp:697
+#, no-c-format
+msgid "Start downloads on low disk space?"
+msgstr "Начинать загрузку при нехватке пространства на диске?"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 24
+#: rc.cpp:700
+#, no-c-format
+msgid "Maximum number of connections per torrent (0 = no limit)"
+msgstr ""
+"Максимальное количество соединений на один торрент (0 - без ограничений)"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 29
+#: rc.cpp:703
+#, no-c-format
+msgid "Maximum number of connections for all torrents (0 = no limit) "
+msgstr "Максимальное общее количество соединений (0 - без ограничений)"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 34
+#: rc.cpp:706
+#, no-c-format
+msgid "Maximum upload speed in KB/sec (0 = no limit)"
+msgstr "Максимальная скорость отдачи, КБ/с (0 - без ограничений)"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 39
+#: rc.cpp:709
+#, no-c-format
+msgid "Maximum download speed in KB/sec (0 = no limit)"
+msgstr "Максимальная скорость приёма, КБ/с (0 - без ограничений)"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 44
+#: rc.cpp:712
+#, fuzzy, no-c-format
+msgid "Maximum share ratio(0 = no limit)"
+msgstr "Максимальное количество полных источников (0 - без ограничений)"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 49
+#: rc.cpp:715
+#, fuzzy, no-c-format
+msgid "Maximum seed time in hours (0 = no limit)"
+msgstr "Максимальное количество полных источников (0 - без ограничений)"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 66
+#: rc.cpp:724
+#, no-c-format
+msgid "Show a system tray icon"
+msgstr "Значок в системном лотке"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 70
+#: rc.cpp:727
+#, no-c-format
+msgid "Show speed bar in tray icon"
+msgstr "Показывать индикатор скорости в системном лотке"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 74
+#: rc.cpp:730
+#, no-c-format
+msgid "Download bandwidth (in kb/s):"
+msgstr "Пропускная способность канала (загрузка) в КБ/с"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 80
+#: rc.cpp:733
+#, no-c-format
+msgid "Upload bandwidth (in kb/s):"
+msgstr "Пропускная способность канала (отдача) в КБ/с"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 86
+#: rc.cpp:736
+#, no-c-format
+msgid "Show popup messages when torrent is finished."
+msgstr "Показывать всплывающие сообщения когда загрузка торрента завершена."
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 90
+#: rc.cpp:739
+#, no-c-format
+msgid "Keep seeding after download has finished"
+msgstr "Продолжать передачу после получения всех частей"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 94
+#: rc.cpp:742
+#, no-c-format
+msgid "Folder to store temporary files"
+msgstr "Каталог для временных файлов"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 98
+#: rc.cpp:745
+#, no-c-format
+msgid "Whether to automatically save downloads to saveDir"
+msgstr "Сохранять ли автоматически загрузки в указанный каталог"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 102
+#: rc.cpp:748
+#, no-c-format
+msgid "Folder to store downloaded files"
+msgstr "Каталог для загруженных файлов"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 106
+#: rc.cpp:751
+#, no-c-format
+msgid "Whether to automatically move completed downloads to completedDir"
+msgstr "Автоматически перемещать завершённые в соответствующий каталог."
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 110
+#: rc.cpp:754
+#, no-c-format
+msgid "Folder to move completed downloaded files to"
+msgstr "Каталог для перемещения загруженных файлов"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 114
+#: rc.cpp:757
+#, no-c-format
+msgid "Whether to automatically copy .torrent files to torrentCopyDir"
+msgstr "Автоматически копировать файлы .torrent в специальный каталог."
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 118
+#: rc.cpp:760
+#, no-c-format
+msgid "Folder to copy .torrent files to"
+msgstr "Каталог для копирования файлов .torrent"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 122
+#: rc.cpp:763
+#, no-c-format
+msgid "Whether to use a custom IP to pass to the tracker"
+msgstr "Использовать указанный IP для доступа к трекеру?"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 126
+#: rc.cpp:766
+#, no-c-format
+msgid "Directory which was used as the last save directory"
+msgstr "Каталог, использованный последним для сохранения"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 130
+#: rc.cpp:769
+#, no-c-format
+msgid "IP to pass to the tracker"
+msgstr "IP, передаваемый трекеру"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 134
+#: rc.cpp:772
+#, no-c-format
+msgid "Memory usage"
+msgstr "Использование памяти"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 138
+#: rc.cpp:775
+#, no-c-format
+msgid "GUI update interval"
+msgstr "Частота обновления графика"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 142
+#: rc.cpp:778
+#, no-c-format
+msgid "Support for DHT"
+msgstr "Поддержка DHT"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 146
+#: rc.cpp:781
+#, no-c-format
+msgid "DHT port"
+msgstr "Порт DHT"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 152
+#: rc.cpp:784
+#, no-c-format
+msgid "Number of upload slots"
+msgstr "Число слотов для отдачи"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 196
+#: rc.cpp:793
+#, no-c-format
+msgid "Columns shown in KTorrentView"
+msgstr "Столбцы в KTorrentView"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 205
+#: rc.cpp:796
+#, no-c-format
+msgid "ET algorithm"
+msgstr "Метод вычисления оставшегося времени"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 227
+#: rc.cpp:799
+#, no-c-format
+msgid ""
+"When there's no space left to complete download and free diskspace is less than "
+"minDiskSpace, torrent will be stopped."
+msgstr ""
+"Когда нет места на диске или места меньше минимума, торрент будет остановлен."
+
+#. i18n: file ./libktorrent/pluginmanagerwidget.ui line 16
+#: rc.cpp:802
+#, no-c-format
+msgid "Plugin Manager"
+msgstr "Управление модулями"
+
+#. i18n: file ./libktorrent/pluginmanagerwidget.ui line 48
+#: rc.cpp:805
+#, no-c-format
+msgid "Load"
+msgstr "Включить"
+
+#. i18n: file ./libktorrent/pluginmanagerwidget.ui line 56
+#: rc.cpp:808
+#, fuzzy, no-c-format
+msgid "U&nload"
+msgstr "&Отключить"
+
+#. i18n: file ./libktorrent/pluginmanagerwidget.ui line 64
+#: rc.cpp:811
+#, fuzzy, no-c-format
+msgid "Load &All"
+msgstr "Включить все"
+
+#. i18n: file ./libktorrent/pluginmanagerwidget.ui line 72
+#: rc.cpp:814
+#, fuzzy, no-c-format
+msgid "&Unload All"
+msgstr "Отключить все"
+
+#. i18n: file ./plugins/upnp/ktupnpplugin.kcfg line 10
+#: rc.cpp:817
+#, no-c-format
+msgid "Default UPnP device to use"
+msgstr "Устройство UPnP по умолчанию"
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 16
+#: plugins/upnp/upnpplugin.cpp:46 plugins/upnp/upnpprefpage.cpp:31 rc.cpp:820
+#, no-c-format
+msgid "UPnP"
+msgstr "UPnP"
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 35
+#: rc.cpp:823
+#, no-c-format
+msgid "Detected devices:"
+msgstr "Обнаруженные устройства:"
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 41
+#: rc.cpp:826
+#, no-c-format
+msgid "Device"
+msgstr "Устройство"
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 52
+#: rc.cpp:829
+#, no-c-format
+msgid "Ports Forwarded"
+msgstr "Перенаправленные порты"
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 63
+#: rc.cpp:832
+#, no-c-format
+msgid "WAN Connection"
+msgstr "WAN соединение"
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 91
+#: rc.cpp:835
+#, no-c-format
+msgid "Forw&ard Ports"
+msgstr "Перенаправить порты"
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 99
+#: rc.cpp:838
+#, no-c-format
+msgid "Undo Port Forwarding"
+msgstr "Отменить перенаправление порта"
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 124
+#: rc.cpp:841
+#, no-c-format
+msgid "Rescan"
+msgstr "Пересканировать"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 9
+#: rc.cpp:844
+#, no-c-format
+msgid "Enable scanning of folder1?"
+msgstr "Сканировать folder1?"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 14
+#: rc.cpp:847
+#, no-c-format
+msgid "Enable scanning of folder2?"
+msgstr "Сканировать folder2?"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 19
+#: rc.cpp:850
+#, no-c-format
+msgid "Enable scanning of folder3?"
+msgstr "Сканировать folder3?"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 24
+#: rc.cpp:853
+#, no-c-format
+msgid "Folder1 path"
+msgstr "Путь Folder1"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 29
+#: rc.cpp:856
+#, no-c-format
+msgid "Folder2 path"
+msgstr "Путь Folder2"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 34
+#: rc.cpp:859
+#, no-c-format
+msgid "Folder3 path"
+msgstr "Путь Folder3"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 39
+#: rc.cpp:862
+#, fuzzy, no-c-format
+msgid "Whether to open torrent silently or not."
+msgstr "Предлагать ли выборочную загрузку открываемых торрентов"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 44
+#: rc.cpp:865
+#, no-c-format
+msgid "Delete action checked."
+msgstr "Выбрано удаление"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 49
+#: rc.cpp:868
+#, no-c-format
+msgid "Move action checked."
+msgstr "Предлагать перемещение по умолчанию"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 16
+#: rc.cpp:871
+#, no-c-format
+msgid "ScanFolder Preferences"
+msgstr "Параметры сканирования папок"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 35
+#: rc.cpp:874
+#, no-c-format
+msgid "Scan folder &1"
+msgstr "Сканировать папку &1"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 38
+#: rc.cpp:877 rc.cpp:1480
+#, no-c-format
+msgid "Alt+1"
+msgstr "Alt+1"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 46
+#: rc.cpp:880
+#, no-c-format
+msgid "Scan folder &2"
+msgstr "Сканировать папку &2"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 49
+#: rc.cpp:883 rc.cpp:1471 rc.cpp:1495
+#, no-c-format
+msgid "Alt+2"
+msgstr "Alt+2"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 57
+#: rc.cpp:886
+#, no-c-format
+msgid "Scan folder &3"
+msgstr "Сканировать папку &3"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 60
+#: rc.cpp:889 rc.cpp:1465
+#, no-c-format
+msgid "Alt+3"
+msgstr "Alt+3"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 81
+#: rc.cpp:895
+#, no-c-format
+msgid "Move to \"loaded\" directory &after loading"
+msgstr "Переместить в папку \"загруженные\" после загрузки"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 84
+#: rc.cpp:898
+#, no-c-format
+msgid "Move torrent to \"loaded\" directory after loading it"
+msgstr "Переместить торрент в папку \"загруженные\" после его загрузки."
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 92
+#: rc.cpp:901
+#, no-c-format
+msgid "Open torrents silentl&y"
+msgstr "&Не предлагать выборочную загрузку открываемых торрентов"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 95
+#: rc.cpp:904
+#, fuzzy, no-c-format
+msgid "Do not show 'Select files to download' dialog"
+msgstr "Не показывать диалог выбора файлов в торренте для загрузки"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 103
+#: rc.cpp:907
+#, no-c-format
+msgid "Delete after loadin&g"
+msgstr "Удалить после загрузки"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 106
+#: rc.cpp:910
+#, no-c-format
+msgid "Deletes torrent after loading"
+msgstr "Удалить торрент-файлы после загрузки"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 116
+#: rc.cpp:913
+#, no-c-format
+msgid "Folders to scan"
+msgstr "Сканируемые папки"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 151
+#: rc.cpp:916
+#, no-c-format
+msgid "Folder 1:"
+msgstr "Папка 1:"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 162
+#: rc.cpp:919
+#, no-c-format
+msgid "Folder 2:"
+msgstr "Папка 2:"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 173
+#: rc.cpp:922
+#, no-c-format
+msgid "Folder 3:"
+msgstr "Папка 3:"
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 30
+#: rc.cpp:925 rc.cpp:1895
+#, no-c-format
+msgid "Search Preferences"
+msgstr "Параметры поиска"
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 41
+#: rc.cpp:928
+#, no-c-format
+msgid "Web Server"
+msgstr "Веб-сервер"
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 82
+#: rc.cpp:934
+#, fuzzy, no-c-format
+msgid "Forward port"
+msgstr "Перенаправление портов"
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 107
+#: rc.cpp:937
+#, no-c-format
+msgid "Session TTL (in sec):"
+msgstr "TTL на сеанс (в секундах):"
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 142
+#: rc.cpp:940
+#, no-c-format
+msgid "Select interface:"
+msgstr "Выберите интерфейс:"
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 173
+#: rc.cpp:943
+#, no-c-format
+msgid "Username:"
+msgstr "Имя пользователя:"
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 188
+#: rc.cpp:946
+#, no-c-format
+msgid "Change password ..."
+msgstr "Изменить пароль ..."
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 206
+#: rc.cpp:949
+#, no-c-format
+msgid "Php executable path:"
+msgstr "Путь к PHP:"
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 10
+#: rc.cpp:953
+#, no-c-format
+msgid "Port number"
+msgstr "Номер порта:"
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 15
+#: rc.cpp:956
+#, fuzzy, no-c-format
+msgid "forward Port"
+msgstr "Перенаправление портов"
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 20
+#: rc.cpp:959
+#, no-c-format
+msgid "Session time to live"
+msgstr "Время жизни сеанса"
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 24
+#: rc.cpp:962
+#, fuzzy, no-c-format
+msgid "interface skin"
+msgstr "Общие параметры"
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 28
+#: rc.cpp:965
+#, no-c-format
+msgid "php executable path"
+msgstr "путь к PHP"
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 33
+#: rc.cpp:968
+#, no-c-format
+msgid "username"
+msgstr "имя пользователя"
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 37
+#: rc.cpp:971
+#, no-c-format
+msgid "password"
+msgstr "пароль"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 16
+#: plugins/infowidget/infowidgetplugin.cpp:194 rc.cpp:974 rc.cpp:1046
+#, no-c-format
+msgid "Chunks"
+msgstr "Части"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 43
+#: rc.cpp:977
+#, no-c-format
+msgid "Total:"
+msgstr "Общее:"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 81
+#: rc.cpp:981
+#, no-c-format
+msgid "Currently downloading:"
+msgstr "Загружается:"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 119
+#: rc.cpp:985
+#, no-c-format
+msgid "Downloaded:"
+msgstr "Загружено:"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 157
+#: rc.cpp:989
+#, no-c-format
+msgid "Excluded:"
+msgstr "Исключено:"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 195
+#: rc.cpp:993
+#, no-c-format
+msgid "Left:"
+msgstr "Осталось:"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 233
+#: rc.cpp:997
+#, no-c-format
+msgid "Size:"
+msgstr "Размер:"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 280
+#: rc.cpp:1001
+#, no-c-format
+msgid "Chunk"
+msgstr "Часть"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 291
+#: rc.cpp:1004
+#, no-c-format
+msgid "Progress"
+msgstr "Выполнение"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 302
+#: rc.cpp:1007
+#, no-c-format
+msgid "Peer"
+msgstr "Клиент"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 324
+#: rc.cpp:1013
+#, no-c-format
+msgid "Assigned Peers"
+msgstr "Подключенные клиенты"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 63
+#: rc.cpp:1022
+#, no-c-format
+msgid "Seeders:"
+msgstr "Полные источники:"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 71
+#: rc.cpp:1025
+#, no-c-format
+msgid "Leechers:"
+msgstr "Загружающие:"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 129
+#: rc.cpp:1030
+#, no-c-format
+msgid "Average Down Speed:"
+msgstr "Средняя скорость загрузки:"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 177
+#: rc.cpp:1035
+#, no-c-format
+msgid "Average Up Speed:"
+msgstr "Средняя скорость отдачи:"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 195
+#: rc.cpp:1038 rc.cpp:1111
+#, no-c-format
+msgid "Next update in:"
+msgstr "Следующее обновление:"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 203
+#: rc.cpp:1041
+#, fuzzy, no-c-format
+msgid "Tracker Status:"
+msgstr "Взаимодействие с трекером"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 332
+#: rc.cpp:1049
+#, no-c-format
+msgid "Parts of the torrent which have been downloaded:"
+msgstr "Полученные части:"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 367
+#: rc.cpp:1052
+#, no-c-format
+msgid "Parts of the torrent which are available:"
+msgstr "Доступные части:"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 457
+#: rc.cpp:1055
+#, no-c-format
+msgid "Sharing"
+msgstr "Передача"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 487
+#: rc.cpp:1058
+#, no-c-format
+msgid ""
+"Your upload will stop when share ratio gets to this value. Zero means no limit."
+msgstr ""
+"Отдача торрента будет остановлена по достижении указанного коэффициента "
+"передачи. 0 = не останавливать передачу."
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 525
+#: rc.cpp:1064
+#, no-c-format
+msgid "Your upload will stop when you have uploaded for this many hours."
+msgstr ""
+"Отдача будет остановлена после того как вы раздавали файлы достаточно долго."
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 533
+#: rc.cpp:1067
+#, no-c-format
+msgid "Hours"
+msgstr "ч"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 543
+#: rc.cpp:1070
+#, fuzzy, no-c-format
+msgid "Ratio limit:"
+msgstr "Общее ограничение на число соединений"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 549
+#: rc.cpp:1074
+#, no-c-format
+msgid "Limit works only in seed mode"
+msgstr "Ограничение действует только в режиме сидирования"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 557
+#: rc.cpp:1077
+#, no-c-format
+msgid "Time &limit:"
+msgstr "Ограничение по времени:"
+
+#. i18n: file ./plugins/infowidget/trackerviewbase.ui line 37
+#: rc.cpp:1081
+#, no-c-format
+msgid "&Update Tracker"
+msgstr "Связаться с трекером"
+
+#. i18n: file ./plugins/infowidget/trackerviewbase.ui line 40
+#: rc.cpp:1084
+#, no-c-format
+msgid "Minimum update interval - 60 seconds"
+msgstr "Минимальный интервал обновления - 60 секунд"
+
+#. i18n: file ./plugins/infowidget/trackerviewbase.ui line 48
+#: rc.cpp:1087
+#, no-c-format
+msgid "Add Trac&ker"
+msgstr "Добавить трекер"
+
+#. i18n: file ./plugins/infowidget/trackerviewbase.ui line 64
+#: rc.cpp:1090
+#, no-c-format
+msgid "Remove Tracker"
+msgstr "Удалить трекер"
+
+#. i18n: file ./plugins/infowidget/trackerviewbase.ui line 75
+#: rc.cpp:1094
+#, no-c-format
+msgid "Ch&ange Tracker"
+msgstr "Изменить URL трекера"
+
+#. i18n: file ./plugins/infowidget/trackerviewbase.ui line 100
+#: rc.cpp:1097
+#, no-c-format
+msgid "Restore Defaults"
+msgstr "Сбросить"
+
+#. i18n: file ./plugins/infowidget/ktinfowidgetplugin.kcfg line 10
+#: rc.cpp:1115
+#, no-c-format
+msgid "Show peer view tab in main window"
+msgstr "Показать панель просмотра участников в главном окне"
+
+#. i18n: file ./plugins/infowidget/ktinfowidgetplugin.kcfg line 14
+#: rc.cpp:1118
+#, no-c-format
+msgid "Show chunk download view tab in main window"
+msgstr "Показать панель загрузки частей в главном окне"
+
+#. i18n: file ./plugins/infowidget/ktinfowidgetplugin.kcfg line 18
+#: rc.cpp:1121
+#, no-c-format
+msgid "Show trackers view tab in main window"
+msgstr "Показать панель трекеров в главном окне"
+
+#. i18n: file ./plugins/infowidget/iwpref.ui line 24
+#: rc.cpp:1124
+#, no-c-format
+msgid "Show list of peers"
+msgstr "Показать список участников"
+
+#. i18n: file ./plugins/infowidget/iwpref.ui line 35
+#: rc.cpp:1128
+#, no-c-format
+msgid "Show list of chunks currentl&y downloading"
+msgstr "Показать загружа&емые части"
+
+#. i18n: file ./plugins/infowidget/iwpref.ui line 60
+#: rc.cpp:1131
+#, no-c-format
+msgid "Show list of trackers"
+msgstr "Показать список трекеров"
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 16
+#: rc.cpp:1135
+#, no-c-format
+msgid "IPBlocking Preferences"
+msgstr "Параметры блокирования по IP"
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 47
+#: rc.cpp:1138
+#, no-c-format
+msgid "Select PeerGuardian Filter File "
+msgstr "Выберите файл PeerGuardian"
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 58
+#: rc.cpp:1141
+#, no-c-format
+msgid "Use PeerGuardian filter?"
+msgstr "Использовать фильтр PeerGuardian?"
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 77
+#: rc.cpp:1145
+#, no-c-format
+msgid "IP filter file:"
+msgstr "Файл фильтров IP:"
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 85
+#: rc.cpp:1148
+#, no-c-format
+msgid "http://www.bluetack.co.uk/modules.php?name=Downloads&d_op=getit&lid=8"
+msgstr "http://www.bluetack.co.uk/modules.php?name=Downloads&d_op=getit&lid=8"
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 123
+#: rc.cpp:1151
+#, no-c-format
+msgid "Dow&nload/Convert"
+msgstr "За&грузить/Преобразовать"
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 134
+#: rc.cpp:1154
+#, no-c-format
+msgid ""
+"Download PeerGuardian filter from bluetack.co.uk or blocklist.org.\n"
+"NOTE: ZIP file from bluetack.co.uk is supported."
+msgstr ""
+"Загрузите файл PeerGuardian c bluetack.co.uk или с blocklist.org.\n"
+"ЗАМЕТКА: поддерживается ZIP-файл с bluetack.co.uk"
+
+#. i18n: file ./plugins/ipfilter/ktipfilterplugin.kcfg line 10
+#: rc.cpp:1159
+#, no-c-format
+msgid "Level1 filter url"
+msgstr "URL фильтра первого уровня"
+
+#. i18n: file ./plugins/ipfilter/ktipfilterplugin.kcfg line 14
+#: rc.cpp:1162
+#, no-c-format
+msgid "Use level1 filter?"
+msgstr "Использовать фильтр первого уровня?"
+
+#. i18n: file ./plugins/ipfilter/convert_dlg.ui line 24
+#: plugins/ipfilter/convertdialog.cpp:155 rc.cpp:1165
+#, no-c-format
+msgid "Converting..."
+msgstr "Преобразование..."
+
+#. i18n: file ./plugins/ipfilter/convert_dlg.ui line 41
+#: rc.cpp:1168
+#, fuzzy, no-c-format
+msgid ""
+"Click on the 'convert' button to start converting antip2p file. NOTE: This "
+"process could take a while even on fast machines and during that time you will "
+"not be able to use KTorrent."
+msgstr ""
+"Нажмите на кнопку \"Преобразовать\", чтобы начать преобразование antip2p файл. "
+"ЗАМЕТКА: Процесс может занять некоторое время даже на быстрых компьютерах и в "
+"это время вы не сможете пользоваться KTorrent."
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 27
+#: rc.cpp:1179
+#, no-c-format
+msgid "Update"
+msgstr "Обновить"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 46
+#: rc.cpp:1182 rc.cpp:1268
+#, no-c-format
+msgid "Update charts every"
+msgstr "Обновлять таблицы каждые"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 71
+#: rc.cpp:1185
+#, no-c-format
+msgid "GUI updates"
+msgstr "Частота обновления интерфейса"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 92
+#: rc.cpp:1188 rc.cpp:1271
+#, no-c-format
+msgid "Gather data every"
+msgstr "Собирать данные каждые"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 120
+#: rc.cpp:1191
+#, no-c-format
+msgid "miliseconds"
+msgstr "мс"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 135
+#: rc.cpp:1194
+#, no-c-format
+msgid "Maximum"
+msgstr "Максимум"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 154
+#: rc.cpp:1197
+#, no-c-format
+msgid "Maximum speed scale mode:"
+msgstr "Максимум шкалы скорости:"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 165
+#: rc.cpp:1203
+#, no-c-format
+msgid "Exact"
+msgstr "Точно"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 175
+#: rc.cpp:1206
+#, no-c-format
+msgid "See 'What's this' for more help"
+msgstr "См. \"Что это?\""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 180
+#: rc.cpp:1209
+#, no-c-format
+msgid ""
+"Set maximum value on OY scale as:\n"
+"- Top: Globally achieved maximum speed\n"
+"- Exact: Maximum achieved speed visible on chart"
+msgstr ""
+"Установить максимальное значение шкалы OY в:\n"
+"- Пик: Максимально достигнутая скорость за всё время\n"
+"- Точно: Максимально достигнутая скорость за интервал отражаемый на графике"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 192
+#: rc.cpp:1214 rc.cpp:1247
+#, no-c-format
+msgid "Peers speed"
+msgstr "Скорость у участников"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 211
+#: rc.cpp:1217
+#, no-c-format
+msgid "Peers speed:"
+msgstr "Скорость у участников:"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 222
+#: rc.cpp:1220
+#, no-c-format
+msgid "update every"
+msgstr "обновлять каждые"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 244
+#: rc.cpp:1223
+#, no-c-format
+msgid "chart data updates"
+msgstr "обновления графиков"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 254
+#: rc.cpp:1226
+#, no-c-format
+msgid "Gathering data about many connected peers can be CPU consuming."
+msgstr ""
+"Сбор информации про участников при большом их количестве может сказаться на "
+"производительности."
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 267
+#: rc.cpp:1229
+#, no-c-format
+msgid "Peers connections"
+msgstr "Соединения с участниками:"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 270
+#: rc.cpp:1232
+#, fuzzy, no-c-format
+msgid "Large values can obscure charts of connected peers"
+msgstr "Большие значения могут заслонять колонки с соединенными клиентами"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 289
+#: rc.cpp:1235
+#, fuzzy, no-c-format
+msgid "Show seeders in swarms"
+msgstr "Показывать сидов в списке"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 297
+#: rc.cpp:1238
+#, fuzzy, no-c-format
+msgid "Show leechers in swarms"
+msgstr "Показывать скачивающих в списке"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 309
+#: rc.cpp:1241
+#, no-c-format
+msgid "Measurements count"
+msgstr "Числовые значения"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 392
+#: rc.cpp:1250 rc.cpp:1265
+#, no-c-format
+msgid "Upload"
+msgstr "Отдача"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 424
+#: rc.cpp:1253
+#, no-c-format
+msgid "Connections"
+msgstr "Соединения"
+
+#. i18n: file ./plugins/stats/statsspdwgt.ui line 40
+#: plugins/infowidget/infowidgetplugin.cpp:173 rc.cpp:1262 rc.cpp:1304
+#, no-c-format
+msgid "Peers"
+msgstr "Участники"
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 18
+#: rc.cpp:1274
+#, fuzzy, no-c-format
+msgid "Toggle peers speed charts"
+msgstr "Переключение таблиц скоростей клиентов"
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 22
+#: rc.cpp:1277
+#, no-c-format
+msgid "Interval between getting data about peers speed"
+msgstr "Интервал между получением данных о скорости у участников"
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 26
+#: rc.cpp:1280
+#, fuzzy, no-c-format
+msgid "Toggle drawing of leechers in swarms"
+msgstr "Переключение прорисовки скачивающих в списке"
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 30
+#: rc.cpp:1283
+#, fuzzy, no-c-format
+msgid "Toggle drawing of seeders in swarms"
+msgstr "Переключение прорисовки сидов в списке"
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 35
+#: rc.cpp:1286
+#, fuzzy, no-c-format
+msgid "Download mesurments count"
+msgstr "Расчет значения загрузки"
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 39
+#: rc.cpp:1289
+#, fuzzy, no-c-format
+msgid "Peers speed mesurments count"
+msgstr "Расчет значения скорости клиентов"
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 43
+#: rc.cpp:1292
+#, fuzzy, no-c-format
+msgid "Upload mesurments count"
+msgstr "Расчет значения отдачи"
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 47
+#: rc.cpp:1295
+#, fuzzy, no-c-format
+msgid "Connections mesurments count"
+msgstr "Расчет значения соединений"
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 51
+#: rc.cpp:1298
+#, fuzzy, no-c-format
+msgid "DHT mesurments count"
+msgstr "Расчет значений DHT"
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 56
+#: rc.cpp:1301
+#, no-c-format
+msgid "OY axis max mode"
+msgstr "Максимум оси OY"
+
+#. i18n: file ./plugins/partfileimport/importdlgbase.ui line 16
+#: rc.cpp:1310
+#, no-c-format
+msgid "Import an existing download"
+msgstr "Импорт существующей загрузки"
+
+#. i18n: file ./plugins/partfileimport/importdlgbase.ui line 49
+#: rc.cpp:1313
+#, no-c-format
+msgid "Torrent:"
+msgstr "Торрент:"
+
+#. i18n: file ./plugins/partfileimport/importdlgbase.ui line 63
+#: rc.cpp:1316
+#, no-c-format
+msgid "Data:"
+msgstr "Данные:"
+
+#. i18n: file ./plugins/partfileimport/importdlgbase.ui line 95
+#: rc.cpp:1319
+#, no-c-format
+msgid ""
+"Please specify the torrent and the data already downloaded for that torrent."
+msgstr ""
+"Укажите торрент и файл или папку, в которую записывались загруженные данные для "
+"этого торрента."
+
+#. i18n: file ./plugins/partfileimport/importdlgbase.ui line 133
+#: rc.cpp:1322
+#, no-c-format
+msgid "&Import"
+msgstr "&Импортировать"
+
+#. i18n: file ./plugins/rssfeed/ktrssfeedplugin.kcfg line 10
+#: rc.cpp:1328
+#, no-c-format
+msgid "default"
+msgstr "по-умолчанию"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 18
+#: rc.cpp:1331
+#, no-c-format
+msgid "Rss Feeds"
+msgstr "Ленты RSS"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 36
+#: rc.cpp:1334
+#, no-c-format
+msgid "Feeds"
+msgstr "Ленты"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 78
+#: rc.cpp:1337
+#, no-c-format
+msgid "De&lete"
+msgstr "Удалить"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 86
+#: rc.cpp:1340 rc.cpp:1382 rc.cpp:1392
+#, fuzzy, no-c-format
+msgid "&New"
+msgstr "Добавить"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 117
+#: rc.cpp:1343
+#, fuzzy, no-c-format
+msgid "&URL"
+msgstr "URL"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 139
+#: rc.cpp:1346
+#, no-c-format
+msgid "Articles"
+msgstr "Статьи"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 216
+#: rc.cpp:1353
+#, no-c-format
+msgid "Auto&refresh"
+msgstr "Автообновление"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 242
+#: rc.cpp:1356
+#, no-c-format
+msgid "I&gnore TTL"
+msgstr "Игнорировать TTL"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 270
+#: rc.cpp:1359
+#, no-c-format
+msgid "Refresh"
+msgstr "Обновить"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 299
+#: rc.cpp:1363 rc.cpp:1395
+#, no-c-format
+msgid "&Title"
+msgstr "Заголовок"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 323
+#: rc.cpp:1366
+#, no-c-format
+msgid "Keep Articles (days)"
+msgstr "Хранить статьи (дни)"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 347
+#: rc.cpp:1369 rc.cpp:1398
+#, no-c-format
+msgid "&Active"
+msgstr "Активно"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 362
+#: rc.cpp:1372
+#, no-c-format
+msgid "Filters"
+msgstr "Фильтры"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 389
+#: rc.cpp:1375
+#, fuzzy, no-c-format
+msgid "Accept Filters"
+msgstr "Принимать фильтры"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 440
+#: rc.cpp:1385
+#, fuzzy, no-c-format
+msgid "Reject Filters"
+msgstr "Отклонять фильтры"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 557
+#: rc.cpp:1401
+#, no-c-format
+msgid "Regular Expressions"
+msgstr "Регулярные выражения"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 587
+#: rc.cpp:1404
+#, no-c-format
+msgid "Treat as &Series"
+msgstr "Рассматривать как серию"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 624
+#: rc.cpp:1407
+#, fuzzy, no-c-format
+msgid "Process"
+msgstr "Выполнение"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 643
+#: rc.cpp:1411
+#, no-c-format
+msgid "Series Criteria"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 679
+#: rc.cpp:1414
+#, no-c-format
+msgid "Match Without Episode"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 713
+#: rc.cpp:1418
+#, no-c-format
+msgid "Max Episode"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 739
+#: rc.cpp:1421
+#, fuzzy, no-c-format
+msgid "Max Season"
+msgstr "Коэффициент передачи:"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 758
+#: rc.cpp:1424
+#, no-c-format
+msgid "Min Season"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 782
+#: rc.cpp:1427
+#, no-c-format
+msgid "Min Episode"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 814
+#: rc.cpp:1430
+#, no-c-format
+msgid "Test te&xt"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 840
+#: rc.cpp:1433
+#, no-c-format
+msgid "Te&st"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 858
+#: rc.cpp:1436
+#, fuzzy, no-c-format
+msgid "Filter Matches"
+msgstr "Путь Folder1"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 28
+#: rc.cpp:1447
+#, no-c-format
+msgid "Bandwidth scheduler"
+msgstr "Планирование использования канала"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 50
+#: rc.cpp:1450
+#, no-c-format
+msgid "Left click category"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 61
+#: rc.cpp:1453
+#, no-c-format
+msgid "Categor&y 1"
+msgstr "Категор&ия 1"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 157
+#: rc.cpp:1456 rc.cpp:1483
+#, no-c-format
+msgid "T&urn off"
+msgstr "В&ыключить"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 165
+#: rc.cpp:1459 rc.cpp:1486
+#, no-c-format
+msgid "&Normal"
+msgstr "&Норма"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 195
+#: rc.cpp:1462
+#, no-c-format
+msgid "Category &3"
+msgstr "Категория &3"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 206
+#: rc.cpp:1468 rc.cpp:1492
+#, no-c-format
+msgid "Category &2"
+msgstr "Категория &2"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 219
+#: rc.cpp:1474
+#, no-c-format
+msgid "Right click category"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 230
+#: rc.cpp:1477
+#, no-c-format
+msgid "Category &1"
+msgstr "Категория &1"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 367
+#: rc.cpp:1489
+#, no-c-format
+msgid "&Category 3"
+msgstr "&Категория 3"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 390
+#: rc.cpp:1498
+#, no-c-format
+msgid "Categories"
+msgstr "Категории"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 401
+#: rc.cpp:1501
+#, no-c-format
+msgid "<b>1. Category</b>"
+msgstr "<b>1. Категория</b>"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 409
+#: rc.cpp:1504
+#, no-c-format
+msgid "<b>3. Category</b>"
+msgstr "<b>3. Категория</b>"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 425
+#: rc.cpp:1507 rc.cpp:1516 rc.cpp:1525
+#, no-c-format
+msgid "download:"
+msgstr "загрузка:"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 441
+#: rc.cpp:1510 rc.cpp:1519 rc.cpp:1528
+#, no-c-format
+msgid "upload:"
+msgstr "отдача:"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 457
+#: rc.cpp:1513 rc.cpp:1522 rc.cpp:1531
+#, no-c-format
+msgid "KB/s *"
+msgstr "КБ/с *"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 567
+#: rc.cpp:1534
+#, no-c-format
+msgid "<b>2. Category</b>"
+msgstr "<b>2. Категория</b>"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 626
+#: rc.cpp:1538
+#, no-c-format
+msgid "* zero means no limit"
+msgstr "* 0 - без ограничений"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 672
+#: rc.cpp:1541
+#, no-c-format
+msgid "Save to file"
+msgstr "Сохранить в файл"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 680
+#: rc.cpp:1544
+#, no-c-format
+msgid "&Load from file"
+msgstr "&Загрузить из файла"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 688
+#: rc.cpp:1547
+#, fuzzy, no-c-format
+msgid "Reset schedule"
+msgstr "Сбросить задание"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 751
+#: rc.cpp:1550
+#, no-c-format
+msgid "O&k"
+msgstr "O&k"
+
+#. i18n: file ./plugins/scheduler/schedulerpage.ui line 16
+#: rc.cpp:1559
+#, fuzzy, no-c-format
+msgid "Scheduler Plugin Pref Page"
+msgstr "Страница параметров модуля задач"
+
+#. i18n: file ./plugins/scheduler/schedulerpage.ui line 27
+#: rc.cpp:1562
+#, no-c-format
+msgid "Use &bandwidth scheduler?"
+msgstr "Включить &планирование использования канала"
+
+#. i18n: file ./plugins/scheduler/schedulerpage.ui line 35
+#: plugins/scheduler/schedulerplugin.cpp:59 rc.cpp:1565
+#, no-c-format
+msgid "Bandwidth Scheduler"
+msgstr "Планирование использования канала"
+
+#. i18n: file ./plugins/scheduler/schedulerpage.ui line 46
+#: rc.cpp:1568
+#, no-c-format
+msgid "Use colors instead of pi&xmaps?"
+msgstr "Использовать цвета вместо изображений?"
+
+#. i18n: file ./plugins/scheduler/schedulerpage.ui line 54
+#: rc.cpp:1571
+#, no-c-format
+msgid "(Recommended for slower systems)"
+msgstr "(рекомендуется для медленных компьютеров)"
+
+#. i18n: file ./plugins/scheduler/schedulerpage.ui line 62
+#: rc.cpp:1574
+#, fuzzy, no-c-format
+msgid "Edit s&chedule"
+msgstr "Изменить задание"
+
+#. i18n: file ./plugins/scheduler/ktschedulerplugin.kcfg line 10
+#: rc.cpp:1577
+#, no-c-format
+msgid "Enable bandwidth scheduler?"
+msgstr "Включить планирование использования канала?"
+
+#. i18n: file ./plugins/scheduler/ktschedulerplugin.kcfg line 14
+#: rc.cpp:1580
+#, no-c-format
+msgid "Use colors instead of pixmaps?"
+msgstr "Использовать цвета вместо изображений?"
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 10
+#: rc.cpp:1583
+#, no-c-format
+msgid "Use rich log text"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 15
+#: rc.cpp:1586
+#, no-c-format
+msgid "General info messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 19
+#: rc.cpp:1589
+#, no-c-format
+msgid "Connections messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 23
+#: rc.cpp:1592
+#, no-c-format
+msgid "DHT messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 27
+#: rc.cpp:1595
+#, no-c-format
+msgid "Tracker info messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 31
+#: rc.cpp:1598
+#, no-c-format
+msgid "Disk IO info messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 35
+#: rc.cpp:1601
+#, no-c-format
+msgid "IPFilter plugin messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 39
+#: rc.cpp:1604
+#, no-c-format
+msgid "Search plugin messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 43
+#: rc.cpp:1607
+#, no-c-format
+msgid "PartFileImport plugin messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 47
+#: rc.cpp:1610
+#, no-c-format
+msgid "InfoWidget plugin messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 51
+#: rc.cpp:1613
+#, no-c-format
+msgid "UPnP plugin messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 55
+#: rc.cpp:1616
+#, no-c-format
+msgid "ScanFolder plugin messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 59
+#: rc.cpp:1619
+#, no-c-format
+msgid "Scheduler plugin messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 63
+#: rc.cpp:1622
+#, no-c-format
+msgid "RSS plugin messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 67
+#: rc.cpp:1625
+#, fuzzy, no-c-format
+msgid "WebInterface plugin messages flag"
+msgstr "Общие параметры"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 16
+#: plugins/logviewer/logprefpage.cpp:31 rc.cpp:1628
+#, no-c-format
+msgid "LogViewer Options"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 44
+#: libktorrent/pluginmanagerprefpage.cpp:63 rc.cpp:1631
+#, no-c-format
+msgid "Plugins"
+msgstr "Модули"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 53
+#: rc.cpp:1634 rc.cpp:1652 rc.cpp:1670 rc.cpp:1691 rc.cpp:1706 rc.cpp:1724
+#: rc.cpp:1745 rc.cpp:1763 rc.cpp:1778 rc.cpp:1811 rc.cpp:1826 rc.cpp:1841
+#: rc.cpp:1859 rc.cpp:1874
+#, no-c-format
+msgid "All"
+msgstr "Все"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 58
+#: rc.cpp:1637 rc.cpp:1655 rc.cpp:1673 rc.cpp:1694 rc.cpp:1709 rc.cpp:1727
+#: rc.cpp:1748 rc.cpp:1766 rc.cpp:1781 rc.cpp:1814 rc.cpp:1829 rc.cpp:1844
+#: rc.cpp:1862 rc.cpp:1877
+#, no-c-format
+msgid "Debug"
+msgstr "Отладка"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 63
+#: rc.cpp:1640 rc.cpp:1658 rc.cpp:1676 rc.cpp:1697 rc.cpp:1712 rc.cpp:1730
+#: rc.cpp:1751 rc.cpp:1769 rc.cpp:1784 rc.cpp:1817 rc.cpp:1832 rc.cpp:1847
+#: rc.cpp:1865 rc.cpp:1880
+#, no-c-format
+msgid "Notice"
+msgstr "Уведомление"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 68
+#: rc.cpp:1643 rc.cpp:1661 rc.cpp:1679 rc.cpp:1700 rc.cpp:1715 rc.cpp:1733
+#: rc.cpp:1754 rc.cpp:1772 rc.cpp:1787 rc.cpp:1820 rc.cpp:1835 rc.cpp:1850
+#: rc.cpp:1868 rc.cpp:1883
+#, no-c-format
+msgid "Important"
+msgstr "Важное"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 73
+#: rc.cpp:1646 rc.cpp:1664 rc.cpp:1682 rc.cpp:1703 rc.cpp:1718 rc.cpp:1736
+#: rc.cpp:1757 rc.cpp:1775 rc.cpp:1790 rc.cpp:1823 rc.cpp:1838 rc.cpp:1853
+#: rc.cpp:1871 rc.cpp:1886
+#, no-c-format
+msgid "None"
+msgstr "Нет"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 85
+#: rc.cpp:1649
+#, no-c-format
+msgid "IPFilter:"
+msgstr "IP-фильтр:"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 126
+#: rc.cpp:1667
+#, no-c-format
+msgid "Search:"
+msgstr "Поиск:"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 167
+#: rc.cpp:1685
+#, no-c-format
+msgid "UPnP:"
+msgstr "UPnP:"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 178
+#: rc.cpp:1688
+#, no-c-format
+msgid "ScanFolder:"
+msgstr "Сканировать каталог:"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 249
+#: rc.cpp:1721
+#, no-c-format
+msgid "Scheduler:"
+msgstr "Планирование:"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 290
+#: rc.cpp:1739
+#, no-c-format
+msgid "PartFileImport:"
+msgstr "Загрузка неполных файлов:"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 301
+#: rc.cpp:1742
+#, no-c-format
+msgid "InfoWidget:"
+msgstr "InfoWidget:"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 342
+#: rc.cpp:1760
+#, no-c-format
+msgid "RSS plugin:"
+msgstr "Модуль RSS:"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 413
+#: rc.cpp:1793
+#, no-c-format
+msgid "WebInterface plugin:"
+msgstr "Модуль Веб-интерфейса"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 426
+#: rc.cpp:1796
+#, fuzzy, no-c-format
+msgid "System"
+msgstr "Система"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 437
+#: rc.cpp:1799
+#, no-c-format
+msgid "General:"
+msgstr "Общие:"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 445
+#: rc.cpp:1802
+#, no-c-format
+msgid "Connections:"
+msgstr "Соединения:"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 559
+#: rc.cpp:1856
+#, no-c-format
+msgid "Disk I/O:"
+msgstr "Работа с жёстким диском:"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 640
+#: rc.cpp:1892
+#, no-c-format
+msgid "Use rich te&xt for log"
+msgstr "Использовать rtf для протокола"
+
+#. i18n: file ./plugins/search/searchpref.ui line 41
+#: rc.cpp:1898
+#, no-c-format
+msgid "External Browser"
+msgstr "Внешний браузер"
+
+#. i18n: file ./plugins/search/searchpref.ui line 52
+#: rc.cpp:1901
+#, no-c-format
+msgid "Open searches in external browser"
+msgstr "Открывать поисковые запросы во внешнем браузере"
+
+#. i18n: file ./plugins/search/searchpref.ui line 60
+#: rc.cpp:1904 rc.cpp:1955
+#, no-c-format
+msgid "Use default browser"
+msgstr "Использовать стандартный браузер"
+
+#. i18n: file ./plugins/search/searchpref.ui line 79
+#: rc.cpp:1908
+#, no-c-format
+msgid "Custom browser path:"
+msgstr "Указать путь к браузеру:"
+
+#. i18n: file ./plugins/search/searchpref.ui line 116
+#: rc.cpp:1912
+#, no-c-format
+msgid "Search Engines"
+msgstr "Поисковики"
+
+#. i18n: file ./plugins/search/searchpref.ui line 143
+#: rc.cpp:1916
+#, no-c-format
+msgid "Search engine name:"
+msgstr "Имя поисковика:"
+
+#. i18n: file ./plugins/search/searchpref.ui line 187
+#: rc.cpp:1922
+#, no-c-format
+msgid "&Add"
+msgstr "&Добавить"
+
+#. i18n: file ./plugins/search/searchpref.ui line 195
+#: rc.cpp:1925
+#, no-c-format
+msgid "Engines"
+msgstr "Поисковики"
+
+#. i18n: file ./plugins/search/searchpref.ui line 206
+#: rc.cpp:1928
+#, no-c-format
+msgid "URL"
+msgstr "URL"
+
+#. i18n: file ./plugins/search/searchpref.ui line 257
+#: rc.cpp:1934
+#, no-c-format
+msgid "R&emove All"
+msgstr "Удалит&ь все"
+
+#. i18n: file ./plugins/search/searchpref.ui line 282
+#: rc.cpp:1937
+#, no-c-format
+msgid "Add Defau&lt"
+msgstr "&Добавить основной"
+
+#. i18n: file ./plugins/search/searchpref.ui line 290
+#: rc.cpp:1940
+#, no-c-format
+msgid "Update From Internet"
+msgstr "Обновить из Internet"
+
+#. i18n: file ./plugins/search/searchbar.ui line 53
+#: plugins/search/searchplugin.cpp:50 plugins/search/searchtab.cpp:48
+#: rc.cpp:1946
+#, no-c-format
+msgid "Search"
+msgstr "Поиск"
+
+#. i18n: file ./plugins/search/searchbar.ui line 78
+#: rc.cpp:1949
+#, no-c-format
+msgid "Search engine:"
+msgstr "Поисковик:"
+
+#. i18n: file ./plugins/search/ktsearchplugin.kcfg line 10
+#: rc.cpp:1952
+#, no-c-format
+msgid "Current search engine"
+msgstr "Текущий поисковик"
+
+#. i18n: file ./plugins/search/ktsearchplugin.kcfg line 19
+#: rc.cpp:1958
+#, no-c-format
+msgid "Use custom browser"
+msgstr "Использовать указанный браузер"
+
+#. i18n: file ./plugins/search/ktsearchplugin.kcfg line 23
+#: rc.cpp:1961
+#, no-c-format
+msgid "Custom browser executable path"
+msgstr "Путь к браузеру"
+
+#: libktorrent/interfaces/functions.cpp:35
+msgid "%1 GB"
+msgstr "%1 Гб"
+
+#: libktorrent/interfaces/functions.cpp:37
+msgid "%1 MB"
+msgstr "%1 Мб"
+
+#: libktorrent/interfaces/functions.cpp:39
+msgid "%1 KB"
+msgstr "%1 КБ"
+
+#: libktorrent/interfaces/functions.cpp:41
+msgid "%1 B"
+msgstr "%1 Б"
+
+#: libktorrent/interfaces/functions.cpp:47
+msgid "%1 KB/s"
+msgstr "%1 КБ/с"
+
+#: libktorrent/interfaces/functions.cpp:58
+#, c-format
+msgid ""
+"_n: 1 day \n"
+"%n days "
+msgstr ""
+"%n день\n"
+"%n дня\n"
+"%n дней"
+
+#: libktorrent/interfaces/filetreeitem.cpp:77
+#: plugins/infowidget/iwfiletreediritem.cpp:148
+#: plugins/infowidget/iwfiletreeitem.cpp:120
+msgid "Yes, First"
+msgstr "Да, первый"
+
+#: libktorrent/interfaces/filetreeitem.cpp:80
+#: plugins/infowidget/iwfiletreediritem.cpp:152
+#: plugins/infowidget/iwfiletreeitem.cpp:123
+msgid "Yes, Last"
+msgstr "Да, последний"
+
+#: libktorrent/util/log.cpp:103
+msgid "Cannot open log file %1 : %2"
+msgstr "Не удалось открыть протокол %1: %2"
+
+#: libktorrent/util/file.cpp:87
+msgid "Cannot write to %1 : %2"
+msgstr "Не удалось записать в %1: %2"
+
+#: libktorrent/util/file.cpp:101
+#, c-format
+msgid "Cannot read from %1"
+msgstr "Не удалось прочитать из %1"
+
+#: libktorrent/util/fileops.cpp:78
+msgid "Cannot create directory %1: %2"
+msgstr "Не удаётся создать каталог %1: %2"
+
+#: libktorrent/util/fileops.cpp:92
+msgid "Cannot symlink %1 to %2: %3"
+msgstr "Не удаётся создать символическую ссылку %2 для %1: %3"
+
+#: libktorrent/util/fileops.cpp:108
+msgid "Cannot move %1 to %2: %3"
+msgstr "Не удаётся переместить %1 в %2: %3"
+
+#: libktorrent/util/fileops.cpp:124 libktorrent/util/fileops.cpp:140
+msgid "Cannot copy %1 to %2: %3"
+msgstr "Не удаётся скопировать %1 в %2: %3"
+
+#: libktorrent/util/fileops.cpp:232
+msgid "Cannot delete %1: %2"
+msgstr "Не удаётся удалить %1: %2"
+
+#: libktorrent/util/fileops.cpp:251
+msgid "Cannot create %1: %2"
+msgstr "Не удаётся создать %1: %2"
+
+#: libktorrent/util/fileops.cpp:272
+msgid "Cannot calculate the filesize of %1: %2"
+msgstr "Не удалось определить размер файла %1: %2"
+
+#: libktorrent/util/fileops.cpp:289
+#, c-format
+msgid "Cannot calculate the filesize : %2"
+msgstr "Не удалось определить размер файла: %2"
+
+#: libktorrent/torrent/cachefile.cpp:95 libktorrent/util/fileops.cpp:317
+#: libktorrent/util/fileops.cpp:346 libktorrent/util/fileops.cpp:405
+#: plugins/partfileimport/importdialog.cpp:257
+msgid "Cannot open %1 : %2"
+msgstr "Не удалось открыть %1: %2"
+
+#: libktorrent/util/fileops.cpp:367 libktorrent/util/fileops.cpp:373
+#: libktorrent/util/fileops.cpp:376 libktorrent/util/fileops.cpp:391
+#, c-format
+msgid "Cannot expand file : %1"
+msgstr "Не удалось увеличить размер файла: %1"
+
+#: libktorrent/util/fileops.cpp:393
+msgid "Cannot expand file"
+msgstr "Не удалось увеличить размер файла"
+
+#: libktorrent/util/fileops.cpp:426
+#, c-format
+msgid "Cannot seek in file : %1"
+msgstr "Не удалось произвести перемещение по файлу: %1"
+
+#: libktorrent/util/mmapfile.cpp:166
+msgid "Cannot write beyond end of the mmap buffer!"
+msgstr "Не удалось записать за пределами буферной памяти."
+
+#: libktorrent/pluginmanagerprefpage.cpp:54
+msgid "%1<br>Status: <b>%2</b><br>Author: %3"
+msgstr "%1<br>Состояние: <b>%2</b><br>Автор: %3"
+
+#: libktorrent/pluginmanagerprefpage.cpp:55
+msgid "Loaded"
+msgstr "Загружено"
+
+#: libktorrent/pluginmanagerprefpage.cpp:55
+msgid "Not loaded"
+msgstr "Не загружено"
+
+#: libktorrent/pluginmanagerprefpage.cpp:63
+msgid "Plugin Options"
+msgstr "Параметры модулей"
+
+#: libktorrent/migrate/ccmigrate.cpp:119 libktorrent/migrate/ccmigrate.cpp:125
+#: libktorrent/torrent/multifilecache.cpp:595
+#: libktorrent/torrent/multifilecache.cpp:673
+msgid "Cannot open file %1 : %2"
+msgstr "Не удалось открыть файл %1: %2"
+
+#: libktorrent/migrate/migrate.cpp:45
+msgid "The directory %1 does not exist"
+msgstr "Папка %1 не существует"
+
+#: libktorrent/torrent/bdecoder.cpp:62
+#, c-format
+msgid "Illegal token: %1"
+msgstr "Недопустимая лексема: %1"
+
+#: libktorrent/torrent/bdecoder.cpp:83
+msgid "Decode error"
+msgstr "Ошибка декодирования"
+
+#: libktorrent/torrent/bdecoder.cpp:144 libktorrent/torrent/bdecoder.cpp:189
+msgid "Unexpected end of input"
+msgstr "Неожиданный конец ввода"
+
+#: libktorrent/torrent/bdecoder.cpp:164 libktorrent/torrent/bdecoder.cpp:198
+msgid "Cannot convert %1 to an int"
+msgstr "Не удалось преобразовать %1 в целое"
+
+#: libktorrent/torrent/bdecoder.cpp:203
+msgid "Torrent is incomplete!"
+msgstr "Торрент не полный!"
+
+#: libktorrent/torrent/torrent.cpp:63 libktorrent/torrent/torrent.cpp:116
+#: libktorrent/torrent/torrent.cpp:139 libktorrent/torrent/torrent.cpp:147
+#: libktorrent/torrent/torrent.cpp:154 libktorrent/torrent/torrent.cpp:158
+#: libktorrent/torrent/torrent.cpp:165 libktorrent/torrent/torrent.cpp:178
+#: libktorrent/torrent/torrent.cpp:182 libktorrent/torrent/torrent.cpp:195
+#: libktorrent/torrent/torrent.cpp:204 libktorrent/torrent/torrent.cpp:216
+#: libktorrent/torrent/torrent.cpp:223 libktorrent/torrent/torrent.cpp:229
+#: libktorrent/torrent/torrent.cpp:236 libktorrent/torrent/torrent.cpp:242
+#: libktorrent/torrent/torrent.cpp:258 libktorrent/torrent/torrent.cpp:304
+#: libktorrent/torrent/torrent.cpp:310 libktorrent/torrent/torrent.cpp:313
+#: libktorrent/torrent/torrent.cpp:316
+msgid "Corrupted torrent!"
+msgstr "Торрент повреждён"
+
+#: libktorrent/torrent/torrent.cpp:76
+msgid "Torrent has no announce or nodes field"
+msgstr "У торрента нет поля объявления или поля узлов"
+
+#: libktorrent/torrent/torrent.cpp:103
+msgid " Unable to open torrent file %1 : %2"
+msgstr " Не удаётся открыть торрент %1: %2"
+
+#: libktorrent/torrent/announcelist.cpp:58
+#: libktorrent/torrent/announcelist.cpp:64 libktorrent/torrent/torrent.cpp:281
+#: libktorrent/torrent/torrent.cpp:287
+msgid "Parse Error"
+msgstr "Ошибка анализа"
+
+#: libktorrent/torrent/torrentcontrol.cpp:508
+#, c-format
+msgid ""
+"An error occurred while loading the torrent. The torrent is probably corrupt or "
+"is not a torrent file.\n"
+"%1"
+msgstr ""
+"Ошибка при загрузке торрента. Вероятно, торрент повреждён, или вообще не "
+"является таковым.\n"
+"%1"
+
+#: libktorrent/torrent/torrentcontrol.cpp:537
+msgid ""
+"An error occurred while loading the torrent. The torrent is probably corrupt or "
+"is not a torrent file."
+msgstr ""
+"Ошибка при загрузке торрента. Вероятно, торрент повреждён, или вообще не "
+"является таковым."
+
+#: libktorrent/torrent/torrentcontrol.cpp:546
+msgid "Unable to create %1 : %2"
+msgstr "Не удалось создать %1: %2"
+
+#: libktorrent/torrent/torrentcontrol.cpp:562
+msgid ""
+"You are already downloading this torrent %1, the list of trackers of both "
+"torrents has been merged."
+msgstr "%1 уже загружается, список трекеров из обоих торрентов был объединён."
+
+#: libktorrent/torrent/torrentcontrol.cpp:566
+#, c-format
+msgid "You are already downloading the torrent %1"
+msgstr "%1 уже загружается"
+
+#: libktorrent/torrent/torrentcontrol.cpp:672
+msgid "Cannot migrate %1 : %2"
+msgstr "Не удалось перенести %1: %2"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1273
+msgid ""
+"The torrent %1 was started with a previous version of KTorrent. To make sure "
+"this torrent still works with this version of KTorrent, we will migrate this "
+"torrent. You will be asked for a location to save the torrent to. If you press "
+"cancel, we will select your home directory."
+msgstr ""
+"Загрузка торрента %1 была начата предыдущей версией KTorrent. Для продолжения "
+"этой версией KTorrent он будет перенесен. Укажите место для его сохранения. "
+"Если вы нажмёте Отмена, будет выбрана домашняя папку."
+
+#: libktorrent/torrent/torrentcontrol.cpp:1278
+msgid "Select Folder to Save To"
+msgstr "Выберите папку для сохранения"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1364
+msgid "Not started"
+msgstr "Не запущено"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1370
+msgid "Seeding"
+msgstr "Сидирование"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1372
+msgid "Downloading"
+msgstr "Загрузка"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1374
+msgid "Stalled"
+msgstr "Нет передачи"
+
+#: libktorrent/torrent/peersourcemanager.cpp:152
+#: libktorrent/torrent/torrentcontrol.cpp:1376
+msgid "Stopped"
+msgstr "Остановлено"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1378
+msgid "Error: "
+msgstr "Ошибка: "
+
+#: libktorrent/torrent/torrentcontrol.cpp:1380
+msgid "Allocating diskspace"
+msgstr "Выделение дискового пространства"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1382
+msgid "Queued"
+msgstr "В очереди"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1384
+msgid "Checking data"
+msgstr "Проверка данных"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1386
+msgid "Stopped. No space left on device."
+msgstr "Остановлено. Нет места на диске."
+
+#: libktorrent/torrent/queuemanager.cpp:135
+msgid ""
+"You don't have enough disk space to download this torrent. Are you sure you "
+"want to continue?"
+msgstr "Не достаточно места для загрузки торрента. Продолжить?"
+
+#: libktorrent/torrent/queuemanager.cpp:135
+#, c-format
+msgid "Insufficient disk space for %1"
+msgstr "Недостаточно дискового пространства для %1"
+
+#: libktorrent/torrent/queuemanager.cpp:157
+#, fuzzy
+msgid ""
+"Torrent \"%1\" has reached its maximum share ratio. Ignore the limit and start "
+"seeding anyway?"
+msgstr ""
+"Торрент \"%1\" достиг своего максимума ратио. Игнорировать и продолжить "
+"сидирование?"
+
+#: libktorrent/torrent/queuemanager.cpp:157
+#, fuzzy
+msgid "Maximum share ratio limit reached."
+msgstr "Максимум ратио достигнут."
+
+#: libktorrent/torrent/queuemanager.cpp:236
+#: libktorrent/torrent/queuemanager.cpp:760
+msgid "Error stopping torrent %1 : %2"
+msgstr "Ошибка при остановке торрента %1: %2"
+
+#: libktorrent/torrent/queuemanager.cpp:742
+msgid "Error starting torrent %1 : %2"
+msgstr "Ошибка при запуске торрента %1: %2"
+
+#: libktorrent/torrent/peersourcemanager.cpp:458
+msgid "Announcing"
+msgstr "Обновление"
+
+#: libktorrent/torrent/peerid.cpp:203
+msgid "Unknown client"
+msgstr "Неизвестный клиент"
+
+#: libktorrent/torrent/chunkdownload.cpp:339
+#, c-format
+msgid ""
+"_n: 1 peer\n"
+"%n peers"
+msgstr ""
+"%n участник\n"
+"%n участника\n"
+"%n участников"
+
+#: libktorrent/torrent/dndfile.cpp:108
+msgid "Cannot create file %1 : %2"
+msgstr "Не удалось создать файл %1: %2"
+
+#: libktorrent/torrent/dndfile.cpp:175
+#, c-format
+msgid "Failed to write first chunk to DND file : %1"
+msgstr "Не удалось записать первую часть в файл DND: %1"
+
+#: libktorrent/torrent/dndfile.cpp:233
+#, c-format
+msgid "Failed to write last chunk to DND file : %1"
+msgstr "Не удалось записать последнюю часть в файл DND: %1"
+
+#: libktorrent/torrent/cachefile.cpp:121 libktorrent/torrent/cachefile.cpp:220
+#: libktorrent/torrent/cachefile.cpp:382 libktorrent/torrent/cachefile.cpp:448
+msgid "Cannot open %1 for writing : readonly filesystem"
+msgstr "Не удалось открыть %1 для записи: файловая система только для чтения."
+
+#: libktorrent/torrent/cachefile.cpp:240
+#, fuzzy
+msgid "Cannot expand file %1 : %2"
+msgstr "Не удалось увеличить размер файла: %1"
+
+#: libktorrent/torrent/cachefile.cpp:242
+#, fuzzy
+msgid "Cannot expand file %1 : incomplete write"
+msgstr "Не удалось увеличить размер файла %1"
+
+#: libktorrent/torrent/cachefile.cpp:255
+#, c-format
+msgid "Cannot expand file %1"
+msgstr "Не удалось увеличить размер файла %1"
+
+#: libktorrent/torrent/cachefile.cpp:351
+#, c-format
+msgid "Error : Reading past the end of the file %1"
+msgstr "Ошибка: Чтение после конца файла %1"
+
+#: libktorrent/torrent/cachefile.cpp:361
+#, c-format
+msgid "Error reading from %1"
+msgstr "Ошибка чтения из %1"
+
+#: libktorrent/torrent/cachefile.cpp:403
+msgid "Error writing to %1 : %2"
+msgstr "Ошибка записи в %1: %2"
+
+#: libktorrent/torrent/cachefile.cpp:407
+#, c-format
+msgid "Error writing to %1"
+msgstr "Ошибка записи в %1"
+
+#: libktorrent/torrent/cachefile.cpp:475
+#: libktorrent/torrent/multifilecache.cpp:657
+#, c-format
+msgid "Cannot preallocate diskspace : %1"
+msgstr "Не удалось выделить дисковое пространство: %1"
+
+#: libktorrent/torrent/udptrackersocket.cpp:62
+msgid "Cannot bind to udp port %1 or the 10 following ports."
+msgstr ""
+"Не удалось закрепить за собой порт udp %1 или 10 следующих за ним портов."
+
+#: libktorrent/torrent/httptracker.cpp:260
+#: libktorrent/torrent/httptracker.cpp:280
+#: libktorrent/torrent/httptracker.cpp:320
+#: libktorrent/torrent/httptracker.cpp:399
+msgid "Invalid response from tracker"
+msgstr "Недопустимый ответ от трекера"
+
+#: libktorrent/torrent/httptracker.cpp:273
+msgid "Invalid data from tracker"
+msgstr "Недопустимые данные от трекера"
+
+#: libktorrent/torrent/httptracker.cpp:415
+msgid "Invalid tracker URL"
+msgstr "Неправильный URL торрента"
+
+#: libktorrent/torrent/torrentcreator.cpp:123
+#: libktorrent/torrent/torrentcreator.cpp:239
+#: libktorrent/torrent/torrentcreator.cpp:277
+msgid "Cannot open file %1: %2"
+msgstr "Не удаётся открыть файл %1: %2"
+
+#: libktorrent/torrent/torrentcreator.cpp:339
+#, c-format
+msgid "Cannot create index file: %1"
+msgstr "Не удаётся создать файл индекса %1"
+
+#: libktorrent/datachecker/singledatachecker.cpp:50
+msgid "Cannot open file : %1 : %2"
+msgstr "Не удаётся открыть файл %1: %2"
+
+#: plugins/upnp/upnpplugin.cpp:46
+msgid "Uses UPnP to automatically forward ports on your router"
+msgstr ""
+"Использует UPnP для автоматической трансляции портов на маршрутизаторе."
+
+#: plugins/upnp/upnprouter.cpp:418 plugins/upnp/upnprouter.cpp:431
+msgid "Cannot find port forwarding service in the device's description!"
+msgstr "Не удалось найти сервис транслирования в описании устройства."
+
+#: plugins/upnp/upnpprefpage.cpp:31
+msgid "UPnP Devices"
+msgstr "Устройства UPnP"
+
+#: plugins/scanfolder/scanfolderplugin.cpp:49
+msgid "Automatically scans directories for torrent files and loads them."
+msgstr "Автоматически сканирует каталоги в поисках торрентов и загружает их."
+
+#: plugins/scanfolder/scanfolderplugin.cpp:52
+#, fuzzy
+msgid "Scan Folder"
+msgstr "Сканнер каталогов"
+
+#: plugins/scanfolder/scanfolderprefpage.cpp:34
+msgid "ScanFolder"
+msgstr "Сканнер каталогов"
+
+#: plugins/scanfolder/scanfolderprefpage.cpp:34
+msgid "ScanFolder Options"
+msgstr "Параметры сканнера каталогов"
+
+#: plugins/scanfolder/scanfolder.cpp:150 plugins/scanfolder/scanfolder.cpp:188
+#: plugins/scanfolder/scanfolder.cpp:189
+msgid "loaded"
+msgstr "загружено"
+
+#: plugins/scanfolder/scanfolderprefpagewidget.cpp:73
+msgid ""
+"ScanFolder - Folder %1: Invalid URL or folder does not exist. Please, choose a "
+"valid directory."
+msgstr ""
+"Сканнер каталогов - Папка %1: Неправильная ссылка или каталог не существует. "
+"Укажите правильную папку."
+
+#: plugins/webinterface/webinterfaceprefpage.cpp:27
+msgid "WebInterface"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefpage.cpp:27
+msgid "WebInterface Options"
+msgstr "Параметры Web-интерфейса"
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:70
+#, fuzzy
+msgid "Php executable is not in default path, please enter the path manually"
+msgstr "Нестандартный путь к PHP. Введите путь вручную."
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:106
+msgid "Please enter a new password for the web interface."
+msgstr "Введите новый пароль для Веб-интерфейса."
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:116
+msgid "%1 exists and it is executable"
+msgstr "%1 существует и является исполняемым"
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:120
+#, fuzzy
+msgid "%1 does not exist"
+msgstr "%1 не существует"
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:124
+#, fuzzy
+msgid "%1 is not executable"
+msgstr "%1 не является исполняемым"
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:128
+msgid "%1 is a directory"
+msgstr "%1 - каталог"
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:132
+#, fuzzy
+msgid "%1 is not php executable path"
+msgstr "%1 не исполняемый файл PHP"
+
+#: plugins/webinterface/webinterfaceplugin.cpp:44
+#, fuzzy
+msgid "Web Interface"
+msgstr "Модуль Веб-интерфейса"
+
+#: plugins/webinterface/webinterfaceplugin.cpp:44
+msgid "Allow to control ktorrent through browser"
+msgstr "Позволять контролировать KTorrent из браузера"
+
+#: plugins/infowidget/fileview.cpp:57
+msgid "Download First"
+msgstr "Загрузить с высоким приоритетом"
+
+#: plugins/infowidget/fileview.cpp:58
+msgid "Download Normally"
+msgstr "Загрузить с обычными приоритетом"
+
+#: plugins/infowidget/fileview.cpp:59
+msgid "Download Last"
+msgstr "Загрузить позже"
+
+#: plugins/infowidget/fileview.cpp:62
+msgid "Delete File(s)"
+msgstr "Удалить файлы"
+
+#: plugins/infowidget/fileview.cpp:204
+#: plugins/infowidget/iwfiletreeitem.cpp:71
+#: plugins/infowidget/iwfiletreeitem.cpp:103
+msgid "Available"
+msgstr "Доступно"
+
+#: plugins/infowidget/fileview.cpp:206
+#: plugins/infowidget/iwfiletreeitem.cpp:75
+#: plugins/infowidget/iwfiletreeitem.cpp:107
+msgid "Pending"
+msgstr "Ожидание"
+
+#: plugins/infowidget/fileview.cpp:343
+msgid ""
+"_n: You will lose all data in this file, are you sure you want to do this ?\n"
+"You will lose all data in these files, are you sure you want to do this ?"
+msgstr ""
+
+#: plugins/infowidget/statustab.cpp:55
+#, fuzzy
+msgid "No limit"
+msgstr "&Включить ограничение?"
+
+#: plugins/infowidget/infowidgetplugin.cpp:51
+#: plugins/infowidget/infowidgetprefpage.cpp:34
+msgid "Info Widget"
+msgstr "Сведения"
+
+#: plugins/infowidget/infowidgetplugin.cpp:52
+msgid ""
+"Shows additional information about a download. Like which chunks have been "
+"downloaded, how many seeders and leechers ..."
+msgstr ""
+
+#: plugins/infowidget/trackerview.cpp:71
+msgid "Cannot add a tracker to a private torrent."
+msgstr ""
+
+#: plugins/infowidget/trackerview.cpp:96
+#, fuzzy
+msgid "Cannot remove torrent default tracker."
+msgstr "Не удаётся создать каталог %1: %2"
+
+#: plugins/infowidget/trackerview.cpp:214
+msgid "You cannot add trackers to a private torrent"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:213
+msgid "IP"
+msgstr "IP"
+
+#: plugins/infowidget/peerview.cpp:214
+msgid "Country"
+msgstr "Страна"
+
+#: plugins/infowidget/peerview.cpp:215
+msgid "Client"
+msgstr "Клиент"
+
+#: plugins/infowidget/peerview.cpp:218
+msgid "Choked"
+msgstr "Остановлено"
+
+#: plugins/infowidget/peerview.cpp:219
+msgid "Snubbed"
+msgstr "Зависло"
+
+#: plugins/infowidget/peerview.cpp:220
+msgid "Availability"
+msgstr "Доступно"
+
+#: plugins/infowidget/peerview.cpp:222
+msgid "Score"
+msgstr "Счёт"
+
+#: plugins/infowidget/peerview.cpp:223
+msgid "Upload Slot"
+msgstr "Слот на отдачу"
+
+#: plugins/infowidget/peerview.cpp:224
+msgid "Requests"
+msgstr "Запросы"
+
+#: plugins/infowidget/peerview.cpp:249
+msgid ""
+"_: to kick\n"
+"Kick peer"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:250
+msgid ""
+"_: to ban\n"
+"Ban peer"
+msgstr "Блокировать участника"
+
+#: plugins/infowidget/availabilitychunkbar.cpp:32
+msgid ""
+"<img src=\"available_color\">&nbsp; - Available Chunks"
+"<br><img src=\"unavailable_color\">&nbsp; - Unavailable Chunks"
+"<br><img src=\"excluded_color\">&nbsp; - Excluded Chunks"
+msgstr ""
+
+#: plugins/infowidget/infowidgetprefpage.cpp:34
+msgid "Information Widget Options"
+msgstr ""
+
+#: plugins/infowidget/chunkbar.cpp:98
+msgid ""
+"<img src=\"available_color\">&nbsp; - Downloaded Chunks"
+"<br><img src=\"unavailable_color\">&nbsp; - Chunks to Download"
+"<br><img src=\"excluded_color\">&nbsp; - Excluded Chunks"
+msgstr ""
+
+#: plugins/ipfilter/convertdialog.cpp:81
+msgid "Convert"
+msgstr "Преобразование"
+
+#: plugins/ipfilter/convertdialog.cpp:102
+msgid "Loading txt file..."
+msgstr "Загрузка текстового файла..."
+
+#: plugins/ipfilter/convertdialog.cpp:103
+msgid "Please wait..."
+msgstr "Ждите..."
+
+#: plugins/ipfilter/convertdialog.cpp:194
+msgid "File converted."
+msgstr "Файл преобразован."
+
+#: plugins/ipfilter/convertdialog.cpp:199
+msgid "Could not load filter:"
+msgstr "Не удалось загрузить фильтр:"
+
+#: plugins/ipfilter/convertdialog.cpp:199
+msgid "Bad filter file. It may be corrupted or has a bad format."
+msgstr ""
+"Недопустимый файл фильтра. Он может быть повреждён или иметь неверный формат."
+
+#: plugins/ipfilter/ipfilterplugin.cpp:43
+msgid "Filters out unwanted peers based on their IP address"
+msgstr ""
+
+#: plugins/ipfilter/ipfilterplugin.cpp:46
+#, fuzzy
+msgid "IP Filter"
+msgstr "Фильтр IP"
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:70
+#: plugins/ipfilter/ipblockingprefpage.cpp:94
+msgid "Status: Loaded and running."
+msgstr "Состояние: Загружен и выполняется."
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:76
+#: plugins/ipfilter/ipblockingprefpage.cpp:99
+msgid "Status: Not loaded."
+msgstr "Состояние: Не загружен."
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:96
+msgid ""
+"Status: <font color=\"#ff0000\">Filter file not found.</font> "
+"Download and convert filter file."
+msgstr ""
+"Состояние: <font color=\"#ff0000\">Файл фильтра не найден.</font> "
+"Загрузите и преобразуйте файл фильтра."
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:117
+msgid "Selected file already exists, do you want to download it again?"
+msgstr "Выбранный файл уже существует, загрузить его заново?"
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:117
+#: plugins/ipfilter/ipblockingprefpage.cpp:194
+msgid "File Exists"
+msgstr "Файл существует"
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:194
+msgid ""
+"Filter file (level1.dat) already exists, do you want to convert it again?"
+msgstr "Файл фильтра (level1.dat) уже существует, преобразовать его заново?"
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:223
+msgid "IPBlocking Filter"
+msgstr "IP-фильтр"
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:223
+msgid "IPBlocking Filter Options"
+msgstr "Параметры IP-фильтра"
+
+#: plugins/stats/StatsPluginPrefs.cc:25 plugins/stats/statsplugin.cc:29
+#, fuzzy
+msgid "Statistics"
+msgstr "Статус"
+
+#: plugins/stats/StatsPluginPrefs.cc:25
+msgid "Statistics options"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:49
+#, fuzzy
+msgid "Leechers connected"
+msgstr "Соединения:"
+
+#: plugins/stats/StatsCon.cc:50
+#, fuzzy
+msgid "Leechers in swarms"
+msgstr "Выводить &значок в системном лотке"
+
+#: plugins/stats/StatsCon.cc:51
+#, fuzzy
+msgid "Seeders connected"
+msgstr "Соединения:"
+
+#: plugins/stats/StatsCon.cc:52
+#, fuzzy
+msgid "Seeders in swarms"
+msgstr "Выводить &значок в системном лотке"
+
+#: plugins/stats/StatsCon.cc:53
+#, fuzzy
+msgid "Average connected leechers per torrent"
+msgstr "Максимум соединений на один торрент:"
+
+#: plugins/stats/StatsCon.cc:54
+#, fuzzy
+msgid "Average connected seeders per torrent"
+msgstr "Максимум соединений на один торрент:"
+
+#: plugins/stats/StatsCon.cc:55
+msgid "Average connected leechers per running torrent"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:56
+msgid "Average connected seeders per running torrent"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:61
+#, fuzzy
+msgid "Nodes"
+msgstr "Папки"
+
+#: plugins/stats/StatsCon.cc:62
+#, fuzzy
+msgid "Tasks"
+msgstr "Трекеры"
+
+#: plugins/stats/statsplugin.cc:29
+msgid "Shows transfers statistics"
+msgstr ""
+
+#: plugins/stats/statsplugin.cc:67
+#, fuzzy
+msgid "Speed statistics"
+msgstr "Ограничение скорости, кб/с"
+
+#: plugins/stats/statsplugin.cc:68
+#, fuzzy
+msgid "Connection statistics"
+msgstr "Соединения:"
+
+#: plugins/stats/StatsSpd.cc:57 plugins/stats/StatsSpd.cc:58
+#, fuzzy
+msgid "Current"
+msgstr "Торрент"
+
+#: plugins/stats/StatsSpd.cc:60 plugins/stats/StatsSpd.cc:61
+msgid "Average"
+msgstr ""
+
+#: plugins/stats/StatsSpd.cc:63 plugins/stats/StatsSpd.cc:64
+#, fuzzy
+msgid "Limit"
+msgstr "&Включить ограничение?"
+
+#: plugins/stats/StatsSpd.cc:71
+#, fuzzy
+msgid "Average from leecher"
+msgstr "Средняя скорость загрузки:"
+
+#: plugins/stats/StatsSpd.cc:72
+#, fuzzy
+msgid "Average to leecher"
+msgstr "Средняя скорость загрузки:"
+
+#: plugins/stats/StatsSpd.cc:73
+#, fuzzy
+msgid "Average from seeder"
+msgstr "Средняя скорость загрузки:"
+
+#: plugins/stats/StatsSpd.cc:74
+#, fuzzy
+msgid "From leechers"
+msgstr "Загружающие:"
+
+#: plugins/stats/StatsSpd.cc:75
+#, fuzzy
+msgid "From seeders"
+msgstr "Папки"
+
+#: plugins/stats/ChartDrawer.cc:419
+msgid "Legend"
+msgstr ""
+
+#: plugins/partfileimport/importdialog.cpp:50
+msgid "Torrent files"
+msgstr "Файлы .torrent"
+
+#: plugins/partfileimport/importdialog.cpp:50
+msgid "All files"
+msgstr "Все файлы"
+
+#: plugins/partfileimport/importdialog.cpp:100
+#, fuzzy, c-format
+msgid "Cannot verify data : %1"
+msgstr "Не удалось проверить данные %1: %2"
+
+#: plugins/partfileimport/importdialog.cpp:207
+#: plugins/partfileimport/importdialog.cpp:243
+#, c-format
+msgid "Cannot load the torrent file : %1"
+msgstr "Не удалось загрузить торрент: %1"
+
+#: plugins/partfileimport/partfileimportplugin.cpp:43
+msgid "Imports partially or fully downloaded torrents from other clients"
+msgstr ""
+
+#: plugins/partfileimport/partfileimportplugin.cpp:56
+#, fuzzy
+msgid "Import existing download"
+msgstr "Импортировать существующую закачку"
+
+#: plugins/rssfeed/rss/testlibrss.cpp:14
+msgid "URL of feed"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedplugin.cpp:48
+msgid ""
+"Automatically scans RSS feeds for torrent matching regular expressions and "
+"loads them."
+msgstr ""
+
+#: plugins/rssfeed/rssfeedplugin.cpp:51 plugins/rssfeed/rssfeedplugin.cpp:68
+msgid "RSS Feeds"
+msgstr ""
+
+#: plugins/rssfeed/rsslinkdownloader.cpp:45
+#: plugins/rssfeed/rsslinkdownloader.cpp:183
+#, c-format
+msgid "Failed to find and download a valid torrent for %1"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:78
+msgid "Title"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:78
+msgid "Description"
+msgstr "Описание"
+
+#: plugins/rssfeed/rssfeedmanager.cpp:78 plugins/rssfeed/rssfeedmanager.cpp:87
+msgid "Link"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:87
+#, fuzzy
+msgid "Season"
+msgstr "Коэффициент передачи:"
+
+#: plugins/rssfeed/rssfeedmanager.cpp:87
+msgid "Episode"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:87
+#, fuzzy
+msgid "Time"
+msgstr "Осталось"
+
+#: plugins/scheduler/schedulerprefpage.cpp:35
+msgid "Scheduler"
+msgstr "Планирование"
+
+#: plugins/scheduler/schedulerprefpage.cpp:35
+msgid "Scheduler plugin options"
+msgstr "Параметры планирования"
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "MON"
+msgstr "ПН"
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "TUE"
+msgstr "ВТ"
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "WED"
+msgstr "СР"
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "THU"
+msgstr "ЧТ"
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "FRI"
+msgstr "ПТ"
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "SAT"
+msgstr "СБ"
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "SUN"
+msgstr "ВСК"
+
+#: plugins/scheduler/bwsprefpagewidget.cpp:165
+msgid "Schedule saved."
+msgstr ""
+
+#: plugins/scheduler/bwsprefpagewidget.cpp:174
+msgid "File not found."
+msgstr ""
+
+#: plugins/scheduler/bwsprefpagewidget.cpp:208
+msgid "Schedule loaded."
+msgstr ""
+
+#: plugins/scheduler/schedulerplugin.cpp:56
+msgid "Bandwidth scheduling plugin"
+msgstr "Модуль планирования использования канала"
+
+#: plugins/scheduler/schedulerplugin.cpp:97
+#: plugins/scheduler/schedulerplugin.cpp:137
+msgid "Open Bandwidth Scheduler"
+msgstr "Открыть окно Планирование использования канала"
+
+#: plugins/scheduler/schedulerplugin.cpp:130
+msgid ""
+"Bandwidth scheduler is disabled. Go to Preferences->Scheduler to enable it."
+msgstr ""
+"Планирование использования канала отключено. Перейдите в Параметры->"
+"Планирование использования канала для его включения."
+
+#: plugins/logviewer/logprefpage.cpp:31
+msgid "LogViewer"
+msgstr "Просмотр протоколов"
+
+#: plugins/logviewer/logviewerplugin.cpp:44
+#: plugins/logviewer/logviewerplugin.cpp:58
+#, fuzzy
+msgid "Log Viewer"
+msgstr "Просмотр протоколов"
+
+#: plugins/logviewer/logviewerplugin.cpp:45
+msgid "Displays ktorrent logging output"
+msgstr ""
+
+#: plugins/search/searchprefpage.cpp:52
+#, fuzzy
+msgid ""
+"Use your web browser to search for the string %1 (capital letters) on the "
+"search engine you want to add. "
+"<br> Then copy the URL in the addressbar after the search is finished, and "
+"paste it here."
+"<br>"
+"<br>Searching for %1 on Google for example, will result in "
+"http://www.google.com/search?q=FOOBAR&ie=UTF-8&oe=UTF-8. "
+"<br> If you add this URL here, ktorrent can search using Google."
+msgstr ""
+"В браузере запустите поиск строки %1 (заглавными буквами) в поисковике, который "
+"вы хотите добавить. Затем, когда поиск завершится, скопируйте URL из адресной "
+"строки и вставьте его сюда. "
+"<br>Поиск %2 в Google, например, даст результат в виде "
+"http://www.google.com/search?q=FOOBAR&ie=UTF-8&oe=UTF-8. Если вы вставите сюда "
+"этот URL, KTorrent будет искать через Google."
+
+#: plugins/search/searchprefpage.cpp:57
+msgid ""
+"Use your web browser to search for the string %1 (capital letters) on the "
+"search engine you want to add. Use the resulting URL below."
+msgstr ""
+
+#: plugins/search/searchprefpage.cpp:124
+msgid "You must enter the search engine's name and URL"
+msgstr "Введите имя поисковика и URL"
+
+#: plugins/search/searchprefpage.cpp:137
+msgid ""
+"A search engine with the same name already exists. Please use a different name."
+msgstr "Поисковик с таким именем уже существует. Задайте другое имя."
+
+#: plugins/search/searchprefpage.cpp:146
+msgid ""
+"Bad URL. You should search for FOOBAR with your Internet browser and copy/paste "
+"the exact URL here."
+msgstr ""
+"Недопустимый URL. Найдите FOOBAR через браузер и вставьте точный URL сюда."
+
+#: plugins/search/searchprefpage.cpp:247
+msgid ""
+"_: a noun\n"
+"Search"
+msgstr "Поиск"
+
+#: plugins/search/searchprefpage.cpp:247
+msgid "Search Engine Options"
+msgstr "Параметры поиска"
+
+#: plugins/search/searchwidget.cpp:178
+msgid "Searching for %1..."
+msgstr "Поиск %1 ..."
+
+#: plugins/search/searchwidget.cpp:209
+msgid "torrent files"
+msgstr "Файлы .torrent"
+
+#: plugins/search/searchwidget.cpp:267
+msgid "Search finished"
+msgstr "Поиск окончен"
+
+#: plugins/search/searchtab.cpp:65
+#, fuzzy
+msgid " Engine: "
+msgstr "Поисковики"
+
+#: plugins/search/searchplugin.cpp:51
+msgid "Search for torrents on several popular torrent search engines"
+msgstr ""
+
+#: plugins/search/htmlpart.cpp:165
+msgid "Do you want to download or save the torrent?"
+msgstr "Загрузить или сохранить торрент?"
+
+#: plugins/search/htmlpart.cpp:166
+msgid "Download Torrent"
+msgstr "Загрузить Torrent"
+
+#: plugins/search/htmlpart.cpp:167
+msgid ""
+"_: to download\n"
+"Download"
+msgstr "Загрузить"
+
+#: plugins/zeroconf/zeroconfplugin.cpp:41
+msgid "Zeroconf"
+msgstr ""
+
+#: plugins/zeroconf/zeroconfplugin.cpp:41
+msgid ""
+"Finds peers running ktorrent on the local network to share torrents with"
+msgstr ""
+
+#~ msgid "ETA algorithm:"
+#~ msgstr "Метод вычисления оставшегося времени"
+
+#~ msgid "Cannot load chunk %1"
+#~ msgstr "Не удалось загрузить часть %1"
+
+#, fuzzy
+#~ msgid "Alt+X"
+#~ msgstr "Alt+1"
+
+#, fuzzy
+#~ msgid "TrackerViewBase"
+#~ msgstr "Трекеры"
+
+#~ msgid "Type of service field of IP packets"
+#~ msgstr "Поле TOS для пакетов IP (для определения приоритета)"
+
+#~ msgid "Alt+N"
+#~ msgstr "Alt+N"
+
+#~ msgid "Alt+S"
+#~ msgstr "Alt+S"
+
+#~ msgid "You must add at least one tracker."
+#~ msgstr "Добавьте хотя бы один трекер."
+
+#, fuzzy
+#~ msgid "DownloadPref"
+#~ msgstr "Получено"
+
+#, fuzzy
+#~ msgid "Alt+B"
+#~ msgstr "Alt+1"
+
+#, fuzzy
+#~ msgid "Alt+U"
+#~ msgstr "Alt+1"
+
+#, fuzzy
+#~ msgid "Alt+A"
+#~ msgstr "Alt+1"
+
+#, fuzzy
+#~ msgid "Alt+L"
+#~ msgstr "Alt+1"
+
+#~ msgid "Max ratio:"
+#~ msgstr "Коэффициент передачи:"
+
+#~ msgid "Name"
+#~ msgstr "Модуль"
+
+#~ msgid "Author"
+#~ msgstr "Автор"
+
+#, fuzzy
+#~ msgid "Download \"Proper\" ReReleases"
+#~ msgstr "Загрузка завершена"
+
+#~ msgid "Tracker URL:"
+#~ msgstr "URL трекера:"
+
+#~ msgid "Tracker status:"
+#~ msgstr "Состояние трекера:"
+
+#, fuzzy
+#~ msgid "Specified udp port (%1) is unavailable or in use by another application. KTorrent is bound to port %2."
+#~ msgstr "Заданный порт udp (%1) недоступен или используется другим приложением. KTorrent переключается на порт %2."
+
+#, fuzzy
+#~ msgid "Select folder for data of %1"
+#~ msgstr "Выберите папку для сохранения"
+
+#~ msgid "Downloads %1/%2"
+#~ msgstr "Загрузки %1/%2"
+
+#~ msgid "Uploads %1/%2"
+#~ msgstr "Раздачи %1/%2"

@@ -1,0 +1,5188 @@
+# translation of ktorrent to Kinyarwanda.
+# Copyright (C) 
+# This file is distributed under the same license as the ktorrent package.
+# Steve Murphy <murf@e-tools.com>, 2005.
+# Steve performed initial rough translation from compendium built from translations provided by the following translators:
+# Philibert Ndandali  <ndandali@yahoo.fr>, 2005.
+# Viateur MUGENZI <muvia1@yahoo.fr>, 2005.
+# Noëlla Mupole <s24211045@tuks.co.za>, 2005.
+# Carole Karema <karemacarole@hotmail.com>, 2005.
+# JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>, 2005.
+# Augustin KIBERWA  <akiberwa@yahoo.co.uk>, 2005.
+# Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>, 2005.
+# Antoine Bigirimana <antoine@e-tools.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktorrent 3.4\n"
+"POT-Creation-Date: 2008-04-18 19:40+0200\n"
+"PO-Revision-Date: 2005-05-25 18:43-0600\n"
+"Last-Translator: Steve Murphy <murf@e-tools.com>\n"
+"Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: apps/ktorrent/ktorrent.cpp:167
+msgid "No incoming connections (possibly firewalled)"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 42
+#: apps/ktorrent/ktorrent.cpp:184 rc.cpp:345 rc.cpp:383 rc.cpp:1019
+#, no-c-format
+msgid "Info"
+msgstr "Ibisobanuro"
+
+#: apps/ktorrent/ktorrent.cpp:185
+#, fuzzy
+msgid "Data transferred during the current session"
+msgstr "i KIGEZWEHO Umukoro "
+
+#: apps/ktorrent/ktorrent.cpp:186
+#, fuzzy
+msgid "Current speed of all torrents combined"
+msgstr "Umuvuduko Bya Byose "
+
+#: apps/ktorrent/groups/groupview.cpp:76 apps/ktorrent/ktorrent.cpp:215
+msgid "Groups"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:515 apps/ktorrent/ktorrentviewmenu.cpp:41
+msgid ""
+"_: to start\n"
+"Start"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:519 apps/ktorrent/ktorrentviewmenu.cpp:37
+msgid ""
+"_: to stop\n"
+"Stop"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:527 apps/ktorrent/ktorrent.cpp:530
+msgid ""
+"_: to start all\n"
+"Start All"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:533 apps/ktorrent/ktorrent.cpp:536
+msgid ""
+"_: to stop all\n"
+"Stop All"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:539
+msgid ""
+"_: to paste torrent URL\n"
+"Paste Torrent URL..."
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:543
+msgid ""
+"_: to open Queue Manager\n"
+"Open Queue Manager..."
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:548 apps/ktorrent/ktorrentviewmenu.cpp:53
+msgid "Enqueue/Dequeue"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:553
+#, fuzzy
+msgid "IPFilter"
+msgstr "Ibyahisemo"
+
+#: apps/ktorrent/ktorrent.cpp:558 apps/ktorrent/ktorrentviewmenu.cpp:96
+msgid "Check Data Integrity"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:571
+#, fuzzy
+msgid "Set max upload rate"
+msgstr "Gushyiraho Igipimo : "
+
+#: apps/ktorrent/ktorrent.cpp:574
+#, fuzzy
+msgid "Set max download rate"
+msgstr "Iyimura Igipimo : "
+
+#: apps/ktorrent/ktorrent.cpp:626
+#, fuzzy
+msgid "Torrent Files"
+msgstr "Amadosiye y'inyandiko"
+
+#: apps/ktorrent/ktorrent.cpp:626
+#, fuzzy
+msgid "All Files"
+msgstr "amadosiye yose"
+
+#: apps/ktorrent/ktorrent.cpp:627
+msgid "Open Location"
+msgstr "Gufungura Umwanya"
+
+#: apps/ktorrent/ktorrent.cpp:793
+#, fuzzy
+msgid "Speed down: %1 / up: %2"
+msgstr "Hejuru : %1 /Hasi : %2 "
+
+#: apps/ktorrent/ktorrent.cpp:799
+#, fuzzy
+msgid "Transferred down: %1 / up: %2"
+msgstr "Hejuru : %1 /Hasi : %2 "
+
+#: apps/ktorrent/ktorrent.cpp:819
+msgid "DHT: %1 nodes, %2 tasks"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:823
+msgid "DHT: off"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlg.cpp:284 apps/ktorrent/groups/allgroup.cpp:26
+#: apps/ktorrent/groups/groupmanager.h:54 apps/ktorrent/ktorrent.cpp:962
+#, fuzzy
+msgid "All Torrents"
+msgstr "Ikinyakoreya"
+
+#: apps/ktorrent/filterbar.cpp:52
+#, fuzzy
+msgid "Find:"
+msgstr "Byarangiye"
+
+#: apps/ktorrent/filterbar.cpp:65
+msgid "Case sensitive"
+msgstr ""
+
+#: apps/ktorrent/newui/ddockwindow.cpp:88
+msgid "Move to left dock"
+msgstr ""
+
+#: apps/ktorrent/newui/ddockwindow.cpp:89
+msgid "Move to right dock"
+msgstr ""
+
+#: apps/ktorrent/newui/ddockwindow.cpp:90
+msgid "Move to bottom dock"
+msgstr ""
+
+#: apps/ktorrent/newui/button.cpp:58
+msgid "Assign Accelerator..."
+msgstr ""
+
+#: apps/ktorrent/newui/button.cpp:60
+msgid "Clear Accelerator"
+msgstr ""
+
+#: apps/ktorrent/newui/button.cpp:319
+msgid "Change Button Number"
+msgstr ""
+
+#: apps/ktorrent/newui/button.cpp:319
+msgid "New accelerator number:"
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidget.cpp:72
+msgid ""
+"You must enter IP in format 'XXX.XXX.XXX.XXX'. You can also use wildcards for "
+"ranges like '127.0.0.*'."
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidget.cpp:88
+#: plugins/scheduler/bwsprefpagewidget.cpp:129
+msgid "Choose a file"
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidget.cpp:100
+#: plugins/scheduler/bwsprefpagewidget.cpp:119
+#, fuzzy
+msgid "Choose a filename to save under"
+msgstr "Idosiye Kuri Kubika "
+
+#: apps/ktorrent/pastedialog.cpp:56 plugins/infowidget/trackerview.cpp:78
+#: plugins/search/searchprefpage.cpp:131
+#, fuzzy
+msgid "Malformed URL."
+msgstr "URL Ikoze nabi"
+
+#. i18n: file ./apps/ktorrent/ktorrentui.rc line 9
+#: apps/ktorrent/groups/downloadgroup.cpp:27
+#: apps/ktorrent/groups/groupmanager.h:57 apps/ktorrent/pref.cpp:147
+#: apps/ktorrent/viewmanager.cpp:62 rc.cpp:138 rc.cpp:342
+#, no-c-format
+msgid "Downloads"
+msgstr "Iyimura"
+
+#: apps/ktorrent/groups/groupmanager.h:60
+#: apps/ktorrent/groups/uploadgroup.cpp:27 apps/ktorrent/viewmanager.cpp:63
+#, fuzzy
+msgid "Uploads"
+msgstr "Gushyiraho"
+
+#: apps/ktorrent/ktorrentcore.cpp:115
+msgid ""
+"Specified port (%1) is unavailable or in use by another application. KTorrent "
+"is now using port %2."
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:124
+msgid ""
+"KTorrent is unable to accept connections because the ports %1 to %2 are already "
+"in use by another program."
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:767
+#, fuzzy, c-format
+msgid "Cannot create torrent: %1"
+msgstr "Kurema : %1 "
+
+#: apps/ktorrent/ktorrentcore.cpp:1028
+msgid ""
+"Several data files of the torrent \"%1\" are missing, do you want to recreate "
+"them, or do you want to not download them?"
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:1031 apps/ktorrent/ktorrentcore.cpp:1069
+#, fuzzy
+msgid "Recreate"
+msgstr "Kurema"
+
+#: apps/ktorrent/ktorrentcore.cpp:1031 plugins/infowidget/fileview.cpp:61
+#, fuzzy
+msgid "Do Not Download"
+msgstr "Iyimura"
+
+#: apps/ktorrent/ktorrentcore.cpp:1041
+#, fuzzy, c-format
+msgid "Cannot recreate missing files: %1"
+msgstr "Kurema Umubarendanga Idosiye : %1 "
+
+#: apps/ktorrent/ktorrentcore.cpp:1042 apps/ktorrent/ktorrentcore.cpp:1056
+#: apps/ktorrent/ktorrentcore.cpp:1062
+msgid "Data files are missing"
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:1055
+#, fuzzy, c-format
+msgid "Cannot deselect missing files: %1"
+msgstr "Kurema Umubarendanga Idosiye : %1 "
+
+#: apps/ktorrent/ktorrentcore.cpp:1068
+msgid ""
+"The file where the data is saved of the torrent \"%1\" is missing, do you want "
+"to recreate it?"
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:1069
+#, fuzzy
+msgid "Do Not Recreate"
+msgstr "Kurema"
+
+#: apps/ktorrent/ktorrentcore.cpp:1078
+#, fuzzy, c-format
+msgid "Cannot recreate data file: %1"
+msgstr "Kurema Umubarendanga Idosiye : %1 "
+
+#: apps/ktorrent/ktorrentcore.cpp:1079 apps/ktorrent/ktorrentcore.cpp:1085
+msgid "Data file is missing"
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:1135
+msgid "Checking Data Integrity"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewitem.cpp:153
+#: apps/ktorrent/ktorrentviewitem.cpp:159
+#, fuzzy
+msgid "infinity"
+msgstr "Bidashira"
+
+#: apps/ktorrent/ktorrentviewitem.cpp:255 plugins/infowidget/fileview.cpp:189
+#: plugins/infowidget/iwfiletreeitem.cpp:95
+msgid "%1 %"
+msgstr "%1 %"
+
+#: apps/ktorrent/scandialog.cpp:70
+#, fuzzy, c-format
+msgid "Error scanning data: %1"
+msgstr "Gufungura Idosiye %1 : %2 "
+
+#: apps/ktorrent/scandialog.cpp:77
+#, fuzzy
+msgid "Scanning data of <b>%1</b> :"
+msgstr "Gufungura Idosiye %1 : %2 "
+
+#: apps/ktorrent/main.cpp:76
+#, fuzzy
+msgid "A BitTorrent program for KDE"
+msgstr "A Porogaramu ya:  MukusanyaKDE "
+
+#: apps/ktorrent/main.cpp:108
+#, fuzzy
+msgid "Debug mode"
+msgstr "Ubwoko "
+
+#: apps/ktorrent/main.cpp:109
+msgid "Silently save torrent given on URL"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:110
+msgid "Document to open"
+msgstr "Inyandiko igomba gufungurwa"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 59
+#: apps/ktorrent/main.cpp:120 rc.cpp:553
+#, fuzzy, no-c-format
+msgid "KTorrent"
+msgstr "Ikinyakoreya"
+
+#: apps/ktorrent/main.cpp:125
+msgid "RSS Plugin"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:126
+#, fuzzy
+msgid "Webinterface Plugin"
+msgstr "Amahitamo Rusange"
+
+#: apps/ktorrent/main.cpp:127
+msgid "Statistics Plugin"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:130
+#, fuzzy
+msgid "Application icon and a couple of others"
+msgstr "1."
+
+#: apps/ktorrent/main.cpp:131
+#, fuzzy
+msgid "The downloads icon"
+msgstr "Iyimura Agashushondanga "
+
+#: apps/ktorrent/main.cpp:134
+#, fuzzy
+msgid "1.0 application icon"
+msgstr "1."
+
+#: apps/ktorrent/main.cpp:139
+msgid "ChunkBar's tooltip and IWFileTreeItem sorting"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:143
+msgid ""
+"Country locator for InfoWidget plugin (This product includes GeoLite data "
+"created by MaxMind, available from http://www.maxmind.com/). "
+msgstr ""
+
+#: apps/ktorrent/main.cpp:144
+msgid "Country flags"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:145
+#, fuzzy
+msgid "File prioritization"
+msgstr "Idosiye "
+
+#: apps/ktorrent/main.cpp:146
+msgid "Miniupnp was used as an example for our own UPnP implementation"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:147
+msgid "Global max share ratio patch"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:148 apps/ktorrent/main.cpp:149
+msgid "Zeroconf enhancements"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:150
+msgid "Coldmilk webgui"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:151
+msgid "IDEAl code from KDevelop"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:152
+msgid "Conversion speed improvement in ipfilter plugin"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:153
+msgid "Discovered 2 security vulnerabilities (both are fixed)"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:154
+msgid "Patch to load silently with a save location"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:155
+msgid "Fixes in PHP code of webinterface"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:156
+msgid "XFS specific disk preallocation"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:157
+msgid "Patch to not show very low speeds"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:158
+msgid "Patch to show potentially firewalled status"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:159
+#, fuzzy
+msgid "Several patches"
+msgstr "amadosiye yose"
+
+#: apps/ktorrent/main.cpp:160
+msgid "Patch to hide the menubar"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:161
+msgid "Patch to modify file priorities in the webgui"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:162
+#, fuzzy
+msgid "Several webgui patches"
+msgstr "amadosiye yose"
+
+#: apps/ktorrent/main.cpp:163
+#, fuzzy
+msgid "Filterbar patch"
+msgstr "amadosiye yose"
+
+#: apps/ktorrent/main.cpp:164
+msgid "Non threaded fileview update patch"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:165
+msgid "Optimization to SHA1 hash generation"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:166
+msgid "Patch to fix free diskspace calculation on FreeBSD"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:167
+#, fuzzy
+msgid "Patch to load torrents silently from the command line"
+msgstr "Gufungura Idosiye %1 : %2 "
+
+#: apps/ktorrent/torrentcreatordlg.cpp:64
+#, fuzzy
+msgid "You must select a file or a folder."
+msgstr "Guhitamo A Idosiye Cyangwa A Ububiko . "
+
+#: apps/ktorrent/torrentcreatordlg.cpp:71
+msgid ""
+"You have not added a tracker, are you sure you want to create this torrent ?"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlg.cpp:79
+#, fuzzy
+msgid "You must add at least one node."
+msgstr "&Ongera Ku Rimwe . "
+
+#: apps/ktorrent/torrentcreatordlg.cpp:98
+msgid "Torrent Files (*.torrent)"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlg.cpp:99
+#, fuzzy
+msgid "Choose File to Save Torrent"
+msgstr "Idosiye Kuri Kubika "
+
+#: apps/ktorrent/torrentcreatordlg.cpp:108
+#, fuzzy
+msgid "Creating %1..."
+msgstr "Kurema"
+
+#: apps/ktorrent/groups/groupview.cpp:107
+msgid "Custom Groups"
+msgstr ""
+
+#: apps/ktorrent/groups/groupview.cpp:138
+msgid "New Group"
+msgstr ""
+
+#: apps/ktorrent/groups/groupview.cpp:141
+#, fuzzy
+msgid "Edit Name"
+msgstr "Izina:"
+
+#: apps/ktorrent/groups/groupview.cpp:144
+#, fuzzy
+msgid "Remove Group"
+msgstr "Mucapurirakure"
+
+#: apps/ktorrent/groups/groupview.cpp:147
+msgid "Open Tab"
+msgstr ""
+
+#: apps/ktorrent/groups/groupview.cpp:159
+msgid "Please enter the group name."
+msgstr ""
+
+#: apps/ktorrent/groups/groupview.cpp:166
+#: apps/ktorrent/groups/groupview.cpp:217
+msgid "The group %1 already exists."
+msgstr ""
+
+#: apps/ktorrent/groups/groupview.cpp:207
+msgid "Please enter the new group name."
+msgstr ""
+
+#: apps/ktorrent/groups/activeuploadsgroup.cpp:29
+#: apps/ktorrent/groups/groupmanager.h:90
+#, fuzzy
+msgid "Active uploads"
+msgstr "Gushyiraho"
+
+#: apps/ktorrent/groups/groupmanager.h:66
+#: apps/ktorrent/groups/queueduploadsgroup.cpp:29
+msgid "Queued uploads"
+msgstr ""
+
+#: apps/ktorrent/groups/groupmanager.h:63
+#: apps/ktorrent/groups/queueddownloadsgroup.cpp:29
+#, fuzzy
+msgid "Queued downloads"
+msgstr "Iyimura Agashushondanga "
+
+#: apps/ktorrent/groups/groupmanager.h:69
+#: apps/ktorrent/groups/userdownloadsgroup.cpp:29
+#, fuzzy
+msgid "User downloads"
+msgstr "Iyimura"
+
+#: apps/ktorrent/groups/groupmanager.h:72
+#: apps/ktorrent/groups/useruploadsgroup.cpp:29
+#, fuzzy
+msgid "User uploads"
+msgstr "Gushyiraho"
+
+#: apps/ktorrent/groups/groupmanager.h:75
+#: apps/ktorrent/groups/inactivegroup.cpp:29
+#, fuzzy
+msgid "Inactive torrents"
+msgstr "Gukora inyandiko"
+
+#: apps/ktorrent/groups/groupmanager.h:78
+#: apps/ktorrent/groups/inactivedownloadsgroup.cpp:29
+#, fuzzy
+msgid "Inactive downloads"
+msgstr "Iyimura"
+
+#: apps/ktorrent/groups/groupmanager.h:81
+#: apps/ktorrent/groups/inactiveuploadsgroup.cpp:29
+#, fuzzy
+msgid "Inactive uploads"
+msgstr "Gushyiraho"
+
+#: apps/ktorrent/groups/activegroup.cpp:29
+#: apps/ktorrent/groups/groupmanager.h:84
+#, fuzzy
+msgid "Active torrents"
+msgstr "Ikinyakoreya"
+
+#: apps/ktorrent/groups/activedownloadsgroup.cpp:28
+#: apps/ktorrent/groups/groupmanager.h:87
+#, fuzzy
+msgid "Active downloads"
+msgstr "Iyimura"
+
+#: apps/ktorrent/ktorrentview.cpp:397 apps/ktorrent/ktorrentviewmenu.cpp:45
+#, fuzzy
+msgid "Remove Torrent"
+msgstr "Kubika ? "
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:49
+#, fuzzy
+msgid "Remove Torrent and Data"
+msgstr "Kubika ? "
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:59
+#, fuzzy
+msgid "Add Peers"
+msgstr "Kugena ibizakorwa"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:63
+msgid "Additional Peer Sources"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:64
+msgid "Torrent Peer Sources:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 85
+#: apps/ktorrent/ktorrentviewmenu.cpp:66 plugins/infowidget/peerview.cpp:221
+#: rc.cpp:77 rc.cpp:1256 rc.cpp:1307
+#, no-c-format
+msgid "DHT"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:67
+msgid "Peer Exchange"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:72
+#, fuzzy
+msgid "Manual Announce"
+msgstr "Ibahasha y'Intoki"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:76 plugins/infowidget/fileview.cpp:50
+msgid "Preview"
+msgstr "Igaragazambere"
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:81
+msgid "Open Directory"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:82
+msgid "Data Directory"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:84
+msgid "Temporary Directory"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:87
+#, fuzzy
+msgid "Set Download Location"
+msgstr "Iyimura Agashushondanga "
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:90
+msgid "Remove From Group"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:93
+msgid "Add to Group"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 16
+#: apps/ktorrent/ktorrentviewmenu.cpp:100 rc.cpp:147
+#, no-c-format
+msgid "Speed Limits"
+msgstr ""
+
+#: apps/ktorrent/addpeerwidget.cpp:67
+msgid "Torrent does not exist. Report this bug to KTorrent developers."
+msgstr ""
+
+#: apps/ktorrent/addpeerwidget.cpp:102
+msgid "Potential peer added."
+msgstr ""
+
+#: apps/ktorrent/addpeerwidget.cpp:106
+#, fuzzy
+msgid "Malformed IP address."
+msgstr "URL Ikoze nabi"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 311
+#: apps/ktorrent/pref.cpp:58 rc.cpp:282
+#, no-c-format
+msgid "Preferences"
+msgstr "Ibyahisemo"
+
+#: apps/ktorrent/pref.cpp:147
+#, fuzzy
+msgid "Download Options"
+msgstr "Iyimura y'inkoranyamagambo"
+
+#: apps/ktorrent/pref.cpp:179 apps/ktorrent/pref.cpp:294
+msgid "The DHT port needs to be different from the UDP tracker port!"
+msgstr ""
+
+#: apps/ktorrent/pref.cpp:216
+msgid "General"
+msgstr "Rusange"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 16
+#: apps/ktorrent/pref.cpp:216 rc.cpp:57
+#, no-c-format
+msgid "General Options"
+msgstr "Amahitamo Rusange"
+
+#: apps/ktorrent/pref.cpp:283
+msgid ""
+"Cannot lookup %1: %2\n"
+"Please provide a valid IP address or hostname."
+msgstr ""
+
+#: apps/ktorrent/pref.cpp:411
+msgid "Advanced"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 27
+#: apps/ktorrent/pref.cpp:411 rc.cpp:540
+#, fuzzy, no-c-format
+msgid "Advanced Options"
+msgstr "Idosiye "
+
+#: apps/ktorrent/ktorrentview.cpp:132
+msgid "Visible columns"
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 16
+#: apps/ktorrent/ktorrentview.cpp:135
+#: plugins/infowidget/infowidgetplugin.cpp:76 rc.cpp:1016
+#, no-c-format
+msgid "Status"
+msgstr "Imimerere"
+
+#: apps/ktorrent/ktorrentview.cpp:136 plugins/infowidget/peerview.cpp:225
+msgid "Downloaded"
+msgstr "Yimuwe"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 149
+#: apps/ktorrent/ktorrentview.cpp:137 plugins/infowidget/fileview.cpp:48
+#: rc.cpp:24
+#, no-c-format
+msgid "Size"
+msgstr "Ingano"
+
+#: apps/ktorrent/ktorrentview.cpp:138 plugins/infowidget/peerview.cpp:226
+#, fuzzy
+msgid "Uploaded"
+msgstr "Gushyiraho"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 313
+#: apps/ktorrent/ktorrentview.cpp:139 plugins/infowidget/peerview.cpp:216
+#: rc.cpp:1010
+#, fuzzy, no-c-format
+msgid "Down Speed"
+msgstr "Ntu kohereze"
+
+#: apps/ktorrent/ktorrentview.cpp:140 plugins/infowidget/peerview.cpp:217
+#, fuzzy
+msgid "Up Speed"
+msgstr "Umuvuduko"
+
+#: apps/ktorrent/ktorrentview.cpp:141
+msgid "Time Left"
+msgstr "Igihe gisigaye:"
+
+#: apps/ktorrent/ktorrentview.cpp:142
+#, fuzzy
+msgid "Seeders"
+msgstr "Uwohereza"
+
+#: apps/ktorrent/ktorrentview.cpp:143
+#, fuzzy
+msgid "Leechers"
+msgstr "Ibaruwa:"
+
+#: apps/ktorrent/ktorrentview.cpp:144 plugins/infowidget/fileview.cpp:51
+#, fuzzy
+msgid "% Complete"
+msgstr "%1 Yarangiye"
+
+#: apps/ktorrent/ktorrentview.cpp:145
+#, fuzzy
+msgid "Share Ratio"
+msgstr "Ikigero cy'Ingano:"
+
+#: apps/ktorrent/ktorrentview.cpp:146
+#, fuzzy
+msgid "Time Downloaded"
+msgstr "Yimuwe"
+
+#: apps/ktorrent/ktorrentview.cpp:147
+#, fuzzy
+msgid "Time Seeded"
+msgstr "Igihe gisigaye:"
+
+#: apps/ktorrent/ktorrentview.cpp:203 apps/ktorrent/ktorrentview.cpp:551
+#: apps/ktorrent/ktorrentview.cpp:877
+#, fuzzy
+msgid "All Torrents %1/%2"
+msgstr "Ikinyakoreya"
+
+#: apps/ktorrent/ktorrentview.cpp:283
+#, c-format
+msgid ""
+"_n: Cannot start more than 1 download, \n"
+"Cannot start more than %n downloads, "
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:285
+#, fuzzy, c-format
+msgid ""
+"_n: and 1 seed. \n"
+"and %n seeds. "
+msgstr "1 %n "
+
+#: apps/ktorrent/ktorrentview.cpp:286 apps/ktorrent/trayicon.cpp:258
+msgid "Go to Settings -> Configure KTorrent, if you want to change the limits."
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:375
+#, fuzzy
+msgid ""
+"The torrent %1 has not finished downloading, do you want to delete the "
+"incomplete data, too?"
+msgstr "Byose Ibyatanzwe Yimuwe ya:  iyi , NIBA iyi . Kuri iyi ? "
+
+#: apps/ktorrent/ktorrentview.cpp:378
+#, fuzzy
+msgid "Remove Download"
+msgstr "Iyimura"
+
+#: apps/ktorrent/ktorrentview.cpp:379
+msgid "Delete Data"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:379
+msgid "Keep Data"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:395
+msgid ""
+"You will lose all the downloaded data. Are you sure you want to do this?"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:631
+#, fuzzy
+msgid "You are already checking the data of the torrent %1 !"
+msgstr "Kuri Iyimura i ? "
+
+#: apps/ktorrent/ktorrentview.cpp:751
+#, fuzzy, c-format
+msgid "Choose download location for %1"
+msgstr "Iyimura Agashushondanga "
+
+#: apps/ktorrent/fileselectdlg.cpp:120
+msgid ""
+"You have deselected the following existing files. You will lose all data in "
+"these files, are you sure you want to do this ?"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlg.cpp:124
+msgid "Yes, delete the files"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlg.cpp:125
+msgid "No, keep the files"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlg.cpp:220
+msgid " short!"
+msgstr ""
+
+#: apps/ktorrent/queuedialog.cpp:73
+msgid "User"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 24
+#: apps/ktorrent/queuedialog.cpp:75 rc.cpp:249
+#, no-c-format
+msgid "Queue Manager"
+msgstr ""
+
+#: apps/ktorrent/queuedialog.cpp:305 apps/ktorrent/queuedialog.cpp:326
+#, fuzzy
+msgid "No (private torrent)"
+msgstr "Gukora inyandiko"
+
+#: apps/ktorrent/trayicon.cpp:90
+msgid ""
+"<table cellpadding='2' cellspacing='2' align='center'>"
+"<tr>"
+"<td><b>Speed:</b></td>"
+"<td></td></tr>"
+"<tr>"
+"<td>Download: <font color='#1c9a1c'>%1</font></td>"
+"<td>Upload: <font color='#990000'>%2</font></td></tr>"
+"<tr>"
+"<td><b>Transfer:</b></td>"
+"<td></td></tr>"
+"<tr>"
+"<td>Download: <font color='#1c9a1c'>%3</font></td>"
+"<td>Upload: <font color='#990000'>%4</font></td></tr></table>"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:147
+#, fuzzy
+msgid "<b>%1</b> has completed downloading.<br>Average speed: %2 DL / %3 UL."
+msgstr "<b> %1 </b> Byarangiye Iyimura . <br> Umuvuduko : %2 /%3 . "
+
+#: apps/ktorrent/trayicon.cpp:153 libktorrent/torrent/torrentcontrol.cpp:1366
+#, fuzzy
+msgid "Download completed"
+msgstr "Byarangiye "
+
+#: apps/ktorrent/trayicon.cpp:165
+msgid ""
+"<b>%1</b> has reached its maximum share ratio of %2 and has been stopped."
+"<br>Uploaded %3 at an average speed of %4."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:172 apps/ktorrent/trayicon.cpp:191
+#: libktorrent/torrent/torrentcontrol.cpp:1368
+#, fuzzy
+msgid "Seeding completed"
+msgstr "Byarangiye "
+
+#: apps/ktorrent/trayicon.cpp:184
+msgid ""
+"<b>%1</b> has reached its maximum seed time of %2 hours and has been stopped."
+"<br>Uploaded %3 at an average speed of %4."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:200
+#, fuzzy
+msgid "<b>%1</b> has been stopped with the following error: <br>%2"
+msgstr "<b> %1 </b> Kyahagariswe ku i Ikosa : <br> %2 "
+
+#: apps/ktorrent/trayicon.cpp:212
+msgid ""
+"Corrupted data has been found in the torrent <b>%1</b>"
+"<br>It would be a good idea to do a data integrity check on the torrent."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:229
+msgid ""
+"<b>%1</b> has reached its maximum share ratio of %2 and cannot be enqueued. "
+"Remove the limit manually if you want to continue seeding."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:232
+msgid ""
+"<b>%1</b> has reached its maximum seed time of %2 hours and cannot be enqueued. "
+"Remove the limit manually if you want to continue seeding."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:235
+msgid "Torrent cannot be enqueued."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:243
+#, fuzzy
+msgid "Cannot start <b>%1</b> : <br>"
+msgstr "Gufungura Idosiye %1 : %2 "
+
+#: apps/ktorrent/trayicon.cpp:251
+#, c-format
+msgid ""
+"_n: Cannot seed more than 1 torrent. "
+"<br>\n"
+"Cannot seed more than %n torrents. "
+"<br>"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:256
+#, c-format
+msgid ""
+"_n: Cannot download more than 1 torrent. "
+"<br>\n"
+"Cannot download more than %n torrents. "
+"<br>"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:259 apps/ktorrent/trayicon.cpp:263
+msgid "Torrent cannot be started"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:262
+msgid "There is not enough diskspace available."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:277
+msgid ""
+"Your disk is running out of space.<br /><b>%1</b> is being downloaded to '%2'."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:280
+msgid "Torrent has been stopped.<br />"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:282
+msgid "Device running out of space"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:301
+msgid "Speed limit in KB/s"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:304 apps/ktorrent/trayicon.cpp:306
+#: apps/ktorrent/trayicon.cpp:359
+msgid "Unlimited"
+msgstr ""
+
+#: apps/ktorrent/speedlimitsdlg.cpp:36
+msgid "Speed limits for <b>%1</b>:"
+msgstr ""
+
+#: apps/ktupnptest/main.cpp:35
+msgid "A KDE KPart Application"
+msgstr ""
+
+#: apps/ktupnptest/main.cpp:51
+msgid "KTUPnPTest"
+msgstr ""
+
+#: apps/ktcachecheck/cachechecker.cpp:47 apps/ktcachecheck/cachechecker.cpp:76
+#: libktorrent/torrent/chunkmanager.cpp:207
+#: libktorrent/torrent/chunkmanager.cpp:432
+#, fuzzy
+msgid "Cannot open index file %1 : %2"
+msgstr "Gufungura Ubwihisho Idosiye : %1 "
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr ""
+"Viateur MUGENZI, JEAN BAPTISTE NGENDAHAYO, Augustin KIBERWA, Donatien "
+"NSENGIYUMVA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr ""
+"muvia1@yahoo.fr, ngenda_denis@yahoo.co.uk, akiberwa@yahoo.co.uk, "
+"ndonatienuk@yahoo.co.uk"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 16
+#: rc.cpp:3
+#, fuzzy, no-c-format
+msgid "Select Which Files You Want to Download"
+msgstr "Kuri "
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 35
+#: rc.cpp:6
+#, fuzzy, no-c-format
+msgid "Download to:"
+msgstr "Iyimura"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 74
+#: rc.cpp:9
+#, no-c-format
+msgid "Group:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 97
+#: rc.cpp:12
+#, fuzzy, no-c-format
+msgid "&User controlled"
+msgstr "Iyimura"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 116
+#: rc.cpp:15
+#, fuzzy, no-c-format
+msgid "Start torrent"
+msgstr "Gutangira i "
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 160
+#: plugins/infowidget/fileview.cpp:49 rc.cpp:27 rc.cpp:1244 rc.cpp:1259
+#: rc.cpp:1349 rc.cpp:1439
+#, no-c-format
+msgid "Download"
+msgstr "Iyimura"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 181
+#: rc.cpp:30
+#, no-c-format
+msgid "Select &All"
+msgstr "Hitamo byose"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 189
+#: rc.cpp:33
+#, fuzzy, no-c-format
+msgid "Select &None"
+msgstr "Guhitamo Umanuka"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 197
+#: rc.cpp:36
+#, fuzzy, no-c-format
+msgid "Invert Selection"
+msgstr "Gucurika Itoranya"
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 224
+#: rc.cpp:39
+#, no-c-format
+msgid "Disk space"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 260
+#: rc.cpp:42
+#, no-c-format
+msgid "Required disk space:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 268
+#: rc.cpp:45
+#, no-c-format
+msgid "Free disk space:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 276
+#: rc.cpp:48
+#, fuzzy, no-c-format
+msgid "After download:"
+msgstr "Iyimura"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 44
+#: rc.cpp:60
+#, no-c-format
+msgid "Encryption"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 58
+#: rc.cpp:64 rc.cpp:787
+#, no-c-format
+msgid "Use protocol encryption"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 64
+#: rc.cpp:68
+#, no-c-format
+msgid ""
+"Protocol encryption is used to prevent ISP's from slowing down bittorrent "
+"connections."
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 72
+#: rc.cpp:71 rc.cpp:790
+#, no-c-format
+msgid "Allow unencrypted connections"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 75
+#: rc.cpp:74
+#, no-c-format
+msgid ""
+"If unchecked, you'll be able to connect only to clients supporting encryption."
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 88
+#: rc.cpp:80
+#, no-c-format
+msgid ""
+"<b>D</b>istributed <b>H</b>ash <b>T</b>able protocol."
+"<br>Decentralized peers exchange protocol. See manual for more info."
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 99
+#: rc.cpp:83
+#, no-c-format
+msgid "&Use DHT to get additional peers"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 118
+#: rc.cpp:87
+#, no-c-format
+msgid "UDP port for DHT communication:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 161
+#: rc.cpp:90
+#, no-c-format
+msgid "Custom IP"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 172
+#: rc.cpp:93
+#, no-c-format
+msgid "Se&nd the tracker a custom IP address or hostname"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 188
+#: rc.cpp:96
+#, no-c-format
+msgid "Custom IP address or hostname:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 205
+#: rc.cpp:99
+#, fuzzy, no-c-format
+msgid "System Tray Icon"
+msgstr "Kwerekana agashushondanga k'igitwara sisitemu"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 216
+#: rc.cpp:102
+#, fuzzy, no-c-format
+msgid "Show s&ystem tray icon"
+msgstr "Kwerekana agashushondanga k'igitwara sisitemu"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 224
+#: rc.cpp:105
+#, fuzzy, no-c-format
+msgid "Show speed &bar in tray icon"
+msgstr "Kwerekana agashushondanga k'igitwara sisitemu"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 232
+#: rc.cpp:108
+#, fuzzy, no-c-format
+msgid "Show system tray popup messages"
+msgstr "Kwerekana agashushondanga k'igitwara sisitemu"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 251
+#: rc.cpp:112
+#, no-c-format
+msgid "Upload bandwidth (in KB/sec):"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 276
+#: rc.cpp:115
+#, no-c-format
+msgid "Download bandwidth (in KB/sec):"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 305
+#: rc.cpp:118
+#, fuzzy, no-c-format
+msgid "Folders"
+msgstr "amadosiye yose"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 324
+#: rc.cpp:121
+#, fuzzy, no-c-format
+msgid "Folder to store temporary files:"
+msgstr "Kuri By'igihe gito Idosiye : "
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 342
+#: rc.cpp:124
+#, fuzzy, no-c-format
+msgid "Move completed downloads to:"
+msgstr "Iyimura"
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 353
+#: rc.cpp:128
+#, fuzzy, no-c-format
+msgid "&Automatically save downloads to:"
+msgstr "Kubika Iyimura Kuri : "
+
+#. i18n: file ./apps/ktorrent/generalpref.ui line 395
+#: rc.cpp:131
+#, fuzzy, no-c-format
+msgid "Copy .torrent files to:"
+msgstr "Amadosiye y'inyandiko"
+
+#. i18n: file ./apps/ktorrent/ktorrentui.rc line 34
+#: rc.cpp:144
+#, fuzzy, no-c-format
+msgid "Download Toolbar"
+msgstr "Iyimura y'ububiko"
+
+#. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 27
+#: rc.cpp:150
+#, fuzzy, no-c-format
+msgid "Set the speed limits for torrent"
+msgstr "Gutangira i "
+
+#. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 51
+#: rc.cpp:153
+#, fuzzy, no-c-format
+msgid "Max upload rate:"
+msgstr "Gushyiraho Igipimo : "
+
+#. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 59
+#: rc.cpp:156
+#, fuzzy, no-c-format
+msgid "Max download rate:"
+msgstr "Iyimura Igipimo : "
+
+#. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 97
+#: rc.cpp:159 rc.cpp:162
+#, fuzzy, no-c-format
+msgid "KB/s (0 is no limit)"
+msgstr "/Sec. ( 0 %S ni Oya ) "
+
+#. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 16
+#: rc.cpp:171
+#, no-c-format
+msgid "Add potential peer"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 35
+#: rc.cpp:174
+#, fuzzy, no-c-format
+msgid "Peer IP:"
+msgstr "Peru"
+
+#. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 43
+#: rc.cpp:177 rc.cpp:208
+#, no-c-format
+msgid "127.0.0.1"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 51
+#: rc.cpp:180 rc.cpp:288 rc.cpp:525 rc.cpp:931
+#, no-c-format
+msgid "Port:"
+msgstr "Impagikiro:"
+
+#. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 100
+#: rc.cpp:183
+#, no-c-format
+msgid "Enter peer IP and port."
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 16
+#: rc.cpp:193
+#, fuzzy, no-c-format
+msgid "KTorrent Blacklist"
+msgstr "Amadosiye y'inyandiko"
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 30
+#: rc.cpp:196
+#, no-c-format
+msgid ""
+"Note: Blacklist applies to current session only. Use save/open to save your "
+"entries or use IPFilter plugin (PeerGuardian)."
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 41
+#: rc.cpp:199
+#, fuzzy, no-c-format
+msgid "Banned Peers"
+msgstr "Kugena ibizakorwa"
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 50
+#: rc.cpp:202
+#, no-c-format
+msgid "Peer IP address"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 96
+#: rc.cpp:205
+#, no-c-format
+msgid "Add peer:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 134
+#: rc.cpp:215
+#, no-c-format
+msgid "Adds a peer to blacklist"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 168
+#: rc.cpp:222
+#, no-c-format
+msgid "Removes selected peer from blacklist"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 176
+#: rc.cpp:225
+#, no-c-format
+msgid "C&lear"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 182
+#: rc.cpp:228
+#, no-c-format
+msgid "Clears this list"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 218
+#: rc.cpp:234
+#, no-c-format
+msgid "Save &As..."
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 224
+#: rc.cpp:237
+#, no-c-format
+msgid "Save this blacklist to use with KTorrent IPFilter plugin"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 59
+#: rc.cpp:252
+#, fuzzy, no-c-format
+msgid "Maximum downloads:"
+msgstr "Iyimura : "
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 86
+#: rc.cpp:255
+#, fuzzy, no-c-format
+msgid "Maximum seeds:"
+msgstr "Iyimura : "
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 94
+#: rc.cpp:258
+#, no-c-format
+msgid "Start download on low disk space :"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 102
+#: rc.cpp:261
+#, no-c-format
+msgid "Minimum disk space:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 140
+#: rc.cpp:264
+#, fuzzy, no-c-format
+msgid "Don't start"
+msgstr "Itatangiye"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 145
+#: rc.cpp:267
+#, no-c-format
+msgid "Always ask"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 150
+#: rc.cpp:270
+#, fuzzy, no-c-format
+msgid "Force start"
+msgstr "Itatangiye"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 208
+#: rc.cpp:273
+#, no-c-format
+msgid "MB"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 236
+#: rc.cpp:276 rc.cpp:279 rc.cpp:312 rc.cpp:315 rc.cpp:324
+#, fuzzy, no-c-format
+msgid "(0 is no limit)"
+msgstr "( 0 %S ni Oya ) "
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 330
+#: rc.cpp:285
+#, fuzzy, no-c-format
+msgid "Maximum download rate:"
+msgstr "Iyimura Igipimo : "
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 346
+#: rc.cpp:291
+#, no-c-format
+msgid "Global connection limit:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 354
+#: rc.cpp:294
+#, fuzzy, no-c-format
+msgid "Max seed time:"
+msgstr "Ikigero cy'Ingano:"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 370
+#: rc.cpp:297
+#, fuzzy, no-c-format
+msgid "Maximum connections per torrent:"
+msgstr "Ukwihuza Iyimura : "
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 397
+#: rc.cpp:300
+#, no-c-format
+msgid "Number of upload slots:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 405
+#: rc.cpp:303
+#, fuzzy, no-c-format
+msgid "UDP tracker port:"
+msgstr "Umuyoboro: : "
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 413
+#: rc.cpp:306
+#, fuzzy, no-c-format
+msgid "Max share ratio:"
+msgstr "Ikigero cy'Ingano:"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 421
+#: rc.cpp:309
+#, fuzzy, no-c-format
+msgid "Maximum upload rate:"
+msgstr "Gushyiraho Igipimo : "
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 576
+#: rc.cpp:318 rc.cpp:321
+#, fuzzy, no-c-format
+msgid "KB/sec (0 is no limit)"
+msgstr "/Sec. ( 0 %S ni Oya ) "
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 651
+#: rc.cpp:327
+#, fuzzy, no-c-format
+msgid "Hours (0 is no limit)"
+msgstr "( 0 %S ni Oya ) "
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 663
+#: rc.cpp:330
+#, fuzzy, no-c-format
+msgid "&Keep seeding after download is finished"
+msgstr "Nyuma Iyimura ni Byarangiye "
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 674
+#: rc.cpp:333
+#, fuzzy, no-c-format
+msgid "Attention"
+msgstr "icya/ibyahindutse"
+
+#. i18n: file ./apps/ktorrent/downloadpref.ui line 685
+#: rc.cpp:336
+#, no-c-format
+msgid ""
+"The above ports must also be forwarded if you are behind a router. The UPnP "
+"plugin can do this for you."
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 16
+#: rc.cpp:339
+#, no-c-format
+msgid "KT Queue Dialog"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 69
+#: rc.cpp:348 rc.cpp:386 rc.cpp:1107
+#, no-c-format
+msgid "Status:"
+msgstr "Imimerere:"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 85
+#: rc.cpp:351 rc.cpp:389 rc.cpp:1808
+#, fuzzy, no-c-format
+msgid "Tracker:"
+msgstr "Mucapurirakure"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 93
+#: rc.cpp:354 rc.cpp:392 rc.cpp:1805
+#, no-c-format
+msgid "DHT:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 109
+#: rc.cpp:357 rc.cpp:395 rc.cpp:1061
+#, fuzzy, no-c-format
+msgid "Share ratio:"
+msgstr "Ikigero cy'Ingano:"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 117
+#: rc.cpp:360
+#, no-c-format
+msgid "Bytes left:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 177
+#: rc.cpp:368 rc.cpp:377
+#, fuzzy, no-c-format
+msgid "Torrent"
+msgstr "Ikinyakoreya"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 188
+#: rc.cpp:371 rc.cpp:380
+#, no-c-format
+msgid "Controlled by"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 214
+#: rc.cpp:374
+#, fuzzy, no-c-format
+msgid "Upload&s"
+msgstr "Gushyiraho"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 333
+#: rc.cpp:398
+#, fuzzy, no-c-format
+msgid "Uploaded:"
+msgstr "Gushyiraho"
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 486
+#: rc.cpp:406
+#, no-c-format
+msgid "M&ove up"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 494
+#: rc.cpp:409
+#, no-c-format
+msgid "Move dow&n"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 519
+#: rc.cpp:412
+#, no-c-format
+msgid "Move to top"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 530
+#: rc.cpp:416
+#, no-c-format
+msgid "Move to &bottom"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 555
+#: rc.cpp:419
+#, no-c-format
+msgid "&QM Controlled"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/queuedlg.ui line 563
+#: rc.cpp:422
+#, no-c-format
+msgid "&User Controlled"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/pastedlgbase.ui line 30
+#: rc.cpp:434
+#, no-c-format
+msgid "Paste URL"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/pastedlgbase.ui line 52
+#: rc.cpp:437 rc.cpp:1104 rc.cpp:1919
+#, no-c-format
+msgid "URL:"
+msgstr "URL:"
+
+#. i18n: file ./apps/ktorrent/pastedlgbase.ui line 106
+#: rc.cpp:440
+#, fuzzy, no-c-format
+msgid "O&K"
+msgstr "YEGO"
+
+#. i18n: file ./apps/ktorrent/pastedlgbase.ui line 114
+#: rc.cpp:443 rc.cpp:675 rc.cpp:1176
+#, fuzzy, no-c-format
+msgid "C&ancel"
+msgstr "Kureka"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 16
+#: rc.cpp:446
+#, fuzzy, no-c-format
+msgid "Create Torrent"
+msgstr "Gukora inyandiko"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 38
+#: rc.cpp:449
+#, fuzzy, no-c-format
+msgid "The file or folder of which you want to create a torrent:"
+msgstr "Idosiye Cyangwa Ububiko Bya Kuri Kurema A : "
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 53
+#: rc.cpp:452
+#, fuzzy, no-c-format
+msgid "You must add at least one tracker or node."
+msgstr "&Ongera Ku Rimwe . "
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 61
+#: rc.cpp:455
+#, fuzzy, no-c-format
+msgid "File Options"
+msgstr "Idosiye "
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 80
+#: rc.cpp:458
+#, fuzzy, no-c-format
+msgid "Size of each chunk:"
+msgstr "Bya : "
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 86
+#: rc.cpp:461
+#, no-c-format
+msgid "32"
+msgstr "32"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 91
+#: rc.cpp:464
+#, no-c-format
+msgid "64"
+msgstr "64"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 96
+#: rc.cpp:467
+#, fuzzy, no-c-format
+msgid "128"
+msgstr "1,28"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 101
+#: rc.cpp:470
+#, fuzzy, no-c-format
+msgid "256"
+msgstr "25"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 106
+#: rc.cpp:473
+#, fuzzy, no-c-format
+msgid "512"
+msgstr "12"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 111
+#: rc.cpp:476
+#, fuzzy, no-c-format
+msgid "1024"
+msgstr "0,24"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 116
+#: rc.cpp:479
+#, no-c-format
+msgid "2048"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 121
+#: rc.cpp:482
+#, no-c-format
+msgid "4096"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 126
+#: rc.cpp:485
+#, no-c-format
+msgid "8192"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 138
+#: rc.cpp:488 rc.cpp:633
+#, no-c-format
+msgid "KB"
+msgstr "KB"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 165
+#: rc.cpp:491
+#, fuzzy, no-c-format
+msgid "Start seedin&g the torrent"
+msgstr "Gutangira i "
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 176
+#: rc.cpp:494
+#, no-c-format
+msgid "Decentrali&zed (DHT only)"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 184
+#: rc.cpp:497
+#, no-c-format
+msgid "Private torrent (DHT not allowed)"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 202
+#: rc.cpp:500
+#, no-c-format
+msgid "Comments:"
+msgstr "Ibisobanuro:"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 248
+#: rc.cpp:503
+#, fuzzy, no-c-format
+msgid "&Create"
+msgstr "Kurema"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 262
+#: rc.cpp:506 rc.cpp:1325
+#, fuzzy, no-c-format
+msgid "Ca&ncel"
+msgstr "Kureka"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 275
+#: plugins/infowidget/infowidgetplugin.cpp:214 rc.cpp:509 rc.cpp:1101
+#, fuzzy, no-c-format
+msgid "Trackers"
+msgstr "Udusodeko"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 283
+#: rc.cpp:512
+#, no-c-format
+msgid "DHT nodes"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 333
+#: rc.cpp:522
+#, fuzzy, no-c-format
+msgid "Node:"
+msgstr "Izina:"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 385
+#: rc.cpp:528
+#, no-c-format
+msgid "IP or hostname"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 396
+#: rc.cpp:531 rc.cpp:718 rc.cpp:721
+#, no-c-format
+msgid "Port"
+msgstr "Umuyoboro"
+
+#. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 437
+#: rc.cpp:534
+#, no-c-format
+msgid ""
+"NOTE: Some known good DHT nodes are already inserted. You should probably "
+"insert your own IP address and port too if you plan to seed this torrent."
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 16
+#: rc.cpp:537
+#, fuzzy, no-c-format
+msgid "Advanced Preferences"
+msgstr "Ibyahiswemo by'Umutekano"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 46
+#: rc.cpp:543
+#, no-c-format
+msgid "Time left estimation algorithm:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 53
+#: rc.cpp:546 rc.cpp:568
+#, no-c-format
+msgid ""
+"<b>KTorrent algorithm:</b> Default algorithm using combination of other "
+"algorithms based on our tests."
+"<br>\n"
+"<b>Current speed algorithm:</b> Simplest algorithm - BytesLeft/CurrentSpeed"
+"<br>\n"
+"<b>Global average speed algorithm:</b> BytesLeft/AverageSpeed"
+"<br>\n"
+"<b>Window of X algorithm:</b> ET calculated from X speed samples"
+"<br>\n"
+"<b>Moving average algorithm:</b> Moving average speed calculated from X samples"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 64
+#: rc.cpp:556
+#, fuzzy, no-c-format
+msgid "Current speed"
+msgstr "Shakisha "
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 69
+#: rc.cpp:559
+#, no-c-format
+msgid "Global average speed"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 74
+#: rc.cpp:562
+#, no-c-format
+msgid "Window of X"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 79
+#: rc.cpp:565
+#, no-c-format
+msgid "Moving average"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 98
+#: rc.cpp:575
+#, no-c-format
+msgid "(takes effect after restart)"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 125
+#: rc.cpp:578
+#, no-c-format
+msgid "Disa&ble diskspace preallocation"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 141
+#: rc.cpp:581
+#, no-c-format
+msgid "F&ully preallocate diskspace (avoids fragmentation)"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 147
+#: rc.cpp:584
+#, no-c-format
+msgid "Basic (slow)"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 152
+#: rc.cpp:587
+#, no-c-format
+msgid "Filesystem specific"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 174
+#: rc.cpp:590
+#, fuzzy, no-c-format
+msgid "Performance"
+msgstr "Ibyahisemo"
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 193
+#: rc.cpp:593
+#, no-c-format
+msgid "Memory usage:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 199
+#: rc.cpp:596
+#, no-c-format
+msgid "Low"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 204
+#: rc.cpp:599
+#, no-c-format
+msgid "Medium"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 209
+#: rc.cpp:602
+#, no-c-format
+msgid "High"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 248
+#: rc.cpp:605
+#, fuzzy, no-c-format
+msgid "GUI update interval:"
+msgstr "Ihuzagihe in : "
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 254
+#: rc.cpp:608
+#, no-c-format
+msgid "500ms"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 259
+#: rc.cpp:611
+#, no-c-format
+msgid "1s"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 264
+#: rc.cpp:614
+#, no-c-format
+msgid "2s"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 269
+#: rc.cpp:617
+#, no-c-format
+msgid "5s"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 308
+#: rc.cpp:620
+#, no-c-format
+msgid "Fast CPU"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 342
+#: rc.cpp:624
+#, no-c-format
+msgid "Slow CPU"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 354
+#: rc.cpp:627
+#, no-c-format
+msgid "Data Checking"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 373
+#: rc.cpp:630
+#, no-c-format
+msgid "During uploading, do &not recheck chunks bigger than"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 430
+#: rc.cpp:636
+#, no-c-format
+msgid "Do a data integrit&y check after"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 449
+#: rc.cpp:639
+#, no-c-format
+msgid "corrupted chunks"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 478
+#: rc.cpp:642
+#, no-c-format
+msgid "Networking"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 505
+#: rc.cpp:645
+#, fuzzy, no-c-format
+msgid "Maximum number of connection setups:"
+msgstr "Umubare Bya Ukwihuza Iyimura ( 0 %S = Oya ) "
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 527
+#: rc.cpp:648
+#, no-c-format
+msgid "DSCP for IP packets:"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 570
+#: rc.cpp:651
+#, no-c-format
+msgid "Do not use the KDE pro&xy settings for HTTP tracker connections"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/advancedpref.ui line 586
+#: rc.cpp:654
+#, fuzzy, no-c-format
+msgid "HTTP tracker proxy:"
+msgstr "Umuyoboro: : "
+
+#. i18n: file ./apps/ktorrent/scandlgbase.ui line 24
+#: rc.cpp:657
+#, no-c-format
+msgid "Scanning data"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/scandlgbase.ui line 38
+#: rc.cpp:660
+#, no-c-format
+msgid "Scanning data of torrent :"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/scandlgbase.ui line 62
+#: rc.cpp:663
+#, no-c-format
+msgid "Number of chunks found :"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/scandlgbase.ui line 70
+#: rc.cpp:666
+#, no-c-format
+msgid "Number of chunks failed / not downloaded :"
+msgstr ""
+
+#. i18n: file ./apps/ktorrent/scandlgbase.ui line 97
+#: rc.cpp:669 rc.cpp:672
+#, no-c-format
+msgid "0"
+msgstr ""
+
+#. i18n: file ./apps/ktupnptest/mainwidget.ui line 54
+#: rc.cpp:678
+#, no-c-format
+msgid "Test"
+msgstr ""
+
+#. i18n: file ./libktorrent/labelviewitembase.ui line 49
+#: rc.cpp:685
+#, no-c-format
+msgid "textLabel2"
+msgstr ""
+
+#. i18n: file ./libktorrent/labelviewitembase.ui line 65
+#: rc.cpp:688
+#, no-c-format
+msgid "textLabel3"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 10
+#: rc.cpp:691
+#, fuzzy, no-c-format
+msgid "Maximum number of downloads (0 = no limit)"
+msgstr "Umubare Bya Iyimura ( 0 %S = Oya ) "
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 15
+#: rc.cpp:694
+#, fuzzy, no-c-format
+msgid "Maximum number of seeds (0 = no limit)"
+msgstr "Umubare Bya Iyimura ( 0 %S = Oya ) "
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 20
+#: rc.cpp:697
+#, no-c-format
+msgid "Start downloads on low disk space?"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 24
+#: rc.cpp:700
+#, fuzzy, no-c-format
+msgid "Maximum number of connections per torrent (0 = no limit)"
+msgstr "Umubare Bya Ukwihuza Iyimura ( 0 %S = Oya ) "
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 29
+#: rc.cpp:703
+#, fuzzy, no-c-format
+msgid "Maximum number of connections for all torrents (0 = no limit) "
+msgstr "Umubare Bya Ukwihuza Iyimura ( 0 %S = Oya ) "
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 34
+#: rc.cpp:706
+#, fuzzy, no-c-format
+msgid "Maximum upload speed in KB/sec (0 = no limit)"
+msgstr "Gushyiraho Umuvuduko in /Sec. ( 0 %S = Oya ) "
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 39
+#: rc.cpp:709
+#, fuzzy, no-c-format
+msgid "Maximum download speed in KB/sec (0 = no limit)"
+msgstr "Umuvuduko in /Sec. ( 0 %S = Oya ) "
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 44
+#: rc.cpp:712
+#, fuzzy, no-c-format
+msgid "Maximum share ratio(0 = no limit)"
+msgstr "Umubare Bya Iyimura ( 0 %S = Oya ) "
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 49
+#: rc.cpp:715
+#, fuzzy, no-c-format
+msgid "Maximum seed time in hours (0 = no limit)"
+msgstr "Umubare Bya Iyimura ( 0 %S = Oya ) "
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 66
+#: rc.cpp:724
+#, fuzzy, no-c-format
+msgid "Show a system tray icon"
+msgstr "A Sisitemu Agasanduku Agashushondanga "
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 70
+#: rc.cpp:727
+#, fuzzy, no-c-format
+msgid "Show speed bar in tray icon"
+msgstr "Kwerekana agashushondanga k'igitwara sisitemu"
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 74
+#: rc.cpp:730
+#, no-c-format
+msgid "Download bandwidth (in kb/s):"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 80
+#: rc.cpp:733
+#, no-c-format
+msgid "Upload bandwidth (in kb/s):"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 86
+#: rc.cpp:736
+#, no-c-format
+msgid "Show popup messages when torrent is finished."
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 90
+#: rc.cpp:739
+#, fuzzy, no-c-format
+msgid "Keep seeding after download has finished"
+msgstr "Nyuma Iyimura Byarangiye "
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 94
+#: rc.cpp:742
+#, fuzzy, no-c-format
+msgid "Folder to store temporary files"
+msgstr "Kuri By'igihe gito Idosiye "
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 98
+#: rc.cpp:745
+#, fuzzy, no-c-format
+msgid "Whether to automatically save downloads to saveDir"
+msgstr "Kubika Iyimura Kuri : "
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 102
+#: rc.cpp:748
+#, fuzzy, no-c-format
+msgid "Folder to store downloaded files"
+msgstr "Kuri Yimuwe Idosiye "
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 106
+#: rc.cpp:751
+#, fuzzy, no-c-format
+msgid "Whether to automatically move completed downloads to completedDir"
+msgstr "Kubika Iyimura Kuri : "
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 110
+#: rc.cpp:754
+#, fuzzy, no-c-format
+msgid "Folder to move completed downloaded files to"
+msgstr "Kuri Yimuwe Idosiye "
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 114
+#: rc.cpp:757
+#, fuzzy, no-c-format
+msgid "Whether to automatically copy .torrent files to torrentCopyDir"
+msgstr "Kubika Iyimura Kuri : "
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 118
+#: rc.cpp:760
+#, fuzzy, no-c-format
+msgid "Folder to copy .torrent files to"
+msgstr "Kuri By'igihe gito Idosiye "
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 122
+#: rc.cpp:763
+#, no-c-format
+msgid "Whether to use a custom IP to pass to the tracker"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 126
+#: rc.cpp:766
+#, no-c-format
+msgid "Directory which was used as the last save directory"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 130
+#: rc.cpp:769
+#, no-c-format
+msgid "IP to pass to the tracker"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 134
+#: rc.cpp:772
+#, no-c-format
+msgid "Memory usage"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 138
+#: rc.cpp:775
+#, fuzzy, no-c-format
+msgid "GUI update interval"
+msgstr "Ihuzagihe in : "
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 142
+#: rc.cpp:778
+#, no-c-format
+msgid "Support for DHT"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 146
+#: rc.cpp:781
+#, no-c-format
+msgid "DHT port"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 152
+#: rc.cpp:784
+#, no-c-format
+msgid "Number of upload slots"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 196
+#: rc.cpp:793
+#, no-c-format
+msgid "Columns shown in KTorrentView"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 205
+#: rc.cpp:796
+#, no-c-format
+msgid "ET algorithm"
+msgstr ""
+
+#. i18n: file ./libktorrent/ktorrent.kcfg line 227
+#: rc.cpp:799
+#, no-c-format
+msgid ""
+"When there's no space left to complete download and free diskspace is less than "
+"minDiskSpace, torrent will be stopped."
+msgstr ""
+
+#. i18n: file ./libktorrent/pluginmanagerwidget.ui line 16
+#: rc.cpp:802
+#, no-c-format
+msgid "Plugin Manager"
+msgstr ""
+
+#. i18n: file ./libktorrent/pluginmanagerwidget.ui line 48
+#: rc.cpp:805
+#, no-c-format
+msgid "Load"
+msgstr ""
+
+#. i18n: file ./libktorrent/pluginmanagerwidget.ui line 56
+#: rc.cpp:808
+#, fuzzy, no-c-format
+msgid "U&nload"
+msgstr "Iyimura"
+
+#. i18n: file ./libktorrent/pluginmanagerwidget.ui line 64
+#: rc.cpp:811
+#, no-c-format
+msgid "Load &All"
+msgstr ""
+
+#. i18n: file ./libktorrent/pluginmanagerwidget.ui line 72
+#: rc.cpp:814
+#, fuzzy, no-c-format
+msgid "&Unload All"
+msgstr "Iyimura"
+
+#. i18n: file ./plugins/upnp/ktupnpplugin.kcfg line 10
+#: rc.cpp:817
+#, no-c-format
+msgid "Default UPnP device to use"
+msgstr ""
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 16
+#: plugins/upnp/upnpplugin.cpp:46 plugins/upnp/upnpprefpage.cpp:31 rc.cpp:820
+#, no-c-format
+msgid "UPnP"
+msgstr ""
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 35
+#: rc.cpp:823
+#, no-c-format
+msgid "Detected devices:"
+msgstr ""
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 41
+#: rc.cpp:826
+#, fuzzy, no-c-format
+msgid "Device"
+msgstr "Igaragazambere"
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 52
+#: rc.cpp:829
+#, fuzzy, no-c-format
+msgid "Ports Forwarded"
+msgstr "Yimuwe"
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 63
+#: rc.cpp:832
+#, no-c-format
+msgid "WAN Connection"
+msgstr ""
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 91
+#: rc.cpp:835
+#, no-c-format
+msgid "Forw&ard Ports"
+msgstr ""
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 99
+#: rc.cpp:838
+#, no-c-format
+msgid "Undo Port Forwarding"
+msgstr ""
+
+#. i18n: file ./plugins/upnp/upnpwidget.ui line 124
+#: rc.cpp:841
+#, no-c-format
+msgid "Rescan"
+msgstr ""
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 9
+#: rc.cpp:844
+#, no-c-format
+msgid "Enable scanning of folder1?"
+msgstr ""
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 14
+#: rc.cpp:847
+#, no-c-format
+msgid "Enable scanning of folder2?"
+msgstr ""
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 19
+#: rc.cpp:850
+#, no-c-format
+msgid "Enable scanning of folder3?"
+msgstr ""
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 24
+#: rc.cpp:853
+#, fuzzy, no-c-format
+msgid "Folder1 path"
+msgstr "amadosiye yose"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 29
+#: rc.cpp:856
+#, fuzzy, no-c-format
+msgid "Folder2 path"
+msgstr "amadosiye yose"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 34
+#: rc.cpp:859
+#, fuzzy, no-c-format
+msgid "Folder3 path"
+msgstr "amadosiye yose"
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 39
+#: rc.cpp:862
+#, fuzzy, no-c-format
+msgid "Whether to open torrent silently or not."
+msgstr "Gufungura Idosiye %1 : %2 "
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 44
+#: rc.cpp:865
+#, no-c-format
+msgid "Delete action checked."
+msgstr ""
+
+#. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 49
+#: rc.cpp:868
+#, no-c-format
+msgid "Move action checked."
+msgstr ""
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 16
+#: rc.cpp:871
+#, fuzzy, no-c-format
+msgid "ScanFolder Preferences"
+msgstr "Ibyahiswemo by'Umutekano"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 35
+#: rc.cpp:874
+#, no-c-format
+msgid "Scan folder &1"
+msgstr ""
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 38
+#: rc.cpp:877 rc.cpp:1480
+#, no-c-format
+msgid "Alt+1"
+msgstr ""
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 46
+#: rc.cpp:880
+#, no-c-format
+msgid "Scan folder &2"
+msgstr ""
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 49
+#: rc.cpp:883 rc.cpp:1471 rc.cpp:1495
+#, no-c-format
+msgid "Alt+2"
+msgstr ""
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 57
+#: rc.cpp:886
+#, no-c-format
+msgid "Scan folder &3"
+msgstr ""
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 60
+#: rc.cpp:889 rc.cpp:1465
+#, no-c-format
+msgid "Alt+3"
+msgstr ""
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 81
+#: rc.cpp:895
+#, no-c-format
+msgid "Move to \"loaded\" directory &after loading"
+msgstr ""
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 84
+#: rc.cpp:898
+#, no-c-format
+msgid "Move torrent to \"loaded\" directory after loading it"
+msgstr ""
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 92
+#: rc.cpp:901
+#, fuzzy, no-c-format
+msgid "Open torrents silentl&y"
+msgstr "Amadosiye y'inyandiko"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 95
+#: rc.cpp:904
+#, no-c-format
+msgid "Do not show 'Select files to download' dialog"
+msgstr ""
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 103
+#: rc.cpp:907
+#, no-c-format
+msgid "Delete after loadin&g"
+msgstr ""
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 106
+#: rc.cpp:910
+#, no-c-format
+msgid "Deletes torrent after loading"
+msgstr ""
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 116
+#: rc.cpp:913
+#, fuzzy, no-c-format
+msgid "Folders to scan"
+msgstr "amadosiye yose"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 151
+#: rc.cpp:916
+#, fuzzy, no-c-format
+msgid "Folder 1:"
+msgstr "amadosiye yose"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 162
+#: rc.cpp:919
+#, fuzzy, no-c-format
+msgid "Folder 2:"
+msgstr "amadosiye yose"
+
+#. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 173
+#: rc.cpp:922
+#, fuzzy, no-c-format
+msgid "Folder 3:"
+msgstr "amadosiye yose"
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 30
+#: rc.cpp:925 rc.cpp:1895
+#, fuzzy, no-c-format
+msgid "Search Preferences"
+msgstr "Ibyahiswemo by'Umutekano"
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 41
+#: rc.cpp:928
+#, no-c-format
+msgid "Web Server"
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 82
+#: rc.cpp:934
+#, no-c-format
+msgid "Forward port"
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 107
+#: rc.cpp:937
+#, no-c-format
+msgid "Session TTL (in sec):"
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 142
+#: rc.cpp:940
+#, fuzzy, no-c-format
+msgid "Select interface:"
+msgstr "Guhitamo Umanuka"
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 173
+#: rc.cpp:943
+#, no-c-format
+msgid "Username:"
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 188
+#: rc.cpp:946
+#, no-c-format
+msgid "Change password ..."
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/webinterfacepref.ui line 206
+#: rc.cpp:949
+#, no-c-format
+msgid "Php executable path:"
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 10
+#: rc.cpp:953
+#, no-c-format
+msgid "Port number"
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 15
+#: rc.cpp:956
+#, no-c-format
+msgid "forward Port"
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 20
+#: rc.cpp:959
+#, no-c-format
+msgid "Session time to live"
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 24
+#: rc.cpp:962
+#, fuzzy, no-c-format
+msgid "interface skin"
+msgstr "Amahitamo Rusange"
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 28
+#: rc.cpp:965
+#, no-c-format
+msgid "php executable path"
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 33
+#: rc.cpp:968
+#, no-c-format
+msgid "username"
+msgstr ""
+
+#. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 37
+#: rc.cpp:971
+#, no-c-format
+msgid "password"
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 16
+#: plugins/infowidget/infowidgetplugin.cpp:194 rc.cpp:974 rc.cpp:1046
+#, fuzzy, no-c-format
+msgid "Chunks"
+msgstr "Inkingi"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 43
+#: rc.cpp:977
+#, fuzzy, no-c-format
+msgid "Total:"
+msgstr "Igiteranyo:"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 81
+#: rc.cpp:981
+#, fuzzy, no-c-format
+msgid "Currently downloading:"
+msgstr "Iyimura : "
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 119
+#: rc.cpp:985
+#, fuzzy, no-c-format
+msgid "Downloaded:"
+msgstr "Yimuwe"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 157
+#: rc.cpp:989
+#, fuzzy, no-c-format
+msgid "Excluded:"
+msgstr "Gukuramo igice: "
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 195
+#: rc.cpp:993
+#, no-c-format
+msgid "Left:"
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 233
+#: rc.cpp:997
+#, fuzzy, no-c-format
+msgid "Size:"
+msgstr "Ingano"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 280
+#: rc.cpp:1001
+#, fuzzy, no-c-format
+msgid "Chunk"
+msgstr "Umwanda"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 291
+#: rc.cpp:1004
+#, no-c-format
+msgid "Progress"
+msgstr "Aho bigeze"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 302
+#: rc.cpp:1007
+#, fuzzy, no-c-format
+msgid "Peer"
+msgstr "Peru"
+
+#. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 324
+#: rc.cpp:1013
+#, fuzzy, no-c-format
+msgid "Assigned Peers"
+msgstr "Kugena ibizakorwa"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 63
+#: rc.cpp:1022
+#, fuzzy, no-c-format
+msgid "Seeders:"
+msgstr "Uwohereza"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 71
+#: rc.cpp:1025
+#, fuzzy, no-c-format
+msgid "Leechers:"
+msgstr "Ibaruwa:"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 129
+#: rc.cpp:1030
+#, fuzzy, no-c-format
+msgid "Average Down Speed:"
+msgstr "Umuvuduko "
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 177
+#: rc.cpp:1035
+#, fuzzy, no-c-format
+msgid "Average Up Speed:"
+msgstr "Umuvuduko "
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 195
+#: rc.cpp:1038 rc.cpp:1111
+#, fuzzy, no-c-format
+msgid "Next update in:"
+msgstr "Ihuzagihe in : "
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 203
+#: rc.cpp:1041
+#, fuzzy, no-c-format
+msgid "Tracker Status:"
+msgstr "Udusodeko"
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 332
+#: rc.cpp:1049
+#, fuzzy, no-c-format
+msgid "Parts of the torrent which have been downloaded:"
+msgstr "Bya i Idosiye Yimuwe : "
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 367
+#: rc.cpp:1052
+#, fuzzy, no-c-format
+msgid "Parts of the torrent which are available:"
+msgstr "Bya i Idosiye Bihari : "
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 457
+#: rc.cpp:1055
+#, no-c-format
+msgid "Sharing"
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 487
+#: rc.cpp:1058
+#, no-c-format
+msgid ""
+"Your upload will stop when share ratio gets to this value. Zero means no limit."
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 525
+#: rc.cpp:1064
+#, no-c-format
+msgid "Your upload will stop when you have uploaded for this many hours."
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 533
+#: rc.cpp:1067
+#, no-c-format
+msgid "Hours"
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 543
+#: rc.cpp:1070
+#, no-c-format
+msgid "Ratio limit:"
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 549
+#: rc.cpp:1074
+#, no-c-format
+msgid "Limit works only in seed mode"
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/statustabbase.ui line 557
+#: rc.cpp:1077
+#, no-c-format
+msgid "Time &limit:"
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/trackerviewbase.ui line 37
+#: rc.cpp:1081
+#, fuzzy, no-c-format
+msgid "&Update Tracker"
+msgstr "Mucapurirakure"
+
+#. i18n: file ./plugins/infowidget/trackerviewbase.ui line 40
+#: rc.cpp:1084
+#, no-c-format
+msgid "Minimum update interval - 60 seconds"
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/trackerviewbase.ui line 48
+#: rc.cpp:1087
+#, fuzzy, no-c-format
+msgid "Add Trac&ker"
+msgstr "Mucapurirakure"
+
+#. i18n: file ./plugins/infowidget/trackerviewbase.ui line 64
+#: rc.cpp:1090
+#, fuzzy, no-c-format
+msgid "Remove Tracker"
+msgstr "Mucapurirakure"
+
+#. i18n: file ./plugins/infowidget/trackerviewbase.ui line 75
+#: rc.cpp:1094
+#, fuzzy, no-c-format
+msgid "Ch&ange Tracker"
+msgstr "Mucapurirakure"
+
+#. i18n: file ./plugins/infowidget/trackerviewbase.ui line 100
+#: rc.cpp:1097
+#, fuzzy, no-c-format
+msgid "Restore Defaults"
+msgstr "Mburabuzi "
+
+#. i18n: file ./plugins/infowidget/ktinfowidgetplugin.kcfg line 10
+#: rc.cpp:1115
+#, no-c-format
+msgid "Show peer view tab in main window"
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/ktinfowidgetplugin.kcfg line 14
+#: rc.cpp:1118
+#, no-c-format
+msgid "Show chunk download view tab in main window"
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/ktinfowidgetplugin.kcfg line 18
+#: rc.cpp:1121
+#, no-c-format
+msgid "Show trackers view tab in main window"
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/iwpref.ui line 24
+#: rc.cpp:1124
+#, no-c-format
+msgid "Show list of peers"
+msgstr ""
+
+#. i18n: file ./plugins/infowidget/iwpref.ui line 35
+#: rc.cpp:1128
+#, fuzzy, no-c-format
+msgid "Show list of chunks currentl&y downloading"
+msgstr "Iyimura : "
+
+#. i18n: file ./plugins/infowidget/iwpref.ui line 60
+#: rc.cpp:1131
+#, no-c-format
+msgid "Show list of trackers"
+msgstr ""
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 16
+#: rc.cpp:1135
+#, fuzzy, no-c-format
+msgid "IPBlocking Preferences"
+msgstr "Ibyahisemo"
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 47
+#: rc.cpp:1138
+#, fuzzy, no-c-format
+msgid "Select PeerGuardian Filter File "
+msgstr "Amadosiye y'inyandiko"
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 58
+#: rc.cpp:1141
+#, fuzzy, no-c-format
+msgid "Use PeerGuardian filter?"
+msgstr "Amadosiye y'inyandiko"
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 77
+#: rc.cpp:1145
+#, no-c-format
+msgid "IP filter file:"
+msgstr ""
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 85
+#: rc.cpp:1148
+#, no-c-format
+msgid "http://www.bluetack.co.uk/modules.php?name=Downloads&d_op=getit&lid=8"
+msgstr ""
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 123
+#: rc.cpp:1151
+#, fuzzy, no-c-format
+msgid "Dow&nload/Convert"
+msgstr "Iyimura Byinshi..."
+
+#. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 134
+#: rc.cpp:1154
+#, no-c-format
+msgid ""
+"Download PeerGuardian filter from bluetack.co.uk or blocklist.org.\n"
+"NOTE: ZIP file from bluetack.co.uk is supported."
+msgstr ""
+
+#. i18n: file ./plugins/ipfilter/ktipfilterplugin.kcfg line 10
+#: rc.cpp:1159
+#, no-c-format
+msgid "Level1 filter url"
+msgstr ""
+
+#. i18n: file ./plugins/ipfilter/ktipfilterplugin.kcfg line 14
+#: rc.cpp:1162
+#, no-c-format
+msgid "Use level1 filter?"
+msgstr ""
+
+#. i18n: file ./plugins/ipfilter/convert_dlg.ui line 24
+#: plugins/ipfilter/convertdialog.cpp:155 rc.cpp:1165
+#, fuzzy, no-c-format
+msgid "Converting..."
+msgstr "Kurema"
+
+#. i18n: file ./plugins/ipfilter/convert_dlg.ui line 41
+#: rc.cpp:1168
+#, no-c-format
+msgid ""
+"Click on the 'convert' button to start converting antip2p file. NOTE: This "
+"process could take a while even on fast machines and during that time you will "
+"not be able to use KTorrent."
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 27
+#: rc.cpp:1179
+#, no-c-format
+msgid "Update"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 46
+#: rc.cpp:1182 rc.cpp:1268
+#, no-c-format
+msgid "Update charts every"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 71
+#: rc.cpp:1185
+#, fuzzy, no-c-format
+msgid "GUI updates"
+msgstr "Ihuzagihe in : "
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 92
+#: rc.cpp:1188 rc.cpp:1271
+#, no-c-format
+msgid "Gather data every"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 120
+#: rc.cpp:1191
+#, no-c-format
+msgid "miliseconds"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 135
+#: rc.cpp:1194
+#, fuzzy, no-c-format
+msgid "Maximum"
+msgstr "Iyimura : "
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 154
+#: rc.cpp:1197
+#, fuzzy, no-c-format
+msgid "Maximum speed scale mode:"
+msgstr "Iyimura : "
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 165
+#: rc.cpp:1203
+#, no-c-format
+msgid "Exact"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 175
+#: rc.cpp:1206
+#, no-c-format
+msgid "See 'What's this' for more help"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 180
+#: rc.cpp:1209
+#, no-c-format
+msgid ""
+"Set maximum value on OY scale as:\n"
+"- Top: Globally achieved maximum speed\n"
+"- Exact: Maximum achieved speed visible on chart"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 192
+#: rc.cpp:1214 rc.cpp:1247
+#, fuzzy, no-c-format
+msgid "Peers speed"
+msgstr "N'aho mukanya"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 211
+#: rc.cpp:1217
+#, fuzzy, no-c-format
+msgid "Peers speed:"
+msgstr "Peru"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 222
+#: rc.cpp:1220
+#, no-c-format
+msgid "update every"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 244
+#: rc.cpp:1223
+#, no-c-format
+msgid "chart data updates"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 254
+#: rc.cpp:1226
+#, no-c-format
+msgid "Gathering data about many connected peers can be CPU consuming."
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 267
+#: rc.cpp:1229
+#, no-c-format
+msgid "Peers connections"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 270
+#: rc.cpp:1232
+#, no-c-format
+msgid "Large values can obscure charts of connected peers"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 289
+#: rc.cpp:1235
+#, fuzzy, no-c-format
+msgid "Show seeders in swarms"
+msgstr "Kwerekana agashushondanga k'igitwara sisitemu"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 297
+#: rc.cpp:1238
+#, no-c-format
+msgid "Show leechers in swarms"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 309
+#: rc.cpp:1241
+#, no-c-format
+msgid "Measurements count"
+msgstr ""
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 392
+#: rc.cpp:1250 rc.cpp:1265
+#, fuzzy, no-c-format
+msgid "Upload"
+msgstr "Gushyiraho"
+
+#. i18n: file ./plugins/stats/sprefwgt.ui line 424
+#: rc.cpp:1253
+#, no-c-format
+msgid "Connections"
+msgstr ""
+
+#. i18n: file ./plugins/stats/statsspdwgt.ui line 40
+#: plugins/infowidget/infowidgetplugin.cpp:173 rc.cpp:1262 rc.cpp:1304
+#, fuzzy, no-c-format
+msgid "Peers"
+msgstr "N'aho mukanya"
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 18
+#: rc.cpp:1274
+#, no-c-format
+msgid "Toggle peers speed charts"
+msgstr ""
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 22
+#: rc.cpp:1277
+#, no-c-format
+msgid "Interval between getting data about peers speed"
+msgstr ""
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 26
+#: rc.cpp:1280
+#, no-c-format
+msgid "Toggle drawing of leechers in swarms"
+msgstr ""
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 30
+#: rc.cpp:1283
+#, no-c-format
+msgid "Toggle drawing of seeders in swarms"
+msgstr ""
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 35
+#: rc.cpp:1286
+#, fuzzy, no-c-format
+msgid "Download mesurments count"
+msgstr "Iyimura Byinshi..."
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 39
+#: rc.cpp:1289
+#, no-c-format
+msgid "Peers speed mesurments count"
+msgstr ""
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 43
+#: rc.cpp:1292
+#, no-c-format
+msgid "Upload mesurments count"
+msgstr ""
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 47
+#: rc.cpp:1295
+#, no-c-format
+msgid "Connections mesurments count"
+msgstr ""
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 51
+#: rc.cpp:1298
+#, no-c-format
+msgid "DHT mesurments count"
+msgstr ""
+
+#. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 56
+#: rc.cpp:1301
+#, no-c-format
+msgid "OY axis max mode"
+msgstr ""
+
+#. i18n: file ./plugins/partfileimport/importdlgbase.ui line 16
+#: rc.cpp:1310
+#, no-c-format
+msgid "Import an existing download"
+msgstr ""
+
+#. i18n: file ./plugins/partfileimport/importdlgbase.ui line 49
+#: rc.cpp:1313
+#, fuzzy, no-c-format
+msgid "Torrent:"
+msgstr "Ikinyakoreya"
+
+#. i18n: file ./plugins/partfileimport/importdlgbase.ui line 63
+#: rc.cpp:1316
+#, no-c-format
+msgid "Data:"
+msgstr ""
+
+#. i18n: file ./plugins/partfileimport/importdlgbase.ui line 95
+#: rc.cpp:1319
+#, no-c-format
+msgid ""
+"Please specify the torrent and the data already downloaded for that torrent."
+msgstr ""
+
+#. i18n: file ./plugins/partfileimport/importdlgbase.ui line 133
+#: rc.cpp:1322
+#, no-c-format
+msgid "&Import"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/ktrssfeedplugin.kcfg line 10
+#: rc.cpp:1328
+#, fuzzy, no-c-format
+msgid "default"
+msgstr "Mburabuzi "
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 18
+#: rc.cpp:1331
+#, no-c-format
+msgid "Rss Feeds"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 36
+#: rc.cpp:1334
+#, fuzzy, no-c-format
+msgid "Feeds"
+msgstr "Uwohereza"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 78
+#: rc.cpp:1337
+#, no-c-format
+msgid "De&lete"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 86
+#: rc.cpp:1340 rc.cpp:1382 rc.cpp:1392
+#, no-c-format
+msgid "&New"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 117
+#: rc.cpp:1343
+#, fuzzy, no-c-format
+msgid "&URL"
+msgstr "URL"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 139
+#: rc.cpp:1346
+#, no-c-format
+msgid "Articles"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 216
+#: rc.cpp:1353
+#, no-c-format
+msgid "Auto&refresh"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 242
+#: rc.cpp:1356
+#, no-c-format
+msgid "I&gnore TTL"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 270
+#: rc.cpp:1359
+#, no-c-format
+msgid "Refresh"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 299
+#: rc.cpp:1363 rc.cpp:1395
+#, no-c-format
+msgid "&Title"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 323
+#: rc.cpp:1366
+#, no-c-format
+msgid "Keep Articles (days)"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 347
+#: rc.cpp:1369 rc.cpp:1398
+#, no-c-format
+msgid "&Active"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 362
+#: rc.cpp:1372
+#, fuzzy, no-c-format
+msgid "Filters"
+msgstr "Ibyahisemo"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 389
+#: rc.cpp:1375
+#, fuzzy, no-c-format
+msgid "Accept Filters"
+msgstr "amadosiye yose"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 440
+#: rc.cpp:1385
+#, no-c-format
+msgid "Reject Filters"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 557
+#: rc.cpp:1401
+#, no-c-format
+msgid "Regular Expressions"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 587
+#: rc.cpp:1404
+#, no-c-format
+msgid "Treat as &Series"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 624
+#: rc.cpp:1407
+#, fuzzy, no-c-format
+msgid "Process"
+msgstr "Aho bigeze"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 643
+#: rc.cpp:1411
+#, no-c-format
+msgid "Series Criteria"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 679
+#: rc.cpp:1414
+#, no-c-format
+msgid "Match Without Episode"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 713
+#: rc.cpp:1418
+#, no-c-format
+msgid "Max Episode"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 739
+#: rc.cpp:1421
+#, fuzzy, no-c-format
+msgid "Max Season"
+msgstr "Ikigero cy'Ingano:"
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 758
+#: rc.cpp:1424
+#, no-c-format
+msgid "Min Season"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 782
+#: rc.cpp:1427
+#, no-c-format
+msgid "Min Episode"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 814
+#: rc.cpp:1430
+#, no-c-format
+msgid "Test te&xt"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 840
+#: rc.cpp:1433
+#, no-c-format
+msgid "Te&st"
+msgstr ""
+
+#. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 858
+#: rc.cpp:1436
+#, fuzzy, no-c-format
+msgid "Filter Matches"
+msgstr "amadosiye yose"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 28
+#: rc.cpp:1447
+#, no-c-format
+msgid "Bandwidth scheduler"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 50
+#: rc.cpp:1450
+#, no-c-format
+msgid "Left click category"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 61
+#: rc.cpp:1453
+#, no-c-format
+msgid "Categor&y 1"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 157
+#: rc.cpp:1456 rc.cpp:1483
+#, no-c-format
+msgid "T&urn off"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 165
+#: rc.cpp:1459 rc.cpp:1486
+#, no-c-format
+msgid "&Normal"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 195
+#: rc.cpp:1462
+#, no-c-format
+msgid "Category &3"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 206
+#: rc.cpp:1468 rc.cpp:1492
+#, no-c-format
+msgid "Category &2"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 219
+#: rc.cpp:1474
+#, no-c-format
+msgid "Right click category"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 230
+#: rc.cpp:1477
+#, no-c-format
+msgid "Category &1"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 367
+#: rc.cpp:1489
+#, no-c-format
+msgid "&Category 3"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 390
+#: rc.cpp:1498
+#, no-c-format
+msgid "Categories"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 401
+#: rc.cpp:1501
+#, no-c-format
+msgid "<b>1. Category</b>"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 409
+#: rc.cpp:1504
+#, no-c-format
+msgid "<b>3. Category</b>"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 425
+#: rc.cpp:1507 rc.cpp:1516 rc.cpp:1525
+#, fuzzy, no-c-format
+msgid "download:"
+msgstr "Iyimura"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 441
+#: rc.cpp:1510 rc.cpp:1519 rc.cpp:1528
+#, fuzzy, no-c-format
+msgid "upload:"
+msgstr "Gushyiraho"
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 457
+#: rc.cpp:1513 rc.cpp:1522 rc.cpp:1531
+#, no-c-format
+msgid "KB/s *"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 567
+#: rc.cpp:1534
+#, no-c-format
+msgid "<b>2. Category</b>"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 626
+#: rc.cpp:1538
+#, fuzzy, no-c-format
+msgid "* zero means no limit"
+msgstr "( 0 %S ni Oya ) "
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 672
+#: rc.cpp:1541
+#, no-c-format
+msgid "Save to file"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 680
+#: rc.cpp:1544
+#, no-c-format
+msgid "&Load from file"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 688
+#: rc.cpp:1547
+#, no-c-format
+msgid "Reset schedule"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/bwspage.ui line 751
+#: rc.cpp:1550
+#, fuzzy, no-c-format
+msgid "O&k"
+msgstr "YEGO"
+
+#. i18n: file ./plugins/scheduler/schedulerpage.ui line 16
+#: rc.cpp:1559
+#, no-c-format
+msgid "Scheduler Plugin Pref Page"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/schedulerpage.ui line 27
+#: rc.cpp:1562
+#, no-c-format
+msgid "Use &bandwidth scheduler?"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/schedulerpage.ui line 35
+#: plugins/scheduler/schedulerplugin.cpp:59 rc.cpp:1565
+#, no-c-format
+msgid "Bandwidth Scheduler"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/schedulerpage.ui line 46
+#: rc.cpp:1568
+#, no-c-format
+msgid "Use colors instead of pi&xmaps?"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/schedulerpage.ui line 54
+#: rc.cpp:1571
+#, no-c-format
+msgid "(Recommended for slower systems)"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/schedulerpage.ui line 62
+#: rc.cpp:1574
+#, no-c-format
+msgid "Edit s&chedule"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/ktschedulerplugin.kcfg line 10
+#: rc.cpp:1577
+#, no-c-format
+msgid "Enable bandwidth scheduler?"
+msgstr ""
+
+#. i18n: file ./plugins/scheduler/ktschedulerplugin.kcfg line 14
+#: rc.cpp:1580
+#, no-c-format
+msgid "Use colors instead of pixmaps?"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 10
+#: rc.cpp:1583
+#, no-c-format
+msgid "Use rich log text"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 15
+#: rc.cpp:1586
+#, no-c-format
+msgid "General info messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 19
+#: rc.cpp:1589
+#, no-c-format
+msgid "Connections messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 23
+#: rc.cpp:1592
+#, no-c-format
+msgid "DHT messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 27
+#: rc.cpp:1595
+#, no-c-format
+msgid "Tracker info messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 31
+#: rc.cpp:1598
+#, fuzzy, no-c-format
+msgid "Disk IO info messages flag"
+msgstr "Idosiye "
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 35
+#: rc.cpp:1601
+#, no-c-format
+msgid "IPFilter plugin messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 39
+#: rc.cpp:1604
+#, no-c-format
+msgid "Search plugin messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 43
+#: rc.cpp:1607
+#, no-c-format
+msgid "PartFileImport plugin messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 47
+#: rc.cpp:1610
+#, no-c-format
+msgid "InfoWidget plugin messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 51
+#: rc.cpp:1613
+#, no-c-format
+msgid "UPnP plugin messages flag"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 55
+#: rc.cpp:1616
+#, fuzzy, no-c-format
+msgid "ScanFolder plugin messages flag"
+msgstr "Idosiye "
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 59
+#: rc.cpp:1619
+#, fuzzy, no-c-format
+msgid "Scheduler plugin messages flag"
+msgstr "Idosiye "
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 63
+#: rc.cpp:1622
+#, fuzzy, no-c-format
+msgid "RSS plugin messages flag"
+msgstr "Idosiye "
+
+#. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 67
+#: rc.cpp:1625
+#, fuzzy, no-c-format
+msgid "WebInterface plugin messages flag"
+msgstr "Idosiye "
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 16
+#: plugins/logviewer/logprefpage.cpp:31 rc.cpp:1628
+#, fuzzy, no-c-format
+msgid "LogViewer Options"
+msgstr "Idosiye "
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 44
+#: libktorrent/pluginmanagerprefpage.cpp:63 rc.cpp:1631
+#, no-c-format
+msgid "Plugins"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 53
+#: rc.cpp:1634 rc.cpp:1652 rc.cpp:1670 rc.cpp:1691 rc.cpp:1706 rc.cpp:1724
+#: rc.cpp:1745 rc.cpp:1763 rc.cpp:1778 rc.cpp:1811 rc.cpp:1826 rc.cpp:1841
+#: rc.cpp:1859 rc.cpp:1874
+#, no-c-format
+msgid "All"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 58
+#: rc.cpp:1637 rc.cpp:1655 rc.cpp:1673 rc.cpp:1694 rc.cpp:1709 rc.cpp:1727
+#: rc.cpp:1748 rc.cpp:1766 rc.cpp:1781 rc.cpp:1814 rc.cpp:1829 rc.cpp:1844
+#: rc.cpp:1862 rc.cpp:1877
+#, fuzzy, no-c-format
+msgid "Debug"
+msgstr "Ubwoko "
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 63
+#: rc.cpp:1640 rc.cpp:1658 rc.cpp:1676 rc.cpp:1697 rc.cpp:1712 rc.cpp:1730
+#: rc.cpp:1751 rc.cpp:1769 rc.cpp:1784 rc.cpp:1817 rc.cpp:1832 rc.cpp:1847
+#: rc.cpp:1865 rc.cpp:1880
+#, no-c-format
+msgid "Notice"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 68
+#: rc.cpp:1643 rc.cpp:1661 rc.cpp:1679 rc.cpp:1700 rc.cpp:1715 rc.cpp:1733
+#: rc.cpp:1754 rc.cpp:1772 rc.cpp:1787 rc.cpp:1820 rc.cpp:1835 rc.cpp:1850
+#: rc.cpp:1868 rc.cpp:1883
+#, no-c-format
+msgid "Important"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 73
+#: rc.cpp:1646 rc.cpp:1664 rc.cpp:1682 rc.cpp:1703 rc.cpp:1718 rc.cpp:1736
+#: rc.cpp:1757 rc.cpp:1775 rc.cpp:1790 rc.cpp:1823 rc.cpp:1838 rc.cpp:1853
+#: rc.cpp:1871 rc.cpp:1886
+#, no-c-format
+msgid "None"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 85
+#: rc.cpp:1649
+#, fuzzy, no-c-format
+msgid "IPFilter:"
+msgstr "Ibyahisemo"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 126
+#: rc.cpp:1667
+#, fuzzy, no-c-format
+msgid "Search:"
+msgstr "Gushaka"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 167
+#: rc.cpp:1685
+#, no-c-format
+msgid "UPnP:"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 178
+#: rc.cpp:1688
+#, fuzzy, no-c-format
+msgid "ScanFolder:"
+msgstr "amadosiye yose"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 249
+#: rc.cpp:1721
+#, fuzzy, no-c-format
+msgid "Scheduler:"
+msgstr "Uwohereza"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 290
+#: rc.cpp:1739
+#, no-c-format
+msgid "PartFileImport:"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 301
+#: rc.cpp:1742
+#, no-c-format
+msgid "InfoWidget:"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 342
+#: rc.cpp:1760
+#, no-c-format
+msgid "RSS plugin:"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 413
+#: rc.cpp:1793
+#, fuzzy, no-c-format
+msgid "WebInterface plugin:"
+msgstr "Amahitamo Rusange"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 426
+#: rc.cpp:1796
+#, no-c-format
+msgid "System"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 437
+#: rc.cpp:1799
+#, fuzzy, no-c-format
+msgid "General:"
+msgstr "Rusange"
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 445
+#: rc.cpp:1802
+#, no-c-format
+msgid "Connections:"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 559
+#: rc.cpp:1856
+#, no-c-format
+msgid "Disk I/O:"
+msgstr ""
+
+#. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 640
+#: rc.cpp:1892
+#, no-c-format
+msgid "Use rich te&xt for log"
+msgstr ""
+
+#. i18n: file ./plugins/search/searchpref.ui line 41
+#: rc.cpp:1898
+#, no-c-format
+msgid "External Browser"
+msgstr ""
+
+#. i18n: file ./plugins/search/searchpref.ui line 52
+#: rc.cpp:1901
+#, no-c-format
+msgid "Open searches in external browser"
+msgstr ""
+
+#. i18n: file ./plugins/search/searchpref.ui line 60
+#: rc.cpp:1904 rc.cpp:1955
+#, no-c-format
+msgid "Use default browser"
+msgstr ""
+
+#. i18n: file ./plugins/search/searchpref.ui line 79
+#: rc.cpp:1908
+#, no-c-format
+msgid "Custom browser path:"
+msgstr ""
+
+#. i18n: file ./plugins/search/searchpref.ui line 116
+#: rc.cpp:1912
+#, fuzzy, no-c-format
+msgid "Search Engines"
+msgstr "Shakisha ama moteri"
+
+#. i18n: file ./plugins/search/searchpref.ui line 143
+#: rc.cpp:1916
+#, fuzzy, no-c-format
+msgid "Search engine name:"
+msgstr "Izina: : "
+
+#. i18n: file ./plugins/search/searchpref.ui line 187
+#: rc.cpp:1922
+#, no-c-format
+msgid "&Add"
+msgstr "&Ongera"
+
+#. i18n: file ./plugins/search/searchpref.ui line 195
+#: rc.cpp:1925
+#, fuzzy, no-c-format
+msgid "Engines"
+msgstr "Ama moteri yose"
+
+#. i18n: file ./plugins/search/searchpref.ui line 206
+#: rc.cpp:1928
+#, no-c-format
+msgid "URL"
+msgstr "URL"
+
+#. i18n: file ./plugins/search/searchpref.ui line 257
+#: rc.cpp:1934
+#, fuzzy, no-c-format
+msgid "R&emove All"
+msgstr "Gukuraho Byose"
+
+#. i18n: file ./plugins/search/searchpref.ui line 282
+#: rc.cpp:1937
+#, fuzzy, no-c-format
+msgid "Add Defau&lt"
+msgstr "Mburabuzi "
+
+#. i18n: file ./plugins/search/searchpref.ui line 290
+#: rc.cpp:1940
+#, fuzzy, no-c-format
+msgid "Update From Internet"
+msgstr "Ihuzagihe in : "
+
+#. i18n: file ./plugins/search/searchbar.ui line 53
+#: plugins/search/searchplugin.cpp:50 plugins/search/searchtab.cpp:48
+#: rc.cpp:1946
+#, no-c-format
+msgid "Search"
+msgstr "Gushaka"
+
+#. i18n: file ./plugins/search/searchbar.ui line 78
+#: rc.cpp:1949
+#, fuzzy, no-c-format
+msgid "Search engine:"
+msgstr "Shakisha Imoteri"
+
+#. i18n: file ./plugins/search/ktsearchplugin.kcfg line 10
+#: rc.cpp:1952
+#, fuzzy, no-c-format
+msgid "Current search engine"
+msgstr "Shakisha "
+
+#. i18n: file ./plugins/search/ktsearchplugin.kcfg line 19
+#: rc.cpp:1958
+#, no-c-format
+msgid "Use custom browser"
+msgstr ""
+
+#. i18n: file ./plugins/search/ktsearchplugin.kcfg line 23
+#: rc.cpp:1961
+#, no-c-format
+msgid "Custom browser executable path"
+msgstr ""
+
+#: libktorrent/interfaces/functions.cpp:35
+msgid "%1 GB"
+msgstr "%1 GB"
+
+#: libktorrent/interfaces/functions.cpp:37
+msgid "%1 MB"
+msgstr "%1 MB"
+
+#: libktorrent/interfaces/functions.cpp:39
+msgid "%1 KB"
+msgstr "%1 KB"
+
+#: libktorrent/interfaces/functions.cpp:41
+msgid "%1 B"
+msgstr "%1 B"
+
+#: libktorrent/interfaces/functions.cpp:47
+#, fuzzy
+msgid "%1 KB/s"
+msgstr "%1 /Sec. "
+
+#: libktorrent/interfaces/functions.cpp:58
+#, c-format
+msgid ""
+"_n: 1 day \n"
+"%n days "
+msgstr ""
+
+#: libktorrent/interfaces/filetreeitem.cpp:77
+#: plugins/infowidget/iwfiletreediritem.cpp:148
+#: plugins/infowidget/iwfiletreeitem.cpp:120
+msgid "Yes, First"
+msgstr ""
+
+#: libktorrent/interfaces/filetreeitem.cpp:80
+#: plugins/infowidget/iwfiletreediritem.cpp:152
+#: plugins/infowidget/iwfiletreeitem.cpp:123
+msgid "Yes, Last"
+msgstr ""
+
+#: libktorrent/util/log.cpp:103
+#, fuzzy
+msgid "Cannot open log file %1 : %2"
+msgstr "Gufungura LOG Idosiye %1 "
+
+#: libktorrent/util/file.cpp:87
+#, fuzzy
+msgid "Cannot write to %1 : %2"
+msgstr "Kurema : %1 "
+
+#: libktorrent/util/file.cpp:101
+#, fuzzy, c-format
+msgid "Cannot read from %1"
+msgstr "Kurema : %1 "
+
+#: libktorrent/util/fileops.cpp:78
+#, fuzzy
+msgid "Cannot create directory %1: %2"
+msgstr "Kurema Ububiko %1 : %2 "
+
+#: libktorrent/util/fileops.cpp:92
+#, fuzzy
+msgid "Cannot symlink %1 to %2: %3"
+msgstr "%1 Kuri %2 : %3 "
+
+#: libktorrent/util/fileops.cpp:108
+#, fuzzy
+msgid "Cannot move %1 to %2: %3"
+msgstr "Himura %1 Kuri %2 : %3 "
+
+#: libktorrent/util/fileops.cpp:124 libktorrent/util/fileops.cpp:140
+#, fuzzy
+msgid "Cannot copy %1 to %2: %3"
+msgstr "Gukoporora %1 Kuri %2 : %3 "
+
+#: libktorrent/util/fileops.cpp:232
+#, fuzzy
+msgid "Cannot delete %1: %2"
+msgstr "Gusiba %1 : %2 "
+
+#: libktorrent/util/fileops.cpp:251
+#, fuzzy
+msgid "Cannot create %1: %2"
+msgstr "Kurema %1 : %2 "
+
+#: libktorrent/util/fileops.cpp:272
+#, fuzzy
+msgid "Cannot calculate the filesize of %1: %2"
+msgstr "Gufungura Idosiye %1 : %2 "
+
+#: libktorrent/util/fileops.cpp:289
+#, fuzzy, c-format
+msgid "Cannot calculate the filesize : %2"
+msgstr "Gufungura Idosiye %1 : %2 "
+
+#: libktorrent/torrent/cachefile.cpp:95 libktorrent/util/fileops.cpp:317
+#: libktorrent/util/fileops.cpp:346 libktorrent/util/fileops.cpp:405
+#: plugins/partfileimport/importdialog.cpp:257
+#, fuzzy
+msgid "Cannot open %1 : %2"
+msgstr "Gufungura Idosiye %1 : %2 "
+
+#: libktorrent/util/fileops.cpp:367 libktorrent/util/fileops.cpp:373
+#: libktorrent/util/fileops.cpp:376 libktorrent/util/fileops.cpp:391
+#, fuzzy, c-format
+msgid "Cannot expand file : %1"
+msgstr "Kurema Umubarendanga Idosiye : %1 "
+
+#: libktorrent/util/fileops.cpp:393
+#, fuzzy
+msgid "Cannot expand file"
+msgstr "Kurema Umubarendanga Idosiye : %1 "
+
+#: libktorrent/util/fileops.cpp:426
+#, fuzzy, c-format
+msgid "Cannot seek in file : %1"
+msgstr "Kurema Umubarendanga Idosiye : %1 "
+
+#: libktorrent/util/mmapfile.cpp:166
+msgid "Cannot write beyond end of the mmap buffer!"
+msgstr ""
+
+#: libktorrent/pluginmanagerprefpage.cpp:54
+msgid "%1<br>Status: <b>%2</b><br>Author: %3"
+msgstr ""
+
+#: libktorrent/pluginmanagerprefpage.cpp:55
+#, fuzzy
+msgid "Loaded"
+msgstr "Gushyiraho"
+
+#: libktorrent/pluginmanagerprefpage.cpp:55
+#, fuzzy
+msgid "Not loaded"
+msgstr "Yimuwe"
+
+#: libktorrent/pluginmanagerprefpage.cpp:63
+#, fuzzy
+msgid "Plugin Options"
+msgstr "Idosiye "
+
+#: libktorrent/migrate/ccmigrate.cpp:119 libktorrent/migrate/ccmigrate.cpp:125
+#: libktorrent/torrent/multifilecache.cpp:595
+#: libktorrent/torrent/multifilecache.cpp:673
+#, fuzzy
+msgid "Cannot open file %1 : %2"
+msgstr "Gufungura Idosiye %1 : %2 "
+
+#: libktorrent/migrate/migrate.cpp:45
+msgid "The directory %1 does not exist"
+msgstr ""
+
+#: libktorrent/torrent/bdecoder.cpp:62
+#, c-format
+msgid "Illegal token: %1"
+msgstr ""
+
+#: libktorrent/torrent/bdecoder.cpp:83
+#, fuzzy
+msgid "Decode error"
+msgstr "Ikosa "
+
+#: libktorrent/torrent/bdecoder.cpp:144 libktorrent/torrent/bdecoder.cpp:189
+#, fuzzy
+msgid "Unexpected end of input"
+msgstr "Impera Bya Iyinjiza "
+
+#: libktorrent/torrent/bdecoder.cpp:164 libktorrent/torrent/bdecoder.cpp:198
+#, fuzzy
+msgid "Cannot convert %1 to an int"
+msgstr "GUHINDURA %1 Kuri INT "
+
+#: libktorrent/torrent/bdecoder.cpp:203
+#, fuzzy
+msgid "Torrent is incomplete!"
+msgstr "Amadosiye y'inyandiko"
+
+#: libktorrent/torrent/torrent.cpp:63 libktorrent/torrent/torrent.cpp:116
+#: libktorrent/torrent/torrent.cpp:139 libktorrent/torrent/torrent.cpp:147
+#: libktorrent/torrent/torrent.cpp:154 libktorrent/torrent/torrent.cpp:158
+#: libktorrent/torrent/torrent.cpp:165 libktorrent/torrent/torrent.cpp:178
+#: libktorrent/torrent/torrent.cpp:182 libktorrent/torrent/torrent.cpp:195
+#: libktorrent/torrent/torrent.cpp:204 libktorrent/torrent/torrent.cpp:216
+#: libktorrent/torrent/torrent.cpp:223 libktorrent/torrent/torrent.cpp:229
+#: libktorrent/torrent/torrent.cpp:236 libktorrent/torrent/torrent.cpp:242
+#: libktorrent/torrent/torrent.cpp:258 libktorrent/torrent/torrent.cpp:304
+#: libktorrent/torrent/torrent.cpp:310 libktorrent/torrent/torrent.cpp:313
+#: libktorrent/torrent/torrent.cpp:316
+msgid "Corrupted torrent!"
+msgstr ""
+
+#: libktorrent/torrent/torrent.cpp:76
+msgid "Torrent has no announce or nodes field"
+msgstr ""
+
+#: libktorrent/torrent/torrent.cpp:103
+#, fuzzy
+msgid " Unable to open torrent file %1 : %2"
+msgstr "Gufungura Idosiye %1 : %2 "
+
+#: libktorrent/torrent/announcelist.cpp:58
+#: libktorrent/torrent/announcelist.cpp:64 libktorrent/torrent/torrent.cpp:281
+#: libktorrent/torrent/torrent.cpp:287
+#, fuzzy
+msgid "Parse Error"
+msgstr "Ikosa "
+
+#: libktorrent/torrent/torrentcontrol.cpp:508
+#, fuzzy, c-format
+msgid ""
+"An error occurred while loading the torrent. The torrent is probably corrupt or "
+"is not a torrent file.\n"
+"%1"
+msgstr ""
+"Ikosa Ifungura i Idosiye . ni i Idosiye ni , Cyangwa ni OYA A Idosiye Ku Byose "
+". "
+
+#: libktorrent/torrent/torrentcontrol.cpp:537
+#, fuzzy
+msgid ""
+"An error occurred while loading the torrent. The torrent is probably corrupt or "
+"is not a torrent file."
+msgstr ""
+"Ikosa Ifungura i Idosiye . ni i Idosiye ni , Cyangwa ni OYA A Idosiye Ku Byose "
+". "
+
+#: libktorrent/torrent/torrentcontrol.cpp:546
+#, fuzzy
+msgid "Unable to create %1 : %2"
+msgstr "Gufungura Idosiye %1 : %2 "
+
+#: libktorrent/torrent/torrentcontrol.cpp:562
+msgid ""
+"You are already downloading this torrent %1, the list of trackers of both "
+"torrents has been merged."
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:566
+#, fuzzy, c-format
+msgid "You are already downloading the torrent %1"
+msgstr "Kuri Iyimura i ? "
+
+#: libktorrent/torrent/torrentcontrol.cpp:672
+#, fuzzy
+msgid "Cannot migrate %1 : %2"
+msgstr "Kurema %1 : %2 "
+
+#: libktorrent/torrent/torrentcontrol.cpp:1273
+msgid ""
+"The torrent %1 was started with a previous version of KTorrent. To make sure "
+"this torrent still works with this version of KTorrent, we will migrate this "
+"torrent. You will be asked for a location to save the torrent to. If you press "
+"cancel, we will select your home directory."
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:1278
+#, fuzzy
+msgid "Select Folder to Save To"
+msgstr "Kuri Kubika "
+
+#: libktorrent/torrent/torrentcontrol.cpp:1364
+#, fuzzy
+msgid "Not started"
+msgstr "Itatangiye"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1370
+#, fuzzy
+msgid "Seeding"
+msgstr "Kugenzura"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1372
+msgid "Downloading"
+msgstr "Iyimura"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1374
+msgid "Stalled"
+msgstr "Byatindijwe"
+
+#: libktorrent/torrent/peersourcemanager.cpp:152
+#: libktorrent/torrent/torrentcontrol.cpp:1376
+msgid "Stopped"
+msgstr "Kyahagariswe"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1378
+msgid "Error: "
+msgstr "Ikosa"
+
+#: libktorrent/torrent/torrentcontrol.cpp:1380
+msgid "Allocating diskspace"
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:1382
+msgid "Queued"
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:1384
+msgid "Checking data"
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:1386
+msgid "Stopped. No space left on device."
+msgstr ""
+
+#: libktorrent/torrent/queuemanager.cpp:135
+msgid ""
+"You don't have enough disk space to download this torrent. Are you sure you "
+"want to continue?"
+msgstr ""
+
+#: libktorrent/torrent/queuemanager.cpp:135
+#, c-format
+msgid "Insufficient disk space for %1"
+msgstr ""
+
+#: libktorrent/torrent/queuemanager.cpp:157
+msgid ""
+"Torrent \"%1\" has reached its maximum share ratio. Ignore the limit and start "
+"seeding anyway?"
+msgstr ""
+
+#: libktorrent/torrent/queuemanager.cpp:157
+msgid "Maximum share ratio limit reached."
+msgstr ""
+
+#: libktorrent/torrent/queuemanager.cpp:236
+#: libktorrent/torrent/queuemanager.cpp:760
+#, fuzzy
+msgid "Error stopping torrent %1 : %2"
+msgstr "Gufungura Idosiye %1 : %2 "
+
+#: libktorrent/torrent/queuemanager.cpp:742
+#, fuzzy
+msgid "Error starting torrent %1 : %2"
+msgstr "Gufungura Idosiye %1 : %2 "
+
+#: libktorrent/torrent/peersourcemanager.cpp:458
+msgid "Announcing"
+msgstr ""
+
+#: libktorrent/torrent/peerid.cpp:203
+#, fuzzy
+msgid "Unknown client"
+msgstr "Umukiriya "
+
+#: libktorrent/torrent/chunkdownload.cpp:339
+#, fuzzy, c-format
+msgid ""
+"_n: 1 peer\n"
+"%n peers"
+msgstr "1 %n "
+
+#: libktorrent/torrent/dndfile.cpp:108
+#, fuzzy
+msgid "Cannot create file %1 : %2"
+msgstr "Kurema %1 : %2 "
+
+#: libktorrent/torrent/dndfile.cpp:175
+#, c-format
+msgid "Failed to write first chunk to DND file : %1"
+msgstr ""
+
+#: libktorrent/torrent/dndfile.cpp:233
+#, c-format
+msgid "Failed to write last chunk to DND file : %1"
+msgstr ""
+
+#: libktorrent/torrent/cachefile.cpp:121 libktorrent/torrent/cachefile.cpp:220
+#: libktorrent/torrent/cachefile.cpp:382 libktorrent/torrent/cachefile.cpp:448
+msgid "Cannot open %1 for writing : readonly filesystem"
+msgstr ""
+
+#: libktorrent/torrent/cachefile.cpp:240
+#, fuzzy
+msgid "Cannot expand file %1 : %2"
+msgstr "Kurema Umubarendanga Idosiye : %1 "
+
+#: libktorrent/torrent/cachefile.cpp:242
+#, fuzzy
+msgid "Cannot expand file %1 : incomplete write"
+msgstr "Kurema Umubarendanga Idosiye : %1 "
+
+#: libktorrent/torrent/cachefile.cpp:255
+#, fuzzy, c-format
+msgid "Cannot expand file %1"
+msgstr "Kurema Umubarendanga Idosiye : %1 "
+
+#: libktorrent/torrent/cachefile.cpp:351
+#, c-format
+msgid "Error : Reading past the end of the file %1"
+msgstr ""
+
+#: libktorrent/torrent/cachefile.cpp:361
+#, fuzzy, c-format
+msgid "Error reading from %1"
+msgstr "Kurema : %1 "
+
+#: libktorrent/torrent/cachefile.cpp:403
+#, fuzzy
+msgid "Error writing to %1 : %2"
+msgstr "Gufungura Idosiye %1 : %2 "
+
+#: libktorrent/torrent/cachefile.cpp:407
+#, fuzzy, c-format
+msgid "Error writing to %1"
+msgstr "Gufungura Idosiye %1 : %2 "
+
+#: libktorrent/torrent/cachefile.cpp:475
+#: libktorrent/torrent/multifilecache.cpp:657
+#, fuzzy, c-format
+msgid "Cannot preallocate diskspace : %1"
+msgstr "Kurema Umubarendanga Idosiye : %1 "
+
+#: libktorrent/torrent/udptrackersocket.cpp:62
+msgid "Cannot bind to udp port %1 or the 10 following ports."
+msgstr ""
+
+#: libktorrent/torrent/httptracker.cpp:260
+#: libktorrent/torrent/httptracker.cpp:280
+#: libktorrent/torrent/httptracker.cpp:320
+#: libktorrent/torrent/httptracker.cpp:399
+#, fuzzy
+msgid "Invalid response from tracker"
+msgstr ", Inyibutsa "
+
+#: libktorrent/torrent/httptracker.cpp:273
+#, fuzzy
+msgid "Invalid data from tracker"
+msgstr ", Inyibutsa "
+
+#: libktorrent/torrent/httptracker.cpp:415
+#, fuzzy
+msgid "Invalid tracker URL"
+msgstr ", Inyibutsa "
+
+#: libktorrent/torrent/torrentcreator.cpp:123
+#: libktorrent/torrent/torrentcreator.cpp:239
+#: libktorrent/torrent/torrentcreator.cpp:277
+#, fuzzy
+msgid "Cannot open file %1: %2"
+msgstr "Gufungura Idosiye %1 : %2 "
+
+#: libktorrent/torrent/torrentcreator.cpp:339
+#, fuzzy, c-format
+msgid "Cannot create index file: %1"
+msgstr "Kurema Umubarendanga Idosiye : %1 "
+
+#: libktorrent/datachecker/singledatachecker.cpp:50
+#, fuzzy
+msgid "Cannot open file : %1 : %2"
+msgstr "Gufungura Idosiye %1 : %2 "
+
+#: plugins/upnp/upnpplugin.cpp:46
+msgid "Uses UPnP to automatically forward ports on your router"
+msgstr ""
+
+#: plugins/upnp/upnprouter.cpp:418 plugins/upnp/upnprouter.cpp:431
+msgid "Cannot find port forwarding service in the device's description!"
+msgstr ""
+
+#: plugins/upnp/upnpprefpage.cpp:31
+msgid "UPnP Devices"
+msgstr ""
+
+#: plugins/scanfolder/scanfolderplugin.cpp:49
+msgid "Automatically scans directories for torrent files and loads them."
+msgstr ""
+
+#: plugins/scanfolder/scanfolderplugin.cpp:52
+#, fuzzy
+msgid "Scan Folder"
+msgstr "amadosiye yose"
+
+#: plugins/scanfolder/scanfolderprefpage.cpp:34
+#, fuzzy
+msgid "ScanFolder"
+msgstr "amadosiye yose"
+
+#: plugins/scanfolder/scanfolderprefpage.cpp:34
+#, fuzzy
+msgid "ScanFolder Options"
+msgstr "Idosiye "
+
+#: plugins/scanfolder/scanfolder.cpp:150 plugins/scanfolder/scanfolder.cpp:188
+#: plugins/scanfolder/scanfolder.cpp:189
+#, fuzzy
+msgid "loaded"
+msgstr "Gushyiraho"
+
+#: plugins/scanfolder/scanfolderprefpagewidget.cpp:73
+msgid ""
+"ScanFolder - Folder %1: Invalid URL or folder does not exist. Please, choose a "
+"valid directory."
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefpage.cpp:27
+msgid "WebInterface"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefpage.cpp:27
+#, fuzzy
+msgid "WebInterface Options"
+msgstr "Amahitamo Rusange"
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:70
+msgid "Php executable is not in default path, please enter the path manually"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:106
+msgid "Please enter a new password for the web interface."
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:116
+msgid "%1 exists and it is executable"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:120
+msgid "%1 does not exist"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:124
+msgid "%1 is not executable"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:128
+msgid "%1 is a directory"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:132
+msgid "%1 is not php executable path"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceplugin.cpp:44
+#, fuzzy
+msgid "Web Interface"
+msgstr "Amahitamo Rusange"
+
+#: plugins/webinterface/webinterfaceplugin.cpp:44
+msgid "Allow to control ktorrent through browser"
+msgstr ""
+
+#: plugins/infowidget/fileview.cpp:57
+#, fuzzy
+msgid "Download First"
+msgstr "Iyimura"
+
+#: plugins/infowidget/fileview.cpp:58
+#, fuzzy
+msgid "Download Normally"
+msgstr "Byarangiye "
+
+#: plugins/infowidget/fileview.cpp:59
+#, fuzzy
+msgid "Download Last"
+msgstr "Iyimura"
+
+#: plugins/infowidget/fileview.cpp:62
+#, fuzzy
+msgid "Delete File(s)"
+msgstr "amadosiye yose"
+
+#: plugins/infowidget/fileview.cpp:204
+#: plugins/infowidget/iwfiletreeitem.cpp:71
+#: plugins/infowidget/iwfiletreeitem.cpp:103
+msgid "Available"
+msgstr "Bihari"
+
+#: plugins/infowidget/fileview.cpp:206
+#: plugins/infowidget/iwfiletreeitem.cpp:75
+#: plugins/infowidget/iwfiletreeitem.cpp:107
+#, fuzzy
+msgid "Pending"
+msgstr "Imisobekere"
+
+#: plugins/infowidget/fileview.cpp:343
+msgid ""
+"_n: You will lose all data in this file, are you sure you want to do this ?\n"
+"You will lose all data in these files, are you sure you want to do this ?"
+msgstr ""
+
+#: plugins/infowidget/statustab.cpp:55
+#, fuzzy
+msgid "No limit"
+msgstr "( 0 %S ni Oya ) "
+
+#: plugins/infowidget/infowidgetplugin.cpp:51
+#: plugins/infowidget/infowidgetprefpage.cpp:34
+msgid "Info Widget"
+msgstr ""
+
+#: plugins/infowidget/infowidgetplugin.cpp:52
+msgid ""
+"Shows additional information about a download. Like which chunks have been "
+"downloaded, how many seeders and leechers ..."
+msgstr ""
+
+#: plugins/infowidget/trackerview.cpp:71
+msgid "Cannot add a tracker to a private torrent."
+msgstr ""
+
+#: plugins/infowidget/trackerview.cpp:96
+#, fuzzy
+msgid "Cannot remove torrent default tracker."
+msgstr "Kurema : %1 "
+
+#: plugins/infowidget/trackerview.cpp:214
+msgid "You cannot add trackers to a private torrent"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:213
+#, fuzzy
+msgid "IP"
+msgstr "ZIPU"
+
+#: plugins/infowidget/peerview.cpp:214
+msgid "Country"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:215
+msgid "Client"
+msgstr "Umukiriya"
+
+#: plugins/infowidget/peerview.cpp:218
+#, fuzzy
+msgid "Choked"
+msgstr "Ivivuwe"
+
+#: plugins/infowidget/peerview.cpp:219
+#, fuzzy
+msgid "Snubbed"
+msgstr "yanditswe/byemewe"
+
+#: plugins/infowidget/peerview.cpp:220
+#, fuzzy
+msgid "Availability"
+msgstr "Bihari"
+
+#: plugins/infowidget/peerview.cpp:222
+msgid "Score"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:223
+#, fuzzy
+msgid "Upload Slot"
+msgstr "Gushyiraho"
+
+#: plugins/infowidget/peerview.cpp:224
+msgid "Requests"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:249
+msgid ""
+"_: to kick\n"
+"Kick peer"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:250
+msgid ""
+"_: to ban\n"
+"Ban peer"
+msgstr ""
+
+#: plugins/infowidget/availabilitychunkbar.cpp:32
+msgid ""
+"<img src=\"available_color\">&nbsp; - Available Chunks"
+"<br><img src=\"unavailable_color\">&nbsp; - Unavailable Chunks"
+"<br><img src=\"excluded_color\">&nbsp; - Excluded Chunks"
+msgstr ""
+
+#: plugins/infowidget/infowidgetprefpage.cpp:34
+msgid "Information Widget Options"
+msgstr ""
+
+#: plugins/infowidget/chunkbar.cpp:98
+msgid ""
+"<img src=\"available_color\">&nbsp; - Downloaded Chunks"
+"<br><img src=\"unavailable_color\">&nbsp; - Chunks to Download"
+"<br><img src=\"excluded_color\">&nbsp; - Excluded Chunks"
+msgstr ""
+
+#: plugins/ipfilter/convertdialog.cpp:81
+msgid "Convert"
+msgstr ""
+
+#: plugins/ipfilter/convertdialog.cpp:102
+msgid "Loading txt file..."
+msgstr ""
+
+#: plugins/ipfilter/convertdialog.cpp:103
+msgid "Please wait..."
+msgstr ""
+
+#: plugins/ipfilter/convertdialog.cpp:194
+msgid "File converted."
+msgstr ""
+
+#: plugins/ipfilter/convertdialog.cpp:199
+msgid "Could not load filter:"
+msgstr ""
+
+#: plugins/ipfilter/convertdialog.cpp:199
+msgid "Bad filter file. It may be corrupted or has a bad format."
+msgstr ""
+
+#: plugins/ipfilter/ipfilterplugin.cpp:43
+msgid "Filters out unwanted peers based on their IP address"
+msgstr ""
+
+#: plugins/ipfilter/ipfilterplugin.cpp:46
+#, fuzzy
+msgid "IP Filter"
+msgstr "Ibyahisemo"
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:70
+#: plugins/ipfilter/ipblockingprefpage.cpp:94
+msgid "Status: Loaded and running."
+msgstr ""
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:76
+#: plugins/ipfilter/ipblockingprefpage.cpp:99
+#, fuzzy
+msgid "Status: Not loaded."
+msgstr "Yimuwe"
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:96
+msgid ""
+"Status: <font color=\"#ff0000\">Filter file not found.</font> "
+"Download and convert filter file."
+msgstr ""
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:117
+msgid "Selected file already exists, do you want to download it again?"
+msgstr ""
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:117
+#: plugins/ipfilter/ipblockingprefpage.cpp:194
+#, fuzzy
+msgid "File Exists"
+msgstr "Idosiye "
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:194
+msgid ""
+"Filter file (level1.dat) already exists, do you want to convert it again?"
+msgstr ""
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:223
+#, fuzzy
+msgid "IPBlocking Filter"
+msgstr "Ibyahisemo"
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:223
+#, fuzzy
+msgid "IPBlocking Filter Options"
+msgstr "Idosiye "
+
+#: plugins/stats/StatsPluginPrefs.cc:25 plugins/stats/statsplugin.cc:29
+#, fuzzy
+msgid "Statistics"
+msgstr "Imimerere"
+
+#: plugins/stats/StatsPluginPrefs.cc:25
+msgid "Statistics options"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:49
+#, fuzzy
+msgid "Leechers connected"
+msgstr "Ibaruwa:"
+
+#: plugins/stats/StatsCon.cc:50
+#, fuzzy
+msgid "Leechers in swarms"
+msgstr "Kwerekana agashushondanga k'igitwara sisitemu"
+
+#: plugins/stats/StatsCon.cc:51
+#, fuzzy
+msgid "Seeders connected"
+msgstr "Byarangiye "
+
+#: plugins/stats/StatsCon.cc:52
+#, fuzzy
+msgid "Seeders in swarms"
+msgstr "Kwerekana agashushondanga k'igitwara sisitemu"
+
+#: plugins/stats/StatsCon.cc:53
+#, fuzzy
+msgid "Average connected leechers per torrent"
+msgstr "Ukwihuza Iyimura : "
+
+#: plugins/stats/StatsCon.cc:54
+#, fuzzy
+msgid "Average connected seeders per torrent"
+msgstr "Ukwihuza Iyimura : "
+
+#: plugins/stats/StatsCon.cc:55
+msgid "Average connected leechers per running torrent"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:56
+msgid "Average connected seeders per running torrent"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:61
+#, fuzzy
+msgid "Nodes"
+msgstr "Izina:"
+
+#: plugins/stats/StatsCon.cc:62
+#, fuzzy
+msgid "Tasks"
+msgstr "Udusodeko"
+
+#: plugins/stats/statsplugin.cc:29
+msgid "Shows transfers statistics"
+msgstr ""
+
+#: plugins/stats/statsplugin.cc:67
+msgid "Speed statistics"
+msgstr ""
+
+#: plugins/stats/statsplugin.cc:68
+msgid "Connection statistics"
+msgstr ""
+
+#: plugins/stats/StatsSpd.cc:57 plugins/stats/StatsSpd.cc:58
+#, fuzzy
+msgid "Current"
+msgstr "Ikinyakoreya"
+
+#: plugins/stats/StatsSpd.cc:60 plugins/stats/StatsSpd.cc:61
+msgid "Average"
+msgstr ""
+
+#: plugins/stats/StatsSpd.cc:63 plugins/stats/StatsSpd.cc:64
+#, fuzzy
+msgid "Limit"
+msgstr "( 0 %S ni Oya ) "
+
+#: plugins/stats/StatsSpd.cc:71
+#, fuzzy
+msgid "Average from leecher"
+msgstr "Umuvuduko "
+
+#: plugins/stats/StatsSpd.cc:72
+#, fuzzy
+msgid "Average to leecher"
+msgstr "Umuvuduko "
+
+#: plugins/stats/StatsSpd.cc:73
+#, fuzzy
+msgid "Average from seeder"
+msgstr "Umuvuduko "
+
+#: plugins/stats/StatsSpd.cc:74
+#, fuzzy
+msgid "From leechers"
+msgstr "Ibaruwa:"
+
+#: plugins/stats/StatsSpd.cc:75
+#, fuzzy
+msgid "From seeders"
+msgstr "amadosiye yose"
+
+#: plugins/stats/ChartDrawer.cc:419
+msgid "Legend"
+msgstr ""
+
+#: plugins/partfileimport/importdialog.cpp:50
+#, fuzzy
+msgid "Torrent files"
+msgstr "Amadosiye y'inyandiko"
+
+#: plugins/partfileimport/importdialog.cpp:50
+#, fuzzy
+msgid "All files"
+msgstr "amadosiye yose"
+
+#: plugins/partfileimport/importdialog.cpp:100
+#, fuzzy, c-format
+msgid "Cannot verify data : %1"
+msgstr "Kurema %1 : %2 "
+
+#: plugins/partfileimport/importdialog.cpp:207
+#: plugins/partfileimport/importdialog.cpp:243
+#, fuzzy, c-format
+msgid "Cannot load the torrent file : %1"
+msgstr "Kurema : %1 "
+
+#: plugins/partfileimport/partfileimportplugin.cpp:43
+msgid "Imports partially or fully downloaded torrents from other clients"
+msgstr ""
+
+#: plugins/partfileimport/partfileimportplugin.cpp:56
+msgid "Import existing download"
+msgstr ""
+
+#: plugins/rssfeed/rss/testlibrss.cpp:14
+msgid "URL of feed"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedplugin.cpp:48
+msgid ""
+"Automatically scans RSS feeds for torrent matching regular expressions and "
+"loads them."
+msgstr ""
+
+#: plugins/rssfeed/rssfeedplugin.cpp:51 plugins/rssfeed/rssfeedplugin.cpp:68
+msgid "RSS Feeds"
+msgstr ""
+
+#: plugins/rssfeed/rsslinkdownloader.cpp:45
+#: plugins/rssfeed/rsslinkdownloader.cpp:183
+#, c-format
+msgid "Failed to find and download a valid torrent for %1"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:78
+msgid "Title"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:78
+msgid "Description"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:78 plugins/rssfeed/rssfeedmanager.cpp:87
+msgid "Link"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:87
+#, fuzzy
+msgid "Season"
+msgstr "Ikigero cy'Ingano:"
+
+#: plugins/rssfeed/rssfeedmanager.cpp:87
+msgid "Episode"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:87
+#, fuzzy
+msgid "Time"
+msgstr "Igihe gisigaye:"
+
+#: plugins/scheduler/schedulerprefpage.cpp:35
+msgid "Scheduler"
+msgstr ""
+
+#: plugins/scheduler/schedulerprefpage.cpp:35
+#, fuzzy
+msgid "Scheduler plugin options"
+msgstr "Idosiye "
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "MON"
+msgstr ""
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "TUE"
+msgstr ""
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "WED"
+msgstr ""
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "THU"
+msgstr ""
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "FRI"
+msgstr ""
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "SAT"
+msgstr ""
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "SUN"
+msgstr ""
+
+#: plugins/scheduler/bwsprefpagewidget.cpp:165
+msgid "Schedule saved."
+msgstr ""
+
+#: plugins/scheduler/bwsprefpagewidget.cpp:174
+msgid "File not found."
+msgstr ""
+
+#: plugins/scheduler/bwsprefpagewidget.cpp:208
+msgid "Schedule loaded."
+msgstr ""
+
+#: plugins/scheduler/schedulerplugin.cpp:56
+#, fuzzy
+msgid "Bandwidth scheduling plugin"
+msgstr "Shakisha "
+
+#: plugins/scheduler/schedulerplugin.cpp:97
+#: plugins/scheduler/schedulerplugin.cpp:137
+msgid "Open Bandwidth Scheduler"
+msgstr ""
+
+#: plugins/scheduler/schedulerplugin.cpp:130
+msgid ""
+"Bandwidth scheduler is disabled. Go to Preferences->Scheduler to enable it."
+msgstr ""
+
+#: plugins/logviewer/logprefpage.cpp:31
+msgid "LogViewer"
+msgstr ""
+
+#: plugins/logviewer/logviewerplugin.cpp:44
+#: plugins/logviewer/logviewerplugin.cpp:58
+#, fuzzy
+msgid "Log Viewer"
+msgstr "Idosiye "
+
+#: plugins/logviewer/logviewerplugin.cpp:45
+msgid "Displays ktorrent logging output"
+msgstr ""
+
+#: plugins/search/searchprefpage.cpp:52
+#, fuzzy
+msgid ""
+"Use your web browser to search for the string %1 (capital letters) on the "
+"search engine you want to add. "
+"<br> Then copy the URL in the addressbar after the search is finished, and "
+"paste it here."
+"<br>"
+"<br>Searching for %1 on Google for example, will result in "
+"http://www.google.com/search?q=FOOBAR&ie=UTF-8&oe=UTF-8. "
+"<br> If you add this URL here, ktorrent can search using Google."
+msgstr ""
+"( ) ku i Shakisha Kuri &Ongera . Gukoporora i in i Nyuma i Shakisha ni "
+"Byarangiye , na Komeka . "
+"<br> ya:  "
+
+#: plugins/search/searchprefpage.cpp:57
+msgid ""
+"Use your web browser to search for the string %1 (capital letters) on the "
+"search engine you want to add. Use the resulting URL below."
+msgstr ""
+
+#: plugins/search/searchprefpage.cpp:124
+#, fuzzy
+msgid "You must enter the search engine's name and URL"
+msgstr "Injiza Izina: na "
+
+#: plugins/search/searchprefpage.cpp:137
+msgid ""
+"A search engine with the same name already exists. Please use a different name."
+msgstr ""
+
+#: plugins/search/searchprefpage.cpp:146
+#, fuzzy
+msgid ""
+"Bad URL. You should search for FOOBAR with your Internet browser and copy/paste "
+"the exact URL here."
+msgstr ""
+". Shakisha ya:  Na: Interineti Mucukumbuzi na Gukoporora /Komeka NYACYO . "
+
+#: plugins/search/searchprefpage.cpp:247
+msgid ""
+"_: a noun\n"
+"Search"
+msgstr ""
+
+#: plugins/search/searchprefpage.cpp:247
+#, fuzzy
+msgid "Search Engine Options"
+msgstr "Shakisha ama moteri"
+
+#: plugins/search/searchwidget.cpp:178
+#, fuzzy
+msgid "Searching for %1..."
+msgstr "ya:  %1 ... "
+
+#: plugins/search/searchwidget.cpp:209
+#, fuzzy
+msgid "torrent files"
+msgstr "Amadosiye y'inyandiko"
+
+#: plugins/search/searchwidget.cpp:267
+#, fuzzy
+msgid "Search finished"
+msgstr "Byarangiye "
+
+#: plugins/search/searchtab.cpp:65
+#, fuzzy
+msgid " Engine: "
+msgstr "Ama moteri yose"
+
+#: plugins/search/searchplugin.cpp:51
+msgid "Search for torrents on several popular torrent search engines"
+msgstr ""
+
+#: plugins/search/htmlpart.cpp:165
+#, fuzzy
+msgid "Do you want to download or save the torrent?"
+msgstr "Kuri Iyimura i ? "
+
+#: plugins/search/htmlpart.cpp:166
+#, fuzzy
+msgid "Download Torrent"
+msgstr "Iyimura Byinshi..."
+
+#: plugins/search/htmlpart.cpp:167
+msgid ""
+"_: to download\n"
+"Download"
+msgstr ""
+
+#: plugins/zeroconf/zeroconfplugin.cpp:41
+msgid "Zeroconf"
+msgstr ""
+
+#: plugins/zeroconf/zeroconfplugin.cpp:41
+msgid ""
+"Finds peers running ktorrent on the local network to share torrents with"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Cannot load chunk %1"
+#~ msgstr "Kurema : %1 "
+
+#, fuzzy
+#~ msgid "TrackerViewBase"
+#~ msgstr "Udusodeko"
+
+#, fuzzy
+#~ msgid "You must add at least one tracker."
+#~ msgstr "&Ongera Ku Rimwe . "
+
+#, fuzzy
+#~ msgid "DownloadPref"
+#~ msgstr "Yimuwe"
+
+#, fuzzy
+#~ msgid "Max ratio:"
+#~ msgstr "Ikigero cy'Ingano:"
+
+#, fuzzy
+#~ msgid "Name"
+#~ msgstr "Izina:"
+
+#, fuzzy
+#~ msgid "Download \"Proper\" ReReleases"
+#~ msgstr "Byarangiye "
+
+#, fuzzy
+#~ msgid "Tracker URL:"
+#~ msgstr "Mucapurirakure"
+
+#, fuzzy
+#~ msgid "Tracker status:"
+#~ msgstr "Udusodeko"
+
+#, fuzzy
+#~ msgid "Select folder for data of %1"
+#~ msgstr "Kuri Kubika "
+
+#, fuzzy
+#~ msgid "Downloads %1/%2"
+#~ msgstr "Iyimura"
+
+#, fuzzy
+#~ msgid "Uploads %1/%2"
+#~ msgstr "Gushyiraho"
+
+#, fuzzy
+#~ msgid "Search Engine:"
+#~ msgstr "Shakisha ama moteri"
+
+#, fuzzy
+#~ msgid "Torrents"
+#~ msgstr "Ikinyakoreya"
+
+#, fuzzy
+#~ msgid "Tracker"
+#~ msgstr "Mucapurirakure"
+
+#, fuzzy
+#~ msgid "St&atus"
+#~ msgstr "Imimerere"
+
+#, fuzzy
+#~ msgid "Tracker request timed out"
+#~ msgstr "Udusodeko"
+
+#, fuzzy
+#~ msgid "finished"
+#~ msgstr "Byarangiye"
+
+#, fuzzy
+#~ msgid "Search engines"
+#~ msgstr "Shakisha ama moteri"
+
+#, fuzzy
+#~ msgid "Download Completed"
+#~ msgstr "Byarangiye "
+
+#, fuzzy
+#~ msgid "Seeding Completed"
+#~ msgstr "Byarangiye "
+
+#~ msgid "Completed"
+#~ msgstr "Byarangiye"
+
+#, fuzzy
+#~ msgid "Invalid response"
+#~ msgstr "IntegoItemewe"
+
+#, fuzzy
+#~ msgid "Unreachable"
+#~ msgstr "Kurema imbonerahamwe"
+
+#, fuzzy
+#~ msgid "Parse error"
+#~ msgstr "Ikosa "
+
+#, fuzzy
+#~ msgid "SearchBar"
+#~ msgstr "Gushaka"
+
+#, fuzzy
+#~ msgid ""
+#~ "_n: Cannot start more than 1 download. Go to Settings -> Configure KTorrent, if you want to change the limit.\n"
+#~ "Cannot start more than %n downloads. Go to Settings -> Configure KTorrent, if you want to change the limit."
+#~ msgstr ""
+#~ "Tangira &vendorShortName; Birenzeho 1 Iyimura . Kuri - > , NIBA Kuri Guhindura... i . \n"
+#~ "Tangira &vendorShortName; Birenzeho %n Iyimura . Kuri - > , NIBA Kuri Guhindura... i . "
+
+#, fuzzy
+#~ msgid ""
+#~ "_n: Cannot start more than 1 seed. Go to Settings -> Configure KTorrent, if you want to change the limit.\n"
+#~ "Cannot start more than %n seeds. Go to Settings -> Configure KTorrent, if you want to change the limit."
+#~ msgstr ""
+#~ "Tangira &vendorShortName; Birenzeho 1 Iyimura . Kuri - > , NIBA Kuri Guhindura... i . \n"
+#~ "Tangira &vendorShortName; Birenzeho %n Iyimura . Kuri - > , NIBA Kuri Guhindura... i . "
+
+#, fuzzy
+#~ msgid "Use &KTorrent filter?"
+#~ msgstr "Amadosiye y'inyandiko"
+
+#, fuzzy
+#~ msgid "You must fill in the name field."
+#~ msgstr "Kuzuza in i Izina: Umwanya . "
+
+#, fuzzy
+#~ msgid "Available trackers:"
+#~ msgstr "Bihari"
+
+#, fuzzy
+#~ msgid "Down:"
+#~ msgstr "Hasi"
+
+#, fuzzy
+#~ msgid "Up:"
+#~ msgstr "Hejuru"
+
+#, fuzzy
+#~ msgid "Fi&les"
+#~ msgstr "amadosiye yose"
+
+#, fuzzy
+#~ msgid "KTorrent's UPnP plugin"
+#~ msgstr "Shakisha "
+
+#, fuzzy
+#~ msgid "KTorrent's IP filter plugin"
+#~ msgstr "Shakisha "
+
+#, fuzzy
+#~ msgid "KTorrent's log viewer plugin"
+#~ msgstr "Shakisha "
+
+#, fuzzy
+#~ msgid "KTorrent's search plugin"
+#~ msgstr "Shakisha "
+
+#, fuzzy
+#~ msgid "Re&store default."
+#~ msgstr "Mburabuzi "
+
+#, fuzzy
+#~ msgid "Downlo&ad"
+#~ msgstr "Iyimura"
+
+#, fuzzy
+#~ msgid "&Seed"
+#~ msgstr "Kugenzura"
+
+#~ msgid "yes"
+#~ msgstr "Yego"
+
+#, fuzzy
+#~ msgid "no"
+#~ msgstr "Oya"
+
+#, fuzzy
+#~ msgid "Cannot preallocate diskspace : %s"
+#~ msgstr "Kurema Umubarendanga Idosiye : %1 "
+
+#, fuzzy
+#~ msgid "&Status"
+#~ msgstr "Imimerere"
+
+#, fuzzy
+#~ msgid "Unable to open cache file: %1"
+#~ msgstr "Gufungura Ubwihisho Idosiye : %1 "
+
+#, fuzzy
+#~ msgid "You must add a least one tracker."
+#~ msgstr "&Ongera A Rimwe . "
+
+#, fuzzy
+#~ msgid ""
+#~ "If you are behind a NAT-enabled router, it is important that you forward \n"
+#~ "the above ports. You should consult your router's manual if you \n"
+#~ "do not know how to do this."
+#~ msgstr ""
+#~ "A - Bikora , ni By'ingirakamaro Imbere \n"
+#~ "i hejuru . Bikorwa NIBA \n"
+#~ "OYA Kuri iyi . "
+
+#, fuzzy
+#~ msgid "Can't open index file"
+#~ msgstr "Gufungura Umubarendanga Idosiye "
+
+#, fuzzy
+#~ msgid "Can't save chunk_info file : %1"
+#~ msgstr "Kubika Idosiye : %1 "
+
+#, fuzzy
+#~ msgid "The download %1 has finished. Do you want to save it now?"
+#~ msgstr "Iyimura %1 Byarangiye . Kuri Kubika NONEAHA ? "
+
+#~ msgid "Do Not Save"
+#~ msgstr "Ntubike"
+
+#, fuzzy
+#~ msgid "The tracker %1 sent the following error : %2"
+#~ msgstr "Yoherejwe: Inyuma i Ikosa : %1 "
+
+#, fuzzy
+#~ msgid "Tracker error : %1"
+#~ msgstr "Ikosa "
+
+#, fuzzy
+#~ msgid "The tracker %1 is down."
+#~ msgstr "%1 ni Hasi . "
+
+#, fuzzy
+#~ msgid "The tracker is down."
+#~ msgstr "ni Hasi . "
+
+#, fuzzy
+#~ msgid "Unreachable, trying backup"
+#~ msgstr ", Inyibutsa "
+
+#, fuzzy
+#~ msgid "The tracker %1 did not send a proper response"
+#~ msgstr "%1 OYA Kohereza A NYACYO "
+
+#, fuzzy
+#~ msgid "The UDP Tracker Port and Port cannot have the same value !"
+#~ msgstr "na i Agaciro: ! "
+
+#~ msgid "Start"
+#~ msgstr "Gutangira"
+
+#, fuzzy
+#~ msgid "Are you sure?"
+#~ msgstr "Ni byo koko"
+
+#, fuzzy
+#~ msgid "Use your web browser to search for the string "
+#~ msgstr "Urubuga Mucukumbuzi Kuri Shakisha ya:  i Ikurikiranyanyuguti "
+
+#, fuzzy
+#~ msgid " on google for example, will result in http://www.google.com/search?q=FOOBAR&ie=UTF-8&oe=UTF-8 . If you add this URL here, ktorrent can search using google."
+#~ msgstr "google. comsearch."
+
+#~ msgid "ID"
+#~ msgstr "ID"
