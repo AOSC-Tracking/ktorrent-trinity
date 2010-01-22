@@ -21,6 +21,8 @@
 #ifndef CHARTDRAWER_H_
 #define CHARTDRAWER_H_
 
+#include <stdint.h> 
+
 #include <qwidget.h>
 #include <qpainter.h>
 #include <qstring.h>
