@@ -20,7 +20,7 @@
 #ifndef DHTKEY_H
 #define DHTKEY_H
 
-#include <qcstring.h>
+#include <tqcstring.h>
 #include <util/sha1hash.h>
 
 
@@ -52,9 +52,9 @@ namespace dht
 		
 		/**
 		 * Make a key out of a bytearray
-		 * @param ba The QByteArray
+		 * @param ba The TQByteArray
 		 */
-		Key(const QByteArray & ba);
+		Key(const TQByteArray & ba);
 		
 		/**
 		 * Make a key out of a 20 byte array.

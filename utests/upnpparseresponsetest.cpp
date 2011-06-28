@@ -53,7 +53,7 @@ namespace utest
 				"USN: uuid:75802409-bccb-40e7-8e6c-fa095ecce13e::urn:schemas-upnp-org:device:InternetGatewayDevice:1\r\n\r\n";
 		
 		UPnPMCastSocket mcast;
-		UPnPRouter* r = mcast.parseResponse(QCString(test_ps));
+		UPnPRouter* r = mcast.parseResponse(TQCString(test_ps));
 		if (r)
 		{
 			delete r;

@@ -19,7 +19,7 @@
  ***************************************************************************/
 #include <time.h>
 #include <stdlib.h>
-#include <qcstring.h>
+#include <tqcstring.h>
 #include <util/constants.h>
 #include "key.h"
 
@@ -39,7 +39,7 @@ namespace dht
 	{
 	}
 	
-	Key::Key(const QByteArray & ba)
+	Key::Key(const TQByteArray & ba)
 	{
 		for (Uint32 i = 0;i < 20 && i < ba.size();i++)
 			hash[i] = ba[i];

@@ -31,7 +31,7 @@ namespace kt
 
 	ExitJobOperation::ExitJobOperation(KIO::Job* j)
 	{
-		connect(j,SIGNAL(result(KIO::Job*)),this,SLOT(onResult( KIO::Job* )));
+		connect(j,TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(onResult( KIO::Job* )));
 	}
 	
 	ExitJobOperation::~ExitJobOperation()

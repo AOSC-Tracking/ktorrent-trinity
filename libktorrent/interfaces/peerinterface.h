@@ -20,7 +20,7 @@
 #ifndef KTPEERINTERFACE_H
 #define KTPEERINTERFACE_H
 
-#include <qstring.h>
+#include <tqstring.h>
 #include <util/constants.h>
 namespace kt
 {
@@ -41,9 +41,9 @@ namespace kt
 		struct Stats
 		{
 			/// IP address of peer (dotted notation)
-			QString ip_address;
+			TQString ip_address;
 			/// The client (Azureus, BitComet, ...)
-			QString client;
+			TQString client;
 			/// Download rate (bytes/s)
 			bt::Uint32 download_rate;
 			/// Upload rate (bytes/s)

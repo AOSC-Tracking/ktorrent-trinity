@@ -22,7 +22,7 @@
 
 #include <util/constants.h>
 
-class QString;
+class TQString;
 
 namespace net
 {
@@ -46,7 +46,7 @@ namespace bt
 	public:
 		virtual ~Globals();
 		
-		void initLog(const QString & file);
+		void initLog(const TQString & file);
 		void initServer(Uint16 port);
 		void setDebugMode(bool on) {debug_mode = on;}
 		bool isDebugModeSet() const {return debug_mode;}

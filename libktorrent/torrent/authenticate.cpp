@@ -26,7 +26,7 @@
 namespace bt
 {
 
-	Authenticate::Authenticate(const QString & ip,Uint16 port,
+	Authenticate::Authenticate(const TQString & ip,Uint16 port,
 							   const SHA1Hash & info_hash,const PeerID & peer_id,PeerManager* pman) 
 	: info_hash(info_hash),our_peer_id(peer_id),pman(pman)
 	{

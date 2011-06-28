@@ -24,7 +24,7 @@
 
 #include <ksystemtray.h>
 #include <kpopupmenu.h>
-#include <qpainter.h>
+#include <tqpainter.h>
 
 #include "ktorrentcore.h"
 #include "settings.h"
@@ -32,7 +32,7 @@
 #include <util/constants.h>
 
 using namespace bt;
-class QString;
+class TQString;
 class TrayHoverPopup;
 
 struct TrayStats
@@ -50,8 +50,9 @@ struct TrayStats
 class TrayIcon : public KSystemTray
 {
 	Q_OBJECT
+  TQ_OBJECT
 public:
-	TrayIcon(KTorrentCore* tc, QWidget *parent = 0, const char *name = 0);
+	TrayIcon(KTorrentCore* tc, TQWidget *tqparent = 0, const char *name = 0);
 	virtual ~TrayIcon();
 
 	/// Update stats for system tray icon
@@ -59,9 +60,9 @@ public:
 	
 private:
 	void drawSpeedBar(int downloadSpeed, int uploadSpeed, int downloadBandwidth, int uploadBandwidth);
-	void showPassivePopup(const QString & msg,const QString & titile);
-	virtual void enterEvent(QEvent* ev);
-	virtual void leaveEvent(QEvent* ev);
+	void showPassivePopup(const TQString & msg,const TQString & titile);
+	virtual void enterEvent(TQEvent* ev);
+	virtual void leaveEvent(TQEvent* ev);
 
 private slots:
 	/**
@@ -87,7 +88,7 @@ private slots:
 	 * @param tc The torrent 
 	 * @param msg Error message
 	 */
-	void torrentStoppedByError(kt::TorrentInterface* tc, QString msg);
+	void torrentStoppedByError(kt::TorrentInterface* tc, TQString msg);
 	
 	/**
 	 * Corrupted data has been found.
@@ -113,18 +114,19 @@ private slots:
 	
 private:
 	KTorrentCore* m_core;
-	QPainter *paint;
+	TQPainter *paint;
 	int previousDownloadHeight;
 	int previousUploadHeight;
 	TrayHoverPopup* m_hover_popup;
-	QPixmap m_kt_pix;
+	TQPixmap m_kt_pix;
 };
 
 class SetMaxRate : public KPopupMenu
 {
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		SetMaxRate(KTorrentCore* tc, int t, QWidget *parent=0, const char *name=0); // type: 0 Upload; 1 Download
+		SetMaxRate(KTorrentCore* tc, int t, TQWidget *tqparent=0, const char *name=0); // type: 0 Upload; 1 Download
 		~SetMaxRate()
 		{}
 		;

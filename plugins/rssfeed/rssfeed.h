@@ -20,12 +20,12 @@
 #ifndef RSSFEED_H
 #define RSSFEED_H
 
-#include <qobject.h>
-#include <qstring.h>
-#include <qdatetime.h>
-#include <qvaluelist.h>
-#include <qtimer.h>
-#include <qdatastream.h>
+#include <tqobject.h>
+#include <tqstring.h>
+#include <tqdatetime.h>
+#include <tqvaluelist.h>
+#include <tqtimer.h>
+#include <tqdatastream.h>
 
 #include <kurl.h>
 
@@ -45,16 +45,17 @@ namespace kt
 	 * 
 	*/
 	
-	class RssFeed : public QObject
+	class RssFeed : public TQObject
 	{
 			Q_OBJECT
+  TQ_OBJECT
 		public:
 			
 			/**
 			 * Default constructor.
 			 */
-			RssFeed(QObject * parent = 0);
-			RssFeed(KURL feedUrl, QString title = "", bool active = false, int articleAge = 3, bool ignoreTTL = false, QTime autoRefresh = QTime());
+			RssFeed(TQObject * tqparent = 0);
+			RssFeed(KURL feedUrl, TQString title = "", bool active = false, int articleAge = 3, bool ignoreTTL = false, TQTime autoRefresh = TQTime());
 			RssFeed(const RssFeed &other);
  			RssFeed &operator=(const RssFeed &other);
  			~RssFeed();
@@ -62,8 +63,8 @@ namespace kt
  			KURL feedUrl() const { return m_feedUrl; }
  			bool active() const { return m_active; }
  			int articleAge() const { return m_articleAge; }
- 			QString title() const { return m_title; }
- 			QTime autoRefresh() const { return m_autoRefresh; }
+ 			TQString title() const { return m_title; }
+ 			TQTime autoRefresh() const { return m_autoRefresh; }
  			bool ignoreTTL() const { return m_ignoreTTL; }
  			
  			
@@ -72,28 +73,28 @@ namespace kt
 
 		public slots:
 			void refreshFeed();
-			void feedLoaded(Loader *feedLoader, Document doc, Status status);
+			void feedLoaded(Loader *feedLoader, Document doc, tqStatus status);
 			
 			void clearArticles();
 			
 			void setFeedUrl( const KURL& url );
-			void setFeedUrl( const QString& url );
+			void setFeedUrl( const TQString& url );
 			void setActive( bool active );
 			void setArticleAge( int articleAge );
-			void setTitle( const QString& title );
-			void setAutoRefresh( const QTime& autoRefresh );
+			void setTitle( const TQString& title );
+			void setAutoRefresh( const TQTime& autoRefresh );
 			void setIgnoreTTL( bool ignoreTTL );
 			void saveArticles();
 			
-			void setDownloaded(QString link, int downloaded);
+			void setDownloaded(TQString link, int downloaded);
 			
 		signals:
 			void feedUrlChanged( const KURL& url );
 			void activeChanged( bool active );
 			void articleAgeChanged( int articleAge );
-			void titleChanged( const QString& title );
-			void updateTitle( const QString& title );
-			void autoRefreshChanged( const QTime& autoRefresh );
+			void titleChanged( const TQString& title );
+			void updateTitle( const TQString& title );
+			void autoRefreshChanged( const TQTime& autoRefresh );
 			void ignoreTTLChanged( bool ignoreTTL );
 			
 			void articlesChanged( const RssArticle::List& articles );
@@ -104,23 +105,23 @@ namespace kt
 			KURL m_feedUrl;
 			bool m_active;
 			int m_articleAge;
-			QString m_title;
-			QTime m_autoRefresh;
+			TQString m_title;
+			TQTime m_autoRefresh;
 			bool m_ignoreTTL;
 			RssArticle::List m_articles;
-			QTimer refreshTimer;
+			TQTimer refreshTimer;
 			
 			bool feedLoading;
 			
-			QString getFilename();
+			TQString getFilename();
 			void initialize();
 			void startFeed();
 			void cleanArticles();
 			void loadArticles();
 	};
 
-	QDataStream &operator<<( QDataStream &out, const RssFeed &feed );
-	QDataStream &operator>>( QDataStream &in, RssFeed &feed );
+	TQDataStream &operator<<( TQDataStream &out, const RssFeed &feed );
+	TQDataStream &operator>>( TQDataStream &in, RssFeed &feed );
 
 }
 

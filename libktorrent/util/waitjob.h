@@ -20,9 +20,9 @@
 #ifndef BTWAITJOB_H
 #define BTWAITJOB_H
 
-#include <qtimer.h>
+#include <tqtimer.h>
 #include <kio/job.h>
-#include <qvaluelist.h>
+#include <tqvaluelist.h>
 #include <interfaces/exitoperation.h>
 #include "constants.h"
 
@@ -38,6 +38,7 @@ namespace bt
 	class WaitJob : public KIO::Job
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		WaitJob(Uint32 millis);
 		virtual ~WaitJob();
@@ -65,8 +66,8 @@ namespace bt
 		void operationFinished(kt::ExitOperation* op);
 		
 	private:
-		QTimer timer;
-		QValueList<kt::ExitOperation*> exit_ops;
+		TQTimer timer;
+		TQValueList<kt::ExitOperation*> exit_ops;
 	};
 	
 	void SynchronousWait(Uint32 millis);

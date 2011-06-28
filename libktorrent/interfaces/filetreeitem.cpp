@@ -32,10 +32,10 @@ using namespace bt;
 namespace kt
 {
 
-	FileTreeItem::FileTreeItem(FileTreeDirItem* item,const QString & name,kt::TorrentFileInterface & file)
-	: QCheckListItem(item,QString::null,QCheckListItem::CheckBox),name(name),file(file)
+	FileTreeItem::FileTreeItem(FileTreeDirItem* item,const TQString & name,kt::TorrentFileInterface & file)
+	: TQCheckListItem(item,TQString(),TQCheckListItem::CheckBox),name(name),file(file)
 	{
-		parent = item;
+		tqparent = item;
 		manual_change = false;
 		init();
 	}
@@ -66,7 +66,7 @@ namespace kt
 		}
 		
 		updatePriorityText();
-		parent->childStateChange();
+		tqparent->childStateChange();
 	}
 	
 	void FileTreeItem::updatePriorityText()
@@ -141,10 +141,10 @@ namespace kt
 		}
 		
 		updatePriorityText();
-		parent->childStateChange();
+		tqparent->childStateChange();
 	}
 	
-	int FileTreeItem::compare(QListViewItem* i, int col, bool ascending) const
+	int FileTreeItem::compare(TQListViewItem* i, int col, bool ascending) const
 	{
 		if (col == 1)
 		{
@@ -157,8 +157,8 @@ namespace kt
 		else
 		{
 			// lets sort case insensitive
-			return QString::compare(text(col).lower(),i->text(col).lower());
-			//		QCheckListItem::compare(i, col, ascending);
+			return TQString::compare(text(col).lower(),i->text(col).lower());
+			//		TQCheckListItem::compare(i, col, ascending);
 		}
 	}
 

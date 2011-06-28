@@ -21,7 +21,7 @@
 #ifndef PEERMONITOR_H_
 #define PEERMONITOR_H_
 
-#include <qmutex.h>
+#include <tqmutex.h>
 
 #include <interfaces/monitorinterface.h>
 #include <interfaces/peerinterface.h>
@@ -43,7 +43,7 @@ Used for peers statistics
 \warning Don't use it, as There Can Be Only One™ and the infowidgetplugin relays on it
 */
 
-class PeerMonitor : public MonitorInterface, public QObject
+class PeerMonitor : public MonitorInterface, public TQObject
 {
 	public:
 		///Type of conteiner of pointers to peers
@@ -55,7 +55,7 @@ class PeerMonitor : public MonitorInterface, public QObject
 		
 		Used for locking conteiner with pointers to peers
 		*/
-		QMutex mtx;
+		TQMutex mtx;
 		///Container with pointers to peers
 		data_t mPeers;
 		///Monitored torrent

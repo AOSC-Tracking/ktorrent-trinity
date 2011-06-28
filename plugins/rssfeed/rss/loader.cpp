@@ -16,11 +16,11 @@
 #include <kurl.h>
 #include <kdebug.h>
 
-#include <qdom.h>
-#include <qbuffer.h>
-#include <qregexp.h>
-#include <qstringlist.h>
-#include <qtimer.h>
+#include <tqdom.h>
+#include <tqbuffer.h>
+#include <tqregexp.h>
+#include <tqstringlist.h>
+#include <tqtimer.h>
 
 using namespace RSS;
 
@@ -45,7 +45,7 @@ struct FileRetriever::Private
       delete buffer;
    }
 
-   QBuffer *buffer;
+   TQBuffer *buffer;
    int lastError;
    KIO::Job *job;
 };
@@ -72,7 +72,7 @@ void FileRetriever::retrieveData(const KURL &url)
    if (d->buffer)
       return;
 
-   d->buffer = new QBuffer;
+   d->buffer = new TQBuffer;
    d->buffer->open(IO_WriteOnly);
 
    KURL u=url;
@@ -83,13 +83,13 @@ void FileRetriever::retrieveData(const KURL &url)
    d->job = KIO::get(u, !m_useCache, false);
 
    
-   QTimer::singleShot(1000*90, this, SLOT(slotTimeout()));
+   TQTimer::singleShot(1000*90, this, TQT_SLOT(slotTimeout()));
    
-   connect(d->job, SIGNAL(data(KIO::Job *, const QByteArray &)),
-                SLOT(slotData(KIO::Job *, const QByteArray &)));
-   connect(d->job, SIGNAL(result(KIO::Job *)), SLOT(slotResult(KIO::Job *)));
-   connect(d->job, SIGNAL(permanentRedirection(KIO::Job *, const KURL &, const KURL &)),
-                SLOT(slotPermanentRedirection(KIO::Job *, const KURL &, const KURL &)));
+   connect(d->job, TQT_SIGNAL(data(KIO::Job *, const TQByteArray &)),
+                TQT_SLOT(slotData(KIO::Job *, const TQByteArray &)));
+   connect(d->job, TQT_SIGNAL(result(KIO::Job *)), TQT_SLOT(slotResult(KIO::Job *)));
+   connect(d->job, TQT_SIGNAL(permanentRedirection(KIO::Job *, const KURL &, const KURL &)),
+                TQT_SLOT(slotPermanentRedirection(KIO::Job *, const KURL &, const KURL &)));
 }
 
 void FileRetriever::slotTimeout()
@@ -101,7 +101,7 @@ void FileRetriever::slotTimeout()
 
     d->lastError = KIO::ERR_SERVER_TIMEOUT;
     
-    emit dataRetrieved(QByteArray(), false);
+    emit dataRetrieved(TQByteArray(), false);
 }
 
 int FileRetriever::errorCode() const
@@ -109,14 +109,14 @@ int FileRetriever::errorCode() const
    return d->lastError;
 }
 
-void FileRetriever::slotData(KIO::Job *, const QByteArray &data)
+void FileRetriever::slotData(KIO::Job *, const TQByteArray &data)
 {
    d->buffer->writeBlock(data.data(), data.size());
 }
 
 void FileRetriever::slotResult(KIO::Job *job)
 {
-   QByteArray data = d->buffer->buffer();
+   TQByteArray data = d->buffer->buffer();
    data.detach();
 
    delete d->buffer;
@@ -155,7 +155,7 @@ struct OutputRetriever::Private
    }
 
    KShellProcess *process;
-   QBuffer *buffer;
+   TQBuffer *buffer;
    int lastError;
 };
 
@@ -175,14 +175,14 @@ void OutputRetriever::retrieveData(const KURL &url)
    if (d->buffer || d->process)
       return;
 
-   d->buffer = new QBuffer;
+   d->buffer = new TQBuffer;
    d->buffer->open(IO_WriteOnly);
 
    d->process = new KShellProcess();
-   connect(d->process, SIGNAL(processExited(KProcess *)),
-                       SLOT(slotExited(KProcess *)));
-   connect(d->process, SIGNAL(receivedStdout(KProcess *, char *, int)),
-                       SLOT(slotOutput(KProcess *, char *, int)));
+   connect(d->process, TQT_SIGNAL(processExited(KProcess *)),
+                       TQT_SLOT(slotExited(KProcess *)));
+   connect(d->process, TQT_SIGNAL(receivedStdout(KProcess *, char *, int)),
+                       TQT_SLOT(slotOutput(KProcess *, char *, int)));
    *d->process << url.path();
    d->process->start(KProcess::NotifyOnExit, KProcess::Stdout);
 }
@@ -202,7 +202,7 @@ void OutputRetriever::slotExited(KProcess *p)
    if (!p->normalExit())
       d->lastError = p->exitStatus();
 
-   QByteArray data = d->buffer->buffer();
+   TQByteArray data = d->buffer->buffer();
    data.detach();
 
    delete d->buffer;
@@ -237,10 +237,10 @@ Loader *Loader::create()
    return new Loader;
 }
 
-Loader *Loader::create(QObject *object, const char *slot)
+Loader *Loader::create(TQObject *object, const char *slot)
 {
    Loader *loader = create();
-   connect(loader, SIGNAL(loadingComplete(Loader *, Document, Status)),
+   connect(loader, TQT_SIGNAL(loadingComplete(Loader *, Document, tqStatus)),
            object, slot);
    return loader;
 }
@@ -262,8 +262,8 @@ void Loader::loadFrom(const KURL &url, DataRetriever *retriever)
    d->url=url;
    d->retriever = retriever;
 
-   connect(d->retriever, SIGNAL(dataRetrieved(const QByteArray &, bool)),
-           this, SLOT(slotRetrieverDone(const QByteArray &, bool)));
+   connect(d->retriever, TQT_SIGNAL(dataRetrieved(const TQByteArray &, bool)),
+           this, TQT_SLOT(slotRetrieverDone(const TQByteArray &, bool)));
 
    d->retriever->retrieveData(url);
 }
@@ -281,7 +281,7 @@ void Loader::abort()
         delete d->retriever;
 		d->retriever=NULL;
 	}
-    emit loadingComplete(this, QDomDocument(), Aborted);
+    emit loadingComplete(this, TQDomDocument(), Aborted);
     delete this;
 }
 
@@ -292,7 +292,7 @@ const KURL &Loader::discoveredFeedURL() const
 
 #include <kdebug.h>
 
-void Loader::slotRetrieverDone(const QByteArray &data, bool success)
+void Loader::slotRetrieverDone(const TQByteArray &data, bool success)
 {
    d->lastError = d->retriever->errorCode();
 
@@ -300,29 +300,29 @@ void Loader::slotRetrieverDone(const QByteArray &data, bool success)
    d->retriever = NULL;
 
    Document rssDoc;
-   Status status = Success;
+   tqStatus status = Success;
 
    if (success) {
-      QDomDocument doc;
+      TQDomDocument doc;
 
       /* Some servers insert whitespace before the <?xml...?> declaration.
-       * QDom doesn't tolerate that (and it's right, that's invalid XML),
+       * TQDom doesn't tolerate that (and it's right, that's invalid XML),
        * so we strip that.
        */
 
       const char *charData = data.data();
       int len = data.count();
 
-      while (len && QChar(*charData).isSpace()) {
+      while (len && TQChar(*charData).isSpace()) {
          --len;
          ++charData;
       }
 
-      if ( len > 3 && QChar(*charData) == QChar(0357) ) { // 0357 0273 0277 
+      if ( len > 3 && TQChar(*charData) == TQChar(0357) ) { // 0357 0273 0277 
 			  len -= 3;
 			  charData += 3;
 	  }
-      QByteArray tmpData;
+      TQByteArray tmpData;
       tmpData.setRawData(charData, len);
       
       if (doc.setContent(tmpData))
@@ -349,24 +349,24 @@ void Loader::slotRetrieverDone(const QByteArray &data, bool success)
    delete this;
 }
 
-void Loader::discoverFeeds(const QByteArray &data)
+void Loader::discoverFeeds(const TQByteArray &data)
 {
-    QString str = QString(data).simplifyWhiteSpace();
-    QString s2;
-    //QTextStream ts( &str, IO_WriteOnly );
+    TQString str = TQString(data).simplifyWhiteSpace();
+    TQString s2;
+    //TQTextStream ts( &str, IO_WriteOnly );
     //ts << data.data();
     
     // "<[\\s]link[^>]*rel[\\s]=[\\s]\\\"[\\s]alternate[\\s]\\\"[^>]*>"
     // "type[\\s]=[\\s]\\\"application/rss+xml\\\""
     // "href[\\s]=[\\s]\\\"application/rss+xml\\\""
-    QRegExp rx( "(?:REL)[^=]*=[^sAa]*(?:service.feed|ALTERNATE)[\\s]*[^s][^s](?:[^>]*)(?:HREF)[^=]*=[^A-Z0-9-_~,./$]*([^'\">\\s]*)", false);
+    TQRegExp rx( "(?:REL)[^=]*=[^sAa]*(?:service.feed|ALTERNATE)[\\s]*[^s][^s](?:[^>]*)(?:HREF)[^=]*=[^A-Z0-9-_~,./$]*([^'\">\\s]*)", false);
     if (rx.search(str)!=-1)
         s2=rx.cap(1);
     else{
     // does not support Atom/RSS autodiscovery.. try finding feeds by brute force....
         int pos=0;
-        QStringList feeds;
-        QString host=d->url.host();
+        TQStringList feeds;
+        TQString host=d->url.host();
         rx.setPattern("(?:<A )[^H]*(?:HREF)[^=]*=[^A-Z0-9-_~,./]*([^'\">\\s]*)");
         while ( pos >= 0 ) {
             pos = rx.search( str, pos );
@@ -381,7 +381,7 @@ void Loader::discoverFeeds(const QByteArray &data)
         s2=feeds.first();
         KURL testURL;
         // loop through, prefer feeds on same host
-        for ( QStringList::Iterator it = feeds.begin(); it != feeds.end(); ++it ) {
+        for ( TQStringList::Iterator it = feeds.begin(); it != feeds.end(); ++it ) {
             testURL=*it;
             if (testURL.host()==host)
             {

@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 #include <klocale.h>
-#include <qcheckbox.h>
+#include <tqcheckbox.h>
 #include <kglobal.h>
 #include <kiconloader.h>
 #include "infowidgetplugin.h"
@@ -53,9 +53,9 @@ namespace kt
 		return true;
 	}
 
-	void InfoWidgetPrefPage::createWidget(QWidget* parent)
+	void InfoWidgetPrefPage::createWidget(TQWidget* tqparent)
 	{
-		pref = new IWPref(parent);
+		pref = new IWPref(tqparent);
 		updateData();
 	}
 

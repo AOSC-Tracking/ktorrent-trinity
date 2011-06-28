@@ -19,17 +19,17 @@
  ***************************************************************************/
 #include "dtabwidget.h"
 
-#include <qtoolbutton.h>
-#include <qtabbar.h>
+#include <tqtoolbutton.h>
+#include <tqtabbar.h>
 
 #include <kconfig.h>
 #include <kiconloader.h>
 #include <kapplication.h>
 
-DTabWidget::DTabWidget(QWidget *parent, const char *name)
-    :KTabWidget(parent, name), m_closeButton(0)
+DTabWidget::DTabWidget(TQWidget *tqparent, const char *name)
+    :KTabWidget(tqparent, name), m_closeButton(0)
 {
-    setFocusPolicy(NoFocus);
+    setFocusPolicy(TQ_NoFocus);
     setMargin(0);
 
     loadSettings();
@@ -37,7 +37,7 @@ DTabWidget::DTabWidget(QWidget *parent, const char *name)
     if (!m_tabBarShown)
         tabBar()->hide();
     else {
-        m_closeButton = new QToolButton(this);
+        m_closeButton = new TQToolButton(this);
         m_closeButton->setIconSet(SmallIconSet("tab_remove"));
         m_closeButton->adjustSize();
         m_closeButton->hide();
@@ -49,8 +49,8 @@ DTabWidget::DTabWidget(QWidget *parent, const char *name)
         setTabReorderingEnabled(true);
     }
     
-    connect(this, SIGNAL(currentChanged(QWidget*)), this, SLOT(setFocus(QWidget*)));
-//    connect(this, SIGNAL(currentChanged(QWidget*)), this, SLOT(updateHistory(QWidget*)));
+    connect(this, TQT_SIGNAL(currentChanged(TQWidget*)), this, TQT_SLOT(setFocus(TQWidget*)));
+//    connect(this, TQT_SIGNAL(currentChanged(TQWidget*)), this, TQT_SLOT(updateHistory(TQWidget*)));
 }
 
 void DTabWidget::loadSettings()
@@ -74,35 +74,35 @@ void DTabWidget::saveSettings()
 {
 }
 
-QToolButton *DTabWidget::closeButton() const
+TQToolButton *DTabWidget::closeButton() const
 {
     return m_closeButton;
 }
 
-void DTabWidget::setFocus(QWidget *w)
+void DTabWidget::setFocus(TQWidget *w)
 {
     if (w)
         w->setFocus();
 }
 
-void DTabWidget::insertTab(QWidget *child, const QString &label, int index)
+void DTabWidget::insertTab(TQWidget *child, const TQString &label, int index)
 {
     if (m_closeButton && m_closeButtonShown)
         m_closeButton->show();
     KTabWidget::insertTab(child, label, index);
-    if (index != -1) tabBar()->repaint();
+    if (index != -1) tabBar()->tqrepaint();
 }
 
-void DTabWidget::insertTab(QWidget *child, const QIconSet &iconset, 
-    const QString &label, int index)
+void DTabWidget::insertTab(TQWidget *child, const TQIconSet &iconset, 
+    const TQString &label, int index)
 {
     if (m_closeButton && m_closeButtonShown)
         m_closeButton->show();
     KTabWidget::insertTab(child, iconset, label, index);
-    if (index != -1) tabBar()->repaint();
+    if (index != -1) tabBar()->tqrepaint();
 }
 
-/*void DTabWidget::updateHistory(QWidget *w)
+/*void DTabWidget::updateHistory(TQWidget *w)
 {
     if (m_history.top() != w)
         m_history.push(w);

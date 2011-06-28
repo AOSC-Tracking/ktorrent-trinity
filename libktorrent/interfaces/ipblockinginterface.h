@@ -22,7 +22,7 @@
 #ifndef IPBLOCKINGINTERFACE_H
 #define IPBLOCKINGINTERFACE_H
 
-class QString;
+class TQString;
 
 namespace kt
 {
@@ -41,7 +41,7 @@ namespace kt
 			 * @return TRUE if IP should be blocked. FALSE otherwise
 			 * @arg ip String representation of IP address.
 			 */
-			virtual bool isBlockedIP(const QString& ip) = 0;
+			virtual bool isBlockedIP(const TQString& ip) = 0;
 			
 	};
 }

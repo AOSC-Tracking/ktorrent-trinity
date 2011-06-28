@@ -20,7 +20,7 @@
 #ifndef KTEXITOPERATION_H
 #define KTEXITOPERATION_H
 
-#include <qobject.h>
+#include <tqobject.h>
 #include <kio/job.h>
 
 namespace kt
@@ -35,9 +35,10 @@ namespace kt
 	 * ExitOperation's can be used in combination with a WaitJob, to wait for a certain amount of time
 	 * to give serveral ExitOperation's the time time to finish up.
 	*/
-	class ExitOperation : public QObject
+	class ExitOperation : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		ExitOperation();
 		virtual ~ExitOperation();
@@ -54,6 +55,7 @@ namespace kt
 	class ExitJobOperation : public ExitOperation
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		ExitJobOperation(KIO::Job* j);
 		virtual ~ExitJobOperation();

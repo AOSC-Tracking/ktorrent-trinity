@@ -21,7 +21,7 @@
 
 namespace kt
 {
-	static QString ResponseCodeToString(int r)
+	static TQString ResponseCodeToString(int r)
 	{
 		switch (r)
 		{
@@ -30,7 +30,7 @@ namespace kt
 			case 304: return "Not Modified";
 			case 404: return "Not Found";
 		}
-		return QString::null;
+		return TQString();
 	}
 	
 	HttpResponseHeader::HttpResponseHeader(int response_code) 
@@ -53,20 +53,20 @@ namespace kt
 		response_code = rc;
 	}
 	
-	void HttpResponseHeader::setValue(const QString & key,const QString & value)
+	void HttpResponseHeader::setValue(const TQString & key,const TQString & value)
 	{
 		fields[key] = value;
 	}
 		
-	QString HttpResponseHeader::toString() const
+	TQString HttpResponseHeader::toString() const
 	{
-		QString str;
-		str += QString("HTTP/1.1 %1 %2\r\n").arg(response_code).arg(ResponseCodeToString(response_code));
+		TQString str;
+		str += TQString("HTTP/1.1 %1 %2\r\n").tqarg(response_code).tqarg(ResponseCodeToString(response_code));
 		
-		QMap<QString,QString>::const_iterator itr = fields.begin();
+		TQMap<TQString,TQString>::const_iterator itr = fields.begin();
 		while (itr != fields.end())
 		{
-			str += QString("%1: %2\r\n").arg(itr.key()).arg(itr.data());
+			str += TQString("%1: %2\r\n").tqarg(itr.key()).tqarg(itr.data());
 			itr++;
 		}
 		str += "\r\n";

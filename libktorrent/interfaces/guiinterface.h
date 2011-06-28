@@ -20,11 +20,11 @@
 #ifndef KTGUIINTERFACE_H
 #define KTGUIINTERFACE_H
 
-#include <qptrlist.h>
+#include <tqptrlist.h>
 
-class QWidget;
-class QIconSet;
-class QString;
+class TQWidget;
+class TQIconSet;
+class TQString;
 class KToolBar;
 class KProgress;
 
@@ -65,10 +65,10 @@ namespace kt
 	{
 	public:
 		/// By default all tabs can be closed, but this can be overridden
-		virtual bool closeAllowed(QWidget* ) {return true;}
+		virtual bool closeAllowed(TQWidget* ) {return true;}
 		
 		/// THe close button was pressed for this tab, please remove it from the GUI
-		virtual void tabCloseRequest(kt::GUIInterface* gui,QWidget* tab) = 0;
+		virtual void tabCloseRequest(kt::GUIInterface* gui,TQWidget* tab) = 0;
 	};
 	
 	/**
@@ -79,7 +79,7 @@ namespace kt
 	*/
 	class GUIInterface
 	{
-		QPtrList<ViewListener> listeners;
+		TQPtrList<ViewListener> listeners;
 	public:
 		GUIInterface();
 		virtual ~GUIInterface();
@@ -104,15 +104,15 @@ namespace kt
 		 * @param caption Text on the tab
 		 * @param ctl For closeable tabs this pointer should be set
 		 */
-		virtual void addTabPage(QWidget* page,const QIconSet & icon,
-								const QString & caption,CloseTabListener* ctl = 0) = 0;
+		virtual void addTabPage(TQWidget* page,const TQIconSet & icon,
+								const TQString & caption,CloseTabListener* ctl = 0) = 0;
 
 		/**
 		 * Remove a tab page, does nothing if the page
 		 * isn't added. Does not delete the widget.
 		 * @param page The page
 		 */
-		virtual void removeTabPage(QWidget* page) = 0;
+		virtual void removeTabPage(TQWidget* page) = 0;
 
 		/**
 		 * Add a page to the preference dialog.
@@ -131,7 +131,7 @@ namespace kt
 		 * Change the statusbar message.
 		 * @param msg The new message
 		 */
-		virtual void changeStatusbar(const QString& msg) = 0;
+		virtual void changeStatusbar(const TQString& msg) = 0;
 
 		/**
 		 * Merge the GUI of a plugin.
@@ -151,14 +151,14 @@ namespace kt
 		 * @param w The widget
 		 * @param pos How the widget will be positioned against the already present widgets
 		 */
-		virtual void addWidgetInView(QWidget* w,Position pos) = 0;
+		virtual void addWidgetInView(TQWidget* w,Position pos) = 0;
 
 		/**
 		 * Remove a widget added with addWidgetInView.
 		 * The widget will be reparented to 0.
 		 * @param w The widget 
 		 */
-		virtual void removeWidgetFromView(QWidget* w) = 0;
+		virtual void removeWidgetFromView(TQWidget* w) = 0;
 		
 		/**
 		 * Add a widget below the view.
@@ -166,13 +166,13 @@ namespace kt
 		 * @param icon Name of icon to use
 		 * @param caption The caption to use
 		 */
-		virtual void addWidgetBelowView(QWidget* w,const QString & icon,const QString & caption) = 0;
+		virtual void addWidgetBelowView(TQWidget* w,const TQString & icon,const TQString & caption) = 0;
 		
 		/**
 		 * Remove a widget, which was added below the view.
 		 * @param w The widget
 		 */
-		virtual void removeWidgetBelowView(QWidget* w) = 0;
+		virtual void removeWidgetBelowView(TQWidget* w) = 0;
 		
 		enum ToolDock
 		{
@@ -188,13 +188,13 @@ namespace kt
 		 * @param caption The caption to use
 		 * @param dock Where to dock the widget
 		 */
-		virtual void addToolWidget(QWidget* w,const QString & icon,const QString & caption,ToolDock dock) = 0;
+		virtual void addToolWidget(TQWidget* w,const TQString & icon,const TQString & caption,ToolDock dock) = 0;
 		
 		/**
 		 * Remove a tool widget.
 		 * @param w The widget
 		 */
-		virtual void removeToolWidget(QWidget* w) = 0;
+		virtual void removeToolWidget(TQWidget* w) = 0;
 
 		/// Get the current torrent.
 		virtual const TorrentInterface* getCurrentTorrent() const = 0;

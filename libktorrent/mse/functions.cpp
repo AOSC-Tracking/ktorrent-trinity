@@ -58,7 +58,7 @@ namespace mse
 		return bt::SHA1Hash::generate(buf,120);
 	}
 	
-	void DumpBigInt(const QString & name,const BigInt & bi)
+	void DumpBigInt(const TQString & name,const BigInt & bi)
 	{
 		static Uint8 buf[512];
 		Uint32 nb = bi.toBuffer(buf,512);
@@ -66,7 +66,7 @@ namespace mse
 		lg << name << " (" << nb << ") = ";
 		for (Uint32 i = 0;i < nb;i++)
 		{
-			lg << QString("0x%1 ").arg(buf[i],0,16);
+			lg << TQString("0x%1 ").tqarg(buf[i],0,16);
 		}
 		lg << endl;
 	}

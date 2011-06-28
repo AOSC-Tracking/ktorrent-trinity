@@ -24,7 +24,7 @@
 #include <util/log.h>
 #include <torrent/globals.h>
 
-#include <qstring.h>
+#include <tqstring.h>
 
 using namespace bt;
 
@@ -137,7 +137,7 @@ namespace kt
 		m_log = log;
 	}
 	
-	QString& LogFlags::getFormattedMessage(unsigned int arg, QString& line)
+	TQString& LogFlags::getFormattedMessage(unsigned int arg, TQString& line)
 	{
 		if( (arg & LOG_ALL) == LOG_ALL)
 		{

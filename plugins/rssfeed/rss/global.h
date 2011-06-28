@@ -12,7 +12,7 @@
 #define LIBRSS_GLOBAL_H
 
 template <class>
-class QValueList;
+class TQValueList;
 
 namespace RSS
 {
@@ -39,7 +39,7 @@ namespace RSS
 	 * Possible status values returned by the signal
 	 * Loader::loadingComplete().
 	 */
-	enum Status {
+	enum tqStatus {
 		Success,	   /**
 						* Nothing went wrong so far, but you still have to check
 						* what values are returned by the classes since it's not
@@ -133,12 +133,12 @@ namespace RSS
 	/**
 	 * This type is used by Document::skipDays().
 	 */
-	typedef QValueList<Day> DayList;
+	typedef TQValueList<Day> DayList;
 
 	/**
 	 * This type is used by Document::skipHours().
 	 */
-	typedef QValueList<unsigned short> HourList;
+	typedef TQValueList<unsigned short> HourList;
 }
 
 #endif // LIBRSS_GLOBAL_H

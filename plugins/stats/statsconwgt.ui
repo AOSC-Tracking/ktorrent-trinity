@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>StatsConWgt</class>
-<widget class="QWidget">
+<widget class="TQWidget">
     <property name="name">
         <cstring>StatsConWgt</cstring>
     </property>
@@ -16,15 +16,15 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="0" column="0">
+        <widget class="TQLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>layout3</cstring>
+                <cstring>tqlayout3</cstring>
             </property>
             <hbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QGroupBox">
+                <widget class="TQGroupBox">
                     <property name="name">
                         <cstring>PeersConGbw</cstring>
                     </property>
@@ -32,7 +32,7 @@
                         <string>Peers</string>
                     </property>
                 </widget>
-                <widget class="QGroupBox">
+                <widget class="TQGroupBox">
                     <property name="name">
                         <cstring>DHTGbw</cstring>
                     </property>
@@ -44,5 +44,5 @@
         </widget>
     </grid>
 </widget>
-<layoutdefaults spacing="6" margin="11"/>
+<tqlayoutdefaults spacing="6" margin="11"/>
 </UI>

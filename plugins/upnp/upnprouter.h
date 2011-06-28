@@ -21,7 +21,7 @@
 #define KTUPNPROUTER_H
 
 #include <kurl.h>
-#include <qstringlist.h>
+#include <tqstringlist.h>
 #include <kstreamsocket.h>
 #include <net/portlist.h>
 
@@ -45,11 +45,11 @@ namespace kt
 	*/
 	struct UPnPService	
 	{ 
-		QString serviceid;
-		QString servicetype;
-		QString controlurl;
-		QString eventsuburl;
-		QString scpdurl;
+		TQString serviceid;
+		TQString servicetype;
+		TQString controlurl;
+		TQString eventsuburl;
+		TQString scpdurl;
 		
 		UPnPService();
 		UPnPService(const UPnPService & s);
@@ -59,7 +59,7 @@ namespace kt
 		 * @param name Name of the property (matches to variable names)
 		 * @param value Value of the property
 		 */
-		void setProperty(const QString & name,const QString & value);
+		void setProperty(const TQString & name,const TQString & value);
 		
 		/**
 		 * Set all strings to empty.
@@ -82,18 +82,18 @@ namespace kt
 	 */
 	struct UPnPDeviceDescription
 	{
-		QString friendlyName;
-		QString manufacturer;
-		QString modelDescription;
-		QString modelName;
-		QString modelNumber;
+		TQString friendlyName;
+		TQString manufacturer;
+		TQString modelDescription;
+		TQString modelName;
+		TQString modelNumber;
 		
 		/**
 		 * Set a property of the description
 		 * @param name Name of the property (matches to variable names)
 		 * @param value Value of the property
 		 */
-		void setProperty(const QString & name,const QString & value);
+		void setProperty(const TQString & name,const TQString & value);
 	};
 	
 	/**
@@ -102,9 +102,10 @@ namespace kt
 	 * Class representing a UPnP enabled router. This class is also used to communicate
 	 * with the router.
 	*/
-	class UPnPRouter : public QObject
+	class UPnPRouter : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 				
 	public:
 		struct Forwarding 
@@ -114,13 +115,13 @@ namespace kt
 			UPnPService* service;
 		};
 	private:	
-		QString server;
-		QString tmp_file;
+		TQString server;
+		TQString tmp_file;
 		KURL location;
 		UPnPDeviceDescription desc;
-		QValueList<UPnPService> services;
-		QValueList<Forwarding> fwds;
-		QValueList<bt::HTTPRequest*> active_reqs;
+		TQValueList<UPnPService> services;
+		TQValueList<Forwarding> fwds;
+		TQValueList<bt::HTTPRequest*> active_reqs;
 	public:
 		/**
 		 * Construct a router.
@@ -128,11 +129,11 @@ namespace kt
 		 * @param location The location of it's xml description file
 		 * @param verbose Print lots of debug info
 		 */
-		UPnPRouter(const QString & server,const KURL & location,bool verbose = false);	
+		UPnPRouter(const TQString & server,const KURL & location,bool verbose = false);	
 		virtual ~UPnPRouter();
 		
 		/// Get the name  of the server
-		QString getServer() const {return server;}
+		TQString getServer() const {return server;}
 		
 		/// Get the location of it's xml description
 		KURL getLocation() const {return location;}
@@ -183,12 +184,12 @@ namespace kt
 		
 		void debugPrintData();
 		
-		QValueList<Forwarding>::iterator beginPortMappings() {return fwds.begin();}
-		QValueList<Forwarding>::iterator endPortMappings() {return fwds.end();}
+		TQValueList<Forwarding>::iterator beginPortMappings() {return fwds.begin();}
+		TQValueList<Forwarding>::iterator endPortMappings() {return fwds.end();}
 		
 	private slots:
-		void onReplyOK(bt::HTTPRequest* r,const QString &);
-		void onReplyError(bt::HTTPRequest* r,const QString &);
+		void onReplyOK(bt::HTTPRequest* r,const TQString &);
+		void onReplyError(bt::HTTPRequest* r,const TQString &);
 		void onError(bt::HTTPRequest* r,bool);
 		void downloadFinished(KIO::Job* j);
 		
@@ -208,9 +209,9 @@ namespace kt
 		void xmlFileDownloaded(UPnPRouter* r,bool success);
 		
 	private:
-		QValueList<UPnPService>::iterator findPortForwardingService();		
+		TQValueList<UPnPService>::iterator findPortForwardingService();		
 		
-		bt::HTTPRequest* sendSoapQuery(const QString & query,const QString & soapact,const QString & controlurl,bool at_exit = false);
+		bt::HTTPRequest* sendSoapQuery(const TQString & query,const TQString & soapact,const TQString & controlurl,bool at_exit = false);
 		bool verbose;
 		
 		void forward(UPnPService* srv,const net::Port & port);

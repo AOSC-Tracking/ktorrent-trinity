@@ -36,13 +36,14 @@ namespace kt
 	class ZeroConfPlugin : public Plugin
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		ZeroConfPlugin(QObject* parent, const char* name, const QStringList& args);
+		ZeroConfPlugin(TQObject* tqparent, const char* name, const TQStringList& args);
 		virtual ~ZeroConfPlugin();
 		
 		virtual void load();
 		virtual void unload();
-		virtual bool versionCheck(const QString& version) const;
+		virtual bool versionCheck(const TQString& version) const;
 		
 	private slots:
 		/**

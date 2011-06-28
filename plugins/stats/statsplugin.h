@@ -23,8 +23,8 @@
 
 #include <kgenericfactory.h>
 
-#include <qwidget.h>
-#include <qtimer.h>
+#include <tqwidget.h>
+#include <tqtimer.h>
 
 #include <interfaces/plugin.h>
 #include <interfaces/guiinterface.h>
@@ -52,6 +52,7 @@ namespace kt {
 class StatsPlugin : public Plugin
 {
 	Q_OBJECT
+  TQ_OBJECT
 
 	private:
 		///Speed UI of the plugin
@@ -104,7 +105,7 @@ class StatsPlugin : public Plugin
 		std::pair<uint32_t, uint32_t> mRunningSeedAvg;
 		
 		///Data update timer
-		QTimer * pmUpdTmr;
+		TQTimer * pmUpdTmr;
 		
 		///Update ctr
 		uint32_t mUpdCtr;
@@ -133,17 +134,17 @@ class StatsPlugin : public Plugin
 	public:
 		/**
 		\brief Constructor
-		\param parent Parent
+		\param tqparent Parent
 		\param qt_name 
 		\param args
 		*/
-		StatsPlugin(QObject* parent, const char* qt_name, const QStringList& args);
+		StatsPlugin(TQObject* tqparent, const char* qt_name, const TQStringList& args);
 		///Destructor
 		virtual ~StatsPlugin();
 		
 		virtual void load();
 		virtual void unload();
-		virtual bool versionCheck(const QString&) const;
+		virtual bool versionCheck(const TQString&) const;
 		virtual void guiUpdate();
 };
 

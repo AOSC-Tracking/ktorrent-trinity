@@ -20,7 +20,7 @@
 #ifndef BTUPSPEEDESTIMATER_H
 #define BTUPSPEEDESTIMATER_H
 
-#include <qvaluelist.h>
+#include <tqvaluelist.h>
 #include <util/constants.h>
 
 namespace bt
@@ -68,16 +68,16 @@ namespace bt
 		/// Get the protocol overhead 
 		double protocollOverhead() const {return proto_upload_rate;}
 	private:
-		double rate(QValueList<Entry> & el);
+		double rate(TQValueList<Entry> & el);
 		
 	private:
 		double upload_rate;
 		double proto_upload_rate;
 		Uint32 accumulated_bytes;
-		QValueList<Entry> outstanding_bytes;
-		QValueList<Entry> written_bytes;
+		TQValueList<Entry> outstanding_bytes;
+		TQValueList<Entry> written_bytes;
 #ifdef MEASURE_PROTO_OVERHEAD
-		QValueList<Entry> proto_bytes;
+		TQValueList<Entry> proto_bytes;
 #endif
 	};
 

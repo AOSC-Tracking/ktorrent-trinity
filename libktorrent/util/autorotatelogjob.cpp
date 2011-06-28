@@ -26,7 +26,7 @@
 namespace bt
 {
 
-	AutoRotateLogJob::AutoRotateLogJob(const QString & file,Log* lg)
+	AutoRotateLogJob::AutoRotateLogJob(const TQString & file,Log* lg)
 		: KIO::Job(false),file(file),cnt(10),lg(lg)
 	{
 		update();
@@ -46,12 +46,12 @@ namespace bt
 	{
 		while (cnt > 1)
 		{
-			QString prev = QString("%1-%2.gz").arg(file).arg(cnt - 1);
-			QString curr = QString("%1-%2.gz").arg(file).arg(cnt);
+			TQString prev = TQString("%1-%2.gz").tqarg(file).tqarg(cnt - 1);
+			TQString curr = TQString("%1-%2.gz").tqarg(file).tqarg(cnt);
 			if (bt::Exists(prev)) // if file exists start the move job
 			{
 				KIO::Job* sj = KIO::file_move(KURL::fromPathOrURL(prev),KURL::fromPathOrURL(curr),-1,true,false,false);
-				connect(sj,SIGNAL(result(KIO::Job*)),this,SLOT(moveJobDone(KIO::Job* )));	
+				connect(sj,TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(moveJobDone(KIO::Job* )));	
 				return;
 			}
 			else
@@ -65,12 +65,12 @@ namespace bt
 				// move current log to 1 and zip it
 			bt::Move(file,file + "-1",true);
 			KIO::Job* sj = KIO::file_move(KURL::fromPathOrURL(file),KURL::fromPathOrURL(file + "-1"),-1,true,false,false);
-			connect(sj,SIGNAL(result(KIO::Job*)),this,SLOT(moveJobDone(KIO::Job* )));
+			connect(sj,TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(moveJobDone(KIO::Job* )));
 		}
 		else
 		{
 				// final log file is moved, now zip it and end the job
-			std::system(QString("gzip " + KProcess::quote(file + "-1")).local8Bit());
+			std::system(TQString("gzip " + KProcess::quote(file + "-1")).local8Bit());
 			m_error = 0;
 			lg->logRotateDone();
 			emitResult();

@@ -17,7 +17,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qmap.h>
+#include <tqmap.h>
 #include <kresolver.h>
 #include <util/log.h>
 #include <util/array.h>
@@ -46,7 +46,7 @@ namespace dht
 
 	DHT::DHT() : node(0),srv(0),db(0),tman(0)
 	{
-		connect(&update_timer,SIGNAL(timeout()),this,SLOT(update()));
+		connect(&update_timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(update()));
 	}
 
 
@@ -56,7 +56,7 @@ namespace dht
 			stop();
 	}
 	
-	void DHT::start(const QString & table,const QString & key_file,bt::Uint16 port)
+	void DHT::start(const TQString & table,const TQString & key_file,bt::Uint16 port)
 	{
 		if (running)
 			return;
@@ -133,7 +133,7 @@ namespace dht
 		
 		Uint32 rs = kns.requiredSpace();
 		// create the data
-		QByteArray nodes(rs);
+		TQByteArray nodes(rs);
 		// pack the found nodes in a byte array
 		if (rs > 0)
 			kns.pack(nodes);
@@ -198,7 +198,7 @@ namespace dht
 			node->findKClosestNodes(kns);
 			Uint32 rs = kns.requiredSpace();
 			// create the data
-			QByteArray nodes(rs);
+			TQByteArray nodes(rs);
 			// pack the found nodes in a byte array
 			if (rs > 0)
 				kns.pack(nodes);
@@ -228,7 +228,7 @@ namespace dht
 	{}
 	
 
-	void DHT::portRecieved(const QString & ip,bt::Uint16 port)
+	void DHT::portRecieved(const TQString & ip,bt::Uint16 port)
 	{
 		if (!running)
 			return;
@@ -264,7 +264,7 @@ namespace dht
 			AnnounceTask* at = new AnnounceTask(db,srv,node,info_hash,port);
 			at->start(kns,!canStartTask());
 			tman->addTask(at);
-			if (!db->contains(info_hash))
+			if (!db->tqcontains(info_hash))
 				db->insert(info_hash);
 			return at;
 		}
@@ -333,21 +333,21 @@ namespace dht
 		node->onTimeout(r);
 	}
 	
-	void DHT::addDHTNode(const QString & host,Uint16 hport)
+	void DHT::addDHTNode(const TQString & host,Uint16 hport)
 	{
 		if (!running)
 			return;
 		
-		KResolverResults res = KResolver::resolve(host,QString::number(hport));
+		KResolverResults res = KResolver::resolve(host,TQString::number(hport));
 		if (res.count() > 0)
 		{
 			srv->ping(node->getOurID(),res.front().address());
 		}
 	}
 	
-	QMap<QString, int> DHT::getClosestGoodNodes(int maxNodes)
+	TQMap<TQString, int> DHT::getClosestGoodNodes(int maxNodes)
 	{
-		QMap<QString, int> map;
+		TQMap<TQString, int> map;
 		
 		if(!node)
 			return map;

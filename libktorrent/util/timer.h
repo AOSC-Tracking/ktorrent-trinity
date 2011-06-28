@@ -20,7 +20,7 @@
 #ifndef BTTIMER_H
 #define BTTIMER_H
 
-#include <qdatetime.h>
+#include <tqdatetime.h>
 #include "constants.h"
 
 namespace bt
@@ -31,7 +31,7 @@ namespace bt
 	*/
 	class Timer
 	{
-		QTime last;
+		TQTime last;
 		Uint32 elapsed;
 	public:
 		Timer();

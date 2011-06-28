@@ -21,7 +21,7 @@
 #define BTDOWNLOADCAP_H
 
 #if 0
-#include <qvaluelist.h>
+#include <tqvaluelist.h>
 #include <util/timer.h>
 #include "globals.h"
 #include "cap.h"

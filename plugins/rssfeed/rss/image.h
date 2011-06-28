@@ -13,9 +13,9 @@
 
 #include "global.h"
 
-#include <qobject.h>
+#include <tqobject.h>
 
-class QDomNode;
+class TQDomNode;
 
 namespace KIO
 {
@@ -31,9 +31,10 @@ namespace RSS
     * is via Document::image().
     * @see Document::image()
     */
-   class Image : public QObject
+   class Image : public TQObject
    {
       Q_OBJECT
+  TQ_OBJECT
       public:
          /**
           * Default constructor.
@@ -48,10 +49,10 @@ namespace RSS
 
          /**
           * Constructs an Image from a piece of RSS markup.
-          * @param node A QDomNode which references the DOM leaf to be used
+          * @param node A TQDomNode which references the DOM leaf to be used
           * for constructing the Image.
           */
-         Image(const QDomNode &node);
+         Image(const TQDomNode &node);
 
          /**
           * Assignment operator.
@@ -83,10 +84,10 @@ namespace RSS
 
          /**
           * RSS 0.90 and upwards
-          * @return The 'caption' of this image, or QString::null if no
+          * @return The 'caption' of this image, or TQString() if no
           * caption is available.
           */
-         QString title() const;
+         TQString title() const;
 
          /**
           * RSS 0.90 and upwards
@@ -112,11 +113,11 @@ namespace RSS
          /**
           * RSS 0.91 and upwards
           * @return A description of what this picture shows, or
-          * QString::null if no description is available. Useful for
+          * TQString() if no description is available. Useful for
           * people who deactivated images but want or need to know what is
           * shown.
           */
-         QString description() const;
+         TQString description() const;
 
          /**
           * RSS 0.91 and upwards
@@ -125,7 +126,7 @@ namespace RSS
           * this value to be between 1 and 400.
           * '0' if this information isn't available. This is merely provided
           * for completeness, you should not rely on this value but rather
-          * check what height the QPixmap as returned by gotPixmap()
+          * check what height the TQPixmap as returned by gotPixmap()
           * reports.
           */
          unsigned int height() const;
@@ -136,7 +137,7 @@ namespace RSS
           * default value is 88 pixels. The RSS 0.91 Specification requires
           * this value to be between 1 and 144.
           * This is merely provided for completeness, you should not rely
-          * on this value but rather check what width the QPixmap as
+          * on this value but rather check what width the TQPixmap as
           * returned by gotPixmap() reports.
           */
          unsigned int width() const;
@@ -157,10 +158,10 @@ namespace RSS
           * @param pixmap The pixmap as constructed from the data referenced
           * by the URL returned by link().
           */
-         void gotPixmap(const QPixmap &pixmap);
+         void gotPixmap(const TQPixmap &pixmap);
 
       private slots:
-         void slotData(KIO::Job *job, const QByteArray &data);
+         void slotData(KIO::Job *job, const TQByteArray &data);
          void slotResult(KIO::Job *job);
 
       private:

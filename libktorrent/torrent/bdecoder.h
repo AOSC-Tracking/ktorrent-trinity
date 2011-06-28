@@ -20,7 +20,7 @@
 #ifndef BTBDECODER_H
 #define BTBDECODER_H
 
-#include <qstring.h>
+#include <tqstring.h>
 #include <util/constants.h>
 
 namespace bt
@@ -39,7 +39,7 @@ namespace bt
 	 */
 	class BDecoder
 	{
-		const QByteArray & data;
+		const TQByteArray & data;
 		Uint32 pos;
 		bool verbose;
 	public:
@@ -49,7 +49,7 @@ namespace bt
 		 * @param verbose Verbose output to the log
 		 * @param off Offset to start parsing
 		 */
-		BDecoder(const QByteArray & data,bool verbose,Uint32 off = 0);
+		BDecoder(const TQByteArray & data,bool verbose,Uint32 off = 0);
 		virtual ~BDecoder();
 
 		/**

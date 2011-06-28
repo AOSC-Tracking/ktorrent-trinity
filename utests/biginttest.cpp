@@ -43,7 +43,7 @@ namespace utest
 		b.toBuffer(buf,10);
 		for (Uint32 i = 0;i < 10;i++)
 		{
-			Out() << QString("0x%1 ").arg(buf[i],0,16);
+			Out() << TQString("0x%1 ").tqarg(buf[i],0,16);
 		}
 		Out() << endl;
 	}
@@ -67,7 +67,7 @@ namespace utest
 		a.toBuffer(foobar,5);
 		for (Uint32 i = 0;i < 5;i++)
 		{
-			Out() << QString("0x%1 ").arg(foobar[i],0,16);
+			Out() << TQString("0x%1 ").tqarg(foobar[i],0,16);
 		}
 		Out() << endl;
 		Out() << "Third test" << endl;

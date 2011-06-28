@@ -17,7 +17,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qurl.h>
+#include <tqurl.h>
 #include <string.h>
 #include <algorithm>
 #include "log.h"
@@ -72,10 +72,10 @@ namespace bt
 		return hg.generate(data,len);
 	}
 
-	QString SHA1Hash::toString() const
+	TQString SHA1Hash::toString() const
 	{
 		char tmp[41];
-		QString fmt;
+		TQString fmt;
 		for (int i = 0;i < 20;i++)
 			fmt += "%02x";
 		tmp[40] = '\0';
@@ -84,17 +84,17 @@ namespace bt
 				hash[5],hash[6],hash[7],hash[8],hash[9],
 				hash[10],hash[11],hash[12],hash[13],hash[14],
 				hash[15],hash[16],hash[17],hash[18],hash[19]);
-		return QString(tmp);
+		return TQString(tmp);
 	}
 	
-	QByteArray SHA1Hash::toByteArray() const
+	TQByteArray SHA1Hash::toByteArray() const
 	{
-		QByteArray arr(20);
+		TQByteArray arr(20);
 		arr.duplicate((const char*)hash,20);
 		return arr;
 	}
 
-	QString SHA1Hash::toURLString() const
+	TQString SHA1Hash::toURLString() const
 	{
 		return URLEncoder::encode((const char*)hash,20);
 	}

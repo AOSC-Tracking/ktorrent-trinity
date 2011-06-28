@@ -17,26 +17,26 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
-#include <qvbox.h>
-#include <qhbox.h>
-#include <qlabel.h>
-#include <qtooltip.h>
-#include <qpixmap.h>
+#include <tqvbox.h>
+#include <tqhbox.h>
+#include <tqlabel.h>
+#include <tqtooltip.h>
+#include <tqpixmap.h>
 #include <kdialog.h>
 #include <util/log.h>
 #include "trayhoverpopup.h"
 
 using namespace bt;
 
-TrayHoverPopup::TrayHoverPopup(const QPixmap & pix,QWidget *parent, const char *name )
-	: KPassivePopup(KPassivePopup::Boxed,parent,name),pix(pix)
+TrayHoverPopup::TrayHoverPopup(const TQPixmap & pix,TQWidget *tqparent, const char *name )
+	: KPassivePopup(KPassivePopup::Boxed,tqparent,name),pix(pix)
 {
 	setTimeout(0);
 	setAutoDelete(false);
-	connect(&hover_timer,SIGNAL(timeout()),this,SLOT(onHoverTimeout()));
-	connect(&show_timer,SIGNAL(timeout()),this,SLOT(onShowTimeout()));
+	connect(&hover_timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(onHoverTimeout()));
+	connect(&show_timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(onShowTimeout()));
 	create();
-	setPalette(QToolTip::palette());
+	setPalette(TQToolTip::palette());
 	setLineWidth(1);
 	context_menu_shown = false;
 	cursor_over_icon = false;
@@ -96,39 +96,39 @@ void TrayHoverPopup::onShowTimeout()
 		show();
 }
 
-void TrayHoverPopup::updateText(const QString & msg)
+void TrayHoverPopup::updateText(const TQString & msg)
 {
 	text->setText(msg);
 }
 
 void TrayHoverPopup::create()
 {
-	QVBox *vb = new QVBox(this);
+	TQVBox *vb = new TQVBox(this);
 	vb->setSpacing(KDialog::spacingHint());
 	 
-	QHBox *hb=0;
+	TQHBox *hb=0;
 	if (!pix.isNull()) 
 	{
-		hb = new QHBox(vb);
+		hb = new TQHBox(vb);
 		hb->setMargin(0);
 		hb->setSpacing(KDialog::spacingHint());
-		QLabel* pix_lbl = new QLabel(hb,"title_icon");
+		TQLabel* pix_lbl = new TQLabel(hb,"title_icon");
 		pix_lbl->setPixmap(pix);
-		pix_lbl->setAlignment(AlignLeft);
+		pix_lbl->tqsetAlignment(AlignLeft);
 	}
 	 
 	
-	QLabel* title = new QLabel("KTorrent", hb ? hb : vb, "title_label" );
-	QFont fnt = title->font();
+	TQLabel* title = new TQLabel("KTorrent", hb ? hb : vb, "title_label" );
+	TQFont fnt = title->font();
 	fnt.setBold( true );
 	title->setFont( fnt );
-	title->setAlignment( Qt::AlignHCenter );
+	title->tqsetAlignment( TQt::AlignHCenter );
 	if ( hb )
 		hb->setStretchFactor(title, 10 ); // enforce centering
 
 	// text will be filled later
-	text = new QLabel( "Dummy", vb, "msg_label" );
-				text->setAlignment( AlignLeft );
+	text = new TQLabel( "Dummy", vb, "msg_label" );
+				text->tqsetAlignment( AlignLeft );
 	setView(vb);
 }
 	

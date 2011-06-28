@@ -17,7 +17,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qfile.h>
+#include <tqfile.h>
 #include <plugins/upnp/upnprouter.h>
 #include <plugins/upnp/upnpdescriptionparser.h>
 #include <util/fileops.h>
@@ -360,8 +360,8 @@ namespace utest
 
 	bool UPnPParseDescriptionTest::doParse(const char* data,bool forward_test)
 	{
-		QString fn = "/tmp/UPnPParseDescriptionTest";
-		QFile fptr(fn);
+		TQString fn = "/tmp/UPnPParseDescriptionTest";
+		TQFile fptr(fn);
 		if (!fptr.open(IO_WriteOnly))
 		{
 			Out() << "Cannot open " << fn << " : " << fptr.errorString() << endl;
@@ -370,7 +370,7 @@ namespace utest
 		fptr.writeBlock(data,strlen(data));
 		fptr.close();
 		
-		kt::UPnPRouter router(QString::null,"http://foobar.com");
+		kt::UPnPRouter router(TQString(),"http://foobar.com");
 		kt::UPnPDescriptionParser dp;
 		
 		if (!dp.parse(fn,&router))

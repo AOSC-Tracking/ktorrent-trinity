@@ -30,12 +30,13 @@ class KTorrentView;
 class KTorrentViewMenu : public KPopupMenu
 {
 	Q_OBJECT
+  TQ_OBJECT
 public:
-	KTorrentViewMenu(KTorrentView *parent, const char *name = 0 );
+	KTorrentViewMenu(KTorrentView *tqparent, const char *name = 0 );
 	virtual ~KTorrentViewMenu();
 	
 	/// Show the menu at the given point
-	void show(const QPoint & p);
+	void show(const TQPoint & p);
 	
 	/// Get the group sub menu
 	KPopupMenu* getGroupsSubMenu() {return groups_sub_menu;}
@@ -45,7 +46,7 @@ public slots:
 	
 signals:
 	/// A item in the groups sub menu has been activated
-	void groupItemActivated(const QString & group);
+	void groupItemActivated(const TQString & group);
 
 private:
 	KTorrentView* view;

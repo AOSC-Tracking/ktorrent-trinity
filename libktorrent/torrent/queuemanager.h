@@ -18,12 +18,12 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#ifndef QUEUEMANAGER_H
-#define QUEUEMANAGER_H
+#ifndef TQUEUEMANAGER_H
+#define TQUEUEMANAGER_H
 
 #include <set>
-#include <qobject.h>
-#include <qptrlist.h>
+#include <tqobject.h>
+#include <tqptrlist.h>
 
 #include <interfaces/torrentinterface.h>
 
@@ -39,23 +39,24 @@ namespace bt
 	struct TrackerTier;
 	class WaitJob;
 
-	class QueuePtrList : public QPtrList<kt::TorrentInterface>
+	class QueuePtrList : public TQPtrList<kt::TorrentInterface>
 	{
 		public:
 			QueuePtrList();
 			virtual ~QueuePtrList();
 
 		protected:
-			int compareItems(QPtrCollection::Item item1, QPtrCollection::Item item2);
+			int compareItems(TQPtrCollection::Item item1, TQPtrCollection::Item item2);
 	};
 
 	/**
 	 * @author Ivan Vasic
 	 * @brief This class contains list of all TorrentControls and is responsible for starting/stopping them
 	 */
-	class QueueManager : public QObject
+	class QueueManager : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 				
 		public:
 			QueueManager();
@@ -93,7 +94,7 @@ namespace bt
 
 			void startNext();
 			
-			typedef QPtrList<kt::TorrentInterface>::iterator iterator;
+			typedef TQPtrList<kt::TorrentInterface>::iterator iterator;
 
 			iterator begin();
 			iterator end();

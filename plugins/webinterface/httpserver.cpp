@@ -17,9 +17,9 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qtimer.h>
-#include <qcstring.h>
-#include <qdatetime.h>
+#include <tqtimer.h>
+#include <tqcstring.h>
+#include <tqdatetime.h>
 #include <kapplication.h>
 #include <kgenericfactory.h>
 #include <kglobal.h>
@@ -27,9 +27,9 @@
 #include <kmdcodec.h>
 #include <ktempfile.h>
 
-#include <qfileinfo.h>
-#include <qsocket.h>
-#include <qstringlist.h>
+#include <tqfileinfo.h>
+#include <tqsocket.h>
+#include <tqstringlist.h>
 
 #include <interfaces/coreinterface.h>
 #include <interfaces/torrentinterface.h>
@@ -53,12 +53,12 @@ namespace kt
 	
 	
 
-	HttpServer::HttpServer(CoreInterface *core, int port) : QServerSocket(port, 5),core(core),cache(10,23)
+	HttpServer::HttpServer(CoreInterface *core, int port) : TQServerSocket(port, 5),core(core),cache(10,23)
 	{
 		php_i = new PhpInterface(core);
 		clients.setAutoDelete(true);
 		
-		QStringList dirList = KGlobal::instance()->dirs()->findDirs("data", "ktorrent/www");
+		TQStringList dirList = KGlobal::instance()->dirs()->findDirs("data", "ktorrent/www");
 		rootDir = *(dirList.begin());
 		Out(SYS_WEB|LOG_DEBUG) << "WWW Root Directory "<< rootDir <<endl;
 		session.logged_in = false;
@@ -72,23 +72,23 @@ namespace kt
 
 	void HttpServer::newConnection(int s)
 	{
-		QSocket* socket = new QSocket(this);
+		TQSocket* socket = new TQSocket(this);
 		socket->setSocket(s);
 	
-		connect(socket, SIGNAL(readyRead()), this, SLOT(slotSocketReadyToRead()));
-		connect(socket, SIGNAL(delayedCloseFinished()), this, SLOT(slotConnectionClosed()));
-		connect(socket, SIGNAL(connectionClosed()), this, SLOT(slotConnectionClosed()));
+		connect(socket, TQT_SIGNAL(readyRead()), this, TQT_SLOT(slotSocketReadyToRead()));
+		connect(socket, TQT_SIGNAL(delayedCloseFinished()), this, TQT_SLOT(slotConnectionClosed()));
+		connect(socket, TQT_SIGNAL(connectionClosed()), this, TQT_SLOT(slotConnectionClosed()));
 	
 		HttpClientHandler* handler = new HttpClientHandler(this,socket);
 		clients.insert(socket,handler);
-		Out(SYS_WEB|LOG_NOTICE) << "connection from "<< socket->peerAddress().toString()  << endl;
+		Out(SYS_WEB|LOG_NOTICE) << "connection from "<< TQString(socket->peerAddress().toString())  << endl;
 	}
 	
 
 	void HttpServer::slotSocketReadyToRead()
 	{
-		QSocket* client = (QSocket*)sender();
-		HttpClientHandler* handler = clients.find(client);
+		TQSocket* client = (TQSocket*)sender();
+		HttpClientHandler* handler = clients.tqfind(client);
 		if (!handler)
 		{
 			client->deleteLater();
@@ -98,10 +98,10 @@ namespace kt
 		handler->readyToRead();
 	}
 	
-	static int DecodeEscapedChar(QString & password,int idx)
+	static int DecodeEscapedChar(TQString & password,int idx)
 	{
-		QChar a = password[idx + 1].lower();
-		QChar b = password[idx + 2].lower();
+		TQChar a = password[idx + 1].lower();
+		TQChar b = password[idx + 2].lower();
 		if (!a.isNumber() && !(a.latin1() >= 'a' && a.latin1() <= 'f'))
 			return idx + 2; // not a valid hex digit
 		
@@ -112,21 +112,21 @@ namespace kt
 		Uint8 h = (a.latin1() - (a.isNumber() ? '0' : 'a')) << 4;
 		Uint8 l = (b.latin1() - (b.isNumber() ? '0' : 'a'));
 		char r = (char) h | l; // combine them and cast to a char
-		password.replace(idx,3,r);
+		password.tqreplace(idx,3,r);
 		return idx + 1;
 	}
 	
-	bool HttpServer::checkLogin(const QHttpRequestHeader & hdr,const QByteArray & data)
+	bool HttpServer::checkLogin(const TQHttpRequestHeader & hdr,const TQByteArray & data)
 	{
 		if (hdr.contentType() != "application/x-www-form-urlencoded")
 			return false;
 		
-		QString username;
-		QString password;
-		QStringList params = QStringList::split("&",QString(data));
-		for (QStringList::iterator i = params.begin();i != params.end();i++)
+		TQString username;
+		TQString password;
+		TQStringList params = TQStringList::split("&",TQString(data));
+		for (TQStringList::iterator i = params.begin();i != params.end();i++)
 		{
-			QString t = *i;
+			TQString t = *i;
 			if (t.section("=",0,0) == "username")
 				username = t.section("=",1,1);
 			else if (t.section("=",0,0) == "password")
@@ -134,7 +134,7 @@ namespace kt
 			
 			// check for passwords with url encoded stuff in them and decode them if necessary
 			int idx = 0;
-			while ((idx = password.find('%',idx)) > 0)
+			while ((idx = password.tqfind('%',idx)) > 0)
 			{
 				if (idx + 2 < password.length())
 				{
@@ -154,7 +154,7 @@ namespace kt
 			{
 				session.logged_in = true;
 				session.sessionId=rand();
-				session.last_access=QTime::currentTime();
+				session.last_access=TQTime::currentTime();
 				Out(SYS_WEB|LOG_NOTICE) << "Webgui login succesfull !" << endl;
 				return true;
 			}
@@ -163,19 +163,19 @@ namespace kt
 		return false;
 	}
 	
-	bool HttpServer::checkSession(const QHttpRequestHeader & hdr)
+	bool HttpServer::checkSession(const TQHttpRequestHeader & hdr)
 	{
 		// check session in cookie
 		int session_id = 0;
 		if (hdr.hasKey("Cookie"))
 		{
-			QString cookie = hdr.value("Cookie");
-			int idx = cookie.find("KT_SESSID=");
+			TQString cookie = hdr.value("Cookie");
+			int idx = cookie.tqfind("KT_SESSID=");
 			if (idx == -1)
 				return false;
 			
-			QString number;
-			idx += QString("KT_SESSID=").length();
+			TQString number;
+			idx += TQString("KT_SESSID=").length();
 			while (idx < cookie.length())
 			{
 				if (cookie[idx] >= '0' && cookie[idx] <= '9')
@@ -193,9 +193,9 @@ namespace kt
 		if (session_id == session.sessionId)
 		{
 			// check if the session hasn't expired yet
-			if(session.last_access.secsTo(QTime::currentTime())<WebInterfacePluginSettings::sessionTTL())
+			if(session.last_access.secsTo(TQTime::currentTime())<WebInterfacePluginSettings::sessionTTL())
 			{
-				session.last_access=QTime::currentTime();
+				session.last_access=TQTime::currentTime();
 			}
 			else
 			{
@@ -208,7 +208,7 @@ namespace kt
 		return true;
 	}
 	
-	static QString ExtensionToContentType(const QString & ext)
+	static TQString ExtensionToContentType(const TQString & ext)
 	{
 		if (ext == "html")
 			return "text/html";
@@ -219,41 +219,41 @@ namespace kt
 		else if (ext == "gif" || ext == "png" || ext == "ico")
 			return "image/" + ext;
 		else
-			return QString::null;
+			return TQString();
 	}
 	
 	// HTTP needs non translated dates
-	static QString days[] = {
+	static TQString days[] = {
 		"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"
 	};
 	
-	static QString months[] = {
+	static TQString months[] = {
 		"Jan","Feb","Mar","Apr",
 		"May","Jun","Jul","Aug",
 		"Sep","Oct","Nov","Dec"
 	};
 	
-	static QString DateTimeToString(const QDateTime & now,bool cookie)
+	static TQString DateTimeToString(const TQDateTime & now,bool cookie)
 	{
 		if (!cookie)
 			return now.toString("%1, dd %2 yyyy hh:mm:ss UTC")
-				.arg(days[now.date().dayOfWeek() - 1])
-				.arg(months[now.date().month() - 1]);
+				.tqarg(days[now.date().dayOfWeek() - 1])
+				.tqarg(months[now.date().month() - 1]);
 		else
 			return now.toString("%1, dd-%2-yyyy hh:mm:ss GMT")
-				.arg(days[now.date().dayOfWeek() - 1])
-				.arg(months[now.date().month() - 1]);
+				.tqarg(days[now.date().dayOfWeek() - 1])
+				.tqarg(months[now.date().month() - 1]);
 	}
 		
-	void HttpServer::setDefaultResponseHeaders(HttpResponseHeader & hdr,const QString & content_type,bool with_session_info)
+	void HttpServer::setDefaultResponseHeaders(HttpResponseHeader & hdr,const TQString & content_type,bool with_session_info)
 	{
 		hdr.setValue("Server","KTorrent/" KT_VERSION_MACRO);
-		hdr.setValue("Date",DateTimeToString(QDateTime::currentDateTime(Qt::UTC),false));
+		hdr.setValue("Date",DateTimeToString(TQDateTime::tqcurrentDateTime(Qt::UTC),false));
 		hdr.setValue("Content-Type",content_type);
 		hdr.setValue("Connection","keep-alive");
 		if (with_session_info && session.sessionId && session.logged_in)
 		{
-			hdr.setValue("Set-Cookie",QString("KT_SESSID=%1").arg(session.sessionId));
+			hdr.setValue("Set-Cookie",TQString("KT_SESSID=%1").tqarg(session.sessionId));
 		}
 	}
 	
@@ -262,7 +262,7 @@ namespace kt
 		HttpResponseHeader rhdr(301);
 		setDefaultResponseHeaders(rhdr,"text/html",false);
 		rhdr.setValue("Location","/login.html");
-		QString path = rootDir + bt::DirSeparator() + WebInterfacePluginSettings::skin() + "/login.html";
+		TQString path = rootDir + bt::DirSeparator() + WebInterfacePluginSettings::skin() + "/login.html";
 		if (!hdlr->sendFile(rhdr,path))
 		{
 			HttpResponseHeader nhdr(404);
@@ -272,9 +272,9 @@ namespace kt
 		Out(SYS_WEB|LOG_NOTICE) << "Redirecting to /login.html" << endl;
 	}
 	
-	void HttpServer::handleGet(HttpClientHandler* hdlr,const QHttpRequestHeader & hdr,bool do_not_check_session)
+	void HttpServer::handleGet(HttpClientHandler* hdlr,const TQHttpRequestHeader & hdr,bool do_not_check_session)
 	{
-		QString file = hdr.path();
+		TQString file = hdr.path();
 		if (file == "/")
 			file = "/login.html";
 		
@@ -283,7 +283,7 @@ namespace kt
 		KURL url;
 		url.setEncodedPathAndQuery(file);
 		
-		QString path = rootDir + bt::DirSeparator() + WebInterfacePluginSettings::skin() + url.path();
+		TQString path = rootDir + bt::DirSeparator() + WebInterfacePluginSettings::skin() + url.path();
 		// first check if the file exists (if not send 404)
 		if (!bt::Exists(path))
 		{
@@ -293,8 +293,8 @@ namespace kt
 			return;
 		}
 		
-		QFileInfo fi(path);
-		QString ext = fi.extension();
+		TQFileInfo fi(path);
+		TQString ext = fi.extension();
 		
 		// if it is the login page send that
 		if (file == "/login.html" || file == "/")
@@ -328,8 +328,8 @@ namespace kt
 			if (path.endsWith("login.html"))
 			{
 				// clear cookie in case of login page
-				QDateTime dt = QDateTime::currentDateTime().addDays(-1);
-				QString cookie = QString("KT_SESSID=666; expires=%1 +0000").arg(DateTimeToString(dt,true));
+				TQDateTime dt = TQDateTime::tqcurrentDateTime().addDays(-1);
+				TQString cookie = TQString("KT_SESSID=666; expires=%1 +0000").tqarg(DateTimeToString(dt,true));
 				rhdr.setValue("Set-Cookie",cookie);
 			}
 			
@@ -344,14 +344,14 @@ namespace kt
 		{
 			if (hdr.hasKey("If-Modified-Since"))
 			{
-				QDateTime dt = parseDate(hdr.value("If-Modified-Since"));
+				TQDateTime dt = parseDate(hdr.value("If-Modified-Since"));
 				if (dt.isValid() && dt < fi.lastModified())
 				{	
 					HttpResponseHeader rhdr(304);
 					setDefaultResponseHeaders(rhdr,"text/html",true);
 					rhdr.setValue("Cache-Control","max-age=0");
 					rhdr.setValue("Last-Modified",DateTimeToString(fi.lastModified(),false));
-					rhdr.setValue("Expires",DateTimeToString(QDateTime::currentDateTime(Qt::UTC).addSecs(3600),false));
+					rhdr.setValue("Expires",DateTimeToString(TQDateTime::tqcurrentDateTime(Qt::UTC).addSecs(3600),false));
 					hdlr->sendResponse(rhdr);
 					return;
 				}
@@ -361,7 +361,7 @@ namespace kt
 			HttpResponseHeader rhdr(200);
 			setDefaultResponseHeaders(rhdr,ExtensionToContentType(ext),true);
 			rhdr.setValue("Last-Modified",DateTimeToString(fi.lastModified(),false));
-			rhdr.setValue("Expires",DateTimeToString(QDateTime::currentDateTime(Qt::UTC).addSecs(3600),false));
+			rhdr.setValue("Expires",DateTimeToString(TQDateTime::tqcurrentDateTime(Qt::UTC).addSecs(3600),false));
 			rhdr.setValue("Cache-Control","private");
 			if (!hdlr->sendFile(rhdr,path))
 			{
@@ -381,7 +381,7 @@ namespace kt
 			{
 				// first send back login page
 				redirectToLoginPage(hdlr);
-				QTimer::singleShot(1000,kapp,SLOT(quit()));
+				TQTimer::singleShot(1000,kapp,TQT_SLOT(quit()));
 			}
 			else if (redirect)
 			{
@@ -409,7 +409,7 @@ namespace kt
 		}
 	}
 	
-	void HttpServer::handlePost(HttpClientHandler* hdlr,const QHttpRequestHeader & hdr,const QByteArray & data)
+	void HttpServer::handlePost(HttpClientHandler* hdlr,const TQHttpRequestHeader & hdr,const TQByteArray & data)
 	{
 		// this is either a file or a login
 		if (hdr.value("Content-Type").startsWith("multipart/form-data"))
@@ -418,7 +418,7 @@ namespace kt
 		}
 		else if (!checkLogin(hdr,data))
 		{
-			QHttpRequestHeader tmp = hdr;
+			TQHttpRequestHeader tmp = hdr;
 			tmp.setRequest("GET","/login.html",1,1);
 			handleGet(hdlr,tmp);
 		}
@@ -428,11 +428,11 @@ namespace kt
 		}
 	}
 	
-	void HttpServer::handleTorrentPost(HttpClientHandler* hdlr,const QHttpRequestHeader & hdr,const QByteArray & data)
+	void HttpServer::handleTorrentPost(HttpClientHandler* hdlr,const TQHttpRequestHeader & hdr,const TQByteArray & data)
 	{
 		const char* ptr = data.data();
 		Uint32 len = data.size();
-		int pos = QString(data).find("\r\n\r\n");
+		int pos = TQString(data).tqfind("\r\n\r\n");
 		
 		if (pos == -1 || pos + 4 >= len || ptr[pos + 4] != 'd')
 		{
@@ -444,7 +444,7 @@ namespace kt
 		
 		// save torrent to a temporary file
 		KTempFile tmp_file(locateLocal("tmp", "ktwebgui-"), ".torrent");
-		QDataStream* out = tmp_file.dataStream();
+		TQDataStream* out = tmp_file.dataStream();
 		if (!out)
 		{
 			HttpResponseHeader rhdr(500);
@@ -472,11 +472,11 @@ namespace kt
 	
 	void HttpServer::slotConnectionClosed()
 	{
-		QSocket* socket= (QSocket*)sender();
+		TQSocket* socket= (TQSocket*)sender();
 		clients.erase(socket);
 	}
 
-	QDateTime HttpServer::parseDate(const QString & str)
+	TQDateTime HttpServer::parseDate(const TQString & str)
 	{
 		/*
 		Potential date formats :
@@ -484,66 +484,66 @@ namespace kt
       		Sunday, 06-Nov-94 08:49:37 GMT ; RFC 850, obsoleted by RFC 1036
       		Sun Nov  6 08:49:37 1994       ; ANSI C's asctime() format
 		*/
-		QStringList sl = QStringList::split(" ",str);
+		TQStringList sl = TQStringList::split(" ",str);
 		if (sl.count() == 6)
 		{
 			// RFC 1123 format
-			QDate d;
-			QString month = sl[2];
+			TQDate d;
+			TQString month = sl[2];
 			int m = -1;
 			for (int i = 1;i <= 12 && m < 0;i++)
-				if (QDate::shortMonthName(i) == month)
+				if (TQDate::shortMonthName(i) == month)
 					m = i;
 			
 			d.setYMD(sl[3].toInt(),m,sl[1].toInt());
 			
-			QTime t = QTime::fromString(sl[4],Qt::ISODate);
-			return QDateTime(d,t);
+			TQTime t = TQTime::fromString(sl[4],Qt::ISODate);
+			return TQDateTime(d,t);
 		}
 		else if (sl.count() == 4)
 		{
 			//  RFC 1036
-			QStringList dl = QStringList::split("-",sl[1]);
+			TQStringList dl = TQStringList::split("-",sl[1]);
 			if (dl.count() != 3)
-				return QDateTime();
+				return TQDateTime();
 			
-			QDate d;
-			QString month = dl[1];
+			TQDate d;
+			TQString month = dl[1];
 			int m = -1;
 			for (int i = 1;i <= 12 && m < 0;i++)
-				if (QDate::shortMonthName(i) == month)
+				if (TQDate::shortMonthName(i) == month)
 					m = i;
 			
 			d.setYMD(2000 + dl[2].toInt(),m,dl[0].toInt());
 			
-			QTime t = QTime::fromString(sl[2],Qt::ISODate);
-			return QDateTime(d,t);
+			TQTime t = TQTime::fromString(sl[2],Qt::ISODate);
+			return TQDateTime(d,t);
 		}
 		else if (sl.count() == 5)
 		{
 			// ANSI C
-			QDate d;
-			QString month = sl[1];
+			TQDate d;
+			TQString month = sl[1];
 			int m = -1;
 			for (int i = 1;i <= 12 && m < 0;i++)
-				if (QDate::shortMonthName(i) == month)
+				if (TQDate::shortMonthName(i) == month)
 					m = i;
 			
 			d.setYMD(sl[4].toInt(),m,sl[2].toInt());
 			
-			QTime t = QTime::fromString(sl[3],Qt::ISODate);
-			return QDateTime(d,t);
+			TQTime t = TQTime::fromString(sl[3],Qt::ISODate);
+			return TQDateTime(d,t);
 		}
 		else
-			return QDateTime();
+			return TQDateTime();
 	}
 	
-	bt::MMapFile* HttpServer::cacheLookup(const QString & name)
+	bt::MMapFile* HttpServer::cacheLookup(const TQString & name)
 	{
-		return cache.find(name);
+		return cache.tqfind(name);
 	}
 	
-	void HttpServer::insertIntoCache(const QString & name,bt::MMapFile* file)
+	void HttpServer::insertIntoCache(const TQString & name,bt::MMapFile* file)
 	{
 		cache.insert(name,file);
 	}

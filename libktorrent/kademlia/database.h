@@ -20,8 +20,8 @@
 #ifndef DHTDATABASE_H
 #define DHTDATABASE_H
 
-#include <qmap.h>
-#include <qvaluelist.h>
+#include <tqmap.h>
+#include <tqvaluelist.h>
 #include <util/ptrmap.h>
 #include <util/constants.h>
 #include <util/array.h>
@@ -58,7 +58,7 @@ namespace dht
 		DBItem & operator = (const DBItem & item);
 	};
 	
-	typedef QValueList<DBItem> DBItemList;
+	typedef TQValueList<DBItem> DBItemList;
 
 	/**
 	 * @author Joris Guisson
@@ -68,7 +68,7 @@ namespace dht
 	class Database
 	{		
 		bt::PtrMap<dht::Key,DBItemList> items;
-		QMap<dht::Key,bt::TimeStamp> tokens;
+		TQMap<dht::Key,bt::TimeStamp> tokens;
 	public:
 		Database();
 		virtual ~Database();
@@ -118,7 +118,7 @@ namespace dht
 		bool checkToken(const dht::Key & token,bt::Uint32 ip,bt::Uint16 port);
 		
 		/// Test wether or not the DB contains a key
-		bool contains(const dht::Key & key) const;
+		bool tqcontains(const dht::Key & key) const;
 		
 		/// Insert an empty item (only if it isn't already in the DB)
 		void insert(const dht::Key & key);

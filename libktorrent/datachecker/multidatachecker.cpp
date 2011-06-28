@@ -45,7 +45,7 @@ namespace bt
 		delete [] buf;
 	}
 	
-	void MultiDataChecker::check(const QString& path, const Torrent& tor,const QString & dnddir)
+	void MultiDataChecker::check(const TQString& path, const Torrent& tor,const TQString & dnddir)
 	{
 		Uint32 num_chunks = tor.getNumChunks();
 		// initialize the bitsets
@@ -104,13 +104,13 @@ namespace bt
 								const TorrentFile & tf,
 								const Torrent & tor,
 								Uint8* buf,
-								const QString & cache)
+								const TQString & cache)
 	{
 		File fptr;
 		if (!fptr.open(cache + tf.getPath(), "rb"))
 		{
-			Out() << QString("Warning : Cannot open %1 : %2").arg(cache + 
-					tf.getPath()).arg(fptr.errorString()) << endl;
+			Out() << TQString("Warning : Cannot open %1 : %2").tqarg(cache + 
+					tf.getPath()).tqarg(fptr.errorString()) << endl;
 			return 0;
 		}
 		
@@ -121,7 +121,7 @@ namespace bt
 	
 	bool MultiDataChecker::loadChunk(Uint32 ci,Uint32 cs,const Torrent & tor)
 	{
-		QValueList<Uint32> tflist;
+		TQValueList<Uint32> tflist;
 		tor.calcChunkPos(ci,tflist);
 		
 		// one file is simple
@@ -183,8 +183,8 @@ namespace bt
 				File fptr;
 				if (!fptr.open(cache + f.getPath(), "rb"))
 				{
-					Out() << QString("Warning : Cannot open %1 : %2").arg(cache + 
-							f.getPath()).arg(fptr.errorString()) << endl;
+					Out() << TQString("Warning : Cannot open %1 : %2").tqarg(cache + 
+							f.getPath()).tqarg(fptr.errorString()) << endl;
 					return false;
 				}
 				else

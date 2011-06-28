@@ -30,7 +30,7 @@ namespace bt
 	MoveDataFilesJob::~MoveDataFilesJob()
 	{}
 
-	void MoveDataFilesJob::addMove(const QString & src,const QString & dst)
+	void MoveDataFilesJob::addMove(const TQString & src,const TQString & dst)
 	{
 		todo.insert(src,dst);
 	}
@@ -53,7 +53,7 @@ namespace bt
 		else
 		{
 			success.insert(active_src,active_dst);
-			active_src = active_dst = QString::null;
+			active_src = active_dst = TQString();
 			active_job = 0;
 			startMoving();
 		}
@@ -76,13 +76,13 @@ namespace bt
 			return;
 		}
 			
-		QMap<QString,QString>::iterator i = todo.begin();	
+		TQMap<TQString,TQString>::iterator i = todo.begin();	
 		active_job = KIO::move(KURL::fromPathOrURL(i.key()),KURL::fromPathOrURL(i.data()),false);
 		active_src = i.key();
 		active_dst = i.data();
 		Out(SYS_GEN|LOG_DEBUG) << "Moving " << active_src << " -> " << active_dst << endl;
-		connect(active_job,SIGNAL(result(KIO::Job*)),this,SLOT(onJobDone(KIO::Job*)));
-		connect(active_job,SIGNAL(canceled(KIO::Job*)),this,SLOT(onCanceled(KIO::Job*)));
+		connect(active_job,TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(onJobDone(KIO::Job*)));
+		connect(active_job,TQT_SIGNAL(canceled(KIO::Job*)),this,TQT_SLOT(onCanceled(KIO::Job*)));
 		todo.erase(i);
 	}
 	
@@ -93,10 +93,10 @@ namespace bt
 			emitResult();
 			return;
 		}
-		QMap<QString,QString>::iterator i = success.begin();	
+		TQMap<TQString,TQString>::iterator i = success.begin();	
 		active_job = KIO::move(KURL::fromPathOrURL(i.data()),KURL::fromPathOrURL(i.key()),false);
-		connect(active_job,SIGNAL(result(KIO::Job*)),this,SLOT(onJobDone(KIO::Job*)));
-		connect(active_job,SIGNAL(canceled(KIO::Job*)),this,SLOT(onCanceled(KIO::Job*)));
+		connect(active_job,TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(onJobDone(KIO::Job*)));
+		connect(active_job,TQT_SIGNAL(canceled(KIO::Job*)),this,TQT_SLOT(onCanceled(KIO::Job*)));
 		success.erase(i);
 	}
 }

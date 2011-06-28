@@ -21,7 +21,7 @@
 #include <algorithm>
 #include <util/file.h>
 #include <util/array.h>
-#include <qstringlist.h>
+#include <tqstringlist.h>
 #include "chunkmanager.h"
 #include "torrent.h"
 #include <util/error.h>
@@ -43,8 +43,8 @@ namespace bt
 
 	ChunkManager::ChunkManager(
 			Torrent & tor,
-			const QString & tmpdir,
-			const QString & datadir,
+			const TQString & tmpdir,
+			const TQString & datadir,
 			bool custom_output_name)
 	: tor(tor),chunks(tor.getNumChunks()),
 	bitset(tor.getNumChunks()),excluded_chunks(tor.getNumChunks()),only_seed_chunks(tor.getNumChunks()),todo(tor.getNumChunks())
@@ -79,8 +79,8 @@ namespace bt
 		for (Uint32 i = 0;i < tor.getNumFiles();i++)
 		{
 			TorrentFile & tf = tor.getFile(i);
-			connect(&tf,SIGNAL(downloadPriorityChanged(TorrentFile*, Priority, Priority )),
-					 this,SLOT(downloadPriorityChanged(TorrentFile*, Priority, Priority )));
+			connect(&tf,TQT_SIGNAL(downloadPriorityChanged(TorrentFile*, Priority, Priority )),
+					 this,TQT_SLOT(downloadPriorityChanged(TorrentFile*, Priority, Priority )));
 			
 			if (tf.getPriority() != NORMAL_PRIORITY)
 			{
@@ -135,12 +135,12 @@ namespace bt
 		delete cache;
 	}
 	
-	QString ChunkManager::getDataDir() const
+	TQString ChunkManager::getDataDir() const
 	{
 		return cache->getDataDir();
 	}
 
-	void ChunkManager::changeDataDir(const QString & data_dir)
+	void ChunkManager::changeDataDir(const TQString & data_dir)
 	{
 		cache->changeTmpDir(data_dir);
 		index_file = data_dir + "index";
@@ -148,7 +148,7 @@ namespace bt
 		file_priority_file = data_dir + "file_priority";
 	}
 	
-	KIO::Job* ChunkManager::moveDataFiles(const QString & ndir)
+	KIO::Job* ChunkManager::moveDataFiles(const TQString & ndir)
 	{
 		return cache->moveDataFiles(ndir);
 	}
@@ -158,7 +158,7 @@ namespace bt
 		cache->moveDataFilesCompleted(job);
 	}
 	
-	void ChunkManager::changeOutputPath(const QString & output_path)
+	void ChunkManager::changeOutputPath(const TQString & output_path)
 	{
 		cache->changeOutputPath(output_path);
 	}
@@ -189,7 +189,7 @@ namespace bt
 				Chunk* c = getChunk(hdr.index);
 				if (c)
 				{
-					c->setStatus(Chunk::ON_DISK);
+					c->settqStatus(Chunk::ON_DISK);
 					bitset.set(hdr.index,true);
 					todo.set(hdr.index,false);
 					recalc_chunks_left = true;
@@ -204,12 +204,12 @@ namespace bt
 	{
 		File fptr;
 		if (!fptr.open(index_file,"wb"))
-			throw Error(i18n("Cannot open index file %1 : %2").arg(index_file).arg(fptr.errorString()));
+			throw Error(i18n("Cannot open index file %1 : %2").tqarg(index_file).tqarg(fptr.errorString()));
 		
 		for (unsigned int i = 0;i < tor.getNumChunks();i++)
 		{
 			Chunk* c = getChunk(i);
-			if (c->getStatus() != Chunk::NOT_DOWNLOADED)
+			if (c->gettqStatus() != Chunk::NOT_DOWNLOADED)
 			{
 				NewChunkHeader hdr;
 				hdr.index = i;
@@ -232,8 +232,8 @@ namespace bt
 			for (Uint32 i = 0;i < tor.getNumFiles();i++)
 			{
 				TorrentFile & tf = tor.getFile(i);
-				connect(&tf,SIGNAL(downloadPriorityChanged(TorrentFile*, Priority, Priority )),
-						this,SLOT(downloadPriorityChanged(TorrentFile*, Priority, Priority )));
+				connect(&tf,TQT_SIGNAL(downloadPriorityChanged(TorrentFile*, Priority, Priority )),
+						this,TQT_SLOT(downloadPriorityChanged(TorrentFile*, Priority, Priority )));
 				
 				if (tf.getPriority() != NORMAL_PRIORITY)
 				{
@@ -243,7 +243,7 @@ namespace bt
 		}
 	}
 	
-	bool ChunkManager::hasMissingFiles(QStringList & sl)
+	bool ChunkManager::hasMissingFiles(TQStringList & sl)
 	{
 		return cache->hasMissingFiles(sl);
 	}
@@ -267,16 +267,16 @@ namespace bt
 		for (Uint32 i = 0;i < bitset.getNumBits();i++)
 		{
 			Chunk* c = chunks[i];
-			if (c->getStatus() == Chunk::MMAPPED)
+			if (c->gettqStatus() == Chunk::MMAPPED)
 			{
 				cache->save(c);
 				c->clear();
-				c->setStatus(Chunk::ON_DISK);
+				c->settqStatus(Chunk::ON_DISK);
 			}
-			else if (c->getStatus() == Chunk::BUFFERED)
+			else if (c->gettqStatus() == Chunk::BUFFERED)
 			{
 				c->clear();
-				c->setStatus(Chunk::ON_DISK);
+				c->settqStatus(Chunk::ON_DISK);
 			}
 		}
 		cache->close();
@@ -288,11 +288,11 @@ namespace bt
 			return 0;
 		
 		Chunk* c = chunks[i];
-		if (c->getStatus() == Chunk::NOT_DOWNLOADED || c->isExcluded())
+		if (c->gettqStatus() == Chunk::NOT_DOWNLOADED || c->isExcluded())
 		{
 			return 0;
 		}
-		else if (c->getStatus() == Chunk::ON_DISK)
+		else if (c->gettqStatus() == Chunk::ON_DISK)
 		{
 			// load the chunk if it is on disk
 			cache->load(c);
@@ -338,10 +338,10 @@ namespace bt
 		Chunk* c = chunks[i];
 		if (!c->taken())
 		{
-			if (c->getStatus() == Chunk::MMAPPED)
+			if (c->gettqStatus() == Chunk::MMAPPED)
 				cache->save(c);
 			c->clear();
-			c->setStatus(Chunk::ON_DISK);
+			c->settqStatus(Chunk::ON_DISK);
 			loaded.remove(i);
 		}
 	}
@@ -352,10 +352,10 @@ namespace bt
 			return;
 		
 		Chunk* c = chunks[i];
-		if (c->getStatus() == Chunk::MMAPPED)
+		if (c->gettqStatus() == Chunk::MMAPPED)
 			cache->save(c);
 		c->clear();
-		c->setStatus(Chunk::NOT_DOWNLOADED);
+		c->settqStatus(Chunk::NOT_DOWNLOADED);
 		bitset.set(i,false);
 		todo.set(i,!excluded_chunks.get(i) && !only_seed_chunks.get(i));
 		loaded.remove(i);
@@ -365,18 +365,18 @@ namespace bt
 	void ChunkManager::checkMemoryUsage()
 	{
 		Uint32 num_removed = 0;
-		QMap<Uint32,TimeStamp>::iterator i = loaded.begin();
+		TQMap<Uint32,TimeStamp>::iterator i = loaded.begin();
 		while (i != loaded.end())
 		{
 			Chunk* c = chunks[i.key()];
 			// get rid of chunk if nobody asked for it in the last 5 seconds
 			if (!c->taken() && bt::GetCurrentTime() - i.data() > 5000)
 			{
-				if (c->getStatus() == Chunk::MMAPPED)
+				if (c->gettqStatus() == Chunk::MMAPPED)
 					cache->save(c);
 				c->clear();
-				c->setStatus(Chunk::ON_DISK);
-				QMap<Uint32,TimeStamp>::iterator j = i;
+				c->settqStatus(Chunk::ON_DISK);
+				TQMap<Uint32,TimeStamp>::iterator j = i;
 				i++;
 				loaded.erase(j);
 				num_removed++;
@@ -387,7 +387,7 @@ namespace bt
 			}
 		}
 	//	Uint32 num_in_mem = loaded.count();
-	//	Out() << QString("Cleaned %1 chunks, %2 still in memory").arg(num_removed).arg(num_in_mem) << endl;
+	//	Out() << TQString("Cleaned %1 chunks, %2 still in memory").tqarg(num_removed).tqarg(num_in_mem) << endl;
 	}
 	
 	void ChunkManager::saveChunk(unsigned int i,bool update_index)
@@ -413,7 +413,7 @@ namespace bt
 		else
 		{
 			c->clear();
-			c->setStatus(Chunk::NOT_DOWNLOADED);
+			c->settqStatus(Chunk::NOT_DOWNLOADED);
 			Out(SYS_DIO|LOG_IMPORTANT) << "Warning: attempted to save a chunk which was excluded" << endl;
 		}
 	}
@@ -429,7 +429,7 @@ namespace bt
 			// try again
 			if (!fptr.open(index_file,"r+b"))
 				// panick if it failes
-				throw Error(i18n("Cannot open index file %1 : %2").arg(index_file).arg(fptr.errorString()));
+				throw Error(i18n("Cannot open index file %1 : %2").tqarg(index_file).tqarg(fptr.errorString()));
 		}
 
 		
@@ -837,7 +837,7 @@ namespace bt
 		//	Out(SYS_DIO|LOG_DEBUG) << "Excluding chunks " << first << " to " << last << endl;
 			// first and last chunk may be part of multiple files
 			// so we can't just exclude them
-			QValueList<Uint32> files,last_files;
+			TQValueList<Uint32> files,last_files;
 
 			// get list of files where first chunk lies in
 			tor.calcChunkPos(first,files);
@@ -874,7 +874,7 @@ namespace bt
 			bool modified = false;
 			
 			// if one file in the list needs to be downloaded,increment first
-			for (QValueList<Uint32>::iterator i = files.begin();i != files.end();i++)
+			for (TQValueList<Uint32>::iterator i = files.begin();i != files.end();i++)
 			{
 				if (*i == tf->getIndex())
 					continue;
@@ -903,7 +903,7 @@ namespace bt
 			modified = false;
 			
 			// if one file in the list needs to be downloaded,decrement last
-			for (QValueList<Uint32>::iterator i = last_files.begin();i != last_files.end();i++)
+			for (TQValueList<Uint32>::iterator i = last_files.begin();i != last_files.end();i++)
 			{
 				if (*i == tf->getIndex())
 					continue;
@@ -962,14 +962,14 @@ namespace bt
 		
 		// first and last chunk may be part of multiple files
 		// so we can't just exclude them
-		QValueList<Uint32> files;
+		TQValueList<Uint32> files;
 
 		// get list of files where first chunk lies in
 		tor.calcChunkPos(first,files);
 		
 		Chunk* c = chunks[first];
 		// if one file in the list needs to be downloaded,increment first
-		for (QValueList<Uint32>::iterator i = files.begin();i != files.end();i++)
+		for (TQValueList<Uint32>::iterator i = files.begin();i != files.end();i++)
 		{
 			Priority np = tor.getFile(*i).getPriority();
 			if (np > newpriority && *i != tf->getIndex())
@@ -988,7 +988,7 @@ namespace bt
 		tor.calcChunkPos(last,files);
 		c = chunks[last];
 		// if one file in the list needs to be downloaded,decrement last
-		for (QValueList<Uint32>::iterator i = files.begin();i != files.end();i++)
+		for (TQValueList<Uint32>::iterator i = files.begin();i != files.end();i++)
 		{
 			Priority np = tor.getFile(*i).getPriority();
 			if (np > newpriority && *i != tf->getIndex())
@@ -1016,13 +1016,13 @@ namespace bt
 	
 	bool ChunkManager::prepareChunk(Chunk* c,bool allways)
 	{
-		if (!allways && c->getStatus() != Chunk::NOT_DOWNLOADED)
+		if (!allways && c->gettqStatus() != Chunk::NOT_DOWNLOADED)
 			return false;
 		
 		return cache->prep(c);
 	}
 	
-	QString ChunkManager::getOutputPath() const
+	TQString ChunkManager::getOutputPath() const
 	{
 		return cache->getOutputPath();
 	}
@@ -1044,7 +1044,7 @@ namespace bt
 				bitset.set(i,true);
 				todo.set(i,false);
 				// the chunk must be on disk
-				c->setStatus(Chunk::ON_DISK);
+				c->settqStatus(Chunk::ON_DISK);
 				tor.updateFilePercentage(i,bitset); 
 			}
 			else if (!ok_chunks.get(i) && bitset.get(i))
@@ -1053,12 +1053,12 @@ namespace bt
 				// We think we have a chunk, but we don't
 				bitset.set(i,false);
 				todo.set(i,!only_seed_chunks.get(i) && !excluded_chunks.get(i));
-				if (c->getStatus() == Chunk::ON_DISK)
+				if (c->gettqStatus() == Chunk::ON_DISK)
 				{
-					c->setStatus(Chunk::NOT_DOWNLOADED);
+					c->settqStatus(Chunk::NOT_DOWNLOADED);
 					tor.updateFilePercentage(i,bitset);
 				}
-				else if (c->getStatus() == Chunk::MMAPPED || c->getStatus() == Chunk::BUFFERED)
+				else if (c->gettqStatus() == Chunk::MMAPPED || c->gettqStatus() == Chunk::BUFFERED)
 				{
 					resetChunk(i);
 				}

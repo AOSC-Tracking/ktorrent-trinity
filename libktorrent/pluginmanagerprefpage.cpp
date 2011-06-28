@@ -20,7 +20,7 @@
 #include <klocale.h>
 #include <kpushbutton.h>
 #include <klistview.h>
-#include <qheader.h> 
+#include <tqheader.h> 
 #include <kglobal.h>
 #include <kiconloader.h>
 #include <util/constants.h>
@@ -38,8 +38,8 @@ namespace kt
 	{
 		Plugin* p;
 	public:
-		PluginViewItem(Plugin* p,LabelView* parent) 
-			: LabelViewItem(p->getIcon(),p->getGuiName(),p->getDescription(),parent),p(p)
+		PluginViewItem(Plugin* p,LabelView* tqparent) 
+			: LabelViewItem(p->getIcon(),p->getGuiName(),p->getDescription(),tqparent),p(p)
 		{
 			update();
 		}
@@ -51,12 +51,12 @@ namespace kt
 		{
 			setTitle("<h3>" + p->getGuiName() + "</h3>");
 			setDescription(
-				i18n("%1<br>Status: <b>%2</b><br>Author: %3").arg(p->getDescription())
-					.arg(p->isLoaded() ? i18n("Loaded") : i18n("Not loaded"))
-					.arg(p->getAuthor()));
+				i18n("%1<br>tqStatus: <b>%2</b><br>Author: %3").tqarg(p->getDescription())
+					.tqarg(p->isLoaded() ? i18n("Loaded") : i18n("Not loaded"))
+					.tqarg(p->getAuthor()));
 		}
 		
-		QString pluginName() {return p->getName();}
+		TQString pluginName() {return p->getName();}
 	};
 
 	PluginManagerPrefPage::PluginManagerPrefPage(PluginManager* pman)
@@ -74,16 +74,16 @@ namespace kt
 		return true;
 	}
 	
-	void PluginManagerPrefPage::createWidget(QWidget* parent)
+	void PluginManagerPrefPage::createWidget(TQWidget* tqparent)
 	{
-		pmw = new PluginManagerWidget(parent);
+		pmw = new PluginManagerWidget(tqparent);
 
-		connect(pmw->load_btn,SIGNAL(clicked()),this,SLOT(onLoad()));
-		connect(pmw->unload_btn,SIGNAL(clicked()),this,SLOT(onUnload()));
-		connect(pmw->load_all_btn,SIGNAL(clicked()),this,SLOT(onLoadAll()));
-		connect(pmw->unload_all_btn,SIGNAL(clicked()),this,SLOT(onUnloadAll()));
+		connect(pmw->load_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onLoad()));
+		connect(pmw->unload_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onUnload()));
+		connect(pmw->load_all_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onLoadAll()));
+		connect(pmw->unload_all_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onUnloadAll()));
 		LabelView* lv = pmw->plugin_view;
-		connect(lv,SIGNAL(currentChanged(LabelViewItem * )),this,SLOT(onCurrentChanged( LabelViewItem* )));
+		connect(lv,TQT_SIGNAL(currentChanged(LabelViewItem * )),this,TQT_SLOT(onCurrentChanged( LabelViewItem* )));
 	}
 	
 	void PluginManagerPrefPage::updatePluginList()
@@ -91,11 +91,11 @@ namespace kt
 		LabelView* lv = pmw->plugin_view;
 		lv->clear();
 		// get list of plugins
-		QPtrList<Plugin> pl;
+		TQPtrList<Plugin> pl;
 		pman->fillPluginList(pl);
 		
 		// Add them all
-		QPtrList<Plugin>::iterator i = pl.begin();
+		TQPtrList<Plugin>::iterator i = pl.begin();
 		while (i != pl.end())
 		{
 			Plugin* p = *i;
@@ -139,10 +139,10 @@ namespace kt
 		Uint32 tot = 0;
 		Uint32 loaded = 0;
 		// get list of plugins
-		QPtrList<Plugin> pl;
+		TQPtrList<Plugin> pl;
 		pman->fillPluginList(pl);
 		
-		QPtrList<Plugin>::iterator i = pl.begin();
+		TQPtrList<Plugin>::iterator i = pl.begin();
 		while (i != pl.end())
 		{
 			Plugin* p = *i;

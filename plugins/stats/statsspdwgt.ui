@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>StatsSpdWgt</class>
-<widget class="QWidget">
+<widget class="TQWidget">
     <property name="name">
         <cstring>StatsSpdWgt</cstring>
     </property>
@@ -16,15 +16,15 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="0" column="0">
+        <widget class="TQLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>layout5</cstring>
+                <cstring>tqlayout5</cstring>
             </property>
             <hbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QGroupBox">
+                <widget class="TQGroupBox">
                     <property name="name">
                         <cstring>DownSpeedGbw</cstring>
                     </property>
@@ -32,7 +32,7 @@
                         <string>Download</string>
                     </property>
                 </widget>
-                <widget class="QGroupBox">
+                <widget class="TQGroupBox">
                     <property name="name">
                         <cstring>PeersSpdGbw</cstring>
                     </property>
@@ -40,7 +40,7 @@
                         <string>Peers</string>
                     </property>
                 </widget>
-                <widget class="QGroupBox">
+                <widget class="TQGroupBox">
                     <property name="name">
                         <cstring>UpSpeedGbw</cstring>
                     </property>
@@ -52,5 +52,5 @@
         </widget>
     </grid>
 </widget>
-<layoutdefaults spacing="6" margin="11"/>
+<tqlayoutdefaults spacing="6" margin="11"/>
 </UI>

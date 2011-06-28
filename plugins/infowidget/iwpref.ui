@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>IWPref</class>
-<widget class="QWidget">
+<widget class="TQWidget">
     <property name="name">
         <cstring>IWPref</cstring>
     </property>
@@ -16,7 +16,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QCheckBox" row="0" column="0">
+        <widget class="TQCheckBox" row="0" column="0">
             <property name="name">
                 <cstring>m_show_pv</cstring>
             </property>
@@ -27,7 +27,7 @@
                 <string></string>
             </property>
         </widget>
-        <widget class="QCheckBox" row="1" column="0">
+        <widget class="TQCheckBox" row="1" column="0">
             <property name="name">
                 <cstring>m_show_cdv</cstring>
             </property>
@@ -45,14 +45,14 @@
             <property name="sizeType">
                 <enum>Expanding</enum>
             </property>
-            <property name="sizeHint">
+            <property name="tqsizeHint">
                 <size>
                     <width>20</width>
                     <height>21</height>
                 </size>
             </property>
         </spacer>
-        <widget class="QCheckBox" row="2" column="0">
+        <widget class="TQCheckBox" row="2" column="0">
             <property name="name">
                 <cstring>m_show_tv</cstring>
             </property>
@@ -65,5 +65,5 @@
         </widget>
     </grid>
 </widget>
-<layoutdefaults spacing="6" margin="11"/>
+<tqlayoutdefaults spacing="6" margin="11"/>
 </UI>

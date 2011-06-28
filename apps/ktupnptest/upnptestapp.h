@@ -38,11 +38,12 @@ using kt::UPnPRouter;
 class UPnPTestApp : public KMainWindow, public kt::LogMonitorInterface
 {
 	Q_OBJECT
+  TQ_OBJECT
 public:
-	UPnPTestApp(QWidget *parent = 0, const char *name = 0);
+	UPnPTestApp(TQWidget *tqparent = 0, const char *name = 0);
 	virtual ~UPnPTestApp();
 	
-	virtual void message(const QString& line, unsigned int arg);
+	virtual void message(const TQString& line, unsigned int arg);
 	bool queryExit();
 	
 private slots:

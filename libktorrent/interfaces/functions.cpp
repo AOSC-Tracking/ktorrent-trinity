@@ -17,7 +17,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
-#include <qdatetime.h>
+#include <tqdatetime.h>
 #include <klocale.h>
 #include <kglobal.h>
 #include "functions.h"
@@ -28,32 +28,32 @@ namespace kt
 {
 	
 	
-	QString BytesToString(Uint64 bytes,int precision)
+	TQString BytesToString(Uint64 bytes,int precision)
 	{
 		KLocale* loc = KGlobal::locale();
 		if (bytes >= 1024 * 1024 * 1024)
-			return i18n("%1 GB").arg(loc->formatNumber(bytes / TO_GIG,precision < 0 ? 2 : precision));
+			return i18n("%1 GB").tqarg(loc->formatNumber(bytes / TO_GIG,precision < 0 ? 2 : precision));
 		else if (bytes >= 1024*1024)
-			return i18n("%1 MB").arg(loc->formatNumber(bytes / TO_MEG,precision < 0 ? 1 : precision));
+			return i18n("%1 MB").tqarg(loc->formatNumber(bytes / TO_MEG,precision < 0 ? 1 : precision));
 		else if (bytes >= 1024)
-			return i18n("%1 KB").arg(loc->formatNumber(bytes / TO_KB,precision < 0 ? 1 : precision));
+			return i18n("%1 KB").tqarg(loc->formatNumber(bytes / TO_KB,precision < 0 ? 1 : precision));
 		else
-			return i18n("%1 B").arg(bytes);
+			return i18n("%1 B").tqarg(bytes);
 	}
 
-	QString KBytesPerSecToString(double speed,int precision)
+	TQString KBytesPerSecToString(double speed,int precision)
 	{
 		KLocale* loc = KGlobal::locale();
-		return i18n("%1 KB/s").arg(loc->formatNumber(speed,precision));
+		return i18n("%1 KB/s").tqarg(loc->formatNumber(speed,precision));
 	}
 
-	QString DurationToString(Uint32 nsecs)
+	TQString DurationToString(Uint32 nsecs)
 	{
 		KLocale* loc = KGlobal::locale();
-		QTime t;
+		TQTime t;
 		int ndays = nsecs / 86400;
 		t = t.addSecs(nsecs % 86400);
-		QString s = loc->formatTime(t,true,true);
+		TQString s = loc->formatTime(t,true,true);
 		if (ndays > 0)
 			s = i18n("1 day ","%n days ",ndays) + s;
 

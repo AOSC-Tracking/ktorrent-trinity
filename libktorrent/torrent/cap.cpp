@@ -23,7 +23,7 @@
 
 namespace bt
 {
-	typedef QValueList<Cap::Entry>::iterator CapItr;
+	typedef TQValueList<Cap::Entry>::iterator CapItr;
 
 	Cap::Cap(bool percentage_check) : max_bytes_per_sec(0),leftover(0),current_speed(0),percentage_check(percentage_check)
 	{

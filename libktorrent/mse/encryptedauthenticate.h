@@ -39,8 +39,9 @@ namespace mse
 	class EncryptedAuthenticate : public bt::Authenticate
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		EncryptedAuthenticate(const QString& ip, Uint16 port, const bt::SHA1Hash& info_hash, const bt::PeerID& peer_id, bt::PeerManager* pman);
+		EncryptedAuthenticate(const TQString& ip, Uint16 port, const bt::SHA1Hash& info_hash, const bt::PeerID& peer_id, bt::PeerManager* pman);
 		virtual ~EncryptedAuthenticate();
 		
 	private slots:

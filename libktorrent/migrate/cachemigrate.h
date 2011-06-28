@@ -25,10 +25,10 @@ namespace bt
 	class Torrent;
 	
 	/// See if a cache migrate is needed
-	bool IsCacheMigrateNeeded(const Torrent & tor,const QString & cache);
+	bool IsCacheMigrateNeeded(const Torrent & tor,const TQString & cache);
 
 	/// Migrate the cache
-	void MigrateCache(const Torrent & tor,const QString & cache,const QString & output_dir);
+	void MigrateCache(const Torrent & tor,const TQString & cache,const TQString & output_dir);
 }
 
 #endif

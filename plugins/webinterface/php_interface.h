@@ -21,7 +21,7 @@
 #ifndef PHP_INTERFACE_H
 #define PHP_INTERFACE_H
 		
-#include <qstring.h>
+#include <tqstring.h>
 #include <torrent/peermanager.h>
 #include <settings.h>
 #include <torrent/queuemanager.h>
@@ -40,8 +40,8 @@ namespace kt
 			PhpCodeGenerator(CoreInterface *c);
 			virtual ~PhpCodeGenerator(){}
 			
-			void downloadStatus(QTextStream & out);
-			void globalInfo(QTextStream & out);
+			void downloadtqStatus(TQTextStream & out);
+			void globalInfo(TQTextStream & out);
 		private:
 			CoreInterface *core;
 	};

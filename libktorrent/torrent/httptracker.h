@@ -20,7 +20,7 @@
 #ifndef BTHTTPTRACKER_H
 #define BTHTTPTRACKER_H
 
-#include <qtimer.h>
+#include <tqtimer.h>
 #include "tracker.h"
 
 namespace KIO
@@ -42,6 +42,7 @@ namespace bt
 	class HTTPTracker : public Tracker
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		HTTPTracker(const KURL & url,kt::TorrentInterface* tor,const PeerID & id,int tier);
 		virtual ~HTTPTracker();
@@ -60,7 +61,7 @@ namespace bt
 
 	private:
 		void doRequest(WaitJob* wjob = 0);
-		bool updateData(const QByteArray & data);
+		bool updateData(const TQByteArray & data);
 		void setupMetaData(KIO::MetaData & md);
 		void doAnnounceQueue();
 		void doAnnounce(const KURL & u);
@@ -68,7 +69,7 @@ namespace bt
 	private:
 		KIO::Job* active_job;
 		KURL::List announce_queue;
-		QString event;
+		TQString event;
 		Uint32 failures;
 	};
 

@@ -21,9 +21,9 @@
 #define BTUDPTRACKER_H
 
 #include <kurl.h>
-#include <qvaluelist.h>
-#include <qcstring.h>
-#include <qtimer.h>
+#include <tqvaluelist.h>
+#include <tqcstring.h>
+#include <tqtimer.h>
 #include <ksocketaddress.h>
 #include "tracker.h"
 #include "globals.h"
@@ -62,6 +62,7 @@ namespace bt
 	class UDPTracker : public Tracker
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		UDPTracker(const KURL & url,kt::TorrentInterface* tor,const PeerID & id,int tier);
 		virtual ~UDPTracker();
@@ -76,8 +77,8 @@ namespace bt
 	private slots:
 		void onConnTimeout();
 		void connectRecieved(Int32 tid,Int64 connection_id);
-		void announceRecieved(Int32 tid,const QByteArray & buf);
-		void onError(Int32 tid,const QString & error_string);
+		void announceRecieved(Int32 tid,const TQByteArray & buf);
+		void onError(Int32 tid,const TQString & error_string);
 		void onResolverResults(KResolverResults res);
 
 	private:
@@ -93,7 +94,7 @@ namespace bt
 
 		Uint32 data_read;
 		int n;
-		QTimer conn_timer;
+		TQTimer conn_timer;
 		Event event;
 
 		static UDPTrackerSocket* socket;

@@ -96,7 +96,7 @@ namespace net
 	
 	void SocketMonitor::add(BufferedSocket* sock)
 	{
-		QMutexLocker lock(&mutex);
+		TQMutexLocker lock(&mutex);
 		
 		bool start_threads = smap.count() == 0;
 		smap.append(sock);
@@ -106,15 +106,15 @@ namespace net
 			Out(SYS_CON|LOG_DEBUG) << "Starting socketmonitor threads" << endl;
 				
 			if (!dt->isRunning())
-				dt->start(QThread::IdlePriority);
+				dt->start(TQThread::IdlePriority);
 			if (!ut->isRunning())
-				ut->start(QThread::IdlePriority);
+				ut->start(TQThread::IdlePriority);
 		}
 	}
 	
 	void SocketMonitor::remove(BufferedSocket* sock)
 	{
-		QMutexLocker lock(&mutex);
+		TQMutexLocker lock(&mutex);
 		if (smap.count() == 0)
 			return;
 		

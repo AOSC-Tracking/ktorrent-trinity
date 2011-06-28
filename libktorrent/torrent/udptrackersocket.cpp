@@ -42,14 +42,14 @@ namespace bt
 	{
 		sock = new KNetwork::KDatagramSocket(this);
 		sock->setAddressReuseable(true);
-		connect(sock,SIGNAL(readyRead()),this,SLOT(dataReceived()));
+		connect(sock,TQT_SIGNAL(readyRead()),this,TQT_SLOT(dataReceived()));
 		int i = 0;
 		if (port == 0)
 			port = 4444;
 		
 		bool bound = false;
 		
-		while (!(bound = sock->bind(QString::null,QString::number(port + i))) && i < 10)
+		while (!(bound = sock->bind(TQString(),TQString::number(port + i))) && i < 10)
 		{
 			Out() << "Failed to bind socket to port " << (port+i) << endl;
 			i++;
@@ -59,7 +59,7 @@ namespace bt
 		if (!bound)
 		{
 			KMessageBox::error(0,
-				i18n("Cannot bind to udp port %1 or the 10 following ports.").arg(port));
+				i18n("Cannot bind to udp port %1 or the 10 following ports.").tqarg(port));
 		}
 		else
 		{
@@ -99,13 +99,13 @@ namespace bt
 		transactions.remove(tid);
 	}
 
-	void UDPTrackerSocket::handleConnect(const QByteArray & data)
+	void UDPTrackerSocket::handleConnect(const TQByteArray & data)
 	{	
 		const Uint8* buf = (const Uint8*)data.data();
 		
 		// Read the transaction_id and check it
 		Int32 tid = ReadInt32(buf,4);
-		QMap<Int32,Action>::iterator i = transactions.find(tid);
+		TQMap<Int32,Action>::iterator i = transactions.tqfind(tid);
 		// if we can't find the transaction, just return
 		if (i == transactions.end())
 		{
@@ -116,7 +116,7 @@ namespace bt
 		if (i.data() != CONNECT)
 		{
 			transactions.erase(i);
-			error(tid,QString::null);
+			error(tid,TQString());
 			return;
 		}
 
@@ -125,13 +125,13 @@ namespace bt
 		connectRecieved(tid,ReadInt64(buf,8));
 	}
 
-	void UDPTrackerSocket::handleAnnounce(const QByteArray & data)
+	void UDPTrackerSocket::handleAnnounce(const TQByteArray & data)
 	{
 		const Uint8* buf = (const Uint8*)data.data();
 		
 		// Read the transaction_id and check it
 		Int32 tid = ReadInt32(buf,4);
-		QMap<Int32,Action>::iterator i = transactions.find(tid);
+		TQMap<Int32,Action>::iterator i = transactions.tqfind(tid);
 		// if we can't find the transaction, just return
 		if (i == transactions.end())
 			return;
@@ -140,7 +140,7 @@ namespace bt
 		if (i.data() != ANNOUNCE)
 		{
 			transactions.erase(i);
-			error(tid,QString::null);
+			error(tid,TQString());
 			return;
 		}
 
@@ -149,19 +149,19 @@ namespace bt
 		announceRecieved(tid,data);
 	}
 	
-	void UDPTrackerSocket::handleError(const QByteArray & data)
+	void UDPTrackerSocket::handleError(const TQByteArray & data)
 	{
 		const Uint8* buf = (const Uint8*)data.data();
 		// Read the transaction_id and check it
 		Int32 tid = ReadInt32(buf,4);
-		QMap<Int32,Action>::iterator it = transactions.find(tid);
+		TQMap<Int32,Action>::iterator it = transactions.tqfind(tid);
 		// if we can't find the transaction, just return
 		if (it == transactions.end())
 			return;
 
 		// extract error message
 		transactions.erase(it);
-		QString msg;
+		TQString msg;
 		for (Uint32 i = 8;i < data.size();i++)
 			msg += (char)buf[i];
 
@@ -183,7 +183,7 @@ namespace bt
 		}
 		
 		KDatagramPacket pck = sock->receive();
-		const QByteArray & data = pck.data();
+		const TQByteArray & data = pck.data();
 		const Uint8* buf = (const Uint8*)data.data();
 		Uint32 type = ReadUint32(buf,0);
 		switch (type)
@@ -203,7 +203,7 @@ namespace bt
 	Int32 UDPTrackerSocket::newTransactionID()
 	{
 		Int32 transaction_id = rand() * time(0);
-		while (transactions.contains(transaction_id))
+		while (transactions.tqcontains(transaction_id))
 			transaction_id++;
 		return transaction_id;
 	}

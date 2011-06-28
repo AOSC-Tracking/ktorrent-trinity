@@ -58,14 +58,14 @@ namespace bt
 	};
 	
 	/**
-	 * Write the output of a BEncoder to a QByteArray
+	 * Write the output of a BEncoder to a TQByteArray
 	 */
 	class BEncoderBufferOutput : public BEncoderOutput
 	{
-		QByteArray & data;
+		TQByteArray & data;
 		Uint32 ptr;
 	public:
-		BEncoderBufferOutput(QByteArray & data);
+		BEncoderBufferOutput(TQByteArray & data);
 
 		void write(const char* str,Uint32 len);
 	};
@@ -124,13 +124,13 @@ namespace bt
 		 * Write a string
 		 * @param str 
 		 */
-		void write(const QString & str);
+		void write(const TQString & str);
 		
 		/**
-		 * Write a QByteArray
+		 * Write a TQByteArray
 		 * @param data 
 		 */
-		void write(const QByteArray & data);
+		void write(const TQByteArray & data);
 
 		/**
 		 * Write a data array

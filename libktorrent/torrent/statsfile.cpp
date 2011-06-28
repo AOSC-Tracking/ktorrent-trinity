@@ -23,14 +23,14 @@
 #include <util/log.h>
 #include <util/functions.h>
 
-#include <qstring.h>
-#include <qfile.h>
-#include <qtextstream.h>
+#include <tqstring.h>
+#include <tqfile.h>
+#include <tqtextstream.h>
 
 namespace bt
 {
 
-	StatsFile::StatsFile(QString filename)
+	StatsFile::StatsFile(TQString filename)
 	:m_filename(filename)
 	{
 		m_file.setName(filename);
@@ -47,42 +47,42 @@ namespace bt
 		m_file.close();
 	}
 	
-	void StatsFile::write(QString key, QString value)
+	void StatsFile::write(TQString key, TQString value)
 	{
 		m_values.insert(key.stripWhiteSpace(), value.stripWhiteSpace());
 	}
 	
-	QString StatsFile::readString(QString key)
+	TQString StatsFile::readString(TQString key)
 	{
 		return m_values[key].stripWhiteSpace();
 	}
 	
-	Uint64 StatsFile::readUint64(QString key)
+	Uint64 StatsFile::readUint64(TQString key)
 	{
 		bool ok = true;
 		Uint64 val = readString(key).toULongLong(&ok);
 		return val;
 	}
 	
-	int StatsFile::readInt(QString key)
+	int StatsFile::readInt(TQString key)
 	{
 		bool ok = true;
 		int val = readString(key).toInt(&ok);
 		return val;
 	}
 	
-	bool StatsFile::readBoolean(QString key)
+	bool StatsFile::readBoolean(TQString key)
 	{
 		return (bool) readInt(key);
 	}
 	
-	unsigned long StatsFile::readULong(QString key)
+	unsigned long StatsFile::readULong(TQString key)
 	{
 		bool ok = true;
 		return readString(key).toULong(&ok);
 	}
 	
-	float bt::StatsFile::readFloat( QString key )
+	float bt::StatsFile::readFloat( TQString key )
 	{
 		bool ok = true;
 		return readString(key).toFloat(&ok);
@@ -93,11 +93,11 @@ namespace bt
 		if (!m_file.open(IO_ReadOnly))
 			return;
 		
-		QTextStream in(&m_file);
+		TQTextStream in(&m_file);
 		while (!in.atEnd())
 		{
-			QString line = in.readLine();
-			QString tmp = line.left(line.find('='));
+			TQString line = in.readLine();
+			TQString tmp = line.left(line.tqfind('='));
 			m_values.insert(tmp, line.mid(tmp.length()+1));
 		}
 		close();
@@ -107,8 +107,8 @@ namespace bt
 	{
 		if (!m_file.open(IO_WriteOnly))
 			return;
-		QTextStream out(&m_file);
-		QMap<QString, QString>::iterator it = m_values.begin();
+		TQTextStream out(&m_file);
+		TQMap<TQString, TQString>::iterator it = m_values.begin();
 		while(it!=m_values.end())
 		{
 			out << it.key() << "=" << it.data() << ::endl;

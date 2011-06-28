@@ -17,8 +17,8 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qdir.h>
-#include <qfileinfo.h>
+#include <tqdir.h>
+#include <tqfileinfo.h>
 #include <klocale.h>
 #include <time.h>
 #include <util/error.h>
@@ -39,16 +39,16 @@
 namespace bt
 {
 
-	TorrentCreator::TorrentCreator(const QString & tar,
-								   const QStringList & track,
+	TorrentCreator::TorrentCreator(const TQString & tar,
+								   const TQStringList & track,
 								   Uint32 cs,
-								   const QString & name,
-								   const QString & comments,bool priv, bool decentralized)
+								   const TQString & name,
+								   const TQString & comments,bool priv, bool decentralized)
 	: target(tar),trackers(track),chunk_size(cs),
 	name(name),comments(comments),cur_chunk(0),priv(priv),tot_size(0), decentralized(decentralized)
 	{
 		this->chunk_size *= 1024;
-		QFileInfo fi(target);
+		TQFileInfo fi(target);
 		if (fi.isDir())
 		{
 			if (!this->target.endsWith(bt::DirSeparator()))
@@ -84,13 +84,13 @@ namespace bt
 	TorrentCreator::~TorrentCreator()
 	{}
 
-	void TorrentCreator::buildFileList(const QString & dir)
+	void TorrentCreator::buildFileList(const TQString & dir)
 	{
-		QDir d(target + dir);
+		TQDir d(target + dir);
 		// first get all files (we ignore symlinks)
-		QStringList dfiles = d.entryList(QDir::Files|QDir::NoSymLinks);
+		TQStringList dfiles = d.entryList(TQDir::Files|TQDir::NoSymLinks);
 		Uint32 cnt = 0; // counter to keep track of file index
-		for (QStringList::iterator i = dfiles.begin();i != dfiles.end();++i)
+		for (TQStringList::iterator i = dfiles.begin();i != dfiles.end();++i)
 		{
 			// add a TorrentFile to the list
 			Uint64 fs = bt::FileSize(target + dir + *i);
@@ -102,13 +102,13 @@ namespace bt
 		}
 
 		// now for each subdir do a buildFileList 
-		QStringList subdirs = d.entryList(QDir::Dirs|QDir::NoSymLinks);
-		for (QStringList::iterator i = subdirs.begin();i != subdirs.end();++i)
+		TQStringList subdirs = d.entryList(TQDir::Dirs|TQDir::NoSymLinks);
+		for (TQStringList::iterator i = subdirs.begin();i != subdirs.end();++i)
 		{
 			if (*i == "." || *i == "..")
 				continue;
 			
-			QString sd = dir + *i;
+			TQString sd = dir + *i;
 			if (!sd.endsWith(bt::DirSeparator()))
 				sd += bt::DirSeparator();
 			buildFileList(sd);
@@ -116,21 +116,21 @@ namespace bt
 	}
 
 
-	void TorrentCreator::saveTorrent(const QString & url)
+	void TorrentCreator::saveTorrent(const TQString & url)
 	{
 		File fptr;
 		if (!fptr.open(url,"wb"))
-			throw Error(i18n("Cannot open file %1: %2").arg(url).arg(fptr.errorString()));
+			throw Error(i18n("Cannot open file %1: %2").tqarg(url).tqarg(fptr.errorString()));
 
 		BEncoder enc(&fptr);
 		enc.beginDict(); // top dict
 		
 		if(!decentralized)
 		{
-			enc.write("announce"); enc.write(trackers[0]);
+			enc.write(TQString("announce")); enc.write(trackers[0]);
 			if (trackers.count() > 1)
 			{
-				enc.write("announce-list");
+				enc.write(TQString("announce-list"));
 				enc.beginList();
 				enc.beginList();
 				for (Uint32 i = 0;i < trackers.count();i++)
@@ -144,23 +144,23 @@ namespace bt
 		
 		if (comments.length() > 0)
 		{
-			enc.write("comments");
+			enc.write(TQString("comments"));
 			enc.write(comments);
 		}
-		enc.write("created by");enc.write(QString("KTorrent %1").arg(kt::VERSION_STRING));
-		enc.write("creation date");enc.write((Uint64)time(0));
-		enc.write("info");
+		enc.write(TQString("created by"));enc.write(TQString("KTorrent %1").tqarg(kt::VERSION_STRING));
+		enc.write(TQString("creation date"));enc.write((Uint64)time(0));
+		enc.write(TQString("info"));
 		saveInfo(enc);
 		// save the nodes list after the info hash, keys must be sorted !
 		if (decentralized)
 		{
 			//DHT torrent
-			enc.write("nodes");
+			enc.write(TQString("nodes"));
 			enc.beginList();
 			
 			for(int i=0; i < trackers.count(); ++i)
 			{
-				QString t = trackers[i];
+				TQString t = trackers[i];
 				enc.beginList();
 				enc.write(t.section(',',0,0));
 				enc.write((Uint32)t.section(',',1,1).toInt());
@@ -176,12 +176,12 @@ namespace bt
 	{
 		enc.beginDict();
 		
-		QFileInfo fi(target);
+		TQFileInfo fi(target);
 		if (fi.isDir())
 		{
-			enc.write("files");
+			enc.write(TQString("files"));
 			enc.beginList();
-			QValueList<TorrentFile>::iterator i = files.begin();
+			TQValueList<TorrentFile>::iterator i = files.begin();
 			while (i != files.end())
 			{
 				saveFile(enc,*i);
@@ -191,14 +191,14 @@ namespace bt
 		}
 		else
 		{
-			enc.write("length"); enc.write(bt::FileSize(target));
+			enc.write(TQString("length")); enc.write(bt::FileSize(target));
 		}
-		enc.write("name"); enc.write(name);
-		enc.write("piece length"); enc.write((Uint64)chunk_size);
-		enc.write("pieces"); savePieces(enc);
+		enc.write(TQString("name")); enc.write(name);
+		enc.write(TQString("piece length")); enc.write((Uint64)chunk_size);
+		enc.write(TQString("pieces")); savePieces(enc);
 		if (priv)
 		{
-			enc.write("private"); 
+			enc.write(TQString("private")); 
 			enc.write((Uint64)1);
 		}
 		enc.end();
@@ -207,11 +207,11 @@ namespace bt
 	void TorrentCreator::saveFile(BEncoder & enc,const TorrentFile & file)
 	{
 		enc.beginDict();
-		enc.write("length");enc.write(file.getSize());
-		enc.write("path");
+		enc.write(TQString("length"));enc.write(file.getSize());
+		enc.write(TQString("path"));
 		enc.beginList();
-		QStringList sl = QStringList::split(bt::DirSeparator(),file.getPath());
-		for (QStringList::iterator i = sl.begin();i != sl.end();i++)
+		TQStringList sl = TQStringList::split(bt::DirSeparator(),file.getPath());
+		for (TQStringList::iterator i = sl.begin();i != sl.end();i++)
 			enc.write(*i);
 		enc.end();
 		enc.end();
@@ -237,7 +237,7 @@ namespace bt
 		File fptr;
 		if (!fptr.open(target,"rb"))
 			throw Error(i18n("Cannot open file %1: %2")
-					.arg(target).arg(fptr.errorString()));
+					.tqarg(target).tqarg(fptr.errorString()));
 
 		Uint32 s = cur_chunk != num_chunks - 1 ? chunk_size : last_size;
 		fptr.seek(File::BEGIN,(Int64)cur_chunk*chunk_size);
@@ -254,7 +254,7 @@ namespace bt
 		Uint32 s = cur_chunk != num_chunks - 1 ? chunk_size : last_size;
 		// first find the file(s) the chunk lies in
 		Array<Uint8> buf(s);
-		QValueList<TorrentFile> file_list;
+		TQValueList<TorrentFile> file_list;
 		Uint32 i = 0;
 		while (i < files.size())
 		{
@@ -275,7 +275,7 @@ namespace bt
 			if (!fptr.open(target + f.getPath(),"rb"))
 			{
 				throw Error(i18n("Cannot open file %1: %2")
-						.arg(f.getPath()).arg(fptr.errorString()));
+						.tqarg(f.getPath()).tqarg(fptr.errorString()));
 			}
 
 			// first calculate offset into file
@@ -321,9 +321,9 @@ namespace bt
 			return calcHashMulti();
 	}
 	
-	TorrentControl* TorrentCreator::makeTC(const QString & data_dir)
+	TorrentControl* TorrentCreator::makeTC(const TQString & data_dir)
 	{
-		QString dd = data_dir;
+		TQString dd = data_dir;
 		if (!dd.endsWith(bt::DirSeparator()))
 			dd += bt::DirSeparator();
 
@@ -336,7 +336,7 @@ namespace bt
 		// write full index file
 		File fptr;
 		if (!fptr.open(dd + "index","wb"))
-			throw Error(i18n("Cannot create index file: %1").arg(fptr.errorString()));
+			throw Error(i18n("Cannot create index file: %1").tqarg(fptr.errorString()));
 
 		for (Uint32 i = 0;i < num_chunks;i++)
 		{
@@ -350,10 +350,10 @@ namespace bt
 		TorrentControl* tc = new TorrentControl();
 		try
 		{
-			// get the parent dir of target
-			QFileInfo fi = QFileInfo(target);
+			// get the tqparent dir of target
+			TQFileInfo fi = TQFileInfo(target);
 			
-			QString odir;
+			TQString odir;
 			StatsFile st(dd + "stats");
 			if (fi.fileName() == name)
 			{
@@ -371,10 +371,10 @@ namespace bt
 			st.write("RUNNING_TIME_UL","0");
 			st.write("PRIORITY", "0");
 			st.write("AUTOSTART", "1");
-			st.write("IMPORTED", QString::number(tot_size));
+			st.write("IMPORTED", TQString::number(tot_size));
 			st.writeSync();
 			
-			tc->init(0,dd + "torrent",dd,odir,QString::null);
+			tc->init(0,dd + "torrent",dd,odir,TQString());
 			tc->createFiles();
 		}
 		catch (...)

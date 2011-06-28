@@ -38,21 +38,21 @@ k_dcop:
 	virtual void setMaxDownloadSpeed(int kbytes_per_sec) = 0;
 	virtual void setMaxConnectionsPerDownload(int max) = 0;
 	virtual void setShowSysTrayIcon(bool yes) = 0;
-	virtual bool changeDataDir(const QString & new_dir) = 0;
-	virtual void openTorrent(const QString & file) = 0;
-	virtual void openTorrentSilently(const QString & file) = 0;
-	virtual QValueList<int> getTorrentNumbers(int type = 3) = 0;
+	virtual bool changeDataDir(const TQString & new_dir) = 0;
+	virtual void openTorrent(const TQString & file) = 0;
+	virtual void openTorrentSilently(const TQString & file) = 0;
+	virtual TQValueList<int> getTorrentNumbers(int type = 3) = 0;
 	virtual QCStringList getTorrentInfo(int tornumber) = 0;
 	virtual int getFileCount(int tornumber) = 0;
 	virtual QCStringList getInfo() = 0;
 	virtual QCStringList getFileNames(int tornumber) = 0;
-	virtual QValueList<int> getFilePriorities(int tornumber) = 0;
+	virtual TQValueList<int> getFilePriorities(int tornumber) = 0;
 	virtual void setFilePriority(int tornumber, int index, int priority) = 0;
 	virtual void start(int tornumber) = 0;
 	virtual void stop(int tornumber, bool user) = 0;
 	virtual void remove(int tornumber, bool del_data) = 0;
 	virtual void announce(int tornumber) = 0;
-	virtual QCString dataDir() = 0;
+	virtual TQCString dataDir() = 0;
 	virtual int maxDownloads() = 0;
 	virtual int maxSeeds() = 0;
 	virtual int maxConnections() = 0;
@@ -60,9 +60,9 @@ k_dcop:
 	virtual int maxDownloadRate() = 0;
 	virtual bool keepSeeding() = 0;
 	virtual bool showSystemTrayIcon() = 0;
-	virtual QValueList<int> intSettings() = 0;
-	virtual bool isBlockedIP(QString ip) = 0;
-	virtual void openTorrentSilentlyDir(const QString & file, const QString & savedir) = 0;
+	virtual TQValueList<int> intSettings() = 0;
+	virtual bool isBlockedIP(TQString ip) = 0;
+	virtual void openTorrentSilentlyDir(const TQString & file, const TQString & savedir) = 0;
 };
 
 

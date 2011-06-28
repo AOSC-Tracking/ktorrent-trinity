@@ -17,8 +17,8 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qstringlist.h>
-#include <qfileinfo.h>
+#include <tqstringlist.h>
+#include <tqfileinfo.h>
 #include <util/log.h>
 #include <util/fileops.h>
 #include <util/functions.h>
@@ -30,21 +30,21 @@
 namespace bt
 {
 
-	bool IsCacheMigrateNeeded(const Torrent & tor,const QString & cache)
+	bool IsCacheMigrateNeeded(const Torrent & tor,const TQString & cache)
 	{
 		// mutli files always need to be migrated
 		if (tor.isMultiFile())
 			return true;
 		
 		// a single file and a symlink do not need to be migrated
-		QFileInfo finfo(cache);
+		TQFileInfo finfo(cache);
 		if (finfo.isSymLink())
 			return false;
 		
 		return true;
 	}
 	
-	static void MigrateSingleCache(const Torrent & tor,const QString & cache,const QString & output_dir)
+	static void MigrateSingleCache(const Torrent & tor,const TQString & cache,const TQString & output_dir)
 	{
 		Out() << "Migrating single cache " << cache << " to " << output_dir << endl;
 		
@@ -52,12 +52,12 @@ namespace bt
 		bt::SymLink(output_dir + tor.getNameSuggestion(),cache);
 	}
 	
-	static void MakePath(const QString & startdir,const QString & path)
+	static void MakePath(const TQString & startdir,const TQString & path)
 	{
-		QStringList sl = QStringList::split(bt::DirSeparator(),path);
+		TQStringList sl = TQStringList::split(bt::DirSeparator(),path);
 
 		// create all necessary subdirs
-		QString ctmp = startdir;
+		TQString ctmp = startdir;
 		
 		for (Uint32 i = 0;i < sl.count() - 1;i++)
 		{
@@ -71,22 +71,22 @@ namespace bt
 		}
 	}
 	
-	static void MigrateMultiCache(const Torrent & tor,const QString & cache,const QString & output_dir)
+	static void MigrateMultiCache(const Torrent & tor,const TQString & cache,const TQString & output_dir)
 	{
 		Out() << "Migrating multi cache " << cache << " to " << output_dir << endl;
 		// if the cache dir is a symlink, everything is OK
-		if (QFileInfo(cache).isSymLink())
+		if (TQFileInfo(cache).isSymLink())
 			return;
 		
-		QString cache_dir = cache;
+		TQString cache_dir = cache;
 		
 		
 		// make the output dir if it does not exists
 		if (!bt::Exists(output_dir + tor.getNameSuggestion()))
 			bt::MakeDir(output_dir + tor.getNameSuggestion());
 		
-		QString odir = output_dir + tor.getNameSuggestion() + bt::DirSeparator();
-		QString cdir = cache;
+		TQString odir = output_dir + tor.getNameSuggestion() + bt::DirSeparator();
+		TQString cdir = cache;
 		if (!cdir.endsWith(bt::DirSeparator()))
 			cdir += bt::DirSeparator();
 		
@@ -94,7 +94,7 @@ namespace bt
 		for (Uint32 i = 0;i < tor.getNumFiles();i++)
 		{
 			const TorrentFile & tf = tor.getFile(i);
-			QFileInfo fi(cdir + tf.getPath());
+			TQFileInfo fi(cdir + tf.getPath());
 			// symlinks are OK
 			if (fi.isSymLink())
 				continue;
@@ -106,9 +106,9 @@ namespace bt
 		}
 	}
 
-	void MigrateCache(const Torrent & tor,const QString & cache,const QString & output_dir)
+	void MigrateCache(const Torrent & tor,const TQString & cache,const TQString & output_dir)
 	{
-		QString odir = output_dir;
+		TQString odir = output_dir;
 		if (!odir.endsWith(bt::DirSeparator()))
 			odir += bt::DirSeparator();
 		

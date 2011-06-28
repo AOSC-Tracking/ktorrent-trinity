@@ -20,7 +20,7 @@
 #ifndef BTERROR_H
 #define BTERROR_H
 
-#include <qstring.h>
+#include <tqstring.h>
 
 namespace bt
 {
@@ -30,12 +30,12 @@ namespace bt
 	*/
 	class Error
 	{
-		QString msg;
+		TQString msg;
 	public:
-		Error(const QString & msg);
+		Error(const TQString & msg);
 		virtual ~Error();
 		
-		QString toString() const {return msg;}
+		TQString toString() const {return msg;}
 
 	};
 

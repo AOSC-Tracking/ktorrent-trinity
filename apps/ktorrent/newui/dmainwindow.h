@@ -33,8 +33,9 @@ namespace Ideal {
 /**Main window which provides simplified IDEA mode.*/
 class DMainWindow: public KParts::MainWindow {
     Q_OBJECT
+  TQ_OBJECT
 public:
-    DMainWindow(QWidget *parent = 0, const char *name = 0);
+    DMainWindow(TQWidget *tqparent = 0, const char *name = 0);
     virtual ~DMainWindow();
 
     /**@return The tool window in given @p position.*/
@@ -42,22 +43,22 @@ public:
 
     /**Adds a tabbed widget into the active (focused) tab widget.
     If @p widget is null then only tab is created.*/
-    virtual void addWidget(QWidget *widget, const QString &title);
-    virtual void addWidget(DTabWidget *tab, QWidget *widget, const QString &title);
+    virtual void addWidget(TQWidget *widget, const TQString &title);
+    virtual void addWidget(DTabWidget *tab, TQWidget *widget, const TQString &title);
     /**Removes widget. Does not delete it.*/
-    virtual void removeWidget(QWidget *widget);
+    virtual void removeWidget(TQWidget *widget);
    /**Moves a widget from an existing dockposition to a new position**/
-    virtual void moveWidget(DDockWindow::Position newPosition, QWidget *widget, const QString & title);
+    virtual void moveWidget(DDockWindow::Position newPosition, TQWidget *widget, const TQString & title);
 
     /**Adds a dock widget into given position.*/
-    virtual void addDockWidget(DDockWindow::Position position, QWidget *view, const QString &title);
+    virtual void addDockWidget(DDockWindow::Position position, TQWidget *view, const TQString &title);
     /**Removes a dock widget.*/
-    virtual void removeDockWidget(QWidget *view);
+    virtual void removeDockWidget(TQWidget *view);
 
     virtual void saveSettings();
 
-    bool hasDockWidget(QWidget *view);
-    DDockWindow::Position dockWidgetPosition(QWidget *view);
+    bool hasDockWidget(TQWidget *view);
+    DDockWindow::Position dockWidgetPosition(TQWidget *view);
 
 public slots:
     DTabWidget *splitHorizontal();
@@ -69,17 +70,17 @@ protected slots:
     virtual void closeTab();
     /**This does nothing. Reimplement in subclass to close the tab
     when hover close button is pressed.*/
-    virtual void closeTab(QWidget*);
+    virtual void closeTab(TQWidget*);
     /**This does nothing. Reimplement in subclass to show tab context menu.*/
-    virtual void tabContext(QWidget*,const QPoint &);
+    virtual void tabContext(TQWidget*,const TQPoint &);
 
     void widgetDestroyed();
 
 signals:
-    void widgetChanged(QWidget *);
+    void widgetChanged(TQWidget *);
 
 protected:
-    bool eventFilter(QObject *obj, QEvent *ev);
+    bool eventFilter(TQObject *obj, TQEvent *ev);
 
     virtual void loadSettings();
 
@@ -90,23 +91,23 @@ protected:
     DDockWindow *m_rightDock;
     DDockWindow *m_bottomDock;
 
-    QMap<QWidget*, DDockWindow::Position> m_docks;
+    TQMap<TQWidget*, DDockWindow::Position> m_docks;
 
     Ideal::DockSplitter *m_central;
     DTabWidget *m_activeTabWidget;
 
-    QValueList<DTabWidget*> m_tabs;
+    TQValueList<DTabWidget*> m_tabs;
 
     bool m_openTabAfterCurrent;
     bool m_showIconsOnTabs;
     bool m_firstRemoved;
 
-    QValueList<QWidget*> m_widgets;
-    QMap<QWidget*, DTabWidget*> m_widgetTabs;
-    QWidget *m_currentWidget;
+    TQValueList<TQWidget*> m_widgets;
+    TQMap<TQWidget*, DTabWidget*> m_widgetTabs;
+    TQWidget *m_currentWidget;
 
 private slots:
-    void invalidateActiveTabWidget();
+    void tqinvalidateActiveTabWidget();
 
 };
 

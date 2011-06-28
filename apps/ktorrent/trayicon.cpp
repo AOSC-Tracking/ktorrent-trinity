@@ -23,7 +23,7 @@
 #include <kapplication.h>
 #include "ktorrent.h"
 #include "trayicon.h"
-#include <qtooltip.h>
+#include <tqtooltip.h>
 #include <kpassivepopup.h>
 #include <interfaces/torrentinterface.h>
 #include "ktorrentcore.h"
@@ -36,76 +36,76 @@
 using namespace bt;
 using namespace kt;
 
-TrayIcon::TrayIcon( KTorrentCore* tc, QWidget *parent, const char *name)
-		: KSystemTray(parent, name)
+TrayIcon::TrayIcon( KTorrentCore* tc, TQWidget *tqparent, const char *name)
+		: KSystemTray(tqparent, name)
 {
 	m_core = tc;
 	m_kt_pix = loadIcon("ktorrent");
 	setPixmap(m_kt_pix);
-	paint=new QPainter( this );
+	paint=new TQPainter( this );
 	drawContents ( paint );
 	previousDownloadHeight=0;
 	previousUploadHeight=0;
 	
 	m_hover_popup = new TrayHoverPopup(m_kt_pix,this);
 
-	connect(this,SIGNAL(quitSelected()),kapp,SLOT(quit()));
-	connect(m_core, SIGNAL(finished(kt::TorrentInterface* )),
-	        this, SLOT(finished(kt::TorrentInterface* )));
-	connect(m_core,SIGNAL(torrentStoppedByError(kt::TorrentInterface*, QString )),
-	        this,SLOT(torrentStoppedByError(kt::TorrentInterface*, QString )));
-	connect(m_core,SIGNAL(maxShareRatioReached( kt::TorrentInterface* )),
-			this,SLOT(maxShareRatioReached( kt::TorrentInterface* )));
-	connect(m_core,SIGNAL(maxSeedTimeReached(kt::TorrentInterface*)),
-			this, SLOT(maxSeedTimeReached(kt::TorrentInterface*)));
-	connect(m_core,SIGNAL(corruptedData( kt::TorrentInterface* )),
-			this,SLOT(corruptedData( kt::TorrentInterface* )));
-	connect(m_core, SIGNAL(queuingNotPossible( kt::TorrentInterface* )),
-			this, SLOT(queuingNotPossible( kt::TorrentInterface* )));
-	connect(m_core,SIGNAL(canNotStart(kt::TorrentInterface*, kt::TorrentStartResponse)),
-			this,SLOT(canNotStart(kt::TorrentInterface*, kt::TorrentStartResponse)));
-	connect(m_core, SIGNAL(lowDiskSpace(kt::TorrentInterface*, bool)),
-			this, SLOT(lowDiskSpace(kt::TorrentInterface*, bool)));
+	connect(this,TQT_SIGNAL(quitSelected()),kapp,TQT_SLOT(quit()));
+	connect(m_core, TQT_SIGNAL(finished(kt::TorrentInterface* )),
+	        this, TQT_SLOT(finished(kt::TorrentInterface* )));
+	connect(m_core,TQT_SIGNAL(torrentStoppedByError(kt::TorrentInterface*, TQString )),
+	        this,TQT_SLOT(torrentStoppedByError(kt::TorrentInterface*, TQString )));
+	connect(m_core,TQT_SIGNAL(maxShareRatioReached( kt::TorrentInterface* )),
+			this,TQT_SLOT(maxShareRatioReached( kt::TorrentInterface* )));
+	connect(m_core,TQT_SIGNAL(maxSeedTimeReached(kt::TorrentInterface*)),
+			this, TQT_SLOT(maxSeedTimeReached(kt::TorrentInterface*)));
+	connect(m_core,TQT_SIGNAL(corruptedData( kt::TorrentInterface* )),
+			this,TQT_SLOT(corruptedData( kt::TorrentInterface* )));
+	connect(m_core, TQT_SIGNAL(queuingNotPossible( kt::TorrentInterface* )),
+			this, TQT_SLOT(queuingNotPossible( kt::TorrentInterface* )));
+	connect(m_core,TQT_SIGNAL(canNotStart(kt::TorrentInterface*, kt::TorrentStartResponse)),
+			this,TQT_SLOT(canNotStart(kt::TorrentInterface*, kt::TorrentStartResponse)));
+	connect(m_core, TQT_SIGNAL(lowDiskSpace(kt::TorrentInterface*, bool)),
+			this, TQT_SLOT(lowDiskSpace(kt::TorrentInterface*, bool)));
 	
-	connect(this->contextMenu(),SIGNAL(aboutToShow()),m_hover_popup,SLOT(contextMenuAboutToShow()));
-	connect(this->contextMenu(),SIGNAL(aboutToHide()),m_hover_popup,SLOT(contextMenuAboutToHide()));
+	connect(this->contextMenu(),TQT_SIGNAL(aboutToShow()),m_hover_popup,TQT_SLOT(contextMenuAboutToShow()));
+	connect(this->contextMenu(),TQT_SIGNAL(aboutToHide()),m_hover_popup,TQT_SLOT(contextMenuAboutToHide()));
 }
 
 TrayIcon::~TrayIcon()
 {}
 
-void TrayIcon::enterEvent(QEvent* ev)
+void TrayIcon::enterEvent(TQEvent* ev)
 {
 	KSystemTray::enterEvent(ev);
 	m_hover_popup->enterEvent();
 }
 
-void TrayIcon::leaveEvent(QEvent* )
+void TrayIcon::leaveEvent(TQEvent* )
 {
 	m_hover_popup->leaveEvent();
 }
 
 void TrayIcon::updateStats(const CurrentStats stats, bool showBars,int downloadBandwidth, int uploadBandwidth )
 {
-	QString tip = i18n("<table cellpadding='2' cellspacing='2' align='center'><tr><td><b>Speed:</b></td><td></td></tr><tr><td>Download: <font color='#1c9a1c'>%1</font></td><td>Upload: <font color='#990000'>%2</font></td></tr><tr><td><b>Transfer:</b></td><td></td></tr><tr><td>Download: <font color='#1c9a1c'>%3</font></td><td>Upload: <font color='#990000'>%4</font></td></tr></table>")
-			.arg(KBytesPerSecToString((double)stats.download_speed/1024.0))
-			.arg(KBytesPerSecToString((double)stats.upload_speed/1024.0))
-			.arg(BytesToString(stats.bytes_downloaded))
-			.arg(BytesToString(stats.bytes_uploaded));
+	TQString tip = i18n("<table cellpadding='2' cellspacing='2' align='center'><tr><td><b>Speed:</b></td><td></td></tr><tr><td>Download: <font color='#1c9a1c'>%1</font></td><td>Upload: <font color='#990000'>%2</font></td></tr><tr><td><b>Transfer:</b></td><td></td></tr><tr><td>Download: <font color='#1c9a1c'>%3</font></td><td>Upload: <font color='#990000'>%4</font></td></tr></table>")
+			.tqarg(KBytesPerSecToString((double)stats.download_speed/1024.0))
+			.tqarg(KBytesPerSecToString((double)stats.upload_speed/1024.0))
+			.tqarg(BytesToString(stats.bytes_downloaded))
+			.tqarg(BytesToString(stats.bytes_uploaded));
 	m_hover_popup->updateText(tip);
 	
 	if(showBars)
 		drawSpeedBar(stats.download_speed/1024,stats.upload_speed/1024, downloadBandwidth, uploadBandwidth);
 	else if (previousDownloadHeight > 0 || previousUploadHeight > 0)
 	{
-		repaint(); // clear the bars if they are disabled
+		tqrepaint(); // clear the bars if they are disabled
 		previousDownloadHeight = previousUploadHeight = 0;
 	}
 }
 
 void TrayIcon::drawSpeedBar(int downloadSpeed, int uploadSpeed, int downloadBandwidth, int uploadBandwidth )
 {
-	//check if need repaint
+	//check if need tqrepaint
 	if (uploadBandwidth == 0)
 		 uploadBandwidth = 1;
 	if (downloadBandwidth == 0)
@@ -116,10 +116,10 @@ void TrayIcon::drawSpeedBar(int downloadSpeed, int uploadSpeed, int downloadBand
 	if(previousDownloadHeight==DownloadHeight && previousUploadHeight==UploadHeight)
 		return;
 	
-	repaint ();
+	tqrepaint ();
 
-	QBrush brushD(green);
-	QBrush brushU(red);
+	TQBrush brushD(green);
+	TQBrush brushU(red);
 	paint->fillRect(0,pixmap()->height(),2,-DownloadHeight,brushD);
 	paint->fillRect(pixmap()->width()-2,pixmap()->height(),2,-UploadHeight,brushU);
 
@@ -127,10 +127,10 @@ void TrayIcon::drawSpeedBar(int downloadSpeed, int uploadSpeed, int downloadBand
 	previousUploadHeight=UploadHeight;	
 }
 
-void TrayIcon::showPassivePopup(const QString & msg,const QString & title)
+void TrayIcon::showPassivePopup(const TQString & msg,const TQString & title)
 {
 	KPassivePopup* p = KPassivePopup::message(KPassivePopup::Boxed,title,msg,m_kt_pix, this);
-	p->setPalette(QToolTip::palette());
+	p->setPalette(TQToolTip::palette());
 	p->setLineWidth(1);
 }
 
@@ -144,11 +144,11 @@ void TrayIcon::finished(TorrentInterface* tc)
 	double speed_up = (double)s.bytes_uploaded / 1024.0;
 	double speed_down = (double)(s.bytes_downloaded - s.imported_bytes)/ 1024.0;
 
-	QString msg = i18n("<b>%1</b> has completed downloading."
+	TQString msg = i18n("<b>%1</b> has completed downloading."
 						"<br>Average speed: %2 DL / %3 UL.")
-						.arg(s.torrent_name)
-						.arg(KBytesPerSecToString(speed_down / tc->getRunningTimeDL()))
-						.arg(KBytesPerSecToString(speed_up / tc->getRunningTimeUL()));
+						.tqarg(s.torrent_name)
+						.tqarg(KBytesPerSecToString(speed_down / tc->getRunningTimeDL()))
+						.tqarg(KBytesPerSecToString(speed_up / tc->getRunningTimeUL()));
 
 	showPassivePopup(msg,i18n("Download completed"));
 }
@@ -162,12 +162,12 @@ void TrayIcon::maxShareRatioReached(kt::TorrentInterface* tc)
 	KLocale* loc = KGlobal::locale();
 	double speed_up = (double)s.bytes_uploaded / 1024.0;
 	
-	QString msg = i18n("<b>%1</b> has reached its maximum share ratio of %2 and has been stopped."
+	TQString msg = i18n("<b>%1</b> has reached its maximum share ratio of %2 and has been stopped."
 			"<br>Uploaded %3 at an average speed of %4.")
-			.arg(s.torrent_name)
-			.arg(loc->formatNumber(s.max_share_ratio,2))
-			.arg(BytesToString(s.bytes_uploaded))
-			.arg(KBytesPerSecToString(speed_up / tc->getRunningTimeUL()));
+			.tqarg(s.torrent_name)
+			.tqarg(loc->formatNumber(s.max_share_ratio,2))
+			.tqarg(BytesToString(s.bytes_uploaded))
+			.tqarg(KBytesPerSecToString(speed_up / tc->getRunningTimeUL()));
 	
 	showPassivePopup(msg,i18n("Seeding completed"));
 }
@@ -181,24 +181,24 @@ void TrayIcon::maxSeedTimeReached(kt::TorrentInterface* tc)
 	KLocale* loc = KGlobal::locale();
 	double speed_up = (double)s.bytes_uploaded / 1024.0;
 	
-	QString msg = i18n("<b>%1</b> has reached its maximum seed time of %2 hours and has been stopped."
+	TQString msg = i18n("<b>%1</b> has reached its maximum seed time of %2 hours and has been stopped."
 			"<br>Uploaded %3 at an average speed of %4.")
-			.arg(s.torrent_name)
-			.arg(loc->formatNumber(s.max_seed_time,2))
-			.arg(BytesToString(s.bytes_uploaded))
-			.arg(KBytesPerSecToString(speed_up / tc->getRunningTimeUL()));
+			.tqarg(s.torrent_name)
+			.tqarg(loc->formatNumber(s.max_seed_time,2))
+			.tqarg(BytesToString(s.bytes_uploaded))
+			.tqarg(KBytesPerSecToString(speed_up / tc->getRunningTimeUL()));
 	
 	showPassivePopup(msg,i18n("Seeding completed"));
 }
 
-void TrayIcon::torrentStoppedByError(kt::TorrentInterface* tc, QString msg)
+void TrayIcon::torrentStoppedByError(kt::TorrentInterface* tc, TQString msg)
 {
 	if (!Settings::showPopups())
 		return;
 	
 	const TorrentStats & s = tc->getStats();
-	QString err_msg = i18n("<b>%1</b> has been stopped with the following error: <br>%2")
-				.arg(s.torrent_name).arg(msg);
+	TQString err_msg = i18n("<b>%1</b> has been stopped with the following error: <br>%2")
+				.tqarg(s.torrent_name).tqarg(msg);
 	
 	showPassivePopup(err_msg,i18n("Error"));
 }
@@ -209,9 +209,9 @@ void TrayIcon::corruptedData(kt::TorrentInterface* tc)
 		return;
 	
 	const TorrentStats & s = tc->getStats();
-	QString err_msg = i18n("Corrupted data has been found in the torrent <b>%1</b>"
+	TQString err_msg = i18n("Corrupted data has been found in the torrent <b>%1</b>"
 			"<br>It would be a good idea to do a data integrity check on the torrent.")
-			.arg(s.torrent_name);
+			.tqarg(s.torrent_name);
 	showPassivePopup(err_msg,i18n("Error"));
 }
 
@@ -222,15 +222,15 @@ void TrayIcon::queuingNotPossible(kt::TorrentInterface* tc)
 	
 	const TorrentStats & s = tc->getStats();
 		
-	QString msg;
+	TQString msg;
 	KLocale* loc = KGlobal::locale();
 	 
 	if (tc->overMaxRatio())
 		msg = i18n("<b>%1</b> has reached its maximum share ratio of %2 and cannot be enqueued. Remove the limit manually if you want to continue seeding.")
-				.arg(s.torrent_name).arg(loc->formatNumber(s.max_share_ratio,2));
+				.tqarg(s.torrent_name).tqarg(loc->formatNumber(s.max_share_ratio,2));
 	else
 		msg = i18n("<b>%1</b> has reached its maximum seed time of %2 hours and cannot be enqueued. Remove the limit manually if you want to continue seeding.")
-				.arg(s.torrent_name).arg(loc->formatNumber(s.max_seed_time,2));
+				.tqarg(s.torrent_name).tqarg(loc->formatNumber(s.max_seed_time,2));
 	
 	showPassivePopup(msg,i18n("Torrent cannot be enqueued."));
 }
@@ -240,10 +240,10 @@ void TrayIcon::canNotStart(kt::TorrentInterface* tc,kt::TorrentStartResponse rea
 	if (!Settings::showPopups())
 		return;
 	
-	QString msg = i18n("Cannot start <b>%1</b> : <br>").arg(tc->getStats().torrent_name);
+	TQString msg = i18n("Cannot start <b>%1</b> : <br>").tqarg(tc->getStats().torrent_name);
 	switch (reason)
 	{
-	case kt::QM_LIMITS_REACHED:
+	case kt::TQM_LIMITS_REACHED:
 		if (tc->getStats().bytes_left_to_download == 0)
 		{
 			// is a seeder
@@ -274,7 +274,7 @@ void TrayIcon::lowDiskSpace(kt::TorrentInterface * tc, bool stopped)
 	
 	const TorrentStats & s = tc->getStats();
 	
-	QString msg = i18n("Your disk is running out of space.<br /><b>%1</b> is being downloaded to '%2'.").arg(s.torrent_name).arg(tc->getDataDir());
+	TQString msg = i18n("Your disk is running out of space.<br /><b>%1</b> is being downloaded to '%2'.").tqarg(s.torrent_name).tqarg(tc->getDataDir());
 	
 	if(stopped)
 		msg.prepend(i18n("Torrent has been stopped.<br />"));
@@ -282,12 +282,12 @@ void TrayIcon::lowDiskSpace(kt::TorrentInterface * tc, bool stopped)
 	showPassivePopup(msg,i18n("Device running out of space"));
 }
 
-SetMaxRate::SetMaxRate( KTorrentCore* tc, int t, QWidget *parent, const char *name):KPopupMenu(parent, name)
+SetMaxRate::SetMaxRate( KTorrentCore* tc, int t, TQWidget *tqparent, const char *name):KPopupMenu(tqparent, name)
 {
 	m_core = tc;
 	type=t;
 	makeMenu();
-	connect(this,SIGNAL(activated (int)),this,SLOT(rateSelected(int )));
+	connect(this,TQT_SIGNAL(activated (int)),this,TQT_SLOT(rateSelected(int )));
 }
 void SetMaxRate::makeMenu()
 {
@@ -312,7 +312,7 @@ void SetMaxRate::makeMenu()
 
 	for (int i = 0; i < 15; i++)
 	{
-		QValueList<int> valuePair;
+		TQValueList<int> valuePair;
 		if (delta == 0)
 			valuePair.append(maxBandwidth);
 		else
@@ -335,10 +335,10 @@ void SetMaxRate::makeMenu()
 			{
 				if(rate == valuePair[j] && j==0)
 				{
-					setItemChecked(insertItem(QString("%1").arg(valuePair[j]),-1, (j == 0) ? 2 : count()), true);
+					setItemChecked(insertItem(TQString("%1").tqarg(valuePair[j]),-1, (j == 0) ? 2 : count()), true);
 				}
 				else
-					insertItem(QString("%1").arg(valuePair[j]),-1, (j == 0) ? 2 : count());
+					insertItem(TQString("%1").tqarg(valuePair[j]),-1, (j == 0) ? 2 : count());
 			}
 		}
 
@@ -355,8 +355,8 @@ void SetMaxRate::update()
 void SetMaxRate::rateSelected(int id)
 {
 	int rate;
-	QString ratestr = text(id).remove('&');
-	if (ratestr.contains(i18n("Unlimited")))
+	TQString ratestr = text(id).remove('&');
+	if (ratestr.tqcontains(i18n("Unlimited")))
 		rate = 0;
 	else
 		rate = ratestr.toInt();

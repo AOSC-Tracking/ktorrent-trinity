@@ -20,9 +20,9 @@
 #ifndef RSSARTICLE_H
 #define RSSARTICLE_H
 
-#include <qstring.h>
-#include <qdatetime.h>
-#include <qdatastream.h>
+#include <tqstring.h>
+#include <tqdatetime.h>
+#include <tqdatastream.h>
 
 #include <kurl.h>
 
@@ -41,7 +41,7 @@ namespace kt
 	{
 		public:
 			
-			typedef QValueList<RssArticle> List;
+			typedef TQValueList<RssArticle> List;
 			 
 			/**
 			 * Default constructor.
@@ -51,31 +51,31 @@ namespace kt
 			RssArticle(const RssArticle &other);
  			RssArticle &operator=(const RssArticle &other);
  			bool operator==(const RssArticle &other) const;
-			RssArticle(QString title, KURL link, QString description, QDateTime pubDate, QString guid, int downloaded = 0);
+			RssArticle(TQString title, KURL link, TQString description, TQDateTime pubDate, TQString guid, int downloaded = 0);
 			
-			void setTitle(const QString& title) { m_title=title; }
+			void setTitle(const TQString& title) { m_title=title; }
 			void setDownloaded(const int downloaded) { m_downloaded=downloaded; }
 			
-			QString title() const { return m_title; }
+			TQString title() const { return m_title; }
 			KURL link() const { return m_link; }
-			QString description() const { return m_description; }
-			QDateTime pubDate() const { return m_pubDate; }
-			QString guid() const { return m_guid; }
+			TQString description() const { return m_description; }
+			TQDateTime pubDate() const { return m_pubDate; }
+			TQString guid() const { return m_guid; }
 			int downloaded() const { return m_downloaded; }
 			
 			~RssArticle();
 
 		private:
 			KURL m_link;
-			QString m_title;
-			QString m_description;
-			QDateTime m_pubDate;
-			QString m_guid;
+			TQString m_title;
+			TQString m_description;
+			TQDateTime m_pubDate;
+			TQString m_guid;
 			int m_downloaded;
 	};
 	
-	QDataStream &operator<<( QDataStream &out, const RssArticle &article );
-	QDataStream &operator>>( QDataStream &in, RssArticle &article );
+	TQDataStream &operator<<( TQDataStream &out, const RssArticle &article );
+	TQDataStream &operator>>( TQDataStream &in, RssArticle &article );
 
 }
 

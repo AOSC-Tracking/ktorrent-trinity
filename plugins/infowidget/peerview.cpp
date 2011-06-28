@@ -27,8 +27,8 @@
 #include <kstandarddirs.h>
 #include <kmessagebox.h>
 #include <ksocketaddress.h>
-#include <qpoint.h>
-#include <qlistview.h>
+#include <tqpoint.h>
+#include <tqlistview.h>
 #include <kpopupmenu.h>
 #include <interfaces/peerinterface.h>
 #include <interfaces/functions.h>
@@ -53,13 +53,13 @@ namespace kt
 	Uint32 PeerViewItem::pvi_count = 0;
 	// Global GeoIP pointer, gets destroyed when no PeerViewItem's exist
 	static GeoIP* geo_ip = 0; 
-	static QPixmap yes_pix;
-	static QPixmap no_pix;
-	static QPixmap lock_pix;
+	static TQPixmap yes_pix;
+	static TQPixmap no_pix;
+	static TQPixmap lock_pix;
 	static FlagDB flagDB(22, 18);
 	static bool yes_no_pix_loaded = false;
 	static bool geoip_db_exists = true;
-	static QString geoip_data_file;
+	static TQString geoip_data_file;
 		
 	PeerViewItem::PeerViewItem(PeerView* pv,kt::PeerInterface* peer) : KListViewItem(pv),peer(peer)
 	{	
@@ -67,8 +67,8 @@ namespace kt
 		{
 			KIconLoader* iload = KGlobal::iconLoader();
 			/* Prefer builtin flag images to the ones provided by KDE */
-			flagDB.addFlagSource("data",  QString("ktorrent/geoip/%1.png"));
-			flagDB.addFlagSource("locale", QString("l10n/%1/flag.png"));
+			flagDB.addFlagSource("data",  TQString("ktorrent/geoip/%1.png"));
+			flagDB.addFlagSource("locale", TQString("l10n/%1/flag.png"));
 			yes_pix = iload->loadIcon("button_ok",KIcon::Small);
 			no_pix = iload->loadIcon("button_cancel",KIcon::Small);
 			lock_pix = iload->loadIcon("ktencrypted",KIcon::Small);
@@ -111,7 +111,7 @@ namespace kt
 			country_code = GeoIP_country_code[country_id];
 			country_name = GeoIP_country_name[country_id];
 			setText(1, country_name);
-			m_country = QString(country_name);
+			m_country = TQString(country_name);
 		}
 		else
 		{
@@ -170,16 +170,16 @@ namespace kt
 		setText(5,s.choked ? i18n("Yes") : i18n("No"));
 		//setPixmap(6,!s.snubbed ? yes_pix : no_pix);
 		setText(6,s.snubbed ? i18n("Yes") : i18n("No"));
-		setText(7,QString("%1 %").arg(loc->formatNumber(s.perc_of_file,2)));
+		setText(7,TQString("%1 %").tqarg(loc->formatNumber(s.perc_of_file,2)));
 		setPixmap(8,s.dht_support ? yes_pix : no_pix);
 		setText(9,loc->formatNumber(s.aca_score,2));
-		setPixmap(10,s.has_upload_slot ? yes_pix : QPixmap());
-		setText(11,QString("%1 / %2").arg(s.num_down_requests).arg(s.num_up_requests));
+		setPixmap(10,s.has_upload_slot ? yes_pix : TQPixmap());
+		setText(11,TQString("%1 / %2").tqarg(s.num_down_requests).tqarg(s.num_up_requests));
 		setText(12, BytesToString(s.bytes_downloaded));
 		setText(13, BytesToString(s.bytes_uploaded));
 	}
 	
-	int PeerViewItem::compare(QListViewItem * i,int col,bool) const
+	int PeerViewItem::compare(TQListViewItem * i,int col,bool) const
 	{
 		PeerViewItem* pvi = (PeerViewItem*) i;
 		PeerInterface* op = pvi->peer;
@@ -188,9 +188,9 @@ namespace kt
 		switch (col)
 		{
 			case 0: return CompareVal(ip,pvi->ip); // use numeric representation to sort
-			//return QString::compare(s.ip_address,os.ip_address);
-			case 1:	return QString::compare(m_country, pvi->m_country);
-			case 2: return QString::compare(s.client,os.client);
+			//return TQString::compare(s.ip_address,os.ip_address);
+			case 1:	return TQString::compare(m_country, pvi->m_country);
+			case 2: return TQString::compare(s.client,os.client);
 			case 3: return CompareVal(s.download_rate,os.download_rate);
 			case 4: return CompareVal(s.upload_rate,os.upload_rate);
 			case 5: return CompareVal(s.choked,os.choked);
@@ -207,8 +207,8 @@ namespace kt
 		return 0;
 	}
 	
-	PeerView::PeerView(QWidget *parent, const char *name)
-			: KListView(parent, name)
+	PeerView::PeerView(TQWidget *tqparent, const char *name)
+			: KListView(tqparent, name)
 	{
 		addColumn(i18n("IP"));
 		addColumn(i18n("Country"));
@@ -228,20 +228,20 @@ namespace kt
 		setAllColumnsShowFocus(true);
 		setShowSortIndicator(true);
 		
-		setColumnAlignment(3,Qt::AlignRight);
-		setColumnAlignment(4,Qt::AlignRight);
-		setColumnAlignment(5,Qt::AlignCenter);
-		setColumnAlignment(6,Qt::AlignCenter);
-		setColumnAlignment(7,Qt::AlignRight);
-		setColumnAlignment(8,Qt::AlignCenter);
-		setColumnAlignment(9,Qt::AlignRight);
-		setColumnAlignment(10,Qt::AlignCenter);
-		setColumnAlignment(11,Qt::AlignCenter);
-		setColumnAlignment(12,Qt::AlignRight);
-		setColumnAlignment(13,Qt::AlignRight);
+		setColumnAlignment(3,TQt::AlignRight);
+		setColumnAlignment(4,TQt::AlignRight);
+		setColumnAlignment(5,TQt::AlignCenter);
+		setColumnAlignment(6,TQt::AlignCenter);
+		setColumnAlignment(7,TQt::AlignRight);
+		setColumnAlignment(8,TQt::AlignCenter);
+		setColumnAlignment(9,TQt::AlignRight);
+		setColumnAlignment(10,TQt::AlignCenter);
+		setColumnAlignment(11,TQt::AlignCenter);
+		setColumnAlignment(12,TQt::AlignRight);
+		setColumnAlignment(13,TQt::AlignRight);
 		
 		for (Uint32 i = 0;i < (Uint32)columns();i++)
-			setColumnWidthMode(i,QListView::Manual);
+			setColumnWidthMode(i,TQListView::Manual);
 			
 		setShowSortIndicator(true);
 		
@@ -249,10 +249,10 @@ namespace kt
 		kick_id = menu->insertItem(KGlobal::iconLoader()->loadIcon("delete_user", KIcon::NoGroup), i18n("to kick", "Kick peer"));
 		ban_id = menu->insertItem(KGlobal::iconLoader()->loadIcon("filter",KIcon::NoGroup), i18n("to ban", "Ban peer"));
 		
-		connect(this,SIGNAL(contextMenu(KListView*, QListViewItem*, const QPoint& )),
-				this,SLOT(showContextMenu(KListView*, QListViewItem*, const QPoint& )));
-		connect(menu, SIGNAL ( activated ( int ) ), this, SLOT ( contextItem ( int ) ) );
-		setFrameShape(QFrame::NoFrame);
+		connect(this,TQT_SIGNAL(contextMenu(KListView*, TQListViewItem*, const TQPoint& )),
+				this,TQT_SLOT(showContextMenu(KListView*, TQListViewItem*, const TQPoint& )));
+		connect(menu, TQT_SIGNAL ( activated ( int ) ), this, TQT_SLOT ( contextItem ( int ) ) );
+		setFrameShape(TQFrame::NoFrame);
 	}
 	
 	
@@ -267,7 +267,7 @@ namespace kt
 	
 	void PeerView::removePeer(kt::PeerInterface* peer)
 	{
-		QMap<kt::PeerInterface*,PeerViewItem*>::iterator it = items.find(peer);
+		TQMap<kt::PeerInterface*,PeerViewItem*>::iterator it = items.tqfind(peer);
 		if (it == items.end())
 		{
 			return;
@@ -290,7 +290,7 @@ namespace kt
 		IPBlocklist& filter = IPBlocklist::instance();
 		const PeerInterface::Stats & s = peer->getStats();
 		KNetwork::KIpAddress ip(s.ip_address);
-		QString ips = ip.toString();
+		TQString ips = ip.toString();
 		/**
 		 * @TODO Clean this up.
 		 * this whole mess was because of KNetwork classes
@@ -314,7 +314,7 @@ namespace kt
 	
 	void PeerView::update()
 	{
-		QMap<kt::PeerInterface*,PeerViewItem*>::iterator i = items.begin();
+		TQMap<kt::PeerInterface*,PeerViewItem*>::iterator i = items.begin();
 		while (i != items.end())
 		{
 			PeerViewItem* it = i.data();
@@ -330,7 +330,7 @@ namespace kt
 		clear();
 	}
 	
-	void PeerView::showContextMenu( KListView*, QListViewItem* item, const QPoint& p)
+	void PeerView::showContextMenu( KListView*, TQListViewItem* item, const TQPoint& p)
 	{
 		if(!item)
 			return;

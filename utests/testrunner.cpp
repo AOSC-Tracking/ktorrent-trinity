@@ -45,7 +45,7 @@ namespace utest
 	{
 		int succes = 0;
 		int failure = 0;
-		QPtrList<UnitTest>::iterator i = tests.begin();
+		TQPtrList<UnitTest>::iterator i = tests.begin();
 		while (i != tests.end())
 		{
 			Out() << "======================" << endl;

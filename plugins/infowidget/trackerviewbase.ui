@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>TrackerViewBase</class>
-<widget class="QWidget">
+<widget class="TQWidget">
     <property name="name">
         <cstring>TrackerViewBase</cstring>
     </property>
@@ -24,7 +24,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLineEdit" row="1" column="0">
+        <widget class="TQLineEdit" row="1" column="0">
             <property name="name">
                 <cstring>txtTracker</cstring>
             </property>
@@ -48,9 +48,9 @@
                 <string>Add Trac&amp;ker</string>
             </property>
         </widget>
-        <widget class="QLayoutWidget" row="2" column="1">
+        <widget class="TQLayoutWidget" row="2" column="1">
             <property name="name">
-                <cstring>layout8</cstring>
+                <cstring>tqlayout8</cstring>
             </property>
             <vbox>
                 <property name="name">
@@ -67,7 +67,7 @@
                         <string></string>
                     </property>
                 </widget>
-                <widget class="QPushButton">
+                <widget class="TQPushButton">
                     <property name="name">
                         <cstring>btnChange</cstring>
                     </property>
@@ -85,7 +85,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>20</width>
                             <height>68</height>
@@ -127,15 +127,15 @@
                 <bool>true</bool>
             </property>
         </widget>
-        <widget class="QLayoutWidget" row="0" column="0">
+        <widget class="TQLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>layout6</cstring>
+                <cstring>tqlayout6</cstring>
             </property>
             <hbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLabel">
+                <widget class="TQLabel">
                     <property name="name">
                         <cstring>textLabel1</cstring>
                     </property>
@@ -151,7 +151,7 @@
                         <string>URL:</string>
                     </property>
                 </widget>
-                <widget class="QLineEdit">
+                <widget class="TQLineEdit">
                     <property name="name">
                         <cstring>lblCurrent</cstring>
                     </property>
@@ -180,14 +180,14 @@
                     <property name="sizeType">
                         <enum>Fixed</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>16</width>
                             <height>20</height>
                         </size>
                     </property>
                 </spacer>
-                <widget class="QLabel">
+                <widget class="TQLabel">
                     <property name="name">
                         <cstring>textLabel3</cstring>
                     </property>
@@ -200,12 +200,12 @@
                         </sizepolicy>
                     </property>
                     <property name="text">
-                        <string>Status:</string>
+                        <string>tqStatus:</string>
                     </property>
                 </widget>
-                <widget class="QLabel">
+                <widget class="TQLabel">
                     <property name="name">
-                        <cstring>lblStatus</cstring>
+                        <cstring>lbltqStatus</cstring>
                     </property>
                     <property name="sizePolicy">
                         <sizepolicy>
@@ -229,14 +229,14 @@
                     <property name="sizeType">
                         <enum>Fixed</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>16</width>
                             <height>20</height>
                         </size>
                     </property>
                 </spacer>
-                <widget class="QLabel">
+                <widget class="TQLabel">
                     <property name="name">
                         <cstring>textLabel5</cstring>
                     </property>
@@ -252,7 +252,7 @@
                         <string>Next update in:</string>
                     </property>
                 </widget>
-                <widget class="QLabel">
+                <widget class="TQLabel">
                     <property name="name">
                         <cstring>lblUpdate</cstring>
                     </property>
@@ -298,15 +298,15 @@
         <slot>btnRestore_clicked()</slot>
     </connection>
 </connections>
-<slots>
+<Q_SLOTS>
     <slot>btnChange_clicked()</slot>
-    <slot>listTrackers_currentChanged(QListViewItem*)</slot>
+    <slot>listTrackers_currentChanged(TQListViewItem*)</slot>
     <slot>btnUpdate_clicked()</slot>
     <slot>btnAdd_clicked()</slot>
     <slot>btnRemove_clicked()</slot>
     <slot>btnRestore_clicked()</slot>
-</slots>
-<layoutdefaults spacing="6" margin="11"/>
+</Q_SLOTS>
+<tqlayoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>

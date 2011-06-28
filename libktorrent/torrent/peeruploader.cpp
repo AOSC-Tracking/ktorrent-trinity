@@ -45,7 +45,7 @@ namespace bt
 	void PeerUploader::addRequest(const Request & r)
 	{
 	//	Out(SYS_CON|LOG_DEBUG) << 
-	//			QString("PeerUploader::addRequest %1 %2 %3\n").arg(r.getIndex()).arg(r.getOffset()).arg(r.getLength()) << endl;
+	//			TQString("PeerUploader::addRequest %1 %2 %3\n").tqarg(r.getIndex()).tqarg(r.getOffset()).tqarg(r.getLength()) << endl;
 		
 		// allowed fast chunks go to the front of the queue
 		requests.append(r);
@@ -54,7 +54,7 @@ namespace bt
 	void PeerUploader::removeRequest(const Request & r)
 	{
 	//	Out(SYS_CON|LOG_DEBUG) << 
-	//			QString("PeerUploader::removeRequest %1 %2 %3\n").arg(r.getIndex()).arg(r.getOffset()).arg(r.getLength()) << endl;
+	//			TQString("PeerUploader::removeRequest %1 %2 %3\n").tqarg(r.getIndex()).tqarg(r.getOffset()).tqarg(r.getLength()) << endl;
 		requests.remove(r);
 		peer->getPacketWriter().doNotSendPiece(r,peer->getStats().fast_extensions);
 	}
@@ -113,7 +113,7 @@ namespace bt
 			// reject all requests 
 			// if the peer supports fast extensions, 
 			// choke doesn't mean reject all
-			QValueList<Request>::iterator i = requests.begin();
+			TQValueList<Request>::iterator i = requests.begin();
 			while (i != requests.end())
 			{	
 				pw.sendReject(*i);

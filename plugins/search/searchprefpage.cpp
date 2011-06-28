@@ -19,8 +19,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 #include <kurl.h>
-#include <qtooltip.h>
-#include <qfile.h>
+#include <tqtooltip.h>
+#include <tqfile.h>
 #include <klocale.h>
 #include <kglobal.h>
 #include <kstandarddirs.h>
@@ -33,9 +33,9 @@
 #include <kio/netaccess.h>
 #include <klineedit.h>
 
-#include <qlabel.h>
-#include <qcheckbox.h>
-#include <qradiobutton.h>
+#include <tqlabel.h>
+#include <tqcheckbox.h>
+#include <tqradiobutton.h>
 
 #include <util/constants.h>
 #include "searchprefpage.h"
@@ -47,25 +47,25 @@ using namespace bt;
 
 namespace kt
 {
-	SearchPrefPageWidget::SearchPrefPageWidget(QWidget *parent) : SEPreferences(parent)
+	SearchPrefPageWidget::SearchPrefPageWidget(TQWidget *tqparent) : SEPreferences(tqparent)
 	{
-		QString info = i18n("Use your web browser to search for the string %1"
+		TQString info = i18n("Use your web browser to search for the string %1"
 				" (capital letters) on the search engine you want to add. <br> "
 				"Then copy the URL in the addressbar after the search is finished, and paste it here.<br><br>Searching for %1"
 				" on Google for example, will result in http://www.google.com/search?q=FOOBAR&ie=UTF-8&oe=UTF-8. <br> "
-				"If you add this URL here, ktorrent can search using Google.").arg("FOOBAR").arg("FOOBAR");
-		QString info_short = i18n("Use your web browser to search for the string %1 (capital letters) "
-				"on the search engine you want to add. Use the resulting URL below.").arg("FOOBAR");
+				"If you add this URL here, ktorrent can search using Google.").tqarg("FOOBAR").tqarg("FOOBAR");
+		TQString info_short = i18n("Use your web browser to search for the string %1 (capital letters) "
+				"on the search engine you want to add. Use the resulting URL below.").tqarg("FOOBAR");
 		m_infoLabel->setText(info_short);
-		QToolTip::add(m_infoLabel,info);
-		QToolTip::add(m_engine_name,info);
+		TQToolTip::add(m_infoLabel,info);
+		TQToolTip::add(m_engine_name,info);
 		
-		connect(btnAdd, SIGNAL(clicked()), this, SLOT(addClicked()));
-		connect(btnRemove, SIGNAL(clicked()), this, SLOT(removeClicked()));
-		connect(btn_add_default, SIGNAL(clicked()), this, SLOT(addDefaultClicked()));
-		connect(btnRemoveAll, SIGNAL(clicked()), this, SLOT(removeAllClicked()));
+		connect(btnAdd, TQT_SIGNAL(clicked()), this, TQT_SLOT(addClicked()));
+		connect(btnRemove, TQT_SIGNAL(clicked()), this, TQT_SLOT(removeClicked()));
+		connect(btn_add_default, TQT_SIGNAL(clicked()), this, TQT_SLOT(addDefaultClicked()));
+		connect(btnRemoveAll, TQT_SIGNAL(clicked()), this, TQT_SLOT(removeAllClicked()));
 		
-		connect(useCustomBrowser, SIGNAL(toggled(bool)), this, SLOT(customToggled( bool )));
+		connect(useCustomBrowser, TQT_SIGNAL(toggled(bool)), this, TQT_SLOT(customToggled( bool )));
 		
 		useCustomBrowser->setChecked(SearchPluginSettings::useCustomBrowser());
 		useDefaultBrowser->setChecked(SearchPluginSettings::useDefaultBrowser());
@@ -81,7 +81,7 @@ namespace kt
 		
 		for (Uint32 i = 0;i < se.getNumEngines();i++)
 		{
-			new QListViewItem(m_engines,se.getEngineName(i),se.getSearchURL(i).prettyURL());
+			new TQListViewItem(m_engines,se.getEngineName(i),se.getSearchURL(i).prettyURL());
 		}
 	}
  
@@ -99,20 +99,20 @@ namespace kt
  
 	void SearchPrefPageWidget::saveSearchEngines()
 	{
-		QFile fptr(KGlobal::dirs()->saveLocation("data","ktorrent") + "search_engines");
+		TQFile fptr(KGlobal::dirs()->saveLocation("data","ktorrent") + "search_engines");
 		if (!fptr.open(IO_WriteOnly))
 			return;
-		QTextStream out(&fptr);
+		TQTextStream out(&fptr);
 		out << "# PLEASE DO NOT MODIFY THIS FILE. Use KTorrent configuration dialog for adding new search engines." << ::endl;
 		out << "# SEARCH ENGINES list" << ::endl;
      
-		QListViewItemIterator itr(m_engines);
+		TQListViewItemIterator itr(m_engines);
 		while (itr.current())
 		{
-			QListViewItem* item = itr.current();
-			QString u = item->text(1);
-			QString name = item->text(0);
-			out << name.replace(" ","%20") << " " << u.replace(" ","%20") <<  endl;
+			TQListViewItem* item = itr.current();
+			TQString u = item->text(1);
+			TQString name = item->text(0);
+			out << name.tqreplace(" ","%20") << " " << u.tqreplace(" ","%20") <<  endl;
 			itr++;
 		}
 	}
@@ -123,7 +123,7 @@ namespace kt
 		{
 			KMessageBox::error(this, i18n("You must enter the search engine's name and URL"));
 		}
-		else if ( m_engine_url->text().contains("FOOBAR")  )
+		else if ( m_engine_url->text().tqcontains("FOOBAR")  )
 		{
 			KURL url = KURL::fromPathOrURL(m_engine_url->text());
 			if ( !url.isValid() ) 
@@ -132,12 +132,12 @@ namespace kt
 				return; 
 			}
 			
-			if (m_engines->findItem(m_engine_name->text(), 0)) 
+			if (m_engines->tqfindItem(m_engine_name->text(), 0)) 
 			{
 				KMessageBox::error(this, i18n("A search engine with the same name already exists. Please use a different name.")); return; 
 			}
 			
-			new QListViewItem(m_engines, m_engine_name->text(), m_engine_url->text());
+			new TQListViewItem(m_engines, m_engine_name->text(), m_engine_url->text());
 			m_engine_url->setText("");
 			m_engine_name->setText("");
 		}
@@ -152,30 +152,30 @@ namespace kt
 		if ( m_engines->selectedItem() == 0 ) 
 			return;
  
-		QListViewItem* item = m_engines->selectedItem();
+		TQListViewItem* item = m_engines->selectedItem();
 		m_engines->takeItem(item);
 		delete item;
 	}
  
 	void SearchPrefPageWidget::addDefaultClicked()
 	{
-		QListViewItem* se = new QListViewItem(m_engines, "KTorrents", "http://www.ktorrents.com/search.php?lg=0&sourceid=ktorrent&q=FOOBAR&f=0");
+		TQListViewItem* se = new TQListViewItem(m_engines, "KTorrents", "http://www.ktorrents.com/search.php?lg=0&sourceid=ktorrent&q=FOOBAR&f=0");
 		
-		se = new QListViewItem(m_engines, "bittorrent.com", "http://search.bittorrent.com/search.jsp?query=FOOBAR");
+		se = new TQListViewItem(m_engines, "bittorrent.com", "http://search.bittorrent.com/search.jsp?query=FOOBAR");
      
-		se = new QListViewItem(m_engines, "isohunt.com", "http://isohunt.com/torrents.php?ihq=FOOBAR&op=and");
+		se = new TQListViewItem(m_engines, "isohunt.com", "http://isohunt.com/torrents.php?ihq=FOOBAR&op=and");
      
-		se = new QListViewItem(m_engines, "mininova.org", "http://www.mininova.org/search.php?search=FOOBAR");
+		se = new TQListViewItem(m_engines, "mininova.org", "http://www.mininova.org/search.php?search=FOOBAR");
      
-		se = new QListViewItem(m_engines, "thepiratebay.org", "http://thepiratebay.org/search.php?q=FOOBAR");
+		se = new TQListViewItem(m_engines, "thepiratebay.org", "http://thepiratebay.org/search.php?q=FOOBAR");
      
-		se = new QListViewItem(m_engines, "bitoogle.com", "http://bitoogle.com/search.php?q=FOOBAR");
+		se = new TQListViewItem(m_engines, "bitoogle.com", "http://bitoogle.com/search.php?q=FOOBAR");
      
-		se = new QListViewItem(m_engines, "bytenova.org", "http://www.bitenova.org/search.php?search=FOOBAR&start=0&start=0&ie=utf-8&oe=utf-8");
+		se = new TQListViewItem(m_engines, "bytenova.org", "http://www.bitenova.org/search.php?search=FOOBAR&start=0&start=0&ie=utf-8&oe=utf-8");
      
-		se = new QListViewItem(m_engines, "torrentspy.com", "http://torrentspy.com/search.asp?query=FOOBAR");
+		se = new TQListViewItem(m_engines, "torrentspy.com", "http://torrentspy.com/search.asp?query=FOOBAR");
 
-		se = new QListViewItem(m_engines, "torrentz.com", "http://www.torrentz.com/search_FOOBAR");
+		se = new TQListViewItem(m_engines, "torrentz.com", "http://www.torrentz.com/search_FOOBAR");
 	}
  
 	void SearchPrefPageWidget::removeAllClicked()
@@ -185,7 +185,7 @@ namespace kt
 	
 	void SearchPrefPageWidget::btnUpdate_clicked()
 	{
-		QString fn = KGlobal::dirs()->saveLocation("data","ktorrent") + "search_engines.tmp";
+		TQString fn = KGlobal::dirs()->saveLocation("data","ktorrent") + "search_engines.tmp";
 		KURL source("http://www.ktorrent.org/downloads/search_engines");
 		
 		if (KIO::NetAccess::download(source,fn,NULL))
@@ -197,27 +197,27 @@ namespace kt
 		}
 	}
 	
-	void SearchPrefPageWidget::updateList(QString& source)
+	void SearchPrefPageWidget::updateList(TQString& source)
 	{
-		QFile fptr(source);
+		TQFile fptr(source);
      
 		if (!fptr.open(IO_ReadOnly))
 			return;
  
-		QTextStream in(&fptr);
+		TQTextStream in(&fptr);
 		
-		QMap<QString,KURL> engines;
+		TQMap<TQString,KURL> engines;
 		
 		while (!in.atEnd())
 		{
-			QString line = in.readLine();
+			TQString line = in.readLine();
 
 			if(line.startsWith("#") || line.startsWith(" ") || line.isEmpty() )
 				continue;
 
-			QStringList tokens = QStringList::split(" ", line);
-			QString name = tokens[0];
-			name = name.replace("%20"," ");
+			TQStringList tokens = TQStringList::split(" ", line);
+			TQString name = tokens[0];
+			name = name.tqreplace("%20"," ");
 			
 			KURL url = KURL::fromPathOrURL(tokens[1]);
 			for(Uint32 i=2; i<tokens.count(); ++i)
@@ -226,15 +226,15 @@ namespace kt
 			engines.insert(name,url);
 		}
 		
-		QMap<QString,KURL>::iterator i = engines.begin();
+		TQMap<TQString,KURL>::iterator i = engines.begin();
 		while (i != engines.end())
 		{	
-			QListViewItem* item = m_engines->findItem(i.key(),0);
+			TQListViewItem* item = m_engines->tqfindItem(i.key(),0);
 			// if we have found the item, replace it if not make a new one
 			if (item)
 				item->setText(1, i.data().prettyURL());
 			else
-				new QListViewItem(m_engines,i.key(),i.data().prettyURL());
+				new TQListViewItem(m_engines,i.key(),i.data().prettyURL());
 			
 			i++;
 		}
@@ -264,9 +264,9 @@ namespace kt
 		return ret;
 	}
 
-	void SearchPrefPage::createWidget(QWidget* parent)
+	void SearchPrefPage::createWidget(TQWidget* tqparent)
 	{
-		widget = new SearchPrefPageWidget(parent);
+		widget = new SearchPrefPageWidget(tqparent);
 	}
 
 	void SearchPrefPage::deleteWidget()

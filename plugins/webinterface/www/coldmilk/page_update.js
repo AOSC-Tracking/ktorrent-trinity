@@ -141,7 +141,7 @@ function update_status_bar(xmldoc) {
 			document.createTextNode("down: " + down + " / up: " + up));
 	}
 	var oldtable = document.getElementById('status_bar_table');
-	oldtable.parentNode.replaceChild(newtable, oldtable);
+	oldtable.tqparentNode.replaceChild(newtable, oldtable);
 }
 
 function update_torrent_table(xmldoc) {
@@ -159,7 +159,7 @@ function update_torrent_table(xmldoc) {
 	_torrent_table_header(newtable.insertRow(0));
 
 	var oldtable = document.getElementById('torrent_list_table');
-	oldtable.parentNode.replaceChild(newtable, oldtable);
+	oldtable.tqparentNode.replaceChild(newtable, oldtable);
 }
 
 function _torrent_table_row(torrent, table, i) {
@@ -327,7 +327,7 @@ function get_torrents_details(xmldoc) {
 	_torrent_table_header(newtable.insertRow(0));*/
 
 	var oldtable = document.getElementById('torrents_details_files');
-	oldtable.parentNode.replaceChild(newtable, oldtable);
+	oldtable.tqparentNode.replaceChild(newtable, oldtable);
 }
 
 function _create_action_button(button_name, image_src, command) {
@@ -403,7 +403,7 @@ function _get_file_status_name(status_id)
 }
 
 function _torrents_details_header(row) {
-	headers = new Array("Actions", "File", "Size", "Perc done", "Status");
+	headers = new Array("Actions", "File", "Size", "Perc done", "tqStatus");
 	for (var i in headers) {
 		var header =  document.createElement("th");
 		header.appendChild(document.createTextNode(headers[i]));
@@ -414,7 +414,7 @@ function _torrents_details_header(row) {
 
 function _torrent_table_header(row) {
 	headers = new Array(
-		"Actions", "File", "Status", 
+		"Actions", "File", "tqStatus", 
 		"Speed", "Size", "Peers", 
 		"Transferred", "% done"
 	);

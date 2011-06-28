@@ -20,7 +20,7 @@
 #ifndef NETNETWORKTHREAD_H
 #define NETNETWORKTHREAD_H
 
-#include <qthread.h>
+#include <tqthread.h>
 #include <util/constants.h>
 #include <util/ptrmap.h>
 		
@@ -37,7 +37,7 @@ namespace net
 	
 		Base class for the 2 networking threads. Handles the socket groups.
 	*/
-	class NetworkThread : public QThread
+	class NetworkThread : public TQThread
 	{
 	protected:
 		SocketMonitor* sm;

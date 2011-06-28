@@ -20,7 +20,7 @@
 #ifndef BTHTTPREQUEST_H
 #define BTHTTPREQUEST_H
 
-#include <qobject.h>
+#include <tqobject.h>
 #include <kurl.h>
 #include <kstreamsocket.h>
 #include <interfaces/exitoperation.h>
@@ -41,6 +41,7 @@ namespace bt
 	class HTTPRequest : public kt::ExitOperation
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		/**
 		 * Constructor, set the url and the request header.
@@ -50,7 +51,7 @@ namespace bt
 		 * @param port THe port
 		 * @param verbose Print traffic to the log
 		 */
-		HTTPRequest(const QString & hdr,const QString & payload,const QString & host,
+		HTTPRequest(const TQString & hdr,const TQString & payload,const TQString & host,
 					Uint16 port,bool verbose);
 		virtual ~HTTPRequest();
 		
@@ -65,14 +66,14 @@ namespace bt
 	     * @param r The sender of the request
 		 * @param data The data of the reply
 		 */
-		void replyOK(bt::HTTPRequest* r,const QString & data);
+		void replyOK(bt::HTTPRequest* r,const TQString & data);
 		
 		/**
 		 * Anything else but an 200 OK was sent.
 		 * @param r The sender of the request
 		 * @param data The data of the reply
 		 */
-		void replyError(bt::HTTPRequest* r,const QString & data);
+		void replyError(bt::HTTPRequest* r,const TQString & data);
 		
 		/**
 		 * No reply was sent and an error or timeout occurred.
@@ -89,7 +90,7 @@ namespace bt
 		
 	private:
 		KNetwork::KStreamSocket* sock;
-		QString hdr,payload;
+		TQString hdr,payload;
 		bool verbose;
 	};
 

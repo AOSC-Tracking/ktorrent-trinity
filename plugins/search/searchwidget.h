@@ -20,8 +20,8 @@
 #ifndef BTSEARCHWIDGET_H
 #define BTSEARCHWIDGET_H
 
-#include <qwidget.h>
-#include <qvaluevector.h>
+#include <tqwidget.h>
+#include <tqvaluevector.h>
 #include <kurl.h>
 
 class SearchBar;
@@ -45,9 +45,10 @@ namespace kt
 		
 		Widget which shows a KHTML window with the users search in it
 	*/
-	class SearchWidget : public QWidget
+	class SearchWidget : public TQWidget
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		SearchWidget(SearchPlugin* sp);
 		virtual ~SearchWidget();
@@ -57,21 +58,21 @@ namespace kt
 		void updateSearchEngines(const SearchEngineList & sl);
 	
 	public slots:
-		void search(const QString & text,int engine = 0);
+		void search(const TQString & text,int engine = 0);
 		void copy();
 		void onShutDown();
 	
 	private slots:
 		void searchPressed();
 		void clearPressed();
-		void onURLHover(const QString & url);
+		void onURLHover(const TQString & url);
 		void onFinished();
 		void onOpenTorrent(const KURL & url);
 		void onSaveTorrent(const KURL & url);
-		void showPopupMenu(const QString & s,const QPoint & p);
+		void showPopupMenu(const TQString & s,const TQPoint & p);
 		void onBackAvailable(bool available);
 		void onFrameAdded(KParts::Part* p);
-		void statusBarMsg(const QString & url);
+		void statusBarMsg(const TQString & url);
 		void openTorrent(const KURL & url);
 		void loadingProgress(int perc);
 		

@@ -15,7 +15,7 @@
 
 class KURL;
 
-#include <qobject.h>
+#include <tqobject.h>
 
 namespace KIO
 {
@@ -32,9 +32,10 @@ namespace RSS
 	 * a new retrieval algorithm which can then be plugged into the RSS loader.
 	 * @see Loader, FileRetriever, OutputRetriever
 	 */
-	class DataRetriever : public QObject
+	class DataRetriever : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 		public:
 			/**
 			 * Default constructor.
@@ -75,7 +76,7 @@ namespace RSS
 			 * wrong and that the data parameter might contain no or invalid
 			 * data.
 			 */
-			void dataRetrieved(const QByteArray &data, bool success);
+			void dataRetrieved(const TQByteArray &data, bool success);
 
 		private:
 			DataRetriever(const DataRetriever &other);
@@ -89,6 +90,7 @@ namespace RSS
 	class FileRetriever : public DataRetriever
 	{
 		Q_OBJECT
+  TQ_OBJECT
 		public:
 			/**
 			 * Default constructor.
@@ -135,7 +137,7 @@ namespace RSS
             void slotTimeout();
                 
 		private slots:
-			void slotData(KIO::Job *job, const QByteArray &data);
+			void slotData(KIO::Job *job, const TQByteArray &data);
 			void slotResult(KIO::Job *job);
 			void slotPermanentRedirection(KIO::Job *job, const KURL &fromUrl,
 			                                             const KURL &toUrl);
@@ -158,6 +160,7 @@ namespace RSS
 	class OutputRetriever : public DataRetriever
 	{
 		Q_OBJECT
+  TQ_OBJECT
 		public:
 			/**
 			 * Default constructor.
@@ -206,8 +209,8 @@ namespace RSS
 	 *
 	 * \code
 	 * Loader *loader = Loader::create();
-	 * connect(loader, SIGNAL(loadingComplete(Loader *, Document, Status)),
-	 *         this, SLOT(slotLoadingComplete(Loader *, Document, Status)));
+	 * connect(loader, TQT_SIGNAL(loadingComplete(Loader *, Document, tqStatus)),
+	 *         this, TQT_SLOT(slotLoadingComplete(Loader *, Document, tqStatus)));
 	 * loader->loadFrom("http://www.blah.org/foobar.rdf", new FileRetriever);
 	 * \endcode
 	 *
@@ -231,7 +234,7 @@ namespace RSS
 	 * 'slotLoadingComplete' method might look like this:
 	 *
 	 * \code
-	 * void MyClass::slotLoadingComplete(Loader *loader, Document doc, Status status)
+	 * void MyClass::slotLoadingComplete(Loader *loader, Document doc, tqStatus status)
 	 * {
 	 *     // Note that Loader::~Loader() is private, so you cannot delete Loader instances.
 	 *     // You don't need to do that anyway since Loader instances delete themselves.
@@ -239,7 +242,7 @@ namespace RSS
 	 *     if (status != RSS::Success)
 	 *         return;
 	 *
-	 *     QString title = doc.title();
+	 *     TQString title = doc.title();
 	 *     // do whatever you want with the information.
 	 * }
 	 * \endcode
@@ -249,9 +252,10 @@ namespace RSS
 	 * loadingComplete signal goes out of scope. This is e.g. the case if you
 	 * intend to call getPixmap() on Document::image()!
 	 */
-	class Loader : public QObject
+	class Loader : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 		friend class someClassWhichDoesNotExist;
 		public:
 			/**
@@ -268,10 +272,10 @@ namespace RSS
 			 * Convenience method. Does the same as the above method except that
 			 * it also does the job of connecting the loadingComplete() signal
 			 * to the given slot for you.
-			 * @param object A QObject which features the specified slot
+			 * @param object A TQObject which features the specified slot
 			 * @param slot Which slot to connect to.
 			 */
-			static Loader *create(QObject *object, const char *slot);
+			static Loader *create(TQObject *object, const char *slot);
 			
 			/**
 			 * Loads the RSS file referenced by the given URL using the
@@ -316,19 +320,19 @@ namespace RSS
 			 * the case if you intend to call getPixmap() on Document::image()!
 			 * @param status A status byte telling whether there were any problems
 			 * while retrieving or parsing the data.
-			 * @see Document, Status
+			 * @see Document, tqStatus
 			 */
-			void loadingComplete(Loader *loader, Document doc, Status status);
+			void loadingComplete(Loader *loader, Document doc, tqStatus status);
 
 		private slots:
-			void slotRetrieverDone(const QByteArray &data, bool success);
+			void slotRetrieverDone(const TQByteArray &data, bool success);
 
 		private:
 			Loader();
 			Loader(const Loader &other);
 			Loader &operator=(const Loader &other);
 			~Loader();
-            void discoverFeeds(const QByteArray &data);
+            void discoverFeeds(const TQByteArray &data);
             
 			struct Private;
 			Private *d;

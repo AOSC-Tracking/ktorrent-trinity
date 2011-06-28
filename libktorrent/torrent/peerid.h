@@ -20,7 +20,7 @@
 #ifndef BTPEERID_H
 #define BTPEERID_H
 
-#include <qstring.h>
+#include <tqstring.h>
 
 namespace bt
 {
@@ -31,7 +31,7 @@ namespace bt
 	class PeerID
 	{
 		char id[20];
-		QString client_name;
+		TQString client_name;
 	public:
 		PeerID();
 		PeerID(const char* pid);
@@ -42,14 +42,14 @@ namespace bt
 		
 		const char* data() const {return id;}
 		
-		QString toString() const;
+		TQString toString() const;
 
 		/**
 		 * Interprets the PeerID to figure out which client it is.
 		 * @author Ivan + Joris
 		 * @return The name of the client
 		 */
-		QString identifyClient() const;
+		TQString identifyClient() const;
 		
 		friend bool operator == (const PeerID & a,const PeerID & b);
 		friend bool operator != (const PeerID & a,const PeerID & b);

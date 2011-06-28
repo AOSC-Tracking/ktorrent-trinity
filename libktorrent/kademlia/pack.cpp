@@ -27,7 +27,7 @@ using namespace KNetwork;
 namespace dht
 {
 
-	void PackBucketEntry(const KBucketEntry & e,QByteArray & ba,Uint32 off)
+	void PackBucketEntry(const KBucketEntry & e,TQByteArray & ba,Uint32 off)
 	{
 		// first check size
 		if (off + 26 > ba.size())
@@ -43,7 +43,7 @@ namespace dht
 		bt::WriteUint16(ptr,24,addr.port());
 	}
 	
-	KBucketEntry UnpackBucketEntry(const QByteArray & ba,Uint32 off)
+	KBucketEntry UnpackBucketEntry(const TQByteArray & ba,Uint32 off)
 	{
 		if (off + 26 > ba.size())
 			throw bt::Error("Not enough room in buffer");

@@ -23,16 +23,17 @@
 #include "convert_dlg.h"
 #include "ipfilterplugin.h"
 
-#include <qevent.h>
+#include <tqevent.h>
 
 namespace kt
 {
 	class ConvertDialog: public ConvertingDlg
 	{
 			Q_OBJECT
+  TQ_OBJECT
 
 		public:
-			ConvertDialog( IPFilterPlugin* p, QWidget *parent = 0, const char *name = 0 );
+			ConvertDialog( IPFilterPlugin* p, TQWidget *tqparent = 0, const char *name = 0 );
 
 		public slots:
 			virtual void btnClose_clicked();
@@ -45,7 +46,7 @@ namespace kt
 			bool canceled;
 			
 		private slots:
-			void closeEvent(QCloseEvent* e);
+			void closeEvent(TQCloseEvent* e);
     		virtual void btnCancel_clicked();
 	};
 }

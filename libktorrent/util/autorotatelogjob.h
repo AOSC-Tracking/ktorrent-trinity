@@ -36,8 +36,9 @@ namespace bt
 	class AutoRotateLogJob : public KIO::Job
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		AutoRotateLogJob(const QString & file,Log* lg);
+		AutoRotateLogJob(const TQString & file,Log* lg);
 		virtual ~AutoRotateLogJob();
 		
 		virtual void kill(bool quietly=true);
@@ -49,7 +50,7 @@ namespace bt
 		void update();
 		
 	private:
-		QString file;
+		TQString file;
 		int cnt;
 		Log* lg;
 	};

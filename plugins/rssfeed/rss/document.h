@@ -14,8 +14,8 @@
 #include "article.h"
 #include "global.h"
 
-class QDateTime;
-class QDomDocument;
+class TQDateTime;
+class TQDomDocument;
 
 namespace RSS
 {
@@ -45,7 +45,7 @@ namespace RSS
 			/**
 			 * Constructs a Document from a piece of XML markup.
 			 */
-			Document(const QDomDocument &doc);
+			Document(const TQDomDocument &doc);
 			
 			/**
 			 * Assignment operator.
@@ -75,28 +75,28 @@ namespace RSS
 			/**
 			 * Convenience method. Differs from version() only in how the result
 			 * is returned.
-			 * @return A QString representing the verbose version of the
+			 * @return A TQString representing the verbose version of the
 			 * document.
 			 * @see version()
 			 */
-			QString verbVersion() const;
+			TQString verbVersion() const;
 
 			/**
 			 * RSS 0.90 and upwards
-			 * @return The title of the RSS document, or QString::null if no
+			 * @return The title of the RSS document, or TQString() if no
 			 * title was available. This is often the name of the news source
 			 * from which the RSS document was retrieved.
 			 */
-			QString title() const;
+			TQString title() const;
 
 			/**
 			 * RSS 0.90 and upwards
-			 * @return The description of the RSS document, or QString::null
+			 * @return The description of the RSS document, or TQString()
 			 * if no description was available. This is usually a short slogan
 			 * or description of the news source from which the RSS document
 			 * was retrieved.
 			 */
-			QString description() const;
+			TQString description() const;
 
 			/**
 			 * RSS 0.90 and upwards
@@ -158,28 +158,28 @@ namespace RSS
 			/**
 			 * RSS 0.91 and upwards
 			 * @return A copyright of the information contained in the RSS
-			 * document, or QString::null if no copyright is available.
+			 * document, or TQString() if no copyright is available.
 			 */
-			QString copyright() const;
+			TQString copyright() const;
 
 			/**
 			 * RSS 0.91 and upwards
 			 * @return The date when the RSS document was published.
 			 */
-			const QDateTime &pubDate() const;
+			const TQDateTime &pubDate() const;
 
 			/**
 			 * RSS 0.91 and upwards.
 			 * @return The last time the channel was modified.
 			 */
-			const QDateTime &lastBuildDate() const;
+			const TQDateTime &lastBuildDate() const;
 
 			/**
 			 * RSS 0.91 and upwards
 			 * @return A <a href="http://www.w3.org/PICS/#Specs">PICS</a>
 			 * rating for this page.
 			 */
-			QString rating() const;
+			TQString rating() const;
 
 			/**
 			 * RSS 0.91 and upwards
@@ -197,16 +197,16 @@ namespace RSS
 			 * bull@mancuso.com (Bull Mancuso).
 			 * @see webMaster()
 			 */
-			QString managingEditor() const;
+			TQString managingEditor() const;
 
 			/**
 			 * RSS 0.91 and upwards
 			 * @return The email address of the webmaster for the site, the
 			 * person to contact if there are technical problems with the
-			 * channel, or QString::null if this information isn't available.
+			 * channel, or TQString() if this information isn't available.
 			 * @see managingEditor()
 			 */
-			QString webMaster() const;
+			TQString webMaster() const;
 
 			/**
 			 * RSS 0.91 and upwards

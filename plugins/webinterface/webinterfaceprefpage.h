@@ -41,7 +41,7 @@ namespace kt
 			virtual ~WebInterfacePrefPage();
 
 			virtual bool apply();
-			virtual void createWidget(QWidget* parent);
+			virtual void createWidget(TQWidget* tqparent);
 			virtual void updateData();
 			virtual void deleteWidget();
 			

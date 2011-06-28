@@ -22,7 +22,7 @@
 
 namespace bt
 {
-	QString hex[] = {
+	TQString hex[] = {
 		"%00", "%01", "%02", "%03", "%04", "%05", "%06", "%07",
 		"%08", "%09", "%0a", "%0b", "%0c", "%0d", "%0e", "%0f",
 		"%10", "%11", "%12", "%13", "%14", "%15", "%16", "%17",
@@ -58,9 +58,9 @@ namespace bt
 	};
 
 
-	QString URLEncoder::encode(const char* buf,Uint32 size)
+	TQString URLEncoder::encode(const char* buf,Uint32 size)
 	{
-		QString res = "";
+		TQString res = "";
 		
 		for (Uint32 i = 0; i < size; i++) 
 		{

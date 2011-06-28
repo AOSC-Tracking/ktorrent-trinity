@@ -28,7 +28,7 @@
 #include <util/log.h>
 #include <util/constants.h>
 
-#include <qstring.h>
+#include <tqstring.h>
 
 #include "rssfilter.h"
 #include "rssarticle.h"
@@ -44,30 +44,31 @@ namespace kt
 	 * 
 	*/
 	
-	class RssLinkDownloader : public QObject
+	class RssLinkDownloader : public TQObject
 	{
 			Q_OBJECT
+  TQ_OBJECT
 		public:
 			
 			/**
 			 * Default constructor.
 			 */
-			RssLinkDownloader(CoreInterface* core, QString link, RssFilter * filter = 0, QObject * parent = 0);
+			RssLinkDownloader(CoreInterface* core, TQString link, RssFilter * filter = 0, TQObject * tqparent = 0);
 			
  			~RssLinkDownloader();
  			
 
 		public slots:
-			void processLink(KIO::Job* jobStatus);
+			void processLink(KIO::Job* jobtqStatus);
 			void suicide();
 			
 		signals:
-			void linkDownloaded( QString link, int downloaded );
+			void linkDownloaded( TQString link, int downloaded );
 			
 		private:
 			KIO::StoredTransferJob * curFile;
-			QString curLink, curSubLink;
-			QStringList subLinks;
+			TQString curLink, curSubLink;
+			TQStringList subLinks;
 			RssFilter * curFilter;
 			bool firstLink;
 			

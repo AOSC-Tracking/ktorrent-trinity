@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>TorrentCreatorDlgBase</class>
-<widget class="QDialog">
+<widget class="TQDialog">
     <property name="name">
         <cstring>TorrentCreatorDlgBase</cstring>
     </property>
@@ -22,15 +22,15 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="0" column="0">
+        <widget class="TQLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>layout2</cstring>
+                <cstring>tqlayout2</cstring>
             </property>
             <vbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLabel">
+                <widget class="TQLabel">
                     <property name="name">
                         <cstring>textLabel1</cstring>
                     </property>
@@ -45,7 +45,7 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QLabel" row="2" column="0">
+        <widget class="TQLabel" row="2" column="0">
             <property name="name">
                 <cstring>m_label1</cstring>
             </property>
@@ -53,7 +53,7 @@
                 <string>You must add at least one tracker or node.</string>
             </property>
         </widget>
-        <widget class="QGroupBox" row="1" column="0">
+        <widget class="TQGroupBox" row="1" column="0">
             <property name="name">
                 <cstring>groupBox1</cstring>
             </property>
@@ -64,15 +64,15 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLayoutWidget" row="0" column="0">
+                <widget class="TQLayoutWidget" row="0" column="0">
                     <property name="name">
-                        <cstring>layout7</cstring>
+                        <cstring>tqlayout7</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel2</cstring>
                             </property>
@@ -130,7 +130,7 @@
                                 <cstring>m_chunk_size</cstring>
                             </property>
                         </widget>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel3</cstring>
                             </property>
@@ -148,7 +148,7 @@
                             <property name="sizeType">
                                 <enum>Expanding</enum>
                             </property>
-                            <property name="sizeHint">
+                            <property name="tqsizeHint">
                                 <size>
                                     <width>21</width>
                                     <height>20</height>
@@ -157,7 +157,7 @@
                         </spacer>
                     </hbox>
                 </widget>
-                <widget class="QCheckBox" row="1" column="0">
+                <widget class="TQCheckBox" row="1" column="0">
                     <property name="name">
                         <cstring>m_start_seeding</cstring>
                     </property>
@@ -168,7 +168,7 @@
                         <bool>true</bool>
                     </property>
                 </widget>
-                <widget class="QCheckBox" row="3" column="0">
+                <widget class="TQCheckBox" row="3" column="0">
                     <property name="name">
                         <cstring>m_decentralized</cstring>
                     </property>
@@ -176,7 +176,7 @@
                         <string>Decentrali&amp;zed (DHT only)</string>
                     </property>
                 </widget>
-                <widget class="QCheckBox" row="2" column="0">
+                <widget class="TQCheckBox" row="2" column="0">
                     <property name="name">
                         <cstring>m_private</cstring>
                     </property>
@@ -186,15 +186,15 @@
                 </widget>
             </grid>
         </widget>
-        <widget class="QLayoutWidget" row="5" column="0">
+        <widget class="TQLayoutWidget" row="5" column="0">
             <property name="name">
-                <cstring>layout9</cstring>
+                <cstring>tqlayout9</cstring>
             </property>
             <hbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLabel">
+                <widget class="TQLabel">
                     <property name="name">
                         <cstring>textLabel2_2</cstring>
                     </property>
@@ -209,7 +209,7 @@
                 </widget>
             </hbox>
         </widget>
-        <widget class="QLayoutWidget" row="6" column="0">
+        <widget class="TQLayoutWidget" row="6" column="0">
             <property name="name">
                 <cstring>Layout1</cstring>
             </property>
@@ -233,14 +233,14 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>20</width>
                             <height>20</height>
                         </size>
                     </property>
                 </spacer>
-                <widget class="QPushButton">
+                <widget class="TQPushButton">
                     <property name="name">
                         <cstring>m_create_btn</cstring>
                     </property>
@@ -254,7 +254,7 @@
                         <bool>true</bool>
                     </property>
                 </widget>
-                <widget class="QPushButton">
+                <widget class="TQPushButton">
                     <property name="name">
                         <cstring>m_cancel_btn</cstring>
                     </property>
@@ -275,7 +275,7 @@
                 <string>Trackers</string>
             </property>
         </widget>
-        <widget class="QGroupBox" row="4" column="0">
+        <widget class="TQGroupBox" row="4" column="0">
             <property name="name">
                 <cstring>m_nodes</cstring>
             </property>
@@ -317,15 +317,15 @@
                         <number>27</number>
                     </property>
                 </widget>
-                <widget class="QLayoutWidget" row="0" column="0">
+                <widget class="TQLayoutWidget" row="0" column="0">
                     <property name="name">
-                        <cstring>layout9</cstring>
+                        <cstring>tqlayout9</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel1_2</cstring>
                             </property>
@@ -338,7 +338,7 @@
                                 <cstring>m_node</cstring>
                             </property>
                         </widget>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel1_2_2</cstring>
                             </property>
@@ -372,7 +372,7 @@
                     <property name="sizeType">
                         <enum>Maximum</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>40</width>
                             <height>20</height>
@@ -422,21 +422,21 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>20</width>
                             <height>40</height>
                         </size>
                     </property>
                 </spacer>
-                <widget class="QLabel" row="4" column="0" rowspan="1" colspan="3">
+                <widget class="TQLabel" row="4" column="0" rowspan="1" colspan="3">
                     <property name="name">
                         <cstring>textLabel1_3</cstring>
                     </property>
                     <property name="text">
                         <string>NOTE: Some known good DHT nodes are already inserted. You should probably insert your own IP address and port too if you plan to seed this torrent.</string>
                     </property>
-                    <property name="alignment">
+                    <property name="tqalignment">
                         <set>WordBreak|AlignVCenter</set>
                     </property>
                 </widget>
@@ -489,9 +489,9 @@
     </connection>
     <connection>
         <sender>m_nodeList</sender>
-        <signal>selectionChanged(QListViewItem*)</signal>
+        <signal>selectionChanged(TQListViewItem*)</signal>
         <receiver>TorrentCreatorDlgBase</receiver>
-        <slot>m_nodeList_selectionChanged(QListViewItem*)</slot>
+        <slot>m_nodeList_selectionChanged(TQListViewItem*)</slot>
     </connection>
 </connections>
 <tabstops>
@@ -508,13 +508,13 @@
     <tabstop>m_create_btn</tabstop>
     <tabstop>m_cancel_btn</tabstop>
 </tabstops>
-<slots>
+<Q_SLOTS>
     <slot>btnRemoveNode_clicked()</slot>
     <slot>btnAddNode_clicked()</slot>
     <slot>m_node_textChanged(const QString&amp;)</slot>
-    <slot>m_nodeList_selectionChanged(QListViewItem*)</slot>
-</slots>
-<layoutdefaults spacing="6" margin="11"/>
+    <slot>m_nodeList_selectionChanged(TQListViewItem*)</slot>
+</Q_SLOTS>
+<tqlayoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kurlrequester.h</includehint>
     <includehint>klineedit.h</includehint>

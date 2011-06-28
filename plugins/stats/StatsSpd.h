@@ -21,10 +21,10 @@
 #ifndef STATSSPD_H_
 #define STATSSPD_H_
 
-#include <qwidget.h>
-#include <qlayout.h>
-#include <qtabwidget.h>
-#include <qgroupbox.h>
+#include <tqwidget.h>
+#include <tqlayout.h>
+#include <tqtabwidget.h>
+#include <tqgroupbox.h>
 
 #include "statspluginsettings.h"
 #include "statsspdwgt.h"
@@ -39,14 +39,15 @@ namespace kt {
 class StatsSpd : public StatsSpdWgt
 {	
 	Q_OBJECT
+  TQ_OBJECT
 	
 	private:
 		///Layout of upload speed
-		QVBoxLayout * pmUSpdLay;
+		TQVBoxLayout * pmUSpdLay;
 		///Layout of down speed
-		QVBoxLayout * pmDSpdLay;
+		TQVBoxLayout * pmDSpdLay;
 		///Layout of peers speed
-		QVBoxLayout * pmPeersSpdLay;
+		TQVBoxLayout * pmPeersSpdLay;
 		
 		///Chart widget of download speed
 		ChartDrawer * pmDownCht;
@@ -60,7 +61,7 @@ class StatsSpd : public StatsSpdWgt
 		\brief Constructor
 		\param p Parent
 		*/
-		StatsSpd(QWidget *p = 0);
+		StatsSpd(TQWidget *p = 0);
 		///Destructor
 		virtual ~StatsSpd();
 		

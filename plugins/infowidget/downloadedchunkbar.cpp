@@ -24,8 +24,8 @@
 namespace kt
 {
 		
-	DownloadedChunkBar::DownloadedChunkBar(QWidget* parent, const char* name)
-		: ChunkBar(parent,name)
+	DownloadedChunkBar::DownloadedChunkBar(TQWidget* tqparent, const char* name)
+		: ChunkBar(tqparent,name)
 	{
 		show_excluded = true;
 	}

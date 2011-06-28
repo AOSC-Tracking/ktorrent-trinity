@@ -20,12 +20,12 @@
 #ifndef KTEXPANDABLEWIDGET_H
 #define KTEXPANDABLEWIDGET_H
 
-#include <qwidget.h>
-#include <qptrlist.h>
+#include <tqwidget.h>
+#include <tqptrlist.h>
 #include <interfaces/guiinterface.h>
 
-class QSplitter;
-class QHBoxLayout;
+class TQSplitter;
+class TQHBoxLayout;
 
 namespace kt
 {
@@ -40,39 +40,40 @@ namespace kt
 	 * one child widget. It allows to add more widgets separating the new widget
 	 * and everything which was previously in the container by a separator.
 	*/
-	class ExpandableWidget : public QWidget
+	class ExpandableWidget : public TQWidget
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		/**
 		 * Constructor, the first child must be provided.
 		 * @param child The first child
-		 * @param parent The parent
+		 * @param tqparent The tqparent
 		 * @param name The name
 		 */
-		ExpandableWidget(QWidget* child,QWidget *parent = 0, const char *name = 0);
+		ExpandableWidget(TQWidget* child,TQWidget *tqparent = 0, const char *name = 0);
 		virtual ~ExpandableWidget();
 
 
 
 		/**
-		 * Expand the widget. This will ensure the proper parent child relations.
+		 * Expand the widget. This will ensure the proper tqparent child relations.
 		 * @param w The widget
 		 * @param pos It's position relative to the current widget
 		 */
-		void expand(QWidget* w,Position pos);
+		void expand(TQWidget* w,Position pos);
 
 		/**
-		 * Remove a widget. This will ensure the proper parent child relations.
-		 * The widget w will become parentless. Note the first child will never be removed.
+		 * Remove a widget. This will ensure the proper tqparent child relations.
+		 * The widget w will become tqparentless. Note the first child will never be removed.
 		 * @param w The widget
 		 */
-		void remove(QWidget* w);
+		void remove(TQWidget* w);
 	private:
 		struct StackElement
 		{
-			QWidget* w;
-			QSplitter* s;
+			TQWidget* w;
+			TQSplitter* s;
 			Position pos;
 			StackElement* next;
 
@@ -81,7 +82,7 @@ namespace kt
 		};
 
 		StackElement* begin;
-		QHBoxLayout* top_layout;
+		TQHBoxLayout* top_layout;
 	};
 
 }

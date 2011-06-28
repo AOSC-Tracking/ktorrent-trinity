@@ -40,8 +40,8 @@ K_EXPORT_COMPONENT_FACTORY(ktwebinterfaceplugin,KGenericFactory<kt::WebInterface
 using namespace bt;
 namespace kt
 {
-	WebInterfacePlugin::WebInterfacePlugin(QObject* parent, const char* name, const QStringList& args)
-	: Plugin(parent, name, args,NAME,i18n("Web Interface"),AUTHOR,EMAIL,i18n("Allow to control ktorrent through browser"),"toggle_log")
+	WebInterfacePlugin::WebInterfacePlugin(TQObject* tqparent, const char* name, const TQStringList& args)
+	: Plugin(tqparent, name, args,NAME,i18n("Web Interface"),AUTHOR,EMAIL,i18n("Allow to control ktorrent through browser"),"toggle_log")
 	{
 		http_server = 0;
 		pref=0;
@@ -119,7 +119,7 @@ namespace kt
 		}
 	}
 
-	bool WebInterfacePlugin::versionCheck(const QString & version) const
+	bool WebInterfacePlugin::versionCheck(const TQString & version) const
 	{
 		return version == KT_VERSION_MACRO;
 	}

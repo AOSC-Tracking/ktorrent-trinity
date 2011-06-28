@@ -20,9 +20,9 @@
 #ifndef BTSTATSFILE_H
 #define BTSTATSFILE_H
 
-#include <qstring.h>
-#include <qfile.h>
-#include <qmap.h>
+#include <tqstring.h>
+#include <tqfile.h>
+#include <tqmap.h>
 
 #include <util/constants.h>
 
@@ -40,32 +40,32 @@ namespace bt
 			 * @brief A constructor.
 			 * Constructs StatsFile object and calls readSync().
 			 */
-			StatsFile(QString filename);
+			StatsFile(TQString filename);
 			~StatsFile();
 			
-			///Closes QFile
+			///Closes TQFile
 			void close();
 			
 			/**
 			 * @brief Main read function.
-			 * @return QString value that correspodents to key.
-			 * @param key - QString stats key.
+			 * @return TQString value that correspodents to key.
+			 * @param key - TQString stats key.
 			 */
-			QString readString(QString key);
+			TQString readString(TQString key);
 			
-			Uint64 readUint64(QString key);
-			bool readBoolean(QString key);
-			int readInt(QString key);
-			unsigned long readULong(QString key);
-			float readFloat(QString key);
+			Uint64 readUint64(TQString key);
+			bool readBoolean(TQString key);
+			int readInt(TQString key);
+			unsigned long readULong(TQString key);
+			float readFloat(TQString key);
 		
 			/**
 			 * @brief Writes key and value.
 			 * It only inserts pair of key/value to the m_values. To make changes to file call writeSync().
-			 * @param key - QString key
-			 * @param value - QString value.
+			 * @param key - TQString key
+			 * @param value - TQString value.
 			 */
-			void write(QString key, QString value);
+			void write(TQString key, TQString value);
 			
 			///Reads data from stats file to m_values.
 			void readSync();
@@ -78,13 +78,13 @@ namespace bt
 			 * @param key The key
 			 * @return true if key is in the stats file
 			 */
-			bool hasKey(const QString & key) const {return m_values.contains(key);}
+			bool hasKey(const TQString & key) const {return m_values.tqcontains(key);}
 			
 		private:
-			QString m_filename;
-			QFile m_file;
+			TQString m_filename;
+			TQFile m_file;
 			
-			QMap<QString, QString> m_values;
+			TQMap<TQString, TQString> m_values;
 	};
 }
 

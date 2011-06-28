@@ -119,7 +119,7 @@ namespace dht
 	
 	void KBucket::insert(const KBucketEntry & entry)
 	{
-		QValueList<KBucketEntry>::iterator i = entries.find(entry);
+		TQValueList<KBucketEntry>::iterator i = entries.tqfind(entry);
 	
 		// If in the list, move it to the end
 		if (i != entries.end())
@@ -149,7 +149,7 @@ namespace dht
 	{
 		last_modified = bt::GetCurrentTime();
 		
-		if (!pending_entries_busy_pinging.contains(c))
+		if (!pending_entries_busy_pinging.tqcontains(c))
 			return;
 		
 		KBucketEntry entry = pending_entries_busy_pinging[c];
@@ -166,13 +166,13 @@ namespace dht
 	
 	void KBucket::onTimeout(RPCCall* c)
 	{
-		if (!pending_entries_busy_pinging.contains(c))
+		if (!pending_entries_busy_pinging.tqcontains(c))
 			return;
 		
 		KBucketEntry entry = pending_entries_busy_pinging[c];
 		
 		// replace the entry which timed out
-		QValueList<KBucketEntry>::iterator i;
+		TQValueList<KBucketEntry>::iterator i;
 		for (i = entries.begin();i != entries.end();i++)
 		{
 			KBucketEntry & e = *i;
@@ -203,7 +203,7 @@ namespace dht
 			return;
 		}
 		
-		QValueList<KBucketEntry>::iterator i;
+		TQValueList<KBucketEntry>::iterator i;
 		// we haven't found any bad ones so try the questionable ones
 		for (i = entries.begin();i != entries.end();i++)
 		{
@@ -228,7 +228,7 @@ namespace dht
 	
 	bool KBucket::replaceBadEntry(const KBucketEntry & entry)
 	{
-		QValueList<KBucketEntry>::iterator i;
+		TQValueList<KBucketEntry>::iterator i;
 		for (i = entries.begin();i != entries.end();i++)
 		{
 			KBucketEntry & e = *i;
@@ -244,14 +244,14 @@ namespace dht
 		return false;
 	}
 
-	bool KBucket::contains(const KBucketEntry & entry) const
+	bool KBucket::tqcontains(const KBucketEntry & entry) const
 	{
-		return entries.contains(entry);
+		return entries.tqcontains(entry);
 	}
 	
 	void KBucket::findKClosestNodes(KClosestNodesSearch & kns)
 	{
-		QValueList<KBucketEntry>::iterator i = entries.begin();
+		TQValueList<KBucketEntry>::iterator i = entries.begin();
 		while (i != entries.end())
 		{
 			kns.tryInsert(*i);
@@ -261,7 +261,7 @@ namespace dht
 	
 	bool KBucket::onTimeout(const KInetSocketAddress & addr)
 	{
-		QValueList<KBucketEntry>::iterator i;
+		TQValueList<KBucketEntry>::iterator i;
 		
 		for (i = entries.begin();i != entries.end();i++)
 		{
@@ -302,7 +302,7 @@ namespace dht
 		hdr.num_entries = entries.count();
 		
 		fptr.write(&hdr,sizeof(BucketHeader));
-		QValueList<KBucketEntry>::iterator i;
+		TQValueList<KBucketEntry>::iterator i;
 		for (i = entries.begin();i != entries.end();i++)
 		{
 			KBucketEntry & e = *i;
@@ -345,8 +345,8 @@ namespace dht
 		refresh_task = t;
 		if (refresh_task)
 		{
-			connect(refresh_task,SIGNAL(finished( Task* )),
-					this,SLOT(onFinished( Task* )));
+			connect(refresh_task,TQT_SIGNAL(finished( Task* )),
+					this,TQT_SLOT(onFinished( Task* )));
 		}
 	}
 	

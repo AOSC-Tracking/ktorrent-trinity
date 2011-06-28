@@ -20,10 +20,10 @@
 #ifndef KTBWSWIDGET_H
 #define KTBWSWIDGET_H
 
-#include <qtable.h>
-#include <qpixmap.h>
-#include <qpoint.h>
-#include <qcolor.h>
+#include <tqtable.h>
+#include <tqpixmap.h>
+#include <tqpoint.h>
+#include <tqcolor.h>
 
 #include "bwscheduler.h"
 
@@ -39,17 +39,18 @@ namespace kt
 	/**
 	 * @brief Bandwidth scheduler widget.
 	 * @author Ivan Vasić <ivasic@gmail.com>
-	 * This class is a QTable with customized cells. It's used for bandwidth scheduling by painting each cell with mouse moves or keyboard.
+	 * This class is a TQTable with customized cells. It's used for bandwidth scheduling by painting each cell with mouse moves or keyboard.
 	 */
-	class BWSWidget : public QTable
+	class BWSWidget : public TQTable
 	{
 			Q_OBJECT
+  TQ_OBJECT
 		public:
-			BWSWidget(QWidget* parent = 0, const char* name = 0, bool useColors = true);
+			BWSWidget(TQWidget* tqparent = 0, const char* name = 0, bool useColors = true);
 			~BWSWidget();
 
 			///Repaints the whole widget
-			void repaintWidget();
+			void tqrepaintWidget();
 
 			///Clears selection (removes focus)
 			void clearSelect();
@@ -77,19 +78,19 @@ namespace kt
 
 		private slots:
 			void cellSelectionChanged(int row, int col);
-			void cellMouseDown(int row, int col, int button, const QPoint& mousePos);
+			void cellMouseDown(int row, int col, int button, const TQPoint& mousePos);
 
 		private:
-			void paintFocus(QPainter* p, const QRect& cr);
-			void paintCell(QPainter* p, int row, int col, const QRect& cr, bool selected);
-			void drawCell(QPainter* p, int category, bool focus = false);
-			void focusOutEvent(QFocusEvent*);
+			void paintFocus(TQPainter* p, const TQRect& cr);
+			void paintCell(TQPainter* p, int row, int col, const TQRect& cr, bool selected);
+			void drawCell(TQPainter* p, int category, bool focus = false);
+			void focusOutEvent(TQFocusEvent*);
 
-			QPixmap* m_pix[5];
-			QPixmap* m_pixf[5];
+			TQPixmap* m_pix[5];
+			TQPixmap* m_pixf[5];
 
-			QColor* m_color[5];
-			QColor* m_colorf[5];
+			TQColor* m_color[5];
+			TQColor* m_colorf[5];
 
 			int m_leftCategory;
 			int m_rightCategory;

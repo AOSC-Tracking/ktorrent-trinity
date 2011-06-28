@@ -34,7 +34,7 @@ namespace ktdebug
 		SingleCacheChecker(bt::Torrent& tor);
 		virtual ~SingleCacheChecker();
 
-		virtual void check(const QString& cache, const QString& index);
+		virtual void check(const TQString& cache, const TQString& index);
 
 	};
 

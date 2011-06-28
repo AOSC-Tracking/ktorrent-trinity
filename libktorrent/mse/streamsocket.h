@@ -20,11 +20,11 @@
 #ifndef MSESTREAMSOCKET_H
 #define MSESTREAMSOCKET_H
 
-#include <qobject.h>
+#include <tqobject.h>
 #include <util/constants.h>
 #include <net/bufferedsocket.h>
 
-class QString;
+class TQString;
 
 using bt::Uint8;
 using bt::Uint16;
@@ -52,9 +52,10 @@ namespace mse
 	 * not be used anymore, a SocketReader and SocketWriter should be provided,
 	 * so that reading and writing is controlled from the monitor thread.
 	*/
-	class StreamSocket : public QObject,public net::SocketReader,public net::SocketWriter
+	class StreamSocket : public TQObject,public net::SocketReader,public net::SocketWriter
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		StreamSocket();
 		StreamSocket(int fd);
@@ -99,10 +100,10 @@ namespace mse
 		void close();
 		
 		/// Connect the socket to a remote host
-		bool connectTo(const QString & ip,Uint16 port);
+		bool connectTo(const TQString & ip,Uint16 port);
 		
 		/// Get the IP address of the remote peer
-		QString getRemoteIPAddress() const;
+		TQString getRemoteIPAddress() const;
 		
 		/// Get the port of the remote peer
 		bt::Uint16 getRemotePort() const;

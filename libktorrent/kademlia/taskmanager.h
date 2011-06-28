@@ -20,7 +20,7 @@
 #ifndef DHTTASKMANAGER_H
 #define DHTTASKMANAGER_H
 
-#include <qptrlist.h>
+#include <tqptrlist.h>
 #include <util/ptrmap.h>
 #include <util/constants.h>
 #include "task.h"
@@ -60,7 +60,7 @@ namespace dht
 
 	private:
 		bt::PtrMap<Uint32,Task> tasks;
-		QPtrList<Task> queued;
+		TQPtrList<Task> queued;
 		bt::Uint32 next_id;
 	};
 

@@ -18,8 +18,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 #include <klocale.h>
-#include <qfileinfo.h>
-#include <qstringlist.h> 
+#include <tqfileinfo.h>
+#include <tqstringlist.h> 
 #include <util/fileops.h>
 #include <util/error.h>
 #include <util/functions.h>
@@ -35,24 +35,24 @@
 namespace bt
 {
 
-	SingleFileCache::SingleFileCache(Torrent& tor,const QString & tmpdir,const QString & datadir)
+	SingleFileCache::SingleFileCache(Torrent& tor,const TQString & tmpdir,const TQString & datadir)
 	: Cache(tor,tmpdir,datadir),fd(0)
 	{
 		cache_file = tmpdir + "cache";
-		output_file = QFileInfo(cache_file).readLink();
+		output_file = TQFileInfo(cache_file).readLink();
 	}
 
 
 	SingleFileCache::~SingleFileCache()
 	{}
 
-	void SingleFileCache::changeTmpDir(const QString & ndir)
+	void SingleFileCache::changeTmpDir(const TQString & ndir)
 	{
 		Cache::changeTmpDir(ndir);
 		cache_file = tmpdir + "cache";
 	}
 	
-	KIO::Job* SingleFileCache::moveDataFiles(const QString & ndir)
+	KIO::Job* SingleFileCache::moveDataFiles(const TQString & ndir)
 	{
 		return KIO::move(KURL::fromPathOrURL(output_file),KURL::fromPathOrURL(ndir));
 	}
@@ -61,11 +61,11 @@ namespace bt
 	{
 	}
 	
-	void bt::SingleFileCache::changeOutputPath(const QString & outputpath)
+	void bt::SingleFileCache::changeOutputPath(const TQString & outputpath)
 	{
 		bt::Delete(cache_file);
 		output_file = outputpath;
-		datadir = output_file.left(output_file.findRev(bt::DirSeparator()));
+		datadir = output_file.left(output_file.tqfindRev(bt::DirSeparator()));
 		
 		bt::SymLink(output_file, cache_file);
 	}
@@ -76,7 +76,7 @@ namespace bt
 		{
 			// mmap continuously fails, so stop using it
 			c->allocate();
-			c->setStatus(Chunk::BUFFERED);
+			c->settqStatus(Chunk::BUFFERED);
 		}
 		else
 		{
@@ -88,7 +88,7 @@ namespace bt
 				// buffer it if mmapping fails
 				Out(SYS_GEN|LOG_IMPORTANT) << "Warning : mmap failure, falling back to buffered mode" << endl;
 				c->allocate();
-				c->setStatus(Chunk::BUFFERED);
+				c->settqStatus(Chunk::BUFFERED);
 			}
 			else
 			{
@@ -105,7 +105,7 @@ namespace bt
 		if (mmap_failures >= 3 || !(buf = (Uint8*)fd->map(c,off,c->getSize(),CacheFile::READ)))
 		{
 			c->allocate();
-			c->setStatus(Chunk::BUFFERED);
+			c->settqStatus(Chunk::BUFFERED);
 			fd->read(c->getData(),c->getSize(),off);
 			if (mmap_failures < 3)
 				mmap_failures++;
@@ -119,27 +119,27 @@ namespace bt
 	void SingleFileCache::save(Chunk* c)
 	{
 		// unmap the chunk if it is mapped
-		if (c->getStatus() == Chunk::MMAPPED)
+		if (c->gettqStatus() == Chunk::MMAPPED)
 		{
 			fd->unmap(c->getData(),c->getSize());
 			c->clear();
-			c->setStatus(Chunk::ON_DISK);
+			c->settqStatus(Chunk::ON_DISK);
 		}
-		else if (c->getStatus() == Chunk::BUFFERED)
+		else if (c->gettqStatus() == Chunk::BUFFERED)
 		{
 			Uint64 off = c->getIndex() * tor.getChunkSize();
 			fd->write(c->getData(),c->getSize(),off);
 			c->clear();
-			c->setStatus(Chunk::ON_DISK);
+			c->settqStatus(Chunk::ON_DISK);
 		}
 	}
 
 	void SingleFileCache::create()
 	{
-		QFileInfo fi(cache_file);
+		TQFileInfo fi(cache_file);
 		if (!fi.exists())
 		{
-			QString out_file = fi.readLink();
+			TQString out_file = fi.readLink();
 					
 			if (out_file.isNull())
 					out_file = datadir + tor.getNameSuggestion();
@@ -157,7 +157,7 @@ namespace bt
 		}
 		else
 		{
-			QString out_file = fi.readLink();
+			TQString out_file = fi.readLink();
 			if (!bt::Exists(out_file))
 				bt::Touch(out_file);
 			else
@@ -205,12 +205,12 @@ namespace bt
 			prealloc->setNotFinished();
 	}
 	
-	bool SingleFileCache::hasMissingFiles(QStringList & sl)
+	bool SingleFileCache::hasMissingFiles(TQStringList & sl)
 	{
-		QFileInfo fi(cache_file);
+		TQFileInfo fi(cache_file);
 		if (!fi.exists())
 		{
-			QString out_file = fi.readLink();
+			TQString out_file = fi.readLink();
 			sl.append(fi.readLink());
 			return true;
 		}

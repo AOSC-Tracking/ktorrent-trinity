@@ -11,39 +11,39 @@
 #include "tools_p.h"
 
 #include <krfcdate.h>
-#include <qdom.h>
+#include <tqdom.h>
 
-time_t RSS::parseISO8601Date(const QString &s)
+time_t RSS::parseISO8601Date(const TQString &s)
 {
     // do some sanity check: 26-12-2004T00:00+00:00 is parsed to epoch+1 in the KRFCDate, which is wrong. So let's check if the date begins with YYYY -fo
     if (s.stripWhiteSpace().left(4).toInt() < 1000)
         return 0; // error
 
     // FIXME: imho this is done in KRFCDate::parseDateISO8601() automatically, so we could omit it? -fo
-	if (s.find('T') != -1)
+	if (s.tqfind('T') != -1)
 		return KRFCDate::parseDateISO8601(s);
     else
         return KRFCDate::parseDateISO8601(s + "T12:00:00");
 }
 
 
-QString RSS::extractNode(const QDomNode &parent, const QString &elemName, bool isInlined)
+TQString RSS::extractNode(const TQDomNode &tqparent, const TQString &elemName, bool isInlined)
 {
-	QDomNode node = parent.namedItem(elemName);
+	TQDomNode node = tqparent.namedItem(elemName);
 	if (node.isNull())
-		return QString::null;
+		return TQString();
 
-	QString result = node.toElement().text();
+	TQString result = node.toElement().text();
 
-	bool hasPre = result.contains("<pre>",false);
-	bool hasHtml = hasPre || result.contains("<");	// FIXME: test if we have html, should be more clever -> regexp
+	bool hasPre = result.tqcontains("<pre>",false);
+	bool hasHtml = hasPre || result.tqcontains("<");	// FIXME: test if we have html, should be more clever -> regexp
 	if(!isInlined && !hasHtml)						// perform nl2br if not a inline elt and it has no html elts
-		result = result = result.replace(QChar('\n'), "<br />");
+		result = result = result.tqreplace(TQChar('\n'), "<br />");
 	if(!hasPre)										// strip white spaces if no <pre>
 		result = result.simplifyWhiteSpace();
 
 	if (result.isEmpty())
-		return QString::null;
+		return TQString();
 
 	return result;
 }

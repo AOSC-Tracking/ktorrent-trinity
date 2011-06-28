@@ -109,7 +109,7 @@ namespace bt
 
 	void OldChokeAlgorithm::updateDownloaders()
 	{
-		QPtrList<Peer>::iterator itr = interested.begin();
+		TQPtrList<Peer>::iterator itr = interested.begin();
 		int num = 0;
 		// send all downloaders an unchoke
 		for (;itr != interested.end();itr++)
@@ -152,7 +152,7 @@ namespace bt
 		if (downloaders.count() == 0)
 			return;
 		
-		QPtrList<Peer>::iterator itr = not_interested.begin();
+		TQPtrList<Peer>::iterator itr = not_interested.begin();
 		// fd = fastest_downloader
 		Peer* fd = downloaders.first();
 		// send all downloaders an unchoke
@@ -188,8 +188,8 @@ namespace bt
 		}
 		
 		// Get current time
-		QTime now = QTime::currentTime();
-		QPtrList<Peer> peers;	// list to store peers to select from
+		TQTime now = TQTime::currentTime();
+		TQPtrList<Peer> peers;	// list to store peers to select from
 
 		// recently connected peers == peers connected in the last 5 minutes
 		const int RECENTLY_CONNECT_THRESH = 5*60;

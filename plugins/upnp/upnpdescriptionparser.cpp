@@ -17,8 +17,8 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qxml.h>
-#include <qvaluestack.h>
+#include <tqxml.h>
+#include <tqvaluestack.h>
 #include <util/fileops.h>
 #include <util/log.h>
 #include <torrent/globals.h>
@@ -30,17 +30,17 @@ using namespace bt;
 namespace kt
 {
 	
-	class XMLContentHandler : public QXmlDefaultHandler
+	class XMLContentHandler : public TQXmlDefaultHandler
 	{
-		enum Status
+		enum tqStatus
 		{
 		    TOPLEVEL,ROOT,DEVICE,SERVICE,FIELD,OTHER
 		};
 
-		QString tmp;
+		TQString tmp;
 		UPnPRouter* router;
 		UPnPService curr_service;
-		QValueStack<Status> status_stack;
+		TQValueStack<tqStatus> status_stack;
 	public:
 		XMLContentHandler(UPnPRouter* router);
 		virtual ~XMLContentHandler();
@@ -48,13 +48,13 @@ namespace kt
 
 		bool startDocument();
 		bool endDocument();
-		bool startElement(const QString &, const QString & localName, const QString &,
-		                  const QXmlAttributes & atts);
-		bool endElement(const QString & , const QString & localName, const QString &  );
-		bool characters(const QString & ch);
+		bool startElement(const TQString &, const TQString & localName, const TQString &,
+		                  const TQXmlAttributes & atts);
+		bool endElement(const TQString & , const TQString & localName, const TQString &  );
+		bool characters(const TQString & ch);
 		
-		bool interestingDeviceField(const QString & name);
-		bool interestingServiceField(const QString & name);
+		bool interestingDeviceField(const TQString & name);
+		bool interestingServiceField(const TQString & name);
 	};
 
 
@@ -65,17 +65,17 @@ namespace kt
 	UPnPDescriptionParser::~UPnPDescriptionParser()
 	{}
 
-	bool UPnPDescriptionParser::parse(const QString & file,UPnPRouter* router)
+	bool UPnPDescriptionParser::parse(const TQString & file,UPnPRouter* router)
 	{
 		bool ret = true;
 		{
-			QFile fptr(file);
+			TQFile fptr(file);
 			if (!fptr.open(IO_ReadOnly))
 				return false;
 
-			QXmlInputSource input(&fptr);
+			TQXmlInputSource input(TQT_TQIODEVICE(&fptr));
 			XMLContentHandler chandler(router);
-			QXmlSimpleReader reader;
+			TQXmlSimpleReader reader;
 
 			reader.setContentHandler(&chandler);
 			ret = reader.parse(&input,false);
@@ -111,21 +111,21 @@ namespace kt
 		return true;
 	}
 	
-	bool XMLContentHandler::interestingDeviceField(const QString & name)
+	bool XMLContentHandler::interestingDeviceField(const TQString & name)
 	{
 		return name == "friendlyName" || name == "manufacturer" || name == "modelDescription" ||
 				name == "modelName" || name == "modelNumber";
 	}
 
 	
-	bool XMLContentHandler::interestingServiceField(const QString & name)
+	bool XMLContentHandler::interestingServiceField(const TQString & name)
 	{
 		return name == "serviceType" || name == "serviceId" || name == "SCPDURL" ||
 				name == "controlURL" || name == "eventSubURL";
 	}
 
-	bool XMLContentHandler::startElement(const QString &, const QString & localName, const QString &,
-	                                     const QXmlAttributes & )
+	bool XMLContentHandler::startElement(const TQString &, const TQString & localName, const TQString &,
+	                                     const TQXmlAttributes & )
 	{
 		tmp = "";
 		switch (status_stack.top())
@@ -172,7 +172,7 @@ namespace kt
 		return true;
 	}
 
-	bool XMLContentHandler::endElement(const QString & , const QString & localName, const QString &  )
+	bool XMLContentHandler::endElement(const TQString & , const TQString & localName, const TQString &  )
 	{
 		switch (status_stack.top())
 		{
@@ -208,7 +208,7 @@ namespace kt
 	}
 
 
-	bool XMLContentHandler::characters(const QString & ch)
+	bool XMLContentHandler::characters(const TQString & ch)
 	{
 		if (ch.length() > 0)
 		{

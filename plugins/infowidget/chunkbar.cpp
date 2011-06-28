@@ -18,16 +18,16 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
-#include <qpainter.h>
-#include <qpen.h>
-#include <qbrush.h>
-#include <qvaluelist.h>
-#include <qpixmap.h>
+#include <tqpainter.h>
+#include <tqpen.h>
+#include <tqbrush.h>
+#include <tqvaluelist.h>
+#include <tqpixmap.h>
 #include <math.h>
-#include <qtooltip.h>
+#include <tqtooltip.h>
 #include <klocale.h>
-#include <qmime.h>
-#include <qimage.h>
+#include <tqmime.h>
+#include <tqimage.h>
 #include <util/log.h>
 #include <interfaces/torrentinterface.h>
 #include <util/bitset.h>
@@ -47,7 +47,7 @@ namespace kt
 	};
 	
 	
-	static void FillAndFrameBlack(QImage* image, uint color, int size)
+	static void FillAndFrameBlack(TQImage* image, uint color, int size)
 	{
 		image->fill(color);
 		for (int i = 0; i < size; i++)
@@ -68,23 +68,23 @@ namespace kt
 			return;
 		images_initialized = true;
 		
-		QMimeSourceFactory* factory = QMimeSourceFactory::defaultFactory();
+		TQMimeSourceFactory* factory = TQMimeSourceFactory::defaultFactory();
 		
-		QImage excluded(16, 16, 32);
-		FillAndFrameBlack(&excluded, bar->colorGroup().color(QColorGroup::Mid).pixel(), 16);
+		TQImage excluded(16, 16, 32);
+		FillAndFrameBlack(&excluded, TQColor(bar->tqcolorGroup().color(TQColorGroup::Mid)).pixel(), 16);
 		factory->setImage("excluded_color", excluded);
 		
-		QImage available(16, 16, 32);
-		FillAndFrameBlack(&available, bar->colorGroup().highlight().pixel(), 16);
+		TQImage available(16, 16, 32);
+		FillAndFrameBlack(&available, bar->tqcolorGroup().highlight().pixel(), 16);
 		factory->setImage("available_color", available);
 		
-		QImage unavailable(16, 16, 32);
-		FillAndFrameBlack(&unavailable, bar->colorGroup().base().pixel(), 16);
+		TQImage unavailable(16, 16, 32);
+		FillAndFrameBlack(&unavailable, bar->tqcolorGroup().base().pixel(), 16);
 		factory->setImage("unavailable_color", unavailable);
 	}
 	
-	ChunkBar::ChunkBar(QWidget *parent, const char *name)
-		: QFrame(parent, name),curr_tc(0)
+	ChunkBar::ChunkBar(TQWidget *tqparent, const char *name)
+		: TQFrame(tqparent, name),curr_tc(0)
 	{
 		setFrameShape(StyledPanel);
 		setFrameShadow(Sunken);
@@ -95,7 +95,7 @@ namespace kt
 		
 		InitializeToolTipImages(this);
 		
-		QToolTip::add(this, i18n("<img src=\"available_color\">&nbsp; - Downloaded Chunks<br><img src=\"unavailable_color\">&nbsp; - Chunks to Download<br><img src=\"excluded_color\">&nbsp; - Excluded Chunks"));
+		TQToolTip::add(this, i18n("<img src=\"available_color\">&nbsp; - Downloaded Chunks<br><img src=\"unavailable_color\">&nbsp; - Chunks to Download<br><img src=\"excluded_color\">&nbsp; - Excluded Chunks"));
 		
 	}
 	
@@ -106,7 +106,7 @@ namespace kt
 	void ChunkBar::updateBar()
 	{
 		const BitSet & bs = getBitSet();
-		QSize s = contentsRect().size();
+		TQSize s = contentsRect().size();
 		bool changed = !(curr == bs);
 		if (show_excluded && curr_tc)
 		{
@@ -121,22 +121,22 @@ namespace kt
 		//	PROFILE("ChunkBar::updateBar");
 		//	Out() << "Pixmap : " << s.width() << " " << s.height() << endl;
 			pixmap.resize(s);
-			pixmap.fill(colorGroup().color(QColorGroup::Base));
-			QPainter painter(&pixmap);
+			pixmap.fill(tqcolorGroup().color(TQColorGroup::Base));
+			TQPainter painter(&pixmap);
 			drawBarContents(&painter);
 			update();
 		}
 	}
 	
-	void ChunkBar::drawContents(QPainter *p)
+	void ChunkBar::drawContents(TQPainter *p)
 	{
 		// first draw background
 		if (isEnabled())
-			p->setBrush(colorGroup().base());
+			p->setBrush(tqcolorGroup().base());
 		else
-			p->setBrush(colorGroup().background());
+			p->setBrush(tqcolorGroup().background());
 	
-		p->setPen(Qt::NoPen);
+		p->setPen(TQt::NoPen);
 		p->drawRect(contentsRect());
 		if (isEnabled())
 			p->drawPixmap(contentsRect(),pixmap);
@@ -145,16 +145,16 @@ namespace kt
 	void ChunkBar::setTC(kt::TorrentInterface* tc)
 	{
 		curr_tc = tc;
-		QSize s = contentsRect().size();
+		TQSize s = contentsRect().size();
 		//Out() << "Pixmap : " << s.width() << " " << s.height() << endl;
 		pixmap.resize(s);
-		pixmap.fill(colorGroup().color(QColorGroup::Base));
-		QPainter painter(&pixmap);
+		pixmap.fill(tqcolorGroup().color(TQColorGroup::Base));
+		TQPainter painter(&pixmap);
 		drawBarContents(&painter);
 		update();
 	}
 	
-	void ChunkBar::drawBarContents(QPainter *p)
+	void ChunkBar::drawBarContents(TQPainter *p)
 	{
 		p->saveWorldMatrix();
 		if (curr_tc)
@@ -164,15 +164,15 @@ namespace kt
 			const BitSet & bs = getBitSet();
 			curr = bs;
 			if (bs.allOn())
-				drawAllOn(p,colorGroup().highlight());
+				drawAllOn(p,tqcolorGroup().highlight());
 			else if (s.total_chunks > w)
-				drawMoreChunksThenPixels(p,bs,colorGroup().highlight());
+				drawMoreChunksThenPixels(p,bs,tqcolorGroup().highlight());
 			else
-				drawEqual(p,bs,colorGroup().highlight());
+				drawEqual(p,bs,tqcolorGroup().highlight());
 	
 			if (show_excluded && s.num_chunks_excluded > 0)
 			{
-				QColor c = colorGroup().color(QColorGroup::Mid);
+				TQColor c = tqcolorGroup().color(TQColorGroup::Mid);
 				if (curr_ebs.allOn())
 					drawAllOn(p,c);
 				else if (s.total_chunks > w)
@@ -184,10 +184,10 @@ namespace kt
 		p->restoreWorldMatrix();
 	}
 	
-	void ChunkBar::drawEqual(QPainter *p,const BitSet & bs,const QColor & color)
+	void ChunkBar::drawEqual(TQPainter *p,const BitSet & bs,const TQColor & color)
 	{
-		//p->setPen(QPen(colorGroup().highlight(),1,Qt::SolidLine));
-		QColor c = color;
+		//p->setPen(TQPen(tqcolorGroup().highlight(),1,TQt::SolidLine));
+		TQColor c = color;
 	
 		Uint32 w = contentsRect().width();
 		double scale = 1.0;
@@ -195,10 +195,10 @@ namespace kt
 		if (curr_tc->getStats().total_chunks != w)
 			scale = (double)w / total_chunks;
 		
-		p->setPen(QPen(c,1,Qt::SolidLine));
+		p->setPen(TQPen(c,1,TQt::SolidLine));
 		p->setBrush(c);
 		
-		QValueList<Range> rs;
+		TQValueList<Range> rs;
 		
 		for (Uint32 i = 0;i < bs.getNumBits();i++)
 		{
@@ -225,9 +225,9 @@ namespace kt
 			}
 		}
 	
-		QRect r = contentsRect();
+		TQRect r = contentsRect();
 	
-		for (QValueList<Range>::iterator i = rs.begin();i != rs.end();++i)
+		for (TQValueList<Range>::iterator i = rs.begin();i != rs.end();++i)
 		{
 			Range & ra = *i;
 			int rw = ra.last - ra.first + 1;
@@ -235,11 +235,11 @@ namespace kt
 		}
 	}
 	
-	void ChunkBar::drawMoreChunksThenPixels(QPainter *p,const BitSet & bs,const QColor & color)
+	void ChunkBar::drawMoreChunksThenPixels(TQPainter *p,const BitSet & bs,const TQColor & color)
 	{
 		Uint32 w = contentsRect().width(); 
 		double chunks_per_pixel = (double)bs.getNumBits() / w;
-		QValueList<Range> rs; 
+		TQValueList<Range> rs; 
 
 		for (Uint32 i = 0;i < w;i++) 
 		{ 
@@ -274,14 +274,14 @@ namespace kt
 			}
 		}
 	
-		QRect r = contentsRect();
+		TQRect r = contentsRect();
 	
-		for (QValueList<Range>::iterator i = rs.begin();i != rs.end();++i)
+		for (TQValueList<Range>::iterator i = rs.begin();i != rs.end();++i)
 		{
 			Range & ra = *i;
 			int rw = ra.last - ra.first + 1;
 			int fac = ra.fac;
-			QColor c = color;
+			TQColor c = color;
 			if (fac < 100)
 			{
 				// do some rounding off
@@ -293,18 +293,18 @@ namespace kt
 					fac = 65;
 				c = color.light(200-fac);
 			} 
-			p->setPen(QPen(c,1,Qt::SolidLine));
+			p->setPen(TQPen(c,1,TQt::SolidLine));
 			p->setBrush(c);
 			p->drawRect(ra.first,0,rw,r.height());
 		}
 		
 	}
 	
-	void ChunkBar::drawAllOn(QPainter *p,const QColor & color)
+	void ChunkBar::drawAllOn(TQPainter *p,const TQColor & color)
 	{
-		p->setPen(QPen(color,1,Qt::SolidLine));
+		p->setPen(TQPen(color,1,TQt::SolidLine));
 		p->setBrush(color);
-		QSize s = contentsRect().size();
+		TQSize s = contentsRect().size();
 		p->drawRect(0,0,s.width(),s.height());
 	}
 }

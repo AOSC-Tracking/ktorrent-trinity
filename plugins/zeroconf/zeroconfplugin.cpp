@@ -37,8 +37,8 @@ using namespace bt;
 namespace kt
 {
 
-	ZeroConfPlugin::ZeroConfPlugin(QObject* parent, const char* name, const QStringList& args)
-	: Plugin(parent, name,args,NAME,i18n("Zeroconf"),AUTHOR,QString::null,i18n("Finds peers running ktorrent on the local network to share torrents with"),"ktplugins")
+	ZeroConfPlugin::ZeroConfPlugin(TQObject* tqparent, const char* name, const TQStringList& args)
+	: Plugin(tqparent, name,args,NAME,i18n("Zeroconf"),AUTHOR,TQString(),i18n("Finds peers running ktorrent on the local network to share torrents with"),"ktplugins")
 	{
 		services.setAutoDelete(true);
 	}
@@ -50,14 +50,14 @@ namespace kt
 	void ZeroConfPlugin::load()
 	{
 		CoreInterface* core = getCore();
-		connect(core,SIGNAL(torrentAdded( kt::TorrentInterface* )),
-				this,SLOT(torrentAdded( kt::TorrentInterface* )));
-		connect(core,SIGNAL(torrentRemoved( kt::TorrentInterface* )),
-				this,SLOT(torrentRemoved( kt::TorrentInterface* )));
+		connect(core,TQT_SIGNAL(torrentAdded( kt::TorrentInterface* )),
+				this,TQT_SLOT(torrentAdded( kt::TorrentInterface* )));
+		connect(core,TQT_SIGNAL(torrentRemoved( kt::TorrentInterface* )),
+				this,TQT_SLOT(torrentRemoved( kt::TorrentInterface* )));
 		
 		// go over existing torrents and add them
 		bt::QueueManager* qman = core->getQueueManager();
-		for (QPtrList<kt::TorrentInterface>::iterator i = qman->begin();i != qman->end();i++)
+		for (TQPtrList<kt::TorrentInterface>::iterator i = qman->begin();i != qman->end();i++)
 		{
 			torrentAdded(*i);
 		}
@@ -66,10 +66,10 @@ namespace kt
 	void ZeroConfPlugin::unload()
 	{
 		CoreInterface* core = getCore();
-		disconnect(core,SIGNAL(torrentAdded( kt::TorrentInterface* )),
-				   this,SLOT(torrentAdded( kt::TorrentInterface* )));
-		disconnect(core,SIGNAL(torrentRemoved( kt::TorrentInterface* )),
-				   this,SLOT(torrentRemoved( kt::TorrentInterface*)));
+		disconnect(core,TQT_SIGNAL(torrentAdded( kt::TorrentInterface* )),
+				   this,TQT_SLOT(torrentAdded( kt::TorrentInterface* )));
+		disconnect(core,TQT_SIGNAL(torrentRemoved( kt::TorrentInterface* )),
+				   this,TQT_SLOT(torrentRemoved( kt::TorrentInterface*)));
 		
 		bt::PtrMap<kt::TorrentInterface*,AvahiService>::iterator i = services.begin();
 		while (i != services.end())
@@ -84,7 +84,7 @@ namespace kt
 	
 	void ZeroConfPlugin::torrentAdded(kt::TorrentInterface* tc)
 	{
-		if (services.contains(tc))
+		if (services.tqcontains(tc))
 			return;
 		
 		bt::Uint16 port = bt::Globals::instance().getServer().getPortInUse();
@@ -93,14 +93,14 @@ namespace kt
 		tc->addPeerSource(av);
 		Out(SYS_ZCO|LOG_NOTICE) << "ZeroConf service added for " 
 				<< tc->getStats().torrent_name << endl;
-		connect(av,SIGNAL(serviceDestroyed( AvahiService* )),
-				this,SLOT(avahiServiceDestroyed( AvahiService* )));
+		connect(av,TQT_SIGNAL(serviceDestroyed( AvahiService* )),
+				this,TQT_SLOT(avahiServiceDestroyed( AvahiService* )));
 	}
 
 		
 	void ZeroConfPlugin::torrentRemoved(kt::TorrentInterface* tc)
 	{
-		AvahiService* av = services.find(tc);
+		AvahiService* av = services.tqfind(tc);
 		if (!av)
 			return;
 		Out(SYS_ZCO|LOG_NOTICE) << "ZeroConf service removed for " 
@@ -127,7 +127,7 @@ namespace kt
 		services.setAutoDelete(true);
 	}
 
-	bool ZeroConfPlugin::versionCheck(const QString & version) const
+	bool ZeroConfPlugin::versionCheck(const TQString & version) const
 	{
 		return version == KT_VERSION_MACRO;
 	}

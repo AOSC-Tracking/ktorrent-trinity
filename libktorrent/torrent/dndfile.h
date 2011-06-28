@@ -20,7 +20,7 @@
 #ifndef BTDNDFILE_H
 #define BTDNDFILE_H
 
-#include <qstring.h>
+#include <tqstring.h>
 #include <util/constants.h>
 
 namespace bt
@@ -36,11 +36,11 @@ namespace bt
 	class DNDFile
 	{
 	public:
-		DNDFile(const QString & path);
+		DNDFile(const TQString & path);
 		virtual ~DNDFile();
 		
 		/// Change the path of the file
-		void changePath(const QString & npath);
+		void changePath(const TQString & npath);
 		
 		/**
 		 * CHeck integrity of the file, create it if it doesn't exist.
@@ -81,7 +81,7 @@ namespace bt
 		void create();
 
 	private:
-		QString path;
+		TQString path;
 	};
 
 }

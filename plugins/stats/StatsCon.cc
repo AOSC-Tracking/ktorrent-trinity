@@ -22,20 +22,20 @@
 
 namespace kt {
 
-StatsCon::StatsCon(QWidget * p) :  StatsConWgt(p), pmPeersConCht(new ChartDrawer(PeersConGbw, StatsPluginSettings::connectionsMeasurements())), 
+StatsCon::StatsCon(TQWidget * p) :  StatsConWgt(p), pmPeersConCht(new ChartDrawer(PeersConGbw, StatsPluginSettings::connectionsMeasurements())), 
 				pmDHTCht(new ChartDrawer(DHTGbw, StatsPluginSettings::dHTMeasurements()))
 {
 	PeersConGbw->setColumnLayout(0, Qt::Vertical );
-	PeersConGbw->layout()->setSpacing( 6 );
-	PeersConGbw->layout()->setMargin( 11 );
+	PeersConGbw->tqlayout()->setSpacing( 6 );
+	PeersConGbw->tqlayout()->setMargin( 11 );
 	
-	pmPeersConLay = new QVBoxLayout(PeersConGbw -> layout());
+	pmPeersConLay = new TQVBoxLayout(PeersConGbw -> tqlayout());
 	
 	DHTGbw->setColumnLayout(0, Qt::Vertical );
-	DHTGbw->layout()->setSpacing( 6 );
-	DHTGbw->layout()->setMargin( 11 );
+	DHTGbw->tqlayout()->setSpacing( 6 );
+	DHTGbw->tqlayout()->setMargin( 11 );
 	
-	pmDHTLay = new QVBoxLayout(DHTGbw -> layout());
+	pmDHTLay = new TQVBoxLayout(DHTGbw -> tqlayout());
 	
 	//-------------
 	
@@ -46,20 +46,20 @@ StatsCon::StatsCon(QWidget * p) :  StatsConWgt(p), pmPeersConCht(new ChartDrawer
 	
 	pmPeersConCht -> SetUnitName("n");
 	
-	pmPeersConCht -> AddValuesCnt(QPen("#f00"), i18n("Leechers connected"));
-	pmPeersConCht -> AddValuesCnt(QPen("#900"), i18n("Leechers in swarms"));
-	pmPeersConCht -> AddValuesCnt(QPen("#00f"), i18n("Seeders connected"));
-	pmPeersConCht -> AddValuesCnt(QPen("#009"), i18n("Seeders in swarms"));
-	pmPeersConCht -> AddValuesCnt(QPen("#0a0"), i18n("Average connected leechers per torrent"));
-	pmPeersConCht -> AddValuesCnt(QPen("#060"), i18n("Average connected seeders per torrent"));
- 	pmPeersConCht -> AddValuesCnt(QPen("#099"), i18n("Average connected leechers per running torrent"));
- 	pmPeersConCht -> AddValuesCnt(QPen("#055"), i18n("Average connected seeders per running torrent"));
+	pmPeersConCht -> AddValuesCnt(TQPen("#f00"), i18n("Leechers connected"));
+	pmPeersConCht -> AddValuesCnt(TQPen("#900"), i18n("Leechers in swarms"));
+	pmPeersConCht -> AddValuesCnt(TQPen("#00f"), i18n("Seeders connected"));
+	pmPeersConCht -> AddValuesCnt(TQPen("#009"), i18n("Seeders in swarms"));
+	pmPeersConCht -> AddValuesCnt(TQPen("#0a0"), i18n("Average connected leechers per torrent"));
+	pmPeersConCht -> AddValuesCnt(TQPen("#060"), i18n("Average connected seeders per torrent"));
+ 	pmPeersConCht -> AddValuesCnt(TQPen("#099"), i18n("Average connected leechers per running torrent"));
+ 	pmPeersConCht -> AddValuesCnt(TQPen("#055"), i18n("Average connected seeders per running torrent"));
 
 	
 	pmDHTCht -> SetUnitName("n");
 	
-	pmDHTCht -> AddValuesCnt(QPen("#f00"), i18n("Nodes"));
-	pmDHTCht -> AddValuesCnt(QPen("#00f"), i18n("Tasks"));
+	pmDHTCht -> AddValuesCnt(TQPen("#f00"), i18n("Nodes"));
+	pmDHTCht -> AddValuesCnt(TQPen("#00f"), i18n("Tasks"));
 }
 
 StatsCon::~StatsCon()

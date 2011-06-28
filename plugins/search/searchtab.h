@@ -33,9 +33,10 @@ namespace kt
 	/**
 		Holds all widgets of the toolbar of the search plugin.
 	*/
-	class SearchTab : public QObject
+	class SearchTab : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	
 	public:
 		SearchTab(KToolBar* toolbar);
@@ -53,12 +54,12 @@ namespace kt
 	protected slots:
 		void clearButtonPressed();
 		void searchNewTabPressed();
-		void searchBoxReturn(const QString & str);
-		void textChanged(const QString & str);
+		void searchBoxReturn(const TQString & str);
+		void textChanged(const TQString & str);
 		
 	signals:
 		/// Emitted when the user presses enter or clicks search
-		void search(const QString & text,int engine,bool external);
+		void search(const TQString & text,int engine,bool external);
 		
 	private:
 		void loadSearchHistory();

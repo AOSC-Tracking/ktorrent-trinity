@@ -22,7 +22,7 @@
 namespace kt
 {
 
-	TorrentFileInterface::TorrentFileInterface(const QString & path,Uint64 size)
+	TorrentFileInterface::TorrentFileInterface(const TQString & path,Uint64 size)
 	: path(path),size(size),first_chunk(0),last_chunk(0),num_chunks_downloaded(0),
 	priority(NORMAL_PRIORITY),m_emitDlStatusChanged(true),preview(false)
 	{

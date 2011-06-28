@@ -20,10 +20,10 @@
 #ifndef KTPLUGINMANAGER_H
 #define KTPLUGINMANAGER_H
 
-#include <qptrlist.h>
+#include <tqptrlist.h>
 #include <util/ptrmap.h>
 #include <interfaces/plugin.h>
-#include <qstringlist.h>
+#include <tqstringlist.h>
 
 
 namespace kt
@@ -40,12 +40,12 @@ namespace kt
 	 */
 	class PluginManager
 	{
-		bt::PtrMap<QString,Plugin> plugins,unloaded;
+		bt::PtrMap<TQString,Plugin> plugins,unloaded;
 		CoreInterface* core;
 		GUIInterface* gui;
 		PluginManagerPrefPage* prefpage;
-		QStringList pltoload;
-		QString cfg_file;
+		TQStringList pltoload;
+		TQString cfg_file;
 	public:
 		PluginManager(CoreInterface* core,GUIInterface* gui);
 		virtual ~PluginManager();
@@ -62,38 +62,38 @@ namespace kt
 		 * Loads which plugins need to be loaded from a file.
 		 * @param file The file
 		 */
-		void loadConfigFile(const QString & file);
+		void loadConfigFile(const TQString & file);
 
 		/**
 		 * Saves which plugins are loaded to a file.
 		 * @param file The file
 		 */
-		void saveConfigFile(const QString & file);
+		void saveConfigFile(const TQString & file);
 
 		/**
 		 * Fill a list with all available plugins.
 		 * @param pllist The plugin list
 		 */
-		void fillPluginList(QPtrList<Plugin> & plist);
+		void fillPluginList(TQPtrList<Plugin> & plist);
 
 		/**
 		 * Is a plugin loaded
 		 * @param name Naame of plugin.
 		 * @return True if it is, false if it isn't
 		 */
-		bool isLoaded(const QString & name) const;
+		bool isLoaded(const TQString & name) const;
 		
 		/**
 		 * Load a plugin.
 		 * @param name Name of the plugin
 		 */
-		void load(const QString & name);
+		void load(const TQString & name);
 		
 		/**
 		 * Unload a plugin.
 		 * @param name Name of the plugin
 		 */
-		void unload(const QString & name);
+		void unload(const TQString & name);
 		
 		/**
 		 * Load all unloaded plugins.
@@ -110,7 +110,7 @@ namespace kt
 		 */
 		void updateGuiPlugins();
 	private:
-		void writeDefaultConfigFile(const QString & file);
+		void writeDefaultConfigFile(const TQString & file);
 	};
 
 }

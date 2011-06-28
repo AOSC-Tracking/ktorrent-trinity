@@ -20,8 +20,8 @@
 #ifndef VIEWMANAGER_H
 #define VIEWMANAGER_H
 
-#include <qobject.h>
-#include <qvaluelist.h>
+#include <tqobject.h>
+#include <tqvaluelist.h>
 #include <interfaces/guiinterface.h>
 
 class KConfig;
@@ -32,11 +32,12 @@ class KTorrent;
 /**
 	@author Joris Guisson <joris.guisson@gmail.com>
 */
-class ViewManager : public QObject, public kt::CloseTabListener
+class ViewManager : public TQObject, public kt::CloseTabListener
 {
 	Q_OBJECT
+  TQ_OBJECT
 public:
-	ViewManager(QObject *parent = 0, const char *name = 0);
+	ViewManager(TQObject *tqparent = 0, const char *name = 0);
 	virtual ~ViewManager();
 	
 	/// Create a new view
@@ -73,13 +74,13 @@ public:
 	 * Put the current selection of the current view in a list.
 	 * @param sel The list to put it in
 	 */
-	void getSelection(QValueList<kt::TorrentInterface*> & sel);
+	void getSelection(TQValueList<kt::TorrentInterface*> & sel);
 	
 	/// Get the current view
 	KTorrentView* getCurrentView() {return current;}
 	
-	virtual bool closeAllowed(QWidget* tab);
-	virtual void tabCloseRequest(kt::GUIInterface* gui,QWidget* tab);
+	virtual bool closeAllowed(TQWidget* tab);
+	virtual void tabCloseRequest(kt::GUIInterface* gui,TQWidget* tab);
 	
 	/// A group was renamed, modify all view which where showing this group
 	void groupRenamed(kt::Group* g,KTabWidget* mtw);
@@ -104,10 +105,10 @@ public slots:
 	void checkDataIntegrity();
 	
 	/// The current tab has changed
-	void onCurrentTabChanged(QWidget* w);
+	void onCurrentTabChanged(TQWidget* w);
 
 private:
-	QValueList<KTorrentView*> views;
+	TQValueList<KTorrentView*> views;
 	KTorrentView* current;
 };
 

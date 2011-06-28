@@ -32,7 +32,7 @@ namespace dht
 	 * @param ba The byte array
 	 * @param off The offset into the array
 	 */
-	void PackBucketEntry(const KBucketEntry & e,QByteArray & ba,Uint32 off);
+	void PackBucketEntry(const KBucketEntry & e,TQByteArray & ba,Uint32 off);
 	
 	/**
 	 * Unpack a KBucketEntry from a byte array.
@@ -41,7 +41,7 @@ namespace dht
 	 * @param off The offset
 	 * @return The entry
 	 */
-	KBucketEntry UnpackBucketEntry(const QByteArray & ba,Uint32 off);
+	KBucketEntry UnpackBucketEntry(const TQByteArray & ba,Uint32 off);
 
 }
 

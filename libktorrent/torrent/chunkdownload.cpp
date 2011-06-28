@@ -35,17 +35,17 @@
 namespace bt
 {	
 
-	class DownloadStatus : public std::set<Uint32>
+	class DownloadtqStatus : public std::set<Uint32>
 	{
 	public:
 	//	typedef std::set<Uint32>::iterator iterator;
 		
-		DownloadStatus()
+		DownloadtqStatus()
 		{
 	
 		}
 
-		~DownloadStatus()
+		~DownloadtqStatus()
 		{
 		}
 
@@ -59,7 +59,7 @@ namespace bt
 			erase(p);
 		}
 		
-		bool contains(Uint32 p)
+		bool tqcontains(Uint32 p)
 		{
 			return count(p) > 0;
 		}
@@ -111,7 +111,7 @@ namespace bt
 			return false;
 
 	
-		DownloadStatus* ds = dstatus.find(p.getPeer());
+		DownloadtqStatus* ds = dstatus.tqfind(p.getPeer());
 		if (ds)
 			ds->remove(pp);
 		
@@ -143,7 +143,7 @@ namespace bt
 			}
 		}
 		
-		for (QPtrList<PeerDownloader>::iterator i = pdown.begin();i != pdown.end();++i)
+		for (TQPtrList<PeerDownloader>::iterator i = pdown.begin();i != pdown.end();++i)
 			sendRequests(*i);
 
 		return false;
@@ -155,8 +155,8 @@ namespace bt
 		{
 			PeerDownloader* pd = pdown.at(i);
 			pd->release();
-			disconnect(pd,SIGNAL(timedout(const Request& )),this,SLOT(onTimeout(const Request& )));
-			disconnect(pd,SIGNAL(rejected( const Request& )),this,SLOT(onRejected( const Request& )));
+			disconnect(pd,TQT_SIGNAL(timedout(const Request& )),this,TQT_SLOT(onTimeout(const Request& )));
+			disconnect(pd,TQT_SIGNAL(rejected( const Request& )),this,TQT_SLOT(onRejected( const Request& )));
 		}
 		dstatus.clear();
 		pdown.clear();
@@ -164,22 +164,22 @@ namespace bt
 	
 	bool ChunkDownload::assignPeer(PeerDownloader* pd)
 	{
-		if (!pd || pdown.contains(pd))
+		if (!pd || pdown.tqcontains(pd))
 			return false;
 			
 		pd->grab();
 		pdown.append(pd);
-		dstatus.insert(pd->getPeer()->getID(),new DownloadStatus());
+		dstatus.insert(pd->getPeer()->getID(),new DownloadtqStatus());
 		sendRequests(pd);
-		connect(pd,SIGNAL(timedout(const Request& )),this,SLOT(onTimeout(const Request& )));
-		connect(pd,SIGNAL(rejected( const Request& )),this,SLOT(onRejected( const Request& )));
+		connect(pd,TQT_SIGNAL(timedout(const Request& )),this,TQT_SLOT(onTimeout(const Request& )));
+		connect(pd,TQT_SIGNAL(rejected( const Request& )),this,TQT_SLOT(onRejected( const Request& )));
 		return true;
 	}
 	
 	void ChunkDownload::notDownloaded(const Request & r,bool reject)
 	{
 		// find the peer 
-		DownloadStatus* ds = dstatus.find(r.getPeer());
+		DownloadtqStatus* ds = dstatus.tqfind(r.getPeer());
 		if (ds)
 		{
 			//	Out() << "ds != 0"  << endl;
@@ -188,7 +188,7 @@ namespace bt
 		}
 			
 			// go over all PD's and do requets again
-		for (QPtrList<PeerDownloader>::iterator i = pdown.begin();i != pdown.end();++i)
+		for (TQPtrList<PeerDownloader>::iterator i = pdown.begin();i != pdown.end();++i)
 			sendRequests(*i);
 	}
 	
@@ -196,7 +196,7 @@ namespace bt
 	{
 		if (chunk->getIndex() == r.getIndex())
 		{
-//			Out(SYS_CON|LOG_DEBUG) << QString("Request rejected %1 %2 %3 %4").arg(r.getIndex()).arg(r.getOffset()).arg(r.getLength()).arg(r.getPeer()) << endl;
+//			Out(SYS_CON|LOG_DEBUG) << TQString("Request rejected %1 %2 %3 %4").tqarg(r.getIndex()).tqarg(r.getOffset()).tqarg(r.getLength()).tqarg(r.getPeer()) << endl;
 		
 			notDownloaded(r,true);
 		}
@@ -207,7 +207,7 @@ namespace bt
 		// see if we are dealing with a piece of ours
 		if (chunk->getIndex() == r.getIndex())
 		{
-			Out(SYS_CON|LOG_DEBUG) << QString("Request timed out %1 %2 %3 %4").arg(r.getIndex()).arg(r.getOffset()).arg(r.getLength()).arg(r.getPeer()) << endl;
+			Out(SYS_CON|LOG_DEBUG) << TQString("Request timed out %1 %2 %3 %4").tqarg(r.getIndex()).tqarg(r.getOffset()).tqarg(r.getLength()).tqarg(r.getPeer()) << endl;
 		
 			notDownloaded(r,false);
 		}
@@ -216,7 +216,7 @@ namespace bt
 	void ChunkDownload::sendRequests(PeerDownloader* pd)
 	{
 		timer.update();
-		DownloadStatus* ds = dstatus.find(pd->getPeer()->getID());
+		DownloadtqStatus* ds = dstatus.tqfind(pd->getPeer()->getID());
 		if (!ds)
 			return;
 			
@@ -229,7 +229,7 @@ namespace bt
 		{
 			// get the first one in the queue
 			Uint32 i = piece_queue.first();
-			if (!ds->contains(i))
+			if (!ds->tqcontains(i))
 			{
 				// send request
 				pd->download(
@@ -255,18 +255,18 @@ namespace bt
 	void ChunkDownload::update()
 	{
 		// go over all PD's and do requets again
-		for (QPtrList<PeerDownloader>::iterator i = pdown.begin();i != pdown.end();++i)
+		for (TQPtrList<PeerDownloader>::iterator i = pdown.begin();i != pdown.end();++i)
 			sendRequests(*i);
 	}
 	
 	
 	void ChunkDownload::sendCancels(PeerDownloader* pd)
 	{
-		DownloadStatus* ds = dstatus.find(pd->getPeer()->getID());
+		DownloadtqStatus* ds = dstatus.tqfind(pd->getPeer()->getID());
 		if (!ds)
 			return;
 		
-		DownloadStatus::iterator itr = ds->begin();
+		DownloadtqStatus::iterator itr = ds->begin();
 		while (itr != ds->end())
 		{
 			Uint32 i = *itr;
@@ -283,13 +283,13 @@ namespace bt
 	
 	void ChunkDownload::endgameCancel(const Piece & p)
 	{
-		QPtrList<PeerDownloader>::iterator i = pdown.begin();
+		TQPtrList<PeerDownloader>::iterator i = pdown.begin();
 		while (i != pdown.end())
 		{
 			PeerDownloader* pd = *i;
-			DownloadStatus* ds = dstatus.find(pd->getPeer()->getID());
+			DownloadtqStatus* ds = dstatus.tqfind(pd->getPeer()->getID());
 			Uint32 pp = p.getOffset() / MAX_PIECE_LEN;
-			if (ds && ds->contains(pp))
+			if (ds && ds->tqcontains(pp))
 			{
 				pd->cancel(Request(p));
 				ds->remove(pp);
@@ -300,13 +300,13 @@ namespace bt
 
 	void ChunkDownload::peerKilled(PeerDownloader* pd)
 	{
-		if (!pdown.contains(pd))
+		if (!pdown.tqcontains(pd))
 			return;
 
 		dstatus.erase(pd->getPeer()->getID());
 		pdown.remove(pd);
-		disconnect(pd,SIGNAL(timedout(const Request& )),this,SLOT(onTimeout(const Request& )));
-		disconnect(pd,SIGNAL(rejected( const Request& )),this,SLOT(onRejected( const Request& )));
+		disconnect(pd,TQT_SIGNAL(timedout(const Request& )),this,TQT_SLOT(onTimeout(const Request& )));
+		disconnect(pd,TQT_SIGNAL(rejected( const Request& )),this,TQT_SLOT(onRejected( const Request& )));
 	}
 	
 	
@@ -323,11 +323,11 @@ namespace bt
 		return chunk->getIndex();
 	}
 
-	QString ChunkDownload::getCurrentPeerID() const
+	TQString ChunkDownload::getCurrentPeerID() const
 	{
 		if (pdown.count() == 0)
 		{
-			return QString::null;
+			return TQString();
 		}
 		else if (pdown.count() == 1)
 		{
@@ -343,7 +343,7 @@ namespace bt
 	Uint32 ChunkDownload::getDownloadSpeed() const
 	{
 		Uint32 r = 0;
-		QPtrList<PeerDownloader>::const_iterator i = pdown.begin();
+		TQPtrList<PeerDownloader>::const_iterator i = pdown.begin();
 		while (i != pdown.end())
 		{
 			const PeerDownloader* pd = *i;
@@ -360,7 +360,7 @@ namespace bt
 		ChunkDownloadHeader hdr;
 		hdr.index = chunk->getIndex();
 		hdr.num_bits = pieces.getNumBits();
-		hdr.buffered = chunk->getStatus() == Chunk::BUFFERED ? 1 : 0;
+		hdr.buffered = chunk->gettqStatus() == Chunk::BUFFERED ? 1 : 0;
 		// save the chunk header
 		file.write(&hdr,sizeof(ChunkDownloadHeader));
 		// save the bitset
@@ -370,7 +370,7 @@ namespace bt
 			// if it's a buffered chunk, save the contents to
 			file.write(chunk->getData(),chunk->getSize());
 			chunk->clear();
-			chunk->setStatus(Chunk::ON_DISK);
+			chunk->settqStatus(Chunk::ON_DISK);
 		}
 	}
 		
@@ -415,7 +415,7 @@ namespace bt
 
 	void ChunkDownload::cancelAll()
 	{
-		QPtrList<PeerDownloader>::iterator i = pdown.begin();
+		TQPtrList<PeerDownloader>::iterator i = pdown.begin();
 		while (i != pdown.end())
 		{
 			sendCancels(*i);
@@ -448,7 +448,7 @@ namespace bt
 	
 	bool ChunkDownload::isChoked() const
 	{
-		QPtrList<PeerDownloader>::const_iterator i = pdown.begin();
+		TQPtrList<PeerDownloader>::const_iterator i = pdown.begin();
 		while (i != pdown.end())
 		{
 			const PeerDownloader* pd = *i;

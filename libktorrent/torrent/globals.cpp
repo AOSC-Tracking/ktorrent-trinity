@@ -61,7 +61,7 @@ namespace bt
 		inst = 0;
 	}
 
-	void Globals::initLog(const QString & file)
+	void Globals::initLog(const TQString & file)
 	{
 		log->setOutputFile(file);
 		log->setOutputToConsole(debug_mode);

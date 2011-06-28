@@ -24,9 +24,9 @@
 #include <util/constants.h>
 #include <util/log.h>
 
-#include <qstring.h>
-#include <qtimer.h>
-#include <qdatetime.h>
+#include <tqstring.h>
+#include <tqtimer.h>
+#include <tqdatetime.h>
 
 #include <kmessagebox.h>
 #include <klocale.h>
@@ -50,17 +50,17 @@ K_EXPORT_COMPONENT_FACTORY(ktschedulerplugin,KGenericFactory<kt::SchedulerPlugin
 
 namespace kt
 {	
-	const QString NAME = "Bandwith Scheduler";
-	const QString AUTHOR = "Ivan Vasic";
-	const QString EMAIL = "ivasic@gmail.com";
-	const QString DESCRIPTION = i18n("Bandwidth scheduling plugin");
+	const TQString NAME = "Bandwith Scheduler";
+	const TQString AUTHOR = "Ivan Vasic";
+	const TQString EMAIL = "ivasic@gmail.com";
+	const TQString DESCRIPTION = i18n("Bandwidth scheduling plugin");
 
-	SchedulerPlugin::SchedulerPlugin(QObject* parent, const char* name, const QStringList& args)
-	: Plugin(parent, name, args,NAME,i18n("Bandwidth Scheduler"),AUTHOR,EMAIL,DESCRIPTION, "clock")
+	SchedulerPlugin::SchedulerPlugin(TQObject* tqparent, const char* name, const TQStringList& args)
+	: Plugin(tqparent, name, args,NAME,i18n("Bandwidth Scheduler"),AUTHOR,EMAIL,DESCRIPTION, "clock")
 	{
 		setXMLFile("ktschedulerpluginui.rc");
 		bws_action = 0;
-		connect(&m_timer, SIGNAL(timeout()), this, SLOT(timer_triggered()));
+		connect(&m_timer, TQT_SIGNAL(timeout()), this, TQT_SLOT(timer_triggered()));
 	}
 
 
@@ -74,17 +74,17 @@ namespace kt
 		getGUI()->addPrefPage(Pref);
 		BWScheduler::instance().setCoreInterface(getCore());
 		
-		QDateTime now = QDateTime::currentDateTime();
+		TQDateTime now = TQDateTime::tqcurrentDateTime();
 		
 		//each hour
-		QDateTime hour = now.addSecs(3600);
-		QTime t(hour.time().hour(), 0);
+		TQDateTime hour = now.addSecs(3600);
+		TQTime t(hour.time().hour(), 0);
 		
 		//each minute
-// 		QDateTime hour = now.addSecs(60);
-// 		QTime t(hour.time().hour(), hour.time().minute());
+// 		TQDateTime hour = now.addSecs(60);
+// 		TQTime t(hour.time().hour(), hour.time().minute());
 		
-		QDateTime round(hour.date(), t);
+		TQDateTime round(hour.date(), t);
 		
 		// add a 5 second safety margin (BUG: 131246)
 		int secs_to = now.secsTo(round) + 5;
@@ -95,7 +95,7 @@ namespace kt
 		
 // 		updateEnabledBWS();
 		bws_action = new KAction(i18n("Open Bandwidth Scheduler" ), "clock", 0, this,
-								 SLOT(openBWS()), actionCollection(), "bwscheduler" );
+								 TQT_SLOT(openBWS()), actionCollection(), "bwscheduler" );
 	}
 
 	void SchedulerPlugin::unload()
@@ -115,7 +115,7 @@ namespace kt
 	void SchedulerPlugin::timer_triggered()
 	{
 		m_timer.changeInterval(3600*1000);
-		QDateTime now = QDateTime::currentDateTime();
+		TQDateTime now = TQDateTime::tqcurrentDateTime();
 		BWScheduler::instance().trigger();
 	}
 	
@@ -135,7 +135,7 @@ namespace kt
 		if(SchedulerPluginSettings::enableBWS())
 		{
 			bws_action = new KAction(i18n("Open Bandwidth Scheduler" ), "clock", 0, this,
-									 SLOT(openBWS()), actionCollection(), "bwscheduler" );
+									 TQT_SLOT(openBWS()), actionCollection(), "bwscheduler" );
 		}
 		else
 		{
@@ -145,7 +145,7 @@ namespace kt
 		}
 	}
 	
-	bool SchedulerPlugin::versionCheck(const QString & version) const
+	bool SchedulerPlugin::versionCheck(const TQString & version) const
 	{
 		return version == KT_VERSION_MACRO;
 	}

@@ -17,17 +17,17 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
-#include <qfile.h>
-#include <qtextstream.h>
-#include <qapplication.h>
-#include <qlistbox.h>
-#include <qcheckbox.h>
+#include <tqfile.h>
+#include <tqtextstream.h>
+#include <tqapplication.h>
+#include <tqlistbox.h>
+#include <tqcheckbox.h>
 #include <kglobal.h>
 #include <kpushbutton.h>
 #include <kiconloader.h>
 #include <kcombobox.h>
 #include <kcompletion.h>
-#include <qlabel.h>
+#include <tqlabel.h>
 #include <klocale.h>
 #include "searchtab.h"
 #include "searchenginelist.h"
@@ -48,21 +48,21 @@ namespace kt
 		m_search_new_tab = new KPushButton(i18n("Search"),tb);
 		m_search_engine = new KComboBox(tb);
 		
-		m_clear_button->setIconSet(SmallIconSet(QApplication::reverseLayout() ? "clear_left" : "locationbar_erase"));
+		m_clear_button->setIconSet(SmallIconSet(TQApplication::reverseLayout() ? "clear_left" : "locationbar_erase"));
 		m_clear_button->setEnabled(false);
 
-		connect(m_search_new_tab,SIGNAL(clicked()),this,SLOT(searchNewTabPressed()));
-		connect(m_search_text,SIGNAL(returnPressed(const QString&)),this,SLOT(searchBoxReturn( const QString& )));
-		connect(m_search_text,SIGNAL(textChanged(const QString &)),this,SLOT(textChanged( const QString& )));
-		connect(m_clear_button,SIGNAL(clicked()),this,SLOT(clearButtonPressed()));
+		connect(m_search_new_tab,TQT_SIGNAL(clicked()),this,TQT_SLOT(searchNewTabPressed()));
+		connect(m_search_text,TQT_SIGNAL(returnPressed(const TQString&)),this,TQT_SLOT(searchBoxReturn( const TQString& )));
+		connect(m_search_text,TQT_SIGNAL(textChanged(const TQString &)),this,TQT_SLOT(textChanged( const TQString& )));
+		connect(m_clear_button,TQT_SIGNAL(clicked()),this,TQT_SLOT(clearButtonPressed()));
 		m_search_text->setMaxCount(20);
 		m_search_new_tab->setEnabled(false);
-		m_search_text->setInsertionPolicy(QComboBox::NoInsertion);
+		m_search_text->setInsertionPolicy(TQComboBox::NoInsertion);
 		
 		tb->insertWidget(1,-1,m_clear_button);
 		tb->insertWidget(2,-1,m_search_text);
 		tb->insertWidget(3,-1,m_search_new_tab);
-		tb->insertWidget(4,-1,new QLabel(i18n(" Engine: "),tb));
+		tb->insertWidget(4,-1,new TQLabel(i18n(" Engine: "),tb));
 		tb->insertWidget(5,-1,m_search_engine);
 		loadSearchHistory();
 	}
@@ -93,7 +93,7 @@ namespace kt
 		m_search_engine->setCurrentItem(ci);
 	}
 	
-	void SearchTab::searchBoxReturn(const QString & str)
+	void SearchTab::searchBoxReturn(const TQString & str)
 	{
 		KCompletion *comp = m_search_text->completionObject();
 		if (!m_search_text->contains(str))
@@ -116,7 +116,7 @@ namespace kt
 		searchBoxReturn(m_search_text->currentText());
 	}
 	
-	void SearchTab::textChanged(const QString & str)
+	void SearchTab::textChanged(const TQString & str)
 	{
 		m_search_new_tab->setEnabled(str.length() > 0);
 		m_clear_button->setEnabled(str.length() > 0);
@@ -124,17 +124,17 @@ namespace kt
 
 	void SearchTab::loadSearchHistory()
 	{
-		QFile fptr(kt::DataDir() + "search_history");
+		TQFile fptr(kt::DataDir() + "search_history");
 		if (!fptr.open(IO_ReadOnly))
 			return;
 		
 		KCompletion *comp = m_search_text->completionObject();
 		
 		Uint32 cnt = 0;
-		QTextStream in(&fptr);
+		TQTextStream in(&fptr);
 		while (!in.atEnd() && cnt < 50)
 		{
-			QString line = in.readLine();
+			TQString line = in.readLine();
 			if (line.isNull())
 				break; 
 			
@@ -151,14 +151,14 @@ namespace kt
 	
 	void SearchTab::saveSearchHistory()
 	{
-		QFile fptr(kt::DataDir() + "search_history");
+		TQFile fptr(kt::DataDir() + "search_history");
 		if (!fptr.open(IO_WriteOnly))
 			return;
 		
-		QTextStream out(&fptr);
+		TQTextStream out(&fptr);
 		KCompletion *comp = m_search_text->completionObject();
-		QStringList items = comp->items();
-		for (QStringList::iterator i = items.begin();i != items.end();i++)
+		TQStringList items = comp->items();
+		for (TQStringList::iterator i = items.begin();i != items.end();i++)
 		{
 			out << *i << endl;
 		}

@@ -20,9 +20,9 @@
 #ifndef BTPEERSOURCEMANAGER_H
 #define BTPEERSOURCEMANAGER_H
 
-#include <qtimer.h>
-#include <qdatetime.h>
-#include <qptrlist.h>
+#include <tqtimer.h>
+#include <tqdatetime.h>
+#include <tqptrlist.h>
 #include <util/ptrmap.h>
 #include <interfaces/trackerslist.h>
 
@@ -48,21 +48,22 @@ namespace bt
 	 * 
 	 * This class manages all PeerSources.
 	*/
-	class PeerSourceManager : public QObject, public kt::TrackersList
+	class PeerSourceManager : public TQObject, public kt::TrackersList
 	{
 		Q_OBJECT
+  TQ_OBJECT
 				
 		TorrentControl* tor;
 		PeerManager* pman;
 		PtrMap<KURL,Tracker> trackers;
-		QPtrList<kt::PeerSource> additional;
+		TQPtrList<kt::PeerSource> additional;
 		Tracker* curr;
 		dht::DHTTrackerBackend* m_dht;
 		bool started;
 		bool pending;
 		KURL::List custom_trackers;
-		QDateTime request_time;
-		QTimer timer;
+		TQDateTime request_time;
+		TQTimer timer;
 		Uint32 failures;
 		bool no_save_custom_trackers;
 	public:
@@ -144,7 +145,7 @@ namespace bt
 		 * The an error happened contacting the tracker.
 		 * @param err The error
 		 */
-		void onTrackerError(const QString & err);
+		void onTrackerError(const TQString & err);
 		
 		/**
 		 * Tracker update was OK.
@@ -164,10 +165,10 @@ namespace bt
 		
 	signals:
 		/**
-		 * Status has changed of the tracker.
+		 * tqStatus has changed of the tracker.
 		 * @param ns The new status
 		 */
-		void statusChanged(const QString & ns);
+		void statusChanged(const TQString & ns);
 		
 	private:
 		void saveCustomURLs();

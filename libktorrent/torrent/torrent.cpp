@@ -18,9 +18,9 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qfile.h>
-#include <qdatastream.h>
-#include <qstringlist.h>
+#include <tqfile.h>
+#include <tqdatastream.h>
+#include <tqstringlist.h>
 #include <util/log.h>
 #include <util/functions.h>
 #include <util/error.h>
@@ -50,7 +50,7 @@ namespace bt
 	}
 	
 	
-	void Torrent::load(const QByteArray & data,bool verbose)
+	void Torrent::load(const TQByteArray & data,bool verbose)
 	{
 		BNode* node = 0;
 		 
@@ -81,7 +81,7 @@ namespace bt
 			if (nodes) // DHT torrrents have a node key
 				loadNodes(nodes);
 			
-			loadInfo(dict->getDict("info"));
+			loadInfo(dict->getDict(TQString("info")));
 			loadAnnounceList(dict->getData("announce-list"));
 			BNode* n = dict->getData("info");
 			SHA1HashGen hg;
@@ -96,14 +96,14 @@ namespace bt
 		}
 	}
 
-	void Torrent::load(const QString & file,bool verbose)
+	void Torrent::load(const TQString & file,bool verbose)
 	{
-		QFile fptr(file);
+		TQFile fptr(file);
 		if (!fptr.open(IO_ReadOnly))
 			throw Error(i18n(" Unable to open torrent file %1 : %2")
-					.arg(file).arg(fptr.errorString()));
+					.tqarg(file).tqarg(fptr.errorString()));
 		
-		QByteArray data(fptr.size());
+		TQByteArray data(fptr.size());
 	//	Out() << "File size = " << fptr.size() << endl;
 		fptr.readBlock(data.data(),fptr.size());
 		
@@ -157,14 +157,14 @@ namespace bt
 			if (!ln)
 				throw Error(i18n("Corrupted torrent!"));
 
-			QString path;
+			TQString path;
 			for (Uint32 j = 0;j < ln->getNumChildren();j++)
 			{
 				BValueNode* v = ln->getValue(j);
 				if (!v || v->data().getType() != Value::STRING)
 					throw Error(i18n("Corrupted torrent!"));
 	
-				QString sd = v->data().toString(encoding);
+				TQString sd = v->data().toString(encoding);
 				path += sd;
 				if (j + 1 < ln->getNumChildren())
 					path += bt::DirSeparator();
@@ -242,7 +242,7 @@ namespace bt
 			throw Error(i18n("Corrupted torrent!"));
 		
 		
-		QByteArray hash_string = node->data().toByteArray();
+		TQByteArray hash_string = node->data().toByteArray();
 		for (unsigned int i = 0;i < hash_string.size();i+=20)
 		{
 			Uint8 h[20];
@@ -366,7 +366,7 @@ namespace bt
 	const SHA1Hash & Torrent::getHash(Uint32 idx) const
 	{
 		if (idx >= hash_pieces.count())
-			throw Error(QString("Torrent::getHash %1 is out of bounds").arg(idx));
+			throw Error(TQString("Torrent::getHash %1 is out of bounds").tqarg(idx));
 		
 		return hash_pieces[idx];
 	}
@@ -399,7 +399,7 @@ namespace bt
 		return count;
 	}
 
-	void Torrent::calcChunkPos(Uint32 chunk,QValueList<Uint32> & file_list) const
+	void Torrent::calcChunkPos(Uint32 chunk,TQValueList<Uint32> & file_list) const
 	{
 		file_list.clear();
 		if (chunk >= hash_pieces.size() || files.empty())
@@ -429,10 +429,10 @@ namespace bt
 	
 	void Torrent::updateFilePercentage(Uint32 chunk,const BitSet & bs)
 	{
-		QValueList<Uint32> cfiles;
+		TQValueList<Uint32> cfiles;
 		calcChunkPos(chunk,cfiles);
 		
-		QValueList<Uint32>::iterator i = cfiles.begin();
+		TQValueList<Uint32>::iterator i = cfiles.begin();
 		while (i != cfiles.end())
 		{
 			TorrentFile & f = getFile(*i);
@@ -441,9 +441,9 @@ namespace bt
 		}
 	}
 	
-	bool Torrent::checkPathForDirectoryTraversal(const QString & p)
+	bool Torrent::checkPathForDirectoryTraversal(const TQString & p)
 	{
-		QStringList sl = QStringList::split(bt::DirSeparator(),p);
-		return !sl.contains("..");
+		TQStringList sl = TQStringList::split(bt::DirSeparator(),p);
+		return !sl.tqcontains("..");
 	}
 }

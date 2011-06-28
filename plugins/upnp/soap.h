@@ -20,8 +20,8 @@
 #ifndef KTSOAP_H
 #define KTSOAP_H
 
-#include <qvaluelist.h>
-#include <qstring.h>
+#include <tqvaluelist.h>
+#include <tqstring.h>
 
 namespace kt
 {
@@ -39,12 +39,12 @@ namespace kt
 		 * @param service The name of the service
 		 * @return The command
 		 */
-		static QString createCommand(const QString & action,const QString & service);
+		static TQString createCommand(const TQString & action,const TQString & service);
 		
 		struct Arg
 		{
-			QString element;
-			QString value;
+			TQString element;
+			TQString value;
 		};
 
 		/**
@@ -54,7 +54,7 @@ namespace kt
 		 * @param args Arguments for command
 		 * @return The command
 		 */
-		static QString createCommand(const QString & action,const QString & service,const QValueList<Arg> & args);
+		static TQString createCommand(const TQString & action,const TQString & service,const TQValueList<Arg> & args);
 	};
 
 }

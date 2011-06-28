@@ -20,7 +20,7 @@
 #ifndef UTESTTESTRUNNER_H
 #define UTESTTESTRUNNER_H
 
-#include <qptrlist.h>
+#include <tqptrlist.h>
 #include "unittest.h"
 
 namespace utest
@@ -31,7 +31,7 @@ namespace utest
 	*/
 	class TestRunner
 	{
-		QPtrList<UnitTest> tests;
+		TQPtrList<UnitTest> tests;
 	public:
 		TestRunner();
 		virtual ~TestRunner();

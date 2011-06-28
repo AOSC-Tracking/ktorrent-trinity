@@ -20,8 +20,8 @@
 #ifndef KTTORRENTFILEINTERFACE_H
 #define KTTORRENTFILEINTERFACE_H
 
-#include <qobject.h>
-#include <qstring.h>
+#include <tqobject.h>
+#include <tqstring.h>
 #include <util/constants.h>
 
 namespace kt
@@ -41,20 +41,21 @@ namespace kt
 	 *
 	 * This class is the interface for a file in a multifile torrent.
 	*/
-	class TorrentFileInterface : public QObject
+	class TorrentFileInterface : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		/**
 		 * Constructor, set the path and size.
 		 * @param path The path 
 		 * @param size The size
 		 */
-		TorrentFileInterface(const QString & path,Uint64 size);
+		TorrentFileInterface(const TQString & path,Uint64 size);
 		virtual ~TorrentFileInterface();
 
 		/// Get the path of the file
-		QString getPath() const {return path;}
+		TQString getPath() const {return path;}
 
 		/// Get the size of the file
 		Uint64 getSize() const {return size;}
@@ -115,7 +116,7 @@ namespace kt
 		void previewAvailable(bool available);
 		
 	protected:
-		QString path;
+		TQString path;
 		Uint64 size;
 		Uint32 first_chunk;
 		Uint32 last_chunk;

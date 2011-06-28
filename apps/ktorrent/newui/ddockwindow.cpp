@@ -19,13 +19,13 @@
  ***************************************************************************/
 #include "ddockwindow.h"
 
-#include <qtoolbutton.h>
-#include <qlayout.h>
-#include <qstyle.h>
-#include <qwidgetstack.h>
-#include <qimage.h>
-#include <qapplication.h>
-#include <qpopupmenu.h>
+#include <tqtoolbutton.h>
+#include <tqlayout.h>
+#include <tqstyle.h>
+#include <tqwidgetstack.h>
+#include <tqimage.h>
+#include <tqapplication.h>
+#include <tqpopupmenu.h>
 
 #include <kdebug.h>
 #include <kglobal.h>
@@ -39,9 +39,9 @@
 #include "button.h"
 #include "dmainwindow.h"
 
-DDockWindow::DDockWindow(DMainWindow *parent, Position position)
-    :QDockWindow(QDockWindow::InDock, parent), m_position(position), m_visible(false),
-    m_mainWindow(parent), m_doNotCloseActiveWidget(false), m_toggledButton(0), m_lastContextMenuButton(0)
+DDockWindow::DDockWindow(DMainWindow *tqparent, Position position)
+    :TQDockWindow(TQDockWindow::InDock, tqparent), m_position(position), m_visible(false),
+    m_mainWindow(tqparent), m_doNotCloseActiveWidget(false), m_toggledButton(0), m_lastContextMenuButton(0)
 {
     setMovingEnabled(false);
     setResizeEnabled(true);
@@ -51,20 +51,20 @@ DDockWindow::DDockWindow(DMainWindow *parent, Position position)
         case DDockWindow::Bottom:
             m_name = "BottomToolWindow";
             place = Ideal::Bottom;
-            m_internalLayout = new QVBoxLayout(boxLayout(), 0);
-            m_internalLayout->setDirection(QBoxLayout::BottomToTop);
+            m_internalLayout = new TQVBoxLayout(boxLayout(), 0);
+            m_internalLayout->setDirection(TQBoxLayout::BottomToTop);
             break;
         case DDockWindow::Left:
             m_name = "LeftToolWindow";
             place = Ideal::Left;
-            m_internalLayout = new QHBoxLayout(boxLayout(), 0);
-            m_internalLayout->setDirection(QBoxLayout::LeftToRight);
+            m_internalLayout = new TQHBoxLayout(boxLayout(), 0);
+            m_internalLayout->setDirection(TQBoxLayout::LeftToRight);
             break;
         case DDockWindow::Right:
             m_name = "RightToolWindow";
             place = Ideal::Right;
-            m_internalLayout = new QHBoxLayout(boxLayout(), 0);
-            m_internalLayout->setDirection(QBoxLayout::RightToLeft);
+            m_internalLayout = new TQHBoxLayout(boxLayout(), 0);
+            m_internalLayout->setDirection(TQBoxLayout::RightToLeft);
             break;
     }
 
@@ -82,12 +82,12 @@ DDockWindow::DDockWindow(DMainWindow *parent, Position position)
     m_bar = new Ideal::ButtonBar(place, buttonMode, this);
     m_internalLayout->addWidget(m_bar);
 
-    m_widgetStack = new QWidgetStack(this);
+    m_widgetStack = new TQWidgetStack(this);
     m_internalLayout->addWidget(m_widgetStack);
 
-    m_moveToDockLeft = new KAction( i18n("Move to left dock"), 0, this, SLOT(moveToDockLeft()), this );
-    m_moveToDockRight = new KAction( i18n("Move to right dock"), 0, this, SLOT(moveToDockRight()), this );
-    m_moveToDockBottom = new KAction( i18n("Move to bottom dock"), 0, this, SLOT(moveToDockBottom()), this );
+    m_moveToDockLeft = new KAction( i18n("Move to left dock"), 0, TQT_TQOBJECT(this), TQT_SLOT(moveToDockLeft()), TQT_TQOBJECT(this) );
+    m_moveToDockRight = new KAction( i18n("Move to right dock"), 0, TQT_TQOBJECT(this), TQT_SLOT(moveToDockRight()), TQT_TQOBJECT(this) );
+    m_moveToDockBottom = new KAction( i18n("Move to bottom dock"), 0, TQT_TQOBJECT(this), TQT_SLOT(moveToDockBottom()), TQT_TQOBJECT(this) );
 
     setVisible(m_visible);
 
@@ -104,7 +104,7 @@ void DDockWindow::setVisible(bool v)
 {
     //write dock width to the config file
     KConfig *config = kapp->config();
-    QString group = QString("%1").arg(m_name);
+    TQString group = TQString("%1").tqarg(m_name);
     config->setGroup(group);
 
     if (m_visible)
@@ -115,13 +115,13 @@ void DDockWindow::setVisible(bool v)
     v ? m_widgetStack->show() : m_widgetStack->hide();
     m_visible = v;
 
-    m_internalLayout->invalidate();
+    m_internalLayout->tqinvalidate();
     if (!m_visible)
     {
         if (m_position == DDockWindow::Bottom)
-            setFixedExtentHeight(m_internalLayout->sizeHint().height());
+            setFixedExtentHeight(m_internalLayout->tqsizeHint().height());
         else
-            setFixedExtentWidth(m_internalLayout->sizeHint().width());
+            setFixedExtentWidth(m_internalLayout->tqsizeHint().width());
         emit hidden();
     }
     else
@@ -130,12 +130,12 @@ void DDockWindow::setVisible(bool v)
         int size = 0;
         if (m_position == DDockWindow::Bottom)
         {
-            size = config->readNumEntry("ViewWidth", m_internalLayout->minimumSize().height());
+            size = config->readNumEntry("ViewWidth", m_internalLayout->tqminimumSize().height());
             setFixedExtentHeight(size);
         }
         else
         {
-            size = config->readNumEntry("ViewWidth", m_internalLayout->minimumSize().width());
+            size = config->readNumEntry("ViewWidth", m_internalLayout->tqminimumSize().width());
             setFixedExtentWidth(size);
         }
     }
@@ -148,7 +148,7 @@ void DDockWindow::loadSettings()
 void DDockWindow::saveSettings()
 {
     KConfig *config = kapp->config();
-    QString group = QString("%1").arg(m_name);
+    TQString group = TQString("%1").tqarg(m_name);
     int invisibleWidth = 0;
     config->setGroup(group);
     if (config->hasKey("ViewWidth"))
@@ -164,22 +164,22 @@ void DDockWindow::saveSettings()
         config->writeEntry("ViewWidth", invisibleWidth);
 }
 
-QWidget *DDockWindow::currentWidget() const
+TQWidget *DDockWindow::currentWidget() const
 {
     return m_widgetStack->visibleWidget();
 }
 
-void DDockWindow::addWidget(const QString &title, QWidget *widget, bool skipActivation)
+void DDockWindow::addWidget(const TQString &title, TQWidget *widget, bool skipActivation)
 {
     kdDebug(9000) << k_funcinfo << endl;
-    QPixmap *pm = const_cast<QPixmap*>(widget->icon());
+    TQPixmap *pm = const_cast<TQPixmap*>(widget->icon());
     Ideal::Button *button;
     if (pm != 0)
     {
         //force 16pt for now
         if (pm->height() > 16)
         {
-            QImage img = pm->convertToImage();
+            TQImage img = pm->convertToImage();
             img = img.smoothScale(16, 16);
             pm->convertFromImage(img);
         }
@@ -192,15 +192,15 @@ void DDockWindow::addWidget(const QString &title, QWidget *widget, bool skipActi
     m_bar->addButton(button);
 
     m_widgetStack->addWidget(widget);
-    connect(button, SIGNAL(clicked()), this, SLOT(selectWidget()));
-    connect(button, SIGNAL(contextMenu(QPopupMenu*)), this, SLOT(contextMenu(QPopupMenu*)) );
+    connect(button, TQT_SIGNAL(clicked()), TQT_TQOBJECT(this), TQT_SLOT(selectWidget()));
+    connect(button, TQT_SIGNAL(contextMenu(TQPopupMenu*)), TQT_TQOBJECT(this), TQT_SLOT(contextMenu(TQPopupMenu*)) );
 
     if (!skipActivation)
     {
         //if the widget was selected last time the dock is deleted
         //we need to show it
         KConfig *config = kapp->config();
-        QString group = QString("%1").arg(m_name);
+        TQString group = TQString("%1").tqarg(m_name);
         config->setGroup(group);
         if (config->readEntry("ViewLastWidget") == title)
         {
@@ -211,7 +211,7 @@ void DDockWindow::addWidget(const QString &title, QWidget *widget, bool skipActi
     }
 }
 
-void DDockWindow::raiseWidget(QWidget *widget)
+void DDockWindow::raiseWidget(TQWidget *widget)
 {
     kdDebug(9000) << k_funcinfo << endl;
 
@@ -225,7 +225,7 @@ void DDockWindow::raiseWidget(QWidget *widget)
     }
 }
 
-void DDockWindow::lowerWidget(QWidget * widget)
+void DDockWindow::lowerWidget(TQWidget * widget)
 {
     kdDebug(9000) << k_funcinfo << endl;
 
@@ -239,7 +239,7 @@ void DDockWindow::lowerWidget(QWidget * widget)
     }
 }
 
-void DDockWindow::removeWidget(QWidget *widget)
+void DDockWindow::removeWidget(TQWidget *widget)
 {
     kdDebug(9000) << k_funcinfo << endl;
     if (m_widgetStack->id(widget) == -1)
@@ -294,10 +294,10 @@ void DDockWindow::selectWidget(Ideal::Button *button)
 
 void DDockWindow::selectWidget()
 {
-    selectWidget((Ideal::Button*)sender());
+    selectWidget((Ideal::Button*)TQT_TQOBJECT(const_cast<TQT_BASE_OBJECT_NAME*>(sender())));
 }
 
-void DDockWindow::hideWidget(QWidget *widget)
+void DDockWindow::hideWidget(TQWidget *widget)
 {
     Ideal::Button *button = m_buttons[widget];
     if (button != 0)
@@ -310,7 +310,7 @@ void DDockWindow::hideWidget(QWidget *widget)
         setVisible(false);
 }
 
-void DDockWindow::showWidget(QWidget *widget)
+void DDockWindow::showWidget(TQWidget *widget)
 {
     Ideal::Button *button = m_buttons[widget];
     if (button != 0)
@@ -322,7 +322,7 @@ void DDockWindow::setMovingEnabled(bool)
 {
     //some operations on KMainWindow cause moving to be enabled
     //but we always don't want DDockWindow instances to be movable
-    QDockWindow::setMovingEnabled(false);
+    TQDockWindow::setMovingEnabled(false);
 }
 
 void DDockWindow::selectLastWidget()
@@ -338,16 +338,16 @@ bool DDockWindow::isActive()
 {
     if (m_toggledButton)
     {
-        QWidget *w = qApp->focusWidget();
+        TQWidget *w = tqApp->tqfocusWidget();
         if (!w)
             return false;
-        QWidget *toolWidget = m_widgets[m_toggledButton];
+        TQWidget *toolWidget = m_widgets[m_toggledButton];
         if (toolWidget == w)
             return true;
         else
         {
             do {
-                w = (QWidget*)w->parent();
+                w = (TQWidget*)w->tqparent();
                 if (w && (w == toolWidget)) return true;
             } while (w);
         }
@@ -373,9 +373,9 @@ void DDockWindow::selectPrevWidget()
         b->animateClick();
 }
 
-void DDockWindow::contextMenu(QPopupMenu * menu)
+void DDockWindow::contextMenu(TQPopupMenu * menu)
 {
-    m_lastContextMenuButton = static_cast<Ideal::Button*>( const_cast<QObject*>( sender() ) );
+    m_lastContextMenuButton = static_cast<Ideal::Button*>( TQT_TQWIDGET(const_cast<TQT_BASE_OBJECT_NAME*>(sender())) );
 
     menu->insertSeparator();
 
@@ -404,7 +404,7 @@ void DDockWindow::moveToDockBottom()
 
 void DDockWindow::moveToDock(DDockWindow::Position position )
 {
-    if (  m_widgets.contains( m_lastContextMenuButton ) )
+    if (  m_widgets.tqcontains( m_lastContextMenuButton ) )
     {
         mainWindow()->moveWidget( position, m_widgets[ m_lastContextMenuButton ], m_lastContextMenuButton->realTextWithoutAccel() );
     }

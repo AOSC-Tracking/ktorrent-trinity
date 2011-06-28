@@ -20,9 +20,9 @@
  ***************************************************************************/
 
 #include "ipblocklist.h"
-#include <qmap.h>
-#include <qstring.h>
-#include <qstringlist.h>
+#include <tqmap.h>
+#include <tqstring.h>
+#include <tqstringlist.h>
 #include <util/constants.h>
 #include <util/log.h>
 #include "globals.h"
@@ -31,7 +31,7 @@
 
 namespace bt
 {
-	Uint32 toUint32(const QString& ip, bool* ok)
+	Uint32 toUint32(const TQString& ip, bool* ok)
 	{
 		bool test;
 		*ok = true;
@@ -69,29 +69,29 @@ namespace bt
 
 	IPBlocklist::IPBlocklist(const IPBlocklist & ) {}
 
-	void IPBlocklist::insert( QString ip, int state )
+	void IPBlocklist::insert( TQString ip, int state )
 	{
 		bool ok;
 		Uint32 ipi = toUint32(ip, &ok);
 		if(!ok)
 			return;
-		IPKey key(ipi,0xFFFFFFFF); //-- you can test ranges here. Just specify your mask.
+		IPKey key(ipi,0xFFFFFFFF); //-- you can test ranges here. Just specify your tqmask.
 		insertRangeIP(key, state);
 		Out(SYS_IPF|LOG_NOTICE) << "IP " << ip << " banned." << endl;
 	}
 
-	void IPBlocklist::addRange(QString ip)
+	void IPBlocklist::addRange(TQString ip)
 	{
 		bool ok; 
 		int tmp = 0; 
 		Uint32 addr = 0; 
-		Uint32 mask = 0xFFFFFFFF; 
+		Uint32 tqmask = 0xFFFFFFFF; 
 		 
 		tmp = ip.section('.',0,0).toInt(&ok); 
 		if(!ok) 
 		{ 
 			if(ip.section('.',0,0) == "*") 
-				mask &= 0x00FFFFFF; 
+				tqmask &= 0x00FFFFFF; 
 			else return; //illegal character 
 		} 
 		else 
@@ -102,7 +102,7 @@ namespace bt
 		{ 
 			addr <<= 8; 
 			if(ip.section('.',1,1) == "*") 
-				mask &= 0xFF00FFFF; 
+				tqmask &= 0xFF00FFFF; 
 			else return; //illegal character 
 		} 
 		else 
@@ -116,7 +116,7 @@ namespace bt
 		{ 
 			addr <<= 8; 
 			if(ip.section('.',2,2) == "*") 
-				mask &= 0xFFFF00FF; 
+				tqmask &= 0xFFFF00FF; 
 			else return; //illegal character 
 		} 
 		else 
@@ -130,7 +130,7 @@ namespace bt
 		{ 
 			addr <<= 8; 
 			if(ip.section('.',3,3) == "*") 
-				mask &=0xFFFFFF00; 
+				tqmask &=0xFFFFFF00; 
 			else return; //illegal character 
 		}
 		else 
@@ -139,21 +139,21 @@ namespace bt
 			addr |= tmp; 
 		} 
 		
-		IPKey key(addr, mask); 
+		IPKey key(addr, tqmask); 
 		this->insertRangeIP(key);
 	}
 
 	void IPBlocklist::insertRangeIP(IPKey& key, int state)
 	{
-// 		Out() << "Blocked range: " << key.m_ip << " - " << key.m_mask << endl;
-		QMap<IPKey, int>::iterator it;
-		if ((it = m_peers.find(key)) != m_peers.end())
+// 		Out() << "Blocked range: " << key.m_ip << " - " << key.m_tqmask << endl;
+		TQMap<IPKey, int>::iterator it;
+		if ((it = m_peers.tqfind(key)) != m_peers.end())
 		{
 
-			if(it.key().m_mask != key.m_mask)
+			if(it.key().m_tqmask != key.m_tqmask)
 			{
 				int st = it.data();
-				IPKey key1(key.m_ip, it.key().m_mask | key.m_mask);
+				IPKey key1(key.m_ip, it.key().m_tqmask | key.m_tqmask);
 				m_peers.insert(key1, state+st);
 				return;
 			}
@@ -163,18 +163,18 @@ namespace bt
 			m_peers.insert(key,state);
 	}
 	
-	void IPBlocklist::removeRange(QString ip)
+	void IPBlocklist::removeRange(TQString ip)
 	{
 		bool ok; 
 		int tmp = 0; 
 		Uint32 addr = 0; 
-		Uint32 mask = 0xFFFFFFFF; 
+		Uint32 tqmask = 0xFFFFFFFF; 
 		 
 		tmp = ip.section('.',0,0).toInt(&ok); 
 		if(!ok) 
 		{ 
 			if(ip.section('.',0,0) == "*") 
-				mask &= 0x00FFFFFF; 
+				tqmask &= 0x00FFFFFF; 
 			else return; //illegal character 
 		} 
 		else 
@@ -185,7 +185,7 @@ namespace bt
 		{ 
 			addr <<= 8; 
 			if(ip.section('.',1,1) == "*") 
-				mask &= 0xFF00FFFF; 
+				tqmask &= 0xFF00FFFF; 
 			else return; //illegal character 
 		} 
 		else 
@@ -199,7 +199,7 @@ namespace bt
 		{ 
 			addr <<= 8; 
 			if(ip.section('.',2,2) == "*") 
-				mask &= 0xFFFF00FF; 
+				tqmask &= 0xFFFF00FF; 
 			else return; //illegal character 
 		} 
 		else 
@@ -213,7 +213,7 @@ namespace bt
 		{ 
 			addr <<= 8; 
 			if(ip.section('.',3,3) == "*") 
-				mask &=0xFFFFFF00; 
+				tqmask &=0xFFFFFF00; 
 			else return; //illegal character 
 		}
 		else 
@@ -222,9 +222,9 @@ namespace bt
 			addr |= tmp; 
 		} 
 		
-		IPKey key(addr, mask); 
+		IPKey key(addr, tqmask); 
 		
-		QMap<IPKey, int>::iterator it = m_peers.find(key);
+		TQMap<IPKey, int>::iterator it = m_peers.tqfind(key);
 		if (it == m_peers.end())
 			return;
 		
@@ -236,7 +236,7 @@ namespace bt
 		this->pluginInterface = ptr;
 	}
 
-	bool IPBlocklist::isBlocked(const QString& ip )
+	bool IPBlocklist::isBlocked(const TQString& ip )
 	{
 		//First check local filter list
 		if(isBlockedLocal(ip))
@@ -255,7 +255,7 @@ namespace bt
 		return false;
 	}
 	
-	bool IPBlocklist::isBlockedLocal(const QString& ip )
+	bool IPBlocklist::isBlockedLocal(const TQString& ip )
 	{
 		bool ok;
 		Uint32 ipi = toUint32(ip,&ok);
@@ -263,15 +263,15 @@ namespace bt
 			return false;
 		IPKey key(ipi);
 
-		QMap<IPKey, int>::iterator it;
-		it = m_peers.find(key);
+		TQMap<IPKey, int>::iterator it;
+		it = m_peers.tqfind(key);
 		if (it==m_peers.end())
 			return false;
 
 		return m_peers[key] >= 3;
 	}
 	
-	bool IPBlocklist::isBlockedPlugin(const QString& ip )
+	bool IPBlocklist::isBlockedPlugin(const TQString& ip )
 	{
 		if (pluginInterface == 0) //the plugin is not loaded
 			return false;
@@ -279,10 +279,10 @@ namespace bt
 			return pluginInterface->isBlockedIP(ip);
 	}
 	
-	QStringList* IPBlocklist::getBlocklist()
+	TQStringList* IPBlocklist::getBlocklist()
 	{
-		QStringList* ret = new QStringList();
-		QMap<IPKey,int>::iterator it = m_peers.begin();
+		TQStringList* ret = new TQStringList();
+		TQMap<IPKey,int>::iterator it = m_peers.begin();
 		for( ;it!=m_peers.end();++it)
 		{
 			IPKey key = it.key();
@@ -292,10 +292,10 @@ namespace bt
 		return ret;
 	}
 	
-	void IPBlocklist::setBlocklist(QStringList* list)
+	void IPBlocklist::setBlocklist(TQStringList* list)
 	{
 		m_peers.clear();
-		for (QStringList::Iterator it = list->begin(); it != list->end(); ++it ) 
+		for (TQStringList::Iterator it = list->begin(); it != list->end(); ++it ) 
 			addRange(*it);
 	}
 
@@ -304,11 +304,11 @@ namespace bt
 	IPKey::IPKey()
 	{
 		m_ip = 0;
-		m_mask = 0xFFFFFFFF;
+		m_tqmask = 0xFFFFFFFF;
 	}
 
-	IPKey::IPKey(QString& ip, Uint32 mask)
-			: m_mask(mask)
+	IPKey::IPKey(TQString& ip, Uint32 tqmask)
+			: m_tqmask(tqmask)
 	{
 		bool ok;
 		this->m_ip = toUint32(ip, &ok);
@@ -317,81 +317,81 @@ namespace bt
 	IPKey::IPKey(const IPKey& ip)
 	{
 		m_ip = ip.m_ip;
-		m_mask = ip.m_mask;
+		m_tqmask = ip.m_tqmask;
 	}
 
-	IPKey::IPKey(Uint32 ip, Uint32 mask)
-			: m_ip(ip), m_mask(mask)
+	IPKey::IPKey(Uint32 ip, Uint32 tqmask)
+			: m_ip(ip), m_tqmask(tqmask)
 	{}
 
-	QString IPKey::toString()
+	TQString IPKey::toString()
 	{
-		Uint32 tmp, tmpmask;
+		Uint32 tmp, tmptqmask;
 		Uint32 ip = m_ip;
-		Uint32 mask = m_mask;
-		QString out;
+		Uint32 tqmask = m_tqmask;
+		TQString out;
 	
 		tmp = ip;
-		tmpmask = mask;
+		tmptqmask = tqmask;
 		tmp &= 0x000000FF;
-		tmpmask &= 0x000000FF;
-		if(tmpmask == 0)
+		tmptqmask &= 0x000000FF;
+		if(tmptqmask == 0)
 			out.prepend("*");
 		else
-			out.prepend(QString("%1").arg(tmp));
+			out.prepend(TQString("%1").tqarg(tmp));
 		ip >>= 8;
-		mask >>= 8;
+		tqmask >>= 8;
 		tmp = ip;
-		tmpmask = mask;
+		tmptqmask = tqmask;
 		tmp &= 0x000000FF;
-		tmpmask &= 0x000000FF;
-		if(tmpmask == 0)
+		tmptqmask &= 0x000000FF;
+		if(tmptqmask == 0)
 			out.prepend("*.");
 		else
-			out.prepend(QString("%1.").arg(tmp));
+			out.prepend(TQString("%1.").tqarg(tmp));
 		ip >>= 8;
-		mask >>= 8;
+		tqmask >>= 8;
 		tmp = ip;
-		tmpmask = mask;
+		tmptqmask = tqmask;
 		tmp &= 0x000000FF;
-		tmpmask &= 0x000000FF;
-		if(tmpmask == 0)
+		tmptqmask &= 0x000000FF;
+		if(tmptqmask == 0)
 			out.prepend("*.");
 		else
-			out.prepend(QString("%1.").arg(tmp));
+			out.prepend(TQString("%1.").tqarg(tmp));
 		ip >>= 8;
-		mask >>= 8;
+		tqmask >>= 8;
 		tmp = ip;
-		tmpmask = mask;
+		tmptqmask = tqmask;
 		tmp &= 0x000000FF;
-		tmpmask &= 0x000000FF;
-		if(tmpmask == 0)
+		tmptqmask &= 0x000000FF;
+		if(tmptqmask == 0)
 			out.prepend("*.");
 		else
-			out.prepend(QString("%1.").arg(tmp));
+			out.prepend(TQString("%1.").tqarg(tmp));
 	
 		return out;
 	}
 	
 	bool IPKey::operator ==(const IPKey& ip) const
 	{
-		return  (m_ip & m_mask) == m_mask & ip.m_ip;
+		return  (m_ip & m_tqmask) == m_tqmask & ip.m_ip;
 	}
 
 	bool IPKey::operator !=(const IPKey& ip) const
 	{
-		return (m_ip & m_mask) != m_mask & ip.m_ip;
+		return (m_ip & m_tqmask) != m_tqmask & ip.m_ip;
 	}
 
 	bool IPKey::operator < (const IPKey& ip) const
 	{
-		return (m_ip & m_mask) < (m_mask & ip.m_ip);
+		return (m_ip & m_tqmask) < (m_tqmask & ip.m_ip);
 	}
 
 	IPKey& IPKey::operator =(const IPKey& ip)
 	{
 		m_ip = ip.m_ip;
-		m_mask = ip.m_mask;
+		m_tqmask = ip.m_tqmask;
 		return *this;
 	}
 

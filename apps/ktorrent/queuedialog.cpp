@@ -22,15 +22,15 @@
 #include <interfaces/functions.h>
 #include <torrent/queuemanager.h>
 
-#include <qlistview.h>
-#include <qstring.h>
-#include <qmessagebox.h>
-#include <qptrlist.h>
-#include <qlabel.h>
-#include <qtabwidget.h>
-#include <qgroupbox.h>
-#include <qpushbutton.h>
-#include <qlayout.h>
+#include <tqlistview.h>
+#include <tqstring.h>
+#include <tqmessagebox.h>
+#include <tqptrlist.h>
+#include <tqlabel.h>
+#include <tqtabwidget.h>
+#include <tqgroupbox.h>
+#include <tqpushbutton.h>
+#include <tqlayout.h>
 
 #include <klocale.h>
 #include <kglobal.h>
@@ -44,21 +44,21 @@
 using namespace bt;
 using namespace kt;
 
-QueueItem::QueueItem(kt::TorrentInterface* t, QListView* parent)
-	:QListViewItem(parent), tc(t)
+QueueItem::QueueItem(kt::TorrentInterface* t, TQListView* tqparent)
+	:TQListViewItem(tqparent), tc(t)
 {
 	setPriority(tc->getPriority());
-	setText(0, QString(tc->getStats().torrent_name));
+	setText(0, TQString(tc->getStats().torrent_name));
 }
 
-int QueueItem::compare(QListViewItem *i, int , bool ) const
+int QueueItem::compare(TQListViewItem *i, int , bool ) const
 {
 	QueueItem* it = (QueueItem*) i;
 	if(it->getPriority() == torrentPriority)
 	{
 		const TorrentInterface* ti = it->getTC();
-		QString name1 = tc->getStats().torrent_name;
-		QString name2 = ti->getStats().torrent_name;
+		TQString name1 = tc->getStats().torrent_name;
+		TQString name2 = ti->getStats().torrent_name;
 		return name1.compare(name2);
 	}
 			
@@ -80,23 +80,23 @@ void QueueItem::setTorrentPriority(int p)
 	tc->setPriority(p);
 }
 
-void QueueItem::paintCell(QPainter* p,const QColorGroup & cg,int column,int width,int align)
+void QueueItem::paintCell(TQPainter* p,const TQColorGroup & cg,int column,int width,int align)
 {
-	QColorGroup colorGrp( cg );
-	QColor txt = colorGrp.text();
+	TQColorGroup colorGrp( cg );
+	TQColor txt = colorGrp.text();
 
 	//if (column == 1)
 	if(torrentPriority == 0)
-		colorGrp.setColor(QColorGroup::Text, Qt::gray);
+		colorGrp.setColor(TQColorGroup::Text, TQt::gray);
 	else
-		colorGrp.setColor(QColorGroup::Text, txt);
+		colorGrp.setColor(TQColorGroup::Text, txt);
 
 
-	QListViewItem::paintCell(p,colorGrp,column,width,align);
+	TQListViewItem::paintCell(p,colorGrp,column,width,align);
 }
 
-QueueDialog::QueueDialog(bt::QueueManager* qm, QWidget *parent, const char *name)
-	:QueueDlg(parent, name)
+QueueDialog::QueueDialog(bt::QueueManager* qm, TQWidget *tqparent, const char *name)
+	:QueueDlg(tqparent, name)
 {
 	KIconLoader* iload = KGlobal::iconLoader();
 	
@@ -105,8 +105,8 @@ QueueDialog::QueueDialog(bt::QueueManager* qm, QWidget *parent, const char *name
 	
  	logo->setPixmap(iload->loadIcon("ktqueuemanager", KIcon::Desktop));
 	
-	connect(downloadList, SIGNAL(selectionChanged(QListViewItem*)), this, SLOT(downloadList_currentChanged( QListViewItem* )));
-	connect(seedList, SIGNAL(selectionChanged(QListViewItem*)), this, SLOT(seedList_currentChanged( QListViewItem* )));
+	connect(downloadList, TQT_SIGNAL(selectionChanged(TQListViewItem*)), this, TQT_SLOT(downloadList_currentChanged( TQListViewItem* )));
+	connect(seedList, TQT_SIGNAL(selectionChanged(TQListViewItem*)), this, TQT_SLOT(seedList_currentChanged( TQListViewItem* )));
 	
 	if(downloadList->firstChild())
 		downloadList->setCurrentItem(downloadList->firstChild());
@@ -119,11 +119,11 @@ QueueDialog::QueueDialog(bt::QueueManager* qm, QWidget *parent, const char *name
 	
 	this->qman = qm;
 
-	QPtrList<kt::TorrentInterface>::iterator it = qman->begin();
+	TQPtrList<kt::TorrentInterface>::iterator it = qman->begin();
 	for( ; it != qman->end(); ++it)
 	{
 		TorrentInterface* tc = *it;
-		TorrentStatus ts = tc->getStats().status;
+		TorrenttqStatus ts = tc->getStats().status;
 		
 		if(ts == kt::SEEDING || ts == kt::DOWNLOAD_COMPLETE || 
 			ts == kt::SEEDING_COMPLETE || tc->getStats().completed)
@@ -279,16 +279,16 @@ void QueueDialog::btnOk_clicked()
 	this->close();
 }
 
-QListView* QueueDialog::getCurrentList()
+TQListView* QueueDialog::getCurrentList()
 {
 	return m_tabs->currentPageIndex() == 0 ? downloadList : seedList;
 }
 
-void QueueDialog::downloadList_currentChanged(QListViewItem* item)
+void QueueDialog::downloadList_currentChanged(TQListViewItem* item)
 {
 	if(!item)
 	{
-		dlStatus->clear();
+		dltqStatus->clear();
 		dlTracker->clear();
 		dlRatio->clear();
 		dlDHT->clear();
@@ -298,18 +298,18 @@ void QueueDialog::downloadList_currentChanged(QListViewItem* item)
 	const TorrentInterface* tc = ((QueueItem*)item)->getTC();
 	TorrentStats s = tc->getStats();
 	
-	dlStatus->setText(tc->statusToString());
+	dltqStatus->setText(tc->statusToString());
 	dlTracker->setText(tc->getTrackersList()->getTrackerURL().prettyURL());
-	dlRatio->setText(QString("%1").arg((float)s.bytes_uploaded / s.bytes_downloaded,0,'f',2));
+	dlRatio->setText(TQString("%1").tqarg((float)s.bytes_uploaded / s.bytes_downloaded,0,'f',2));
 	dlBytes->setText(BytesToString(s.bytes_left_to_download));
 	dlDHT->setText(s.priv_torrent ? i18n("No (private torrent)") : i18n("Yes"));
 }
 
-void QueueDialog::seedList_currentChanged(QListViewItem* item)
+void QueueDialog::seedList_currentChanged(TQListViewItem* item)
 {
 	if(!item)
 	{
-		ulStatus->clear();
+		ultqStatus->clear();
 		ulTracker->clear();
 		ulRatio->clear();
 		ulDHT->clear();
@@ -319,9 +319,9 @@ void QueueDialog::seedList_currentChanged(QListViewItem* item)
 	const TorrentInterface* tc = ((QueueItem*)item)->getTC();
 	TorrentStats s = tc->getStats();
 	
-	ulStatus->setText(tc->statusToString());
+	ultqStatus->setText(tc->statusToString());
 	ulTracker->setText(tc->getTrackersList()->getTrackerURL().prettyURL());
-	ulRatio->setText(QString("%1").arg((float)s.bytes_uploaded / s.bytes_downloaded,0,'f',2));
+	ulRatio->setText(TQString("%1").tqarg((float)s.bytes_uploaded / s.bytes_downloaded,0,'f',2));
 	ulBytes->setText(BytesToString(s.bytes_uploaded));
 	ulDHT->setText(s.priv_torrent ? i18n("No (private torrent)") : i18n("Yes"));
 }

@@ -22,29 +22,29 @@
 
 namespace kt {
 
-StatsSpd::StatsSpd(QWidget *p) : StatsSpdWgt(p),
+StatsSpd::StatsSpd(TQWidget *p) : StatsSpdWgt(p),
 				pmDownCht(new ChartDrawer(DownSpeedGbw, StatsPluginSettings::downloadMeasurements())),
 				pmPeersSpdCht(new ChartDrawer(PeersSpdGbw, StatsPluginSettings::peersSpeedMeasurements())),
 				pmUpCht(new ChartDrawer(UpSpeedGbw, StatsPluginSettings::uploadMeasurements()))
 {
 
 	DownSpeedGbw->setColumnLayout(0, Qt::Vertical );
-	DownSpeedGbw->layout()->setSpacing( 6 );
-	DownSpeedGbw->layout()->setMargin( 11 );
+	DownSpeedGbw->tqlayout()->setSpacing( 6 );
+	DownSpeedGbw->tqlayout()->setMargin( 11 );
 	
-	pmDSpdLay = new QVBoxLayout(DownSpeedGbw -> layout());
+	pmDSpdLay = new TQVBoxLayout(DownSpeedGbw -> tqlayout());
 	
 	UpSpeedGbw->setColumnLayout(0, Qt::Vertical );
-	UpSpeedGbw->layout()->setSpacing( 6 );
-	UpSpeedGbw->layout()->setMargin( 11 );
+	UpSpeedGbw->tqlayout()->setSpacing( 6 );
+	UpSpeedGbw->tqlayout()->setMargin( 11 );
 	
-	pmUSpdLay = new QVBoxLayout(UpSpeedGbw -> layout());
+	pmUSpdLay = new TQVBoxLayout(UpSpeedGbw -> tqlayout());
 	
 	PeersSpdGbw->setColumnLayout(0, Qt::Vertical );
-	PeersSpdGbw->layout()->setSpacing( 6 );
-	PeersSpdGbw->layout()->setMargin( 11 );
+	PeersSpdGbw->tqlayout()->setSpacing( 6 );
+	PeersSpdGbw->tqlayout()->setMargin( 11 );
 	
-	pmPeersSpdLay = new QVBoxLayout(PeersSpdGbw -> layout());
+	pmPeersSpdLay = new TQVBoxLayout(PeersSpdGbw -> tqlayout());
 
 	//-----------------
 	
@@ -54,25 +54,25 @@ StatsSpd::StatsSpd(QWidget *p) : StatsSpdWgt(p),
 	
 	// ----------------
 	
-	pmUpCht -> AddValuesCnt(QPen("#f00"), i18n("Current"));
-	pmDownCht -> AddValuesCnt(QPen("#f00"), i18n("Current"));
+	pmUpCht -> AddValuesCnt(TQPen("#f00"), i18n("Current"));
+	pmDownCht -> AddValuesCnt(TQPen("#f00"), i18n("Current"));
 
-	pmUpCht -> AddValuesCnt(QPen("#00f"), i18n("Average"));
-	pmDownCht -> AddValuesCnt(QPen("#00f"), i18n("Average"));
+	pmUpCht -> AddValuesCnt(TQPen("#00f"), i18n("Average"));
+	pmDownCht -> AddValuesCnt(TQPen("#00f"), i18n("Average"));
 	
 	pmUpCht -> AddValuesCnt(i18n("Limit"), 0);
 	pmDownCht -> AddValuesCnt(i18n("Limit"), 0);
 	
-// 	pmUpCht -> AddValuesCnt(QPen("#f0f"), i18n("Current torrent"));
-// 	pmDownCht -> AddValuesCnt(QPen("#f0f"), i18n("Current torrent"));
+// 	pmUpCht -> AddValuesCnt(TQPen("#f0f"), i18n("Current torrent"));
+// 	pmDownCht -> AddValuesCnt(TQPen("#f0f"), i18n("Current torrent"));
 // 	
 	
 	
-	pmPeersSpdCht -> AddValuesCnt(QPen("#090"), i18n("Average from leecher"));
-	pmPeersSpdCht -> AddValuesCnt(QPen("#f00"), i18n("Average to leecher"));
-	pmPeersSpdCht -> AddValuesCnt(QPen("#00f"), i18n("Average from seeder"));
-	pmPeersSpdCht -> AddValuesCnt(QPen("magenta"), i18n("From leechers"));
-	pmPeersSpdCht -> AddValuesCnt(QPen("orange"), i18n("From seeders"));
+	pmPeersSpdCht -> AddValuesCnt(TQPen("#090"), i18n("Average from leecher"));
+	pmPeersSpdCht -> AddValuesCnt(TQPen("#f00"), i18n("Average to leecher"));
+	pmPeersSpdCht -> AddValuesCnt(TQPen("#00f"), i18n("Average from seeder"));
+	pmPeersSpdCht -> AddValuesCnt(TQPen("magenta"), i18n("From leechers"));
+	pmPeersSpdCht -> AddValuesCnt(TQPen("orange"), i18n("From seeders"));
 	
 }
 

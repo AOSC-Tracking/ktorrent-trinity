@@ -40,15 +40,15 @@ namespace ktdebug
 	{}
 
 
-	void SingleCacheChecker::check(const QString& cache, const QString& index)
+	void SingleCacheChecker::check(const TQString& cache, const TQString& index)
 	{
 		loadIndex(index);
 		Uint32 num_chunks = tor.getNumChunks();
 		File fptr;
 		if (!fptr.open(cache,"rb"))
 		{
-			throw Error(QString("Cannot open file : %1 : %2")
-					.arg(cache).arg( fptr.errorString()));
+			throw Error(TQString("Cannot open file : %1 : %2")
+					.tqarg(cache).tqarg( fptr.errorString()));
 		}
 
 		Uint32 num_ok = 0,num_not_ok = 0,num_not_downloaded = 0,extra_ok = 0;

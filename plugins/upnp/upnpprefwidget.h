@@ -21,7 +21,7 @@
 #ifndef UPNPPREFWIDGET_H
 #define UPNPPREFWIDGET_H
 
-#include <qmap.h>
+#include <tqmap.h>
 #include "upnprouter.h"
 #include "upnpwidget.h"
 
@@ -41,9 +41,10 @@ namespace kt
 	class UPnPPrefWidget : public UPnPWidget,public net::PortListener
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	
 	public:
-		UPnPPrefWidget(QWidget* parent = 0, const char* name = 0, WFlags fl = 0 );
+		UPnPPrefWidget(TQWidget* tqparent = 0, const char* name = 0, WFlags fl = 0 );
 		virtual ~UPnPPrefWidget();
 		
 		void shutdown(bt::WaitJob* job);
@@ -74,7 +75,7 @@ namespace kt
 		virtual void portRemoved(const net::Port & port);
 		
 	private:
-		QMap<KListViewItem*,UPnPRouter*> itemmap;
+		TQMap<KListViewItem*,UPnPRouter*> itemmap;
 		UPnPRouter* def_router;
 	};
 }

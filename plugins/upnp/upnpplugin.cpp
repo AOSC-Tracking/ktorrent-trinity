@@ -42,8 +42,8 @@ K_EXPORT_COMPONENT_FACTORY(ktupnpplugin,KGenericFactory<kt::UPnPPlugin>("ktupnpp
 namespace kt
 {
 
-	UPnPPlugin::UPnPPlugin(QObject* parent, const char* name, const QStringList& args)
-	: Plugin(parent, name, args,NAME,i18n("UPnP"),AUTHOR,EMAIL,i18n("Uses UPnP to automatically forward ports on your router"),"ktupnp")
+	UPnPPlugin::UPnPPlugin(TQObject* tqparent, const char* name, const TQStringList& args)
+	: Plugin(tqparent, name, args,NAME,i18n("UPnP"),AUTHOR,EMAIL,i18n("Uses UPnP to automatically forward ports on your router"),"ktupnp")
 	{
 		sock = 0;
 		pref = 0;
@@ -64,7 +64,7 @@ namespace kt
 		pref = new UPnPPrefPage(sock);
 		this->getGUI()->addPrefPage(pref);
 		// load the routers list
-		QString routers_file = KGlobal::dirs()->saveLocation("data","ktorrent") + "routers";
+		TQString routers_file = KGlobal::dirs()->saveLocation("data","ktorrent") + "routers";
 		if (bt::Exists(routers_file))
 			sock->loadRouters(routers_file);
 		sock->discover();
@@ -72,7 +72,7 @@ namespace kt
 
 	void UPnPPlugin::unload()
 	{
-		QString routers_file = KGlobal::dirs()->saveLocation("data","ktorrent") + "routers";
+		TQString routers_file = KGlobal::dirs()->saveLocation("data","ktorrent") + "routers";
 		sock->saveRouters(routers_file);
 		this->getGUI()->removePrefPage(pref);
 		sock->close();
@@ -87,7 +87,7 @@ namespace kt
 		pref->shutdown(job);
 	}
 	
-	bool UPnPPlugin::versionCheck(const QString & version) const
+	bool UPnPPlugin::versionCheck(const TQString & version) const
 	{
 		return version == KT_VERSION_MACRO;
 	}

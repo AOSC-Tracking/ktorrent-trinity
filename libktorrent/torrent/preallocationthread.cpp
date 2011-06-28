@@ -25,7 +25,7 @@
 
 #include <util/log.h>
 #include <util/error.h>
-#include <qfile.h>
+#include <tqfile.h>
 #include <klocale.h>
 #include "preallocationthread.h"
 #include "chunkmanager.h"
@@ -71,7 +71,7 @@ namespace bt
 		mutex.unlock();
 	}
 		
-	void PreallocationThread::setErrorMsg(const QString & msg) 
+	void PreallocationThread::setErrorMsg(const TQString & msg) 
 	{
 		mutex.lock();
 		error_msg = msg; stopped = true;

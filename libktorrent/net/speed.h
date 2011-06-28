@@ -20,8 +20,8 @@
 #ifndef NETSPEED_H
 #define NETSPEED_H
 
-#include <qpair.h>
-#include <qvaluelist.h>
+#include <tqpair.h>
+#include <tqvaluelist.h>
 #include <util/constants.h>
 
 namespace net
@@ -36,7 +36,7 @@ namespace net
 	{
 		float rate;
 		bt::Uint32 bytes;
-		QValueList<QPair<bt::Uint32,bt::TimeStamp> > dlrate;
+		TQValueList<TQPair<bt::Uint32,bt::TimeStamp> > dlrate;
 	public:
 		Speed();
 		virtual ~Speed();

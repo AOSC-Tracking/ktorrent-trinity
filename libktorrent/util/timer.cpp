@@ -25,7 +25,7 @@ namespace bt
 
 	Timer::Timer() : elapsed(0)
 	{
-		last = QTime::currentTime();
+		last = TQTime::currentTime();
 	}
 
 	Timer::Timer(const Timer & t) : last(t.last),elapsed(t.elapsed)
@@ -37,7 +37,7 @@ namespace bt
 
 	void Timer::update()
 	{
-		QTime now = QTime::currentTime();
+		TQTime now = TQTime::currentTime();
 
 		int d = last.msecsTo(now);
 		if (d < 0)
@@ -48,7 +48,7 @@ namespace bt
 	
 	Uint32 Timer::getElapsedSinceUpdate() const
 	{
-		QTime now = QTime::currentTime();
+		TQTime now = TQTime::currentTime();
 		int d = last.msecsTo(now);
 		if (d < 0)
 			d = 0;

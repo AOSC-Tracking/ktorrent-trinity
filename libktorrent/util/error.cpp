@@ -22,7 +22,7 @@
 namespace bt
 {
 
-	Error::Error(const QString & msg) : msg(msg)
+	Error::Error(const TQString & msg) : msg(msg)
 	{}
 
 

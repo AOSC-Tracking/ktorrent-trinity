@@ -19,7 +19,7 @@
  ***************************************************************************/
 #include <kglobal.h>
 #include <kconfig.h>
-#include <qapplication.h>
+#include <tqapplication.h>
 #include "logviewer.h"
 #include "logflags.h"
 #include "logviewerpluginsettings.h"
@@ -28,33 +28,33 @@ namespace kt
 {
 	const int LOG_EVENT_TYPE = 65432;
 	
-	class LogEvent : public QCustomEvent
+	class LogEvent : public TQCustomEvent
 	{
-		QString str;
+		TQString str;
 	public:
-		LogEvent(const QString & str) : QCustomEvent(LOG_EVENT_TYPE),str(str)
+		LogEvent(const TQString & str) : TQCustomEvent(LOG_EVENT_TYPE),str(str)
 		{}
 		
 		virtual ~LogEvent()
 		{}
 		
-		const QString & msg() const {return str;}
+		const TQString & msg() const {return str;}
 	};
 
-	LogViewer::LogViewer(QWidget *parent, const char *name)
-			: KTextBrowser(parent, name), LogMonitorInterface()
+	LogViewer::LogViewer(TQWidget *tqparent, const char *name)
+			: KTextBrowser(tqparent, name), LogMonitorInterface()
 	{
 		/*
 		IMPORTANT: use LogText mode, so that setMaxLogLines will work, if not everything will be kept in memory.
 		*/
-		setTextFormat(Qt::LogText);
+		setTextFormat(TQt::LogText);
 		setMaxLogLines(200);
-		setMinimumSize(QSize(0,50));
-		setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+		setMinimumSize(TQSize(0,50));
+		tqsetSizePolicy(TQSizePolicy::Expanding,TQSizePolicy::Expanding);
 		KGlobal::config()->setGroup("LogViewer");
 		if (KGlobal::config()->hasKey("LogViewerWidgetSize"))
 		{
-			QSize s = KGlobal::config()->readSizeEntry("LogViewerWidgetSize",0);
+			TQSize s = KGlobal::config()->readSizeEntry("LogViewerWidgetSize",0);
 			resize(s);
 		}
 		
@@ -70,10 +70,10 @@ namespace kt
 	}
 
 
-	void LogViewer::message(const QString& line, unsigned int arg)
+	void LogViewer::message(const TQString& line, unsigned int arg)
 	{
 		/*
-			IMPORTANT: because QTextBrowser is not thread safe, we must use the Qt event mechanism 
+			IMPORTANT: because TQTextBrowser is not thread safe, we must use the TQt event mechanism 
 			to add strings to it, this will ensure that strings will only be added in the main application
 			thread.
 		*/
@@ -81,19 +81,19 @@ namespace kt
 		{
 			if(m_useRichText)
 			{
-				QString tmp = line;
+				TQString tmp = line;
 				LogEvent* le = new LogEvent(LogFlags::instance().getFormattedMessage(arg, tmp));
-				QApplication::postEvent(this,le);
+				TQApplication::postEvent(this,le);
 			}
 			else
 			{
 				LogEvent* le = new LogEvent(line);
-				QApplication::postEvent(this,le);
+				TQApplication::postEvent(this,le);
 			}
 		}
 	}
 	
-	void LogViewer::customEvent(QCustomEvent* ev)
+	void LogViewer::customEvent(TQCustomEvent* ev)
 	{
 		if (ev->type() == LOG_EVENT_TYPE)
 		{

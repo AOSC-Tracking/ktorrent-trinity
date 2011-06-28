@@ -20,7 +20,7 @@
 #ifndef KTTORRENTDRAG_H
 #define KTTORRENTDRAG_H
 
-#include <qdragobject.h>
+#include <tqdragobject.h>
 
 namespace kt
 {
@@ -29,11 +29,12 @@ namespace kt
 	/**
 		@author Joris Guisson <joris.guisson@gmail.com>
 	*/
-	class TorrentDrag : public QStoredDrag
+	class TorrentDrag : public TQStoredDrag
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		TorrentDrag(QWidget* src,const char *name = 0);
+		TorrentDrag(TQWidget* src,const char *name = 0);
 		virtual ~TorrentDrag();
 
 	};

@@ -34,15 +34,15 @@
 #include <torrent/globals.h>
 #include <interfaces/coreinterface.h>
 
-#include <qfile.h>
-#include <qstringlist.h>
-#include <qtextstream.h>
-#include <qregexp.h>
-#include <qvalidator.h>
-#include <qlabel.h>
-#include <qpushbutton.h>
-#include <qevent.h>
-#include <qurloperator.h>
+#include <tqfile.h>
+#include <tqstringlist.h>
+#include <tqtextstream.h>
+#include <tqregexp.h>
+#include <tqvalidator.h>
+#include <tqlabel.h>
+#include <tqpushbutton.h>
+#include <tqevent.h>
+#include <tqurloperator.h>
 #include "antip2p.h"
 
 using namespace bt;
@@ -51,7 +51,7 @@ namespace kt
 {
 
 
-	Uint32 toUint32(QString& ip)
+	Uint32 toUint32(TQString& ip)
 	{
 		bool test;
 		Uint32 ret = ip.section('.',0,0).toULongLong(&test);
@@ -65,17 +65,17 @@ namespace kt
 		return ret;
 	}
 
-	IPBlock RangeToBlock(const QString& range)
+	IPBlock RangeToBlock(const TQString& range)
 	{
 		IPBlock block;
-		QStringList ls = QStringList::split('-', range);
+		TQStringList ls = TQStringList::split('-', range);
 		block.ip1 = toUint32(ls[0]);
 		block.ip2 = toUint32(ls[1]);
 		return block;
 	}
 
-	ConvertDialog::ConvertDialog( IPFilterPlugin* p, QWidget *parent, const char *name )
-			: ConvertingDlg( parent, name )
+	ConvertDialog::ConvertDialog( IPFilterPlugin* p, TQWidget *tqparent, const char *name )
+			: ConvertingDlg( tqparent, name )
 	{
 		m_plugin = p;
 		btnClose->setText(i18n("Convert"));
@@ -87,9 +87,9 @@ namespace kt
 
 	void ConvertDialog::convert()
 	{
-		QFile source( KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.txt" );
-		QFile target( KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat" );
-		QFile temp( KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat.tmp" );
+		TQFile source( KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.txt" );
+		TQFile target( KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat" );
+		TQFile temp( KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat.tmp" );
 		
 		if(target.exists())
 		{
@@ -98,7 +98,7 @@ namespace kt
 		}
 
 		/*    READ INPUT FILE  */
-		QValueList<IPBlock> list;
+		TQValueList<IPBlock> list;
 		lbl_progress->setText( i18n( "Loading txt file..." ) );
 		label1->setText( i18n("Please wait...") );
 		ulong source_size = source.size();
@@ -109,12 +109,12 @@ namespace kt
 
 		if ( source.open( IO_ReadOnly ) )
 		{
-			QTextStream stream( &source );
+			TQTextStream stream( &source );
 			kProgress1->setEnabled(true);
 
 			int i = 0;
-			QRegExp rx( "[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}-[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}" );
-			QRegExpValidator v( rx, 0 );
+			TQRegExp rx( "[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}-[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}" );
+			TQRegExpValidator v( rx, 0 );
 			int poz = 0;
 
 			while ( !stream.atEnd() )
@@ -123,13 +123,13 @@ namespace kt
 					return;
 				
 				KApplication::kApplication() ->processEvents();
-				QString line = stream.readLine();
+				TQString line = stream.readLine();
 				i += line.length() * sizeof( char ); //rough estimation of string size
 				kProgress1->setProgress( i * 100 / source_size );
 				++i;
 
-				QString ip_part = line.section( ':' , -1 );
-				if ( v.validate( ip_part, poz ) != QValidator::Acceptable )
+				TQString ip_part = line.section( ':' , -1 );
+				if ( v.validate( ip_part, poz ) != TQValidator::Acceptable )
 					continue;
 				else
 					++counter;
@@ -172,7 +172,7 @@ namespace kt
 
 			Out(SYS_IPF|LOG_NOTICE) << "Loading finished. Starting conversion..." << endl;
 
-			QValueList<IPBlock>::iterator iter;
+			TQValueList<IPBlock>::iterator iter;
 			int i = 0;
 			for (iter = list.begin(); iter != list.end(); ++iter, ++i)
 			{
@@ -226,7 +226,7 @@ namespace kt
 			this->close();
 	}
 	
-	void ConvertDialog::closeEvent(QCloseEvent* e)
+	void ConvertDialog::closeEvent(TQCloseEvent* e)
 	{
 		if(!converting)
 			e->accept();
@@ -238,11 +238,11 @@ namespace kt
 	{
 		if(converting)
 		{
-			QFile target( KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat" );
+			TQFile target( KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat" );
 			if(target.exists())
 				target.remove();
 			
-			QFile temp( KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat.tmp");
+			TQFile temp( KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat.tmp");
 			if(temp.exists())
 			{
 				KIO::NetAccess::file_copy(KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat.tmp", KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat", -1, true);

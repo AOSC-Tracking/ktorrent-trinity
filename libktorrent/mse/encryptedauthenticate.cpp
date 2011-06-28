@@ -36,7 +36,7 @@ namespace mse
 	
 
 	EncryptedAuthenticate::EncryptedAuthenticate(
-			const QString& ip, 
+			const TQString& ip, 
 			Uint16 port, 
 			const SHA1Hash& info_hash, 
 			const PeerID& peer_id, 

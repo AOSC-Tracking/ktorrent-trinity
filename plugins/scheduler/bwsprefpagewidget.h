@@ -20,7 +20,7 @@
 #ifndef KTBWSPREFPAGEWIDGET_H
 #define KTBWSPREFPAGEWIDGET_H
 
-#include <qwidget.h>
+#include <tqwidget.h>
 
 #include "bwspage.h"
 #include "bwscheduler.h"
@@ -34,8 +34,9 @@ namespace kt
 	class BWSPrefPageWidget : public BWSPage
 	{
 			Q_OBJECT
+  TQ_OBJECT
 		public:
-			BWSPrefPageWidget(QWidget* parent = 0, const char* name = 0, WFlags fl = 0 );
+			BWSPrefPageWidget(TQWidget* tqparent = 0, const char* name = 0, WFlags fl = 0 );
 			~BWSPrefPageWidget();
 			/*$PUBLIC_FUNCTIONS$*/
 			
@@ -52,13 +53,13 @@ namespace kt
 			 * @ref BWSPrefPageWidget::btnLoad_clicked()
 			 * @ref BWSPrefPageWidget::loadDefault()
 			 */
-			void loadSchedule(QString& fn, bool showmsg = true);
+			void loadSchedule(TQString& fn, bool showmsg = true);
 			
 			/**
 			 * Saves current schedule to HD.
 			 * @param fn Schedule filename.
 			 */
-			void saveSchedule(QString& fn);
+			void saveSchedule(TQString& fn);
 			
 
 		public slots:

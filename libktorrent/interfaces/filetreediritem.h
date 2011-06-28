@@ -44,41 +44,41 @@ namespace kt
 	 *
 	 * Directory item the file tree showing the files in a multifile torrent
 	 */
-	class FileTreeDirItem : public QCheckListItem
+	class FileTreeDirItem : public TQCheckListItem
 	{
 	protected:
-		QString name;
+		TQString name;
 		Uint64 size;
-		bt::PtrMap<QString,FileTreeItem> children;
-		bt::PtrMap<QString,FileTreeDirItem> subdirs;
-		FileTreeDirItem* parent;
+		bt::PtrMap<TQString,FileTreeItem> tqchildren;
+		bt::PtrMap<TQString,FileTreeDirItem> subdirs;
+		FileTreeDirItem* tqparent;
 		bool manual_change;
 		FileTreeRootListener* root_listener;
 	public:
-		FileTreeDirItem(KListView* klv,const QString & name,FileTreeRootListener* rl = 0);
-		FileTreeDirItem(FileTreeDirItem* parent,const QString & name);
+		FileTreeDirItem(KListView* klv,const TQString & name,FileTreeRootListener* rl = 0);
+		FileTreeDirItem(FileTreeDirItem* tqparent,const TQString & name);
 		virtual ~FileTreeDirItem();
 		
 		/// Get the path of the directory (if this is the root directory / will be returned)
-		QString getPath() const;
+		TQString getPath() const;
 
 		/**
 		 * Recursively insert a TorrentFileInterface.
 		 * @param path Path of file
 		 * @param file File itself
 		 */
-		void insert(const QString & path,kt::TorrentFileInterface & file);
+		void insert(const TQString & path,kt::TorrentFileInterface & file);
 
 		/**
 		 * Recursivly walk the tree to find the TorrentFile which
-		 * is shown by a QListViewItem (which should be an FileTreeItem).
+		 * is shown by a TQListViewItem (which should be an FileTreeItem).
 		 * If item can't be found or item is an FileTreeDirItem, a reference to
 		 * TorrentFile::null will be returned. In which case the isNull() function
 		 * of TorrentFile will return true
-		 * @param item Pointer to the QListViewItem
+		 * @param item Pointer to the TQListViewItem
 		 * @return A reference to the TorrentFile
 		 */
-		kt::TorrentFileInterface & findTorrentFile(QListViewItem* item);
+		kt::TorrentFileInterface & findTorrentFile(TQListViewItem* item);
 
 		/**
 		 * Set all items checked or not.
@@ -93,11 +93,11 @@ namespace kt
 		void invertChecked();
 
 		/**
-		 * Called by the child to notify the parent it's state has changed.
+		 * Called by the child to notify the tqparent it's state has changed.
 		 */
 		void childStateChange();
 
-		FileTreeDirItem* getParent() {return parent;}
+		FileTreeDirItem* getParent() {return tqparent;}
 		
 		/// Recusively get the total number of bytes to download
 		Uint64 bytesToDownload() const;
@@ -110,7 +110,7 @@ namespace kt
 		 * @param file The TorrentFileInterface
 		 * @return A newly created FileTreeItem
 		 */
-		virtual FileTreeItem* newFileTreeItem(const QString & name,
+		virtual FileTreeItem* newFileTreeItem(const TQString & name,
 											  TorrentFileInterface & file);
 
 
@@ -120,7 +120,7 @@ namespace kt
 		 * @param subdir The name of the subdir
 		 * @return A newly created FileTreeDirItem
 		 */
-		virtual FileTreeDirItem* newFileTreeDirItem(const QString & subdir);
+		virtual FileTreeDirItem* newFileTreeDirItem(const TQString & subdir);
 		
 		
 		/**
@@ -131,7 +131,7 @@ namespace kt
 		
 	private:
 		virtual void stateChange(bool on);
-		virtual int compare(QListViewItem* i, int col, bool ascending) const;
+		virtual int compare(TQListViewItem* i, int col, bool ascending) const;
 		bool allChildrenOn();
 	};
 

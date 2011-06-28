@@ -38,7 +38,7 @@ namespace kt
 	void PeerSource::aboutToBeDestroyed()
 	{}
 	
-	void PeerSource::addPeer(const QString & ip,bt::Uint16 port,bool local)
+	void PeerSource::addPeer(const TQString & ip,bt::Uint16 port,bool local)
 	{
 		PotentialPeer pp;
 		pp.ip = ip;

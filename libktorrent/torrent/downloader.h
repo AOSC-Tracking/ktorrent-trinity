@@ -20,7 +20,7 @@
 #ifndef BTDOWNLOADER_H
 #define BTDOWNLOADER_H
 
-#include <qobject.h>
+#include <tqobject.h>
 #include <util/ptrmap.h>
 #include "globals.h"
 
@@ -64,9 +64,10 @@ namespace bt
 	 * This class manages the downloading of the file. It should
 	 * regurarly be updated.
 	*/
-	class Downloader : public QObject
+	class Downloader : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 		
 	public:
 		/**
@@ -109,20 +110,20 @@ namespace bt
 		 * Save the current downloads.
 		 * @param file The file to save to
 		 */
-		void saveDownloads(const QString & file);
+		void saveDownloads(const TQString & file);
 
 		/**
 		 * Load the current downloads.
 		 * @param file The file to load from
 		 */
-		void loadDownloads(const QString & file);
+		void loadDownloads(const TQString & file);
 
 		/**
 		 * Get the number of bytes already downloaded in the current_chunks file.
 		 * @param file The path of the current_chunks file
 		 * @return The bytes already downloading
 		 */
-		Uint32 getDownloadedBytesOfCurrentChunksFile(const QString & file);
+		Uint32 getDownloadedBytesOfCurrentChunksFile(const TQString & file);
 		
 		/**
 		 * A corrupted chunk has been detected, make sure we redownload it.
@@ -189,7 +190,7 @@ namespace bt
 		 * An error occurred while we we're writing or reading from disk.
 		 * @param msg Message
 		 */
-		void ioError(const QString & msg);
+		void ioError(const TQString & msg);
 		
 	private:
 		void downloadFrom(PeerDownloader* pd);

@@ -20,10 +20,10 @@
 #ifndef KTPLUGINMANAGERPREFPAGE_H
 #define KTPLUGINMANAGERPREFPAGE_H
 
-#include <qobject.h>
+#include <tqobject.h>
 #include <interfaces/prefpageinterface.h>
 
-class QListViewItem;
+class TQListViewItem;
 class PluginManagerWidget;
 
 namespace kt
@@ -36,15 +36,16 @@ namespace kt
 	 *
 	 * Pref page which allows to load and unload plugins.
 	*/
-	class PluginManagerPrefPage : public QObject,public PrefPageInterface
+	class PluginManagerPrefPage : public TQObject,public PrefPageInterface
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		PluginManagerPrefPage(PluginManager* pman);
 		virtual ~PluginManagerPrefPage();
 
 		virtual bool apply();
-		virtual void createWidget(QWidget* parent);
+		virtual void createWidget(TQWidget* tqparent);
 		virtual void updateData();
 		virtual void deleteWidget();
 		

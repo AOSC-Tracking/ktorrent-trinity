@@ -25,8 +25,8 @@
 #include "ipblockingpref.h"
 #include "ipfilterplugin.h"
 #include <interfaces/coreinterface.h>
-#include <qthread.h>
-#include <qobject.h>
+#include <tqthread.h>
+#include <tqobject.h>
 
 class KProgress;
 
@@ -41,7 +41,7 @@ namespace kt
 	class IPBlockingPrefPageWidget : public IPBlockingPref
 	{
 		public:
-			IPBlockingPrefPageWidget(QWidget *parent = 0);
+			IPBlockingPrefPageWidget(TQWidget *tqparent = 0);
 			void apply();
 			void convert();
 			void setPlugin(IPFilterPlugin* p);
@@ -70,7 +70,7 @@ namespace kt
 			virtual ~IPBlockingPrefPage();
 			
 			virtual bool apply();
-			virtual void createWidget(QWidget* parent);
+			virtual void createWidget(TQWidget* tqparent);
 			virtual void updateData();
 			virtual void deleteWidget();
 

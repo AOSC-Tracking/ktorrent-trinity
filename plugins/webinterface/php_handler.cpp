@@ -33,24 +33,24 @@ using namespace bt;
 
 namespace kt
 {
-	QMap<QString,QByteArray> PhpHandler::scripts;
+	TQMap<TQString,TQByteArray> PhpHandler::scripts;
 
-	PhpHandler::PhpHandler(const QString & php_exe,PhpInterface *php) : QProcess(php_exe),php_i(php)
+	PhpHandler::PhpHandler(const TQString & php_exe,PhpInterface *php) : TQProcess(php_exe),php_i(php)
 	{
-		connect(this,SIGNAL(readyReadStdout()),this,SLOT(onReadyReadStdout()));
-		connect(this,SIGNAL(processExited()),this,SLOT(onExited()));
+		connect(this,TQT_SIGNAL(readyReadStdout()),this,TQT_SLOT(onReadyReadStdout()));
+		connect(this,TQT_SIGNAL(processExited()),this,TQT_SLOT(onExited()));
 	}
 	
 	PhpHandler::~PhpHandler()
 	{
 	}
 	
-	bool PhpHandler::executeScript(const QString & path,const QMap<QString,QString> & args)
+	bool PhpHandler::executeScript(const TQString & path,const TQMap<TQString,TQString> & args)
 	{
-		QByteArray php_s;
-		if (!scripts.contains(path))
+		TQByteArray php_s;
+		if (!scripts.tqcontains(path))
 		{
-			QFile fptr(path);
+			TQFile fptr(path);
 			if (!fptr.open(IO_ReadOnly))
 			{
 				Out(SYS_WEB|LOG_DEBUG) << "Failed to open " << path << endl;
@@ -66,32 +66,32 @@ namespace kt
 		
 		output.resize(0);
 	
-		int firstphptag = QCString(php_s).find("<?php");
+		int firstphptag = TQCString(php_s).tqfind("<?php");
 		if (firstphptag == -1)
 			return false;
 		
 		int off = firstphptag + 6;
-		QByteArray data;
-		QTextStream ts(data,IO_WriteOnly);
-		ts.setEncoding( QTextStream::UnicodeUTF8 );
+		TQByteArray data;
+		TQTextStream ts(data,IO_WriteOnly);
+		ts.setEncoding( TQTextStream::UnicodeUTF8 );
 		ts.writeRawBytes(php_s.data(),off); // first write the opening tag from the script
 		php_i->globalInfo(ts);
-		php_i->downloadStatus(ts);
+		php_i->downloadtqStatus(ts);
 		
-		QMap<QString,QString>::const_iterator it;
+		TQMap<TQString,TQString>::const_iterator it;
 			
 		for ( it = args.begin(); it != args.end(); ++it )
 		{
-			ts << QString("$_REQUEST['%1']=\"%2\";\n").arg(it.key()).arg(it.data());
+			ts << TQString("$_REQUEST['%1']=\"%2\";\n").tqarg(it.key()).tqarg(it.data());
 		}
 		ts.writeRawBytes(php_s.data() + off,php_s.size() - off); // the rest of the script
 		ts << flush;
 		
 #if 0
-		QFile dinges("output.php");
+		TQFile dinges("output.php");
 		if (dinges.open(IO_WriteOnly))
 		{
-			QTextStream out(&dinges);
+			TQTextStream out(&dinges);
 			out.writeRawBytes(data.data(),data.size());
 			dinges.close();
 		}
@@ -108,10 +108,10 @@ namespace kt
 	
 	void PhpHandler::onReadyReadStdout()
 	{
-		QTextStream out(output,IO_WriteOnly|IO_Append);
+		TQTextStream out(output,IO_WriteOnly|IO_Append);
 		while (canReadLineStdout())
 		{
-			QByteArray d = readStdout();
+			TQByteArray d = readStdout();
 			out.writeRawBytes(d.data(),d.size());
 		}
 	}

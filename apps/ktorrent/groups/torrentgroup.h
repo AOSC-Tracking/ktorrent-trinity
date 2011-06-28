@@ -37,7 +37,7 @@ namespace kt
 		std::set<TorrentInterface*> torrents;
 		std::set<bt::SHA1Hash> hashes;
 	public:
-		TorrentGroup(const QString& name);
+		TorrentGroup(const TQString& name);
 		virtual ~TorrentGroup();
 
 		virtual bool isMember(TorrentInterface* tor);

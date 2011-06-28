@@ -22,7 +22,7 @@
 #define BTTORRENT_H
 
 #include <kurl.h>
-#include <qvaluevector.h>
+#include <tqvaluevector.h>
 #include <util/sha1hash.h>
 #include <util/constants.h>
 #include <interfaces/torrentinterface.h>
@@ -74,7 +74,7 @@ namespace bt
 		 * @param verbose Wether to print information to the log
 		 * @throw Error if something goes wrong
 		 */
-		void load(const QString & file,bool verbose);
+		void load(const TQString & file,bool verbose);
 		
 		/**
 		 * Load a .torrent file.
@@ -82,7 +82,7 @@ namespace bt
 		 * @param verbose Wether to print information to the log
 		 * @throw Error if something goes wrong
 		 */
-		void load(const QByteArray & data,bool verbose);
+		void load(const TQByteArray & data,bool verbose);
 		
 		void debugPrintInfo();
 		
@@ -102,7 +102,7 @@ namespace bt
 		Uint64 getFileLength() const {return file_length;}
 		
 		/// Get the suggested name.
-		QString getNameSuggestion() const {return name_suggestion;}
+		TQString getNameSuggestion() const {return name_suggestion;}
 		
 		/**
 		 * Verify wether a hash matches the hash
@@ -155,7 +155,7 @@ namespace bt
 		 * @param chunk The index of the chunk
 		 * @param file_list This list will be filled with all the indices
 		 */
-		void calcChunkPos(Uint32 chunk,QValueList<Uint32> & file_list) const;
+		void calcChunkPos(Uint32 chunk,TQValueList<Uint32> & file_list) const;
 
 		/**
 		* Checks if torrent file is audio or video.
@@ -197,19 +197,19 @@ namespace bt
 		void loadFiles(BListNode* node);
 		void loadNodes(BListNode* node);
 		void loadAnnounceList(BNode* node);
-		bool checkPathForDirectoryTraversal(const QString & p);
+		bool checkPathForDirectoryTraversal(const TQString & p);
 		
 	private:
 		TrackerTier* trackers;
-		QString name_suggestion;
+		TQString name_suggestion;
 		Uint64 piece_length;
 		Uint64 file_length;
 		SHA1Hash info_hash;
 		PeerID peer_id;
-		QValueVector<SHA1Hash> hash_pieces;
-		QValueVector<TorrentFile> files;
-		QValueVector<kt::DHTNode> nodes;
-		QString encoding;
+		TQValueVector<SHA1Hash> hash_pieces;
+		TQValueVector<TorrentFile> files;
+		TQValueVector<kt::DHTNode> nodes;
+		TQString encoding;
 		bool priv_torrent;
 	};
 

@@ -11,15 +11,15 @@
 #ifndef LIBRSS_ARTICLE_H
 #define LIBRSS_ARTICLE_H
 
-#include <qmap.h>
+#include <tqmap.h>
 
 #include "global.h"
 
-class QDateTime;
-class QDomNode;
-template <class> class QValueList;
-class QString;
-class QWidget;
+class TQDateTime;
+class TQDomNode;
+template <class> class TQValueList;
+class TQString;
+class TQWidget;
 class KURL;
 class KURLLabel;
 
@@ -37,7 +37,7 @@ namespace RSS
          /**
           * A list of articles.
           */
-         typedef QValueList<Article> List;
+         typedef TQValueList<Article> List;
 
          /**
           * Default constructor.
@@ -52,10 +52,10 @@ namespace RSS
 
          /**
           * Constructs an Article from a piece of RSS markup.
-          * @param node A QDomNode which references the DOM leaf to be used
+          * @param node A TQDomNode which references the DOM leaf to be used
           * for constructing the Article.
           */
-         Article(const QDomNode &node, Format format);
+         Article(const TQDomNode &node, Format format);
 
          /**
           * Assignment operator.
@@ -87,10 +87,10 @@ namespace RSS
 
          /**
           * RSS 0.90 and upwards
-          * @return The headline of this article, or QString::null if
+          * @return The headline of this article, or TQString() if
           * no headline was available.
           */
-         QString title() const;
+         TQString title() const;
 
          /**
           * RSS 0.90 and upwards
@@ -103,20 +103,20 @@ namespace RSS
 
          /**
           * RSS 0.91 and upwards
-          * @return A story synopsis, or QString::null if no description
+          * @return A story synopsis, or TQString() if no description
           * was available.
           */
-         QString description() const;
+         TQString description() const;
 
          /**
           * RSS 2.0 and upwards
           * @return An article GUID (globally unique identifier).
           */
-         QString guid() const;
+         TQString guid() const;
 
          /**
           * RSS 2.0 and upwards
-          * @return If this article GUID is permalink. Has no meaning when guid() is QString::null.
+          * @return If this article GUID is permalink. Has no meaning when guid() is TQString().
           */
          bool guidIsPermaLink() const;
 
@@ -124,30 +124,30 @@ namespace RSS
           * RSS 2.0 and upwards
           * @return The date when the article was published.
           */
-         const QDateTime &pubDate() const;
+         const TQDateTime &pubDate() const;
          
 		 const KURL &commentsLink() const;
 		 int comments() const;
 
-		 QString meta(const QString &key) const;
+		 TQString meta(const TQString &key) const;
          
          /**
-          * @param parent The parent widget for the KURLLabel.
+          * @param tqparent The tqparent widget for the KURLLabel.
           * @param name A name for the widget which will be used internally.
           * @return a widget (a KURLLabel in this case) for the Article.
           * This makes building a user-interface which contains the
           * information in this Article object more convenient.
           * The returned KURLLabel's caption will be the title(), clicking
-          * on it will emit the URL link(), and it has a QToolTip attached
+          * on it will emit the URL link(), and it has a TQToolTip attached
           * to it which displays the description() (in case it has one,
           * if there is no description, the URL which the label links to
           * will be used).
           * Note that you have to delete the KURLLabel object returned by
           * this method yourself.
           */
-         KURLLabel *widget(QWidget *parent = 0, const char *name = 0) const;
+         KURLLabel *widget(TQWidget *tqparent = 0, const char *name = 0) const;
          
-         typedef QMap<QString, QString> MetaInfoMap;
+         typedef TQMap<TQString, TQString> MetaInfoMap;
          
       private:
          struct Private;

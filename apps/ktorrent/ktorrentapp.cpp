@@ -48,7 +48,7 @@ int KTorrentApp::newInstance()
 	KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 	bt::Globals::instance().setDebugMode(args->isSet("debug"));
 
-	QString data_dir = KGlobal::dirs()->saveLocation("data","ktorrent");
+	TQString data_dir = KGlobal::dirs()->saveLocation("data","ktorrent");
 	if (!data_dir.endsWith(bt::DirSeparator()))
 		data_dir += bt::DirSeparator();
 	bt::Globals::instance().initLog(data_dir + "log");
@@ -62,7 +62,7 @@ int KTorrentApp::newInstance()
 		KStartupInfo::setNewStartupId( mainWidget(), kapp->startupId());
 
 
-	KTorrent *widget = ::qt_cast<KTorrent*>( mainWidget() );
+	KTorrent *widget = ::tqqt_cast<KTorrent*>( mainWidget() );
 
 	for (int i = 0; i < args->count(); i++)
 	{

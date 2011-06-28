@@ -18,7 +18,7 @@
 <table  width="100%">
   <tbody>
     	<?php
-		$stats=downloadStatus();
+		$stats=downloadtqStatus();
 		$a = 0;
 		foreach ($stats as $torrent) {
 			echo "<tr>";
@@ -59,7 +59,7 @@
 							echo "<td>Checking Data</td>";
 							break;
 						default:
-							echo "<td>Not supported Status</td>";
+							echo "<td>Not supported tqStatus</td>";
 				}
 				echo "<td>$perc%</td>";
       		$a=$a+1;	

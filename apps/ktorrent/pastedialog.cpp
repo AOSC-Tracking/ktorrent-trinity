@@ -22,19 +22,19 @@
 #include "ktorrentcore.h"
 #include <kpushbutton.h>
 #include <kstdguiitem.h>
-#include <qclipboard.h>
-#include <qapplication.h>
+#include <tqclipboard.h>
+#include <tqapplication.h>
 #include <kurl.h>
 #include <klineedit.h>
 #include <kmessagebox.h>
 #include <klocale.h>
 
-PasteDialog::PasteDialog(KTorrentCore* core, QWidget *parent, const char *name)
-		:PasteDlgBase(parent, name)
+PasteDialog::PasteDialog(KTorrentCore* core, TQWidget *tqparent, const char *name)
+		:PasteDlgBase(tqparent, name)
 {
 	m_core = core;
-	QClipboard *cb = QApplication::clipboard();
-	QString text = cb->text(QClipboard::Clipboard);
+	TQClipboard *cb = TQApplication::tqclipboard();
+	TQString text = cb->text(TQClipboard::Clipboard);
 	KURL url = KURL::fromPathOrURL(text);
 	if ( url.isValid() )
 		m_url->setText(url.url());
@@ -49,7 +49,7 @@ void PasteDialog::btnOK_clicked()
 	if ( url.isValid() )
 	{
 		m_core->load(url);
-		QDialog::accept();
+		TQDialog::accept();
 	}
 	else
 	{

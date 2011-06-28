@@ -35,7 +35,7 @@ namespace ktdebug
 
 		~MultiCacheChecker();
 
-		virtual void check(const QString& cache, const QString& index);
+		virtual void check(const TQString& cache, const TQString& index);
 
 	};
 

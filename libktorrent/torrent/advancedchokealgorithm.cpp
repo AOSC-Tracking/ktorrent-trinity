@@ -234,7 +234,7 @@ namespace bt
 		while (i != start)
 		{
 			Peer* p = pman.getPeer(i);
-			if (p && p->isChoked() && p->isInterested() && !p->isSeeder() && ppl.contains(p))
+			if (p && p->isChoked() && p->isInterested() && !p->isSeeder() && ppl.tqcontains(p))
 				return p->getID();
 			i = (i + 1) % num_peers;
 		}

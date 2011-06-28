@@ -24,8 +24,8 @@
 #include <util/mmapfile.h>
 #include <util/constants.h>
 
-#include <qvaluelist.h>
-#include <qstring.h>
+#include <tqvaluelist.h>
+#include <tqstring.h>
 
 namespace kt
 {
@@ -70,9 +70,9 @@ namespace kt
 			/**
 			 * Checks if specified IP is listed in filter file.
 			 * @return TRUE if IP should be blocked, FALSE otherwise
-			 * @param ip QString representation of IP to be checked
+			 * @param ip TQString representation of IP to be checked
 			 **/
-			bool isBlockedIP(const QString& ip);
+			bool isBlockedIP(const TQString& ip);
 			
 			/**
 			 * Overloaded function. Uses Uint32 IP to be checked
@@ -80,13 +80,13 @@ namespace kt
 			bool isBlockedIP(bt::Uint32& ip);
 			
 			/**
-			 * This function converts QString IP to Uint32 format.
+			 * This function converts TQString IP to Uint32 format.
 			 **/
-			static bt::Uint32 toUint32(const QString& ip);
+			static bt::Uint32 toUint32(const TQString& ip);
 			
 		private:
 			bt::MMapFile* file;
-			QValueList<HeaderBlock> blocks;
+			TQValueList<HeaderBlock> blocks;
 			
 			///Is AntiP2P header loaded
 			bool header_loaded;

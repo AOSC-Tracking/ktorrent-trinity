@@ -20,10 +20,10 @@
 #include "scanfolderprefpagewidget.h"
 #include "scanfolderpluginsettings.h"
 
-#include <qwidget.h>
-#include <qstring.h>
-#include <qcheckbox.h>
-#include <qfile.h>
+#include <tqwidget.h>
+#include <tqstring.h>
+#include <tqcheckbox.h>
+#include <tqfile.h>
 
 #include <kglobal.h>
 #include <klocale.h>
@@ -32,8 +32,8 @@
 
 namespace kt
 {
-	ScanFolderPrefPageWidget::ScanFolderPrefPageWidget(QWidget *parent, const char *name)
-			:SfPrefPageWidgetBase(parent, name)
+	ScanFolderPrefPageWidget::ScanFolderPrefPageWidget(TQWidget *tqparent, const char *name)
+			:SfPrefPageWidgetBase(tqparent, name)
 	{
 		use1->setChecked(ScanFolderPluginSettings::useFolder1());
 		use2->setChecked(ScanFolderPluginSettings::useFolder2());
@@ -58,9 +58,9 @@ namespace kt
 		bool usesf2 = use2->isChecked();
 		bool usesf3 = use3->isChecked();
 
-		QString sfPath1 = url1->url();
-		QString sfPath2 = url2->url();
-		QString sfPath3 = url3->url();
+		TQString sfPath1 = url1->url();
+		TQString sfPath2 = url2->url();
+		TQString sfPath3 = url3->url();
 
 		bool silently = openSilently->isChecked();
 		bool deleteChecked = deleteCheck->isChecked();
@@ -70,26 +70,26 @@ namespace kt
 		ScanFolderPluginSettings::setActionDelete(deleteChecked);
 		ScanFolderPluginSettings::setActionMove(moveChecked);
 		
-		QString message = i18n( "ScanFolder - Folder %1: Invalid URL or folder does not exist. Please, choose a valid directory." );
-		if(!QFile::exists(sfPath1) && usesf1)
+		TQString message = i18n( "ScanFolder - Folder %1: Invalid URL or folder does not exist. Please, choose a valid directory." );
+		if(!TQFile::exists(sfPath1) && usesf1)
 		{
-			KMessageBox::sorry(0, message.arg( 1 ) );
+			KMessageBox::sorry(0, message.tqarg( 1 ) );
 			usesf1 = false;
 		}
 		else
 			ScanFolderPluginSettings::setFolder1(sfPath1);
 
-		if(!QFile::exists(sfPath2) && usesf2)
+		if(!TQFile::exists(sfPath2) && usesf2)
 		{
-			KMessageBox::sorry(0, message.arg( 2 ) );
+			KMessageBox::sorry(0, message.tqarg( 2 ) );
 			usesf2 = false;
 		}
 		else
 			ScanFolderPluginSettings::setFolder2(sfPath2);
 
-		if(!QFile::exists(sfPath3) && usesf3)
+		if(!TQFile::exists(sfPath3) && usesf3)
 		{
-			KMessageBox::sorry(0, message.arg( 3 ) );
+			KMessageBox::sorry(0, message.tqarg( 3 ) );
 			usesf3 = false;
 		}
 		else

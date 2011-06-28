@@ -13,8 +13,8 @@
 
 #include <time.h>
 
-class QDomNode;
-class QString;
+class TQDomNode;
+class TQString;
 
 namespace RSS
 {
@@ -26,8 +26,8 @@ namespace RSS
 		unsigned int count;
 	};
 
-	QString extractNode(const QDomNode &parent, const QString &elemName, bool isInlined=true);
-	time_t parseISO8601Date(const QString &s);
+	TQString extractNode(const TQDomNode &tqparent, const TQString &elemName, bool isInlined=true);
+	time_t parseISO8601Date(const TQString &s);
 }
 
 #endif // LIBRSS_TOOLS_P_H

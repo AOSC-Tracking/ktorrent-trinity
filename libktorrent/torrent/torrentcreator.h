@@ -20,7 +20,7 @@
 #ifndef BTTORRENTCREATOR_H
 #define BTTORRENTCREATOR_H
 
-#include <qstringlist.h>
+#include <tqstringlist.h>
 #include "torrent.h"
 #include <util/sha1hash.h>
 
@@ -40,15 +40,15 @@ namespace bt
 	class TorrentCreator
 	{
 		// input values
-		QString target;
-		QStringList trackers;
+		TQString target;
+		TQStringList trackers;
 		int chunk_size;
-		QString name,comments;
+		TQString name,comments;
 		// calculated values
 		Uint32 num_chunks;
 		Uint64 last_size;
-		QValueList<TorrentFile> files;
-		QValueList<SHA1Hash> hashes;
+		TQValueList<TorrentFile> files;
+		TQValueList<SHA1Hash> hashes;
 		//
 		Uint32 cur_chunk;
 		bool priv;
@@ -64,9 +64,9 @@ namespace bt
 		 * @param comments The comments field of the torrent
 		 * @param priv Private torrent or not
 		 */
-		TorrentCreator(const QString & target,const QStringList & trackers,
-					   Uint32 chunk_size,const QString & name,
-					   const QString & comments,bool priv,bool decentralized);
+		TorrentCreator(const TQString & target,const TQStringList & trackers,
+					   Uint32 chunk_size,const TQString & name,
+					   const TQString & comments,bool priv,bool decentralized);
 		virtual ~TorrentCreator();
 
 		
@@ -86,7 +86,7 @@ namespace bt
 		 * @param url Filename
 		 * @throw Error if something goes wrong
 		 */
-		void saveTorrent(const QString & url);
+		void saveTorrent(const TQString & url);
 		
 		/**
 		 * Make a TorrentControl object for this torrent.
@@ -98,13 +98,13 @@ namespace bt
 		 * @throw Error if something goes wrong
 		 * @return The newly created object
 		 */
-		TorrentControl* makeTC(const QString & data_dir);
+		TorrentControl* makeTC(const TQString & data_dir);
 
 	private:
 		void saveInfo(BEncoder & enc);
 		void saveFile(BEncoder & enc,const TorrentFile & file);
 		void savePieces(BEncoder & enc);
-		void buildFileList(const QString & dir);
+		void buildFileList(const TQString & dir);
 		bool calcHashSingle();
 		bool calcHashMulti();
 	};

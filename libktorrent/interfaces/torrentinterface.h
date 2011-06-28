@@ -20,7 +20,7 @@
 #ifndef KTTORRENTINTERFACE_H
 #define KTTORRENTINTERFACE_H
 
-#include <qobject.h>
+#include <tqobject.h>
 #include <util/constants.h>
 #include <interfaces/trackerslist.h>
 
@@ -44,7 +44,7 @@ namespace kt
 	class TorrentFileInterface;
 	class PeerSource;
 	
-	enum TorrentStatus
+	enum TorrenttqStatus
 	{
 		NOT_STARTED,
 		SEEDING_COMPLETE,
@@ -55,7 +55,7 @@ namespace kt
 		STOPPED,
 		ALLOCATING_DISKSPACE,
 		ERROR,
-		QUEUED,
+		TQUEUED,
 		CHECKING_DATA,
   		NO_SPACE_LEFT
 	};
@@ -67,7 +67,7 @@ namespace kt
 		NOT_ENOUGH_DISKSPACE, 
 		MAX_SHARE_RATIO_REACHED, 
 		BUSY_WITH_DATA_CHECK, 
-		QM_LIMITS_REACHED // Max seeds or downloads reached
+		TQM_LIMITS_REACHED // Max seeds or downloads reached
 	};
 	
 	enum AutoStopReason
@@ -118,10 +118,10 @@ namespace kt
 		Uint32 leechers_total;
 		/// Num leechers connected to
 		Uint32 leechers_connected_to;
-		/// Status of the download
-		TorrentStatus status;
+		/// tqStatus of the download
+		TorrenttqStatus status;
 		/// The status of the tracker
-		QString trackerstatus;
+		TQString trackerstatus;
 		/// The number of bytes downloaded in this session
 		Uint64 session_bytes_downloaded;
 		/// The number of bytes uploaded in this session
@@ -131,9 +131,9 @@ namespace kt
 		/// The number of bytes upload since the last started event, this gets sent to the tracker
 		Uint64 trk_bytes_uploaded;
 		/// Name of the torrent
-		QString torrent_name;
+		TQString torrent_name;
 		/// Path of the dir or file where the data will get saved
-		QString output_path;
+		TQString output_path;
 		/// See if we are running
 		bool running;
 		/// See if the torrent has been started
@@ -161,7 +161,7 @@ namespace kt
 		
 	struct DHTNode
 	{
-		QString ip;
+		TQString ip;
 		bt::Uint16 port;
 	};
 	
@@ -179,9 +179,10 @@ namespace kt
 	 * This class is the interface for an object which controls the
 	 * up- and download of one torrent.
 	*/
-	class TorrentInterface : public QObject
+	class TorrentInterface : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		TorrentInterface();
 		virtual ~TorrentInterface();
@@ -226,13 +227,13 @@ namespace kt
 		 * Get the torX directory of this torrent. Temporary stuff like the index
 		 * file get stored there.
 		 */
-		virtual QString getTorDir() const = 0;
+		virtual TQString getTorDir() const = 0;
 
 		/// Get the data directory of this torrent
-		virtual QString getDataDir() const = 0;
+		virtual TQString getDataDir() const = 0;
 
 		/// Get a short error message
-		virtual QString getShortErrorMessage() const = 0;
+		virtual TQString getShortErrorMessage() const = 0;
 
 		/**
 		 * Get the download running time of this torrent in seconds
@@ -252,7 +253,7 @@ namespace kt
 		 * @param new_dir The new directory
 		 * @return true upon succes
 		 */
-		virtual bool changeDataDir(const QString & new_dir) = 0;
+		virtual bool changeDataDir(const TQString & new_dir) = 0;
 		
 		/**
 		 * Change torrents output directory. If this fails we will fall back on the old directory.
@@ -260,7 +261,7 @@ namespace kt
 		 * @param moveFiles Wheather to actually move the files or just change the directory without moving them.
 		 * @return true upon success.
 		 */
-		virtual bool changeOutputDir(const QString& new_dir, bool moveFiles = true) = 0;
+		virtual bool changeOutputDir(const TQString& new_dir, bool moveFiles = true) = 0;
 
 		/**
 		 * Roll back the previous changeDataDir call.
@@ -329,7 +330,7 @@ namespace kt
 		virtual float getMaxSeedTime() const = 0;
 		
 		/// Make a string of the current status
-		virtual QString statusToString() const = 0;
+		virtual TQString statusToString() const = 0;
 		
 		///Is manual announce allowed?
 		virtual bool announceAllowed() = 0;
@@ -363,7 +364,7 @@ namespace kt
 		 * Test all files and see if they are not missing.
 		 * If so put them in a list
 		 */
-		virtual bool hasMissingFiles(QStringList & sl) = 0;
+		virtual bool hasMissingFiles(TQStringList & sl) = 0;
 		
 		/**
 		 * Recreate missing files.
@@ -394,7 +395,7 @@ namespace kt
 		virtual bool overMaxSeedTime() = 0;
 		
 		/// Handle an error
-		virtual void handleError(const QString & err) = 0;
+		virtual void handleError(const TQString & err) = 0;
 		
 		/// Get the info_hash.
 		virtual const bt::SHA1Hash & getInfoHash() const  = 0;
@@ -443,7 +444,7 @@ namespace kt
 		 * @param me The object who emitted the signal
 		 * @param msg Error message
 		 */
-		void stoppedByError(kt::TorrentInterface* me, QString msg);
+		void stoppedByError(kt::TorrentInterface* me, TQString msg);
 		
 		/**
 		 * Emited when maximum share ratio for this torrent is changed

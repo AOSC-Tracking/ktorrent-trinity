@@ -17,8 +17,8 @@
 #include <kurllabel.h>
 #include <kmdcodec.h> 
 
-#include <qdatetime.h>
-#include <qdom.h>
+#include <tqdatetime.h>
+#include <tqdom.h>
 
 using namespace RSS;
 namespace RSS
@@ -28,11 +28,11 @@ namespace RSS
 
 struct Article::Private : public Shared
 {
-	QString title;
+	TQString title;
 	KURL link;
-	QString description;
-	QDateTime pubDate;
-	QString guid;
+	TQString description;
+	TQDateTime pubDate;
+	TQString guid;
 	bool guidIsPermaLink;
     MetaInfoMap meta;
 	KURL commentsLink;
@@ -48,28 +48,28 @@ Article::Article(const Article &other) : d(0)
 	*this = other;
 }
 
-Article::Article(const QDomNode &node, Format format) : d(new Private)
+Article::Article(const TQDomNode &node, Format format) : d(new Private)
 {
-	QString elemText;
+	TQString elemText;
 
 	d->numComments=0;
 
-	if (!(elemText = extractNode(node, QString::fromLatin1("title"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("title"))).isNull())
 		d->title = elemText;
    
 
-	QDomNode n;
+	TQDomNode n;
 	bool foundTorrentEnclosure = false;
 	for (n = node.firstChild(); !n.isNull(); n = n.nextSibling()) {
-		const QDomElement e = n.toElement();
-		if ( (e.tagName()==QString::fromLatin1("enclosure") ) )
+		const TQDomElement e = n.toElement();
+		if ( (e.tagName()==TQString::tqfromLatin1("enclosure") ) )
 			{
-			QString enclosureAttr = e.attribute(QString::fromLatin1("type"));
+			TQString enclosureAttr = e.attribute(TQString::tqfromLatin1("type"));
 			if (!enclosureAttr.isNull() )
 				{
 				if (enclosureAttr == "application/x-bittorrent")
 					{
-					enclosureAttr = e.attribute(QString::fromLatin1("url"));
+					enclosureAttr = e.attribute(TQString::tqfromLatin1("url"));
 					if (!enclosureAttr.isNull() )
 						{
 						d->link=enclosureAttr;
@@ -85,44 +85,44 @@ Article::Article(const QDomNode &node, Format format) : d(new Private)
 		{
 		if (format==AtomFeed)
 		{
-			QDomNode n;
+			TQDomNode n;
 			for (n = node.firstChild(); !n.isNull(); n = n.nextSibling()) {
-				const QDomElement e = n.toElement();
-				if ( (e.tagName()==QString::fromLatin1("link")) &&
-					(e.attribute(QString::fromLatin1("rel"))==QString::fromLatin1("alternate")))
+				const TQDomElement e = n.toElement();
+				if ( (e.tagName()==TQString::tqfromLatin1("link")) &&
+					(e.attribute(TQString::tqfromLatin1("rel"))==TQString::tqfromLatin1("alternate")))
 					{   
-						d->link=n.toElement().attribute(QString::fromLatin1("href"));
+						d->link=n.toElement().attribute(TQString::tqfromLatin1("href"));
 						break;
 					}
 			}
 		}
 		else
 		{
-			if (!(elemText = extractNode(node, QString::fromLatin1("link"))).isNull())
+			if (!(elemText = extractNode(node, TQString::tqfromLatin1("link"))).isNull())
 				d->link = elemText;
 		}
 	}
 
 
     // prefer content/content:encoded over summary/description for feeds that provide it
-    QString tagName=(format==AtomFeed)? QString::fromLatin1("content"): QString::fromLatin1("content:encoded");
+    TQString tagName=(format==AtomFeed)? TQString::tqfromLatin1("content"): TQString::tqfromLatin1("content:encoded");
     
     if (!(elemText = extractNode(node, tagName, false)).isNull())
         d->description = elemText;
     
     if (d->description.isEmpty())
     {
-		if (!(elemText = extractNode(node, QString::fromLatin1("body"), false)).isNull())
+		if (!(elemText = extractNode(node, TQString::tqfromLatin1("body"), false)).isNull())
 	    	d->description = elemText;
     
 		if (d->description.isEmpty())  // 3rd try: see http://www.intertwingly.net/blog/1299.html
 		{
-			if (!(elemText = extractNode(node, QString::fromLatin1((format==AtomFeed)? "summary" : "description"), false)).isNull())
+			if (!(elemText = extractNode(node, TQString::tqfromLatin1((format==AtomFeed)? "summary" : "description"), false)).isNull())
 				d->description = elemText;
 		}
     }
     
-	if (!(elemText = extractNode(node, QString::fromLatin1((format==AtomFeed)? "created": "pubDate"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1((format==AtomFeed)? "created": "pubDate"))).isNull())
     {
 		time_t _time;
 		if (format==AtomFeed)
@@ -134,7 +134,7 @@ Article::Article(const QDomNode &node, Format format) : d(new Private)
         if (_time != 0)
 		  d->pubDate.setTime_t(_time);
 	}
-	if (!(elemText = extractNode(node, QString::fromLatin1("dc:date"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("dc:date"))).isNull())
     {
 		time_t _time = parseISO8601Date(elemText);
 
@@ -146,23 +146,23 @@ Article::Article(const QDomNode &node, Format format) : d(new Private)
 	//no luck so far - so let's set it to the current time
 	if (!d->pubDate.isValid())
 	{
-		d->pubDate = QDateTime::currentDateTime();
+		d->pubDate = TQDateTime::tqcurrentDateTime();
 	}
 	
 
-	if (!(elemText = extractNode(node, QString::fromLatin1("wfw:comment"))).isNull()) {
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("wfw:comment"))).isNull()) {
 		d->commentsLink = elemText;
 	}
 
-    if (!(elemText = extractNode(node, QString::fromLatin1("slash:comments"))).isNull()) {
+    if (!(elemText = extractNode(node, TQString::tqfromLatin1("slash:comments"))).isNull()) {
         d->numComments = elemText.toInt();
     }
 
-    tagName=(format==AtomFeed)? QString::fromLatin1("id"): QString::fromLatin1("guid");
+    tagName=(format==AtomFeed)? TQString::tqfromLatin1("id"): TQString::tqfromLatin1("guid");
     n = node.namedItem(tagName);
 	if (!n.isNull()) {
 		d->guidIsPermaLink = (format==AtomFeed)? false : true;
-		if (n.toElement().attribute(QString::fromLatin1("isPermaLink"), "true") == "false") d->guidIsPermaLink = false;
+		if (n.toElement().attribute(TQString::tqfromLatin1("isPermaLink"), "true") == "false") d->guidIsPermaLink = false;
 
 		if (!(elemText = extractNode(node, tagName)).isNull())
 			d->guid = elemText;
@@ -172,18 +172,18 @@ Article::Article(const QDomNode &node, Format format) : d(new Private)
 		d->guidIsPermaLink = false;
         
 		md5Machine.reset();
-		QDomNode n(node);
+		TQDomNode n(node);
 		md5Machine.update(d->title.utf8());
 		md5Machine.update(d->description.utf8());
-		d->guid = QString(md5Machine.hexDigest().data());
-        d->meta[QString::fromLatin1("guidIsHash")] = QString::fromLatin1("true");
+		d->guid = TQString(md5Machine.hexDigest().data());
+        d->meta[TQString::tqfromLatin1("guidIsHash")] = TQString::tqfromLatin1("true");
 	}
 
-    for (QDomNode i = node.firstChild(); !i.isNull(); i = i.nextSibling())
+    for (TQDomNode i = node.firstChild(); !i.isNull(); i = i.nextSibling())
     {
-        if (i.isElement() && i.toElement().tagName() == QString::fromLatin1("metaInfo:meta"))
+        if (i.isElement() && i.toElement().tagName() == TQString::tqfromLatin1("metaInfo:meta"))
         {
-            QString type = i.toElement().attribute(QString::fromLatin1("type"));
+            TQString type = i.toElement().attribute(TQString::tqfromLatin1("type"));
             d->meta[type] = i.toElement().text();
         }
     }
@@ -195,7 +195,7 @@ Article::~Article()
 		delete d;
 }
 
-QString Article::title() const
+TQString Article::title() const
 {
 	return d->title;
 }
@@ -205,12 +205,12 @@ const KURL &Article::link() const
 	return d->link;
 }
 
-QString Article::description() const
+TQString Article::description() const
 {
 	return d->description;
 }
 
-QString Article::guid() const
+TQString Article::guid() const
 {
 	return d->guid;
 }
@@ -220,7 +220,7 @@ bool Article::guidIsPermaLink() const
 	return d->guidIsPermaLink;
 }
 
-const QDateTime &Article::pubDate() const
+const TQDateTime &Article::pubDate() const
 {
 	return d->pubDate;
 }
@@ -236,14 +236,14 @@ int Article::comments() const
 }
 
 
-QString Article::meta(const QString &key) const
+TQString Article::meta(const TQString &key) const
 {
     return d->meta[key];
 }
 
-KURLLabel *Article::widget(QWidget *parent, const char *name) const
+KURLLabel *Article::widget(TQWidget *tqparent, const char *name) const
 {
-	KURLLabel *label = new KURLLabel(d->link.url(), d->title, parent, name);
+	KURLLabel *label = new KURLLabel(d->link.url(), d->title, tqparent, name);
 	label->setUseTips(true);
 	if (!d->description.isNull())
 		label->setTipText(d->description);

@@ -20,7 +20,7 @@
 #ifndef DHTNODE_H
 #define DHTNODE_H
 
-#include <qobject.h>
+#include <tqobject.h>
 #include "key.h"
 #include "kbucket.h"
 
@@ -37,16 +37,17 @@ namespace dht
 	/**
 	 * @author Joris Guisson
 	 *
-	 * A Node represents us in the kademlia network. It contains
+	 * A Node represents us in the kademlia network. It tqcontains
 	 * our id and 160 KBucket's.
 	 * A KBucketEntry is in node i, when the difference between our id and
 	 * the KBucketEntry's id is between 2 to the power i and 2 to the power i+1.
 	*/
-	class Node : public QObject
+	class Node : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		Node(RPCServer* srv,const QString & key_file);
+		Node(RPCServer* srv,const TQString & key_file);
 		virtual ~Node();
 
 		/**
@@ -77,10 +78,10 @@ namespace dht
 		void refreshBuckets(DHT* dh_table);
 		
 		/// Save the routing table to a file
-		void saveTable(const QString & file);
+		void saveTable(const TQString & file);
 		
 		/// Load the routing table from a file
-		void loadTable(const QString & file);
+		void loadTable(const TQString & file);
 		
 		/// Get the number of entries in the routing table
 		Uint32 getNumEntriesInRoutingTable() const {return num_entries;}

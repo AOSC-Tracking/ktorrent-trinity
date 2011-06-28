@@ -42,7 +42,7 @@ namespace dht
 	
 
 
-	RPCServer::RPCServer(DHT* dh_table,Uint16 port,QObject *parent) : QObject(parent),dh_table(dh_table),next_mtid(0),port(port)
+	RPCServer::RPCServer(DHT* dh_table,Uint16 port,TQObject *tqparent) : TQObject(tqparent),dh_table(dh_table),next_mtid(0),port(port)
 	{
 		sock = new KDatagramSocket(this);
 		sock->setBlocking(false);
@@ -63,7 +63,7 @@ namespace dht
 	void RPCServer::start()
 	{
 		sock->setBlocking(true);
-		if (!sock->bind(QString::null,QString::number(port)))
+		if (!sock->bind(TQString(),TQString::number(port)))
 		{
 			Out(SYS_DHT|LOG_IMPORTANT) << "DHT: Failed to bind to UDP port " << port << " for DHT" << endl;
 		}
@@ -72,7 +72,7 @@ namespace dht
 			bt::Globals::instance().getPortList().addNewPort(port,net::UDP,true);
 		}
 		sock->setBlocking(false);
-		connect(sock,SIGNAL(readyRead()),this,SLOT(readPacket()));
+		connect(sock,TQT_SIGNAL(readyRead()),this,TQT_SLOT(readPacket()));
 	}
 		
 	void RPCServer::stop()
@@ -81,13 +81,13 @@ namespace dht
 		sock->close();
 	}
 	
-	static void PrintRawData(const QByteArray & data)
+	static void PrintRawData(const TQByteArray & data)
 	{
-		QString tmp;
+		TQString tmp;
 		for (Uint32 i = 0;i < data.size();i++)
 		{
-			char c = QChar(data[i]).latin1();
-			if (!QChar(data[i]).isPrint() || c == 0)
+			char c = TQChar(data[i]).latin1();
+			if (!TQChar(data[i]).isPrint() || c == 0)
 				tmp += '#';
 			else
 				tmp += c;
@@ -134,10 +134,10 @@ namespace dht
 				msg->setOrigin(pck.address());
 				msg->apply(dh_table);
 			// erase an existing call
-				if (msg->getType() == RSP_MSG && calls.contains(msg->getMTID()))
+				if (msg->getType() == RSP_MSG && calls.tqcontains(msg->getMTID()))
 				{
 				// delete the call, but first notify it off the response
-					RPCCall* c = calls.find(msg->getMTID());
+					RPCCall* c = calls.tqfind(msg->getMTID());
 					c->response(msg);
 					calls.erase(msg->getMTID());
 					c->deleteLater();
@@ -157,7 +157,7 @@ namespace dht
 	}
 	
 	
-	void RPCServer::send(const KNetwork::KSocketAddress & addr,const QByteArray & msg)
+	void RPCServer::send(const KNetwork::KSocketAddress & addr,const TQByteArray & msg)
 	{
 		sock->send(KNetwork::KDatagramPacket(msg,addr));
 	}
@@ -165,7 +165,7 @@ namespace dht
 	RPCCall* RPCServer::doCall(MsgBase* msg)
 	{
 		Uint8 start = next_mtid;
-		while (calls.contains(next_mtid))
+		while (calls.tqcontains(next_mtid))
 		{
 			next_mtid++;
 			if (next_mtid == start) // if this happens we cannot do any calls
@@ -187,7 +187,7 @@ namespace dht
 	
 	void RPCServer::sendMsg(MsgBase* msg)
 	{
-		QByteArray data;
+		TQByteArray data;
 		msg->encode(data);
 		send(msg->getDestination(),data);
 		
@@ -197,7 +197,7 @@ namespace dht
 	void RPCServer::timedOut(Uint8 mtid)
 	{
 		// delete the call
-		RPCCall* c = calls.find(mtid);
+		RPCCall* c = calls.tqfind(mtid);
 		if (c)
 		{
 			dh_table->timeout(c->getRequest());
@@ -214,7 +214,7 @@ namespace dht
 			RPCCall* c = call_queue.first();
 			call_queue.removeFirst();
 			
-			while (calls.contains(next_mtid))
+			while (calls.tqcontains(next_mtid))
 				next_mtid++;
 			
 			MsgBase* msg = c->getRequest();
@@ -227,7 +227,7 @@ namespace dht
 	
 	const RPCCall* RPCServer::findCall(Uint8 mtid) const
 	{
-		return calls.find(mtid);
+		return calls.tqfind(mtid);
 	}
 	
 	void RPCServer::ping(const dht::Key & our_id,const KNetwork::KSocketAddress & addr)

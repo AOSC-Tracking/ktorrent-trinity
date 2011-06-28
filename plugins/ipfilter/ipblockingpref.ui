@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>IPBlockingPref</class>
-<widget class="QWidget">
+<widget class="TQWidget">
     <property name="name">
         <cstring>IPBlockingPref</cstring>
     </property>
@@ -29,14 +29,14 @@
             <property name="sizeType">
                 <enum>Expanding</enum>
             </property>
-            <property name="sizeHint">
+            <property name="tqsizeHint">
                 <size>
                     <width>20</width>
                     <height>20</height>
                 </size>
             </property>
         </spacer>
-        <widget class="QGroupBox" row="0" column="0">
+        <widget class="TQGroupBox" row="0" column="0">
             <property name="name">
                 <cstring>groupBox1</cstring>
             </property>
@@ -50,7 +50,7 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QCheckBox" row="0" column="0">
+                <widget class="TQCheckBox" row="0" column="0">
                     <property name="name">
                         <cstring>checkUseLevel1</cstring>
                     </property>
@@ -61,15 +61,15 @@
                         <string></string>
                     </property>
                 </widget>
-                <widget class="QLayoutWidget" row="1" column="0">
+                <widget class="TQLayoutWidget" row="1" column="0">
                     <property name="name">
-                        <cstring>layout5</cstring>
+                        <cstring>tqlayout5</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel1_3</cstring>
                             </property>
@@ -90,9 +90,9 @@
                         </widget>
                     </hbox>
                 </widget>
-                <widget class="QLayoutWidget" row="2" column="0">
+                <widget class="TQLayoutWidget" row="2" column="0">
                     <property name="name">
-                        <cstring>layout3</cstring>
+                        <cstring>tqlayout3</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -108,14 +108,14 @@
                             <property name="sizeType">
                                 <enum>Expanding</enum>
                             </property>
-                            <property name="sizeHint">
+                            <property name="tqsizeHint">
                                 <size>
                                     <width>361</width>
                                     <height>20</height>
                                 </size>
                             </property>
                         </spacer>
-                        <widget class="QPushButton">
+                        <widget class="TQPushButton">
                             <property name="name">
                                 <cstring>btnDownload</cstring>
                             </property>
@@ -125,7 +125,7 @@
                         </widget>
                     </hbox>
                 </widget>
-                <widget class="QLabel" row="3" column="0">
+                <widget class="TQLabel" row="3" column="0">
                     <property name="name">
                         <cstring>textLabel1_2</cstring>
                     </property>
@@ -134,7 +134,7 @@
 NOTE: ZIP file from bluetack.co.uk is supported.</string>
                     </property>
                 </widget>
-                <widget class="QLabel" row="5" column="0">
+                <widget class="TQLabel" row="5" column="0">
                     <property name="name">
                         <cstring>lbl_status1</cstring>
                     </property>
@@ -152,7 +152,7 @@ NOTE: ZIP file from bluetack.co.uk is supported.</string>
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>20</width>
                             <height>20</height>
@@ -191,12 +191,12 @@ NOTE: ZIP file from bluetack.co.uk is supported.</string>
         <slot>setEnabled(bool)</slot>
     </connection>
 </connections>
-<slots>
+<Q_SLOTS>
     <slot>btnDownload_clicked()</slot>
     <slot>checkUseLevel1_toggled(bool)</slot>
     <slot>checkUseKTfilter_toggled(bool)</slot>
-</slots>
-<layoutdefaults spacing="6" margin="11"/>
+</Q_SLOTS>
+<tqlayoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kurlrequester.h</includehint>
     <includehint>kpushbutton.h</includehint>

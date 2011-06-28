@@ -20,26 +20,26 @@
 #ifndef IDEALBUTTONBAR_H
 #define IDEALBUTTONBAR_H
 
-#include <qwidget.h>
-#include <qvaluelist.h>
+#include <tqwidget.h>
+#include <tqvaluelist.h>
 
 #include "comdefs.h"
 
-#include <qlayout.h>
+#include <tqlayout.h>
 
 namespace Ideal {
 
 class Button;
 class ButtonBar;
 
-/**@short A layout for a ButtonBar class.
+/**@short A tqlayout for a ButtonBar class.
 
-Overrides minimumSize method to allow shrinking button bar buttons.*/
-class ButtonLayout: public QBoxLayout{
+Overrides tqminimumSize method to allow shrinking button bar buttons.*/
+class ButtonLayout: public TQBoxLayout{
 public:
-    ButtonLayout(ButtonBar *parent, Direction d, int margin = 0, int spacing = -1, const char * name = 0);
+    ButtonLayout(ButtonBar *tqparent, Direction d, int margin = 0, int spacing = -1, const char * name = 0);
 
-    virtual QSize minimumSize() const;
+    virtual TQSize tqminimumSize() const;
 
 private:
     ButtonBar *m_buttonBar;
@@ -51,11 +51,12 @@ private:
 Looks like a toolbar but has another behaviour. It is suitable for
 placing on the left(right, bottom, top) corners of a window as a bar with slider.
 */
-class ButtonBar : public QWidget {
+class ButtonBar : public TQWidget {
     Q_OBJECT
+  TQ_OBJECT
 public:
     ButtonBar(Place place, ButtonMode mode = IconsAndText,
-        QWidget *parent = 0, const char *name = 0);
+        TQWidget *tqparent = 0, const char *name = 0);
     virtual ~ButtonBar();
 
     /**Adds a button to the bar.*/
@@ -87,7 +88,7 @@ public:
     Button *prevTo(Button *button);
 
 protected:
-    virtual void resizeEvent ( QResizeEvent *ev );
+    virtual void resizeEvent ( TQResizeEvent *ev );
 
     int originalDimension();
 
@@ -95,7 +96,7 @@ private:
     void fixDimensions();
     void setButtonsPlace(Ideal::Place place);
 
-    typedef QValueList<Button*> ButtonList;
+    typedef TQValueList<Button*> ButtonList;
     ButtonList m_buttons;
 
     ButtonMode m_mode;

@@ -31,8 +31,9 @@ namespace kt
 	class AvailabilityChunkBar : public ChunkBar
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		AvailabilityChunkBar(QWidget* parent, const char* name);
+		AvailabilityChunkBar(TQWidget* tqparent, const char* name);
 		virtual ~AvailabilityChunkBar();
 	
 		virtual const bt::BitSet & getBitSet() const;

@@ -20,15 +20,15 @@
 #ifndef BTCHUNKMANAGER_H
 #define BTCHUNKMANAGER_H
 
-#include <qmap.h>
-#include <qstring.h>
-#include <qobject.h>
-#include <qptrvector.h> 
+#include <tqmap.h>
+#include <tqstring.h>
+#include <tqobject.h>
+#include <tqptrvector.h> 
 #include <util/bitset.h>
 #include "chunk.h"
 #include "globals.h"
 
-class QStringList;
+class TQStringList;
 
 namespace KIO
 {
@@ -58,15 +58,16 @@ namespace bt
 	 * The chunks are stored in the cache file in the correct order. Eliminating
 	 * the need for a file reconstruction algorithm for single files.
 	 */
-	class ChunkManager : public QObject
+	class ChunkManager : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 				
 		Torrent & tor;
-		QString index_file,file_info_file,file_priority_file;
-		QPtrVector<Chunk> chunks;
+		TQString index_file,file_info_file,file_priority_file;
+		TQPtrVector<Chunk> chunks;
 		Cache* cache;
-		QMap<Uint32,TimeStamp> loaded; // loaded chunks and when they were loaded
+		TQMap<Uint32,TimeStamp> loaded; // loaded chunks and when they were loaded
 		BitSet bitset;
 		BitSet excluded_chunks;
 		BitSet only_seed_chunks;
@@ -78,8 +79,8 @@ namespace bt
 		bool during_load;	
 	public:
 		ChunkManager(Torrent & tor,
-					 const QString & tmpdir,
-					 const QString & datadir,
+					 const TQString & tmpdir,
+					 const TQString & datadir,
 					 bool custom_output_name);
 		virtual ~ChunkManager();
 
@@ -87,12 +88,12 @@ namespace bt
 		const Torrent & getTorrent() const {return tor;}
 		
 		/// Get the data dir
-		QString getDataDir() const;
+		TQString getDataDir() const;
 		
 		/// Get the actual output path
-		QString getOutputPath() const;
+		TQString getOutputPath() const;
 		
-		void changeOutputPath(const QString& output_path);
+		void changeOutputPath(const TQString& output_path);
 		
 		/// Remove obsolete chunks
 		void checkMemoryUsage();
@@ -101,14 +102,14 @@ namespace bt
 		 * Change the data dir.
 		 * @param data_dir 
 		 */
-		void changeDataDir(const QString & data_dir);
+		void changeDataDir(const TQString & data_dir);
 		
 		/**
 		 * Move the data files of the torrent.
 		 * @param ndir The new directory
 		 * @return The job doing the move
 		 */
-		KIO::Job* moveDataFiles(const QString & ndir);
+		KIO::Job* moveDataFiles(const TQString & ndir);
 		
 		/**
 		 * The move data files job has finished
@@ -133,7 +134,7 @@ namespace bt
 		 * Test all files and see if they are not missing.
 		 * If so put them in a list
 		 */
-		bool hasMissingFiles(QStringList & sl);
+		bool hasMissingFiles(TQStringList & sl);
 		
 		/**
 		 * Preallocate diskspace for all files
@@ -357,7 +358,8 @@ namespace bt
 	private slots:
 		void downloadStatusChanged(TorrentFile* tf,bool download);
 		void downloadPriorityChanged(TorrentFile* tf,Priority newpriority,Priority oldpriority);
-		
+
+	private:
 		static Uint32 max_chunk_size_for_data_check;
 	};
 

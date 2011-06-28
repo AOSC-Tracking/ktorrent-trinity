@@ -17,7 +17,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
-#include <qlabel.h>
+#include <tqlabel.h>
 #include <klocale.h>
 #include <knuminput.h>
 #include <kpushbutton.h>
@@ -30,10 +30,10 @@
 using namespace bt;
 using namespace kt;
 
-SpeedLimitsDlg::SpeedLimitsDlg(kt::TorrentInterface* ti,QWidget* parent, const char* name)
-		: SpeedLimitsDlgBase(parent,name,true,0),tor(ti)
+SpeedLimitsDlg::SpeedLimitsDlg(kt::TorrentInterface* ti,TQWidget* tqparent, const char* name)
+		: SpeedLimitsDlgBase(tqparent,name,true,0),tor(ti)
 {
-	m_main_caption->setText(i18n("Speed limits for <b>%1</b>:").arg(tor->getStats().torrent_name));
+	m_main_caption->setText(i18n("Speed limits for <b>%1</b>:").tqarg(tor->getStats().torrent_name));
 	Uint32 up,down;
 	tor->getTrafficLimits(up,down);
 	m_upload_rate->setValue(up / 1024);
@@ -54,7 +54,7 @@ void SpeedLimitsDlg::accept()
 	Uint32 up = m_upload_rate->value() * 1024;
 	Uint32 down = m_download_rate->value() * 1024;
 	tor->setTrafficLimits(up,down);
-	QDialog::accept();
+	TQDialog::accept();
 }
 
 

@@ -20,8 +20,8 @@
 #ifndef BTPEER_H
 #define BTPEER_H
 
-#include <qobject.h>
-#include <qdatetime.h>
+#include <tqobject.h>
+#include <tqdatetime.h>
 #include <util/timer.h>
 #include <interfaces/peerinterface.h>
 #include <util/bitset.h>
@@ -64,10 +64,11 @@ namespace bt
 	 * It provides functions for sending packets. Packets it receives
 	 * get relayed to the outside world using a bunch of signals.
 	*/
-	class Peer : public QObject, public kt::PeerInterface
+	class Peer : public TQObject, public kt::PeerInterface
 			  //,public Object
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		/**
 		 * Constructor, set the socket.
@@ -92,7 +93,7 @@ namespace bt
 		Uint32 getID() const {return id;}
 		
 		/// Get the IP address of the Peer.
-		QString getIPAddresss() const;
+		TQString getIPAddresss() const;
 		
 		/// Get the port of the Peer
 		Uint16 getPort() const;
@@ -197,7 +198,7 @@ namespace bt
 		Uint32 getTimeSinceLastPiece() const;
 
 		/// Get the time the peer connection was established.
-		const QTime & getConnectTime() const {return connect_time;}
+		const TQTime & getConnectTime() const {return connect_time;}
 
 		/**
 		 * Get the percentual amount of data available from peer.
@@ -224,7 +225,7 @@ namespace bt
 		/**
 		 * Emit the pex signal
 		 */
-		void emitPex(const QByteArray & data);
+		void emitPex(const TQByteArray & data);
 		
 		/// Disable or enable pex
 		void setPexEnabled(bool on);
@@ -281,12 +282,12 @@ namespace bt
 		 * @param ip The IP
 		 * @param port The port
 		 */
-		void gotPortPacket(const QString & ip,Uint16 port);
+		void gotPortPacket(const TQString & ip,Uint16 port);
 		
 		/**
-		 * A Peer Exchange has been received, the QByteArray contains the data.
+		 * A Peer Exchange has been received, the TQByteArray contains the data.
 		 */
-		void pex(const QByteArray & data);
+		void pex(const TQByteArray & data);
 		
 	private:
 		void packetReady(const Uint8* packet,Uint32 size);
@@ -310,7 +311,7 @@ namespace bt
 		PeerDownloader* downloader;
 		PeerUploader* uploader;
 		mutable kt::PeerInterface::Stats stats;
-		QTime connect_time;
+		TQTime connect_time;
 		UTPex* ut_pex;
 		bool pex_allowed;
 		Uint32 utorrent_pex_id;

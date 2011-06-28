@@ -20,13 +20,13 @@
 #ifndef HTTPSERVER_H
 #define HTTPSERVER_H
 		
-#include <qcache.h>
-#include <qhttp.h>
-#include <qdatetime.h>
-#include <qserversocket.h>		
+#include <tqcache.h>
+#include <tqhttp.h>
+#include <tqdatetime.h>
+#include <tqserversocket.h>		
 #include <util/ptrmap.h>
 
-class QSocket;
+class TQSocket;
 
 namespace bt
 {
@@ -43,7 +43,7 @@ namespace kt
 	struct Session
 	{
 		bool logged_in;
-		QTime last_access;
+		TQTime last_access;
 		int sessionId;
 	};
 	
@@ -62,41 +62,42 @@ namespace kt
 	
 
 	
-	class HttpServer : public QServerSocket
+	class HttpServer : public TQServerSocket
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		HttpServer(CoreInterface *core, int port);
 		virtual ~HttpServer();
 		
 		void newConnection(int s);
 		
-		void handleGet(HttpClientHandler* hdlr,const QHttpRequestHeader & hdr,bool do_not_check_session = false);
-		void handlePost(HttpClientHandler* hdlr,const QHttpRequestHeader & hdr,const QByteArray & data);
+		void handleGet(HttpClientHandler* hdlr,const TQHttpRequestHeader & hdr,bool do_not_check_session = false);
+		void handlePost(HttpClientHandler* hdlr,const TQHttpRequestHeader & hdr,const TQByteArray & data);
 		void handleUnsupportedMethod(HttpClientHandler* hdlr);
-		bt::MMapFile* cacheLookup(const QString & name);
-		void insertIntoCache(const QString & name,bt::MMapFile* file);
+		bt::MMapFile* cacheLookup(const TQString & name);
+		void insertIntoCache(const TQString & name,bt::MMapFile* file);
 
 	protected slots:
 		void slotSocketReadyToRead();
 		void slotConnectionClosed();
 		
 	private:
-		bool checkSession(const QHttpRequestHeader & hdr);
-		bool checkLogin(const QHttpRequestHeader & hdr,const QByteArray & data);
-		void setDefaultResponseHeaders(HttpResponseHeader & hdr,const QString & content_type,bool with_session_info);
-		void handleTorrentPost(HttpClientHandler* hdlr,const QHttpRequestHeader & hdr,const QByteArray & data);
-		QDateTime parseDate(const QString & str);
+		bool checkSession(const TQHttpRequestHeader & hdr);
+		bool checkLogin(const TQHttpRequestHeader & hdr,const TQByteArray & data);
+		void setDefaultResponseHeaders(HttpResponseHeader & hdr,const TQString & content_type,bool with_session_info);
+		void handleTorrentPost(HttpClientHandler* hdlr,const TQHttpRequestHeader & hdr,const TQByteArray & data);
+		TQDateTime parseDate(const TQString & str);
 		void redirectToLoginPage(HttpClientHandler* hdlr);
 		
 	private:
-		QString rootDir;
+		TQString rootDir;
 		int sessionTTL;
 		PhpInterface *php_i;
 		Session session;
-		bt::PtrMap<QSocket*,HttpClientHandler> clients;
+		bt::PtrMap<TQSocket*,HttpClientHandler> clients;
 		CoreInterface *core;
-		QCache<bt::MMapFile> cache;
+		TQCache<bt::MMapFile> cache;
 	};
 
 	

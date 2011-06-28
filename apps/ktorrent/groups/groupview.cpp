@@ -26,7 +26,7 @@
 #include <kinputdialog.h>
 #include <kstandarddirs.h>
 #include <kpopupmenu.h>
-#include <qheader.h>
+#include <tqheader.h>
 #include <util/log.h>
 #include <interfaces/torrentinterface.h>
 #include "groupview.h"
@@ -41,13 +41,13 @@ using namespace bt;
 
 namespace kt
 {
-	GroupViewItem::GroupViewItem(GroupView* parent,Group* g) : KListViewItem(parent),gview(parent)
+	GroupViewItem::GroupViewItem(GroupView* tqparent,Group* g) : KListViewItem(tqparent),gview(tqparent)
 	{
 		setText(0,g->groupName());
 		setPixmap(0,g->groupIcon());
 	}
 	
-	GroupViewItem::GroupViewItem(GroupView* gview,KListViewItem* parent,Group* g) : KListViewItem(parent),gview(gview)
+	GroupViewItem::GroupViewItem(GroupView* gview,KListViewItem* tqparent,Group* g) : KListViewItem(tqparent),gview(gview)
 	{
 		setText(0,g->groupName());
 		setPixmap(0,g->groupIcon());
@@ -57,16 +57,16 @@ namespace kt
 	{
 	}
 	
-	int GroupViewItem::compare(QListViewItem* i,int ,bool ) const
+	int GroupViewItem::compare(TQListViewItem* i,int ,bool ) const
 	{
 		if (text(1).isNull() && i->text(1).isNull())
-			return QString::compare(text(0),i->text(0));
+			return TQString::compare(text(0),i->text(0));
 		else
-			return QString::compare(text(1),i->text(1));
+			return TQString::compare(text(1),i->text(1));
 	}
 
-	GroupView::GroupView(ViewManager* view,KActionCollection* col,QWidget *parent, const char *name)
-	: KListView(parent, name),view(view),custom_root(0)
+	GroupView::GroupView(ViewManager* view,KActionCollection* col,TQWidget *tqparent, const char *name)
+	: KListView(tqparent, name),view(view),custom_root(0)
 	{
 		setFullWidth(true);
 		setRootIsDecorated(true);
@@ -80,11 +80,11 @@ namespace kt
 	
 		current = gman->allGroup();
 		
-		connect(this,SIGNAL(clicked(QListViewItem*)),this,SLOT(onExecuted( QListViewItem* )));
-		connect(this,SIGNAL(contextMenu(KListView*,QListViewItem*,const QPoint & )),
-				this,SLOT(showContextMenu( KListView*, QListViewItem*, const QPoint& )));
-		connect(this,SIGNAL(dropped(QDropEvent*,QListViewItem*)),
-				this,SLOT(onDropped( QDropEvent*, QListViewItem* )));	
+		connect(this,TQT_SIGNAL(clicked(TQListViewItem*)),this,TQT_SLOT(onExecuted( TQListViewItem* )));
+		connect(this,TQT_SIGNAL(contextMenu(KListView*,TQListViewItem*,const TQPoint & )),
+				this,TQT_SLOT(showContextMenu( KListView*, TQListViewItem*, const TQPoint& )));
+		connect(this,TQT_SIGNAL(dropped(TQDropEvent*,TQListViewItem*)),
+				this,TQT_SLOT(onDropped( TQDropEvent*, TQListViewItem* )));	
 		
 		current_item = 0;
 		menu = 0;
@@ -136,16 +136,16 @@ namespace kt
 		menu = new KPopupMenu(this);
 		
 		new_group = new KAction(i18n("New Group"),"filenew",0,
-							this, SLOT(addGroup()),col, "New Group");
+							 TQT_TQOBJECT(this), TQT_SLOT(addGroup()),col, "New Group");
 		
 		edit_group = new KAction(i18n("Edit Name"),"edit",0,
-							 this, SLOT(editGroupName()),col,"Edit Group Name");
+							 TQT_TQOBJECT(this), TQT_SLOT(editGroupName()),col,"Edit Group Name");
 		
 		remove_group = new KAction(i18n("Remove Group"),"remove",0,
-							   this, SLOT(removeGroup()),col,"Remove Group");
+							 TQT_TQOBJECT(this), TQT_SLOT(removeGroup()),col,"Remove Group");
 		
 		open_in_new_tab = new KAction(i18n("Open Tab"),"fileopen",0,
-							  this,SLOT(openView()),col,"Open Tab");
+							 TQT_TQOBJECT(this) ,TQT_SLOT(openView()),col,"Open Tab");
 		
 		open_in_new_tab->plug(menu);
 		menu->insertSeparator();
@@ -156,14 +156,14 @@ namespace kt
 	
 	void GroupView::addGroup()
 	{
-		QString name = KInputDialog::getText(QString::null,i18n("Please enter the group name."));
+		TQString name = KInputDialog::getText(TQString(),i18n("Please enter the group name."));
 		
 		if (name.isNull() || name.length() == 0)
 			return;
 		
-		if (gman->find(name))
+		if (gman->tqfind(name))
 		{
-			KMessageBox::error(this,i18n("The group %1 already exists.").arg(name));
+			KMessageBox::error(this,i18n("The group %1 already exists.").tqarg(name));
 			return;
 		}
 		
@@ -177,7 +177,7 @@ namespace kt
 		if (!current_item)
 			return;
 		
-		Group* g = groups.find(current_item);
+		Group* g = groups.tqfind(current_item);
 		if (!g)
 			return;
 		
@@ -200,11 +200,11 @@ namespace kt
 		if (!current_item)
 			return;
 		
-		Group* g = groups.find(current_item);
+		Group* g = groups.tqfind(current_item);
 		if (!g)
 			return;
 		
-		QString name = KInputDialog::getText(QString::null,i18n("Please enter the new group name."),g->groupName());
+		TQString name = KInputDialog::getText(TQString(),i18n("Please enter the new group name."),g->groupName());
 		
 		if (name.isNull() || name.length() == 0)
 			return;
@@ -212,9 +212,9 @@ namespace kt
 		if (g->groupName() == name)
 			return;
 		
-		if (gman->find(name)) 
+		if (gman->tqfind(name)) 
 		{
-			KMessageBox::error(this,i18n("The group %1 already exists.").arg(name));
+			KMessageBox::error(this,i18n("The group %1 already exists.").tqarg(name));
 		}
 		else
 		{
@@ -226,12 +226,12 @@ namespace kt
 		}
 	}
 
-	GroupViewItem* GroupView::addGroup(Group* g,KListViewItem* parent)
+	GroupViewItem* GroupView::addGroup(Group* g,KListViewItem* tqparent)
 	{
 		GroupViewItem* li = 0;
-		if (parent)
+		if (tqparent)
 		{
-			li = new GroupViewItem(this,parent,g);
+			li = new GroupViewItem(this,tqparent,g);
 		}
 		else
 		{
@@ -240,19 +240,19 @@ namespace kt
 		}
 		
 		groups.insert(li,g);
-		if (custom_root && custom_root->childCount() == 1 && custom_root == parent)
+		if (custom_root && custom_root->childCount() == 1 && custom_root == tqparent)
 			setOpen(custom_root,true);
 		
 		return li;
 	}
 	
-	void GroupView::showContextMenu(KListView* ,QListViewItem* item,const QPoint & p)
+	void GroupView::showContextMenu(KListView* ,TQListViewItem* item,const TQPoint & p)
 	{
 		current_item = dynamic_cast<GroupViewItem*>(item);
 		
 		Group* g = 0;
 		if (current_item)
-			g = groups.find(current_item);
+			g = groups.tqfind(current_item);
 		
 		if (!g ||!gman->canRemove(g))
 		{
@@ -270,7 +270,7 @@ namespace kt
 		menu->popup(p);
 	}
 	
-	void GroupView::onExecuted(QListViewItem* item)
+	void GroupView::onExecuted(TQListViewItem* item)
 	{
 		if (!item) return;
 		
@@ -278,7 +278,7 @@ namespace kt
 		if (!li)
 			return;
 		
-		Group* g = groups.find(li);
+		Group* g = groups.tqfind(li);
 		if (g)
 		{
 			current = g;
@@ -286,18 +286,18 @@ namespace kt
 		}
 	}
 	
-	void GroupView::onDropped(QDropEvent* e,QListViewItem *after)
+	void GroupView::onDropped(TQDropEvent* e,TQListViewItem *after)
 	{
 		GroupViewItem* li = dynamic_cast<GroupViewItem*>(after);
 		if (!li)
 			return;
 		
-		TorrentGroup* g = dynamic_cast<TorrentGroup*>(groups.find(li));
+		TorrentGroup* g = dynamic_cast<TorrentGroup*>(groups.tqfind(li));
 		if (g)
 		{
-			QValueList<TorrentInterface*> sel;
+			TQValueList<TorrentInterface*> sel;
 			view->getSelection(sel);
-			QValueList<TorrentInterface*>::iterator i = sel.begin();
+			TQValueList<TorrentInterface*>::iterator i = sel.begin();
 			while (i != sel.end())
 			{
 				g->add(*i);
@@ -307,7 +307,7 @@ namespace kt
 		}
 	}
 	
-	bool GroupView::acceptDrag(QDropEvent* event) const
+	bool GroupView::acceptDrag(TQDropEvent* event) const
 	{
 		return event->provides("application/x-ktorrent-drag-object");
 	}
@@ -327,9 +327,9 @@ namespace kt
 		}
 	}
 	
-	void GroupView::onGroupsSubMenuItemActivated(KTorrentView* v,const QString & group)
+	void GroupView::onGroupsSubMenuItemActivated(KTorrentView* v,const TQString & group)
 	{
-		Group* g = gman->find(group);
+		Group* g = gman->tqfind(group);
 		if (g)
 		{
 			v->addSelectionToGroup(g);
@@ -337,9 +337,9 @@ namespace kt
 		}
 	}
 	
-	const Group* GroupView::findGroup(const QString & name) const
+	const Group* GroupView::findGroup(const TQString & name) const
 	{
-		Group* g = gman->find(name);
+		Group* g = gman->tqfind(name);
 		if (!g)
 			g = gman->findDefault(name);
 		
@@ -351,7 +351,7 @@ namespace kt
 		if (!current_item)
 			return;
 		
-		Group* g = groups.find(current_item);
+		Group* g = groups.tqfind(current_item);
 		if (g)
 			openNewTab(g);
 	}

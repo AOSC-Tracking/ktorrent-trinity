@@ -37,8 +37,9 @@ namespace kt
 	class HTMLPart : public KHTMLPart
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		HTMLPart(QWidget *parent = 0);
+		HTMLPart(TQWidget *tqparent = 0);
 		virtual ~HTMLPart();
 	
 	public slots:
@@ -49,8 +50,8 @@ namespace kt
 	
 	private slots:
 		void addToHistory(const KURL & url);
-		void dataRecieved(KIO::Job* job,const QByteArray & data);
-		void mimetype(KIO::Job* job,const QString & mt);
+		void dataRecieved(KIO::Job* job,const TQByteArray & data);
+		void mimetype(KIO::Job* job,const TQString & mt);
 		void jobDone(KIO::Job* job);
 		
 	
@@ -63,8 +64,8 @@ namespace kt
 	private:
 		KURL::List history;
 		KIO::Job* active_job;
-		QByteArray curr_data;
-		QString mime_type;
+		TQByteArray curr_data;
+		TQString mime_type;
 		KURL curr_url;
 	};
 }

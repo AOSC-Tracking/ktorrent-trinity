@@ -33,13 +33,14 @@ namespace kt
 	class WebInterfacePlugin : public Plugin
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		WebInterfacePlugin(QObject* parent, const char* name, const QStringList& args);
+		WebInterfacePlugin(TQObject* tqparent, const char* name, const TQStringList& args);
 		virtual ~WebInterfacePlugin();
 		
 		virtual void load();
 		virtual void unload();
-		virtual bool versionCheck(const QString& version) const;
+		virtual bool versionCheck(const TQString& version) const;
 		
 		void preferencesUpdated();
 	private:

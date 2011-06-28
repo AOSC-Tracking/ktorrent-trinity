@@ -28,10 +28,10 @@
 #include <knuminput.h>
 #include <kmessagebox.h>
 
-#include <qstring.h>
-#include <qstringlist.h>
-#include <qregexp.h>
-#include <qvalidator.h>
+#include <tqstring.h>
+#include <tqstringlist.h>
+#include <tqregexp.h>
+#include <tqvalidator.h>
 
 using namespace kt;
 using bt::Uint16;
@@ -58,8 +58,8 @@ void ManualPeerSource::signalPeersReady()
 
 //AddPeerWidget
 
-AddPeerWidget::AddPeerWidget(kt::TorrentInterface* tc, QWidget *parent, const char *name)
-	:AddPeerWidgetBase(parent, name), m_tc(tc)
+AddPeerWidget::AddPeerWidget(kt::TorrentInterface* tc, TQWidget *tqparent, const char *name)
+	:AddPeerWidgetBase(tqparent, name), m_tc(tc)
 {
 	if(!tc)
 	{
@@ -88,12 +88,12 @@ void AddPeerWidget::btnAdd_clicked()
 {
 	int var=0;
 	
-	QRegExp rx("[0-9]{1,3}(.[0-9]{1,3}){3,3}");
-	QRegExpValidator v( rx,0);
+	TQRegExp rx("[0-9]{1,3}(.[0-9]{1,3}){3,3}");
+	TQRegExpValidator v( rx,0);
 	
-	QString ip = m_ip->text();
+	TQString ip = m_ip->text();
 
-	if(v.validate( ip, var ) == QValidator::Acceptable)
+	if(v.validate( ip, var ) == TQValidator::Acceptable)
 	{
 		m_peerSource->addPeer(ip, m_port->value());
 		

@@ -21,8 +21,8 @@
 #define BTPEERDOWNLOADER_H
 
 #include <set>
-#include <qvaluelist.h>
-#include <qobject.h>
+#include <tqvaluelist.h>
+#include <tqobject.h>
 #include "globals.h"
 #include "request.h"
 
@@ -91,9 +91,10 @@ namespace bt
 	 *
 	 * This class downloads Piece's from a Peer.
 	*/
-	class PeerDownloader : public QObject
+	class PeerDownloader : public TQObject
 	{
-		Q_OBJECT	
+		Q_OBJECT
+		TQ_OBJECT
 	public:
 		/**
 		 * Constructor, set the Peer
@@ -218,8 +219,8 @@ namespace bt
 		
 	private:
 		Peer* peer;
-		QValueList<TimeStampedRequest> reqs;
-		QValueList<Request> wait_queue;
+		TQValueList<TimeStampedRequest> reqs;
+		TQValueList<Request> wait_queue;
 		Uint32 max_wait_queue_size;
 		int grabbed;
 		Uint32 chunk_size;

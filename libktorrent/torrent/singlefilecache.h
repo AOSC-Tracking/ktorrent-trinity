@@ -35,11 +35,11 @@ namespace bt
 	 */
 	class SingleFileCache : public Cache
 	{
-		QString cache_file;
-		QString output_file;
+		TQString cache_file;
+		TQString output_file;
 		CacheFile* fd;
 	public:
-		SingleFileCache(Torrent& tor,const QString & tmpdir,const QString & datadir);
+		SingleFileCache(Torrent& tor,const TQString & tmpdir,const TQString & datadir);
 		virtual ~SingleFileCache();
 
 		virtual bool prep(Chunk* c);
@@ -48,13 +48,13 @@ namespace bt
 		virtual void create();
 		virtual void close();
 		virtual void open();
-		virtual void changeTmpDir(const QString & ndir);
-		virtual KIO::Job* moveDataFiles(const QString & ndir);
+		virtual void changeTmpDir(const TQString & ndir);
+		virtual KIO::Job* moveDataFiles(const TQString & ndir);
 		virtual void moveDataFilesCompleted(KIO::Job* job);
-		virtual void changeOutputPath(const QString& outputpath);
-		virtual QString getOutputPath() const {return output_file;}
+		virtual void changeOutputPath(const TQString& outputpath);
+		virtual TQString getOutputPath() const {return output_file;}
 		virtual void preallocateDiskSpace(PreallocationThread* prealloc);
-		virtual bool hasMissingFiles(QStringList & sl);
+		virtual bool hasMissingFiles(TQStringList & sl);
 		virtual void deleteDataFiles();
 		virtual Uint64 diskUsage();
 	};

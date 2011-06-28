@@ -43,11 +43,11 @@ namespace kt
 		return true;
 	}
 
-	void UPnPPrefPage::createWidget(QWidget* parent)
+	void UPnPPrefPage::createWidget(TQWidget* tqparent)
 	{
-		widget = new UPnPPrefWidget(parent);
-		QObject::connect(sock,SIGNAL(discovered(UPnPRouter* )),widget,SLOT(addDevice(UPnPRouter* )));
-		QObject::connect(widget,SIGNAL(rescan()),sock,SLOT(discover()));
+		widget = new UPnPPrefWidget(tqparent);
+		TQObject::connect(sock,TQT_SIGNAL(discovered(UPnPRouter* )),widget,TQT_SLOT(addDevice(UPnPRouter* )));
+		TQObject::connect(widget,TQT_SIGNAL(rescan()),sock,TQT_SLOT(discover()));
 	}
 
 	void UPnPPrefPage::deleteWidget()

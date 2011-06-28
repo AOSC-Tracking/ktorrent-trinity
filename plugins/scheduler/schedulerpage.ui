@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>SchedulerPage</class>
-<widget class="QWidget">
+<widget class="TQWidget">
     <property name="name">
         <cstring>SchedulerPage</cstring>
     </property>
@@ -19,7 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QCheckBox" row="0" column="0">
+        <widget class="TQCheckBox" row="0" column="0">
             <property name="name">
                 <cstring>useBS</cstring>
             </property>
@@ -27,7 +27,7 @@
                 <string>Use &amp;bandwidth scheduler?</string>
             </property>
         </widget>
-        <widget class="QGroupBox" row="1" column="0">
+        <widget class="TQGroupBox" row="1" column="0">
             <property name="name">
                 <cstring>groupBWS</cstring>
             </property>
@@ -38,7 +38,7 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="2">
+                <widget class="TQCheckBox" row="0" column="0" rowspan="1" colspan="2">
                     <property name="name">
                         <cstring>useColors</cstring>
                     </property>
@@ -46,7 +46,7 @@
                         <string>Use colors instead of pi&amp;xmaps?</string>
                     </property>
                 </widget>
-                <widget class="QLabel" row="0" column="2">
+                <widget class="TQLabel" row="0" column="2">
                     <property name="name">
                         <cstring>textLabel1_2</cstring>
                     </property>
@@ -54,7 +54,7 @@
                         <string>(Recommended for slower systems)</string>
                     </property>
                 </widget>
-                <widget class="QPushButton" row="2" column="0">
+                <widget class="TQPushButton" row="2" column="0">
                     <property name="name">
                         <cstring>btnEditBWS</cstring>
                     </property>
@@ -72,7 +72,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>40</width>
                             <height>20</height>
@@ -89,7 +89,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>20</width>
                             <height>80</height>
@@ -108,7 +108,7 @@
             <property name="sizeType">
                 <enum>Expanding</enum>
             </property>
-            <property name="sizeHint">
+            <property name="tqsizeHint">
                 <size>
                     <width>20</width>
                     <height>40</height>
@@ -137,10 +137,10 @@
         <slot>useColors_toggled(bool)</slot>
     </connection>
 </connections>
-<slots>
+<Q_SLOTS>
     <slot>btnEditBWS_toggled(bool)</slot>
     <slot>btnEditBWS_clicked()</slot>
     <slot>useColors_toggled(bool)</slot>
-</slots>
-<layoutdefaults spacing="6" margin="11"/>
+</Q_SLOTS>
+<tqlayoutdefaults spacing="6" margin="11"/>
 </UI>

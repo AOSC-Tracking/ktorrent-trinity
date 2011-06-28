@@ -25,8 +25,8 @@
 #include <util/constants.h>
 #include <util/log.h>
 
-#include <qstring.h>
-#include <qfile.h>
+#include <tqstring.h>
+#include <tqfile.h>
 
 #include <kmessagebox.h>
 #include <klocale.h>
@@ -43,13 +43,13 @@ K_EXPORT_COMPONENT_FACTORY(ktscanfolderplugin,KGenericFactory<kt::ScanFolderPlug
 
 namespace kt
 {	
-	const QString NAME = "Scan Folder";
-	const QString AUTHOR = "Ivan Vasic";
-	const QString EMAIL = "ivasic@gmail.com";
-	const QString DESCRIPTION = i18n("Automatically scans directories for torrent files and loads them.");
+	const TQString NAME = "Scan Folder";
+	const TQString AUTHOR = "Ivan Vasic";
+	const TQString EMAIL = "ivasic@gmail.com";
+	const TQString DESCRIPTION = i18n("Automatically scans directories for torrent files and loads them.");
 
-	ScanFolderPlugin::ScanFolderPlugin(QObject* parent, const char* name, const QStringList& args)
-	: Plugin(parent, name, args,NAME,i18n("Scan Folder"),AUTHOR,EMAIL,DESCRIPTION,"view_sidetree")
+	ScanFolderPlugin::ScanFolderPlugin(TQObject* tqparent, const char* name, const TQStringList& args)
+	: Plugin(tqparent, name, args,NAME,i18n("Scan Folder"),AUTHOR,EMAIL,DESCRIPTION,"view_sidetree")
 	{
 // 		setXMLFile("ktscanfolderpluginui.rc");
 		m_sf1 = 0;
@@ -90,13 +90,13 @@ namespace kt
 	
 	void ScanFolderPlugin::updateScanFolders()
 	{
-		QString sfPath1 = ScanFolderPluginSettings::folder1();
-		QString sfPath2 = ScanFolderPluginSettings::folder2();
-		QString sfPath3 = ScanFolderPluginSettings::folder3();
+		TQString sfPath1 = ScanFolderPluginSettings::folder1();
+		TQString sfPath2 = ScanFolderPluginSettings::folder2();
+		TQString sfPath3 = ScanFolderPluginSettings::folder3();
 		
-		bool valid1 = QFile::exists(sfPath1);
-		bool valid2 = QFile::exists(sfPath2);
-		bool valid3 = QFile::exists(sfPath3);
+		bool valid1 = TQFile::exists(sfPath1);
+		bool valid2 = TQFile::exists(sfPath2);
+		bool valid3 = TQFile::exists(sfPath3);
 		
 		bool usesf1 = ScanFolderPluginSettings::useFolder1() && valid1;
 		bool usesf2 = ScanFolderPluginSettings::useFolder2() && valid2;
@@ -180,7 +180,7 @@ namespace kt
 			
 	}
 	
-	bool ScanFolderPlugin::versionCheck(const QString & version) const
+	bool ScanFolderPlugin::versionCheck(const TQString & version) const
 	{
 		return version == KT_VERSION_MACRO;
 	}

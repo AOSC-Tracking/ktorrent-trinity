@@ -36,7 +36,7 @@ using namespace bt;
 
 namespace kt
 {
-	extern QString DataDir();
+	extern TQString DataDir();
 	
 	using bt::FIRST_PRIORITY;
  	using bt::NORMAL_PRIORITY;
@@ -44,23 +44,23 @@ namespace kt
  	using bt::EXCLUDED;
 
 	
-	QString BytesToString2(Uint64 bytes,int precision = 2)
+	TQString BytesToString2(Uint64 bytes,int precision = 2)
 	{
 		KLocale* loc = KGlobal::locale();
 		if (bytes >= 1024 * 1024 * 1024)
-			return QString("%1 GB").arg(loc->formatNumber(bytes / TO_GIG,precision < 0 ? 2 : precision));
+			return TQString("%1 GB").tqarg(loc->formatNumber(bytes / TO_GIG,precision < 0 ? 2 : precision));
 		else if (bytes >= 1024*1024)
-			return QString("%1 MB").arg(loc->formatNumber(bytes / TO_MEG,precision < 0 ? 1 : precision));
+			return TQString("%1 MB").tqarg(loc->formatNumber(bytes / TO_MEG,precision < 0 ? 1 : precision));
 		else if (bytes >= 1024)
-			return QString("%1 KB").arg(loc->formatNumber(bytes / TO_KB,precision < 0 ? 1 : precision));
+			return TQString("%1 KB").tqarg(loc->formatNumber(bytes / TO_KB,precision < 0 ? 1 : precision));
 		else
-			return QString("%1 B").arg(bytes);
+			return TQString("%1 B").tqarg(bytes);
 	}
 
-	QString KBytesPerSecToString2(double speed,int precision = 2)
+	TQString KBytesPerSecToString2(double speed,int precision = 2)
 	{
 		KLocale* loc = KGlobal::locale();
-		return QString("%1 KB/s").arg(loc->formatNumber(speed,precision));
+		return TQString("%1 KB/s").tqarg(loc->formatNumber(speed,precision));
 	}
 
 	/************************
@@ -72,62 +72,62 @@ namespace kt
 	}
 	
 	/*Generate php code
-	* function downloadStatus()
+	* function downloadtqStatus()
 	* {
 	*	return array( ... );
 	* }
 	*/
-	void PhpCodeGenerator::downloadStatus(QTextStream & out)
+	void PhpCodeGenerator::downloadtqStatus(TQTextStream & out)
 	{
 		TorrentStats stats;
 		//Priority file_priority;
-		QString status;
-		out << "function downloadStatus()\n{\nreturn array(";
+		TQString status;
+		out << "function downloadtqStatus()\n{\nreturn array(";
 
-		QPtrList<TorrentInterface>::iterator i= core->getQueueManager()->begin();
+		TQPtrList<TorrentInterface>::iterator i= core->getQueueManager()->begin();
 		for(int k=0; i != core->getQueueManager()->end(); i++, k++)
 		{
 			if (k > 0)
 				out << ",\n";
 			
 			stats=(*i)->getStats();
-			out << QString("\n%1 => array(").arg(k);
+			out << TQString("\n%1 => array(").tqarg(k);
 			
-			out << QString("\"imported_bytes\" => %1,\n").arg(stats.imported_bytes);
-			out << QString("\"bytes_downloaded\" => \"%1\",\n").arg(BytesToString2(stats.bytes_downloaded));
-			out << QString("\"bytes_uploaded\" => \"%1\",\n").arg(BytesToString2(stats.bytes_uploaded));
-			out << QString("\"bytes_left\" => %1,\n").arg(stats.bytes_left);
-			out << QString("\"bytes_left_to_download\" => %1,\n").arg(stats.bytes_left_to_download);
-			out << QString("\"total_bytes\" => \"%1\",\n").arg(BytesToString2(stats.total_bytes));
-			out << QString("\"total_bytes_to_download\" => %1,\n").arg(stats.total_bytes_to_download);
-			out << QString("\"download_rate\" => \"%1\",\n").arg(KBytesPerSecToString2(stats.download_rate / 1024.0));
-			out << QString("\"upload_rate\" => \"%1\",\n").arg(KBytesPerSecToString2(stats.upload_rate / 1024.0));
-			out << QString("\"num_peers\" => %1,\n").arg(stats.num_peers);
-			out << QString("\"num_chunks_downloading\" => %1,\n").arg(stats.num_chunks_downloading);
-			out << QString("\"total_chunks\" => %1,\n").arg(stats.total_chunks);
-			out << QString("\"num_chunks_downloaded\" => %1,\n").arg(stats.num_chunks_downloaded);
-			out << QString("\"num_chunks_excluded\" => %1,\n").arg(stats.num_chunks_excluded);
-			out << QString("\"chunk_size\" => %1,\n").arg(stats.chunk_size);
-			out << QString("\"seeders_total\" => %1,\n").arg(stats.seeders_total);
-			out << QString("\"seeders_connected_to\" => %1,\n").arg(stats.seeders_connected_to);
-			out << QString("\"leechers_total\" => %1,\n").arg(stats.leechers_total);
-			out << QString("\"leechers_connected_to\" => %1,\n").arg(stats.leechers_connected_to);
-			out << QString("\"status\" => %1,\n").arg(stats.status);
-			out << QString("\"running\" => %1,\n").arg(stats.running);
-			out << QString("\"trackerstatus\" => \"%1\",\n").arg(stats.trackerstatus.replace("\\", "\\\\").replace("\"", "\\\"").replace("$", "\\$"));
-			out << QString("\"session_bytes_downloaded\" => %1,\n").arg(stats.session_bytes_downloaded);
-			out << QString("\"session_bytes_uploaded\" => %1,\n").arg(stats.session_bytes_uploaded);
-			out << QString("\"trk_bytes_downloaded\" => %1,\n").arg(stats.trk_bytes_downloaded);
-			out << QString("\"trk_bytes_uploaded\" => %1,\n").arg(stats.trk_bytes_uploaded);
-			out << QString("\"torrent_name\" => \"%1\",\n").arg(stats.torrent_name.replace("\\", "\\\\").replace("\"", "\\\"").replace("$", "\\$"));
-			out << QString("\"output_path\" => \"%1\",\n").arg(stats.output_path.replace("\\", "\\\\").replace("\"", "\\\"").replace("$", "\\$"));
-			out << QString("\"stopped_by_error\" => \"%1\",\n").arg(stats.stopped_by_error);
-			out << QString("\"completed\" => \"%1\",\n").arg(stats.completed);
-			out << QString("\"user_controlled\" => \"%1\",\n").arg(stats.user_controlled);
-			out << QString("\"max_share_ratio\" => %1,\n").arg(stats.max_share_ratio);
-			out << QString("\"priv_torrent\" => \"%1\",\n").arg(stats.priv_torrent);
-			out << QString("\"num_files\" => \"%1\",\n").arg((*i)->getNumFiles());			
-			out << QString("\"files\" => array(");
+			out << TQString("\"imported_bytes\" => %1,\n").tqarg(stats.imported_bytes);
+			out << TQString("\"bytes_downloaded\" => \"%1\",\n").tqarg(BytesToString2(stats.bytes_downloaded));
+			out << TQString("\"bytes_uploaded\" => \"%1\",\n").tqarg(BytesToString2(stats.bytes_uploaded));
+			out << TQString("\"bytes_left\" => %1,\n").tqarg(stats.bytes_left);
+			out << TQString("\"bytes_left_to_download\" => %1,\n").tqarg(stats.bytes_left_to_download);
+			out << TQString("\"total_bytes\" => \"%1\",\n").tqarg(BytesToString2(stats.total_bytes));
+			out << TQString("\"total_bytes_to_download\" => %1,\n").tqarg(stats.total_bytes_to_download);
+			out << TQString("\"download_rate\" => \"%1\",\n").tqarg(KBytesPerSecToString2(stats.download_rate / 1024.0));
+			out << TQString("\"upload_rate\" => \"%1\",\n").tqarg(KBytesPerSecToString2(stats.upload_rate / 1024.0));
+			out << TQString("\"num_peers\" => %1,\n").tqarg(stats.num_peers);
+			out << TQString("\"num_chunks_downloading\" => %1,\n").tqarg(stats.num_chunks_downloading);
+			out << TQString("\"total_chunks\" => %1,\n").tqarg(stats.total_chunks);
+			out << TQString("\"num_chunks_downloaded\" => %1,\n").tqarg(stats.num_chunks_downloaded);
+			out << TQString("\"num_chunks_excluded\" => %1,\n").tqarg(stats.num_chunks_excluded);
+			out << TQString("\"chunk_size\" => %1,\n").tqarg(stats.chunk_size);
+			out << TQString("\"seeders_total\" => %1,\n").tqarg(stats.seeders_total);
+			out << TQString("\"seeders_connected_to\" => %1,\n").tqarg(stats.seeders_connected_to);
+			out << TQString("\"leechers_total\" => %1,\n").tqarg(stats.leechers_total);
+			out << TQString("\"leechers_connected_to\" => %1,\n").tqarg(stats.leechers_connected_to);
+			out << TQString("\"status\" => %1,\n").tqarg(stats.status);
+			out << TQString("\"running\" => %1,\n").tqarg(stats.running);
+			out << TQString("\"trackerstatus\" => \"%1\",\n").tqarg(stats.trackerstatus.tqreplace("\\", "\\\\").tqreplace("\"", "\\\"").tqreplace("$", "\\$"));
+			out << TQString("\"session_bytes_downloaded\" => %1,\n").tqarg(stats.session_bytes_downloaded);
+			out << TQString("\"session_bytes_uploaded\" => %1,\n").tqarg(stats.session_bytes_uploaded);
+			out << TQString("\"trk_bytes_downloaded\" => %1,\n").tqarg(stats.trk_bytes_downloaded);
+			out << TQString("\"trk_bytes_uploaded\" => %1,\n").tqarg(stats.trk_bytes_uploaded);
+			out << TQString("\"torrent_name\" => \"%1\",\n").tqarg(stats.torrent_name.tqreplace("\\", "\\\\").tqreplace("\"", "\\\"").tqreplace("$", "\\$"));
+			out << TQString("\"output_path\" => \"%1\",\n").tqarg(stats.output_path.tqreplace("\\", "\\\\").tqreplace("\"", "\\\"").tqreplace("$", "\\$"));
+			out << TQString("\"stopped_by_error\" => \"%1\",\n").tqarg(stats.stopped_by_error);
+			out << TQString("\"completed\" => \"%1\",\n").tqarg(stats.completed);
+			out << TQString("\"user_controlled\" => \"%1\",\n").tqarg(stats.user_controlled);
+			out << TQString("\"max_share_ratio\" => %1,\n").tqarg(stats.max_share_ratio);
+			out << TQString("\"priv_torrent\" => \"%1\",\n").tqarg(stats.priv_torrent);
+			out << TQString("\"num_files\" => \"%1\",\n").tqarg((*i)->getNumFiles());			
+			out << TQString("\"files\" => array(");
 			out << flush;
 			if (stats.multi_file_torrent)
 			{
@@ -138,12 +138,12 @@ namespace kt
 						out << ",\n";
 					
 					TorrentFileInterface & file = (*i)->getTorrentFile(j);
-					out << QString("\"%1\" => array(\n").arg(j);
-					out << QString("\"name\" => \"%1\",\n").arg(file.getPath());
-					out << QString("\"size\" => \"%1\",\n").arg(KIO::convertSize(file.getSize()));
-					out << QString("\"perc_done\" => \"%1\",\n").arg(file.getDownloadPercentage());
-					out << QString("\"status\" => \"%1\"\n").arg(file.getPriority());
-					out << QString(")\n");
+					out << TQString("\"%1\" => array(\n").tqarg(j);
+					out << TQString("\"name\" => \"%1\",\n").tqarg(file.getPath());
+					out << TQString("\"size\" => \"%1\",\n").tqarg(KIO::convertSize(file.getSize()));
+					out << TQString("\"perc_done\" => \"%1\",\n").tqarg(file.getDownloadPercentage());
+					out << TQString("\"status\" => \"%1\"\n").tqarg(file.getPriority());
+					out << TQString(")\n");
 					out << flush;
 				}
 			}
@@ -156,26 +156,26 @@ namespace kt
 	}
 	
 	/*Generate php code
-	* function globalStatus()
+	* function globaltqStatus()
 	* {
 	*	return array( ... );
 	* }
 	*/
-	void PhpCodeGenerator::globalInfo(QTextStream & out)
+	void PhpCodeGenerator::globalInfo(TQTextStream & out)
 	{
 		out << "function globalInfo()\n{\nreturn array(";
 		CurrentStats stats=core->getStats();
 	
-		out << QString("\"download_speed\" => \"%1\",").arg(KBytesPerSecToString2(stats.download_speed / 1024.0));
-		out << QString("\"upload_speed\" => \"%1\",").arg(KBytesPerSecToString2(stats.upload_speed / 1024.0));
-		out << QString("\"bytes_downloaded\" => \"%1\",").arg(stats.bytes_downloaded);
-		out << QString("\"bytes_uploaded\" => \"%1\",").arg(stats.bytes_uploaded);
-		out << QString("\"max_download_speed\" => \"%1\",").arg(core->getMaxDownloadSpeed());
-		out << QString("\"max_upload_speed\" => \"%1\",").arg(core->getMaxUploadSpeed());
-		out << QString("\"max_downloads\" => \"%1\",").arg(Settings::maxDownloads());
-		out << QString("\"max_seeds\"=> \"%1\",").arg(Settings::maxSeeds());
-		out << QString("\"dht_support\" => \"%1\",").arg(Settings::dhtSupport());
-		out << QString("\"use_encryption\" => \"%1\"").arg(Settings::useEncryption());
+		out << TQString("\"download_speed\" => \"%1\",").tqarg(KBytesPerSecToString2(stats.download_speed / 1024.0));
+		out << TQString("\"upload_speed\" => \"%1\",").tqarg(KBytesPerSecToString2(stats.upload_speed / 1024.0));
+		out << TQString("\"bytes_downloaded\" => \"%1\",").tqarg(stats.bytes_downloaded);
+		out << TQString("\"bytes_uploaded\" => \"%1\",").tqarg(stats.bytes_uploaded);
+		out << TQString("\"max_download_speed\" => \"%1\",").tqarg(core->getMaxDownloadSpeed());
+		out << TQString("\"max_upload_speed\" => \"%1\",").tqarg(core->getMaxUploadSpeed());
+		out << TQString("\"max_downloads\" => \"%1\",").tqarg(Settings::maxDownloads());
+		out << TQString("\"max_seeds\"=> \"%1\",").tqarg(Settings::maxSeeds());
+		out << TQString("\"dht_support\" => \"%1\",").tqarg(Settings::dhtSupport());
+		out << TQString("\"use_encryption\" => \"%1\"").tqarg(Settings::useEncryption());
 		out << ");\n}\n";
 	}
 	
@@ -193,14 +193,14 @@ namespace kt
 		bool ret = false;
 		shutdown = false;
 		int separator_loc;
-		QString parse;
-		QString torrent_num;
-		QString file_num;
+		TQString parse;
+		TQString torrent_num;
+		TQString file_num;
 		KURL redirected_url;
 		redirected_url.setPath(url.path());
 		
-		const QMap<QString, QString> & params = url.queryItems();
-		QMap<QString, QString>::ConstIterator it;
+		const TQMap<TQString, TQString> & params = url.queryItems();
+		TQMap<TQString, TQString>::ConstIterator it;
 	
 		for ( it = params.begin(); it != params.end(); ++it ) 
 		{
@@ -263,14 +263,14 @@ namespace kt
 					break;
 				case 'f':
 					//parse argument into torrent number and file number
-					separator_loc=it.data().find('-');
+					separator_loc=it.data().tqfind('-');
 					parse=it.data();
 					torrent_num.append(parse.left(separator_loc));
 					file_num.append(parse.right(parse.length()-(separator_loc+1)));
 
 					if(it.key()=="file_lp")
 					{
-						QPtrList<TorrentInterface>::iterator i= core->getQueueManager()->begin();
+						TQPtrList<TorrentInterface>::iterator i= core->getQueueManager()->begin();
 						for(int k=0; i != core->getQueueManager()->end(); i++, k++)
 						{
 							if(torrent_num.toInt()==k)
@@ -284,7 +284,7 @@ namespace kt
 					}
 					else if(it.key()=="file_np")
 					{
-						QPtrList<TorrentInterface>::iterator i= core->getQueueManager()->begin();
+						TQPtrList<TorrentInterface>::iterator i= core->getQueueManager()->begin();
 						for(int k=0; i != core->getQueueManager()->end(); i++, k++)
 						{
 							if(torrent_num.toInt()==k)
@@ -298,7 +298,7 @@ namespace kt
 					}
 					else if(it.key()=="file_hp")
 					{
-						QPtrList<TorrentInterface>::iterator i= core->getQueueManager()->begin();
+						TQPtrList<TorrentInterface>::iterator i= core->getQueueManager()->begin();
 						for(int k=0; i != core->getQueueManager()->end(); i++, k++)
 						{
 							if(torrent_num.toInt()==k)
@@ -312,7 +312,7 @@ namespace kt
 					}
 					else if(it.key()=="file_stop")
 					{
-						QPtrList<TorrentInterface>::iterator i= core->getQueueManager()->begin();
+						TQPtrList<TorrentInterface>::iterator i= core->getQueueManager()->begin();
 						for(int k=0; i != core->getQueueManager()->end(); i++, k++)
 						{
 							if(torrent_num.toInt()==k)
@@ -410,7 +410,7 @@ namespace kt
 				case 'r':
 					if(it.key()=="remove")
 					{
-						QPtrList<TorrentInterface>::iterator i= core->getQueueManager()->begin();
+						TQPtrList<TorrentInterface>::iterator i= core->getQueueManager()->begin();
 						for(int k=0; i != core->getQueueManager()->end(); i++, k++)
 						{
 							if(it.data().toInt()==k)
@@ -433,7 +433,7 @@ namespace kt
 					}
 					else if(it.key()=="stop")
 					{
-						QPtrList<TorrentInterface>::iterator i= core->getQueueManager()->begin();
+						TQPtrList<TorrentInterface>::iterator i= core->getQueueManager()->begin();
 						for(int k=0; i != core->getQueueManager()->end(); i++, k++)
 						{
 							if(it.data().toInt()==k)
@@ -446,7 +446,7 @@ namespace kt
 					}
 					else if(it.key()=="start")
 					{
-						QPtrList<TorrentInterface>::iterator i= core->getQueueManager()->begin();
+						TQPtrList<TorrentInterface>::iterator i= core->getQueueManager()->begin();
 						for(int k=0; i != core->getQueueManager()->end(); i++, k++)
 						{
 							if(it.data().toInt()==k)

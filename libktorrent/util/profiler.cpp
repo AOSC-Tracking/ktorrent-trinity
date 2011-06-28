@@ -18,19 +18,19 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 #ifdef KT_PROFILE
-#include <qfile.h>
-#include <qtextstream.h>
+#include <tqfile.h>
+#include <tqtextstream.h>
 #include <sys/time.h>
 #include "profiler.h"
 
 namespace bt
 {
-	Profile::Profile(Profile* parent,const QString & name) : parent(parent),name(name)
+	Profile::Profile(Profile* tqparent,const TQString & name) : tqparent(tqparent),name(name)
 	{
 		min = max = avg = 0.0;
 		count = 0;
 		start_time = 0.0;
-		children.setAutoDelete(true);
+		tqchildren.setAutoDelete(true);
 	}
 	
 	Profile::~Profile()
@@ -61,10 +61,10 @@ namespace bt
 		count++;
 	}
 		
-	Profile* Profile::child(const QString & name)
+	Profile* Profile::child(const TQString & name)
 	{
-		QPtrList<Profile>::iterator i = children.begin();
-		while (i != children.end())
+		TQPtrList<Profile>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			Profile* p = *i;
 			if (p->name == name)
@@ -73,19 +73,19 @@ namespace bt
 		}
 		
 		Profile* p = new Profile(this,name);
-		children.append(p);
+		tqchildren.append(p);
 		return p;
 	}
 	
-	void Profile::save(QTextStream & out,const QString & base)
+	void Profile::save(TQTextStream & out,const TQString & base)
 	{
-		QString nb = base + "/" + name;
+		TQString nb = base + "/" + name;
 		
 		out.precision(5);
 		out << qSetW(60) << nb << qSetW(10) << min << qSetW(10) << max << qSetW(10) << avg << qSetW(10) << count << endl;
 		
-		QPtrList<Profile>::iterator i = children.begin();
-		while (i != children.end())
+		TQPtrList<Profile>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			Profile* p = *i;
 			p->save(out,nb);
@@ -109,7 +109,7 @@ namespace bt
 		delete root;
 	}
 
-	void Profiler::start(const QString & s)
+	void Profiler::start(const TQString & s)
 	{
 		curr = curr->child(s);
 		curr->start();
@@ -121,18 +121,18 @@ namespace bt
 		curr = curr->getParent();
 	}
 
-	void Profiler::saveToFile(const QString & fn)
+	void Profiler::saveToFile(const TQString & fn)
 	{
-		QFile fptr(fn);
+		TQFile fptr(fn);
 		if (!fptr.open(IO_WriteOnly))
 			return;
 		
-		QTextStream out(&fptr);
+		TQTextStream out(&fptr);
 		
 		out << qSetW(60) << "code" << qSetW(10) << "min" << qSetW(10) << "max" << qSetW(10) << "avg" << qSetW(10) << "count" << endl;
 		out << endl; 
 		
-		root->save(out,QString::null);
+		root->save(out,TQString());
 	}
 }
 #endif

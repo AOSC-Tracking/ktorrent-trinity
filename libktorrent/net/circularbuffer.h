@@ -20,7 +20,7 @@
 #ifndef NETCIRCULARBUFFER_H
 #define NETCIRCULARBUFFER_H
 
-#include <qmutex.h> 
+#include <tqmutex.h> 
 #include <util/constants.h>
 
 namespace net
@@ -43,7 +43,7 @@ namespace net
 		Uint32 max_size;
 		Uint32 first; // index of first byte in the buffer
 		Uint32 size; // number of bytes in use
-		mutable QMutex mutex;
+		mutable TQMutex mutex;
 	public:
 		/**
 		 * Create the buffer.

@@ -46,7 +46,7 @@ namespace bt
 		if (size <= 2 || packet[1] != 1)
 			return;
 		
-		QByteArray tmp;
+		TQByteArray tmp;
 		tmp.setRawData((const char*)packet,size);
 		BNode* node = 0;
 		try
@@ -61,7 +61,7 @@ namespace bt
 				BValueNode* val = dict->getValue("added");
 				if (val)
 				{
-					QByteArray data = val->data().toByteArray();
+					TQByteArray data = val->data().toByteArray();
 					peer->emitPex(data);
 				}
 			}
@@ -111,14 +111,14 @@ namespace bt
 		if (!(peers.size() == 0 && added.size() == 0))
 		{
 			// encode the whole lot
-			QByteArray data;
+			TQByteArray data;
 			BEncoder enc(new BEncoderBufferOutput(data));
 			enc.beginDict();
-			enc.write("added");
+			enc.write(TQString("added"));
 			encode(enc,added);
-			enc.write("added.f"); // no idea what this added.f thing means
-			enc.write("");
-			enc.write("dropped");
+			enc.write(TQString("added.f")); // no idea what this added.f thing means
+			enc.write(TQString(""));
+			enc.write(TQString("dropped"));
 			encode(enc,peers);
 			enc.end();
 			
@@ -132,7 +132,7 @@ namespace bt
 	{
 		if (ps.size() == 0)
 		{
-			enc.write("");
+			enc.write(TQString(""));
 			return;
 		}
 		

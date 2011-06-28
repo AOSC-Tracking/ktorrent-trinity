@@ -39,34 +39,34 @@ namespace bt
 	 */
 	class MultiFileCache : public Cache
 	{
-		QString cache_dir,output_dir;
+		TQString cache_dir,output_dir;
 		PtrMap<Uint32,CacheFile> files;
 		PtrMap<Uint32,DNDFile> dnd_files;
 	public:
-		MultiFileCache(Torrent& tor,const QString & tmpdir,const QString & datadir,bool custom_output_name);
+		MultiFileCache(Torrent& tor,const TQString & tmpdir,const TQString & datadir,bool custom_output_name);
 		virtual ~MultiFileCache();
 
-		virtual void changeTmpDir(const QString& ndir);
+		virtual void changeTmpDir(const TQString& ndir);
 		virtual void create();
 		virtual void load(Chunk* c);
 		virtual void save(Chunk* c);
 		virtual bool prep(Chunk* c);
 		virtual void close();
 		virtual void open();
-		virtual QString getOutputPath() const;
-		virtual void changeOutputPath(const QString & outputpath);
-		virtual KIO::Job* moveDataFiles(const QString & ndir);
+		virtual TQString getOutputPath() const;
+		virtual void changeOutputPath(const TQString & outputpath);
+		virtual KIO::Job* moveDataFiles(const TQString & ndir);
 		virtual void moveDataFilesCompleted(KIO::Job* job);
 		virtual void preallocateDiskSpace(PreallocationThread* prealloc);
-		virtual bool hasMissingFiles(QStringList & sl);
+		virtual bool hasMissingFiles(TQStringList & sl);
 		virtual void deleteDataFiles();
 		virtual Uint64 diskUsage();
 	private:
 		void touch(TorrentFile & tf);
 		virtual void downloadStatusChanged(TorrentFile*, bool);
-		QString guessDataDir();
-		void saveFirstAndLastChunk(TorrentFile* tf,const QString & src_file,const QString & dst_file);
-		void recreateFile(TorrentFile* tf,const QString & dnd_file,const QString & output_file);
+		TQString guessDataDir();
+		void saveFirstAndLastChunk(TorrentFile* tf,const TQString & src_file,const TQString & dst_file);
+		void recreateFile(TorrentFile* tf,const TQString & dnd_file,const TQString & output_file);
 	};
 
 }

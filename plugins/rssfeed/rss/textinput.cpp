@@ -13,15 +13,15 @@
 
 #include <kurl.h>
 
-#include <qdom.h>
+#include <tqdom.h>
 
 using namespace RSS;
 
 struct TextInput::Private : public Shared
 {
-	QString title;
-	QString description;
-	QString name;
+	TQString title;
+	TQString description;
+	TQString name;
 	KURL link;
 };
 
@@ -34,17 +34,17 @@ TextInput::TextInput(const TextInput &other) : d(0)
 	*this = other;
 }
 
-TextInput::TextInput(const QDomNode &node) : d(new Private)
+TextInput::TextInput(const TQDomNode &node) : d(new Private)
 {
-	QString elemText;
+	TQString elemText;
 
-	if (!(elemText = extractNode(node, QString::fromLatin1("title"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("title"))).isNull())
 		d->title = elemText;
-	if (!(elemText = extractNode(node, QString::fromLatin1("description"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("description"))).isNull())
 		d->description = elemText;
-	if (!(elemText = extractNode(node, QString::fromLatin1("name"))))
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("name"))))
 		d->name = elemText;
-	if (!(elemText = extractNode(node, QString::fromLatin1("link"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("link"))).isNull())
 		d->link = elemText;
 }
 
@@ -54,17 +54,17 @@ TextInput::~TextInput()
 		delete d;
 }
 
-QString TextInput::title() const
+TQString TextInput::title() const
 {
 	return d->title;
 }
 
-QString TextInput::description() const
+TQString TextInput::description() const
 {
 	return d->description;
 }
 
-QString TextInput::name() const
+TQString TextInput::name() const
 {
 	return d->name;
 }

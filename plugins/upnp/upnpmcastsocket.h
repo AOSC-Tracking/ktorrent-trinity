@@ -40,6 +40,7 @@ namespace kt
 	class UPnPMCastSocket : public KNetwork::KDatagramSocket
 	{
 	Q_OBJECT
+  TQ_OBJECT
 	public:
 		UPnPMCastSocket(bool verbose = false);
 		virtual ~UPnPMCastSocket();
@@ -48,13 +49,13 @@ namespace kt
 		Uint32 getNumDevicesDiscovered() const {return routers.count();}
 		
 		/// Find a router using it's server name
-		UPnPRouter* findDevice(const QString & name) {return routers.find(name);}
+		UPnPRouter* findDevice(const TQString & name) {return routers.tqfind(name);}
 		
 		/// Save all routers to a file (for convenience at startup)
-		void saveRouters(const QString & file);
+		void saveRouters(const TQString & file);
 		
 		/// Load all routers from a file
-		void loadRouters(const QString & file);
+		void loadRouters(const TQString & file);
 		
 	public slots:
 		/**
@@ -76,14 +77,14 @@ namespace kt
 		void discovered(UPnPRouter* router);
 		
 	public:
-		UPnPRouter* parseResponse(const QByteArray & arr);
+		UPnPRouter* parseResponse(const TQByteArray & arr);
 		
 	private:
 		void joinUPnPMCastGroup();
 		void leaveUPnPMCastGroup();
 	
 	private:	
-		bt::PtrMap<QString,UPnPRouter> routers;
+		bt::PtrMap<TQString,UPnPRouter> routers;
 		bool verbose;
 	};
 }

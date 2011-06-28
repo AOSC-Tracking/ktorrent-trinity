@@ -18,12 +18,12 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qdir.h>
-#include <qfile.h>
+#include <tqdir.h>
+#include <tqfile.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kfiledialog.h>
-#include <qtextstream.h>
+#include <tqtextstream.h>
 #include <util/log.h>
 #include <util/error.h>
 #include <util/bitset.h>
@@ -90,7 +90,7 @@ namespace bt
 		stats.session_bytes_downloaded = 0;
 		stats.session_bytes_uploaded = 0;
 		istats.session_bytes_uploaded = 0;
-		old_datadir = QString::null;
+		old_datadir = TQString();
 		stats.status = NOT_STARTED;
 		stats.autostart = true;
 		stats.user_controlled = false;
@@ -200,7 +200,7 @@ namespace bt
 			if (stats.completed && !comp)
 			{
 				pman->killSeeders();
-				QDateTime now = QDateTime::currentDateTime();
+				TQDateTime now = TQDateTime::tqcurrentDateTime();
 				istats.running_time_dl += istats.time_started_dl.secsTo(now);
 				updateStatusMsg();
 				updateStats();
@@ -228,7 +228,7 @@ namespace bt
 				else
 					psman->manualUpdate();
 				istats.last_announce = bt::GetCurrentTime();
-				istats.time_started_dl = QDateTime::currentDateTime();
+				istats.time_started_dl = TQDateTime::tqcurrentDateTime();
 			}
 			updateStatusMsg();
 			
@@ -296,7 +296,7 @@ namespace bt
 			//Move completed files if needed:
 			if (moveCompleted)
 			{
-				QString outdir = Settings::completedDir();
+				TQString outdir = Settings::completedDir();
 				if(!outdir.endsWith(bt::DirSeparator()))
 					outdir += bt::DirSeparator();
 				
@@ -309,7 +309,7 @@ namespace bt
 		}
 	}
 
-	void TorrentControl::onIOError(const QString & msg)
+	void TorrentControl::onIOError(const TQString & msg)
 	{
 		Out(SYS_DIO|LOG_IMPORTANT) << "Error : " << msg << endl;
 		stats.stopped_by_error = true;
@@ -351,7 +351,7 @@ namespace bt
 			throw;
 		}
 		
-		istats.time_started_ul = istats.time_started_dl = QDateTime::currentDateTime();
+		istats.time_started_ul = istats.time_started_dl = TQDateTime::tqcurrentDateTime();
 		resetTrackerStats();
 		
 		if (prealloc)
@@ -408,7 +408,7 @@ namespace bt
 
 	void TorrentControl::stop(bool user,WaitJob* wjob)
 	{
-		QDateTime now = QDateTime::currentDateTime();
+		TQDateTime now = TQDateTime::tqcurrentDateTime();
 		if(!stats.completed)
 			istats.running_time_dl += istats.time_started_dl.secsTo(now);
 		istats.running_time_ul += istats.time_started_ul.secsTo(now);
@@ -490,10 +490,10 @@ namespace bt
 	
 	
 	void TorrentControl::init(QueueManager* qman,
-							  const QString & torrent,
-							  const QString & tmpdir,
-							  const QString & ddir,
-							  const QString & default_save_dir)
+							  const TQString & torrent,
+							  const TQString & tmpdir,
+							  const TQString & ddir,
+							  const TQString & default_save_dir)
 	{
 		// first load the torrent file
 		tor = new Torrent();
@@ -506,13 +506,13 @@ namespace bt
 			delete tor;
 			tor = 0;
 			throw Error(i18n("An error occurred while loading the torrent."
-					" The torrent is probably corrupt or is not a torrent file.\n%1").arg(torrent));
+					" The torrent is probably corrupt or is not a torrent file.\n%1").tqarg(torrent));
 		}
 		
 		initInternal(qman,tmpdir,ddir,default_save_dir,torrent.startsWith(tmpdir));
 		
 		// copy torrent in tor dir
-		QString tor_copy = datadir + "torrent";
+		TQString tor_copy = datadir + "torrent";
 		if (tor_copy != torrent)
 		{
 			bt::CopyFile(torrent,tor_copy);
@@ -521,8 +521,8 @@ namespace bt
 	}
 	
 	
-	void TorrentControl::init(QueueManager* qman, const QByteArray & data,const QString & tmpdir,
-							  const QString & ddir,const QString & default_save_dir)
+	void TorrentControl::init(QueueManager* qman, const TQByteArray & data,const TQString & tmpdir,
+							  const TQString & ddir,const TQString & default_save_dir)
 	{
 		// first load the torrent file
 		tor = new Torrent();
@@ -540,11 +540,11 @@ namespace bt
 		
 		initInternal(qman,tmpdir,ddir,default_save_dir,true);
 		// copy data into torrent file
-		QString tor_copy = datadir + "torrent";
-		QFile fptr(tor_copy);
+		TQString tor_copy = datadir + "torrent";
+		TQFile fptr(tor_copy);
 		if (!fptr.open(IO_WriteOnly))
 			throw Error(i18n("Unable to create %1 : %2")
-					.arg(tor_copy).arg(fptr.errorString()));
+					.tqarg(tor_copy).tqarg(fptr.errorString()));
 	
 		fptr.writeBlock(data.data(),data.size());
 	}
@@ -559,17 +559,17 @@ namespace bt
 			{
 				qman->mergeAnnounceList(tor->getInfoHash(),tor->getTrackerList());
 
-				throw Error(i18n("You are already downloading this torrent %1, the list of trackers of both torrents has been merged.").arg(tor->getNameSuggestion()));
+				throw Error(i18n("You are already downloading this torrent %1, the list of trackers of both torrents has been merged.").tqarg(tor->getNameSuggestion()));
 			}
 			else
 			{
 				throw Error(i18n("You are already downloading the torrent %1")
-						.arg(tor->getNameSuggestion()));
+						.tqarg(tor->getNameSuggestion()));
 			}
 		}
 	}
 	
-	void TorrentControl::setupDirs(const QString & tmpdir,const QString & ddir)
+	void TorrentControl::setupDirs(const TQString & tmpdir,const TQString & ddir)
 	{
 		datadir = tmpdir;
 		
@@ -607,14 +607,14 @@ namespace bt
 			loadOutputDir();
 	}
 	
-	void TorrentControl::setupData(const QString & ddir)
+	void TorrentControl::setupData(const TQString & ddir)
 	{
 		// create PeerManager and Tracker
 		pman = new PeerManager(*tor);
 		//Out() << "Tracker url " << url << " " << url.protocol() << " " << url.prettyURL() << endl;
 		psman = new PeerSourceManager(this,pman);
-		connect(psman,SIGNAL(statusChanged( const QString& )),
-				this,SLOT(trackerStatusChanged( const QString& )));
+		connect(psman,TQT_SIGNAL(statusChanged( const TQString& )),
+				this,TQT_SLOT(trackerStatusChanged( const TQString& )));
 
 
 		// Create chunkmanager, load the index file if it exists
@@ -626,7 +626,7 @@ namespace bt
 		
 		// store the outputdir into the output_path variable, so others can access it	
 		
-		connect(cman,SIGNAL(updateStats()),this,SLOT(updateStats()));
+		connect(cman,TQT_SIGNAL(updateStats()),this,TQT_SLOT(updateStats()));
 		if (bt::Exists(datadir + "index"))
 			cman->loadIndexFile();
 
@@ -634,23 +634,23 @@ namespace bt
 
 		// create downloader,uploader and choker
 		down = new Downloader(*tor,*pman,*cman);
-		connect(down,SIGNAL(ioError(const QString& )),
-				this,SLOT(onIOError(const QString& )));
+		connect(down,TQT_SIGNAL(ioError(const TQString& )),
+				this,TQT_SLOT(onIOError(const TQString& )));
 		up = new Uploader(*cman,*pman);
 		choke = new Choker(*pman,*cman);
 
 
-		connect(pman,SIGNAL(newPeer(Peer* )),this,SLOT(onNewPeer(Peer* )));
-		connect(pman,SIGNAL(peerKilled(Peer* )),this,SLOT(onPeerRemoved(Peer* )));
-		connect(cman,SIGNAL(excluded(Uint32, Uint32 )),down,SLOT(onExcluded(Uint32, Uint32 )));
-		connect(cman,SIGNAL(included( Uint32, Uint32 )),down,SLOT(onIncluded( Uint32, Uint32 )));
-		connect(cman,SIGNAL(corrupted( Uint32 )),this,SLOT(corrupted( Uint32 )));
+		connect(pman,TQT_SIGNAL(newPeer(Peer* )),this,TQT_SLOT(onNewPeer(Peer* )));
+		connect(pman,TQT_SIGNAL(peerKilled(Peer* )),this,TQT_SLOT(onPeerRemoved(Peer* )));
+		connect(cman,TQT_SIGNAL(excluded(Uint32, Uint32 )),down,TQT_SLOT(onExcluded(Uint32, Uint32 )));
+		connect(cman,TQT_SIGNAL(included( Uint32, Uint32 )),down,TQT_SLOT(onIncluded( Uint32, Uint32 )));
+		connect(cman,TQT_SIGNAL(corrupted( Uint32 )),this,TQT_SLOT(corrupted( Uint32 )));
 	}
 	
 	void TorrentControl::initInternal(QueueManager* qman,
-									  const QString & tmpdir,
-									  const QString & ddir,
-									  const QString & default_save_dir,
+									  const TQString & tmpdir,
+									  const TQString & ddir,
+									  const TQString & default_save_dir,
 									  bool first_time)
 	{
 		checkExisting(qman);
@@ -670,7 +670,7 @@ namespace bt
 				
 				throw Error(
 						i18n("Cannot migrate %1 : %2")
-						.arg(tor->getNameSuggestion()).arg(err.toString()));
+						.tqarg(tor->getNameSuggestion()).tqarg(err.toString()));
 			}
 		}
 		setupData(ddir);
@@ -731,8 +731,8 @@ namespace bt
 
 	void TorrentControl::onNewPeer(Peer* p)
 	{
-		connect(p,SIGNAL(gotPortPacket( const QString&, Uint16 )),
-				this,SLOT(onPortPacket( const QString&, Uint16 )));
+		connect(p,TQT_SIGNAL(gotPortPacket( const TQString&, Uint16 )),
+				this,TQT_SLOT(onPortPacket( const TQString&, Uint16 )));
 		
 		if (p->getStats().fast_extensions)
 		{
@@ -772,8 +772,8 @@ namespace bt
 
 	void TorrentControl::onPeerRemoved(Peer* p)
 	{
-		disconnect(p,SIGNAL(gotPortPacket( const QString&, Uint16 )),
-				this,SLOT(onPortPacket( const QString&, Uint16 )));
+		disconnect(p,TQT_SIGNAL(gotPortPacket( const TQString&, Uint16 )),
+				this,TQT_SLOT(onPortPacket( const TQString&, Uint16 )));
 		if (tmon)
 			tmon->peerRemoved(p);
 	}
@@ -783,16 +783,16 @@ namespace bt
 		choke->update(stats.completed,stats);
 	}
 
-	bool TorrentControl::changeDataDir(const QString & new_dir)
+	bool TorrentControl::changeDataDir(const TQString & new_dir)
 	{
-		int pos = datadir.findRev(bt::DirSeparator(),-2);
+		int pos = datadir.tqfindRev(bt::DirSeparator(),-2);
 		if (pos == -1)
 		{
 			Out(SYS_GEN|LOG_DEBUG) << "Could not find torX part in " << datadir << endl;
 			return false;
 		}
 		
-		QString ndatadir = new_dir + datadir.mid(pos + 1);
+		TQString ndatadir = new_dir + datadir.mid(pos + 1);
 		
 		Out(SYS_GEN|LOG_DEBUG) << datadir << " -> " << ndatadir << endl;
 		try
@@ -811,7 +811,7 @@ namespace bt
 		return true;
 	}
 	
-	bool TorrentControl::changeOutputDir(const QString & new_dir, bool moveFiles)
+	bool TorrentControl::changeOutputDir(const TQString & new_dir, bool moveFiles)
 	{
 		if (moving_files)
 			return false;
@@ -830,10 +830,10 @@ namespace bt
 		moving_files = true;
 		try
 		{
-			QString nd;
+			TQString nd;
 			if (istats.custom_output_name)
 			{
-				int slash_pos = stats.output_path.findRev(bt::DirSeparator(),-2);
+				int slash_pos = stats.output_path.tqfindRev(bt::DirSeparator(),-2);
 				nd = new_dir + stats.output_path.mid(slash_pos + 1);
 			}
 			else
@@ -855,7 +855,7 @@ namespace bt
 				move_data_files_destination_path = nd;
 				if (j)
 				{
-					connect(j,SIGNAL(result(KIO::Job*)),this,SLOT(moveDataFilesJobDone(KIO::Job*)));
+					connect(j,TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(moveDataFilesJobDone(KIO::Job*)));
 					return true;
 				}
 				else
@@ -932,7 +932,7 @@ namespace bt
 		else if (!stats.started)
 			stats.status = kt::NOT_STARTED;
 		else if(!stats.running && !stats.user_controlled)
-			stats.status = kt::QUEUED;
+			stats.status = kt::TQUEUED;
 		else if (!stats.running && stats.completed && (overMaxRatio() || overMaxSeedTime()))
 			stats.status = kt::SEEDING_COMPLETE;
 		else if (!stats.running && stats.completed)
@@ -988,26 +988,26 @@ namespace bt
 		if (cman->getDataDir() != outputdir)
 			outputdir = cman->getDataDir();
 		
-		st.write("UPLOADED", QString::number(up->bytesUploaded()));
+		st.write("UPLOADED", TQString::number(up->bytesUploaded()));
 		
 		if (stats.running)
 		{
-			QDateTime now = QDateTime::currentDateTime();
-			st.write("RUNNING_TIME_DL",QString("%1").arg(istats.running_time_dl + istats.time_started_dl.secsTo(now)));
-			st.write("RUNNING_TIME_UL",QString("%1").arg(istats.running_time_ul + istats.time_started_ul.secsTo(now)));
+			TQDateTime now = TQDateTime::tqcurrentDateTime();
+			st.write("RUNNING_TIME_DL",TQString("%1").tqarg(istats.running_time_dl + istats.time_started_dl.secsTo(now)));
+			st.write("RUNNING_TIME_UL",TQString("%1").tqarg(istats.running_time_ul + istats.time_started_ul.secsTo(now)));
 		}
 		else
 		{
-			st.write("RUNNING_TIME_DL", QString("%1").arg(istats.running_time_dl));
-			st.write("RUNNING_TIME_UL", QString("%1").arg(istats.running_time_ul));
+			st.write("RUNNING_TIME_DL", TQString("%1").tqarg(istats.running_time_dl));
+			st.write("RUNNING_TIME_UL", TQString("%1").tqarg(istats.running_time_ul));
 		}
 		
-		st.write("PRIORITY", QString("%1").arg(istats.priority));
-		st.write("AUTOSTART", QString("%1").arg(stats.autostart));
-		st.write("IMPORTED", QString("%1").arg(stats.imported_bytes));
+		st.write("PRIORITY", TQString("%1").tqarg(istats.priority));
+		st.write("AUTOSTART", TQString("%1").tqarg(stats.autostart));
+		st.write("IMPORTED", TQString("%1").tqarg(stats.imported_bytes));
 		st.write("CUSTOM_OUTPUT_NAME",istats.custom_output_name ? "1" : "0");
-		st.write("MAX_RATIO", QString("%1").arg(stats.max_share_ratio,0,'f',2));
-		st.write("MAX_SEED_TIME",QString::number(stats.max_seed_time));
+		st.write("MAX_RATIO", TQString("%1").tqarg(stats.max_share_ratio,0,'f',2));
+		st.write("MAX_SEED_TIME",TQString::number(stats.max_seed_time));
 		st.write("RESTART_DISK_PREALLOCATION",prealloc ? "1" : "0");
 		
 		if(!stats.priv_torrent)
@@ -1017,8 +1017,8 @@ namespace bt
 			st.write("UT_PEX", isFeatureEnabled(kt::UT_PEX_FEATURE) ? "1" : "0");
 		}
 		
-		st.write("UPLOAD_LIMIT",QString::number(upload_limit));
-		st.write("DOWNLOAD_LIMIT",QString::number(download_limit));
+		st.write("UPLOAD_LIMIT",TQString::number(upload_limit));
+		st.write("DOWNLOAD_LIMIT",TQString::number(download_limit));
 		
 		st.writeSync();
 	}
@@ -1222,7 +1222,7 @@ namespace bt
 		if (!stats.running || stats.completed)
 			return istats.running_time_dl;
 		else
-			return istats.running_time_dl + istats.time_started_dl.secsTo(QDateTime::currentDateTime());
+			return istats.running_time_dl + istats.time_started_dl.secsTo(TQDateTime::tqcurrentDateTime());
 	}
 
 	Uint32 TorrentControl::getRunningTimeUL() const
@@ -1230,7 +1230,7 @@ namespace bt
 		if (!stats.running)
 			return istats.running_time_ul;
 		else
-			return istats.running_time_ul + istats.time_started_ul.secsTo(QDateTime::currentDateTime());
+			return istats.running_time_ul + istats.time_started_ul.secsTo(TQDateTime::tqcurrentDateTime());
 	}
 
 	Uint32 TorrentControl::getNumFiles() const
@@ -1249,16 +1249,16 @@ namespace bt
 			return TorrentFile::null;
 	}
 
-	void TorrentControl::migrateTorrent(const QString & default_save_dir)
+	void TorrentControl::migrateTorrent(const TQString & default_save_dir)
 	{
 		if (bt::Exists(datadir + "current_chunks") && bt::IsPreMMap(datadir + "current_chunks"))
 		{
 			// in case of error copy torX dir to migrate-failed-tor
-			QString dd = datadir;
-			int pos = dd.findRev("tor");
+			TQString dd = datadir;
+			int pos = dd.tqfindRev("tor");
 			if (pos != - 1)
 			{
-				dd = dd.replace(pos,3,"migrate-failed-tor");
+				dd = dd.tqreplace(pos,3,"migrate-failed-tor");
 				Out() << "Copying " << datadir << " to " << dd << endl;
 				bt::CopyDir(datadir,dd,true);
 			}
@@ -1274,10 +1274,10 @@ namespace bt
 							" To make sure this torrent still works with this version of KTorrent, "
 							"we will migrate this torrent. You will be asked for a location to save "
 							"the torrent to. If you press cancel, we will select your home directory.")
-								.arg(tor->getNameSuggestion()));
-					outputdir = KFileDialog::getExistingDirectory(QString::null, 0,i18n("Select Folder to Save To"));
+								.tqarg(tor->getNameSuggestion()));
+					outputdir = KFileDialog::getExistingDirectory(TQString(), 0,i18n("Select Folder to Save To"));
 					if (outputdir.isNull())
-						outputdir = QDir::homeDirPath();
+						outputdir = TQDir::homeDirPath();
 				}
 				else
 				{
@@ -1301,7 +1301,7 @@ namespace bt
 		istats.priority = p;
 		stats.user_controlled = p == 0 ? true : false;
 		if(p)
-			stats.status = kt::QUEUED;
+			stats.status = kt::TQUEUED;
 		else
 			updateStatusMsg();
 		
@@ -1356,7 +1356,7 @@ namespace bt
 	}
 
 	
-	QString TorrentControl::statusToString() const
+	TQString TorrentControl::statusToString() const
 	{
 		switch (stats.status)
 		{
@@ -1378,14 +1378,14 @@ namespace bt
 				return i18n("Error: ") + getShortErrorMessage(); 
 			case kt::ALLOCATING_DISKSPACE:
 				return i18n("Allocating diskspace");
-			case kt::QUEUED:
+			case kt::TQUEUED:
 				return i18n("Queued");
 			case kt::CHECKING_DATA:
 				return i18n("Checking data");
 			case kt::NO_SPACE_LEFT:
 				return i18n("Stopped. No space left on device.");
 		}
-		return QString::null;
+		return TQString();
 	}
 
 	TrackersList* TorrentControl::getTrackersList()
@@ -1398,7 +1398,7 @@ namespace bt
 		return psman;
 	}
 
-	void TorrentControl::onPortPacket(const QString & ip,Uint16 port)
+	void TorrentControl::onPortPacket(const TQString & ip,Uint16 port)
 	{
 		if (Globals::instance().getDHT().isRunning() && !stats.priv_torrent)
 			Globals::instance().getDHT().portRecieved(ip,port);
@@ -1489,7 +1489,7 @@ namespace bt
 		return cman->hasExistingFiles();
 	}
 	
-	bool TorrentControl::hasMissingFiles(QStringList & sl)
+	bool TorrentControl::hasMissingFiles(TQStringList & sl)
 	{
 		return cman->hasMissingFiles(sl);
 	}
@@ -1525,7 +1525,7 @@ namespace bt
 		}
 	}
 	
-	void TorrentControl::handleError(const QString & err)
+	void TorrentControl::handleError(const TQString & err)
 	{
 		onIOError(err);
 	}
@@ -1558,7 +1558,7 @@ namespace bt
 		stats.trk_bytes_uploaded = 0;
 	}
 	
-	void TorrentControl::trackerStatusChanged(const QString & ns)
+	void TorrentControl::trackerStatusChanged(const TQString & ns)
 	{
 		stats.trackerstatus = ns;
 	}

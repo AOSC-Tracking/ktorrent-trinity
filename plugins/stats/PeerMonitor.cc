@@ -22,7 +22,7 @@
 
 namespace kt {
 
-PeerMonitor::PeerMonitor(kt::TorrentInterface * pTi, std::map<bt::SHA1Hash, PeerMonitor *> * pM) : kt::MonitorInterface(), QObject(), pmTorIface(pTi), pmPeerMMgr(pM)
+PeerMonitor::PeerMonitor(kt::TorrentInterface * pTi, std::map<bt::SHA1Hash, PeerMonitor *> * pM) : kt::MonitorInterface(), TQObject(), pmTorIface(pTi), pmPeerMMgr(pM)
 {
 
 }
@@ -33,7 +33,7 @@ PeerMonitor::~PeerMonitor()
 
 void PeerMonitor::peerAdded (kt::PeerInterface *peer)
 {
-	QMutexLocker lock(&mtx);
+	TQMutexLocker lock(&mtx);
 	
 	mPeers.push_back( peer );
 }
@@ -41,9 +41,9 @@ void PeerMonitor::peerAdded (kt::PeerInterface *peer)
 void PeerMonitor::peerRemoved (kt::PeerInterface *peer)
 {
 
-	QMutexLocker lock(&mtx);
+	TQMutexLocker lock(&mtx);
 
-	data_t::iterator it = std::find(mPeers.begin(), mPeers.end(), peer);
+	data_t::iterator it = std::tqfind(mPeers.begin(), mPeers.end(), peer);
 	
 	if(it != mPeers.end())
 	{
@@ -65,7 +65,7 @@ void PeerMonitor::downloadRemoved (kt::ChunkDownloadInterface *)
 
 void PeerMonitor::stopped () 
 {
-	QMutexLocker lock(&mtx);
+	TQMutexLocker lock(&mtx);
 	
 	std::fill(mPeers.begin(), mPeers.end(), static_cast<PeerInterface*>( 0 ) );
 //	mPeers.clear();
@@ -73,7 +73,7 @@ void PeerMonitor::stopped ()
 
 void PeerMonitor::destroyed () 
 { 
-	if(pmPeerMMgr -> find(pmTorIface -> getInfoHash()) != pmPeerMMgr -> end() )
+	if(pmPeerMMgr -> tqfind(pmTorIface -> getInfoHash()) != pmPeerMMgr -> end() )
 	{
 		pmTorIface -> setMonitor(0);
 		pmPeerMMgr -> erase(pmTorIface -> getInfoHash());
@@ -84,12 +84,12 @@ void PeerMonitor::destroyed ()
 
 double PeerMonitor::LeechersUpSpeed() 
 {
-	QMutexLocker lock(&mtx);
+	TQMutexLocker lock(&mtx);
 	
 	double spd = 0.0;
 	
 	//without it'll segfault/SIGABRT on stop as in meantime the iterator from 
-	// mPeers will be invalidated
+	// mPeers will be tqinvalidated
 	
 	for( data_t::const_iterator it = mPeers.begin(); it != mPeers.end(); it++)
 	{
@@ -104,7 +104,7 @@ double PeerMonitor::LeechersUpSpeed()
 
 double PeerMonitor::LeechersDownSpeed()
 {
-	QMutexLocker lock(&mtx);
+	TQMutexLocker lock(&mtx);
 	
 	double spd = 0.0;
 	
@@ -123,7 +123,7 @@ double PeerMonitor::LeechersDownSpeed()
 
 double PeerMonitor::SeedersUpSpeed() 
 {
-	QMutexLocker lock(&mtx);
+	TQMutexLocker lock(&mtx);
 	
 	double spd = 0.0;
 	
@@ -143,7 +143,7 @@ double PeerMonitor::SeedersUpSpeed()
 
 uint64_t PeerMonitor::GetLeechers() 
 {
-	QMutexLocker lock(&mtx);
+	TQMutexLocker lock(&mtx);
 	
 	uint64_t l = 0;
 	
@@ -162,7 +162,7 @@ uint64_t PeerMonitor::GetLeechers()
 
 uint64_t PeerMonitor::GetSeeders() 
 {
-	QMutexLocker lock(&mtx);
+	TQMutexLocker lock(&mtx);
 	
 	uint64_t s = 0;
 	

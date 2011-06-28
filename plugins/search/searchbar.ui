@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>SearchBar</class>
-<widget class="QWidget">
+<widget class="TQWidget">
     <property name="name">
         <cstring>SearchBar</cstring>
     </property>
@@ -63,14 +63,14 @@
             <property name="sizeType">
                 <enum>Maximum</enum>
             </property>
-            <property name="sizeHint">
+            <property name="tqsizeHint">
                 <size>
                     <width>60</width>
                     <height>20</height>
                 </size>
             </property>
         </spacer>
-        <widget class="QLabel">
+        <widget class="TQLabel">
             <property name="name">
                 <cstring>textLabel1</cstring>
             </property>
@@ -87,7 +87,7 @@
 </widget>
 <customwidgets>
 </customwidgets>
-<layoutdefaults spacing="6" margin="11"/>
+<tqlayoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>

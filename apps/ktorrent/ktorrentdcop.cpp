@@ -33,19 +33,19 @@ KTorrentDCOP::~KTorrentDCOP()
 {}
 
 
-bool KTorrentDCOP::changeDataDir(const QString& new_dir)
+bool KTorrentDCOP::changeDataDir(const TQString& new_dir)
 {
 	Settings::setTempDir(new_dir);
 	Settings::writeConfig();
 	return app->getCore().changeDataDir(new_dir);
 }
 
-void KTorrentDCOP::openTorrent(const QString& file)
+void KTorrentDCOP::openTorrent(const TQString& file)
 {
 	app->load(KURL::fromPathOrURL(file));
 }
 
-void KTorrentDCOP::openTorrentSilently(const QString & file)
+void KTorrentDCOP::openTorrentSilently(const TQString & file)
 {
 	app->loadSilently(KURL::fromPathOrURL(file));
 }
@@ -123,7 +123,7 @@ void KTorrentDCOP::stop(int tornumber, bool user)
 		app->getCore().stop(tc, user);
 }
 
-QValueList<int> KTorrentDCOP::getTorrentNumbers(int type)
+TQValueList<int> KTorrentDCOP::getTorrentNumbers(int type)
 {
 	return app->getCore().getTorrentNumbers(type);
 }
@@ -141,7 +141,7 @@ QCStringList KTorrentDCOP::getTorrentInfo(int tornumber)
 QCStringList KTorrentDCOP::getInfo()
 {
 	QCStringList info;
-	QString thisinfo = app->getStatusInfo();
+	TQString thisinfo = app->getStatusInfo();
 	info.append(thisinfo.ascii());
 	thisinfo = app->getStatusTransfer();
 	info.append(thisinfo.ascii());
@@ -162,7 +162,7 @@ QCStringList KTorrentDCOP::getFileNames(int tornumber)
 	return app->getCore().getFileNames(tornumber);
 }
 
-QValueList<int> KTorrentDCOP::getFilePriorities(int tornumber)
+TQValueList<int> KTorrentDCOP::getFilePriorities(int tornumber)
 {
 	return app->getCore().getFilePriorities(tornumber);
 }
@@ -187,9 +187,9 @@ void KTorrentDCOP::announce(int tornumber)
 	app->getCore().announceByTorNum(tornumber);
 }
 
-QCString KTorrentDCOP::dataDir()
+TQCString KTorrentDCOP::dataDir()
 {
-	QCString dir = Settings::tempDir().ascii();
+	TQCString dir = Settings::tempDir().ascii();
 	return dir;
 }
 
@@ -228,9 +228,9 @@ bool KTorrentDCOP::showSystemTrayIcon()
 	return Settings::showSystemTrayIcon();
 }
 
-QValueList<int> KTorrentDCOP::intSettings()
+TQValueList<int> KTorrentDCOP::intSettings()
 {
-	QValueList<int> intsettings;
+	TQValueList<int> intsettings;
 	intsettings.append(Settings::maxDownloads());
 	intsettings.append(Settings::maxSeeds());
 	intsettings.append(Settings::maxConnections());
@@ -241,12 +241,12 @@ QValueList<int> KTorrentDCOP::intSettings()
 	return intsettings;
 }
 
-bool KTorrentDCOP::isBlockedIP(QString ip)
+bool KTorrentDCOP::isBlockedIP(TQString ip)
 {
 	return bt::IPBlocklist::instance().isBlocked(ip);	
 }
 
-void KTorrentDCOP::openTorrentSilentlyDir(const QString & file, const QString & savedir)
+void KTorrentDCOP::openTorrentSilentlyDir(const TQString & file, const TQString & savedir)
 {
 	app->loadSilentlyDir(KURL::fromPathOrURL(file), KURL::fromPathOrURL(savedir));
 }

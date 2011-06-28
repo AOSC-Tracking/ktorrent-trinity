@@ -66,12 +66,12 @@ int main(int argc,char** argv)
 	/*
 	if (argc >= 2)
 	{
-		kt::UPnPRouter router(QString::null,"http://foobar.com");
+		kt::UPnPRouter router(TQString(),"http://foobar.com");
 		kt::UPnPDescriptionParser dp;
 		
 		if (!dp.parse(argv[1],&router))
 		{
-			Out() << "Cannot parse " << QString(argv[1]) << endl;
+			Out() << "Cannot parse " << TQString(argv[1]) << endl;
 		}
 		else
 		{
@@ -83,7 +83,7 @@ int main(int argc,char** argv)
 	
 	Out() << "Doing second test" << endl;
 	UPnPMCastSocket mcast;
-	UPnPRouter* r = mcast.parseResponse(QCString(test_ps));
+	UPnPRouter* r = mcast.parseResponse(TQCString(test_ps));
 	if (r)
 	{
 		Out() << "Succesfully parsed test_ps" << endl;

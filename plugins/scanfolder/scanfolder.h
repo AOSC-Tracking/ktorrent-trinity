@@ -22,11 +22,11 @@
 
 #include <kdirlister.h>
 #include <kfileitem.h>
-#include <qstring.h>
-#include <qobject.h>
-#include <qdir.h>
-#include <qvaluelist.h>
-#include <qtimer.h>
+#include <tqstring.h>
+#include <tqobject.h>
+#include <tqdir.h>
+#include <tqvaluelist.h>
+#include <tqtimer.h>
 #include <kurl.h>
 
 namespace kt
@@ -53,9 +53,10 @@ namespace kt
 	 * @see LoadedTorrentAction
 	 * 
 	*/
-	class ScanFolder : public QObject
+	class ScanFolder : public TQObject
 	{
 			Q_OBJECT
+  TQ_OBJECT
 		public:
 			
 			/**
@@ -65,7 +66,7 @@ namespace kt
 			 * @param action Action to perform on loaded torrents.
 			 * @param openSilently Wheather to open torrent silently or not.
 			 */
-			ScanFolder(CoreInterface* core, QString& dir, LoadedTorrentAction action = defaultAction, bool openSilently = true);
+			ScanFolder(CoreInterface* core, TQString& dir, LoadedTorrentAction action = defaultAction, bool openSilently = true);
 			~ScanFolder();
 
 			///Accessor method for m_openSilently.
@@ -82,7 +83,7 @@ namespace kt
 			bool isValid() const { return m_valid; }
 			
 			///Sets directory path
-			void setFolderUrl(QString& url);
+			void setFolderUrl(TQString& url);
 
 		public slots:
 			void onNewItems(const KFileItemList &items);
@@ -102,10 +103,10 @@ namespace kt
 			LoadedTorrentAction m_loadedAction;
 			bool m_openSilently;
 			
-			QValueList<KURL> m_pendingURLs;
-			QValueList<KURL> m_incompleteURLs;
+			TQValueList<KURL> m_pendingURLs;
+			TQValueList<KURL> m_incompleteURLs;
 
-			QTimer m_incomplePollingTimer;
+			TQTimer m_incomplePollingTimer;
 	};
 }
 #endif

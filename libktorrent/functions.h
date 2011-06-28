@@ -20,7 +20,7 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
-#include <qstring.h>
+#include <tqstring.h>
 #include <util/constants.h>
 
 namespace kt
@@ -29,7 +29,7 @@ namespace kt
 	 * Will return the data directory
 	 * @return ~/.kde/share/apps/ktorrent/
 	 */
-	QString DataDir();
+	TQString DataDir();
 }
 
 #endif

@@ -17,7 +17,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qlabel.h>
+#include <tqlabel.h>
 #include <klocale.h>
 #include <kprogress.h>
 #include <kpushbutton.h>
@@ -36,12 +36,12 @@ using namespace kt;
 
 	
 ScanDialog::ScanDialog(KTorrentCore* core,bool auto_import,
-					   QWidget* parent, const char* name, bool modal, WFlags fl)
-	: ScanDlgBase(parent,name, modal,fl),DataCheckerListener(auto_import),mutex(true),core(core)
+					   TQWidget* tqparent, const char* name, bool modal, WFlags fl)
+	: ScanDlgBase(tqparent,name, modal,fl),DataCheckerListener(auto_import),mutex(true),core(core)
 {
 	m_cancel->setGuiItem(KStdGuiItem::cancel());
-	connect(m_cancel,SIGNAL(clicked()),this,SLOT(onCancelPressed()));
-	connect(&timer,SIGNAL(timeout()),this,SLOT(update()));
+	connect(m_cancel,TQT_SIGNAL(clicked()),this,TQT_SLOT(onCancelPressed()));
+	connect(&timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(update()));
 	tc = 0;
 	silently = false;
 	restart = false;
@@ -67,14 +67,14 @@ void ScanDialog::scan()
 	}
 	catch (bt::Error & err)
 	{
-		KMessageBox::error(0,i18n("Error scanning data: %1").arg(err.toString()));
+		KMessageBox::error(0,i18n("Error scanning data: %1").tqarg(err.toString()));
 	}
 	
 }
 
 void ScanDialog::execute(kt::TorrentInterface* tc,bool silently)
 {
-	m_torrent_label->setText(i18n("Scanning data of <b>%1</b> :").arg(tc->getStats().torrent_name));
+	m_torrent_label->setText(i18n("Scanning data of <b>%1</b> :").tqarg(tc->getStats().torrent_name));
 	adjustSize();
 	m_cancel->setEnabled(true);
 	this->silently = silently;
@@ -103,7 +103,7 @@ void ScanDialog::execute(kt::TorrentInterface* tc,bool silently)
 
 void ScanDialog::finished()
 {
-	QMutexLocker lock(&mutex);
+	TQMutexLocker lock(&mutex);
 	scanning = false;
 	timer.stop();
 	progress(100,100);
@@ -127,8 +127,8 @@ void ScanDialog::finished()
 		{
 			// cancel now becomes a close button
 			m_cancel->setGuiItem(KStdGuiItem::close()); 
-			disconnect(m_cancel,SIGNAL(clicked()),this,SLOT(onCancelPressed()));
-			connect(m_cancel,SIGNAL(clicked()),this,SLOT(accept()));
+			disconnect(m_cancel,TQT_SIGNAL(clicked()),this,TQT_SLOT(onCancelPressed()));
+			connect(m_cancel,TQT_SIGNAL(clicked()),this,TQT_SLOT(accept()));
 		}
 	}
 	else
@@ -144,13 +144,13 @@ void ScanDialog::finished()
 			}
 		}
 		
-		QDialog::reject();
+		TQDialog::reject();
 	}
 }
 
 void ScanDialog::progress(bt::Uint32 num,bt::Uint32 total)
 {
-	QMutexLocker lock(&mutex);
+	TQMutexLocker lock(&mutex);
 	num_chunks = num;
 	total_chunks = total;
 	
@@ -158,16 +158,16 @@ void ScanDialog::progress(bt::Uint32 num,bt::Uint32 total)
 
 void ScanDialog::update()
 {
-	QMutexLocker lock(&mutex);
+	TQMutexLocker lock(&mutex);
 	m_progress->setTotalSteps(total_chunks);
 	m_progress->setProgress(num_chunks);
-	m_chunks_found->setText(QString::number(num_downloaded));
-	m_chunks_failed->setText(QString::number(num_failed));
+	m_chunks_found->setText(TQString::number(num_downloaded));
+	m_chunks_failed->setText(TQString::number(num_failed));
 }
 
 void ScanDialog::status(bt::Uint32 failed,bt::Uint32 downloaded)
 {
-	QMutexLocker lock(&mutex);
+	TQMutexLocker lock(&mutex);
 	num_failed = failed;
 	num_downloaded = downloaded;
 }
@@ -177,7 +177,7 @@ void ScanDialog::reject()
 	if (scanning)
 		stop();
 	else
-		QDialog::reject();
+		TQDialog::reject();
 }
 
 void ScanDialog::onCancelPressed()
@@ -187,10 +187,10 @@ void ScanDialog::onCancelPressed()
 
 void ScanDialog::accept()
 {
-	QDialog::accept();
+	TQDialog::accept();
 }
 
-void ScanDialog::closeEvent(QCloseEvent* e)
+void ScanDialog::closeEvent(TQCloseEvent* e)
 {
 	if (scanning)
 		reject();

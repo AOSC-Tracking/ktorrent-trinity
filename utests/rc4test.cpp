@@ -59,15 +59,15 @@ namespace utest
 		if (memcmp(dec,test,tlen) == 0)
 		{
 			Out() << "Test succesfull" << endl;
-			Out() << QString(test) << endl;
-			Out() << QString((char*)dec) << endl;
+			Out() << TQString(test) << endl;
+			Out() << TQString((char*)dec) << endl;
 			return true;
 		}
 		else
 		{
 			Out() << "Test not succesfull" << endl;
-			Out() << QString(test) << endl;
-			Out() << QString((char*)dec) << endl;
+			Out() << TQString(test) << endl;
+			Out() << TQString((char*)dec) << endl;
 			return false;
 		}
 	}

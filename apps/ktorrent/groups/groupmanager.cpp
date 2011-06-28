@@ -97,9 +97,9 @@ namespace kt
 	}
 
 
-	Group* GroupManager::newGroup(const QString & name)
+	Group* GroupManager::newGroup(const TQString & name)
 	{
-		if (find(name))
+		if (tqfind(name))
 			return 0;
 		
 		Group* g = new TorrentGroup(name);
@@ -109,11 +109,11 @@ namespace kt
 	
 	bool GroupManager::canRemove(const Group* g) const
 	{
-		return default_groups.find(g->groupName()) == 0;
+		return default_groups.tqfind(g->groupName()) == 0;
 	}
 	
 	
-	void GroupManager::saveGroups(const QString & fn)
+	void GroupManager::saveGroups(const TQString & fn)
 	{
 		bt::File fptr;
 		if (!fptr.open(fn,"wb"))
@@ -142,7 +142,7 @@ namespace kt
 	
 
 		
-	void GroupManager::loadGroups(const QString & fn)
+	void GroupManager::loadGroups(const TQString & fn)
 	{
 		bt::File fptr;
 		if (!fptr.open(fn,"rb"))
@@ -153,7 +153,7 @@ namespace kt
 		try
 		{
 			Uint32 fs = bt::FileSize(fn);
-			QByteArray data(fs);
+			TQByteArray data(fs);
 			fptr.read(data.data(),fs);
 			
 			BDecoder dec(data,false);
@@ -180,7 +180,7 @@ namespace kt
 					throw;
 				}
 				
-				if (!find(g->groupName()))
+				if (!tqfind(g->groupName()))
 					insert(g->groupName(),g);
 				else
 					delete g;
@@ -201,9 +201,9 @@ namespace kt
 		}
 	}
 	
-	void GroupManager::renameGroup(const QString & old_name,const QString & new_name)
+	void GroupManager::renameGroup(const TQString & old_name,const TQString & new_name)
 	{
-		Group* g = find(old_name);
+		Group* g = tqfind(old_name);
 		if (!g)
 			return;
 		
@@ -214,8 +214,8 @@ namespace kt
 		setAutoDelete(true);
 	}
 	
-	Group* GroupManager::findDefault(const QString & name)
+	Group* GroupManager::findDefault(const TQString & name)
 	{
-		return default_groups.find(name);
+		return default_groups.tqfind(name);
 	}
 }

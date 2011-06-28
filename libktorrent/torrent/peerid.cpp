@@ -19,7 +19,7 @@
  ***************************************************************************/
 #include <time.h>
 #include <stdlib.h>
-#include <qmap.h>
+#include <tqmap.h>
 #include <klocale.h>
 #include "peerid.h"
 #include "ktversion.h"
@@ -97,23 +97,23 @@ namespace bt
 		return false;
 	}
 
-	QString PeerID::toString() const
+	TQString PeerID::toString() const
 	{
-		QString r;
+		TQString r;
 		for (int i = 0;i < 20;i++)
 			r += id[i] == 0 ? ' ' : id[i];
 		return r;
 	}
 
-	QString PeerID::identifyClient() const
+	TQString PeerID::identifyClient() const
 	{
 		if (!client_name.isNull())
 			return client_name;
 		
-		QString peer_id = toString();
+		TQString peer_id = toString();
 		// we only need to create this map once
 		// so make it static
-		static QMap<QString, QString> Map;
+		static TQMap<TQString, TQString> Map;
 		static bool first = true; 
 
 		if (first)
@@ -159,8 +159,8 @@ namespace bt
 			Map["MT"] = "MoonLight";
 			Map["PD"] = "Pando";
 			Map["qB"] = "qBittorrent";
-			Map["QD"] = "QQDownload";
-			Map["QT"] = "Qt 4 Torrent example";
+			Map["QD"] = "TQQDownload";
+			Map["QT"] = "TQt 4 Torrent example";
 			Map["RS"] = "Rufus";
 			Map["RT"] = "Retriever";
 			Map["S~"] = "Shareaza alpha/beta";
@@ -174,7 +174,7 @@ namespace bt
 			Map["TS"] = "Torrent Storm";
 			Map["TT"] = "TuoTu";
 			Map["UL"] = "uLeecher!";
-			Map["UT"] = QString("%1Torrent").arg(QChar(0x00B5)); // µTorrent, 0x00B5 is unicode for µ
+			Map["UT"] = TQString("%1Torrent").tqarg(TQChar(0x00B5)); // µTorrent, 0x00B5 is tqunicode for µ
 			Map["WT"] = "BitLet";
 			Map["WY"] = "FireTorrent";
 			Map["XL"] = "Xunlei";
@@ -200,32 +200,32 @@ namespace bt
 			first = false;
 		}
 
-		QString name = i18n("Unknown client");
-		if (peer_id.at(0) == '-' &&
-			peer_id.at(1).isLetter() &&
-			peer_id.at(2).isLetter() ) //AZ style
+		TQString name = i18n("Unknown client");
+		if (peer_id.tqat(0) == '-' &&
+			peer_id.tqat(1).isLetter() &&
+			peer_id.tqat(2).isLetter() ) //AZ style
 		{
-			QString ID(peer_id.mid(1,2));
-			if (Map.contains(ID))
-				name = Map[ID] + " " + peer_id.at(3) + "." + peer_id.at(4) + "."
-					+ peer_id.at(5) + "." + peer_id.at(6);
+			TQString ID(peer_id.mid(1,2));
+			if (Map.tqcontains(ID))
+				name = Map[ID] + " " + peer_id.tqat(3) + "." + peer_id.tqat(4) + "."
+					+ peer_id.tqat(5) + "." + peer_id.tqat(6);
 		}
-		else if (peer_id.at(0).isLetter() &&
-				peer_id.at(1).isDigit() &&
-				peer_id.at(2).isDigit() )  //Shadow's style
+		else if (peer_id.tqat(0).isLetter() &&
+				peer_id.tqat(1).isDigit() &&
+				peer_id.tqat(2).isDigit() )  //Shadow's style
 		{
-			QString ID = QString(peer_id.at(0));
-			if (Map.contains(ID))
-				name = Map[ID] + " " + peer_id.at(1) + "." +
-						peer_id.at(2) + "." + peer_id.at(3);
+			TQString ID = TQString(peer_id.tqat(0));
+			if (Map.tqcontains(ID))
+				name = Map[ID] + " " + peer_id.tqat(1) + "." +
+						peer_id.tqat(2) + "." + peer_id.tqat(3);
 		}
-		else if (peer_id.at(0) == 'M' && peer_id.at(2) == '-' && (peer_id.at(4) == '-' || peer_id.at(5) == '-'))
+		else if (peer_id.tqat(0) == 'M' && peer_id.tqat(2) == '-' && (peer_id.tqat(4) == '-' || peer_id.tqat(5) == '-'))
 		{
-			name = Map["M"] + " " + peer_id.at(1) + "." + peer_id.at(3);
-			if(peer_id.at(4) == '-')
-				name += "." + peer_id.at(5);
+			name = Map["M"] + " " + peer_id.tqat(1) + "." + peer_id.tqat(3);
+			if(peer_id.tqat(4) == '-')
+				name += "." + peer_id.tqat(5);
 			else
-				name += peer_id.at(4) + "." + peer_id.at(6);
+				name += peer_id.tqat(4) + "." + peer_id.tqat(6);
 		}
 		else if (peer_id.startsWith("OP"))
 		{
@@ -245,7 +245,7 @@ namespace bt
 		}
 		else if ( peer_id.startsWith("Mbrst"))
 		{
-			name = Map["Mbrst"] + " " + peer_id.at(5) + "." + peer_id.at(7);
+			name = Map["Mbrst"] + " " + peer_id.tqat(5) + "." + peer_id.tqat(7);
 		}
 			
 		return name;

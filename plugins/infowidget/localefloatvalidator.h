@@ -22,23 +22,24 @@
 #ifndef LOCALEFLOATVALIDATOR_H
 #define LOCALEFLOATVALIDATOR_H
 
-#include <qvalidator.h>
-class QRegExp;
+#include <tqvalidator.h>
+class TQRegExp;
 namespace kt{
 	/**
 	* @author Jonas Widarsson
 	*
 	* A float validator that respects KLocale::decimalSymbol()
 	*/
-	class LocaleFloatValidator : public QValidator
+	class LocaleFloatValidator : public TQValidator
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		LocaleFloatValidator( QObject * parent, const char *name = 0 );
+		LocaleFloatValidator( TQObject * tqparent, const char *name = 0 );
 	
-		virtual QValidator::State validate( QString & str, int & pos) const;
+		virtual TQValidator::State validate( TQString & str, int & pos) const;
 	private:
-		QRegExp regexp;
+		TQRegExp regexp;
 	};
 }
 

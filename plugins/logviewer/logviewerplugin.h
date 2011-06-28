@@ -35,13 +35,14 @@ namespace kt
 	class LogViewerPlugin : public Plugin
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		LogViewerPlugin(QObject* parent, const char* qt_name, const QStringList& args);
+		LogViewerPlugin(TQObject* tqparent, const char* qt_name, const TQStringList& args);
 		virtual ~LogViewerPlugin();
 			
 		virtual void load();
 		virtual void unload();
-		virtual bool versionCheck(const QString& version) const;
+		virtual bool versionCheck(const TQString& version) const;
 	private:
 		LogViewer* lv;
 		LogPrefPage* pref;

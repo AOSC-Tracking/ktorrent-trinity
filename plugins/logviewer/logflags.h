@@ -20,7 +20,7 @@
 #ifndef KTLOGFLAGS_H
 #define KTLOGFLAGS_H
 
-class QString;
+class TQString;
 
 namespace kt
 {
@@ -72,7 +72,7 @@ namespace kt
 			void setLog(LogViewer* log);
 			
 			///Makes line rich text according to arg level.
-			QString& getFormattedMessage(unsigned int arg, QString& line);
+			TQString& getFormattedMessage(unsigned int arg, TQString& line);
 			
 		private:
 			LogFlags();

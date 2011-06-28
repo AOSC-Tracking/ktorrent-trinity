@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>StatusTabBase</class>
-<widget class="QWidget">
+<widget class="TQWidget">
     <property name="name">
         <cstring>StatusTabBase</cstring>
     </property>
@@ -13,13 +13,13 @@
         </rect>
     </property>
     <property name="caption">
-        <string>Status</string>
+        <string>tqStatus</string>
     </property>
     <vbox>
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLabel">
+        <widget class="TQLabel">
             <property name="name">
                 <cstring>m_info_caption</cstring>
             </property>
@@ -39,23 +39,23 @@
                 <string>Info</string>
             </property>
         </widget>
-        <widget class="QLayoutWidget">
+        <widget class="TQLayoutWidget">
             <property name="name">
-                <cstring>layout16</cstring>
+                <cstring>tqlayout16</cstring>
             </property>
             <hbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLayoutWidget">
+                <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout15</cstring>
+                        <cstring>tqlayout15</cstring>
                     </property>
                     <grid>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel" row="1" column="0">
+                        <widget class="TQLabel" row="1" column="0">
                             <property name="name">
                                 <cstring>textLabel2</cstring>
                             </property>
@@ -63,7 +63,7 @@
                                 <string>Seeders:</string>
                             </property>
                         </widget>
-                        <widget class="QLabel" row="0" column="0">
+                        <widget class="TQLabel" row="0" column="0">
                             <property name="name">
                                 <cstring>textLabel1_6</cstring>
                             </property>
@@ -71,11 +71,11 @@
                                 <string>Leechers:</string>
                             </property>
                         </widget>
-                        <widget class="QLabel" row="1" column="1">
+                        <widget class="TQLabel" row="1" column="1">
                             <property name="name">
                                 <cstring>m_seeders</cstring>
                             </property>
-                            <property name="minimumSize">
+                            <property name="tqminimumSize">
                                 <size>
                                     <width>100</width>
                                     <height>0</height>
@@ -87,15 +87,15 @@
                             <property name="text">
                                 <string></string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                         </widget>
-                        <widget class="QLabel" row="0" column="1">
+                        <widget class="TQLabel" row="0" column="1">
                             <property name="name">
                                 <cstring>m_leechers</cstring>
                             </property>
-                            <property name="minimumSize">
+                            <property name="tqminimumSize">
                                 <size>
                                     <width>100</width>
                                     <height>0</height>
@@ -107,21 +107,21 @@
                             <property name="text">
                                 <string></string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                         </widget>
                     </grid>
                 </widget>
-                <widget class="QLayoutWidget">
+                <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout14</cstring>
+                        <cstring>tqlayout14</cstring>
                     </property>
                     <grid>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel" row="1" column="0">
+                        <widget class="TQLabel" row="1" column="0">
                             <property name="name">
                                 <cstring>textLabel2_2</cstring>
                             </property>
@@ -129,11 +129,11 @@
                                 <string>Average Down Speed:</string>
                             </property>
                         </widget>
-                        <widget class="QLabel" row="1" column="1">
+                        <widget class="TQLabel" row="1" column="1">
                             <property name="name">
                                 <cstring>m_avg_down</cstring>
                             </property>
-                            <property name="minimumSize">
+                            <property name="tqminimumSize">
                                 <size>
                                     <width>100</width>
                                     <height>0</height>
@@ -145,15 +145,15 @@
                             <property name="text">
                                 <string></string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                         </widget>
-                        <widget class="QLabel" row="0" column="1">
+                        <widget class="TQLabel" row="0" column="1">
                             <property name="name">
                                 <cstring>m_avg_up</cstring>
                             </property>
-                            <property name="minimumSize">
+                            <property name="tqminimumSize">
                                 <size>
                                     <width>100</width>
                                     <height>0</height>
@@ -165,11 +165,11 @@
                             <property name="text">
                                 <string></string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                         </widget>
-                        <widget class="QLabel" row="0" column="0">
+                        <widget class="TQLabel" row="0" column="0">
                             <property name="name">
                                 <cstring>textLabel1_7</cstring>
                             </property>
@@ -179,15 +179,15 @@
                         </widget>
                     </grid>
                 </widget>
-                <widget class="QLayoutWidget">
+                <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout12</cstring>
+                        <cstring>tqlayout12</cstring>
                     </property>
                     <grid>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel" row="1" column="0">
+                        <widget class="TQLabel" row="1" column="0">
                             <property name="name">
                                 <cstring>textLabel3_2</cstring>
                             </property>
@@ -195,19 +195,19 @@
                                 <string>Next update in:</string>
                             </property>
                         </widget>
-                        <widget class="QLabel" row="0" column="0">
+                        <widget class="TQLabel" row="0" column="0">
                             <property name="name">
                                 <cstring>textLabel1_5</cstring>
                             </property>
                             <property name="text">
-                                <string>Tracker Status:</string>
+                                <string>Tracker tqStatus:</string>
                             </property>
                         </widget>
-                        <widget class="QLabel" row="0" column="1">
+                        <widget class="TQLabel" row="0" column="1">
                             <property name="name">
                                 <cstring>m_tracker_status</cstring>
                             </property>
-                            <property name="minimumSize">
+                            <property name="tqminimumSize">
                                 <size>
                                     <width>100</width>
                                     <height>0</height>
@@ -219,15 +219,15 @@
                             <property name="text">
                                 <string></string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                         </widget>
-                        <widget class="QLabel" row="1" column="1">
+                        <widget class="TQLabel" row="1" column="1">
                             <property name="name">
                                 <cstring>m_tracker_update_time</cstring>
                             </property>
-                            <property name="minimumSize">
+                            <property name="tqminimumSize">
                                 <size>
                                     <width>100</width>
                                     <height>0</height>
@@ -239,7 +239,7 @@
                             <property name="text">
                                 <string></string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                         </widget>
@@ -255,7 +255,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>207</width>
                             <height>20</height>
@@ -264,31 +264,31 @@
                 </spacer>
             </hbox>
         </widget>
-        <widget class="QLayoutWidget">
+        <widget class="TQLayoutWidget">
             <property name="name">
-                <cstring>layout17</cstring>
+                <cstring>tqlayout17</cstring>
             </property>
             <hbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLayoutWidget">
+                <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout23</cstring>
+                        <cstring>tqlayout23</cstring>
                     </property>
                     <vbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLayoutWidget">
+                        <widget class="TQLayoutWidget">
                             <property name="name">
-                                <cstring>layout25</cstring>
+                                <cstring>tqlayout25</cstring>
                             </property>
                             <vbox>
                                 <property name="name">
                                     <cstring>unnamed</cstring>
                                 </property>
-                                <widget class="QLabel">
+                                <widget class="TQLabel">
                                     <property name="name">
                                         <cstring>m_chunks_caption</cstring>
                                     </property>
@@ -316,7 +316,7 @@
                                         <string>Chunks</string>
                                     </property>
                                 </widget>
-                                <widget class="QLabel">
+                                <widget class="TQLabel">
                                     <property name="name">
                                         <cstring>textLabel1_2</cstring>
                                     </property>
@@ -344,14 +344,14 @@
                                             <verstretch>0</verstretch>
                                         </sizepolicy>
                                     </property>
-                                    <property name="minimumSize">
+                                    <property name="tqminimumSize">
                                         <size>
                                             <width>0</width>
                                             <height>20</height>
                                         </size>
                                     </property>
                                 </widget>
-                                <widget class="QLabel">
+                                <widget class="TQLabel">
                                     <property name="name">
                                         <cstring>textLabel1_3</cstring>
                                     </property>
@@ -379,7 +379,7 @@
                                             <verstretch>0</verstretch>
                                         </sizepolicy>
                                     </property>
-                                    <property name="minimumSize">
+                                    <property name="tqminimumSize">
                                         <size>
                                             <width>0</width>
                                             <height>20</height>
@@ -398,7 +398,7 @@
                             <property name="sizeType">
                                 <enum>Expanding</enum>
                             </property>
-                            <property name="sizeHint">
+                            <property name="tqsizeHint">
                                 <size>
                                     <width>20</width>
                                     <height>16</height>
@@ -429,15 +429,15 @@
                         <enum>Vertical</enum>
                     </property>
                 </widget>
-                <widget class="QLayoutWidget">
+                <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout16</cstring>
+                        <cstring>tqlayout16</cstring>
                     </property>
                     <vbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>m_sharing_caption</cstring>
                             </property>
@@ -457,9 +457,9 @@
                                 <string>Sharing</string>
                             </property>
                         </widget>
-                        <widget class="QLayoutWidget">
+                        <widget class="TQLayoutWidget">
                             <property name="name">
-                                <cstring>layout15</cstring>
+                                <cstring>tqlayout15</cstring>
                             </property>
                             <grid>
                                 <property name="name">
@@ -477,7 +477,7 @@
                                             <verstretch>0</verstretch>
                                         </sizepolicy>
                                     </property>
-                                    <property name="minimumSize">
+                                    <property name="tqminimumSize">
                                         <size>
                                             <width>20</width>
                                             <height>0</height>
@@ -487,7 +487,7 @@
                                         <string>Your upload will stop when share ratio gets to this value. Zero means no limit.</string>
                                     </property>
                                 </widget>
-                                <widget class="QLabel" row="0" column="0">
+                                <widget class="TQLabel" row="0" column="0">
                                     <property name="name">
                                         <cstring>textLabel3_3</cstring>
                                     </property>
@@ -495,9 +495,9 @@
                                         <string>Share ratio:</string>
                                     </property>
                                 </widget>
-                                <widget class="QLayoutWidget" row="2" column="1">
+                                <widget class="TQLayoutWidget" row="2" column="1">
                                     <property name="name">
-                                        <cstring>layout11</cstring>
+                                        <cstring>tqlayout11</cstring>
                                     </property>
                                     <hbox>
                                         <property name="name">
@@ -515,7 +515,7 @@
                                                     <verstretch>0</verstretch>
                                                 </sizepolicy>
                                             </property>
-                                            <property name="minimumSize">
+                                            <property name="tqminimumSize">
                                                 <size>
                                                     <width>20</width>
                                                     <height>0</height>
@@ -525,7 +525,7 @@
                                                 <string>Your upload will stop when you have uploaded for this many hours.</string>
                                             </property>
                                         </widget>
-                                        <widget class="QLabel">
+                                        <widget class="TQLabel">
                                             <property name="name">
                                                 <cstring>textLabel1_9</cstring>
                                             </property>
@@ -535,7 +535,7 @@
                                         </widget>
                                     </hbox>
                                 </widget>
-                                <widget class="QCheckBox" row="1" column="0">
+                                <widget class="TQCheckBox" row="1" column="0">
                                     <property name="name">
                                         <cstring>useLimit</cstring>
                                     </property>
@@ -549,7 +549,7 @@
                                         <string>Limit works only in seed mode</string>
                                     </property>
                                 </widget>
-                                <widget class="QCheckBox" row="2" column="0">
+                                <widget class="TQCheckBox" row="2" column="0">
                                     <property name="name">
                                         <cstring>useTimeLimit</cstring>
                                     </property>
@@ -557,11 +557,11 @@
                                         <string>Time &amp;limit:</string>
                                     </property>
                                 </widget>
-                                <widget class="QLabel" row="0" column="1">
+                                <widget class="TQLabel" row="0" column="1">
                                     <property name="name">
                                         <cstring>m_share_ratio</cstring>
                                     </property>
-                                    <property name="minimumSize">
+                                    <property name="tqminimumSize">
                                         <size>
                                             <width>50</width>
                                             <height>0</height>
@@ -573,7 +573,7 @@
                                     <property name="text">
                                         <string></string>
                                     </property>
-                                    <property name="alignment">
+                                    <property name="tqalignment">
                                         <set>AlignVCenter|AlignRight</set>
                                     </property>
                                 </widget>
@@ -589,7 +589,7 @@
                             <property name="sizeType">
                                 <enum>MinimumExpanding</enum>
                             </property>
-                            <property name="sizeHint">
+                            <property name="tqsizeHint">
                                 <size>
                                     <width>20</width>
                                     <height>20</height>
@@ -657,7 +657,7 @@
         <data format="XBM.GZ" length="79">789c534e494dcbcc4b554829cdcdad8c2fcf4c29c95030e0524611cd48cd4ccf28010a1797249664262b2467241641a592324b8aa363156c15aab914146aadb90067111b1f</data>
     </image>
 </images>
-<layoutdefaults spacing="6" margin="11"/>
+<tqlayoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>downloadedchunkbar.h</includehint>
     <includehint>availabilitychunkbar.h</includehint>

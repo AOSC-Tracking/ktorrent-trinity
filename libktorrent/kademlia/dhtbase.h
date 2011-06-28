@@ -20,10 +20,10 @@
 #ifndef DHTDHTBASE_H
 #define DHTDHTBASE_H
 
-#include <qobject.h>
+#include <tqobject.h>
 #include <util/constants.h>
 
-class QString;
+class TQString;
 
 namespace bt
 {
@@ -48,9 +48,10 @@ namespace dht
 	 * Interface for DHT class, this is to keep other things separate from the inner workings
 	 * of the DHT.
 	 */
-	class DHTBase : public QObject
+	class DHTBase : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		DHTBase();
 		virtual ~DHTBase();
@@ -62,7 +63,7 @@ namespace dht
 		 * @param key_file The file where the key is stored
 		 * @param port The port to use
 		 */
-		virtual void start(const QString & table,const QString & key_file,bt::Uint16 port) = 0;
+		virtual void start(const TQString & table,const TQString & key_file,bt::Uint16 port) = 0;
 		
 		/**
 		 * Stop the DHT
@@ -79,7 +80,7 @@ namespace dht
 		 * @param ip The IP of the peer
 		 * @param port The port in the PORT message
 		 */
-		virtual void portRecieved(const QString & ip,bt::Uint16 port) = 0;
+		virtual void portRecieved(const TQString & ip,bt::Uint16 port) = 0;
 		
 		/**
 		 * Do an announce on the DHT network
@@ -105,14 +106,14 @@ namespace dht
 		 * @param host The hostname or ip
 		 * @param hport The port of the host
 		 */
-		virtual void addDHTNode(const QString & host,bt::Uint16 hport) = 0;
+		virtual void addDHTNode(const TQString & host,bt::Uint16 hport) = 0;
 		
 		/**
 		 * Returns maxNodes number of <IP address, port> nodes 
 		 * that are closest to ourselves and are good.
-		 * @param maxNodes maximum nr of nodes in QMap to return.
+		 * @param maxNodes maximum nr of nodes in TQMap to return.
 		 */
-		virtual QMap<QString, int> getClosestGoodNodes(int maxNodes) = 0;
+		virtual TQMap<TQString, int> getClosestGoodNodes(int maxNodes) = 0;
 		
 	signals:
 		void started();

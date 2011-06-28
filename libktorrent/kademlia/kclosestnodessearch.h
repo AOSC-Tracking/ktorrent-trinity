@@ -31,7 +31,7 @@ namespace dht
 	 * @author Joris Guisson <joris.guisson@gmail.com>
 	 * 
 	 * Class used to store the search results during a K closests nodes search
-	 * Note: we use a std::map because of lack of functionality in QMap
+	 * Note: we use a std::map because of lack of functionality in TQMap
 	*/
 	class KClosestNodesSearch
 	{
@@ -82,7 +82,7 @@ namespace dht
 		 * enough space to store requiredSpace() bytes.
 		 * @param ba The buffer
 		 */
-		void pack(QByteArray & ba);
+		void pack(TQByteArray & ba);
 	};
 
 }

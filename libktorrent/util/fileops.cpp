@@ -30,9 +30,9 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fcntl.h>
-#include <qdir.h>
-#include <qfile.h>
-#include <qstringlist.h>
+#include <tqdir.h>
+#include <tqfile.h>
+#include <tqstringlist.h>
 #include "fileops.h"
 #include "error.h"
 #include "log.h"
@@ -70,88 +70,88 @@ typedef	int64_t		__s64;
 
 namespace bt
 {
-	void MakeDir(const QString & dir,bool nothrow)
+	void MakeDir(const TQString & dir,bool nothrow)
 	{
-		if (mkdir(QFile::encodeName(dir),0777) < -1)
+		if (mkdir(TQFile::encodeName(dir),0777) < -1)
 		{
 			if (!nothrow)
 				throw Error(i18n("Cannot create directory %1: %2")
-					.arg(dir).arg(strerror(errno)));
+					.tqarg(dir).tqarg(strerror(errno)));
 			else
 			{
-				Out() << QString("Error : Cannot create directory %1 : %2").arg(dir).arg(strerror(errno))<< endl;
+				Out() << TQString("Error : Cannot create directory %1 : %2").tqarg(dir).tqarg(strerror(errno))<< endl;
 			}
 		}
 	}
 	
-	void SymLink(const QString & link_to,const QString & link_url,bool nothrow)
+	void SymLink(const TQString & link_to,const TQString & link_url,bool nothrow)
 	{
-		if (symlink(QFile::encodeName(link_to),QFile::encodeName(link_url)) != 0)
+		if (symlink(TQFile::encodeName(link_to),TQFile::encodeName(link_url)) != 0)
 		{
 			if (!nothrow)
 				throw Error(i18n("Cannot symlink %1 to %2: %3")
-					.arg(link_url.utf8()).arg(link_to.utf8())
-					.arg(strerror(errno)));
+					.tqarg(link_url.utf8().data()).tqarg(link_to.utf8().data())
+					.tqarg(strerror(errno)));
 			else
-				Out() << QString("Error : Cannot symlink %1 to %2: %3")
-						.arg(link_url.utf8()).arg(link_to.utf8())
-				.arg(strerror(errno)) << endl;
+				Out() << TQString("Error : Cannot symlink %1 to %2: %3")
+						.tqarg(link_url.utf8().data()).tqarg(link_to.utf8().data())
+				.tqarg(strerror(errno)) << endl;
 		}
 	}
 
-	void Move(const QString & src,const QString & dst,bool nothrow)
+	void Move(const TQString & src,const TQString & dst,bool nothrow)
 	{
 	//	Out() << "Moving " << src << " -> " << dst << endl;
 		if (!KIO::NetAccess::move(KURL::fromPathOrURL(src),KURL::fromPathOrURL(dst),0))
 		{
 			if (!nothrow)
 				throw Error(i18n("Cannot move %1 to %2: %3")
-					.arg(src).arg(dst)
-						.arg(KIO::NetAccess::lastErrorString()));
+					.tqarg(src).tqarg(dst)
+						.tqarg(KIO::NetAccess::lastErrorString()));
 			else
-				Out() << QString("Error : Cannot move %1 to %2: %3")
-						.arg(src).arg(dst)
-						.arg(KIO::NetAccess::lastErrorString()) << endl;
+				Out() << TQString("Error : Cannot move %1 to %2: %3")
+						.tqarg(src).tqarg(dst)
+						.tqarg(KIO::NetAccess::lastErrorString()) << endl;
 		
 		}
 	}
 
-	void CopyFile(const QString & src,const QString & dst,bool nothrow)
+	void CopyFile(const TQString & src,const TQString & dst,bool nothrow)
 	{
 		if (!KIO::NetAccess::file_copy(KURL::fromPathOrURL(src),KURL::fromPathOrURL(dst)))
 		{
 			if (!nothrow)
 				throw Error(i18n("Cannot copy %1 to %2: %3")
-						.arg(src).arg(dst)
-						.arg(KIO::NetAccess::lastErrorString()));
+						.tqarg(src).tqarg(dst)
+						.tqarg(KIO::NetAccess::lastErrorString()));
 			else
-				Out() << QString("Error : Cannot copy %1 to %2: %3")
-						.arg(src).arg(dst)
-						.arg(KIO::NetAccess::lastErrorString()) << endl;
+				Out() << TQString("Error : Cannot copy %1 to %2: %3")
+						.tqarg(src).tqarg(dst)
+						.tqarg(KIO::NetAccess::lastErrorString()) << endl;
 	
 		}
 	}
 	
-	void CopyDir(const QString & src,const QString & dst,bool nothrow)
+	void CopyDir(const TQString & src,const TQString & dst,bool nothrow)
 	{
 		if (!KIO::NetAccess::dircopy(KURL::fromPathOrURL(src),KURL::fromPathOrURL(dst),0))
 		{
 			if (!nothrow)
 				throw Error(i18n("Cannot copy %1 to %2: %3")
-						.arg(src).arg(dst)
-						.arg(KIO::NetAccess::lastErrorString()));
+						.tqarg(src).tqarg(dst)
+						.tqarg(KIO::NetAccess::lastErrorString()));
 			else
-				Out() << QString("Error : Cannot copy %1 to %2: %3")
-						.arg(src).arg(dst)
-						.arg(KIO::NetAccess::lastErrorString()) << endl;
+				Out() << TQString("Error : Cannot copy %1 to %2: %3")
+						.tqarg(src).tqarg(dst)
+						.tqarg(KIO::NetAccess::lastErrorString()) << endl;
 	
 		}
 	}
 
-	bool Exists(const QString & url)
+	bool Exists(const TQString & url)
 	{
 	//	Out() << "Testing if " << url << " exists " << endl;
-		if (access(QFile::encodeName(url),F_OK) < 0)
+		if (access(TQFile::encodeName(url),F_OK) < 0)
 		{
 	//		Out() << "No " << endl;
 			return false;
@@ -163,14 +163,14 @@ namespace bt
 		}
 	}
 	
-	static bool DelDir(const QString & fn)
+	static bool DelDir(const TQString & fn)
 	{
-		QDir d(fn);
-		QStringList subdirs = d.entryList(QDir::Dirs);
+		TQDir d(fn);
+		TQStringList subdirs = d.entryList(TQDir::Dirs);
 		
-		for (QStringList::iterator i = subdirs.begin(); i != subdirs.end();i++)
+		for (TQStringList::iterator i = subdirs.begin(); i != subdirs.end();i++)
 		{
-			QString entry = *i;
+			TQString entry = *i;
 
 			if (entry == ".." || entry == ".")
 				continue;
@@ -182,12 +182,12 @@ namespace bt
 			}
 		}
 		
-		QStringList files = d.entryList(QDir::Files | QDir::System | QDir::Hidden);
-		for (QStringList::iterator i = files.begin(); i != files.end();i++)
+		TQStringList files = d.entryList(TQDir::Files | TQDir::System | TQDir::Hidden);
+		for (TQStringList::iterator i = files.begin(); i != files.end();i++)
 		{
-			QString entry = *i;
+			TQString entry = *i;
 
-			if (remove(QFile::encodeName(d.absFilePath(entry))) < 0)
+			if (remove(TQFile::encodeName(d.absFilePath(entry))) < 0)
 			{
 				Out(SYS_GEN|LOG_DEBUG) << "Delete of " << fn << "/" << entry << " failed !" << endl;
 				return false;	
@@ -203,9 +203,9 @@ namespace bt
 		return true;
 	}
 
-	void Delete(const QString & url,bool nothrow)
+	void Delete(const TQString & url,bool nothrow)
 	{
-		QCString fn = QFile::encodeName(url);
+		TQCString fn = TQFile::encodeName(url);
 #if HAVE_STAT64
 		struct stat64 statbuf;
 		if (lstat64(fn, &statbuf) < 0)
@@ -229,9 +229,9 @@ namespace bt
 		
 		if (!ok)
 		{
-			QString err = i18n("Cannot delete %1: %2")
-					.arg(url)
-					.arg(strerror(errno));
+			TQString err = i18n("Cannot delete %1: %2")
+					.tqarg(url)
+					.tqarg(strerror(errno));
 			if (!nothrow)
 				throw Error(err);
 			else
@@ -239,7 +239,7 @@ namespace bt
 		}
 	}
 
-	void Touch(const QString & url,bool nothrow)
+	void Touch(const TQString & url,bool nothrow)
 	{
 		if (Exists(url))
 			return;
@@ -249,8 +249,8 @@ namespace bt
 		{
 			if (!nothrow)
 				throw Error(i18n("Cannot create %1: %2")
-						.arg(url)
-						.arg(fptr.errorString()));
+						.tqarg(url)
+						.tqarg(fptr.errorString()));
 			else
 				Out() << "Error : Cannot create " << url << " : "
 						<< fptr.errorString() << endl;
@@ -258,19 +258,19 @@ namespace bt
 		}
 	}
 	
-	Uint64 FileSize(const QString & url)
+	Uint64 FileSize(const TQString & url)
 	{
 		int ret = 0;
 #if HAVE_STAT64
 		struct stat64 sb;
-		ret = stat64(QFile::encodeName(url),&sb);
+		ret = stat64(TQFile::encodeName(url),&sb);
 #else
 		struct stat sb;
-		ret = stat(QFile::encodeName(url),&sb);
+		ret = stat(TQFile::encodeName(url),&sb);
 #endif
 		if (ret < 0)
 			throw Error(i18n("Cannot calculate the filesize of %1: %2")
-					.arg(url).arg(strerror(errno)));
+					.tqarg(url).tqarg(strerror(errno)));
 		
 		return (Uint64)sb.st_size;
 	}
@@ -286,7 +286,7 @@ namespace bt
 		ret = fstat(fd,&sb);
 #endif
 		if (ret < 0)
-			throw Error(i18n("Cannot calculate the filesize : %2").arg(strerror(errno)));
+			throw Error(i18n("Cannot calculate the filesize : %2").tqarg(strerror(errno)));
 		
 		return (Uint64)sb.st_size;
 	}
@@ -310,11 +310,11 @@ namespace bt
 		return true;
 	}
 	
-	bool FatPreallocate(const QString & path,Uint64 size)
+	bool FatPreallocate(const TQString & path,Uint64 size)
 	{
-		int fd = ::open(QFile::encodeName(path),O_RDWR | O_LARGEFILE);
+		int fd = ::open(TQFile::encodeName(path),O_RDWR | O_LARGEFILE);
 		if (fd < 0)
-			throw Error(i18n("Cannot open %1 : %2").arg(path).arg(strerror(errno)));
+			throw Error(i18n("Cannot open %1 : %2").tqarg(path).tqarg(strerror(errno)));
 		
 		bool ret = FatPreallocate(fd,size);
 		close(fd);
@@ -339,11 +339,11 @@ namespace bt
 		
 	}
 	
-	bool XfsPreallocate(const QString & path, Uint64 size)
+	bool XfsPreallocate(const TQString & path, Uint64 size)
 	{
-		int fd = ::open(QFile::encodeName(path), O_RDWR | O_LARGEFILE);
+		int fd = ::open(TQFile::encodeName(path), O_RDWR | O_LARGEFILE);
 		if (fd < 0)
-			throw Error(i18n("Cannot open %1 : %2").arg(path).arg(strerror(errno)));
+			throw Error(i18n("Cannot open %1 : %2").tqarg(path).tqarg(strerror(errno)));
 		
 		bool ret = XfsPreallocate(fd,size);
 		close(fd);
@@ -364,16 +364,16 @@ namespace bt
 #else
 			if (ftruncate(fd,size) == -1)
 #endif	
-				throw Error(i18n("Cannot expand file : %1").arg(strerror(errno)));
+				throw Error(i18n("Cannot expand file : %1").tqarg(strerror(errno)));
 		}
 		else
 		{
 #if HAVE_POSIX_FALLOCATE64
 			if (posix_fallocate64(fd,0,size) != 0)
-				throw Error(i18n("Cannot expand file : %1").arg(strerror(errno)));
+				throw Error(i18n("Cannot expand file : %1").tqarg(strerror(errno)));
 #elif HAVE_POSIX_FALLOCATE
 			if (posix_fallocate(fd,0,size) != 0)
-				throw Error(i18n("Cannot expand file : %1").arg(strerror(errno)));
+				throw Error(i18n("Cannot expand file : %1").tqarg(strerror(errno)));
 #else
 			SeekFile(fd,0,SEEK_SET);
 			bt::Array<Uint8> buf(4096);
@@ -388,9 +388,9 @@ namespace bt
 				
 				int ret = write(fd,buf,to_write);
 				if (ret < 0)
-					throw Error(i18n("Cannot expand file : %1").arg(strerror(errno)));
+					throw Error(i18n("Cannot expand file : %1").tqarg(strerror(errno)));
 				else if (ret == 0 || ret != (int)to_write)
-					throw Error(i18n("Cannot expand file").arg(strerror(errno)));
+					throw Error(i18n("Cannot expand file").tqarg(strerror(errno)));
 				else
 					written += to_write;
 			}
@@ -398,11 +398,11 @@ namespace bt
 		}
 	}
 	
-	void TruncateFile(const QString & path,Uint64 size)
+	void TruncateFile(const TQString & path,Uint64 size)
 	{
-		int fd = ::open(QFile::encodeName(path),O_RDWR | O_LARGEFILE);
+		int fd = ::open(TQFile::encodeName(path),O_RDWR | O_LARGEFILE);
 		if (fd < 0)
-			throw Error(i18n("Cannot open %1 : %2").arg(path).arg(strerror(errno)));
+			throw Error(i18n("Cannot open %1 : %2").tqarg(path).tqarg(strerror(errno)));
 		
 		try
 		{
@@ -423,10 +423,10 @@ namespace bt
 #else
 		if (lseek(fd,off,whence) == -1)
 #endif
-			throw Error(i18n("Cannot seek in file : %1").arg(strerror(errno)));
+			throw Error(i18n("Cannot seek in file : %1").tqarg(strerror(errno)));
 	}
 	
-	bool FreeDiskSpace(const QString & path,Uint64 & bytes_free)
+	bool FreeDiskSpace(const TQString & path,Uint64 & bytes_free)
 	{
 #if HAVE_STATVFS
 #if HAVE_STATVFS64
@@ -443,7 +443,7 @@ namespace bt
 		else
 		{
 			Out(SYS_GEN|LOG_DEBUG) << "Error : statvfs for " << path << " failed :  "
-						<< QString(strerror(errno)) << endl;
+						<< TQString(strerror(errno)) << endl;
 
 			return false;
 		}
@@ -457,7 +457,7 @@ namespace bt
 		else
 		{
 			Out(SYS_GEN|LOG_DEBUG) << "Error : statfs for " << path << " failed :  "
-						<< QString(strerror(errno)) << endl;
+						<< TQString(strerror(errno)) << endl;
 
 			return false;
 		}

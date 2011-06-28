@@ -21,7 +21,7 @@
 #ifndef CHARTDRAWERDATA_H_
 #define CHARTDRAWERDATA_H_
 
-#include <qpen.h>
+#include <tqpen.h>
 #include <vector>
 #include <map>
 
@@ -43,18 +43,18 @@ class ChartDrawerData
 
 	private:
 		///Pen used for drawing
-		QPen * pmQp;
+		TQPen * pmQp;
 		///Values
 		val_t * pmVals;
 		///Name of set
-		QString mName;
+		TQString mName;
 		
 	public:
 		/**
 		\brief Constructor
 		\param rN Name
 		*/
-		ChartDrawerData(const QString & rN);
+		ChartDrawerData(const TQString & rN);
 		/**
 		\brief Copy constructor
 		\param rS Source
@@ -65,20 +65,20 @@ class ChartDrawerData
 		\param s Size
 		\param rN Name
 		*/
-		ChartDrawerData(const size_t s,  const QString & rN);
+		ChartDrawerData(const size_t s,  const TQString & rN);
 		/**
 		\brief Constructor
 		\param rQp Pen used for drawing
 		\param rN Name
 		*/
-		ChartDrawerData(const QPen & rQp, const QString & rN);
+		ChartDrawerData(const TQPen & rQp, const TQString & rN);
 		/**
 		\brief Constructor
 		\param rQp Pen used for drawing
 		\param s Size
 		\param rN Name
 		*/
-		ChartDrawerData(const QPen & rQp, const size_t s,  const QString & rN);
+		ChartDrawerData(const TQPen & rQp, const size_t s,  const TQString & rN);
 		
 		///Destructor
 		~ChartDrawerData();
@@ -92,23 +92,23 @@ class ChartDrawerData
 		\brief Gets pen
 		\return Pointer pen
 		*/
-		const QPen * GetPen() const;
+		const TQPen * GetPen() const;
 		/**
 		\brief Gets name
 		\return Name
 		*/
-		QString GetName() const;
+		TQString GetName() const;
 		
 		/**
 		\brief Sets pen
 		\param rQp Pen
 		*/
-		void SetPen(const QPen & rQp);
+		void SetPen(const TQPen & rQp);
 		/**
 		\brief Sets name
 		\param rN Name
 		*/
-		void SetName( const QString & rN );
+		void SetName( const TQString & rN );
 		
 		/**
 		\brief Finds maximum value

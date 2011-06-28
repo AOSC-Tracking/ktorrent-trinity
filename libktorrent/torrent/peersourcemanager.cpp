@@ -17,7 +17,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
-#include <qfile.h>
+#include <tqfile.h>
 #include <klocale.h>
 #include <functions.h>
 #include <util/log.h>
@@ -65,14 +65,14 @@ namespace bt
 		//load custom trackers
 		loadCustomURLs();
 				
-		connect(&timer,SIGNAL(timeout()),this,SLOT(updateCurrentManually()));
+		connect(&timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(updateCurrentManually()));
 	}
 	
 	PeerSourceManager::~PeerSourceManager()
 	{
 		saveCustomURLs();
 		additional.setAutoDelete(true);
-		QPtrList<kt::PeerSource>::iterator itr = additional.begin();
+		TQPtrList<kt::PeerSource>::iterator itr = additional.begin();
 		while (itr != additional.end())
 		{
 			kt::PeerSource* ps = *itr;
@@ -85,21 +85,21 @@ namespace bt
 	void PeerSourceManager::addTracker(Tracker* trk)
 	{
 		trackers.insert(trk->trackerURL(),trk);
-		connect(trk,SIGNAL(peersReady( kt::PeerSource* )),
-				 pman,SLOT(peerSourceReady( kt::PeerSource* )));
+		connect(trk,TQT_SIGNAL(peersReady( kt::PeerSource* )),
+				 pman,TQT_SLOT(peerSourceReady( kt::PeerSource* )));
 	}
 		
 	void PeerSourceManager::addPeerSource(kt::PeerSource* ps)
 	{
 		additional.append(ps);
-		connect(ps,SIGNAL(peersReady( kt::PeerSource* )),
-						 pman,SLOT(peerSourceReady( kt::PeerSource* )));
+		connect(ps,TQT_SIGNAL(peersReady( kt::PeerSource* )),
+						 pman,TQT_SLOT(peerSourceReady( kt::PeerSource* )));
 	}
 	
 	void PeerSourceManager::removePeerSource(kt::PeerSource* ps)
 	{
-		disconnect(ps,SIGNAL(peersReady( kt::PeerSource* )),
-				pman,SLOT(peerSourceReady( kt::PeerSource* )));
+		disconnect(ps,TQT_SIGNAL(peersReady( kt::PeerSource* )),
+				pman,TQT_SLOT(peerSourceReady( kt::PeerSource* )));
 		additional.remove(ps);
 	}
 
@@ -109,7 +109,7 @@ namespace bt
 			return;
 		
 		started = true;
-		QPtrList<kt::PeerSource>::iterator i = additional.begin();
+		TQPtrList<kt::PeerSource>::iterator i = additional.begin();
 		while (i != additional.end())
 		{
 			(*i)->start();
@@ -138,7 +138,7 @@ namespace bt
 			return;
 		
 		started = false;
-		QPtrList<kt::PeerSource>::iterator i = additional.begin();
+		TQPtrList<kt::PeerSource>::iterator i = additional.begin();
 		while (i != additional.end())
 		{
 			(*i)->stop();
@@ -154,7 +154,7 @@ namespace bt
 		
 	void PeerSourceManager::completed()
 	{
-		QPtrList<kt::PeerSource>::iterator i = additional.begin();
+		TQPtrList<kt::PeerSource>::iterator i = additional.begin();
 		while (i != additional.end())
 		{
 			(*i)->completed();
@@ -167,7 +167,7 @@ namespace bt
 		
 	void PeerSourceManager::manualUpdate()
 	{
-		QPtrList<kt::PeerSource>::iterator i = additional.begin();
+		TQPtrList<kt::PeerSource>::iterator i = additional.begin();
 		while (i != additional.end())
 		{
 			(*i)->manualUpdate();
@@ -207,7 +207,7 @@ namespace bt
 	
 	void PeerSourceManager::addTracker(KURL url, bool custom,int tier)
 	{
-		if (trackers.contains(url))
+		if (trackers.tqcontains(url))
 			return;
 		
 		Tracker* trk = 0;
@@ -227,11 +227,11 @@ namespace bt
 	
 	bool PeerSourceManager::removeTracker(KURL url)
 	{
-		if (!custom_trackers.contains(url))
+		if (!custom_trackers.tqcontains(url))
 			return false;
 		
 		custom_trackers.remove(url);
-		Tracker* trk = trackers.find(url);
+		Tracker* trk = trackers.tqfind(url);
 		if (curr == trk)
 		{
 			// do a timed delete on the tracker, so the stop signal
@@ -260,7 +260,7 @@ namespace bt
 	
 	void PeerSourceManager::setTracker(KURL url)
 	{
-		Tracker* trk = trackers.find(url);
+		Tracker* trk = trackers.tqfind(url);
 		if (!trk)
 			return;
 		
@@ -279,7 +279,7 @@ namespace bt
 		KURL::List::iterator i = custom_trackers.begin();
 		while (i != custom_trackers.end())
 		{
-			Tracker* t = trackers.find(*i);
+			Tracker* t = trackers.tqfind(*i);
 			if (t)
 			{
 				if (curr == t)
@@ -313,25 +313,25 @@ namespace bt
 	
 	void PeerSourceManager::saveCustomURLs()
 	{
-		QString trackers_file = tor->getTorDir() + "trackers"; 
-		QFile file(trackers_file);
+		TQString trackers_file = tor->getTorDir() + "trackers"; 
+		TQFile file(trackers_file);
 		if(!file.open(IO_WriteOnly))
 			return;
 		
-		QTextStream stream(&file);
+		TQTextStream stream(&file);
 		for (KURL::List::iterator i = custom_trackers.begin();i != custom_trackers.end();i++)
 			stream << (*i).prettyURL() << ::endl;
 	}
 	
 	void PeerSourceManager::loadCustomURLs()
 	{
-		QString trackers_file = tor->getTorDir() + "trackers";
-		QFile file(trackers_file);
+		TQString trackers_file = tor->getTorDir() + "trackers";
+		TQFile file(trackers_file);
 		if(!file.open(IO_ReadOnly))
 			return;
 		
 		no_save_custom_trackers = true;
-		QTextStream stream(&file);
+		TQTextStream stream(&file);
 		while (!stream.atEnd())
 		{
 			KURL url = stream.readLine();
@@ -365,7 +365,7 @@ namespace bt
 		return n;
 	}
 	
-	void PeerSourceManager::onTrackerError(const QString & err)
+	void PeerSourceManager::onTrackerError(const TQString & err)
 	{
 		failures++;
 		pending = false;
@@ -386,7 +386,7 @@ namespace bt
 				// 30 minutes
 				curr->setInterval(FINAL_WAIT_TIME);
 				timer.start(FINAL_WAIT_TIME * 1000,true);
-				request_time = QDateTime::currentDateTime();
+				request_time = TQDateTime::tqcurrentDateTime();
 			}
 			else if (curr->failureCount() > 2)
 			{
@@ -394,14 +394,14 @@ namespace bt
 				// a minute or 5, no need for hammering every 30 seconds
 				curr->setInterval(LONGER_WAIT_TIME);
 				timer.start(LONGER_WAIT_TIME * 1000,true);
-				request_time = QDateTime::currentDateTime();
+				request_time = TQDateTime::tqcurrentDateTime();
 			}
 			else
 			{
 				// lets not hammer and wait 30 seconds
 				curr->setInterval(INITIAL_WAIT_TIME);
 				timer.start(INITIAL_WAIT_TIME * 1000,true);
-				request_time = QDateTime::currentDateTime();
+				request_time = TQDateTime::tqcurrentDateTime();
 			}
 		}
 		else
@@ -418,7 +418,7 @@ namespace bt
 			{
 				curr->setInterval(FINAL_WAIT_TIME);
 				timer.start(FINAL_WAIT_TIME * 1000,true);
-				request_time = QDateTime::currentDateTime();
+				request_time = TQDateTime::tqcurrentDateTime();
 			}
 			else if (trk->failureCount() > 2)
 			{
@@ -426,14 +426,14 @@ namespace bt
 				// wait 5 minutes and try again
 				curr->setInterval(LONGER_WAIT_TIME);
 				timer.start(LONGER_WAIT_TIME * 1000,true);
-				request_time = QDateTime::currentDateTime();
+				request_time = TQDateTime::tqcurrentDateTime();
 			}
 			else
 			{
 				// wait 30 seconds and try again
 				curr->setInterval(INITIAL_WAIT_TIME);
 				timer.start(INITIAL_WAIT_TIME * 1000,true);
-				request_time = QDateTime::currentDateTime();
+				request_time = TQDateTime::tqcurrentDateTime();
 			}
 		}
 	}
@@ -449,7 +449,7 @@ namespace bt
 		pending = false;
 		if (started)
 			statusChanged(i18n("OK"));
-		request_time = QDateTime::currentDateTime();
+		request_time = TQDateTime::tqcurrentDateTime();
 	}
 		
 	void PeerSourceManager::onTrackerRequestPending()
@@ -477,10 +477,10 @@ namespace bt
 	
 		if (curr)
 		{
-			disconnect(curr,SIGNAL(requestFailed( const QString& )),
-					   this,SLOT(onTrackerError( const QString& )));
-			disconnect(curr,SIGNAL(requestOK()),this,SLOT(onTrackerOK()));
-			disconnect(curr,SIGNAL(requestPending()),this,SLOT(onTrackerRequestPending()));
+			disconnect(curr,TQT_SIGNAL(requestFailed( const TQString& )),
+					   this,TQT_SLOT(onTrackerError( const TQString& )));
+			disconnect(curr,TQT_SIGNAL(requestOK()),this,TQT_SLOT(onTrackerOK()));
+			disconnect(curr,TQT_SIGNAL(requestPending()),this,TQT_SLOT(onTrackerRequestPending()));
 			curr = 0;
 		}
 		
@@ -488,14 +488,14 @@ namespace bt
 		if (curr)
 		{
 			Out(SYS_TRK|LOG_NOTICE) << "Switching to tracker " << trk->trackerURL() << endl;
-			QObject::connect(curr,SIGNAL(requestFailed( const QString& )),
-					this,SLOT(onTrackerError( const QString& )));
+			TQObject::connect(curr,TQT_SIGNAL(requestFailed( const TQString& )),
+					this,TQT_SLOT(onTrackerError( const TQString& )));
 			
-			QObject::connect(curr,SIGNAL(requestOK()),
-					this,SLOT(onTrackerOK()));
+			TQObject::connect(curr,TQT_SIGNAL(requestOK()),
+					this,TQT_SLOT(onTrackerOK()));
 			
-			QObject::connect(curr,SIGNAL(requestPending()),
-					this,SLOT(onTrackerRequestPending()));
+			TQObject::connect(curr,TQT_SIGNAL(requestPending()),
+					this,TQT_SLOT(onTrackerRequestPending()));
 		}
 	}
 	
@@ -504,7 +504,7 @@ namespace bt
 		if (pending || !started || !curr)
 			return 0;
 		
-		return curr->getInterval() - request_time.secsTo(QDateTime::currentDateTime());
+		return curr->getInterval() - request_time.secsTo(TQDateTime::tqcurrentDateTime());
 	}
 	
 	Uint32 PeerSourceManager::getNumSeeders() const

@@ -61,9 +61,9 @@ namespace net
 				{
 					// add to the correct group
 					Uint32 gid = s->downloadGroupID();
-					SocketGroup* g = groups.find(gid);
+					SocketGroup* g = groups.tqfind(gid);
 					if (!g)
-						g = groups.find(0);
+						g = groups.tqfind(0);
 					
 					g->add(s);
 					num_ready++;

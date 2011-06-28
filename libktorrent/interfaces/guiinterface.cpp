@@ -33,7 +33,7 @@ namespace kt
 
 	void GUIInterface::notifyViewListeners(TorrentInterface* tc)
 	{
-		QPtrList<ViewListener>::iterator i = listeners.begin();
+		TQPtrList<ViewListener>::iterator i = listeners.begin();
 		while (i != listeners.end())
 		{
 			ViewListener* vl = *i;

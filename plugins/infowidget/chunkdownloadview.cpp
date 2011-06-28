@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 #include <klocale.h>
-#include <qlabel.h>
+#include <tqlabel.h>
 #include <interfaces/chunkdownloadinterface.h>
 #include <interfaces/functions.h>
 #include <interfaces/torrentinterface.h>
@@ -42,14 +42,14 @@ namespace kt
 		ChunkDownloadInterface::Stats s;
 		cd->getStats(s);
 			
-		setText(0,QString::number(s.chunk_index));
-		setText(1,QString("%1 / %2").arg(s.pieces_downloaded).arg(s.total_pieces));
+		setText(0,TQString::number(s.chunk_index));
+		setText(1,TQString("%1 / %2").tqarg(s.pieces_downloaded).tqarg(s.total_pieces));
 		setText(2,s.current_peer_id);
 		setText(3,KBytesPerSecToString(s.download_speed / 1024.0));
-		setText(4,QString::number(s.num_downloaders));
+		setText(4,TQString::number(s.num_downloaders));
 	}
 	
-	int ChunkDownloadViewItem::compare(QListViewItem * i,int col,bool) const
+	int ChunkDownloadViewItem::compare(TQListViewItem * i,int col,bool) const
 	{
 		ChunkDownloadViewItem* it = (ChunkDownloadViewItem*)i;
 		kt::ChunkDownloadInterface* ocd = it->cd;
@@ -61,7 +61,7 @@ namespace kt
 		{
 			case 0: return CompareVal(s.chunk_index,os.chunk_index);
 			case 1: return CompareVal(s.pieces_downloaded,os.pieces_downloaded);
-			case 2: return QString::compare(s.current_peer_id,os.current_peer_id);
+			case 2: return TQString::compare(s.current_peer_id,os.current_peer_id);
 			case 3: return CompareVal(s.download_speed,os.download_speed);
 			case 4: return CompareVal(s.num_downloaders,os.num_downloaders);
 		}
@@ -69,16 +69,16 @@ namespace kt
 	}
 	
 	
-	ChunkDownloadView::ChunkDownloadView(QWidget *parent, const char *name)
-	: ChunkDownloadViewBase(parent, name)
+	ChunkDownloadView::ChunkDownloadView(TQWidget *tqparent, const char *name)
+	: ChunkDownloadViewBase(tqparent, name)
 	{
 		m_list_view->setShowSortIndicator(true);
 		m_list_view->setAllColumnsShowFocus(true);
 	
-		m_list_view->setColumnAlignment(0,Qt::AlignLeft);
-		m_list_view->setColumnAlignment(1,Qt::AlignCenter);
-		m_list_view->setColumnAlignment(3,Qt::AlignRight);
-		m_list_view->setColumnAlignment(4,Qt::AlignRight);
+		m_list_view->setColumnAlignment(0,TQt::AlignLeft);
+		m_list_view->setColumnAlignment(1,TQt::AlignCenter);
+		m_list_view->setColumnAlignment(3,TQt::AlignRight);
+		m_list_view->setColumnAlignment(4,TQt::AlignRight);
 		curr_tc = 0;
 	}
 	
@@ -95,7 +95,7 @@ namespace kt
 		
 	void ChunkDownloadView::removeDownload(kt::ChunkDownloadInterface* cd)
 	{
-		if (!items.contains(cd))
+		if (!items.tqcontains(cd))
 			return;
 		
 		ChunkDownloadViewItem* it = items[cd];
@@ -121,7 +121,7 @@ namespace kt
 		if (!curr_tc)
 			return;
 		
-		QMap<ChunkDownloadInterface*,ChunkDownloadViewItem*>::iterator i = items.begin();
+		TQMap<ChunkDownloadInterface*,ChunkDownloadViewItem*>::iterator i = items.begin();
 		while (i != items.end())
 		{
 			ChunkDownloadViewItem* it = i.data();
@@ -131,24 +131,24 @@ namespace kt
 		m_list_view->sort();
 		
 		const TorrentStats & s = curr_tc->getStats();
-		m_chunks_downloading->setText(QString::number(s.num_chunks_downloading));
-		m_chunks_downloaded->setText(QString::number(s.num_chunks_downloaded));
-		m_total_chunks->setText(QString::number(s.total_chunks));
-		m_excluded_chunks->setText(QString::number(s.num_chunks_excluded));
-		m_chunks_left->setText(QString::number(s.num_chunks_left));
+		m_chunks_downloading->setText(TQString::number(s.num_chunks_downloading));
+		m_chunks_downloaded->setText(TQString::number(s.num_chunks_downloaded));
+		m_total_chunks->setText(TQString::number(s.total_chunks));
+		m_excluded_chunks->setText(TQString::number(s.num_chunks_excluded));
+		m_chunks_left->setText(TQString::number(s.num_chunks_left));
 		
 		if( s.chunk_size / 1024 < 1024 )
-			m_size_chunks->setText(QString::number(s.chunk_size / 1024) + "." + QString::number((s.chunk_size % 1024) / 100) + " KB");
+			m_size_chunks->setText(TQString::number(s.chunk_size / 1024) + "." + TQString::number((s.chunk_size % 1024) / 100) + " KB");
 		else
-			m_size_chunks->setText(QString::number(s.chunk_size / 1024 / 1024) + "." + QString::number(((s.chunk_size / 1024) % 1024) / 100) + " MB");
+			m_size_chunks->setText(TQString::number(s.chunk_size / 1024 / 1024) + "." + TQString::number(((s.chunk_size / 1024) % 1024) / 100) + " MB");
 	}
 	
-	void ChunkDownloadView::saveLayout(KConfig* cfg,const QString & group_name)
+	void ChunkDownloadView::saveLayout(KConfig* cfg,const TQString & group_name)
 	{
 		m_list_view->saveLayout(cfg,group_name);
 	}
 	
-	void ChunkDownloadView::restoreLayout(KConfig* cfg,const QString & group_name)
+	void ChunkDownloadView::restoreLayout(KConfig* cfg,const TQString & group_name)
 	{
 		m_list_view->restoreLayout(cfg,group_name);
 	}

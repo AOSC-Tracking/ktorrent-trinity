@@ -21,26 +21,26 @@
 #include "schedulerpluginsettings.h"
 
 #include <klocale.h>
-#include <qstringlist.h>
-#include <qpixmap.h>
-#include <qtable.h>
-#include <qpainter.h>
-#include <qrect.h>
-#include <qfont.h>
-#include <qcolor.h>
+#include <tqstringlist.h>
+#include <tqpixmap.h>
+#include <tqtable.h>
+#include <tqpainter.h>
+#include <tqrect.h>
+#include <tqfont.h>
+#include <tqcolor.h>
 
 #include <kglobal.h>
 #include <kstandarddirs.h>
 
 namespace kt
 {
-	BWSWidget::BWSWidget(QWidget* parent, const char* name, bool useColors)
-			: QTable(parent,name), m_leftCategory(1), m_rightCategory(0), draw_focus(true), right_click(false), use_colors(useColors)
+	BWSWidget::BWSWidget(TQWidget* tqparent, const char* name, bool useColors)
+			: TQTable(tqparent,name), m_leftCategory(1), m_rightCategory(0), draw_focus(true), right_click(false), use_colors(useColors)
 	{
 		use_colors = SchedulerPluginSettings::useColors();
 		
-		QStringList days;
-		QStringList hours;
+		TQStringList days;
+		TQStringList hours;
 
 		days << i18n("MON") << i18n("TUE") << i18n("WED") << i18n("THU") << i18n("FRI") << i18n("SAT") << i18n("SUN");
 		hours <<
@@ -63,9 +63,9 @@ namespace kt
 		setColumnLabels(days);
 		setRowLabels(hours);
 		
-		setFocusPolicy(QWidget::StrongFocus);
+		setFocusPolicy(TQ_StrongFocus);
 
-		QFont f;
+		TQFont f;
 		f.setPointSize(8);
 		setFont(f);
 
@@ -96,13 +96,13 @@ namespace kt
 
 		resetSchedule();
 
-		setSelectionMode(QTable::NoSelection);
+		setSelectionMode(TQTable::NoSelection);
 		
-		setHScrollBarMode(QTable::AlwaysOff);
-		setVScrollBarMode(QTable::AlwaysOff);
+		setHScrollBarMode(TQTable::AlwaysOff);
+		setVScrollBarMode(TQTable::AlwaysOff);
 
-		connect(this, SIGNAL(currentChanged( int, int )), this, SLOT(cellSelectionChanged( int, int )));
-		connect(this, SIGNAL(pressed(int, int, int, const QPoint&)), this, SLOT(cellMouseDown(int, int, int, const QPoint& )));
+		connect(this, TQT_SIGNAL(currentChanged( int, int )), this, TQT_SLOT(cellSelectionChanged( int, int )));
+		connect(this, TQT_SIGNAL(pressed(int, int, int, const TQPoint&)), this, TQT_SLOT(cellMouseDown(int, int, int, const TQPoint& )));
 	}
 
 	BWSWidget::~BWSWidget()
@@ -115,7 +115,7 @@ namespace kt
 		}
 	}
 
-	void BWSWidget::paintFocus(QPainter* p, const QRect& cr)
+	void BWSWidget::paintFocus(TQPainter* p, const TQRect& cr)
 	{
 		int x = rowAt(cr.y());
 		int y = columnAt(cr.x());
@@ -146,12 +146,12 @@ namespace kt
 	void BWSWidget::cellSelectionChanged(int row, int col)
 	{
 		if(right_click)
-			setText(row, col, QString::number(m_rightCategory));
+			setText(row, col, TQString::number(m_rightCategory));
 		else
-			setText(row, col, QString::number(m_leftCategory));
+			setText(row, col, TQString::number(m_leftCategory));
 	}
 
-	void BWSWidget::paintCell(QPainter* p, int row, int col, const QRect& cr, bool selected)
+	void BWSWidget::paintCell(TQPainter* p, int row, int col, const TQRect& cr, bool selected)
 	{
 		if(selected)
 			return;
@@ -161,8 +161,8 @@ namespace kt
 		if((ok || cat == 0) && cat >= 0 && cat <= 4)
 			drawCell(p, cat);
 		else
-			setText(row,col,QString::number(0));
-		// 	QTable::paintCell(p,row,col,cr,selected);
+			setText(row,col,TQString::number(0));
+		// 	TQTable::paintCell(p,row,col,cr,selected);
 	}
 
 	void BWSWidget::resetSchedule()
@@ -175,14 +175,14 @@ namespace kt
 		updateHeaderStates();
 	}
 
-	void BWSWidget::repaintWidget()
+	void BWSWidget::tqrepaintWidget()
 	{
 		for(int i=0; i<7; ++i)
 			for(int j=0; j<24; ++j)
 				updateCell(j,i);
 	}
 
-	void BWSWidget::cellMouseDown(int row, int col, int button, const QPoint& mousePos)
+	void BWSWidget::cellMouseDown(int row, int col, int button, const TQPoint& mousePos)
 	{
 		right_click = button == 2;
 		draw_focus = true;
@@ -194,7 +194,7 @@ namespace kt
 		draw_focus = false;
 		clearSelection();
 		updateHeaderStates();
-		repaintWidget();
+		tqrepaintWidget();
 	}
 
 	void BWSWidget::setLeftCategory(const int& theValue)
@@ -213,7 +213,7 @@ namespace kt
 		use_colors = theValue;
 	}
 
-	void BWSWidget::drawCell(QPainter* p, int category, bool focus)
+	void BWSWidget::drawCell(TQPainter* p, int category, bool focus)
 	{
 		if(use_colors) {
 			if(focus) {
@@ -224,15 +224,15 @@ namespace kt
 
 			switch(category) {
 					case 0:
-					// 				p->drawText(QRect(0,0,40,20), Qt::AlignCenter | Qt::SingleLine, "normalllll");
+					// 				p->drawText(TQRect(0,0,40,20), TQt::AlignCenter | TQt::SingleLine, "normalllll");
 					break;
 					case 1:
 					case 2:
 					case 3:
-					p->drawText(QRect(0,0,40,20), Qt::AlignCenter | Qt::SingleLine, QString::number(category));
+					p->drawText(TQRect(0,0,40,20), TQt::AlignCenter | TQt::SingleLine, TQString::number(category));
 					break;
 					case 4:
-					p->drawText(QRect(0,0,40,20), Qt::AlignCenter | Qt::SingleLine, "off");
+					p->drawText(TQRect(0,0,40,20), TQt::AlignCenter | TQt::SingleLine, "off");
 					break;
 			}
 
@@ -258,17 +258,17 @@ namespace kt
 				m_pixf[i] = 0;
 			}
 
-			m_color[0] = new QColor(30,165,105);
-			m_color[1] = new QColor(195,195,70);
-			m_color[2] = new QColor(195,195,70);
-			m_color[3] = new QColor(195,195,70);
-			m_color[4] = new QColor(190,30,30);
+			m_color[0] = new TQColor(30,165,105);
+			m_color[1] = new TQColor(195,195,70);
+			m_color[2] = new TQColor(195,195,70);
+			m_color[3] = new TQColor(195,195,70);
+			m_color[4] = new TQColor(190,30,30);
 
-			m_colorf[0] = new QColor(40,200,130);
-			m_colorf[1] = new QColor(210,220,130);
-			m_colorf[2] = new QColor(210,220,130);
-			m_colorf[3] = new QColor(210,220,130);
-			m_colorf[4] = new QColor(230,40,40);
+			m_colorf[0] = new TQColor(40,200,130);
+			m_colorf[1] = new TQColor(210,220,130);
+			m_colorf[2] = new TQColor(210,220,130);
+			m_colorf[3] = new TQColor(210,220,130);
+			m_colorf[4] = new TQColor(230,40,40);
 
 		} else {
 			for(int i=0; i<5; ++i) {
@@ -281,22 +281,22 @@ namespace kt
 				m_colorf[i] = 0;
 			}
 
-			m_pix[0] = new QPixmap(locate("data", QString("ktorrent/icons/cell-a-0000.png")));
-			m_pix[1] = new QPixmap(locate("data", QString("ktorrent/icons/cell-a-0001.png")));
-			m_pix[2] = new QPixmap(locate("data", QString("ktorrent/icons/cell-a-0002.png")));
-			m_pix[3] = new QPixmap(locate("data", QString("ktorrent/icons/cell-a-0003.png")));
-			m_pix[4] = new QPixmap(locate("data", QString("ktorrent/icons/cell-a-0004.png")));
+			m_pix[0] = new TQPixmap(locate("data", TQString("ktorrent/icons/cell-a-0000.png")));
+			m_pix[1] = new TQPixmap(locate("data", TQString("ktorrent/icons/cell-a-0001.png")));
+			m_pix[2] = new TQPixmap(locate("data", TQString("ktorrent/icons/cell-a-0002.png")));
+			m_pix[3] = new TQPixmap(locate("data", TQString("ktorrent/icons/cell-a-0003.png")));
+			m_pix[4] = new TQPixmap(locate("data", TQString("ktorrent/icons/cell-a-0004.png")));
 
-			m_pixf[0] = new QPixmap(locate("data", QString("ktorrent/icons/cell-b-0000.png")));
-			m_pixf[1] = new QPixmap(locate("data", QString("ktorrent/icons/cell-b-0001.png")));
-			m_pixf[2] = new QPixmap(locate("data", QString("ktorrent/icons/cell-b-0002.png")));
-			m_pixf[3] = new QPixmap(locate("data", QString("ktorrent/icons/cell-b-0003.png")));
-			m_pixf[4] = new QPixmap(locate("data", QString("ktorrent/icons/cell-b-0004.png")));
+			m_pixf[0] = new TQPixmap(locate("data", TQString("ktorrent/icons/cell-b-0000.png")));
+			m_pixf[1] = new TQPixmap(locate("data", TQString("ktorrent/icons/cell-b-0001.png")));
+			m_pixf[2] = new TQPixmap(locate("data", TQString("ktorrent/icons/cell-b-0002.png")));
+			m_pixf[3] = new TQPixmap(locate("data", TQString("ktorrent/icons/cell-b-0003.png")));
+			m_pixf[4] = new TQPixmap(locate("data", TQString("ktorrent/icons/cell-b-0004.png")));
 		}
 
 		use_colors = color;
 
-		repaintWidget();
+		tqrepaintWidget();
 	}
 	
 	void BWSWidget::setSchedule(const BWS& theValue)
@@ -304,7 +304,7 @@ namespace kt
 		m_schedule = theValue;
 		for(int i=0; i<7; ++i)
 			for(int j=0; j<24; ++j)
-				setText(j,i, QString::number((int) m_schedule.getCategory(i,j)));
+				setText(j,i, TQString::number((int) m_schedule.getCategory(i,j)));
 	}
 	
 	const BWS& BWSWidget::schedule()
@@ -326,7 +326,7 @@ namespace kt
 		return m_schedule;
 	}
 	
-	void BWSWidget::focusOutEvent(QFocusEvent* e)
+	void BWSWidget::focusOutEvent(TQFocusEvent* e)
 	{
 		if(e->lostFocus())
 			clearSelect();

@@ -1,6 +1,6 @@
 <?php
 $globalinfo=globalInfo();
-$stats=downloadStatus();
+$stats=downloadtqStatus();
 
 function get_torrent_status_name($status_id)
 {
@@ -18,7 +18,7 @@ function get_torrent_status_name($status_id)
 	10 => 'Checking Data'
 	);
 	if (array_key_exists($status_id, $table)) return $table[$status_id];
-	else return 'Not supported Status';
+	else return 'Not supported tqStatus';
 }
 
 function generate_button_code($img, $alt, $href='')
@@ -104,7 +104,7 @@ function generate_button_code($img, $alt, $href='')
 		<tr>
 			<th>Actions</th>
 			<th>File</th>
-			<th>Status</th>
+			<th>tqStatus</th>
 			<th>Downloaded</th>
 			<th>Size</th>
 			<th>Uploaded</th>
@@ -118,7 +118,7 @@ function generate_button_code($img, $alt, $href='')
 		foreach ($stats as $torrent) {
 			echo "\t\t".'<tr>'."\n\t\t\t";
 
-			$torrent_name = str_replace("'", "\'", $torrent['torrent_name']);
+			$torrent_name = str_tqreplace("'", "\'", $torrent['torrent_name']);
 			if($torrent['total_bytes_to_download']!=0) $perc = round(100.0 - ($torrent['bytes_left_to_download'] / $torrent['total_bytes_to_download']) * 100.0, 2);
 			else $perc = 0;
 			if(strlen($torrent['torrent_name'])>30) $display_name=substr($torrent['torrent_name'], 0, 30)." ...";

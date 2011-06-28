@@ -28,10 +28,11 @@ namespace kt
 	class WebInterfacePrefWidget:public WebInterfacePreference
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		WebInterfacePrefWidget(QWidget *parent = 0, const char *name = 0);
+		WebInterfacePrefWidget(TQWidget *tqparent = 0, const char *name = 0);
 		bool apply();
-		QCString password;
+		TQCString password;
 	public slots:
 		void btnUpdate_clicked();
 		void changeLedState();

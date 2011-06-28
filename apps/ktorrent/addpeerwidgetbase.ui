@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>AddPeerWidgetBase</class>
-<widget class="QDialog">
+<widget class="TQDialog">
     <property name="name">
         <cstring>AddPeerWidgetBase</cstring>
     </property>
@@ -19,15 +19,15 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="0" column="0">
+        <widget class="TQLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>layout10</cstring>
+                <cstring>tqlayout10</cstring>
             </property>
             <hbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLabel">
+                <widget class="TQLabel">
                     <property name="name">
                         <cstring>textLabel1</cstring>
                     </property>
@@ -43,7 +43,7 @@
                         <string>127.0.0.1</string>
                     </property>
                 </widget>
-                <widget class="QLabel">
+                <widget class="TQLabel">
                     <property name="name">
                         <cstring>textLabel2</cstring>
                     </property>
@@ -77,16 +77,16 @@
             <property name="sizeType">
                 <enum>Expanding</enum>
             </property>
-            <property name="sizeHint">
+            <property name="tqsizeHint">
                 <size>
                     <width>20</width>
                     <height>16</height>
                 </size>
             </property>
         </spacer>
-        <widget class="QLayoutWidget" row="2" column="0">
+        <widget class="TQLayoutWidget" row="2" column="0">
             <property name="name">
-                <cstring>layout11</cstring>
+                <cstring>tqlayout11</cstring>
             </property>
             <hbox>
                 <property name="name">
@@ -149,10 +149,10 @@
     <tabstop>m_port</tabstop>
     <tabstop>btnAdd</tabstop>
 </tabstops>
-<slots>
+<Q_SLOTS>
     <slot>btnAdd_clicked()</slot>
-</slots>
-<layoutdefaults spacing="6" margin="11"/>
+</Q_SLOTS>
+<tqlayoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>klineedit.h</includehint>
     <includehint>knuminput.h</includehint>

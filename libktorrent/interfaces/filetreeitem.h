@@ -37,25 +37,25 @@ namespace kt
 	 * @author Joris Guisson
 	 *
 	 * File item part of a tree which shows the files in a multifile torrent.
-	 * This is derived from QCheckListItem, if the user checks or unchecks the box,
+	 * This is derived from TQCheckListItem, if the user checks or unchecks the box,
 	 * wether or not to download a file will be changed.
 	 */
-	class FileTreeItem : public QCheckListItem
+	class FileTreeItem : public TQCheckListItem
 	{
 	protected:
-		QString name;
+		TQString name;
 		TorrentFileInterface & file;
-		FileTreeDirItem* parent;
+		FileTreeDirItem* tqparent;
 		bool manual_change;
 	public:
 		/**
-		 * Constructor, set the parent, name and file
+		 * Constructor, set the tqparent, name and file
 		 * @param item Parent item
 		 * @param name Name of file
 		 * @param file THe TorrentFileInterface
 		 * @return 
 		 */
-		FileTreeItem(FileTreeDirItem* item,const QString & name,TorrentFileInterface & file);
+		FileTreeItem(FileTreeDirItem* item,const TQString & name,TorrentFileInterface & file);
 		virtual ~FileTreeItem();
 
 		/// Get a reference to the TorrentFileInterface
@@ -78,7 +78,7 @@ namespace kt
 		void updatePriorityText();
 		
 	protected:
-		virtual int compare(QListViewItem* i, int col, bool ascending) const;
+		virtual int compare(TQListViewItem* i, int col, bool ascending) const;
 		
 		/**
 		 * Subclasses should override this if they want to show a confirmation dialog. 

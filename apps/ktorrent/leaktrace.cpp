@@ -91,7 +91,7 @@ static void WriteLeakReport()
 	fclose(report);
 }
 
-static void PrintStatus()
+static void PrinttqStatus()
 {
 	if (mtree.count == 0)
 	{
@@ -124,7 +124,7 @@ static void RegisterAlloc(void* ptr,Uint32 size)
 		for (Uint32 b = 0;b < SOME_PRIME;b++)
 			mtree.buckets[b] = 0;
 		mtree.num_buckets = SOME_PRIME;
-		atexit(PrintStatus);
+		atexit(PrinttqStatus);
 	}
 	
 	// hash the address
@@ -147,7 +147,7 @@ static void RegisterAlloc(void* ptr,Uint32 size)
 static void DeregisterAlloc(void* ptr)
 {
 	if (print_status_done)
-		printf("PrintStatus already happened !!!!!!!!!!\n");
+		printf("PrinttqStatus already happened !!!!!!!!!!\n");
 	Uint32 b = ADDR_HASH(ptr);
 	
 	MemAlloc* p = mtree.buckets[b];
@@ -180,7 +180,7 @@ static void DeregisterAlloc(void* ptr)
 				
 		if (!p->left && !p->right)
 		{
-			// no children so just free p
+			// no tqchildren so just free p
 			if (prev->left == p)
 			{
 				free(prev->left);
@@ -214,7 +214,7 @@ static void DeregisterAlloc(void* ptr)
 		}
 		else
 		{
-			// both children exist
+			// both tqchildren exist
 			if (prev->left == p)
 			{
 				// attach the left child of p

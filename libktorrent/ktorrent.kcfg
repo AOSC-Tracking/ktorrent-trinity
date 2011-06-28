@@ -92,7 +92,7 @@
 		</entry>
 		<entry name="tempDir" type="String">
 			<label>Folder to store temporary files</label>
-			<default code="true">QString::null</default>
+			<default code="true">TQString::null</default>
 		</entry>
 		<entry name="useSaveDir" type="Bool">
 			<label>Whether to automatically save downloads to saveDir</label>
@@ -100,7 +100,7 @@
 		</entry>
 		<entry name="saveDir" type="String">
 			<label>Folder to store downloaded files</label>
-			<default code="true">QString::null</default>
+			<default code="true">TQString::null</default>
 		</entry>
 		<entry name="useCompletedDir" type="Bool">
 			<label>Whether to automatically move completed downloads to completedDir</label>
@@ -108,7 +108,7 @@
 		</entry>
 		<entry name="completedDir" type="String">
 			<label>Folder to move completed downloaded files to</label>
-			<default code="true">QString::null</default>
+			<default code="true">TQString::null</default>
 		</entry>
 		<entry name="useTorrentCopyDir" type="Bool">
 			<label>Whether to automatically copy .torrent files to torrentCopyDir</label>
@@ -116,7 +116,7 @@
 		</entry>
 		<entry name="torrentCopyDir" type="String">
 			<label>Folder to copy .torrent files to</label>
-			<default code="true">QString::null</default>
+			<default code="true">TQString::null</default>
 		</entry>
 		<entry name="useExternalIP" type="Bool">
 			<label>Whether to use a custom IP to pass to the tracker</label>
@@ -124,11 +124,11 @@
 		</entry>
 		<entry name="lastSaveDir" type="String">
 			<label>Directory which was used as the last save directory</label>
-			<default code="true">QString::null</default>
+			<default code="true">TQString::null</default>
 		</entry>
 		<entry name="externalIP" type="String">
 			<label>IP to pass to the tracker</label>
-			<default code="true">QString::null</default>
+			<default code="true">TQString::null</default>
 		</entry>
 		<entry name="memoryUsage" type="Int">
 			<label>Memory usage</label>
@@ -199,7 +199,7 @@
 			<default>false</default>
 		</entry>
 		<entry name="httpTrackerProxy" type="String">
-			<default code="true">QString::null</default>
+			<default code="true">TQString::null</default>
 		</entry>
 			<entry name="eta" type="Int">
 			<label>ET algorithm</label>

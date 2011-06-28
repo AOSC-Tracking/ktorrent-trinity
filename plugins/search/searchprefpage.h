@@ -24,7 +24,7 @@
 #include <interfaces/prefpageinterface.h>
 #include "searchpref.h"
 
-#include <qstring.h>
+#include <tqstring.h>
 
 namespace kt
 {	
@@ -34,12 +34,13 @@ namespace kt
 	class SearchPrefPageWidget : public SEPreferences
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		SearchPrefPageWidget(QWidget *parent = 0);
+		SearchPrefPageWidget(TQWidget *tqparent = 0);
 	
 		bool apply();
 		void saveSearchEngines();
-		void updateList(QString& source);
+		void updateList(TQString& source);
 		
 		void updateSearchEngines(const SearchEngineList & se);
 		
@@ -64,7 +65,7 @@ namespace kt
 		virtual ~SearchPrefPage();
 
 		virtual bool apply();
-		virtual void createWidget(QWidget* parent);
+		virtual void createWidget(TQWidget* tqparent);
 		virtual void updateData();
 		virtual void deleteWidget();
 

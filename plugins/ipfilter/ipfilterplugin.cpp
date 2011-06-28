@@ -25,7 +25,7 @@
 #include <util/constants.h>
 #include <torrent/ipblocklist.h>
 
-#include <qstring.h>
+#include <tqstring.h>
 
 #include "ipfilterplugin.h"
 #include "ipfilterpluginsettings.h"
@@ -37,13 +37,13 @@ K_EXPORT_COMPONENT_FACTORY(ktipfilterplugin,KGenericFactory<kt::IPFilterPlugin>(
 
 namespace kt
 {	
-	const QString NAME = "IP Filter";
-	const QString AUTHOR = "Ivan Vasic";
-	const QString EMAIL = "ivasic@gmail.com";
-	const QString DESCRIPTION = i18n("Filters out unwanted peers based on their IP address");
+	const TQString NAME = "IP Filter";
+	const TQString AUTHOR = "Ivan Vasic";
+	const TQString EMAIL = "ivasic@gmail.com";
+	const TQString DESCRIPTION = i18n("Filters out unwanted peers based on their IP address");
 
-	IPFilterPlugin::IPFilterPlugin(QObject* parent, const char* name, const QStringList& args)
-	: Plugin(parent, name, args,NAME,i18n("IP Filter"),AUTHOR,EMAIL,DESCRIPTION,"filter")
+	IPFilterPlugin::IPFilterPlugin(TQObject* tqparent, const char* name, const TQStringList& args)
+	: Plugin(tqparent, name, args,NAME,i18n("IP Filter"),AUTHOR,EMAIL,DESCRIPTION,"filter")
 	{
 		// setXMLFile("ktpluginui.rc");
 		level1 = 0;
@@ -114,7 +114,7 @@ namespace kt
 			return true;
 	}
 	
-	bool IPFilterPlugin::isBlockedIP(const QString& ip)
+	bool IPFilterPlugin::isBlockedIP(const TQString& ip)
 	{
 		if (level1 == 0)
 			return false;
@@ -122,7 +122,7 @@ namespace kt
 		return level1->isBlockedIP(ip);
 	}
 
-	bool IPFilterPlugin::versionCheck(const QString & version) const
+	bool IPFilterPlugin::versionCheck(const TQString & version) const
 	{
 		return version == KT_VERSION_MACRO;
 	}

@@ -20,7 +20,7 @@
 #ifndef BTCHOKER_H
 #define BTCHOKER_H
 
-#include <qptrlist.h>
+#include <tqptrlist.h>
 #include <util/constants.h>
 #include "peer.h"
 
@@ -39,7 +39,7 @@ namespace bt
 	
 	typedef int (*PeerCompareFunc)(Peer* a,Peer* b);
 	
-	class PeerPtrList : public QPtrList<Peer>
+	class PeerPtrList : public TQPtrList<Peer>
 	{
 		PeerCompareFunc pcmp;
 	public:
@@ -48,7 +48,7 @@ namespace bt
 		
 		void setCompareFunc(PeerCompareFunc p) {pcmp = p;}
 		
-		virtual int compareItems(QPtrCollection::Item a, QPtrCollection::Item b);
+		virtual int compareItems(TQPtrCollection::Item a, TQPtrCollection::Item b);
 	};
 	
 	/**

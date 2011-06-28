@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 
-#include <qserversocket.h>
+#include <tqserversocket.h>
 #include <mse/streamsocket.h>
 #include <util/sha1hash.h>
 #include <util/log.h>
@@ -36,13 +36,13 @@
 namespace bt
 {
 
-	class ServerSocket : public QServerSocket
+	class ServerSocket : public TQServerSocket
 	{
 		Server* srv;
 	public:	
-		ServerSocket(Server* srv,Uint16 port) : QServerSocket(port),srv(srv)
+		ServerSocket(Server* srv,Uint16 port) : TQServerSocket(port),srv(srv)
 		{
-			QSocketDevice* sd = socketDevice();
+			TQSocketDevice* sd = socketDevice();
 			if (sd)
 				sd->setAddressReusable(true);
 		}
@@ -114,7 +114,7 @@ namespace bt
 		else
 		{
 			IPBlocklist& ipfilter = IPBlocklist::instance();
-			QString IP(s->getRemoteIPAddress());
+			TQString IP(s->getRemoteIPAddress());
 			if (ipfilter.isBlocked( IP ))
 			{
 				delete s;
@@ -145,7 +145,7 @@ namespace bt
 
 	PeerManager* Server::findPeerManager(const SHA1Hash & hash)
 	{
-		QPtrList<PeerManager>::iterator i = peer_managers.begin();
+		TQPtrList<PeerManager>::iterator i = peer_managers.begin();
 		while (i != peer_managers.end())
 		{
 			PeerManager* pm = *i;
@@ -165,7 +165,7 @@ namespace bt
 	{
 		Uint8 buf[24];
 		memcpy(buf,"req2",4);
-		QPtrList<PeerManager>::iterator i = peer_managers.begin();
+		TQPtrList<PeerManager>::iterator i = peer_managers.begin();
 		while (i != peer_managers.end())
 		{
 			PeerManager* pm = *i;

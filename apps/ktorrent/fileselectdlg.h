@@ -43,6 +43,7 @@ namespace kt
 class FileSelectDlg : public FileSelectDlgBase, public kt::FileTreeRootListener
 {
 		Q_OBJECT
+  TQ_OBJECT
 
 		kt::TorrentInterface* tc;
 		kt::FileTreeDirItem* root;
@@ -53,7 +54,7 @@ class FileSelectDlg : public FileSelectDlgBase, public kt::FileTreeRootListener
 		bool* m_start;
 
 	public:
-		FileSelectDlg(kt::GroupManager* gm, bool* user, bool* start, QWidget* parent = 0, const char* name = 0,
+		FileSelectDlg(kt::GroupManager* gm, bool* user, bool* start, TQWidget* tqparent = 0, const char* name = 0,
 					  bool modal = true, WFlags fl = 0);
 
 		virtual ~FileSelectDlg();

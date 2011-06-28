@@ -19,10 +19,10 @@
 #ifndef FLAGDB_H
 #define FLAGDB_H
 
-#include <qpixmap.h>
-#include <qstring.h>
-#include <qstringlist.h>
-#include <qmap.h>
+#include <tqpixmap.h>
+#include <tqstring.h>
+#include <tqstringlist.h>
+#include <tqmap.h>
 
 namespace kt
 {
@@ -30,16 +30,16 @@ namespace kt
 	{
 	public:
 		FlagDBSource();
-		FlagDBSource(const char* type, const QString& pathPattern);
-		FlagDBSource(const QString& pathPattern);
-		QString getPath(const QString& country) const;
+		FlagDBSource(const char* type, const TQString& pathPattern);
+		FlagDBSource(const TQString& pathPattern);
+		TQString getPath(const TQString& country) const;
 
 		const char* getType() { return type; };
-		const QString& getPathPattern() { return pathPattern; };
+		const TQString& getPathPattern() { return pathPattern; };
 
 	private:
 		const char* type;
-		const QString pathPattern;
+		const TQString pathPattern;
 	};
 
 	/**
@@ -53,15 +53,15 @@ namespace kt
 		~FlagDB();
 
 		void addFlagSource(const FlagDBSource& source);
-		void addFlagSource(const char* type, const QString& pathPattern);
-		const QValueList<FlagDBSource>& listSources() const;
-		bool isFlagAvailable(const QString& country);
-		const QPixmap& getFlag(const QString& country);
+		void addFlagSource(const char* type, const TQString& pathPattern);
+		const TQValueList<FlagDBSource>& listSources() const;
+		bool isFlagAvailable(const TQString& country);
+		const TQPixmap& getFlag(const TQString& country);
 	private:
-		static const QPixmap& nullPixmap;
+		static const TQPixmap& nullPixmap;
 		int preferredWidth, preferredHeight;
-		QValueList<FlagDBSource> sources;
-		QMap<QString,QPixmap> db;
+		TQValueList<FlagDBSource> sources;
+		TQMap<TQString,TQPixmap> db;
 	};
 }
 

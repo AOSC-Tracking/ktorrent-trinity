@@ -19,7 +19,7 @@
  ***************************************************************************/
 
 
-#include <qptrlist.h>
+#include <tqptrlist.h>
 #include <interfaces/functions.h>
 #include "choker.h"
 #include "peermanager.h"
@@ -37,7 +37,7 @@ namespace bt
 	PeerPtrList::~PeerPtrList()
 	{}
 		
-	int PeerPtrList::compareItems(QPtrCollection::Item a, QPtrCollection::Item b)
+	int PeerPtrList::compareItems(TQPtrCollection::Item a, TQPtrCollection::Item b)
 	{
 		if (pcmp)
 			return pcmp((Peer*)a,(Peer*)b);

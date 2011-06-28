@@ -33,25 +33,25 @@
 #include <kstdguiitem.h>
 #include <kpushbutton.h>
 
-#include <qcombobox.h>
-#include <qfile.h>
-#include <qdatastream.h>
-#include <qlabel.h>
-#include <qcheckbox.h>
-#include <qradiobutton.h>
+#include <tqcombobox.h>
+#include <tqfile.h>
+#include <tqdatastream.h>
+#include <tqlabel.h>
+#include <tqcheckbox.h>
+#include <tqradiobutton.h>
 
 namespace kt
 {
 
 	/* PREF PAGE WIDGET --------------------------------------------------------*/
 
-	BWSPrefPageWidget::BWSPrefPageWidget(QWidget* parent, const char* name, WFlags fl)
-			: BWSPage(parent,name,fl)
+	BWSPrefPageWidget::BWSPrefPageWidget(TQWidget* tqparent, const char* name, WFlags fl)
+			: BWSPage(tqparent,name,fl)
 	{
 
 		loadDefault();
 
-		lblStatus->clear();
+		lbltqStatus->clear();
 
 		pix_icon->setPixmap(KGlobal::iconLoader()->loadIcon("clock",KIcon::NoGroup));
 		
@@ -67,42 +67,42 @@ namespace kt
 
 		if(use_colors) //set up colors
 		{
-			pix1->setPaletteBackgroundColor(QColor(30,165,105));
-			pix2->setPaletteBackgroundColor(QColor(195,195,70));
-			pix3->setPaletteBackgroundColor(QColor(195,195,70));
-			pix4->setPaletteBackgroundColor(QColor(195,195,70));
-			pix5->setPaletteBackgroundColor(QColor(190,30,30));
+			pix1->setPaletteBackgroundColor(TQColor(30,165,105));
+			pix2->setPaletteBackgroundColor(TQColor(195,195,70));
+			pix3->setPaletteBackgroundColor(TQColor(195,195,70));
+			pix4->setPaletteBackgroundColor(TQColor(195,195,70));
+			pix5->setPaletteBackgroundColor(TQColor(190,30,30));
 			
-			pix12->setPaletteBackgroundColor(QColor(30,165,105));
-			pix22->setPaletteBackgroundColor(QColor(195,195,70));
-			pix32->setPaletteBackgroundColor(QColor(195,195,70));
-			pix42->setPaletteBackgroundColor(QColor(195,195,70));
-			pix52->setPaletteBackgroundColor(QColor(190,30,30));
+			pix12->setPaletteBackgroundColor(TQColor(30,165,105));
+			pix22->setPaletteBackgroundColor(TQColor(195,195,70));
+			pix32->setPaletteBackgroundColor(TQColor(195,195,70));
+			pix42->setPaletteBackgroundColor(TQColor(195,195,70));
+			pix52->setPaletteBackgroundColor(TQColor(190,30,30));
 		} else //set up pixmaps
 		{
-			pix1->setPixmap(QPixmap(locate("data", QString("ktorrent/icons/cell-a-0000.png"))));
-			pix2->setPixmap(QPixmap(locate("data", QString("ktorrent/icons/cell-a-0001.png"))));
-			pix3->setPixmap(QPixmap(locate("data", QString("ktorrent/icons/cell-a-0002.png"))));
-			pix4->setPixmap(QPixmap(locate("data", QString("ktorrent/icons/cell-a-0003.png"))));
-			pix5->setPixmap(QPixmap(locate("data", QString("ktorrent/icons/cell-a-0004.png"))));
+			pix1->setPixmap(TQPixmap(locate("data", TQString("ktorrent/icons/cell-a-0000.png"))));
+			pix2->setPixmap(TQPixmap(locate("data", TQString("ktorrent/icons/cell-a-0001.png"))));
+			pix3->setPixmap(TQPixmap(locate("data", TQString("ktorrent/icons/cell-a-0002.png"))));
+			pix4->setPixmap(TQPixmap(locate("data", TQString("ktorrent/icons/cell-a-0003.png"))));
+			pix5->setPixmap(TQPixmap(locate("data", TQString("ktorrent/icons/cell-a-0004.png"))));
 
-			pix12->setPixmap(QPixmap(locate("data", QString("ktorrent/icons/cell-a-0000.png"))));
-			pix22->setPixmap(QPixmap(locate("data", QString("ktorrent/icons/cell-a-0001.png"))));
-			pix32->setPixmap(QPixmap(locate("data", QString("ktorrent/icons/cell-a-0002.png"))));
-			pix42->setPixmap(QPixmap(locate("data", QString("ktorrent/icons/cell-a-0003.png"))));
-			pix52->setPixmap(QPixmap(locate("data", QString("ktorrent/icons/cell-a-0004.png"))));
+			pix12->setPixmap(TQPixmap(locate("data", TQString("ktorrent/icons/cell-a-0000.png"))));
+			pix22->setPixmap(TQPixmap(locate("data", TQString("ktorrent/icons/cell-a-0001.png"))));
+			pix32->setPixmap(TQPixmap(locate("data", TQString("ktorrent/icons/cell-a-0002.png"))));
+			pix42->setPixmap(TQPixmap(locate("data", TQString("ktorrent/icons/cell-a-0003.png"))));
+			pix52->setPixmap(TQPixmap(locate("data", TQString("ktorrent/icons/cell-a-0004.png"))));
 		}
 
-		connect(radio1, SIGNAL(stateChanged(int)), this, SLOT(categoryChanged(int)));
-		connect(radio2, SIGNAL(stateChanged(int)), this, SLOT(categoryChanged(int)));
-		connect(radio3, SIGNAL(stateChanged(int)), this, SLOT(categoryChanged(int)));
-		connect(radio4, SIGNAL(stateChanged(int)), this, SLOT(categoryChanged(int)));
-		connect(radio5, SIGNAL(stateChanged(int)), this, SLOT(categoryChanged(int)));
-		connect(radio12, SIGNAL(stateChanged(int)), this, SLOT(categoryChanged(int)));
-		connect(radio22, SIGNAL(stateChanged(int)), this, SLOT(categoryChanged(int)));
-		connect(radio32, SIGNAL(stateChanged(int)), this, SLOT(categoryChanged(int)));
-		connect(radio42, SIGNAL(stateChanged(int)), this, SLOT(categoryChanged(int)));
-		connect(radio52, SIGNAL(stateChanged(int)), this, SLOT(categoryChanged(int)));
+		connect(radio1, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
+		connect(radio2, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
+		connect(radio3, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
+		connect(radio4, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
+		connect(radio5, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
+		connect(radio12, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
+		connect(radio22, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
+		connect(radio32, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
+		connect(radio42, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
+		connect(radio52, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
 
 		//pre-check default categories (say 1 for left and 0 for right)
 		radio2->setChecked(true);
@@ -116,7 +116,7 @@ namespace kt
 
 	void BWSPrefPageWidget::btnSave_clicked()
 	{
-		QString sf = KFileDialog::getSaveFileName("/home","*",this,i18n("Choose a filename to save under"));
+		TQString sf = KFileDialog::getSaveFileName("/home","*",this,i18n("Choose a filename to save under"));
 
 		if(sf.isEmpty())
 			return;
@@ -126,7 +126,7 @@ namespace kt
 
 	void BWSPrefPageWidget::btnLoad_clicked()
 	{
-		QString lf = KFileDialog::getOpenFileName("/home", "*",this,i18n("Choose a file"));
+		TQString lf = KFileDialog::getOpenFileName("/home", "*",this,i18n("Choose a file"));
 
 		if(lf.isEmpty())
 			return;
@@ -135,14 +135,14 @@ namespace kt
 		loadSchedule(lf);
 	}
 
-	void BWSPrefPageWidget::saveSchedule(QString& fn)
+	void BWSPrefPageWidget::saveSchedule(TQString& fn)
 	{
 		schedule = m_bwsWidget->schedule();
 
-		QFile file(fn);
+		TQFile file(fn);
 
 		file.open(IO_WriteOnly);
-		QDataStream stream(&file);
+		TQDataStream stream(&file);
 
 		//First category
 		stream << dlCat1->value();
@@ -162,12 +162,12 @@ namespace kt
 				stream << (int) schedule.getCategory(i, j);
 
 		file.close();
-		lblStatus->setText(i18n("Schedule saved."));
+		lbltqStatus->setText(i18n("Schedule saved."));
 	}
 
-	void BWSPrefPageWidget::loadSchedule(QString& fn, bool showmsg)
+	void BWSPrefPageWidget::loadSchedule(TQString& fn, bool showmsg)
 	{
-		QFile file(fn);
+		TQFile file(fn);
 
 		if(!file.exists()) {
 			if(showmsg)
@@ -176,7 +176,7 @@ namespace kt
 		}
 
 		file.open(IO_ReadOnly);
-		QDataStream stream(&file);
+		TQDataStream stream(&file);
 
 		int tmp;
 
@@ -205,13 +205,13 @@ namespace kt
 		file.close();
 
 		m_bwsWidget->setSchedule(schedule);
-		lblStatus->setText(i18n("Schedule loaded."));
+		lbltqStatus->setText(i18n("Schedule loaded."));
 	}
 
 	void BWSPrefPageWidget::loadDefault()
 	{
 		//read schedule from HD
-		QString fn = KGlobal::dirs()->saveLocation("data","ktorrent") + "bwschedule";
+		TQString fn = KGlobal::dirs()->saveLocation("data","ktorrent") + "bwschedule";
 		loadSchedule(fn, false);
 	}
 
@@ -228,7 +228,7 @@ namespace kt
 		ulCat2->setValue(0);
 		ulCat3->setValue(0);
 
-		lblStatus->clear();
+		lbltqStatus->clear();
 	}
 
 	void BWSPrefPageWidget::apply()

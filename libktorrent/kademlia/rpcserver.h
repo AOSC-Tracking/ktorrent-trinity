@@ -20,7 +20,7 @@
 #ifndef DHTRPCSERVER_H
 #define DHTRPCSERVER_H
 
-#include <qptrlist.h>
+#include <tqptrlist.h>
 #include <kdatagramsocket.h>
 #include <util/constants.h>
 #include <util/array.h>
@@ -52,11 +52,12 @@ namespace dht
 	 *
 	 * Class to handle incoming and outgoing RPC messages.
 	 */
-	class RPCServer : public QObject
+	class RPCServer : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		RPCServer(DHT* dh_table,Uint16 port,QObject *parent = 0);
+		RPCServer(DHT* dh_table,Uint16 port,TQObject *tqparent = 0);
 		virtual ~RPCServer();
 		
 		/// Start the server
@@ -105,14 +106,14 @@ namespace dht
 		void readPacket();
 		
 	private:
-		void send(const KNetwork::KSocketAddress & addr,const QByteArray & msg);
+		void send(const KNetwork::KSocketAddress & addr,const TQByteArray & msg);
 		void doQueuedCalls();
 			
 	private:
 		KDatagramSocket* sock;
 		DHT* dh_table;
 		bt::PtrMap<bt::Uint8,RPCCall> calls;
-		QPtrList<RPCCall> call_queue;
+		TQPtrList<RPCCall> call_queue;
 		bt::Uint8 next_mtid;
 		bt::Uint16 port;
 	};

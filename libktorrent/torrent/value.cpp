@@ -17,7 +17,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qtextcodec.h>
+#include <tqtextcodec.h>
 #include "value.h"
 
 namespace bt
@@ -32,7 +32,7 @@ namespace bt
 	Value::Value(Int64 val) : type(INT64),big_ival(val)
 	{}
 	
-	Value::Value(const QByteArray & val) : type(STRING),ival(0),strval(val),big_ival(0)
+	Value::Value(const TQByteArray & val) : type(STRING),ival(0),strval(val),big_ival(0)
 	{}
 	
 	Value::Value(const Value & val)
@@ -43,12 +43,12 @@ namespace bt
 	{}
 
 
-	QString Value::toString(const QString & encoding) const
+	TQString Value::toString(const TQString & encoding) const
 	{
 		if (encoding.isNull() || encoding.isEmpty())
 			return toString();
 
-		QTextCodec* tc = QTextCodec::codecForName(encoding.ascii());
+		TQTextCodec* tc = TQTextCodec::codecForName(encoding.ascii());
 		if (!tc)
 			return toString();
 
@@ -80,7 +80,7 @@ namespace bt
 		return *this;
 	}
 	
-	Value & Value::operator = (const QByteArray & val)
+	Value & Value::operator = (const TQByteArray & val)
 	{
 		type = STRING;
 		strval = val;

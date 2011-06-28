@@ -36,7 +36,7 @@ class StatsPluginPrefsPage : public sprefwgt
 		\brief Constructor
 		\param p Parent
 		*/
-		StatsPluginPrefsPage(QWidget * p = 0);
+		StatsPluginPrefsPage(TQWidget * p = 0);
 };
 
 }

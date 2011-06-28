@@ -23,9 +23,9 @@
 #include <kstandarddirs.h>
 #include <krfcdate.h>
 #include <kio/netaccess.h>
-#include <qfile.h>
-#include <qapplication.h>
-#include <qdir.h>
+#include <tqfile.h>
+#include <tqapplication.h>
+#include <tqdir.h>
 
 namespace kt
 {
@@ -35,7 +35,7 @@ namespace kt
 		if (m_active)
 			{
 			refreshFeed();
-			refreshTimer.start(QTime().msecsTo(m_autoRefresh));
+			refreshTimer.start(TQTime().msecsTo(m_autoRefresh));
 			}
 		else
 			{
@@ -48,13 +48,13 @@ namespace kt
 		feedLoading = false;
 		loadArticles();
 		
-		connect(&refreshTimer, SIGNAL(timeout()), this, SLOT( refreshFeed() ) );
-		connect(this, SIGNAL(articlesChanged(const RssArticle::List&)), this, SLOT( saveArticles() ) );
+		connect(&refreshTimer, TQT_SIGNAL(timeout()), this, TQT_SLOT( refreshFeed() ) );
+		connect(this, TQT_SIGNAL(articlesChanged(const RssArticle::List&)), this, TQT_SLOT( saveArticles() ) );
 		
 		startFeed();
 	}
 	
-	RssFeed::RssFeed(QObject * parent) : QObject(parent)
+	RssFeed::RssFeed(TQObject * tqparent) : TQObject(tqparent)
 	{
 		m_active = false;
 		m_articleAge = 365;
@@ -64,7 +64,7 @@ namespace kt
 		initialize();
 	}
 	
-	RssFeed::RssFeed(KURL feedUrl, QString title, bool active, int articleAge, bool ignoreTTL, QTime autoRefresh )
+	RssFeed::RssFeed(KURL feedUrl, TQString title, bool active, int articleAge, bool ignoreTTL, TQTime autoRefresh )
 	{
 		m_feedUrl = feedUrl;
 		m_title = title;
@@ -76,7 +76,7 @@ namespace kt
 		initialize();
 	}
 	
-	RssFeed::RssFeed(const RssFeed &other) : QObject()
+	RssFeed::RssFeed(const RssFeed &other) : TQObject()
 	{
 		*this = other;
 	}
@@ -109,7 +109,7 @@ namespace kt
 		}
 	}
 	
-	void RssFeed::setFeedUrl( const QString& url )
+	void RssFeed::setFeedUrl( const TQString& url )
 	{
 		if (m_feedUrl != url)
 		{
@@ -146,7 +146,7 @@ namespace kt
 		}
 	}
 	
-	void RssFeed::setTitle( const QString& title )
+	void RssFeed::setTitle( const TQString& title )
 	{
 		if (m_title != title)
 		{
@@ -155,14 +155,14 @@ namespace kt
 		}
 	}
 	
-	void RssFeed::setAutoRefresh( const QTime& autoRefresh )
+	void RssFeed::setAutoRefresh( const TQTime& autoRefresh )
 	{
 		if (m_autoRefresh != autoRefresh)
 		{
 			m_autoRefresh = autoRefresh;
 			if (m_active)
 			{
-				refreshTimer.changeInterval(QTime().msecsTo(m_autoRefresh));
+				refreshTimer.changeInterval(TQTime().msecsTo(m_autoRefresh));
 			}
 			
 			emit autoRefreshChanged(autoRefresh);
@@ -178,25 +178,25 @@ namespace kt
 		}
 	}
 	
-	QString RssFeed::getFilename()
+	TQString RssFeed::getFilename()
 	{
-		QDir directory;
+		TQDir directory;
 		directory.mkdir(KGlobal::dirs()->saveLocation("data","ktorrent") + "rssfeeds");
-		return KGlobal::dirs()->saveLocation("data","ktorrent") + "rssfeeds/" + m_feedUrl.prettyURL(-1).replace("/", "_").replace(":", "_") + ".ktr";
+		return KGlobal::dirs()->saveLocation("data","ktorrent") + "rssfeeds/" + m_feedUrl.prettyURL(-1).tqreplace("/", "_").tqreplace(":", "_") + ".ktr";
 		
 	}
 	
 	void RssFeed::loadArticles()
 	{
-		QString filename = getFilename();
+		TQString filename = getFilename();
 		
 		//load articles from disk
-		QFile file(filename);
+		TQFile file(filename);
 		
 		if (file.exists())
 			{
 			file.open( IO_ReadOnly );
-			QDataStream in(&file);
+			TQDataStream in(&file);
 			
 			in >> m_articles;
 			emit articlesChanged( m_articles );
@@ -205,13 +205,13 @@ namespace kt
 	
 	void RssFeed::saveArticles()
 	{
-		QString filename = getFilename();
+		TQString filename = getFilename();
 		
 		//load articles from disk
-		QFile file(filename);
+		TQFile file(filename);
 		
 		file.open( IO_WriteOnly );
-		QDataStream out(&file);
+		TQDataStream out(&file);
 		
 		out << m_articles;
 	}
@@ -223,7 +223,7 @@ namespace kt
 		RssArticle::List::iterator it;
 		for ( it = m_articles.begin(); it != m_articles.end();  )
 			{
-			if ((*it).pubDate().daysTo(QDateTime::currentDateTime()) > m_articleAge)
+			if ((*it).pubDate().daysTo(TQDateTime::tqcurrentDateTime()) > m_articleAge)
 				{
 				it = m_articles.erase(it);
 				removed = true;
@@ -254,12 +254,12 @@ namespace kt
 		feedLoading = true;
 		cleanArticles();
 		Loader * feedLoader = Loader::create();
-		connect( feedLoader, SIGNAL( loadingComplete( Loader *, Document, Status ) ),
-			this, SLOT( feedLoaded( Loader *, Document, Status ) ) );
+		connect( feedLoader, TQT_SIGNAL( loadingComplete( Loader *, Document, tqStatus ) ),
+			this, TQT_SLOT( feedLoaded( Loader *, Document, tqStatus ) ) );
 		feedLoader->loadFrom( m_feedUrl, new FileRetriever );
 	}
 	
-	void RssFeed::feedLoaded(Loader *feedLoader, Document doc, Status status)
+	void RssFeed::feedLoaded(Loader *feedLoader, Document doc, tqStatus status)
 	{
 		feedLoading = false;
 
@@ -267,7 +267,7 @@ namespace kt
 		{
 			bool added = false;
 			
-			if (m_title.isEmpty() || m_title == QString("New"))
+			if (m_title.isEmpty() || m_title == TQString("New"))
 			{
 				setTitle(doc.title());
 				emit updateTitle(doc.title());
@@ -277,11 +277,11 @@ namespace kt
 			{
 				if (doc.ttl() < 0)
 				{
-					setAutoRefresh(QTime().addSecs(3600));
+					setAutoRefresh(TQTime().addSecs(3600));
 				}
 				else
 				{
-					setAutoRefresh(QTime().addSecs(doc.ttl() * 60));
+					setAutoRefresh(TQTime().addSecs(doc.ttl() * 60));
 				}
 			}
 	
@@ -290,7 +290,7 @@ namespace kt
 			for (int i=doc.articles().count()-1; i>=0; i--)
 			{
 				curArticle = doc.articles()[i];
-				if (curArticle.pubDate().daysTo(QDateTime::currentDateTime()) < m_articleAge && !m_articles.contains(curArticle))
+				if (curArticle.pubDate().daysTo(TQDateTime::tqcurrentDateTime()) < m_articleAge && !m_articles.tqcontains(curArticle))
 				{
 					m_articles.prepend(curArticle);
 					emit scanRssArticle(curArticle);
@@ -306,13 +306,13 @@ namespace kt
 			qDebug( "There was and error loading the feed\n");
 		}
 		
-		disconnect( feedLoader, SIGNAL( loadingComplete( Loader *, Document, Status ) ),
-			this, SLOT( feedLoaded( Loader *, Document, Status ) ) );
+		disconnect( feedLoader, TQT_SIGNAL( loadingComplete( Loader *, Document, tqStatus ) ),
+			this, TQT_SLOT( feedLoaded( Loader *, Document, tqStatus ) ) );
 		feedLoader->deleteLater();
 
 	}
 	
-	void RssFeed::setDownloaded(QString link, int downloaded)
+	void RssFeed::setDownloaded(TQString link, int downloaded)
 	{
 		bool changed = false;
 		
@@ -332,21 +332,21 @@ namespace kt
 		}	
 	}
 	
-	QDataStream &operator<<( QDataStream &out, const RssFeed &feed )
+	TQDataStream &operator<<( TQDataStream &out, const RssFeed &feed )
 	{
 		out << feed.feedUrl() << feed.title() << int(feed.active()) << feed.articleAge() << int(feed.ignoreTTL()) << feed.autoRefresh();
 		
 		return out;
 	}
 	
-	QDataStream &operator>>( QDataStream &in, RssFeed &feed )
+	TQDataStream &operator>>( TQDataStream &in, RssFeed &feed )
 	{
 		KURL feedUrl;
-		QString title;
+		TQString title;
 		int active;
 		int articleAge;
 		int ignoreTTL;
-		QTime autoRefresh;
+		TQTime autoRefresh;
 		in >> feedUrl >> title >> active >> articleAge >> ignoreTTL >> autoRefresh;
 		feed = RssFeed(feedUrl, title, active, articleAge, ignoreTTL, autoRefresh);
 		

@@ -22,7 +22,7 @@
 
 #include <kio/job.h>
 
-class QStringList;
+class TQStringList;
 
 namespace bt
 {
@@ -43,36 +43,36 @@ namespace bt
 	{
 	protected:
 		Torrent & tor;
-		QString tmpdir;
-		QString datadir;
+		TQString tmpdir;
+		TQString datadir;
 		bool preexisting_files;
 		Uint32 mmap_failures;
 	public:
-		Cache(Torrent & tor,const QString & tmpdir,const QString & datadir);
+		Cache(Torrent & tor,const TQString & tmpdir,const TQString & datadir);
 		virtual ~Cache();
 
 		/// Get the datadir
-		QString getDataDir() const {return datadir;}
+		TQString getDataDir() const {return datadir;}
 		
 		/**
 		 * Get the actual output path.
 		 * @return The output path
 		 */
-		virtual QString getOutputPath() const = 0;
+		virtual TQString getOutputPath() const = 0;
 		
 		/**
 		 * Changes the tmp dir. All data files should already been moved.
 		 * This just modifies the tmpdir variable.
 		 * @param ndir The new tmpdir
 		 */
-		virtual void changeTmpDir(const QString & ndir);
+		virtual void changeTmpDir(const TQString & ndir);
 		
 		/**
 		 * Move the data files to a new directory.
 		 * @param ndir The directory
 		 * @return The KIO::Job doing the move
 		 */
-		virtual KIO::Job* moveDataFiles(const QString & ndir) = 0;
+		virtual KIO::Job* moveDataFiles(const TQString & ndir) = 0;
 		
 		/**
 		 * The move data files job is done.
@@ -85,7 +85,7 @@ namespace bt
 		 * This just modifies the datadir variable.
 		 * @param outputpath New output path
 		 */
-		virtual void changeOutputPath(const QString & outputpath) = 0;
+		virtual void changeOutputPath(const TQString & outputpath) = 0;
 		
 		/**
 		 * Load a chunk into memory. If something goes wrong,
@@ -140,7 +140,7 @@ namespace bt
 		 * Test all files and see if they are not missing.
 		 * If so put them in a list
 		 */
-		virtual bool hasMissingFiles(QStringList & sl) = 0;
+		virtual bool hasMissingFiles(TQStringList & sl) = 0;
 
 		/**
 		 * Delete all data files, in case of multi file torrents

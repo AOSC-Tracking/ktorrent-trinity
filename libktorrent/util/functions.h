@@ -22,8 +22,8 @@
 
 #include "constants.h"
 
-class QString;
-class QHostAddress;
+class TQString;
+class TQHostAddress;
 class KURL;
 
 namespace bt
@@ -56,9 +56,9 @@ namespace bt
 	
 	TimeStamp Now();
 	
-	QHostAddress LookUpHost(const QString & host);
-	QString DirSeparator();
-	bool IsMultimediaFile(const QString & filename);
+	TQHostAddress LookUpHost(const TQString & host);
+	TQString DirSeparator();
+	bool IsMultimediaFile(const TQString & filename);
 
 	/**
 	 * Maximize the file and memory limits using setrlimit.

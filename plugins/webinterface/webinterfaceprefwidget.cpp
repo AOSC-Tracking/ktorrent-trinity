@@ -26,17 +26,17 @@
 #include <kiconloader.h>
 #include <kstandarddirs.h>
 
-#include <qwidget.h>
-#include <qstring.h>
-#include <qcheckbox.h>
-#include <qcombobox.h>
+#include <tqwidget.h>
+#include <tqstring.h>
+#include <tqcheckbox.h>
+#include <tqcombobox.h>
 #include <knuminput.h>
 #include <kurlrequester.h>
 #include <klineedit.h>
 #include <kpassdlg.h>
 #include <kmdcodec.h>
 #include <kled.h>
-#include <qtooltip.h>
+#include <tqtooltip.h>
 
 #include <net/portlist.h>
 #include <torrent/globals.h>
@@ -44,16 +44,16 @@ using namespace bt;
 namespace kt
 {
 
-WebInterfacePrefWidget::WebInterfacePrefWidget(QWidget *parent, const char *name):WebInterfacePreference(parent,name)
+WebInterfacePrefWidget::WebInterfacePrefWidget(TQWidget *tqparent, const char *name):WebInterfacePreference(tqparent,name)
 {
 	port->setValue(WebInterfacePluginSettings::port());
 	forward->setChecked(WebInterfacePluginSettings::forward());
 	sessionTTL->setValue(WebInterfacePluginSettings::sessionTTL());
 	
-	QStringList dirList=KGlobal::instance()->dirs()->findDirs("data", "ktorrent/www");
-	QDir d(*(dirList.begin()));
-	QStringList skinList=d.entryList(QDir::Dirs);
-	for ( QStringList::Iterator it = skinList.begin(); it != skinList.end(); ++it ){ 
+	TQStringList dirList=KGlobal::instance()->dirs()->findDirs("data", "ktorrent/www");
+	TQDir d(*(dirList.begin()));
+	TQStringList skinList=d.entryList(TQDir::Dirs);
+	for ( TQStringList::Iterator it = skinList.begin(); it != skinList.end(); ++it ){ 
 		if(*it=="." || *it=="..")
 			continue;
         	interfaceSkinBox->insertItem(*it);
@@ -62,11 +62,11 @@ WebInterfacePrefWidget::WebInterfacePrefWidget(QWidget *parent, const char *name
    	interfaceSkinBox->setCurrentText (WebInterfacePluginSettings::skin());
 	
 	if(WebInterfacePluginSettings::phpExecutablePath().isEmpty()){
-		QString phpPath=KStandardDirs::findExe("php");
-		if(phpPath==QString::null)
+		TQString phpPath=KStandardDirs::findExe("php");
+		if(phpPath==TQString())
 			phpPath=KStandardDirs::findExe("php-cli");
 		
-		if(phpPath==QString::null)
+		if(phpPath==TQString())
 			phpExecutablePath->setURL (i18n("Php executable is not in default path, please enter the path manually"));
 		else
 			phpExecutablePath->setURL (phpPath);
@@ -102,7 +102,7 @@ bool WebInterfacePrefWidget::apply()
 
 void WebInterfacePrefWidget::btnUpdate_clicked()
 {
-	QCString passwd;
+	TQCString passwd;
  	int result = KPasswordDialog::getNewPassword(passwd, i18n("Please enter a new password for the web interface."));
  	if (result == KPasswordDialog::Accepted)
 		password=passwd;
@@ -111,25 +111,25 @@ void WebInterfacePrefWidget::btnUpdate_clicked()
 
 void WebInterfacePrefWidget::changeLedState()
 {
-       QFileInfo fi(phpExecutablePath->url());
+       TQFileInfo fi(phpExecutablePath->url());
        if(fi.isExecutable() && (fi.isFile() || fi.isSymLink())){
-               QToolTip::add( kled, i18n("%1 exists and it is executable").arg(phpExecutablePath->url()));
+               TQToolTip::add( kled, i18n("%1 exists and it is executable").tqarg(phpExecutablePath->url()));
                kled->setColor(green);
        }
        else if (!fi.exists()){
-               QToolTip::add( kled, i18n("%1 does not exist").arg(phpExecutablePath->url()) );
+               TQToolTip::add( kled, i18n("%1 does not exist").tqarg(phpExecutablePath->url()) );
                kled->setColor(red);
        }
        else if (!fi.isExecutable()){
-               QToolTip::add( kled, i18n("%1 is not executable").arg(phpExecutablePath->url()) );
+               TQToolTip::add( kled, i18n("%1 is not executable").tqarg(phpExecutablePath->url()) );
                kled->setColor(red);
        }
        else if (fi.isDir()){
-               QToolTip::add( kled, i18n("%1 is a directory").arg(phpExecutablePath->url()) );
+               TQToolTip::add( kled, i18n("%1 is a directory").tqarg(phpExecutablePath->url()) );
                kled->setColor(red);
        }
        else{
-               QToolTip::add( kled, i18n("%1 is not php executable path").arg(phpExecutablePath->url()) );
+               TQToolTip::add( kled, i18n("%1 is not php executable path").tqarg(phpExecutablePath->url()) );
                kled->setColor(red);
        }
 }

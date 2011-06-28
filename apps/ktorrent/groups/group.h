@@ -20,8 +20,8 @@
 #ifndef KTGROUP_H
 #define KTGROUP_H
 
-#include <qstring.h>
-#include <qpixmap.h>
+#include <tqstring.h>
+#include <tqpixmap.h>
 
 namespace bt
 {
@@ -43,9 +43,9 @@ namespace kt
 	class Group
 	{
 	protected:
-		QString name;
-		QPixmap icon;
-		QString icon_name;
+		TQString name;
+		TQPixmap icon;
+		TQString icon_name;
 		int flags;
 	public:
 		enum Properties
@@ -60,7 +60,7 @@ namespace kt
 		 * @param name The name of the group
 		 * @param flags Properties of the group
 		 */
-		Group(const QString & name,int flags);
+		Group(const TQString & name,int flags);
 		virtual ~Group();
 		
 		/// See if this is a standard group.
@@ -73,19 +73,19 @@ namespace kt
 		 * Rename the group.
 		 * @param nn The new name
 		 */
-		void rename(const QString & nn);
+		void rename(const TQString & nn);
 		
 		/**
 		 * Set the group icon by name.
 		 * @param in The icon name
 		 */
-		void setIconByName(const QString & in);
+		void setIconByName(const TQString & in);
 		
 		/// Get the name of the group
-		const QString & groupName() const {return name;}
+		const TQString & groupName() const {return name;}
 		
 		/// Get the icon of the group
-		const QPixmap & groupIcon() const {return icon;}
+		const TQPixmap & groupIcon() const {return icon;}
 		
 		/**
 		 * Save the torrents.The torrents should be save in a bencoded file.

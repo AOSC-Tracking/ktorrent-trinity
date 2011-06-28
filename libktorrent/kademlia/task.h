@@ -20,7 +20,7 @@
 #ifndef DHTTASK_H
 #define DHTTASK_H
 
-#include <qvaluelist.h>
+#include <tqvaluelist.h>
 #include "rpccall.h"
 //#include "kbucket.h"
 
@@ -49,6 +49,7 @@ namespace dht
 	class Task : public RPCCallListener
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		/**
 		 * Create a task. 
@@ -134,7 +135,7 @@ namespace dht
 		 * @param ip The ip or hostname of the node
 		 * @param port The port
 		 */
-		void addDHTNode(const QString & ip,bt::Uint16 port);
+		void addDHTNode(const TQString & ip,bt::Uint16 port);
 		
 	signals:
 		/**
@@ -157,8 +158,8 @@ namespace dht
 		void onResolverResults(KResolverResults res);
 				
 	protected:	
-		QValueList<KBucketEntry> visited; // nodes visited
-		QValueList<KBucketEntry> todo; // nodes todo
+		TQValueList<KBucketEntry> visited; // nodes visited
+		TQValueList<KBucketEntry> todo; // nodes todo
 		Node* node;
 		
 	private:

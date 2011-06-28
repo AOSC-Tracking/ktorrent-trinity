@@ -22,7 +22,7 @@
 #ifndef FLOATSPINBOX_H
 #define FLOATSPINBOX_H
 
-#include <qspinbox.h>
+#include <tqspinbox.h>
 
 namespace kt
 {
@@ -31,21 +31,22 @@ namespace kt
 	* @author Jonas Widarsson
 	*
 	* A Spinbox for float values which respects KGlobal::locale().
-	* QSpinBox's internal integer value is only
+	* TQSpinBox's internal integer value is only
 	* used for step detection.
 	*/
 	
-	class FloatSpinBox : public QSpinBox
+	class FloatSpinBox : public TQSpinBox
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		FloatSpinBox( QWidget* parent=0, const char* name=0 );
-		FloatSpinBox( int precision = 2, QWidget* parent=0, const char* name=0 );
+		FloatSpinBox( TQWidget* tqparent=0, const char* name=0 );
+		FloatSpinBox( int precision = 2, TQWidget* tqparent=0, const char* name=0 );
 		FloatSpinBox( float minValue, float maxValue, float step = 0.5,  int precision = 2,
-			QWidget* parent=0, const char* name=0 );
+			TQWidget* tqparent=0, const char* name=0 );
 		virtual ~FloatSpinBox();
 		
-		QString mapValueToText( int value );
+		TQString mapValueToText( int value );
 		
 		int mapTextToValue( bool *ok );
 		

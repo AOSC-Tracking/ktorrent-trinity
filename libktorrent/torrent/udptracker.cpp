@@ -51,16 +51,16 @@ namespace bt
 		transaction_id = 0;
 		interval = 0;
 		
-		connect(&conn_timer,SIGNAL(timeout()),this,SLOT(onConnTimeout()));
-		connect(socket,SIGNAL(announceRecieved(Int32, const QByteArray &)),
-				this,SLOT(announceRecieved(Int32, const QByteArray& )));
-		connect(socket,SIGNAL(connectRecieved(Int32, Int64 )),
-				this,SLOT(connectRecieved(Int32, Int64 )));
-		connect(socket,SIGNAL(error(Int32, const QString& )),
-				this,SLOT(onError(Int32, const QString& )));
+		connect(&conn_timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(onConnTimeout()));
+		connect(socket,TQT_SIGNAL(announceRecieved(Int32, const TQByteArray &)),
+				this,TQT_SLOT(announceRecieved(Int32, const TQByteArray& )));
+		connect(socket,TQT_SIGNAL(connectRecieved(Int32, Int64 )),
+				this,TQT_SLOT(connectRecieved(Int32, Int64 )));
+		connect(socket,TQT_SIGNAL(error(Int32, const TQString& )),
+				this,TQT_SLOT(onError(Int32, const TQString& )));
 		
-		KResolver::resolveAsync(this,SLOT(onResolverResults(KResolverResults )),
-									   url.host(),QString::number(url.port()));
+		KResolver::resolveAsync(this,TQT_SLOT(onResolverResults(KResolverResults )),
+									   url.host(),TQString::number(url.port()));
 	}
 
 
@@ -117,7 +117,7 @@ namespace bt
 		sendAnnounce();
 	}
 	
-	void UDPTracker::announceRecieved(Int32 tid,const QByteArray & data)
+	void UDPTracker::announceRecieved(Int32 tid,const TQByteArray & data)
 	{
 		if (tid != transaction_id)
 			return;
@@ -143,11 +143,11 @@ namespace bt
 		for (Uint32 i = 20;i < data.size() && j < nip;i+=6,j++)
 		{
 			Uint32 ip = ReadUint32(buf,i);
-			addPeer(QString("%1.%2.%3.%4")
-					.arg((ip & (0xFF000000)) >> 24)
-					.arg((ip & (0x00FF0000)) >> 16)
-					.arg((ip & (0x0000FF00)) >> 8)
-					.arg(ip & 0x000000FF),
+			addPeer(TQString("%1.%2.%3.%4")
+					.tqarg((ip & (0xFF000000)) >> 24)
+					.tqarg((ip & (0x00FF0000)) >> 16)
+					.tqarg((ip & (0x0000FF00)) >> 8)
+					.tqarg(ip & 0x000000FF),
 					ReadUint16(buf,i+4));
 		}
 		
@@ -168,7 +168,7 @@ namespace bt
 		}
 	}
 	
-	void UDPTracker::onError(Int32 tid,const QString & error_string)
+	void UDPTracker::onError(Int32 tid,const TQString & error_string)
 	{
 		if (tid != transaction_id)
 			return;
@@ -245,7 +245,7 @@ namespace bt
 			WriteInt64(buf,64,s.bytes_left);
 		WriteInt64(buf,72,s.trk_bytes_uploaded);
 		WriteInt32(buf,80,ev);
-		QString cip = Tracker::getCustomIP();
+		TQString cip = Tracker::getCustomIP();
 		if (cip.isNull())
 		{
 			WriteUint32(buf,84,0);

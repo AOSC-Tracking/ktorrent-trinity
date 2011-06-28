@@ -49,14 +49,14 @@ namespace dht
 		if (rsp->getMethod() == dht::FIND_NODE && rsp->getType() == dht::RSP_MSG)
 		{
 			FindNodeRsp* fnr = (FindNodeRsp*)rsp;
-			const QByteArray & nodes = fnr->getNodes();
+			const TQByteArray & nodes = fnr->getNodes();
 			Uint32 nnodes = nodes.size() / 26;
 			for (Uint32 j = 0;j < nnodes;j++)
 			{
 				// unpack an entry and add it to the todo list
 				KBucketEntry e = UnpackBucketEntry(nodes,j*26);
 				// lets not talk to ourself
-				if (e.getID() != node->getOurID() && !todo.contains(e) && !visited.contains(e))
+				if (e.getID() != node->getOurID() && !todo.tqcontains(e) && !visited.tqcontains(e))
 					todo.append(e);
 			}
 			num_nodes_rsp++;
@@ -78,7 +78,7 @@ namespace dht
 		{
 			KBucketEntry e = todo.first();
 			// only send a findNode if we haven't allrready visited the node
-			if (!visited.contains(e))
+			if (!visited.tqcontains(e))
 			{
 				// send a findNode to the node
 				FindNodeReq* fnr = new FindNodeReq(node->getOurID(),node_id);

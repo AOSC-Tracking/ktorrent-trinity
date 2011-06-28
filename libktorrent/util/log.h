@@ -23,7 +23,7 @@
 
 
 #include "constants.h"
-#include <qstring.h>
+#include <tqstring.h>
 
 // LOG MESSAGES CONSTANTS
 #define LOG_NONE 0x00
@@ -115,18 +115,18 @@ namespace bt
 		* @param file The name of the file
 		* @throw Exception if the file can't be opened
 		*/
-		void setOutputFile(const QString & file);
+		void setOutputFile(const TQString & file);
 		
 		/**
 		* Write a number to the log file.
-		* Anything which can be passed to QString::number will do.
+		* Anything which can be passed to TQString::number will do.
 		* @param val The value
 		* @return This Log
 		*/
 		template <class T>
 		Log & operator << (T val)
 		{
-			return operator << (QString::number(val));
+			return operator << (TQString::number(val));
 		}
 		
 		/**
@@ -141,18 +141,18 @@ namespace bt
 
 		
 		/**
-		 * Output a QString to the log.
-		 * @param s The QString
+		 * Output a TQString to the log.
+		 * @param s The TQString
 		 * @return This Log
 		 */
 		Log & operator << (const char* s);
 
 		/**
-		 * Output a QString to the log.
-		 * @param s The QString
+		 * Output a TQString to the log.
+		 * @param s The TQString
 		 * @return This Log
 		 */
-		Log & operator << (const QString & s);
+		Log & operator << (const TQString & s);
 
 		/**
 		 * Output a 64 bit integer to the log.

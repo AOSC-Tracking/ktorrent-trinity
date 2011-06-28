@@ -52,8 +52,8 @@ namespace bt
 		unnecessary_data = 0;
 	
 		current_chunks.setAutoDelete(true);
-		connect(&pman,SIGNAL(newPeer(Peer* )),this,SLOT(onNewPeer(Peer* )));
-		connect(&pman,SIGNAL(peerKilled(Peer* )),this,SLOT(onPeerKilled(Peer*)));
+		connect(&pman,TQT_SIGNAL(newPeer(Peer* )),this,TQT_SLOT(onNewPeer(Peer* )));
+		connect(&pman,TQT_SIGNAL(peerKilled(Peer* )),this,TQT_SLOT(onPeerKilled(Peer*)));
 	}
 
 
@@ -87,7 +87,7 @@ namespace bt
 		}
 		
 		// if the chunk is not in memory, reload it
-		if (cd->getChunk()->getStatus() == Chunk::ON_DISK)
+		if (cd->getChunk()->gettqStatus() == Chunk::ON_DISK)
 		{
 			cman.prepareChunk(cd->getChunk(),true);
 		}
@@ -119,7 +119,7 @@ namespace bt
 				downloaded += p.getLength();
 			
 			// save to disk again, if it is idle
-			if (cd->isIdle() && cd->getChunk()->getStatus() == Chunk::MMAPPED)
+			if (cd->isIdle() && cd->getChunk()->gettqStatus() == Chunk::MMAPPED)
 			{
 				cman.saveChunk(cd->getChunk()->getIndex(),false);
 			}
@@ -160,7 +160,7 @@ namespace bt
 			if (cd->isIdle()) // idle chunks do not need to be in memory
 			{
 				Chunk* c = cd->getChunk();
-				if (c->getStatus() == Chunk::MMAPPED)
+				if (c->gettqStatus() == Chunk::MMAPPED)
 				{
 					cman.saveChunk(cd->getChunk()->getIndex(),false);
 				}
@@ -169,7 +169,7 @@ namespace bt
 			{
 				cd->releaseAllPDs();
 				Chunk* c = cd->getChunk();
-				if (c->getStatus() == Chunk::MMAPPED)
+				if (c->gettqStatus() == Chunk::MMAPPED)
 				{
 					cman.saveChunk(cd->getChunk()->getIndex(),false);
 				}
@@ -277,7 +277,7 @@ namespace bt
 		if (sel)
 		{
 			// if it is on disk, reload it
-			if (sel->getChunk()->getStatus() == Chunk::ON_DISK)
+			if (sel->getChunk()->gettqStatus() == Chunk::ON_DISK)
 				cman.prepareChunk(sel->getChunk(),true);
 			
 			sel->assignPeer(pd);
@@ -341,7 +341,7 @@ namespace bt
 			if (cdmin) 
 			{
 				// if it is on disk, reload it
-				if (cdmin->getChunk()->getStatus() == Chunk::ON_DISK)
+				if (cdmin->getChunk()->gettqStatus() == Chunk::ON_DISK)
 				{
 					cman.prepareChunk(cdmin->getChunk(),true);
 				}
@@ -354,14 +354,14 @@ namespace bt
 
 	bool Downloader::areWeDownloading(Uint32 chunk) const
 	{
-		return current_chunks.find(chunk) != 0;
+		return current_chunks.tqfind(chunk) != 0;
 	}
 	
 	void Downloader::onNewPeer(Peer* peer)
 	{		
 		PeerDownloader* pd = peer->getPeerDownloader();
-		connect(pd,SIGNAL(downloaded(const Piece& )),
-				this,SLOT(pieceRecieved(const Piece& )));
+		connect(pd,TQT_SIGNAL(downloaded(const Piece& )),
+				this,TQT_SLOT(pieceRecieved(const Piece& )));
 	}
 
 	void Downloader::onPeerKilled(Peer* peer)
@@ -421,7 +421,7 @@ namespace bt
 				Peer* p = pman.findPeer(pid);
 				if (!p)
 					return false;
-				QString IP(p->getIPAddresss());
+				TQString IP(p->getIPAddresss());
 				Out(SYS_GEN|LOG_NOTICE) << "Peer " << IP << " sent bad data" << endl;
 				IPBlocklist & ipfilter = IPBlocklist::instance();
 				ipfilter.insert( IP );
@@ -438,10 +438,10 @@ namespace bt
 		{
 			Uint32 ch = i->first;
 			Chunk* c = i->second->getChunk();
-			if (c->getStatus() == Chunk::MMAPPED)
+			if (c->gettqStatus() == Chunk::MMAPPED)
 				cman.saveChunk(ch,false);
 			
-			c->setStatus(Chunk::NOT_DOWNLOADED);
+			c->settqStatus(Chunk::NOT_DOWNLOADED);
 		}
 		current_chunks.clear();
 	}
@@ -473,7 +473,7 @@ namespace bt
 	
 
 
-	void Downloader::saveDownloads(const QString & file)
+	void Downloader::saveDownloads(const TQString & file)
 	{
 		File fptr;
 		if (!fptr.open(file,"wb"))
@@ -496,7 +496,7 @@ namespace bt
 		}
 	}
 
-	void Downloader::loadDownloads(const QString & file)
+	void Downloader::loadDownloads(const TQString & file)
 	{
 		// don't load stuff if download is finished
 		if (cman.completed())
@@ -531,7 +531,7 @@ namespace bt
 				return;
 			}
 			
-			if (!cman.getChunk(hdr.index) || current_chunks.contains(hdr.index))
+			if (!cman.getChunk(hdr.index) || current_chunks.tqcontains(hdr.index))
 			{
 				Out() << "Illegal chunk " << hdr.index << endl;
 				return;
@@ -569,7 +569,7 @@ namespace bt
 		curr_chunks_downloaded = 0;
 	}
 	
-	Uint32 Downloader::getDownloadedBytesOfCurrentChunksFile(const QString & file)
+	Uint32 Downloader::getDownloadedBytesOfCurrentChunksFile(const TQString & file)
 	{
 		// Load all partial downloads
 		File fptr;
@@ -628,7 +628,7 @@ namespace bt
 	{
 		for (Uint32 i = from;i <= to;i++)
 		{
-			ChunkDownload* cd = current_chunks.find(i);
+			ChunkDownload* cd = current_chunks.tqfind(i);
 			// let only seed chunks finish
 			if (!cd || cman.getChunk(i)->getPriority() == ONLY_SEED_PRIORITY)
 				continue;
@@ -664,7 +664,7 @@ namespace bt
 	{
 		for (Uint32 i = 0;i < ok_chunks.getNumBits();i++)
 		{
-			ChunkDownload* cd = current_chunks.find(i);
+			ChunkDownload* cd = current_chunks.tqfind(i);
 			if (ok_chunks.get(i) && cd)
 			{
 				// we have a chunk and we are downloading it so kill it

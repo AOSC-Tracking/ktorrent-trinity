@@ -20,7 +20,7 @@
 #ifndef DHTDHTTRACKERBACKEND_H
 #define DHTDHTTRACKERBACKEND_H
 
-#include <qtimer.h>
+#include <tqtimer.h>
 #include <interfaces/peersource.h>
 #include "task.h"
 
@@ -47,6 +47,7 @@ namespace dht
 	class DHTTrackerBackend : public kt::PeerSource
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		DHTTrackerBackend(DHTBase & dh_table,kt::TorrentInterface* tor);
 		virtual ~DHTTrackerBackend();
@@ -66,7 +67,7 @@ namespace dht
 		DHTBase & dh_table;
 		AnnounceTask* curr_task;
 		kt::TorrentInterface* tor;
-		QTimer timer;
+		TQTimer timer;
 		bool started;
 	};
 

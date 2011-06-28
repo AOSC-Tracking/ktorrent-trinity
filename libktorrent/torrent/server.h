@@ -20,8 +20,8 @@
 #ifndef BTSERVER_H
 #define BTSERVER_H
 
-#include <qptrlist.h>
-#include <qobject.h>
+#include <tqptrlist.h>
+#include <tqobject.h>
 #include "globals.h"
 
 namespace bt
@@ -42,11 +42,12 @@ namespace bt
 	 * All PeerManager's should register with this class when they
 	 * are created and should unregister when they are destroyed.
 	 */
-	class Server : public QObject
+	class Server : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 
-		QPtrList<PeerManager> peer_managers;
+		TQPtrList<PeerManager> peer_managers;
 		ServerSocket* sock;
 		Uint16 port;
 		bool encryption;

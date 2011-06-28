@@ -22,32 +22,32 @@
 namespace kt 
 {
 
-	QString SOAP::createCommand(const QString & action,const QString & service)
+	TQString SOAP::createCommand(const TQString & action,const TQString & service)
 	{
-		QString comm = QString("<?xml version=\"1.0\"?>\r\n"
+		TQString comm = TQString("<?xml version=\"1.0\"?>\r\n"
 				"<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\"SOAP-ENV:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">"
 				"<SOAP-ENV:Body>"
 				"<m:%1 xmlns:m=\"%2\"/>"
 				"</SOAP-ENV:Body></SOAP-ENV:Envelope>"
-				"\r\n").arg(action).arg(service);
+				"\r\n").tqarg(action).tqarg(service);
 		
 		return comm;
 	}
 	
-	QString SOAP::createCommand(const QString & action,const QString & service,const QValueList<Arg> & args)
+	TQString SOAP::createCommand(const TQString & action,const TQString & service,const TQValueList<Arg> & args)
 	{
-		QString comm = QString("<?xml version=\"1.0\"?>\r\n"
+		TQString comm = TQString("<?xml version=\"1.0\"?>\r\n"
 				"<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" SOAP-ENV:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">"
 				"<SOAP-ENV:Body>"
-				"<m:%1 xmlns:m=\"%2\">").arg(action).arg(service);
+				"<m:%1 xmlns:m=\"%2\">").tqarg(action).tqarg(service);
 		
-		for (QValueList<Arg>::const_iterator i = args.begin();i != args.end();i++)
+		for (TQValueList<Arg>::const_iterator i = args.begin();i != args.end();i++)
 		{
 			const Arg & a = *i;
 			comm += "<" + a.element + ">" + a.value + "</" + a.element + ">";
 		}
 		
-		comm += QString("</m:%1></SOAP-ENV:Body></SOAP-ENV:Envelope>\r\n").arg(action);
+		comm += TQString("</m:%1></SOAP-ENV:Body></SOAP-ENV:Envelope>\r\n").tqarg(action);
 		return comm;
 	}
 }

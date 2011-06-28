@@ -33,7 +33,7 @@
 
 namespace bt
 {
-	bool IsPreMMap(const QString & current_chunks)
+	bool IsPreMMap(const TQString & current_chunks)
 	{
 		File fptr;
 		if (!fptr.open(current_chunks,"rb"))
@@ -110,19 +110,19 @@ namespace bt
 		return true;
 	}
 
-	static void MigrateCC(const Torrent & tor,const QString & current_chunks)
+	static void MigrateCC(const Torrent & tor,const TQString & current_chunks)
 	{
 		Out() << "Migrating current_chunks file " << current_chunks << endl;
 		// open the old current_chunks file
 		File old_cc;
 		if (!old_cc.open(current_chunks,"rb"))
-			throw Error(i18n("Cannot open file %1 : %2").arg(current_chunks).arg(old_cc.errorString()));
+			throw Error(i18n("Cannot open file %1 : %2").tqarg(current_chunks).tqarg(old_cc.errorString()));
 		
 		// open a new file in the /tmp dir
 		File new_cc;
-		QString tmp = current_chunks + ".tmp";
+		TQString tmp = current_chunks + ".tmp";
 		if (!new_cc.open(tmp,"wb"))
-			throw Error(i18n("Cannot open file %1 : %2").arg(tmp).arg(old_cc.errorString()));
+			throw Error(i18n("Cannot open file %1 : %2").tqarg(tmp).tqarg(old_cc.errorString()));
 		
 		// read the number of chunks
 		Uint32 num = 0;
@@ -150,7 +150,7 @@ namespace bt
 		bt::Move(tmp,current_chunks);
 	}
 	
-	void MigrateCurrentChunks(const Torrent & tor,const QString & current_chunks)
+	void MigrateCurrentChunks(const Torrent & tor,const TQString & current_chunks)
 	{
 		try
 		{

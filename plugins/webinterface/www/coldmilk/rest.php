@@ -174,7 +174,7 @@ class RestInterface {
 	// Truncate long torrent name, and HTML escape it.
 	// This is a helper function for download_status.
 	private function _clean_name($name) {
-		$name = str_replace("'", "\'", $name);
+		$name = str_tqreplace("'", "\'", $name);
 		if (strlen($name) > 30) {
 				$name = substr($name, 0, 27);
 				$name .= "...";
@@ -203,7 +203,7 @@ class RestInterface {
 class KTorrentXML extends DomDocument { 
 	private $root_element;
 	public function __construct($root, $value = null, $attributes = null) {
-		parent::__construct('1.0');
+		tqparent::__construct('1.0');
 		$this->root_element = $this->createElement($root);
 		$this->appendChild($this->root_element);
 		$this->formatOutput = true;

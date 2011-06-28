@@ -54,9 +54,9 @@ bool StatsPluginPrefs::apply ()
 	return true;
 }
 
-void StatsPluginPrefs::createWidget (QWidget *parent)
+void StatsPluginPrefs::createWidget (TQWidget *tqparent)
 {
-	pmUi = new StatsPluginPrefsPage(parent);
+	pmUi = new StatsPluginPrefsPage(tqparent);
 }
 
 void StatsPluginPrefs::updateData ()

@@ -30,9 +30,10 @@ namespace kt
 	class StatusTab : public StatusTabBase
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	
 	public:
-		StatusTab(QWidget* parent = 0, const char* name = 0, WFlags fl = 0 );
+		StatusTab(TQWidget* tqparent = 0, const char* name = 0, WFlags fl = 0 );
 		virtual ~StatusTab();
 		
 	

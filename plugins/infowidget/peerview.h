@@ -20,11 +20,11 @@
 #ifndef PEERVIEW_H
 #define PEERVIEW_H
 
-#include <qmap.h>
+#include <tqmap.h>
 #include <klistview.h>
-#include <qlistview.h>
+#include <tqlistview.h>
 #include <kpopupmenu.h>
-#include <qpoint.h>
+#include <tqpoint.h>
 #include <util/constants.h>
 
 namespace kt
@@ -35,7 +35,7 @@ namespace kt
 	class PeerViewItem : public KListViewItem
 	{
 		kt::PeerInterface* peer;
-		QString m_country;
+		TQString m_country;
 		bt::Uint32 ip;
 		// counter to keep track of how many PeerViewItem objects are in existence
 		static bt::Uint32 pvi_count;
@@ -44,7 +44,7 @@ namespace kt
 		virtual ~PeerViewItem();
 	
 		void update();
-		int compare(QListViewItem * i,int col,bool) const;
+		int compare(TQListViewItem * i,int col,bool) const;
 		kt::PeerInterface* getPeer() { return peer; }
 		
 	};
@@ -55,10 +55,11 @@ namespace kt
 	class PeerView : public KListView
 	{
 		Q_OBJECT
+  TQ_OBJECT
 		
-		QMap<kt::PeerInterface*,PeerViewItem*> items;
+		TQMap<kt::PeerInterface*,PeerViewItem*> items;
 	public:
-		PeerView(QWidget *parent = 0, const char *name = 0);
+		PeerView(TQWidget *tqparent = 0, const char *name = 0);
 		virtual ~PeerView();
 		
 	public slots:
@@ -68,7 +69,7 @@ namespace kt
 		void kickPeer(kt::PeerInterface* peer);
 		void update();
 		void removeAll();
-		void showContextMenu(KListView* ,QListViewItem* item,const QPoint & p);
+		void showContextMenu(KListView* ,TQListViewItem* item,const TQPoint & p);
 		void contextItem(int id);
 	private:
 		KPopupMenu* menu;

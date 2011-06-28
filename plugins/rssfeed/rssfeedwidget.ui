@@ -2,7 +2,7 @@
 <class>RssFeedWidget</class>
 <comment>The display widget for the rssfeed tab</comment>
 <author>Alan Jones</author>
-<widget class="QWidget">
+<widget class="TQWidget">
     <property name="name">
         <cstring>RssFeedWidget</cstring>
     </property>
@@ -21,14 +21,14 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QTabWidget" row="0" column="0">
+        <widget class="TQTabWidget" row="0" column="0">
             <property name="name">
                 <cstring>tabs</cstring>
             </property>
             <property name="margin">
                 <number>2</number>
             </property>
-            <widget class="QWidget">
+            <widget class="TQWidget">
                 <property name="name">
                     <cstring>feeds</cstring>
                 </property>
@@ -39,22 +39,22 @@
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QSplitter">
+                    <widget class="TQSplitter">
                         <property name="name">
                             <cstring>splitter16</cstring>
                         </property>
                         <property name="orientation">
                             <enum>Horizontal</enum>
                         </property>
-                        <widget class="QLayoutWidget">
+                        <widget class="TQLayoutWidget">
                             <property name="name">
-                                <cstring>layout2</cstring>
+                                <cstring>tqlayout2</cstring>
                             </property>
                             <grid>
                                 <property name="name">
                                     <cstring>unnamed</cstring>
                                 </property>
-                                <widget class="QListBox" row="0" column="0" rowspan="1" colspan="2">
+                                <widget class="TQListBox" row="0" column="0" rowspan="1" colspan="2">
                                     <property name="name">
                                         <cstring>feedlist</cstring>
                                     </property>
@@ -67,7 +67,7 @@
                                         </sizepolicy>
                                     </property>
                                 </widget>
-                                <widget class="QPushButton" row="1" column="1">
+                                <widget class="TQPushButton" row="1" column="1">
                                     <property name="name">
                                         <cstring>deleteFeed</cstring>
                                     </property>
@@ -78,7 +78,7 @@
                                         <string>De&amp;lete</string>
                                     </property>
                                 </widget>
-                                <widget class="QPushButton" row="1" column="0">
+                                <widget class="TQPushButton" row="1" column="0">
                                     <property name="name">
                                         <cstring>newFeed</cstring>
                                     </property>
@@ -88,7 +88,7 @@
                                 </widget>
                             </grid>
                         </widget>
-                        <widget class="QLayoutWidget">
+                        <widget class="TQLayoutWidget">
                             <property name="name">
                                 <cstring>feedLayout</cstring>
                             </property>
@@ -101,7 +101,7 @@
                                         <cstring>feedUrl</cstring>
                                     </property>
                                 </widget>
-                                <widget class="QLabel" row="1" column="0">
+                                <widget class="TQLabel" row="1" column="0">
                                     <property name="name">
                                         <cstring>feedUrlLabel</cstring>
                                     </property>
@@ -120,7 +120,7 @@
                                         <cstring>feedUrl</cstring>
                                     </property>
                                 </widget>
-                                <widget class="QGroupBox" row="3" column="0" rowspan="1" colspan="2">
+                                <widget class="TQGroupBox" row="3" column="0" rowspan="1" colspan="2">
                                     <property name="name">
                                         <cstring>feedBox</cstring>
                                     </property>
@@ -152,14 +152,14 @@
                                             <property name="sizeType">
                                                 <enum>Expanding</enum>
                                             </property>
-                                            <property name="sizeHint">
+                                            <property name="tqsizeHint">
                                                 <size>
                                                     <width>90</width>
                                                     <height>21</height>
                                                 </size>
                                             </property>
                                         </spacer>
-                                        <widget class="QPushButton" row="1" column="2">
+                                        <widget class="TQPushButton" row="1" column="2">
                                             <property name="name">
                                                 <cstring>downloadArticle</cstring>
                                             </property>
@@ -173,7 +173,7 @@
                                                 <string></string>
                                             </property>
                                         </widget>
-                                        <widget class="QTable" row="0" column="0" rowspan="1" colspan="3">
+                                        <widget class="TQTable" row="0" column="0" rowspan="1" colspan="3">
                                             <property name="name">
                                                 <cstring>feedArticles</cstring>
                                             </property>
@@ -192,15 +192,15 @@
                                         </widget>
                                     </grid>
                                 </widget>
-                                <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
+                                <widget class="TQLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
                                     <property name="name">
-                                        <cstring>layout13</cstring>
+                                        <cstring>tqlayout13</cstring>
                                     </property>
                                     <hbox>
                                         <property name="name">
                                             <cstring>unnamed</cstring>
                                         </property>
-                                        <widget class="QLabel">
+                                        <widget class="TQLabel">
                                             <property name="name">
                                                 <cstring>feedRefreshTimeLabel</cstring>
                                             </property>
@@ -219,7 +219,7 @@
                                                 <cstring>feedAutoRefresh</cstring>
                                             </property>
                                         </widget>
-                                        <widget class="QTimeEdit">
+                                        <widget class="TQTimeEdit">
                                             <property name="name">
                                                 <cstring>feedAutoRefresh</cstring>
                                             </property>
@@ -234,7 +234,7 @@
                                                 </time>
                                             </property>
                                         </widget>
-                                        <widget class="QCheckBox">
+                                        <widget class="TQCheckBox">
                                             <property name="name">
                                                 <cstring>feedIgnoreTTL</cstring>
                                             </property>
@@ -252,14 +252,14 @@
                                             <property name="sizeType">
                                                 <enum>Expanding</enum>
                                             </property>
-                                            <property name="sizeHint">
+                                            <property name="tqsizeHint">
                                                 <size>
                                                     <width>60</width>
                                                     <height>21</height>
                                                 </size>
                                             </property>
                                         </spacer>
-                                        <widget class="QPushButton">
+                                        <widget class="TQPushButton">
                                             <property name="name">
                                                 <cstring>refreshFeed</cstring>
                                             </property>
@@ -275,15 +275,15 @@
                                         </widget>
                                     </hbox>
                                 </widget>
-                                <widget class="QLayoutWidget" row="0" column="0" rowspan="1" colspan="2">
+                                <widget class="TQLayoutWidget" row="0" column="0" rowspan="1" colspan="2">
                                     <property name="name">
-                                        <cstring>layout47</cstring>
+                                        <cstring>tqlayout47</cstring>
                                     </property>
                                     <hbox>
                                         <property name="name">
                                             <cstring>unnamed</cstring>
                                         </property>
-                                        <widget class="QLabel">
+                                        <widget class="TQLabel">
                                             <property name="name">
                                                 <cstring>feedTitleLabel</cstring>
                                             </property>
@@ -302,12 +302,12 @@
                                                 <cstring>feedTitle</cstring>
                                             </property>
                                         </widget>
-                                        <widget class="QLineEdit">
+                                        <widget class="TQLineEdit">
                                             <property name="name">
                                                 <cstring>feedTitle</cstring>
                                             </property>
                                         </widget>
-                                        <widget class="QLabel">
+                                        <widget class="TQLabel">
                                             <property name="name">
                                                 <cstring>feedArticleAgeLabel</cstring>
                                             </property>
@@ -323,7 +323,7 @@
                                                 <string>Keep Articles (days)</string>
                                             </property>
                                         </widget>
-                                        <widget class="QSpinBox">
+                                        <widget class="TQSpinBox">
                                             <property name="name">
                                                 <cstring>feedArticleAge</cstring>
                                             </property>
@@ -331,7 +331,7 @@
                                                 <number>3650</number>
                                             </property>
                                         </widget>
-                                        <widget class="QCheckBox">
+                                        <widget class="TQCheckBox">
                                             <property name="name">
                                                 <cstring>feedActive</cstring>
                                             </property>
@@ -354,7 +354,7 @@
                     </widget>
                 </vbox>
             </widget>
-            <widget class="QWidget">
+            <widget class="TQWidget">
                 <property name="name">
                     <cstring>filters</cstring>
                 </property>
@@ -365,15 +365,15 @@
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QLayoutWidget">
+                    <widget class="TQLayoutWidget">
                         <property name="name">
-                            <cstring>layout28</cstring>
+                            <cstring>tqlayout28</cstring>
                         </property>
                         <vbox>
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="QGroupBox">
+                            <widget class="TQGroupBox">
                                 <property name="name">
                                     <cstring>groupBox12</cstring>
                                 </property>
@@ -392,12 +392,12 @@
                                     <property name="name">
                                         <cstring>unnamed</cstring>
                                     </property>
-                                    <widget class="QListBox" row="0" column="0" rowspan="1" colspan="2">
+                                    <widget class="TQListBox" row="0" column="0" rowspan="1" colspan="2">
                                         <property name="name">
                                             <cstring>acceptFilterList</cstring>
                                         </property>
                                     </widget>
-                                    <widget class="QPushButton" row="1" column="1">
+                                    <widget class="TQPushButton" row="1" column="1">
                                         <property name="name">
                                             <cstring>deleteAcceptFilter</cstring>
                                         </property>
@@ -411,7 +411,7 @@
                                             <string></string>
                                         </property>
                                     </widget>
-                                    <widget class="QPushButton" row="1" column="0">
+                                    <widget class="TQPushButton" row="1" column="0">
                                         <property name="name">
                                             <cstring>newAcceptFilter</cstring>
                                         </property>
@@ -421,7 +421,7 @@
                                     </widget>
                                 </grid>
                             </widget>
-                            <widget class="QGroupBox">
+                            <widget class="TQGroupBox">
                                 <property name="name">
                                     <cstring>groupBox13</cstring>
                                 </property>
@@ -443,12 +443,12 @@
                                     <property name="name">
                                         <cstring>unnamed</cstring>
                                     </property>
-                                    <widget class="QListBox" row="0" column="0" rowspan="1" colspan="2">
+                                    <widget class="TQListBox" row="0" column="0" rowspan="1" colspan="2">
                                         <property name="name">
                                             <cstring>rejectFilterList</cstring>
                                         </property>
                                     </widget>
-                                    <widget class="QPushButton" row="1" column="1">
+                                    <widget class="TQPushButton" row="1" column="1">
                                         <property name="name">
                                             <cstring>deleteRejectFilter</cstring>
                                         </property>
@@ -462,7 +462,7 @@
                                             <string></string>
                                         </property>
                                     </widget>
-                                    <widget class="QPushButton" row="1" column="0">
+                                    <widget class="TQPushButton" row="1" column="0">
                                         <property name="name">
                                             <cstring>newRejectFilter</cstring>
                                         </property>
@@ -474,23 +474,23 @@
                             </widget>
                         </vbox>
                     </widget>
-                    <widget class="QLayoutWidget">
+                    <widget class="TQLayoutWidget">
                         <property name="name">
-                            <cstring>layout14</cstring>
+                            <cstring>tqlayout14</cstring>
                         </property>
                         <vbox>
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="QLayoutWidget">
+                            <widget class="TQLayoutWidget">
                                 <property name="name">
-                                    <cstring>layout9</cstring>
+                                    <cstring>tqlayout9</cstring>
                                 </property>
                                 <hbox>
                                     <property name="name">
                                         <cstring>unnamed</cstring>
                                     </property>
-                                    <widget class="QLabel">
+                                    <widget class="TQLabel">
                                         <property name="name">
                                             <cstring>filterTitleLabel</cstring>
                                         </property>
@@ -509,12 +509,12 @@
                                             <cstring>filterTitle</cstring>
                                         </property>
                                     </widget>
-                                    <widget class="QLineEdit">
+                                    <widget class="TQLineEdit">
                                         <property name="name">
                                             <cstring>filterTitle</cstring>
                                         </property>
                                     </widget>
-                                    <widget class="QCheckBox">
+                                    <widget class="TQCheckBox">
                                         <property name="name">
                                             <cstring>filterActive</cstring>
                                         </property>
@@ -524,9 +524,9 @@
                                     </widget>
                                 </hbox>
                             </widget>
-                            <widget class="QLayoutWidget">
+                            <widget class="TQLayoutWidget">
                                 <property name="name">
-                                    <cstring>layout12</cstring>
+                                    <cstring>tqlayout12</cstring>
                                 </property>
                                 <hbox>
                                     <property name="name">
@@ -563,23 +563,23 @@
                                             <set>Remove|Add</set>
                                         </property>
                                     </widget>
-                                    <widget class="QLayoutWidget">
+                                    <widget class="TQLayoutWidget">
                                         <property name="name">
-                                            <cstring>layout11</cstring>
+                                            <cstring>tqlayout11</cstring>
                                         </property>
                                         <vbox>
                                             <property name="name">
                                                 <cstring>unnamed</cstring>
                                             </property>
-                                            <widget class="QLayoutWidget">
+                                            <widget class="TQLayoutWidget">
                                                 <property name="name">
-                                                    <cstring>layout28</cstring>
+                                                    <cstring>tqlayout28</cstring>
                                                 </property>
                                                 <hbox>
                                                     <property name="name">
                                                         <cstring>unnamed</cstring>
                                                     </property>
-                                                    <widget class="QCheckBox">
+                                                    <widget class="TQCheckBox">
                                                         <property name="name">
                                                             <cstring>filterSeries</cstring>
                                                         </property>
@@ -600,21 +600,21 @@
                                                         <property name="sizeType">
                                                             <enum>Preferred</enum>
                                                         </property>
-                                                        <property name="sizeHint">
+                                                        <property name="tqsizeHint">
                                                             <size>
                                                                 <width>50</width>
                                                                 <height>21</height>
                                                             </size>
                                                         </property>
                                                     </spacer>
-                                                    <widget class="QPushButton">
+                                                    <widget class="TQPushButton">
                                                         <property name="name">
                                                             <cstring>processFilter</cstring>
                                                         </property>
                                                         <property name="enabled">
                                                             <bool>true</bool>
                                                         </property>
-                                                        <property name="maximumSize">
+                                                        <property name="tqmaximumSize">
                                                             <size>
                                                                 <width>60</width>
                                                                 <height>32767</height>
@@ -629,11 +629,11 @@
                                                     </widget>
                                                 </hbox>
                                             </widget>
-                                            <widget class="QGroupBox">
+                                            <widget class="TQGroupBox">
                                                 <property name="name">
                                                     <cstring>seriesBox</cstring>
                                                 </property>
-                                                <property name="maximumSize">
+                                                <property name="tqmaximumSize">
                                                     <size>
                                                         <width>32000</width>
                                                         <height>32000</height>
@@ -646,9 +646,9 @@
                                                     <property name="name">
                                                         <cstring>unnamed</cstring>
                                                     </property>
-                                                    <widget class="QLayoutWidget">
+                                                    <widget class="TQLayoutWidget">
                                                         <property name="name">
-                                                            <cstring>layout9</cstring>
+                                                            <cstring>tqlayout9</cstring>
                                                         </property>
                                                         <hbox>
                                                             <property name="name">
@@ -664,14 +664,14 @@
                                                                 <property name="sizeType">
                                                                     <enum>Expanding</enum>
                                                                 </property>
-                                                                <property name="sizeHint">
+                                                                <property name="tqsizeHint">
                                                                     <size>
                                                                         <width>20</width>
                                                                         <height>21</height>
                                                                     </size>
                                                                 </property>
                                                             </spacer>
-                                                            <widget class="QCheckBox">
+                                                            <widget class="TQCheckBox">
                                                                 <property name="name">
                                                                     <cstring>filterSansEpisode</cstring>
                                                                 </property>
@@ -684,20 +684,20 @@
                                                             </widget>
                                                         </hbox>
                                                     </widget>
-                                                    <widget class="QLayoutWidget">
+                                                    <widget class="TQLayoutWidget">
                                                         <property name="name">
-                                                            <cstring>layout10</cstring>
+                                                            <cstring>tqlayout10</cstring>
                                                         </property>
                                                         <grid>
                                                             <property name="name">
                                                                 <cstring>unnamed</cstring>
                                                             </property>
-                                                            <widget class="QSpinBox" row="0" column="1">
+                                                            <widget class="TQSpinBox" row="0" column="1">
                                                                 <property name="name">
                                                                     <cstring>filterMinSeason</cstring>
                                                                 </property>
                                                             </widget>
-                                                            <widget class="QLabel" row="1" column="2">
+                                                            <widget class="TQLabel" row="1" column="2">
                                                                 <property name="name">
                                                                     <cstring>filterMaxEpisodeLabel</cstring>
                                                                 </property>
@@ -713,17 +713,17 @@
                                                                     <string>Max Episode</string>
                                                                 </property>
                                                             </widget>
-                                                            <widget class="QSpinBox" row="0" column="3">
+                                                            <widget class="TQSpinBox" row="0" column="3">
                                                                 <property name="name">
                                                                     <cstring>filterMinEpisode</cstring>
                                                                 </property>
                                                             </widget>
-                                                            <widget class="QSpinBox" row="1" column="1">
+                                                            <widget class="TQSpinBox" row="1" column="1">
                                                                 <property name="name">
                                                                     <cstring>filterMaxSeason</cstring>
                                                                 </property>
                                                             </widget>
-                                                            <widget class="QLabel" row="1" column="0">
+                                                            <widget class="TQLabel" row="1" column="0">
                                                                 <property name="name">
                                                                     <cstring>filterMaxSeasonLabel</cstring>
                                                                 </property>
@@ -742,7 +742,7 @@
                                                                     <cstring>filterMinSeason</cstring>
                                                                 </property>
                                                             </widget>
-                                                            <widget class="QLabel" row="0" column="0">
+                                                            <widget class="TQLabel" row="0" column="0">
                                                                 <property name="name">
                                                                     <cstring>filterMinSeasonLabel</cstring>
                                                                 </property>
@@ -761,12 +761,12 @@
                                                                     <cstring>filterMinSeason</cstring>
                                                                 </property>
                                                             </widget>
-                                                            <widget class="QSpinBox" row="1" column="3">
+                                                            <widget class="TQSpinBox" row="1" column="3">
                                                                 <property name="name">
                                                                     <cstring>filterMaxEpisode</cstring>
                                                                 </property>
                                                             </widget>
-                                                            <widget class="QLabel" row="0" column="2">
+                                                            <widget class="TQLabel" row="0" column="2">
                                                                 <property name="name">
                                                                     <cstring>filterMinEpisodeLabel</cstring>
                                                                 </property>
@@ -790,15 +790,15 @@
                                     </widget>
                                 </hbox>
                             </widget>
-                            <widget class="QLayoutWidget">
+                            <widget class="TQLayoutWidget">
                                 <property name="name">
-                                    <cstring>layout33</cstring>
+                                    <cstring>tqlayout33</cstring>
                                 </property>
                                 <hbox>
                                     <property name="name">
                                         <cstring>unnamed</cstring>
                                     </property>
-                                    <widget class="QLabel">
+                                    <widget class="TQLabel">
                                         <property name="name">
                                             <cstring>testTextLabel</cstring>
                                         </property>
@@ -817,7 +817,7 @@
                                             <cstring>testText</cstring>
                                         </property>
                                     </widget>
-                                    <widget class="QLineEdit">
+                                    <widget class="TQLineEdit">
                                         <property name="name">
                                             <cstring>testText</cstring>
                                         </property>
@@ -829,7 +829,7 @@
                                             </color>
                                         </property>
                                     </widget>
-                                    <widget class="QPushButton">
+                                    <widget class="TQPushButton">
                                         <property name="name">
                                             <cstring>testTestText</cstring>
                                         </property>
@@ -842,7 +842,7 @@
                                     </widget>
                                 </hbox>
                             </widget>
-                            <widget class="QGroupBox">
+                            <widget class="TQGroupBox">
                                 <property name="name">
                                     <cstring>filterMatchesBox</cstring>
                                 </property>
@@ -861,7 +861,7 @@
                                     <property name="name">
                                         <cstring>unnamed</cstring>
                                     </property>
-                                    <widget class="QTable">
+                                    <widget class="TQTable">
                                         <property name="name">
                                             <cstring>filterMatches</cstring>
                                         </property>
@@ -878,15 +878,15 @@
                                             <enum>MultiRow</enum>
                                         </property>
                                     </widget>
-                                    <widget class="QLayoutWidget">
+                                    <widget class="TQLayoutWidget">
                                         <property name="name">
-                                            <cstring>layout13</cstring>
+                                            <cstring>tqlayout13</cstring>
                                         </property>
                                         <hbox>
                                             <property name="name">
                                                 <cstring>unnamed</cstring>
                                             </property>
-                                            <widget class="QPushButton">
+                                            <widget class="TQPushButton">
                                                 <property name="name">
                                                     <cstring>downloadFilterMatch</cstring>
                                                 </property>
@@ -910,14 +910,14 @@
                                                 <property name="sizeType">
                                                     <enum>Expanding</enum>
                                                 </property>
-                                                <property name="sizeHint">
+                                                <property name="tqsizeHint">
                                                     <size>
                                                         <width>170</width>
                                                         <height>21</height>
                                                     </size>
                                                 </property>
                                             </spacer>
-                                            <widget class="QPushButton">
+                                            <widget class="TQPushButton">
                                                 <property name="name">
                                                     <cstring>deleteFilterMatch</cstring>
                                                 </property>
@@ -958,7 +958,7 @@
         <slot>setEnabled(bool)</slot>
     </connection>
 </connections>
-<layoutdefaults spacing="2" margin="2"/>
+<tqlayoutdefaults spacing="2" margin="2"/>
 <includehints>
     <includehint>kurlrequester.h</includehint>
     <includehint>klineedit.h</includehint>

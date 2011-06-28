@@ -20,9 +20,9 @@
 #ifndef PREFPAGEINTERFACE_H
 #define PREFPAGEINTERFACE_H
 
-#include <qpixmap.h>
+#include <tqpixmap.h>
 
-class QWidget;
+class TQWidget;
 
 namespace kt
 {
@@ -41,12 +41,12 @@ namespace kt
 		 * @param header 
 		 * @param pix 
 		 */
-		PrefPageInterface(const QString & name,const QString & header,const QPixmap & pix);
+		PrefPageInterface(const TQString & name,const TQString & header,const TQPixmap & pix);
 		virtual ~PrefPageInterface();
 
-		const QString& getItemName() { return itemName; }
-		const QString& getHeader() { return header; }
-		const QPixmap& getPixmap() { return pixmap; }
+		const TQString& getItemName() { return itemName; }
+		const TQString& getHeader() { return header; }
+		const TQPixmap& getPixmap() { return pixmap; }
 
 		/**
 		 * Apply the changes that have been made in the
@@ -58,9 +58,9 @@ namespace kt
 		
 		/**
 		 * Create the actual widget.
-		 * @param parent The parent of the widget
+		 * @param tqparent The tqparent of the widget
 		 */
-		virtual void createWidget(QWidget* parent)=0;
+		virtual void createWidget(TQWidget* tqparent)=0;
 
 		/**
 		 * Update all data on the widget, gets called before
@@ -73,11 +73,11 @@ namespace kt
 		
 	private:
 		///Used in IconList mode. You should prefer a pixmap with size 32x32 pixels
-		QPixmap pixmap;
+		TQPixmap pixmap;
 		///String used in the list or as tab item name.
-		QString itemName;
+		TQString itemName;
 		///Header text use in the list modes. Ignored in Tabbed mode. If empty, the item text is used instead.
-		QString header;
+		TQString header;
 	};
 }
 #endif

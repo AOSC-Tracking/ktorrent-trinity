@@ -20,11 +20,11 @@
 #ifndef TRAYHOVERPOPUP_H
 #define TRAYHOVERPOPUP_H
 
-#include <qtimer.h>
+#include <tqtimer.h>
 #include <kpassivepopup.h>
 		
-class QLabel;
-class QPixmap;
+class TQLabel;
+class TQPixmap;
 
 /**
 	@author Joris Guisson <joris.guisson@gmail.com>
@@ -34,8 +34,9 @@ class QPixmap;
 class TrayHoverPopup : public KPassivePopup
 {
 	Q_OBJECT
+  TQ_OBJECT
 public:
-	TrayHoverPopup(const QPixmap & pix,QWidget *parent = 0, const char *name = 0 );
+	TrayHoverPopup(const TQPixmap & pix,TQWidget *tqparent = 0, const char *name = 0 );
 	virtual ~TrayHoverPopup();
 	
 	/// Cursor entered system tray icon
@@ -45,7 +46,7 @@ public:
 	void leaveEvent();
 	
 	/// Update the text which is shown
-	void updateText(const QString & msg);
+	void updateText(const TQString & msg);
 	
 public slots:
 	void contextMenuAboutToShow();
@@ -60,10 +61,10 @@ private slots:
 	
 	
 private:
-	const QPixmap & pix;
-	QTimer hover_timer;
-	QTimer show_timer;
-	QLabel* text;
+	const TQPixmap & pix;
+	TQTimer hover_timer;
+	TQTimer show_timer;
+	TQLabel* text;
 	bool context_menu_shown;
 	bool cursor_over_icon;
 };

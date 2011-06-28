@@ -25,8 +25,8 @@ K_EXPORT_COMPONENT_FACTORY(ktstatsplugin, KGenericFactory<kt::StatsPlugin>("ktst
 namespace kt
 {
 
-StatsPlugin::StatsPlugin(QObject* parent, const char* qt_name, const QStringList& args):
-		Plugin(parent, qt_name, args, "Statistics", i18n("Statistics"),"Krzysztof Kundzicz", "athantor@gmail.com", i18n("Shows transfers statistics"),"ktimemon"), pmUiSpd(0), pmUiCon(0), pmPrefsUi(0), pmUpdTmr(0)
+StatsPlugin::StatsPlugin(TQObject* tqparent, const char* qt_name, const TQStringList& args):
+		Plugin(tqparent, qt_name, args, "Statistics", i18n("Statistics"),"Krzysztof Kundzicz", "athantor@gmail.com", i18n("Shows transfers statistics"),"ktimemon"), pmUiSpd(0), pmUiCon(0), pmPrefsUi(0), pmUpdTmr(0)
 { 
 	mUpAvg = std::make_pair(0.0, 0.0);
 	mDownAvg = std::make_pair(0.0, 0.0);
@@ -46,18 +46,18 @@ void StatsPlugin::load()
 	mUpdCtr = 1;
 	mPeerSpdUpdCtr = 1;
 	
-	pmUiSpd = new StatsSpd(dynamic_cast<QWidget *>(parent()));
-	pmUiCon = new StatsCon(dynamic_cast<QWidget *>(parent()));
+	pmUiSpd = new StatsSpd(dynamic_cast<TQWidget *>(tqparent()));
+	pmUiCon = new StatsCon(dynamic_cast<TQWidget *>(tqparent()));
 	pmPrefsUi = new StatsPluginPrefs();
-	pmUpdTmr = new QTimer(this);
+	pmUpdTmr = new TQTimer(this);
 	
-	connect(pmUpdTmr, SIGNAL(timeout () ), this, SLOT(UpdateData()));
-	connect(pmPrefsUi, SIGNAL(Applied()), this, SLOT(RestartTimer()));
-	connect(pmPrefsUi, SIGNAL(Applied()), this, SLOT(TogglePeersSpdCht()));
-	connect(pmPrefsUi, SIGNAL(Applied()), this, SLOT(ToggleLchInSwmDrawing()));
-	connect(pmPrefsUi, SIGNAL(Applied()), this, SLOT(ToggleSdrInSwmDrawing()));
-	connect(pmPrefsUi, SIGNAL(Applied()), this, SLOT(ChangeMsmtsCounts()));
-	connect(pmPrefsUi, SIGNAL(Applied()), this, SLOT(ChangeMaxMode()));
+	connect(pmUpdTmr, TQT_SIGNAL(timeout () ), this, TQT_SLOT(UpdateData()));
+	connect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(RestartTimer()));
+	connect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(TogglePeersSpdCht()));
+	connect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(ToggleLchInSwmDrawing()));
+	connect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(ToggleSdrInSwmDrawing()));
+	connect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(ChangeMsmtsCounts()));
+	connect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(ChangeMaxMode()));
 	
 	TogglePeersSpdCht();
 	ChangeMaxMode();
@@ -76,13 +76,13 @@ void StatsPlugin::unload()
 	getGUI() -> removeToolWidget(pmUiCon);
 	getGUI() -> removePrefPage(pmPrefsUi);
 	
-	disconnect(pmUpdTmr, SIGNAL(timeout()), this, SLOT(UpdateData()));
-	disconnect(pmPrefsUi, SIGNAL(Applied()), this, SLOT(RestartTimer()));
-	disconnect(pmPrefsUi, SIGNAL(Applied()), this, SLOT(TogglePeersSpdCht()));
-	disconnect(pmPrefsUi, SIGNAL(Applied()), this, SLOT(ToggleLchInSwmDrawing()));
-	disconnect(pmPrefsUi, SIGNAL(Applied()), this, SLOT(ToggleSdrInSwmDrawing()));
-	disconnect(pmPrefsUi, SIGNAL(Applied()), this, SLOT(ChangeMsmtsCounts()));
-	disconnect(pmPrefsUi, SIGNAL(Applied()), this, SLOT(ChangeMaxMode()));
+	disconnect(pmUpdTmr, TQT_SIGNAL(timeout()), this, TQT_SLOT(UpdateData()));
+	disconnect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(RestartTimer()));
+	disconnect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(TogglePeersSpdCht()));
+	disconnect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(ToggleLchInSwmDrawing()));
+	disconnect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(ToggleSdrInSwmDrawing()));
+	disconnect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(ChangeMsmtsCounts()));
+	disconnect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(ChangeMaxMode()));
 	
 	delete pmUiSpd;
 	delete pmUiCon;
@@ -90,7 +90,7 @@ void StatsPlugin::unload()
 	delete pmUpdTmr;
 }
 
-bool StatsPlugin::versionCheck(const QString& rVer) const
+bool StatsPlugin::versionCheck(const TQString& rVer) const
 {
 	return rVer == KT_VERSION_MACRO;
 }

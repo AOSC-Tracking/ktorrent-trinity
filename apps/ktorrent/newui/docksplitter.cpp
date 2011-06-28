@@ -23,16 +23,16 @@
 
 namespace Ideal {
 
-DockSplitter::DockSplitter(Orientation orientation, QWidget *parent, const char *name)
-    :QSplitter(parent, name), m_orientation(orientation)
+DockSplitter::DockSplitter(Qt::Orientation orientation, TQWidget *tqparent, const char *name)
+    :TQSplitter(tqparent, name), m_orientation(orientation)
 {
     switch (m_orientation)
     {
-        case Horizontal:
-            setOrientation(Vertical);
+        case Qt::Horizontal:
+            setOrientation(Qt::Vertical);
             break;
-        case Vertical:
-            setOrientation(Horizontal);
+        case Qt::Vertical:
+            setOrientation(Qt::Horizontal);
             break;
     }
     setOpaqueResize(true);
@@ -43,11 +43,11 @@ DockSplitter::~DockSplitter()
 {
 }
 
-void DockSplitter::addDock(uint row, uint col, QWidget *dock)
+void DockSplitter::addDock(uint row, uint col, TQWidget *dock)
 {
     if (m_docks.count() <= row)
         for (uint i = m_docks.count(); i <= row ; ++i)
-            m_docks.append(QValueList<QWidget*>());
+            m_docks.append(TQValueList<TQWidget*>());
     
     if (m_docks[row].count() <= col)
     {
@@ -62,9 +62,9 @@ void DockSplitter::addDock(uint row, uint col, QWidget *dock)
     
     if (m_splitters.count() <= row)
         createSplitters(row);
-    QSplitter *splitter = m_splitters[row];
+    TQSplitter *splitter = m_splitters[row];
     
-    dock->reparent(splitter, QPoint(0,0), true);
+    dock->reparent(splitter, TQPoint(0,0), true);
     if (col < m_docks[row].count()-1)
         shiftWidgets(splitter, row, col+1);
 }
@@ -73,11 +73,11 @@ void DockSplitter::appendSplitter()
 {
     switch (m_orientation)
     {
-        case Horizontal:
-            m_splitters.append(new QSplitter(Horizontal, this));
+        case Qt::Horizontal:
+            m_splitters.append(new TQSplitter(Qt::Horizontal, this));
             break;
-        case Vertical:
-            m_splitters.append(new QSplitter(Vertical, this));
+        case Qt::Vertical:
+            m_splitters.append(new TQSplitter(Qt::Vertical, this));
             break;
     }
     m_splitters[m_splitters.size()-1]->setOpaqueResize(true);
@@ -99,7 +99,7 @@ void DockSplitter::removeDock(uint row, uint col, bool alsoDelete)
     if ((row >= m_docks.count()) || (col >= m_docks[row].count()))
         return;
     
-    QWidget *w = m_docks[row][col];
+    TQWidget *w = m_docks[row][col];
     m_docks[row].remove(m_docks[row].at(col));
     
     if (alsoDelete)
@@ -109,11 +109,11 @@ void DockSplitter::removeDock(uint row, uint col, bool alsoDelete)
     }
     else
     {
-        w->reparent(0, QPoint(0,0), false);
+        w->reparent(0, TQPoint(0,0), false);
         w->hide();
     }
 
-    m_splitters[row]->setMinimumSize(m_splitters[row]->minimumSizeHint());
+    m_splitters[row]->setMinimumSize(m_splitters[row]->tqminimumSizeHint());
 
     if (isRowEmpty(row))
     {
@@ -134,7 +134,7 @@ bool DockSplitter::isRowEmpty(int row)
     return true;
 }
 
-void DockSplitter::shiftWidgets(QSplitter *splitter, uint row, uint fromCol)
+void DockSplitter::shiftWidgets(TQSplitter *splitter, uint row, uint fromCol)
 {
     kdDebug(9000) << "shiftWidgets: row=" << row << "  from col=" << fromCol << endl;
     kdDebug(9000) << "row size is: " << m_docks[row].count() << endl;
@@ -161,13 +161,13 @@ int DockSplitter::numCols(int row) const
     return 0;
 }
 
-QPair<uint, uint> DockSplitter::indexOf(QWidget *dock)
+TQPair<uint, uint> DockSplitter::indexOf(TQWidget *dock)
 {
     for (uint i = 0; i < m_docks.count(); ++i)
         for (uint j = 0; j < m_docks[i].count(); ++j)
             if (dock == m_docks[i][j])
-                return qMakePair(i, j);
-    return qMakePair(0u, 0u);
+                return tqMakePair(i, j);
+    return tqMakePair(0u, 0u);
 }
 
 }

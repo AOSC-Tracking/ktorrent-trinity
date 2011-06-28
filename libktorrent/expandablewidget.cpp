@@ -17,18 +17,18 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qlayout.h>
-#include <qsplitter.h>
+#include <tqlayout.h>
+#include <tqsplitter.h>
 #include "expandablewidget.h"
 
 namespace kt
 {
 
-	ExpandableWidget::ExpandableWidget(QWidget* child,QWidget *parent, const char *name)
-			: QWidget(parent, name)
+	ExpandableWidget::ExpandableWidget(TQWidget* child,TQWidget *tqparent, const char *name)
+			: TQWidget(tqparent, name)
 	{
-		top_layout = new QHBoxLayout(this);
-		child->reparent(this,QPoint(),true);
+		top_layout = new TQHBoxLayout(this);
+		child->reparent(this,TQPoint(),true);
 		// make top of stack
 		begin = new StackElement;
 		begin->w = child;
@@ -45,7 +45,7 @@ namespace kt
 		}
 	}
 
-	void ExpandableWidget::expand(QWidget* w,Position pos)
+	void ExpandableWidget::expand(TQWidget* w,Position pos)
 	{
 		// create new element
 		StackElement* se = new StackElement;
@@ -53,45 +53,45 @@ namespace kt
 		se->pos = pos;
 		se->next = begin;
 
-		// remove old top from layout
+		// remove old top from tqlayout
 		top_layout->remove(begin->w);
 			
 		// create new toplevel splitter
 		Qt::Orientation orientation = (pos == RIGHT || pos == LEFT) ? Qt::Horizontal : Qt::Vertical;
-		QSplitter* s =  new QSplitter(orientation,this);;
+		TQSplitter* s =  new TQSplitter(orientation,this);;
 		se->s = s;
 		
 		// reparent w and the bottom widget to s
-		w->reparent(s,QPoint(),false);
+		w->reparent(s,TQPoint(),false);
 		if (begin->s)
-			begin->s->reparent(s,QPoint(),false);
+			begin->s->reparent(s,TQPoint(),false);
 		else
-			begin->w->reparent(s,QPoint(),false);
+			begin->w->reparent(s,TQPoint(),false);
 		
 		// add w and the bottom widget to s
 		if (pos == RIGHT || pos == ABOVE)
 		{
 			s->moveToFirst(w);
-			s->setResizeMode(w,QSplitter::KeepSize);
+			s->setResizeMode(w,TQSplitter::KeepSize);
 			s->moveToLast(begin->s ? begin->s : begin->w);
 		}
 		else
 		{
 			s->moveToFirst(begin->s ? begin->s : begin->w);
 			s->moveToLast(w);
-			s->setResizeMode(w,QSplitter::KeepSize);
+			s->setResizeMode(w,TQSplitter::KeepSize);
 		}
 		// make se new top of stack
 		begin = se;
 
-		// add toplevel splitter to layout
+		// add toplevel splitter to tqlayout
 		top_layout->add(s);
 		
 		// show s
 		s->show();
 	}
 
-	void ExpandableWidget::remove(QWidget* w)
+	void ExpandableWidget::remove(TQWidget* w)
 	{
 		// find the correct stackelement
 		StackElement* se = begin;
@@ -111,21 +111,21 @@ namespace kt
 			// we need to remove the first
 			top_layout->remove(se->s);
 			// reparent current top to 0
-			se->w->reparent(0,QPoint(),false);
-			se->s->reparent(0,QPoint(),false);
+			se->w->reparent(0,TQPoint(),false);
+			se->s->reparent(0,TQPoint(),false);
 			// set new top
 			begin = se->next;
 			
 
 			if (begin->s)
 			{
-				begin->s->reparent(this,QPoint(),false);
+				begin->s->reparent(this,TQPoint(),false);
 				top_layout->add(begin->s);
 				begin->s->show();
 			}
 			else
 			{
-				begin->w->reparent(this,QPoint(),false);
+				begin->w->reparent(this,TQPoint(),false);
 				top_layout->add(begin->w);
 				begin->w->show();
 			}
@@ -143,29 +143,29 @@ namespace kt
 			prev->next = next;
 			
 			// reparent se to 0
-			se->s->reparent(0,QPoint(),false);
-			se->w->reparent(0,QPoint(),false);
+			se->s->reparent(0,TQPoint(),false);
+			se->w->reparent(0,TQPoint(),false);
 			
 			// reparent se->next to prev
 			if (next->s)
-				next->s->reparent(prev->s,QPoint(),false);
+				next->s->reparent(prev->s,TQPoint(),false);
 			else
-				next->w->reparent(prev->s,QPoint(),false);
+				next->w->reparent(prev->s,TQPoint(),false);
 			
 			// update prev's splitter
 			if (prev->pos == RIGHT || prev->pos == ABOVE)
 			{
 				prev->s->moveToFirst(prev->w);
-				prev->s->setResizeMode(prev->w,QSplitter::KeepSize);
+				prev->s->setResizeMode(prev->w,TQSplitter::KeepSize);
 				prev->s->moveToLast(next->s ? next->s : next->w);
-				prev->s->setResizeMode(next->s ? next->s : next->w,QSplitter::KeepSize);
+				prev->s->setResizeMode(next->s ? next->s : next->w,TQSplitter::KeepSize);
 			}
 			else
 			{
 				prev->s->moveToFirst(next->s ? next->s : next->w);
-				prev->s->setResizeMode(next->s ? next->s : next->w,QSplitter::KeepSize);
+				prev->s->setResizeMode(next->s ? next->s : next->w,TQSplitter::KeepSize);
 				prev->s->moveToLast(prev->w);
-				prev->s->setResizeMode(prev->w,QSplitter::KeepSize);
+				prev->s->setResizeMode(prev->w,TQSplitter::KeepSize);
 			}
 
 			// delete se and splitter

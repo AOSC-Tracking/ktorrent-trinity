@@ -36,13 +36,13 @@ namespace bt
 #ifdef LOG_PACKET
 	static void LogPacket(const Uint8* data,Uint32 size,Uint32 len)
 	{
-		QString file = QString("/tmp/kt-packetreader-%1.log").arg(getpid());
+		TQString file = TQString("/tmp/kt-packetreader-%1.log").tqarg(getpid());
 		File fptr;
 		if (!fptr.open(file,"a"))
 			return;
 		
 		
-		QString tmp = QString("PACKET len = %1, type = %2\nDATA: \n").arg(len).arg(data[0]);
+		TQString tmp = TQString("PACKET len = %1, type = %2\nDATA: \n").tqarg(len).tqarg(data[0]);
 		
 		fptr.write(tmp.ascii(),tmp.length());
 		
@@ -51,7 +51,7 @@ namespace bt
 		{
 			for (Uint32 i = 0;i < size;i++)
 			{
-				tmp = QString("0x%1 ").arg(data[i],0,16);
+				tmp = TQString("0x%1 ").tqarg(data[i],0,16);
 				fptr.write(tmp.ascii(),tmp.length());
 				j++;
 				if (j > 10)
@@ -65,7 +65,7 @@ namespace bt
 		{
 			for (Uint32 i = 0;i < 20;i++)
 			{
-				tmp = QString("0x%1 ").arg(data[i],0,16);
+				tmp = TQString("0x%1 ").tqarg(data[i],0,16);
 				fptr.write(tmp.ascii(),tmp.length());
 				j++;
 				if (j > 10)
@@ -74,11 +74,11 @@ namespace bt
 					j = 0;
 				}
 			}
-			tmp = QString("\n ... \n");
+			tmp = TQString("\n ... \n");
 			fptr.write(tmp.ascii(),tmp.length());
 			for (Uint32 i = size - 20;i < size;i++)
 			{
-				tmp = QString("0x%1 ").arg(data[i],0,16);
+				tmp = TQString("0x%1 ").tqarg(data[i],0,16);
 				fptr.write(tmp.ascii(),tmp.length());
 				j++;
 				if (j > 10)

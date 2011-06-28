@@ -18,8 +18,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 #include <errno.h>
-#include <qsocket.h>
-#include <qsocketdevice.h>
+#include <tqsocket.h>
+#include <tqsocketdevice.h>
 #include <util/sha1hash.h>
 #include <util/log.h>
 #include <torrent/peer.h>
@@ -181,7 +181,7 @@ namespace mse
 		sock->close();
 	}
 	
-	bool StreamSocket::connectTo(const QString & ip,Uint16 port)
+	bool StreamSocket::connectTo(const TQString & ip,Uint16 port)
 	{
 		// do a safety check
 		if (ip.isNull() || ip.length() == 0)
@@ -221,7 +221,7 @@ namespace mse
 		return sock->ok();
 	}
 
-	QString StreamSocket::getRemoteIPAddress() const
+	TQString StreamSocket::getRemoteIPAddress() const
 	{
 		return sock->getPeerName().toString();
 	}

@@ -20,7 +20,7 @@
 #ifndef UTESTUNITTEST_H
 #define UTESTUNITTEST_H
 
-#include <qstring.h>
+#include <tqstring.h>
 
 namespace utest
 {
@@ -32,12 +32,12 @@ namespace utest
 	*/
 	class UnitTest
 	{
-		QString name;
+		TQString name;
 	public:
-		UnitTest(const QString & name);
+		UnitTest(const TQString & name);
 		virtual ~UnitTest();
 		
-		QString getName() const {return name;}
+		TQString getName() const {return name;}
 
 		virtual bool doTest() = 0;
 	};

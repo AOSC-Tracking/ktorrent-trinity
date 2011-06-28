@@ -37,13 +37,13 @@ using namespace bt;
 
 namespace kt
 {
-	UPnPPrefWidget::UPnPPrefWidget(QWidget* parent, const char* name, WFlags fl)
-			: UPnPWidget(parent,name,fl)
+	UPnPPrefWidget::UPnPPrefWidget(TQWidget* tqparent, const char* name, WFlags fl)
+			: UPnPWidget(tqparent,name,fl)
 	{
 		def_router = 0;
-		connect(m_forward_btn,SIGNAL(clicked()),this,SLOT(onForwardBtnClicked()));
-		connect(m_undo_forward_btn,SIGNAL(clicked()),this,SLOT(onUndoForwardBtnClicked()));
-		connect(m_rescan,SIGNAL(clicked()),this,SLOT(onRescanClicked()));
+		connect(m_forward_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onForwardBtnClicked()));
+		connect(m_undo_forward_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onUndoForwardBtnClicked()));
+		connect(m_rescan,TQT_SIGNAL(clicked()),this,TQT_SLOT(onRescanClicked()));
 		bt::Globals::instance().getPortList().setListener(this);
 	}
 	
@@ -72,13 +72,13 @@ namespace kt
 	
 	void UPnPPrefWidget::addDevice(UPnPRouter* r)
 	{
-		connect(r,SIGNAL(updateGUI()),this,SLOT(updatePortMappings()));
+		connect(r,TQT_SIGNAL(updateGUI()),this,TQT_SLOT(updatePortMappings()));
 		KListViewItem* item = new KListViewItem(m_device_list,r->getDescription().friendlyName);
 		item->setMultiLinesEnabled(true);
 		itemmap[item] = r;
 		// if we have discovered the default device or there is none
 		// forward it's ports
-		QString def_dev = UPnPPluginSettings::defaultDevice();
+		TQString def_dev = UPnPPluginSettings::defaultDevice();
 		if (def_dev == r->getServer() || def_dev.length() == 0)
 		{
 			Out(SYS_PNP|LOG_DEBUG) << "Doing default port mappings ..." << endl;
@@ -126,7 +126,7 @@ namespace kt
 					r->forward(p);
 			}
 			
-			QString def_dev = UPnPPluginSettings::defaultDevice();
+			TQString def_dev = UPnPPluginSettings::defaultDevice();
 			if (def_dev != r->getServer())
 			{
 				UPnPPluginSettings::setDefaultDevice(r->getServer());
@@ -168,10 +168,10 @@ namespace kt
 					r->undoForward(p,false);
 			}
 			
-			QString def_dev = UPnPPluginSettings::defaultDevice();
+			TQString def_dev = UPnPPluginSettings::defaultDevice();
 			if (def_dev == r->getServer())
 			{
-				UPnPPluginSettings::setDefaultDevice(QString::null);
+				UPnPPluginSettings::setDefaultDevice(TQString());
 				UPnPPluginSettings::writeConfig();
 				def_router = 0;
 			}
@@ -186,22 +186,22 @@ namespace kt
 	void UPnPPrefWidget::updatePortMappings()
 	{
 		// update all port mappings
-		QMap<KListViewItem*,UPnPRouter*>::iterator i = itemmap.begin();
+		TQMap<KListViewItem*,UPnPRouter*>::iterator i = itemmap.begin();
 		while (i != itemmap.end())
 		{
 			UPnPRouter* r = i.data();
 			KListViewItem* item = i.key();
-			QString msg,services;
-			QValueList<UPnPRouter::Forwarding>::iterator j = r->beginPortMappings();
+			TQString msg,services;
+			TQValueList<UPnPRouter::Forwarding>::iterator j = r->beginPortMappings();
 			while (j != r->endPortMappings())
 			{
 				UPnPRouter::Forwarding & f = *j;
 				if (!f.pending_req)
 				{
-					msg += QString::number(f.port.number) + " (";
-					QString prot = (f.port.proto == net::UDP ? "UDP" : "TCP");
+					msg += TQString::number(f.port.number) + " (";
+					TQString prot = (f.port.proto == net::UDP ? "UDP" : "TCP");
 					msg +=  prot + ")";
-					if (f.service->servicetype.contains("WANPPPConnection"))
+					if (f.service->servicetype.tqcontains("WANPPPConnection"))
 						services += "PPP";
 					else
 						services += "IP";

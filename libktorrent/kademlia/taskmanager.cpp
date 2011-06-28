@@ -54,14 +54,14 @@ namespace dht
 		
 	void TaskManager::removeFinishedTasks(const DHT* dh_table)
 	{
-		QValueList<Uint32> rm;
+		TQValueList<Uint32> rm;
 		for (TaskItr i = tasks.begin();i != tasks.end();i++)
 		{
 			if (i->second->isFinished())
 				rm.append(i->first);
 		}
 		
-		for (QValueList<Uint32>::iterator i = rm.begin();i != rm.end();i++)
+		for (TQValueList<Uint32>::iterator i = rm.begin();i != rm.end();i++)
 		{
 			tasks.erase(*i);
 		}

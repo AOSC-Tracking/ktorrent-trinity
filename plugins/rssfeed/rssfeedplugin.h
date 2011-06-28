@@ -22,7 +22,7 @@
 
 #include <interfaces/plugin.h>
 
-class QString;
+class TQString;
 
 
 namespace kt
@@ -37,13 +37,14 @@ namespace kt
 	class RssFeedPlugin : public Plugin
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		RssFeedPlugin(QObject* parent, const char* name, const QStringList& args);
+		RssFeedPlugin(TQObject* tqparent, const char* name, const TQStringList& args);
 		virtual ~RssFeedPlugin();
 
 		virtual void load();
 		virtual void unload();
-		virtual bool versionCheck(const QString& version) const;
+		virtual bool versionCheck(const TQString& version) const;
 		
 		private:
 			RssFeedManager * m_rssFeedManager;

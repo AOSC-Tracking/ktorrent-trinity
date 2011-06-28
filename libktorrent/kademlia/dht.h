@@ -20,9 +20,9 @@
 #ifndef DHTDHT_H
 #define DHTDHT_H
 
-#include <qtimer.h>
-#include <qstring.h>
-#include <qmap.h>
+#include <tqtimer.h>
+#include <tqstring.h>
+#include <tqmap.h>
 #include <util/constants.h>
 #include <util/timer.h>
 #include "key.h"
@@ -64,6 +64,7 @@ namespace dht
 	class DHT : public DHTBase
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		DHT();
 		virtual ~DHT();
@@ -81,7 +82,7 @@ namespace dht
 		 * @param ip The IP of the peer
 		 * @param port The port in the PORT message
 		 */
-		void portRecieved(const QString & ip,bt::Uint16 port);
+		void portRecieved(const TQString & ip,bt::Uint16 port);
 		
 		/**
 		 * Do an announce on the DHT network
@@ -107,16 +108,16 @@ namespace dht
 		/// See if it is possible to start a task
 		bool canStartTask() const;
 		
-		void start(const QString & table,const QString & key_file,bt::Uint16 port);
+		void start(const TQString & table,const TQString & key_file,bt::Uint16 port);
 		void stop();
-		void addDHTNode(const QString & host,bt::Uint16 hport);
+		void addDHTNode(const TQString & host,bt::Uint16 hport);
 		
 		/**
 		 * Returns maxNodes number of <IP address, port> nodes 
 		 * that are closest to ourselves and are good.
-		 * @param maxNodes maximum nr of nodes in QMap to return.
+		 * @param maxNodes maximum nr of nodes in TQMap to return.
 		 */
-		QMap<QString, int> getClosestGoodNodes(int maxNodes);
+		TQMap<TQString, int> getClosestGoodNodes(int maxNodes);
 		
 	private slots:
 		void update();
@@ -127,8 +128,8 @@ namespace dht
 		Database* db;
 		TaskManager* tman;
 		bt::Timer expire_timer;
-		QString table_file;
-		QTimer update_timer;
+		TQString table_file;
+		TQTimer update_timer;
 	};
 
 }

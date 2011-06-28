@@ -40,7 +40,7 @@ namespace dht
 	
 	enum Type
 	{
-		REQ_MSG,
+		RETQ_MSG,
 		RSP_MSG,
 		ERR_MSG,
 		INVALID
@@ -83,7 +83,7 @@ namespace dht
 		 * BEncode the message.
 		 * @param arr Data array
 		 */
-		virtual void encode(QByteArray & arr) = 0;
+		virtual void encode(TQByteArray & arr) = 0;
 		
 		/// Set the origin (i.e. where the message came from)
 		void setOrigin(const KNetwork::KSocketAddress & o) {origin = o;}
@@ -133,14 +133,14 @@ namespace dht
 	class ErrMsg : public MsgBase
 	{
 	public:
-		ErrMsg(Uint8 mtid,const Key & id,const QString & msg);
+		ErrMsg(Uint8 mtid,const Key & id,const TQString & msg);
 		virtual ~ErrMsg();
 		
 		virtual void apply(DHT* dh_table);
 		virtual void print();
-		virtual void encode(QByteArray & arr);
+		virtual void encode(TQByteArray & arr);
 	private:
-		QString msg;
+		TQString msg;
 	};
 	
 	class PingReq : public MsgBase
@@ -151,7 +151,7 @@ namespace dht
 		
 		virtual void apply(DHT* dh_table);
 		virtual void print();
-		virtual void encode(QByteArray & arr);
+		virtual void encode(TQByteArray & arr);
 	};
 	
 	class FindNodeReq : public MsgBase
@@ -162,7 +162,7 @@ namespace dht
 		
 		virtual void apply(DHT* dh_table);
 		virtual void print();
-		virtual void encode(QByteArray & arr);
+		virtual void encode(TQByteArray & arr);
 		
 		const Key & getTarget() const {return target;}
 		
@@ -179,7 +179,7 @@ namespace dht
 		const Key & getInfoHash() const {return info_hash;}
 		virtual void apply(DHT* dh_table);
 		virtual void print();
-		virtual void encode(QByteArray & arr);
+		virtual void encode(TQByteArray & arr);
 	protected:
 		Key info_hash;
 	};
@@ -192,7 +192,7 @@ namespace dht
 		
 		virtual void apply(DHT* dh_table);
 		virtual void print();
-		virtual void encode(QByteArray & arr);
+		virtual void encode(TQByteArray & arr);
 		
 		const Key & getToken() const {return token;}
 		bt::Uint16 getPort() const {return port;}
@@ -209,7 +209,7 @@ namespace dht
 		
 		virtual void apply(DHT* dh_table);
 		virtual void print();
-		virtual void encode(QByteArray & arr);
+		virtual void encode(TQByteArray & arr);
 	};
 	
 	
@@ -217,37 +217,37 @@ namespace dht
 	class FindNodeRsp : public MsgBase
 	{
 	public:
-		FindNodeRsp(Uint8 mtid,const Key & id,const QByteArray & nodes);
+		FindNodeRsp(Uint8 mtid,const Key & id,const TQByteArray & nodes);
 		virtual ~FindNodeRsp();
 		
 		virtual void apply(DHT* dh_table);
 		virtual void print();
-		virtual void encode(QByteArray & arr);
+		virtual void encode(TQByteArray & arr);
 		
-		const QByteArray & getNodes() const {return nodes;}
+		const TQByteArray & getNodes() const {return nodes;}
 	protected:
-		QByteArray nodes;
+		TQByteArray nodes;
 	};
 	
 	class GetPeersRsp : public MsgBase
 	{
 	public:
-		GetPeersRsp(Uint8 mtid,const Key & id,const QByteArray & data,const Key & token);
+		GetPeersRsp(Uint8 mtid,const Key & id,const TQByteArray & data,const Key & token);
 		GetPeersRsp(Uint8 mtid,const Key & id,const DBItemList & values,const Key & token);
 		virtual ~GetPeersRsp();
 		
 		virtual void apply(DHT* dh_table);
 		virtual void print();
-		virtual void encode(QByteArray & arr);
+		virtual void encode(TQByteArray & arr);
 		
-		const QByteArray & getData() const {return data;}
+		const TQByteArray & getData() const {return data;}
 		const DBItemList & getItemList() const {return items;}
 		const Key & getToken() const {return token;}
 		bool containsNodes() const {return data.size() > 0;}
 		bool containsValues() const {return data.size() == 0;}
 	private:
 		Key token;
-		QByteArray data;
+		TQByteArray data;
 		DBItemList items;
 	};
 	
@@ -260,7 +260,7 @@ namespace dht
 	
 		virtual void apply(DHT* dh_table);
 		virtual void print();
-		virtual void encode(QByteArray & arr);
+		virtual void encode(TQByteArray & arr);
 	};
 	
 	

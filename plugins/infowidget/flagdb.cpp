@@ -17,17 +17,17 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 
-#include <qfile.h>
-#include <qimage.h>
+#include <tqfile.h>
+#include <tqimage.h>
 #include <kstandarddirs.h>
 #include "flagdb.h"
 
-kt::FlagDBSource::FlagDBSource(const char* type, const QString& pathPattern)
+kt::FlagDBSource::FlagDBSource(const char* type, const TQString& pathPattern)
 	: type(type), pathPattern(pathPattern) 
 {
 }
 
-kt::FlagDBSource::FlagDBSource(const QString& pathPattern)
+kt::FlagDBSource::FlagDBSource(const TQString& pathPattern)
 	: type(NULL), pathPattern(pathPattern) 
 {
 }
@@ -37,16 +37,16 @@ kt::FlagDBSource::FlagDBSource()
 {
 }
 
-QString kt::FlagDBSource::FlagDBSource::getPath(const QString& country) const
+TQString kt::FlagDBSource::FlagDBSource::getPath(const TQString& country) const
 {
 	if (type) {
-		return locate(type, pathPattern.arg(country));
+		return locate(type, pathPattern.tqarg(country));
 	} else {
-		return pathPattern.arg(country);
+		return pathPattern.tqarg(country);
 	}
 }
 
-const QPixmap& kt::FlagDB::nullPixmap = QPixmap();
+const TQPixmap& kt::FlagDB::nullPixmap = TQPixmap();
 
 kt::FlagDB::FlagDB(int preferredWidth, int preferredHeight)
 	: preferredWidth(preferredWidth),
@@ -74,33 +74,33 @@ void kt::FlagDB::addFlagSource(const FlagDBSource& source)
 	sources.append(source);
 }
 
-void kt::FlagDB::addFlagSource(const char* type, const QString& pathPattern)
+void kt::FlagDB::addFlagSource(const char* type, const TQString& pathPattern)
 {
 	addFlagSource(FlagDBSource(type, pathPattern));
 }
 
-const QValueList<kt::FlagDBSource>& kt::FlagDB::listSources() const
+const TQValueList<kt::FlagDBSource>& kt::FlagDB::listSources() const
 {
 	return sources;
 }
 
-bool kt::FlagDB::isFlagAvailable(const QString& country)
+bool kt::FlagDB::isFlagAvailable(const TQString& country)
 {
 	return getFlag(country).isNull();
 }
 
-const QPixmap& kt::FlagDB::getFlag(const QString& country)
+const TQPixmap& kt::FlagDB::getFlag(const TQString& country)
 {
-	const QString& c = country.lower();
-	if (!db.contains(c)) {
-		QImage img;
-		QPixmap pixmap;
-		for (QValueList<FlagDBSource>::const_iterator it = sources.constBegin(); it != sources.constEnd(); it++) {
-			const QString& path = (*it).getPath(c);
-			if (QFile::exists(path)) {
+	const TQString& c = country.lower();
+	if (!db.tqcontains(c)) {
+		TQImage img;
+		TQPixmap pixmap;
+		for (TQValueList<FlagDBSource>::const_iterator it = sources.constBegin(); it != sources.constEnd(); it++) {
+			const TQString& path = (*it).getPath(c);
+			if (TQFile::exists(path)) {
 				if (img.load(path)) {
 					if (img.width() != preferredWidth || img.height() != preferredHeight) {
-						const QImage& imgScaled = img.smoothScale(preferredWidth, preferredHeight, QImage::ScaleMin);
+						const TQImage& imgScaled = img.smoothScale(preferredWidth, preferredHeight, TQ_ScaleMin);
 						if (!imgScaled.isNull()) {
 							pixmap.convertFromImage(imgScaled);
 							break;

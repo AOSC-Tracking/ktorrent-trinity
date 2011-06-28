@@ -115,10 +115,10 @@ namespace dht
 		finished(this);
 	}
 	
-	void Task::addDHTNode(const QString & ip,bt::Uint16 port)
+	void Task::addDHTNode(const TQString & ip,bt::Uint16 port)
 	{
-		KResolver::resolveAsync(this,SLOT(onResolverResults(KResolverResults )),
-								ip,QString::number(port));
+		KResolver::resolveAsync(this,TQT_SLOT(onResolverResults(KResolverResults )),
+								ip,TQString::number(port));
 	}
 	
 	void Task::onResolverResults(KResolverResults res)

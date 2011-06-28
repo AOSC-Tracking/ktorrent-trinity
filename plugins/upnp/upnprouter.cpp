@@ -21,7 +21,7 @@
 #include <klocale.h>
 #include <kglobal.h>
 #include <kstandarddirs.h>
-#include <qstringlist.h>
+#include <tqstringlist.h>
 #include <kio/netaccess.h>
 #include <kio/job.h>
 #include <torrent/globals.h>
@@ -54,7 +54,7 @@ namespace kt
 		this->scpdurl = s.scpdurl;
 	}
 
-	void UPnPService::setProperty(const QString & name,const QString & value)
+	void UPnPService::setProperty(const TQString & name,const TQString & value)
 	{
 		if (name == "serviceType")
 			servicetype = value;
@@ -94,7 +94,7 @@ namespace kt
 	
 	///////////////////////////////////////
 	
-	void UPnPDeviceDescription::setProperty(const QString & name,const QString & value)
+	void UPnPDeviceDescription::setProperty(const TQString & name,const TQString & value)
 	{
 		if (name == "friendlyName")
 			friendlyName = value;
@@ -110,16 +110,16 @@ namespace kt
 	
 	///////////////////////////////////////
 	
-	UPnPRouter::UPnPRouter(const QString & server,const KURL & location,bool verbose) : server(server),location(location),verbose(verbose)
+	UPnPRouter::UPnPRouter(const TQString & server,const KURL & location,bool verbose) : server(server),location(location),verbose(verbose)
 	{
 		// make the tmp_file unique, current time * a random number should be enough
-		tmp_file = QString("/tmp/ktorrent_upnp_description-%1.xml").arg(bt::GetCurrentTime() * rand());
+		tmp_file = TQString("/tmp/ktorrent_upnp_description-%1.xml").tqarg(bt::GetCurrentTime() * rand());
 	}
 	
 	
 	UPnPRouter::~UPnPRouter()
 	{
-		QValueList<HTTPRequest*>::iterator i = active_reqs.begin();
+		TQValueList<HTTPRequest*>::iterator i = active_reqs.begin();
 		while (i != active_reqs.end())
 		{
 			(*i)->deleteLater();
@@ -129,7 +129,7 @@ namespace kt
 	
 	void UPnPRouter::addService(const UPnPService & s)
 	{
-		QValueList<UPnPService>::iterator i = services.begin();
+		TQValueList<UPnPService>::iterator i = services.begin();
 		while (i != services.end())
 		{
 			UPnPService & os = *i;
@@ -148,14 +148,14 @@ namespace kt
 			return;
 		}
 		
-		QString target = tmp_file;
+		TQString target = tmp_file;
 		// load in the file (target is always local)
 		UPnPDescriptionParser desc_parse;
 		bool ret = desc_parse.parse(target,this);
 		if (!ret)
 		{
 			Out(SYS_PNP|LOG_IMPORTANT) << "Error parsing router description !" << endl;
-			QString dest = KGlobal::dirs()->saveLocation("data","ktorrent") + "upnp_failure";
+			TQString dest = KGlobal::dirs()->saveLocation("data","ktorrent") + "upnp_failure";
 			KIO::file_copy(target,dest,-1,true,false,false);
 		}
 		else
@@ -171,7 +171,7 @@ namespace kt
 	{
 		// downlaod XML description into a temporary file in /tmp
 		KIO::Job* job = KIO::file_copy(location,tmp_file,-1,true,false,false);
-		connect(job,SIGNAL(result(KIO::Job *)),this,SLOT(downloadFinished( KIO::Job* )));
+		connect(job,TQT_SIGNAL(result(KIO::Job *)),this,TQT_SLOT(downloadFinished( KIO::Job* )));
 	}
 	
 	void UPnPRouter::debugPrintData()
@@ -182,7 +182,7 @@ namespace kt
 		Out(SYS_PNP|LOG_DEBUG) << "Model description = " << desc.modelDescription << endl;
 		Out(SYS_PNP|LOG_DEBUG) << "Model name = " << desc.modelName << endl;
 		Out(SYS_PNP|LOG_DEBUG) << "Model number = " << desc.modelNumber << endl;
-		for (QValueList<UPnPService>::iterator i = services.begin();i != services.end();i++)
+		for (TQValueList<UPnPService>::iterator i = services.begin();i != services.end();i++)
 		{
 			UPnPService & s = *i;
 			Out() << "Service : " << endl;
@@ -196,14 +196,14 @@ namespace kt
 	void UPnPRouter::forward(UPnPService* srv,const net::Port & port)
 	{
 		// add all the arguments for the command
-		QValueList<SOAP::Arg> args;
+		TQValueList<SOAP::Arg> args;
 		SOAP::Arg a;
 		a.element = "NewRemoteHost";
 		args.append(a);
 		
 		// the external port
 		a.element = "NewExternalPort";
-		a.value = QString::number(port.number);
+		a.value = TQString::number(port.number);
 		args.append(a);
 		
 		// the protocol
@@ -213,7 +213,7 @@ namespace kt
 		
 		// the local port
 		a.element = "NewInternalPort";
-		a.value = QString::number(port.number);
+		a.value = TQString::number(port.number);
 		args.append(a);
 		
 		// the local IP address
@@ -227,19 +227,19 @@ namespace kt
 		
 		a.element = "NewPortMappingDescription";
 		static Uint32 cnt = 0;
-		a.value = QString("KTorrent UPNP %1").arg(cnt++);	// TODO: change this
+		a.value = TQString("KTorrent UPNP %1").tqarg(cnt++);	// TODO: change this
 		args.append(a);
 		
 		a.element = "NewLeaseDuration";
 		a.value = "0";
 		args.append(a);
 		
-		QString action = "AddPortMapping";
-		QString comm = SOAP::createCommand(action,srv->servicetype,args);
+		TQString action = "AddPortMapping";
+		TQString comm = SOAP::createCommand(action,srv->servicetype,args);
 		
 		Forwarding fw = {port,0,srv};
 		// erase old forwarding if one exists
-		QValueList<Forwarding>::iterator itr = fwds.begin();
+		TQValueList<Forwarding>::iterator itr = fwds.begin();
 		while (itr != fwds.end())
 		{
 			Forwarding & fwo = *itr;
@@ -257,7 +257,7 @@ namespace kt
 	{
 		Out(SYS_PNP|LOG_NOTICE) << "Forwarding port " << port.number << " (" << (port.proto == UDP ? "UDP" : "TCP") << ")" << endl;
 		// first find the right service
-		QValueList<UPnPService>::iterator i = services.begin();
+		TQValueList<UPnPService>::iterator i = services.begin();
 		while (i != services.end())
 		{
 			UPnPService & s = *i;
@@ -274,14 +274,14 @@ namespace kt
 	void UPnPRouter::undoForward(UPnPService* srv,const net::Port & port,bt::WaitJob* waitjob)
 	{
 		// add all the arguments for the command
-		QValueList<SOAP::Arg> args;
+		TQValueList<SOAP::Arg> args;
 		SOAP::Arg a;
 		a.element = "NewRemoteHost";
 		args.append(a);
 		
 		// the external port
 		a.element = "NewExternalPort";
-		a.value = QString::number(port.number);
+		a.value = TQString::number(port.number);
 		args.append(a);
 		
 		// the protocol
@@ -290,8 +290,8 @@ namespace kt
 		args.append(a);
 		
 		
-		QString action = "DeletePortMapping";
-		QString comm = SOAP::createCommand(action,srv->servicetype,args);
+		TQString action = "DeletePortMapping";
+		TQString comm = SOAP::createCommand(action,srv->servicetype,args);
 		bt::HTTPRequest* r = sendSoapQuery(comm,srv->servicetype + "#" + action,srv->controlurl,waitjob != 0);
 		
 		if (waitjob)
@@ -306,7 +306,7 @@ namespace kt
 		Out(SYS_PNP|LOG_NOTICE) << "Undoing forward of port " << port.number 
 				<< " (" << (port.proto == UDP ? "UDP" : "TCP") << ")" << endl;
 		
-		QValueList<Forwarding>::iterator itr = fwds.begin();
+		TQValueList<Forwarding>::iterator itr = fwds.begin();
 		while (itr != fwds.end())
 		{
 			Forwarding & wd = *itr;
@@ -322,29 +322,29 @@ namespace kt
 		}
 	}
 	
-	bt::HTTPRequest* UPnPRouter::sendSoapQuery(const QString & query,const QString & soapact,const QString & controlurl,bool at_exit)
+	bt::HTTPRequest* UPnPRouter::sendSoapQuery(const TQString & query,const TQString & soapact,const TQString & controlurl,bool at_exit)
 	{
 		// if port is not set, 0 will be returned 
 		// thanks to Diego R. Brogna for spotting this bug
 		if (location.port()==0)
 			location.setPort(80);
 		
-		QString http_hdr = QString(
+		TQString http_hdr = TQString(
 				"POST %1 HTTP/1.1\r\n"
 				"HOST: %2:%3\r\n"
 				"Content-length: $CONTENT_LENGTH\r\n"
 				"Content-Type: text/xml\r\n"
 				"SOAPAction: \"%4\"\r\n"
-				"\r\n").arg(controlurl).arg(location.host()).arg(location.port()).arg(soapact);
+				"\r\n").tqarg(controlurl).tqarg(location.host()).tqarg(location.port()).tqarg(soapact);
 
 		
 		HTTPRequest* r = new HTTPRequest(http_hdr,query,location.host(),location.port(),verbose);
-		connect(r,SIGNAL(replyError(bt::HTTPRequest* ,const QString& )),
-				this,SLOT(onReplyError(bt::HTTPRequest* ,const QString& )));
-		connect(r,SIGNAL(replyOK(bt::HTTPRequest* ,const QString& )),
-				this,SLOT(onReplyOK(bt::HTTPRequest* ,const QString& )));
-		connect(r,SIGNAL(error(bt::HTTPRequest*, bool )),
-				this,SLOT(onError(bt::HTTPRequest*, bool )));
+		connect(r,TQT_SIGNAL(replyError(bt::HTTPRequest* ,const TQString& )),
+				this,TQT_SLOT(onReplyError(bt::HTTPRequest* ,const TQString& )));
+		connect(r,TQT_SIGNAL(replyOK(bt::HTTPRequest* ,const TQString& )),
+				this,TQT_SLOT(onReplyOK(bt::HTTPRequest* ,const TQString& )));
+		connect(r,TQT_SIGNAL(error(bt::HTTPRequest*, bool )),
+				this,TQT_SLOT(onError(bt::HTTPRequest*, bool )));
 		r->start();
 		if (!at_exit)
 			active_reqs.append(r);
@@ -353,7 +353,7 @@ namespace kt
 	
 	void UPnPRouter::httpRequestDone(bt::HTTPRequest* r,bool erase_fwd)
 	{
-		QValueList<Forwarding>::iterator i = fwds.begin();
+		TQValueList<Forwarding>::iterator i = fwds.begin();
 		while (i != fwds.end())
 		{
 			Forwarding & fw = *i;
@@ -372,7 +372,7 @@ namespace kt
 		r->deleteLater();
 	}
 	
-	void UPnPRouter::onReplyOK(bt::HTTPRequest* r,const QString &)
+	void UPnPRouter::onReplyOK(bt::HTTPRequest* r,const TQString &)
 	{
 		if (verbose)
 			Out(SYS_PNP|LOG_NOTICE) << "UPnPRouter : OK" << endl;
@@ -380,7 +380,7 @@ namespace kt
 		httpRequestDone(r,false);
 	}
 	
-	void UPnPRouter::onReplyError(bt::HTTPRequest* r,const QString &)
+	void UPnPRouter::onReplyError(bt::HTTPRequest* r,const TQString &)
 	{
 		if (verbose)
 			Out(SYS_PNP|LOG_IMPORTANT) << "UPnPRouter : Error" << endl;
@@ -395,9 +395,9 @@ namespace kt
 	}
 	
 #if 0
-	QValueList<UPnPService>::iterator UPnPRouter::findPortForwardingService()
+	TQValueList<UPnPService>::iterator UPnPRouter::findPortForwardingService()
 	{
-		QValueList<UPnPService>::iterator i = services.begin();
+		TQValueList<UPnPService>::iterator i = services.begin();
 		while (i != services.end())
 		{
 			UPnPService & s = *i;
@@ -413,32 +413,32 @@ namespace kt
 	void UPnPRouter::getExternalIP()
 	{
 		// first find the right service
-		QValueList<UPnPService>::iterator i = findPortForwardingService();
+		TQValueList<UPnPService>::iterator i = findPortForwardingService();
 		if (i == services.end())
 			throw Error(i18n("Cannot find port forwarding service in the device's description!"));
 		
 		UPnPService & s = *i;
-		QString action = "GetExternalIPAddress";
-		QString comm = SOAP::createCommand(action,s.servicetype);
+		TQString action = "GetExternalIPAddress";
+		TQString comm = SOAP::createCommand(action,s.servicetype);
 		sendSoapQuery(comm,s.servicetype + "#" + action,s.controlurl);
 	}
 	
 	void UPnPRouter::isPortForwarded(const net::Port & port)
 	{
 		// first find the right service
-		QValueList<UPnPService>::iterator i = findPortForwardingService();
+		TQValueList<UPnPService>::iterator i = findPortForwardingService();
 		if (i == services.end())
 			throw Error(i18n("Cannot find port forwarding service in the device's description!"));
 		
 		// add all the arguments for the command
-		QValueList<SOAP::Arg> args;
+		TQValueList<SOAP::Arg> args;
 		SOAP::Arg a;
 		a.element = "NewRemoteHost";
 		args.append(a);
 		
 		// the external port
 		a.element = "NewExternalPort";
-		a.value = QString::number(port.number);
+		a.value = TQString::number(port.number);
 		args.append(a);
 		
 		// the protocol
@@ -447,8 +447,8 @@ namespace kt
 		args.append(a);
 		
 		UPnPService & s = *i;
-		QString action = "GetSpecificPortMappingEntry";
-		QString comm = SOAP::createCommand(action,s.servicetype,args);
+		TQString action = "GetSpecificPortMappingEntry";
+		TQString comm = SOAP::createCommand(action,s.servicetype,args);
 		sendSoapQuery(comm,s.servicetype + "#" + action,s.controlurl);
 	}
 #endif

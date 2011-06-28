@@ -23,12 +23,12 @@
 
 #include <stdint.h> 
 
-#include <qwidget.h>
-#include <qpainter.h>
-#include <qstring.h>
-#include <qtooltip.h>
-#include <qmime.h>
-#include <qimage.h>
+#include <tqwidget.h>
+#include <tqpainter.h>
+#include <tqstring.h>
+#include <tqtooltip.h>
+#include <tqmime.h>
+#include <tqimage.h>
 
 #include <klocale.h>
 
@@ -44,9 +44,10 @@ namespace kt {
 \brief Widget for drawing line charts
 \author Krzysztof Kundzicz <athantor@gmail.com>
 */
-class ChartDrawer : public QWidget
+class ChartDrawer : public TQWidget
 {
 	Q_OBJECT
+  TQ_OBJECT
 	
 	public:
 		///Type used as widget size unit
@@ -71,29 +72,29 @@ class ChartDrawer : public QWidget
 		///Chart data
 		val_t mEls;
 		///Name of the chart unit
-		QString mUnitName;
+		TQString mUnitName;
 		///Mark max
 		std::vector<bool> mMarkMax;
 		///Max mode
 		MaxMode mMMode;
 	
 		///Paint event handler
-		void paintEvent ( QPaintEvent * );
+		void paintEvent ( TQPaintEvent * );
 		/**
 		\brief Draws chart's frame
 		\param rPnt Painter on which things will be drawn
 		*/
-		void DrawFrame(QPainter &rPnt);
+		void DrawFrame(TQPainter &rPnt);
 		/**
 		\brief Draws chart's scale
 		\param rPnt Painter on which things will be drawn
 		*/
-		void DrawScale(QPainter &rPnt);
+		void DrawScale(TQPainter &rPnt);
 		/**
 		\brief Draws chart
 		\param rPnt Painter on which things will be drawn
 		*/
-		void DrawChart(QPainter &rPnt);
+		void DrawChart(TQPainter &rPnt);
 		
 		/**
 		\brief Gets distance between two values on OY
@@ -149,7 +150,7 @@ class ChartDrawer : public QWidget
 		\param autom Whether athomagically set the maximum Y size
 		\param uname Unit name
 		*/
-		ChartDrawer(QWidget *p = 0, wgtsize_t x_max = 2, wgtsize_t y_max = 1, bool autom = true, const QString & uname = "KB/s");
+		ChartDrawer(TQWidget *p = 0, wgtsize_t x_max = 2, wgtsize_t y_max = 1, bool autom = true, const TQString & uname = "KB/s");
 		~ChartDrawer();
 		
 		/**
@@ -169,18 +170,18 @@ class ChartDrawer : public QWidget
 		
 		\note It'l be drawn on the chart
 		*/
-		void SetUnitName(const QString & rN);
+		void SetUnitName(const TQString & rN);
 		
 		/**
 		\brief Gets unit name
 		\return name
 		*/
-		QString GetUnitName() const;
+		TQString GetUnitName() const;
 		/**
 		\brief Doubleclick handler
 		\param evt Mouse event
 		*/
-		void mouseDoubleClickEvent ( QMouseEvent * evt );
+		void mouseDoubleClickEvent ( TQMouseEvent * evt );
 		
 		/**
 		\brief Gets mode of OY axis maximum drawing
@@ -215,14 +216,14 @@ class ChartDrawer : public QWidget
 		\param rN Set's data name
 		\param max Whether mark maximum of this dataset
 		*/
-		void AddValuesCnt(const QString & rN, const bool max = true);
+		void AddValuesCnt(const TQString & rN, const bool max = true);
 		/**
 		\brief Adds empty dataset
 		\param rP Pen that will be used to drawing
 		\param rN Dataset name
 		\param max Whether mark maximum of this dataset
 		*/
-		void AddValuesCnt(const QPen & rP, const QString & rN, const bool max = true );
+		void AddValuesCnt(const TQPen & rP, const TQString & rN, const bool max = true );
 		
 		/**
 		\brief Removes dataset
@@ -273,7 +274,7 @@ class ChartDrawer : public QWidget
 		\brief Emited when widget is doubleclicked
 		\param evt Mouse event
 		*/
-		void DoubleClicked(QMouseEvent * evt);
+		void DoubleClicked(TQMouseEvent * evt);
 	
 };
 

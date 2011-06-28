@@ -22,22 +22,22 @@
 #include <kactivelabel.h>
 #include <kglobal.h>
 #include <kcombobox.h>
-#include <qlayout.h>
-#include <qlabel.h>
-#include <qcheckbox.h>
+#include <tqlayout.h>
+#include <tqlabel.h>
+#include <tqcheckbox.h>
 #include <knuminput.h>
 #include <kurlrequester.h>
 #include <kurl.h>
 #include <kfiledialog.h>
 #include <kmessagebox.h>
 #include <klineedit.h>
-#include <qlistview.h>
+#include <tqlistview.h>
 #include <torrent/globals.h>
 #include <util/functions.h>
 #include <kglobal.h>
 #include <kiconloader.h>
-#include <qdir.h>
-#include <qslider.h>
+#include <tqdir.h>
+#include <tqslider.h>
 #include <kresolver.h>
 
 #include "downloadpref.h"
@@ -86,7 +86,7 @@ void KTorrentPreferences::slotOk()
 void KTorrentPreferences::slotApply()
 {
 	validation_err = false;
-	QMap<kt::PrefPageInterface*, QFrame*>::iterator i = pages.begin();
+	TQMap<kt::PrefPageInterface*, TQFrame*>::iterator i = pages.begin();
 
 	while (i != pages.end())
 	{
@@ -108,7 +108,7 @@ void KTorrentPreferences::slotApply()
 
 void KTorrentPreferences::updateData()
 {
-	QMap<kt::PrefPageInterface*, QFrame*>::iterator i = pages.begin();
+	TQMap<kt::PrefPageInterface*, TQFrame*>::iterator i = pages.begin();
 
 	while (i != pages.end())
 	{
@@ -120,8 +120,8 @@ void KTorrentPreferences::updateData()
 
 void KTorrentPreferences::addPrefPage(kt::PrefPageInterface* prefInterface)
 {
-	QFrame* frame = addPage(prefInterface->getItemName(), prefInterface->getHeader(), prefInterface->getPixmap());
-	QVBoxLayout* vbox = new QVBoxLayout(frame);
+	TQFrame* frame = addPage(prefInterface->getItemName(), prefInterface->getHeader(), prefInterface->getPixmap());
+	TQVBoxLayout* vbox = new TQVBoxLayout(frame);
 	vbox->setAutoAdd(true);
 	prefInterface->createWidget(frame);
 
@@ -130,10 +130,10 @@ void KTorrentPreferences::addPrefPage(kt::PrefPageInterface* prefInterface)
 
 void KTorrentPreferences::removePrefPage(kt::PrefPageInterface* pp)
 {
-	if (!pages.contains(pp))
+	if (!pages.tqcontains(pp))
 		return;
 
-	QFrame* fr = pages[pp];
+	TQFrame* fr = pages[pp];
 
 	pages.remove(pp);
 
@@ -152,9 +152,9 @@ DownloadPrefPage::~ DownloadPrefPage()
 	delete dp;
 }
 
-void DownloadPrefPage::createWidget(QWidget* parent)
+void DownloadPrefPage::createWidget(TQWidget* tqparent)
 {
-	dp = new DownloadPref(parent);
+	dp = new DownloadPref(tqparent);
 	updateData();
 }
 
@@ -176,7 +176,7 @@ bool DownloadPrefPage::apply()
 
 	if (Settings::dhtSupport() && dp->udp_tracker_port->value() == Settings::dhtPort())
 	{
-		QString msg = i18n("The DHT port needs to be different from the UDP tracker port!");
+		TQString msg = i18n("The DHT port needs to be different from the UDP tracker port!");
 		KMessageBox::error(0, msg, i18n("Error"));
 		return false;
 	}
@@ -222,16 +222,16 @@ GeneralPrefPage::~GeneralPrefPage()
 	delete gp;
 }
 
-void GeneralPrefPage::createWidget(QWidget* parent)
+void GeneralPrefPage::createWidget(TQWidget* tqparent)
 {
-	gp = new GeneralPref(parent);
+	gp = new GeneralPref(tqparent);
 	updateData();
-	connect(gp->custom_ip_check, SIGNAL(toggled(bool)),
-			this, SLOT(customIPChecked(bool)));
-	connect(gp->use_dht, SIGNAL(toggled(bool)),
-			this, SLOT(dhtChecked(bool)));
-	connect(gp->use_encryption, SIGNAL(toggled(bool)),
-			this, SLOT(useEncryptionChecked(bool)));
+	connect(gp->custom_ip_check, TQT_SIGNAL(toggled(bool)),
+			this, TQT_SLOT(customIPChecked(bool)));
+	connect(gp->use_dht, TQT_SIGNAL(toggled(bool)),
+			this, TQT_SLOT(dhtChecked(bool)));
+	connect(gp->use_encryption, TQT_SIGNAL(toggled(bool)),
+			this, TQT_SLOT(useEncryptionChecked(bool)));
 }
 
 bool GeneralPrefPage::apply()
@@ -241,7 +241,7 @@ bool GeneralPrefPage::apply()
 	Settings::setDownloadBandwidth(gp->downloadBandwidth->value());
 	Settings::setUploadBandwidth(gp->uploadBandwidth->value());
 	Settings::setShowPopups(gp->show_popups->isChecked());
-	QString ourl = Settings::tempDir();
+	TQString ourl = Settings::tempDir();
 
 	KURLRequester* u = gp->temp_dir;
 
@@ -269,19 +269,19 @@ bool GeneralPrefPage::apply()
 	bool useExternalIP = gp->custom_ip_check->isChecked();
 
 	Settings::setUseExternalIP(useExternalIP);
-	QString externalIP = gp->custom_ip->text();
+	TQString externalIP = gp->custom_ip->text();
 	Settings::setExternalIP(externalIP);
 
 	if (useExternalIP)
 	{
 
-		KResolverResults res = KResolver::resolve(externalIP, QString::null);
+		KResolverResults res = KResolver::resolve(externalIP, TQString());
 
 		if (res.error())
 		{
-			QString err = KResolver::errorString(res.error());
-			QString msg = i18n("Cannot lookup %1: %2\n"
-							   "Please provide a valid IP address or hostname.").arg(externalIP).arg(err);
+			TQString err = KResolver::errorString(res.error());
+			TQString msg = i18n("Cannot lookup %1: %2\n"
+							   "Please provide a valid IP address or hostname.").tqarg(externalIP).tqarg(err);
 			KMessageBox::error(0, msg, i18n("Error"));
 			return false;
 		}
@@ -291,7 +291,7 @@ bool GeneralPrefPage::apply()
 
 	if (gp->use_dht->isChecked() && gp->dht_port->value() == Settings::udpTrackerPort())
 	{
-		QString msg = i18n("The DHT port needs to be different from the UDP tracker port!");
+		TQString msg = i18n("The DHT port needs to be different from the UDP tracker port!");
 		KMessageBox::error(0, msg, i18n("Error"));
 		return false;
 	}
@@ -336,9 +336,9 @@ void GeneralPrefPage::updateData()
 	KURLRequester* u = gp->temp_dir;
 	u->fileDialog()->setMode(KFile::Directory);
 
-	if (Settings::tempDir() == QString::null)
+	if (Settings::tempDir() == TQString())
 	{
-		QString data_dir = KGlobal::dirs()->saveLocation("data", "ktorrent");
+		TQString data_dir = KGlobal::dirs()->saveLocation("data", "ktorrent");
 
 		if (!data_dir.endsWith(bt::DirSeparator()))
 			data_dir += bt::DirSeparator();
@@ -355,31 +355,31 @@ void GeneralPrefPage::updateData()
 	u->fileDialog()->setMode(KFile::Directory);
 
 	bool useSaveDir = Settings::useSaveDir();
-	QString saveDir = Settings::saveDir();	
+	TQString saveDir = Settings::saveDir();	
 
 	gp->autosave_downloads_check->setChecked(useSaveDir);
 	u->setEnabled(useSaveDir);	
 
-	u->setURL(!saveDir.isEmpty() ? saveDir : QDir::homeDirPath());
+	u->setURL(!saveDir.isEmpty() ? saveDir : TQDir::homeDirPath());
 
 	
 	//completed dir
 	u = gp->urlCompletedDir;
 	u->fileDialog()->setMode(KFile::Directory);
 	bool useCompletedDir = Settings::useCompletedDir();
-	QString completedDir = Settings::completedDir();
+	TQString completedDir = Settings::completedDir();
 	gp->checkCompletedDir->setChecked(useCompletedDir);
 	u->setEnabled(useCompletedDir);	
-	u->setURL(!completedDir.isEmpty() ? completedDir : QDir::homeDirPath());
+	u->setURL(!completedDir.isEmpty() ? completedDir : TQDir::homeDirPath());
 	
 	//copy .torrent dir
 	u = gp->urlTorrentDir;
 	u->fileDialog()->setMode(KFile::Directory);
 	bool useTorrentDir = Settings::useTorrentCopyDir();
-	QString torrentDir = Settings::torrentCopyDir();	
+	TQString torrentDir = Settings::torrentCopyDir();	
 	gp->checkTorrentDir->setChecked(useTorrentDir);
 	u->setEnabled(useTorrentDir);
-	u->setURL(!torrentDir.isEmpty() ? torrentDir : QDir::homeDirPath());
+	u->setURL(!torrentDir.isEmpty() ? torrentDir : TQDir::homeDirPath());
 	
 
 	gp->custom_ip->setText(Settings::externalIP());
@@ -459,18 +459,18 @@ void AdvancedPrefPage::updateData()
 	ap->max_con_setups->setValue(Settings::maxConnectingSockets());
 }
 
-void AdvancedPrefPage::createWidget(QWidget* parent)
+void AdvancedPrefPage::createWidget(TQWidget* tqparent)
 {
-	ap = new AdvancedPref(parent);
+	ap = new AdvancedPref(tqparent);
 	updateData();
-	connect(ap->no_recheck, SIGNAL(toggled(bool)),
-			this, SLOT(noDataCheckChecked(bool)));
-	connect(ap->auto_recheck, SIGNAL(toggled(bool)),
-			this, SLOT(autoRecheckChecked(bool)));
-	connect(ap->do_not_use_kde_proxy, SIGNAL(toggled(bool)),
-			this, SLOT(doNotUseKDEProxyChecked(bool)));
-	connect(ap->prealloc_disabled,SIGNAL(toggled(bool)),
-			this,SLOT(preallocDisabledChecked(bool)));
+	connect(ap->no_recheck, TQT_SIGNAL(toggled(bool)),
+			this, TQT_SLOT(noDataCheckChecked(bool)));
+	connect(ap->auto_recheck, TQT_SIGNAL(toggled(bool)),
+			this, TQT_SLOT(autoRecheckChecked(bool)));
+	connect(ap->do_not_use_kde_proxy, TQT_SIGNAL(toggled(bool)),
+			this, TQT_SLOT(doNotUseKDEProxyChecked(bool)));
+	connect(ap->prealloc_disabled,TQT_SIGNAL(toggled(bool)),
+			this,TQT_SLOT(preallocDisabledChecked(bool)));
 	
 	preallocDisabledChecked(ap->prealloc_disabled->isChecked());
 }

@@ -28,10 +28,10 @@
 
 #include <kapplication.h>
 #include <newui/dmainwindow.h>
-#include <qtimer.h>
+#include <tqtimer.h>
 #include <interfaces/guiinterface.h>
 
-typedef QValueList<QCString> QCStringList;
+typedef TQValueList<TQCString> QCStringList;
 
 class KAction;
 class KToggleAction;
@@ -41,8 +41,8 @@ class KTorrentView;
 class TrayIcon;
 class SetMaxRate;
 class KTorrentDCOP;
-class QLabel;
-class QListViewItem;
+class TQLabel;
+class TQListViewItem;
 class KTorrentPreferences;
 class ViewManager;
 
@@ -66,6 +66,7 @@ namespace kt
 class KTorrent : public DMainWindow, public kt::GUIInterface
 {
 	Q_OBJECT
+  TQ_OBJECT
 public:
 	/**
 	 * Default Constructor
@@ -78,7 +79,7 @@ public:
 	virtual ~KTorrent();
 
 	/// Open a view with the given group
-	void openView(const QString & group_name);
+	void openView(const TQString & group_name);
 
 	/// Get the core
 	KTorrentCore & getCore() {return *m_core;}
@@ -89,30 +90,30 @@ public:
 	 */
 	void applySettings(bool change_port = true);
 
-	virtual void addTabPage(QWidget* page,const QIconSet & icon,
-							const QString & caption,kt::CloseTabListener* ctl = 0);
-	virtual void addTabPage(QWidget* page,const QPixmap & icon,
-							const QString & caption,kt::CloseTabListener* ctl = 0);
-	virtual void removeTabPage(QWidget* page);
+	virtual void addTabPage(TQWidget* page,const TQIconSet & icon,
+							const TQString & caption,kt::CloseTabListener* ctl = 0);
+	virtual void addTabPage(TQWidget* page,const TQPixmap & icon,
+							const TQString & caption,kt::CloseTabListener* ctl = 0);
+	virtual void removeTabPage(TQWidget* page);
 	virtual void addPrefPage(kt::PrefPageInterface* page);
 	virtual void removePrefPage(kt::PrefPageInterface* page);
 	virtual void mergePluginGui(kt::Plugin* p);
 	virtual void removePluginGui(kt::Plugin* p);
-	virtual void addWidgetBelowView(QWidget* w,const QString & icon,const QString & caption);
-	virtual void removeWidgetBelowView(QWidget* w);
-	virtual void addToolWidget(QWidget* w,const QString & icon,const QString & caption,ToolDock dock);
-	virtual void removeToolWidget(QWidget* w);
+	virtual void addWidgetBelowView(TQWidget* w,const TQString & icon,const TQString & caption);
+	virtual void removeWidgetBelowView(TQWidget* w);
+	virtual void addToolWidget(TQWidget* w,const TQString & icon,const TQString & caption,ToolDock dock);
+	virtual void removeToolWidget(TQWidget* w);
 	virtual const kt::TorrentInterface* getCurrentTorrent() const;
 	virtual KToolBar* addToolBar(const char* name);
 	virtual void removeToolBar(KToolBar* tb);
 	virtual KProgress* addProgressBarToStatusBar();
 	virtual void removeProgressBarFromStatusBar(KProgress* p);
 	
-	QString	getStatusInfo();
-	QString	getStatusTransfer();
-	QString	getStatusSpeed();
-	QString	getStatusDHT();
-	QString getStatusFirewall();
+	TQString	getStatusInfo();
+	TQString	getStatusTransfer();
+	TQString	getStatusSpeed();
+	TQString	getStatusDHT();
+	TQString getStatusFirewall();
 	QCStringList getTorrentInfo(kt::TorrentInterface* tc);
 
 public slots:
@@ -169,19 +170,19 @@ private slots:
 	void optionsConfigureToolbars();
 	void optionsPreferences();
 	void newToolbarConfig();
-	void changeStatusbar(const QString& text);
-	void changeCaption(const QString& text);
+	void changeStatusbar(const TQString& text);
+	void changeCaption(const TQString& text);
 	void currentTorrentChanged(kt::TorrentInterface* tc);
 	void updatedStats();
-	void urlDropped(QDropEvent*,QListViewItem*);
+	void urlDropped(TQDropEvent*,TQListViewItem*);
 	void onUpdateActions(int flags);
 	void groupChanged(kt::Group* g);
 	void groupRenamed(kt::Group* g);
 	void groupRemoved(kt::Group* g);
-	void currentTabChanged(QWidget* w);
+	void currentTabChanged(TQWidget* w);
 	void openDefaultView();
 	void statusBarMsgExpired();
-	void find();
+	void tqfind();
 	
 private:
 	void setupAccel();
@@ -190,8 +191,8 @@ private:
 	bool queryExit();
 	
 	
-	virtual void addWidgetInView(QWidget* w,kt::Position pos);
-	virtual void removeWidgetFromView(QWidget* w);	
+	virtual void addWidgetInView(TQWidget* w,kt::Position pos);
+	virtual void removeWidgetFromView(TQWidget* w);	
 	virtual void closeTab();
 	
 private:
@@ -206,17 +207,17 @@ private:
 	SetMaxRate* m_set_max_download_rate;
 	
 	KTorrentDCOP* m_dcop;
-	QTimer m_gui_update_timer;
-	QTimer m_status_msg_expire;
+	TQTimer m_gui_update_timer;
+	TQTimer m_status_msg_expire;
 	KTorrentPreferences* m_pref;
 
-	QMap<QWidget*,kt::CloseTabListener*> m_tab_map;
+	TQMap<TQWidget*,kt::CloseTabListener*> m_tab_map;
 
-	QLabel* m_statusInfo;
-	QLabel* m_statusTransfer;
-	QLabel* m_statusSpeed;
-	QLabel* m_statusDHT;
-	QLabel* m_statusFirewall;
+	TQLabel* m_statusInfo;
+	TQLabel* m_statusTransfer;
+	TQLabel* m_statusSpeed;
+	TQLabel* m_statusDHT;
+	TQLabel* m_statusFirewall;
 	
 	KAction* m_start;
 	KAction* m_stop;
@@ -230,7 +231,7 @@ private:
 	KAction* m_queueaction;
 	KAction* m_datacheck;
 	KAction* m_ipfilter;
-	KAction* m_find;
+	KAction* m_tqfind;
 	
 	KProgress* m_status_prog;
 };

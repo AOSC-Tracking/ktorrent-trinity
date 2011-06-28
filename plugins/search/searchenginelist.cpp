@@ -17,9 +17,9 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
-#include <qfile.h>
-#include <qtextstream.h>
-#include <qstringlist.h>
+#include <tqfile.h>
+#include <tqtextstream.h>
+#include <tqstringlist.h>
 #include "searchenginelist.h"
 
 using namespace bt;
@@ -34,36 +34,36 @@ namespace kt
 	SearchEngineList::~SearchEngineList()
 	{}
 
-	void SearchEngineList::save(const QString& file)
+	void SearchEngineList::save(const TQString& file)
 	{
-		QFile fptr(file);
+		TQFile fptr(file);
 		if (!fptr.open(IO_WriteOnly))
 			return;
 		
-		QTextStream out(&fptr);
+		TQTextStream out(&fptr);
 		out << "# PLEASE DO NOT MODIFY THIS FILE. Use KTorrent configuration dialog for adding new search engines." << ::endl;
 		out << "# SEARCH ENGINES list" << ::endl;
      
-		QValueList<SearchEngine>::iterator i = m_search_engines.begin();
+		TQValueList<SearchEngine>::iterator i = m_search_engines.begin();
 		while (i != m_search_engines.end())
 		{
 			SearchEngine & e = *i;
 
 			// replace spaces by %20
-			QString name = e.name;
-			name = name.replace(" ","%20");
-			QString u = e.url.prettyURL();
-			u = u.replace(" ","%20");
+			TQString name = e.name;
+			name = name.tqreplace(" ","%20");
+			TQString u = e.url.prettyURL();
+			u = u.tqreplace(" ","%20");
 			out << name << " " << u << ::endl;
 			i++;
 		}
 	}
 	
-	void SearchEngineList::load(const QString& file)
+	void SearchEngineList::load(const TQString& file)
 	{
 		m_search_engines.clear();
 		
-		QFile fptr(file);
+		TQFile fptr(file);
 		
 		if(!fptr.exists())
 			makeDefaultFile(file);
@@ -71,21 +71,21 @@ namespace kt
 		if (!fptr.open(IO_ReadOnly))
 			return;
 		
-		QTextStream in(&fptr);
+		TQTextStream in(&fptr);
 		
 		int id = 0;
 		
 		while (!in.atEnd())
 		{
-			QString line = in.readLine();
+			TQString line = in.readLine();
 		
 			if(line.startsWith("#") || line.startsWith(" ") || line.isEmpty() ) continue;
 		
-			QStringList tokens = QStringList::split(" ", line);
+			TQStringList tokens = TQStringList::split(" ", line);
 		
 			SearchEngine se;
 			se.name = tokens[0];
-			se.name = se.name.replace("%20"," ");
+			se.name = se.name.tqreplace("%20"," ");
 			se.url = KURL::fromPathOrURL(tokens[1]);
 		
 			for(Uint32 i=2; i<tokens.count(); ++i)
@@ -95,13 +95,13 @@ namespace kt
 		}
 	}
 	
-	void SearchEngineList::makeDefaultFile(const QString& file)
+	void SearchEngineList::makeDefaultFile(const TQString& file)
 	{
-		QFile fptr(file);
+		TQFile fptr(file);
 		if (!fptr.open(IO_WriteOnly))
 			return;
 		
-		QTextStream out(&fptr);
+		TQTextStream out(&fptr);
 		out << "# PLEASE DO NOT MODIFY THIS FILE. Use KTorrent configuration dialog for adding new search engines." << ::endl;
 		out << "# SEARCH ENGINES list" << ::endl;
 		out << "KTorrents http://www.ktorrents.com/search.php?lg=0&sourceid=ktorrent&q=FOOBAR&f=0" << ::endl;
@@ -123,10 +123,10 @@ namespace kt
 			return m_search_engines[engine].url;
 	}
 	
-	QString SearchEngineList::getEngineName(bt::Uint32 engine) const
+	TQString SearchEngineList::getEngineName(bt::Uint32 engine) const
 	{
 		if (engine >= m_search_engines.count())
-			return QString::null;
+			return TQString();
 		else
 			return m_search_engines[engine].name;
 	}

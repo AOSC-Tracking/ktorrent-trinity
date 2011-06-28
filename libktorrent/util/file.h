@@ -21,7 +21,7 @@
 #define BTFILE_H
 
 #include <stdio.h>
-#include <qstring.h>
+#include <tqstring.h>
 #include "constants.h"
 
 namespace bt
@@ -36,7 +36,7 @@ namespace bt
 	class File
 	{
 		FILE* fptr;
-		QString file;
+		TQString file;
 	public:
 		/**
 		 * Constructor.
@@ -54,7 +54,7 @@ namespace bt
 		 * @param mode Mode
 		 * @return true upon succes
 		 */
-		bool open(const QString & file,const QString & mode);
+		bool open(const TQString & file,const TQString & mode);
 		
 		/**
 		 * Close the file.
@@ -106,7 +106,7 @@ namespace bt
 		Uint64 tell() const;
 
 		/// Get the error string.
-		QString errorString() const;
+		TQString errorString() const;
 	};
 
 }

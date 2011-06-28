@@ -28,10 +28,10 @@
 namespace bt
 {
 
-	TorrentFile::TorrentFile() : TorrentFileInterface(QString::null,0),missing(false),filetype(UNKNOWN)
+	TorrentFile::TorrentFile() : TorrentFileInterface(TQString(),0),missing(false),filetype(UNKNOWN)
 	{}
 
-	TorrentFile::TorrentFile(Uint32 index,const QString & path,
+	TorrentFile::TorrentFile(Uint32 index,const TQString & path,
 							 Uint64 off,Uint64 size,Uint64 chunk_size)
 	: TorrentFileInterface(path,size),index(index),cache_offset(off),missing(false),filetype(UNKNOWN)
 	{
@@ -46,7 +46,7 @@ namespace bt
 	}
 	
 	TorrentFile::TorrentFile(const TorrentFile & tf)
-		: TorrentFileInterface(QString::null,0)
+		: TorrentFileInterface(TQString(),0)
 	{
 		index = tf.getIndex();
 		path = tf.getPath();

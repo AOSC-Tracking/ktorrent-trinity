@@ -20,7 +20,7 @@
 #ifndef DHTRPCCALL_H
 #define DHTRPCCALL_H
 
-#include <qtimer.h>
+#include <tqtimer.h>
 #include "key.h"
 #include "rpcmsg.h"
 
@@ -32,9 +32,10 @@ namespace dht
 	/**
 	 * Class which objects should derive from, if they want to know the result of a call.
 	*/
-	class RPCCallListener : public QObject
+	class RPCCallListener : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		RPCCallListener();
 		virtual ~RPCCallListener();
@@ -58,9 +59,10 @@ namespace dht
 	/**
 	 * @author Joris Guisson
 	 */
-	class RPCCall : public QObject
+	class RPCCall : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		RPCCall(RPCServer* rpc,MsgBase* msg,bool queued);
 		virtual ~RPCCall();
@@ -100,7 +102,7 @@ namespace dht
 
 	private:
 		MsgBase* msg;
-		QTimer timer; 
+		TQTimer timer; 
 		RPCServer* rpc;
 		bool queued;
 	};

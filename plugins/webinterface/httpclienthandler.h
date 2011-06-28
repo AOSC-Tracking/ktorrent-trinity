@@ -21,12 +21,12 @@
 #define KTHTTPCLIENTHANDLER_H
 		
 
-#include <qhttp.h>
-#include <qobject.h>
+#include <tqhttp.h>
+#include <tqobject.h>
 #include <util/constants.h>
 #include "httpresponseheader.h"
 		
-class QSocket;
+class TQSocket;
 
 
 namespace kt
@@ -38,9 +38,10 @@ namespace kt
 	/**
 		@author Joris Guisson <joris.guisson@gmail.com>
 	*/
-	class HttpClientHandler : public QObject
+	class HttpClientHandler : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 		enum State
 		{
 			WAITING_FOR_REQUEST,
@@ -48,20 +49,20 @@ namespace kt
 			PROCESSING_PHP
 		};
 	public:
-		HttpClientHandler(HttpServer* srv,QSocket* sock);
+		HttpClientHandler(HttpServer* srv,TQSocket* sock);
 		virtual ~HttpClientHandler();
 		
 		void readyToRead();
-		bool sendFile(HttpResponseHeader & hdr,const QString & full_path);
+		bool sendFile(HttpResponseHeader & hdr,const TQString & full_path);
 		void sendResponse(const HttpResponseHeader & hdr);
-		void send404(HttpResponseHeader & hdr,const QString & path);
+		void send404(HttpResponseHeader & hdr,const TQString & path);
 		void send500(HttpResponseHeader & hdr);
 		
 		void executePHPScript(PhpInterface* php_iface,
 							HttpResponseHeader & hdr,
-							const QString & php_exe,
-							const QString & php_file,
-							const QMap<QString,QString> & args);
+							const TQString & php_exe,
+							const TQString & php_file,
+							const TQMap<TQString,TQString> & args);
 		
 	private:
 		void handleRequest();
@@ -71,11 +72,11 @@ namespace kt
 		
 	private:
 		HttpServer* srv;
-		QSocket* client;
+		TQSocket* client;
 		State state;
-		QHttpRequestHeader header;
-		QString header_data;
-		QByteArray request_data;
+		TQHttpRequestHeader header;
+		TQString header_data;
+		TQByteArray request_data;
 		bt::Uint32 bytes_read;
 		PhpHandler* php;
 		HttpResponseHeader php_response_hdr;

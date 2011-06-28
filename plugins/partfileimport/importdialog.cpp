@@ -42,8 +42,8 @@ using namespace bt;
 
 namespace kt
 {
-	ImportDialog::ImportDialog(CoreInterface* core,QWidget* parent, const char* name, bool modal, WFlags fl)
-	: ImportDlgBase(parent,name, modal,fl),DataCheckerListener(false),core(core)
+	ImportDialog::ImportDialog(CoreInterface* core,TQWidget* tqparent, const char* name, bool modal, WFlags fl)
+	: ImportDlgBase(tqparent,name, modal,fl),DataCheckerListener(false),core(core)
 	{
 		KURLRequester* r = m_torrent_url;
 		r->setMode(KFile::File|KFile::LocalOnly);
@@ -52,8 +52,8 @@ namespace kt
 		r = m_data_url;
 		r->setMode(KFile::File|KFile::Directory|KFile::LocalOnly);
 	
-		connect(m_import_btn,SIGNAL(clicked()),this,SLOT(onImport()));
-		connect(m_cancel_btn,SIGNAL(clicked()),this,SLOT(reject()));
+		connect(m_import_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onImport()));
+		connect(m_cancel_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(reject()));
 		m_progress->setEnabled(false);
 	}
 	
@@ -92,18 +92,18 @@ namespace kt
 		try
 		{
 			dc->setListener(this);
-			dc->check(data_url.path(),tor,QString::null);
+			dc->check(data_url.path(),tor,TQString());
 		}
 		catch (Error & e)
 		{
 			delete dc;
-			KMessageBox::error(this,i18n("Cannot verify data : %1").arg(e.toString()),i18n("Error"));
+			KMessageBox::error(this,i18n("Cannot verify data : %1").tqarg(e.toString()),i18n("Error"));
 			reject();
 			return;
 		}
 		
 		// find a new torrent dir and make it if necessary
-		QString tor_dir = core->findNewTorrentDir();
+		TQString tor_dir = core->findNewTorrentDir();
 		if (!tor_dir.endsWith(bt::DirSeparator()))
 			tor_dir += bt::DirSeparator();
 		
@@ -123,11 +123,11 @@ namespace kt
 			// make the cache
 			if (tor.isMultiFile())
 			{
-				QValueList<Uint32> dnd_files;
+				TQValueList<Uint32> dnd_files;
 				bool dnd = false;
 				// first make tor_dir/cache/
-				QString cache_dir = tor_dir + "cache" + bt::DirSeparator();
-				QString dnd_dir = tor_dir + "dnd" + bt::DirSeparator();
+				TQString cache_dir = tor_dir + "cache" + bt::DirSeparator();
+				TQString dnd_dir = tor_dir + "dnd" + bt::DirSeparator();
 				if (!bt::Exists(cache_dir))
 					MakeDir(cache_dir);
 				if (!bt::Exists(dnd_dir))
@@ -143,10 +143,10 @@ namespace kt
 					dnd = false;
 				}
 				
-				QString durl = data_url.path();
+				TQString durl = data_url.path();
 				if (durl.endsWith(bt::DirSeparator()))
 					durl = durl.left(durl.length() - 1);
-				int ds = durl.findRev(bt::DirSeparator());
+				int ds = durl.tqfindRev(bt::DirSeparator());
 				if (durl.mid(ds+1) == tor.getNameSuggestion())
 				{
 					durl = durl.left(ds);
@@ -162,8 +162,8 @@ namespace kt
 			{
 				// single file, just symlink the data_url to tor_dir/cache
 				bt::SymLink(data_url.path(),tor_dir + "cache");
-				QString durl = data_url.path();
-				int ds = durl.findRev(bt::DirSeparator());
+				TQString durl = data_url.path();
+				int ds = durl.tqfindRev(bt::DirSeparator());
 				durl = durl.left(ds);
 				saveStats(tor_dir + "stats",durl,imported,false);
 			}
@@ -204,7 +204,7 @@ namespace kt
 			}
 			catch (Error & e)
 			{
-				KMessageBox::error(this,i18n("Cannot load the torrent file : %1").arg(e.toString()),
+				KMessageBox::error(this,i18n("Cannot load the torrent file : %1").tqarg(e.toString()),
 								   i18n("Error"));
 				reject();
 				return;
@@ -226,7 +226,7 @@ namespace kt
 		{
 			// download the torrent file
 			KIO::StoredTransferJob* j = KIO::storedGet(tor_url);
-			connect(j,SIGNAL(result(KIO::Job* )),this,SLOT(onTorrentGetReult(KIO::Job*)));
+			connect(j,TQT_SIGNAL(result(KIO::Job* )),this,TQT_SLOT(onTorrentGetReult(KIO::Job*)));
 		}
 		else
 		{
@@ -240,7 +240,7 @@ namespace kt
 			}
 			catch (Error & e)
 			{
-				KMessageBox::error(this,i18n("Cannot load the torrent file : %1").arg(e.toString()),
+				KMessageBox::error(this,i18n("Cannot load the torrent file : %1").tqarg(e.toString()),
 								   i18n("Error"));
 				reject();
 				return;
@@ -249,12 +249,12 @@ namespace kt
 		}
 	}
 	
-	void ImportDialog::writeIndex(const QString & file,const BitSet & chunks)
+	void ImportDialog::writeIndex(const TQString & file,const BitSet & chunks)
 	{
 		// first try to open it
 		File fptr;
 		if (!fptr.open(file,"wb"))
-			throw Error(i18n("Cannot open %1 : %2").arg(file).arg(fptr.errorString()));
+			throw Error(i18n("Cannot open %1 : %2").tqarg(file).tqarg(fptr.errorString()));
 		
 		// write all chunks to the file
 		for (Uint32 i = 0;i < chunks.getNumBits();i++)
@@ -270,18 +270,18 @@ namespace kt
 		}
 	}
 	
-	void ImportDialog::linkTorFile(const QString & cache_dir,const QString & dnd_dir,
-								   const KURL & data_url,const QString & fpath,bool & dnd)
+	void ImportDialog::linkTorFile(const TQString & cache_dir,const TQString & dnd_dir,
+								   const KURL & data_url,const TQString & fpath,bool & dnd)
 	{
-		QStringList sl = QStringList::split(bt::DirSeparator(),fpath);
+		TQStringList sl = TQStringList::split(bt::DirSeparator(),fpath);
 
 		// create all necessary subdirs
-		QString ctmp = cache_dir;
-		QString otmp = data_url.path();
+		TQString ctmp = cache_dir;
+		TQString otmp = data_url.path();
 		if (!otmp.endsWith(bt::DirSeparator()))
 			otmp += bt::DirSeparator();
 		
-		QString dtmp = dnd_dir;
+		TQString dtmp = dnd_dir;
 		for (Uint32 i = 0;i < sl.count() - 1;i++)
 		{
 			otmp += sl[i];
@@ -300,7 +300,7 @@ namespace kt
 			dtmp += bt::DirSeparator();
 		}
 
-		QString dfile = otmp + sl.last();
+		TQString dfile = otmp + sl.last();
 		if (!bt::Exists(dfile))
 		{
 			// when we start the torrent the user will be asked what to do
@@ -315,16 +315,16 @@ namespace kt
 		}
 	}
 	
-	void ImportDialog::saveStats(const QString & stats_file,const KURL & data_url,Uint64 imported,bool custom_output_name)
+	void ImportDialog::saveStats(const TQString & stats_file,const KURL & data_url,Uint64 imported,bool custom_output_name)
 	{
-		QFile fptr(stats_file);
+		TQFile fptr(stats_file);
 		if (!fptr.open(IO_WriteOnly))
 		{
 			Out(SYS_PFI|LOG_IMPORTANT) << "Warning : can't create stats file" << endl;
 			return;
 		}
 
-		QTextStream out(&fptr);
+		TQTextStream out(&fptr);
 		out << "OUTPUTDIR=" << data_url.path() << ::endl;
 		out << "UPLOADED=0" << ::endl;
 		out << "RUNNING_TIME_DL=0" << ::endl;
@@ -332,8 +332,8 @@ namespace kt
 		out << "PRIORITY=0" << ::endl;
 		out << "AUTOSTART=1" << ::endl;
 		if (core->getGlobalMaxShareRatio() > 0)
-			out << QString("MAX_RATIO=%1").arg(core->getGlobalMaxShareRatio(),0,'f',2) << ::endl;
-		out << QString("IMPORTED=%1").arg(imported) << ::endl;
+			out << TQString("MAX_RATIO=%1").tqarg(core->getGlobalMaxShareRatio(),0,'f',2) << ::endl;
+		out << TQString("IMPORTED=%1").tqarg(imported) << ::endl;
 		if (custom_output_name)
 			out << "CUSTOM_OUTPUT_NAME=1" << endl;
 	}
@@ -358,7 +358,7 @@ namespace kt
 		return nb;
 	}
 	
-	void ImportDialog::saveFileInfo(const QString & file_info_file,QValueList<Uint32> & dnd)
+	void ImportDialog::saveFileInfo(const TQString & file_info_file,TQValueList<Uint32> & dnd)
 	{
 		// saves which TorrentFile's do not need to be downloaded
 		File fptr;

@@ -24,13 +24,13 @@
 #include <kconfig.h>
 #include <kiconloader.h>
 
-#include <qtoolbutton.h>
+#include <tqtoolbutton.h>
 
 #include "dtabwidget.h"
 #include "docksplitter.h"
 
-DMainWindow::DMainWindow(QWidget *parent, const char *name)
-    :KParts::MainWindow(parent, name), m_firstRemoved(false), m_currentWidget(0)
+DMainWindow::DMainWindow(TQWidget *tqparent, const char *name)
+    :KParts::MainWindow(tqparent, name), m_firstRemoved(false), m_currentWidget(0)
 {
     loadSettings();
     createToolWindows();
@@ -57,7 +57,7 @@ void DMainWindow::saveSettings()
 
 DMainWindow::~DMainWindow()
 {
-/*    for (QValueList<QWidget*>::iterator it = m_widgets.begin(); it != m_widgets.end(); ++it)
+/*    for (TQValueList<TQWidget*>::iterator it = m_widgets.begin(); it != m_widgets.end(); ++it)
         removeWidget(*it);*/
 }
 
@@ -74,11 +74,11 @@ DDockWindow *DMainWindow::toolWindow(DDockWindow::Position position) const
 void DMainWindow::createToolWindows()
 {
     m_bottomDock = new DDockWindow(this, DDockWindow::Bottom);
-    moveDockWindow(m_bottomDock, Qt::DockBottom);
+    moveDockWindow(m_bottomDock, TQt::DockBottom);
     m_leftDock = new DDockWindow(this, DDockWindow::Left);
-    moveDockWindow(m_leftDock, Qt::DockLeft);
+    moveDockWindow(m_leftDock, TQt::DockLeft);
     m_rightDock = new DDockWindow(this, DDockWindow::Right);
-    moveDockWindow(m_rightDock, Qt::DockRight);
+    moveDockWindow(m_rightDock, TQt::DockRight);
     
     // hide all docks until we add stuff to it
     m_bottomDock->hide();
@@ -86,9 +86,9 @@ void DMainWindow::createToolWindows()
     m_rightDock->hide();
 }
 
-void DMainWindow::addWidget(QWidget *widget, const QString &title)
+void DMainWindow::addWidget(TQWidget *widget, const TQString &title)
 {
-//     invalidateActiveTabWidget();
+//     tqinvalidateActiveTabWidget();
     if (m_firstRemoved && m_activeTabWidget == m_tabs.first())
     {
         m_central->addDock(0, 0, m_activeTabWidget);
@@ -98,17 +98,17 @@ void DMainWindow::addWidget(QWidget *widget, const QString &title)
     addWidget(m_activeTabWidget, widget, title);
 }
 
-void DMainWindow::addWidget(DTabWidget *tab, QWidget *widget, const QString &title)
+void DMainWindow::addWidget(DTabWidget *tab, TQWidget *widget, const TQString &title)
 {
-    static QPixmap emptyPixmap;
+    static TQPixmap emptyPixmap;
 
     int idx = -1;
     if (m_openTabAfterCurrent && (tab->count() > 0))
         idx = tab->currentPageIndex() + 1;
     if (m_showIconsOnTabs)
     {
-        const QPixmap *pixmap = widget->icon();
-        const QIconSet &icons = (pixmap && (pixmap->size().height() <= 16)) ? *(pixmap) : SmallIcon("kdevelop");
+        const TQPixmap *pixmap = widget->icon();
+        const TQIconSet &icons = (pixmap && (pixmap->size().height() <= 16)) ? *(pixmap) : SmallIcon("kdevelop");
         tab->insertTab(widget, icons, title, idx);
     }
     else
@@ -119,18 +119,18 @@ void DMainWindow::addWidget(DTabWidget *tab, QWidget *widget, const QString &tit
     tab->showPage(widget);
 }
 
-void DMainWindow::removeWidget(QWidget *widget)
+void DMainWindow::removeWidget(TQWidget *widget)
 {
-    if (!m_widgets.contains(widget))
+    if (!m_widgets.tqcontains(widget))
         return; //not a widget in main window
 
-    if (m_widgetTabs.contains(widget))
+    if (m_widgetTabs.tqcontains(widget))
     {
         DTabWidget *tab = m_widgetTabs[widget];
         if (tab->indexOf(widget) >= 0)
         {
             tab->removePage(widget);
-            widget->reparent(0,QPoint(0,0),false);
+            widget->reparent(0,TQPoint(0,0),false);
             if (tab->count() == 0)
             {
                 if (tab->closeButton())
@@ -138,7 +138,7 @@ void DMainWindow::removeWidget(QWidget *widget)
                 //remove and delete tabwidget if it is not the first one
                 if (tab != m_tabs.first())
                 {
-                    QPair<uint, uint> idx = m_central->indexOf(tab);
+                    TQPair<uint, uint> idx = m_central->indexOf(tab);
                     m_tabs.remove(tab);
                     m_activeTabWidget = m_tabs.first();
                     m_central->removeDock(idx.first, idx.second, true);
@@ -166,8 +166,8 @@ void DMainWindow::removeWidget(QWidget *widget)
     if (m_activeTabWidget && m_activeTabWidget->currentPage())
     {
         //a hack to please multibuffer and actually switch the active part
-        QFocusEvent ev(QEvent::FocusIn);
-        QApplication::sendEvent(m_activeTabWidget->currentPage(), &ev);
+        TQFocusEvent ev(TQEvent::FocusIn);
+        TQApplication::sendEvent(m_activeTabWidget->currentPage(), &ev);
     }
 }
 
@@ -180,25 +180,25 @@ DTabWidget *DMainWindow::splitHorizontal()
 
 DTabWidget *DMainWindow::splitVertical()
 {
-//     invalidateActiveTabWidget();
+//     tqinvalidateActiveTabWidget();
     int row = m_central->indexOf(m_activeTabWidget).first;
     m_activeTabWidget = createTab();
     m_central->addDock(row, m_central->numCols(row), m_activeTabWidget);
     return m_activeTabWidget;
 }
 
-void DMainWindow::invalidateActiveTabWidget()
+void DMainWindow::tqinvalidateActiveTabWidget()
 {
-/*    QWidget *focused = m_central->focusWidget();
-    kdDebug(9000) << "invalidate: " << focused << endl;
+/*    TQWidget *focused = m_central->tqfocusWidget();
+    kdDebug(9000) << "tqinvalidate: " << focused << endl;
     if (focused == 0)
         return;
-    if (!m_widgets.contains(focused))
+    if (!m_widgets.tqcontains(focused))
     {
         kdDebug(9000) << "    focused is not in m_widgets" << endl;
         return;
     }
-    if (m_widgetTabs.contains(focused))
+    if (m_widgetTabs.tqcontains(focused))
     {
         kdDebug(9000) << "    focused is in m_widgets and m_widgetTabs" << endl;
         DTabWidget *tab = m_widgetTabs[focused];
@@ -213,33 +213,33 @@ DTabWidget *DMainWindow::createTab()
     DTabWidget *tab = new DTabWidget(m_central);
     m_tabs.append(tab);
     if (tab->closeButton())
-        connect(tab->closeButton(), SIGNAL(clicked()), this, SLOT(closeTab()));
-    connect(tab, SIGNAL(closeRequest(QWidget*)), this, SLOT(closeTab(QWidget*)));
-    connect(tab, SIGNAL(contextMenu(QWidget*,const QPoint &)),
-        this, SLOT(tabContext(QWidget*,const QPoint &)));
+        connect(tab->closeButton(), TQT_SIGNAL(clicked()), this, TQT_SLOT(closeTab()));
+    connect(tab, TQT_SIGNAL(closeRequest(TQWidget*)), this, TQT_SLOT(closeTab(TQWidget*)));
+    connect(tab, TQT_SIGNAL(contextMenu(TQWidget*,const TQPoint &)),
+        this, TQT_SLOT(tabContext(TQWidget*,const TQPoint &)));
     return tab;
 }
 
-bool DMainWindow::eventFilter(QObject *obj, QEvent *ev)
+bool DMainWindow::eventFilter(TQObject *obj, TQEvent *ev)
 {
-    QWidget *w = (QWidget*)obj;
-    if (!m_widgets.contains(w))
+    TQWidget *w = (TQWidget*)obj;
+    if (!m_widgets.tqcontains(w))
         return KParts::MainWindow::eventFilter(obj, ev);
 
-    if ((m_currentWidget != w) && (ev->type() == QEvent::FocusIn))
+    if ((m_currentWidget != w) && (ev->type() == TQEvent::FocusIn))
     {
         m_currentWidget = w;
         emit widgetChanged(w);
     }
-    else if (ev->type() == QEvent::IconChange)
+    else if (ev->type() == TQEvent::IconChange)
     {
-        if (m_widgetTabs.contains(w))
+        if (m_widgetTabs.tqcontains(w))
         {
             DTabWidget *tab = m_widgetTabs[w];
-            tab->setTabIconSet(w, w->icon() ? (*(w->icon())) : QPixmap());
+            tab->setTabIconSet(w, w->icon() ? (*(w->icon())) : TQPixmap());
         }
     }
-    else if (ev->type() == QEvent::CaptionChange)
+    else if (ev->type() == TQEvent::CaptionChange)
     {
         kdDebug(9000) << "caption change" << endl;
         DTabWidget *tab = m_widgetTabs[w];
@@ -254,19 +254,19 @@ void DMainWindow::closeTab()
     //nothing to do here, should be reimplemented
 }
 
-void DMainWindow::tabContext(QWidget *, const QPoint &)
+void DMainWindow::tabContext(TQWidget *, const TQPoint &)
 {
     //nothing to do here, should be reimplemented
 }
 
-void DMainWindow::closeTab(QWidget *)
+void DMainWindow::closeTab(TQWidget *)
 {
     //nothing to do here, should be reimplemented
 }
 
-void DMainWindow::moveWidget(DDockWindow::Position position, QWidget * view, const QString & title)
+void DMainWindow::moveWidget(DDockWindow::Position position, TQWidget * view, const TQString & title)
 {
-    if (m_docks.contains(view))
+    if (m_docks.tqcontains(view))
     {
         toolWindow(m_docks[view])->removeWidget(view);
 
@@ -275,17 +275,17 @@ void DMainWindow::moveWidget(DDockWindow::Position position, QWidget * view, con
     }
 }
 
-void DMainWindow::addDockWidget(DDockWindow::Position position, QWidget *view, const QString &title)
+void DMainWindow::addDockWidget(DDockWindow::Position position, TQWidget *view, const TQString &title)
 {
     DDockWindow* dock = toolWindow(position);
     dock->addWidget(title, view);
     m_docks[view] = position;
-    connect(view, SIGNAL(destroyed()), this, SLOT(widgetDestroyed()));
+    connect(view, TQT_SIGNAL(destroyed()), this, TQT_SLOT(widgetDestroyed()));
     if (dock->isHidden())
         dock->show();
 }
 
-void DMainWindow::removeDockWidget(QWidget *view)
+void DMainWindow::removeDockWidget(TQWidget *view)
 {
     DDockWindow* dock = toolWindow(m_docks[view]);
     dock->removeWidget(view);
@@ -294,21 +294,21 @@ void DMainWindow::removeDockWidget(QWidget *view)
         dock->hide();
 }
 
-bool DMainWindow::hasDockWidget(QWidget *view)
+bool DMainWindow::hasDockWidget(TQWidget *view)
 {
-    return m_docks.contains(view);
+    return m_docks.tqcontains(view);
 }
 
-DDockWindow::Position DMainWindow::dockWidgetPosition(QWidget *view)
+DDockWindow::Position DMainWindow::dockWidgetPosition(TQWidget *view)
 {
     return m_docks[view];
 }
 
 void DMainWindow::widgetDestroyed()
 {
-    QWidget *w = static_cast<QWidget*>(const_cast<QObject*>(sender()));
+    TQWidget *w = TQT_TQWIDGET(const_cast<TQT_BASE_OBJECT_NAME*>(sender()));
 
-    if (m_docks.contains(w))
+    if (m_docks.tqcontains(w))
     {
         kdError() << "Widget destroyed before being removed from UI!" << endl;
         m_docks.remove(w);
@@ -317,4 +317,4 @@ void DMainWindow::widgetDestroyed()
 
 #include "dmainwindow.moc"
 
-// kate: space-indent on; indent-width 4; tab-width 4; replace-tabs on
+// kate: space-indent on; indent-width 4; tab-width 4; tqreplace-tabs on

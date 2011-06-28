@@ -20,8 +20,8 @@
 #ifndef KTPEERSOURCE_H
 #define KTPEERSOURCE_H
 
-#include <qobject.h>
-#include <qvaluelist.h>
+#include <tqobject.h>
+#include <tqvaluelist.h>
 #include <util/constants.h>
 		
 namespace bt
@@ -33,7 +33,7 @@ namespace kt
 {
 	struct PotentialPeer
 	{
-		QString ip;
+		TQString ip;
 		bt::Uint16 port;
 		bool local;
 		
@@ -47,9 +47,10 @@ namespace kt
 	 * for torrents. PeerSources should work independently and should emit a signal when they
 	 * have peers ready.
 	*/
-	class PeerSource : public QObject
+	class PeerSource : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		PeerSource();
 		virtual ~PeerSource();
@@ -70,7 +71,7 @@ namespace kt
 		 * @param port The port
 		 * @param local Wether or not the peer is on the local network
 		 */
-		void addPeer(const QString & ip,bt::Uint16 port,bool local = false);
+		void addPeer(const TQString & ip,bt::Uint16 port,bool local = false);
 		
 	public slots:
 		/**
@@ -110,7 +111,7 @@ namespace kt
 	
 	private:
 		/// List to keep the potential peers in.
-		QValueList<PotentialPeer> peers;	
+		TQValueList<PotentialPeer> peers;	
 	};
 
 }

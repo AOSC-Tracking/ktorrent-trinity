@@ -44,6 +44,7 @@ namespace bt
 	class Authenticate : public AuthenticateBase
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 
 		/**
@@ -54,7 +55,7 @@ namespace bt
 		 * @param peer_id Peer ID
 		 * @param pman PeerManager
 		 */
-		Authenticate(const QString & ip,Uint16 port,
+		Authenticate(const TQString & ip,Uint16 port,
 					 const SHA1Hash & info_hash,const PeerID & peer_id,
 					 PeerManager* pman);
 		
@@ -73,7 +74,7 @@ namespace bt
 		/// See if the authentication is succesfull
 		bool isSuccesfull() const {return succes;}
 		
-		const QString & getIP() const {return host;}
+		const TQString & getIP() const {return host;}
 		Uint16 getPort() const {return port;}
 		
 	protected slots:
@@ -88,7 +89,7 @@ namespace bt
 	protected:
 		SHA1Hash info_hash;
 		PeerID our_peer_id,peer_id;
-		QString host;
+		TQString host;
 		Uint16 port;
 		bool succes;
 		PeerManager* pman;

@@ -18,9 +18,9 @@
 #include <krfcdate.h>
 #include <kurl.h>
 
-#include <qdatetime.h>
-#include <qdom.h>
-#include <qptrlist.h>
+#include <tqdatetime.h>
+#include <tqdom.h>
+#include <tqptrlist.h>
 
 using namespace RSS;
 
@@ -40,22 +40,22 @@ struct Document::Private : public Shared
     }
 
     Version version;
-    QString title;
-    QString description;
+    TQString title;
+    TQString description;
     KURL link;
     Image *image;
     TextInput *textInput;
     Article::List articles;
     Language language;
     Format format;
-    QString copyright;
-    QDateTime pubDate;
-    QDateTime lastBuildDate;
-    QString rating;
+    TQString copyright;
+    TQDateTime pubDate;
+    TQDateTime lastBuildDate;
+    TQString rating;
     KURL docs;
 	int ttl;
-    QString managingEditor;
-    QString webMaster;
+    TQString managingEditor;
+    TQString webMaster;
     HourList skipHours;
     DayList skipDays;
     bool valid;
@@ -70,51 +70,51 @@ Document::Document(const Document &other) : d(0)
     *this = other;
 }
 
-Document::Document(const QDomDocument &doc) : d(new Private)
+Document::Document(const TQDomDocument &doc) : d(new Private)
 {
-    QString elemText;
-    QDomNode rootNode = doc.documentElement();
+    TQString elemText;
+    TQDomNode rootNode = doc.documentElement();
 
     // Determine the version of the present RSS markup.
-    QString attr;
+    TQString attr;
 
     // we should probably check that it ISN'T feed or rss, rather than check if it is xhtml
-    if (rootNode.toElement().tagName()==QString::fromLatin1("html"))
+    if (rootNode.toElement().tagName()==TQString::tqfromLatin1("html"))
         d->valid=false;
     else
         d->valid=true;
     
-    attr = rootNode.toElement().attribute(QString::fromLatin1("version"), QString::null);
+    attr = rootNode.toElement().attribute(TQString::tqfromLatin1("version"), TQString());
     if (!attr.isNull()) {
         if (rootNode.toElement().tagName()=="feed")
         {
             d->format=AtomFeed;
-            if (attr == QString::fromLatin1("0.3"))
+            if (attr == TQString::tqfromLatin1("0.3"))
                 d->version = vAtom_0_3;
-            else if (attr == QString::fromLatin1("0.2")) /* smt -> review */
+            else if (attr == TQString::tqfromLatin1("0.2")) /* smt -> review */
                d->version = vAtom_0_2;
-            else if (attr == QString::fromLatin1("0.1")) /* smt -> review */
+            else if (attr == TQString::tqfromLatin1("0.1")) /* smt -> review */
               d->version = vAtom_0_1;
         }
         else
         {
             d->format=RSSFeed;
-            if (attr == QString::fromLatin1("0.91"))
+            if (attr == TQString::tqfromLatin1("0.91"))
                 d->version = v0_91;
-            else if (attr == QString::fromLatin1("0.92"))
+            else if (attr == TQString::tqfromLatin1("0.92"))
                 d->version = v0_92;
-            else if (attr == QString::fromLatin1("0.93"))
+            else if (attr == TQString::tqfromLatin1("0.93"))
                 d->version = v0_93;
-            else if (attr == QString::fromLatin1("0.94"))
+            else if (attr == TQString::tqfromLatin1("0.94"))
                 d->version = v0_94;
-            else if (attr.startsWith("2.0") || attr == QString::fromLatin1("2")) // http://www.breuls.org/rss puts 2.00 in version (BR #0000016)
+            else if (attr.startsWith("2.0") || attr == TQString::tqfromLatin1("2")) // http://www.breuls.org/rss puts 2.00 in version (BR #0000016)
                 d->version = v2_0;
         }
     }
 
     if (d->format==UnknownFormat)
     {
-        attr = rootNode.toElement().attribute(QString::fromLatin1("xmlns"), QString::null);
+        attr = rootNode.toElement().attribute(TQString::tqfromLatin1("xmlns"), TQString());
         if (!attr.isNull()) {
         /*
          * Hardcoding these URLs is actually a bad idea, since the DTD doesn't
@@ -124,275 +124,275 @@ Document::Document(const QDomDocument &doc) : d(new Private)
          * distinguish the RSS versions by analyzing the relationship between
          * the nodes.
          */
-            if (attr == QString::fromLatin1("http://my.netscape.com/rdf/simple/0.9/")) {
+            if (attr == TQString::tqfromLatin1("http://my.netscape.com/rdf/simple/0.9/")) {
                 d->format=RSSFeed;
                 d->version = v0_90;
              }
-            else if (attr == QString::fromLatin1("http://purl.org/rss/1.0/")) {
+            else if (attr == TQString::tqfromLatin1("http://purl.org/rss/1.0/")) {
                 d->format=RSSFeed;
                 d->version = v1_0;
             }
         }
     }
 
-    QDomNode channelNode;
+    TQDomNode channelNode;
 
     if (d->format == AtomFeed)
         channelNode=rootNode;
     else
-        channelNode=rootNode.namedItem(QString::fromLatin1("channel"));
+        channelNode=rootNode.namedItem(TQString::tqfromLatin1("channel"));
 
-    if (!(elemText = extractNode(channelNode, QString::fromLatin1("title"))).isNull())
+    if (!(elemText = extractNode(channelNode, TQString::tqfromLatin1("title"))).isNull())
         d->title = elemText;
-    if (!(elemText = extractNode(channelNode, QString::fromLatin1("description"))).isNull())
+    if (!(elemText = extractNode(channelNode, TQString::tqfromLatin1("description"))).isNull())
         d->description = elemText;
-    if (!(elemText = extractNode(channelNode, QString::fromLatin1("link"))).isNull())
+    if (!(elemText = extractNode(channelNode, TQString::tqfromLatin1("link"))).isNull())
         d->link = elemText;
 
     
-    /* This is ugly but necessary since RSS 0.90 and 1.0 have a different parent
+    /* This is ugly but necessary since RSS 0.90 and 1.0 have a different tqparent
      * node for <image>, <textinput> and <item> than RSS 0.91-0.94 and RSS 2.0.
      */
-    QDomNode parentNode;
+    TQDomNode tqparentNode;
     if (d->version == v0_90 || d->version == v1_0 || d->format == AtomFeed)
-        parentNode = rootNode;
+        tqparentNode = rootNode;
     else
     {
 	// following is a HACK for broken 0.91 feeds like xanga.com's
-	if (!rootNode.namedItem(QString::fromLatin1("item")).isNull())
-	    parentNode = rootNode;
+	if (!rootNode.namedItem(TQString::tqfromLatin1("item")).isNull())
+	    tqparentNode = rootNode;
 	else
-            parentNode = channelNode;
+            tqparentNode = channelNode;
     }
     
     // image and textinput aren't supported by Atom.. handle in case feed provides
-    QDomNode n = parentNode.namedItem(QString::fromLatin1("image"));
+    TQDomNode n = tqparentNode.namedItem(TQString::tqfromLatin1("image"));
     if (!n.isNull())
         d->image = new Image(n);
 
-    n = parentNode.namedItem(QString::fromLatin1("textinput"));
+    n = tqparentNode.namedItem(TQString::tqfromLatin1("textinput"));
     if (!n.isNull())
         d->textInput = new TextInput(n);
 
     // Our (hopefully faster) version of elementsByTagName()
-    QString tagName;
+    TQString tagName;
     if (d->format == AtomFeed)
-        tagName=QString::fromLatin1("entry");
+        tagName=TQString::tqfromLatin1("entry");
     else
-        tagName=QString::fromLatin1("item");
+        tagName=TQString::tqfromLatin1("item");
 
-    for (n = parentNode.firstChild(); !n.isNull(); n = n.nextSibling()) {
-        const QDomElement e = n.toElement();
+    for (n = tqparentNode.firstChild(); !n.isNull(); n = n.nextSibling()) {
+        const TQDomElement e = n.toElement();
         if (e.tagName() == tagName)
             d->articles.append(Article(e, d->format));
     }
 
-    if (!(elemText = extractNode(channelNode, QString::fromLatin1("copyright"))).isNull())
+    if (!(elemText = extractNode(channelNode, TQString::tqfromLatin1("copyright"))).isNull())
         d->copyright = elemText;
 
     if (d->format == AtomFeed)
-        elemText = rootNode.toElement().attribute(QString::fromLatin1("xml:lang"), QString::null);
+        elemText = rootNode.toElement().attribute(TQString::tqfromLatin1("xml:lang"), TQString());
     else
-        elemText = extractNode(channelNode, QString::fromLatin1("language"));
+        elemText = extractNode(channelNode, TQString::tqfromLatin1("language"));
 
     if (!elemText.isNull()){
-        if (elemText == QString::fromLatin1("af"))
+        if (elemText == TQString::tqfromLatin1("af"))
             d->language = af;
-        else if (elemText == QString::fromLatin1("sq"))
+        else if (elemText == TQString::tqfromLatin1("sq"))
             d->language = sq;
-        else if (elemText == QString::fromLatin1("eu"))
+        else if (elemText == TQString::tqfromLatin1("eu"))
             d->language = eu;
-        else if (elemText == QString::fromLatin1("be"))
+        else if (elemText == TQString::tqfromLatin1("be"))
             d->language = be;
-        else if (elemText == QString::fromLatin1("bg"))
+        else if (elemText == TQString::tqfromLatin1("bg"))
             d->language = bg;
-        else if (elemText == QString::fromLatin1("ca"))
+        else if (elemText == TQString::tqfromLatin1("ca"))
             d->language = ca;
-        else if (elemText == QString::fromLatin1("zh-cn"))
+        else if (elemText == TQString::tqfromLatin1("zh-cn"))
             d->language = zh_cn;
-        else if (elemText == QString::fromLatin1("zh-tw"))
+        else if (elemText == TQString::tqfromLatin1("zh-tw"))
             d->language = zh_tw;
-        else if (elemText == QString::fromLatin1("hr"))
+        else if (elemText == TQString::tqfromLatin1("hr"))
             d->language = hr;
-        else if (elemText == QString::fromLatin1("cs"))
+        else if (elemText == TQString::tqfromLatin1("cs"))
             d->language = cs;
-        else if (elemText == QString::fromLatin1("da"))
+        else if (elemText == TQString::tqfromLatin1("da"))
             d->language = da;
-        else if (elemText == QString::fromLatin1("nl"))
+        else if (elemText == TQString::tqfromLatin1("nl"))
             d->language = nl;
-        else if (elemText == QString::fromLatin1("nl-be"))
+        else if (elemText == TQString::tqfromLatin1("nl-be"))
             d->language = nl_be;
-        else if (elemText == QString::fromLatin1("nl-nl"))
+        else if (elemText == TQString::tqfromLatin1("nl-nl"))
             d->language = nl_nl;
-        else if (elemText == QString::fromLatin1("en"))
+        else if (elemText == TQString::tqfromLatin1("en"))
             d->language = en;
-        else if (elemText == QString::fromLatin1("en-au"))
+        else if (elemText == TQString::tqfromLatin1("en-au"))
             d->language = en_au;
-        else if (elemText == QString::fromLatin1("en-bz"))
+        else if (elemText == TQString::tqfromLatin1("en-bz"))
             d->language = en_bz;
-        else if (elemText == QString::fromLatin1("en-ca"))
+        else if (elemText == TQString::tqfromLatin1("en-ca"))
             d->language = en_ca;
-        else if (elemText == QString::fromLatin1("en-ie"))
+        else if (elemText == TQString::tqfromLatin1("en-ie"))
             d->language = en_ie;
-        else if (elemText == QString::fromLatin1("en-jm"))
+        else if (elemText == TQString::tqfromLatin1("en-jm"))
             d->language = en_jm;
-        else if (elemText == QString::fromLatin1("en-nz"))
+        else if (elemText == TQString::tqfromLatin1("en-nz"))
             d->language = en_nz;
-        else if (elemText == QString::fromLatin1("en-ph"))
+        else if (elemText == TQString::tqfromLatin1("en-ph"))
             d->language = en_ph;
-        else if (elemText == QString::fromLatin1("en-za"))
+        else if (elemText == TQString::tqfromLatin1("en-za"))
             d->language = en_za;
-        else if (elemText == QString::fromLatin1("en-tt"))
+        else if (elemText == TQString::tqfromLatin1("en-tt"))
             d->language = en_tt;
-        else if (elemText == QString::fromLatin1("en-gb"))
+        else if (elemText == TQString::tqfromLatin1("en-gb"))
             d->language = en_gb;
-        else if (elemText == QString::fromLatin1("en-us"))
+        else if (elemText == TQString::tqfromLatin1("en-us"))
             d->language = en_us;
-        else if (elemText == QString::fromLatin1("en-zw"))
+        else if (elemText == TQString::tqfromLatin1("en-zw"))
             d->language = en_zw;
-        else if (elemText == QString::fromLatin1("fo"))
+        else if (elemText == TQString::tqfromLatin1("fo"))
             d->language = fo;
-        else if (elemText == QString::fromLatin1("fi"))
+        else if (elemText == TQString::tqfromLatin1("fi"))
             d->language = fi;
-        else if (elemText == QString::fromLatin1("fr"))
+        else if (elemText == TQString::tqfromLatin1("fr"))
             d->language = fr;
-        else if (elemText == QString::fromLatin1("fr-be"))
+        else if (elemText == TQString::tqfromLatin1("fr-be"))
             d->language = fr_be;
-        else if (elemText == QString::fromLatin1("fr-ca"))
+        else if (elemText == TQString::tqfromLatin1("fr-ca"))
             d->language = fr_ca;
-        else if (elemText == QString::fromLatin1("fr-fr"))
+        else if (elemText == TQString::tqfromLatin1("fr-fr"))
             d->language = fr_fr;
-        else if (elemText == QString::fromLatin1("fr-lu"))
+        else if (elemText == TQString::tqfromLatin1("fr-lu"))
             d->language = fr_lu;
-        else if (elemText == QString::fromLatin1("fr-mc"))
+        else if (elemText == TQString::tqfromLatin1("fr-mc"))
             d->language = fr_mc;
-        else if (elemText == QString::fromLatin1("fr-ch"))
+        else if (elemText == TQString::tqfromLatin1("fr-ch"))
             d->language = fr_ch;
-        else if (elemText == QString::fromLatin1("gl"))
+        else if (elemText == TQString::tqfromLatin1("gl"))
             d->language = gl;
-        else if (elemText == QString::fromLatin1("gd"))
+        else if (elemText == TQString::tqfromLatin1("gd"))
             d->language = gd;
-        else if (elemText == QString::fromLatin1("de"))
+        else if (elemText == TQString::tqfromLatin1("de"))
             d->language = de;
-        else if (elemText == QString::fromLatin1("de-at"))
+        else if (elemText == TQString::tqfromLatin1("de-at"))
             d->language = de_at;
-        else if (elemText == QString::fromLatin1("de-de"))
+        else if (elemText == TQString::tqfromLatin1("de-de"))
             d->language = de_de;
-        else if (elemText == QString::fromLatin1("de-li"))
+        else if (elemText == TQString::tqfromLatin1("de-li"))
             d->language = de_li;
-        else if (elemText == QString::fromLatin1("de-lu"))
+        else if (elemText == TQString::tqfromLatin1("de-lu"))
             d->language = de_lu;
-        else if (elemText == QString::fromLatin1("de-ch"))
+        else if (elemText == TQString::tqfromLatin1("de-ch"))
             d->language = de_ch;
-        else if (elemText == QString::fromLatin1("el"))
+        else if (elemText == TQString::tqfromLatin1("el"))
             d->language = el;
-        else if (elemText == QString::fromLatin1("hu"))
+        else if (elemText == TQString::tqfromLatin1("hu"))
             d->language = hu;
-        else if (elemText == QString::fromLatin1("is"))
+        else if (elemText == TQString::tqfromLatin1("is"))
             d->language = is;
-        else if (elemText == QString::fromLatin1("id"))
+        else if (elemText == TQString::tqfromLatin1("id"))
             d->language = id;
-        else if (elemText == QString::fromLatin1("ga"))
+        else if (elemText == TQString::tqfromLatin1("ga"))
             d->language = ga;
-        else if (elemText == QString::fromLatin1("it"))
+        else if (elemText == TQString::tqfromLatin1("it"))
             d->language = it;
-        else if (elemText == QString::fromLatin1("it-it"))
+        else if (elemText == TQString::tqfromLatin1("it-it"))
             d->language = it_it;
-        else if (elemText == QString::fromLatin1("it-ch"))
+        else if (elemText == TQString::tqfromLatin1("it-ch"))
             d->language = it_ch;
-        else if (elemText == QString::fromLatin1("ja"))
+        else if (elemText == TQString::tqfromLatin1("ja"))
             d->language = ja;
-        else if (elemText == QString::fromLatin1("ko"))
+        else if (elemText == TQString::tqfromLatin1("ko"))
             d->language = ko;
-        else if (elemText == QString::fromLatin1("mk"))
+        else if (elemText == TQString::tqfromLatin1("mk"))
             d->language = mk;
-        else if (elemText == QString::fromLatin1("no"))
+        else if (elemText == TQString::tqfromLatin1("no"))
             d->language = no;
-        else if (elemText == QString::fromLatin1("pl"))
+        else if (elemText == TQString::tqfromLatin1("pl"))
             d->language = pl;
-        else if (elemText == QString::fromLatin1("pt"))
+        else if (elemText == TQString::tqfromLatin1("pt"))
             d->language = pt;
-        else if (elemText == QString::fromLatin1("pt-br"))
+        else if (elemText == TQString::tqfromLatin1("pt-br"))
             d->language = pt_br;
-        else if (elemText == QString::fromLatin1("pt-pt"))
+        else if (elemText == TQString::tqfromLatin1("pt-pt"))
             d->language = pt_pt;
-        else if (elemText == QString::fromLatin1("ro"))
+        else if (elemText == TQString::tqfromLatin1("ro"))
             d->language = ro;
-        else if (elemText == QString::fromLatin1("ro-mo"))
+        else if (elemText == TQString::tqfromLatin1("ro-mo"))
             d->language = ro_mo;
-        else if (elemText == QString::fromLatin1("ro-ro"))
+        else if (elemText == TQString::tqfromLatin1("ro-ro"))
             d->language = ro_ro;
-        else if (elemText == QString::fromLatin1("ru"))
+        else if (elemText == TQString::tqfromLatin1("ru"))
             d->language = ru;
-        else if (elemText == QString::fromLatin1("ru-mo"))
+        else if (elemText == TQString::tqfromLatin1("ru-mo"))
             d->language = ru_mo;
-        else if (elemText == QString::fromLatin1("ru-ru"))
+        else if (elemText == TQString::tqfromLatin1("ru-ru"))
             d->language = ru_ru;
-        else if (elemText == QString::fromLatin1("sr"))
+        else if (elemText == TQString::tqfromLatin1("sr"))
             d->language = sr;
-        else if (elemText == QString::fromLatin1("sk"))
+        else if (elemText == TQString::tqfromLatin1("sk"))
             d->language = sk;
-        else if (elemText == QString::fromLatin1("sl"))
+        else if (elemText == TQString::tqfromLatin1("sl"))
             d->language = sl;
-        else if (elemText == QString::fromLatin1("es"))
+        else if (elemText == TQString::tqfromLatin1("es"))
             d->language = es;
-        else if (elemText == QString::fromLatin1("es-ar"))
+        else if (elemText == TQString::tqfromLatin1("es-ar"))
             d->language = es_ar;
-        else if (elemText == QString::fromLatin1("es-bo"))
+        else if (elemText == TQString::tqfromLatin1("es-bo"))
             d->language = es_bo;
-        else if (elemText == QString::fromLatin1("es-cl"))
+        else if (elemText == TQString::tqfromLatin1("es-cl"))
             d->language = es_cl;
-        else if (elemText == QString::fromLatin1("es-co"))
+        else if (elemText == TQString::tqfromLatin1("es-co"))
             d->language = es_co;
-        else if (elemText == QString::fromLatin1("es-cr"))
+        else if (elemText == TQString::tqfromLatin1("es-cr"))
             d->language = es_cr;
-        else if (elemText == QString::fromLatin1("es-do"))
+        else if (elemText == TQString::tqfromLatin1("es-do"))
             d->language = es_do;
-        else if (elemText == QString::fromLatin1("es-ec"))
+        else if (elemText == TQString::tqfromLatin1("es-ec"))
             d->language = es_ec;
-        else if (elemText == QString::fromLatin1("es-sv"))
+        else if (elemText == TQString::tqfromLatin1("es-sv"))
             d->language = es_sv;
-        else if (elemText == QString::fromLatin1("es-gt"))
+        else if (elemText == TQString::tqfromLatin1("es-gt"))
             d->language = es_gt;
-        else if (elemText == QString::fromLatin1("es-hn"))
+        else if (elemText == TQString::tqfromLatin1("es-hn"))
             d->language = es_hn;
-        else if (elemText == QString::fromLatin1("es-mx"))
+        else if (elemText == TQString::tqfromLatin1("es-mx"))
             d->language = es_mx;
-        else if (elemText == QString::fromLatin1("es-ni"))
+        else if (elemText == TQString::tqfromLatin1("es-ni"))
             d->language = es_ni;
-        else if (elemText == QString::fromLatin1("es-pa"))
+        else if (elemText == TQString::tqfromLatin1("es-pa"))
             d->language = es_pa;
-        else if (elemText == QString::fromLatin1("es-py"))
+        else if (elemText == TQString::tqfromLatin1("es-py"))
             d->language = es_py;
-        else if (elemText == QString::fromLatin1("es-pe"))
+        else if (elemText == TQString::tqfromLatin1("es-pe"))
             d->language = es_pe;
-        else if (elemText == QString::fromLatin1("es-pr"))
+        else if (elemText == TQString::tqfromLatin1("es-pr"))
             d->language = es_pr;
-        else if (elemText == QString::fromLatin1("es-es"))
+        else if (elemText == TQString::tqfromLatin1("es-es"))
             d->language = es_es;
-        else if (elemText == QString::fromLatin1("es-uy"))
+        else if (elemText == TQString::tqfromLatin1("es-uy"))
             d->language = es_uy;
-        else if (elemText == QString::fromLatin1("es-ve"))
+        else if (elemText == TQString::tqfromLatin1("es-ve"))
             d->language = es_ve;
-        else if (elemText == QString::fromLatin1("sv"))
+        else if (elemText == TQString::tqfromLatin1("sv"))
             d->language = sv;
-        else if (elemText == QString::fromLatin1("sv-fi"))
+        else if (elemText == TQString::tqfromLatin1("sv-fi"))
             d->language = sv_fi;
-        else if (elemText == QString::fromLatin1("sv-se"))
+        else if (elemText == TQString::tqfromLatin1("sv-se"))
             d->language = sv_se;
-        else if (elemText == QString::fromLatin1("tr"))
+        else if (elemText == TQString::tqfromLatin1("tr"))
             d->language = tr;
-        else if (elemText == QString::fromLatin1("uk"))
+        else if (elemText == TQString::tqfromLatin1("uk"))
             d->language = uk;
         else
             d->language = UndefinedLanguage;
     }
 
     if (d->format == AtomFeed)
-        tagName=QString::fromLatin1("issued"); // atom doesn't specify this for feeds
+        tagName=TQString::tqfromLatin1("issued"); // atom doesn't specify this for feeds
                                                // but some broken feeds do this
     else
-        tagName=QString::fromLatin1("pubDate");
+        tagName=TQString::tqfromLatin1("pubDate");
 
     if (!(elemText = extractNode(channelNode, tagName)).isNull()) {
         time_t _time;
@@ -408,7 +408,7 @@ Document::Document(const QDomDocument &doc) : d(new Private)
         d->pubDate.setTime_t(_time);
     }
 
-    if (!(elemText = extractNode(channelNode, QString::fromLatin1("dc:date"))).isNull()) {
+    if (!(elemText = extractNode(channelNode, TQString::tqfromLatin1("dc:date"))).isNull()) {
         time_t _time = parseISO8601Date(elemText);
         /* \bug This isn't really the right way since it will set the date to
          * Jan 1 1970, 1:00:00 if the passed date was invalid; this means that
@@ -418,9 +418,9 @@ Document::Document(const QDomDocument &doc) : d(new Private)
     }
 
     if (d->format == AtomFeed)
-        tagName=QString::fromLatin1("modified");
+        tagName=TQString::tqfromLatin1("modified");
     else
-        tagName=QString::fromLatin1("lastBuildDate");
+        tagName=TQString::tqfromLatin1("lastBuildDate");
     if (!(elemText = extractNode(channelNode, tagName)).isNull()) {
         time_t _time;
         if (d->format == AtomFeed)
@@ -430,44 +430,44 @@ Document::Document(const QDomDocument &doc) : d(new Private)
         d->lastBuildDate.setTime_t(_time);
     }
 
-    if (!(elemText = extractNode(channelNode, QString::fromLatin1("rating"))).isNull())
+    if (!(elemText = extractNode(channelNode, TQString::tqfromLatin1("rating"))).isNull())
         d->rating = elemText;
-    if (!(elemText = extractNode(channelNode, QString::fromLatin1("docs"))).isNull())
+    if (!(elemText = extractNode(channelNode, TQString::tqfromLatin1("docs"))).isNull())
         d->docs = elemText;
-    if (!(elemText = extractNode(channelNode, QString::fromLatin1((d->format == AtomFeed) ? "author" : "managingEditor"))).isNull())
+    if (!(elemText = extractNode(channelNode, TQString::tqfromLatin1((d->format == AtomFeed) ? "author" : "managingEditor"))).isNull())
         d->managingEditor = elemText;
-    if (!(elemText = extractNode(channelNode, QString::fromLatin1("webMaster"))).isNull())
+    if (!(elemText = extractNode(channelNode, TQString::tqfromLatin1("webMaster"))).isNull())
         d->webMaster = elemText;
 
-	if (!(elemText = extractNode(channelNode, QString::fromLatin1("ttl"))).isNull())
+	if (!(elemText = extractNode(channelNode, TQString::tqfromLatin1("ttl"))).isNull())
         d->ttl = elemText.toUInt();
 
-    n = channelNode.namedItem(QString::fromLatin1("skipHours"));
+    n = channelNode.namedItem(TQString::tqfromLatin1("skipHours"));
     if (!n.isNull())
-        for (QDomElement e = n.firstChild().toElement(); !e.isNull(); e = e.nextSibling().toElement())
-            if (e.tagName() == QString::fromLatin1("hour"))
+        for (TQDomElement e = n.firstChild().toElement(); !e.isNull(); e = e.nextSibling().toElement())
+            if (e.tagName() == TQString::tqfromLatin1("hour"))
                 d->skipHours.append(e.text().toUInt());
 
-    n = channelNode.namedItem(QString::fromLatin1("skipDays"));
+    n = channelNode.namedItem(TQString::tqfromLatin1("skipDays"));
     if (!n.isNull()) {
         Day day;
-        QString elemText;
-        for (QDomElement e = n.firstChild().toElement(); !e.isNull(); e = e.nextSibling().toElement())
-            if (e.tagName() == QString::fromLatin1("day")) {
+        TQString elemText;
+        for (TQDomElement e = n.firstChild().toElement(); !e.isNull(); e = e.nextSibling().toElement())
+            if (e.tagName() == TQString::tqfromLatin1("day")) {
                 elemText = e.text().lower();
-                if (elemText == QString::fromLatin1("monday"))
+                if (elemText == TQString::tqfromLatin1("monday"))
                     day = Monday;
-                else if (elemText == QString::fromLatin1("tuesday"))
+                else if (elemText == TQString::tqfromLatin1("tuesday"))
                     day = Tuesday;
-                else if (elemText == QString::fromLatin1("wednesday"))
+                else if (elemText == TQString::tqfromLatin1("wednesday"))
                     day = Wednesday;
-                else if (elemText == QString::fromLatin1("thursday"))
+                else if (elemText == TQString::tqfromLatin1("thursday"))
                     day = Thursday;
-                else if (elemText == QString::fromLatin1("friday"))
+                else if (elemText == TQString::tqfromLatin1("friday"))
                     day = Friday;
-                else if (elemText == QString::fromLatin1("saturday"))
+                else if (elemText == TQString::tqfromLatin1("saturday"))
                     day = Saturday;
-                else if (elemText == QString::fromLatin1("sunday"))
+                else if (elemText == TQString::tqfromLatin1("sunday"))
                     day = Sunday;
                 else
                     day = UndefinedDay;
@@ -493,29 +493,29 @@ Version Document::version() const
     return d->version;
 }
 
-QString Document::verbVersion() const
+TQString Document::verbVersion() const
 {
     switch (d->version) {
-        case v0_90: return QString::fromLatin1("0.90");
-        case v0_91: return QString::fromLatin1("0.91");
-        case v0_92: return QString::fromLatin1("0.92");
-        case v0_93: return QString::fromLatin1("0.93");
-        case v0_94: return QString::fromLatin1("0.94");
-        case v1_0: return QString::fromLatin1("1.0");
-        case v2_0: return QString::fromLatin1("2.0");
-        case vAtom_0_3: return QString::fromLatin1("0.3");
-        case vAtom_0_2: return QString::fromLatin1("0.2");
-        case vAtom_0_1: return QString::fromLatin1("0.1");
+        case v0_90: return TQString::tqfromLatin1("0.90");
+        case v0_91: return TQString::tqfromLatin1("0.91");
+        case v0_92: return TQString::tqfromLatin1("0.92");
+        case v0_93: return TQString::tqfromLatin1("0.93");
+        case v0_94: return TQString::tqfromLatin1("0.94");
+        case v1_0: return TQString::tqfromLatin1("1.0");
+        case v2_0: return TQString::tqfromLatin1("2.0");
+        case vAtom_0_3: return TQString::tqfromLatin1("0.3");
+        case vAtom_0_2: return TQString::tqfromLatin1("0.2");
+        case vAtom_0_1: return TQString::tqfromLatin1("0.1");
     }
-    return QString::null;
+    return TQString();
 }
 
-QString Document::title() const
+TQString Document::title() const
 {
     return d->title;
 }
 
-QString Document::description() const
+TQString Document::description() const
 {
     return d->description;
 }
@@ -555,22 +555,22 @@ Language Document::language() const
     return d->language;
 }
 
-QString Document::copyright() const
+TQString Document::copyright() const
 {
     return d->copyright;
 }
 
-const QDateTime &Document::pubDate() const
+const TQDateTime &Document::pubDate() const
 {
     return d->pubDate;
 }
 
-const QDateTime &Document::lastBuildDate() const
+const TQDateTime &Document::lastBuildDate() const
 {
     return d->lastBuildDate;
 }
 
-QString Document::rating() const
+TQString Document::rating() const
 {
     return d->rating;
 }
@@ -580,12 +580,12 @@ const KURL &Document::docs() const
     return d->docs;
 }
 
-QString Document::managingEditor() const
+TQString Document::managingEditor() const
 {
     return d->managingEditor;
 }
 
-QString Document::webMaster() const
+TQString Document::webMaster() const
 {
     return d->webMaster;
 }

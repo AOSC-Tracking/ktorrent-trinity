@@ -27,7 +27,7 @@
  */
 
 #include <cstdlib>
-#include <qstring.h>
+#include <tqstring.h>
 
 
 #include <avahi-client/client.h>
@@ -45,6 +45,7 @@ namespace kt
 	class AvahiService : public kt::PeerSource
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		AvahiService(const bt::PeerID&, bt::Uint16, const bt::SHA1Hash&);
 		virtual ~AvahiService();
@@ -95,9 +96,9 @@ namespace kt
 			void*
 		);
 	
-		QString id;
+		TQString id;
 		int port;
-		QString infoHash;
+		TQString infoHash;
 	
 		bool started;
 	

@@ -20,9 +20,9 @@
 #include <kmessagebox.h>
 #include <kio/job.h>
 #include <kio/jobclasses.h>
-//#include <qfile.h>
-#include <qclipboard.h>
-#include <qapplication.h>
+//#include <tqfile.h>
+#include <tqclipboard.h>
+#include <tqapplication.h>
 #include <kio/netaccess.h>
 #include <klocale.h>
 #include <kfiledialog.h>
@@ -36,8 +36,8 @@ using namespace bt;
 namespace kt
 {
 	
-	HTMLPart::HTMLPart(QWidget *parent)
-			: KHTMLPart(parent)
+	HTMLPart::HTMLPart(TQWidget *tqparent)
+			: KHTMLPart(tqparent)
 	{
 		setJScriptEnabled(true);
 		setJavaEnabled(true);
@@ -45,8 +45,8 @@ namespace kt
 		setPluginsEnabled(false);
 		setStatusMessagesEnabled(false);
 		KParts::BrowserExtension* ext = this->browserExtension();
-		connect(ext,SIGNAL(openURLRequest(const KURL&,const KParts::URLArgs&)),
-				this,SLOT(openURLRequest(const KURL&, const KParts::URLArgs& )));
+		connect(ext,TQT_SIGNAL(openURLRequest(const KURL&,const KParts::URLArgs&)),
+				this,TQT_SLOT(openURLRequest(const KURL&, const KParts::URLArgs& )));
 	
 		ext->enableAction("copy",true);
 		ext->enableAction("paste",true);
@@ -59,11 +59,11 @@ namespace kt
 	
 	void HTMLPart::copy()
 	{
-		QString txt = selectedText();
-		QClipboard *cb = QApplication::clipboard();
+		TQString txt = selectedText();
+		TQClipboard *cb = TQApplication::tqclipboard();
 		// Copy text into the clipboard
 		if (cb)
-			cb->setText(txt,QClipboard::Clipboard);
+			cb->setText(txt,TQClipboard::Clipboard);
 	}
 	
 	void HTMLPart::openURLRequest(const KURL &u,const KParts::URLArgs &)
@@ -75,15 +75,15 @@ namespace kt
 		}
 		
 		KIO::TransferJob* j = KIO::get(u,false,false);
-		connect(j,SIGNAL(data(KIO::Job*,const QByteArray &)),
-				this,SLOT(dataRecieved(KIO::Job*, const QByteArray& )));
-		connect(j,SIGNAL(result(KIO::Job*)),this,SLOT(jobDone(KIO::Job* )));
-		connect(j,SIGNAL(mimetype(KIO::Job*, const QString &)),
-				this,SLOT(mimetype(KIO::Job*, const QString& )));
+		connect(j,TQT_SIGNAL(data(KIO::Job*,const TQByteArray &)),
+				this,TQT_SLOT(dataRecieved(KIO::Job*, const TQByteArray& )));
+		connect(j,TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(jobDone(KIO::Job* )));
+		connect(j,TQT_SIGNAL(mimetype(KIO::Job*, const TQString &)),
+				this,TQT_SLOT(mimetype(KIO::Job*, const TQString& )));
 	
 		active_job = j;
 		curr_data.resize(0);
-		mime_type = QString::null;
+		mime_type = TQString();
 		curr_url = u;
 	}
 	
@@ -115,7 +115,7 @@ namespace kt
 		openURL(url());
 	}
 	
-	void HTMLPart::dataRecieved(KIO::Job* job,const QByteArray & data)
+	void HTMLPart::dataRecieved(KIO::Job* job,const TQByteArray & data)
 	{
 		if (job != active_job)
 		{
@@ -134,7 +134,7 @@ namespace kt
 		}
 	}
 	
-	void HTMLPart::mimetype(KIO::Job* job,const QString & mt)
+	void HTMLPart::mimetype(KIO::Job* job,const TQString & mt)
 	{
 		if (job != active_job)
 		{
@@ -191,7 +191,7 @@ namespace kt
 		active_job = 0;
 		curr_data.resize(0);
 		curr_url = KURL();
-		mime_type = QString::null;
+		mime_type = TQString();
 	}
 }
 

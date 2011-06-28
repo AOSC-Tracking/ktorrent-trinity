@@ -40,7 +40,7 @@ namespace kt
 			virtual ~SchedulerPrefPage();
 			
 			virtual bool apply();
-			virtual void createWidget(QWidget* parent);
+			virtual void createWidget(TQWidget* tqparent);
 			virtual void updateData();
 			virtual void deleteWidget();
 			

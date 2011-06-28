@@ -23,16 +23,16 @@
 #include <klocale.h>
 #include "localefloatvalidator.h"
 
-kt::LocaleFloatValidator::LocaleFloatValidator( QObject * parent, const char * name )
-:QValidator(parent, name)
+kt::LocaleFloatValidator::LocaleFloatValidator( TQObject * tqparent, const char * name )
+:TQValidator(tqparent, name)
 {
-	QString decimalPoint = QRegExp::escape(KGlobal::locale()->decimalSymbol());
+	TQString decimalPoint = TQRegExp::escape(KGlobal::locale()->decimalSymbol());
 	regexp.setPattern("^-?\\d*(" + decimalPoint + "\\d*)?$");
 }
 
-QValidator::State kt::LocaleFloatValidator::validate( QString & str, int & pos) const
+TQValidator::State kt::LocaleFloatValidator::validate( TQString & str, int & pos) const
 {
-	return regexp.exactMatch(str) ? QValidator::Acceptable : QValidator::Invalid;
+	return regexp.exactMatch(str) ? TQValidator::Acceptable : TQValidator::Invalid;
 }
 
 

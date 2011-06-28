@@ -20,8 +20,8 @@
 #ifndef IDEALDOCKSPLITTER_H
 #define IDEALDOCKSPLITTER_H
 
-#include <qsplitter.h>
-#include <qvaluelist.h>
+#include <tqsplitter.h>
+#include <tqvaluelist.h>
 
 namespace Ideal {
 
@@ -30,16 +30,17 @@ class DockWidget;
 /**
 @short Splitter for docks
 */
-class DockSplitter: public QSplitter {
+class DockSplitter: public TQSplitter {
     Q_OBJECT
+  TQ_OBJECT
 public:
-    DockSplitter(Orientation orientation, QWidget *parent = 0, const char *name = 0);
+    DockSplitter(Qt::Orientation orientation, TQWidget *tqparent = 0, const char *name = 0);
     ~DockSplitter();
     
-    void addDock(uint row, uint col, QWidget *dock);
+    void addDock(uint row, uint col, TQWidget *dock);
     void removeDock(uint row, uint col, bool alsoDelete = false);
     
-    QPair<uint, uint> indexOf(QWidget *dock);
+    TQPair<uint, uint> indexOf(TQWidget *dock);
     
     int numRows() const;
     int numCols(int row) const;
@@ -47,14 +48,14 @@ public:
 protected:
     void appendSplitter();
     void createSplitters(uint index);
-    void shiftWidgets(QSplitter *splitter, uint row, uint fromCol);
+    void shiftWidgets(TQSplitter *splitter, uint row, uint fromCol);
     
     bool isRowEmpty(int row);
     
 private:
-    Orientation m_orientation;
-    QValueList<QSplitter*> m_splitters;
-    QValueList<QValueList<QWidget*> > m_docks;
+    Qt::Orientation m_orientation;
+    TQValueList<TQSplitter*> m_splitters;
+    TQValueList<TQValueList<TQWidget*> > m_docks;
 };
 
 }

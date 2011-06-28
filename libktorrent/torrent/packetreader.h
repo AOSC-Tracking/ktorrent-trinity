@@ -20,8 +20,8 @@
 #ifndef BTPACKETREADER_H
 #define BTPACKETREADER_H
 
-#include <qmutex.h>
-#include <qptrlist.h>
+#include <tqmutex.h>
+#include <tqptrlist.h>
 #include <net/bufferedsocket.h>
 #include "globals.h"
 
@@ -46,8 +46,8 @@ namespace bt
 	{
 		Peer* peer;
 		bool error;
-		QPtrList<IncomingPacket> packet_queue;
-		QMutex mutex;
+		TQPtrList<IncomingPacket> packet_queue;
+		TQMutex mutex;
 		Uint8 len[4];
 		int len_received;
 	public:

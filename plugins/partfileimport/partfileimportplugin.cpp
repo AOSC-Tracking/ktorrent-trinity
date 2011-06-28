@@ -39,8 +39,8 @@ K_EXPORT_COMPONENT_FACTORY(ktpartfileimportplugin,KGenericFactory<kt::PartFileIm
 namespace kt
 {
 
-	PartFileImportPlugin::PartFileImportPlugin(QObject* parent, const char* name, const QStringList& args)
-	: Plugin(parent, name, args,NAME,i18n("Import"),AUTHOR,EMAIL,i18n("Imports partially or fully downloaded torrents from other clients"),"ktplugins")
+	PartFileImportPlugin::PartFileImportPlugin(TQObject* tqparent, const char* name, const TQStringList& args)
+	: Plugin(tqparent, name, args,NAME,i18n("Import"),AUTHOR,EMAIL,i18n("Imports partially or fully downloaded torrents from other clients"),"ktplugins")
 	{
 		setXMLFile("ktpartfileimportpluginui.rc");
 		import_action = 0;
@@ -54,7 +54,7 @@ namespace kt
 	void PartFileImportPlugin::load()
 	{
 		import_action = new KAction(i18n("Import existing download" ), 0, this,
-									 SLOT(onImport()), actionCollection(), "partfileimport" );
+									 TQT_SLOT(onImport()), actionCollection(), "partfileimport" );
 	}
 
 	void PartFileImportPlugin::unload()
@@ -69,7 +69,7 @@ namespace kt
 		dlg.exec();
 	}
 	
-	bool PartFileImportPlugin::versionCheck(const QString & version) const
+	bool PartFileImportPlugin::versionCheck(const TQString & version) const
 	{
 		return version == KT_VERSION_MACRO;
 	}

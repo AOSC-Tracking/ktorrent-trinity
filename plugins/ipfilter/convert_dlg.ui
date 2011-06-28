@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>ConvertingDlg</class>
-<widget class="QDialog">
+<widget class="TQDialog">
     <property name="name">
         <cstring>ConvertingDlg</cstring>
     </property>
@@ -33,7 +33,7 @@
         <property name="resizeMode">
             <enum>Fixed</enum>
         </property>
-        <widget class="QLabel" row="0" column="0">
+        <widget class="TQLabel" row="0" column="0">
             <property name="name">
                 <cstring>textLabel1</cstring>
             </property>
@@ -46,14 +46,14 @@
             <property name="scaledContents">
                 <bool>false</bool>
             </property>
-            <property name="alignment">
+            <property name="tqalignment">
                 <set>WordBreak|AlignVCenter</set>
             </property>
             <property name="indent">
                 <number>-2</number>
             </property>
         </widget>
-        <widget class="QLabel" row="1" column="0">
+        <widget class="TQLabel" row="1" column="0">
             <property name="name">
                 <cstring>lbl_progress</cstring>
             </property>
@@ -73,22 +73,22 @@
                     <verstretch>0</verstretch>
                 </sizepolicy>
             </property>
-            <property name="minimumSize">
+            <property name="tqminimumSize">
                 <size>
                     <width>390</width>
                     <height>0</height>
                 </size>
             </property>
         </widget>
-        <widget class="QLayoutWidget" row="3" column="0">
+        <widget class="TQLayoutWidget" row="3" column="0">
             <property name="name">
-                <cstring>layout6</cstring>
+                <cstring>tqlayout6</cstring>
             </property>
             <hbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLabel">
+                <widget class="TQLabel">
                     <property name="name">
                         <cstring>label1</cstring>
                     </property>
@@ -96,7 +96,7 @@
                         <string></string>
                     </property>
                 </widget>
-                <widget class="QPushButton">
+                <widget class="TQPushButton">
                     <property name="name">
                         <cstring>btnClose</cstring>
                     </property>
@@ -112,7 +112,7 @@
                         <string>&amp;Close</string>
                     </property>
                 </widget>
-                <widget class="QPushButton">
+                <widget class="TQPushButton">
                     <property name="name">
                         <cstring>btnCancel</cstring>
                     </property>
@@ -146,11 +146,11 @@
         <slot>btnCancel_clicked()</slot>
     </connection>
 </connections>
-<slots>
+<Q_SLOTS>
     <slot>btnClose_clicked()</slot>
     <slot>btnCancel_clicked()</slot>
-</slots>
-<layoutdefaults spacing="6" margin="11"/>
+</Q_SLOTS>
+<tqlayoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kprogress.h</includehint>
 </includehints>

@@ -22,7 +22,7 @@
 #include <config.h>
 #endif
 
-#include <qfile.h>
+#include <tqfile.h>
 #include "config.h"
 #include <klocale.h>
 #include <string.h>
@@ -45,15 +45,15 @@ namespace bt
 		close();
 	}
 	
-	bool File::open(const QString & file,const QString & mode)
+	bool File::open(const TQString & file,const TQString & mode)
 	{
 		this->file = file;
 		if (fptr)
 			close();
 #if HAVE_FOPEN64
-		fptr = fopen64(QFile::encodeName(file),mode.ascii());
+		fptr = fopen64(TQFile::encodeName(file),mode.ascii());
 #else
-		fptr = fopen(QFile::encodeName(file),mode.ascii());
+		fptr = fopen(TQFile::encodeName(file),mode.ascii());
 #endif
 		return fptr != 0;
 	}
@@ -84,7 +84,7 @@ namespace bt
 			if (errno == ENOSPC)
 				Out() << "Disk full !" << endl;
 			
-			throw Error(i18n("Cannot write to %1 : %2").arg(file).arg(strerror(errno)));
+			throw Error(i18n("Cannot write to %1 : %2").tqarg(file).tqarg(strerror(errno)));
 		}
 		return ret;
 	}
@@ -98,7 +98,7 @@ namespace bt
 		if (ferror(fptr))
 		{
 			clearerr(fptr);
-			throw Error(i18n("Cannot read from %1").arg(file));
+			throw Error(i18n("Cannot read from %1").tqarg(file));
 		}
 		return ret;
 	}
@@ -143,8 +143,8 @@ namespace bt
 		return ftello(fptr);
 	}
 
-	QString File::errorString() const
+	TQString File::errorString() const
 	{
-		return QString(strerror(errno));
+		return TQString(strerror(errno));
 	}
 }

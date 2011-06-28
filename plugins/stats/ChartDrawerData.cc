@@ -22,25 +22,25 @@
 
 namespace kt {
 
-ChartDrawerData::ChartDrawerData(const QString & rN) : pmQp(new QPen("#000", 1, Qt::SolidLine)), pmVals(new val_t(2, 0.0)), mName(rN)
+ChartDrawerData::ChartDrawerData(const TQString & rN) : pmQp(new TQPen("#000", 1, TQt::SolidLine)), pmVals(new val_t(2, 0.0)), mName(rN)
 {
 }
 
-ChartDrawerData::ChartDrawerData(const size_t s, const QString & rN) : pmQp(new QPen("#000", 1, Qt::SolidLine)), pmVals(new val_t(s, 0.0)), mName(rN)
+ChartDrawerData::ChartDrawerData(const size_t s, const TQString & rN) : pmQp(new TQPen("#000", 1, TQt::SolidLine)), pmVals(new val_t(s, 0.0)), mName(rN)
 {
 }
 
-ChartDrawerData::ChartDrawerData(const QPen & rQp, const QString & rN) : pmQp(new QPen(rQp)), pmVals(new val_t(2, 0.0)), mName(rN)
+ChartDrawerData::ChartDrawerData(const TQPen & rQp, const TQString & rN) : pmQp(new TQPen(rQp)), pmVals(new val_t(2, 0.0)), mName(rN)
 {
 }
 
-ChartDrawerData::ChartDrawerData(const QPen & rQp, const size_t s, const QString & rN) : pmQp(new QPen(rQp)), pmVals(new val_t(s, 0.0)), mName(rN)
+ChartDrawerData::ChartDrawerData(const TQPen & rQp, const size_t s, const TQString & rN) : pmQp(new TQPen(rQp)), pmVals(new val_t(s, 0.0)), mName(rN)
 {
 }
 
 ChartDrawerData::ChartDrawerData(const ChartDrawerData & rS)
 {
-	pmQp = new QPen(*rS.pmQp);
+	pmQp = new TQPen(*rS.pmQp);
 	pmVals = new val_t(*rS.pmVals);
 	mName = rS.mName;
 }
@@ -56,15 +56,15 @@ const ChartDrawerData::val_t * ChartDrawerData::GetVals() const
 	return pmVals;
 }
 
-const QPen * ChartDrawerData::GetPen() const
+const TQPen * ChartDrawerData::GetPen() const
 {
 	return pmQp;
 }
 
-void ChartDrawerData::SetPen(const QPen & rQp)
+void ChartDrawerData::SetPen(const TQPen & rQp)
 {
 	delete pmQp;
-	pmQp = new QPen(rQp);
+	pmQp = new TQPen(rQp);
 }
 
 std::pair<double, size_t> ChartDrawerData::Max() const 
@@ -88,11 +88,11 @@ std::pair<double, size_t> ChartDrawerData::Max() const
 	return std::make_pair(max, maxpos);
 }
 
-QString ChartDrawerData::GetName() const
+TQString ChartDrawerData::GetName() const
 {
 	return mName;
 }
-void ChartDrawerData::SetName( const QString & rN )
+void ChartDrawerData::SetName( const TQString & rN )
 {
 	mName = rN;
 }

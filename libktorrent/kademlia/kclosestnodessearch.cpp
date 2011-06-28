@@ -65,7 +65,7 @@ namespace dht
 		
 	}
 	
-	void KClosestNodesSearch::pack(QByteArray & ba)
+	void KClosestNodesSearch::pack(TQByteArray & ba)
 	{
 		// make sure we do not writ to much
 		Uint32 max_items = ba.size() / 26;

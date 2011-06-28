@@ -26,7 +26,7 @@
 namespace bt
 {
 
-	Cache::Cache(Torrent & tor,const QString & tmpdir,const QString & datadir)
+	Cache::Cache(Torrent & tor,const TQString & tmpdir,const TQString & datadir)
 	: tor(tor),tmpdir(tmpdir),datadir(datadir),mmap_failures(0)
 	{
 		if (!datadir.endsWith(bt::DirSeparator()))
@@ -43,7 +43,7 @@ namespace bt
 	{}
 
 
-	void Cache::changeTmpDir(const QString & ndir)
+	void Cache::changeTmpDir(const TQString & ndir)
 	{
 		tmpdir = ndir;
 	}

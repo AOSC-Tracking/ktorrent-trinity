@@ -40,11 +40,11 @@ namespace kt
 		Group* g;
 		GroupView* gview;
 	public:
-		GroupViewItem(GroupView* parent,Group* g);
-		GroupViewItem(GroupView* gview,KListViewItem* parent,Group* g);
+		GroupViewItem(GroupView* tqparent,Group* g);
+		GroupViewItem(GroupView* gview,KListViewItem* tqparent,Group* g);
 		virtual ~GroupViewItem();
 		
-		virtual int compare(QListViewItem* i,int col,bool ascending) const; 
+		virtual int compare(TQListViewItem* i,int col,bool ascending) const; 
 	};
 
 	/**
@@ -53,8 +53,9 @@ namespace kt
 	class GroupView : public KListView
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		GroupView(ViewManager* view,KActionCollection* col,QWidget *parent = 0, const char *name = 0);
+		GroupView(ViewManager* view,KActionCollection* col,TQWidget *tqparent = 0, const char *name = 0);
 		virtual ~GroupView();
 		
 		/// Get the current group
@@ -67,7 +68,7 @@ namespace kt
 		void loadGroups();
 		
 		/// Find a group by its name
-		const Group* findGroup(const QString & name) const;
+		const Group* findGroup(const TQString & name) const;
 		
 		GroupManager* groupManager() const { return gman; }
 		
@@ -78,16 +79,16 @@ namespace kt
 		void updateGroupsSubMenu(KPopupMenu* gsm);
 		
 		/// An item was activated in the groups sub menu of a KTorrentView
-		void onGroupsSubMenuItemActivated(KTorrentView* v,const QString & group);
+		void onGroupsSubMenuItemActivated(KTorrentView* v,const TQString & group);
 		
 	private slots:
-		void onExecuted(QListViewItem* item);
-		void showContextMenu(KListView* ,QListViewItem* item,const QPoint & p);
+		void onExecuted(TQListViewItem* item);
+		void showContextMenu(KListView* ,TQListViewItem* item,const TQPoint & p);
 		void addGroup();
 		void removeGroup();
 		void editGroupName();
-		void onDropped(QDropEvent* e,QListViewItem *after);
-		virtual bool acceptDrag(QDropEvent* event) const;
+		void onDropped(TQDropEvent* e,TQListViewItem *after);
+		virtual bool acceptDrag(TQDropEvent* event) const;
 		void openView();
 		
 		
@@ -99,14 +100,14 @@ namespace kt
 		
 	private:
 		void createMenu(KActionCollection* col);
-		GroupViewItem* addGroup(Group* g,KListViewItem* parent);
+		GroupViewItem* addGroup(Group* g,KListViewItem* tqparent);
 			
 	private:
 		ViewManager* view;
 		KListViewItem* custom_root;
 		bt::PtrMap<GroupViewItem*,Group> groups;
 		GroupManager* gman;
-		QString save_file;
+		TQString save_file;
 		
 		Group* current;
 		

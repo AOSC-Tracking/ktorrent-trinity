@@ -27,17 +27,18 @@ class KTorrent;
 /**
 @author Joris Guisson
 */
-class KTorrentDCOP : public QObject,virtual public DCOPInterface
+class KTorrentDCOP : public TQObject,virtual public DCOPInterface
 {
 	Q_OBJECT
+  TQ_OBJECT
 	KTorrent* app;
 public:
 	KTorrentDCOP(KTorrent* app);
 	~KTorrentDCOP();
 
-	virtual bool changeDataDir(const QString& new_dir);
-	virtual void openTorrent(const QString& file);
-	virtual void openTorrentSilently(const QString & file);
+	virtual bool changeDataDir(const TQString& new_dir);
+	virtual void openTorrent(const TQString& file);
+	virtual void openTorrentSilently(const TQString & file);
 	virtual void setKeepSeeding(bool ks);
 	virtual void setMaxConnectionsPerDownload(int max);
 	virtual void setMaxDownloads(int max);
@@ -47,18 +48,18 @@ public:
 	virtual void setShowSysTrayIcon(bool yes);
 	virtual void startAll(int type = 3);
 	virtual void stopAll(int type = 3);
-	virtual QValueList<int> getTorrentNumbers(int type = 3);
+	virtual TQValueList<int> getTorrentNumbers(int type = 3);
 	virtual QCStringList getTorrentInfo(int tornumber);
 	virtual int getFileCount(int tornumber);
 	virtual QCStringList getInfo();
 	virtual QCStringList getFileNames(int tornumber);
-	virtual QValueList<int> getFilePriorities(int tornumber);
+	virtual TQValueList<int> getFilePriorities(int tornumber);
 	virtual void setFilePriority(int tornumber, int index, int priority);
 	virtual void start(int tornumber);
 	virtual void stop(int tornumber, bool user);
 	virtual void remove(int tornumber, bool del_data);
 	virtual void announce(int tornumber);
-	virtual QCString dataDir();
+	virtual TQCString dataDir();
 	virtual int maxDownloads();
 	virtual int maxSeeds();
 	virtual int maxConnections();
@@ -66,9 +67,9 @@ public:
 	virtual int maxDownloadRate();
 	virtual bool keepSeeding();
 	virtual bool showSystemTrayIcon();
-	virtual QValueList<int> intSettings();
-	virtual bool isBlockedIP(QString ip);
-	virtual void openTorrentSilentlyDir(const QString & file, const QString & savedir);
+	virtual TQValueList<int> intSettings();
+	virtual bool isBlockedIP(TQString ip);
+	virtual void openTorrentSilentlyDir(const TQString & file, const TQString & savedir);
 
 };
 

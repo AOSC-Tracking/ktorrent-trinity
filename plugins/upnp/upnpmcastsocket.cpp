@@ -19,23 +19,24 @@
  ***************************************************************************/
 
 #include <kurl.h>
-#include <unistd.h>
+extern "C" {
+	#include <unistd.h>
+	inline ssize_t mycread (int __fd, void *__buf, size_t __nbytes) { read(__fd, __buf, __nbytes); }
+};
 #include <sys/socket.h>
 #include <netinet/in.h>
-#include <netinet/in_systm.h>		
+#include <netinet/in_systm.h>
 #include <netinet/ip.h>
 #include <arpa/inet.h>
 #include <netinet/ip.h>
-#include <qstringlist.h>
+#include <tqstringlist.h>
 #include <ksocketdevice.h>
 #include <ksocketaddress.h>
 #include <util/log.h>
 #include <torrent/globals.h>
-#include <qfile.h>
-#include <qtextstream.h>
+#include <tqfile.h>
+#include <tqtextstream.h>
 #include "upnpmcastsocket.h"
-
-
 
 using namespace KNetwork;
 using namespace bt;
@@ -46,14 +47,14 @@ namespace kt
 	UPnPMCastSocket::UPnPMCastSocket(bool verbose) : verbose(verbose)
 	{
 		routers.setAutoDelete(true);
-		QObject::connect(this,SIGNAL(readyRead()),this,SLOT(onReadyRead()));
-		QObject::connect(this,SIGNAL(gotError(int)),this,SLOT(onError(int)));
+		TQObject::connect(this,TQT_SIGNAL(readyRead()),this,TQT_SLOT(onReadyRead()));
+		TQObject::connect(this,TQT_SIGNAL(gotError(int)),this,TQT_SLOT(onError(int)));
 		setAddressReuseable(true);
 		setFamily(KNetwork::KResolver::IPv4Family);
 		setBlocking(true);
 		for (Uint32 i = 0;i < 10;i++)
 		{
-			if (!bind(QString::null,QString::number(1900 + i)))
+			if (!bind(TQString(),TQString::number(1900 + i)))
 				Out(SYS_PNP|LOG_IMPORTANT) << "Cannot bind to UDP port 1900" << endl;
 			else
 				break;
@@ -66,8 +67,8 @@ namespace kt
 	UPnPMCastSocket::~UPnPMCastSocket()
 	{
 		leaveUPnPMCastGroup();
-		QObject::disconnect(this,SIGNAL(readyRead()),this,SLOT(onReadyRead()));
-		QObject::disconnect(this,SIGNAL(gotError(int)),this,SLOT(onError(int)));
+		TQObject::disconnect(this,TQT_SIGNAL(readyRead()),this,TQT_SLOT(onReadyRead()));
+		TQObject::disconnect(this,TQT_SIGNAL(gotError(int)),this,TQT_SLOT(onError(int)));
 	}
 	
 	void UPnPMCastSocket::discover()
@@ -102,7 +103,7 @@ namespace kt
 		else
 		{
 			// add it to the list and emit the signal
-			if (!routers.contains(r->getServer()))
+			if (!routers.tqcontains(r->getServer()))
 			{
 				routers.insert(r->getServer(),r);
 				discovered(r);
@@ -123,7 +124,7 @@ namespace kt
 			// so we need to deal with it oursleves
 			int fd = socketDevice()->socket();
 			char tmp;
-			read(fd,&tmp,1);
+			mycread(fd,&tmp,1);
 			return;
 		}
 		
@@ -134,25 +135,25 @@ namespace kt
 		if (verbose)
 		{
 			Out(SYS_PNP|LOG_NOTICE) << "Received : " << endl;
-			Out(SYS_PNP|LOG_NOTICE) << QString(p.data()) << endl;
+			Out(SYS_PNP|LOG_NOTICE) << TQString(p.data()) << endl;
 		}
 		
 		// try to make a router of it
 		UPnPRouter* r = parseResponse(p.data());
 		if (r)
 		{
-			QObject::connect(r,SIGNAL(xmlFileDownloaded( UPnPRouter*, bool )),
-					this,SLOT(onXmlFileDownloaded( UPnPRouter*, bool )));
+			TQObject::connect(r,TQT_SIGNAL(xmlFileDownloaded( UPnPRouter*, bool )),
+					this,TQT_SLOT(onXmlFileDownloaded( UPnPRouter*, bool )));
 			
 			// download it's xml file
 			r->downloadXMLFile();
 		}
 	}
 	
-	UPnPRouter* UPnPMCastSocket::parseResponse(const QByteArray & arr)
+	UPnPRouter* UPnPMCastSocket::parseResponse(const TQByteArray & arr)
 	{
-		QStringList lines = QStringList::split("\r\n",QString(arr),false);
-		QString server;
+		TQStringList lines = TQStringList::split("\r\n",TQString(arr),false);
+		TQString server;
 		KURL location;
 		
 		/*
@@ -162,14 +163,14 @@ namespace kt
 		*/
 		
 		// first read first line and see if contains a HTTP 200 OK message
-		QString line = lines.first();
-		if (!line.contains("HTTP"))
+		TQString line = lines.first();
+		if (!line.tqcontains("HTTP"))
 		{
 			// it is either a 200 OK or a NOTIFY
-			if (!line.contains("NOTIFY") && !line.contains("200")) 
+			if (!line.tqcontains("NOTIFY") && !line.tqcontains("200")) 
 				return 0;
 		}
-		else if (line.contains("M-SEARCH")) // ignore M-SEARCH 
+		else if (line.tqcontains("M-SEARCH")) // ignore M-SEARCH 
 			return 0;
 		
 		// quick check that the response being parsed is valid 
@@ -177,7 +178,7 @@ namespace kt
 		for (Uint32 idx = 0;idx < lines.count() && !validDevice; idx++) 
 		{ 
 			line = lines[idx]; 
-			if ((line.contains("ST:") || line.contains("NT:")) && line.contains("InternetGatewayDevice")) 
+			if ((line.tqcontains("ST:") || line.tqcontains("NT:")) && line.tqcontains("InternetGatewayDevice")) 
 			{
 				validDevice = true; 
 			}
@@ -194,20 +195,20 @@ namespace kt
 			line = lines[i];
 			if (line.startsWith("Location") || line.startsWith("LOCATION") || line.startsWith("location"))
 			{
-				location = line.mid(line.find(':') + 1).stripWhiteSpace();
+				location = line.mid(line.tqfind(':') + 1).stripWhiteSpace();
 				if (!location.isValid())
 					return 0;
 			}
 			else if (line.startsWith("Server") || line.startsWith("server") || line.startsWith("SERVER"))
 			{
-				server = line.mid(line.find(':') + 1).stripWhiteSpace();
+				server = line.mid(line.tqfind(':') + 1).stripWhiteSpace();
 				if (server.length() == 0)
 					return 0;
 				
 			}
 		}
 		
-		if (routers.contains(server))
+		if (routers.tqcontains(server))
 		{
 			return 0;
 		}
@@ -221,22 +222,22 @@ namespace kt
 	
 	void UPnPMCastSocket::onError(int)
 	{
-		Out(SYS_PNP|LOG_IMPORTANT) << "UPnPMCastSocket Error : " << errorString() << endl;
+		Out(SYS_PNP|LOG_IMPORTANT) << "UPnPMCastSocket Error : " << KSocketBase::errorString() << endl;
 	}
 	
-	void UPnPMCastSocket::saveRouters(const QString & file)
+	void UPnPMCastSocket::saveRouters(const TQString & file)
 	{
-		QFile fptr(file);
+		TQFile fptr(file);
 		if (!fptr.open(IO_WriteOnly))
 		{
-			Out(SYS_PNP|LOG_IMPORTANT) << "Cannot open file " << file << " : " << fptr.errorString() << endl;
+			Out(SYS_PNP|LOG_IMPORTANT) << "Cannot open file " << file << " : " << TQString(fptr.errorString()) << endl;
 			return;
 		}
 		
 		// file format is simple : 2 lines per router, 
 		// one containing the server, the other the location
-		QTextStream fout(&fptr);
-		bt::PtrMap<QString,UPnPRouter>::iterator i = routers.begin();
+		TQTextStream fout(&fptr);
+		bt::PtrMap<TQString,UPnPRouter>::iterator i = routers.begin();
 		while (i != routers.end())
 		{
 			UPnPRouter* r = i->second;
@@ -246,29 +247,29 @@ namespace kt
 		}
 	}
 	
-	void UPnPMCastSocket::loadRouters(const QString & file)
+	void UPnPMCastSocket::loadRouters(const TQString & file)
 	{
-		QFile fptr(file);
+		TQFile fptr(file);
 		if (!fptr.open(IO_ReadOnly))
 		{
-			Out(SYS_PNP|LOG_IMPORTANT) << "Cannot open file " << file << " : " << fptr.errorString() << endl;
+			Out(SYS_PNP|LOG_IMPORTANT) << "Cannot open file " << file << " : " << TQString(fptr.errorString()) << endl;
 			return;
 		}
 		
 		// file format is simple : 2 lines per router, 
 		// one containing the server, the other the location
-		QTextStream fin(&fptr);
+		TQTextStream fin(&fptr);
 		
 		while (!fin.atEnd())
 		{
-			QString server, location;
+			TQString server, location;
 			server = fin.readLine();
 			location = fin.readLine();
-			if (!routers.contains(server))
+			if (!routers.tqcontains(server))
 			{
 				UPnPRouter* r = new UPnPRouter(server,location);
 				// download it's xml file
-				QObject::connect(r,SIGNAL(xmlFileDownloaded( UPnPRouter*, bool )),this,SLOT(onXmlFileDownloaded( UPnPRouter*, bool )));
+				TQObject::connect(r,TQT_SIGNAL(xmlFileDownloaded( UPnPRouter*, bool )),this,TQT_SLOT(onXmlFileDownloaded( UPnPRouter*, bool )));
 				r->downloadXMLFile();
 			}
 		}

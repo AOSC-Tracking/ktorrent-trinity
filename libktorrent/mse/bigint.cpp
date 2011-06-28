@@ -36,7 +36,7 @@ namespace mse
 		mpz_init2(val,num_bits);	
 	}
 		
-	BigInt::BigInt(const QString & value)
+	BigInt::BigInt(const TQString & value)
 	{
 		mpz_init2(val,(value.length() - 2)*4);
 		mpz_set_str(val,value.ascii(),0);	

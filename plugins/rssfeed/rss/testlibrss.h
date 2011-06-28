@@ -1,7 +1,7 @@
 #ifndef TESTLIBRSS_H
 #define TESTLIBRSS_H
 
-#include <qobject.h>
+#include <tqobject.h>
 
 #include "loader.h"
 #include "document.h"
@@ -10,16 +10,17 @@
 
 using RSS::Loader;
 using RSS::Document;
-using RSS::Status;
+using RSS::tqStatus;
 
-class Tester : public QObject
+class Tester : public TQObject
 {
 	Q_OBJECT
+  TQ_OBJECT
 	public:
-		void test( const QString &url );
+		void test( const TQString &url );
 
 	private slots:
-		void slotLoadingComplete( Loader *loader, Document doc, Status status );
+		void slotLoadingComplete( Loader *loader, Document doc, tqStatus status );
 };
 
 #endif

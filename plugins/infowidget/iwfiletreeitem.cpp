@@ -33,19 +33,19 @@ using namespace kt;
 namespace kt
 {
 				
-	IWFileTreeItem::IWFileTreeItem(IWFileTreeDirItem* item,const QString & name,kt::TorrentFileInterface & file)
+	IWFileTreeItem::IWFileTreeItem(IWFileTreeDirItem* item,const TQString & name,kt::TorrentFileInterface & file)
 		: FileTreeItem(item,name,file)
 	{
 		perc_complete = 0.0;
-		connect(&file,SIGNAL(downloadPercentageChanged( float )),this,SLOT(onPercentageUpdated( float )));
-		connect(&file,SIGNAL(previewAvailable( bool )),this,SLOT(onPreviewAvailable( bool )));
+		connect(&file,TQT_SIGNAL(downloadPercentageChanged( float )),this,TQT_SLOT(onPercentageUpdated( float )));
+		connect(&file,TQT_SIGNAL(previewAvailable( bool )),this,TQT_SLOT(onPreviewAvailable( bool )));
 	}
 	
 	IWFileTreeItem::~IWFileTreeItem()
 	{
 	}
 	
-	int IWFileTreeItem::compare(QListViewItem* i, int col, bool ascending) const
+	int IWFileTreeItem::compare(TQListViewItem* i, int col, bool ascending) const
 	{
 		if (col == 4)
 		{
@@ -92,7 +92,7 @@ namespace kt
 		else if (percent > 100.0)
 			percent = 100.0;
 		KLocale* loc = KGlobal::locale();
-		setText(4,i18n("%1 %").arg(loc->formatNumber(percent,2)));
+		setText(4,i18n("%1 %").tqarg(loc->formatNumber(percent,2)));
 		perc_complete = percent;
 	}
 	
@@ -147,8 +147,8 @@ namespace kt
 	{
 		return bt::KEEP_DATA;
 		/*
-		QString msg = i18n("Do you want to keep the existing data for seeding ?");
-		int ret = KMessageBox::warningYesNoCancel(0,msg,QString::null,
+		TQString msg = i18n("Do you want to keep the existing data for seeding ?");
+		int ret = KMessageBox::warningYesNoCancel(0,msg,TQString(),
 				KGuiItem(i18n("Keep the data")),
 				KGuiItem(i18n("Delete the data")));
 		if (ret == KMessageBox::Yes)

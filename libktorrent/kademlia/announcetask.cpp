@@ -52,13 +52,13 @@ namespace dht
 		
 		if (gpr->containsNodes())
 		{
-			const QByteArray & n = gpr->getData();
+			const TQByteArray & n = gpr->getData();
 			Uint32 nval = n.size() / 26;
 			for (Uint32 i = 0;i < nval;i++)
 			{
 				// add node to todo list
 				KBucketEntry e = UnpackBucketEntry(n,i*26);
-				if (!todo.contains(e) && !visited.contains(e) && 
+				if (!todo.tqcontains(e) && !visited.tqcontains(e) && 
 					todo.count() < 100)
 				{
 					todo.append(e);
@@ -78,7 +78,7 @@ namespace dht
 			
 			// add the peer who responded to the answered list, so we can do an announce
 			KBucketEntry e(rsp->getOrigin(),rsp->getID());
-			if (!answered.contains(KBucketEntryAndToken(e,gpr->getToken())) && !answered_visited.contains(e))
+			if (!answered.tqcontains(KBucketEntryAndToken(e,gpr->getToken())) && !answered_visited.tqcontains(e))
 			{
 				answered.append(KBucketEntryAndToken(e,gpr->getToken()));
 			}
@@ -101,7 +101,7 @@ namespace dht
 		while (!answered.empty() && canDoRequest())
 		{
 			KBucketEntryAndToken & e = answered.first();
-			if (!answered_visited.contains(e))
+			if (!answered_visited.tqcontains(e))
 			{
 				AnnounceReq* anr = new AnnounceReq(node->getOurID(),info_hash,port,e.getToken());
 				anr->setOrigin(e.getAddress());
@@ -117,7 +117,7 @@ namespace dht
 		{
 			KBucketEntry e = todo.first();
 			// onLy send a findNode if we haven't allrready visited the node
-			if (!visited.contains(e))
+			if (!visited.tqcontains(e))
 			{
 				// send a findNode to the node
 				GetPeersReq* gpr = new GetPeersReq(node->getOurID(),info_hash);

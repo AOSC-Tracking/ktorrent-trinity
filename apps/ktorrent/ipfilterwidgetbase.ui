@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>BlacklistWidgetBase</class>
-<widget class="QDialog">
+<widget class="TQDialog">
     <property name="name">
         <cstring>BlacklistWidgetBase</cstring>
     </property>
@@ -22,18 +22,18 @@
         <property name="resizeMode">
             <enum>Minimum</enum>
         </property>
-        <widget class="QLabel" row="1" column="0">
+        <widget class="TQLabel" row="1" column="0">
             <property name="name">
                 <cstring>textLabel2</cstring>
             </property>
             <property name="text">
                 <string>Note: Blacklist applies to current session only. Use save/open to save your entries or use IPFilter plugin (PeerGuardian).</string>
             </property>
-            <property name="alignment">
+            <property name="tqalignment">
                 <set>WordBreak|AlignVCenter</set>
             </property>
         </widget>
-        <widget class="QGroupBox" row="0" column="0">
+        <widget class="TQGroupBox" row="0" column="0">
             <property name="name">
                 <cstring>groupBox1</cstring>
             </property>
@@ -73,22 +73,22 @@
                     <property name="sizeType">
                         <enum>Fixed</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>20</width>
                             <height>20</height>
                         </size>
                     </property>
                 </spacer>
-                <widget class="QLayoutWidget" row="0" column="0">
+                <widget class="TQLayoutWidget" row="0" column="0">
                     <property name="name">
-                        <cstring>layout8</cstring>
+                        <cstring>tqlayout8</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel1</cstring>
                             </property>
@@ -109,9 +109,9 @@
                         </widget>
                     </hbox>
                 </widget>
-                <widget class="QLayoutWidget" row="0" column="1" rowspan="3" colspan="1">
+                <widget class="TQLayoutWidget" row="0" column="1" rowspan="3" colspan="1">
                     <property name="name">
-                        <cstring>layout7</cstring>
+                        <cstring>tqlayout7</cstring>
                     </property>
                     <vbox>
                         <property name="name">
@@ -144,7 +144,7 @@
                             <property name="sizeType">
                                 <enum>Fixed</enum>
                             </property>
-                            <property name="sizeHint">
+                            <property name="tqsizeHint">
                                 <size>
                                     <width>20</width>
                                     <height>20</height>
@@ -192,7 +192,7 @@
                             <property name="sizeType">
                                 <enum>Fixed</enum>
                             </property>
-                            <property name="sizeHint">
+                            <property name="tqsizeHint">
                                 <size>
                                     <width>20</width>
                                     <height>16</height>
@@ -234,7 +234,7 @@
                             <property name="sizeType">
                                 <enum>Expanding</enum>
                             </property>
-                            <property name="sizeHint">
+                            <property name="tqsizeHint">
                                 <size>
                                     <width>20</width>
                                     <height>30</height>
@@ -344,7 +344,7 @@
     <tabstop>peerIP</tabstop>
     <tabstop>btnAdd</tabstop>
 </tabstops>
-<slots>
+<Q_SLOTS>
     <slot>btnAdd_clicked()</slot>
     <slot>btnRemove_clicked()</slot>
     <slot>btnClear_clicked()</slot>
@@ -352,8 +352,8 @@
     <slot>btnSave_clicked()</slot>
     <slot>btnOk_clicked()</slot>
     <slot>btnApply_clicked()</slot>
-</slots>
-<layoutdefaults spacing="6" margin="11"/>
+</Q_SLOTS>
+<tqlayoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>klistview.h</includehint>
     <includehint>kpushbutton.h</includehint>

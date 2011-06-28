@@ -31,9 +31,9 @@
 #include <util/constants.h>
 #include <util/log.h>
 
-#include <qdatetime.h>
-#include <qfile.h>
-#include <qptrlist.h>
+#include <tqdatetime.h>
+#include <tqfile.h>
+#include <tqptrlist.h>
 
 #include <kglobal.h>
 #include <kstandarddirs.h>
@@ -160,9 +160,9 @@ namespace kt
 		if(!m_enabled)
 			return;
 		
-		QDateTime now = QDateTime::currentDateTime();
+		TQDateTime now = TQDateTime::tqcurrentDateTime();
 
-		QString prefix = QString("BWS: %1 :: ").arg(now.toString());
+		TQString prefix = TQString("BWS: %1 :: ").tqarg(now.toString());
 		
 		int t1 = now.date().dayOfWeek();
 		int t2 = now.time().hour();
@@ -172,8 +172,8 @@ namespace kt
 		{
 			case CAT_NORMAL:
 				Out(SYS_SCD|LOG_NOTICE) << prefix << "Switching to NORMAL category" << endl;
-				Out(SYS_SCD|LOG_NOTICE) << prefix << QString("%1 Up, %2 Down")
-						.arg(m_core->getMaxUploadSpeed()).arg(m_core->getMaxDownloadSpeed()) << endl;
+				Out(SYS_SCD|LOG_NOTICE) << prefix << TQString("%1 Up, %2 Down")
+						.tqarg(m_core->getMaxUploadSpeed()).tqarg(m_core->getMaxDownloadSpeed()) << endl;
 				if(!m_core)
 					break;
 				m_core->setPausedState(false);
@@ -182,8 +182,8 @@ namespace kt
 				break;
 			case CAT_FIRST:
 				Out(SYS_SCD|LOG_NOTICE) << prefix << "Switching to FIRST category" << endl;
-				Out(SYS_SCD|LOG_NOTICE) << prefix << QString("%1 Up, %2 Down")
-						.arg(m_schedule.getUpload(0)).arg(m_schedule.getDownload(0)) << endl;
+				Out(SYS_SCD|LOG_NOTICE) << prefix << TQString("%1 Up, %2 Down")
+						.tqarg(m_schedule.getUpload(0)).tqarg(m_schedule.getDownload(0)) << endl;
 				if(!m_core)
 					break;
 				m_core->setPausedState(false);
@@ -192,8 +192,8 @@ namespace kt
 				break;
 			case CAT_SECOND:
 				Out(SYS_SCD|LOG_NOTICE) << prefix << "Switching to SECOND category" << endl;
-				Out(SYS_SCD|LOG_NOTICE) << prefix << QString("%1 Up, %2 Down")
-						.arg(m_schedule.getUpload(1)).arg(m_schedule.getDownload(1)) << endl;
+				Out(SYS_SCD|LOG_NOTICE) << prefix << TQString("%1 Up, %2 Down")
+						.tqarg(m_schedule.getUpload(1)).tqarg(m_schedule.getDownload(1)) << endl;
 				if(!m_core)
 					break;
 				m_core->setPausedState(false);
@@ -202,8 +202,8 @@ namespace kt
 				break;
 			case CAT_THIRD:
 				Out(SYS_SCD|LOG_NOTICE) << prefix << "Switching to THIRD category" << endl;
-				Out(SYS_SCD|LOG_NOTICE) << prefix << QString("%1 Up, %2 Down")
-						.arg(m_schedule.getUpload(2)).arg(m_schedule.getDownload(2)) << endl;
+				Out(SYS_SCD|LOG_NOTICE) << prefix << TQString("%1 Up, %2 Down")
+						.tqarg(m_schedule.getUpload(2)).tqarg(m_schedule.getDownload(2)) << endl;
 				if(!m_core)
 					break;
 				m_core->setPausedState(false);
@@ -222,13 +222,13 @@ namespace kt
 	
 	void BWScheduler::loadSchedule()
 	{
-		QFile file(KGlobal::dirs()->saveLocation("data","ktorrent") + "bwschedule");
+		TQFile file(KGlobal::dirs()->saveLocation("data","ktorrent") + "bwschedule");
 
 		if(!file.exists())
 			return;
 
 		file.open(IO_ReadOnly);
-		QDataStream stream(&file);
+		TQDataStream stream(&file);
 
 		int tmp;
 
@@ -256,10 +256,10 @@ namespace kt
 
 	void BWScheduler::saveSchedule()
 	{
-		QFile file(KGlobal::dirs()->saveLocation("data","ktorrent") + "bwschedule");
+		TQFile file(KGlobal::dirs()->saveLocation("data","ktorrent") + "bwschedule");
 
 		file.open(IO_WriteOnly);
-		QDataStream stream(&file);
+		TQDataStream stream(&file);
 
 		for(int i=0; i<3; ++i)
 		{

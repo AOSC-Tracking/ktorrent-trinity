@@ -42,10 +42,10 @@ namespace bt
 		 * @param sdir The save directory
 		 * @throw Error if something goes wrong
 		 */
-		void migrate(const Torrent & tor,const QString & tor_dir,const QString & sdir);
+		void migrate(const Torrent & tor,const TQString & tor_dir,const TQString & sdir);
 	private:
-		bool preMMap(const QString & current_chunks);
-		void migrateCurrentChunks(const QString & current_chunks);
+		bool preMMap(const TQString & current_chunks);
+		void migrateCurrentChunks(const TQString & current_chunks);
 	};
 
 }

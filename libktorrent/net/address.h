@@ -20,7 +20,7 @@
 #ifndef NETADDRESS_H
 #define NETADDRESS_H
 
-#include <qstring.h>
+#include <tqstring.h>
 #include <util/constants.h>
 
 namespace net
@@ -37,7 +37,7 @@ namespace net
 		Uint16 m_port;
 	public:
 		Address();
-		Address(const QString & host,Uint16 port);
+		Address(const TQString & host,Uint16 port);
 		Address(const Address & addr);
 		virtual ~Address();
 
@@ -51,7 +51,7 @@ namespace net
 		Uint16 port() const {return m_port;}
 		void setPort(Uint16 p) {m_port = p;}
 
-		QString toString() const;
+		TQString toString() const;
 
 	};
 

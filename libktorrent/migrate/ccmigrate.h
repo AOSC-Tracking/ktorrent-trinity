@@ -25,11 +25,11 @@ namespace bt
 	class Torrent;
 
 	/// Migrates the current_chunks file to the post-mmap era.
-	void MigrateCurrentChunks(const Torrent & tor,const QString & current_chunks);
+	void MigrateCurrentChunks(const Torrent & tor,const TQString & current_chunks);
 	
 	
 	/// Test if a current_chunks file is from the pre-mmap period
-	bool IsPreMMap(const QString & current_chunks);
+	bool IsPreMMap(const TQString & current_chunks);
 
 }
 

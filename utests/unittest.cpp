@@ -22,7 +22,7 @@
 namespace utest
 {
 
-	UnitTest::UnitTest(const QString & name) : name(name)
+	UnitTest::UnitTest(const TQString & name) : name(name)
 	{}
 
 

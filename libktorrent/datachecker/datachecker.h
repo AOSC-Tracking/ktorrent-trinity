@@ -23,7 +23,7 @@
 #include <util/bitset.h>
 #include "datacheckerlistener.h"
 
-class QString;
+class TQString;
 
 
 namespace bt 
@@ -54,7 +54,7 @@ namespace bt
 		 * @param tor The torrent
 		 * @param dnddir DND dir, optional argument if we know this
 		 */
-		virtual void check(const QString & path,const Torrent & tor,const QString & dnddir) = 0;
+		virtual void check(const TQString & path,const Torrent & tor,const TQString & dnddir) = 0;
 		
 		/**
 		 * Get the BitSet representing all the downloaded chunks.

@@ -21,7 +21,7 @@
 #define BTCAP_H
 
 #if 0
-#include <qvaluelist.h>
+#include <tqvaluelist.h>
 #include <util/timer.h>
 #include <util/constants.h>
 
@@ -100,7 +100,7 @@ namespace bt
 		void update();
 		
 	private:
-		QValueList<Entry> entries;
+		TQValueList<Entry> entries;
 		Uint32 max_bytes_per_sec;
 		Timer timer;
 		Uint32 leftover;

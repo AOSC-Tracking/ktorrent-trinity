@@ -31,10 +31,11 @@ namespace kt
 class SpeedLimitsDlg : public SpeedLimitsDlgBase
 {
 	Q_OBJECT
+  TQ_OBJECT
 
 	kt::TorrentInterface* tor;
 public:
-	SpeedLimitsDlg(kt::TorrentInterface* ti,QWidget* parent = 0, const char* name = 0);
+	SpeedLimitsDlg(kt::TorrentInterface* ti,TQWidget* tqparent = 0, const char* name = 0);
 	virtual ~SpeedLimitsDlg();
 		
 

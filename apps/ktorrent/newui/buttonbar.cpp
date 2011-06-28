@@ -19,7 +19,7 @@
  ***************************************************************************/
 #include "buttonbar.h"
 
-#include <qlayout.h>
+#include <tqlayout.h>
 
 #include <kdebug.h>
 #include <kconfig.h>
@@ -32,14 +32,14 @@ namespace Ideal {
 
 //ButtonLayout class
 
-ButtonLayout::ButtonLayout(ButtonBar *parent, Direction d, int margin, int spacing, const char *name)
-    :QBoxLayout(parent, d, margin, spacing, name), m_buttonBar(parent)
+ButtonLayout::ButtonLayout(ButtonBar *tqparent, Direction d, int margin, int spacing, const char *name)
+    :TQBoxLayout(tqparent, d, margin, spacing, name), m_buttonBar(tqparent)
 {
 }
 
-QSize ButtonLayout::minimumSize() const
+TQSize ButtonLayout::tqminimumSize() const
 {
-    QSize size = QBoxLayout::minimumSize();
+    TQSize size = TQBoxLayout::tqminimumSize();
 
     if (!m_buttonBar->autoResize())
         return size;
@@ -48,13 +48,13 @@ QSize ButtonLayout::minimumSize() const
     {
         case Ideal::Left:
         case Ideal::Right:
-            return QSize(size.width(),0);
+            return TQSize(size.width(),0);
             break;
         case Ideal::Top:
         case Ideal::Bottom:
-            return QSize(0,size.height());
+            return TQSize(0,size.height());
     }
-    return QBoxLayout::minimumSize();
+    return TQBoxLayout::tqminimumSize();
 }
 
 
@@ -62,22 +62,22 @@ QSize ButtonLayout::minimumSize() const
 //ButtonBar class
 
 
-ButtonBar::ButtonBar(Place place, ButtonMode mode, QWidget *parent, const char *name)
-    :QWidget(parent, name), m_place(place), l(0), m_shrinked(false), m_autoResize(true)
+ButtonBar::ButtonBar(Place place, ButtonMode mode, TQWidget *tqparent, const char *name)
+    :TQWidget(tqparent, name), m_place(place), l(0), m_shrinked(false), m_autoResize(true)
 {
     switch (m_place)
     {
         case Ideal::Left:
         case Ideal::Right:
-           l = new ButtonLayout(this, QBoxLayout::TopToBottom, 0, 0);
+           l = new ButtonLayout(this, TQBoxLayout::TopToBottom, 0, 0);
             break;
         case Ideal::Top:
         case Ideal::Bottom:
-            l = new ButtonLayout(this, QBoxLayout::LeftToRight, 0, 0);
+            l = new ButtonLayout(this, TQBoxLayout::LeftToRight, 0, 0);
             break;
     }
 
-    l->setResizeMode(QLayout::Minimum);
+    l->setResizeMode(TQLayout::Minimum);
     setMode(mode);
 
     l->insertStretch(-1);
@@ -128,14 +128,14 @@ void ButtonBar::fixDimensions()
     {
         case Ideal::Left:
         case Ideal::Right:
-            setFixedWidth(sizeHint().width());
-            setMinimumHeight(sizeHint().height());
+            setFixedWidth(tqsizeHint().width());
+            setMinimumHeight(tqsizeHint().height());
             setMaximumHeight(32767);
             break;
         case Ideal::Top:
         case Ideal::Bottom:
-            setFixedHeight(sizeHint().height());
-            setMinimumWidth(sizeHint().width());
+            setFixedHeight(tqsizeHint().height());
+            setMinimumWidth(tqsizeHint().width());
             setMaximumWidth(32767);
             break;
     }
@@ -147,7 +147,7 @@ void ButtonBar::setButtonsPlace(Ideal::Place place)
         (*it)->setPlace(place);
 }
 
-void ButtonBar::resizeEvent(QResizeEvent *ev)
+void ButtonBar::resizeEvent(TQResizeEvent *ev)
 {
     int preferredDimension = 0;
     int actualDimension = 0;
@@ -156,13 +156,13 @@ void ButtonBar::resizeEvent(QResizeEvent *ev)
     {
         case Ideal::Left:
         case Ideal::Right:
-            preferredDimension = l->QBoxLayout::minimumSize().height();
+            preferredDimension = l->TQBoxLayout::tqminimumSize().height();
             actualDimension = size().height();
             oldDimension = ev->oldSize().height();
             break;
         case Ideal::Top:
         case Ideal::Bottom:
-            preferredDimension = l->QBoxLayout::minimumSize().width();
+            preferredDimension = l->TQBoxLayout::tqminimumSize().width();
             actualDimension = size().width();
             oldDimension = ev->oldSize().width();
             break;
@@ -175,7 +175,7 @@ void ButtonBar::resizeEvent(QResizeEvent *ev)
     else if (m_shrinked && actualDimension > oldDimension)
         deshrink(preferredDimension, actualDimension);
 
-    QWidget::resizeEvent(ev);
+    TQWidget::resizeEvent(ev);
 }
 
 void ButtonBar::shrink(int preferredDimension, int actualDimension)
@@ -186,7 +186,7 @@ void ButtonBar::shrink(int preferredDimension, int actualDimension)
     m_shrinked = true;
 
     uint textLength = 0;
-    QValueList<uint> texts;
+    TQValueList<uint> texts;
     uint maxLength = 0;
     for (ButtonList::const_iterator it = m_buttons.constBegin(); it != m_buttons.constEnd(); ++it)
     {
@@ -203,7 +203,7 @@ void ButtonBar::shrink(int preferredDimension, int actualDimension)
     do {
         newMaxLength -= 1;
         newTextLength = 0;
-        for (QValueList<uint>::iterator it = texts.begin(); it != texts.end(); ++it)
+        for (TQValueList<uint>::iterator it = texts.begin(); it != texts.end(); ++it)
         {
             if (*it > newMaxLength)
                 *it = newMaxLength;
@@ -227,7 +227,7 @@ void ButtonBar::deshrink(int preferredDimension, int actualDimension)
     m_shrinked = true;
 
     uint textLength = 0;
-    QValueList<uint> texts;
+    TQValueList<uint> texts;
     uint maxLength = 0;
     for (ButtonList::const_iterator it = m_buttons.constBegin(); it != m_buttons.constEnd(); ++it)
     {
@@ -247,9 +247,9 @@ void ButtonBar::deshrink(int preferredDimension, int actualDimension)
     do {
         newTextLength = 0;
         int i = 0;
-        for (QValueList<uint>::iterator it = texts.begin(); it != texts.end(); ++it, i++)
+        for (TQValueList<uint>::iterator it = texts.begin(); it != texts.end(); ++it, i++)
         {
-            if (m_buttons[i]->text().contains("..."))
+            if (m_buttons[i]->text().tqcontains("..."))
                 (*it)++;
             newTextLength += *it;
         }
@@ -285,7 +285,7 @@ int ButtonBar::originalDimension()
     int size = 0;
     for (ButtonList::const_iterator it = m_buttons.constBegin(); it != m_buttons.constEnd(); ++it)
     {
-        size += (*it)->sizeHint((*it)->realText()).width();
+        size += (*it)->tqsizeHint((*it)->realText()).width();
     }
     return size;
 }
@@ -309,7 +309,7 @@ Button *ButtonBar::firstButton()
 
 Button *ButtonBar::nextTo(Button *button)
 {
-    ButtonList::iterator it = m_buttons.find(button);
+    ButtonList::iterator it = m_buttons.tqfind(button);
     Button *next = 0;
     if ((*it) == m_buttons.last())
         next = m_buttons.first();
@@ -326,7 +326,7 @@ Button *ButtonBar::nextTo(Button *button)
 
 Button *ButtonBar::prevTo(Button *button)
 {
-    ButtonList::iterator it = m_buttons.find(button);
+    ButtonList::iterator it = m_buttons.tqfind(button);
     Button *prev = 0;
     if (it == m_buttons.begin())
         prev = m_buttons.last();

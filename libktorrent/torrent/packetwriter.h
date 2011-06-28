@@ -21,7 +21,7 @@
 #define BTPACKETWRITER_H
 
 #include <list>
-#include <qmutex.h>
+#include <tqmutex.h>
 #include <net/bufferedsocket.h>
 #include "globals.h"
 
@@ -45,7 +45,7 @@ namespace bt
 		Uint32 ctrl_packets_sent;
 		mutable Uint32 uploaded;
 		mutable Uint32 uploaded_non_data;
-		mutable QMutex mutex;
+		mutable TQMutex mutex;
 	public:
 		PacketWriter(Peer* peer);
 		virtual ~PacketWriter();
@@ -145,7 +145,7 @@ namespace bt
 		void sendExtProtHandshake(Uint16 port,bool pex_on = true);
 		
 		/// Send an extended protocol message
-		void sendExtProtMsg(Uint8 id,const QByteArray & data);
+		void sendExtProtMsg(Uint8 id,const TQByteArray & data);
 
 		/// Get the number of packets which need to be written
 		Uint32 getNumPacketsToWrite() const;

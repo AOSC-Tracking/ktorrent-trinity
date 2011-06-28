@@ -14,9 +14,9 @@
 #include <kio/job.h>
 #include <kurl.h>
 
-#include <qbuffer.h>
-#include <qdom.h>
-#include <qpixmap.h>
+#include <tqbuffer.h>
+#include <tqdom.h>
+#include <tqpixmap.h>
 
 using namespace RSS;
 
@@ -25,40 +25,40 @@ struct Image::Private : public Shared
 	Private() : height(31), width(88), pixmapBuffer(NULL), job(NULL)
 		{ }
 
-	QString title;
+	TQString title;
 	KURL url;
 	KURL link;
-	QString description;
+	TQString description;
 	unsigned int height;
 	unsigned int width;
-	QBuffer *pixmapBuffer;
+	TQBuffer *pixmapBuffer;
 	KIO::Job *job;
 };
 
-Image::Image() : QObject(), d(new Private)
+Image::Image() : TQObject(), d(new Private)
 {
 }
 
-Image::Image(const Image &other) : QObject(), d(0)
+Image::Image(const Image &other) : TQObject(), d(0)
 {
 	*this = other;
 }
 
-Image::Image(const QDomNode &node) : QObject(), d(new Private)
+Image::Image(const TQDomNode &node) : TQObject(), d(new Private)
 {
-	QString elemText;
+	TQString elemText;
 
-	if (!(elemText = extractNode(node, QString::fromLatin1("title"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("title"))).isNull())
 		d->title = elemText;
-	if (!(elemText = extractNode(node, QString::fromLatin1("url"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("url"))).isNull())
 		d->url = elemText;
-	if (!(elemText = extractNode(node, QString::fromLatin1("link"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("link"))).isNull())
 		d->link = elemText;
-	if (!(elemText = extractNode(node, QString::fromLatin1("description"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("description"))).isNull())
 		d->description = elemText;
-	if (!(elemText = extractNode(node, QString::fromLatin1("height"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("height"))).isNull())
 		d->height = elemText.toUInt();
-	if (!(elemText = extractNode(node, QString::fromLatin1("width"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("width"))).isNull())
 		d->width = elemText.toUInt();
 }
 
@@ -72,7 +72,7 @@ Image::~Image()
         }
 }
 
-QString Image::title() const
+TQString Image::title() const
 {
 	return d->title;
 }
@@ -87,7 +87,7 @@ const KURL &Image::link() const
 	return d->link;
 }
 
-QString Image::description() const
+TQString Image::description() const
 {
 	return d->description;
 }
@@ -108,25 +108,25 @@ void Image::getPixmap()
 	if (d->pixmapBuffer)
 		return;
 
-	d->pixmapBuffer = new QBuffer;
+	d->pixmapBuffer = new TQBuffer;
 	d->pixmapBuffer->open(IO_WriteOnly);
 
 	d->job = KIO::get(d->url, false, false);
-	connect(d->job, SIGNAL(data(KIO::Job *, const QByteArray &)),
-	        this, SLOT(slotData(KIO::Job *, const QByteArray &)));
-	connect(d->job, SIGNAL(result(KIO::Job *)), this, SLOT(slotResult(KIO::Job *)));
+	connect(d->job, TQT_SIGNAL(data(KIO::Job *, const TQByteArray &)),
+	        this, TQT_SLOT(slotData(KIO::Job *, const TQByteArray &)));
+	connect(d->job, TQT_SIGNAL(result(KIO::Job *)), this, TQT_SLOT(slotResult(KIO::Job *)));
 }
 
-void Image::slotData(KIO::Job *, const QByteArray &data)
+void Image::slotData(KIO::Job *, const TQByteArray &data)
 {
 	d->pixmapBuffer->writeBlock(data.data(), data.size());
 }
 
 void Image::slotResult(KIO::Job *job)
 {
-	QPixmap pixmap;
+	TQPixmap pixmap;
 	if (!job->error())
-		pixmap = QPixmap(d->pixmapBuffer->buffer());
+		pixmap = TQPixmap(d->pixmapBuffer->buffer());
 	emit gotPixmap(pixmap);
 
 	delete d->pixmapBuffer;

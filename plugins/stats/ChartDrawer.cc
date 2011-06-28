@@ -28,7 +28,7 @@ int isinf(double x) { return !finite(x) && x==x; }
 
 namespace kt {
 
-ChartDrawer::ChartDrawer(QWidget *p, wgtsize_t x_max, wgtsize_t y_max, bool autom, const QString & uname) : QWidget(p), mXMax(x_max), mYMax(y_max), mAutoMax(autom),
+ChartDrawer::ChartDrawer(TQWidget *p, wgtsize_t x_max, wgtsize_t y_max, bool autom, const TQString & uname) : TQWidget(p), mXMax(x_max), mYMax(y_max), mAutoMax(autom),
 													mUnitName(uname), mMMode(MaxModeExact)
 {
 	setBackgroundColor("white");
@@ -36,7 +36,7 @@ ChartDrawer::ChartDrawer(QWidget *p, wgtsize_t x_max, wgtsize_t y_max, bool auto
 
 ChartDrawer::~ChartDrawer()
 {
-	QToolTip::remove(this);
+	TQToolTip::remove(this);
 }
 
 ChartDrawer::wgtsize_t ChartDrawer::GetXMax() const
@@ -75,9 +75,9 @@ inline ChartDrawer::wgtunit_t ChartDrawer::TrY(const ChartDrawer::wgtunit_t y) c
 	return height() - y;
 }
 
-void ChartDrawer::paintEvent ( QPaintEvent *)
+void ChartDrawer::paintEvent ( TQPaintEvent *)
 {
-	QPainter pnt( this );
+	TQPainter pnt( this );
 
 	DrawScale(pnt);
 	DrawFrame(pnt);
@@ -87,25 +87,25 @@ void ChartDrawer::paintEvent ( QPaintEvent *)
 
 inline ChartDrawer::wgtunit_t ChartDrawer::height() const
 {
-	return QWidget::height() - 15;
+	return TQWidget::height() - 15;
 }
 
 inline ChartDrawer::wgtunit_t ChartDrawer::width() const
 {
-	return QWidget::width() - 65;
+	return TQWidget::width() - 65;
 }
 
-void ChartDrawer::DrawFrame(QPainter & rPnt )
+void ChartDrawer::DrawFrame(TQPainter & rPnt )
 {
-	QPen op = rPnt.pen();
-	rPnt.setPen(QPen("#000", 3));
+	TQPen op = rPnt.pen();
+	rPnt.setPen(TQPen("#000", 3));
 	
 	rPnt.drawLine(0, TrY(0), width()+3, TrY(0));
-	rPnt.drawLine(width()+1, TrY(0), width()+1, TrY(QWidget::height()));
+	rPnt.drawLine(width()+1, TrY(0), width()+1, TrY(TQWidget::height()));
 	
-	QFont oldf(rPnt.font());
-	QFont newf(oldf);
-	newf.setWeight(QFont::Bold);
+	TQFont oldf(rPnt.font());
+	TQFont newf(oldf);
+	newf.setWeight(TQFont::Bold);
 	newf.setPointSize(10);
 	newf.setUnderline(1);
 
@@ -116,7 +116,7 @@ void ChartDrawer::DrawFrame(QPainter & rPnt )
 	rPnt.setPen(op);
 }
 
-void ChartDrawer::DrawScale(QPainter & rPnt )
+void ChartDrawer::DrawScale(TQPainter & rPnt )
 {
 
 	if(!mYMax)
@@ -124,10 +124,10 @@ void ChartDrawer::DrawScale(QPainter & rPnt )
 		return;
 	}
 	
-	QPen op = rPnt.pen();
-	QPen ep("#eee", 1, Qt::DashLine);
-	QPen lp("#666", 2, Qt::DotLine);
-	QPen tp("#000");
+	TQPen op = rPnt.pen();
+	TQPen ep("#eee", 1, TQt::DashLine);
+	TQPen lp("#666", 2, TQt::DotLine);
+	TQPen tp("#000");
 	
 	rPnt.setPen(ep);
 	
@@ -144,23 +144,23 @@ void ChartDrawer::DrawScale(QPainter & rPnt )
 	rPnt.setPen(lp);
 	rPnt.drawLine(0, TrY(height() - 10), width(), TrY(height() - 10));
 	rPnt.setPen(tp);
-	rPnt.drawText(width() + 4, TrY(height() - 10) + 4, QString::number (mYMax));
+	rPnt.drawText(width() + 4, TrY(height() - 10) + 4, TQString::number (mYMax));
 	
 	for(wgtsize_t i = 0; i < height() - 15 ; i += GetYScale())
 	{
 		rPnt.setPen(lp);
 		rPnt.drawLine(0, TrY(i), width(), TrY(i));
 		rPnt.setPen(tp);
-		rPnt.drawText(width() + 4, TrY(i) + 4, QString::number ( (mYMax / 8.0 ) * ( i / static_cast<double>(GetYScale() )), 'f', 1 ) );
+		rPnt.drawText(width() + 4, TrY(i) + 4, TQString::number ( (mYMax / 8.0 ) * ( i / static_cast<double>(GetYScale() )), 'f', 1 ) );
 	}
 	
 	rPnt.setPen(op);
 }
 
-void ChartDrawer::DrawChart(QPainter & rPnt)
+void ChartDrawer::DrawChart(TQPainter & rPnt)
 {
 
-	QPen op = rPnt.pen();
+	TQPen op = rPnt.pen();
 	
 	uint32_t skip_max = 0;
 	
@@ -188,20 +188,20 @@ void ChartDrawer::DrawChart(QPainter & rPnt)
 		// --------------------
 		//	Line on top
 		// ------------
-		QPen myop(rPnt.pen());
-		QPen topl(myop);
+		TQPen myop(rPnt.pen());
+		TQPen topl(myop);
 		topl.setStyle(Qt::DotLine);	
 		rPnt.setPen(topl);
 		rPnt.drawLine(0, TrY(FindYScreenCoords(mEls[i].pmVals -> at(mEls[i].pmVals -> size() - 1))), width(), TrY(FindYScreenCoords(mEls[i].pmVals -> at(mEls[i].pmVals -> size() - 1))) );
 		rPnt.setPen(myop);
 		
-		QFont oldf(rPnt.font());
-		QFont newf(oldf);
-		newf.setWeight(QFont::Bold);
+		TQFont oldf(rPnt.font());
+		TQFont newf(oldf);
+		newf.setWeight(TQFont::Bold);
 		newf.setPointSize(8);
 
 		rPnt.setFont(newf);
-		rPnt.drawText(5 + (i * 50), TrY(FindYScreenCoords(mEls[i].pmVals -> at(mEls[i].pmVals -> size() - 1))) + 11, QString::number (mEls[i].pmVals -> at(mEls[i].pmVals -> size() - 1), 'f', 2 ) );
+		rPnt.drawText(5 + (i * 50), TrY(FindYScreenCoords(mEls[i].pmVals -> at(mEls[i].pmVals -> size() - 1))) + 11, TQString::number (mEls[i].pmVals -> at(mEls[i].pmVals -> size() - 1), 'f', 2 ) );
 
 		
 		//------------------
@@ -220,7 +220,7 @@ void ChartDrawer::DrawChart(QPainter & rPnt)
 			rPnt.setPen(myop);
 			
 			rPnt.setFont(newf);
-			QString maxv(QString::number (max.first, 'f', 2));
+			TQString maxv(TQString::number (max.first, 'f', 2));
 			
 			if(FindXScreenCoords(max.second) < 35)
 			{
@@ -336,7 +336,7 @@ void ChartDrawer::AddValues(ChartDrawerData Cdd, const size_t idx, const bool ma
 	MakeLegendTooltip();
 }
 
-void ChartDrawer::AddValuesCnt(const QString & rN, const bool max)
+void ChartDrawer::AddValuesCnt(const TQString & rN, const bool max)
 {
 	mEls.push_back(ChartDrawerData(mXMax, rN));
 	mMarkMax.push_back(max);
@@ -344,7 +344,7 @@ void ChartDrawer::AddValuesCnt(const QString & rN, const bool max)
 	MakeLegendTooltip();
 }
 
-void ChartDrawer::AddValuesCnt(const QPen & rP, const QString & rN, const bool max)
+void ChartDrawer::AddValuesCnt(const TQPen & rP, const TQString & rN, const bool max)
 {
 	mEls.push_back(ChartDrawerData(rP, mXMax, rN));
 	mMarkMax.push_back(max);
@@ -352,17 +352,17 @@ void ChartDrawer::AddValuesCnt(const QPen & rP, const QString & rN, const bool m
 	MakeLegendTooltip();
 }
 
-void ChartDrawer::SetUnitName(const QString & rN)
+void ChartDrawer::SetUnitName(const TQString & rN)
 {
 	mUnitName = rN;
 }
 
-QString ChartDrawer::GetUnitName() const
+TQString ChartDrawer::GetUnitName() const
 {
 	return mUnitName;
 }
 
-void ChartDrawer::mouseDoubleClickEvent ( QMouseEvent * evt )
+void ChartDrawer::mouseDoubleClickEvent ( TQMouseEvent * evt )
 {
 	FindSetMax();
 	
@@ -414,16 +414,16 @@ void ChartDrawer::Zero(const size_t idx)
 
 void ChartDrawer::MakeLegendTooltip()
 {
-	QToolTip::remove(this);
+	TQToolTip::remove(this);
 	
-	QString helpstr(QString("<b>%1:</b><br><br>").arg(i18n("Legend")));
-	QMimeSourceFactory* factory = QMimeSourceFactory::defaultFactory();
-	std::vector<QImage> img;
+	TQString helpstr(TQString("<b>%1:</b><br><br>").tqarg(i18n("Legend")));
+	TQMimeSourceFactory* factory = TQMimeSourceFactory::defaultFactory();
+	std::vector<TQImage> img;
 	
 	for(size_t i = 0; i < mEls.size(); i++)
 	{
-		img.push_back(QImage(16,16, 32));
-		img[i].fill(mEls[i].GetPen() -> color().pixel());
+		img.push_back(TQImage(16,16, 32));
+		img[i].fill(TQColor(mEls[i].GetPen() -> color()).pixel());
 		
 		for(uint8_t px = 0; px < 16; px++)
 		{
@@ -433,11 +433,11 @@ void ChartDrawer::MakeLegendTooltip()
 			img[i].setPixel(15, px, 0); //r
 		}
 		
-		factory->setImage(mEls[i].GetName().replace(' ', '_') + "-" + QString::number(i), img[i]);
-		helpstr += QString("<img src='%1'>&nbsp;&nbsp;-&nbsp;&nbsp;%2<br>").arg(mEls[i].GetName().replace(" ", "_") + "-" + QString::number(i)).arg( mEls[i].GetName() );	
+		factory->setImage(mEls[i].GetName().tqreplace(' ', '_') + "-" + TQString::number(i), img[i]);
+		helpstr += TQString("<img src='%1'>&nbsp;&nbsp;-&nbsp;&nbsp;%2<br>").tqarg(mEls[i].GetName().tqreplace(" ", "_") + "-" + TQString::number(i)).tqarg( mEls[i].GetName() );	
 	}
 	
-	QToolTip::add(this, helpstr);
+	TQToolTip::add(this, helpstr);
 }
 
 void ChartDrawer::FindSetMax()

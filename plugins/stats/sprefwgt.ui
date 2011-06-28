@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>sprefwgt</class>
-<widget class="QWidget">
+<widget class="TQWidget">
     <property name="name">
         <cstring>sprefwgt</cstring>
     </property>
@@ -19,7 +19,7 @@
         <property name="spacing">
             <number>0</number>
         </property>
-        <widget class="QGroupBox">
+        <widget class="TQGroupBox">
             <property name="name">
                 <cstring>groupBox1</cstring>
             </property>
@@ -30,15 +30,15 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLayoutWidget">
+                <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout2</cstring>
+                        <cstring>tqlayout2</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel1</cstring>
                             </property>
@@ -49,7 +49,7 @@
                                 <cstring>GuiUpdatesSbw</cstring>
                             </property>
                         </widget>
-                        <widget class="QSpinBox">
+                        <widget class="TQSpinBox">
                             <property name="name">
                                 <cstring>GuiUpdatesSbw</cstring>
                             </property>
@@ -63,7 +63,7 @@
                                 <number>4</number>
                             </property>
                         </widget>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel2</cstring>
                             </property>
@@ -76,15 +76,15 @@
                         </widget>
                     </hbox>
                 </widget>
-                <widget class="QLayoutWidget">
+                <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout4</cstring>
+                        <cstring>tqlayout4</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel3</cstring>
                             </property>
@@ -95,7 +95,7 @@
                                 <cstring>spinBox2</cstring>
                             </property>
                         </widget>
-                        <widget class="QSpinBox">
+                        <widget class="TQSpinBox">
                             <property name="name">
                                 <cstring>DataIvalSbw</cstring>
                             </property>
@@ -112,7 +112,7 @@
                                 <number>1000</number>
                             </property>
                         </widget>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel4</cstring>
                             </property>
@@ -127,7 +127,7 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QGroupBox">
+        <widget class="TQGroupBox">
             <property name="name">
                 <cstring>groupBox5</cstring>
             </property>
@@ -138,15 +138,15 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLayoutWidget">
+                <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout11</cstring>
+                        <cstring>tqlayout11</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel1_4</cstring>
                             </property>
@@ -154,7 +154,7 @@
                                 <string>Maximum speed scale mode:</string>
                             </property>
                         </widget>
-                        <widget class="QComboBox">
+                        <widget class="TQComboBox">
                             <item>
                                 <property name="text">
                                     <string>Top</string>
@@ -184,7 +184,7 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QGroupBox">
+        <widget class="TQGroupBox">
             <property name="name">
                 <cstring>groupBox3</cstring>
             </property>
@@ -195,15 +195,15 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLayoutWidget">
+                <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout3</cstring>
+                        <cstring>tqlayout3</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QCheckBox">
+                        <widget class="TQCheckBox">
                             <property name="name">
                                 <cstring>PeersSpdCbw</cstring>
                             </property>
@@ -214,7 +214,7 @@
                                 <bool>true</bool>
                             </property>
                         </widget>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel1_2</cstring>
                             </property>
@@ -222,7 +222,7 @@
                                 <string>update every</string>
                             </property>
                         </widget>
-                        <widget class="QSpinBox">
+                        <widget class="TQSpinBox">
                             <property name="name">
                                 <cstring>PeersSpdUpdIvalSbw</cstring>
                             </property>
@@ -236,7 +236,7 @@
                                 <number>4</number>
                             </property>
                         </widget>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel2_2</cstring>
                             </property>
@@ -246,20 +246,20 @@
                         </widget>
                     </hbox>
                 </widget>
-                <widget class="QLabel">
+                <widget class="TQLabel">
                     <property name="name">
                         <cstring>textLabel3_2</cstring>
                     </property>
                     <property name="text">
                         <string>Gathering data about many connected peers can be CPU consuming.</string>
                     </property>
-                    <property name="alignment">
+                    <property name="tqalignment">
                         <set>WordBreak|AlignVCenter</set>
                     </property>
                 </widget>
             </vbox>
         </widget>
-        <widget class="QGroupBox">
+        <widget class="TQGroupBox">
             <property name="name">
                 <cstring>groupBox11</cstring>
             </property>
@@ -273,15 +273,15 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLayoutWidget">
+                <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout7</cstring>
+                        <cstring>tqlayout7</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QCheckBox">
+                        <widget class="TQCheckBox">
                             <property name="name">
                                 <cstring>ConnSdrInSwaCbw</cstring>
                             </property>
@@ -289,7 +289,7 @@
                                 <string>Show seeders in swarms</string>
                             </property>
                         </widget>
-                        <widget class="QCheckBox">
+                        <widget class="TQCheckBox">
                             <property name="name">
                                 <cstring>ConnLchInSwaCbw</cstring>
                             </property>
@@ -301,7 +301,7 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QGroupBox">
+        <widget class="TQGroupBox">
             <property name="name">
                 <cstring>groupBox8</cstring>
             </property>
@@ -312,15 +312,15 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLayoutWidget" row="0" column="0">
+                <widget class="TQLayoutWidget" row="0" column="0">
                     <property name="name">
-                        <cstring>layout5</cstring>
+                        <cstring>tqlayout5</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel1_3</cstring>
                             </property>
@@ -328,7 +328,7 @@
                                 <string>Download</string>
                             </property>
                         </widget>
-                        <widget class="QSpinBox">
+                        <widget class="TQSpinBox">
                             <property name="name">
                                 <cstring>DownloadMrmtSbw</cstring>
                             </property>
@@ -344,15 +344,15 @@
                         </widget>
                     </hbox>
                 </widget>
-                <widget class="QLayoutWidget" row="1" column="0">
+                <widget class="TQLayoutWidget" row="1" column="0">
                     <property name="name">
-                        <cstring>layout5_2</cstring>
+                        <cstring>tqlayout5_2</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel1_3_2</cstring>
                             </property>
@@ -360,7 +360,7 @@
                                 <string>Peers speed</string>
                             </property>
                         </widget>
-                        <widget class="QSpinBox">
+                        <widget class="TQSpinBox">
                             <property name="name">
                                 <cstring>PeersSpdMrmtSbw</cstring>
                             </property>
@@ -376,15 +376,15 @@
                         </widget>
                     </hbox>
                 </widget>
-                <widget class="QLayoutWidget" row="2" column="0">
+                <widget class="TQLayoutWidget" row="2" column="0">
                     <property name="name">
-                        <cstring>layout5_3</cstring>
+                        <cstring>tqlayout5_3</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel1_3_3</cstring>
                             </property>
@@ -392,7 +392,7 @@
                                 <string>Upload</string>
                             </property>
                         </widget>
-                        <widget class="QSpinBox">
+                        <widget class="TQSpinBox">
                             <property name="name">
                                 <cstring>UploadMrmtSbw</cstring>
                             </property>
@@ -408,15 +408,15 @@
                         </widget>
                     </hbox>
                 </widget>
-                <widget class="QLayoutWidget" row="0" column="1">
+                <widget class="TQLayoutWidget" row="0" column="1">
                     <property name="name">
-                        <cstring>layout5_5</cstring>
+                        <cstring>tqlayout5_5</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel1_3_5</cstring>
                             </property>
@@ -424,7 +424,7 @@
                                 <string>Connections</string>
                             </property>
                         </widget>
-                        <widget class="QSpinBox">
+                        <widget class="TQSpinBox">
                             <property name="name">
                                 <cstring>ConnsMrmtSbw</cstring>
                             </property>
@@ -440,15 +440,15 @@
                         </widget>
                     </hbox>
                 </widget>
-                <widget class="QLayoutWidget" row="1" column="1">
+                <widget class="TQLayoutWidget" row="1" column="1">
                     <property name="name">
-                        <cstring>layout5_4</cstring>
+                        <cstring>tqlayout5_4</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel1_3_4</cstring>
                             </property>
@@ -456,7 +456,7 @@
                                 <string>DHT</string>
                             </property>
                         </widget>
-                        <widget class="QSpinBox">
+                        <widget class="TQSpinBox">
                             <property name="name">
                                 <cstring>DHTMrmtSbw</cstring>
                             </property>
@@ -484,7 +484,7 @@
             <property name="sizeType">
                 <enum>Expanding</enum>
             </property>
-            <property name="sizeHint">
+            <property name="tqsizeHint">
                 <size>
                     <width>20</width>
                     <height>40</height>
@@ -513,5 +513,5 @@
         <slot>setEnabled(bool)</slot>
     </connection>
 </connections>
-<layoutdefaults spacing="6" margin="11"/>
+<tqlayoutdefaults spacing="6" margin="11"/>
 </UI>

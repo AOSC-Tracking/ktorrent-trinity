@@ -21,12 +21,12 @@
 #define KTLABELVIEW_H
 
 #include <list>
-#include <qscrollview.h>
+#include <tqscrollview.h>
 #include "labelviewitembase.h"
 
-class QLabel;
-class QHBoxLayout;
-class QVBoxLayout;
+class TQLabel;
+class TQHBoxLayout;
+class TQVBoxLayout;
 
 namespace kt
 {
@@ -38,18 +38,19 @@ namespace kt
 	class LabelViewItem : public LabelViewItemBase
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		LabelViewItem(const QString & icon,const QString & title,const QString & description,LabelView* view);
+		LabelViewItem(const TQString & icon,const TQString & title,const TQString & description,LabelView* view);
 		virtual ~LabelViewItem();
 		
 		/// Set the title of the item
-		void setTitle(const QString & title);
+		void setTitle(const TQString & title);
 		
 		/// Set the description
-		void setDescription(const QString & d);
+		void setDescription(const TQString & d);
 		
 		/// Set the name of the icon
-		void setIcon(const QString & icon);
+		void setIcon(const TQString & icon);
 		
 		/// Set if this is an odd item (they have a different background color)
 		void setOdd(bool odd);
@@ -64,7 +65,7 @@ namespace kt
 		virtual bool operator < (const LabelViewItem & item);
 		
 	private:
-		virtual void mousePressEvent(QMouseEvent *e);
+		virtual void mousePressEvent(TQMouseEvent *e);
 		
 	signals:
 		void clicked(LabelViewItem* item);
@@ -79,11 +80,12 @@ namespace kt
 	/**
 		@author Joris Guisson <joris.guisson@gmail.com>
 	*/
-	class LabelView : public QScrollView
+	class LabelView : public TQScrollView
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		LabelView(QWidget *parent = 0, const char *name = 0);
+		LabelView(TQWidget *tqparent = 0, const char *name = 0);
 		virtual ~LabelView();
 		
 		/// Add an item to the label view
@@ -108,7 +110,7 @@ namespace kt
 		void onItemClicked(LabelViewItem* it);
 		
 	private:
-		void updateOddStatus();
+		void updateOddtqStatus();
 		
 	signals:
 		/// The current item has changed

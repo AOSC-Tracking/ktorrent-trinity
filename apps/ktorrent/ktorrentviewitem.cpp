@@ -20,8 +20,8 @@
 #include <klocale.h>
 #include <kglobal.h>
 #include <interfaces/torrentinterface.h>
-#include <qdatetime.h>
-#include <qpainter.h>
+#include <tqdatetime.h>
+#include <tqpainter.h>
 #include <math.h>
 #include <interfaces/functions.h>
 #include "ktorrentview.h"
@@ -30,7 +30,7 @@
 using namespace bt;
 using namespace kt;
 /*
-static QString StatusToString(TorrentInterface* tc,TorrentStatus s)
+static TQString StatusToString(TorrentInterface* tc,TorrenttqStatus s)
 {
 	switch (s)
 	{
@@ -51,14 +51,14 @@ static QString StatusToString(TorrentInterface* tc,TorrentStatus s)
 		case kt::ALLOCATING_DISKSPACE:
 			return i18n("Allocating diskspace");
 	}
-	return QString::null;
+	return TQString();
 }
 */
 
-static QColor StatusToColor(TorrentStatus s,const QColorGroup & cg)
+static TQColor StatusToColor(TorrenttqStatus s,const TQColorGroup & cg)
 {
-	QColor green(40,205,40);
-	QColor yellow(255,174,0);
+	TQColor green(40,205,40);
+	TQColor yellow(255,174,0);
 	switch (s)
 	{
 		case kt::SEEDING :
@@ -69,10 +69,10 @@ static QColor StatusToColor(TorrentStatus s,const QColorGroup & cg)
 		case kt::CHECKING_DATA:
 			return yellow;
 		case kt::ERROR :
-			return Qt::red;
+			return TQt::red;
 		case kt::NOT_STARTED :
 		case kt::STOPPED:
-		case kt::QUEUED:
+		case kt::TQUEUED:
 		case kt::DOWNLOAD_COMPLETE :
 		case kt::SEEDING_COMPLETE :
 		default:
@@ -81,10 +81,10 @@ static QColor StatusToColor(TorrentStatus s,const QColorGroup & cg)
 	return cg.text();
 }
 
-static QColor ratioToColor(float ratio)
+static TQColor ratioToColor(float ratio)
 {
-	QColor green(40,205,40);
-	return ratio > 0.8 ? green : Qt::red;
+	TQColor green(40,205,40);
+	return ratio > 0.8 ? green : TQt::red;
 }
 
 static double Percentage(const TorrentStats & s)
@@ -116,10 +116,10 @@ static double Percentage(const TorrentStats & s)
 
 
 
-KTorrentViewItem::KTorrentViewItem(KTorrentView* parent,TorrentInterface* tc)
-	: KListViewItem(parent->listView()),tc(tc)
+KTorrentViewItem::KTorrentViewItem(KTorrentView* tqparent,TorrentInterface* tc)
+	: KListViewItem(tqparent->listView()),tc(tc)
 {
-	m_parent = parent;
+	m_parent = tqparent;
 	update();
 }
 
@@ -144,7 +144,7 @@ QCStringList KTorrentViewItem::getTorrentInfo(kt::TorrentInterface* tc)
 	info.append(KBytesPerSecToString(s.upload_rate / 1024.0).local8Bit());
 	if (s.bytes_left_to_download == 0)
 	{
-		info.append(QCString(""));
+		info.append(TQCString(""));
 	}
 	else if (s.running) 
 	{
@@ -159,11 +159,11 @@ QCStringList KTorrentViewItem::getTorrentInfo(kt::TorrentInterface* tc)
 		info.append(i18n("infinity").local8Bit());
 	}
 	
-	info.append(QString::number(s.num_peers).local8Bit());
-	info.append(QString(KGlobal::locale()->formatNumber(Percentage(s),2) + " %").local8Bit());
+	info.append(TQString::number(s.num_peers).local8Bit());
+	info.append(TQString(KGlobal::locale()->formatNumber(Percentage(s),2) + " %").local8Bit());
 	info.append(KGlobal::locale()->formatNumber(kt::ShareRatio(s),2).local8Bit());
-	info.append(QString::number(s.seeders_connected_to).local8Bit());
-	info.append(QString::number(s.leechers_connected_to).local8Bit());
+	info.append(TQString::number(s.seeders_connected_to).local8Bit());
+	info.append(TQString::number(s.leechers_connected_to).local8Bit());
 	return info;
 }
 
@@ -214,7 +214,7 @@ void KTorrentViewItem::update()
 	{
 		if (s.bytes_left_to_download == 0)
 		{
-			setText(7,QString::null);
+			setText(7,TQString());
 			eta = -1;
 		}
 		else if (s.running) 
@@ -222,7 +222,7 @@ void KTorrentViewItem::update()
 			Uint32 secs = tc->getETA();
 			if(secs == -1)
 			{
-				setText(7,QString("%1").arg(QChar(0x221E)));
+				setText(7,TQString("%1").tqarg(TQChar(0x221E)));
 				eta = -2;
 			}
 			else
@@ -233,32 +233,32 @@ void KTorrentViewItem::update()
 		}
 		else
 		{
-			setText(7,QString("%1").arg(QChar(0x221E)));
+			setText(7,TQString("%1").tqarg(TQChar(0x221E)));
 			eta = -2;
 		}
 	}
 	if(m_parent->columnVisible(8))	
-		setText(8,QString::number(s.num_peers));
+		setText(8,TQString::number(s.num_peers));
 	
 	if(m_parent->columnVisible(8))
 	{
-		setText(8,QString("%1 (%2)").arg(QString::number(s.seeders_connected_to)).arg(QString::number(s.seeders_total)));	
+		setText(8,TQString("%1 (%2)").tqarg(TQString::number(s.seeders_connected_to)).tqarg(TQString::number(s.seeders_total)));	
 	}
 
 	if(m_parent->columnVisible(9))
 	{
-		setText(9,QString("%1 (%2)").arg(QString::number(s.leechers_connected_to)).arg(QString::number(s.leechers_total)));
+		setText(9,TQString("%1 (%2)").tqarg(TQString::number(s.leechers_connected_to)).tqarg(TQString::number(s.leechers_total)));
 	}
 
 	if(m_parent->columnVisible(10))
 	{
-		setText(10,i18n("%1 %").arg(KGlobal::locale()->formatNumber(Percentage(s),2)));
+		setText(10,i18n("%1 %").tqarg(KGlobal::locale()->formatNumber(Percentage(s),2)));
 	}
 	
 	if(m_parent->columnVisible(11))
 	{
 		float ratio = kt::ShareRatio(s);
-		setText(11,QString("%1").arg(KGlobal::locale()->formatNumber(ratio,2)));
+		setText(11,TQString("%1").tqarg(KGlobal::locale()->formatNumber(ratio,2)));
 	}
 	
 	if (m_parent->columnVisible(12))
@@ -276,7 +276,7 @@ void KTorrentViewItem::update()
 
 
 
-int KTorrentViewItem::compare(QListViewItem * i,int col,bool) const
+int KTorrentViewItem::compare(TQListViewItem * i,int col,bool) const
 {
 	KTorrentViewItem* other = (KTorrentViewItem*)i;
 	TorrentInterface* otc = other->tc;
@@ -284,8 +284,8 @@ int KTorrentViewItem::compare(QListViewItem * i,int col,bool) const
 	const TorrentStats & os = otc->getStats();
 	switch (col)
 	{
-		case 0: return QString::compare(s.torrent_name,os.torrent_name);
-		case 1: return QString::compare(tc->statusToString(),otc->statusToString());
+		case 0: return TQString::compare(s.torrent_name,os.torrent_name);
+		case 1: return TQString::compare(tc->statusToString(),otc->statusToString());
 		case 2: return CompareVal(s.bytes_downloaded,os.bytes_downloaded);
 		case 3: return CompareVal(s.total_bytes_to_download,os.total_bytes_to_download);
 		case 4: return CompareVal(s.bytes_uploaded,os.bytes_uploaded);
@@ -337,17 +337,17 @@ int KTorrentViewItem::compare(QListViewItem * i,int col,bool) const
 	return 0;
 }
 
-void KTorrentViewItem::paintCell(QPainter* p,const QColorGroup & cg,
+void KTorrentViewItem::paintCell(TQPainter* p,const TQColorGroup & cg,
 								 int column,int width,int align)
 {
-	QColorGroup _cg( cg );
-	QColor c = _cg.text();
+	TQColorGroup _cg( cg );
+	TQColor c = _cg.text();
 
 	if (column == 1)
-		_cg.setColor(QColorGroup::Text, StatusToColor(tc->getStats().status,cg));
+		_cg.setColor(TQColorGroup::Text, StatusToColor(tc->getStats().status,cg));
 	
 	if (column == 11)
-		_cg.setColor(QColorGroup::Text, ratioToColor(kt::ShareRatio(tc->getStats())));
+		_cg.setColor(TQColorGroup::Text, ratioToColor(kt::ShareRatio(tc->getStats())));
 
 
 	KListViewItem::paintCell(p,_cg,column,width,align);

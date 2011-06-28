@@ -23,11 +23,11 @@
 
 #include <interfaces/ipblockinginterface.h>
 
-#include <qmap.h>
-#include <qstringlist.h>
+#include <tqmap.h>
+#include <tqstringlist.h>
 #include <util/constants.h>
 
-class QString;
+class TQString;
 
 namespace bt
 {
@@ -35,8 +35,8 @@ namespace bt
 	{
 		public:
 			IPKey();
-			IPKey(QString& ip, Uint32 mask = 0xFFFFFFFF);
-			IPKey(Uint32 ip, Uint32 mask = 0xFFFFFFFF);
+			IPKey(TQString& ip, Uint32 tqmask = 0xFFFFFFFF);
+			IPKey(Uint32 ip, Uint32 tqmask = 0xFFFFFFFF);
 			IPKey(const IPKey& ip);
 			~IPKey();
 
@@ -45,10 +45,10 @@ namespace bt
 			bool operator < (const IPKey & ip) const;
 			IPKey&  operator= (const IPKey& ip);
 			
-			QString toString();
+			TQString toString();
 
 			Uint32 m_ip;
-			Uint32 m_mask;
+			Uint32 m_tqmask;
 	};
 
 	/**
@@ -77,33 +77,33 @@ namespace bt
 			/**
 			 * @brief Adds ip address to the list. 
 			 * It also increases the number of times this IP appeared in the list.
-			 * @param ip QString containing the peer IP address
+			 * @param ip TQString containing the peer IP address
 			 * @param state int number of bad chunks client from ip sent. Basically this parameter
 			 * is used only to permanently block some IP (by setting this param to 3)
 			 */
-			void insert(QString ip, int state=1);
+			void insert(TQString ip, int state=1);
 
 			/**
 			* @brief Adds IP range to the list
 			* It is used  for blocking plugin. For single IP use insert() instead.
-			* @param ip QString peer IP address. Uses ''*" for ranges.
+			* @param ip TQString peer IP address. Uses ''*" for ranges.
 			 **/
-			void addRange(QString ip);
+			void addRange(TQString ip);
 			
 			
 			/**
 			 * @brief Removes IP range from list
 			 * It is used  for blocking plugin.
-			 * @param ip QString peer IP address. Uses ''*" for ranges.
+			 * @param ip TQString peer IP address. Uses ''*" for ranges.
 			 **/
-			void removeRange(QString ip);
+			void removeRange(TQString ip);
 
 			/**
 			 * Checks if IP is in the blocking list
 			 * @param ip - IP address to check
 			 * @returns true if IP is blocked
 			 */
-			bool isBlocked(const QString& ip);
+			bool isBlocked(const TQString& ip);
 			
 			/**
 			 * @brief Sets the pointer to the IPBlockingInterface (IPBlocking plugin)
@@ -120,19 +120,19 @@ namespace bt
 			
 			
 			/**
-			 * @brief This function will fill QStringList with all banned peer IP addresses.
-			 * @return QStringList filled with blacklisted peers. 
-			 * It will create a new QStringList object so don't forget to delete it after using.
+			 * @brief This function will fill TQStringList with all banned peer IP addresses.
+			 * @return TQStringList filled with blacklisted peers. 
+			 * It will create a new TQStringList object so don't forget to delete it after using.
 			 */
-			QStringList* getBlocklist();
+			TQStringList* getBlocklist();
 			
 			
 			/**
 			 * @brief This function will load blacklisted peers to IPFilter.
-			 * @param list QStringList containing all banned peers.
+			 * @param list TQStringList containing all banned peers.
 			 * @note This function will remove current peers from blocklist before setting new list!!!
 			 */
-			void setBlocklist(QStringList* list);
+			void setBlocklist(TQStringList* list);
 
 		private:
 			
@@ -143,10 +143,10 @@ namespace bt
 			kt::IPBlockingInterface* pluginInterface;
 			
 			/**
-			 * @param IPKey - Key: Peer IP address and bit mask if it is a range
+			 * @param IPKey - Key: Peer IP address and bit tqmask if it is a range
 			 * @param int - Number of bad chunks sent.
 			**/
-			QMap<IPKey, int> m_peers;
+			TQMap<IPKey, int> m_peers;
 			
 			/**
 			 * @brief Adds IP range to the list.
@@ -161,13 +161,13 @@ namespace bt
 			 * Checks if IP is listed in local database (IPBlocklist::m_peers)
 			 * @return TRUE if IP is to be blocked
 			 */
-			bool isBlockedLocal(const QString& ip);
+			bool isBlockedLocal(const TQString& ip);
 			
 			/**
 			 * Checks if IP is listed in plugins antip2p file
 			 * @return TRUE if IP is to be blocked
 			 */
-			bool isBlockedPlugin(const QString& ip);
+			bool isBlockedPlugin(const TQString& ip);
 	};
 }
 

@@ -17,7 +17,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qstring.h>
+#include <tqstring.h>
 #include <string.h>
 #include <util/log.h>
 #include <util/bitset.h>
@@ -86,7 +86,7 @@ namespace bt
 		memcpy(data+13,ch->getData() + begin,len);
 	}
 
-	Packet::Packet(Uint8 ext_id,const QByteArray & ext_data) : data(0),size(0),written(0)
+	Packet::Packet(Uint8 ext_id,const TQByteArray & ext_data) : data(0),size(0),written(0)
 	{
 		size = 6 + ext_data.size();
 		data = AllocPacket(size,EXTENDED);
@@ -131,23 +131,23 @@ namespace bt
 	}
 	
 	/*
-	QString Packet::debugString() const
+	TQString Packet::debugString() const
 	{
 		if (!data)
-			return QString::null;
+			return TQString();
 		
 		switch (data[4])
 		{
-			case CHOKE : return QString("CHOKE %1 %2").arg(hdr_length).arg(data_length);
-			case UNCHOKE : return QString("UNCHOKE %1 %2").arg(hdr_length).arg(data_length);
-			case INTERESTED : return QString("INTERESTED %1 %2").arg(hdr_length).arg(data_length);
-			case NOT_INTERESTED : return QString("NOT_INTERESTED %1 %2").arg(hdr_length).arg(data_length);
-			case HAVE : return QString("HAVE %1 %2").arg(hdr_length).arg(data_length);
-			case BITFIELD : return QString("BITFIELD %1 %2").arg(hdr_length).arg(data_length);
-			case PIECE : return QString("PIECE %1 %2").arg(hdr_length).arg(data_length);
-			case REQUEST : return QString("REQUEST %1 %2").arg(hdr_length).arg(data_length);
-			case CANCEL : return QString("CANCEL %1 %2").arg(hdr_length).arg(data_length);
-			default: return QString("UNKNOWN %1 %2").arg(hdr_length).arg(data_length);
+			case CHOKE : return TQString("CHOKE %1 %2").tqarg(hdr_length).tqarg(data_length);
+			case UNCHOKE : return TQString("UNCHOKE %1 %2").tqarg(hdr_length).tqarg(data_length);
+			case INTERESTED : return TQString("INTERESTED %1 %2").tqarg(hdr_length).tqarg(data_length);
+			case NOT_INTERESTED : return TQString("NOT_INTERESTED %1 %2").tqarg(hdr_length).tqarg(data_length);
+			case HAVE : return TQString("HAVE %1 %2").tqarg(hdr_length).tqarg(data_length);
+			case BITFIELD : return TQString("BITFIELD %1 %2").tqarg(hdr_length).tqarg(data_length);
+			case PIECE : return TQString("PIECE %1 %2").tqarg(hdr_length).tqarg(data_length);
+			case REQUEST : return TQString("REQUEST %1 %2").tqarg(hdr_length).tqarg(data_length);
+			case CANCEL : return TQString("CANCEL %1 %2").tqarg(hdr_length).tqarg(data_length);
+			default: return TQString("UNKNOWN %1 %2").tqarg(hdr_length).tqarg(data_length);
 		}
 	}
 	*/

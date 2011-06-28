@@ -21,7 +21,7 @@
  
 #include <kurl.h>
 #include <klocale.h>
-#include <qhostaddress.h>
+#include <tqhostaddress.h>
 #include <util/log.h>
 #include <util/functions.h>
 #include <util/error.h>
@@ -80,7 +80,7 @@ namespace bt
 	{
 		event = "completed";
 		doRequest();
-		event = QString::null;
+		event = TQString();
 	}
 	
 	void HTTPTracker::manualUpdate()
@@ -105,9 +105,9 @@ namespace bt
 		}
 		
 		KURL scrape_url = url;
-		scrape_url.setFileName(url.fileName(false).replace("announce","scrape"));
+		scrape_url.setFileName(url.fileName(false).tqreplace("announce","scrape"));
 		
-		QString epq = scrape_url.encodedPathAndQuery();
+		TQString epq = scrape_url.encodedPathAndQuery();
 		const SHA1Hash & info_hash = tor->getInfoHash();
 		if (scrape_url.queryItems().count() > 0)
 			epq += "&info_hash=" + info_hash.toURLString();
@@ -124,7 +124,7 @@ namespace bt
 		j->setMetaData(md);
 		KIO::Scheduler::scheduleJob(j);
 		
-		connect(j,SIGNAL(result(KIO::Job* )),this,SLOT(onScrapeResult( KIO::Job* )));
+		connect(j,TQT_SIGNAL(result(KIO::Job* )),this,TQT_SLOT(onScrapeResult( KIO::Job* )));
 	}
 	
 	void HTTPTracker::onScrapeResult(KIO::Job* j)
@@ -152,7 +152,7 @@ namespace bt
 		if (n && n->getType() == BNode::DICT)
 		{
 			BDictNode* d = (BDictNode*)n;
-			d = d->getDict("files");
+			d = d->getDict(TQString("files"));
 			if (d)
 			{
 				d = d->getDict(tor->getInfoHash().toByteArray());
@@ -188,21 +188,21 @@ namespace bt
 		if (!url.isValid())
 		{
 			requestPending();
-			QTimer::singleShot(500,this,SLOT(emitInvalidURLFailure()));
+			TQTimer::singleShot(500,this,TQT_SLOT(emitInvalidURLFailure()));
 			return;
 		}
 
 		Uint16 port = Globals::instance().getServer().getPortInUse();;
 		
 		u.addQueryItem("peer_id",peer_id.toString());
-		u.addQueryItem("port",QString::number(port));
-		u.addQueryItem("uploaded",QString::number(s.trk_bytes_uploaded));
-		u.addQueryItem("downloaded",QString::number(s.trk_bytes_downloaded));
+		u.addQueryItem("port",TQString::number(port));
+		u.addQueryItem("uploaded",TQString::number(s.trk_bytes_uploaded));
+		u.addQueryItem("downloaded",TQString::number(s.trk_bytes_downloaded));
 		
 		if (event == "completed")
 			u.addQueryItem("left","0"); // need to send 0 when we are completed
 		else
-			u.addQueryItem("left",QString::number(s.bytes_left));
+			u.addQueryItem("left",TQString::number(s.bytes_left));
 		
 		u.addQueryItem("compact","1");
 		if (event != "stopped")
@@ -210,14 +210,14 @@ namespace bt
 		else
 			u.addQueryItem("numwant","0");
 		
-		u.addQueryItem("key",QString::number(key));
-		QString cip = Tracker::getCustomIP();
+		u.addQueryItem("key",TQString::number(key));
+		TQString cip = Tracker::getCustomIP();
 		if (!cip.isNull())
 			u.addQueryItem("ip",cip);
 
-		if (event != QString::null)
+		if (event != TQString())
 			u.addQueryItem("event",event);
-		QString epq = u.encodedPathAndQuery();
+		TQString epq = u.encodedPathAndQuery();
 		const SHA1Hash & info_hash = tor->getInfoHash();
 		epq += "&info_hash=" + info_hash.toURLString();
 
@@ -238,12 +238,12 @@ namespace bt
 		}
 	}
 
-	bool HTTPTracker::updateData(const QByteArray & data)
+	bool HTTPTracker::updateData(const TQByteArray & data)
 	{
 //#define DEBUG_PRINT_RESPONSE
 #ifdef DEBUG_PRINT_RESPONSE
 		Out() << "Data : " << endl;
-		Out() << QString(data) << endl;
+		Out() << TQString(data) << endl;
 #endif
 		// search for dictionary, there might be random garbage infront of the data
 		Uint32 i = 0;
@@ -285,7 +285,7 @@ namespace bt
 		if (dict->getData("failure reason"))
 		{
 			BValueNode* vn = dict->getValue("failure reason");
-			QString msg = vn->data().toString();
+			TQString msg = vn->data().toString();
 			delete n;
 			failures++;
 			requestFailed(msg);
@@ -321,14 +321,14 @@ namespace bt
 				return false;
 			}
 
-			QByteArray arr = vn->data().toByteArray();
+			TQByteArray arr = vn->data().toByteArray();
 			for (Uint32 i = 0;i < arr.size();i+=6)
 			{
 				Uint8 buf[6];
 				for (int j = 0;j < 6;j++)
 					buf[j] = arr[i + j];
 
-				addPeer(QHostAddress(ReadUint32(buf,0)).toString(),ReadUint16(buf,4));
+				addPeer(TQHostAddress(ReadUint32(buf,0)).toString(),ReadUint16(buf,4));
 			}
 		}
 		else
@@ -398,7 +398,7 @@ namespace bt
 					failures++;
 					requestFailed(i18n("Invalid response from tracker"));
 				}
-				event = QString::null;
+				event = TQString();
 			}
 			else
 			{
@@ -429,7 +429,7 @@ namespace bt
 			if (url.isValid())
 				md["UseProxy"] = url.pathOrURL();
 			else
-				md["UseProxy"] = QString::null;
+				md["UseProxy"] = TQString();
 		}
 	}
 	
@@ -453,7 +453,7 @@ namespace bt
 		j->setMetaData(md);
 		KIO::Scheduler::scheduleJob(j);
 		
-		connect(j,SIGNAL(result(KIO::Job* )),this,SLOT(onAnnounceResult( KIO::Job* )));
+		connect(j,TQT_SIGNAL(result(KIO::Job* )),this,TQT_SLOT(onAnnounceResult( KIO::Job* )));
 		
 		active_job = j;
 		requestPending();

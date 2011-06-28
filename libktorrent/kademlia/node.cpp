@@ -37,7 +37,7 @@ using namespace KNetwork;
 
 namespace dht
 {
-	static void SaveKey(const dht::Key & key,const QString & key_file)
+	static void SaveKey(const dht::Key & key,const TQString & key_file)
 	{
 		bt::File fptr;
 		if (!fptr.open(key_file,"wb"))
@@ -50,7 +50,7 @@ namespace dht
 		fptr.close();
 	}
 	
-	static dht::Key LoadKey(const QString & key_file,bool & new_key)
+	static dht::Key LoadKey(const TQString & key_file,bool & new_key)
 	{
 		bt::File fptr;
 		if (!fptr.open(key_file,"rb"))
@@ -75,7 +75,7 @@ namespace dht
 		return dht::Key(data);
 	}
 
-	Node::Node(RPCServer* srv,const QString & key_file) : srv(srv)
+	Node::Node(RPCServer* srv,const TQString & key_file) : srv(srv)
 	{
 		num_receives = 0;
 		num_entries = 0;
@@ -224,7 +224,7 @@ namespace dht
 	}
 	
 	
-	void Node::saveTable(const QString & file)
+	void Node::saveTable(const TQString & file)
 	{
 		bt::File fptr;
 		if (!fptr.open(file,"wb"))
@@ -243,7 +243,7 @@ namespace dht
 		}
 	}
 		
-	void Node::loadTable(const QString & file)
+	void Node::loadTable(const TQString & file)
 	{
 		if (delete_table)
 		{

@@ -71,7 +71,7 @@ namespace bt
 	
 	void PacketWriter::queuePacket(Packet* p)
 	{
-		QMutexLocker locker(&mutex);
+		TQMutexLocker locker(&mutex);
 		if (p->getType() == PIECE)
 			data_packets.push_back(p);
 		else
@@ -194,8 +194,8 @@ namespace bt
 		}
 		else
 		{
-	/*		Out(SYS_CON|LOG_DEBUG) << QString("Uploading %1 %2 %3 %4 %5")
-					.arg(index).arg(begin).arg(len).arg((Q_ULLONG)ch,0,16).arg((Q_ULLONG)ch->getData(),0,16) 
+	/*		Out(SYS_CON|LOG_DEBUG) << TQString("Uploading %1 %2 %3 %4 %5")
+					.tqarg(index).tqarg(begin).tqarg(len).tqarg((TQ_ULLONG)ch,0,16).tqarg((TQ_ULLONG)ch->getData(),0,16) 
 					<< endl;;
 	*/
 			queuePacket(new Packet(index,begin,len,ch));
@@ -205,25 +205,25 @@ namespace bt
 	
 	void PacketWriter::sendExtProtHandshake(Uint16 port,bool pex_on)
 	{
-		QByteArray arr;
+		TQByteArray arr;
 		BEncoder enc(new BEncoderBufferOutput(arr));
 		enc.beginDict();
-		enc.write("m"); 
+		enc.write(TQString("m")); 
 		// supported messages
 		enc.beginDict();
-		enc.write("ut_pex");enc.write((Uint32)(pex_on ? 1 : 0));
+		enc.write(TQString("ut_pex"));enc.write((Uint32)(pex_on ? 1 : 0));
 		enc.end();
 		if (port > 0)
 		{
-			enc.write("p"); 
+			enc.write(TQString("p")); 
 			enc.write((Uint32)port);
 		}
-		enc.write("v"); enc.write(QString("KTorrent %1").arg(kt::VERSION_STRING));
+		enc.write(TQString("v")); enc.write(TQString("KTorrent %1").tqarg(kt::VERSION_STRING));
 		enc.end();
 		sendExtProtMsg(0,arr);
 	}
 	
-	void PacketWriter::sendExtProtMsg(Uint8 id,const QByteArray & data)
+	void PacketWriter::sendExtProtMsg(Uint8 id,const TQByteArray & data)
 	{
 		queuePacket(new Packet(id,data));
 	}
@@ -259,7 +259,7 @@ namespace bt
 	
 	Uint32 PacketWriter::onReadyToWrite(Uint8* data,Uint32 max_to_write)
 	{
-		QMutexLocker locker(&mutex);
+		TQMutexLocker locker(&mutex);
 		
 		if (!curr_packet)
 			curr_packet = selectPacket();
@@ -314,7 +314,7 @@ namespace bt
 	
 	Uint32 PacketWriter::getUploadedDataBytes() const
 	{
-		QMutexLocker locker(&mutex);
+		TQMutexLocker locker(&mutex);
 		Uint32 ret = uploaded;
 		uploaded = 0;
 		return ret;
@@ -322,7 +322,7 @@ namespace bt
 	
 	Uint32 PacketWriter::getUploadedNonDataBytes() const
 	{
-		QMutexLocker locker(&mutex);
+		TQMutexLocker locker(&mutex);
 		Uint32 ret = uploaded_non_data;
 		uploaded_non_data = 0;
 		return ret;
@@ -330,19 +330,19 @@ namespace bt
 	
 	Uint32 PacketWriter::getNumPacketsToWrite() const
 	{
-		QMutexLocker locker(&mutex);
+		TQMutexLocker locker(&mutex);
 		return data_packets.size() + control_packets.size();
 	}
 	
 	Uint32 PacketWriter::getNumDataPacketsToWrite() const
 	{
-		QMutexLocker locker(&mutex);
+		TQMutexLocker locker(&mutex);
 		return data_packets.size();
 	}
 	
 	void PacketWriter::doNotSendPiece(const Request & req,bool reject)
 	{
-		QMutexLocker locker(&mutex);
+		TQMutexLocker locker(&mutex);
 		std::list<Packet*>::iterator i = data_packets.begin();
 		while (i != data_packets.end())
 		{
@@ -370,7 +370,7 @@ namespace bt
 	
 	void PacketWriter::clearPieces(bool reject)
 	{
-		QMutexLocker locker(&mutex);
+		TQMutexLocker locker(&mutex);
 		
 		std::list<Packet*>::iterator i = data_packets.begin();
 		while (i != data_packets.end())

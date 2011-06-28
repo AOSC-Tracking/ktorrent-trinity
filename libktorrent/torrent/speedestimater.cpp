@@ -17,8 +17,8 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qpair.h>
-#include <qvaluelist.h>
+#include <tqpair.h>
+#include <tqvaluelist.h>
 #include <util/log.h>
 #include <util/timer.h>
 #include "speedestimater.h"
@@ -29,14 +29,14 @@ namespace bt
 	class SpeedEstimater::SpeedEstimaterPriv
 	{
 		float rate;
-		QValueList<QPair<Uint32,TimeStamp> > dlrate;
+		TQValueList<TQPair<Uint32,TimeStamp> > dlrate;
 	public:
 		SpeedEstimaterPriv() : rate(0) {}
 		~SpeedEstimaterPriv() {}
 		
 		void data(Uint32 bytes)
 		{
-			dlrate.append(qMakePair(bytes,GetCurrentTime()));
+			dlrate.append(tqMakePair(bytes,GetCurrentTime()));
 		}
 		
 		void update()
@@ -44,10 +44,10 @@ namespace bt
 			TimeStamp now = GetCurrentTime();
 			
 			Uint32 bytes = 0,oldest = now;
-			QValueList<QPair<Uint32,TimeStamp> >::iterator i = dlrate.begin();
+			TQValueList<TQPair<Uint32,TimeStamp> >::iterator i = dlrate.begin();
 			while (i != dlrate.end())
 			{
-				QPair<Uint32,TimeStamp> & p = *i;
+				TQPair<Uint32,TimeStamp> & p = *i;
 				if (now - p.second > 3000)
 				{
 					i = dlrate.erase(i);

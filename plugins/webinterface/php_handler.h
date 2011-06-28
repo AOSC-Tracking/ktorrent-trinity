@@ -20,24 +20,25 @@
 #ifndef PHP_HANDLER_H
 #define PHP_HANDLER_H
 		
-#include <qmap.h>
+#include <tqmap.h>
 #include <kurl.h>
-#include <qprocess.h>
+#include <tqprocess.h>
 
 
 namespace kt
 {
 	class PhpInterface;
 	
-	class PhpHandler : public QProcess 
+	class PhpHandler : public TQProcess 
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		PhpHandler(const QString & php_exe,PhpInterface *php);
+		PhpHandler(const TQString & php_exe,PhpInterface *php);
 		virtual ~PhpHandler();
 			
-		bool executeScript(const QString & path,const QMap<QString,QString> & args);
-		const QByteArray & getOutput() const {return output;};
+		bool executeScript(const TQString & path,const TQMap<TQString,TQString> & args);
+		const TQByteArray & getOutput() const {return output;};
 		
 	public slots:
 		void onExited();
@@ -47,10 +48,10 @@ namespace kt
 		void finished();
 		
 	private:
-		QByteArray output;
+		TQByteArray output;
 		PhpInterface *php_i;
 		
-		static QMap<QString,QByteArray> scripts;
+		static TQMap<TQString,TQByteArray> scripts;
 	};
 }
 

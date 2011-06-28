@@ -30,8 +30,9 @@
 class IPFilterWidget: public BlacklistWidgetBase
 {
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		IPFilterWidget(QWidget *parent = 0, const char *name = 0);
+		IPFilterWidget(TQWidget *tqparent = 0, const char *name = 0);
 		
 		virtual void btnApply_clicked();
 		virtual void btnOk_clicked();
@@ -41,8 +42,8 @@ class IPFilterWidget: public BlacklistWidgetBase
 		virtual void btnRemove_clicked();
 		virtual void btnAdd_clicked();
 		
-		void saveFilter(QString& fn);
-		void loadFilter(QString& fn);
+		void saveFilter(TQString& fn);
+		void loadFilter(TQString& fn);
 };
 
 #endif

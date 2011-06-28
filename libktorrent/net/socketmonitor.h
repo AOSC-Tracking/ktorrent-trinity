@@ -21,8 +21,8 @@
 #define NETSOCKETMONITOR_H
 
 
-#include <qmutex.h>
-#include <qptrlist.h>
+#include <tqmutex.h>
+#include <tqptrlist.h>
 #include <util/constants.h>
 
 
@@ -44,10 +44,10 @@ namespace net
 	{
 		static SocketMonitor self;
 
-		QMutex mutex;
+		TQMutex mutex;
 		UploadThread* ut;
 		DownloadThread* dt;
-		QPtrList<BufferedSocket> smap;
+		TQPtrList<BufferedSocket> smap;
 		Uint32 next_group_id;
 				
 		SocketMonitor();	
@@ -90,7 +90,7 @@ namespace net
 		 */
 		void removeGroup(GroupType type,Uint32 gid);
 		
-		typedef QPtrList<BufferedSocket>::iterator Itr;
+		typedef TQPtrList<BufferedSocket>::iterator Itr;
 		
 		/// Get the begin of the list of sockets
 		Itr begin() {return smap.begin();}

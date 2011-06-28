@@ -21,10 +21,10 @@
 #define BTPROFILER_H
 
 #ifdef KT_PROFILE
-#include <qptrlist.h>
+#include <tqptrlist.h>
 #include <util/constants.h>
 
-class QTextStream;
+class TQTextStream;
 
 
 namespace bt
@@ -34,15 +34,15 @@ namespace bt
 	 */
 	class Profile
 	{
-		Profile* parent;
-		QPtrList<Profile> children;
+		Profile* tqparent;
+		TQPtrList<Profile> tqchildren;
 		
-		QString name;
+		TQString name;
 		double min,max,avg;
 		Uint32 count;
 		double start_time;
 	public:	
-		Profile(Profile* parent,const QString & name);
+		Profile(Profile* tqparent,const TQString & name);
 		virtual ~Profile();
 		
 		/**
@@ -60,19 +60,19 @@ namespace bt
 		 * @param name The name of the child
 		 * @return The child
 		 */
-		Profile* child(const QString & name);
+		Profile* child(const TQString & name);
 		
 		/**
-		 * Get the parent of the current profile.
+		 * Get the tqparent of the current profile.
 		 */
-		Profile* getParent() const {return parent;}
+		Profile* getParent() const {return tqparent;}
 		
 		/**
 		 * Save profile information to a file.
 		 * @param out Text stream to write to
 		 * @param base Base path of the profiles
 		 */
-		void save(QTextStream & out,const QString & base);
+		void save(TQTextStream & out,const TQString & base);
 	};
 
 	/**
@@ -91,9 +91,9 @@ namespace bt
 	public:
 		virtual ~Profiler();
 
-		void start(const QString & s);
+		void start(const TQString & s);
 		void end();
-		void saveToFile(const QString & fn);
+		void saveToFile(const TQString & fn);
 		
 		static Profiler & instance() {return inst;} 
 	};

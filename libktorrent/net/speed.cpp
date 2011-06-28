@@ -37,16 +37,16 @@ namespace net
 	
 	void Speed::onData(Uint32 b,bt::TimeStamp ts)
 	{
-		dlrate.append(qMakePair(b,ts));
+		dlrate.append(tqMakePair(b,ts));
 		bytes += b;
 	}
 
 	void Speed::update(bt::TimeStamp now)
 	{	
-		QValueList<QPair<Uint32,TimeStamp> >::iterator i = dlrate.begin();
+		TQValueList<TQPair<Uint32,TimeStamp> >::iterator i = dlrate.begin();
 		while (i != dlrate.end())
 		{
-			QPair<Uint32,TimeStamp> & p = *i;
+			TQPair<Uint32,TimeStamp> & p = *i;
 			if (now - p.second > SPEED_INTERVAL || now < p.second)
 			{
 				if (bytes >= p.first) // make sure we don't wrap around

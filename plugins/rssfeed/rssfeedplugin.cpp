@@ -26,8 +26,8 @@
 #include <util/constants.h>
 #include <util/log.h>
 
-#include <qstring.h>
-#include <qfile.h>
+#include <tqstring.h>
+#include <tqfile.h>
 
 #include <kmessagebox.h>
 #include <klocale.h>
@@ -42,13 +42,13 @@ K_EXPORT_COMPONENT_FACTORY(ktrssfeedplugin,KGenericFactory<kt::RssFeedPlugin>("r
 
 namespace kt
 {	
-	const QString NAME = "RSS Feeds";
-	const QString AUTHOR = "Alan Jones";
-	const QString EMAIL = "skyphyr@gmail.com";
-	const QString DESCRIPTION = i18n("Automatically scans RSS feeds for torrent matching regular expressions and loads them.");
+	const TQString NAME = "RSS Feeds";
+	const TQString AUTHOR = "Alan Jones";
+	const TQString EMAIL = "skyphyr@gmail.com";
+	const TQString DESCRIPTION = i18n("Automatically scans RSS feeds for torrent matching regular expressions and loads them.");
 
-	RssFeedPlugin::RssFeedPlugin(QObject* parent, const char* name, const QStringList& args)
-	: Plugin(parent, name, args,NAME,i18n("RSS Feeds"),AUTHOR,EMAIL,DESCRIPTION,"player_playlist")
+	RssFeedPlugin::RssFeedPlugin(TQObject* tqparent, const char* name, const TQStringList& args)
+	: Plugin(tqparent, name, args,NAME,i18n("RSS Feeds"),AUTHOR,EMAIL,DESCRIPTION,"player_playlist")
 	{
 		m_rssFeedManager = 0;
 	}
@@ -77,7 +77,7 @@ namespace kt
 		m_rssFeedManager = 0;
 	}
 	
-	bool RssFeedPlugin::versionCheck(const QString & version) const
+	bool RssFeedPlugin::versionCheck(const TQString & version) const
 	{
 		return version == KT_VERSION_MACRO;
 	}

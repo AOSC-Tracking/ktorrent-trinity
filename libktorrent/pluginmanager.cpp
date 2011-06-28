@@ -17,8 +17,8 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qfile.h>
-#include <qtextstream.h>
+#include <tqfile.h>
+#include <tqtextstream.h>
 #include <kparts/componentfactory.h>
 #include <util/log.h>
 #include <util/error.h>
@@ -61,7 +61,7 @@ namespace kt
 			int errCode = 0;
 			Plugin* plugin =
 					KParts::ComponentFactory::createInstanceFromService<kt::Plugin>
-					(service, 0, 0, QStringList(),&errCode);
+					(service, 0, 0, TQStringList(),&errCode);
 
 			if (!plugin)
 				continue;
@@ -70,8 +70,8 @@ namespace kt
 			if (!plugin->versionCheck(kt::VERSION_STRING))
 			{
 				Out(SYS_GEN|LOG_NOTICE) <<
-						QString("Plugin %1 version does not match KTorrent version, unloading it.")
-						.arg(service->library()) << endl;
+						TQString("Plugin %1 version does not match KTorrent version, unloading it.")
+						.tqarg(service->library()) << endl;
 
 				delete plugin;
 				// unload the library again, no need to have it loaded
@@ -80,7 +80,7 @@ namespace kt
 			}
 
 			unloaded.insert(plugin->getName(),plugin);
-			if (pltoload.contains(plugin->getName()))
+			if (pltoload.tqcontains(plugin->getName()))
 				load(plugin->getName());
 		}
 		
@@ -93,9 +93,9 @@ namespace kt
 	}
 
 
-	void PluginManager::load(const QString & name)
+	void PluginManager::load(const TQString & name)
 	{
-		Plugin* p = unloaded.find(name);
+		Plugin* p = unloaded.tqfind(name);
 		if (!p)
 			return;
 
@@ -112,9 +112,9 @@ namespace kt
 			saveConfigFile(cfg_file);
 	}
 
-	void PluginManager::unload(const QString & name)
+	void PluginManager::unload(const TQString & name)
 	{
-		Plugin* p = plugins.find(name);
+		Plugin* p = plugins.tqfind(name);
 		if (!p)
 			return;
 		
@@ -146,7 +146,7 @@ namespace kt
 
 	void PluginManager::loadAll()
 	{
-		bt::PtrMap<QString,Plugin>::iterator i = unloaded.begin();
+		bt::PtrMap<TQString,Plugin>::iterator i = unloaded.begin();
 		while (i != unloaded.end())
 		{
 			Plugin* p = i->second;
@@ -169,7 +169,7 @@ namespace kt
 		bt::WaitJob* wjob = new WaitJob(2000);
 		try
 		{
-			bt::PtrMap<QString,Plugin>::iterator i = plugins.begin();
+			bt::PtrMap<TQString,Plugin>::iterator i = plugins.begin();
 			while (i != plugins.end())
 			{
 				Plugin* p = i->second;
@@ -188,7 +188,7 @@ namespace kt
 		}
 		
 		// then unload them
-		bt::PtrMap<QString,Plugin>::iterator i = plugins.begin();
+		bt::PtrMap<TQString,Plugin>::iterator i = plugins.begin();
 		while (i != plugins.end())
 		{
 			Plugin* p = i->second;
@@ -205,7 +205,7 @@ namespace kt
 
 	void PluginManager::updateGuiPlugins()
 	{
-		bt::PtrMap<QString,Plugin>::iterator i = plugins.begin();
+		bt::PtrMap<TQString,Plugin>::iterator i = plugins.begin();
 		while (i != plugins.end())
 		{
 			Plugin* p = i->second;
@@ -214,9 +214,9 @@ namespace kt
 		}
 	}
 
-	void PluginManager::fillPluginList(QPtrList<Plugin> & plist)
+	void PluginManager::fillPluginList(TQPtrList<Plugin> & plist)
 	{
-		bt::PtrMap<QString,Plugin>::iterator i = plugins.begin();
+		bt::PtrMap<TQString,Plugin>::iterator i = plugins.begin();
 		while (i != plugins.end())
 		{
 			Plugin* p = i->second;
@@ -234,13 +234,13 @@ namespace kt
 		}
 	}
 
-	bool PluginManager::isLoaded(const QString & name) const
+	bool PluginManager::isLoaded(const TQString & name) const
 	{
-		const Plugin* p = plugins.find(name);
+		const Plugin* p = plugins.tqfind(name);
 		return p != 0;
 	}
 
-	void PluginManager::loadConfigFile(const QString & file)
+	void PluginManager::loadConfigFile(const TQString & file)
 	{
 		cfg_file = file;
 		// make a default config file if doesn't exist
@@ -250,19 +250,19 @@ namespace kt
 			return;
 		}
 
-		QFile f(file);
+		TQFile f(file);
 		if (!f.open(IO_ReadOnly))
 		{
-			Out(SYS_GEN|LOG_DEBUG) << "Cannot open file " << file << " : " << f.errorString() << endl;
+			Out(SYS_GEN|LOG_DEBUG) << "Cannot open file " << file << " : " << TQString(f.errorString()) << endl;
 			return;
 		}
 
 		pltoload.clear();
 
-		QTextStream in(&f);
+		TQTextStream in(&f);
 		while (!in.atEnd())
 		{
-			QString l = in.readLine();
+			TQString l = in.readLine();
 			if (l.isNull())
 				break;
 
@@ -270,18 +270,18 @@ namespace kt
 		}
 	}
 
-	void PluginManager::saveConfigFile(const QString & file)
+	void PluginManager::saveConfigFile(const TQString & file)
 	{
 		cfg_file = file;
-		QFile f(file);
+		TQFile f(file);
 		if (!f.open(IO_WriteOnly))
 		{
-			Out(SYS_GEN|LOG_DEBUG) << "Cannot open file " << file << " : " << f.errorString() << endl;
+			Out(SYS_GEN|LOG_DEBUG) << "Cannot open file " << file << " : " << TQString(f.errorString()) << endl;
 			return;
 		}
 
-		QTextStream out(&f);
-		bt::PtrMap<QString,Plugin>::iterator i = plugins.begin();
+		TQTextStream out(&f);
+		bt::PtrMap<TQString,Plugin>::iterator i = plugins.begin();
 		while (i != plugins.end())
 		{
 			Plugin* p = i->second;
@@ -291,17 +291,17 @@ namespace kt
 	}
 
 
-	void PluginManager::writeDefaultConfigFile(const QString & file)
+	void PluginManager::writeDefaultConfigFile(const TQString & file)
 	{
 		// by default we will load the infowidget and searchplugin
-		QFile f(file);
+		TQFile f(file);
 		if (!f.open(IO_WriteOnly))
 		{
-			Out(SYS_GEN|LOG_DEBUG) << "Cannot open file " << file << " : " << f.errorString() << endl;
+			Out(SYS_GEN|LOG_DEBUG) << "Cannot open file " << file << " : " << TQString(f.errorString()) << endl;
 			return;
 		}
 
-		QTextStream out(&f);
+		TQTextStream out(&f);
 		
 		out << "Info Widget" << endl << "Search" << endl;
 

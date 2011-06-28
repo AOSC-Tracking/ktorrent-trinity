@@ -21,13 +21,13 @@
 #include <interfaces/torrentinterface.h>
 #include <interfaces/trackerslist.h>
 
-#include <qdatetime.h>
-#include <qstring.h>
-#include <qlabel.h>
-#include <qlistview.h>
-#include <qlineedit.h>
-#include <qpushbutton.h>
-#include <qtooltip.h>
+#include <tqdatetime.h>
+#include <tqstring.h>
+#include <tqlabel.h>
+#include <tqlistview.h>
+#include <tqlineedit.h>
+#include <tqpushbutton.h>
+#include <tqtooltip.h>
 
 #include <klocale.h>
 #include <kurl.h>
@@ -43,8 +43,8 @@
 
 namespace kt
 {
-	TrackerView::TrackerView(QWidget *parent, const char *name)
-		:TrackerViewBase(parent, name), tc(0)
+	TrackerView::TrackerView(TQWidget *tqparent, const char *name)
+		:TrackerViewBase(tqparent, name), tc(0)
 	{
 		KIconLoader* iload = KGlobal::iconLoader();
 		btnUpdate->setIconSet(iload->loadIconSet("apply", KIcon::Small));
@@ -52,8 +52,8 @@ namespace kt
 		btnRemove->setIconSet(iload->loadIconSet("remove", KIcon::Small));
 		btnRestore->setIconSet(iload->loadIconSet("undo", KIcon::Small));
 		
-		QPalette p = lblCurrent->palette();
-		p.setColor(QPalette::Active,QColorGroup::Base,p.color(QPalette::Active,QColorGroup::Background));
+		TQPalette p = lblCurrent->palette();
+		p.setColor(TQPalette::Active,TQColorGroup::Base,p.color(TQPalette::Active,TQColorGroup::Background));
 		lblCurrent->setPalette(p);
 	}
 	
@@ -79,13 +79,13 @@ namespace kt
 			return;
 		}
 			
-		new QListViewItem(listTrackers, txtTracker->text());
+		new TQListViewItem(listTrackers, txtTracker->text());
 		tc->getTrackersList()->addTracker(url,true);
 	}
 
 	void TrackerView::btnRemove_clicked()
 	{
-		QListViewItem* current = listTrackers->currentItem();
+		TQListViewItem* current = listTrackers->currentItem();
 		if(!current)
 			return;
 		
@@ -98,7 +98,7 @@ namespace kt
 
 	void TrackerView::btnChange_clicked()
 	{
-		QListViewItem* current = listTrackers->currentItem();
+		TQListViewItem* current = listTrackers->currentItem();
 		if(!current)
 			return;
 		
@@ -120,7 +120,7 @@ namespace kt
 			return;
 		
 		for (KURL::List::const_iterator i = trackers.begin();i != trackers.end();i++)
-			new QListViewItem(listTrackers, (*i).prettyURL());
+			new TQListViewItem(listTrackers, (*i).prettyURL());
 	}
 
 	void TrackerView::btnUpdate_clicked()
@@ -131,7 +131,7 @@ namespace kt
 		tc->updateTracker();
 	}
 	
-	void TrackerView::listTrackers_currentChanged(QListViewItem* item)
+	void TrackerView::listTrackers_currentChanged(TQListViewItem* item)
 	{
 		if(!item)
 			txtTracker->clear();
@@ -157,7 +157,7 @@ namespace kt
 		const TorrentStats & s = tc->getStats();
 		if (s.running)
 		{
-			QTime t;
+			TQTime t;
 			t = t.addSecs(tc->getTimeToNextTrackerUpdate());
 			lblUpdate->setText(t.toString("mm:ss"));
 		}
@@ -167,17 +167,17 @@ namespace kt
 		// only enable change when we can actually change and the torrent is running
 		btnChange->setEnabled(s.running && listTrackers->childCount() > 1);
 
-		lblStatus->setText("<b>" + s.trackerstatus + "</b>");
+		lbltqStatus->setText("<b>" + s.trackerstatus + "</b>");
 		if (tc->getTrackersList())
 		{
-			QString t = tc->getTrackersList()->getTrackerURL().prettyURL();
+			TQString t = tc->getTrackersList()->getTrackerURL().prettyURL();
 			if (lblCurrent->text() != t )
 				lblCurrent->setText(t);
 		}
 		else
 			lblCurrent->clear();
 		
-		btnAdd->setEnabled(txtTracker->text() != QString::null && !tc->getStats().priv_torrent);
+		btnAdd->setEnabled(txtTracker->text() != TQString() && !tc->getStats().priv_torrent);
 	}
 	
 	void TrackerView::onLoadingFinished(const KURL & ,bool,bool)
@@ -191,7 +191,7 @@ namespace kt
 		listTrackers->clear();
 		if(!tc)
 		{
-			lblStatus->clear();
+			lbltqStatus->clear();
 			lblCurrent->clear();
 			lblUpdate->clear();
 			txtTracker->clear();
@@ -226,12 +226,12 @@ namespace kt
 		const KURL::List trackers = tc->getTrackersList()->getTrackerURLs();
 		if(trackers.empty())
 		{
-			new QListViewItem(listTrackers, tc->getTrackersList()->getTrackerURL().prettyURL());
+			new TQListViewItem(listTrackers, tc->getTrackersList()->getTrackerURL().prettyURL());
 		}
 		else
 		{
 			for (KURL::List::const_iterator i = trackers.begin();i != trackers.end();i++)
-				new QListViewItem(listTrackers, (*i).prettyURL());
+				new TQListViewItem(listTrackers, (*i).prettyURL());
 		}
 		
 		btnUpdate->setEnabled(s.running && tc->announceAllowed());

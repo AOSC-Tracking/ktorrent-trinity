@@ -36,8 +36,8 @@ using namespace KNetwork;
 
 namespace bt
 {
-	static QString custom_ip;
-	static QString custom_ip_resolved;
+	static TQString custom_ip;
+	static TQString custom_ip_resolved;
 	
 	Tracker::Tracker(const KURL & url,kt::TorrentInterface* tor,const PeerID & id,int tier) 
 	: url(url),tier(tier),peer_id(id),tor(tor)
@@ -54,21 +54,21 @@ namespace bt
 	{
 	}
 	
-	void Tracker::setCustomIP(const QString & ip)
+	void Tracker::setCustomIP(const TQString & ip)
 	{
 		if (custom_ip == ip)
 			return;
 		
 		Out(SYS_TRK|LOG_NOTICE) << "Setting custom ip to " << ip << endl;
 		custom_ip = ip;
-		custom_ip_resolved = QString::null;
+		custom_ip_resolved = TQString();
 		if (ip.isNull())
 			return;
 		
-		KResolverResults res = KResolver::resolve(ip,QString::null);
+		KResolverResults res = KResolver::resolve(ip,TQString());
 		if (res.error() || res.empty())
 		{
-			custom_ip = custom_ip_resolved = QString::null;
+			custom_ip = custom_ip_resolved = TQString();
 		}
 		else
 		{
@@ -77,15 +77,15 @@ namespace bt
 		}
 	}
 	
-	QString Tracker::getCustomIP()
+	TQString Tracker::getCustomIP()
 	{
 		return custom_ip_resolved;
 	}
 	
 	void Tracker::timedDelete(int ms)
 	{
-		QTimer::singleShot(ms,this,SLOT(deleteLater()));
-		connect(this,SIGNAL(stopDone()),this,SLOT(deleteLater()));
+		TQTimer::singleShot(ms,this,TQT_SLOT(deleteLater()));
+		connect(this,TQT_SIGNAL(stopDone()),this,TQT_SLOT(deleteLater()));
 	}
 	
 }

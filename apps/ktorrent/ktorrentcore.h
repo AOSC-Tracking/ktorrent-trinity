@@ -20,13 +20,13 @@
 #ifndef KTORRENTCORE_H
 #define KTORRENTCORE_H
 
-#include <qmap.h>
-#include <qtimer.h>
-#include <qcstring.h>
+#include <tqmap.h>
+#include <tqtimer.h>
+#include <tqcstring.h>
 #include <util/constants.h>
 #include <interfaces/coreinterface.h>
 
-typedef QValueList<QCString> QCStringList;
+typedef TQValueList<TQCString> QCStringList;
 
 namespace bt
 {
@@ -63,6 +63,7 @@ class KProgress;
 class KTorrentCore : public kt::CoreInterface
 {
 	Q_OBJECT
+  TQ_OBJECT
 public:
 	KTorrentCore(kt::GUIInterface* gui);
 	virtual ~KTorrentCore();
@@ -80,7 +81,7 @@ public:
 	 * Load an existing torrent, which has already a properly set up torX dir.
 	 * @param tor_dir The torX dir
 	 */
-	void loadExistingTorrent(const QString & tor_dir);
+	void loadExistingTorrent(const TQString & tor_dir);
 	
 	/**
 	 * Set the maximum number of simultanious downloads.
@@ -109,7 +110,7 @@ public:
 	 * and leaves everything where it supposed to be.
 	 * @param new_dir The new directory
 	 */
-	bool changeDataDir(const QString & new_dir);
+	bool changeDataDir(const TQString & new_dir);
 	
 	/**
 	 * Save active torrents on exit.
@@ -140,9 +141,9 @@ public:
 	 * @param priv_tor Is this a private torrent
 	 * @param prog Progress bar to update
 	 */
-	void makeTorrent(const QString & file,const QStringList & trackers,
-					 int chunk_size,const QString & name,const QString & comments,
-					 bool seed,const QString & output_file,bool priv_tor,KProgress* prog, bool decentralized);
+	void makeTorrent(const TQString & file,const TQStringList & trackers,
+					 int chunk_size,const TQString & name,const TQString & comments,
+					 bool seed,const TQString & output_file,bool priv_tor,KProgress* prog, bool decentralized);
 
 	CurrentStats getStats();
 
@@ -160,16 +161,16 @@ public:
 	bt::Uint32 getNumTorrentsNotRunning() const;
 	
 	///Inserts blocked IP range into IPBlocklist
-	void addBlockedIP(QString& ip);
+	void addBlockedIP(TQString& ip);
 	
 	///Removes blocked IP range from IPBlocklist
-	void removeBlockedIP(QString& ip);
+	void removeBlockedIP(TQString& ip);
 	
 	/**
 	 * Find the next free torX dir.
 	 * @return Path to the dir (including the torX part)
 	 */
-	QString findNewTorrentDir() const;
+	TQString findNewTorrentDir() const;
 	
 	/**
 	 * Load plugins. 
@@ -202,10 +203,10 @@ public:
 	void setPausedState(bool pause);
 	
 	kt::TorrentInterface* getTorFromNumber(int tornumber);
-	QValueList<int> getTorrentNumbers(int type);
+	TQValueList<int> getTorrentNumbers(int type);
 	unsigned int getFileCount(int tornumber);
 	QCStringList getFileNames(int tornumber);
-	QValueList<int> getFilePriorities(int tornumber);
+	TQValueList<int> getFilePriorities(int tornumber);
 	void setFilePriority(kt::TorrentInterface* tc, bt::Uint32 index, int priority);
 	void announceByTorNum(int tornumber);
 
@@ -218,7 +219,7 @@ public slots:
 	 * @param dir Directory to save the data
 	 * @param silently Wether or not to do this silently
 	 */
-	bool load(const QString & file,const QString & dir,bool silently);
+	bool load(const TQString & file,const TQString & dir,bool silently);
 	
 	/**
 	 * Load a torrent file. Pops up an error dialog
@@ -227,7 +228,7 @@ public slots:
 	 * @param dir Directory to save the data
 	 * @param silently Wether or not to do this silently
 	 */
-	bool load(const QByteArray & data,const QString & dir,bool silently, const KURL& url);
+	bool load(const TQByteArray & data,const TQString & dir,bool silently, const KURL& url);
 	
 	/**
 	 * Remove a download.This will delete all temp
@@ -330,28 +331,28 @@ signals:
 	void lowDiskSpace(kt::TorrentInterface* tc, bool stopped);
 
 private:
-	void rollback(const QPtrList<kt::TorrentInterface> & success);
+	void rollback(const TQPtrList<kt::TorrentInterface> & success);
 	void connectSignals(kt::TorrentInterface* tc);
 	bool init(bt::TorrentControl* tc,bool silently);
 	
 private slots:
 	void torrentFinished(kt::TorrentInterface* tc);
-	void slotStoppedByError(kt::TorrentInterface* tc, QString msg);
+	void slotStoppedByError(kt::TorrentInterface* tc, TQString msg);
 	void torrentSeedAutoStopped(kt::TorrentInterface* tc,kt::AutoStopReason reason);
 	void downloadFinished(KIO::Job *job);
 	void downloadFinishedSilently(KIO::Job *job);
 	void emitCorruptedData(kt::TorrentInterface* tc);
 	
 private:
-	QString data_dir;
+	TQString data_dir;
 	int max_downloads;
 	bool keep_seeding;
-	QTimer update_timer;
+	TQTimer update_timer;
 	bt::Uint64 removed_bytes_up,removed_bytes_down;
 	kt::PluginManager* pman;
 	bt::QueueManager* qman;
 	kt::GroupManager* gman;
-	QMap<KIO::Job*,KURL> custom_save_locations; // map to store save locations
+	TQMap<KIO::Job*,KURL> custom_save_locations; // map to store save locations
 };
 
 #endif

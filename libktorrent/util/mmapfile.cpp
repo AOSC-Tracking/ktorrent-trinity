@@ -29,7 +29,7 @@
 #include <sys/mman.h>
 #include <sys/stat.h>
 #include <errno.h>
-#include <qfile.h>
+#include <tqfile.h>
 #include <kfileitem.h>
 #include <kio/netaccess.h>
 #include <klocale.h>
@@ -51,20 +51,20 @@ namespace bt
 			close();
 	}
 
-	bool MMapFile::open(const QString & file,Mode mode)
+	bool MMapFile::open(const TQString & file,Mode mode)
 	{
 #if HAVE_STAT64
 		struct stat64 sb;
-		stat64(QFile::encodeName(file),&sb);
+		stat64(TQFile::encodeName(file),&sb);
 #else
 		struct stat sb;
-		stat(QFile::encodeName(file),&sb);
+		stat(TQFile::encodeName(file),&sb);
 #endif
 		
 		return open(file,mode,(Uint64)sb.st_size);
 	}
 	
-	bool MMapFile::open(const QString & file,Mode mode,Uint64 size)
+	bool MMapFile::open(const TQString & file,Mode mode,Uint64 size)
 	{
 		// close already open file
 		if (fd > 0)
@@ -97,7 +97,7 @@ namespace bt
 #endif
 
 		// open the file
-		fd = ::open(QFile::encodeName(file) , flag);//(int)flag);
+		fd = ::open(TQFile::encodeName(file) , flag);//(int)flag);
 		if (fd == -1)
 			return false;
 		
@@ -107,10 +107,10 @@ namespace bt
 		
 #if HAVE_STAT64
 		struct stat64 sb;
-		stat64(QFile::encodeName(file),&sb);
+		stat64(TQFile::encodeName(file),&sb);
 #else
 		struct stat sb;
-		stat(QFile::encodeName(file),&sb);
+		stat(TQFile::encodeName(file),&sb);
 #endif
 		file_size = (Uint64)sb.st_size;
 		filename = file;
@@ -146,7 +146,7 @@ namespace bt
 			ptr = size = 0;
 			data = 0;
 			fd = -1;
-			filename = QString::null;
+			filename = TQString();
 		}
 	}
 		
@@ -274,7 +274,7 @@ namespace bt
 		return ptr;
 	}
 	
-	QString MMapFile::errorString() const
+	TQString MMapFile::errorString() const
 	{
 		return strerror(errno);
 	}

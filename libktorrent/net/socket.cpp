@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 
-#include <qglobal.h>
+#include <tqglobal.h>
 
 #include <unistd.h>
 #include <string.h>
@@ -39,7 +39,7 @@
 #endif
 
 #ifndef MSG_NOSIGNAL
-#define MSG_NOSIGNAL 0
+#define MSG_NOTQT_SIGNAL 0
 #endif
 
 #include <unistd.h>
@@ -60,7 +60,7 @@ namespace net
 		int val = 1; 
 		if (setsockopt(m_fd,SOL_SOCKET,SO_NOSIGPIPE,&val,sizeof(int)) < 0)
 		{
-			Out(SYS_CON|LOG_NOTICE) << QString("Failed to set the NOSIGPIPE option : %1").arg(strerror(errno)) << endl;
+			Out(SYS_CON|LOG_NOTICE) << TQString("Failed to set the NOSIGPIPE option : %1").tqarg(strerror(errno)) << endl;
 		}
 #endif
 		cacheAddress();
@@ -71,14 +71,14 @@ namespace net
 		int fd = socket(PF_INET,tcp ? SOCK_STREAM : SOCK_DGRAM,0);
 		if (fd < 0)
 		{
-			Out(SYS_GEN|LOG_IMPORTANT) << QString("Cannot create socket : %1").arg(strerror(errno)) << endl;
+			Out(SYS_GEN|LOG_IMPORTANT) << TQString("Cannot create socket : %1").tqarg(strerror(errno)) << endl;
 		}
 		m_fd = fd;
 #if defined(Q_OS_MACX) || defined(Q_OS_DARWIN) || (defined(Q_OS_FREEBSD) && !defined(__DragonFly__) && __FreeBSD_version < 600020)
 		int val = 1;
 		if (setsockopt(m_fd,SOL_SOCKET,SO_NOSIGPIPE,&val,sizeof(int)) < 0)
 		{
-			Out(SYS_CON|LOG_NOTICE) << QString("Failed to set the NOSIGPIPE option : %1").arg(strerror(errno)) << endl;
+			Out(SYS_CON|LOG_NOTICE) << TQString("Failed to set the NOSIGPIPE option : %1").tqarg(strerror(errno)) << endl;
 		}
 #endif	
 	}
@@ -126,8 +126,8 @@ namespace net
 			}
 			else
 			{
-				Out(SYS_CON|LOG_NOTICE) << QString("Cannot connect to host %1:%2 : %3")
-					.arg(a.toString()).arg(a.port()).arg(strerror(errno)) << endl;
+				Out(SYS_CON|LOG_NOTICE) << TQString("Cannot connect to host %1:%2 : %3")
+					.tqarg(a.toString()).tqarg(a.port()).tqarg(strerror(errno)) << endl;
 				return false;
 			}
 		}
@@ -145,20 +145,20 @@ namespace net
 	
 		if (::bind(m_fd,(struct sockaddr*)&addr,sizeof(struct sockaddr)) < 0)
 		{
-			Out(SYS_CON|LOG_IMPORTANT) << QString("Cannot bind to port %1 : %2").arg(port).arg(strerror(errno)) << endl;
+			Out(SYS_CON|LOG_IMPORTANT) << TQString("Cannot bind to port %1 : %2").tqarg(port).tqarg(strerror(errno)) << endl;
 			return false;
 		}
 
 		if (also_listen && listen(m_fd,5) < 0)
 		{
-			Out(SYS_CON|LOG_IMPORTANT) << QString("Cannot listen to port %1 : %2").arg(port).arg(strerror(errno)) << endl;
+			Out(SYS_CON|LOG_IMPORTANT) << TQString("Cannot listen to port %1 : %2").tqarg(port).tqarg(strerror(errno)) << endl;
 			return false;
 		}
 
 		int val = 1;
 		if (setsockopt(m_fd,SOL_SOCKET,SO_REUSEADDR,&val,sizeof(int)) < 0)
 		{
-			Out(SYS_CON|LOG_NOTICE) << QString("Failed to set the reuseaddr option : %1").arg(strerror(errno)) << endl;
+			Out(SYS_CON|LOG_NOTICE) << TQString("Failed to set the reuseaddr option : %1").tqarg(strerror(errno)) << endl;
 		}
 		m_state = BOUND;
 		return true;
@@ -171,7 +171,7 @@ namespace net
 		{
 			if (errno != EAGAIN && errno != EWOULDBLOCK)
 			{
-			//	Out(SYS_CON|LOG_DEBUG) << "Send error : " << QString(strerror(errno)) << endl;
+			//	Out(SYS_CON|LOG_DEBUG) << "Send error : " << TQString(strerror(errno)) << endl;
 				close();
 			}
 			return 0;
@@ -186,7 +186,7 @@ namespace net
 		{
 			if (errno != EAGAIN && errno != EWOULDBLOCK)
 			{
-			//	Out(SYS_CON|LOG_DEBUG) << "Receive error : " << QString(strerror(errno)) << endl;
+			//	Out(SYS_CON|LOG_DEBUG) << "Receive error : " << TQString(strerror(errno)) << endl;
 				close();
 			}
 			return 0;
@@ -215,7 +215,7 @@ namespace net
 			int ret = ::sendto(m_fd,(char*)buf + ns,left,0,(struct sockaddr*)&addr,sizeof(struct sockaddr));
 			if (ret < 0)
 			{
-				Out(SYS_CON|LOG_DEBUG) << "Send error : " << QString(strerror(errno)) << endl;
+				Out(SYS_CON|LOG_DEBUG) << "Send error : " << TQString(strerror(errno)) << endl;
 				return 0;
 			}
 
@@ -233,7 +233,7 @@ namespace net
 		int ret = ::recvfrom(m_fd,buf,max_len,0,(struct sockaddr*)&addr,&sl);
 		if (ret < 0)
 		{
-			Out(SYS_CON|LOG_DEBUG) << "Receive error : " << QString(strerror(errno)) << endl;
+			Out(SYS_CON|LOG_DEBUG) << "Receive error : " << TQString(strerror(errno)) << endl;
 			return 0;
 		}
 
@@ -251,14 +251,14 @@ namespace net
 		int sfd = ::accept(m_fd,(struct sockaddr*)&addr,&slen);
 		if (sfd < 0)
 		{
-			Out(SYS_CON|LOG_DEBUG) << "Accept error : " << QString(strerror(errno)) << endl;
+			Out(SYS_CON|LOG_DEBUG) << "Accept error : " << TQString(strerror(errno)) << endl;
 			return -1;
 		}
 		
 		a.setPort(ntohs(addr.sin_port));
 		a.setIP(ntohl(addr.sin_addr.s_addr));
 
-		Out(SYS_CON|LOG_DEBUG) << "Accepted connection from " << QString(inet_ntoa(addr.sin_addr)) << endl;
+		Out(SYS_CON|LOG_DEBUG) << "Accepted connection from " << TQString(inet_ntoa(addr.sin_addr)) << endl;
 		return sfd;
 	}
 	
@@ -271,8 +271,8 @@ namespace net
 #endif
 		if (setsockopt(m_fd,IPPROTO_IP,IP_TOS,&c,sizeof(c)) < 0)
 		{
-			Out(SYS_CON|LOG_NOTICE) << QString("Failed to set TOS to %1 : %2")
-					.arg(type_of_service).arg(strerror(errno)) << endl;
+			Out(SYS_CON|LOG_NOTICE) << TQString("Failed to set TOS to %1 : %2")
+					.tqarg(type_of_service).tqarg(strerror(errno)) << endl;
 			return false;
 		}
 		return true;

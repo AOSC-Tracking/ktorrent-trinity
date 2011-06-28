@@ -20,7 +20,7 @@
 #ifndef BTUPLOADER_H
 #define BTUPLOADER_H
 
-#include <qobject.h>
+#include <tqobject.h>
 #include "globals.h"
 
 namespace bt
@@ -38,9 +38,10 @@ namespace bt
 	 * Class which manages the uploading of data. It has a PeerUploader for
 	 * each Peer.
 	 */
-	class Uploader : public QObject
+	class Uploader : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		/**
 		 * Constructor, sets the ChunkManager. 

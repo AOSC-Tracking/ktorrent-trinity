@@ -29,7 +29,7 @@
 #include <interfaces/functions.h>
 #include <interfaces/torrentinterface.h>
 #include <interfaces/torrentfileinterface.h>
-#include <qfileinfo.h>
+#include <tqfileinfo.h>
 #include "functions.h"
 #include "iwfiletreeitem.h"
 #include "iwfiletreediritem.h"
@@ -40,10 +40,10 @@ using namespace bt;
 namespace kt
 {
 
-	FileView::FileView(QWidget *parent, const char *name)
-	    : KListView(parent, name),curr_tc(0),multi_root(0),pending_fill(0),next_fill_item(0)
+	FileView::FileView(TQWidget *tqparent, const char *name)
+	    : KListView(tqparent, name),curr_tc(0),multi_root(0),pending_fill(0),next_fill_item(0)
 	{
-		setFrameShape(QFrame::NoFrame);
+		setFrameShape(TQFrame::NoFrame);
 		addColumn( i18n( "File" ) );
     	addColumn( i18n( "Size" ) );
     	addColumn( i18n( "Download" ) );
@@ -69,17 +69,17 @@ namespace kt
 		context_menu->setItemEnabled(dnd_keep_id, false);
 		context_menu->setItemEnabled(dnd_throw_away_id, false);
 
-		connect(this,SIGNAL(contextMenu(KListView*, QListViewItem*, const QPoint& )),
-				this,SLOT(showContextMenu(KListView*, QListViewItem*, const QPoint& )));
-		connect(context_menu, SIGNAL ( activated ( int ) ), this, SLOT ( contextItem ( int ) ) );
-		connect(this,SIGNAL(doubleClicked( QListViewItem*, const QPoint&, int )),
-				this,SLOT(onDoubleClicked(QListViewItem*, const QPoint&, int)));
+		connect(this,TQT_SIGNAL(contextMenu(KListView*, TQListViewItem*, const TQPoint& )),
+				this,TQT_SLOT(showContextMenu(KListView*, TQListViewItem*, const TQPoint& )));
+		connect(context_menu, TQT_SIGNAL ( activated ( int ) ), this, TQT_SLOT ( contextItem ( int ) ) );
+		connect(this,TQT_SIGNAL(doubleClicked( TQListViewItem*, const TQPoint&, int )),
+				this,TQT_SLOT(onDoubleClicked(TQListViewItem*, const TQPoint&, int)));
 		
-		connect(&fill_timer, SIGNAL(timeout()), this, SLOT( fillTreePartial() ) );
+		connect(&fill_timer, TQT_SIGNAL(timeout()), this, TQT_SLOT( fillTreePartial() ) );
 
 		setEnabled(false);
 		
-		setSelectionMode(QListView::Extended);
+		setSelectionMode(TQListView::Extended);
 	}
 
 
@@ -108,8 +108,8 @@ namespace kt
 			multi_root->updatePercentageInformation();
 			multi_root->updatePreviewInformation(curr_tc);
 			fill_timer.stop();
-			connect(curr_tc,SIGNAL(missingFilesMarkedDND( kt::TorrentInterface* )),
-				this,SLOT(refreshFileTree( kt::TorrentInterface* )));
+			connect(curr_tc,TQT_SIGNAL(missingFilesMarkedDND( kt::TorrentInterface* )),
+				this,TQT_SLOT(refreshFileTree( kt::TorrentInterface* )));
 		}
 		else
 			fill_timer.start(0,true);
@@ -141,8 +141,8 @@ namespace kt
 	
 			item->setPixmap(0,KMimeType::findByPath(s.torrent_name)->pixmap(KIcon::Small));
 			setEnabled(true);
-			connect(curr_tc,SIGNAL(missingFilesMarkedDND( kt::TorrentInterface* )),
-				this,SLOT(refreshFileTree( kt::TorrentInterface* )));
+			connect(curr_tc,TQT_SIGNAL(missingFilesMarkedDND( kt::TorrentInterface* )),
+				this,TQT_SLOT(refreshFileTree( kt::TorrentInterface* )));
 		}
 	}
 
@@ -173,7 +173,7 @@ namespace kt
 	{
 		if (curr_tc && !curr_tc->getStats().multi_file_torrent)
 		{
-			QListViewItemIterator it(this);
+			TQListViewItemIterator it(this);
 			if (!it.current())
 				return;
 						
@@ -186,7 +186,7 @@ namespace kt
 			else if (percent > 100.0)
 				percent = 100.0;
 			KLocale* loc = KGlobal::locale();
-			it.current()->setText(4,i18n("%1 %").arg(loc->formatNumber(percent,2)));
+			it.current()->setText(4,i18n("%1 %").tqarg(loc->formatNumber(percent,2)));
 		}
 	}
 
@@ -194,7 +194,7 @@ namespace kt
 	{
 		if (curr_tc && !curr_tc->getStats().multi_file_torrent)
 		{
-			QListViewItemIterator it(this);
+			TQListViewItemIterator it(this);
 			if (!it.current())
 				return;
 			
@@ -211,14 +211,14 @@ namespace kt
 		}
 	}
 	
-	void FileView::showContextMenu(KListView* ,QListViewItem*,const QPoint & p)
+	void FileView::showContextMenu(KListView* ,TQListViewItem*,const TQPoint & p)
 	{
 		const TorrentStats & s = curr_tc->getStats();
 		// don't show a menu if item is 0 or if it is a directory
 		
 		
 		
-		QPtrList<QListViewItem> sel = selectedItems();
+		TQPtrList<TQListViewItem> sel = selectedItems();
 		switch(sel.count())
 		{
 		case 0:
@@ -237,7 +237,7 @@ namespace kt
 			return;
 			break;
 		}
-		QListViewItem* item = sel.getFirst();
+		TQListViewItem* item = sel.getFirst();
 
 		context_menu->setItemEnabled(first_id, false);
 		context_menu->setItemEnabled(normal_id, false);
@@ -321,7 +321,7 @@ namespace kt
 	
 	void FileView::contextItem(int id)
 	{
-		QPtrList<QListViewItem> sel = selectedItems();
+		TQPtrList<TQListViewItem> sel = selectedItems();
 		
 		Priority newpriority = NORMAL_PRIORITY;
 		if(id == this->preview_id)
@@ -338,7 +338,7 @@ namespace kt
 				n = (*sel.begin())->childCount() == 0 ? 1 : 666;
 			} 
 			
-			QString msg = i18n(
+			TQString msg = i18n(
 					"You will lose all data in this file, are you sure you want to do this ?",
 					"You will lose all data in these files, are you sure you want to do this ?",n);
 					
@@ -365,17 +365,17 @@ namespace kt
 		
 
 		
-		QPtrList<QListViewItem>::Iterator i = sel.begin();
+		TQPtrList<TQListViewItem>::Iterator i = sel.begin();
 		while(i != sel.end())
 		{
-			QListViewItem* item = *i;
+			TQListViewItem* item = *i;
 			changePriority(item, newpriority);
 			multi_root->updatePriorityInformation(curr_tc);
 			i++;
 		}
 	}
 	
-	void FileView::changePriority(QListViewItem* item, Priority newpriority)
+	void FileView::changePriority(TQListViewItem* item, Priority newpriority)
 	{	
 		if(item->childCount() == 0)
 		{
@@ -396,7 +396,7 @@ namespace kt
 			}
 			return;
 		}
-		QListViewItem* myChild = item->firstChild();
+		TQListViewItem* myChild = item->firstChild();
 		while( myChild )
 		{
 			changePriority(myChild, newpriority);
@@ -413,7 +413,7 @@ namespace kt
 			multi_root->updateDNDInformation();
 	}
 	
-	void FileView::onDoubleClicked(QListViewItem* item,const QPoint & ,int )
+	void FileView::onDoubleClicked(TQListViewItem* item,const TQPoint & ,int )
 	{
 		if (!curr_tc)
 			return;
@@ -426,7 +426,7 @@ namespace kt
 			{
 				// file
 				FileTreeItem* file = (FileTreeItem*)item;
-				QString path = "cache" + bt::DirSeparator() + file->getTorrentFile().getPath();
+				TQString path = "cache" + bt::DirSeparator() + file->getTorrentFile().getPath();
 				new KRun(KURL::fromPathOrURL(curr_tc->getTorDir() + path), 0, true, true);
 			}
 			else
@@ -438,7 +438,7 @@ namespace kt
 		}
 		else
 		{
-			QFileInfo fi(curr_tc->getTorDir()+"cache");
+			TQFileInfo fi(curr_tc->getTorDir()+"cache");
 			new KRun(KURL::fromPathOrURL(fi.readLink()), 0, true, true);
 		}
 	}

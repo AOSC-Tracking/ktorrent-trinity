@@ -24,11 +24,11 @@
 
 #include "schedulerprefpage.h"
 
-#include <qtimer.h>
+#include <tqtimer.h>
 
 #include <kstdaction.h>
 
-class QString;
+class TQString;
 
 
 namespace kt
@@ -43,13 +43,14 @@ namespace kt
 	class SchedulerPlugin : public Plugin
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		SchedulerPlugin(QObject* parent, const char* name, const QStringList& args);
+		SchedulerPlugin(TQObject* tqparent, const char* name, const TQStringList& args);
 		virtual ~SchedulerPlugin();
 
 		virtual void load();
 		virtual void unload();
-		virtual bool versionCheck(const QString& version) const;
+		virtual bool versionCheck(const TQString& version) const;
 		
 		void updateEnabledBWS();
 		
@@ -58,7 +59,7 @@ namespace kt
 		void openBWS();
 	
 	private:
-		QTimer m_timer;
+		TQTimer m_timer;
 		
 		/* BANDWIDTH SCHEDULE PLUGIN */
  		SchedulerPrefPage* Pref;

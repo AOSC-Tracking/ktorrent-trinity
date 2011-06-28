@@ -20,7 +20,7 @@
 #ifndef BTURLENCODER_H
 #define BTURLENCODER_H
 
-#include <qstring.h>
+#include <tqstring.h>
 #include "constants.h"
 
 namespace bt
@@ -32,7 +32,7 @@ namespace bt
 	class URLEncoder
 	{
 	public:
-		static QString encode(const char* buf,Uint32 size);
+		static TQString encode(const char* buf,Uint32 size);
 	};
 
 }

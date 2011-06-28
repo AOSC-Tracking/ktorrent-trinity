@@ -17,24 +17,24 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
-#ifndef QUEUEDIALOG_H
-#define QUEUEDIALOG_H
+#ifndef TQUEUEDIALOG_H
+#define TQUEUEDIALOG_H
 
 #include "queuedlg.h"
 #include <interfaces/torrentinterface.h>
 #include <torrent/queuemanager.h>
 
-#include <qlistview.h>
-#include <qstring.h>
+#include <tqlistview.h>
+#include <tqstring.h>
 
-class QueueItem: public QListViewItem
+class QueueItem: public TQListViewItem
 {
 	public:
-		QueueItem(kt::TorrentInterface* t, QListView* parent);
+		QueueItem(kt::TorrentInterface* t, TQListView* tqparent);
 		
 		int getPriority() { return torrentPriority; }
 		void setPriority(int p);
-		int compare(QListViewItem *i, int col, bool ascending ) const;
+		int compare(TQListViewItem *i, int col, bool ascending ) const;
 		
 		void setTorrentPriority(int p);
 		
@@ -42,7 +42,7 @@ class QueueItem: public QListViewItem
 		
 	private:
 		//void updatePriorities(QueueItem* to, bool from_end, int val);
-		void paintCell(QPainter* p,const QColorGroup & cg,int column,int width,int align);
+		void paintCell(TQPainter* p,const TQColorGroup & cg,int column,int width,int align);
 		
 		kt::TorrentInterface* tc;
 		int torrentPriority;
@@ -51,8 +51,9 @@ class QueueItem: public QListViewItem
 class QueueDialog: public QueueDlg 
 {
 	Q_OBJECT
+  TQ_OBJECT
 	public:
-		QueueDialog(bt::QueueManager* qm, QWidget *parent = 0, const char *name = 0);
+		QueueDialog(bt::QueueManager* qm, TQWidget *tqparent = 0, const char *name = 0);
 	public slots:
 		virtual void btnMoveUp_clicked();
 		virtual void btnClose_clicked();
@@ -61,8 +62,8 @@ class QueueDialog: public QueueDlg
     	virtual void btnEnqueue_clicked();
     	virtual void btnApply_clicked();
     	virtual void btnOk_clicked();
-    	virtual void seedList_currentChanged(QListViewItem*);
-    	virtual void downloadList_currentChanged(QListViewItem*);
+    	virtual void seedList_currentChanged(TQListViewItem*);
+    	virtual void downloadList_currentChanged(TQListViewItem*);
     virtual void btnMoveBottom_clicked();
     virtual void btnMoveTop_clicked();
     	
@@ -75,7 +76,7 @@ class QueueDialog: public QueueDlg
 		void writeQueue();
 		
 		///Gets the pointer to currently visible torrentList (download or seed)
-		QListView* getCurrentList();
+		TQListView* getCurrentList();
 
 		bt::QueueManager* qman;
 };

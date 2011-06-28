@@ -30,8 +30,9 @@ namespace kt
 	class DownloadedChunkBar : public ChunkBar
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		DownloadedChunkBar(QWidget* parent, const char* name);
+		DownloadedChunkBar(TQWidget* tqparent, const char* name);
 		virtual ~DownloadedChunkBar();
 	
 		virtual const bt::BitSet & getBitSet() const;

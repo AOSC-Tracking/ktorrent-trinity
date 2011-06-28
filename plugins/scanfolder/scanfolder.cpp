@@ -24,10 +24,10 @@
 #include <klocale.h>
 #include <kio/job.h>
 
-#include <qstring.h>
-#include <qobject.h>
-#include <qfile.h>
-#include <qvaluelist.h>
+#include <tqstring.h>
+#include <tqobject.h>
+#include <tqfile.h>
+#include <tqvaluelist.h>
 
 #include <torrent/globals.h>
 #include <util/log.h>
@@ -45,7 +45,7 @@ using namespace bt;
 namespace kt
 {
 
-	ScanFolder::ScanFolder(CoreInterface* core, QString& dir, LoadedTorrentAction action, bool openSilently)
+	ScanFolder::ScanFolder(CoreInterface* core, TQString& dir, LoadedTorrentAction action, bool openSilently)
 			: m_core(core), m_dir(0), m_loadedAction(action), m_openSilently(openSilently)
 	{
 		m_dir = new KDirLister();
@@ -58,9 +58,9 @@ namespace kt
 
 		m_dir->setShowingDotFiles(true);
 
-		connect(m_dir, SIGNAL(newItems( const KFileItemList& )), this, SLOT(onNewItems( const KFileItemList& )));
-		connect(m_core, SIGNAL(loadingFinished( const KURL&, bool, bool )), this, SLOT(onLoadingFinished( const KURL&, bool, bool )));
-		connect(&m_incomplePollingTimer,SIGNAL(timeout()),this,SLOT(onIncompletePollingTimeout()));
+		connect(m_dir, TQT_SIGNAL(newItems( const KFileItemList& )), this, TQT_SLOT(onNewItems( const KFileItemList& )));
+		connect(m_core, TQT_SIGNAL(loadingFinished( const KURL&, bool, bool )), this, TQT_SLOT(onLoadingFinished( const KURL&, bool, bool )));
+		connect(&m_incomplePollingTimer,TQT_SIGNAL(timeout()),this,TQT_SLOT(onIncompletePollingTimeout()));
 	}
 
 
@@ -76,9 +76,9 @@ namespace kt
 		KFileItem* file;
 		for(file=list.first(); file; file=list.next()) 
 		{
-			QString name = file->name();
-			QString dirname = m_dir->url().path();
-			QString filename = dirname + bt::DirSeparator() + name;
+			TQString name = file->name();
+			TQString dirname = m_dir->url().path();
+			TQString filename = dirname + bt::DirSeparator() + name;
 
 			if(!name.endsWith(".torrent"))
 				continue;
@@ -86,8 +86,8 @@ namespace kt
 			if(name.startsWith(".")) 
 			{
 				//Check if corresponding torrent exists
-				if(!QFile::exists(m_dir->url().path() + bt::DirSeparator() + name.right(name.length() - 1)) && (m_loadedAction == defaultAction))
-					QFile::remove(filename);
+				if(!TQFile::exists(m_dir->url().path() + bt::DirSeparator() + name.right(name.length() - 1)) && (m_loadedAction == defaultAction))
+					TQFile::remove(filename);
 
 				continue;
 			}
@@ -96,7 +96,7 @@ namespace kt
 			source.setPath(filename);
 
 			//If torrent has it's hidden complement - skip it.
-			if(QFile::exists(dirname + "/." + name))
+			if(TQFile::exists(dirname + "/." + name))
 				continue;
 			
 			if (incomplete(source))
@@ -132,7 +132,7 @@ namespace kt
 			return;
 		
 		//search for entry
-		QValueList<KURL>::iterator it = m_pendingURLs.find(url);
+		TQValueList<KURL>::iterator it = m_pendingURLs.tqfind(url);
 		
 		//if no entry is found than this torrent was not started by this plugin so - quit
 		if(it == m_pendingURLs.end())
@@ -144,30 +144,30 @@ namespace kt
 		if(canceled)
 			return;
 		
-		QString name = url.filename(false);
-		QString dirname = m_dir->url().path();
-		QString filename = dirname + "/" + name;
+		TQString name = url.filename(false);
+		TQString dirname = m_dir->url().path();
+		TQString filename = dirname + "/" + name;
 		KURL destination(dirname + "/" + i18n("loaded") + "/" + name);
 		
 		switch(m_loadedAction) {
 			case deleteAction:
 					//If torrent has it's hidden complement - remove it too.
-				if(QFile::exists(dirname + "/." + name))
-					QFile::remove(dirname + "/." + name);
+				if(TQFile::exists(dirname + "/." + name))
+					TQFile::remove(dirname + "/." + name);
 					// 				Out() << "Deleting: " << name.ascii() << endl;
-				QFile::remove(filename);
+				TQFile::remove(filename);
 				break;
 			case moveAction:
 					// 				Out() << "Moving: " << name.ascii() << endl;
 					//If torrent has it's hidden complement - remove it too.
-				if(QFile::exists(dirname + "/." + name))
-					QFile::remove(dirname + "/." + name);
+				if(TQFile::exists(dirname + "/." + name))
+					TQFile::remove(dirname + "/." + name);
 
 				// NetAccess considered harmfull !!!
 				KIO::file_move(url, destination);
 				break;
 			case defaultAction:
-				QFile f(dirname + "/." + name);
+				TQFile f(dirname + "/." + name);
 				f.open(IO_WriteOnly);
 				f.close();
 				break;
@@ -183,13 +183,13 @@ namespace kt
 	{
 		m_loadedAction = theValue;
 
-		QDir tmp(m_dir->url().path());
+		TQDir tmp(m_dir->url().path());
 
 		if( (m_loadedAction == moveAction) && !tmp.exists(i18n("loaded"), false))
 			tmp.mkdir(i18n("loaded"), false);
 	}
 
-	void ScanFolder::setFolderUrl(QString& url)
+	void ScanFolder::setFolderUrl(TQString& url)
 	{
 		if(!m_dir->openURL(url)) {
 			m_valid = false;
@@ -201,13 +201,13 @@ namespace kt
 	bool ScanFolder::incomplete(const KURL & src)
 	{
 		// try to decode file, if it is syntactically correct, we can try to load it
-		QFile fptr(src.path());
+		TQFile fptr(src.path());
 		if (!fptr.open(IO_ReadOnly))
 			return false;
 		
 		try
 		{
-			QByteArray data(fptr.size());
+			TQByteArray data(fptr.size());
 			fptr.readBlock(data.data(),fptr.size());
 			bt::BDecoder dec(data,false);
 			bt::BNode* n = dec.decode();
@@ -234,7 +234,7 @@ namespace kt
 	void ScanFolder::onIncompletePollingTimeout()
 	{
 		bt::Out(SYS_SNF|LOG_NOTICE) << "ScanFolder : checking incomplete files" << endl; 
-		for (QValueList<KURL>::iterator i = m_incompleteURLs.begin(); i != m_incompleteURLs.end();)
+		for (TQValueList<KURL>::iterator i = m_incompleteURLs.begin(); i != m_incompleteURLs.end();)
 		{
 			KURL source = *i;
 			if (!bt::Exists(source.path()))

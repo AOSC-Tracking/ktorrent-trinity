@@ -22,7 +22,7 @@
 
 #if 0
 #include <kurl.h>
-#include <qstring.h>
+#include <tqstring.h>
 #include <interfaces/trackerslist.h>
 
 namespace bt
@@ -88,7 +88,7 @@ namespace bt
 		///Loads custom trackers from a file
 		void loadTrackers();
 
-		void setDatadir(const QString& theValue);
+		void setDatadir(const TQString& theValue);
 		
 		/**
 		 * Merge an other announce list to this one.
@@ -97,7 +97,7 @@ namespace bt
 		void merge(const AnnounceList* al);
 		
 	private:
-		QString m_datadir;
+		TQString m_datadir;
 		
 	};
 

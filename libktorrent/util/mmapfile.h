@@ -21,7 +21,7 @@
 #define BTMMAPFILE_H
 
 
-#include <qstring.h>
+#include <tqstring.h>
 #include <util/constants.h>
 
 namespace bt
@@ -52,7 +52,7 @@ namespace bt
 		 * @param mode Mode (READ, WRITE or RW)
 		 * @return true upon succes
 		 */
-		bool open(const QString & file,Mode mode);
+		bool open(const TQString & file,Mode mode);
 		
 		/**
 		 * Open the file. If mode is write and the file doesn't exist, it will
@@ -62,7 +62,7 @@ namespace bt
 		 * @param size Size of the memory mapping (the file will be enlarged to this value)
 		 * @return true upon succes
 		 */
-		bool open(const QString & file,Mode mode,Uint64 size);
+		bool open(const TQString & file,Mode mode,Uint64 size);
 		
 		/**
 		 * Close the file. Undoes the memory mapping.
@@ -112,7 +112,7 @@ namespace bt
 		Uint64 tell() const;
 
 		/// Get the error string.
-		QString errorString() const;
+		TQString errorString() const;
 		
 		/// Get the file size
 		Uint64 getSize() const;
@@ -136,7 +136,7 @@ namespace bt
 		Uint64 size;	// size of mmapping
 		Uint64 file_size; // size of file
 		Uint64 ptr; 
-		QString filename;
+		TQString filename;
 		Mode mode;
 	};
 

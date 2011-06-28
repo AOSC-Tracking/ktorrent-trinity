@@ -21,7 +21,7 @@
 #define KTCOREINTERFACE_H
 
 #include <kurl.h>
-#include <qobject.h>
+#include <tqobject.h>
 #include <util/constants.h>
 #include <torrent/queuemanager.h>
 
@@ -50,9 +50,10 @@ namespace kt
 	 * the applications core, the core is responsible for managing all
 	 * TorrentControl objects.
 	*/
-	class CoreInterface : public QObject
+	class CoreInterface : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		CoreInterface();
 		virtual ~CoreInterface();
@@ -83,7 +84,7 @@ namespace kt
 		 * and leaves everything where it supposed to be.
 		 * @param new_dir The new directory
 		 */
-		virtual bool changeDataDir(const QString & new_dir) = 0;
+		virtual bool changeDataDir(const TQString & new_dir) = 0;
 
 		/**
 		 * Start all, takes into account the maximum number of downloads.
@@ -141,7 +142,7 @@ namespace kt
 		 * @param savedir Dir to save the data
 		 * @param silently Wether or not to do this silently
 		 */
-		virtual bool load(const QString & file,const QString & savedir,bool silently) = 0;
+		virtual bool load(const TQString & file,const TQString & savedir,bool silently) = 0;
 
 		/**
 		 * Load a torrent file. Pops up an error dialog
@@ -171,31 +172,31 @@ namespace kt
 		
 		/**
 		 * Inserts IP range to be blocked into IPBlocklist
-		 * @param ip QString reference to single IP or IP range. For example:
+		 * @param ip TQString reference to single IP or IP range. For example:
 		 * single - 127.0.0.5
 		 * range - 127.0.*.*
 		 **/
-		virtual void addBlockedIP(QString& ip) = 0;
+		virtual void addBlockedIP(TQString& ip) = 0;
 		
 		/**
 		 * Removes IP range from IPBlocklist
-		 * @param ip QString reference to single IP or IP range. For example:
+		 * @param ip TQString reference to single IP or IP range. For example:
 		 * single - 127.0.0.5
 		 * range - 127.0.*.*
 		 **/
-		virtual void removeBlockedIP(QString& ip) = 0;
+		virtual void removeBlockedIP(TQString& ip) = 0;
 		
 		/**
 		 * Find the next free torX dir.
 		 * @return Path to the dir (including the torX part)
 		 */
-		virtual QString findNewTorrentDir() const = 0;
+		virtual TQString findNewTorrentDir() const = 0;
 		
 		/**
 		 * Load an existing torrent, which has already a properly set up torX dir.
 		 * @param tor_dir The torX dir
 		 */
-		virtual void loadExistingTorrent(const QString & tor_dir) = 0;
+		virtual void loadExistingTorrent(const TQString & tor_dir) = 0;
 		
 		/**
 		 * Returns maximum allowed download speed.
@@ -250,7 +251,7 @@ namespace kt
 		 * @param tc TorrentInterface
 		 * @param msg Error message
 		 */
-		void torrentStoppedByError(kt::TorrentInterface* tc, QString msg);
+		void torrentStoppedByError(kt::TorrentInterface* tc, TQString msg);
 	};
 
 }

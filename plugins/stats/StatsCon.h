@@ -21,10 +21,10 @@
 #ifndef STATSCON_H_
 #define STATSCON_H_
 
-#include <qwidget.h>
-#include <qlayout.h>
-#include <qtabwidget.h>
-#include <qgroupbox.h>
+#include <tqwidget.h>
+#include <tqlayout.h>
+#include <tqtabwidget.h>
+#include <tqgroupbox.h>
 
 #include "statspluginsettings.h"
 #include "statsconwgt.h"
@@ -35,11 +35,12 @@ namespace kt {
 class StatsCon : public StatsConWgt
 {
 	Q_OBJECT
+  TQ_OBJECT
 	private:
 		///Layout of peers connections
-		QVBoxLayout * pmPeersConLay;
+		TQVBoxLayout * pmPeersConLay;
 		///Layout of DHT stats
-		QVBoxLayout * pmDHTLay;
+		TQVBoxLayout * pmDHTLay;
 		
 		///Chart widget of peers connted
 		ChartDrawer * pmPeersConCht;
@@ -47,7 +48,7 @@ class StatsCon : public StatsConWgt
 		ChartDrawer * pmDHTCht;
 	
 	public:
-		StatsCon(QWidget * p = 0);
+		StatsCon(TQWidget * p = 0);
 		virtual ~StatsCon();
 		/**
 		\brief Adds value to peers connections chart

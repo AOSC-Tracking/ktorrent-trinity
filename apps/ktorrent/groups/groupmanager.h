@@ -20,7 +20,7 @@
 #ifndef KTGROUPMANAGER_H
 #define KTGROUPMANAGER_H
 
-#include <qstring.h>
+#include <tqstring.h>
 #include <klocale.h>
 #include <util/ptrmap.h>
 
@@ -35,9 +35,9 @@ namespace kt
 	 * 
 	 * Manages all user created groups and the standard groups.
 	*/
-	class GroupManager : public bt::PtrMap<QString,Group> 
+	class GroupManager : public bt::PtrMap<TQString,Group> 
 	{
-		bt::PtrMap<QString,Group> default_groups;
+		bt::PtrMap<TQString,Group> default_groups;
 		
 	public:
 		GroupManager();
@@ -48,7 +48,7 @@ namespace kt
 		 * @param name Name of the group
 		 * @return Pointer to the group or NULL, if another group already exists with the same name.
 		 */
-		Group* newGroup(const QString & name);
+		Group* newGroup(const TQString & name);
 		
 		/// Get the group off all torrents
 		Group* allGroup() {return findDefault(i18n("All Torrents"));}
@@ -90,19 +90,19 @@ namespace kt
 		Group* activeUploadsGroup() { return findDefault(i18n("Active uploads")); }
 		
 		/// Find a default group by the given name
-		Group* findDefault(const QString & name);
+		Group* findDefault(const TQString & name);
 		
 		/**
 		 * Save the groups to a file.
 		 * @param fn The filename
 		 */
-		void saveGroups(const QString & fn);
+		void saveGroups(const TQString & fn);
 		
 		/**
 		 * Load the groups from a file
 		 * @param fn The filename
 		 */
-		void loadGroups(const QString & fn);
+		void loadGroups(const TQString & fn);
 		
 		/**
 		 * See if we can remove a group.
@@ -123,7 +123,7 @@ namespace kt
 		 * @param old_name The old name 
 		 * @param new_name The new name
 		 */
-		void renameGroup(const QString & old_name,const QString & new_name); 
+		void renameGroup(const TQString & old_name,const TQString & new_name); 
 
 	};
 

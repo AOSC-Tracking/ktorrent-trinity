@@ -17,7 +17,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qscrollview.h>
+#include <tqscrollview.h>
 #include <kgenericfactory.h>
 #include <kglobal.h>
 #include <klocale.h>
@@ -47,8 +47,8 @@ namespace kt
 {
 	
 
-	InfoWidgetPlugin::InfoWidgetPlugin(QObject* parent, const char* name, const QStringList& args)
-	: Plugin(parent, name, args,NAME,i18n("Info Widget"),AUTHOR,EMAIL,
+	InfoWidgetPlugin::InfoWidgetPlugin(TQObject* tqparent, const char* name, const TQStringList& args)
+	: Plugin(tqparent, name, args,NAME,i18n("Info Widget"),AUTHOR,EMAIL,
 			 i18n("Shows additional information about a download. Like which chunks have been downloaded, how many seeders and leechers ..."),
 			 "ktinfowidget")
 	{
@@ -73,7 +73,7 @@ namespace kt
 		
 		pref = new InfoWidgetPrefPage(this);
 		getGUI()->addViewListener(this);
-		getGUI()->addToolWidget(status_tab,"info",i18n("Status"),GUIInterface::DOCK_BOTTOM);
+		getGUI()->addToolWidget(status_tab,"info",i18n("tqStatus"),GUIInterface::DOCK_BOTTOM);
 		getGUI()->addToolWidget(file_view,"folder",i18n("Files"),GUIInterface::DOCK_BOTTOM);
 		
 		showPeerView( InfoWidgetPluginSettings::showPeerView() );
@@ -157,7 +157,7 @@ namespace kt
 		createMonitor(tc);
 	}
 	
-	bool InfoWidgetPlugin::versionCheck(const QString & version) const
+	bool InfoWidgetPlugin::versionCheck(const TQString & version) const
 	{
 		return version == KT_VERSION_MACRO;
 	}
@@ -216,8 +216,8 @@ namespace kt
 			tracker_view->changeTC(const_cast<kt::TorrentInterface*>(getGUI()->getCurrentTorrent()));
 			// seeing that a merge of the trackers might happen after a torrent has been loaded
 			// we need to update the tracker_view 
-			connect(getCore(),SIGNAL(loadingFinished(const KURL&, bool, bool)),
-					tracker_view,SLOT(onLoadingFinished(const KURL&, bool, bool)));
+			connect(getCore(),TQT_SIGNAL(loadingFinished(const KURL&, bool, bool)),
+					tracker_view,TQT_SLOT(onLoadingFinished(const KURL&, bool, bool)));
 		}
 		else if (!show && tracker_view)
 		{

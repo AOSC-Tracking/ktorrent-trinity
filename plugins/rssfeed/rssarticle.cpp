@@ -43,7 +43,7 @@ namespace kt
 			*this = other;
 		}
 	
-	RssArticle::RssArticle(QString title, KURL link, QString description, QDateTime pubDate, QString guid, int downloaded)
+	RssArticle::RssArticle(TQString title, KURL link, TQString description, TQDateTime pubDate, TQString guid, int downloaded)
 		{
 			m_title = title;
 			m_link = link;
@@ -74,20 +74,20 @@ namespace kt
 		return m_guid==other.guid();
 	}
 	
-	QDataStream &operator<<( QDataStream &out, const RssArticle &article )
+	TQDataStream &operator<<( TQDataStream &out, const RssArticle &article )
 		{
 		out << article.title() << article.link() << article.description() << article.pubDate() << article.guid() << article.downloaded();
 		
 		return out;
 		}
 	
-	QDataStream &operator>>( QDataStream &in, RssArticle &article )
+	TQDataStream &operator>>( TQDataStream &in, RssArticle &article )
 		{
 		KURL link;
-		QString title;
-		QString description;
-		QDateTime pubDate;
-		QString guid;
+		TQString title;
+		TQString description;
+		TQDateTime pubDate;
+		TQString guid;
 		int downloaded;
 		in >> title >> link >> description >> pubDate >> guid >> downloaded;
 		article = RssArticle(title, link, description, pubDate, guid, downloaded);

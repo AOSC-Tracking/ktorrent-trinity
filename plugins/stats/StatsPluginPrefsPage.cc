@@ -22,7 +22,7 @@
 
 namespace kt {
 
-StatsPluginPrefsPage::StatsPluginPrefsPage(QWidget *p) : sprefwgt(p)
+StatsPluginPrefsPage::StatsPluginPrefsPage(TQWidget *p) : sprefwgt(p)
 {
 }
 

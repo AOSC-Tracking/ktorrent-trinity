@@ -20,10 +20,10 @@
 #ifndef BTPREALLOCATIONTHREAD_H
 #define BTPREALLOCATIONTHREAD_H
 
-#include <qstring.h>
-#include <qthread.h>
-#include <qmap.h>
-#include <qmutex.h>
+#include <tqstring.h>
+#include <tqthread.h>
+#include <tqmap.h>
+#include <tqmutex.h>
 #include <util/constants.h>
 
 
@@ -37,13 +37,13 @@ namespace bt
 	 * 
 	 * Thread to preallocate diskspace
 	*/
-	class PreallocationThread : public QThread
+	class PreallocationThread : public TQThread
 	{
 		ChunkManager* cman;
 		bool stopped,not_finished,done;
-		QString error_msg;
+		TQString error_msg;
 		Uint64 bytes_written;
-		mutable QMutex mutex;
+		mutable TQMutex mutex;
 	public:
 		PreallocationThread(ChunkManager* cman);
 		virtual ~PreallocationThread();
@@ -60,7 +60,7 @@ namespace bt
 		 * Set an error message, also calls stop
 		 * @param msg The message
 		 */
-		void setErrorMsg(const QString & msg);
+		void setErrorMsg(const TQString & msg);
 		
 		/// See if the thread has been stopped
 		bool isStopped() const;
@@ -69,7 +69,7 @@ namespace bt
 		bool errorHappened() const;
 		
 		/// Get the error_msg
-		const QString & errorMessage() const {return error_msg;}
+		const TQString & errorMessage() const {return error_msg;}
 		
 		/// nb Number of bytes have been written
 		void written(Uint64 nb);
@@ -86,7 +86,7 @@ namespace bt
 		/// See if the thread was done
 		bool isDone() const;
 	private:
-		bool expand(const QString & path,Uint64 max_size);
+		bool expand(const TQString & path,Uint64 max_size);
 	};
 
 }

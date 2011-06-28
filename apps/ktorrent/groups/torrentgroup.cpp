@@ -30,7 +30,7 @@ using namespace bt;
 namespace kt
 {
 
-	TorrentGroup::TorrentGroup(const QString& name): Group(name,MIXED_GROUP|CUSTOM_GROUP)
+	TorrentGroup::TorrentGroup(const TQString& name): Group(name,MIXED_GROUP|CUSTOM_GROUP)
 	{
 		setIconByName("player_playlist");
 	}
@@ -51,7 +51,7 @@ namespace kt
 			if (hashes.count(tor->getInfoHash()))
 			{
 		/*		bt::Out(SYS_GEN|LOG_DEBUG) << 
-						QString("TG %1 : Torrent %2 from hashes list").arg(groupName()).arg(tor->getStats().torrent_name) << endl;
+						TQString("TG %1 : Torrent %2 from hashes list").tqarg(groupName()).tqarg(tor->getStats().torrent_name) << endl;
 		*/ 
 				hashes.erase(tor->getInfoHash());
 				torrents.insert(tor);
@@ -74,9 +74,9 @@ namespace kt
 	void TorrentGroup::save(bt::BEncoder* enc)
 	{
 		enc->beginDict();
-		enc->write("name"); enc->write(name.local8Bit());
-		enc->write("icon"); enc->write(icon_name.local8Bit());
-		enc->write("hashes"); enc->beginList();
+		enc->write(TQString("name")); enc->write(name.local8Bit());
+		enc->write(TQString("icon")); enc->write(icon_name.local8Bit());
+		enc->write(TQString("hashes")); enc->beginList();
 		std::set<TorrentInterface*>::iterator i = torrents.begin();
 		while (i != torrents.end())
 		{
@@ -102,15 +102,15 @@ namespace kt
 		if (!vn || vn->data().getType() != bt::Value::STRING)
 			throw bt::Error("invalid or missing name");
 		
-		QByteArray tmp = vn->data().toByteArray();
-		name = QString::fromLocal8Bit(tmp.data(),tmp.size());
+		TQByteArray tmp = vn->data().toByteArray();
+		name = TQString::fromLocal8Bit(tmp.data(),tmp.size());
 		
 		vn = dn->getValue("icon");
 		if (!vn || vn->data().getType() != bt::Value::STRING)
 			throw bt::Error("invalid or missing icon");
 		
 		tmp = vn->data().toByteArray();
-		setIconByName(QString::fromLocal8Bit(tmp.data(),tmp.size()));
+		setIconByName(TQString::fromLocal8Bit(tmp.data(),tmp.size()));
 		
 		BListNode* ln = dn->getList("hashes");
 		if (!ln)
@@ -122,7 +122,7 @@ namespace kt
 			if (!vn || vn->data().getType() != bt::Value::STRING)
 				continue;
 			
-			QByteArray ba = vn->data().toByteArray();
+			TQByteArray ba = vn->data().toByteArray();
 			if (ba.size() != 20)
 				continue;
 			

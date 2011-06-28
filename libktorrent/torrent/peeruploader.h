@@ -21,7 +21,7 @@
 #define BTPEERUPLOADER_H
 
 #include <set>
-#include <qvaluelist.h>
+#include <tqvaluelist.h>
 #include "request.h"
 
 
@@ -45,7 +45,7 @@ namespace bt
 	class PeerUploader
 	{
 		Peer* peer;
-		QValueList<Request> requests;
+		TQValueList<Request> requests;
 		Uint32 uploaded;
 	public:
 		/**

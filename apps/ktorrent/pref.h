@@ -23,8 +23,8 @@
 #define _KTORRENTPREF_H_
 
 #include <kdialogbase.h>
-#include <qframe.h>
-#include <qmap.h> 
+#include <tqframe.h>
+#include <tqmap.h> 
 #include <interfaces/prefpageinterface.h>
  
 
@@ -32,7 +32,7 @@ class DownloadPref;
 class GeneralPref;
 class AdvancedPref;
 class KTorrent;
-class QListViewItem; 
+class TQListViewItem; 
 
 
 class DownloadPrefPage : public kt::PrefPageInterface
@@ -44,13 +44,14 @@ public:
 	
 	virtual bool apply();
 	virtual void updateData();	
-	virtual void createWidget(QWidget* parent);
+	virtual void createWidget(TQWidget* tqparent);
 	virtual void deleteWidget();
 };
 
-class GeneralPrefPage : public QObject,public kt::PrefPageInterface
+class GeneralPrefPage : public TQObject,public kt::PrefPageInterface
 {
-	Q_OBJECT 
+	Q_OBJECT
+	TQ_OBJECT
 	GeneralPref* gp;
 public:
 	GeneralPrefPage();
@@ -58,7 +59,7 @@ public:
 	
 	virtual bool apply();
 	virtual void updateData();
-	virtual void createWidget(QWidget* parent);
+	virtual void createWidget(TQWidget* tqparent);
 	virtual void deleteWidget();
 	
 private slots:
@@ -68,9 +69,10 @@ private slots:
 	void useEncryptionChecked(bool on);
 };
 
-class AdvancedPrefPage : public QObject,public kt::PrefPageInterface
+class AdvancedPrefPage : public TQObject,public kt::PrefPageInterface
 {
 	Q_OBJECT
+	TQ_OBJECT
 	 
 	AdvancedPref* ap;
 public:
@@ -79,7 +81,7 @@ public:
 	
 	virtual bool apply();
 	virtual void updateData();
-	virtual void createWidget(QWidget* parent);
+	virtual void createWidget(TQWidget* tqparent);
 	virtual void deleteWidget();
 	
 private slots:
@@ -93,6 +95,7 @@ private slots:
 class KTorrentPreferences : public KDialogBase
 {
 	Q_OBJECT
+	TQ_OBJECT
 public:
 	KTorrentPreferences(KTorrent & ktor);
 	virtual ~KTorrentPreferences();
@@ -110,7 +113,7 @@ private:
 	DownloadPrefPage* page_one;
 	GeneralPrefPage* page_two;
 	AdvancedPrefPage* page_three;
-	QMap<kt::PrefPageInterface*,QFrame*> pages;
+	TQMap<kt::PrefPageInterface*,TQFrame*> pages;
 	bool validation_err;
 };
 

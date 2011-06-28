@@ -28,7 +28,7 @@
 #include <sys/mman.h>
 #include <unistd.h>
 #include <errno.h>
-#include <qfile.h>
+#include <tqfile.h>
 #include <kio/netaccess.h>
 #include <klocale.h>
 #include <kfileitem.h>
@@ -46,7 +46,7 @@
 
 // Not all systems have an O_LARGEFILE - Solaris depending
 // on command-line defines, FreeBSD never - so in those cases,
-// make it a zero bitmask. As long as it's only OR'ed into
+// make it a zero bittqmask. As long as it's only OR'ed into
 // open(2) flags, that's fine.
 //
 #ifndef O_LARGEFILE
@@ -71,7 +71,7 @@ namespace bt
 			close();
 	}
 	
-	void CacheFile::changePath(const QString & npath)
+	void CacheFile::changePath(const TQString & npath)
 	{
 		path = npath;
 	}
@@ -81,26 +81,26 @@ namespace bt
 		int flags = O_LARGEFILE;
 		
 		// by default allways try read write
-		fd = ::open(QFile::encodeName(path),flags | O_RDWR);
+		fd = ::open(TQFile::encodeName(path),flags | O_RDWR);
 		if (fd < 0 && mode == READ)
 		{
 			// in case RDWR fails, try readonly if possible
-			fd = ::open(QFile::encodeName(path),flags | O_RDONLY);
+			fd = ::open(TQFile::encodeName(path),flags | O_RDONLY);
 			if (fd >= 0)
 				read_only = true;
 		}
 		
 		if (fd < 0)
 		{
-			throw Error(i18n("Cannot open %1 : %2").arg(path).arg(strerror(errno)));
+			throw Error(i18n("Cannot open %1 : %2").tqarg(path).tqarg(strerror(errno)));
 		}
 		
 		file_size = FileSize(fd);
 	}
 	
-	void CacheFile::open(const QString & path,Uint64 size)
+	void CacheFile::open(const TQString & path,Uint64 size)
 	{
-		QMutexLocker lock(&mutex);
+		TQMutexLocker lock(&mutex);
 		// only set the path and the max size, we only open the file when it is needed
 		this->path = path;
 		max_size = size;
@@ -108,7 +108,7 @@ namespace bt
 		
 	void* CacheFile::map(MMappeable* thing,Uint64 off,Uint32 size,Mode mode)
 	{
-		QMutexLocker lock(&mutex);
+		TQMutexLocker lock(&mutex);
 		// reopen the file if necessary
 		if (fd == -1)
 		{
@@ -118,7 +118,7 @@ namespace bt
 		
 		if (read_only && mode != READ)
 		{
-			throw Error(i18n("Cannot open %1 for writing : readonly filesystem").arg(path));
+			throw Error(i18n("Cannot open %1 for writing : readonly filesystem").tqarg(path));
 		}
 		
 		if (off + size > max_size)
@@ -164,7 +164,7 @@ namespace bt
 #endif
 			if (ptr == MAP_FAILED) 
 			{
-				Out() << "mmap failed : " << QString(strerror(errno)) << endl;
+				Out() << "mmap failed : " << TQString(strerror(errno)) << endl;
 				return 0;
 			}
 			else
@@ -189,7 +189,7 @@ namespace bt
 #endif
 			if (ptr == MAP_FAILED) 
 			{
-				Out() << "mmap failed : " << QString(strerror(errno)) << endl;
+				Out() << "mmap failed : " << TQString(strerror(errno)) << endl;
 				return 0;
 			}
 			else
@@ -217,7 +217,7 @@ namespace bt
 		}
 		
 		if (read_only)
-			throw Error(i18n("Cannot open %1 for writing : readonly filesystem").arg(path));
+			throw Error(i18n("Cannot open %1 for writing : readonly filesystem").tqarg(path));
 		
 		// jump to the end of the file
 		SeekFile(fd,0,SEEK_END);
@@ -237,22 +237,22 @@ namespace bt
 			int nb = to_write > 1024 ? 1024 : to_write;
 			int ret = ::write(fd,buf,nb);
 			if (ret < 0)
-				throw Error(i18n("Cannot expand file %1 : %2").arg(path).arg(strerror(errno)));
+				throw Error(i18n("Cannot expand file %1 : %2").tqarg(path).tqarg(strerror(errno)));
 			else if (ret != nb)
-				throw Error(i18n("Cannot expand file %1 : incomplete write").arg(path));
+				throw Error(i18n("Cannot expand file %1 : incomplete write").tqarg(path));
 			to_write -= nb;
 		}
 		file_size += num;
 //		
-	//	Out() << QString("growing %1 = %2").arg(path).arg(kt::BytesToString(file_size)) << endl;
+	//	Out() << TQString("growing %1 = %2").tqarg(path).tqarg(kt::BytesToString(file_size)) << endl;
 
 		if (file_size != FileSize(fd))
 		{
-//			Out() << QString("Homer Simpson %1 %2").arg(file_size).arg(sb.st_size) << endl;
+//			Out() << TQString("Homer Simpson %1 %2").tqarg(file_size).tqarg(sb.st_size) << endl;
 			fsync(fd);
 			if (file_size != FileSize(fd))
 			{
-				throw Error(i18n("Cannot expand file %1").arg(path));
+				throw Error(i18n("Cannot expand file %1").tqarg(path));
 			}
 		}
 	}
@@ -260,9 +260,9 @@ namespace bt
 	void CacheFile::unmap(void* ptr,Uint32 size)
 	{
 		int ret = 0;
-		QMutexLocker lock(&mutex);
+		TQMutexLocker lock(&mutex);
 		// see if it wasn't an offsetted mapping
-		if (mappings.contains(ptr))
+		if (mappings.tqcontains(ptr))
 		{
 			CacheFile::Entry & e = mappings[ptr];
 #if HAVE_MUNMAP64
@@ -292,18 +292,18 @@ namespace bt
 		
 		if (ret < 0)
 		{
-			Out(SYS_DIO|LOG_IMPORTANT) << QString("Munmap failed with error %1 : %2").arg(errno).arg(strerror(errno)) << endl;
+			Out(SYS_DIO|LOG_IMPORTANT) << TQString("Munmap failed with error %1 : %2").tqarg(errno).tqarg(strerror(errno)) << endl;
 		}
 	}
 		
 	void CacheFile::close()
 	{
-		QMutexLocker lock(&mutex);
+		TQMutexLocker lock(&mutex);
 		
 		if (fd == -1)
 			return;
 		
-		QMap<void*,Entry>::iterator i = mappings.begin();
+		TQMap<void*,Entry>::iterator i = mappings.begin();
 		while (i != mappings.end())
 		{
 			int ret = 0;
@@ -326,7 +326,7 @@ namespace bt
 						
 			if (ret < 0)
 			{
-				Out(SYS_DIO|LOG_IMPORTANT) << QString("Munmap failed with error %1 : %2").arg(errno).arg(strerror(errno)) << endl;
+				Out(SYS_DIO|LOG_IMPORTANT) << TQString("Munmap failed with error %1 : %2").tqarg(errno).tqarg(strerror(errno)) << endl;
 			}	
 		}
 		::close(fd);
@@ -335,7 +335,7 @@ namespace bt
 	
 	void CacheFile::read(Uint8* buf,Uint32 size,Uint64 off)
 	{
-		QMutexLocker lock(&mutex);
+		TQMutexLocker lock(&mutex);
 		bool close_again = false;
 		
 		// reopen the file if necessary
@@ -348,7 +348,7 @@ namespace bt
 		
 		if (off >= file_size || off >= max_size)
 		{
-			throw Error(i18n("Error : Reading past the end of the file %1").arg(path));
+			throw Error(i18n("Error : Reading past the end of the file %1").tqarg(path));
 		}
 		
 		// jump to right position
@@ -358,7 +358,7 @@ namespace bt
 			if (close_again)
 				closeTemporary();
 			
-			throw Error(i18n("Error reading from %1").arg(path));
+			throw Error(i18n("Error reading from %1").tqarg(path));
 		}
 		
 		if (close_again)
@@ -367,7 +367,7 @@ namespace bt
 	
 	void CacheFile::write(const Uint8* buf,Uint32 size,Uint64 off)
 	{
-		QMutexLocker lock(&mutex);
+		TQMutexLocker lock(&mutex);
 		bool close_again = false;
 		
 		// reopen the file if necessary
@@ -379,7 +379,7 @@ namespace bt
 		}
 		
 		if (read_only)
-			throw Error(i18n("Cannot open %1 for writing : readonly filesystem").arg(path));
+			throw Error(i18n("Cannot open %1 for writing : readonly filesystem").tqarg(path));
 		
 		if (off + size > max_size)
 		{
@@ -389,7 +389,7 @@ namespace bt
 		
 		if (file_size < off)
 		{
-			//Out() << QString("Writing %1 bytes at %2").arg(size).arg(off) << endl;
+			//Out() << TQString("Writing %1 bytes at %2").tqarg(size).tqarg(off) << endl;
 			growFile(off - file_size);
 		}
 		
@@ -400,11 +400,11 @@ namespace bt
 			closeTemporary();
 		
 		if (ret == -1)
-			throw Error(i18n("Error writing to %1 : %2").arg(path).arg(strerror(errno)));
+			throw Error(i18n("Error writing to %1 : %2").tqarg(path).tqarg(strerror(errno)));
 		else if ((Uint32)ret != size)
 		{
-			Out() << QString("Incomplete write of %1 bytes, should be %2").arg(ret).arg(size) << endl;
-			throw Error(i18n("Error writing to %1").arg(path));
+			Out() << TQString("Incomplete write of %1 bytes, should be %2").tqarg(ret).tqarg(size) << endl;
+			throw Error(i18n("Error writing to %1").tqarg(path));
 		}
 		
 		if (off + size > file_size)
@@ -424,7 +424,7 @@ namespace bt
 		
 	void CacheFile::preallocate(PreallocationThread* prealloc)
 	{
-		QMutexLocker lock(&mutex);
+		TQMutexLocker lock(&mutex);
 		
 		if (FileSize(path) == max_size)
 		{
@@ -445,7 +445,7 @@ namespace bt
 			if (close_again)
 				closeTemporary();
 			
-			throw Error(i18n("Cannot open %1 for writing : readonly filesystem").arg(path));
+			throw Error(i18n("Cannot open %1 for writing : readonly filesystem").tqarg(path));
 		}
 
 		try
@@ -472,7 +472,7 @@ namespace bt
 				if (close_again)
 					closeTemporary();
 				
-				throw Error(i18n("Cannot preallocate diskspace : %1").arg(strerror(errno)));
+				throw Error(i18n("Cannot preallocate diskspace : %1").tqarg(strerror(errno)));
 			}
 		}
 

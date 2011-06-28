@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>FileSelectDlgBase</class>
-<widget class="QDialog">
+<widget class="TQDialog">
     <property name="name">
         <cstring>FileSelectDlgBase</cstring>
     </property>
@@ -19,15 +19,15 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="0" column="0" rowspan="1" colspan="3">
+        <widget class="TQLayoutWidget" row="0" column="0" rowspan="1" colspan="3">
             <property name="name">
-                <cstring>layout4</cstring>
+                <cstring>tqlayout4</cstring>
             </property>
             <hbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLabel">
+                <widget class="TQLabel">
                     <property name="name">
                         <cstring>textLabel1_2</cstring>
                     </property>
@@ -42,23 +42,23 @@
                 </widget>
             </hbox>
         </widget>
-        <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="3">
+        <widget class="TQLayoutWidget" row="1" column="0" rowspan="1" colspan="3">
             <property name="name">
-                <cstring>layout6</cstring>
+                <cstring>tqlayout6</cstring>
             </property>
             <hbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLayoutWidget">
+                <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout5</cstring>
+                        <cstring>tqlayout5</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel2</cstring>
                             </property>
@@ -74,14 +74,14 @@
                                 <string>Group:</string>
                             </property>
                         </widget>
-                        <widget class="QComboBox">
+                        <widget class="TQComboBox">
                             <property name="name">
                                 <cstring>m_cmbGroups</cstring>
                             </property>
                         </widget>
                     </hbox>
                 </widget>
-                <widget class="QCheckBox">
+                <widget class="TQCheckBox">
                     <property name="name">
                         <cstring>m_chkUserControlled</cstring>
                     </property>
@@ -97,7 +97,7 @@
                         <string>&amp;User controlled</string>
                     </property>
                 </widget>
-                <widget class="QCheckBox">
+                <widget class="TQCheckBox">
                     <property name="name">
                         <cstring>m_chkStartTorrent</cstring>
                     </property>
@@ -121,7 +121,7 @@
                 </widget>
             </hbox>
         </widget>
-        <widget class="QButtonGroup" row="2" column="0" rowspan="1" colspan="3">
+        <widget class="TQButtonGroup" row="2" column="0" rowspan="1" colspan="3">
             <property name="name">
                 <cstring>pnlFiles</cstring>
             </property>
@@ -207,7 +207,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>20</width>
                             <height>135</height>
@@ -216,7 +216,7 @@
                 </spacer>
             </grid>
         </widget>
-        <widget class="QGroupBox" row="3" column="0" rowspan="1" colspan="3">
+        <widget class="TQGroupBox" row="3" column="0" rowspan="1" colspan="3">
             <property name="name">
                 <cstring>groupBox1</cstring>
             </property>
@@ -237,22 +237,22 @@
                     <property name="sizeType">
                         <enum>Preferred</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>40</width>
                             <height>20</height>
                         </size>
                     </property>
                 </spacer>
-                <widget class="QLayoutWidget" row="0" column="0">
+                <widget class="TQLayoutWidget" row="0" column="0">
                     <property name="name">
-                        <cstring>layout33</cstring>
+                        <cstring>tqlayout33</cstring>
                     </property>
                     <vbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel1</cstring>
                             </property>
@@ -260,7 +260,7 @@
                                 <string>Required disk space:</string>
                             </property>
                         </widget>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel3</cstring>
                             </property>
@@ -268,7 +268,7 @@
                                 <string>Free disk space:</string>
                             </property>
                         </widget>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel6</cstring>
                             </property>
@@ -278,27 +278,27 @@
                         </widget>
                     </vbox>
                 </widget>
-                <widget class="QLayoutWidget" row="0" column="1">
+                <widget class="TQLayoutWidget" row="0" column="1">
                     <property name="name">
-                        <cstring>layout34</cstring>
+                        <cstring>tqlayout34</cstring>
                     </property>
                     <vbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>lblRequired</cstring>
                             </property>
                         </widget>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>lblFree</cstring>
                             </property>
                         </widget>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
-                                <cstring>lblStatus</cstring>
+                                <cstring>lbltqStatus</cstring>
                             </property>
                         </widget>
                     </vbox>
@@ -315,7 +315,7 @@
             <property name="sizeType">
                 <enum>Expanding</enum>
             </property>
-            <property name="sizeHint">
+            <property name="tqsizeHint">
                 <size>
                     <width>220</width>
                     <height>20</height>
@@ -369,7 +369,7 @@
     <tabstop>m_select_none</tabstop>
     <tabstop>m_invert_selection</tabstop>
 </tabstops>
-<layoutdefaults spacing="6" margin="11"/>
+<tqlayoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kurlrequester.h</includehint>
     <includehint>klineedit.h</includehint>

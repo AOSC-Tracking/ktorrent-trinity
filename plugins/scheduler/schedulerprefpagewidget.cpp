@@ -22,16 +22,16 @@
 #include "bwscheduler.h"
 #include "schedulerpluginsettings.h"
 
-#include <qcheckbox.h>
-#include <qtimer.h>
-#include <qpushbutton.h>
-#include <qgroupbox.h>
+#include <tqcheckbox.h>
+#include <tqtimer.h>
+#include <tqpushbutton.h>
+#include <tqgroupbox.h>
 
 namespace kt
 {
 
-	SchedulerPrefPageWidget::SchedulerPrefPageWidget(QWidget* parent, const char* name, WFlags fl)
-			: SchedulerPage(parent,name,fl)
+	SchedulerPrefPageWidget::SchedulerPrefPageWidget(TQWidget* tqparent, const char* name, WFlags fl)
+			: SchedulerPage(tqparent,name,fl)
 	{
 		groupBWS->setEnabled(false);
 		bool useit = SchedulerPluginSettings::enableBWS();
@@ -59,9 +59,9 @@ namespace kt
 		SchedulerPluginSettings::writeConfig();
 		
 		/* force trigger since the schedule has changed but after KTorrent::apply()
-		* Used QTimer with fixed interval - not very nice solution... */
+		* Used TQTimer with fixed interval - not very nice solution... */
 		if(useBS->isChecked())
-			QTimer::singleShot(1000, this, SLOT(scheduler_trigger()));
+			TQTimer::singleShot(1000, this, TQT_SLOT(scheduler_trigger()));
 		
 		BWScheduler::instance().setEnabled(use_bws);
 	}

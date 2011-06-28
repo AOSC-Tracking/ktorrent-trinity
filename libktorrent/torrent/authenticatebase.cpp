@@ -32,7 +32,7 @@ namespace bt
 
 	AuthenticateBase::AuthenticateBase(mse::StreamSocket*  s) : sock(s),finished(false),local(false)
 	{
-		connect(&timer,SIGNAL(timeout()),this,SLOT(onTimeout()));
+		connect(&timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(onTimeout()));
 		timer.start(20000,true);
 		memset(handshake,0x00,68);
 		bytes_of_handshake_recieved = 0;

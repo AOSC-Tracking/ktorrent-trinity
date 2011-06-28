@@ -66,7 +66,7 @@ namespace bt
 		time_choked = GetCurrentTime();
 		time_unchoked = 0;
 		
-		connect_time = QTime::currentTime();
+		connect_time = TQTime::currentTime();
 		//sock->attachPeer(this);
 		stats.client = peer_id.identifyClient();
 		stats.ip_address = getIPAddresss();
@@ -353,7 +353,7 @@ namespace bt
 			return;
 		}
 		
-		QByteArray tmp;
+		TQByteArray tmp;
 		tmp.setRawData((const char*)packet,size);
 		BNode* node = 0;
 		try
@@ -365,7 +365,7 @@ namespace bt
 				BDictNode* dict = (BDictNode*)node;
 				
 				// handshake packet, so just check if the peer supports ut_pex
-				dict = dict->getDict("m");
+				dict = dict->getDict(TQString("m"));
 				BValueNode* val = 0;
 				if (dict && (val = dict->getValue("ut_pex")))
 				{
@@ -490,12 +490,12 @@ namespace bt
 		return pieces.allOn();
 	}
 
-	QString Peer::getIPAddresss() const
+	TQString Peer::getIPAddresss() const
 	{
 		if (sock)
 			return sock->getRemoteIPAddress();
 		else
-			return QString::null;
+			return TQString();
 	}
 	
 	Uint16 Peer::getPort() const
@@ -555,7 +555,7 @@ namespace bt
 		gotPortPacket(sock->getRemoteIPAddress(),sock->getRemotePort());
 	}
 	
-	void Peer::emitPex(const QByteArray & data)
+	void Peer::emitPex(const TQByteArray & data)
 	{
 		pex(data);
 	}

@@ -38,14 +38,14 @@ namespace bt
 	Migrate::~Migrate()
 	{}
 
-	void Migrate::migrate(const Torrent & tor,const QString & tor_dir,const QString & sdir)
+	void Migrate::migrate(const Torrent & tor,const TQString & tor_dir,const TQString & sdir)
 	{
 		// check if directory exists
 		if (!bt::Exists(tor_dir))
-			throw Error(i18n("The directory %1 does not exist").arg(tor_dir));
+			throw Error(i18n("The directory %1 does not exist").tqarg(tor_dir));
 		
 		// make sure it ends with a /
-		QString tdir = tor_dir;
+		TQString tdir = tor_dir;
 		if (!tdir.endsWith(bt::DirSeparator()))
 			tdir += bt::DirSeparator();
 		

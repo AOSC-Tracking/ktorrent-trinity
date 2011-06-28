@@ -21,7 +21,7 @@
 #define DEBUGCACHECHECKER_H
 
 #include <set>
-#include <qstring.h>
+#include <tqstring.h>
 #include <util/functions.h>
 
 namespace bt
@@ -41,15 +41,15 @@ namespace ktdebug
 		CacheChecker(bt::Torrent & tor);
 		virtual ~CacheChecker();
 
-		void loadIndex(const QString & index_file);
+		void loadIndex(const TQString & index_file);
 		void fixIndex();
 		bool foundFailedChunks() const {return failed_chunks.size() > 0;}
 		bool foundExtraChunks() const {return extra_chunks.size() > 0;}
 		
-		virtual void check(const QString & cache,const QString & index) = 0;
+		virtual void check(const TQString & cache,const TQString & index) = 0;
 	protected:
 		bt::Torrent & tor;
-		QString index_file;
+		TQString index_file;
 		std::set<bt::Uint32>  downloaded_chunks;
 		std::set<bt::Uint32> failed_chunks;
 		std::set<bt::Uint32> extra_chunks;

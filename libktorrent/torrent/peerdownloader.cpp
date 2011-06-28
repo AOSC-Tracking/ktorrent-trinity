@@ -70,8 +70,8 @@ namespace bt
 
 	PeerDownloader::PeerDownloader(Peer* peer,Uint32 chunk_size) : peer(peer),grabbed(0),chunk_size(chunk_size / MAX_PIECE_LEN)
 	{
-		connect(peer,SIGNAL(piece(const Piece& )),this,SLOT(piece(const Piece& )));
-		connect(peer,SIGNAL(destroyed()),this,SLOT(peerDestroyed()));
+		connect(peer,TQT_SIGNAL(piece(const Piece& )),this,TQT_SLOT(piece(const Piece& )));
+		connect(peer,TQT_SIGNAL(destroyed()),this,TQT_SLOT(peerDestroyed()));
 		nearly_done = false;
 		max_wait_queue_size = 25;
 	}
@@ -83,7 +83,7 @@ namespace bt
 #if 0
 	void PeerDownloader::retransmitRequests()
 	{
-		for (QValueList<Request>::iterator i = reqs.begin();i != reqs.end();i++)
+		for (TQValueList<Request>::iterator i = reqs.begin();i != reqs.end();i++)
 			peer->getPacketWriter().sendRequest(*i);
 			
 	}
@@ -126,11 +126,11 @@ namespace bt
 		if (!peer)
 			return;
 		
-		if (wait_queue.contains(req))
+		if (wait_queue.tqcontains(req))
 		{
 			wait_queue.remove(req);
 		}
-		else if (reqs.contains(req))
+		else if (reqs.tqcontains(req))
 		{
 			reqs.remove(req);
 			peer->getPacketWriter().sendCancel(req);
@@ -144,7 +144,7 @@ namespace bt
 
 //		Out(SYS_CON|LOG_DEBUG) << "Rejected : " << req.getIndex() << " " 
 //				<< req.getOffset() << " " << req.getLength() << endl;
-		if (reqs.contains(req))
+		if (reqs.tqcontains(req))
 		{
 			reqs.remove(req);
 			rejected(req);
@@ -155,7 +155,7 @@ namespace bt
 	{
 		if (peer)
 		{
-			QValueList<TimeStampedRequest>::iterator i = reqs.begin();
+			TQValueList<TimeStampedRequest>::iterator i = reqs.begin();
 			while (i != reqs.end())
 			{
 				TimeStampedRequest & tr = *i;
@@ -171,9 +171,9 @@ namespace bt
 	void PeerDownloader::piece(const Piece & p)
 	{
 		Request r(p);
-		if (wait_queue.contains(r))
+		if (wait_queue.tqcontains(r))
 			wait_queue.remove(r);
-		else if (reqs.contains(r))
+		else if (reqs.tqcontains(r))
 			reqs.remove(r);
 			
 		downloaded(p);
@@ -214,7 +214,7 @@ namespace bt
 		TimeStamp now = bt::GetCurrentTime(); 
 		// we use a 60 second interval
 		const Uint32 MAX_INTERVAL = 60 * 1000;
-		QValueList<TimeStampedRequest>::iterator i = reqs.begin();
+		TQValueList<TimeStampedRequest>::iterator i = reqs.begin();
 		while (i != reqs.end())
 		{
 			TimeStampedRequest & tr = *i;
@@ -266,7 +266,7 @@ namespace bt
 		if (peer->getStats().fast_extensions)
 			return;
 		
-		QValueList<TimeStampedRequest>::iterator i = reqs.begin();
+		TQValueList<TimeStampedRequest>::iterator i = reqs.begin();
 		while (i != reqs.end())
 		{
 			TimeStampedRequest & tr = *i;
@@ -275,7 +275,7 @@ namespace bt
 		}
 		reqs.clear();
 		
-		QValueList<Request>::iterator j = wait_queue.begin();
+		TQValueList<Request>::iterator j = wait_queue.begin();
 		while (j != wait_queue.end())
 		{
 			Request & req = *j;

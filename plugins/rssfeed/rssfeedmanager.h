@@ -22,12 +22,12 @@
 
 #include <kdirlister.h>
 #include <kfileitem.h>
-#include <qstring.h>
-#include <qobject.h>
-#include <qdir.h>
+#include <tqstring.h>
+#include <tqobject.h>
+#include <tqdir.h>
 
-#include <qptrlist.h>
-#include <qwidget.h>
+#include <tqptrlist.h>
+#include <tqwidget.h>
 #include "rssfeedwidget.h"
 
 #include "rssfeed.h"
@@ -47,6 +47,7 @@ namespace kt
 	class RssFeedManager : public RssFeedWidget
 	{
 			Q_OBJECT
+  TQ_OBJECT
 		public:
 			
 			/**
@@ -54,7 +55,7 @@ namespace kt
 			 * @param core Pointer to core interface
 			 * @param openSilently Wheather to open torrent silently or nor.
 			 */
-			RssFeedManager(CoreInterface* core, QWidget * parent = 0);
+			RssFeedManager(CoreInterface* core, TQWidget * tqparent = 0);
 			~RssFeedManager();
 
 		public slots:
@@ -85,7 +86,7 @@ namespace kt
 			void deleteSelectedRejectFilter();
 			
 			void updateRegExps();
-			void updateMatches(const QValueList<FilterMatch>& matches);
+			void updateMatches(const TQValueList<FilterMatch>& matches);
 			
 			void saveFeedList();
 			void saveFilterList();
@@ -102,24 +103,24 @@ namespace kt
 			void testTextChanged();
 			void testFilter();
 			
-			void setFilterTitle(const QString& title);
-			void setFeedTitle(const QString& title);
+			void setFilterTitle(const TQString& title);
+			void setFeedTitle(const TQString& title);
 
 		private:
 			CoreInterface* m_core;
 			
-			QPtrList<RssFeed> feeds;
+			TQPtrList<RssFeed> feeds;
 			int currentFeed;
 			
-			QPtrList<RssFilter> acceptFilters;
+			TQPtrList<RssFilter> acceptFilters;
 			int currentAcceptFilter;
-			QPtrList<RssFilter> rejectFilters;
+			TQPtrList<RssFilter> rejectFilters;
 			int currentRejectFilter;
 			
-			QString getFeedListFilename();
+			TQString getFeedListFilename();
 			void loadFeedList();
 			
-			QString getFilterListFilename();
+			TQString getFilterListFilename();
 			void loadFilterList();
 			
 			bool feedListSaving;

@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 #include <stdlib.h>
-#include <qstring.h>
+#include <tqstring.h>
 #include <util/log.h>
 #include <util/error.h>
 #include <torrent/globals.h>
@@ -42,7 +42,7 @@ int main(int argc,char** argv)
 	try
 	{
 		Torrent tor;
-		tor.load(argv[1],false);
+		tor.load(TQString(argv[1]),false);
 		tor.debugPrintInfo();
 	}
 	catch (Error & e)

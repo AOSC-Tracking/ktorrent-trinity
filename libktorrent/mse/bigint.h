@@ -20,7 +20,7 @@
 #ifndef MSEBIGINT_H
 #define MSEBIGINT_H
 
-#include <qstring.h>
+#include <tqstring.h>
 #include <util/constants.h>
 #include <stdio.h>
 #include <gmp.h>
@@ -57,7 +57,7 @@ namespace mse
 		 * Letters can be upper or lower case. Invalid chars will create an invalid number.
 		 * @param value The hexadecimal representation of the number
 		 */
-		BigInt(const QString & value);
+		BigInt(const TQString & value);
 		
 		/**
 		 * Copy constructor.

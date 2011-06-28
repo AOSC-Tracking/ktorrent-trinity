@@ -18,8 +18,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 #include <algorithm>
-#include <qlayout.h>
-#include <qlabel.h>
+#include <tqlayout.h>
+#include <tqlabel.h>
 #include <kiconloader.h>
 #include <kglobalsettings.h>
 #include <util/log.h>
@@ -29,7 +29,7 @@ using namespace bt;
 
 namespace kt
 {
-	LabelViewItem::LabelViewItem(const QString & icon,const QString & title,const QString & description,LabelView* view)
+	LabelViewItem::LabelViewItem(const TQString & icon,const TQString & title,const TQString & description,LabelView* view)
 		: LabelViewItemBase(view),odd(false),selected(false)
 	{
 		icon_lbl->setPixmap(DesktopIcon(icon));
@@ -42,17 +42,17 @@ namespace kt
 	{
 	}
 	
-	void LabelViewItem::setTitle(const QString & title)
+	void LabelViewItem::setTitle(const TQString & title)
 	{
 		title_lbl->setText(title);
 	}
 	
-	void LabelViewItem::setDescription(const QString & d)
+	void LabelViewItem::setDescription(const TQString & d)
 	{
 		description_lbl->setText(d);
 	}
 	
-	void LabelViewItem::setIcon(const QString & icon)
+	void LabelViewItem::setIcon(const TQString & icon)
 	{
 		icon_lbl->setPixmap(DesktopIcon(icon));
 	}
@@ -89,29 +89,29 @@ namespace kt
 		return title_lbl->text() < item.title_lbl->text();
 	}
 	
-	void LabelViewItem::mousePressEvent(QMouseEvent *e)
+	void LabelViewItem::mousePressEvent(TQMouseEvent *e)
 	{
-		if (e->button() == QMouseEvent::LeftButton)
+		if (e->button() == Qt::LeftButton)
 		{
 			clicked(this);
 		}
 
 		setFocus();
-		QWidget::mousePressEvent(e);
+		TQWidget::mousePressEvent(e);
 	}
 	
 	typedef std::list<LabelViewItem*>::iterator LabelViewItr;
 	typedef std::list<LabelViewItem*>::const_iterator LabelViewCItr;
 	
-	class LabelViewBox : public QWidget
+	class LabelViewBox : public TQWidget
 	{
-		QVBoxLayout* layout;
+		TQVBoxLayout* tqlayout;
 	public:
-		LabelViewBox(QWidget* parent) : QWidget(parent)
+		LabelViewBox(TQWidget* tqparent) : TQWidget(tqparent)
 		{
 			setPaletteBackgroundColor(KGlobalSettings::baseColor());
-			layout = new QVBoxLayout(this);
-			layout->setMargin(0);
+			tqlayout = new TQVBoxLayout(this);
+			tqlayout->setMargin(0);
 		}
 		
 		virtual ~LabelViewBox()
@@ -119,25 +119,25 @@ namespace kt
 		
 		void add(LabelViewItem* item)
 		{
-			item->reparent(this,QPoint(0,0));
-			layout->add(item);
+			item->reparent(this,TQPoint(0,0));
+			tqlayout->add(item);
 			item->show();
 		}
 		
 		void remove(LabelViewItem* item)
 		{
 			item->hide();
-			layout->remove(item);
-			item->reparent(0,QPoint(0,0));
+			tqlayout->remove(item);
+			item->reparent(0,TQPoint(0,0));
 		}
 		
 		void sorted(const std::list<LabelViewItem*> items)
 		{
 			for (LabelViewCItr i = items.begin();i != items.end();i++)
-				layout->remove(*i);
+				tqlayout->remove(*i);
 			
 			for (LabelViewCItr i = items.begin();i != items.end();i++)
-				layout->add(*i);
+				tqlayout->add(*i);
 		}
 	};
 	
@@ -145,11 +145,11 @@ namespace kt
 	
 	///////////////////////////////////////
 
-	LabelView::LabelView ( QWidget *parent, const char *name )
-			: QScrollView ( parent, name ),selected(0)
+	LabelView::LabelView ( TQWidget *tqparent, const char *name )
+			: TQScrollView ( tqparent, name ),selected(0)
 	{
 		item_box = new LabelViewBox(this->viewport());
-		setResizePolicy(QScrollView::AutoOneFit);
+		setResizePolicy(TQScrollView::AutoOneFit);
 	
 		addChild(item_box, 0, 0);
 		item_box->show();
@@ -165,8 +165,8 @@ namespace kt
 		items.push_back(item);
 		item->setOdd(items.size() % 2 == 1);
 		
-		connect(item, SIGNAL(clicked(LabelViewItem*)),
-				this, SLOT(onItemClicked(LabelViewItem*)));
+		connect(item, TQT_SIGNAL(clicked(LabelViewItem*)),
+				this, TQT_SLOT(onItemClicked(LabelViewItem*)));
 	}
 	
 	void LabelView::removeItem(LabelViewItem* item)
@@ -176,19 +176,19 @@ namespace kt
 		{
 			item_box->remove(item);
 			items.erase(i);
-			disconnect(item, SIGNAL(clicked(LabelViewItem*)),
-					this, SLOT(onItemClicked(LabelViewItem*)));
+			disconnect(item, TQT_SIGNAL(clicked(LabelViewItem*)),
+					this, TQT_SLOT(onItemClicked(LabelViewItem*)));
 			
 			// check for selected being equal to item
 			if (item == selected)
 				selected = 0;
 			
 			// update odd status of each item
-			updateOddStatus();	
+			updateOddtqStatus();	
 		}
 	}
 	
-	void LabelView::updateOddStatus()
+	void LabelView::updateOddtqStatus()
 	{
 		bool odd = true;
 		LabelViewItr i = items.begin();
@@ -250,7 +250,7 @@ namespace kt
 	{
 		items.sort(LabelViewItemCmp());
 		item_box->sorted(items);
-		updateOddStatus();
+		updateOddtqStatus();
 	}
 
 }

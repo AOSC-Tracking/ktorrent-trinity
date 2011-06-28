@@ -24,15 +24,15 @@
 #include <kglobal.h>
 #include <klocale.h>
 
-#include <qwidget.h>
-#include <qstring.h>
-#include <qcheckbox.h>
-#include <qcombobox.h>
+#include <tqwidget.h>
+#include <tqstring.h>
+#include <tqcheckbox.h>
+#include <tqcombobox.h>
 
 namespace kt
 {
-	LogPrefWidget::LogPrefWidget(QWidget *parent, const char *name)
-			:LogPrefWidgetBase(parent, name)
+	LogPrefWidget::LogPrefWidget(TQWidget *tqparent, const char *name)
+			:LogPrefWidgetBase(tqparent, name)
 	{
 		m_sysgen->setCurrentItem(getLevel(LogViewerPluginSettings::sysGEN()));
 		m_syscon->setCurrentItem(getLevel(LogViewerPluginSettings::sysCON()));

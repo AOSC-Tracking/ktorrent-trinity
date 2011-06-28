@@ -27,7 +27,7 @@
 #include "ipblockingprefpage.h"
 #include "antip2p.h"
 
-class QString;
+class TQString;
 
 namespace kt
 {	
@@ -42,8 +42,9 @@ namespace kt
 	class IPFilterPlugin : public Plugin, public kt::IPBlockingInterface
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		IPFilterPlugin(QObject* parent, const char* name, const QStringList& args);
+		IPFilterPlugin(TQObject* tqparent, const char* name, const TQStringList& args);
 		virtual ~IPFilterPlugin();
 
 		virtual void load();
@@ -60,9 +61,9 @@ namespace kt
 		
 		
 		///Checks if IP is listed in AntiP2P filter list.
-		bool isBlockedIP(const QString& ip);
+		bool isBlockedIP(const TQString& ip);
 		
-		bool versionCheck(const QString & version) const;
+		bool versionCheck(const TQString & version) const;
 	private:
 		IPBlockingPrefPage* pref;
 		AntiP2P* level1;

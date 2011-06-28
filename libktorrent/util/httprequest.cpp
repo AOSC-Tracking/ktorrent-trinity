@@ -17,7 +17,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qstringlist.h>
+#include <tqstringlist.h>
 #include <torrent/globals.h>
 #include "httprequest.h"
 #include "array.h"
@@ -27,18 +27,18 @@
 namespace bt 
 {
 
-	HTTPRequest::HTTPRequest(const QString & hdr,const QString & payload,const QString & host,Uint16 port,bool verbose) : hdr(hdr),payload(payload),verbose(verbose)
+	HTTPRequest::HTTPRequest(const TQString & hdr,const TQString & payload,const TQString & host,Uint16 port,bool verbose) : hdr(hdr),payload(payload),verbose(verbose)
 	{
-		sock = new KNetwork::KStreamSocket(host,QString::number(port),this,0);
+		sock = new KNetwork::KStreamSocket(host,TQString::number(port),this,0);
 		sock->enableRead(true);
 		sock->enableWrite(true);
 		sock->setTimeout(30000);
 		sock->setBlocking(false);
-		connect(sock,SIGNAL(readyRead()),this,SLOT(onReadyRead()));
-		connect(sock,SIGNAL(gotError(int)),this,SLOT(onError(int )));
-		connect(sock,SIGNAL(timedOut()),this,SLOT(onTimeout()));
-		connect(sock,SIGNAL(connected(const KResolverEntry&)),
-				this, SLOT(onConnect( const KResolverEntry& )));
+		connect(sock,TQT_SIGNAL(readyRead()),this,TQT_SLOT(onReadyRead()));
+		connect(sock,TQT_SIGNAL(gotError(int)),this,TQT_SLOT(onError(int )));
+		connect(sock,TQT_SIGNAL(timedOut()),this,TQT_SLOT(onTimeout()));
+		connect(sock,TQT_SIGNAL(connected(const KResolverEntry&)),
+				this, TQT_SLOT(onConnect( const KResolverEntry& )));
 	}
 	
 	
@@ -55,10 +55,10 @@ namespace bt
 	
 	void HTTPRequest::onConnect(const KResolverEntry&)
 	{
-		payload = payload.replace("$LOCAL_IP",sock->localAddress().nodeName());
-		hdr = hdr.replace("$CONTENT_LENGTH",QString::number(payload.length()));
+		payload = payload.tqreplace("$LOCAL_IP",sock->localAddress().nodeName());
+		hdr = hdr.tqreplace("$CONTENT_LENGTH",TQString::number(payload.length()));
 			
-		QString req = hdr + payload;
+		TQString req = hdr + payload;
 		if (verbose)
 		{
 			Out(SYS_PNP|LOG_DEBUG) << "Sending " << endl;
@@ -79,8 +79,8 @@ namespace bt
 			
 		Array<char> data(ba);
 		ba = sock->readBlock(data,ba);
-		QString strdata((const char*)data);
-		QStringList sl = QStringList::split("\r\n",strdata,false);	
+		TQString strdata((const char*)data);
+		TQStringList sl = TQStringList::split("\r\n",strdata,false);	
 		
 		if (verbose)
 		{
@@ -88,7 +88,7 @@ namespace bt
 			Out(SYS_PNP|LOG_DEBUG) << strdata << endl;
 		}
 		
-		if (sl.first().contains("HTTP") && sl.first().contains("200"))
+		if (sl.first().tqcontains("HTTP") && sl.first().tqcontains("200"))
 		{
 			// emit reply OK
 			replyOK(this,sl.last());
@@ -103,7 +103,7 @@ namespace bt
 	
 	void HTTPRequest::onError(int)
 	{
-		Out() << "HTTPRequest error : " << sock->errorString() << endl;
+		Out() << "HTTPRequest error : " << sock->KSocketBase::errorString() << endl;
 		error(this,false);
 		sock->close();
 		operationFinished(this);

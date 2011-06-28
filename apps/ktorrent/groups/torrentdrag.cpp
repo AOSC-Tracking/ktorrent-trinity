@@ -24,7 +24,7 @@
 namespace kt
 {
 
-	TorrentDrag::TorrentDrag(QWidget* src, const char *name) : QStoredDrag("application/x-ktorrent-drag-object",src, name)
+	TorrentDrag::TorrentDrag(TQWidget* src, const char *name) : TQStoredDrag("application/x-ktorrent-drag-object",src, name)
 	{
 		setPixmap(KGlobal::iconLoader()->loadIcon("player_playlist",KIcon::Small));
 	}

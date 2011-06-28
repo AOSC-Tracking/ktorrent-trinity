@@ -21,8 +21,8 @@
 #ifndef SCANDIALOG_H
 #define SCANDIALOG_H
 
-#include <qmutex.h>
-#include <qtimer.h>
+#include <tqmutex.h>
+#include <tqtimer.h>
 #include <datachecker/datacheckerlistener.h>
 #include "scandlgbase.h"
 
@@ -37,8 +37,9 @@ class KTorrentCore;
 class ScanDialog : public ScanDlgBase, public bt::DataCheckerListener
 {
 	Q_OBJECT
+  TQ_OBJECT
 public:
-	ScanDialog(KTorrentCore* core,bool auto_import,QWidget* parent = 0, const char* name = 0, bool modal = false, WFlags fl = WDestructiveClose  );
+	ScanDialog(KTorrentCore* core,bool auto_import,TQWidget* tqparent = 0, const char* name = 0, bool modal = false, WFlags fl = WDestructiveClose  );
 	virtual ~ScanDialog();
 
 	/// Starts the scan thread
@@ -55,7 +56,7 @@ protected:
 	virtual void finished();
 	
 	/// Handle the close event
-	virtual void closeEvent(QCloseEvent* e);
+	virtual void closeEvent(TQCloseEvent* e);
 	
 
 protected slots:
@@ -68,8 +69,8 @@ protected slots:
 
 private:
 	kt::TorrentInterface* tc;
-	QMutex mutex;
-	QTimer timer;
+	TQMutex mutex;
+	TQTimer timer;
 	bt::Uint32 num_chunks;
 	bt::Uint32 total_chunks;
 	bt::Uint32 num_downloaded;

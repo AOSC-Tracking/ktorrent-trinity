@@ -44,6 +44,7 @@ namespace bt
 	class Tracker : public kt::PeerSource
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		Tracker(const KURL & url,kt::TorrentInterface* tor,const PeerID & id,int tier);
 		virtual ~Tracker();
@@ -55,7 +56,7 @@ namespace bt
 		 * Set the custom IP
 		 * @param str 
 		 */
-		static void setCustomIP(const QString & str);
+		static void setCustomIP(const TQString & str);
 		
 		/// get the tracker url
 		KURL trackerURL() const {return url;}
@@ -97,13 +98,13 @@ namespace bt
 		Uint32 getNumLeechers() const {return leechers;}
 		
 		/// Get the custom ip to use, null if none is set
-		static QString getCustomIP();
+		static TQString getCustomIP();
 	signals:
 		/**
 		 * Emitted when an error happens.
 		 * @param failure_reason The reason why we couldn't reach the tracker
 		 */
-		void requestFailed(const QString & failure_reason);
+		void requestFailed(const TQString & failure_reason);
 		
 		/**
 		 * Emitted when a stop is done.
@@ -128,7 +129,7 @@ namespace bt
 		Uint32 interval,seeders,leechers,key;
 		bool started;
 	private:
-		//static QString custom_ip,custom_ip_resolved;
+		//static TQString custom_ip,custom_ip_resolved;
 	};
 	
 }

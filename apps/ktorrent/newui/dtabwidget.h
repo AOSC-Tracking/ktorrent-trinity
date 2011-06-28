@@ -22,36 +22,37 @@
 
 #include <ktabwidget.h>
 
-class QToolButton;
+class TQToolButton;
 
 class DTabWidget: public KTabWidget {
     Q_OBJECT
+  TQ_OBJECT
 public:
-    DTabWidget(QWidget *parent=0, const char *name=0);
+    DTabWidget(TQWidget *tqparent=0, const char *name=0);
     
     /**@return The close button at the top right corner. 
     May be 0 if the configuration do not allow close buttons or the tabbar.*/
-    QToolButton *closeButton() const;
+    TQToolButton *closeButton() const;
 
-    virtual void insertTab(QWidget *child, const QString &label, int index = -1 );
-    virtual void insertTab(QWidget *child, const QIconSet &iconset, 
-        const QString &label, int index = -1);
+    virtual void insertTab(TQWidget *child, const TQString &label, int index = -1 );
+    virtual void insertTab(TQWidget *child, const TQIconSet &iconset, 
+        const TQString &label, int index = -1);
     
 protected:
     virtual void loadSettings();
     virtual void saveSettings();
     
 private slots:
-    void setFocus(QWidget *w);
-//    void updateHistory(QWidget *w);
+    void setFocus(TQWidget *w);
+//    void updateHistory(TQWidget *w);
     
 private:
     bool m_tabBarShown;
     bool m_closeOnHover;
     bool m_closeButtonShown;
     
-    QToolButton *m_closeButton;
-//    QValueStack<QWidget*> *m_history;
+    TQToolButton *m_closeButton;
+//    TQValueStack<TQWidget*> *m_history;
 
 };
 

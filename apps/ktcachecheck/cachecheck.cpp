@@ -46,11 +46,11 @@ int main(int argc,char** argv)
 	try
 	{
 		Torrent tor;
-		QString tor_file,cache,index;
+		TQString tor_file,cache,index;
 
 		if (argc == 2)
 		{
-			QString cache_dir = argv[1];
+			TQString cache_dir = argv[1];
 			if (!cache_dir.endsWith(bt::DirSeparator()))
 				cache_dir += bt::DirSeparator();
 

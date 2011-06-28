@@ -20,10 +20,10 @@
 #ifndef BTSHA1HASH_H
 #define BTSHA1HASH_H
 
-#include <qcstring.h> 
+#include <tqcstring.h> 
 #include "constants.h"
 
-class QString;
+class TQString;
 
 namespace bt
 {
@@ -98,13 +98,13 @@ namespace bt
 		 * Convert the hash to a printable string.
 		 * @return The string
 		 */
-		QString toString() const;
+		TQString toString() const;
 
 		/**
 		 * Convert the hash to a string, usable in http get requests.
 		 * @return The string
 		 */
-		QString toURLString() const;
+		TQString toURLString() const;
 		
 		/**
 		 * Directly get pointer to the data.
@@ -140,7 +140,7 @@ namespace bt
 		/**
 		 * Convert the hash to a byte array.
 		 */
-		QByteArray toByteArray() const;
+		TQByteArray toByteArray() const;
 	};
 
 }

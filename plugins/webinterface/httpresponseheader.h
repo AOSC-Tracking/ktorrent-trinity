@@ -21,8 +21,8 @@
 #define KTHTTPRESPONSEHEADER_H
 		
 
-#include <qmap.h>
-#include <qstring.h>
+#include <tqmap.h>
+#include <tqstring.h>
 
 namespace kt
 {
@@ -33,16 +33,16 @@ namespace kt
 	class HttpResponseHeader
 	{
 		int response_code;
-		QMap<QString,QString> fields;
+		TQMap<TQString,TQString> fields;
 	public:
 		HttpResponseHeader(int response_code);
 		HttpResponseHeader(const HttpResponseHeader & hdr);
 		virtual ~HttpResponseHeader();
 		
 		void setResponseCode(int response_code);
-		void setValue(const QString & key,const QString & value);
+		void setValue(const TQString & key,const TQString & value);
 		
-		QString toString() const;
+		TQString toString() const;
 	};
 
 

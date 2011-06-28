@@ -46,9 +46,10 @@ namespace kt
 	class ImportDialog : public ImportDlgBase,public bt::DataCheckerListener
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	
 	public:
-		ImportDialog(CoreInterface* core,QWidget* parent = 0, const char* name = 0, bool modal = FALSE, WFlags fl = 0 );
+		ImportDialog(CoreInterface* core,TQWidget* tqparent = 0, const char* name = 0, bool modal = FALSE, WFlags fl = 0 );
 		virtual ~ImportDialog();
 		
 	public slots:
@@ -56,12 +57,12 @@ namespace kt
 		void onTorrentGetReult(KIO::Job* j);
 	
 	private:
-		void writeIndex(const QString & file,const bt::BitSet & chunks);
-		void linkTorFile(const QString & cache_dir,const QString & dnd_dir,
-						 const KURL & data_url,const QString & fpath,bool & dnd);
-		void saveStats(const QString & stats_file,const KURL & data_url,bt::Uint64 imported,bool custom_output_name);
+		void writeIndex(const TQString & file,const bt::BitSet & chunks);
+		void linkTorFile(const TQString & cache_dir,const TQString & dnd_dir,
+						 const KURL & data_url,const TQString & fpath,bool & dnd);
+		void saveStats(const TQString & stats_file,const KURL & data_url,bt::Uint64 imported,bool custom_output_name);
 		bt::Uint64 calcImportedBytes(const bt::BitSet & chunks,const bt::Torrent & tor);
-		void saveFileInfo(const QString & file_info_file,QValueList<bt::Uint32> & dnd);
+		void saveFileInfo(const TQString & file_info_file,TQValueList<bt::Uint32> & dnd);
 		
 		virtual void progress(bt::Uint32 num,bt::Uint32 total);
 		virtual void status(bt::Uint32 num_failed,bt::Uint32 num_downloaded);

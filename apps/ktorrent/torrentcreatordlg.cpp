@@ -9,9 +9,9 @@
 // Copyright: See COPYING file that comes with this distribution
 //
 //
-#include <qcheckbox.h>
-#include <qstringlist.h>
-#include <qmap.h>
+#include <tqcheckbox.h>
+#include <tqstringlist.h>
+#include <tqmap.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kcombobox.h>
@@ -28,8 +28,8 @@
 #include <torrent/globals.h>
 #include <kademlia/dhtbase.h>
 		
-TorrentCreatorDlg::TorrentCreatorDlg(KTorrentCore* core,QWidget *parent, const char *name)
-	:TorrentCreatorDlgBase(parent, name),core(core)
+TorrentCreatorDlg::TorrentCreatorDlg(KTorrentCore* core,TQWidget *tqparent, const char *name)
+	:TorrentCreatorDlgBase(tqparent, name),core(core)
 {
 	KURLRequester* r = m_file_or_dir;
 	r->fileDialog()->setMode(
@@ -38,15 +38,15 @@ TorrentCreatorDlg::TorrentCreatorDlg(KTorrentCore* core,QWidget *parent, const c
 	KComboBox* cb = m_chunk_size;
 	cb->setCurrentItem(3);
 	
-	connect(m_create_btn,SIGNAL(clicked()),this,SLOT(onCreate()));
-	connect(m_cancel_btn,SIGNAL(clicked()),this,SLOT(reject()));
+	connect(m_create_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onCreate()));
+	connect(m_cancel_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(reject()));
 	
 	m_nodes->setHidden(true);
 	
-	QMap<QString, int> n = bt::Globals::instance().getDHT().getClosestGoodNodes(10);
+	TQMap<TQString, int> n = bt::Globals::instance().getDHT().getClosestGoodNodes(10);
 	
-	for(QMap<QString, int>::iterator it = n.begin(); it!=n.end(); ++it)
-		new QListViewItem(m_nodeList, it.key(), QString("%1").arg(it.data()));
+	for(TQMap<TQString, int>::iterator it = n.begin(); it!=n.end(); ++it)
+		new TQListViewItem(m_nodeList, it.key(), TQString("%1").tqarg(it.data()));
 }
 
 TorrentCreatorDlg::~TorrentCreatorDlg()
@@ -68,7 +68,7 @@ void TorrentCreatorDlg::onCreate()
 	if (eb->items().count() == 0 && !m_decentralized->isChecked())
 	{
 		//errorMsg(i18n("You must add at least one tracker."));
-		QString msg = i18n("You have not added a tracker, "
+		TQString msg = i18n("You have not added a tracker, "
 				"are you sure you want to create this torrent ?");
 		if (KMessageBox::warningYesNo(this,msg) == KMessageBox::No)
 			return;
@@ -80,11 +80,11 @@ void TorrentCreatorDlg::onCreate()
 		return;
 	}
 
-	QString url = r->url();
+	TQString url = r->url();
 	int chunk_size = cb->currentText().toInt();
-	QString name = KURL::fromPathOrURL(r->url()).fileName();
+	TQString name = KURL::fromPathOrURL(r->url()).fileName();
 	
-	QStringList trackers; 
+	TQStringList trackers; 
 	
 	if(m_decentralized->isChecked())
 	{
@@ -94,8 +94,8 @@ void TorrentCreatorDlg::onCreate()
 	else
 		trackers = eb->items();
 
-	QString s = KFileDialog::getSaveFileName(
-			QString::null,"*.torrent|" + i18n("Torrent Files (*.torrent)"),
+	TQString s = KFileDialog::getSaveFileName(
+			TQString(),"*.torrent|" + i18n("Torrent Files (*.torrent)"),
 			0,i18n("Choose File to Save Torrent"));
 
 	if (s.isNull())
@@ -105,7 +105,7 @@ void TorrentCreatorDlg::onCreate()
 		s += ".torrent";
 
 	KProgressDialog* dlg = new KProgressDialog(this,0);
-	dlg->setLabel(i18n("Creating %1...").arg(s));
+	dlg->setLabel(i18n("Creating %1...").tqarg(s));
 	dlg->setModal(true);
 	dlg->setAllowCancel(false);
 	dlg->show();
@@ -120,14 +120,14 @@ void TorrentCreatorDlg::onCreate()
 	accept();
 }
 
-void TorrentCreatorDlg::errorMsg(const QString & text)
+void TorrentCreatorDlg::errorMsg(const TQString & text)
 {
 	KMessageBox::error(this,text,i18n("Error"));
 }
 
 void TorrentCreatorDlg::btnRemoveNode_clicked()
 {
-	QListViewItem* item = m_nodeList->currentItem();
+	TQListViewItem* item = m_nodeList->currentItem();
 	if(!item)
 		return;
 	
@@ -136,15 +136,15 @@ void TorrentCreatorDlg::btnRemoveNode_clicked()
 
 void TorrentCreatorDlg::btnAddNode_clicked()
 {
-	new QListViewItem(m_nodeList, m_node->text(), QString("%1").arg(m_port->value()));
+	new TQListViewItem(m_nodeList, m_node->text(), TQString("%1").tqarg(m_port->value()));
 }
 
-void TorrentCreatorDlg::m_nodeList_selectionChanged(QListViewItem*)
+void TorrentCreatorDlg::m_nodeList_selectionChanged(TQListViewItem*)
 {
 	btnRemoveNode->setEnabled(m_nodeList->selectedItem()!=0);
 }
 
-void TorrentCreatorDlg::m_node_textChanged(const QString& txt)
+void TorrentCreatorDlg::m_node_textChanged(const TQString& txt)
 {
 	btnAddNode->setEnabled(!txt.isEmpty());
 }

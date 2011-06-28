@@ -20,7 +20,7 @@
  ***************************************************************************/
 #include "queuemanager.h"
 
-#include <qstring.h>
+#include <tqstring.h>
 #include <kmessagebox.h>
 #include <klocale.h>
 #include <util/log.h>
@@ -41,7 +41,7 @@ using namespace kt;
 namespace bt
 {
 
-	QueueManager::QueueManager() : QObject(),exiting(false)
+	QueueManager::QueueManager() : TQObject(),exiting(false)
 	{
 		downloads.setAutoDelete(true);
 		max_downloads = 0;
@@ -60,15 +60,15 @@ namespace bt
 		downloads.append(tc);
 		downloads.sort();
 		
-		connect(tc, SIGNAL(diskSpaceLow(kt::TorrentInterface*, bool)), this, SLOT(onLowDiskSpace(kt::TorrentInterface*, bool)));
-		connect(tc, SIGNAL(torrentStopped(kt::TorrentInterface*)), this, SLOT(torrentStopped(kt::TorrentInterface*)));
+		connect(tc, TQT_SIGNAL(diskSpaceLow(kt::TorrentInterface*, bool)), this, TQT_SLOT(onLowDiskSpace(kt::TorrentInterface*, bool)));
+		connect(tc, TQT_SIGNAL(torrentStopped(kt::TorrentInterface*)), this, TQT_SLOT(torrentStopped(kt::TorrentInterface*)));
 	}
 
 	void QueueManager::remove(kt::TorrentInterface* tc)
 	{
 		paused_torrents.erase(tc);
 					
-		int index = downloads.findRef(tc);
+		int index = downloads.tqfindRef(tc);
 
 		if (index != -1)
 			downloads.remove(index);
@@ -132,7 +132,7 @@ namespace bt
 							return kt::NOT_ENOUGH_DISKSPACE;
 
 						case 1: //ask user
-							if (KMessageBox::questionYesNo(0, i18n("You don't have enough disk space to download this torrent. Are you sure you want to continue?"), i18n("Insufficient disk space for %1").arg(s.torrent_name)) == KMessageBox::No)
+							if (KMessageBox::questionYesNo(0, i18n("You don't have enough disk space to download this torrent. Are you sure you want to continue?"), i18n("Insufficient disk space for %1").tqarg(s.torrent_name)) == KMessageBox::No)
 							{
 								tc->setPriority(0);
 								return kt::USER_CANCELED;
@@ -154,7 +154,7 @@ namespace bt
 
 			if (s.completed && max_ratio > 0 && ratio >= max_ratio)
 			{
-				if (KMessageBox::questionYesNo(0, i18n("Torrent \"%1\" has reached its maximum share ratio. Ignore the limit and start seeding anyway?").arg(s.torrent_name), i18n("Maximum share ratio limit reached.")) == KMessageBox::Yes)
+				if (KMessageBox::questionYesNo(0, i18n("Torrent \"%1\" has reached its maximum share ratio. Ignore the limit and start seeding anyway?").tqarg(s.torrent_name), i18n("Maximum share ratio limit reached.")) == KMessageBox::Yes)
 				{
 					tc->setMaxShareRatio(0.00f);
 					startSafely(tc);
@@ -167,7 +167,7 @@ namespace bt
 		}
 		else
 		{
-			return kt::QM_LIMITS_REACHED;
+			return kt::TQM_LIMITS_REACHED;
 		}
 		
 		return kt::START_OK;
@@ -193,7 +193,7 @@ namespace bt
 
 	void QueueManager::startall(int type)
 	{
-		QPtrList<kt::TorrentInterface>::iterator i = downloads.begin();
+		TQPtrList<kt::TorrentInterface>::iterator i = downloads.begin();
 
 		while (i != downloads.end())
 		{
@@ -213,7 +213,7 @@ namespace bt
 
 	void QueueManager::stopall(int type)
 	{
-		QPtrList<kt::TorrentInterface>::iterator i = downloads.begin();
+		TQPtrList<kt::TorrentInterface>::iterator i = downloads.begin();
 
 		while (i != downloads.end())
 		{
@@ -232,9 +232,9 @@ namespace bt
 				}
 				catch (bt::Error & err)
 				{
-					QString msg =
+					TQString msg =
 						i18n("Error stopping torrent %1 : %2")
-						.arg(s.torrent_name).arg(err.toString());
+						.tqarg(s.torrent_name).tqarg(err.toString());
 					KMessageBox::error(0, msg, i18n("Error"));
 				}
 			}
@@ -249,7 +249,7 @@ namespace bt
 	void QueueManager::onExit(WaitJob* wjob)
 	{
 		exiting = true;
-		QPtrList<kt::TorrentInterface>::iterator i = downloads.begin();
+		TQPtrList<kt::TorrentInterface>::iterator i = downloads.begin();
 
 		while (i != downloads.end())
 		{
@@ -272,7 +272,7 @@ namespace bt
 	int QueueManager::countDownloads()
 	{
 		int nr = 0;
-		QPtrList<TorrentInterface>::const_iterator i = downloads.begin();
+		TQPtrList<TorrentInterface>::const_iterator i = downloads.begin();
 
 		while (i != downloads.end())
 		{
@@ -288,7 +288,7 @@ namespace bt
 	int QueueManager::countSeeds()
 	{
 		int nr = 0;
-		QPtrList<TorrentInterface>::const_iterator i = downloads.begin();
+		TQPtrList<TorrentInterface>::const_iterator i = downloads.begin();
 
 		while (i != downloads.end())
 		{
@@ -305,7 +305,7 @@ namespace bt
 	{
 		int nr = 0;
 		// int test = 1;
-		QPtrList<TorrentInterface>::const_iterator i = downloads.begin();
+		TQPtrList<TorrentInterface>::const_iterator i = downloads.begin();
 
 		while (i != downloads.end())
 		{
@@ -342,7 +342,7 @@ namespace bt
 	{
 		int nr = 0;
 		// int test = 1;
-		QPtrList<TorrentInterface>::const_iterator i = downloads.begin();
+		TQPtrList<TorrentInterface>::const_iterator i = downloads.begin();
 
 		while (i != downloads.end())
 		{
@@ -375,12 +375,12 @@ namespace bt
 		return nr;
 	}
 
-	QPtrList<kt::TorrentInterface>::iterator QueueManager::begin()
+	TQPtrList<kt::TorrentInterface>::iterator QueueManager::begin()
 	{
 		return downloads.begin();
 	}
 
-	QPtrList<kt::TorrentInterface>::iterator QueueManager::end()
+	TQPtrList<kt::TorrentInterface>::iterator QueueManager::end()
 	{
 		return downloads.end();
 	}
@@ -402,7 +402,7 @@ namespace bt
 
 	bool QueueManager::allreadyLoaded(const SHA1Hash & ih) const
 	{
-		QPtrList<kt::TorrentInterface>::const_iterator itr = downloads.begin();
+		TQPtrList<kt::TorrentInterface>::const_iterator itr = downloads.begin();
 
 		while (itr != downloads.end())
 		{
@@ -420,7 +420,7 @@ namespace bt
 	void QueueManager::mergeAnnounceList(const SHA1Hash & ih, const TrackerTier* trk)
 
 	{
-		QPtrList<kt::TorrentInterface>::iterator itr = downloads.begin();
+		TQPtrList<kt::TorrentInterface>::iterator itr = downloads.begin();
 
 		while (itr != downloads.end())
 		{
@@ -447,8 +447,8 @@ namespace bt
 
 		downloads.sort();
 
-		QPtrList<TorrentInterface>::const_iterator it = downloads.begin();
-		QPtrList<TorrentInterface>::const_iterator its = downloads.end();
+		TQPtrList<TorrentInterface>::const_iterator it = downloads.begin();
+		TQPtrList<TorrentInterface>::const_iterator its = downloads.end();
 
 
 		if (max_downloads != 0 || max_seeds != 0)
@@ -607,7 +607,7 @@ namespace bt
 	{
 		if (!user)
 		{
-			QPtrList<TorrentInterface>::const_iterator it = downloads.begin();
+			TQPtrList<TorrentInterface>::const_iterator it = downloads.begin();
 
 			while (it != downloads.end())
 			{
@@ -659,7 +659,7 @@ namespace bt
 		}
 		else
 		{	
-			QPtrList<TorrentInterface>::const_iterator it = downloads.begin();
+			TQPtrList<TorrentInterface>::const_iterator it = downloads.begin();
 			for (; it != downloads.end(); it++)
 			{
 				TorrentInterface* tc = *it;
@@ -692,7 +692,7 @@ namespace bt
 	{
 		int tp = tc->getPriority();
 		bool completed = tc->getStats().completed;
-		QPtrList<TorrentInterface>::const_iterator it = downloads.begin();
+		TQPtrList<TorrentInterface>::const_iterator it = downloads.begin();
 
 		while (it != downloads.end())
 		{
@@ -738,9 +738,9 @@ namespace bt
 		{
 			const TorrentStats & s = tc->getStats();
 
-			QString msg =
+			TQString msg =
 				i18n("Error starting torrent %1 : %2")
-				.arg(s.torrent_name).arg(err.toString());
+				.tqarg(s.torrent_name).tqarg(err.toString());
 
 			KMessageBox::error(0, msg, i18n("Error"));
 		}
@@ -756,9 +756,9 @@ namespace bt
 		{
 			const TorrentStats & s = tc->getStats();
 
-			QString msg =
+			TQString msg =
 				i18n("Error stopping torrent %1 : %2")
-				.arg(s.torrent_name).arg(err.toString());
+				.tqarg(s.torrent_name).tqarg(err.toString());
 
 			KMessageBox::error(0, msg, i18n("Error"));
 		}
@@ -783,13 +783,13 @@ namespace bt
 	/////////////////////////////////////////////////////////////////////////////////////////////
 
 
-	QueuePtrList::QueuePtrList() : QPtrList<kt::TorrentInterface>()
+	QueuePtrList::QueuePtrList() : TQPtrList<kt::TorrentInterface>()
 	{}
 
 	QueuePtrList::~QueuePtrList()
 	{}
 
-	int QueuePtrList::compareItems(QPtrCollection::Item item1, QPtrCollection::Item item2)
+	int QueuePtrList::compareItems(TQPtrCollection::Item item1, TQPtrCollection::Item item2)
 	{
 		kt::TorrentInterface* tc1 = (kt::TorrentInterface*) item1;
 		kt::TorrentInterface* tc2 = (kt::TorrentInterface*) item2;

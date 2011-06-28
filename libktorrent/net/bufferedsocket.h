@@ -20,7 +20,7 @@
 #ifndef NETBUFFEREDSOCKET_H
 #define NETBUFFEREDSOCKET_H
 
-#include <qmutex.h>
+#include <tqmutex.h>
 #include <net/socket.h>
 
 namespace net
@@ -72,7 +72,7 @@ namespace net
 	 */
 	class BufferedSocket : public Socket
 	{
-		mutable QMutex mutex;
+		mutable TQMutex mutex;
 		SocketReader* rdr;
 		SocketWriter* wrt;
 		Uint8* output_buffer;

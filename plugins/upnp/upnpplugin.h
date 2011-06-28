@@ -33,14 +33,15 @@ namespace kt
 	class UPnPPlugin : public Plugin
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		UPnPPlugin(QObject* parent, const char* name, const QStringList& args);
+		UPnPPlugin(TQObject* tqparent, const char* name, const TQStringList& args);
 		virtual ~UPnPPlugin();
 
 		virtual void load();
 		virtual void unload();
 		virtual void shutdown(bt::WaitJob* job);
-		virtual bool versionCheck(const QString& version) const;
+		virtual bool versionCheck(const TQString& version) const;
 	private:
 		UPnPMCastSocket* sock;
 		UPnPPrefPage* pref;

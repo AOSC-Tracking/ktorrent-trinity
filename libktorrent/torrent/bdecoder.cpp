@@ -27,7 +27,7 @@
 namespace bt
 {
 
-	BDecoder::BDecoder(const QByteArray & data,bool verbose,Uint32 off)
+	BDecoder::BDecoder(const TQByteArray & data,bool verbose,Uint32 off)
 	: data(data),pos(off),verbose(verbose)
 	{
 	}
@@ -59,7 +59,7 @@ namespace bt
 		}
 		else
 		{
-			throw Error(i18n("Illegal token: %1").arg(data[pos]));
+			throw Error(i18n("Illegal token: %1").tqarg(data[pos]));
 		}
 	}
 
@@ -83,7 +83,7 @@ namespace bt
 					throw Error(i18n("Decode error"));
 				}
 
-				QByteArray key = k->data().toByteArray();
+				TQByteArray key = k->data().toByteArray();
 				delete kn;
 				
 				BNode* data = decode();
@@ -130,7 +130,7 @@ namespace bt
 	{
 		Uint32 off = pos;
 		pos++;
-		QString n;
+		TQString n;
 		// look for e and add everything between i and e to n
 		while (pos < data.size() && data[pos] != 'e')
 		{
@@ -161,7 +161,7 @@ namespace bt
 			Int64 bi = 0LL;
 			bi = n.toLongLong(&ok);
 			if (!ok)
-				throw Error(i18n("Cannot convert %1 to an int").arg(n));
+				throw Error(i18n("Cannot convert %1 to an int").tqarg(n));
 
 			pos++;
 			if (verbose) Out() << "INT64 = " << n << endl;
@@ -177,7 +177,7 @@ namespace bt
 		// string are encoded 4:spam (length:string)
 
 		// first get length by looking for the :
-		QString n;
+		TQString n;
 		while (pos < data.size() && data[pos] != ':')
 		{
 			n += data[pos];
@@ -195,16 +195,16 @@ namespace bt
 		len = n.toInt(&ok);
 		if (!ok)
 		{
-			throw Error(i18n("Cannot convert %1 to an int").arg(n));
+			throw Error(i18n("Cannot convert %1 to an int").tqarg(n));
 		}
 		// move pos to the first part of the string
 		pos++;
 		if (pos + len > data.size())
 			throw Error(i18n("Torrent is incomplete!"));
 			
-		QByteArray arr(len);
+		TQByteArray arr(len);
 		for (unsigned int i = pos;i < pos + len;i++)
-			arr.at(i-pos) = data[i];
+			arr.tqat(i-pos) = data[i];
 		pos += len;
 		// read the string into n
 
@@ -214,7 +214,7 @@ namespace bt
 		if (verbose)
 		{
 			if (arr.size() < 200)
-				Out() << "STRING " << QString(arr) << endl;
+				Out() << "STRING " << TQString(arr) << endl;
 			else
 				Out() << "STRING " << "really long string" << endl;
 		}

@@ -22,16 +22,16 @@
 
 #include <kglobal.h>
 #include <klocale.h>
-#include <qlineedit.h>
+#include <tqlineedit.h>
 #include "floatspinbox.h"
 #include "localefloatvalidator.h"
 
 
 kt::FloatSpinBox::FloatSpinBox( 
-	QWidget * parent,
+	TQWidget * tqparent,
 	const char * name
 	)
-	:QSpinBox( -100, 100, 1, parent, name), 
+	:TQSpinBox( -100, 100, 1, tqparent, name), 
 	m_precision_digits( 2 ),
 	m_value(0.0f),
 	m_minValue(0.0f),
@@ -39,19 +39,19 @@ kt::FloatSpinBox::FloatSpinBox(
 	m_useRange(false),
 	m_oldIntVal(0)
 {
-	QSpinBox::setValue(0);
+	TQSpinBox::setValue(0);
 	setStep( 0.25f );
-	connect(this, SIGNAL(valueChanged ( int )), this, SLOT(internalValueChanged( int )));
-	setValidator( new LocaleFloatValidator( dynamic_cast<QSpinBox * > (this) ));
-	editor()->setAlignment(Qt::AlignRight);
+	connect(this, TQT_SIGNAL(valueChanged ( int )), this, TQT_SLOT(internalValueChanged( int )));
+	setValidator( new LocaleFloatValidator( TQT_TQOBJECT(dynamic_cast<TQSpinBox * > (this)) ));
+	editor()->tqsetAlignment(TQt::AlignRight);
 }
 
 kt::FloatSpinBox::FloatSpinBox(
 	int precision,
-	QWidget * parent,
+	TQWidget * tqparent,
 	const char * name
 	)
-	:QSpinBox( -100, 100, 1, parent, name), 
+	:TQSpinBox( -100, 100, 1, tqparent, name), 
 	m_precision_digits( precision ),
 	m_value(0.0f),
 	m_minValue(0.0f),
@@ -59,10 +59,10 @@ kt::FloatSpinBox::FloatSpinBox(
 	m_useRange(false),
 	m_oldIntVal(0)
 {
-	QSpinBox::setValue(0);
+	TQSpinBox::setValue(0);
 	setStep( 0.25 );
-	connect(this, SIGNAL(valueChanged ( int )), this, SLOT(internalValueChanged( int )));
-	setValidator( new LocaleFloatValidator( dynamic_cast<QSpinBox * > (this) ));
+	connect(this, TQT_SIGNAL(valueChanged ( int )), this, TQT_SLOT(internalValueChanged( int )));
+	setValidator( new LocaleFloatValidator( TQT_TQOBJECT(dynamic_cast<TQSpinBox * > (this)) ));
 }
 
 
@@ -71,10 +71,10 @@ kt::FloatSpinBox::FloatSpinBox(
 	float maxValue, 
 	float step, 
 	int precision,  
-	QWidget * parent, 
+	TQWidget * tqparent, 
 	const char * name
 	)
-	:QSpinBox( -100, 100, 1, parent, name), 
+	:TQSpinBox( -100, 100, 1, tqparent, name), 
 	m_precision_digits( precision ),
 	m_value(0.0f),
 	m_minValue(minValue),
@@ -82,27 +82,27 @@ kt::FloatSpinBox::FloatSpinBox(
 	m_useRange(true),
 	m_oldIntVal(0)
 {
-	QSpinBox::setValue(0);
+	TQSpinBox::setValue(0);
 	setValue(0.0f);
 	setStep( step );
-	connect(this, SIGNAL(valueChanged ( int )), this, SLOT(internalValueChanged( int )));
-	setValidator( new LocaleFloatValidator( this ));
+	connect(this, TQT_SIGNAL(valueChanged ( int )), this, TQT_SLOT(internalValueChanged( int )));
+	setValidator( new LocaleFloatValidator( TQT_TQOBJECT(this) ));
 
 }
 
-QString kt::FloatSpinBox::mapValueToText( int value )
+TQString kt::FloatSpinBox::mapValueToText( int value )
 {
-	/// This is called from QSpinBox, which passes an int.
-	/// As we don't use the QSpinBox's internal value, we ignore it.
-	QString t = KGlobal::locale()->formatNumber( m_value, m_precision_digits);
+	/// This is called from TQSpinBox, which passes an int.
+	/// As we don't use the TQSpinBox's internal value, we ignore it.
+	TQString t = KGlobal::locale()->formatNumber( m_value, m_precision_digits);
 	editor()->setText(t);
 	return t;
 }
 
 int kt::FloatSpinBox::mapTextToValue( bool * ok )
 {
-	/// This is called from QSpinBox, which needs an int for return.
-	/// As we don't use the QSpinBox's internal value, we only return 0.
+	/// This is called from TQSpinBox, which needs an int for return.
+	/// As we don't use the TQSpinBox's internal value, we only return 0.
 	
 	float value = KGlobal::locale()->readNumber(text(), ok);
 	if (*ok)
@@ -183,7 +183,7 @@ void kt::FloatSpinBox::setStep( float step)
 void kt::FloatSpinBox::internalValueChanged( int value )
 {
 	/// The step buttons won't work without tracking the 
-	/// QSpinbox's value changes.
+	/// TQSpinbox's value changes.
 	
 	if ( value > m_oldIntVal)
 	{	

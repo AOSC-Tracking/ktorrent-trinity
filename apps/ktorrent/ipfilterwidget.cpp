@@ -24,10 +24,10 @@
 #include <util/log.h>
 #include <util/constants.h>
 
-#include <qstring.h>
-#include <qstringlist.h>
-#include <qregexp.h>
-#include <qvalidator.h>
+#include <tqstring.h>
+#include <tqstringlist.h>
+#include <tqregexp.h>
+#include <tqvalidator.h>
 
 #include <klistview.h>
 #include <klineedit.h>
@@ -40,13 +40,13 @@
 
 using namespace bt;
 
-IPFilterWidget::IPFilterWidget(QWidget *parent, const char *name)
-		:BlacklistWidgetBase(parent, name)
+IPFilterWidget::IPFilterWidget(TQWidget *tqparent, const char *name)
+		:BlacklistWidgetBase(tqparent, name)
 {
 	IPBlocklist& ipfilter = IPBlocklist::instance();
-	QStringList* blocklist = ipfilter.getBlocklist();
+	TQStringList* blocklist = ipfilter.getBlocklist();
 	
-	for (QStringList::Iterator it = blocklist->begin(); it != blocklist->end(); ++it)
+	for (TQStringList::Iterator it = blocklist->begin(); it != blocklist->end(); ++it)
 	{
 		new KListViewItem(lstPeers, *it);
 	}
@@ -58,14 +58,14 @@ void IPFilterWidget::btnAdd_clicked()
 {
 	int var=0;
 	
-	QRegExp rx("([*]|[0-9]{1,3}).([*]|[0-9]{1,3}).([*]|[0-9]{1,3}).([*]|[0-9]{1,3})");
-	QRegExpValidator v( rx,0);
+	TQRegExp rx("([*]|[0-9]{1,3}).([*]|[0-9]{1,3}).([*]|[0-9]{1,3}).([*]|[0-9]{1,3})");
+	TQRegExpValidator v( rx,0);
 	
-	QString ip = peerIP->text();
+	TQString ip = peerIP->text();
 
-	if(v.validate( ip, var ) == QValidator::Acceptable)
+	if(v.validate( ip, var ) == TQValidator::Acceptable)
 	{
-		if(lstPeers->findItem(ip, 0) == 0)
+		if(lstPeers->tqfindItem(ip, 0) == 0)
 			new KListViewItem(lstPeers, ip);
 	}
 	else
@@ -85,7 +85,7 @@ void IPFilterWidget::btnClear_clicked()
 
 void IPFilterWidget::btnOpen_clicked()
 {
-	QString lf = KFileDialog::getOpenFileName(QString::null, "*.txt|",this,i18n("Choose a file"));
+	TQString lf = KFileDialog::getOpenFileName(TQString(), "*.txt|",this,i18n("Choose a file"));
 
 	if(lf.isEmpty())
 		return;
@@ -97,7 +97,7 @@ void IPFilterWidget::btnOpen_clicked()
 
 void IPFilterWidget::btnSave_clicked()
 {
-	QString sf = KFileDialog::getSaveFileName(QString::null,"*.txt|",this,i18n("Choose a filename to save under"));
+	TQString sf = KFileDialog::getSaveFileName(TQString(),"*.txt|",this,i18n("Choose a filename to save under"));
 
 	if(sf.isEmpty())
 		return;
@@ -117,9 +117,9 @@ void IPFilterWidget::btnApply_clicked()
 	
 	int count = 0;
 	
-	QStringList* peers = new QStringList();
+	TQStringList* peers = new TQStringList();
 	 
-	QListViewItemIterator it(lstPeers);
+	TQListViewItemIterator it(lstPeers);
 	while (it.current()) 
 	{
 		*peers << it.current()->text(0);
@@ -134,19 +134,19 @@ void IPFilterWidget::btnApply_clicked()
 	Out(SYS_IPF|LOG_NOTICE) << "Loaded " << count << " blocked IP ranges." << endl;
 }
 
-void IPFilterWidget::saveFilter(QString& fn)
+void IPFilterWidget::saveFilter(TQString& fn)
 {
-	QFile fptr(fn);
+	TQFile fptr(fn);
 	
 	if (!fptr.open(IO_WriteOnly))
 	{
-		Out(SYS_GEN|LOG_NOTICE) << QString("Could not open file %1 for writing.").arg(fn) << endl;
+		Out(SYS_GEN|LOG_NOTICE) << TQString("Could not open file %1 for writing.").tqarg(fn) << endl;
 		return;
 	}
 	
-	QTextStream out(&fptr);
+	TQTextStream out(&fptr);
 	
-	QListViewItemIterator it(lstPeers);
+	TQListViewItemIterator it(lstPeers);
 	while (it.current()) 
 	{
 		out << it.current()->text(0) << ::endl;
@@ -156,16 +156,16 @@ void IPFilterWidget::saveFilter(QString& fn)
 	fptr.close();
 }
 
-void IPFilterWidget::loadFilter(QString& fn)
+void IPFilterWidget::loadFilter(TQString& fn)
 {
-	QFile dat(fn);
+	TQFile dat(fn);
 	dat.open(IO_ReadOnly);
 
-	QTextStream stream( &dat );
-	QString line;
+	TQTextStream stream( &dat );
+	TQString line;
 	
-	QRegExp rx("([*]|[0-9]{1,3}).([*]|[0-9]{1,3}).([*]|[0-9]{1,3}).([*]|[0-9]{1,3})");
-	QRegExpValidator v( rx,0);
+	TQRegExp rx("([*]|[0-9]{1,3}).([*]|[0-9]{1,3}).([*]|[0-9]{1,3}).([*]|[0-9]{1,3})");
+	TQRegExpValidator v( rx,0);
 	
 	
 	int i=0;
@@ -175,7 +175,7 @@ void IPFilterWidget::loadFilter(QString& fn)
 	while ( !stream.atEnd() && i < MAX_RANGES )
 	{
 		line = stream.readLine();
-		if ( v.validate( line, var ) != QValidator::Acceptable )
+		if ( v.validate( line, var ) != TQValidator::Acceptable )
 		{
 			err = true;
 			continue;

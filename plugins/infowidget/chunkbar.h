@@ -21,11 +21,11 @@
 #ifndef CHUNKBAR_H
 #define CHUNKBAR_H
 
-#include <qlabel.h>
+#include <tqlabel.h>
 #include <util/bitset.h>
-#include <qpixmap.h>
+#include <tqpixmap.h>
 
-class QPainter;
+class TQPainter;
 
 namespace kt
 {
@@ -47,30 +47,31 @@ namespace kt
 	* BitSets can represent which chunks are downloaded, which chunks are available
 	* and which chunks are excluded.
 	*/
-	class ChunkBar : public QFrame
+	class ChunkBar : public TQFrame
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		ChunkBar(QWidget *parent = 0, const char *name = 0);
+		ChunkBar(TQWidget *tqparent = 0, const char *name = 0);
 		virtual ~ChunkBar();
 	
 		void setTC(kt::TorrentInterface* tc);
 		
 		virtual const bt::BitSet & getBitSet() const = 0;
-		virtual void drawContents(QPainter *p);
+		virtual void drawContents(TQPainter *p);
 		virtual void updateBar();
 	
 	private:
-		void drawEqual(QPainter *p,const bt::BitSet & bs,const QColor & color);
-		void drawMoreChunksThenPixels(QPainter *p,const bt::BitSet & bs,const QColor & color);
-		void drawAllOn(QPainter *p,const QColor & color);
-		void drawBarContents(QPainter *p);
+		void drawEqual(TQPainter *p,const bt::BitSet & bs,const TQColor & color);
+		void drawMoreChunksThenPixels(TQPainter *p,const bt::BitSet & bs,const TQColor & color);
+		void drawAllOn(TQPainter *p,const TQColor & color);
+		void drawBarContents(TQPainter *p);
 		
 	protected:
 		kt::TorrentInterface* curr_tc;
 		bool show_excluded;
 		bt::BitSet curr,curr_ebs;
-		QPixmap pixmap;
+		TQPixmap pixmap;
 	};
 }
 

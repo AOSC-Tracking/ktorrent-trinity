@@ -21,7 +21,7 @@
 #define KTSEARCHENGINELIST_H
 
 #include <kurl.h>
-#include <qvaluelist.h>
+#include <tqvaluelist.h>
 #include <util/constants.h>
 
 namespace kt
@@ -35,21 +35,21 @@ namespace kt
 	{
 		struct SearchEngine
 		{
-			QString name;
+			TQString name;
 			KURL url;
 		};
 		
-		QValueList<SearchEngine> m_search_engines;
+		TQValueList<SearchEngine> m_search_engines;
 	public:
 		SearchEngineList();
 		virtual ~SearchEngineList();
 
-		void save(const QString& file);
-		void load(const QString& file);
-		void makeDefaultFile(const QString& file);
+		void save(const TQString& file);
+		void load(const TQString& file);
+		void makeDefaultFile(const TQString& file);
 		
 		KURL getSearchURL(bt::Uint32 engine) const;
-		QString getEngineName(bt::Uint32 engine) const;
+		TQString getEngineName(bt::Uint32 engine) const;
 		
 		/// Get the number of engines
 		bt::Uint32 getNumEngines() const {return m_search_engines.count();} 

@@ -62,8 +62,8 @@ namespace dht
 	private:
 		dht::Key info_hash;
 		bt::Uint16 port;
-		QValueList<KBucketEntryAndToken> answered; // nodes which have answered with values
-		QValueList<KBucketEntry> answered_visited; // nodes which have answered with values which have been visited
+		TQValueList<KBucketEntryAndToken> answered; // nodes which have answered with values
+		TQValueList<KBucketEntry> answered_visited; // nodes which have answered with values which have been visited
 		Database* db;
 		DBItemList returned_items;
 		

@@ -20,7 +20,7 @@
 #ifndef DHTKBUCKET_H
 #define DHTKBUCKET_H
 
-#include <qvaluelist.h>
+#include <tqvaluelist.h>
 #include <util/constants.h>
 #include <ksocketaddress.h>
 #include "key.h"
@@ -143,12 +143,13 @@ namespace dht
 	class KBucket : public RPCCallListener
 	{
 		Q_OBJECT
+  TQ_OBJECT
 				
 		Uint32 idx;
-		QValueList<KBucketEntry> entries,pending_entries;
+		TQValueList<KBucketEntry> entries,pending_entries;
 		RPCServer* srv;
 		Node* node;
-		QMap<RPCCall*,KBucketEntry> pending_entries_busy_pinging;
+		TQMap<RPCCall*,KBucketEntry> pending_entries_busy_pinging;
 		mutable bt::TimeStamp last_modified;
 		Task* refresh_task;
 	public:
@@ -168,7 +169,7 @@ namespace dht
 		Uint32 getNumEntries() const {return entries.count();}
 	
 		/// See if this bucket contains an entry
-		bool contains(const KBucketEntry & entry) const;
+		bool tqcontains(const KBucketEntry & entry) const;
 		
 		/**
 		 * Find the K closest entries to a key and store them in the KClosestNodesSearch

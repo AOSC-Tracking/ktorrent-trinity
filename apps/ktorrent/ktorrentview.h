@@ -25,7 +25,7 @@
 
 #include <klistview.h>
 
-typedef QValueList<QCString> QCStringList;
+typedef TQValueList<TQCString> QCStringList;
 
 class KURL;
 class KTorrentViewItem;
@@ -34,7 +34,7 @@ class KTorrentCore;
 class KTorrentViewMenu;
 class KTorrentView;
 class ScanDialog;
-class QString;
+class TQString;
 class FilterBar;
 
 namespace kt
@@ -48,10 +48,10 @@ using namespace bt;
 class TorrentView : public KListView
 {
 public:
-	TorrentView(KTorrentView* parent);
+	TorrentView(KTorrentView* tqparent);
 	virtual ~TorrentView();
 	
-	virtual bool eventFilter(QObject* watched, QEvent* e);
+	virtual bool eventFilter(TQObject* watched, TQEvent* e);
 		
 private:
 	KTorrentView* ktview;
@@ -63,9 +63,10 @@ private:
 /**
  * List view which shows information about torrents.
  */
-class KTorrentView : public QWidget
+class KTorrentView : public TQWidget
 {
 	Q_OBJECT
+  TQ_OBJECT
 public:
 	enum ActionEnableFlags
 	{
@@ -80,7 +81,7 @@ public:
 	/**
 	 * Default constructor
 	 */
-	KTorrentView(QWidget *parent);
+	KTorrentView(TQWidget *tqparent);
 
 	/**
 	 * Destructor
@@ -109,7 +110,7 @@ public:
 	 * Put the current selection in a list.
 	 * @param sel The list to put it in
 	 */
-	void getSelection(QValueList<kt::TorrentInterface*> & sel);
+	void getSelection(TQValueList<kt::TorrentInterface*> & sel);
 	
 	/**
 	 * Add the current selection to a group. 
@@ -128,7 +129,7 @@ public:
 	 */
 	void setupViewColumns();
 	
-	QPtrList<QListViewItem> selectedItems() {return view->selectedItems();}
+	TQPtrList<TQListViewItem> selectedItems() {return view->selectedItems();}
 		
 	KListView* listView() {return view;}
 	
@@ -163,10 +164,10 @@ public slots:
 	void speedLimits();
 
 private slots:
-	void onExecuted(QListViewItem* item);
-	void showContextMenu(KListView* ,QListViewItem* item,const QPoint & p);
+	void onExecuted(TQListViewItem* item);
+	void showContextMenu(KListView* ,TQListViewItem* item,const TQPoint & p);
 	void onColumnVisibilityChange(int);
-	void gsmItemActived(const QString & group);
+	void gsmItemActived(const TQString & group);
 	
 	
 signals:
@@ -185,23 +186,23 @@ signals:
 	void queue(kt::TorrentInterface* tc);
 	void needsDataCheck(kt::TorrentInterface* tc);
 	void updateGroupsSubMenu(KPopupMenu* gsm);
-	void groupsSubMenuItemActivated(KTorrentView* v,const QString & group);
+	void groupsSubMenuItemActivated(KTorrentView* v,const TQString & group);
 
 private:
-	bool acceptDrag(QDropEvent* event) const;
+	bool acceptDrag(TQDropEvent* event) const;
 	int getNumRunning();
 	bool startDownload(kt::TorrentInterface* tc);
 	void stopDownload(kt::TorrentInterface* tc);
 	void showStartError();
-	virtual QDragObject* dragObject();
+	virtual TQDragObject* dragObject();
 	void setupColumns();
-	void insertColumn(QString label, Qt::AlignmentFlags);
+	void insertColumn(TQString label, TQt::AlignmentFlags);
 	void columnHide(int index);
 	void columnShow(int index);	
 	
 	
 private:
-	QMap<kt::TorrentInterface*,KTorrentViewItem*> items;
+	TQMap<kt::TorrentInterface*,KTorrentViewItem*> items;
 	KTorrentViewMenu* menu;
 	KPopupMenu* m_headerMenu;
 	kt::Group* current_group;

@@ -23,7 +23,7 @@
 #include <kmimetype.h>
 #include <kmessagebox.h>
 
-#include <qfile.h>
+#include <tqfile.h>
 
 #include "../../libktorrent/torrent/bdecoder.h"
 #include "../../libktorrent/torrent/bnode.h"
@@ -33,7 +33,7 @@ using namespace bt;
 namespace kt
 {
 
-	RssLinkDownloader::RssLinkDownloader(CoreInterface* core, QString link, RssFilter * filter, QObject * parent) : QObject (parent)
+	RssLinkDownloader::RssLinkDownloader(CoreInterface* core, TQString link, RssFilter * filter, TQObject * tqparent) : TQObject (tqparent)
 		{
 			//tempFile.setAutoDelete(true);
 			m_core = core;
@@ -42,15 +42,15 @@ namespace kt
 			if (!KURL(link).isValid())
 			{
 				// no valid URL, so just display an error message
-				KMessageBox::error(0,i18n("Failed to find and download a valid torrent for %1").arg(curLink));
-				QTimer::singleShot(50,this,SLOT(suicide()));
+				KMessageBox::error(0,i18n("Failed to find and download a valid torrent for %1").tqarg(curLink));
+				TQTimer::singleShot(50,this,TQT_SLOT(suicide()));
 			}
 			else
 			{
 				//first let's download the link so we can process it to check for the actual torrent
 				curLink = curSubLink = link;
 				curFile = KIO::storedGet(link,false,false);
-				connect(curFile, SIGNAL(result(KIO::Job*)),this,SLOT(processLink( KIO::Job* )));
+				connect(curFile, TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(processLink( KIO::Job* )));
 			}
 		}
 	
@@ -59,10 +59,10 @@ namespace kt
 			
 		}
 		
-	void RssLinkDownloader::processLink(KIO::Job* jobStatus)
+	void RssLinkDownloader::processLink(KIO::Job* jobtqStatus)
 		{
 		
-		if (!jobStatus->error())
+		if (!jobtqStatus->error())
 			{
 			//the file downloaded ok - so let's check if it's a torrent
 			KMimeType linkType = *KMimeType::findByContent(curFile->data());
@@ -72,22 +72,22 @@ namespace kt
 					{
 					KURL url = curLink;
 					//let's go through the data and populate our sublink array
-					QTextStream html(curFile->data(), IO_ReadOnly);
+					TQTextStream html(curFile->data(), IO_ReadOnly);
 					
 					//go through a line at a time checking for a torrent
-					QString htmlline = html.readLine();
+					TQString htmlline = html.readLine();
 					while (!htmlline.isNull())
 						{
-						QRegExp hrefTags = QString("<A.*HREF.*</A");
+						TQRegExp hrefTags = TQString("<A.*HREF.*</A");
 						hrefTags.setCaseSensitive(false);
 						hrefTags.setMinimal(true);
 						
 						int matchPos = 0;
-						while (htmlline.find(hrefTags, matchPos) >= 0)
+						while (htmlline.tqfind(hrefTags, matchPos) >= 0)
 							{
 							matchPos += hrefTags.matchedLength();
 							//we're found an <a href tag - let's check it if contains download
-							QRegExp hrefText = QString("d(own)?load");
+							TQRegExp hrefText = TQString("d(own)?load");
 							hrefText.setCaseSensitive(false);
 							
 							if (!hrefTags.capturedTexts()[0].contains(hrefText))
@@ -97,20 +97,20 @@ namespace kt
 								}
 								
 							//we're found an <a href tag - now let's the the url out of it
-							hrefText = QString("HREF=\"?([^\">< ]*)[\" ]");
+							hrefText = TQString("HREF=\"?([^\">< ]*)[\" ]");
 							hrefText.setCaseSensitive(false);
 				
-							hrefTags.capturedTexts()[0].find(hrefText);
+							hrefTags.tqcapturedTexts()[0].tqfind(hrefText);
 							//lets get the captured
-							QString hrefLink = hrefText.capturedTexts()[1];
+							TQString hrefLink = hrefText.capturedTexts()[1];
 								
-							if (hrefLink.startsWith("/"))
+							if (hrefLink.tqstartsWith("/"))
 								{
 								hrefLink = url.protocol() + "://" + url.host() + hrefLink;
 								} 
-							else if (!hrefLink.startsWith("http://", false)) 
+							else if (!hrefLink.tqstartsWith("http://", false)) 
 								{
-								hrefLink = url.url().left(url.url().findRev("/")+1) + hrefLink;
+								hrefLink = url.url().left(url.url().tqfindRev("/")+1) + hrefLink;
 								}
 								
 							subLinks.append(hrefLink);
@@ -180,7 +180,7 @@ namespace kt
 			else
 				{
 				//failed to download a selected article from a feed
-				KMessageBox::error(0,i18n("Failed to find and download a valid torrent for %1").arg(curLink));
+				KMessageBox::error(0,i18n("Failed to find and download a valid torrent for %1").tqarg(curLink));
 				}
 				deleteLater();
 			}
@@ -189,7 +189,7 @@ namespace kt
 			curSubLink = subLinks.first();
 			subLinks.pop_front();
 			curFile = KIO::storedGet(curSubLink,false,false);
-			connect(curFile, SIGNAL(result(KIO::Job*)),this,SLOT(processLink( KIO::Job* )));
+			connect(curFile, TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(processLink( KIO::Job* )));
 			}
 		}
 	

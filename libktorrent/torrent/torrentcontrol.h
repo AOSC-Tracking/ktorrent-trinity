@@ -21,9 +21,9 @@
 #ifndef BTTORRENTCONTROL_H
 #define BTTORRENTCONTROL_H
 
-#include <qobject.h>
-#include <qcstring.h> 
-#include <qtimer.h>
+#include <tqobject.h>
+#include <tqcstring.h> 
+#include <tqtimer.h>
 #include <kurl.h>
 #include "globals.h"
 #include <util/timer.h>
@@ -31,8 +31,8 @@
 #include <interfaces/monitorinterface.h>
 #include <interfaces/trackerslist.h>
 
-class QStringList;
-class QString;
+class TQStringList;
+class TQString;
 
 namespace KIO
 {
@@ -68,6 +68,7 @@ namespace bt
 	class TorrentControl : public kt::TorrentInterface
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		TorrentControl();
 		virtual ~TorrentControl();
@@ -103,10 +104,10 @@ namespace bt
 		 * @throw Error when something goes wrong
 		 */
 		void init(QueueManager* qman,
-				const QString & torrent,
-				const QString & tmpdir,
-				const QString & datadir,
-				const QString & default_save_dir);
+				const TQString & torrent,
+				const TQString & tmpdir,
+				const TQString & datadir,
+				const TQString & default_save_dir);
 		
 		/**
 		 * Initialize the TorrentControl. 
@@ -119,10 +120,10 @@ namespace bt
 		 * @throw Error when something goes wrong
 		 */
 		void init(QueueManager* qman,
-				  const QByteArray & data,
-				  const QString & tmpdir,
-				  const QString & datadir,
-				  const QString & default_save_dir);
+				  const TQByteArray & data,
+				  const TQString & tmpdir,
+				  const TQString & datadir,
+				  const TQString & default_save_dir);
 
 		/**
 		 * Change to a new data dir. If this fails
@@ -130,7 +131,7 @@ namespace bt
 		 * @param new_dir The new directory
 		 * @return true upon succes
 		 */
-		bool changeDataDir(const QString & new_dir);
+		bool changeDataDir(const TQString & new_dir);
 		
 		
 		/**
@@ -139,7 +140,7 @@ namespace bt
 		 * @param moveFiles Wheather to actually move the files or just change the directory without moving them.
 		 * @return true upon success.
 		 */
-		bool changeOutputDir(const QString& new_dir, bool moveFiles = true);
+		bool changeOutputDir(const TQString& new_dir, bool moveFiles = true);
 
 		/**
 		 * Roll back the previous changeDataDir call.
@@ -154,10 +155,10 @@ namespace bt
 		const kt::TrackersList* getTrackersList() const;
 	
 		/// Get the data directory of this torrent
-		QString getDataDir() const {return outputdir;}
+		TQString getDataDir() const {return outputdir;}
 
 		/// Get the torX dir.
-		QString getTorDir() const {return datadir;}
+		TQString getTorDir() const {return datadir;}
 
 		/// Set the monitor
 		void setMonitor(kt::MonitorInterface* tmo);
@@ -189,7 +190,7 @@ namespace bt
 		Uint32 getTimeToNextTrackerUpdate() const;
 
 		/// Get a short error message
-		QString getShortErrorMessage() const {return error_msg;}
+		TQString getShortErrorMessage() const {return error_msg;}
 		
 		virtual Uint32 getNumFiles() const;
 		virtual kt::TorrentFileInterface & getTorrentFile(Uint32 index);
@@ -213,7 +214,7 @@ namespace bt
 		void setPreallocateDiskSpace(bool pa) {prealloc = pa;}
 		
 		/// Make a string out of the status message
-		virtual QString statusToString() const;
+		virtual TQString statusToString() const;
 		
 		/// Checks if tracker announce is allowed (minimum interval 60 seconds)
 		bool announceAllowed();
@@ -227,7 +228,7 @@ namespace bt
 		 * Test all files and see if they are not missing.
 		 * If so put them in a list
 		 */
-		bool hasMissingFiles(QStringList & sl);
+		bool hasMissingFiles(TQStringList & sl);
 		
 		
 		virtual Uint32 getNumDHTNodes() const;
@@ -296,38 +297,38 @@ namespace bt
 		 * The tracker status has changed.
 		 * @param ns New status
 		 */
-		void trackerStatusChanged(const QString & ns);
+		void trackerStatusChanged(const TQString & ns);
 		
 	private slots:
 		void onNewPeer(Peer* p);
 		void onPeerRemoved(Peer* p);
 		void doChoking();
-		void onIOError(const QString & msg);
-		void onPortPacket(const QString & ip,Uint16 port);
+		void onIOError(const TQString & msg);
+		void onPortPacket(const TQString & ip,Uint16 port);
 		/// Update the stats of the torrent.
 		void updateStats();
 		void corrupted(Uint32 chunk);
 		void moveDataFilesJobDone(KIO::Job* job);
 		
 	private:	
-		void updateTracker(const QString & ev,bool last_succes = true);
+		void updateTracker(const TQString & ev,bool last_succes = true);
 		void updateStatusMsg();
 		void saveStats();
 		void loadStats();
 		void loadOutputDir();
 		void getSeederInfo(Uint32 & total,Uint32 & connected_to) const;
 		void getLeecherInfo(Uint32 & total,Uint32 & connected_to) const;
-		void migrateTorrent(const QString & default_save_dir);
+		void migrateTorrent(const TQString & default_save_dir);
 		void continueStart();
-		virtual void handleError(const QString & err);
+		virtual void handleError(const TQString & err);
 
-		void initInternal(QueueManager* qman,const QString & tmpdir,
-						  const QString & ddir,const QString & default_save_dir,bool first_time);
+		void initInternal(QueueManager* qman,const TQString & tmpdir,
+						  const TQString & ddir,const TQString & default_save_dir,bool first_time);
 		
 		void checkExisting(QueueManager* qman);
-		void setupDirs(const QString & tmpdir,const QString & ddir);
+		void setupDirs(const TQString & tmpdir,const TQString & ddir);
 		void setupStats();
-		void setupData(const QString & ddir);
+		void setupData(const TQString & ddir);
 		virtual void afterDataCheck();
 		virtual bool isCheckingData(bool & finished) const;
 		
@@ -346,12 +347,12 @@ namespace bt
 		Timer stats_save_timer;
 		Timer stalled_timer;
 		
-		QString datadir;
-		QString old_datadir;
-		QString outputdir;
-		QString error_msg;
+		TQString datadir;
+		TQString old_datadir;
+		TQString outputdir;
+		TQString error_msg;
 		
-		QString move_data_files_destination_path;
+		TQString move_data_files_destination_path;
 		bool restart_torrent_after_move_data_files;
 		
 		bool prealloc;
@@ -362,8 +363,8 @@ namespace bt
 		
 		struct InternalStats
 		{
-			QDateTime time_started_dl; 
-			QDateTime time_started_ul;
+			TQDateTime time_started_dl; 
+			TQDateTime time_started_ul;
 			Uint32 running_time_dl;
 			Uint32 running_time_ul;
 			Uint64 prev_bytes_dl;

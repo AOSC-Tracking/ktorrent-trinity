@@ -20,8 +20,8 @@
 #ifndef IDEALBUTTON_H
 #define IDEALBUTTON_H
 
-#include <qpushbutton.h>
-#include <qiconset.h>
+#include <tqpushbutton.h>
+#include <tqiconset.h>
 
 #include "comdefs.h"
 
@@ -34,50 +34,51 @@ class ButtonBar;
 /**
 @short A button to place onto the ButtonBar
 
-A QPushButton derivative with a size of a QToolBar. Button can be rotated
+A TQPushButton derivative with a size of a TQToolBar. Button can be rotated
 (placed onto different places in ideal mode).
 */
-class Button : public QPushButton {
+class Button : public TQPushButton {
     Q_OBJECT
+  TQ_OBJECT
 public:
-    Button(ButtonBar *parent, const QString text, const QIconSet &icon = QIconSet(),
-        const QString &description = QString::null);
+    Button(ButtonBar *tqparent, const TQString text, const TQIconSet &icon = TQIconSet(),
+        const TQString &description = TQString());
 
     /**Sets the description used as a tooltip.*/
-    void setDescription(const QString &description);
+    void setDescription(const TQString &description);
     /**Returns the description.*/
-    QString description() const;
+    TQString description() const;
 
     /**Sets the place of a button.*/
     void setPlace(Ideal::Place place);
     /**Sets the mode of a button.*/
     void setMode(Ideal::ButtonMode mode);
 
-    QSize sizeHint() const;
-    QSize sizeHint(const QString &text) const;
+    TQSize tqsizeHint() const;
+    TQSize tqsizeHint(const TQString &text) const;
 
     /**Updates size of a widget. Used after squeezing button's text.*/
     void updateSize();
 
     /**Returns the real (i.e. not squeezed) text of a button.*/
-    QString realText() const;
-    QString realTextWithoutAccel() const;
-    void setRealText(const QString &text);
+    TQString realText() const;
+    TQString realTextWithoutAccel() const;
+    void setRealText(const TQString &text);
 
 protected:
     ButtonMode mode();
 
-    virtual void drawButton(QPainter *p);
-    virtual void drawButtonLabel(QPainter *p);
+    virtual void drawButton(TQPainter *p);
+    virtual void drawButtonLabel(TQPainter *p);
 
-    virtual void contextMenuEvent(QContextMenuEvent *e);
+    virtual void contextMenuEvent(TQContextMenuEvent *e);
 
 protected slots:
     void assignAccel();
     void clearAccel();
 
 signals:
-    void contextMenu(QPopupMenu*);
+    void contextMenu(TQPopupMenu*);
 
 private:
     virtual ~Button();
@@ -91,11 +92,11 @@ private:
 
     ButtonBar *m_buttonBar;
 
-    QString m_description;
+    TQString m_description;
     Place m_place;
 
-    QString m_realText;
-    QIconSet m_realIconSet;
+    TQString m_realText;
+    TQIconSet m_realIconSet;
 
     KAction *m_assignAccelAction;
     KAction *m_clearAccelAction;

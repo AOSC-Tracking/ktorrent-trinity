@@ -30,14 +30,14 @@ using namespace bt;
 
 namespace dht
 {
-	const QString TID = "t";
-	const QString REQ = "q";
-	const QString RSP = "r";
-	const QString TYP = "y";
-	const QString ARG = "a";
-	// ERR apparently is defined as a macro on solaris in some header file, 
+	const TQString TID = "t";
+	const TQString REQ = "q";
+	const TQString RSP = "r";
+	const TQString TYP = "y";
+	const TQString ARG = "a";
+	// ERR aptqparently is defined as a macro on solaris in some header file, 
 	// which causes things not to compile on it, so we have changed it to ERR_DHT
-	const QString ERR_DHT = "e"; 
+	const TQString ERR_DHT = "e"; 
 
 	
 	MsgBase* MakeMsg(bt::BDictNode* dict);
@@ -57,13 +57,13 @@ namespace dht
 			return 0;
 			
 		Key id = Key(args->getValue("id")->data().toByteArray());
-		QByteArray mtid_d = dict->getValue(TID)->data().toByteArray();
+		TQByteArray mtid_d = dict->getValue(TID)->data().toByteArray();
 		if (mtid_d.size() == 0)
 			return 0;
 		Uint8 mtid = (Uint8)mtid_d.at(0);
 		MsgBase* msg = 0;
 		
-		QString str = vn->data().toString();
+		TQString str = vn->data().toString();
 		if (str == "ping")
 		{	
 			msg = new PingReq(id);
@@ -116,7 +116,7 @@ namespace dht
 				if (args->getValue("token"))
 				{
 					Key token = args->getValue("token")->data().toByteArray();
-					QByteArray data;
+					TQByteArray data;
 					BListNode* vals = args->getList("values");
 					DBItemList dbl;
 					if (vals)
@@ -163,7 +163,7 @@ namespace dht
 		}
 			
 		
-		QByteArray ba = dict->getValue(TID)->data().toByteArray();
+		TQByteArray ba = dict->getValue(TID)->data().toByteArray();
 		// check for empty byte arrays should prevent 144416
 		if (ba.size() == 0)
 			return 0;
@@ -188,12 +188,12 @@ namespace dht
 			return 0;
 			
 		Key id = Key(args->getValue("id")->data().toByteArray());
-		QString mt_id = dict->getValue(TID)->data().toString();
+		TQString mt_id = dict->getValue(TID)->data().toString();
 		if (mt_id.length() == 0)
 			return 0;
 		
-		Uint8 mtid = (char)mt_id.at(0).latin1();
-		QString str = vn->data().toString();
+		Uint8 mtid = (char)mt_id.tqat(0).latin1();
+		TQString str = vn->data().toString();
 		
 		return new ErrMsg(mtid,id,str);
 	}
@@ -252,7 +252,7 @@ namespace dht
 	
 	////////////////////////////////
 	
-	PingReq::PingReq(const Key & id) : MsgBase(0xFF,PING,REQ_MSG,id)
+	PingReq::PingReq(const Key & id) : MsgBase(0xFF,PING,RETQ_MSG,id)
 	{
 	}
 	
@@ -266,20 +266,20 @@ namespace dht
 	
 	void PingReq::print()
 	{
-		Out(SYS_DHT|LOG_DEBUG) << QString("REQ: %1 %2 : ping").arg(mtid).arg(id.toString()) << endl;
+		Out(SYS_DHT|LOG_DEBUG) << TQString("REQ: %1 %2 : ping").tqarg(mtid).tqarg(id.toString()) << endl;
 	}
 	
-	void PingReq::encode(QByteArray & arr)
+	void PingReq::encode(TQByteArray & arr)
 	{
 		BEncoder enc(new BEncoderBufferOutput(arr));
 		enc.beginDict();
 		{
 			enc.write(ARG); enc.beginDict();
 			{
-				enc.write("id"); enc.write(id.getData(),20);
+				enc.write(TQString("id")); enc.write(id.getData(),20);
 			}
 			enc.end();
-			enc.write(REQ); enc.write("ping");
+			enc.write(REQ); enc.write(TQString("ping"));
 			enc.write(TID); enc.write(&mtid,1);
 			enc.write(TYP); enc.write(REQ);
 		}
@@ -289,7 +289,7 @@ namespace dht
 	////////////////////////////////
 	
 	FindNodeReq::FindNodeReq(const Key & id,const Key & target)
-	: MsgBase(0xFF,FIND_NODE,REQ_MSG,id),target(target)
+	: MsgBase(0xFF,FIND_NODE,RETQ_MSG,id),target(target)
 	{}
 	
 	FindNodeReq::~FindNodeReq()
@@ -302,22 +302,22 @@ namespace dht
 	
 	void FindNodeReq::print()
 	{
-		Out(SYS_DHT|LOG_NOTICE) << QString("REQ: %1 %2 : find_node %3")
-				.arg(mtid).arg(id.toString()).arg(target.toString()) << endl;
+		Out(SYS_DHT|LOG_NOTICE) << TQString("REQ: %1 %2 : find_node %3")
+				.tqarg(mtid).tqarg(id.toString()).tqarg(target.toString()) << endl;
 	}
 	
-	void FindNodeReq::encode(QByteArray & arr)
+	void FindNodeReq::encode(TQByteArray & arr)
 	{
 		BEncoder enc(new BEncoderBufferOutput(arr));
 		enc.beginDict();
 		{
 			enc.write(ARG); enc.beginDict();
 			{
-				enc.write("id"); enc.write(id.getData(),20);
-				enc.write("target"); enc.write(target.getData(),20);
+				enc.write(TQString("id")); enc.write(id.getData(),20);
+				enc.write(TQString("target")); enc.write(target.getData(),20);
 			}
 			enc.end();
-			enc.write(REQ); enc.write("find_node");
+			enc.write(REQ); enc.write(TQString("find_node"));
 			enc.write(TID); enc.write(&mtid,1);
 			enc.write(TYP); enc.write(REQ);
 		}
@@ -328,7 +328,7 @@ namespace dht
 
 	////////////////////////////////
 	GetPeersReq::GetPeersReq(const Key & id,const Key & info_hash) 
-		: MsgBase(0xFF,GET_PEERS,REQ_MSG,id),info_hash(info_hash)
+		: MsgBase(0xFF,GET_PEERS,RETQ_MSG,id),info_hash(info_hash)
 	{}
 	
 	GetPeersReq::~GetPeersReq()
@@ -341,22 +341,22 @@ namespace dht
 	
 	void GetPeersReq::print()
 	{
-		Out(SYS_DHT|LOG_DEBUG) << QString("REQ: %1 %2 : get_peers %3")
-				.arg(mtid).arg(id.toString()).arg(info_hash.toString()) << endl;
+		Out(SYS_DHT|LOG_DEBUG) << TQString("REQ: %1 %2 : get_peers %3")
+				.tqarg(mtid).tqarg(id.toString()).tqarg(info_hash.toString()) << endl;
 	}
 	
-	void GetPeersReq::encode(QByteArray & arr)
+	void GetPeersReq::encode(TQByteArray & arr)
 	{
 		BEncoder enc(new BEncoderBufferOutput(arr));
 		enc.beginDict();
 		{
 			enc.write(ARG); enc.beginDict();
 			{
-				enc.write("id"); enc.write(id.getData(),20);
-				enc.write("info_hash"); enc.write(info_hash.getData(),20);
+				enc.write(TQString("id")); enc.write(id.getData(),20);
+				enc.write(TQString("info_hash")); enc.write(info_hash.getData(),20);
 			}
 			enc.end();
-			enc.write(REQ); enc.write("get_peers");
+			enc.write(REQ); enc.write(TQString("get_peers"));
 			enc.write(TID); enc.write(&mtid,1);
 			enc.write(TYP); enc.write(REQ);
 		}
@@ -380,25 +380,25 @@ namespace dht
 	
 	void AnnounceReq::print()
 	{
-		Out(SYS_DHT|LOG_DEBUG) << QString("REQ: %1 %2 : announce_peer %3 %4 %5")
-				.arg(mtid).arg(id.toString()).arg(info_hash.toString())
-				.arg(port).arg(token.toString()) << endl;
+		Out(SYS_DHT|LOG_DEBUG) << TQString("REQ: %1 %2 : announce_peer %3 %4 %5")
+				.tqarg(mtid).tqarg(id.toString()).tqarg(info_hash.toString())
+				.tqarg(port).tqarg(token.toString()) << endl;
 	}
 	
-	void AnnounceReq::encode(QByteArray & arr)
+	void AnnounceReq::encode(TQByteArray & arr)
 	{
 		BEncoder enc(new BEncoderBufferOutput(arr));
 		enc.beginDict();
 		{
 			enc.write(ARG); enc.beginDict();
 			{
-				enc.write("id"); enc.write(id.getData(),20);
-				enc.write("info_hash"); enc.write(info_hash.getData(),20);
-				enc.write("port"); enc.write((Uint32)port);
-				enc.write("token"); enc.write(token.getData(),20);
+				enc.write(TQString("id")); enc.write(id.getData(),20);
+				enc.write(TQString("info_hash")); enc.write(info_hash.getData(),20);
+				enc.write(TQString("port")); enc.write((Uint32)port);
+				enc.write(TQString("token")); enc.write(token.getData(),20);
 			}
 			enc.end();
-			enc.write(REQ); enc.write("announce_peer");
+			enc.write(REQ); enc.write(TQString("announce_peer"));
 			enc.write(TID); enc.write(&mtid,1);
 			enc.write(TYP); enc.write(REQ);
 		}
@@ -420,18 +420,18 @@ namespace dht
 	
 	void PingRsp::print()
 	{
-		Out(SYS_DHT|LOG_DEBUG) << QString("RSP: %1 %2 : ping")
-					.arg(mtid).arg(id.toString()) << endl;
+		Out(SYS_DHT|LOG_DEBUG) << TQString("RSP: %1 %2 : ping")
+					.tqarg(mtid).tqarg(id.toString()) << endl;
 	}
 	
-	void PingRsp::encode(QByteArray & arr)
+	void PingRsp::encode(TQByteArray & arr)
 	{
 		BEncoder enc(new BEncoderBufferOutput(arr));
 		enc.beginDict();
 		{
 			enc.write(RSP); enc.beginDict();
 			{
-				enc.write("id"); enc.write(id.getData(),20);
+				enc.write(TQString("id")); enc.write(id.getData(),20);
 			}
 			enc.end();
 			enc.write(TID); enc.write(&mtid,1);
@@ -442,7 +442,7 @@ namespace dht
 	
 	////////////////////////////////
 	
-	FindNodeRsp::FindNodeRsp(Uint8 mtid,const Key & id,const QByteArray & nodes)
+	FindNodeRsp::FindNodeRsp(Uint8 mtid,const Key & id,const TQByteArray & nodes)
 	: MsgBase(mtid,FIND_NODE,RSP_MSG,id),nodes(nodes)
 	{}
 	
@@ -455,19 +455,19 @@ namespace dht
 	
 	void FindNodeRsp::print()
 	{
-		Out(SYS_DHT|LOG_DEBUG) << QString("RSP: %1 %2 : find_node")
-				.arg(mtid).arg(id.toString()) << endl;
+		Out(SYS_DHT|LOG_DEBUG) << TQString("RSP: %1 %2 : find_node")
+				.tqarg(mtid).tqarg(id.toString()) << endl;
 	}
 	
-	void FindNodeRsp::encode(QByteArray & arr)
+	void FindNodeRsp::encode(TQByteArray & arr)
 	{
 		BEncoder enc(new BEncoderBufferOutput(arr));
 		enc.beginDict();
 		{
 			enc.write(RSP); enc.beginDict();
 			{
-				enc.write("id"); enc.write(id.getData(),20);
-				enc.write("nodes"); enc.write(nodes);
+				enc.write(TQString("id")); enc.write(id.getData(),20);
+				enc.write(TQString("nodes")); enc.write(nodes);
 			}
 			enc.end();
 			enc.write(TID); enc.write(&mtid,1);
@@ -478,7 +478,7 @@ namespace dht
 	
 	////////////////////////////////
 	
-	GetPeersRsp::GetPeersRsp(Uint8 mtid,const Key & id,const QByteArray & data,const Key & token)
+	GetPeersRsp::GetPeersRsp(Uint8 mtid,const Key & id,const TQByteArray & data,const Key & token)
 	: MsgBase(mtid,dht::GET_PEERS,dht::RSP_MSG,id),token(token),data(data)
 	{
 		this->data.detach();
@@ -497,27 +497,27 @@ namespace dht
 	}
 	void GetPeersRsp::print()
 	{
-		Out() << QString("RSP: %1 %2 : get_peers(%3)")
-				.arg(mtid).arg(id.toString()).arg(data.size() > 0 ? "nodes" : "values") << endl;
+		Out() << TQString("RSP: %1 %2 : get_peers(%3)")
+				.tqarg(mtid).tqarg(id.toString()).tqarg(data.size() > 0 ? "nodes" : "values") << endl;
 	}
 
-	void GetPeersRsp::encode(QByteArray & arr)
+	void GetPeersRsp::encode(TQByteArray & arr)
 	{
 		BEncoder enc(new BEncoderBufferOutput(arr));
 		enc.beginDict();
 		{
 			enc.write(RSP); enc.beginDict();
 			{
-				enc.write("id"); enc.write(id.getData(),20);
+				enc.write(TQString("id")); enc.write(id.getData(),20);
 				if (data.size() > 0)
 				{
-					enc.write("nodes"); enc.write(data);
-					enc.write("token"); enc.write(token.getData(),20);
+					enc.write(TQString("nodes")); enc.write(data);
+					enc.write(TQString("token")); enc.write(token.getData(),20);
 				}
 				else
 				{
-					enc.write("token"); enc.write(token.getData(),20);
-					enc.write("values"); enc.beginList();
+					enc.write(TQString("token")); enc.write(token.getData(),20);
+					enc.write(TQString("values")); enc.beginList();
 					DBItemList::iterator i = items.begin();
 					while (i != items.end())
 					{
@@ -551,18 +551,18 @@ namespace dht
 	
 	void AnnounceRsp::print()
 	{
-		Out() << QString("RSP: %1 %2 : announce_peer")
-				.arg(mtid).arg(id.toString()) << endl;
+		Out() << TQString("RSP: %1 %2 : announce_peer")
+				.tqarg(mtid).tqarg(id.toString()) << endl;
 	}
 	
-	void AnnounceRsp::encode(QByteArray & arr)
+	void AnnounceRsp::encode(TQByteArray & arr)
 	{
 		BEncoder enc(new BEncoderBufferOutput(arr));
 		enc.beginDict();
 		{
 			enc.write(RSP); enc.beginDict();
 			{
-				enc.write("id"); enc.write(id.getData(),20);
+				enc.write(TQString("id")); enc.write(id.getData(),20);
 			}
 			enc.end();
 			enc.write(TID); enc.write(&mtid,1);
@@ -574,7 +574,7 @@ namespace dht
 	
 	////////////////////////////////
 	
-	ErrMsg::ErrMsg(Uint8 mtid,const Key & id,const QString & msg)
+	ErrMsg::ErrMsg(Uint8 mtid,const Key & id,const TQString & msg)
 	: MsgBase(mtid,NONE,ERR_MSG,id),msg(msg)
 	{}
 	
@@ -591,6 +591,6 @@ namespace dht
 		Out(SYS_DHT|LOG_NOTICE) << "ERR: " << mtid << " " << msg << endl;
 	}
 	
-	void ErrMsg::encode(QByteArray & )
+	void ErrMsg::encode(TQByteArray & )
 	{}
 }

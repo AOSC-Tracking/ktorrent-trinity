@@ -20,7 +20,7 @@
 #ifndef KTSCHEDULERPREFPAGEWIDGET_H
 #define KTSCHEDULERPREFPAGEWIDGET_H
 
-#include <qwidget.h>
+#include <tqwidget.h>
 #include "schedulerpage.h"
 
 namespace kt
@@ -32,8 +32,9 @@ namespace kt
 	class SchedulerPrefPageWidget : public SchedulerPage
 	{
 			Q_OBJECT
+  TQ_OBJECT
 		public:
-			SchedulerPrefPageWidget(QWidget* parent = 0, const char* name = 0, WFlags fl = 0 );
+			SchedulerPrefPageWidget(TQWidget* tqparent = 0, const char* name = 0, WFlags fl = 0 );
 
 			~SchedulerPrefPageWidget();
 

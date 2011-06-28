@@ -28,76 +28,76 @@
 		
 using namespace kt;
 
-KTorrentViewMenu::KTorrentViewMenu (KTorrentView *parent, const char *name )
-		: KPopupMenu ( parent, name ),view(parent)
+KTorrentViewMenu::KTorrentViewMenu (KTorrentView *tqparent, const char *name )
+		: KPopupMenu ( tqparent, name ),view(tqparent)
 {
 	KIconLoader* iload = KGlobal::iconLoader();
 	
 	stop_id = insertItem(
 			iload->loadIconSet("ktstop",KIcon::Small),i18n("to stop", "Stop"),
-			parent,SLOT(stopDownloads()));
+			tqparent,TQT_SLOT(stopDownloads()));
 
 	start_id = insertItem(
 			iload->loadIconSet("ktstart",KIcon::Small),i18n("to start", "Start"),
-			parent,SLOT(startDownloads()));
+			tqparent,TQT_SLOT(startDownloads()));
 
 	remove_id = insertItem(
 			iload->loadIconSet("ktremove",KIcon::Small),i18n("Remove Torrent"),
-			parent,SLOT(removeDownloads()));
+			tqparent,TQT_SLOT(removeDownloads()));
 	
 	remove_all_id = insertItem(
 			iload->loadIconSet("ktremove",KIcon::Small),i18n("Remove Torrent and Data"),
-			parent,SLOT(removeDownloadsAndData()));
+			tqparent,TQT_SLOT(removeDownloadsAndData()));
 	
 	queue_id = insertItem(
 			iload->loadIconSet("player_playlist",KIcon::Small),i18n("Enqueue/Dequeue"),
-			parent,SLOT(queueSlot()));
+			tqparent,TQT_SLOT(queueSlot()));
 	
 	insertSeparator();
 	
 	add_peer_id = insertItem(
 			iload->loadIconSet("add", KIcon::Small), i18n("Add Peers"),
-			parent, SLOT(showAddPeersWidget())); 
+			tqparent, TQT_SLOT(showAddPeersWidget())); 
 	
 	peer_sources_menu = new KPopupMenu(this);
 	peer_sources_id = insertItem(i18n("Additional Peer Sources"), peer_sources_menu);
 	peer_sources_menu->insertTitle(i18n("Torrent Peer Sources:"));
 	peer_sources_menu->setCheckable(true);
-	dht_id = peer_sources_menu->insertItem(i18n("DHT"), parent, SLOT(dhtSlot()));
-	ut_pex_id = peer_sources_menu->insertItem(i18n("Peer Exchange"), parent, SLOT(utPexSlot()));
+	dht_id = peer_sources_menu->insertItem(i18n("DHT"), tqparent, TQT_SLOT(dhtSlot()));
+	ut_pex_id = peer_sources_menu->insertItem(i18n("Peer Exchange"), tqparent, TQT_SLOT(utPexSlot()));
 	
 	insertSeparator();
 	
 	announce_id = insertItem(
 			iload->loadIconSet("apply",KIcon::Small),i18n("Manual Announce"),
-			parent,SLOT(manualAnnounce())); 
+			tqparent,TQT_SLOT(manualAnnounce())); 
 	
 	preview_id = insertItem(
 			iload->loadIconSet("frame_image",KIcon::Small),i18n("Preview"), 
-			parent, SLOT(previewFiles()));
+			tqparent, TQT_SLOT(previewFiles()));
 	
 	insertSeparator();
 	dirs_sub_menu = new KPopupMenu(this);
 	dirs_id = insertItem(i18n("Open Directory"), dirs_sub_menu);
 	outputdir_id = dirs_sub_menu->insertItem(iload->loadIconSet("folder",KIcon::Small), i18n("Data Directory"), 
-											 parent, SLOT(openOutputDirectory()));
+											 tqparent, TQT_SLOT(openOutputDirectory()));
 	torxdir_id = dirs_sub_menu->insertItem(iload->loadIconSet("folder",KIcon::Small), i18n("Temporary Directory"),
-										   parent, SLOT(openTorXDirectory()));
+										   tqparent, TQT_SLOT(openTorXDirectory()));
 	
-	downloaddir_id = insertItem(i18n("Set Download Location"), parent, SLOT(setDownloadLocationSlot()));
+	downloaddir_id = insertItem(i18n("Set Download Location"), tqparent, TQT_SLOT(setDownloadLocationSlot()));
 	
 	insertSeparator();
-	remove_from_group_id =  insertItem(i18n("Remove From Group"),parent, SLOT(removeFromGroup()));
+	remove_from_group_id =  insertItem(i18n("Remove From Group"),tqparent, TQT_SLOT(removeFromGroup()));
 	groups_sub_menu = new KPopupMenu(this);
 	
 	add_to_group_id = insertItem(i18n("Add to Group"),groups_sub_menu);
 	
 	insertSeparator();
-	scan_id = insertItem(i18n("Check Data Integrity"),parent, SLOT(checkDataIntegrity()));	
+	scan_id = insertItem(i18n("Check Data Integrity"),tqparent, TQT_SLOT(checkDataIntegrity()));	
 	
-	connect(groups_sub_menu,SIGNAL(activated(int)),this,SLOT(gsmItemActived(int)));
+	connect(groups_sub_menu,TQT_SIGNAL(activated(int)),this,TQT_SLOT(gsmItemActived(int)));
 	
-	traffic_lim_id = insertItem(i18n("Speed Limits"),parent,SLOT(speedLimits()));
+	traffic_lim_id = insertItem(i18n("Speed Limits"),tqparent,TQT_SLOT(speedLimits()));
 }
 
 
@@ -109,7 +109,7 @@ void KTorrentViewMenu::gsmItemActived(int id)
 	groupItemActivated(groups_sub_menu->text(id).remove('&'));
 }
 
-void KTorrentViewMenu::show(const QPoint & p)
+void KTorrentViewMenu::show(const TQPoint & p)
 {
 	bool en_start = false;
 	bool en_stop = false;
@@ -121,8 +121,8 @@ void KTorrentViewMenu::show(const QPoint & p)
 	bool en_peer_sources = false;
 	bool dummy = false;
 	
-	QPtrList<QListViewItem> sel = view->selectedItems();
-	for (QPtrList<QListViewItem>::iterator itr = sel.begin(); itr != sel.end();itr++)
+	TQPtrList<TQListViewItem> sel = view->selectedItems();
+	for (TQPtrList<TQListViewItem>::iterator itr = sel.begin(); itr != sel.end();itr++)
 	{
 		KTorrentViewItem* kvi = (KTorrentViewItem*)*itr;
 		TorrentInterface* tc = kvi->getTC();

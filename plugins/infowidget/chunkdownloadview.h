@@ -21,7 +21,7 @@
 #define BTCHUNKDOWNLOADVIEW_H
 
 #include <klistview.h>
-#include <qmap.h>
+#include <tqmap.h>
 #include "chunkdownloadviewbase.h"
 
 namespace kt
@@ -36,7 +36,7 @@ namespace kt
 		ChunkDownloadViewItem(KListView* cdv,kt::ChunkDownloadInterface* cd);
 	
 		void update();
-		int compare(QListViewItem * i,int col,bool) const;
+		int compare(TQListViewItem * i,int col,bool) const;
 	};
 	
 	
@@ -46,15 +46,16 @@ namespace kt
 	class ChunkDownloadView : public ChunkDownloadViewBase
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	
-		QMap<kt::ChunkDownloadInterface*,ChunkDownloadViewItem*> items;
+		TQMap<kt::ChunkDownloadInterface*,ChunkDownloadViewItem*> items;
 		kt::TorrentInterface* curr_tc;
 	public:
-		ChunkDownloadView(QWidget *parent = 0, const char *name = 0);
+		ChunkDownloadView(TQWidget *tqparent = 0, const char *name = 0);
 		virtual ~ChunkDownloadView();
 		
-		void saveLayout(KConfig* cfg,const QString & group_name);
-		void restoreLayout(KConfig* cfg,const QString & group_name);
+		void saveLayout(KConfig* cfg,const TQString & group_name);
+		void restoreLayout(KConfig* cfg,const TQString & group_name);
 		void clear();
 		void update();
 		void changeTC(kt::TorrentInterface* tc);

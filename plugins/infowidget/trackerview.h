@@ -35,8 +35,9 @@ namespace kt
 	class TrackerView: public TrackerViewBase
 	{
 			Q_OBJECT
+  TQ_OBJECT
 		public:
-			TrackerView(QWidget *parent = 0, const char *name = 0);
+			TrackerView(TQWidget *tqparent = 0, const char *name = 0);
 			virtual ~TrackerView();
 			
 			void update();
@@ -48,7 +49,7 @@ namespace kt
 			virtual void btnChange_clicked();
 			virtual void btnRemove_clicked();
 			virtual void btnAdd_clicked();
-    		virtual void listTrackers_currentChanged(QListViewItem*);
+    		virtual void listTrackers_currentChanged(TQListViewItem*);
 			void onLoadingFinished(const KURL & ,bool,bool);
 			
 		private:

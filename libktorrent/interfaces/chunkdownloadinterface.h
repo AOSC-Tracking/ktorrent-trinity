@@ -20,7 +20,7 @@
 #ifndef KTCHUNKDOWNLOADINTERFACE_H
 #define KTCHUNKDOWNLOADINTERFACE_H
 
-#include <qstring.h>
+#include <tqstring.h>
 #include <util/constants.h>
 
 namespace kt
@@ -41,7 +41,7 @@ namespace kt
 		struct Stats
 		{
 			/// The PeerID of the current downloader
-			QString current_peer_id;
+			TQString current_peer_id;
 			/// The current download speed
 			bt::Uint32 download_speed;
 			/// The index of the chunk

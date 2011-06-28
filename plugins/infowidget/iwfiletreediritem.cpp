@@ -33,13 +33,13 @@ using namespace kt;
 namespace kt
 {
 	
-	IWFileTreeDirItem::IWFileTreeDirItem(KListView* klv,const QString & name)
+	IWFileTreeDirItem::IWFileTreeDirItem(KListView* klv,const TQString & name)
 		: kt::FileTreeDirItem(klv,name)
 	{
 	}
 	
-	IWFileTreeDirItem::IWFileTreeDirItem(IWFileTreeDirItem* parent,const QString & name)
-		: kt::FileTreeDirItem(parent,name)
+	IWFileTreeDirItem::IWFileTreeDirItem(IWFileTreeDirItem* tqparent,const TQString & name)
+		: kt::FileTreeDirItem(tqparent,name)
 	{
 	}
 	
@@ -51,8 +51,8 @@ namespace kt
 	void IWFileTreeDirItem::updatePercentageInformation()
 	{
 		// first set all the child items
-		bt::PtrMap<QString,FileTreeItem>::iterator i = children.begin();
-		while (i != children.end())
+		bt::PtrMap<TQString,FileTreeItem>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			IWFileTreeItem* item = (IWFileTreeItem*)i->second;
 			item->updatePercentageInformation();
@@ -60,7 +60,7 @@ namespace kt
 		}
 	
 		// then recursivly move on to subdirs
-		bt::PtrMap<QString,FileTreeDirItem>::iterator j = subdirs.begin();
+		bt::PtrMap<TQString,FileTreeDirItem>::iterator j = subdirs.begin();
 		while (j != subdirs.end())
 		{
 			((IWFileTreeDirItem*)j->second)->updatePercentageInformation();
@@ -71,8 +71,8 @@ namespace kt
 	void IWFileTreeDirItem::updatePreviewInformation(kt::TorrentInterface* tc)
 	{
 		// first set all the child items
-		bt::PtrMap<QString,FileTreeItem>::iterator i = children.begin();
-		while (i != children.end())
+		bt::PtrMap<TQString,FileTreeItem>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			IWFileTreeItem* item = (IWFileTreeItem*)i->second;
 			item->updatePreviewInformation(tc);
@@ -80,7 +80,7 @@ namespace kt
 		}
 	
 		// then recursivly move on to subdirs
-		bt::PtrMap<QString,FileTreeDirItem>::iterator j = subdirs.begin();
+		bt::PtrMap<TQString,FileTreeDirItem>::iterator j = subdirs.begin();
 		while (j != subdirs.end())
 		{
 			((IWFileTreeDirItem*)j->second)->updatePreviewInformation(tc);
@@ -91,11 +91,11 @@ namespace kt
 	Priority IWFileTreeDirItem::updatePriorityInformation(kt::TorrentInterface* tc)
 	{
                 // first set all the child items
-		bt::PtrMap<QString,FileTreeItem>::iterator i = children.begin();
+		bt::PtrMap<TQString,FileTreeItem>::iterator i = tqchildren.begin();
 		bool setpriority = false;
 		bool oneexcluded = false;
 		Priority priority = PREVIEW_PRIORITY;
-		if(i != children.end())
+		if(i != tqchildren.end())
 		{
 			IWFileTreeItem* item = (IWFileTreeItem*)i->second;
 			item->updatePriorityInformation(tc);
@@ -105,7 +105,7 @@ namespace kt
 				oneexcluded = true;
 			setpriority = true;
 		}
-		while (i != children.end())
+		while (i != tqchildren.end())
 		{
 			IWFileTreeItem* item = (IWFileTreeItem*)i->second;
 			item->updatePriorityInformation(tc);
@@ -117,8 +117,8 @@ namespace kt
 		}
 
                 // then recursivly move on to subdirs
-		bt::PtrMap<QString,FileTreeDirItem>::iterator j = subdirs.begin();
-		if(j != subdirs.end() && children.begin() == children.end())
+		bt::PtrMap<TQString,FileTreeDirItem>::iterator j = subdirs.begin();
+		if(j != subdirs.end() && tqchildren.begin() == tqchildren.end())
 		{
 			Priority priority =
 					((IWFileTreeDirItem*)j->second)->updatePriorityInformation(tc);
@@ -176,12 +176,12 @@ namespace kt
 		return PREVIEW_PRIORITY;
 	}
 
-	FileTreeItem* IWFileTreeDirItem::newFileTreeItem(const QString & name,TorrentFileInterface & file)
+	FileTreeItem* IWFileTreeDirItem::newFileTreeItem(const TQString & name,TorrentFileInterface & file)
 	{
 		return new IWFileTreeItem(this,name,file);
 	}
 	
-	FileTreeDirItem* IWFileTreeDirItem::newFileTreeDirItem(const QString & subdir)
+	FileTreeDirItem* IWFileTreeDirItem::newFileTreeDirItem(const TQString & subdir)
 	{
 		return new IWFileTreeDirItem(this,subdir);
 	}
@@ -189,8 +189,8 @@ namespace kt
 	void IWFileTreeDirItem::updateDNDInformation()
 	{
 			// first set all the child items
-		bt::PtrMap<QString,FileTreeItem>::iterator i = children.begin();
-		while (i != children.end())
+		bt::PtrMap<TQString,FileTreeItem>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			IWFileTreeItem* item = (IWFileTreeItem*)i->second;
 			item->updateDNDInformation();
@@ -198,7 +198,7 @@ namespace kt
 		}
 	
 		// then recursivly move on to subdirs
-		bt::PtrMap<QString,FileTreeDirItem>::iterator j = subdirs.begin();
+		bt::PtrMap<TQString,FileTreeDirItem>::iterator j = subdirs.begin();
 		while (j != subdirs.end())
 		{
 			((IWFileTreeDirItem*)j->second)->updateDNDInformation();
@@ -209,8 +209,8 @@ namespace kt
 	bt::ConfirmationResult IWFileTreeDirItem::confirmationDialog()
 	{
 		return bt::KEEP_DATA;
-/*		QString msg = i18n("Do you want to keep the existing data for seeding ?");
-		int ret = KMessageBox::warningYesNoCancel(0,msg,QString::null,
+/*		TQString msg = i18n("Do you want to keep the existing data for seeding ?");
+		int ret = KMessageBox::warningYesNoCancel(0,msg,TQString(),
 				KGuiItem(i18n("Keep the data")),
 				KGuiItem(i18n("Delete the data")));
 		if (ret == KMessageBox::Yes)

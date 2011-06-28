@@ -21,8 +21,8 @@
 #define BTPEERMANAGER_H
 
 #include <map>
-#include <qobject.h>
-#include <qptrlist.h>
+#include <tqobject.h>
+#include <tqptrlist.h>
 #include <util/ptrmap.h>
 #include "globals.h"
 #include "peerid.h"
@@ -53,9 +53,10 @@ namespace bt
 	 * This class manages all Peer objects.
 	 * It can also open connections to other peers.
 	 */
-	class PeerManager : public QObject
+	class PeerManager : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		/**
 		 * Constructor.
@@ -180,14 +181,14 @@ namespace bt
 		/**
 		 * Save the IP's and port numbers of all peers.
 		 */
-		void savePeerList(const QString & file);
+		void savePeerList(const TQString & file);
 		
 		/**
 		 * Load the peer list again and add them to the potential peers
 		 */
-		void loadPeerList(const QString & file);
+		void loadPeerList(const TQString & file);
 		
-		typedef QPtrList<Peer>::const_iterator CItr;
+		typedef TQPtrList<Peer>::const_iterator CItr;
 		
 		CItr beginPeerList() const {return peer_list.begin();}
 		CItr endPeerList() const {return peer_list.end();}
@@ -212,13 +213,13 @@ namespace bt
 		void updateAvailableChunks();
 		bool killBadPeer();
 		void createPeer(mse::StreamSocket* sock,const PeerID & peer_id,Uint32 support,bool local);
-		bool connectedTo(const QString & ip,Uint16 port) const;
+		bool connectedTo(const TQString & ip,Uint16 port) const;
 
 	private slots:
 		void onHave(Peer* p,Uint32 index);
 		void onBitSetRecieved(const BitSet & bs);
 		void onRerunChoker();
-		void pex(const QByteArray & arr);
+		void pex(const TQByteArray & arr);
 		
 		
 	signals:
@@ -228,8 +229,8 @@ namespace bt
 		
 	private:
 		PtrMap<Uint32,Peer> peer_map;
-		QPtrList<Peer> peer_list;
-		QPtrList<Peer> killed;
+		TQPtrList<Peer> peer_list;
+		TQPtrList<Peer> killed;
 		Torrent & tor;
 		bool started;
 		BitSet available_chunks;
@@ -241,9 +242,9 @@ namespace bt
 		static Uint32 max_total_connections;
 		static Uint32 total_connections;
 		
-		std::multimap<QString,kt::PotentialPeer> potential_peers;
+		std::multimap<TQString,kt::PotentialPeer> potential_peers;
 		
-		typedef std::multimap<QString,kt::PotentialPeer>::iterator PPItr;
+		typedef std::multimap<TQString,kt::PotentialPeer>::iterator PPItr;
 	};
 
 }

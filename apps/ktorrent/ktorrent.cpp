@@ -21,12 +21,12 @@
 
 
 
-#include <qdragobject.h>
-#include <qsplitter.h>
-#include <qvbox.h>
-#include <qlabel.h>
-#include <qtooltip.h>
-#include <qtoolbutton.h>
+#include <tqdragobject.h>
+#include <tqsplitter.h>
+#include <tqvbox.h>
+#include <tqlabel.h>
+#include <tqtooltip.h>
+#include <tqtoolbutton.h>
 
 #include <kglobal.h>
 #include <klocale.h>
@@ -101,7 +101,7 @@
 
 namespace kt
 {
-	QString DataDir();
+	TQString DataDir();
 }
 
 #include <util/profiler.h>
@@ -117,11 +117,11 @@ KTorrent::KTorrent()
 {
 	setHidden(true);
 	//setToolviewStyle(KMdi::TextAndIcon);
-	connect(this,SIGNAL(widgetChanged(QWidget*)),this,SLOT(currentTabChanged(QWidget*)));
+	connect(this,TQT_SIGNAL(widgetChanged(TQWidget*)),this,TQT_SLOT(currentTabChanged(TQWidget*)));
 	
-	m_view_man = new ViewManager(this);
+	m_view_man = new ViewManager(TQT_TQOBJECT(this));
 	m_group_view = new kt::GroupView(m_view_man,actionCollection());
-	connect(m_group_view,SIGNAL(openNewTab(kt::Group*)),this,SLOT(openView(kt::Group*)));
+	connect(m_group_view,TQT_SIGNAL(openNewTab(kt::Group*)),this,TQT_SLOT(openView(kt::Group*)));
 	
 
 	m_pref = new KTorrentPreferences(*this);
@@ -134,37 +134,37 @@ KTorrent::KTorrent()
 	m_group_view->loadGroups();
 	m_view_man->restoreViewState(KGlobal::config(),this);
 	
-	QToolButton* tb = new QToolButton(m_activeTabWidget);
+	TQToolButton* tb = new TQToolButton(m_activeTabWidget);
 	tb->setIconSet(SmallIcon("tab_new"));
 	tb->adjustSize();
-	connect(tb,SIGNAL(clicked()),this,SLOT(openDefaultView()));
+	connect(tb,TQT_SIGNAL(clicked()),this,TQT_SLOT(openDefaultView()));
 	m_activeTabWidget->setCornerWidget(tb, TopLeft);
 	
-	connect(m_group_view,SIGNAL(currentGroupChanged( kt::Group* )),
-			this,SLOT(groupChanged(kt::Group*)));
+	connect(m_group_view,TQT_SIGNAL(currentGroupChanged( kt::Group* )),
+			this,TQT_SLOT(groupChanged(kt::Group*)));
 	
-	connect(m_group_view,SIGNAL(groupRenamed(kt::Group*)),
-			this,SLOT(groupRenamed(kt::Group*)));
+	connect(m_group_view,TQT_SIGNAL(groupRenamed(kt::Group*)),
+			this,TQT_SLOT(groupRenamed(kt::Group*)));
 	
-	connect(m_group_view,SIGNAL(groupRemoved(kt::Group*)),
-			this,SLOT(groupRemoved(kt::Group*)));
+	connect(m_group_view,TQT_SIGNAL(groupRemoved(kt::Group*)),
+			this,TQT_SLOT(groupRemoved(kt::Group*)));
 	
-	connect(m_core,SIGNAL(torrentAdded(kt::TorrentInterface* )),
-			m_view_man,SLOT(addTorrent(kt::TorrentInterface* )));
+	connect(m_core,TQT_SIGNAL(torrentAdded(kt::TorrentInterface* )),
+			m_view_man,TQT_SLOT(addTorrent(kt::TorrentInterface* )));
 
-	connect(m_core,SIGNAL(torrentRemoved(kt::TorrentInterface* )),
-			m_view_man,SLOT(removeTorrent(kt::TorrentInterface* )));
+	connect(m_core,TQT_SIGNAL(torrentRemoved(kt::TorrentInterface* )),
+			m_view_man,TQT_SLOT(removeTorrent(kt::TorrentInterface* )));
 
-	connect(m_core, SIGNAL(torrentRemoved( kt::TorrentInterface* )),
-			m_group_view, SLOT(onTorrentRemoved( kt::TorrentInterface* )));
+	connect(m_core, TQT_SIGNAL(torrentRemoved( kt::TorrentInterface* )),
+			m_group_view, TQT_SLOT(onTorrentRemoved( kt::TorrentInterface* )));
 	
 	m_statusInfo = new KSqueezedTextLabel(this);
-	m_statusSpeed = new QLabel(this);
-	m_statusTransfer = new QLabel(this);
-	m_statusDHT = new QLabel(this);
-	m_statusFirewall = new QLabel(this);
+	m_statusSpeed = new TQLabel(this);
+	m_statusTransfer = new TQLabel(this);
+	m_statusDHT = new TQLabel(this);
+	m_statusFirewall = new TQLabel(this);
 	m_statusFirewall->setPixmap(SmallIcon("messagebox_warning"));
-	QToolTip::add(m_statusFirewall,i18n("No incoming connections (possibly firewalled)"));
+	TQToolTip::add(m_statusFirewall,i18n("No incoming connections (possibly firewalled)"));
 
 	statusBar()->addWidget(m_statusFirewall);
 	statusBar()->addWidget(m_statusInfo,1);
@@ -181,9 +181,9 @@ KTorrent::KTorrent()
 
 	setStandardToolBarMenuEnabled(true);
 
-	QToolTip::add(m_statusInfo, i18n("Info"));
-	QToolTip::add(m_statusTransfer, i18n("Data transferred during the current session"));
-	QToolTip::add(m_statusSpeed, i18n("Current speed of all torrents combined"));
+	TQToolTip::add(m_statusInfo, i18n("Info"));
+	TQToolTip::add(m_statusTransfer, i18n("Data transferred during the current session"));
+	TQToolTip::add(m_statusSpeed, i18n("Current speed of all torrents combined"));
 	
 	//first apply settings..
 	applySettings(false);
@@ -191,7 +191,7 @@ KTorrent::KTorrent()
 	m_core->loadTorrents();
 	m_core->loadPlugins();
 
-	connect(&m_gui_update_timer, SIGNAL(timeout()), this, SLOT(updatedStats()));
+	connect(&m_gui_update_timer, TQT_SIGNAL(timeout()), TQT_TQOBJECT(this), TQT_SLOT(updatedStats()));
 	//Apply GUI update interval
 	int val = 500;
 	switch(Settings::guiUpdateInterval())
@@ -214,8 +214,8 @@ KTorrent::KTorrent()
 	
 	addToolWidget(m_group_view,"player_playlist",i18n("Groups"),DOCK_LEFT);
 	
-	setAutoSaveSettings("WindowStatus",true);
-	KGlobal::config()->setGroup("WindowStatus");
+	setAutoSaveSettings("WindowtqStatus",true);
+	KGlobal::config()->setGroup("WindowtqStatus");
 	bool hidden_on_exit = KGlobal::config()->readBoolEntry("hidden_on_exit",false);
 	if (Settings::showSystemTrayIcon())
 	{
@@ -243,7 +243,7 @@ KTorrent::KTorrent()
 	m_statusbarAction->setChecked(!statusbar_hidden);
 
 	MaximizeLimits();
-	connect(&m_status_msg_expire,SIGNAL(timeout()),this,SLOT(statusBarMsgExpired()));
+	connect(&m_status_msg_expire,TQT_SIGNAL(timeout()),this,TQT_SLOT(statusBarMsgExpired()));
 	
 	m_view_man->updateActions();
 }
@@ -270,36 +270,36 @@ void KTorrent::openView(kt::Group* g)
 	
 	addTabPage(v,g->groupIcon(),v->caption(),m_view_man);
 	
-	connect(v,SIGNAL(currentChanged(kt::TorrentInterface* )),
-			this,SLOT(currentTorrentChanged(kt::TorrentInterface* )));
+	connect(v,TQT_SIGNAL(currentChanged(kt::TorrentInterface* )),
+			this,TQT_SLOT(currentTorrentChanged(kt::TorrentInterface* )));
 
-	connect(v,SIGNAL(wantToRemove(kt::TorrentInterface*,bool )),
-			m_core,SLOT(remove(kt::TorrentInterface*,bool )));
+	connect(v,TQT_SIGNAL(wantToRemove(kt::TorrentInterface*,bool )),
+			m_core,TQT_SLOT(remove(kt::TorrentInterface*,bool )));
 
-	connect(v->listView(),SIGNAL(dropped(QDropEvent*,QListViewItem*)),
-			this,SLOT(urlDropped(QDropEvent*,QListViewItem*)));
+	connect(v->listView(),TQT_SIGNAL(dropped(TQDropEvent*,TQListViewItem*)),
+			this,TQT_SLOT(urlDropped(TQDropEvent*,TQListViewItem*)));
 	
-	connect(v,SIGNAL(wantToStart( kt::TorrentInterface* )),
-			m_core,SLOT(start( kt::TorrentInterface* )));
+	connect(v,TQT_SIGNAL(wantToStart( kt::TorrentInterface* )),
+			m_core,TQT_SLOT(start( kt::TorrentInterface* )));
 	
-	connect(v,SIGNAL(wantToStop( kt::TorrentInterface*, bool )),
-			m_core,SLOT(stop( kt::TorrentInterface*, bool )));
+	connect(v,TQT_SIGNAL(wantToStop( kt::TorrentInterface*, bool )),
+			m_core,TQT_SLOT(stop( kt::TorrentInterface*, bool )));
 	
-	connect(v,SIGNAL(needsDataCheck( kt::TorrentInterface* )),
-			m_core,SLOT(doDataCheck( kt::TorrentInterface* )));
+	connect(v,TQT_SIGNAL(needsDataCheck( kt::TorrentInterface* )),
+			m_core,TQT_SLOT(doDataCheck( kt::TorrentInterface* )));
 	
-	connect(v,SIGNAL(updateActions( int )),
-			this,SLOT(onUpdateActions( int )));
+	connect(v,TQT_SIGNAL(updateActions( int )),
+			this,TQT_SLOT(onUpdateActions( int )));
 	
 	//connect Core queue() with queue() from KTView.
-	connect(v, SIGNAL(queue( kt::TorrentInterface* )), 
-			m_core, SLOT(queue( kt::TorrentInterface* )));
+	connect(v, TQT_SIGNAL(queue( kt::TorrentInterface* )), 
+			m_core, TQT_SLOT(queue( kt::TorrentInterface* )));
 	
-	connect(v,SIGNAL(updateGroupsSubMenu(KPopupMenu*)),
-			m_group_view,SLOT(updateGroupsSubMenu(KPopupMenu*)));
+	connect(v,TQT_SIGNAL(updateGroupsSubMenu(KPopupMenu*)),
+			m_group_view,TQT_SLOT(updateGroupsSubMenu(KPopupMenu*)));
 	
-	connect(v,SIGNAL(groupsSubMenuItemActivated(KTorrentView*, const QString&)),
-			m_group_view,SLOT(onGroupsSubMenuItemActivated(KTorrentView*, const QString&)));
+	connect(v,TQT_SIGNAL(groupsSubMenuItemActivated(KTorrentView*, const TQString&)),
+			m_group_view,TQT_SLOT(onGroupsSubMenuItemActivated(KTorrentView*, const TQString&)));
 	
 	if (m_core)
 	{
@@ -313,7 +313,7 @@ void KTorrent::openView(kt::Group* g)
 	}
 }
 
-void KTorrent::openView(const QString & group_name)
+void KTorrent::openView(const TQString & group_name)
 {
 	const kt::Group* g = m_group_view->findGroup(group_name);
 	if (g)
@@ -342,17 +342,17 @@ void KTorrent::groupRemoved(kt::Group* g)
 	m_view_man->groupRemoved(g,m_activeTabWidget,this,allg);
 }
 
-void KTorrent::addTabPage(QWidget* page,const QIconSet & icon,
-						  const QString & caption,kt::CloseTabListener* ctl)
+void KTorrent::addTabPage(TQWidget* page,const TQIconSet & icon,
+						  const TQString & caption,kt::CloseTabListener* ctl)
 {
 	addWidget(page,caption);
-	page->setIcon(icon.pixmap(QIconSet::Small,QIconSet::Active));
+	page->setIcon(icon.pixmap(TQIconSet::Small,TQIconSet::Active));
 	m_tab_map[page] = ctl;
 	currentTabChanged(page);
 }
 
-void KTorrent::addTabPage(QWidget* page,const QPixmap & icon,
-						  const QString & caption,kt::CloseTabListener* ctl)
+void KTorrent::addTabPage(TQWidget* page,const TQPixmap & icon,
+						  const TQString & caption,kt::CloseTabListener* ctl)
 {
 	addWidget(page,caption);
 	page->setIcon(icon);
@@ -361,13 +361,13 @@ void KTorrent::addTabPage(QWidget* page,const QPixmap & icon,
 }
 
 
-void KTorrent::removeTabPage(QWidget* page)
+void KTorrent::removeTabPage(TQWidget* page)
 {
-	if (!m_tab_map.contains(page))
+	if (!m_tab_map.tqcontains(page))
 		return;
 	
 	m_tab_map.erase(page);
-	page->reparent(0,QPoint());
+	page->reparent(0,TQPoint());
 	removeWidget(page);
 }
 
@@ -417,7 +417,7 @@ void KTorrent::applySettings(bool change_port)
 	if (Settings::useExternalIP())
 		Tracker::setCustomIP(Settings::externalIP());
 	else
-		Tracker::setCustomIP(QString::null);
+		Tracker::setCustomIP(TQString());
         
 	Downloader::setMemoryUsage(Settings::memoryUsage());
 	Choker::setNumUploadSlots(Settings::numUploadSlots());
@@ -497,68 +497,68 @@ void KTorrent::currentTorrentChanged(kt::TorrentInterface* tc)
 
 void KTorrent::setupActions()
 {
-	KStdAction::openNew(this,SLOT(fileNew()),actionCollection());
-	KStdAction::open(this, SLOT(fileOpen()), actionCollection());
-	KStdAction::quit(kapp, SLOT(quit()), actionCollection());
+	KStdAction::openNew(TQT_TQOBJECT(this),TQT_SLOT(fileNew()),actionCollection());
+	KStdAction::open(TQT_TQOBJECT(this), TQT_SLOT(fileOpen()), actionCollection());
+	KStdAction::quit(TQT_TQOBJECT(kapp), TQT_SLOT(quit()), actionCollection());
 	
-	KStdAction::paste(kapp,SLOT(paste()),actionCollection());
+	KStdAction::paste(TQT_TQOBJECT(kapp),TQT_SLOT(paste()),actionCollection());
 
-	m_statusbarAction = KStdAction::showStatusbar(this, SLOT(optionsShowStatusbar()), actionCollection());
-	m_menubarAction = KStdAction::showMenubar(this, SLOT(optionsShowMenubar()), actionCollection()); 
+	m_statusbarAction = KStdAction::showStatusbar(TQT_TQOBJECT(this), TQT_SLOT(optionsShowStatusbar()), actionCollection());
+	m_menubarAction = KStdAction::showMenubar(TQT_TQOBJECT(this), TQT_SLOT(optionsShowMenubar()), actionCollection()); 
 
-	KStdAction::keyBindings(this, SLOT(optionsConfigureKeys()), actionCollection());
-	KStdAction::configureToolbars(this, SLOT(optionsConfigureToolbars()), actionCollection());
+	KStdAction::keyBindings(TQT_TQOBJECT(this), TQT_SLOT(optionsConfigureKeys()), actionCollection());
+	KStdAction::configureToolbars(TQT_TQOBJECT(this), TQT_SLOT(optionsConfigureToolbars()), actionCollection());
 
-	KAction* pref = KStdAction::preferences(this, SLOT(optionsPreferences()), actionCollection());
+	KAction* pref = KStdAction::preferences(TQT_TQOBJECT(this), TQT_SLOT(optionsPreferences()), actionCollection());
 
 	m_start = new KAction(
-			i18n("to start", "Start"), "ktstart",0,this, SLOT(startDownload()),
+			i18n("to start", "Start"), "ktstart",0,TQT_TQOBJECT(this), TQT_SLOT(startDownload()),
 			actionCollection(), "Start");
 
 	m_stop = new KAction(
-			i18n("to stop", "Stop"), "ktstop",0,this, SLOT(stopDownload()),
+			i18n("to stop", "Stop"), "ktstop",0,TQT_TQOBJECT(this), TQT_SLOT(stopDownload()),
 			actionCollection(), "Stop");
 
 	m_remove = new KAction(
-			i18n("Remove"), "ktremove",0,this, SLOT(removeDownload()),
+			i18n("Remove"), "ktremove",0,TQT_TQOBJECT(this), TQT_SLOT(removeDownload()),
 			actionCollection(), "Remove");
 	
 	m_startall = new KAction(
-			i18n("to start all", "Start All"), "ktstart_all",0,this, SLOT(startAllDownloadsCurrentView()),
+			i18n("to start all", "Start All"), "ktstart_all",0,TQT_TQOBJECT(this), TQT_SLOT(startAllDownloadsCurrentView()),
 			actionCollection(), "Start all");
 	
-	m_startall_systray = new KAction(i18n("to start all", "Start All"), "ktstart_all",0,this, SLOT(startAllDownloads()),actionCollection());
+	m_startall_systray = new KAction(i18n("to start all", "Start All"), "ktstart_all",0,TQT_TQOBJECT(this), TQT_SLOT(startAllDownloads()),actionCollection());
 	
 	m_stopall = new KAction(
-			i18n("to stop all", "Stop All"), "ktstop_all",0,this, SLOT(stopAllDownloadsCurrentView()),
+			i18n("to stop all", "Stop All"), "ktstop_all",0,TQT_TQOBJECT(this), TQT_SLOT(stopAllDownloadsCurrentView()),
 			actionCollection(), "Stop all");
 	
-	m_stopall_systray = new KAction(i18n("to stop all", "Stop All"), "ktstop_all",0,this, SLOT(stopAllDownloads()),actionCollection());
+	m_stopall_systray = new KAction(i18n("to stop all", "Stop All"), "ktstop_all",0,TQT_TQOBJECT(this), TQT_SLOT(stopAllDownloads()),actionCollection());
 	
 	m_pasteurl = new KAction(
-			i18n("to paste torrent URL", "Paste Torrent URL..."), "ktstart",0,this, SLOT(torrentPaste()),
+			i18n("to paste torrent URL", "Paste Torrent URL..."), "ktstart",0,TQT_TQOBJECT(this), TQT_SLOT(torrentPaste()),
 			actionCollection(), "paste_url");
 	
 	m_queuemgr = new KAction(
 			i18n("to open Queue Manager", "Open Queue Manager..."),
-			"ktqueuemanager", 0, this, SLOT(queueManagerShow()),
+			"ktqueuemanager", 0, TQT_TQOBJECT(this), TQT_SLOT(queueManagerShow()),
 			actionCollection(), "Queue manager");
 	
 	m_queueaction = new KAction(
 			i18n("Enqueue/Dequeue"),
-			"player_playlist", 0, m_view_man, SLOT(queueAction()),
+			"player_playlist", 0, m_view_man, TQT_SLOT(queueAction()),
 			actionCollection(), "queue_action");
 	
 	m_ipfilter = new KAction(
 			i18n("IPFilter"),
-			"filter", 0, this, SLOT(showIPFilter()),
+			"filter", 0, TQT_TQOBJECT(this), TQT_SLOT(showIPFilter()),
 			actionCollection(), "ipfilter_action");
 	
 	m_datacheck = new KAction(
 			i18n("Check Data Integrity"),
-	QString::null,0,m_view_man,SLOT(checkDataIntegrity()),actionCollection(),"check_data");
+	TQString(),0,m_view_man,TQT_SLOT(checkDataIntegrity()),actionCollection(),"check_data");
 	
-	m_find = KStdAction::find(this,SLOT(find()),actionCollection());
+	m_tqfind = KStdAction::find(TQT_TQOBJECT(this),TQT_SLOT(tqfind()),actionCollection());
 	
 	//Plug actions to systemtray context menu
 	m_startall_systray->plug(m_systray_icon->contextMenu());
@@ -598,7 +598,7 @@ bool KTorrent::queryExit()
 	// stop timers to prevent update
 	m_gui_update_timer.stop();
 	
-	KGlobal::config()->setGroup("WindowStatus");
+	KGlobal::config()->setGroup("WindowtqStatus");
 	KGlobal::config()->writeEntry("hidden_on_exit",this->isHidden());
 	KGlobal::config()->writeEntry("menubar_hidden",menuBar()->isHidden());
 	KGlobal::config()->writeEntry("statusbar_hidden",statusBar()->isHidden());
@@ -623,8 +623,8 @@ void KTorrent::fileNew()
 
 void KTorrent::fileOpen()
 {
-	QString filter = "*.torrent|" + i18n("Torrent Files") + "\n*|" + i18n("All Files");
-	KURL url = KFileDialog::getOpenURL(QString::null, filter, this, i18n("Open Location"));
+	TQString filter = "*.torrent|" + i18n("Torrent Files") + "\n*|" + i18n("All Files");
+	KURL url = KFileDialog::getOpenURL(TQString(), filter, this, i18n("Open Location"));
 
 	if (url.isValid())
 		load(url);
@@ -720,7 +720,7 @@ void KTorrent::optionsConfigureToolbars()
 	saveMainWindowSettings(KGlobal::config());
 #endif
         KEditToolbar dlg(factory());
-        connect(&dlg,SIGNAL(newToolbarConfig()),this,SLOT(newToolbarConfig()));
+        connect(&dlg,TQT_SIGNAL(newToolbarConfig()),this,TQT_SLOT(newToolbarConfig()));
         dlg.exec();
 }
 
@@ -748,7 +748,7 @@ void KTorrent::optionsPreferences()
 	m_pref->exec();
 }
 
-void KTorrent::changeStatusbar(const QString& text)
+void KTorrent::changeStatusbar(const TQString& text)
 {
 	// display the text on the statusbar
 	//statusBar()->message(text);
@@ -757,7 +757,7 @@ void KTorrent::changeStatusbar(const QString& text)
 	m_status_msg_expire.start(5000,true);
 }
 
-void KTorrent::changeCaption(const QString& text)
+void KTorrent::changeCaption(const TQString& text)
 {
 	// display the text on the caption
 	setCaption(text);
@@ -771,7 +771,7 @@ void KTorrent::readProperties(KConfig*)
 {
 }
 
-void KTorrent::urlDropped(QDropEvent* event,QListViewItem*)
+void KTorrent::urlDropped(TQDropEvent* event,TQListViewItem*)
 {
 	KURL::List urls;
 
@@ -790,15 +790,15 @@ void KTorrent::updatedStats()
 	CurrentStats stats = this->m_core->getStats();
 	
 	//m_statusInfo->setText(i18n("Some info here e.g. connected/disconnected"));
-	QString tmp = i18n("Speed down: %1 / up: %2")
-			.arg(KBytesPerSecToString((double)stats.download_speed/1024.0))
-			.arg(KBytesPerSecToString((double)stats.upload_speed/1024.0));
+	TQString tmp = i18n("Speed down: %1 / up: %2")
+			.tqarg(KBytesPerSecToString((double)stats.download_speed/1024.0))
+			.tqarg(KBytesPerSecToString((double)stats.upload_speed/1024.0));
 
 	m_statusSpeed->setText(tmp);
 
-	QString tmp1 = i18n("Transferred down: %1 / up: %2")
-			.arg(BytesToString(stats.bytes_downloaded))
-			.arg(BytesToString(stats.bytes_uploaded));
+	TQString tmp1 = i18n("Transferred down: %1 / up: %2")
+			.tqarg(BytesToString(stats.bytes_downloaded))
+			.tqarg(BytesToString(stats.bytes_uploaded));
 	m_statusTransfer->setText(tmp1);
 	
 	if (ServerAuthenticate::isFirewalled() && m_core->getNumTorrentsRunning() > 0) 
@@ -817,7 +817,7 @@ void KTorrent::updatedStats()
 	{
 		const dht::Stats & s = Globals::instance().getDHT().getStats();
 		m_statusDHT->setText(i18n("DHT: %1 nodes, %2 tasks")
-				.arg(s.num_peers).arg(s.num_tasks));
+				.tqarg(s.num_peers).tqarg(s.num_tasks));
 	}
 	else
 		m_statusDHT->setText(i18n("DHT: off"));
@@ -835,25 +835,25 @@ void KTorrent::removePluginGui(Plugin* p)
 	guiFactory()->removeClient(p);
 }
 
-void KTorrent::addWidgetInView(QWidget* w,Position pos)
+void KTorrent::addWidgetInView(TQWidget* w,Position pos)
 {
 }
 
-void KTorrent::removeWidgetFromView(QWidget* w)
+void KTorrent::removeWidgetFromView(TQWidget* w)
 {
 }
 
-void KTorrent::addWidgetBelowView(QWidget* w,const QString & icon,const QString & caption)
+void KTorrent::addWidgetBelowView(TQWidget* w,const TQString & icon,const TQString & caption)
 {
 	addToolWidget(w,icon,caption,DOCK_BOTTOM);
 }
 	
-void KTorrent::removeWidgetBelowView(QWidget* w)
+void KTorrent::removeWidgetBelowView(TQWidget* w)
 {
 	removeToolWidget(w);
 }
 
-void KTorrent::addToolWidget(QWidget* w,const QString & icon,const QString & caption,ToolDock dock)
+void KTorrent::addToolWidget(TQWidget* w,const TQString & icon,const TQString & caption,ToolDock dock)
 {
 	if (!w) return;
 	
@@ -878,12 +878,12 @@ void KTorrent::addToolWidget(QWidget* w,const QString & icon,const QString & cap
 	}
 }
 
-void KTorrent::removeToolWidget(QWidget* w)
+void KTorrent::removeToolWidget(TQWidget* w)
 {
 	if (!w) return;
 	
 	removeDockWidget(w);
-	w->reparent(0,QPoint());
+	w->reparent(0,TQPoint());
 }
 
 const TorrentInterface* KTorrent::getCurrentTorrent() const
@@ -891,27 +891,27 @@ const TorrentInterface* KTorrent::getCurrentTorrent() const
 	return m_view_man->getCurrentTC();
 }
 
-QString KTorrent::getStatusInfo() 
+TQString KTorrent::getStatusInfo() 
 {
 	return m_statusInfo->text();
 }
 
-QString KTorrent::getStatusTransfer() 
+TQString KTorrent::getStatusTransfer() 
 {
 	return m_statusTransfer->text();
 }
 
-QString KTorrent::getStatusSpeed() 
+TQString KTorrent::getStatusSpeed() 
 {
 	return m_statusSpeed->text();
 }
 
-QString KTorrent::getStatusDHT() 
+TQString KTorrent::getStatusDHT() 
 {
 	return m_statusDHT->text();
 }
 
-QString KTorrent::getStatusFirewall()
+TQString KTorrent::getStatusFirewall()
 {
 	return m_statusFirewall->text();
 }
@@ -930,7 +930,7 @@ void KTorrent::showIPFilter()
 
 void KTorrent::closeTab()
 {
-	QWidget* w = m_currentWidget;
+	TQWidget* w = m_currentWidget;
 	if (!w)
 		return;
 	
@@ -942,7 +942,7 @@ void KTorrent::closeTab()
 	}
 }
 
-void KTorrent::currentTabChanged(QWidget* w)
+void KTorrent::currentTabChanged(TQWidget* w)
 {
 	m_view_man->onCurrentTabChanged(w);
 	currentTorrentChanged(m_view_man->getCurrentTC());
@@ -1006,7 +1006,7 @@ void KTorrent::statusBarMsgExpired()
 	m_statusInfo->clear();
 }
 
-void KTorrent::find()
+void KTorrent::tqfind()
 {
 	KTorrentView* v = m_view_man->getCurrentView();
 	if (v)

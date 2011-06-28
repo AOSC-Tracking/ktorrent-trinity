@@ -40,14 +40,14 @@
 #include <torrent/globals.h>
 #include <interfaces/coreinterface.h>
 
-#include <qthread.h>
-#include <qlabel.h>
-#include <qcheckbox.h>
-#include <qregexp.h>
-#include <qvalidator.h>
-#include <qlayout.h>
-#include <qdialog.h>
-#include <qobject.h>
+#include <tqthread.h>
+#include <tqlabel.h>
+#include <tqcheckbox.h>
+#include <tqregexp.h>
+#include <tqvalidator.h>
+#include <tqlayout.h>
+#include <tqdialog.h>
+#include <tqobject.h>
 
 using namespace bt;
 
@@ -55,11 +55,11 @@ using namespace bt;
 
 namespace kt
 {
-	IPBlockingPrefPageWidget::IPBlockingPrefPageWidget(QWidget* parent) : IPBlockingPref(parent)
+	IPBlockingPrefPageWidget::IPBlockingPrefPageWidget(TQWidget* tqparent) : IPBlockingPref(tqparent)
 	{
 		m_url->setURL(IPBlockingPluginSettings::filterURL());
 		if (m_url->url() == "")
-			m_url->setURL(QString("http://www.bluetack.co.uk/config/splist.zip"));
+			m_url->setURL(TQString("http://www.bluetack.co.uk/config/splist.zip"));
 		
 		bool use_level1 = IPBlockingPluginSettings::useLevel1();
 
@@ -67,13 +67,13 @@ namespace kt
 		
 		if(use_level1)
 		{
-			lbl_status1->setText(i18n("Status: Loaded and running."));
+			lbl_status1->setText(i18n("tqStatus: Loaded and running."));
 			m_url->setEnabled(true);
 			btnDownload->setEnabled(true);
 		}
 		else
 		{
-			lbl_status1->setText(i18n("Status: Not loaded."));
+			lbl_status1->setText(i18n("tqStatus: Not loaded."));
 			m_url->setEnabled(false);
 			btnDownload->setEnabled(false);
 		}
@@ -89,21 +89,21 @@ namespace kt
 		
 		if(checkUseLevel1->isChecked())
 		{
-			QFile target(KGlobal::dirs()->saveLocation("data","ktorrent") + "level1.dat");
+			TQFile target(KGlobal::dirs()->saveLocation("data","ktorrent") + "level1.dat");
 			if(target.exists())
-				lbl_status1->setText(i18n("Status: Loaded and running."));
+				lbl_status1->setText(i18n("tqStatus: Loaded and running."));
 			else
-				lbl_status1->setText(i18n("Status: <font color=\"#ff0000\">Filter file not found.</font> Download and convert filter file."));
+				lbl_status1->setText(i18n("tqStatus: <font color=\"#ff0000\">Filter file not found.</font> Download and convert filter file."));
 		}
 		else
-			lbl_status1->setText(i18n("Status: Not loaded."));
+			lbl_status1->setText(i18n("tqStatus: Not loaded."));
 	}
 
 	void IPBlockingPrefPageWidget::btnDownload_clicked()
 	{
-		QString target(KGlobal::dirs()->saveLocation("data","ktorrent") + "level1");
-		QFile target_file(target);
-		QFile txtfile(target + ".txt");
+		TQString target(KGlobal::dirs()->saveLocation("data","ktorrent") + "level1");
+		TQFile target_file(target);
+		TQFile txtfile(target + ".txt");
 		KURL url(m_url->url());
 		KURL dest(target);
 		KURL temp(KGlobal::dirs()->saveLocation("data","ktorrent") + "level1.tmp");
@@ -132,8 +132,8 @@ namespace kt
 				}
 				else
 				{
-					QString err = KIO::NetAccess::lastErrorString();
-					if(err != QString::null)
+					TQString err = KIO::NetAccess::lastErrorString();
+					if(err != TQString())
 						KMessageBox::error(0,KIO::NetAccess::lastErrorString(),i18n("Error"));
 					else
 						KIO::NetAccess::move(temp, target);
@@ -188,7 +188,7 @@ namespace kt
 	
 	void IPBlockingPrefPageWidget::convert()
 	{
-		QFile target(KGlobal::dirs()->saveLocation("data","ktorrent") + "level1.dat");
+		TQFile target(KGlobal::dirs()->saveLocation("data","ktorrent") + "level1.dat");
 		if(target.exists())
 		{
 			if((KMessageBox::questionYesNo(this,i18n("Filter file (level1.dat) already exists, do you want to convert it again?"),i18n("File Exists")) == 4))
@@ -240,9 +240,9 @@ namespace kt
 		return true;
 	}
 	
-	void IPBlockingPrefPage::createWidget(QWidget* parent)
+	void IPBlockingPrefPage::createWidget(TQWidget* tqparent)
 	{
-		widget = new IPBlockingPrefPageWidget(parent);
+		widget = new IPBlockingPrefPageWidget(tqparent);
 		widget->setPlugin(m_plugin);
 		widget->setPrefPage(this);
 	}

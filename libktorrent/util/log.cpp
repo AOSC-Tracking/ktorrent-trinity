@@ -21,15 +21,15 @@
 #include <kurl.h>
 #include <kprocess.h>
 #include <klocale.h>
-#include <qdatetime.h>
-#include <qtextstream.h>
-#include <qfile.h>
-#include <qptrlist.h>
+#include <tqdatetime.h>
+#include <tqtextstream.h>
+#include <tqfile.h>
+#include <tqptrlist.h>
 #include <iostream>
 #include <stdlib.h>
 #include <torrent/globals.h>
 #include <interfaces/logmonitorinterface.h>
-#include <qmutex.h> 
+#include <tqmutex.h> 
 #include <util/fileops.h>
 #include <stdlib.h>
 #include "log.h"
@@ -45,19 +45,19 @@ namespace bt
 	class Log::Private
 	{
 	public:
-		Log* parent;
-		QTextStream* out;
-		QFile fptr;
+		Log* tqparent;
+		TQTextStream* out;
+		TQFile fptr;
 		bool to_cout;
-		QPtrList<LogMonitorInterface> monitors;
-		QString tmp;
-		QMutex mutex;
+		TQPtrList<LogMonitorInterface> monitors;
+		TQString tmp;
+		TQMutex mutex;
 		unsigned int m_filter;
 		AutoRotateLogJob* rotate_job;
 	public:
-		Private(Log* parent) : parent(parent),out(0),to_cout(false),rotate_job(0)
+		Private(Log* tqparent) : tqparent(tqparent),out(0),to_cout(false),rotate_job(0)
 		{
-			out = new QTextStream();
+			out = new TQTextStream();
 		}
 
 		~Private()
@@ -71,7 +71,7 @@ namespace bt
 			m_filter = filter;
 		}
 		
-		void rotateLogs(const QString & file)
+		void rotateLogs(const TQString & file)
 		{
 			if (bt::Exists(file + "-10.gz"))
 				bt::Delete(file + "-10.gz",true);
@@ -79,18 +79,18 @@ namespace bt
 			// move all log files one up
 			for (Uint32 i = 10;i > 1;i--)
 			{
-				QString prev = QString("%1-%2.gz").arg(file).arg(i - 1);
-				QString curr = QString("%1-%2.gz").arg(file).arg(i);
+				TQString prev = TQString("%1-%2.gz").tqarg(file).tqarg(i - 1);
+				TQString curr = TQString("%1-%2.gz").tqarg(file).tqarg(i);
 				if (bt::Exists(prev))
 					bt::Move(prev,curr,true);
 			}
 			
 			// move current log to 1 and zip it
 			bt::Move(file,file + "-1",true);
-			system(QString("gzip " + KProcess::quote(file + "-1")).local8Bit());
+			system(TQString("gzip " + KProcess::quote(file + "-1")).local8Bit());
 		}
 
-		void setOutputFile(const QString & file)
+		void setOutputFile(const TQString & file)
 		{
 			if (fptr.isOpen())
 				fptr.close();
@@ -100,12 +100,12 @@ namespace bt
 
 			fptr.setName(file);
 			if (!fptr.open(IO_WriteOnly))
-				throw Error(i18n("Cannot open log file %1 : %2").arg(file).arg(fptr.errorString()));
+				throw Error(i18n("Cannot open log file %1 : %2").tqarg(file).tqarg(fptr.errorString()));
 
-			out->setDevice(&fptr);
+			out->setDevice(TQT_TQIODEVICE(&fptr));
 		}
 
-		void write(const QString & line)
+		void write(const TQString & line)
 		{
 			tmp += line;
 		}
@@ -116,14 +116,14 @@ namespace bt
 			// this could result in the loss of some messages
 			if (!rotate_job) 
 			{
-				*out << QDateTime::currentDateTime().toString() << ": " << tmp << ::endl;
+				*out << TQDateTime::tqcurrentDateTime().toString() << ": " << tmp << ::endl;
 				fptr.flush();
 				if (to_cout)
-					std::cout << tmp.local8Bit() << std::endl;
+					std::cout << TQString(tmp.local8Bit()) << std::endl;
 				
 				if (monitors.count() > 0)
 				{
-					QPtrList<LogMonitorInterface>::iterator i = monitors.begin();
+					TQPtrList<LogMonitorInterface>::iterator i = monitors.begin();
 					while (i != monitors.end())
 					{
 						kt::LogMonitorInterface* lmi = *i;
@@ -142,18 +142,18 @@ namespace bt
 			{
 				tmp = "Log larger then 10 MB, rotating";
 				finishLine();
-				QString file = fptr.name();
+				TQString file = fptr.name();
 				fptr.close(); // close the log file
 				out->setDevice(0);		
 				// start the rotate job
-				rotate_job = new AutoRotateLogJob(file,parent); 
+				rotate_job = new AutoRotateLogJob(file,tqparent); 
 			}
 		}
 		
 		void logRotateDone()
 		{
 			fptr.open(IO_WriteOnly);
-			out->setDevice(&fptr);
+			out->setDevice(TQT_TQIODEVICE(&fptr));
 			rotate_job = 0;
 		}
 	};
@@ -170,7 +170,7 @@ namespace bt
 	}
 	
 	
-	void Log::setOutputFile(const QString & file)
+	void Log::setOutputFile(const TQString & file)
 	{
 		priv->setOutputFile(file);
 	}
@@ -203,7 +203,7 @@ namespace bt
 		return *this;
 	}
 
-	Log & Log::operator << (const QString & s)
+	Log & Log::operator << (const TQString & s)
 	{
 		priv->write(s);
 		return *this;
@@ -217,12 +217,12 @@ namespace bt
 
 	Log & Log::operator << (Uint64 v)
 	{
-		return operator << (QString::number(v));
+		return operator << (TQString::number(v));
 	}
 
 	Log & Log::operator << (Int64 v)
 	{
-		return operator << (QString::number(v));
+		return operator << (TQString::number(v));
 	}
 
 	void Log::setFilter(unsigned int filter)

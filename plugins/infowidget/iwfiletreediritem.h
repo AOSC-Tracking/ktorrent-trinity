@@ -49,8 +49,8 @@ namespace kt
 	class IWFileTreeDirItem : public kt::FileTreeDirItem
 	{
 	public:
-		IWFileTreeDirItem(KListView* klv,const QString & name);
-		IWFileTreeDirItem(IWFileTreeDirItem* parent,const QString & name);
+		IWFileTreeDirItem(KListView* klv,const TQString & name);
+		IWFileTreeDirItem(IWFileTreeDirItem* tqparent,const TQString & name);
 		virtual ~IWFileTreeDirItem();
 	
 		/**
@@ -71,8 +71,8 @@ namespace kt
 		*/
 		void updateDNDInformation();
 
-		virtual kt::FileTreeItem* newFileTreeItem(const QString & name, kt::TorrentFileInterface & file);
-		virtual kt::FileTreeDirItem* newFileTreeDirItem(const QString & subdir);
+		virtual kt::FileTreeItem* newFileTreeItem(const TQString & name, kt::TorrentFileInterface & file);
+		virtual kt::FileTreeDirItem* newFileTreeDirItem(const TQString & subdir);
 		virtual bt::ConfirmationResult confirmationDialog();
 	};
 }

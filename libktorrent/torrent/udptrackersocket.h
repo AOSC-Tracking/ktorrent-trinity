@@ -20,9 +20,9 @@
 #ifndef BTUDPTRACKERSOCKET_H
 #define BTUDPTRACKERSOCKET_H
 
-#include <qobject.h>
-#include <qmap.h>
-#include <qcstring.h>
+#include <tqobject.h>
+#include <tqmap.h>
+#include <tqcstring.h>
 #include <util/constants.h>
 
 
@@ -51,9 +51,10 @@ namespace bt
 	 *
 	 * Class which handles communication with one or more UDP trackers.
 	*/
-	class UDPTrackerSocket : public QObject
+	class UDPTrackerSocket : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		UDPTrackerSocket();
 		virtual ~UDPTrackerSocket();
@@ -114,24 +115,24 @@ namespace bt
 		 * @param tid The transaction_id
 		 * @param buf The data
 		 */
-		void announceRecieved(Int32 tid,const QByteArray & buf);
+		void announceRecieved(Int32 tid,const TQByteArray & buf);
 
 		/**
 		 * Signal emitted, when an error occurs during a transaction.
 		 * @param tid The transaction_id
 		 * @param error_string Potential error string
 		 */
-		void error(Int32 tid,const QString & error_string);
+		void error(Int32 tid,const TQString & error_string);
 
 	private:
-		void handleConnect(const QByteArray & buf);
-		void handleAnnounce(const QByteArray & buf);
-		void handleError(const QByteArray & buf);
+		void handleConnect(const TQByteArray & buf);
+		void handleAnnounce(const TQByteArray & buf);
+		void handleError(const TQByteArray & buf);
 		
 	private:
 		Uint16 udp_port;
 		KNetwork::KDatagramSocket* sock;
-		QMap<Int32,Action> transactions;
+		TQMap<Int32,Action> transactions;
 		static Uint16 port;
 	};
 }

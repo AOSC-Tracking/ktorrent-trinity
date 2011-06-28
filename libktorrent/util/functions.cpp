@@ -17,8 +17,8 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qdir.h>
-#include <qhostaddress.h>
+#include <tqdir.h>
+#include <tqhostaddress.h>
 #include <errno.h>
 #include <sys/time.h>
 #include <sys/types.h>
@@ -39,17 +39,17 @@
 namespace bt
 {
 
-	bool IsMultimediaFile(const QString & filename)
+	bool IsMultimediaFile(const TQString & filename)
 	{
 		KMimeType::Ptr ptr = KMimeType::findByPath(filename);
-		QString name = ptr->name();
+		TQString name = ptr->name();
 		return name.startsWith("audio") || name.startsWith("video") || name == "application/ogg";
 	}
 	
-	QHostAddress LookUpHost(const QString & host)
+	TQHostAddress LookUpHost(const TQString & host)
 	{
 		struct hostent * he = gethostbyname(host.ascii());
-		QHostAddress addr;
+		TQHostAddress addr;
 		if (he)
 		{
 			addr.setAddress(inet_ntoa(*((struct in_addr *)he->h_addr)));
@@ -57,10 +57,10 @@ namespace bt
 		return addr;
 	}
 
-	QString DirSeparator()
+	TQString DirSeparator()
 	{
-		QString tmp;
-		tmp.append(QDir::separator());
+		TQString tmp;
+		tmp.append(TQDir::separator());
 		return tmp;
 	}
 
@@ -203,7 +203,7 @@ namespace bt
 			if (setrlimit(RLIMIT_NOFILE,&lim) < 0)
 			{
 				Out(SYS_GEN|LOG_DEBUG) << "Failed to maximize file limit : " 
-						<< QString(strerror(errno)) << endl;
+						<< TQString(strerror(errno)) << endl;
 				return false;
 			}
 		}
@@ -221,7 +221,7 @@ namespace bt
 			if (setrlimit(RLIMIT_DATA,&lim) < 0)
 			{
 				Out(SYS_GEN|LOG_DEBUG) << "Failed to maximize data limit : " 
-						<< QString(strerror(errno)) << endl;
+						<< TQString(strerror(errno)) << endl;
 				return false;
 			}
 		}

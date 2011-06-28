@@ -40,8 +40,8 @@ K_EXPORT_COMPONENT_FACTORY(ktlogviewerplugin,KGenericFactory<kt::LogViewerPlugin
 namespace kt
 {
 
-	LogViewerPlugin::LogViewerPlugin(QObject* parent, const char* qt_name, const QStringList& args)
-	: Plugin(parent, qt_name, args, NAME,i18n("Log Viewer"), AUTHOR, EMAIL,
+	LogViewerPlugin::LogViewerPlugin(TQObject* tqparent, const char* qt_name, const TQStringList& args)
+	: Plugin(tqparent, qt_name, args, NAME,i18n("Log Viewer"), AUTHOR, EMAIL,
 			 i18n("Displays ktorrent logging output"),"log")
 	{
 		lv = 0;
@@ -75,7 +75,7 @@ namespace kt
 		LogFlags::finalize();
 	}
 	
-	bool LogViewerPlugin::versionCheck(const QString & version) const
+	bool LogViewerPlugin::versionCheck(const TQString & version) const
 	{
 		return version == KT_VERSION_MACRO;
 	}

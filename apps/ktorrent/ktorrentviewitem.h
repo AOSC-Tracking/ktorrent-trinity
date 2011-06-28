@@ -39,7 +39,7 @@ class KTorrentViewItem : public KListViewItem
 	kt::TorrentInterface* tc;
 	bt::Int64 eta;
 public:
-	KTorrentViewItem(KTorrentView* parent,kt::TorrentInterface* tc);
+	KTorrentViewItem(KTorrentView* tqparent,kt::TorrentInterface* tc);
 	virtual ~KTorrentViewItem();
 
 	kt::TorrentInterface* getTC() {return tc;}
@@ -48,8 +48,8 @@ public:
 	static QCStringList getTorrentInfo(kt::TorrentInterface* tc);
 
 private:
-	int compare(QListViewItem * i,int col,bool ascending) const;
-	void paintCell(QPainter* p,const QColorGroup & cg,int column,int width,int align);
+	int compare(TQListViewItem * i,int col,bool ascending) const;
+	void paintCell(TQPainter* p,const TQColorGroup & cg,int column,int width,int align);
 	
 	KTorrentView* m_parent;
 

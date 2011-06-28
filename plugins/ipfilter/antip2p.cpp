@@ -28,8 +28,8 @@
 #include <kglobal.h>
 #include <kstandarddirs.h>
 
-#include <qstring.h>
-#include <qvaluelist.h>
+#include <tqstring.h>
+#include <tqvaluelist.h>
 
 using namespace bt;
 
@@ -46,7 +46,7 @@ namespace kt
 			return ip1 < b.ip1;// a and b intersect 
 	}
 	
-	Uint32 AntiP2P::toUint32(const QString& ip)
+	Uint32 AntiP2P::toUint32(const TQString& ip)
 	{
 		bool test;
 		Uint32 ret = ip.section('.',0,0).toULongLong(&test);
@@ -60,26 +60,26 @@ namespace kt
 		return ret;
 	}
 	
-	QString fromUint32(Uint32 ip)
+	TQString fromUint32(Uint32 ip)
 	{
 		Uint32 tmp = ip;
-		QString out;
+		TQString out;
 	
 		tmp = ip;
 		tmp &= 0x000000FF;
-		out.prepend(QString("%1").arg(tmp));
+		out.prepend(TQString("%1").tqarg(tmp));
 		ip >>= 8;
 		tmp = ip;
 		tmp &= 0x000000FF;
-		out.prepend(QString("%1.").arg(tmp));
+		out.prepend(TQString("%1.").tqarg(tmp));
 		ip >>= 8;
 		tmp = ip;
 		tmp &= 0x000000FF;
-		out.prepend(QString("%1.").arg(tmp));
+		out.prepend(TQString("%1.").tqarg(tmp));
 		ip >>= 8;
 		tmp = ip;
 		tmp &= 0x000000FF;
-		out.prepend(QString("%1.").arg(tmp));
+		out.prepend(TQString("%1.").tqarg(tmp));
 	
 		return out;
 	}
@@ -152,7 +152,7 @@ namespace kt
 		return file != 0;
 	}
 	
-	bool AntiP2P::isBlockedIP(const QString& ip )
+	bool AntiP2P::isBlockedIP(const TQString& ip )
 	{
 		Uint32 test = toUint32(ip);
 		return isBlockedIP(test);

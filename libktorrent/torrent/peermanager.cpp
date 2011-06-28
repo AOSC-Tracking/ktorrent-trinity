@@ -31,14 +31,14 @@
 #include "uploader.h"
 #include "downloader.h"
 #include <util/functions.h>
-#include <qhostaddress.h>
+#include <tqhostaddress.h>
 #include <mse/streamsocket.h> 
 #include <mse/encryptedauthenticate.h>
 #include <klocale.h>
 #include "ipblocklist.h"
 #include "chunkcounter.h"
 #include "authenticationmonitor.h"
-#include <qdatetime.h>
+#include <tqdatetime.h>
 
 using namespace kt;
 
@@ -81,7 +81,7 @@ namespace bt
 
 		// update the speed of each peer,
 		// and get ridd of some killed peers
-		QPtrList<Peer>::iterator i = peer_list.begin();
+		TQPtrList<Peer>::iterator i = peer_list.begin();
 		while (i != peer_list.end())
 		{
 			Peer* p = *i;
@@ -111,7 +111,7 @@ namespace bt
 	{
 		Out() << "Getting rid of peers which have been choked for a long time" << endl;
 		TimeStamp now = bt::GetCurrentTime();
-		QPtrList<Peer>::iterator i = peer_list.begin();
+		TQPtrList<Peer>::iterator i = peer_list.begin();
 		Uint32 num_killed = 0;
 		while (i != peer_list.end() && num_killed < 20)
 		{
@@ -157,7 +157,7 @@ namespace bt
 
 	void PeerManager::killSeeders()
 	{
-		QPtrList<Peer>::iterator i = peer_list.begin();
+		TQPtrList<Peer>::iterator i = peer_list.begin();
 		while (i != peer_list.end())
 		{
 			Peer* p = *i;
@@ -169,11 +169,11 @@ namespace bt
 	
 	void PeerManager::killUninterested()
 	{
-		QPtrList<Peer>::iterator i = peer_list.begin();
+		TQPtrList<Peer>::iterator i = peer_list.begin();
 		while (i != peer_list.end())
 		{
 			Peer* p = *i;
-			if ( !p->isInterested() && (p->getConnectTime().secsTo(QTime::currentTime()) > 30) )
+			if ( !p->isInterested() && (p->getConnectTime().secsTo(TQTime::currentTime()) > 30) )
 				p->kill();
 			i++;
 		}
@@ -233,13 +233,13 @@ namespace bt
 			if (a && Globals::instance().getServer().unencryptedConnectionsAllowed())
 			{
 				// if possible try unencrypted
-				QString ip = a->getIP();
+				TQString ip = a->getIP();
 				Uint16 port = a->getPort();
 				Authenticate* st = new Authenticate(ip,port,tor.getInfoHash(),tor.getPeerID(),this);
 				if (auth->isLocal())
 					st->setLocal(true);
 				
-				connect(this,SIGNAL(stopped()),st,SLOT(onPeerManagerDestroyed()));
+				connect(this,TQT_SIGNAL(stopped()),st,TQT_SLOT(onPeerManagerDestroyed()));
 				AuthenticationMonitor::instance().add(st);
 				num_pending++;
 				total_connections++;
@@ -259,11 +259,11 @@ namespace bt
 	{
 		Peer* peer = new Peer(sock,peer_id,tor.getNumChunks(),tor.getChunkSize(),support,local);
 		
-		connect(peer,SIGNAL(haveChunk(Peer*, Uint32 )),this,SLOT(onHave(Peer*, Uint32 )));
-		connect(peer,SIGNAL(bitSetRecieved(const BitSet& )),
-				this,SLOT(onBitSetRecieved(const BitSet& )));
-		connect(peer,SIGNAL(rerunChoker()),this,SLOT(onRerunChoker()));
-		connect(peer,SIGNAL(pex( const QByteArray& )),this,SLOT(pex( const QByteArray& )));
+		connect(peer,TQT_SIGNAL(haveChunk(Peer*, Uint32 )),this,TQT_SLOT(onHave(Peer*, Uint32 )));
+		connect(peer,TQT_SIGNAL(bitSetRecieved(const BitSet& )),
+				this,TQT_SLOT(onBitSetRecieved(const BitSet& )));
+		connect(peer,TQT_SIGNAL(rerunChoker()),this,TQT_SLOT(onRerunChoker()));
+		connect(peer,TQT_SIGNAL(pex( const TQByteArray& )),this,TQT_SLOT(pex( const TQByteArray& )));
 		
 		peer_list.append(peer);
 		peer_map.insert(peer->getID(),peer);
@@ -288,7 +288,7 @@ namespace bt
 		return false;
 	}
 	
-	bool PeerManager::connectedTo(const QString & ip,Uint16 port) const
+	bool PeerManager::connectedTo(const TQString & ip,Uint16 port) const
 	{
 		PtrMap<Uint32,Peer>::const_iterator i = peer_map.begin();
 		while (i != peer_map.end())
@@ -356,7 +356,7 @@ namespace bt
 				if (pp.local)
 					auth->setLocal(true);
 				
-				connect(this,SIGNAL(stopped()),auth,SLOT(onPeerManagerDestroyed()));
+				connect(this,TQT_SIGNAL(stopped()),auth,TQT_SLOT(onPeerManagerDestroyed()));
 				
 				AuthenticationMonitor::instance().add(auth);
 				num_pending++;
@@ -406,7 +406,7 @@ namespace bt
 		Uint16 port;
 	};
 	
-	void PeerManager::savePeerList(const QString & file)
+	void PeerManager::savePeerList(const TQString & file)
 	{
 		bt::File fptr;
 		if (!fptr.open(file,"wb"))
@@ -424,7 +424,7 @@ namespace bt
 			
 			Out(SYS_GEN|LOG_DEBUG) << "Saving list of peers to " << file << endl;
 			// first the active peers
-			for (QPtrList<Peer>::iterator itr = peer_list.begin(); itr != peer_list.end();itr++)
+			for (TQPtrList<Peer>::iterator itr = peer_list.begin(); itr != peer_list.end();itr++)
 			{
 				Peer* p = *itr;
 				PeerListEntry e;
@@ -452,7 +452,7 @@ namespace bt
 		}
 	}
 	
-	void PeerManager::loadPeerList(const QString & file)
+	void PeerManager::loadPeerList(const TQString & file)
 	{
 		bt::File fptr;
 		if (!fptr.open(file,"rb"))
@@ -474,11 +474,11 @@ namespace bt
 				PotentialPeer pp;
 				
 				// convert IP address to string 
-				pp.ip = QString("%1.%2.%3.%4")
-						.arg((e.ip & 0xFF000000) >> 24)
-						.arg((e.ip & 0x00FF0000) >> 16)
-						.arg((e.ip & 0x0000FF00) >> 8)
-						.arg( e.ip & 0x000000FF);
+				pp.ip = TQString("%1.%2.%3.%4")
+						.tqarg((e.ip & 0xFF000000) >> 24)
+						.tqarg((e.ip & 0x00FF0000) >> 16)
+						.tqarg((e.ip & 0x0000FF00) >> 8)
+						.tqarg( e.ip & 0x000000FF);
 				pp.port = e.port;
 				addPotentialPeer(pp);
 			}
@@ -509,7 +509,7 @@ namespace bt
 
 	Peer* PeerManager::findPeer(Uint32 peer_id)
 	{
-		return peer_map.find(peer_id);
+		return peer_map.tqfind(peer_id);
 	}
 	
 	void PeerManager::onRerunChoker()
@@ -550,7 +550,7 @@ namespace bt
 		return false;
 	}
 	
-	void PeerManager::pex(const QByteArray & arr)
+	void PeerManager::pex(const TQByteArray & arr)
 	{
 		if (!pex_on)
 			return;
@@ -563,11 +563,11 @@ namespace bt
 			PotentialPeer pp;
 			pp.port = ReadUint16(tmp,4);
 			Uint32 ip = ReadUint32(tmp,0);
-			pp.ip = QString("%1.%2.%3.%4")
-						.arg((ip & 0xFF000000) >> 24)
-						.arg((ip & 0x00FF0000) >> 16)
-						.arg((ip & 0x0000FF00) >> 8)
-						.arg( ip & 0x000000FF);
+			pp.ip = TQString("%1.%2.%3.%4")
+						.tqarg((ip & 0xFF000000) >> 24)
+						.tqarg((ip & 0x00FF0000) >> 16)
+						.tqarg((ip & 0x0000FF00) >> 8)
+						.tqarg( ip & 0x000000FF);
 			pp.local = false;
 			
 			addPotentialPeer(pp);
@@ -583,7 +583,7 @@ namespace bt
 		if (pex_on == on)
 			return;
 		
-		QPtrList<Peer>::iterator i = peer_list.begin();
+		TQPtrList<Peer>::iterator i = peer_list.begin();
 		while (i != peer_list.end())
 		{
 			Peer* p = *i;

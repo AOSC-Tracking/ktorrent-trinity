@@ -17,7 +17,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
-#include <qdatetime.h>
+#include <tqdatetime.h>
 #include <klocale.h>
 #include <kglobal.h>
 #include <kstandarddirs.h>
@@ -28,9 +28,9 @@ using namespace bt;
 
 namespace kt
 {
-	QString DataDir()
+	TQString DataDir()
 	{
-		QString str = KGlobal::dirs()->saveLocation("data","ktorrent");
+		TQString str = KGlobal::dirs()->saveLocation("data","ktorrent");
 		if (!str.endsWith(bt::DirSeparator()))
 			return str + bt::DirSeparator();
 		else

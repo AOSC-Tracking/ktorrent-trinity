@@ -20,7 +20,7 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
-#include <qstring.h>
+#include <tqstring.h>
 #include <util/constants.h>
 
 namespace kt
@@ -29,9 +29,9 @@ namespace kt
 	const double TO_MEG = (1024.0 * 1024.0);
 	const double TO_GIG = (1024.0 * 1024.0 * 1024.0);
 
-	QString BytesToString(bt::Uint64 bytes,int precision = -1);
-	QString KBytesPerSecToString(double speed,int precision = 1);
-	QString DurationToString(bt::Uint32 nsecs);
+	TQString BytesToString(bt::Uint64 bytes,int precision = -1);
+	TQString KBytesPerSecToString(double speed,int precision = 1);
+	TQString DurationToString(bt::Uint32 nsecs);
 			
 	template<class T> int CompareVal(T a,T b)
 	{

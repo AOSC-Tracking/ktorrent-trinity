@@ -21,7 +21,7 @@
 #include <klocale.h>
 #include <kapplication.h>
 #include <kmessagebox.h>
-#include <qtextbrowser.h>
+#include <tqtextbrowser.h>
 #include <util/error.h>
 #include "upnptestapp.h"
 #include "mainwidget.h"
@@ -29,15 +29,15 @@
 using namespace bt;
 using namespace kt;
 
-UPnPTestApp::UPnPTestApp(QWidget *parent, const char *name)
-		: KMainWindow(parent, name)
+UPnPTestApp::UPnPTestApp(TQWidget *tqparent, const char *name)
+		: KMainWindow(tqparent, name)
 {
 	sock = new UPnPMCastSocket(true);
-	connect(sock,SIGNAL(discovered( UPnPRouter* )),this,SLOT(discovered( UPnPRouter* )));
+	connect(sock,TQT_SIGNAL(discovered( UPnPRouter* )),this,TQT_SLOT(discovered( UPnPRouter* )));
 	mwnd = new MainWidget(this);
 	setCentralWidget(mwnd);
-	connect(mwnd->test_btn,SIGNAL(clicked()),this,SLOT(onTestBtn()));
-	connect(mwnd->close_btn,SIGNAL(clicked()),this,SLOT(onCloseBtn()));
+	connect(mwnd->test_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onTestBtn()));
+	connect(mwnd->close_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onCloseBtn()));
 	bt::Log & lg = bt::Globals::instance().getLog(0);
 	lg.addMonitor(this);
 	Out() << "UPnPTestApp started up !" << endl;
@@ -78,7 +78,7 @@ bool UPnPTestApp::queryExit()
 	return true;
 }
 
-void UPnPTestApp::message(const QString& line, unsigned int arg)
+void UPnPTestApp::message(const TQString& line, unsigned int arg)
 {
 	mwnd->output->append(line);
 }

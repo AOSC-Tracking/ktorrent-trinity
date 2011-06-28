@@ -22,7 +22,7 @@
 
 #include <klistview.h>
 #include <util/constants.h>
-#include <qtimer.h>
+#include <tqtimer.h>
 
 namespace kt
 {
@@ -35,32 +35,33 @@ namespace kt
 	class FileView : public KListView
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		FileView(QWidget *parent = 0, const char *name = 0);
+		FileView(TQWidget *tqparent = 0, const char *name = 0);
 		virtual ~FileView();
 
 		void update();
 		void changeTC(kt::TorrentInterface* tc);
 	private slots:
 		void contextItem(int id);
-		void showContextMenu(KListView* ,QListViewItem* item,const QPoint & p);
+		void showContextMenu(KListView* ,TQListViewItem* item,const TQPoint & p);
 		void refreshFileTree(kt::TorrentInterface* tc);
-		void onDoubleClicked(QListViewItem* item,const QPoint & ,int );
+		void onDoubleClicked(TQListViewItem* item,const TQPoint & ,int );
 		void fillTreePartial();
 		
 	private:
 		void fillFileTree();
 		void readyPreview();
 		void readyPercentage();
-		void changePriority(QListViewItem* item, bt::Priority newpriority);
+		void changePriority(TQListViewItem* item, bt::Priority newpriority);
 		
 	private:
 		kt::TorrentInterface* curr_tc;
 		IWFileTreeDirItem* multi_root;
 		bool pending_fill;
 		KPopupMenu* context_menu;
-		QString preview_path;
-		QTimer fill_timer;
+		TQString preview_path;
+		TQTimer fill_timer;
 		int preview_id;
 		int first_id;
 		int normal_id;

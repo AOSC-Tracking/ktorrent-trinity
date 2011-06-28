@@ -42,15 +42,16 @@ namespace kt
 	class InfoWidgetPlugin : public Plugin,public ViewListener
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		InfoWidgetPlugin(QObject* parent, const char* name, const QStringList& args);
+		InfoWidgetPlugin(TQObject* tqparent, const char* name, const TQStringList& args);
 		virtual ~InfoWidgetPlugin();
 
 		virtual void load();
 		virtual void unload();
 		virtual void guiUpdate();
 		virtual void currentTorrentChanged(TorrentInterface* tc);
-		virtual bool versionCheck(const QString & version) const;
+		virtual bool versionCheck(const TQString & version) const;
 		
 		///Show PeerView in main window
 		void showPeerView(bool show);

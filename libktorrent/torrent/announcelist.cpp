@@ -25,15 +25,15 @@
 #include <util/log.h>
 
 #include <klocale.h>
-#include <qstringlist.h>
-#include <qfile.h>
-#include <qtextstream.h>
+#include <tqstringlist.h>
+#include <tqfile.h>
+#include <tqtextstream.h>
 
 namespace bt
 {
 
 	AnnounceList::AnnounceList()
-		:m_datadir(QString::null)
+		:m_datadir(TQString())
 	{
 		curr = 0;
 	}
@@ -87,7 +87,7 @@ namespace bt
 	
 	bool AnnounceList::removeTracker(KURL url)
 	{
-		KURL::List::iterator i = custom_trackers.find(url);
+		KURL::List::iterator i = custom_trackers.tqfind(url);
 		if(i != custom_trackers.end())
 		{
 			custom_trackers.remove(i);
@@ -122,11 +122,11 @@ namespace bt
 	
 	void AnnounceList::saveTrackers()
 	{
-		QFile file(m_datadir + "trackers");
+		TQFile file(m_datadir + "trackers");
 		if(!file.open(IO_WriteOnly))
 			return;
 		
-		QTextStream stream(&file);
+		TQTextStream stream(&file);
 		for (KURL::List::iterator i = custom_trackers.begin();i != custom_trackers.end();i++)
 			stream << (*i).prettyURL() << ::endl;
 		file.close();
@@ -134,11 +134,11 @@ namespace bt
 	
 	void AnnounceList::loadTrackers()
 	{
-		QFile file(m_datadir + "trackers");
+		TQFile file(m_datadir + "trackers");
 		if(!file.open(IO_ReadOnly))
 			return;
 		
-		QTextStream stream(&file);
+		TQTextStream stream(&file);
 		while (!stream.atEnd()) 
 		{
 			KURL url(stream.readLine().stripWhiteSpace());
@@ -148,7 +148,7 @@ namespace bt
 		file.close();
 	}
 	
-	void AnnounceList::setDatadir(const QString& theValue)
+	void AnnounceList::setDatadir(const TQString& theValue)
 	{
 		m_datadir = theValue;
 		loadTrackers();
@@ -187,7 +187,7 @@ namespace bt
 		for (Uint32 i = 0;i < al->getNumTrackerURLs();i++)
 		{
 			KURL url = *al->trackers.at(i);
-			if (!trackers.contains(url) && !custom_trackers.contains(url))
+			if (!trackers.tqcontains(url) && !custom_trackers.tqcontains(url))
 				custom_trackers.append(url);
 		}
 	}

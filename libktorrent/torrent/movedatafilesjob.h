@@ -32,6 +32,7 @@ namespace bt
 	class MoveDataFilesJob : public KIO::Job
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		MoveDataFilesJob();
 		virtual ~MoveDataFilesJob();
@@ -41,7 +42,7 @@ namespace bt
 		 * @param src File to move
 		 * @param dst Where to move it to
 		 */
-		void addMove(const QString & src,const QString & dst);
+		void addMove(const TQString & src,const TQString & dst);
 		
 		/**
 		 * Start moving the files.
@@ -58,9 +59,9 @@ namespace bt
 	private:
 		bool err;
 		KIO::Job* active_job;
-		QString active_src,active_dst;
-		QMap<QString,QString> todo;
-		QMap<QString,QString> success;		
+		TQString active_src,active_dst;
+		TQMap<TQString,TQString> todo;
+		TQMap<TQString,TQString> success;		
 	};
 
 }

@@ -31,7 +31,7 @@
 
 #include "ktorrentapp.h"
 
-#include <qapplication.h>
+#include <tqapplication.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -46,25 +46,25 @@
 #include <util/fileops.h>
 #include <ktversion.h>
 #include <functions.h>
-#include <qfile.h>
-#include <qdir.h>
+#include <tqfile.h>
+#include <tqdir.h>
 
 using namespace bt;
 
 
 
-void StupidWarningMessagesFromQt( QtMsgType type, const char *msg )
+void StupidWarningMessagesFromTQt( TQtMsgType type, const char *msg )
 {
 	switch ( type ) 
 	{
 		case QtDebugMsg:
-		//	printf("Qt: Debug: %s\n",msg);
+		//	printf("TQt: Debug: %s\n",msg);
 			break;
 		case QtWarningMsg:
-			printf("Qt: Warning: %s\n",msg);
+			printf("TQt: Warning: %s\n",msg);
 			break;
 		case QtFatalMsg:
-			printf("Qt: Fatal : %s\n",msg);
+			printf("TQt: Fatal : %s\n",msg);
 			abort();                    // deliberately core dump
 			break;
 	}
@@ -79,9 +79,9 @@ static const char description[] =
 bool GrabPIDLock()
 {
 	// create a lock file in /tmp/ with the user id of the current user included in the name
-	QString pid_file = QString("/tmp/.ktorrent_%1.lock").arg(getuid());
+	TQString pid_file = TQString("/tmp/.ktorrent_%1.lock").tqarg(getuid());
 		
-	int fd = open(QFile::encodeName(pid_file),O_RDWR|O_CREAT,0640);
+	int fd = open(TQFile::encodeName(pid_file),O_RDWR|O_CREAT,0640);
 	if (fd < 0)
 	{
 		fprintf(stderr,"Failed to open KT lock file %s : %s\n",pid_file.ascii(),strerror(errno));
@@ -116,7 +116,7 @@ int main(int argc, char **argv)
 	// ignore SIGPIPE's
 	signal(SIGPIPE,SIG_IGN);
 	signal(SIGXFSZ,SIG_IGN);
-	qInstallMsgHandler( StupidWarningMessagesFromQt );
+	tqInstallMsgHandler( StupidWarningMessagesFromTQt );
 	KAboutData about("ktorrent", I18N_NOOP("KTorrent"), kt::VERSION_STRING, description,
 					 KAboutData::License_GPL, "(C) 2005 -2008 Joris Guisson and Ivan Vasic", 0,
 					 "http://www.ktorrent.org/");

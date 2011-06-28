@@ -34,10 +34,10 @@ using namespace bt;
 namespace kt
 {
 
-	FileTreeDirItem::FileTreeDirItem(KListView* klv,const QString & name,FileTreeRootListener* rl)
-	: QCheckListItem(klv,QString::null,QCheckListItem::CheckBox),name(name),root_listener(rl)
+	FileTreeDirItem::FileTreeDirItem(KListView* klv,const TQString & name,FileTreeRootListener* rl)
+	: TQCheckListItem(klv,TQString(),TQCheckListItem::CheckBox),name(name),root_listener(rl)
 	{
-		parent = 0;
+		tqparent = 0;
 		size = 0;
 		setPixmap(0,KGlobal::iconLoader()->loadIcon("folder",KIcon::Small));
 		setText(0,name);
@@ -48,9 +48,9 @@ namespace kt
 		manual_change = false;
 	}
 
-	FileTreeDirItem::FileTreeDirItem(FileTreeDirItem* parent,const QString & name)
-	: QCheckListItem(parent,QString::null,QCheckListItem::CheckBox),
-	name(name),parent(parent)
+	FileTreeDirItem::FileTreeDirItem(FileTreeDirItem* tqparent,const TQString & name)
+	: TQCheckListItem(tqparent,TQString(),TQCheckListItem::CheckBox),
+	name(name),tqparent(tqparent)
 	{
 		size = 0;
 		setPixmap(0,KGlobal::iconLoader()->loadIcon("folder",KIcon::Small));
@@ -66,19 +66,19 @@ namespace kt
 	{
 	}
 
-	void FileTreeDirItem::insert(const QString & path,kt::TorrentFileInterface & file)
+	void FileTreeDirItem::insert(const TQString & path,kt::TorrentFileInterface & file)
 	{
 		size += file.getSize();
 		setText(1,BytesToString(size));
-		int p = path.find(bt::DirSeparator());
+		int p = path.tqfind(bt::DirSeparator());
 		if (p == -1)
 		{
-			children.insert(path,newFileTreeItem(path,file));
+			tqchildren.insert(path,newFileTreeItem(path,file));
 		}
 		else
 		{
-			QString subdir = path.left(p);
-			FileTreeDirItem* sd = subdirs.find(subdir);
+			TQString subdir = path.left(p);
+			FileTreeDirItem* sd = subdirs.tqfind(subdir);
 			if (!sd)
 			{
 				sd = newFileTreeDirItem(subdir);
@@ -98,15 +98,15 @@ namespace kt
 			manual_change = false;
 		}
 	// first set all the child items
-		bt::PtrMap<QString,FileTreeItem>::iterator i = children.begin();
-		while (i != children.end())
+		bt::PtrMap<TQString,FileTreeItem>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			i->second->setChecked(on,keep_data);
 			i++;
 		}
 
 	// then recursivly move on to subdirs
-		bt::PtrMap<QString,FileTreeDirItem>::iterator j = subdirs.begin();
+		bt::PtrMap<TQString,FileTreeDirItem>::iterator j = subdirs.begin();
 		while (j != subdirs.end())
 		{
 			j->second->setAllChecked(on,keep_data);
@@ -118,8 +118,8 @@ namespace kt
 	void FileTreeDirItem::invertChecked()
 	{
 	// first set all the child items
-		bt::PtrMap<QString,FileTreeItem>::iterator i = children.begin();
-		while (i != children.end())
+		bt::PtrMap<TQString,FileTreeItem>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			FileTreeItem* item = i->second;
 			item->setChecked(!item->isOn());
@@ -127,7 +127,7 @@ namespace kt
 		}
 
 	// then recursivly move on to subdirs
-		bt::PtrMap<QString,FileTreeDirItem>::iterator j = subdirs.begin();
+		bt::PtrMap<TQString,FileTreeDirItem>::iterator j = subdirs.begin();
 		while (j != subdirs.end())
 		{
 			j->second->invertChecked();
@@ -161,8 +161,8 @@ namespace kt
 						return;
 				}
 			}
-			if (parent)
-				parent->childStateChange();
+			if (tqparent)
+				tqparent->childStateChange();
 		}
 		setText(2,on ? i18n("Yes") : i18n("No"));
 	}
@@ -171,8 +171,8 @@ namespace kt
 	{
 		Uint64 tot = 0;
 		// first check all the child items
-		bt::PtrMap<QString,FileTreeItem>::const_iterator i = children.begin();
-		while (i != children.end())
+		bt::PtrMap<TQString,FileTreeItem>::const_iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			const FileTreeItem* item = i->second;
 			tot += item->bytesToDownload();
@@ -180,7 +180,7 @@ namespace kt
 		}
 
 		// then recursivly move on to subdirs
-		bt::PtrMap<QString,FileTreeDirItem>::const_iterator j = subdirs.begin();
+		bt::PtrMap<TQString,FileTreeDirItem>::const_iterator j = subdirs.begin();
 		while (j != subdirs.end())
 		{
 			tot += j->second->bytesToDownload();
@@ -192,8 +192,8 @@ namespace kt
 	bool FileTreeDirItem::allChildrenOn()
 	{
 		// first check all the child items
-		bt::PtrMap<QString,FileTreeItem>::iterator i = children.begin();
-		while (i != children.end())
+		bt::PtrMap<TQString,FileTreeItem>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			FileTreeItem* item = i->second;
 			if (!item->isOn())
@@ -202,7 +202,7 @@ namespace kt
 		}
 
 		// then recursivly move on to subdirs
-		bt::PtrMap<QString,FileTreeDirItem>::iterator j = subdirs.begin();
+		bt::PtrMap<TQString,FileTreeDirItem>::iterator j = subdirs.begin();
 		while (j != subdirs.end())
 		{
 			if (!j->second->allChildrenOn())
@@ -214,19 +214,19 @@ namespace kt
 
 	void FileTreeDirItem::childStateChange()
 	{
-	// only set this dir on if all children are on
+	// only set this dir on if all tqchildren are on
 		manual_change = true;
 		setOn(allChildrenOn());
 		manual_change = false;
 	
-		if (parent)
-			parent->childStateChange();
+		if (tqparent)
+			tqparent->childStateChange();
 		else if (root_listener)
 			root_listener->treeItemChanged();
 			
 	}
 
-	int FileTreeDirItem::compare(QListViewItem* i, int col, bool ascending) const
+	int FileTreeDirItem::compare(TQListViewItem* i, int col, bool ascending) const
 	{
 		if (col == 1)
 		{
@@ -238,18 +238,18 @@ namespace kt
 		}
 		else
 		{
-			//return QCheckListItem::compare(i, col, ascending);
+			//return TQCheckListItem::compare(i, col, ascending);
 			// case insensitive comparison
-			return QString::compare(text(col).lower(),i->text(col).lower());
+			return TQString::compare(text(col).lower(),i->text(col).lower());
 		}
 	}
 
-	TorrentFileInterface & FileTreeDirItem::findTorrentFile(QListViewItem* item)
+	TorrentFileInterface & FileTreeDirItem::findTorrentFile(TQListViewItem* item)
 	{
 	// first check all the child items
 		TorrentFileInterface & nullfile = (TorrentFileInterface &)TorrentFile::null;
-		bt::PtrMap<QString,FileTreeItem>::iterator i = children.begin();
-		while (i != children.end())
+		bt::PtrMap<TQString,FileTreeItem>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			FileTreeItem* file = i->second;
 			if (file == (FileTreeItem*)item)
@@ -258,7 +258,7 @@ namespace kt
 		}
 
 	// then recursivly move on to subdirs
-		bt::PtrMap<QString,FileTreeDirItem>::iterator j = subdirs.begin();
+		bt::PtrMap<TQString,FileTreeDirItem>::iterator j = subdirs.begin();
 		while (j != subdirs.end())
 		{
 			TorrentFileInterface & thefile = j->second->findTorrentFile(item);
@@ -269,12 +269,12 @@ namespace kt
 		return nullfile;
 	}
 
-	FileTreeItem* FileTreeDirItem::newFileTreeItem(const QString & name,TorrentFileInterface & file)
+	FileTreeItem* FileTreeDirItem::newFileTreeItem(const TQString & name,TorrentFileInterface & file)
 	{
 		return new FileTreeItem(this,name,file);
 	}
 
-	FileTreeDirItem* FileTreeDirItem::newFileTreeDirItem(const QString & subdir)
+	FileTreeDirItem* FileTreeDirItem::newFileTreeDirItem(const TQString & subdir)
 	{
 		return new FileTreeDirItem(this,subdir);
 	}
@@ -284,12 +284,12 @@ namespace kt
 		return bt::THROW_AWAY_DATA;
 	}
 	
-	QString FileTreeDirItem::getPath() const
+	TQString FileTreeDirItem::getPath() const
 	{
-		if (!parent)
+		if (!tqparent)
 			return bt::DirSeparator();
 		else
-			return parent->getPath() + name + bt::DirSeparator();
+			return tqparent->getPath() + name + bt::DirSeparator();
 	}
 }
 

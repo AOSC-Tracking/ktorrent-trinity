@@ -20,7 +20,7 @@
 #ifndef NETPORTLIST_H
 #define NETPORTLIST_H
 
-#include <qvaluelist.h>
+#include <tqvaluelist.h>
 #include <util/constants.h>
 
 namespace net
@@ -69,7 +69,7 @@ namespace net
 	 * List of ports which are currently being used.
 	 * 
 	*/
-	class PortList : public QValueList<Port>
+	class PortList : public TQValueList<Port>
 	{
 		PortListener* lst;
 	public:

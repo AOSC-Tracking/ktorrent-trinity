@@ -38,9 +38,9 @@ namespace utest
 	DHTMsgParseTest::~DHTMsgParseTest()
 	{}
 
-	bool DHTMsgParseTest::doTest(const QString & data,int method)
+	bool DHTMsgParseTest::doTest(const TQString & data,int method)
 	{
-		QByteArray bdata(data.length());
+		TQByteArray bdata(data.length());
 		
 		for (int i = 0;i < data.length();i++)
 		{
@@ -74,14 +74,14 @@ namespace utest
 	bool DHTMsgParseTest::doTest()
 	{	
 
-		QString test_str[] = {
+		TQString test_str[] = {
 			"d1:rd2:id20:####################5:token20:####################6:valuesl6:######6:######6:######6:######6:######6:######6:######6:######ee1:t1:#1:y1:re",
 			
 			"d1:ad2:id20:####################9:info_hash20:####################e1:q9:get_peers1:t1:#1:y1:qe",
 			
 			"d1:rd2:id20:####################5:nodes208:################################################################################################################################################################################################################5:token20:####################e1:t1:#1:y1:re",
 			
-			QString::null
+			TQString()
 		};
 		
 		int types[] = {dht::GET_PEERS,dht::NONE,dht::GET_PEERS};

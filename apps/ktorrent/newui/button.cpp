@@ -19,11 +19,11 @@
  ***************************************************************************/
 #include "button.h"
 
-#include <qpainter.h>
-#include <qtooltip.h>
-#include <qstyle.h>
-#include <qapplication.h>
-#include <qregexp.h>
+#include <tqpainter.h>
+#include <tqtooltip.h>
+#include <tqstyle.h>
+#include <tqapplication.h>
+#include <tqregexp.h>
 
 #include <kdebug.h>
 #include <kiconloader.h>
@@ -39,32 +39,32 @@
 
 namespace Ideal {
 
-Button::Button(ButtonBar *parent, const QString text, const QIconSet &icon,
-    const QString &description)
-    :QPushButton(icon, text, parent), m_buttonBar(parent), m_description(description),
-    m_place(parent->place()), m_realText(text), m_realIconSet(icon)
+Button::Button(ButtonBar *tqparent, const TQString text, const TQIconSet &icon,
+    const TQString &description)
+    :TQPushButton(icon, text, tqparent), m_buttonBar(tqparent), m_description(description),
+    m_place(tqparent->place()), m_realText(text), m_realIconSet(icon)
 {
     hide();
     setFlat(true);
     setToggleButton(true);
-    setFocusPolicy(NoFocus);
+    setFocusPolicy(TQ_NoFocus);
     setDescription(m_description);
-    setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-    resize(sizeHint());
+    tqsetSizePolicy(TQSizePolicy::Minimum, TQSizePolicy::Minimum);
+    resize(tqsizeHint());
     fixDimensions(Ideal::Bottom);
 
-    QToolTip::add(this, m_realText);
+    TQToolTip::add(this, m_realText);
 
     m_assignAccelAction = new KAction(i18n("Assign Accelerator..."), 0,
-        this, SLOT(assignAccel()), this);
+        TQT_TQOBJECT(this), TQT_SLOT(assignAccel()), TQT_TQOBJECT(this));
     m_clearAccelAction = new KAction(i18n("Clear Accelerator"), 0,
-        this, SLOT(clearAccel()), this);
+        TQT_TQOBJECT(this), TQT_SLOT(clearAccel()), TQT_TQOBJECT(this));
 
     KConfig *config = kapp->config();
     config->setGroup("UI");
-    QString accel = config->readEntry(QString("button_%1").arg(text), "");
+    TQString accel = config->readEntry(TQString("button_%1").tqarg(text), "");
     if (!accel.isEmpty())
-        setRealText(QString("&%1 %2").arg(accel).arg(m_realText));
+        setRealText(TQString("&%1 %2").tqarg(accel).tqarg(m_realText));
 }
 
 Button::~Button()
@@ -73,37 +73,37 @@ Button::~Button()
     KConfig *config = kapp->config();
     config->setGroup("UI");
 
-    QRegExp r("^&([0-9])\\s.*");
-    QRegExp r2("^&[0-9]\\s");
+    TQRegExp r("^&([0-9])\\s.*");
+    TQRegExp r2("^&[0-9]\\s");
     if (r.search(m_realText) > -1)
     {
-        QString text = m_realText;
-        if (text.contains(r2))
+        TQString text = m_realText;
+        if (text.tqcontains(r2))
             text.remove(r2);
-        config->writeEntry(QString("button_%1").arg(text), r.cap(1));
+        config->writeEntry(TQString("button_%1").tqarg(text), r.cap(1));
     }
     else
     {
-        config->writeEntry(QString("button_%1").arg(m_realText), "");
+        config->writeEntry(TQString("button_%1").tqarg(m_realText), "");
     }
 }
 
-void Button::setDescription(const QString &description)
+void Button::setDescription(const TQString &description)
 {
     m_description = description;
-    QToolTip::remove(this);
-    QToolTip::add(this, m_description);
+    TQToolTip::remove(this);
+    TQToolTip::add(this, m_description);
 }
 
-QString Button::description() const
+TQString Button::description() const
 {
     return m_description;
 }
 
-void Button::drawButton(QPainter *p)
+void Button::drawButton(TQPainter *p)
 {
-    QRect r = rect();
-    QSize sh = r.size();
+    TQRect r = rect();
+    TQSize sh = r.size();
     switch (m_place)
     {
         case Ideal::Left:
@@ -113,29 +113,29 @@ void Button::drawButton(QPainter *p)
             break;
     }
 
-    QStyle::SFlags flags = QStyle::Style_Default;
+    TQStyle::SFlags flags = TQStyle::Style_Default;
     if (isEnabled())
-        flags |= QStyle::Style_Enabled;
+        flags |= TQStyle::Style_Enabled;
     if (hasFocus())
-        flags |= QStyle::Style_HasFocus;
+        flags |= TQStyle::Style_HasFocus;
     if (isDown())
-        flags |= QStyle::Style_Down;
+        flags |= TQStyle::Style_Down;
     if (isOn())
-        flags |= QStyle::Style_On;
+        flags |= TQStyle::Style_On;
     if (! isFlat() && ! isDown())
-        flags |= QStyle::Style_Raised;
+        flags |= TQStyle::Style_Raised;
     if (isDefault())
-        flags |= QStyle::Style_ButtonDefault;
+        flags |= TQStyle::Style_ButtonDefault;
 
-    QPixmap pm(sh.width(), sh.height());
+    TQPixmap pm(sh.width(), sh.height());
     pm.fill(eraseColor());
-    QPainter p2(&pm);
+    TQPainter p2(&pm);
 
-    style().drawControl(QStyle::CE_PushButton,&p2,this, QRect(0,0,pm.width(),pm.height()), colorGroup(),flags);
+    tqstyle().tqdrawControl(TQStyle::CE_PushButton,&p2,this, TQRect(0,0,pm.width(),pm.height()), tqcolorGroup(),flags);
 
-    style().drawControl(QStyle::CE_PushButtonLabel, &p2, this,
-                        QRect(0,0,pm.width(),pm.height()),
-                        colorGroup(), flags, QStyleOption());
+    tqstyle().tqdrawControl(TQStyle::CE_PushButtonLabel, &p2, this,
+                        TQRect(0,0,pm.width(),pm.height()),
+                        tqcolorGroup(), flags, TQStyleOption());
 
     switch (m_place)
     {
@@ -153,7 +153,7 @@ void Button::drawButton(QPainter *p)
     }
 }
 
-void Button::drawButtonLabel(QPainter */*p*/)
+void Button::drawButtonLabel(TQPainter */*p*/)
 {
 }
 
@@ -178,7 +178,7 @@ void Button::fixDimensions(Place oldPlace)
             if ((oldPlace == Ideal::Bottom) || (oldPlace == Ideal::Top))
             {
                 setFixedWidth(height());
-                setMinimumHeight(sizeHint().width());
+                setMinimumHeight(tqsizeHint().width());
                 setMaximumHeight(32767);
             }
             break;
@@ -187,50 +187,50 @@ void Button::fixDimensions(Place oldPlace)
             if ((oldPlace == Ideal::Left) || (oldPlace == Ideal::Right))
             {
                 setFixedHeight(width());
-                setMinimumWidth(sizeHint().height());
+                setMinimumWidth(tqsizeHint().height());
                 setMaximumWidth(32767);
             }
             break;
     }
 }
 
-QSize Button::sizeHint() const
+TQSize Button::tqsizeHint() const
 {
-    return sizeHint(text());
+    return tqsizeHint(text());
 }
 
-QSize Button::sizeHint(const QString &text) const
+TQSize Button::tqsizeHint(const TQString &text) const
 {
     constPolish();
     int w = 0, h = 0;
 
     if ( iconSet() && !iconSet()->isNull() && (m_buttonBar->mode() != Text) ) {
-        int iw = iconSet()->pixmap( QIconSet::Small, QIconSet::Normal ).width() + 4;
-        int ih = iconSet()->pixmap( QIconSet::Small, QIconSet::Normal ).height();
+        int iw = iconSet()->pixmap( TQIconSet::Small, TQIconSet::Normal ).width() + 4;
+        int ih = iconSet()->pixmap( TQIconSet::Small, TQIconSet::Normal ).height();
         w += iw;
-        h = QMAX( h, ih );
+        h = TQMAX( h, ih );
     }
     if ( isMenuButton() )
-        w += style().pixelMetric(QStyle::PM_MenuButtonIndicator, this);
+        w += tqstyle().tqpixelMetric(TQStyle::PM_MenuButtonIndicator, this);
     if ( pixmap() ) {
-        QPixmap *pm = (QPixmap *)pixmap();
+        TQPixmap *pm = (TQPixmap *)pixmap();
         w += pm->width();
         h += pm->height();
     } else if (m_buttonBar->mode() != Icons) {
-        QString s( text );
+        TQString s( text );
         bool empty = s.isEmpty();
         if ( empty )
-            s = QString::fromLatin1("XXXX");
-        QFontMetrics fm = fontMetrics();
-        QSize sz = fm.size( ShowPrefix, s );
+            s = TQString::tqfromLatin1("XXXX");
+        TQFontMetrics fm = fontMetrics();
+        TQSize sz = fm.size( ShowPrefix, s );
         if(!empty || !w)
             w += sz.width();
         if(!empty || !h)
-            h = QMAX(h, sz.height());
+            h = TQMAX(h, sz.height());
     }
 
-    return (style().sizeFromContents(QStyle::CT_ToolButton, this, QSize(w, h)).
-            expandedTo(QApplication::globalStrut()));
+    return (tqstyle().tqsizeFromContents(TQStyle::CT_ToolButton, this, TQSize(w, h)).
+            expandedTo(TQApplication::globalStrut()));
 }
 
 void Button::updateSize()
@@ -239,17 +239,17 @@ void Button::updateSize()
     {
         case Ideal::Left:
         case Ideal::Right:
-             setMinimumHeight(sizeHint().width());
-             resize(sizeHint().height(), sizeHint().width());
+             setMinimumHeight(tqsizeHint().width());
+             resize(tqsizeHint().height(), tqsizeHint().width());
             break;
         case Ideal::Top:
         case Ideal::Bottom:
-            resize(sizeHint().width(), sizeHint().height());
+            resize(tqsizeHint().width(), tqsizeHint().height());
             break;
     }
 }
 
-QString Button::realText() const
+TQString Button::realText() const
 {
     return m_realText;
 }
@@ -285,7 +285,7 @@ void Button::enableIconSet()
 
 void Button::disableIconSet()
 {
-    setIconSet(QIconSet());
+    setIconSet(TQIconSet());
 }
 
 void Button::disableText()
@@ -299,12 +299,12 @@ void Button::enableText()
     setText(m_realText);
 }
 
-void Button::contextMenuEvent(QContextMenuEvent *e)
+void Button::contextMenuEvent(TQContextMenuEvent *e)
 {
-/*    QPopupMenu menu;
+/*    TQPopupMenu menu;
 
     m_assignAccelAction->plug(&menu);
-    if (m_realText.contains(QRegExp("^&[0-9]\\s")))
+    if (m_realText.tqcontains(TQRegExp("^&[0-9]\\s")))
         m_clearAccelAction->plug(&menu);
 
     emit contextMenu( &menu );
@@ -319,13 +319,13 @@ void Button::assignAccel()
     int num = KInputDialog::getInteger(i18n("Change Button Number"), i18n("New accelerator number:"), 1, 0, 10, 1, &ok, this);
     if (ok)
     {
-        QString text = realTextWithoutAccel();
-        text = QString("&%1 %2").arg(num).arg(text);
+        TQString text = realTextWithoutAccel();
+        text = TQString("&%1 %2").tqarg(num).tqarg(text);
         setRealText(text);
     }
 }
 
-void Button::setRealText(const QString &text)
+void Button::setRealText(const TQString &text)
 {
     m_realText = text;
     setText(text);
@@ -337,11 +337,11 @@ void Button::clearAccel()
     setRealText(realTextWithoutAccel());
 }
 
-QString Button::realTextWithoutAccel() const
+TQString Button::realTextWithoutAccel() const
 {
-    QString text = m_realText;
-    QRegExp r("^&[0-9]\\s");
-    if (text.contains(r))
+    TQString text = m_realText;
+    TQRegExp r("^&[0-9]\\s");
+    if (text.tqcontains(r))
         text.remove(r);
     return text;
 }

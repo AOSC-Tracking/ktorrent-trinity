@@ -28,19 +28,19 @@
 // #include <kmimetype.h>
 #include <kmessagebox.h>
 
-#include <qstring.h>
-#include <qobject.h>
-#include <qfile.h>
-#include <qdatetime.h>
+#include <tqstring.h>
+#include <tqobject.h>
+#include <tqfile.h>
+#include <tqdatetime.h>
 
-#include <qlineedit.h>
+#include <tqlineedit.h>
 #include <kurlrequester.h>
-#include <qspinbox.h>
-#include <qcheckbox.h>
-#include <qdatetimeedit.h>
-#include <qtable.h>
-#include <qregexp.h>
-#include <qlayout.h>
+#include <tqspinbox.h>
+#include <tqcheckbox.h>
+#include <tqdatetimeedit.h>
+#include <tqtable.h>
+#include <tqregexp.h>
+#include <tqlayout.h>
 
 #include <torrent/globals.h>
 #include <util/log.h>
@@ -48,7 +48,7 @@
 
 #include <interfaces/coreinterface.h>
 
-#include <qapplication.h>
+#include <tqapplication.h>
 
 #include "../../libktorrent/torrent/bdecoder.h"
 #include "../../libktorrent/torrent/bnode.h"
@@ -60,7 +60,7 @@ using namespace bt;
 namespace kt
 {
 
-	RssFeedManager::RssFeedManager(CoreInterface* core, QWidget * parent) : RssFeedWidget(parent)
+	RssFeedManager::RssFeedManager(CoreInterface* core, TQWidget * tqparent) : RssFeedWidget(tqparent)
 	{
 		//Construct the manager
 		m_core = core;
@@ -75,7 +75,7 @@ namespace kt
 		feedArticles->setLeftMargin(0);
 		feedArticles->verticalHeader()->hide();
 		feedArticles->setNumCols(3);
-		feedArticles->setColumnLabels(QStringList() << i18n("Title") << i18n("Description") << i18n("Link"));
+		feedArticles->setColumnLabels(TQStringList() << i18n("Title") << i18n("Description") << i18n("Link"));
 		feedArticles->horizontalHeader()->setStretchEnabled(true, 0);
 		feedArticles->hideColumn(1);
 		feedArticles->hideColumn(2);
@@ -84,7 +84,7 @@ namespace kt
 		filterMatches->setLeftMargin(0);
 		filterMatches->verticalHeader()->hide();
 		filterMatches->setNumCols(4);
-		filterMatches->setColumnLabels(QStringList() << i18n("Season") << i18n("Episode") << i18n("Time") << i18n("Link"));
+		filterMatches->setColumnLabels(TQStringList() << i18n("Season") << i18n("Episode") << i18n("Time") << i18n("Link"));
 		filterMatches->setColumnWidth(0, 60);
 		filterMatches->setColumnWidth(1, 60);
 		filterMatches->setColumnWidth(2, 180);
@@ -94,37 +94,37 @@ namespace kt
 		loadFilterList();
 		
 		//connect the buttons
-		connect(newFeed, SIGNAL(clicked()), this, SLOT(addNewFeed() ) );
-		connect(deleteFeed, SIGNAL(clicked()), this, SLOT(deleteSelectedFeed() ) );
+		connect(newFeed, TQT_SIGNAL(clicked()), this, TQT_SLOT(addNewFeed() ) );
+		connect(deleteFeed, TQT_SIGNAL(clicked()), this, TQT_SLOT(deleteSelectedFeed() ) );
 		
-		connect(newAcceptFilter, SIGNAL(clicked()), this, SLOT(addNewAcceptFilter() ) );
-		connect(deleteAcceptFilter, SIGNAL(clicked()), this, SLOT(deleteSelectedAcceptFilter() ) );
+		connect(newAcceptFilter, TQT_SIGNAL(clicked()), this, TQT_SLOT(addNewAcceptFilter() ) );
+		connect(deleteAcceptFilter, TQT_SIGNAL(clicked()), this, TQT_SLOT(deleteSelectedAcceptFilter() ) );
 		
-		connect(newRejectFilter, SIGNAL(clicked()), this, SLOT(addNewRejectFilter() ) );
-		connect(deleteRejectFilter, SIGNAL(clicked()), this, SLOT(deleteSelectedRejectFilter() ) );
+		connect(newRejectFilter, TQT_SIGNAL(clicked()), this, TQT_SLOT(addNewRejectFilter() ) );
+		connect(deleteRejectFilter, TQT_SIGNAL(clicked()), this, TQT_SLOT(deleteSelectedRejectFilter() ) );
 		
 		//connect the changing of the active feed
-		connect(feedlist, SIGNAL(selectionChanged()), this, SLOT(changedActiveFeed()) );
+		connect(feedlist, TQT_SIGNAL(selectionChanged()), this, TQT_SLOT(changedActiveFeed()) );
 		
 		//connect the changing of the url to enable the refresh button
-		connect(feedUrl, SIGNAL(textChanged(const QString &)), this, SLOT(changedFeedUrl()) );
+		connect(feedUrl, TQT_SIGNAL(textChanged(const TQString &)), this, TQT_SLOT(changedFeedUrl()) );
 		
 		//connect the changing of the filters
-		connect(acceptFilterList, SIGNAL(selectionChanged()), this, SLOT(changedActiveAcceptFilter()) );
-		connect(rejectFilterList, SIGNAL(selectionChanged()), this, SLOT(changedActiveRejectFilter()) );
+		connect(acceptFilterList, TQT_SIGNAL(selectionChanged()), this, TQT_SLOT(changedActiveAcceptFilter()) );
+		connect(rejectFilterList, TQT_SIGNAL(selectionChanged()), this, TQT_SLOT(changedActiveRejectFilter()) );
 		
 		//connect the selection and downloading of articles
-		connect(feedArticles, SIGNAL(selectionChanged()), this, SLOT(changedArticleSelection()) );
-		connect(downloadArticle, SIGNAL(clicked()), this, SLOT(downloadSelectedArticles()) );
+		connect(feedArticles, TQT_SIGNAL(selectionChanged()), this, TQT_SLOT(changedArticleSelection()) );
+		connect(downloadArticle, TQT_SIGNAL(clicked()), this, TQT_SLOT(downloadSelectedArticles()) );
 		
 		//connect the selection, downloading and deletion of matches
-		connect(filterMatches, SIGNAL(selectionChanged()), this, SLOT(changedMatchSelection()) );
-		connect(downloadFilterMatch, SIGNAL(clicked()), this, SLOT(downloadSelectedMatches()) );
-		connect(deleteFilterMatch, SIGNAL(clicked()), this, SLOT(deleteSelectedMatches()) );
+		connect(filterMatches, TQT_SIGNAL(selectionChanged()), this, TQT_SLOT(changedMatchSelection()) );
+		connect(downloadFilterMatch, TQT_SIGNAL(clicked()), this, TQT_SLOT(downloadSelectedMatches()) );
+		connect(deleteFilterMatch, TQT_SIGNAL(clicked()), this, TQT_SLOT(deleteSelectedMatches()) );
 		
 		//connect the test text update to the slot
-		connect(testText, SIGNAL(textChanged(const QString &)), this, SLOT(testTextChanged()) );
-		connect(testTestText, SIGNAL(clicked()), this, SLOT(testFilter()) );
+		connect(testText, TQT_SIGNAL(textChanged(const TQString &)), this, TQT_SLOT(testTextChanged()) );
+		connect(testTestText, TQT_SIGNAL(clicked()), this, TQT_SLOT(testFilter()) );
 		
 		changedActiveFeed();
 		changedActiveAcceptFilter();
@@ -138,7 +138,7 @@ namespace kt
 	
 	void RssFeedManager::clearArticles()
 	{
-		int pos = feeds.find((RssFeed *)sender());
+		int pos = feeds.tqfind((RssFeed *)sender());
 			
 		if (pos >= 0)
 		{
@@ -159,65 +159,65 @@ namespace kt
 	void RssFeedManager::connectFeed(int index)
 	{
 	
-		connect(feedTitle, SIGNAL(textChanged(const QString &)), feeds.at(index), SLOT(setTitle(const QString &) ) );
-		connect(feeds.at(index), SIGNAL(titleChanged(const QString &)), this, SLOT(setFeedTitle(const QString &) ) );
+		connect(feedTitle, TQT_SIGNAL(textChanged(const TQString &)), feeds.at(index), TQT_SLOT(setTitle(const TQString &) ) );
+		connect(feeds.at(index), TQT_SIGNAL(titleChanged(const TQString &)), this, TQT_SLOT(setFeedTitle(const TQString &) ) );
 		
 		//url
-		connect(feedUrl, SIGNAL(textChanged(const QString &)), feeds.at(index), SLOT(setFeedUrl(const QString&) ) );
-		connect(feeds.at(index), SIGNAL(feedUrlChanged(const KURL&)), feedUrl, SLOT(setKURL(const KURL&) ) );
+		connect(feedUrl, TQT_SIGNAL(textChanged(const TQString &)), feeds.at(index), TQT_SLOT(setFeedUrl(const TQString&) ) );
+		connect(feeds.at(index), TQT_SIGNAL(feedUrlChanged(const KURL&)), feedUrl, TQT_SLOT(setKURL(const KURL&) ) );
 		
 		//articleAge
-		connect(feedArticleAge, SIGNAL(valueChanged(int)), feeds.at(index), SLOT(setArticleAge(int) ) );
-		connect(feeds.at(index), SIGNAL(articleAgeChanged(int)), feedArticleAge, SLOT(setValue(int) ) );
+		connect(feedArticleAge, TQT_SIGNAL(valueChanged(int)), feeds.at(index), TQT_SLOT(setArticleAge(int) ) );
+		connect(feeds.at(index), TQT_SIGNAL(articleAgeChanged(int)), feedArticleAge, TQT_SLOT(setValue(int) ) );
 		
 		//active
-		connect(feedActive, SIGNAL(toggled(bool)), feeds.at(index), SLOT(setActive(bool) ) );
-		connect(feeds.at(index), SIGNAL(activeChanged(bool)), feedActive, SLOT(setChecked(bool) ) );
+		connect(feedActive, TQT_SIGNAL(toggled(bool)), feeds.at(index), TQT_SLOT(setActive(bool) ) );
+		connect(feeds.at(index), TQT_SIGNAL(activeChanged(bool)), feedActive, TQT_SLOT(setChecked(bool) ) );
 		
 		//autoRefresh
-		connect(feedAutoRefresh, SIGNAL(valueChanged(const QTime&)), feeds.at(index), SLOT(setAutoRefresh(const QTime&) ) );
-		connect(feeds.at(index), SIGNAL(autoRefreshChanged(const QTime&)), feedAutoRefresh, SLOT(setTime(const QTime&) ) );
+		connect(feedAutoRefresh, TQT_SIGNAL(valueChanged(const TQTime&)), feeds.at(index), TQT_SLOT(setAutoRefresh(const TQTime&) ) );
+		connect(feeds.at(index), TQT_SIGNAL(autoRefreshChanged(const TQTime&)), feedAutoRefresh, TQT_SLOT(setTime(const TQTime&) ) );
 	
 		//ignoreTTL
-		connect(feedIgnoreTTL, SIGNAL(toggled(bool)), feeds.at(index), SLOT(setIgnoreTTL(bool) ) );
-		connect(feeds.at(index), SIGNAL(ignoreTTLChanged(bool)), feedIgnoreTTL, SLOT(setChecked(bool) ) );
+		connect(feedIgnoreTTL, TQT_SIGNAL(toggled(bool)), feeds.at(index), TQT_SLOT(setIgnoreTTL(bool) ) );
+		connect(feeds.at(index), TQT_SIGNAL(ignoreTTLChanged(bool)), feedIgnoreTTL, TQT_SLOT(setChecked(bool) ) );
 		
 		//articles
-		connect(feeds.at(index), SIGNAL(articlesChanged(const RssArticle::List&)), this, SLOT(updateArticles(const RssArticle::List&) ) );
+		connect(feeds.at(index), TQT_SIGNAL(articlesChanged(const RssArticle::List&)), this, TQT_SLOT(updateArticles(const RssArticle::List&) ) );
 		
 		//connect the refresh button
-		connect(refreshFeed, SIGNAL(clicked()), feeds.at(index), SLOT(refreshFeed()) );
+		connect(refreshFeed, TQT_SIGNAL(clicked()), feeds.at(index), TQT_SLOT(refreshFeed()) );
 	}
 	
 	void RssFeedManager::disconnectFeed(int index)
 	{
-		disconnect(feedTitle, SIGNAL(textChanged(const QString &)), feeds.at(index), SLOT(setTitle(const QString &) ) );
-		disconnect(feeds.at(index), SIGNAL(titleChanged(const QString &)), this, SLOT(setFeedTitle(const QString &) ) );
+		disconnect(feedTitle, TQT_SIGNAL(textChanged(const TQString &)), feeds.at(index), TQT_SLOT(setTitle(const TQString &) ) );
+		disconnect(feeds.at(index), TQT_SIGNAL(titleChanged(const TQString &)), this, TQT_SLOT(setFeedTitle(const TQString &) ) );
 		
 		//url
-		disconnect(feedUrl, SIGNAL(textChanged(const QString &)), feeds.at(index), SLOT(setFeedUrl(const QString&) ) );
-		disconnect(feeds.at(index), SIGNAL(feedUrlChanged(const KURL&)), feedUrl, SLOT(setKURL(const KURL&) ) );
+		disconnect(feedUrl, TQT_SIGNAL(textChanged(const TQString &)), feeds.at(index), TQT_SLOT(setFeedUrl(const TQString&) ) );
+		disconnect(feeds.at(index), TQT_SIGNAL(feedUrlChanged(const KURL&)), feedUrl, TQT_SLOT(setKURL(const KURL&) ) );
 		
 		//articleAge
-		disconnect(feedArticleAge, SIGNAL(valueChanged(int)), feeds.at(index), SLOT(setArticleAge(int) ) );
-		disconnect(feeds.at(index), SIGNAL(articleAgeChanged(int)), feedArticleAge, SLOT(setValue(int) ) );
+		disconnect(feedArticleAge, TQT_SIGNAL(valueChanged(int)), feeds.at(index), TQT_SLOT(setArticleAge(int) ) );
+		disconnect(feeds.at(index), TQT_SIGNAL(articleAgeChanged(int)), feedArticleAge, TQT_SLOT(setValue(int) ) );
 		
 		//active
-		disconnect(feedActive, SIGNAL(toggled(bool)), feeds.at(index), SLOT(setActive(bool) ) );
-		disconnect(feeds.at(index), SIGNAL(activeChanged(bool)), feedActive, SLOT(setChecked(bool) ) );
+		disconnect(feedActive, TQT_SIGNAL(toggled(bool)), feeds.at(index), TQT_SLOT(setActive(bool) ) );
+		disconnect(feeds.at(index), TQT_SIGNAL(activeChanged(bool)), feedActive, TQT_SLOT(setChecked(bool) ) );
 		
 		//autoRefresh
-		disconnect(feedAutoRefresh, SIGNAL(valueChanged(const QTime&)), feeds.at(index), SLOT(setAutoRefresh(const QTime&) ) );
-		disconnect(feeds.at(index), SIGNAL(autoRefreshChanged(const QTime&)), feedAutoRefresh, SLOT(setTime(const QTime&) ) );
+		disconnect(feedAutoRefresh, TQT_SIGNAL(valueChanged(const TQTime&)), feeds.at(index), TQT_SLOT(setAutoRefresh(const TQTime&) ) );
+		disconnect(feeds.at(index), TQT_SIGNAL(autoRefreshChanged(const TQTime&)), feedAutoRefresh, TQT_SLOT(setTime(const TQTime&) ) );
 	
 		//ignoreTTL
-		disconnect(feedIgnoreTTL, SIGNAL(toggled(bool)), feeds.at(index), SLOT(setIgnoreTTL(bool) ) );
-		disconnect(feeds.at(index), SIGNAL(ignoreTTLChanged(bool)), feedIgnoreTTL, SLOT(setChecked(bool) ) );
+		disconnect(feedIgnoreTTL, TQT_SIGNAL(toggled(bool)), feeds.at(index), TQT_SLOT(setIgnoreTTL(bool) ) );
+		disconnect(feeds.at(index), TQT_SIGNAL(ignoreTTLChanged(bool)), feedIgnoreTTL, TQT_SLOT(setChecked(bool) ) );
 		
 		//articles
-		disconnect(feeds.at(index), SIGNAL(articlesChanged(const RssArticle::List&)), this, SLOT(updateArticles(const RssArticle::List&) ) );
+		disconnect(feeds.at(index), TQT_SIGNAL(articlesChanged(const RssArticle::List&)), this, TQT_SLOT(updateArticles(const RssArticle::List&) ) );
 		
-		disconnect(refreshFeed, SIGNAL(clicked()), feeds.at(index), SLOT(refreshFeed()) );
+		disconnect(refreshFeed, TQT_SIGNAL(clicked()), feeds.at(index), TQT_SLOT(refreshFeed()) );
 	}
 	
 	void RssFeedManager::connectFilter(int index, bool acceptFilter)
@@ -225,69 +225,69 @@ namespace kt
 		if (acceptFilter)
 		{
 		//title
-		connect(filterTitle, SIGNAL(textChanged(const QString &)), acceptFilters.at(index), SLOT(setTitle(const QString &) ) );
-		connect(acceptFilters.at(index), SIGNAL(titleChanged(const QString &)), this, SLOT(setFilterTitle(const QString &) ) );
+		connect(filterTitle, TQT_SIGNAL(textChanged(const TQString &)), acceptFilters.at(index), TQT_SLOT(setTitle(const TQString &) ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(titleChanged(const TQString &)), this, TQT_SLOT(setFilterTitle(const TQString &) ) );
 		//active
-		connect(filterActive, SIGNAL(toggled(bool)), acceptFilters.at(index), SLOT(setActive(bool) ) );
-		connect(acceptFilters.at(index), SIGNAL(activeChanged(bool)), filterActive, SLOT(setChecked(bool) ) );
+		connect(filterActive, TQT_SIGNAL(toggled(bool)), acceptFilters.at(index), TQT_SLOT(setActive(bool) ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(activeChanged(bool)), filterActive, TQT_SLOT(setChecked(bool) ) );
 		//regExps
-		connect(filterRegExps, SIGNAL(changed()), this, SLOT(updateRegExps()) );
+		connect(filterRegExps, TQT_SIGNAL(changed()), this, TQT_SLOT(updateRegExps()) );
 		//series
-		connect(filterSeries, SIGNAL(toggled(bool)), acceptFilters.at(index), SLOT(setSeries(bool) ) );
-		connect(acceptFilters.at(index), SIGNAL(seriesChanged(bool)), filterSeries, SLOT(setChecked(bool) ) );
+		connect(filterSeries, TQT_SIGNAL(toggled(bool)), acceptFilters.at(index), TQT_SLOT(setSeries(bool) ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(seriesChanged(bool)), filterSeries, TQT_SLOT(setChecked(bool) ) );
 		//sansEpisode
-		connect(filterSansEpisode, SIGNAL(toggled(bool)), acceptFilters.at(index), SLOT(setSansEpisode(bool) ) );
-		connect(acceptFilters.at(index), SIGNAL(sansEpisodeChanged(bool)), filterSansEpisode, SLOT(setChecked(bool) ) );
+		connect(filterSansEpisode, TQT_SIGNAL(toggled(bool)), acceptFilters.at(index), TQT_SLOT(setSansEpisode(bool) ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(sansEpisodeChanged(bool)), filterSansEpisode, TQT_SLOT(setChecked(bool) ) );
 		//minSeason
-		connect(filterMinSeason, SIGNAL(valueChanged(int)), acceptFilters.at(index), SLOT(setMinSeason(int) ) );
-		connect(acceptFilters.at(index), SIGNAL(minSeasonChanged(int)), filterMinSeason, SLOT(setValue(int) ) );
+		connect(filterMinSeason, TQT_SIGNAL(valueChanged(int)), acceptFilters.at(index), TQT_SLOT(setMinSeason(int) ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(minSeasonChanged(int)), filterMinSeason, TQT_SLOT(setValue(int) ) );
 		//minEpisode
-		connect(filterMinEpisode, SIGNAL(valueChanged(int)), acceptFilters.at(index), SLOT(setMinEpisode(int) ) );
-		connect(acceptFilters.at(index), SIGNAL(minEpisodeChanged(int)), filterMinEpisode, SLOT(setValue(int) ) );
+		connect(filterMinEpisode, TQT_SIGNAL(valueChanged(int)), acceptFilters.at(index), TQT_SLOT(setMinEpisode(int) ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(minEpisodeChanged(int)), filterMinEpisode, TQT_SLOT(setValue(int) ) );
 		//maxSeason
-		connect(filterMaxSeason, SIGNAL(valueChanged(int)), acceptFilters.at(index), SLOT(setMaxSeason(int) ) );
-		connect(acceptFilters.at(index), SIGNAL(maxSeasonChanged(int)), filterMaxSeason, SLOT(setValue(int) ) );
+		connect(filterMaxSeason, TQT_SIGNAL(valueChanged(int)), acceptFilters.at(index), TQT_SLOT(setMaxSeason(int) ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(maxSeasonChanged(int)), filterMaxSeason, TQT_SLOT(setValue(int) ) );
 		//maxEpisode
-		connect(filterMaxEpisode, SIGNAL(valueChanged(int)), acceptFilters.at(index), SLOT(setMaxEpisode(int) ) );
-		connect(acceptFilters.at(index), SIGNAL(maxEpisodeChanged(int)), filterMaxEpisode, SLOT(setValue(int) ) );
+		connect(filterMaxEpisode, TQT_SIGNAL(valueChanged(int)), acceptFilters.at(index), TQT_SLOT(setMaxEpisode(int) ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(maxEpisodeChanged(int)), filterMaxEpisode, TQT_SLOT(setValue(int) ) );
 		//matches
-		connect(acceptFilters.at(index), SIGNAL(matchesChanged(const QValueList<FilterMatch>&)), this, SLOT(updateMatches(const QValueList<FilterMatch>&) ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(matchesChanged(const TQValueList<FilterMatch>&)), this, TQT_SLOT(updateMatches(const TQValueList<FilterMatch>&) ) );
 		
-		connect(processFilter, SIGNAL(clicked()), acceptFilters.at(index), SIGNAL(rescanFilter()) );
+		connect(processFilter, TQT_SIGNAL(clicked()), acceptFilters.at(index), TQT_SIGNAL(rescanFilter()) );
 
 		}
 		else
 		{
 		//title
-		connect(filterTitle, SIGNAL(textChanged(const QString &)), rejectFilters.at(index), SLOT(setTitle(const QString &) ) );
-		connect(rejectFilters.at(index), SIGNAL(titleChanged(const QString &)), this, SLOT(setFilterTitle(const QString &) ) );
+		connect(filterTitle, TQT_SIGNAL(textChanged(const TQString &)), rejectFilters.at(index), TQT_SLOT(setTitle(const TQString &) ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(titleChanged(const TQString &)), this, TQT_SLOT(setFilterTitle(const TQString &) ) );
 		//active
-		connect(filterActive, SIGNAL(toggled(bool)), rejectFilters.at(index), SLOT(setActive(bool) ) );
-		connect(rejectFilters.at(index), SIGNAL(activeChanged(bool)), filterActive, SLOT(setChecked(bool) ) );
+		connect(filterActive, TQT_SIGNAL(toggled(bool)), rejectFilters.at(index), TQT_SLOT(setActive(bool) ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(activeChanged(bool)), filterActive, TQT_SLOT(setChecked(bool) ) );
 		//regExps
-		connect(filterRegExps, SIGNAL(changed()), this, SLOT(updateRegExps()) );
+		connect(filterRegExps, TQT_SIGNAL(changed()), this, TQT_SLOT(updateRegExps()) );
 		//series
-		connect(filterSeries, SIGNAL(toggled(bool)), rejectFilters.at(index), SLOT(setSeries(bool) ) );
-		connect(rejectFilters.at(index), SIGNAL(seriesChanged(bool)), filterSeries, SLOT(setChecked(bool) ) );
+		connect(filterSeries, TQT_SIGNAL(toggled(bool)), rejectFilters.at(index), TQT_SLOT(setSeries(bool) ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(seriesChanged(bool)), filterSeries, TQT_SLOT(setChecked(bool) ) );
 		//sansEpisode
-		connect(filterSansEpisode, SIGNAL(toggled(bool)), rejectFilters.at(index), SLOT(setSansEpisode(bool) ) );
-		connect(rejectFilters.at(index), SIGNAL(sansEpisodeChanged(bool)), filterSansEpisode, SLOT(setChecked(bool) ) );
+		connect(filterSansEpisode, TQT_SIGNAL(toggled(bool)), rejectFilters.at(index), TQT_SLOT(setSansEpisode(bool) ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(sansEpisodeChanged(bool)), filterSansEpisode, TQT_SLOT(setChecked(bool) ) );
 		//minSeason
-		connect(filterMinSeason, SIGNAL(valueChanged(int)), rejectFilters.at(index), SLOT(setMinSeason(int) ) );
-		connect(rejectFilters.at(index), SIGNAL(minSeasonChanged(int)), filterMinSeason, SLOT(setValue(int) ) );
+		connect(filterMinSeason, TQT_SIGNAL(valueChanged(int)), rejectFilters.at(index), TQT_SLOT(setMinSeason(int) ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(minSeasonChanged(int)), filterMinSeason, TQT_SLOT(setValue(int) ) );
 		//minEpisode
-		connect(filterMinEpisode, SIGNAL(valueChanged(int)), rejectFilters.at(index), SLOT(setMinEpisode(int) ) );
-		connect(rejectFilters.at(index), SIGNAL(minEpisodeChanged(int)), filterMinEpisode, SLOT(setValue(int) ) );
+		connect(filterMinEpisode, TQT_SIGNAL(valueChanged(int)), rejectFilters.at(index), TQT_SLOT(setMinEpisode(int) ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(minEpisodeChanged(int)), filterMinEpisode, TQT_SLOT(setValue(int) ) );
 		//maxSeason
-		connect(filterMaxSeason, SIGNAL(valueChanged(int)), rejectFilters.at(index), SLOT(setMaxSeason(int) ) );
-		connect(rejectFilters.at(index), SIGNAL(maxSeasonChanged(int)), filterMaxSeason, SLOT(setValue(int) ) );
+		connect(filterMaxSeason, TQT_SIGNAL(valueChanged(int)), rejectFilters.at(index), TQT_SLOT(setMaxSeason(int) ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(maxSeasonChanged(int)), filterMaxSeason, TQT_SLOT(setValue(int) ) );
 		//maxEpisode
-		connect(filterMaxEpisode, SIGNAL(valueChanged(int)), rejectFilters.at(index), SLOT(setMaxEpisode(int) ) );
-		connect(rejectFilters.at(index), SIGNAL(maxEpisodeChanged(int)), filterMaxEpisode, SLOT(setValue(int) ) );
+		connect(filterMaxEpisode, TQT_SIGNAL(valueChanged(int)), rejectFilters.at(index), TQT_SLOT(setMaxEpisode(int) ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(maxEpisodeChanged(int)), filterMaxEpisode, TQT_SLOT(setValue(int) ) );
 		//matches
-		connect(rejectFilters.at(index), SIGNAL(matchesChanged(const QValueList<FilterMatch>&)), this, SLOT(updateMatches(const QValueList<FilterMatch>&) ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(matchesChanged(const TQValueList<FilterMatch>&)), this, TQT_SLOT(updateMatches(const TQValueList<FilterMatch>&) ) );
 		
-		connect(processFilter, SIGNAL(clicked()), rejectFilters.at(index), SIGNAL(rescanFilter()) );
+		connect(processFilter, TQT_SIGNAL(clicked()), rejectFilters.at(index), TQT_SIGNAL(rescanFilter()) );
 		
 		}
 	}
@@ -297,68 +297,68 @@ namespace kt
 		if (acceptFilter)
 		{
 		//title
-		disconnect(filterTitle, SIGNAL(textChanged(const QString &)), acceptFilters.at(index), SLOT(setTitle(const QString &) ) );
-		disconnect(acceptFilters.at(index), SIGNAL(titleChanged(const QString &)), this, SLOT(setFilterTitle(const QString &) ) );
+		disconnect(filterTitle, TQT_SIGNAL(textChanged(const TQString &)), acceptFilters.at(index), TQT_SLOT(setTitle(const TQString &) ) );
+		disconnect(acceptFilters.at(index), TQT_SIGNAL(titleChanged(const TQString &)), this, TQT_SLOT(setFilterTitle(const TQString &) ) );
 		//active
-		disconnect(filterActive, SIGNAL(toggled(bool)), acceptFilters.at(index), SLOT(setActive(bool) ) );
-		disconnect(acceptFilters.at(index), SIGNAL(activeChanged(bool)), filterActive, SLOT(setChecked(bool) ) );
+		disconnect(filterActive, TQT_SIGNAL(toggled(bool)), acceptFilters.at(index), TQT_SLOT(setActive(bool) ) );
+		disconnect(acceptFilters.at(index), TQT_SIGNAL(activeChanged(bool)), filterActive, TQT_SLOT(setChecked(bool) ) );
 		//regExps
-		disconnect(filterRegExps, SIGNAL(changed()), this, SLOT(updateRegExps()) );
+		disconnect(filterRegExps, TQT_SIGNAL(changed()), this, TQT_SLOT(updateRegExps()) );
 		//series
-		disconnect(filterSeries, SIGNAL(toggled(bool)), acceptFilters.at(index), SLOT(setSeries(bool) ) );
-		disconnect(acceptFilters.at(index), SIGNAL(seriesChanged(bool)), filterSeries, SLOT(setChecked(bool) ) );
+		disconnect(filterSeries, TQT_SIGNAL(toggled(bool)), acceptFilters.at(index), TQT_SLOT(setSeries(bool) ) );
+		disconnect(acceptFilters.at(index), TQT_SIGNAL(seriesChanged(bool)), filterSeries, TQT_SLOT(setChecked(bool) ) );
 		//sansEpisode
-		disconnect(filterSansEpisode, SIGNAL(toggled(bool)), acceptFilters.at(index), SLOT(setSansEpisode(bool) ) );
-		disconnect(acceptFilters.at(index), SIGNAL(sansEpisodeChanged(bool)), filterSansEpisode, SLOT(setChecked(bool) ) );
+		disconnect(filterSansEpisode, TQT_SIGNAL(toggled(bool)), acceptFilters.at(index), TQT_SLOT(setSansEpisode(bool) ) );
+		disconnect(acceptFilters.at(index), TQT_SIGNAL(sansEpisodeChanged(bool)), filterSansEpisode, TQT_SLOT(setChecked(bool) ) );
 		//minSeason
-		disconnect(filterMinSeason, SIGNAL(valueChanged(int)), acceptFilters.at(index), SLOT(setMinSeason(int) ) );
-		disconnect(acceptFilters.at(index), SIGNAL(minSeasonChanged(int)), filterMinSeason, SLOT(setValue(int) ) );
+		disconnect(filterMinSeason, TQT_SIGNAL(valueChanged(int)), acceptFilters.at(index), TQT_SLOT(setMinSeason(int) ) );
+		disconnect(acceptFilters.at(index), TQT_SIGNAL(minSeasonChanged(int)), filterMinSeason, TQT_SLOT(setValue(int) ) );
 		//minEpisode
-		disconnect(filterMinEpisode, SIGNAL(valueChanged(int)), acceptFilters.at(index), SLOT(setMinEpisode(int) ) );
-		disconnect(acceptFilters.at(index), SIGNAL(minEpisodeChanged(int)), filterMinEpisode, SLOT(setValue(int) ) );
+		disconnect(filterMinEpisode, TQT_SIGNAL(valueChanged(int)), acceptFilters.at(index), TQT_SLOT(setMinEpisode(int) ) );
+		disconnect(acceptFilters.at(index), TQT_SIGNAL(minEpisodeChanged(int)), filterMinEpisode, TQT_SLOT(setValue(int) ) );
 		//maxSeason
-		disconnect(filterMaxSeason, SIGNAL(valueChanged(int)), acceptFilters.at(index), SLOT(setMaxSeason(int) ) );
-		disconnect(acceptFilters.at(index), SIGNAL(maxSeasonChanged(int)), filterMaxSeason, SLOT(setValue(int) ) );
+		disconnect(filterMaxSeason, TQT_SIGNAL(valueChanged(int)), acceptFilters.at(index), TQT_SLOT(setMaxSeason(int) ) );
+		disconnect(acceptFilters.at(index), TQT_SIGNAL(maxSeasonChanged(int)), filterMaxSeason, TQT_SLOT(setValue(int) ) );
 		//maxEpisode
-		disconnect(filterMaxEpisode, SIGNAL(valueChanged(int)), acceptFilters.at(index), SLOT(setMaxEpisode(int) ) );
-		disconnect(acceptFilters.at(index), SIGNAL(maxEpisodeChanged(int)), filterMaxEpisode, SLOT(setValue(int) ) );
+		disconnect(filterMaxEpisode, TQT_SIGNAL(valueChanged(int)), acceptFilters.at(index), TQT_SLOT(setMaxEpisode(int) ) );
+		disconnect(acceptFilters.at(index), TQT_SIGNAL(maxEpisodeChanged(int)), filterMaxEpisode, TQT_SLOT(setValue(int) ) );
 		//matches
-		disconnect(acceptFilters.at(index), SIGNAL(matchesChanged(const QValueList<FilterMatch>&)), this, SLOT(updateMatches(const QValueList<FilterMatch>&) ) ); 
+		disconnect(acceptFilters.at(index), TQT_SIGNAL(matchesChanged(const TQValueList<FilterMatch>&)), this, TQT_SLOT(updateMatches(const TQValueList<FilterMatch>&) ) ); 
 		
-		disconnect(processFilter, SIGNAL(clicked()), acceptFilters.at(index), SIGNAL(rescanFilter()) );
+		disconnect(processFilter, TQT_SIGNAL(clicked()), acceptFilters.at(index), TQT_SIGNAL(rescanFilter()) );
 		}
 		else
 		{
 		//title
-		disconnect(filterTitle, SIGNAL(textChanged(const QString &)), rejectFilters.at(index), SLOT(setTitle(const QString &) ) );
-		disconnect(rejectFilters.at(index), SIGNAL(titleChanged(const QString &)), this, SLOT(setFilterTitle(const QString &) ) );
+		disconnect(filterTitle, TQT_SIGNAL(textChanged(const TQString &)), rejectFilters.at(index), TQT_SLOT(setTitle(const TQString &) ) );
+		disconnect(rejectFilters.at(index), TQT_SIGNAL(titleChanged(const TQString &)), this, TQT_SLOT(setFilterTitle(const TQString &) ) );
 		//active
-		disconnect(filterActive, SIGNAL(toggled(bool)), rejectFilters.at(index), SLOT(setActive(bool) ) );
-		disconnect(rejectFilters.at(index), SIGNAL(activeChanged(bool)), filterActive, SLOT(setChecked(bool) ) );
+		disconnect(filterActive, TQT_SIGNAL(toggled(bool)), rejectFilters.at(index), TQT_SLOT(setActive(bool) ) );
+		disconnect(rejectFilters.at(index), TQT_SIGNAL(activeChanged(bool)), filterActive, TQT_SLOT(setChecked(bool) ) );
 		//regExps
-		disconnect(filterRegExps, SIGNAL(changed()), this, SLOT(updateRegExps()) );
+		disconnect(filterRegExps, TQT_SIGNAL(changed()), this, TQT_SLOT(updateRegExps()) );
 		//series
-		disconnect(filterSeries, SIGNAL(toggled(bool)), rejectFilters.at(index), SLOT(setSeries(bool) ) );
-		disconnect(rejectFilters.at(index), SIGNAL(seriesChanged(bool)), filterSeries, SLOT(setChecked(bool) ) );
+		disconnect(filterSeries, TQT_SIGNAL(toggled(bool)), rejectFilters.at(index), TQT_SLOT(setSeries(bool) ) );
+		disconnect(rejectFilters.at(index), TQT_SIGNAL(seriesChanged(bool)), filterSeries, TQT_SLOT(setChecked(bool) ) );
 		//sansEpisode
-		disconnect(filterSansEpisode, SIGNAL(toggled(bool)), rejectFilters.at(index), SLOT(setSansEpisode(bool) ) );
-		disconnect(rejectFilters.at(index), SIGNAL(sansEpisodeChanged(bool)), filterSansEpisode, SLOT(setChecked(bool) ) );
+		disconnect(filterSansEpisode, TQT_SIGNAL(toggled(bool)), rejectFilters.at(index), TQT_SLOT(setSansEpisode(bool) ) );
+		disconnect(rejectFilters.at(index), TQT_SIGNAL(sansEpisodeChanged(bool)), filterSansEpisode, TQT_SLOT(setChecked(bool) ) );
 		//minSeason
-		disconnect(filterMinSeason, SIGNAL(valueChanged(int)), rejectFilters.at(index), SLOT(setMinSeason(int) ) );
-		disconnect(rejectFilters.at(index), SIGNAL(minSeasonChanged(int)), filterMinSeason, SLOT(setValue(int) ) );
+		disconnect(filterMinSeason, TQT_SIGNAL(valueChanged(int)), rejectFilters.at(index), TQT_SLOT(setMinSeason(int) ) );
+		disconnect(rejectFilters.at(index), TQT_SIGNAL(minSeasonChanged(int)), filterMinSeason, TQT_SLOT(setValue(int) ) );
 		//minEpisode
-		disconnect(filterMinEpisode, SIGNAL(valueChanged(int)), rejectFilters.at(index), SLOT(setMinEpisode(int) ) );
-		disconnect(rejectFilters.at(index), SIGNAL(minEpisodeChanged(int)), filterMinEpisode, SLOT(setValue(int) ) );
+		disconnect(filterMinEpisode, TQT_SIGNAL(valueChanged(int)), rejectFilters.at(index), TQT_SLOT(setMinEpisode(int) ) );
+		disconnect(rejectFilters.at(index), TQT_SIGNAL(minEpisodeChanged(int)), filterMinEpisode, TQT_SLOT(setValue(int) ) );
 		//maxSeason
-		disconnect(filterMaxSeason, SIGNAL(valueChanged(int)), rejectFilters.at(index), SLOT(setMaxSeason(int) ) );
-		disconnect(rejectFilters.at(index), SIGNAL(maxSeasonChanged(int)), filterMaxSeason, SLOT(setValue(int) ) );
+		disconnect(filterMaxSeason, TQT_SIGNAL(valueChanged(int)), rejectFilters.at(index), TQT_SLOT(setMaxSeason(int) ) );
+		disconnect(rejectFilters.at(index), TQT_SIGNAL(maxSeasonChanged(int)), filterMaxSeason, TQT_SLOT(setValue(int) ) );
 		//maxEpisode
-		disconnect(filterMaxEpisode, SIGNAL(valueChanged(int)), rejectFilters.at(index), SLOT(setMaxEpisode(int) ) );
-		disconnect(rejectFilters.at(index), SIGNAL(maxEpisodeChanged(int)), filterMaxEpisode, SLOT(setValue(int) ) );
+		disconnect(filterMaxEpisode, TQT_SIGNAL(valueChanged(int)), rejectFilters.at(index), TQT_SLOT(setMaxEpisode(int) ) );
+		disconnect(rejectFilters.at(index), TQT_SIGNAL(maxEpisodeChanged(int)), filterMaxEpisode, TQT_SLOT(setValue(int) ) );
 		//matches
-		disconnect(rejectFilters.at(index), SIGNAL(matchesChanged(const QValueList<FilterMatch>&)), this, SLOT(updateMatches(const QValueList<FilterMatch>&) ) );
+		disconnect(rejectFilters.at(index), TQT_SIGNAL(matchesChanged(const TQValueList<FilterMatch>&)), this, TQT_SLOT(updateMatches(const TQValueList<FilterMatch>&) ) );
 		
-		disconnect(processFilter, SIGNAL(clicked()), rejectFilters.at(index), SIGNAL(rescanFilter()) );
+		disconnect(processFilter, TQT_SIGNAL(clicked()), rejectFilters.at(index), TQT_SIGNAL(rescanFilter()) );
 		
 		}
 	}
@@ -375,27 +375,27 @@ namespace kt
 		feedlist->setCurrentItem(index);
 		
 		//update the feed list
-		connect(feeds.at(index), SIGNAL(titleChanged(const QString&)), this, SLOT(updateFeedList()) );
+		connect(feeds.at(index), TQT_SIGNAL(titleChanged(const TQString&)), this, TQT_SLOT(updateFeedList()) );
 		
 		//clear the articles list when the url is changed
-		connect(feeds.at(index), SIGNAL(feedUrlChanged(const KURL&)), this, SLOT(clearArticles() ) );
+		connect(feeds.at(index), TQT_SIGNAL(feedUrlChanged(const KURL&)), this, TQT_SLOT(clearArticles() ) );
 		
 		//connect the scanArticle signal to the scanArticle slot
-		connect(feeds.at(index), SIGNAL(scanRssArticle(RssArticle)), this, SLOT(scanArticle(RssArticle) ) );
+		connect(feeds.at(index), TQT_SIGNAL(scanRssArticle(RssArticle)), this, TQT_SLOT(scanArticle(RssArticle) ) );
 		
 		//connect all the fields to the save slot
 		//title
-		connect(feeds.at(index), SIGNAL(titleChanged(const QString &)), this, SLOT(saveFeedList() ) );
+		connect(feeds.at(index), TQT_SIGNAL(titleChanged(const TQString &)), this, TQT_SLOT(saveFeedList() ) );
 		//url
-		connect(feeds.at(index), SIGNAL(feedUrlChanged(const KURL&)), this, SLOT(saveFeedList() ) );
+		connect(feeds.at(index), TQT_SIGNAL(feedUrlChanged(const KURL&)), this, TQT_SLOT(saveFeedList() ) );
 		//articleAge
-		connect(feeds.at(index), SIGNAL(articleAgeChanged(int)), this, SLOT(saveFeedList() ) );
+		connect(feeds.at(index), TQT_SIGNAL(articleAgeChanged(int)), this, TQT_SLOT(saveFeedList() ) );
 		//active
-		connect(feeds.at(index), SIGNAL(activeChanged(bool)), this, SLOT(saveFeedList() ) );
+		connect(feeds.at(index), TQT_SIGNAL(activeChanged(bool)), this, TQT_SLOT(saveFeedList() ) );
 		//autoRefresh
-		connect(feeds.at(index), SIGNAL(autoRefreshChanged(const QTime&)), this, SLOT(saveFeedList() ) );
+		connect(feeds.at(index), TQT_SIGNAL(autoRefreshChanged(const TQTime&)), this, TQT_SLOT(saveFeedList() ) );
 		//ignoreTTL
-		connect(feeds.at(index), SIGNAL(ignoreTTLChanged(bool)), this, SLOT(saveFeedList() ) );
+		connect(feeds.at(index), TQT_SIGNAL(ignoreTTLChanged(bool)), this, TQT_SLOT(saveFeedList() ) );
 	
 	}
 	
@@ -410,52 +410,52 @@ namespace kt
 		acceptFilterList->insertItem(acceptFilters.at(index)->title());
 		acceptFilterList->setCurrentItem(index);
 		
-		connect(acceptFilters.at(index), SIGNAL(titleChanged(const QString&)), this, SLOT(updateAcceptFilterList()) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(titleChanged(const TQString&)), this, TQT_SLOT(updateAcceptFilterList()) );
 		
 		//connect all the fields to the save slot
 		//title
-		connect(acceptFilters.at(index), SIGNAL(titleChanged(const QString &)), this, SLOT(saveFilterList() ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(titleChanged(const TQString &)), this, TQT_SLOT(saveFilterList() ) );
 		//active
-		connect(acceptFilters.at(index), SIGNAL(activeChanged( bool )), this, SLOT(saveFilterList() ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(activeChanged( bool )), this, TQT_SLOT(saveFilterList() ) );
 		//regexps
-		connect(acceptFilters.at(index), SIGNAL(regExpsChanged( const QStringList& )), this, SLOT(saveFilterList() ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(regExpsChanged( const TQStringList& )), this, TQT_SLOT(saveFilterList() ) );
 		//series
-		connect(acceptFilters.at(index), SIGNAL(seriesChanged( bool )), this, SLOT(saveFilterList() ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(seriesChanged( bool )), this, TQT_SLOT(saveFilterList() ) );
 		//sansEpisode
-		connect(acceptFilters.at(index), SIGNAL(sansEpisodeChanged( bool )), this, SLOT(saveFilterList() ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(sansEpisodeChanged( bool )), this, TQT_SLOT(saveFilterList() ) );
 		//minSeason
-		connect(acceptFilters.at(index), SIGNAL(minSeasonChanged (int )), this, SLOT(saveFilterList() ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(minSeasonChanged (int )), this, TQT_SLOT(saveFilterList() ) );
 		//minEpisode
-		connect(acceptFilters.at(index), SIGNAL(minEpisodeChanged (int )), this, SLOT(saveFilterList() ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(minEpisodeChanged (int )), this, TQT_SLOT(saveFilterList() ) );
 		//maxSeason
-		connect(acceptFilters.at(index), SIGNAL(maxSeasonChanged (int )), this, SLOT(saveFilterList() ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(maxSeasonChanged (int )), this, TQT_SLOT(saveFilterList() ) );
 		//maxEpiosde
-		connect(acceptFilters.at(index), SIGNAL(maxEpisodeChanged (int )), this, SLOT(saveFilterList() ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(maxEpisodeChanged (int )), this, TQT_SLOT(saveFilterList() ) );
 		//matches
-		connect(acceptFilters.at(index), SIGNAL(matchesChanged( const QValueList<FilterMatch>& )), this, SLOT(saveFilterList() ) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(matchesChanged( const TQValueList<FilterMatch>& )), this, TQT_SLOT(saveFilterList() ) );
 		
 		//connect the rescan signal to the rescan slot
-		connect(acceptFilters.at(index), SIGNAL(rescanFilter()), this, SLOT(rescanFilter()) );
+		connect(acceptFilters.at(index), TQT_SIGNAL(rescanFilter()), this, TQT_SLOT(rescanFilter()) );
 		
 // 		//connect all except the matchesChanged to the rescanFilter slot
 // 		//title
-// 		connect(acceptFilters.at(index), SIGNAL(titleChanged(const QString &)), this, SLOT(rescanFilter() ) );
+// 		connect(acceptFilters.at(index), TQT_SIGNAL(titleChanged(const TQString &)), this, TQT_SLOT(rescanFilter() ) );
 // 		//active
-// 		connect(acceptFilters.at(index), SIGNAL(activeChanged( bool )), this, SLOT(rescanFilter() ) );
+// 		connect(acceptFilters.at(index), TQT_SIGNAL(activeChanged( bool )), this, TQT_SLOT(rescanFilter() ) );
 // 		//regexps
-// 		connect(acceptFilters.at(index), SIGNAL(regExpsChanged( const QStringList& )), this, SLOT(rescanFilter() ) );
+// 		connect(acceptFilters.at(index), TQT_SIGNAL(regExpsChanged( const TQStringList& )), this, TQT_SLOT(rescanFilter() ) );
 // 		//series
-// 		connect(acceptFilters.at(index), SIGNAL(seriesChanged( bool )), this, SLOT(rescanFilter() ) );
+// 		connect(acceptFilters.at(index), TQT_SIGNAL(seriesChanged( bool )), this, TQT_SLOT(rescanFilter() ) );
 // 		//sansEpisode
-// 		connect(acceptFilters.at(index), SIGNAL(sansEpisodeChanged( bool )), this, SLOT(rescanFilter() ) );
+// 		connect(acceptFilters.at(index), TQT_SIGNAL(sansEpisodeChanged( bool )), this, TQT_SLOT(rescanFilter() ) );
 // 		//minSeason
-// 		connect(acceptFilters.at(index), SIGNAL(minSeasonChanged (int )), this, SLOT(rescanFilter() ) );
+// 		connect(acceptFilters.at(index), TQT_SIGNAL(minSeasonChanged (int )), this, TQT_SLOT(rescanFilter() ) );
 // 		//minEpisode
-// 		connect(acceptFilters.at(index), SIGNAL(minEpisodeChanged (int )), this, SLOT(rescanFilter() ) );
+// 		connect(acceptFilters.at(index), TQT_SIGNAL(minEpisodeChanged (int )), this, TQT_SLOT(rescanFilter() ) );
 // 		//maxSeason
-// 		connect(acceptFilters.at(index), SIGNAL(maxSeasonChanged (int )), this, SLOT(rescanFilter() ) );
+// 		connect(acceptFilters.at(index), TQT_SIGNAL(maxSeasonChanged (int )), this, TQT_SLOT(rescanFilter() ) );
 // 		//maxEpiosde
-// 		connect(acceptFilters.at(index), SIGNAL(maxEpisodeChanged (int )), this, SLOT(rescanFilter() ) );
+// 		connect(acceptFilters.at(index), TQT_SIGNAL(maxEpisodeChanged (int )), this, TQT_SLOT(rescanFilter() ) );
 
 	}
 	
@@ -470,29 +470,29 @@ namespace kt
 		rejectFilterList->insertItem(rejectFilters.at(index)->title());
 		rejectFilterList->setCurrentItem(index);
 		
-		connect(rejectFilters.at(index), SIGNAL(titleChanged(const QString&)), this, SLOT(updateRejectFilterList()) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(titleChanged(const TQString&)), this, TQT_SLOT(updateRejectFilterList()) );
 		
 		//connect all the fields to the save slot
 		//title
-		connect(rejectFilters.at(index), SIGNAL(titleChanged(const QString &)), this, SLOT(saveFilterList() ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(titleChanged(const TQString &)), this, TQT_SLOT(saveFilterList() ) );
 		//active
-		connect(rejectFilters.at(index), SIGNAL(activeChanged( bool )), this, SLOT(saveFilterList() ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(activeChanged( bool )), this, TQT_SLOT(saveFilterList() ) );
 		//regexps
-		connect(rejectFilters.at(index), SIGNAL(regExpsChanged( const QStringList& )), this, SLOT(saveFilterList() ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(regExpsChanged( const TQStringList& )), this, TQT_SLOT(saveFilterList() ) );
 		//series
-		connect(rejectFilters.at(index), SIGNAL(seriesChanged( bool )), this, SLOT(saveFilterList() ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(seriesChanged( bool )), this, TQT_SLOT(saveFilterList() ) );
 		//sansEpisode
-		connect(rejectFilters.at(index), SIGNAL(sansEpisodeChanged( bool )), this, SLOT(saveFilterList() ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(sansEpisodeChanged( bool )), this, TQT_SLOT(saveFilterList() ) );
 		//minSeason
-		connect(rejectFilters.at(index), SIGNAL(minSeasonChanged (int )), this, SLOT(saveFilterList() ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(minSeasonChanged (int )), this, TQT_SLOT(saveFilterList() ) );
 		//minEpisode
-		connect(rejectFilters.at(index), SIGNAL(minEpisodeChanged (int )), this, SLOT(saveFilterList() ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(minEpisodeChanged (int )), this, TQT_SLOT(saveFilterList() ) );
 		//maxSeason
-		connect(rejectFilters.at(index), SIGNAL(maxSeasonChanged (int )), this, SLOT(saveFilterList() ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(maxSeasonChanged (int )), this, TQT_SLOT(saveFilterList() ) );
 		//maxEpiosde
-		connect(rejectFilters.at(index), SIGNAL(maxEpisodeChanged (int )), this, SLOT(saveFilterList() ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(maxEpisodeChanged (int )), this, TQT_SLOT(saveFilterList() ) );
 		//matches
-		connect(rejectFilters.at(index), SIGNAL(matchesChanged( const QValueList<FilterMatch>& )), this, SLOT(saveFilterList() ) );
+		connect(rejectFilters.at(index), TQT_SIGNAL(matchesChanged( const TQValueList<FilterMatch>& )), this, TQT_SLOT(saveFilterList() ) );
 
 	}
 	
@@ -606,7 +606,7 @@ namespace kt
 		if (item < 0)
 		{
 			//let's check which one sent the signal - if we can't figure it all then update them all
-			int pos = feeds.find((RssFeed *)sender());
+			int pos = feeds.tqfind((RssFeed *)sender());
 			
 			if (pos < 0)
 			{
@@ -639,7 +639,7 @@ namespace kt
 		if (item < 0)
 		{
 			//let's check which one sent the signal - if we can't figure it all then update them all
-			int pos = acceptFilters.find((RssFilter *)sender());
+			int pos = acceptFilters.tqfind((RssFilter *)sender());
 			
 			if (pos < 0)
 			{
@@ -672,7 +672,7 @@ namespace kt
 		if (item < 0)
 		{
 			//let's check which one sent the signal - if we can't figure it all then update them all
-			int pos = rejectFilters.find((RssFilter *)sender());
+			int pos = rejectFilters.tqfind((RssFilter *)sender());
 			
 			if (pos < 0)
 			{
@@ -704,7 +704,7 @@ namespace kt
 		feedArticles->setNumRows(articles.count());
 		for (int i=0; i<articles.count(); i++)
 			{
-			QString info;
+			TQString info;
 			if (articles[i].downloaded()==1)
 				{
 				info = ": Manually downloaded";
@@ -719,13 +719,13 @@ namespace kt
 			}
 	}
 	
-	void RssFeedManager::updateMatches(const QValueList<FilterMatch>& matches)
+	void RssFeedManager::updateMatches(const TQValueList<FilterMatch>& matches)
 	{
 		filterMatches->setNumRows(matches.count());
 		for (int i=0; i<matches.count(); i++)
 			{
-			filterMatches->setText(i, 0, QString::number(matches[i].season()));
-			filterMatches->setText(i, 1, QString::number(matches[i].episode()));
+			filterMatches->setText(i, 0, TQString::number(matches[i].season()));
+			filterMatches->setText(i, 1, TQString::number(matches[i].episode()));
 			filterMatches->setText(i, 2, matches[i].time());
 			filterMatches->setText(i, 3, matches[i].link());
 			}
@@ -773,7 +773,7 @@ namespace kt
 				curDownload = new RssLinkDownloader(m_core, feedArticles->text(j, 2));
 				for (int i=0; i<feeds.count(); i++)
 					{
-					connect(curDownload, SIGNAL(linkDownloaded( QString, int )), feeds.at(i), SLOT(setDownloaded(QString, int)) );
+					connect(curDownload, TQT_SIGNAL(linkDownloaded( TQString, int )), feeds.at(i), TQT_SLOT(setDownloaded(TQString, int)) );
 					}
 			}
 		}
@@ -793,7 +793,7 @@ namespace kt
 	
 	void RssFeedManager::deleteSelectedMatches()
 	{
-		QStringList selectedLinks;
+		TQStringList selectedLinks;
 		for (int i=0; i<filterMatches->numSelections(); i++)
 		{
 			int endRow = filterMatches->selection(i).topRow() + filterMatches->selection(i).numRows(); 
@@ -883,7 +883,7 @@ namespace kt
 				//active
 				feedActive->setChecked(false);
 				//autoRefresh
-				feedAutoRefresh->setTime(QTime());
+				feedAutoRefresh->setTime(TQTime());
 				//ignoreTTL
 				feedIgnoreTTL->setChecked(false);
 				//articles
@@ -1080,12 +1080,12 @@ namespace kt
 		}
 	}
 	
-	QString RssFeedManager::getFeedListFilename()
+	TQString RssFeedManager::getFeedListFilename()
 	{
 		return KGlobal::dirs()->saveLocation("data","ktorrent") + "rssfeeds.ktr";
 	}
 	
-	QString RssFeedManager::getFilterListFilename()
+	TQString RssFeedManager::getFilterListFilename()
 	{
 		return KGlobal::dirs()->saveLocation("data","ktorrent") + "rssfilters.ktr";
 	}
@@ -1097,13 +1097,13 @@ namespace kt
 			
 		feedListSaving = true;
 		
-		QString filename = getFeedListFilename();
+		TQString filename = getFeedListFilename();
 		
 		//save feeds to disk
-		QFile file(filename);
+		TQFile file(filename);
 		
 		file.open( IO_WriteOnly );
-		QDataStream out(&file);
+		TQDataStream out(&file);
 		
 		out << feeds.count();
 		
@@ -1117,15 +1117,15 @@ namespace kt
 
 	void RssFeedManager::loadFeedList()
 	{
-		QString filename = getFeedListFilename();
+		TQString filename = getFeedListFilename();
 		
 		//load feeds from disk
-		QFile file(filename);
+		TQFile file(filename);
 		
 		if (file.exists())
 			{
 				file.open( IO_ReadOnly );
-				QDataStream in(&file);
+				TQDataStream in(&file);
 				
 				int numFeeds;
 				
@@ -1150,13 +1150,13 @@ namespace kt
 		
 		filterListSaving = true;
 		
-		QString filename = getFilterListFilename();
+		TQString filename = getFilterListFilename();
 		
 		//save feeds to disk
-		QFile file(filename);
+		TQFile file(filename);
 		
 		file.open( IO_WriteOnly );
-		QDataStream out(&file);
+		TQDataStream out(&file);
 		
 		out << acceptFilters.count();
 		
@@ -1177,15 +1177,15 @@ namespace kt
 
 	void RssFeedManager::loadFilterList()
 	{
-		QString filename = getFilterListFilename();
+		TQString filename = getFilterListFilename();
 		
 		//load feeds from disk
-		QFile file(filename);
+		TQFile file(filename);
 		
 		if (file.exists())
 			{
 				file.open( IO_ReadOnly );
-				QDataStream in(&file);
+				TQDataStream in(&file);
 				
 				int numFilters;
 				
@@ -1232,7 +1232,7 @@ namespace kt
 				RssLinkDownloader * curDownload = new RssLinkDownloader(m_core, article.link().prettyURL(), filter);
 				for (int i=0; i<feeds.count(); i++)
 					{
-					connect(curDownload, SIGNAL(linkDownloaded( QString, int )), feeds.at(i), SLOT(setDownloaded(QString, int)) );
+					connect(curDownload, TQT_SIGNAL(linkDownloaded( TQString, int )), feeds.at(i), TQT_SLOT(setDownloaded(TQString, int)) );
 					}
 			}
 		}
@@ -1245,7 +1245,7 @@ namespace kt
 				RssLinkDownloader * curDownload = new RssLinkDownloader(m_core, article.link().prettyURL(), acceptFilters.at(i));
 				for (int i=0; i<feeds.count(); i++)
 					{
-					connect(curDownload, SIGNAL(linkDownloaded( QString, int )), feeds.at(i), SLOT(setDownloaded(QString, int)) );
+					connect(curDownload, TQT_SIGNAL(linkDownloaded( TQString, int )), feeds.at(i), TQT_SLOT(setDownloaded(TQString, int)) );
 					}
 				}
 			}
@@ -1254,7 +1254,7 @@ namespace kt
 	
 	void RssFeedManager::rescanFilter()
 	{
-		int pos = acceptFilters.find((RssFilter *)sender());
+		int pos = acceptFilters.tqfind((RssFilter *)sender());
 		
 		if (pos >= 0)
 		{
@@ -1270,7 +1270,7 @@ namespace kt
 	
 	void RssFeedManager::testTextChanged()
 	{
-		testText->setPaletteBackgroundColor(QColor(255, 255, 255));
+		testText->setPaletteBackgroundColor(TQColor(255, 255, 255));
 		testTestText->setEnabled(!testText->text().isEmpty());
 	}
 	
@@ -1293,22 +1293,22 @@ namespace kt
 		
 		if (curFilter->scanArticle(testArticle, false, false))
 		{
-		testText->setPaletteBackgroundColor(QColor(0, 255, 0));
+		testText->setPaletteBackgroundColor(TQColor(0, 255, 0));
 		}
 		else
 		{
-		testText->setPaletteBackgroundColor(QColor(255, 0, 0));
+		testText->setPaletteBackgroundColor(TQColor(255, 0, 0));
 		}
 	}
 	
-	void RssFeedManager::setFilterTitle(const QString& title)
+	void RssFeedManager::setFilterTitle(const TQString& title)
 	{
 		int cursorPos = filterTitle->cursorPosition();
 		filterTitle->setText(title);
 		filterTitle->setCursorPosition(cursorPos);
 	}
 	
-	void RssFeedManager::setFeedTitle(const QString& title)
+	void RssFeedManager::setFeedTitle(const TQString& title)
 	{
 		int cursorPos = feedTitle->cursorPosition();
 		feedTitle->setText(title);

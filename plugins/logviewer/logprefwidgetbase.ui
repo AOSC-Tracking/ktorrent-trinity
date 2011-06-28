@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>LogPrefWidgetBase</class>
-<widget class="QWidget">
+<widget class="TQWidget">
     <property name="name">
         <cstring>LogPrefWidgetBase</cstring>
     </property>
@@ -29,14 +29,14 @@
             <property name="sizeType">
                 <enum>Expanding</enum>
             </property>
-            <property name="sizeHint">
+            <property name="tqsizeHint">
                 <size>
                     <width>20</width>
                     <height>110</height>
                 </size>
             </property>
         </spacer>
-        <widget class="QButtonGroup" row="0" column="1">
+        <widget class="TQButtonGroup" row="0" column="1">
             <property name="name">
                 <cstring>buttonGroup2</cstring>
             </property>
@@ -47,7 +47,7 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QComboBox" row="0" column="1">
+                <widget class="TQComboBox" row="0" column="1">
                     <item>
                         <property name="text">
                             <string>All</string>
@@ -77,7 +77,7 @@
                         <cstring>m_sysipf</cstring>
                     </property>
                 </widget>
-                <widget class="QLabel" row="0" column="0">
+                <widget class="TQLabel" row="0" column="0">
                     <property name="name">
                         <cstring>textLabel2</cstring>
                     </property>
@@ -88,7 +88,7 @@
                         <cstring>comboBox1_5</cstring>
                     </property>
                 </widget>
-                <widget class="QComboBox" row="1" column="1">
+                <widget class="TQComboBox" row="1" column="1">
                     <item>
                         <property name="text">
                             <string>All</string>
@@ -118,7 +118,7 @@
                         <cstring>m_syssrc</cstring>
                     </property>
                 </widget>
-                <widget class="QLabel" row="1" column="0">
+                <widget class="TQLabel" row="1" column="0">
                     <property name="name">
                         <cstring>textLabel2_2</cstring>
                     </property>
@@ -129,7 +129,7 @@
                         <cstring>comboBox1_6</cstring>
                     </property>
                 </widget>
-                <widget class="QComboBox" row="2" column="1">
+                <widget class="TQComboBox" row="2" column="1">
                     <item>
                         <property name="text">
                             <string>All</string>
@@ -159,7 +159,7 @@
                         <cstring>m_syspnp</cstring>
                     </property>
                 </widget>
-                <widget class="QLabel" row="2" column="0">
+                <widget class="TQLabel" row="2" column="0">
                     <property name="name">
                         <cstring>textLabel2_3</cstring>
                     </property>
@@ -170,7 +170,7 @@
                         <cstring>comboBox1_7</cstring>
                     </property>
                 </widget>
-                <widget class="QLabel" row="3" column="0">
+                <widget class="TQLabel" row="3" column="0">
                     <property name="name">
                         <cstring>textLabel2_4</cstring>
                     </property>
@@ -181,7 +181,7 @@
                         <cstring>comboBox1_8</cstring>
                     </property>
                 </widget>
-                <widget class="QComboBox" row="3" column="1">
+                <widget class="TQComboBox" row="3" column="1">
                     <item>
                         <property name="text">
                             <string>All</string>
@@ -211,7 +211,7 @@
                         <cstring>m_syssnf</cstring>
                     </property>
                 </widget>
-                <widget class="QComboBox" row="4" column="1">
+                <widget class="TQComboBox" row="4" column="1">
                     <item>
                         <property name="text">
                             <string>All</string>
@@ -241,7 +241,7 @@
                         <cstring>m_sysscd</cstring>
                     </property>
                 </widget>
-                <widget class="QLabel" row="4" column="0">
+                <widget class="TQLabel" row="4" column="0">
                     <property name="name">
                         <cstring>textLabel2_5</cstring>
                     </property>
@@ -252,7 +252,7 @@
                         <cstring>comboBox1_9</cstring>
                     </property>
                 </widget>
-                <widget class="QComboBox" row="5" column="1">
+                <widget class="TQComboBox" row="5" column="1">
                     <item>
                         <property name="text">
                             <string>All</string>
@@ -282,7 +282,7 @@
                         <cstring>m_syspfi</cstring>
                     </property>
                 </widget>
-                <widget class="QLabel" row="5" column="0">
+                <widget class="TQLabel" row="5" column="0">
                     <property name="name">
                         <cstring>textLabel2_6</cstring>
                     </property>
@@ -293,7 +293,7 @@
                         <cstring>comboBox1_10</cstring>
                     </property>
                 </widget>
-                <widget class="QLabel" row="6" column="0">
+                <widget class="TQLabel" row="6" column="0">
                     <property name="name">
                         <cstring>textLabel2_7</cstring>
                     </property>
@@ -304,7 +304,7 @@
                         <cstring>comboBox1_11</cstring>
                     </property>
                 </widget>
-                <widget class="QComboBox" row="6" column="1">
+                <widget class="TQComboBox" row="6" column="1">
                     <item>
                         <property name="text">
                             <string>All</string>
@@ -334,7 +334,7 @@
                         <cstring>m_sysinw</cstring>
                     </property>
                 </widget>
-                <widget class="QLabel" row="7" column="0">
+                <widget class="TQLabel" row="7" column="0">
                     <property name="name">
                         <cstring>textLabel2_7_2</cstring>
                     </property>
@@ -345,7 +345,7 @@
                         <cstring>comboBox1_11</cstring>
                     </property>
                 </widget>
-                <widget class="QComboBox" row="7" column="1">
+                <widget class="TQComboBox" row="7" column="1">
                     <item>
                         <property name="text">
                             <string>All</string>
@@ -375,7 +375,7 @@
                         <cstring>m_sysrss</cstring>
                     </property>
                 </widget>
-                <widget class="QComboBox" row="8" column="1">
+                <widget class="TQComboBox" row="8" column="1">
                     <item>
                         <property name="text">
                             <string>All</string>
@@ -405,7 +405,7 @@
                         <cstring>m_sysweb</cstring>
                     </property>
                 </widget>
-                <widget class="QLabel" row="8" column="0">
+                <widget class="TQLabel" row="8" column="0">
                     <property name="name">
                         <cstring>textLabel2_7_2_2</cstring>
                     </property>
@@ -418,7 +418,7 @@
                 </widget>
             </grid>
         </widget>
-        <widget class="QButtonGroup" row="0" column="0">
+        <widget class="TQButtonGroup" row="0" column="0">
             <property name="name">
                 <cstring>buttonGroup3</cstring>
             </property>
@@ -429,7 +429,7 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLabel" row="0" column="0">
+                <widget class="TQLabel" row="0" column="0">
                     <property name="name">
                         <cstring>textLabel1</cstring>
                     </property>
@@ -437,7 +437,7 @@
                         <string>General:</string>
                     </property>
                 </widget>
-                <widget class="QLabel" row="1" column="0">
+                <widget class="TQLabel" row="1" column="0">
                     <property name="name">
                         <cstring>textLabel2_8</cstring>
                     </property>
@@ -445,7 +445,7 @@
                         <string>Connections:</string>
                     </property>
                 </widget>
-                <widget class="QLabel" row="2" column="0">
+                <widget class="TQLabel" row="2" column="0">
                     <property name="name">
                         <cstring>textLabel2_9</cstring>
                     </property>
@@ -453,7 +453,7 @@
                         <string>DHT:</string>
                     </property>
                 </widget>
-                <widget class="QLabel" row="3" column="0">
+                <widget class="TQLabel" row="3" column="0">
                     <property name="name">
                         <cstring>textLabel2_10</cstring>
                     </property>
@@ -461,7 +461,7 @@
                         <string>Tracker:</string>
                     </property>
                 </widget>
-                <widget class="QComboBox" row="0" column="1">
+                <widget class="TQComboBox" row="0" column="1">
                     <item>
                         <property name="text">
                             <string>All</string>
@@ -491,7 +491,7 @@
                         <cstring>m_sysgen</cstring>
                     </property>
                 </widget>
-                <widget class="QComboBox" row="1" column="1">
+                <widget class="TQComboBox" row="1" column="1">
                     <item>
                         <property name="text">
                             <string>All</string>
@@ -521,7 +521,7 @@
                         <cstring>m_syscon</cstring>
                     </property>
                 </widget>
-                <widget class="QComboBox" row="2" column="1">
+                <widget class="TQComboBox" row="2" column="1">
                     <item>
                         <property name="text">
                             <string>All</string>
@@ -551,7 +551,7 @@
                         <cstring>m_sysdht</cstring>
                     </property>
                 </widget>
-                <widget class="QLabel" row="4" column="0">
+                <widget class="TQLabel" row="4" column="0">
                     <property name="name">
                         <cstring>textLabel1_2</cstring>
                     </property>
@@ -559,7 +559,7 @@
                         <string>Disk I/O:</string>
                     </property>
                 </widget>
-                <widget class="QComboBox" row="3" column="1">
+                <widget class="TQComboBox" row="3" column="1">
                     <item>
                         <property name="text">
                             <string>All</string>
@@ -589,7 +589,7 @@
                         <cstring>m_systrk</cstring>
                     </property>
                 </widget>
-                <widget class="QComboBox" row="4" column="1">
+                <widget class="TQComboBox" row="4" column="1">
                     <item>
                         <property name="text">
                             <string>All</string>
@@ -621,7 +621,7 @@
                 </widget>
             </grid>
         </widget>
-        <widget class="QButtonGroup" row="1" column="0" rowspan="1" colspan="2">
+        <widget class="TQButtonGroup" row="1" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>buttonGroup3_2</cstring>
             </property>
@@ -632,7 +632,7 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QCheckBox" row="0" column="0">
+                <widget class="TQCheckBox" row="0" column="0">
                     <property name="name">
                         <cstring>m_useRich</cstring>
                     </property>
@@ -644,5 +644,5 @@
         </widget>
     </grid>
 </widget>
-<layoutdefaults spacing="6" margin="11"/>
+<tqlayoutdefaults spacing="6" margin="11"/>
 </UI>

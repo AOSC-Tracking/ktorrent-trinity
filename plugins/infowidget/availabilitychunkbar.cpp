@@ -17,7 +17,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <qtooltip.h>
+#include <tqtooltip.h>
 #include <klocale.h>
 
 #include <util/bitset.h>
@@ -27,9 +27,9 @@
 namespace kt
 {
 	
-AvailabilityChunkBar::AvailabilityChunkBar(QWidget* parent, const char* name): ChunkBar(parent, name)
+AvailabilityChunkBar::AvailabilityChunkBar(TQWidget* tqparent, const char* name): ChunkBar(tqparent, name)
 {
-	QToolTip::add(this, i18n("<img src=\"available_color\">&nbsp; - Available Chunks<br><img src=\"unavailable_color\">&nbsp; - Unavailable Chunks<br><img src=\"excluded_color\">&nbsp; - Excluded Chunks"));
+	TQToolTip::add(this, i18n("<img src=\"available_color\">&nbsp; - Available Chunks<br><img src=\"unavailable_color\">&nbsp; - Unavailable Chunks<br><img src=\"excluded_color\">&nbsp; - Excluded Chunks"));
 }
 
 

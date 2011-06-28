@@ -20,9 +20,9 @@
 #ifndef BTAUTHENTICATEBASE_H
 #define BTAUTHENTICATEBASE_H
 
-#include <qobject.h>
-#include <qsocket.h>
-#include <qtimer.h>
+#include <tqobject.h>
+#include <tqsocket.h>
+#include <tqtimer.h>
 #include <util/constants.h>
 
 
@@ -45,9 +45,10 @@ namespace bt
 	 * It has a socket, handles the timing out, provides a function to send
 	 * the handshake.
 	 */
-	class AuthenticateBase : public QObject
+	class AuthenticateBase : public TQObject
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		AuthenticateBase(mse::StreamSocket* s = 0);
 		virtual ~AuthenticateBase();
@@ -111,7 +112,7 @@ namespace bt
 		
 	protected:
 		mse::StreamSocket* sock;
-		QTimer timer;
+		TQTimer timer;
 		bool finished;
 		Uint8 handshake[68];
 		Uint32 bytes_of_handshake_recieved;

@@ -15,8 +15,8 @@
 
 class KURL;
 
-class QDomNode;
-class QString;
+class TQDomNode;
+class TQString;
 
 namespace RSS
 {
@@ -43,10 +43,10 @@ namespace RSS
 			
 			/**
 			 * Constructs a TextInput from a piece of RSS markup.
-			 * @param node A QDomNode which references the DOM leaf to be used
+			 * @param node A TQDomNode which references the DOM leaf to be used
 			 * for constructing the TextInput.
 			 */
-			TextInput(const QDomNode &node);
+			TextInput(const TQDomNode &node);
 
 			/**
 			 * Assignment operator.
@@ -79,25 +79,25 @@ namespace RSS
 			/**
 			 * RSS 0.90 and upwards
 			 * @return The title (often a label to be used for the input field)
-			 * of the text input, or QString::null if no title is available.
+			 * of the text input, or TQString() if no title is available.
 			 */
-			QString title() const;
+			TQString title() const;
 
 			/**
 			 * RSS 0.90 and upwards
 			 * @return The description (usually used as a tooltip which appears
 			 * if the mouse hovers above the input field for a short time) of
-			 * the text input, or QString::null if no description is
+			 * the text input, or TQString() if no description is
 			 * available.
 			 */
-			QString description() const;
+			TQString description() const;
 
 			/**
 			 * RSS 0.90 and upwards
 			 * @return The name of the text input (what's this for?) of the
-			 * text input, or QString::null, if no name is available.
+			 * text input, or TQString(), if no name is available.
 			 */
-			QString name() const;
+			TQString name() const;
 
 			/**
 			 * RSS 0.90 and upwards

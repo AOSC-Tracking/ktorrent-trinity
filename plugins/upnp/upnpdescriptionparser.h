@@ -41,7 +41,7 @@ namespace kt
 		 * @param router The router off the xml description
 		 * @return true upon success
 		 */
-		bool parse(const QString & file,UPnPRouter* router);
+		bool parse(const TQString & file,UPnPRouter* router);
 	};
 
 }

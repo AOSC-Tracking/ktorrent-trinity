@@ -27,12 +27,12 @@
 #include <kmimetype.h>
 #include <kurl.h>
 
-#include <qlabel.h>
-#include <qstring.h>
-#include <qbuttongroup.h>
-#include <qcombobox.h>
-#include <qcheckbox.h>
-#include <qdir.h>
+#include <tqlabel.h>
+#include <tqstring.h>
+#include <tqbuttongroup.h>
+#include <tqcombobox.h>
+#include <tqcheckbox.h>
+#include <tqdir.h>
 
 #include <interfaces/torrentfileinterface.h>
 #include <interfaces/torrentinterface.h>
@@ -49,16 +49,16 @@
 
 using namespace kt;
 
-FileSelectDlg::FileSelectDlg(GroupManager* gm, bool* user, bool* start, QWidget* parent, const char* name, bool modal, WFlags fl)
-		: FileSelectDlgBase(parent, name, modal, fl), m_gman(gm), m_user(user), m_start(start)
+FileSelectDlg::FileSelectDlg(GroupManager* gm, bool* user, bool* start, TQWidget* tqparent, const char* name, bool modal, WFlags fl)
+		: FileSelectDlgBase(tqparent, name, modal, fl), m_gman(gm), m_user(user), m_start(start)
 {
 	root = 0;
-	connect(m_select_all, SIGNAL(clicked()), this, SLOT(selectAll()));
-	connect(m_select_none, SIGNAL(clicked()), this, SLOT(selectNone()));
-	connect(m_invert_selection, SIGNAL(clicked()), this, SLOT(invertSelection()));
-	connect(m_ok, SIGNAL(clicked()), this, SLOT(accept()));
-	connect(m_cancel, SIGNAL(clicked()), this, SLOT(reject()));
-	connect(m_downloadLocation, SIGNAL(textChanged (const QString &)), this, SLOT(updateSizeLabels()));
+	connect(m_select_all, TQT_SIGNAL(clicked()), this, TQT_SLOT(selectAll()));
+	connect(m_select_none, TQT_SIGNAL(clicked()), this, TQT_SLOT(selectNone()));
+	connect(m_invert_selection, TQT_SIGNAL(clicked()), this, TQT_SLOT(invertSelection()));
+	connect(m_ok, TQT_SIGNAL(clicked()), this, TQT_SLOT(accept()));
+	connect(m_cancel, TQT_SIGNAL(clicked()), this, TQT_SLOT(reject()));
+	connect(m_downloadLocation, TQT_SIGNAL(textChanged (const TQString &)), this, TQT_SLOT(updateSizeLabels()));
 	
 	m_downloadLocation->setMode(KFile::Directory);
 }
@@ -83,19 +83,19 @@ int FileSelectDlg::execute(kt::TorrentInterface* tc)
 		return exec();
 	}
 
-	return QDialog::Rejected;
+	return TQDialog::Rejected;
 }
 
 void FileSelectDlg::reject()
 {
-	QDialog::reject();
+	TQDialog::reject();
 }
 
 void FileSelectDlg::accept()
 {
-	QStringList pe_ex;
+	TQStringList pe_ex;
 	
-	QString dn = m_downloadLocation->url();
+	TQString dn = m_downloadLocation->url();
 	if (!dn.endsWith(bt::DirSeparator()))
 		dn += bt::DirSeparator();
 
@@ -104,7 +104,7 @@ void FileSelectDlg::accept()
 		kt::TorrentFileInterface & file = tc->getTorrentFile(i);
 
 		// check for preexsting files
-		QString path = dn + tc->getStats().torrent_name + bt::DirSeparator() + file.getPath();
+		TQString path = dn + tc->getStats().torrent_name + bt::DirSeparator() + file.getPath();
 		if (bt::Exists(path))
 			file.setPreExisting(true);
 		
@@ -117,10 +117,10 @@ void FileSelectDlg::accept()
 
 	if (pe_ex.count() > 0)
 	{
-		QString msg = i18n("You have deselected the following existing files. "
+		TQString msg = i18n("You have deselected the following existing files. "
 						   "You will lose all data in these files, are you sure you want to do this ?");
 		// better ask the user if (s)he wants to delete the already existing data
-		int ret = KMessageBox::warningYesNoList(0, msg, pe_ex, QString::null,
+		int ret = KMessageBox::warningYesNoList(0, msg, pe_ex, TQString(),
 												KGuiItem(i18n("Yes, delete the files")),
 												KGuiItem(i18n("No, keep the files")));
 
@@ -145,7 +145,7 @@ void FileSelectDlg::accept()
 	}
 	
 	//Setup custom download location
-	QString ddir = tc->getDataDir();
+	TQString ddir = tc->getDataDir();
 	if (!ddir.endsWith(bt::DirSeparator()))
 		ddir += bt::DirSeparator();
 	
@@ -159,9 +159,9 @@ void FileSelectDlg::accept()
 	//Now add torrent to selected group
 	if(m_cmbGroups->currentItem() != 0)
 	{
-		QString groupName = m_cmbGroups->currentText();
+		TQString groupName = m_cmbGroups->currentText();
 		
-		Group* group = m_gman->find(groupName);
+		Group* group = m_gman->tqfind(groupName);
 		if(group)
 		{
 			group->addTorrent(tc);	
@@ -170,7 +170,7 @@ void FileSelectDlg::accept()
 	
 	// update the last save directory
 	Settings::setLastSaveDir(dn);
-	QDialog::accept();
+	TQDialog::accept();
 }
 
 void FileSelectDlg::selectAll()
@@ -196,7 +196,7 @@ void FileSelectDlg::updateSizeLabels()
 	//calculate free disk space
 
 	KURL sdir = KURL(m_downloadLocation -> url());
-	while( sdir.isValid() && sdir.isLocalFile() && (!sdir.isEmpty())  && (! QDir(sdir.path()).exists()) ) 
+	while( sdir.isValid() && sdir.isLocalFile() && (!sdir.isEmpty())  && (! TQDir(sdir.path()).exists()) ) 
 	{
 		sdir = sdir.upURL();
 	}
@@ -217,9 +217,9 @@ void FileSelectDlg::updateSizeLabels()
 	lblRequired->setText(kt::BytesToString(bytes_to_download));
 
 	if (bytes_to_download > bytes_free)
-		lblStatus->setText("<font color=\"#ff0000\">" + kt::BytesToString(-1*(long long)(bytes_free - bytes_to_download)) + i18n(" short!"));
+		lbltqStatus->setText("<font color=\"#ff0000\">" + kt::BytesToString(-1*(long long)(bytes_free - bytes_to_download)) + i18n(" short!"));
 	else
-		lblStatus->setText(kt::BytesToString(bytes_free - bytes_to_download));
+		lbltqStatus->setText(kt::BytesToString(bytes_free - bytes_to_download));
 }
 
 void FileSelectDlg::treeItemChanged()
@@ -262,12 +262,12 @@ void FileSelectDlg::setupSinglefileTorrent()
 
 void FileSelectDlg::populateFields()
 {
-	QString dir = Settings::saveDir();
+	TQString dir = Settings::saveDir();
 	if (!Settings::useSaveDir() || dir.isNull())
 	{
 		dir = Settings::lastSaveDir();
 		if (dir.isNull())
-			dir = QDir::homeDirPath();
+			dir = TQDir::homeDirPath();
 	}
 	
 	m_downloadLocation->setURL(dir);
@@ -278,7 +278,7 @@ void FileSelectDlg::loadGroups()
 {
 	GroupManager::iterator it = m_gman->begin();
 	
-	QStringList grps;
+	TQStringList grps;
 	
 	//First default group
 	grps << i18n("All Torrents");

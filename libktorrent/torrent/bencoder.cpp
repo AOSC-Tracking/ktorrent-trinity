@@ -38,7 +38,7 @@ namespace bt
 	
 	////////////////////////////////////
 	
-	BEncoderBufferOutput::BEncoderBufferOutput(QByteArray & data) : data(data),ptr(0)
+	BEncoderBufferOutput::BEncoderBufferOutput(TQByteArray & data) : data(data),ptr(0)
 	{
 	}
 
@@ -87,7 +87,7 @@ namespace bt
 	{
 		if (!out) return;
 		
-		QCString s = QString("i%1e").arg(val).utf8();
+		TQCString s = TQString("i%1e").tqarg(val).utf8();
 		out->write(s,s.length());
 	}
 
@@ -95,25 +95,25 @@ namespace bt
 	{
 		if (!out) return;
 		
-		QCString s = QString("i%1e").arg(val).utf8();
+		TQCString s = TQString("i%1e").tqarg(val).utf8();
 		out->write(s,s.length());
 	}
 	
-	void BEncoder::write(const QString & str)
+	void BEncoder::write(const TQString & str)
 	{
 		if (!out) return;
 		
-		QCString u = str.utf8();
-		QCString s = QString("%1:").arg(u.length()).utf8();
+		TQCString u = str.utf8();
+		TQCString s = TQString("%1:").tqarg(u.length()).utf8();
 		out->write(s,s.length());
 		out->write(u,u.length());
 	}
 	
-	void BEncoder::write(const QByteArray & data)
+	void BEncoder::write(const TQByteArray & data)
 	{
 		if (!out) return;
 		
-		QCString s = QString::number(data.size()).utf8();
+		TQCString s = TQString::number(data.size()).utf8();
 		out->write(s,s.length());
 		out->write(":",1);
 		out->write(data.data(),data.size());
@@ -123,7 +123,7 @@ namespace bt
 	{
 		if (!out) return;
 		
-		QCString s = QString("%1:").arg(size).utf8();
+		TQCString s = TQString("%1:").tqarg(size).utf8();
 		out->write(s,s.length());
 		out->write((const char*)data,size);
 	}

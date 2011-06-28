@@ -20,13 +20,13 @@
 #ifndef DDOCKWINDOW_H
 #define DDOCKWINDOW_H
 
-#include <qdockwindow.h>
-#include <qvaluelist.h>
+#include <tqdockwindow.h>
+#include <tqvaluelist.h>
 
-class QBoxLayout;
-class QToolButton;
-class QWidgetStack;
-class QPopupMenu;
+class TQBoxLayout;
+class TQToolButton;
+class TQWidgetStack;
+class TQPopupMenu;
 
 class KComboBox;
 class KAction;
@@ -38,28 +38,29 @@ namespace Ideal {
     class ButtonBar;
 }
 
-class DDockWindow : public QDockWindow {
+class DDockWindow : public TQDockWindow {
     Q_OBJECT
+  TQ_OBJECT
 public:
     enum Position { Bottom, Left, Right };
 
-    DDockWindow(DMainWindow *parent, Position position);
+    DDockWindow(DMainWindow *tqparent, Position position);
     virtual ~DDockWindow();
 
     virtual void setVisible(bool v);
     bool visible() const { return m_visible; }
     Position position() const { return m_position; }
 
-    virtual void addWidget(const QString &title, QWidget *widget, bool skipActivation = false);
-    virtual void raiseWidget(QWidget *widget);
-    virtual void lowerWidget(QWidget *widget);
+    virtual void addWidget(const TQString &title, TQWidget *widget, bool skipActivation = false);
+    virtual void raiseWidget(TQWidget *widget);
+    virtual void lowerWidget(TQWidget *widget);
     /**Removes the widget from dock. Does not delete it.*/
-    virtual void removeWidget(QWidget *widget);
+    virtual void removeWidget(TQWidget *widget);
 
-    virtual void hideWidget(QWidget *widget);
-    virtual void showWidget(QWidget *widget);
+    virtual void hideWidget(TQWidget *widget);
+    virtual void showWidget(TQWidget *widget);
 
-    virtual QWidget *currentWidget() const;
+    virtual TQWidget *currentWidget() const;
 
     virtual void setMovingEnabled(bool b);
 
@@ -81,7 +82,7 @@ signals:
 private slots:
     void selectWidget();
     void selectWidget(Ideal::Button *button);
-    void contextMenu(QPopupMenu*);
+    void contextMenu(TQPopupMenu*);
     void moveToDockLeft();
     void moveToDockRight();
     void moveToDockBottom();
@@ -91,21 +92,21 @@ protected:
     virtual void loadSettings();
 
     Ideal::ButtonBar *m_bar;
-    QWidgetStack *m_widgetStack;
+    TQWidgetStack *m_widgetStack;
 
-    QMap<Ideal::Button*, QWidget*> m_widgets;
-    QMap<QWidget*, Ideal::Button*> m_buttons;
+    TQMap<Ideal::Button*, TQWidget*> m_widgets;
+    TQMap<TQWidget*, Ideal::Button*> m_buttons;
 
 private:
     Position m_position;
     bool m_visible;
-    QString m_name;
+    TQString m_name;
     DMainWindow *m_mainWindow;
     bool m_doNotCloseActiveWidget;
 
     Ideal::Button *m_toggledButton;
     Ideal::Button *m_lastContextMenuButton;
-    QBoxLayout *m_internalLayout;
+    TQBoxLayout *m_internalLayout;
 
 
     KAction * m_moveToDockLeft;

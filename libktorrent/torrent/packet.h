@@ -22,7 +22,7 @@
 
 #include "globals.h"
 
-class QString;
+class TQString;
 
 namespace bt
 {
@@ -48,7 +48,7 @@ namespace bt
 		Packet(const BitSet & bs);
 		Packet(const Request & req,Uint8 type);
 		Packet(Uint32 index,Uint32 begin,Uint32 len,Chunk* ch);
-		Packet(Uint8 ext_id,const QByteArray & ext_data); // extension protocol packet
+		Packet(Uint8 ext_id,const TQByteArray & ext_data); // extension protocol packet
 		virtual ~Packet();
 
 		Uint8 getType() const {return data ? data[4] : 0;}

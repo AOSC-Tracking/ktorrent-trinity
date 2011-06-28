@@ -20,9 +20,9 @@
 #ifndef BTCACHEFILE_H
 #define BTCACHEFILE_H
 
-#include <qmap.h>
-#include <qmutex.h>
-#include <qstring.h>
+#include <tqmap.h>
+#include <tqmutex.h>
+#include <tqstring.h>
 #include <util/constants.h>
 
 namespace bt
@@ -68,10 +68,10 @@ namespace bt
 		 * @param size Max size of the file
 		 * @throw Error when something goes wrong
 		 */
-		void open(const QString & path,Uint64 size);
+		void open(const TQString & path,Uint64 size);
 		
 		/// Change the path of the file
-		void changePath(const QString & npath);
+		void changePath(const TQString & npath);
 		
 		/**
 		 * Map a part of the file into memory, will expand the file
@@ -130,7 +130,7 @@ namespace bt
 		int fd;
 		bool read_only;
 		Uint64 max_size,file_size;
-		QString path;
+		TQString path;
 		struct Entry
 		{
 			MMappeable* thing;
@@ -140,8 +140,8 @@ namespace bt
 			Uint32 diff;
 			Mode mode;
 		};
-		QMap<void*,Entry> mappings; // mappings where offset wasn't a multiple of 4K
-		mutable QMutex mutex;
+		TQMap<void*,Entry> mappings; // mappings where offset wasn't a multiple of 4K
+		mutable TQMutex mutex;
 	};
 
 }

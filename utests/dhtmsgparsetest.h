@@ -36,7 +36,7 @@ namespace utest
 
 		virtual bool doTest();
 	private:
-		bool doTest(const QString & data,int method);
+		bool doTest(const TQString & data,int method);
 	};
 
 }

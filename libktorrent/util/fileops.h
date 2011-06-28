@@ -25,7 +25,7 @@
 #endif
 
 #include <util/constants.h>
-class QString;
+class TQString;
 
 namespace bt
 {
@@ -37,7 +37,7 @@ namespace bt
 	 * @param nothrow wether or not we shouldn't throw an Error upon failure
 	 * @throw Error upon error
 	 */
-	void MakeDir(const QString & dir,bool nothrow = false);
+	void MakeDir(const TQString & dir,bool nothrow = false);
 
 	/**
 	 * Create a symbolic link @a link_url which links to @a link_to 
@@ -45,7 +45,7 @@ namespace bt
 	 * @param link_url The link url
 	 * @param nothrow wether or not we shouldn't throw an Error upon failure
 	 */
-	void SymLink(const QString & link_to,const QString & link_url,bool nothrow = false);
+	void SymLink(const TQString & link_to,const TQString & link_url,bool nothrow = false);
 
 	/**
 	 * Move a file/dir from one location to another
@@ -53,7 +53,7 @@ namespace bt
 	 * @param dst The destination file / directory
 	 * @param nothrow wether or not we shouldn't throw an Error upon failure
 	 */
-	void Move(const QString & src,const QString & dst,bool nothrow = false);
+	void Move(const TQString & src,const TQString & dst,bool nothrow = false);
 
 	/**
 	 * Copy a file.
@@ -61,7 +61,7 @@ namespace bt
 	 * @param dst The destination dir/file
 	 * @param nothrow wether or not we shouldn't throw an Error upon failure
 	 */
-	void CopyFile(const QString & src,const QString & dst,bool nothrow = false);
+	void CopyFile(const TQString & src,const TQString & dst,bool nothrow = false);
 	
 	/**
 	 * Copy a file or directory
@@ -69,21 +69,21 @@ namespace bt
 	 * @param dst The destination dir/file
 	 * @param nothrow wether or not we shouldn't throw an Error upon failure
 	 */
-	void CopyDir(const QString & src,const QString & dst,bool nothrow = false);
+	void CopyDir(const TQString & src,const TQString & dst,bool nothrow = false);
 	
 	/**
 	 * Check wether a file/dir exists
 	 * @param url The file/dir
 	 * @return true if it exits
 	 */
-	bool Exists(const QString & url);
+	bool Exists(const TQString & url);
 
 	/**
 	 * Delete a file or directory.
 	 * @param url The url of the file/dir
 	 * @param nothrow wether or not we shouldn't throw an Error upon failure
 	 */
-	void Delete(const QString & url,bool nothrow = false);
+	void Delete(const TQString & url,bool nothrow = false);
 
 	/**
 	 * Try to create a file. Doesn't do anything if the file
@@ -91,7 +91,7 @@ namespace bt
 	 * @param url The url of the file
 	 * @param nothrow wether or not we shouldn't throw an Error upon failure
 	 */
-	void Touch(const QString & url,bool nothrow = false);
+	void Touch(const TQString & url,bool nothrow = false);
 	
 	/**
 	 * Calculates the size of a file
@@ -99,7 +99,7 @@ namespace bt
 	 * @return The size of the file
 	 * @throw Error if the file doesn't exist, or something else goes wrong
 	 */
-	Uint64 FileSize(const QString & url);
+	Uint64 FileSize(const TQString & url);
 	
 	/**
 	 * Get the size of a file.
@@ -124,7 +124,7 @@ namespace bt
 	 * @param quick Use the quick way (doesn't prevent fragmentationt)
 	 * @throw Error if the file doesn't exist, or something else goes wrong
 	 */
-	void TruncateFile(const QString & path,Uint64 size);
+	void TruncateFile(const TQString & path,Uint64 size);
 	
 	/**
 	 * Special truncate for FAT file systems.
@@ -134,7 +134,7 @@ namespace bt
 	/**
 	 * Special truncate for FAT file systems.
 	 */
-	bool FatPreallocate(const QString & path,Uint64 size);
+	bool FatPreallocate(const TQString & path,Uint64 size);
 
 #ifdef HAVE_XFS_XFS_H
 	/**
@@ -145,7 +145,7 @@ namespace bt
 	/**
 	 * Special truncate for XFS file systems.
 	 */
-	bool XfsPreallocate(const QString & path,Uint64 size);
+	bool XfsPreallocate(const TQString & path,Uint64 size);
 
 #endif
 
@@ -159,7 +159,7 @@ namespace bt
 	void SeekFile(int fd,Int64 off,int whence);
 
 	/// Calculate the number of bytes free on the filesystem path is located
-	bool FreeDiskSpace(const QString & path,Uint64 & bytes_free);
+	bool FreeDiskSpace(const TQString & path,Uint64 & bytes_free);
 }
 
 #endif

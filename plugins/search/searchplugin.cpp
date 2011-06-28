@@ -46,8 +46,8 @@ K_EXPORT_COMPONENT_FACTORY(ktsearchplugin,KGenericFactory<kt::SearchPlugin>("kts
 namespace kt
 {
 
-	SearchPlugin::SearchPlugin(QObject* parent, const char* name, const QStringList& args)
-	: Plugin(parent, name, args,NAME,i18n("Search"),AUTHOR,EMAIL,
+	SearchPlugin::SearchPlugin(TQObject* tqparent, const char* name, const TQStringList& args)
+	: Plugin(tqparent, name, args,NAME,i18n("Search"),AUTHOR,EMAIL,
 			 i18n("Search for torrents on several popular torrent search engines"),"viewmag")
 	{
 		// setXMLFile("ktsearchpluginui.rc");
@@ -65,8 +65,8 @@ namespace kt
 		engines.load(KGlobal::dirs()->saveLocation("data","ktorrent") + "search_engines");
 		KToolBar* tb = getGUI()->addToolBar("search");
 		tab = new SearchTab(tb);
-		connect(tab,SIGNAL(search( const QString&, int, bool )),
-				this,SLOT(search( const QString&, int, bool )));
+		connect(tab,TQT_SIGNAL(search( const TQString&, int, bool )),
+				this,TQT_SLOT(search( const TQString&, int, bool )));
 		 
 		pref = new SearchPrefPage(this);
 		getGUI()->addPrefPage(pref);
@@ -92,7 +92,7 @@ namespace kt
 		tab = 0;
 	}
 	
-	void SearchPlugin::search(const QString & text,int engine,bool external)
+	void SearchPlugin::search(const TQString & text,int engine,bool external)
 	{	
 		if(external)
 		{
@@ -101,14 +101,14 @@ namespace kt
 			if (engine < 0 || engine >= sl.getNumEngines())
 				engine = 0;
 		
-			QString s_url = sl.getSearchURL(engine).prettyURL();
-			s_url.replace("FOOBAR", KURL::encode_string(text), true);
+			TQString s_url = sl.getSearchURL(engine).prettyURL();
+			s_url.tqreplace("FOOBAR", KURL::encode_string(text), true);
 			KURL url = KURL::fromPathOrURL(s_url);
 			
 			if(SearchPluginSettings::useDefaultBrowser())
 				kapp->invokeBrowser(url.url());
 			else
-				KRun::runCommand(QString("%1 \"%2\"").arg(SearchPluginSettings::customBrowser()).arg(url.url()), SearchPluginSettings::customBrowser(), "viewmag" );
+				KRun::runCommand(TQString("%1 \"%2\"").tqarg(SearchPluginSettings::customBrowser()).tqarg(url.url()), SearchPluginSettings::customBrowser(), "viewmag" );
 			
 			return;
 		}
@@ -118,7 +118,7 @@ namespace kt
 		SearchWidget* search = new SearchWidget(this);
 		getGUI()->addTabPage(search,iload->loadIconSet("viewmag", KIcon::Small),text,this);
 		
-		KAction* copy_act = KStdAction::copy(search,SLOT(copy()),actionCollection());
+		KAction* copy_act = KStdAction::copy(TQT_TQOBJECT(search),TQT_SLOT(copy()),actionCollection());
 		copy_act->plug(search->rightClickMenu(),0);
 		searches.append(search);
 		
@@ -132,16 +132,16 @@ namespace kt
 		if (tab)
 			tab->updateSearchEngines(engines);
 		
-		for (QPtrList<SearchWidget>::iterator i = searches.begin(); i != searches.end();i++)
+		for (TQPtrList<SearchWidget>::iterator i = searches.begin(); i != searches.end();i++)
 		{
 			SearchWidget* w = *i;
 			w->updateSearchEngines(engines);
 		}
 	}
 	
-	void SearchPlugin::tabCloseRequest(kt::GUIInterface* gui,QWidget* tab)
+	void SearchPlugin::tabCloseRequest(kt::GUIInterface* gui,TQWidget* tab)
 	{
-		if (searches.contains((SearchWidget*)tab))
+		if (searches.tqcontains((SearchWidget*)tab))
 		{
 			searches.remove((SearchWidget*)tab);
 			gui->removeTabPage(tab);
@@ -149,7 +149,7 @@ namespace kt
 		}
 	}
 
-	bool SearchPlugin::versionCheck(const QString & version) const
+	bool SearchPlugin::versionCheck(const TQString & version) const
 	{
 		return version == KT_VERSION_MACRO;
 	}

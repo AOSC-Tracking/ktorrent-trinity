@@ -20,10 +20,10 @@
 #ifndef FILTERBAR_H
 #define FILTERBAR_H
 
-#include <qwidget.h>
+#include <tqwidget.h>
 
-class QLabel;
-class QCheckBox;
+class TQLabel;
+class TQCheckBox;
 class KConfig;
 class KLineEdit;
 class KPushButton;
@@ -39,12 +39,13 @@ namespace kt
  *
  * based on dolphin's one (made by Gregor Kališnik)
  */
-class FilterBar : public QWidget
+class FilterBar : public TQWidget
 {
 	Q_OBJECT
+  TQ_OBJECT
 
 public:
-	FilterBar ( QWidget *parent = 0, const char *name = 0 );
+	FilterBar ( TQWidget *tqparent = 0, const char *name = 0 );
 	virtual ~FilterBar();
 	
 	bool matchesFilter(kt::TorrentInterface* tc);
@@ -52,19 +53,19 @@ public:
 	void loadSettings(KConfig* cfg);
 
 private slots:
-	void slotChangeFilter(const QString& nameFilter);
+	void slotChangeFilter(const TQString& nameFilter);
 
 protected:
-	virtual void keyPressEvent ( QKeyEvent* event );
-	virtual void hideEvent(QHideEvent* event);
+	virtual void keyPressEvent ( TQKeyEvent* event );
+	virtual void hideEvent(TQHideEvent* event);
 
 private:
-	QLabel* m_filter;
+	TQLabel* m_filter;
 	KLineEdit* m_filterInput;
 	KPushButton* m_clear;
-	QCheckBox* m_case_sensitive;
+	TQCheckBox* m_case_sensitive;
 	KToolBarButton* m_close;
-	QString m_name_filter;
+	TQString m_name_filter;
 };
 
 #endif

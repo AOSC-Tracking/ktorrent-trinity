@@ -27,9 +27,9 @@ namespace bt
 {
 
 	DataCheckerThread::DataCheckerThread(DataChecker* dc,
-										 const QString & path,
+										 const TQString & path,
 										 const Torrent & tor,
-										 const QString & dnddir)
+										 const TQString & dnddir)
 		: dc(dc),path(path),tor(tor),dnddir(dnddir)
 	{
 		running = true;

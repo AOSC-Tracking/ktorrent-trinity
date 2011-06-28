@@ -48,6 +48,7 @@ namespace kt
 	class Plugin : public KParts::Plugin
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		/**
 		 * Constructor, set the name of the plugin, the name and e-mail of the author and
@@ -59,10 +60,10 @@ namespace kt
 		 * @param description What does the plugin do
 		 * @param icon Name of the plugin's icon
 		 */
-		Plugin(QObject *parent,const char* qt_name,const QStringList & args,
-			   const QString & name,const QString & gui_name,const QString & author,
-			   const QString & email,const QString & description,
-			   const QString & icon);
+		Plugin(TQObject *tqparent,const char* qt_name,const TQStringList & args,
+			   const TQString & name,const TQString & gui_name,const TQString & author,
+			   const TQString & email,const TQString & description,
+			   const TQString & icon);
 		virtual ~Plugin();
 
 		/**
@@ -94,12 +95,12 @@ namespace kt
 		 */
 		virtual void shutdown(bt::WaitJob* job);
 
-		const QString & getName() const {return name;}
-		const QString & getAuthor() const {return author;}
-		const QString & getEMailAddress() const {return email;}
-		const QString & getDescription() const {return description;}
-		const QString & getIcon() const {return icon;}
-		const QString & getGuiName() const {return gui_name;}
+		const TQString & getName() const {return name;}
+		const TQString & getAuthor() const {return author;}
+		const TQString & getEMailAddress() const {return email;}
+		const TQString & getDescription() const {return description;}
+		const TQString & getIcon() const {return icon;}
+		const TQString & getGuiName() const {return gui_name;}
 
 		/// Get a pointer to the CoreInterface
 		CoreInterface* getCore() {return core;}
@@ -131,15 +132,15 @@ namespace kt
 		bool isLoaded() const {return loaded;}
 		
 		/// Check wether the plugin matches the version of KT
-		virtual bool versionCheck(const QString & version) const = 0;
+		virtual bool versionCheck(const TQString & version) const = 0;
 		
 	private:
-		QString name;
-		QString author;
-		QString email;
-		QString description;
-		QString icon;
-		QString gui_name;
+		TQString name;
+		TQString author;
+		TQString email;
+		TQString description;
+		TQString icon;
+		TQString gui_name;
 		CoreInterface* core;
 		GUIInterface* gui;
 		bool loaded;

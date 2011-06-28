@@ -27,7 +27,7 @@ namespace net
 
 	Address::Address() : m_ip(0),m_port(0) {}
 	
-	Address::Address(const QString & host,Uint16 port) : m_ip(0),m_port(port)
+	Address::Address(const TQString & host,Uint16 port) : m_ip(0),m_port(port)
 	{
 		struct in_addr a;
 		if (inet_aton(host.ascii(),&a))
@@ -55,13 +55,13 @@ namespace net
 		return m_ip == a.ip() && m_port == a.port();
 	}
 
-	QString Address::toString() const
+	TQString Address::toString() const
 	{
-		return QString("%1.%2.%3.%4")
-				.arg((m_ip & 0xFF000000) >> 24)
-				.arg((m_ip & 0x00FF0000) >> 16)
-				.arg((m_ip & 0x0000FF00) >> 8)
-				.arg(m_ip & 0x000000FF);
+		return TQString("%1.%2.%3.%4")
+				.tqarg((m_ip & 0xFF000000) >> 24)
+				.tqarg((m_ip & 0x00FF0000) >> 16)
+				.tqarg((m_ip & 0x0000FF00) >> 8)
+				.tqarg(m_ip & 0x000000FF);
 	}
 
 }

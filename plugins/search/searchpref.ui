@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>SEPreferences</class>
-<widget class="QWidget">
+<widget class="TQWidget">
     <property name="name">
         <cstring>SEPreferences</cstring>
     </property>
@@ -20,7 +20,7 @@
             <verstretch>0</verstretch>
         </sizepolicy>
     </property>
-    <property name="minimumSize">
+    <property name="tqminimumSize">
         <size>
             <width>500</width>
             <height>350</height>
@@ -33,7 +33,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QButtonGroup">
+        <widget class="TQButtonGroup">
             <property name="name">
                 <cstring>buttonGroup1</cstring>
             </property>
@@ -44,7 +44,7 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QCheckBox">
+                <widget class="TQCheckBox">
                     <property name="name">
                         <cstring>openExternal</cstring>
                     </property>
@@ -52,7 +52,7 @@
                         <string>Open searches in external browser</string>
                     </property>
                 </widget>
-                <widget class="QRadioButton">
+                <widget class="TQRadioButton">
                     <property name="name">
                         <cstring>useDefaultBrowser</cstring>
                     </property>
@@ -63,15 +63,15 @@
                         <string></string>
                     </property>
                 </widget>
-                <widget class="QLayoutWidget">
+                <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout29</cstring>
+                        <cstring>tqlayout29</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QRadioButton">
+                        <widget class="TQRadioButton">
                             <property name="name">
                                 <cstring>useCustomBrowser</cstring>
                             </property>
@@ -97,7 +97,7 @@
                             <property name="sizeType">
                                 <enum>Expanding</enum>
                             </property>
-                            <property name="sizeHint">
+                            <property name="tqsizeHint">
                                 <size>
                                     <width>40</width>
                                     <height>20</height>
@@ -108,7 +108,7 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QGroupBox">
+        <widget class="TQGroupBox">
             <property name="name">
                 <cstring>groupBox8</cstring>
             </property>
@@ -127,15 +127,15 @@
                         <string></string>
                     </property>
                 </widget>
-                <widget class="QLayoutWidget">
+                <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout22</cstring>
+                        <cstring>tqlayout22</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel3</cstring>
                             </property>
@@ -150,15 +150,15 @@
                         </widget>
                     </hbox>
                 </widget>
-                <widget class="QLayoutWidget">
+                <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout23</cstring>
+                        <cstring>tqlayout23</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLabel">
+                        <widget class="TQLabel">
                             <property name="name">
                                 <cstring>textLabel4</cstring>
                             </property>
@@ -171,7 +171,7 @@
                                 <cstring>m_engine_url</cstring>
                             </property>
                         </widget>
-                        <widget class="QPushButton">
+                        <widget class="TQPushButton">
                             <property name="name">
                                 <cstring>btnAdd</cstring>
                             </property>
@@ -189,7 +189,7 @@
                         </widget>
                     </hbox>
                 </widget>
-                <widget class="QListView">
+                <widget class="TQListView">
                     <column>
                         <property name="text">
                             <string>Engines</string>
@@ -223,7 +223,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="minimumSize">
+                    <property name="tqminimumSize">
                         <size>
                             <width>0</width>
                             <height>50</height>
@@ -233,15 +233,15 @@
                         <enum>AllColumns</enum>
                     </property>
                 </widget>
-                <widget class="QLayoutWidget">
+                <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout5</cstring>
+                        <cstring>tqlayout5</cstring>
                     </property>
                     <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QPushButton">
+                        <widget class="TQPushButton">
                             <property name="name">
                                 <cstring>btnRemove</cstring>
                             </property>
@@ -249,7 +249,7 @@
                                 <string>&amp;Remove</string>
                             </property>
                         </widget>
-                        <widget class="QPushButton">
+                        <widget class="TQPushButton">
                             <property name="name">
                                 <cstring>btnRemoveAll</cstring>
                             </property>
@@ -267,14 +267,14 @@
                             <property name="sizeType">
                                 <enum>Maximum</enum>
                             </property>
-                            <property name="sizeHint">
+                            <property name="tqsizeHint">
                                 <size>
                                     <width>16</width>
                                     <height>20</height>
                                 </size>
                             </property>
                         </spacer>
-                        <widget class="QPushButton">
+                        <widget class="TQPushButton">
                             <property name="name">
                                 <cstring>btn_add_default</cstring>
                             </property>
@@ -306,10 +306,10 @@
         <slot>btnUpdate_clicked()</slot>
     </connection>
 </connections>
-<slots>
+<Q_SLOTS>
     <slot>btnUpdate_clicked()</slot>
-</slots>
-<layoutdefaults spacing="6" margin="11"/>
+</Q_SLOTS>
+<tqlayoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>klineedit.h</includehint>
     <includehint>kactivelabel.h</includehint>

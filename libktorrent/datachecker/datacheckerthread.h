@@ -20,7 +20,7 @@
 #ifndef BTDATACHECKERTHREAD_H
 #define BTDATACHECKERTHREAD_H
 
-#include <qthread.h>
+#include <tqthread.h>
 
 namespace bt
 {
@@ -32,16 +32,16 @@ namespace bt
 	
 		Thread which runs the data check.
 	*/
-	class DataCheckerThread : public QThread
+	class DataCheckerThread : public TQThread
 	{
 		DataChecker* dc;
-		QString path;
+		TQString path;
 		const Torrent & tor;
-		QString dnddir;
+		TQString dnddir;
 		bool running;
-		QString error;
+		TQString error;
 	public:
-		DataCheckerThread(DataChecker* dc,const QString & path,const Torrent & tor,const QString & dnddir);
+		DataCheckerThread(DataChecker* dc,const TQString & path,const Torrent & tor,const TQString & dnddir);
 		virtual ~DataCheckerThread();
 
 		virtual void run();
@@ -53,7 +53,7 @@ namespace bt
 		bool isRunning() const {return running;}
 		
 		/// Get the error (if any occured)
-		QString getError() const {return error;}
+		TQString getError() const {return error;}
 	};
 
 }

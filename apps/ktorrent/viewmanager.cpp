@@ -26,10 +26,10 @@
 #include "ktorrentview.h"
 #include "ktorrent.h"
 		
-typedef QValueList<KTorrentView*>::iterator ViewItr;
+typedef TQValueList<KTorrentView*>::iterator ViewItr;
 
-ViewManager::ViewManager ( QObject *parent, const char *name )
-		: QObject ( parent, name ),current(0)
+ViewManager::ViewManager ( TQObject *tqparent, const char *name )
+		: TQObject ( tqparent, name ),current(0)
 {}
 
 
@@ -45,7 +45,7 @@ KTorrentView* ViewManager::newView()
 	
 void ViewManager::saveViewState(KConfig* cfg)
 {
-	QStringList cv;
+	TQStringList cv;
 	int idx = 0;
 	for (ViewItr i = views.begin();i != views.end();i++)
 	{
@@ -58,17 +58,17 @@ void ViewManager::saveViewState(KConfig* cfg)
 	
 void ViewManager::restoreViewState(KConfig* cfg,KTorrent* ktor)
 {
-	QStringList def;
+	TQStringList def;
 	def.append(i18n("Downloads"));
 	def.append(i18n("Uploads"));
 	
 	cfg->setGroup("ViewManager");
 	
-	QStringList to_load = cfg->readListEntry("current_views",def);
+	TQStringList to_load = cfg->readListEntry("current_views",def);
 	if (to_load.empty())
 		to_load = def;
 	
-	for (QStringList::iterator i = to_load.begin();i != to_load.end();i++)
+	for (TQStringList::iterator i = to_load.begin();i != to_load.end();i++)
 	{
 		ktor->openView(*i);
 	}
@@ -76,7 +76,7 @@ void ViewManager::restoreViewState(KConfig* cfg,KTorrent* ktor)
 	if (views.count() == 0)
 	{
 		// no view open, so open default ones
-		for (QStringList::iterator i = def.begin();i != def.end();i++)
+		for (TQStringList::iterator i = def.begin();i != def.end();i++)
 			ktor->openView(*i);
 	}
 	
@@ -173,13 +173,13 @@ void ViewManager::checkDataIntegrity()
 		current->checkDataIntegrity();
 }
 
-void ViewManager::getSelection(QValueList<kt::TorrentInterface*> & sel)
+void ViewManager::getSelection(TQValueList<kt::TorrentInterface*> & sel)
 {
 	if (current)
 		current->getSelection(sel);
 }
 
-void ViewManager::onCurrentTabChanged(QWidget* w)
+void ViewManager::onCurrentTabChanged(TQWidget* w)
 {
 	KTorrentView* old = current;
 	current = 0;
@@ -198,12 +198,12 @@ void ViewManager::onCurrentTabChanged(QWidget* w)
 	}
 }
 
-bool ViewManager::closeAllowed(QWidget* )
+bool ViewManager::closeAllowed(TQWidget* )
 {
 	return views.count() > 1;
 }
 
-void ViewManager::tabCloseRequest(kt::GUIInterface* gui,QWidget* tab)
+void ViewManager::tabCloseRequest(kt::GUIInterface* gui,TQWidget* tab)
 {
 	for (ViewItr i = views.begin();i != views.end();i++)
 	{

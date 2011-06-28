@@ -39,7 +39,7 @@ namespace bt
 	{}
 
 
-	void SingleDataChecker::check(const QString& path, const Torrent& tor,const QString &)
+	void SingleDataChecker::check(const TQString& path, const Torrent& tor,const TQString &)
 	{
 		// open the file
 		Uint32 num_chunks = tor.getNumChunks();
@@ -48,7 +48,7 @@ namespace bt
 		if (!fptr.open(path,"rb"))
 		{
 			throw Error(i18n("Cannot open file : %1 : %2")
-					.arg(path).arg( fptr.errorString()));
+					.tqarg(path).tqarg( fptr.errorString()));
 		}
 
 		// initialize the bitsets

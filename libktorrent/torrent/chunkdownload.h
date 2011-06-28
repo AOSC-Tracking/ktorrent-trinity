@@ -21,8 +21,8 @@
 #define BTCHUNKDOWNLOAD_H
 
 #include <set>
-#include <qobject.h>
-#include <qptrlist.h>
+#include <tqobject.h>
+#include <tqptrlist.h>
 #include <util/timer.h>
 #include <util/ptrmap.h>
 #include <util/sha1hashgen.h>
@@ -41,7 +41,7 @@ namespace bt
 	class Peer;
 	class Request;
 	class PeerDownloader;
-	class DownloadStatus;
+	class DownloadtqStatus;
 	
 	struct ChunkDownloadHeader
 	{
@@ -59,9 +59,10 @@ namespace bt
 	 * 
 	 * This class handles the download of one Chunk.
 	*/
-	class ChunkDownload : public QObject,public kt::ChunkDownloadInterface 
+	class ChunkDownload : public TQObject,public kt::ChunkDownloadInterface 
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
 		/**
 		 * Constructor, set the chunk and the PeerManager.
@@ -90,7 +91,7 @@ namespace bt
 		const Peer* getCurrentPeer() const;
 		
 		/// Get the PeerID of the current peer
-		QString getCurrentPeerID() const;
+		TQString getCurrentPeerID() const;
 		
 		/// Get the download speed
 		Uint32 getDownloadSpeed() const;
@@ -152,7 +153,7 @@ namespace bt
 		bool getOnlyDownloader(Uint32 & pid);
 		
 		/// See if a PeerDownloader is assigned to this chunk
-		bool containsPeer(PeerDownloader *pd) {return pdown.contains(pd);} 
+		bool containsPeer(PeerDownloader *pd) {return pdown.tqcontains(pd);} 
 		
 		/// See if the download is choked (i.e. all downloaders are choked)
 		bool isChoked() const;
@@ -185,14 +186,14 @@ namespace bt
 		
 	private:		
 		BitSet pieces;
-		QValueList<Uint32> piece_queue;
+		TQValueList<Uint32> piece_queue;
 		Chunk* chunk;
 		Uint32 num;
 		Uint32 num_downloaded;
 		Uint32 last_size;
 		Timer timer;
-		QPtrList<PeerDownloader> pdown;
-		PtrMap<Uint32,DownloadStatus> dstatus;
+		TQPtrList<PeerDownloader> pdown;
+		PtrMap<Uint32,DownloadtqStatus> dstatus;
 		std::set<Uint32> piece_providers;
 		
 

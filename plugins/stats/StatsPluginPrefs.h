@@ -21,9 +21,9 @@
 #ifndef STATSPLUGINPREFS_H_
 #define STATSPLUGINPREFS_H_
 
-#include <qspinbox.h>
-#include <qcheckbox.h>
-#include <qcombobox.h>
+#include <tqspinbox.h>
+#include <tqcheckbox.h>
+#include <tqcombobox.h>
 
 #include <klocale.h>
 #include <kglobal.h>
@@ -40,9 +40,10 @@ namespace kt {
 \brief Prefs page
 \author Krzysztof Kundzicz <athantor@gmail.com>
 */
-class StatsPluginPrefs : public QObject, public PrefPageInterface
+class StatsPluginPrefs : public TQObject, public PrefPageInterface
 {
 	Q_OBJECT
+  TQ_OBJECT
 	
 	private:
 		///Widget
@@ -54,7 +55,7 @@ class StatsPluginPrefs : public QObject, public PrefPageInterface
 		virtual ~StatsPluginPrefs();
 		
 		virtual bool 	apply ();
-		virtual void 	createWidget (QWidget *parent);
+		virtual void 	createWidget (TQWidget *tqparent);
 		virtual void 	updateData ();
 		virtual void 	deleteWidget ();
 	signals:

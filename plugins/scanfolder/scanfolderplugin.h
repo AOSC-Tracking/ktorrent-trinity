@@ -22,7 +22,7 @@
 
 #include <interfaces/plugin.h>
 
-class QString;
+class TQString;
 
 
 namespace kt
@@ -38,13 +38,14 @@ namespace kt
 	class ScanFolderPlugin : public Plugin
 	{
 		Q_OBJECT
+  TQ_OBJECT
 	public:
-		ScanFolderPlugin(QObject* parent, const char* name, const QStringList& args);
+		ScanFolderPlugin(TQObject* tqparent, const char* name, const TQStringList& args);
 		virtual ~ScanFolderPlugin();
 
 		virtual void load();
 		virtual void unload();
-		virtual bool versionCheck(const QString& version) const;
+		virtual bool versionCheck(const TQString& version) const;
 		
 		void updateScanFolders();
 		

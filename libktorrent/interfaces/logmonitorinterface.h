@@ -20,7 +20,7 @@
 #ifndef KTLOGMONITORINTERFACE_H
 #define KTLOGMONITORINTERFACE_H
 
-class QString;
+class TQString;
 
 namespace kt
 {
@@ -42,7 +42,7 @@ namespace kt
 		 * A line was written to the log file.
 		 * @param line The line
 		 */
-		virtual void message(const QString & line, unsigned int arg) = 0;
+		virtual void message(const TQString & line, unsigned int arg) = 0;
 	};
 
 }

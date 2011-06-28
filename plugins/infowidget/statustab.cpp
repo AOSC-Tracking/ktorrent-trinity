@@ -19,8 +19,8 @@
  ***************************************************************************/
 #include <math.h>
 #include <float.h>
-#include <qdatetime.h>
-#include <qcheckbox.h>
+#include <tqdatetime.h>
+#include <tqcheckbox.h>
 #include <kglobal.h>
 #include <klocale.h>
 #include <interfaces/functions.h>
@@ -34,10 +34,10 @@
 namespace kt
 {
 
-	StatusTab::StatusTab(QWidget* parent, const char* name, WFlags fl)
-			: StatusTabBase(parent,name,fl),curr_tc(0)
+	StatusTab::StatusTab(TQWidget* tqparent, const char* name, WFlags fl)
+			: StatusTabBase(tqparent,name,fl),curr_tc(0)
 	{
-		QColorGroup cg = colorGroup();
+		TQColorGroup cg = tqcolorGroup();
 		// do not use hardcoded colors
 		m_info_caption->setPaletteBackgroundColor(cg.mid());
 		m_chunks_caption->setPaletteBackgroundColor(cg.mid());
@@ -46,15 +46,15 @@ namespace kt
 		maxRatio->setMinValue(0.0f);
 		maxRatio->setMaxValue(100.0f);
 		maxRatio->setStep(0.1f);
-		connect(maxRatio, SIGNAL(valueHasChanged()), this, SLOT(maxRatioReturnPressed()));
-		connect(useLimit, SIGNAL( toggled(bool) ), this, SLOT( useLimitToggled(bool) ) );
+		connect(maxRatio, TQT_SIGNAL(valueHasChanged()), this, TQT_SLOT(maxRatioReturnPressed()));
+		connect(useLimit, TQT_SIGNAL( toggled(bool) ), this, TQT_SLOT( useLimitToggled(bool) ) );
 		
 		maxTime->setMinValue(0.0f);
 		maxTime->setMaxValue(10000000.0f);
 		maxTime->setStep(0.05f);
 		maxTime->setSpecialValueText(i18n("No limit"));
-		connect(useTimeLimit,SIGNAL(toggled(bool)), this,SLOT(useTimeLimitToggled(bool)));
-		connect(maxTime,SIGNAL(valueHasChanged()), this, SLOT(timeValueChanged()));
+		connect(useTimeLimit,TQT_SIGNAL(toggled(bool)), this,TQT_SLOT(useTimeLimitToggled(bool)));
+		connect(maxTime,TQT_SIGNAL(valueHasChanged()), this, TQT_SLOT(timeValueChanged()));
 		
 		int h = (int)ceil(fontMetrics().height()*1.25);
 		m_chunk_bar->setFixedHeight(h);
@@ -130,7 +130,7 @@ namespace kt
 		
 		if (s.running)
 		{
-			QTime t;
+			TQTime t;
 			t = t.addSecs(curr_tc->getTimeToNextTrackerUpdate());
 			m_tracker_update_time->setText(t.toString("mm:ss"));
 		}
@@ -141,17 +141,17 @@ namespace kt
 		
 		m_tracker_status->setText(s.trackerstatus);
 		
-		m_seeders->setText(QString("%1 (%2)")
-				.arg(s.seeders_connected_to).arg(s.seeders_total));
+		m_seeders->setText(TQString("%1 (%2)")
+				.tqarg(s.seeders_connected_to).tqarg(s.seeders_total));
 	
-		m_leechers->setText(QString("%1 (%2)")
-				.arg(s.leechers_connected_to).arg(s.leechers_total));
+		m_leechers->setText(TQString("%1 (%2)")
+				.tqarg(s.leechers_connected_to).tqarg(s.leechers_total));
 	
 		float ratio = kt::ShareRatio(s);
 		if(!maxRatio->hasFocus() && useLimit->isChecked())
 			maxRatioUpdate();
 		
-		m_share_ratio->setText(QString("<font color=\"%1\">%2</font>").arg(ratio <= 0.8 ? "#ff0000" : "#1c9a1c").arg(KGlobal::locale()->formatNumber(ratio,2)));
+		m_share_ratio->setText(TQString("<font color=\"%1\">%2</font>").tqarg(ratio <= 0.8 ? "#ff0000" : "#1c9a1c").tqarg(KGlobal::locale()->formatNumber(ratio,2)));
 	
 		Uint32 secs = curr_tc->getRunningTimeUL(); 
 		if (secs == 0)

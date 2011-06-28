@@ -20,8 +20,8 @@
 #include "prefpageinterface.h"
 namespace kt
 {
-	PrefPageInterface::PrefPageInterface(const QString & name,const QString & header,
-										 const QPixmap & pix)
+	PrefPageInterface::PrefPageInterface(const TQString & name,const TQString & header,
+										 const TQPixmap & pix)
 	: pixmap(pix),itemName(name),header(header)
 	{}
 

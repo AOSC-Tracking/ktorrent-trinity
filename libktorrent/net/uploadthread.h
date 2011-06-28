@@ -22,7 +22,7 @@
 
 
 
-#include <qwaitcondition.h> 
+#include <tqwaitcondition.h> 
 #include "networkthread.h"
 
 namespace net
@@ -38,7 +38,7 @@ namespace net
 		static bt::Uint32 ucap;
 		static bt::Uint32 sleep_time;
 	
-		QWaitCondition data_ready;
+		TQWaitCondition data_ready;
 	public:
 		UploadThread(SocketMonitor* sm);
 		virtual ~UploadThread();	

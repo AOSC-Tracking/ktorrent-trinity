@@ -20,8 +20,8 @@
 #ifndef BTBNODE_H
 #define BTBNODE_H
 
-#include <qptrlist.h>
-#include <qvaluelist.h>
+#include <tqptrlist.h>
+#include <tqvaluelist.h>
 #include <util/constants.h>
 #include "value.h"
 
@@ -77,7 +77,7 @@ namespace bt
 	 * @author Joris Guisson
 	 * @brief Represents a value (string,bytearray or int) in bencoded data
 	 *
-	 * @todo Use QVariant
+	 * @todo Use TQVariant
 	 */
 	class BValueNode : public BNode
 	{
@@ -99,10 +99,10 @@ namespace bt
 	{
 		struct DictEntry
 		{
-			QByteArray key;
+			TQByteArray key;
 			BNode* node;
 		};
-		QValueList<DictEntry> children;
+		TQValueList<DictEntry> tqchildren;
 	public:
 		BDictNode(Uint32 off);
 		virtual ~BDictNode();
@@ -112,42 +112,42 @@ namespace bt
 		 * @param key The key
 		 * @param node The node
 		 */
-		void insert(const QByteArray & key,BNode* node);
+		void insert(const TQByteArray & key,BNode* node);
 		
 		/**
 		 * Get a BNode.
 		 * @param key The key
 		 * @return The node or 0 if there is no node with has key @a key 
 		 */
-		BNode* getData(const QString & key);
+		BNode* getData(const TQString & key);
 
 		/**
 		 * Get a BListNode.
 		 * @param key The key
 		 * @return The node or 0 if there is no list node with has key @a key
 		 */
-		BListNode* getList(const QString & key);
+		BListNode* getList(const TQString & key);
 
 		/**
 		 * Get a BDictNode.
 		 * @param key The key
 		 * @return The node or 0 if there is no dict node with has key @a key
 		 */
-		BDictNode* getDict(const QString & key);
+		BDictNode* getDict(const TQString & key);
 		
 		/**
 		 * Get a BDictNode.
 		 * @param key The key
 		 * @return The node or 0 if there is no dict node with has key @a key
 		 */
-		BDictNode* getDict(const QByteArray & key);
+		BDictNode* getDict(const TQByteArray & key);
 
 		/**
 		 * Get a BValueNode.
 		 * @param key The key
 		 * @return The node or 0 if there is no value node with has key @a key
 		 */
-		BValueNode* getValue(const QString & key);
+		BValueNode* getValue(const TQString & key);
 		
 		void printDebugInfo();
 	};
@@ -159,7 +159,7 @@ namespace bt
 	 */
 	class BListNode : public BNode
 	{
-		QPtrList<BNode> children;
+		TQPtrList<BNode> tqchildren;
 	public:
 		BListNode(Uint32 off);
 		virtual ~BListNode();
@@ -172,14 +172,14 @@ namespace bt
 		void printDebugInfo();
 
 		/// Get the number of nodes in the list.
-		Uint32 getNumChildren() const {return children.count();}
+		Uint32 getNumChildren() const {return tqchildren.count();}
 		
 		/**
 		 * Get a node from the list
 		 * @param idx The index
 		 * @return The node or 0 if idx is out of bounds
 		 */
-		BNode* getChild(Uint32 idx) {return children.at(idx);}
+		BNode* getChild(Uint32 idx) {return tqchildren.at(idx);}
 
 		/**
 		 * Get a BListNode.

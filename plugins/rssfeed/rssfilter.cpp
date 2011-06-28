@@ -22,7 +22,7 @@
 namespace kt
 {
 
-	FilterMatch::FilterMatch(int season, int episode, QString link, QString time)
+	FilterMatch::FilterMatch(int season, int episode, TQString link, TQString time)
 	{
 		m_season = season;
 		m_episode = episode;
@@ -53,7 +53,7 @@ namespace kt
 		return m_link==other.link() && m_season==other.season() && m_episode==other.episode();
 	}
 		
-	RssFilter::RssFilter(QObject * parent) : QObject(parent)
+	RssFilter::RssFilter(TQObject * tqparent) : TQObject(tqparent)
 	{
 		m_title = "New";
 		m_active = false;
@@ -62,9 +62,9 @@ namespace kt
 		m_minSeason = m_minEpisode = m_maxSeason = m_maxEpisode = 0;
 	}
 	
-	RssFilter::RssFilter(QString title, bool active, QStringList regExps, bool series, bool sansEpisode, 
+	RssFilter::RssFilter(TQString title, bool active, TQStringList regExps, bool series, bool sansEpisode, 
 					int minSeason, int minEpisode, int maxSeason, int maxEpisode, 
-					QValueList<FilterMatch> matches)
+					TQValueList<FilterMatch> matches)
 	{
 		m_title = title;
 		m_active = active;
@@ -78,7 +78,7 @@ namespace kt
 		m_matches = matches;
 	}
 					
-	RssFilter::RssFilter(const RssFilter &other) : QObject()
+	RssFilter::RssFilter(const RssFilter &other) : TQObject()
 	{
 		*this = other;
 	}
@@ -102,7 +102,7 @@ namespace kt
 		return *this;
 	}
 	
-	void RssFilter::setTitle( const QString& title )
+	void RssFilter::setTitle( const TQString& title )
 	{
 		if (m_title != title)
 		{
@@ -121,7 +121,7 @@ namespace kt
 		}
 	}
 	
-	void RssFilter::setRegExps( const QStringList& regExps )
+	void RssFilter::setRegExps( const TQStringList& regExps )
 	{
 		if (regExps != m_regExps)
 		{
@@ -191,7 +191,7 @@ namespace kt
 		}
 	}
 	
-	void RssFilter::setMatches( const QValueList<FilterMatch>& matches )
+	void RssFilter::setMatches( const TQValueList<FilterMatch>& matches )
 	{
 		if (matches != m_matches)
 		{
@@ -252,7 +252,7 @@ namespace kt
 		if (!m_active && saveMatch)
 			return false;
 	
-		QRegExp regEx;
+		TQRegExp regEx;
 		regEx.setCaseSensitive(false);
 		
 		if (!m_regExps.count())
@@ -263,7 +263,7 @@ namespace kt
 			if (m_regExps[i].isEmpty())
 				continue;
 				
-			QString curExp = m_regExps[i];
+			TQString curExp = m_regExps[i];
 			bool invert=false;
 			
 			if (curExp.startsWith( "!" ))
@@ -276,14 +276,14 @@ namespace kt
 			
 			if (!invert)
 			{
-				if (!article.title().contains(regEx) && !article.link().prettyURL().contains(regEx) && !article.description().contains(regEx) )
+				if (!article.title().tqcontains(regEx) && !article.link().prettyURL().tqcontains(regEx) && !article.description().tqcontains(regEx) )
 				{
 					return false;
 				}
 			}
 			else
 			{
-				if (article.title().contains(regEx) || article.link().prettyURL().contains(regEx) || article.description().contains(regEx) )
+				if (article.title().tqcontains(regEx) || article.link().prettyURL().tqcontains(regEx) || article.description().tqcontains(regEx) )
 				{
 					return false;
 				}
@@ -295,15 +295,15 @@ namespace kt
 		
 		if (m_series)
 		{
-			QStringList episodeFormats;
+			TQStringList episodeFormats;
 			episodeFormats << "s([0-9]{1,2})[de]([0-9]{1,2})[^0-9]" << "[^0-9]([0-9]{1,2})x([0-9]{1,2})[^0-9]" << "[^0-9]([0-9]{1,2})([0-9]{2})[^0-9]";
 			for (int i=0; i<episodeFormats.count(); i++)
 			{
 				regEx.setPattern(*episodeFormats.at(i));
 				if (regEx.search(article.title()) >= 0)
 				{
-					season = (*regEx.capturedTexts().at(1)).toInt();
-					episode = (*regEx.capturedTexts().at(2)).toInt();
+					season = (*regEx.tqcapturedTexts().at(1)).toInt();
+					episode = (*regEx.tqcapturedTexts().at(2)).toInt();
 					if (!episodeInRange(season,episode,ignoreMatches,alreadyDownloaded))
 					{
 						return false;
@@ -313,8 +313,8 @@ namespace kt
 			
 				if (regEx.search(article.link().prettyURL()) >= 0)
 				{
-					season = (*regEx.capturedTexts().at(1)).toInt();
-					episode = (*regEx.capturedTexts().at(2)).toInt();
+					season = (*regEx.tqcapturedTexts().at(1)).toInt();
+					episode = (*regEx.tqcapturedTexts().at(2)).toInt();
 					if (!episodeInRange(season,episode,ignoreMatches,alreadyDownloaded))
 					{
 						return false;
@@ -324,8 +324,8 @@ namespace kt
 			
 				if (regEx.search(article.description()) >= 0)
 				{
-					season = (*regEx.capturedTexts().at(1)).toInt();
-					episode = (*regEx.capturedTexts().at(2)).toInt();
+					season = (*regEx.tqcapturedTexts().at(1)).toInt();
+					episode = (*regEx.tqcapturedTexts().at(2)).toInt();
 					if (!episodeInRange(season,episode,ignoreMatches,alreadyDownloaded))
 					{
 						return false;
@@ -354,10 +354,10 @@ namespace kt
 		return true;
 	}
 	
-	void RssFilter::deleteMatch(const QString& link)
+	void RssFilter::deleteMatch(const TQString& link)
 	{
 	
-		QValueList<FilterMatch>::iterator it = m_matches.begin();
+		TQValueList<FilterMatch>::iterator it = m_matches.begin();
 		while (it != m_matches.end())
 		{
 			if ((*it).link() == link)
@@ -372,43 +372,43 @@ namespace kt
 		
 	}
 	
-	QDataStream &operator<<( QDataStream &out, const FilterMatch &filterMatch )
+	TQDataStream &operator<<( TQDataStream &out, const FilterMatch &filterMatch )
 	{
 		out << filterMatch.season() << filterMatch.episode() << filterMatch.time() << filterMatch.link();
 		
 		return out;
 	}
 	
-	QDataStream &operator>>( QDataStream &in, FilterMatch &filterMatch )
+	TQDataStream &operator>>( TQDataStream &in, FilterMatch &filterMatch )
 	{
 		int season, episode;
-		QString time;
-		QString link;
+		TQString time;
+		TQString link;
 		in >> season >> episode >> time >> link;
 		filterMatch = FilterMatch(season, episode, link, time);
 		
 		return in;
 	}
 	
-	QDataStream &operator<<( QDataStream &out, const RssFilter &filter )
+	TQDataStream &operator<<( TQDataStream &out, const RssFilter &filter )
 	{
 		out << filter.title() << int(filter.active()) << filter.regExps() << int(filter.series()) << int(filter.sansEpisode()) << filter.minSeason() << filter.minEpisode() << filter.maxSeason() << filter.maxEpisode() << filter.matches();
 		
 		return out;
 	}
 	
-	QDataStream &operator>>( QDataStream &in, RssFilter &filter )
+	TQDataStream &operator>>( TQDataStream &in, RssFilter &filter )
 	{
-		QString title;
+		TQString title;
 		int active;
-		QStringList regExps;
+		TQStringList regExps;
 		int series;
 		int sansEpisode;
 		int minSeason;
 		int minEpisode;
 		int maxSeason;
 		int maxEpisode;
-		QValueList<FilterMatch> matches;
+		TQValueList<FilterMatch> matches;
 		in >> title >> active >> regExps >> series >> sansEpisode >> minSeason >> minEpisode >> maxSeason >> maxEpisode >> matches;
 		
 		filter = RssFilter(title, active, regExps, series, sansEpisode, minSeason, minEpisode, maxSeason, maxEpisode, matches);

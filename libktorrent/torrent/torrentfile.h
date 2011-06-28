@@ -21,7 +21,7 @@
 #ifndef BTTORRENTFILE_H
 #define BTTORRENTFILE_H
 
-#include <qstring.h>
+#include <tqstring.h>
 #include <util/constants.h>
 #include <interfaces/torrentfileinterface.h>
 
@@ -38,6 +38,7 @@ namespace bt
 	class TorrentFile : public kt::TorrentFileInterface
 	{
 		Q_OBJECT
+  TQ_OBJECT
 
 		Uint32 index;
 		Uint64 cache_offset;
@@ -68,7 +69,7 @@ namespace bt
 		 * @param size Size of the file
 		 * @param chunk_size Size of each chunk 
 		 */
-		TorrentFile(Uint32 index,const QString & path,Uint64 off,Uint64 size,Uint64 chunk_size);
+		TorrentFile(Uint32 index,const TQString & path,Uint64 off,Uint64 size,Uint64 chunk_size);
 		
 		/**
 		 * Copy constructor.

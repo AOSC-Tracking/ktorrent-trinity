@@ -67,7 +67,7 @@ namespace bt
 		Uint8* hs = handshake;
 		IPBlocklist& ipfilter = IPBlocklist::instance();
 
-		QString IP = sock->getRemoteIPAddress();
+		TQString IP = sock->getRemoteIPAddress();
 
 		if (ipfilter.isBlocked( IP ))
 		{

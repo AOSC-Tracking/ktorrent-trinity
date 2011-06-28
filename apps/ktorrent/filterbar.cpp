@@ -19,9 +19,9 @@
 
 #include "filterbar.h"
 
-#include <qlabel.h>
-#include <qlayout.h>
-#include <qcheckbox.h>
+#include <tqlabel.h>
+#include <tqlayout.h>
+#include <tqcheckbox.h>
 
 #include <kdialog.h>
 #include <klocale.h>
@@ -34,42 +34,42 @@
 
 
 
-FilterBar::FilterBar(QWidget *parent, const char *name) :
-    QWidget(parent, name)
+FilterBar::FilterBar(TQWidget *tqparent, const char *name) :
+    TQWidget(tqparent, name)
 {
 	const int gap = 3;
 	
-	QVBoxLayout* foo = new QVBoxLayout(this);
+	TQVBoxLayout* foo = new TQVBoxLayout(this);
 	foo->addSpacing(gap);
 	
-	QHBoxLayout* layout = new QHBoxLayout(foo);
-	layout->addSpacing(gap);
+	TQHBoxLayout* tqlayout = new TQHBoxLayout(foo);
+	tqlayout->addSpacing(gap);
 	
 	m_close = new KToolBarButton("fileclose",0,this);
-	connect(m_close,SIGNAL(clicked()),this,SLOT(hide()));
-	layout->addWidget(m_close);
+	connect(m_close,TQT_SIGNAL(clicked()),this,TQT_SLOT(hide()));
+	tqlayout->addWidget(m_close);
 	
-	m_filter = new QLabel(i18n("Find:"), this);
-	layout->addWidget(m_filter);
-	layout->addSpacing(KDialog::spacingHint());
+	m_filter = new TQLabel(i18n("Find:"), this);
+	tqlayout->addWidget(m_filter);
+	tqlayout->addSpacing(KDialog::spacingHint());
 	
 	m_filterInput = new KLineEdit(this);
-	layout->addWidget(m_filterInput);
+	tqlayout->addWidget(m_filterInput);
 	
 	m_clear = new KPushButton(this);
 	m_clear->setIconSet(SmallIcon("clear_left"));
 	m_clear->setFlat(true);
-	layout->addWidget(m_clear);
-	layout->addSpacing(gap);
+	tqlayout->addWidget(m_clear);
+	tqlayout->addSpacing(gap);
 	
-	m_case_sensitive = new QCheckBox(i18n("Case sensitive"),this);
+	m_case_sensitive = new TQCheckBox(i18n("Case sensitive"),this);
 	m_case_sensitive->setChecked(true);
-	layout->addWidget(m_case_sensitive);
-	layout->addItem(new QSpacerItem(10,10,QSizePolicy::Expanding));
+	tqlayout->addWidget(m_case_sensitive);
+	tqlayout->addItem(new TQSpacerItem(10,10,TQSizePolicy::Expanding));
 		
-	connect(m_filterInput, SIGNAL(textChanged(const QString&)),
-		this, SLOT(slotChangeFilter(const QString&)));
-	connect(m_clear, SIGNAL(clicked()), m_filterInput, SLOT(clear()));
+	connect(m_filterInput, TQT_SIGNAL(textChanged(const TQString&)),
+		this, TQT_SLOT(slotChangeFilter(const TQString&)));
+	connect(m_clear, TQT_SIGNAL(clicked()), m_filterInput, TQT_SLOT(clear()));
 }
 
 FilterBar::~FilterBar()
@@ -87,7 +87,7 @@ void FilterBar::loadSettings(KConfig* cfg)
 {
 	setHidden(cfg->readBoolEntry("filter_bar_hidden",true));
 	m_case_sensitive->setChecked(cfg->readBoolEntry("filter_bar_case_sensitive",true));
-	m_name_filter = cfg->readEntry("filter_bar_text",QString::null);
+	m_name_filter = cfg->readEntry("filter_bar_text",TQString());
 	m_filterInput->setText(m_name_filter);
 }
 
@@ -97,30 +97,30 @@ bool FilterBar::matchesFilter(kt::TorrentInterface* tc)
 	if (m_name_filter.length() == 0)
 		 return true;
 	else
-		return tc->getStats().torrent_name.contains(m_name_filter,cs);
+		return tc->getStats().torrent_name.tqcontains(m_name_filter,cs);
 }
 
-void FilterBar::slotChangeFilter(const QString& nameFilter)
+void FilterBar::slotChangeFilter(const TQString& nameFilter)
 {	
 	m_name_filter = nameFilter;
 }
 
-void FilterBar::keyPressEvent(QKeyEvent* event)
+void FilterBar::keyPressEvent(TQKeyEvent* event)
 {
-    if ((event->key() == Qt::Key_Escape))
+    if ((event->key() == TQt::Key_Escape))
 	{
         m_filterInput->clear();
-		m_name_filter = QString::null;
+		m_name_filter = TQString();
 		//hide();
     }
 	else 
-		QWidget::keyPressEvent(event);
+		TQWidget::keyPressEvent(event);
 }
 
-void FilterBar::hideEvent(QHideEvent* event)
+void FilterBar::hideEvent(TQHideEvent* event)
 {
 	m_filterInput->releaseKeyboard();
-	QWidget::hideEvent(event);
+	TQWidget::hideEvent(event);
 }
 
 #include "filterbar.moc"

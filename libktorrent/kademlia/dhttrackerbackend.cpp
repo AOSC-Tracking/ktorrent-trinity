@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 #include <kurl.h>
-#include <qhostaddress.h>
+#include <tqhostaddress.h>
 #include <util/log.h>
 #include <util/functions.h>
 #include <torrent/globals.h>
@@ -37,9 +37,9 @@ namespace dht
 	DHTTrackerBackend::DHTTrackerBackend(DHTBase & dh_table,kt::TorrentInterface* tor) 
 		: dh_table(dh_table),curr_task(0),tor(tor)
 	{
-		connect(&timer,SIGNAL(timeout()),this,SLOT(onTimeout()));
-		connect(&dh_table,SIGNAL(started()),this,SLOT(manualUpdate()));
-		connect(&dh_table,SIGNAL(stopped()),this,SLOT(dhtStopped()));
+		connect(&timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(onTimeout()));
+		connect(&dh_table,TQT_SIGNAL(started()),this,TQT_SLOT(manualUpdate()));
+		connect(&dh_table,TQT_SIGNAL(stopped()),this,TQT_SLOT(dhtStopped()));
 		started = false;
 	}
 
@@ -98,8 +98,8 @@ namespace dht
 				const kt::DHTNode & n = tor->getDHTNode(i);
 				curr_task->addDHTNode(n.ip,n.port);
 			}
-			connect(curr_task,SIGNAL(dataReady( Task* )),this,SLOT(onDataReady( Task* )));
-			connect(curr_task,SIGNAL(finished( Task* )),this,SLOT(onFinished( Task* )));
+			connect(curr_task,TQT_SIGNAL(dataReady( Task* )),this,TQT_SLOT(onDataReady( Task* )));
+			connect(curr_task,TQT_SIGNAL(finished( Task* )),this,TQT_SLOT(onFinished( Task* )));
 
 			return true;
 		}
@@ -127,7 +127,7 @@ namespace dht
 			while (curr_task->takeItem(item))
 			{
 				Uint16 port = bt::ReadUint16(item.getData(),4);
-				QString ip = QHostAddress(ReadUint32(item.getData(),0)).toString();
+				TQString ip = TQHostAddress(ReadUint32(item.getData(),0)).toString();
 				
 				addPeer(ip,port);
 				cnt++;
@@ -136,8 +136,8 @@ namespace dht
 			if (cnt)
 			{
 				Out(SYS_DHT|LOG_NOTICE) << 
-						QString("DHT: Got %1 potential peers for torrent %2")
-						.arg(cnt).arg(tor->getStats().torrent_name) << endl;
+						TQString("DHT: Got %1 potential peers for torrent %2")
+						.tqarg(cnt).tqarg(tor->getStats().torrent_name) << endl;
 				peersReady(this);
 			}
 		}

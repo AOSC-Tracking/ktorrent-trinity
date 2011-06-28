@@ -17,8 +17,8 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
-#include <qsocket.h>
-#include <qhttp.h> 
+#include <tqsocket.h>
+#include <tqhttp.h> 
 #include <util/log.h>
 #include <util/mmapfile.h>
 #include "httpserver.h"
@@ -31,7 +31,7 @@ using namespace bt;
 namespace kt
 {
 
-	HttpClientHandler::HttpClientHandler(HttpServer* srv,QSocket* sock) : srv(srv),client(sock),php_response_hdr(200)
+	HttpClientHandler::HttpClientHandler(HttpServer* srv,TQSocket* sock) : srv(srv),client(sock),php_response_hdr(200)
 	{
 		state = WAITING_FOR_REQUEST;
 		bytes_read = 0;
@@ -51,7 +51,7 @@ namespace kt
 		{
 			while (client->canReadLine())
 			{
-				QString line = client->readLine();
+				TQString line = client->readLine();
 				header_data += line;
 				if (header_data.endsWith("\r\n\r\n"))
 				{
@@ -87,7 +87,7 @@ namespace kt
 		
 	void HttpClientHandler::handleRequest()
 	{
-		header = QHttpRequestHeader(header_data);
+		header = TQHttpRequestHeader(header_data);
 	//	Out(SYS_WEB|LOG_DEBUG) << "Parsing request : " << header.toString() << endl;
 		if (header.method() == "POST")
 		{
@@ -112,7 +112,7 @@ namespace kt
 		}
 	}
 	
-	bool HttpClientHandler::sendFile(HttpResponseHeader & hdr,const QString & full_path)
+	bool HttpClientHandler::sendFile(HttpResponseHeader & hdr,const TQString & full_path)
 	{
 	//	Out(SYS_WEB|LOG_DEBUG) << "Sending file " << full_path << endl;
 		// first look in cache
@@ -131,12 +131,12 @@ namespace kt
 			srv->insertIntoCache(full_path,c);
 		}
 		
-		hdr.setValue("Content-Length",QString::number(c->getSize()));
+		hdr.setValue("Content-Length",TQString::number(c->getSize()));
 		
 	//	Out(SYS_WEB|LOG_DEBUG) << "HTTP header : " << endl;
 	//	Out(SYS_WEB|LOG_DEBUG) << hdr.toString() << endl;
 				
-		QCString d = hdr.toString().utf8();
+		TQCString d = hdr.toString().utf8();
 		client->writeBlock(d.data(),d.length());
 
 		Uint32 written = 0;
@@ -156,14 +156,14 @@ namespace kt
 #define HTTP_500_ERROR "<html><head><title>HTTP/1.1 500 Internal Server Error</title></head><body>HTTP/1.1 Internal Server Error<br>%1</body></html>"
 
 	
-	void HttpClientHandler::send404(HttpResponseHeader & hdr,const QString & path)
+	void HttpClientHandler::send404(HttpResponseHeader & hdr,const TQString & path)
 	{
 	//	Out(SYS_WEB|LOG_DEBUG) << "Sending 404 " << path << endl;
-		QString data = HTTP_404_ERROR;
-		hdr.setValue("Content-Length",QString::number(data.length()));
+		TQString data = HTTP_404_ERROR;
+		hdr.setValue("Content-Length",TQString::number(data.length()));
 
-		QTextStream os(client);
-		os.setEncoding( QTextStream::UnicodeUTF8 );
+		TQTextStream os(client);
+		os.setEncoding( TQTextStream::UnicodeUTF8 );
 		os << hdr.toString();
 		os << data;
 	}
@@ -171,11 +171,11 @@ namespace kt
 	void HttpClientHandler::send500(HttpResponseHeader & hdr)
 	{
 	//	Out(SYS_WEB|LOG_DEBUG) << "Sending 500 " << endl;
-		QString data = QString(HTTP_500_ERROR).arg("An internal server error occured !");
-		hdr.setValue("Content-Length",QString::number(data.length()));
+		TQString data = TQString(HTTP_500_ERROR).tqarg("An internal server error occured !");
+		hdr.setValue("Content-Length",TQString::number(data.length()));
 
-		QTextStream os(client);
-		os.setEncoding( QTextStream::UnicodeUTF8 );
+		TQTextStream os(client);
+		os.setEncoding( TQTextStream::UnicodeUTF8 );
 		os << hdr.toString();
 		os << data;
 	}
@@ -183,28 +183,28 @@ namespace kt
 	void HttpClientHandler::sendResponse(const HttpResponseHeader & hdr)
 	{
 	//	Out(SYS_WEB|LOG_DEBUG) << "Sending response " << hdr.toString() << endl;
-		QTextStream os(client);
-		os.setEncoding( QTextStream::UnicodeUTF8 );
+		TQTextStream os(client);
+		os.setEncoding( TQTextStream::UnicodeUTF8 );
 		os << hdr.toString();
 	}
 
 	void HttpClientHandler::executePHPScript(
 			PhpInterface* php_iface,
 			HttpResponseHeader & hdr,
-			const QString & php_exe,
-			const QString & php_file,
-			const QMap<QString,QString> & args)
+			const TQString & php_exe,
+			const TQString & php_file,
+			const TQMap<TQString,TQString> & args)
 	{
 	//	Out(SYS_WEB|LOG_DEBUG) << "Launching PHP script " << php_file << endl;
 		php = new PhpHandler(php_exe,php_iface);
 		if (!php->executeScript(php_file,args))
 		{
-			QString data = QString(HTTP_500_ERROR).arg("Failed to launch PHP executable !");
+			TQString data = TQString(HTTP_500_ERROR).tqarg("Failed to launch PHP executable !");
 			hdr.setResponseCode(500);
-			hdr.setValue("Content-Length",QString::number(data.utf8().length()));
+			hdr.setValue("Content-Length",TQString::number(data.utf8().length()));
 			
-			QTextStream os(client);
-			os.setEncoding( QTextStream::UnicodeUTF8 );
+			TQTextStream os(client);
+			os.setEncoding( TQTextStream::UnicodeUTF8 );
 			os << hdr.toString();
 			os << data;
 			state = WAITING_FOR_REQUEST;
@@ -212,18 +212,18 @@ namespace kt
 		else
 		{
 			php_response_hdr = hdr;
-			connect(php,SIGNAL(finished()),this,SLOT(onPHPFinished()));
+			connect(php,TQT_SIGNAL(finished()),this,TQT_SLOT(onPHPFinished()));
 			state = PROCESSING_PHP;
 		}
 	}
 	
 	void HttpClientHandler::onPHPFinished()
 	{
-		const QByteArray & output = php->getOutput();
-		php_response_hdr.setValue("Content-Length",QString::number(output.size()));
+		const TQByteArray & output = php->getOutput();
+		php_response_hdr.setValue("Content-Length",TQString::number(output.size()));
 		
-		QTextStream os(client);
-		os.setEncoding( QTextStream::UnicodeUTF8 );
+		TQTextStream os(client);
+		os.setEncoding( TQTextStream::UnicodeUTF8 );
 		os << php_response_hdr.toString();
 		os.writeRawBytes(output.data(),output.size());
 		
