@@ -19,7 +19,7 @@
 #include <util/log.h>
 #include <torrent/peerid.h>
 #include <avahi-common/watch.h>
-#include <avahi-qt3/tqt-watch.h>
+#include <avahi-qt3/qt-watch.h>
 #include "localbrowser.h"
 #include "avahiservice.h"
 		
