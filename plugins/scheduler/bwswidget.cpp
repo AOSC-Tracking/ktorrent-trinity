@@ -175,7 +175,7 @@ namespace kt
 		updateHeaderStates();
 	}
 
-	void BWSWidget::tqrepaintWidget()
+	void BWSWidget::repaintWidget()
 	{
 		for(int i=0; i<7; ++i)
 			for(int j=0; j<24; ++j)
@@ -194,7 +194,7 @@ namespace kt
 		draw_focus = false;
 		clearSelection();
 		updateHeaderStates();
-		tqrepaintWidget();
+		repaintWidget();
 	}
 
 	void BWSWidget::setLeftCategory(const int& theValue)
@@ -296,7 +296,7 @@ namespace kt
 
 		use_colors = color;
 
-		tqrepaintWidget();
+		repaintWidget();
 	}
 	
 	void BWSWidget::setSchedule(const BWS& theValue)

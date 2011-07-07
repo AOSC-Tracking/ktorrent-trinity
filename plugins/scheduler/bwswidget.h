@@ -50,7 +50,7 @@ namespace kt
 			~BWSWidget();
 
 			///Repaints the whole widget
-			void tqrepaintWidget();
+			void repaintWidget();
 
 			///Clears selection (removes focus)
 			void clearSelect();
