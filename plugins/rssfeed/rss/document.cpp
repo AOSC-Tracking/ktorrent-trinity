@@ -153,24 +153,24 @@ Document::Document(const TQDomDocument &doc) : d(new Private)
     /* This is ugly but necessary since RSS 0.90 and 1.0 have a different tqparent
      * node for <image>, <textinput> and <item> than RSS 0.91-0.94 and RSS 2.0.
      */
-    TQDomNode tqparentNode;
+    TQDomNode parentNode;
     if (d->version == v0_90 || d->version == v1_0 || d->format == AtomFeed)
-        tqparentNode = rootNode;
+        parentNode = rootNode;
     else
     {
 	// following is a HACK for broken 0.91 feeds like xanga.com's
 	if (!rootNode.namedItem(TQString::tqfromLatin1("item")).isNull())
-	    tqparentNode = rootNode;
+	    parentNode = rootNode;
 	else
-            tqparentNode = channelNode;
+            parentNode = channelNode;
     }
     
     // image and textinput aren't supported by Atom.. handle in case feed provides
-    TQDomNode n = tqparentNode.namedItem(TQString::tqfromLatin1("image"));
+    TQDomNode n = parentNode.namedItem(TQString::tqfromLatin1("image"));
     if (!n.isNull())
         d->image = new Image(n);
 
-    n = tqparentNode.namedItem(TQString::tqfromLatin1("textinput"));
+    n = parentNode.namedItem(TQString::tqfromLatin1("textinput"));
     if (!n.isNull())
         d->textInput = new TextInput(n);
 
@@ -181,7 +181,7 @@ Document::Document(const TQDomDocument &doc) : d(new Private)
     else
         tagName=TQString::tqfromLatin1("item");
 
-    for (n = tqparentNode.firstChild(); !n.isNull(); n = n.nextSibling()) {
+    for (n = parentNode.firstChild(); !n.isNull(); n = n.nextSibling()) {
         const TQDomElement e = n.toElement();
         if (e.tagName() == tagName)
             d->articles.append(Article(e, d->format));

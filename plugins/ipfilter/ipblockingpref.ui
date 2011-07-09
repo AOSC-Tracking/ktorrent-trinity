@@ -196,7 +196,7 @@ NOTE: ZIP file from bluetack.co.uk is supported.</string>
     <slot>checkUseLevel1_toggled(bool)</slot>
     <slot>checkUseKTfilter_toggled(bool)</slot>
 </Q_SLOTS>
-<tqlayoutdefaults spacing="6" margin="11"/>
+<layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kurlrequester.h</includehint>
     <includehint>kpushbutton.h</includehint>

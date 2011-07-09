@@ -142,5 +142,5 @@
     <slot>btnEditBWS_clicked()</slot>
     <slot>useColors_toggled(bool)</slot>
 </Q_SLOTS>
-<tqlayoutdefaults spacing="6" margin="11"/>
+<layoutdefaults spacing="6" margin="11"/>
 </UI>

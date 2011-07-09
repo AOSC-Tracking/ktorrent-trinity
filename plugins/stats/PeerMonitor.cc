@@ -89,7 +89,7 @@ double PeerMonitor::LeechersUpSpeed()
 	double spd = 0.0;
 	
 	//without it'll segfault/SIGABRT on stop as in meantime the iterator from 
-	// mPeers will be tqinvalidated
+	// mPeers will be invalidated
 	
 	for( data_t::const_iterator it = mPeers.begin(); it != mPeers.end(); it++)
 	{

@@ -65,7 +65,7 @@ namespace kt
 
 		/**
 		 * Remove a widget. This will ensure the proper tqparent child relations.
-		 * The widget w will become tqparentless. Note the first child will never be removed.
+		 * The widget w will become parentless. Note the first child will never be removed.
 		 * @param w The widget
 		 */
 		void remove(TQWidget* w);

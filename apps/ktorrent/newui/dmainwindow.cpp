@@ -88,7 +88,7 @@ void DMainWindow::createToolWindows()
 
 void DMainWindow::addWidget(TQWidget *widget, const TQString &title)
 {
-//     tqinvalidateActiveTabWidget();
+//     invalidateActiveTabWidget();
     if (m_firstRemoved && m_activeTabWidget == m_tabs.first())
     {
         m_central->addDock(0, 0, m_activeTabWidget);
@@ -180,14 +180,14 @@ DTabWidget *DMainWindow::splitHorizontal()
 
 DTabWidget *DMainWindow::splitVertical()
 {
-//     tqinvalidateActiveTabWidget();
+//     invalidateActiveTabWidget();
     int row = m_central->indexOf(m_activeTabWidget).first;
     m_activeTabWidget = createTab();
     m_central->addDock(row, m_central->numCols(row), m_activeTabWidget);
     return m_activeTabWidget;
 }
 
-void DMainWindow::tqinvalidateActiveTabWidget()
+void DMainWindow::invalidateActiveTabWidget()
 {
 /*    TQWidget *focused = m_central->tqfocusWidget();
     kdDebug(9000) << "tqinvalidate: " << focused << endl;

@@ -52,5 +52,5 @@
         </widget>
     </grid>
 </widget>
-<tqlayoutdefaults spacing="6" margin="11"/>
+<layoutdefaults spacing="6" margin="11"/>
 </UI>

@@ -958,7 +958,7 @@
         <slot>setEnabled(bool)</slot>
     </connection>
 </connections>
-<tqlayoutdefaults spacing="2" margin="2"/>
+<layoutdefaults spacing="2" margin="2"/>
 <includehints>
     <includehint>kurlrequester.h</includehint>
     <includehint>klineedit.h</includehint>

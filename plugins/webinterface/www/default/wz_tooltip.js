@@ -327,7 +327,7 @@ function tt_OpDeHref(t_e)
 				window.status = tt_tag.t_href;
 				break;
 			}
-			t_tag = t_tag.tqparentElement;
+			t_tag = t_tag.parentElement;
 		}
 	}
 }

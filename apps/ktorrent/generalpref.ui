@@ -453,7 +453,7 @@
     <tabstop>show_systray_icon</tabstop>
 </tabstops>
 <pixmapinproject/>
-<tqlayoutdefaults spacing="6" margin="11"/>
+<layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>knuminput.h</includehint>
     <includehint>klineedit.h</includehint>

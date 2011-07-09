@@ -257,7 +257,7 @@
     <tabstop>deleteCheck</tabstop>
     <tabstop>moveCheck</tabstop>
 </tabstops>
-<tqlayoutdefaults spacing="6" margin="11"/>
+<layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kurlrequester.h</includehint>
     <includehint>klineedit.h</includehint>

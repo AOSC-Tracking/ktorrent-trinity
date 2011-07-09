@@ -150,7 +150,7 @@
     <slot>btnClose_clicked()</slot>
     <slot>btnCancel_clicked()</slot>
 </Q_SLOTS>
-<tqlayoutdefaults spacing="6" margin="11"/>
+<layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kprogress.h</includehint>
 </includehints>

@@ -715,7 +715,7 @@
     <slot>btnMoveTop_clicked()</slot>
     <slot>btnMoveBottom_clicked()</slot>
 </Q_SLOTS>
-<tqlayoutdefaults spacing="6" margin="11"/>
+<layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>ksqueezedtextlabel.h</includehint>
     <includehint>ksqueezedtextlabel.h</includehint>

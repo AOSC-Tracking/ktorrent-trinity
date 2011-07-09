@@ -353,7 +353,7 @@
     <slot>btnOk_clicked()</slot>
     <slot>btnApply_clicked()</slot>
 </Q_SLOTS>
-<tqlayoutdefaults spacing="6" margin="11"/>
+<layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>klistview.h</includehint>
     <includehint>kpushbutton.h</includehint>

@@ -369,7 +369,7 @@
     <tabstop>m_select_none</tabstop>
     <tabstop>m_invert_selection</tabstop>
 </tabstops>
-<tqlayoutdefaults spacing="6" margin="11"/>
+<layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kurlrequester.h</includehint>
     <includehint>klineedit.h</includehint>

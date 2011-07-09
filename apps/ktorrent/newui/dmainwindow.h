@@ -107,7 +107,7 @@ protected:
     TQWidget *m_currentWidget;
 
 private slots:
-    void tqinvalidateActiveTabWidget();
+    void invalidateActiveTabWidget();
 
 };
 

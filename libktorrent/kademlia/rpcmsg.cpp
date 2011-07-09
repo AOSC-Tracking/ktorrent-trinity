@@ -35,7 +35,7 @@ namespace dht
 	const TQString RSP = "r";
 	const TQString TYP = "y";
 	const TQString ARG = "a";
-	// ERR aptqparently is defined as a macro on solaris in some header file, 
+	// ERR apparently is defined as a macro on solaris in some header file, 
 	// which causes things not to compile on it, so we have changed it to ERR_DHT
 	const TQString ERR_DHT = "e"; 
 
