@@ -55,8 +55,8 @@ namespace bt
 	
 	void HTTPRequest::onConnect(const KResolverEntry&)
 	{
-		payload = payload.tqreplace("$LOCAL_IP",sock->localAddress().nodeName());
-		hdr = hdr.tqreplace("$CONTENT_LENGTH",TQString::number(payload.length()));
+		payload = payload.replace("$LOCAL_IP",sock->localAddress().nodeName());
+		hdr = hdr.replace("$CONTENT_LENGTH",TQString::number(payload.length()));
 			
 		TQString req = hdr + payload;
 		if (verbose)
@@ -88,7 +88,7 @@ namespace bt
 			Out(SYS_PNP|LOG_DEBUG) << strdata << endl;
 		}
 		
-		if (sl.first().tqcontains("HTTP") && sl.first().tqcontains("200"))
+		if (sl.first().contains("HTTP") && sl.first().contains("200"))
 		{
 			// emit reply OK
 			replyOK(this,sl.last());

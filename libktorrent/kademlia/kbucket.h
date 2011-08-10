@@ -169,7 +169,7 @@ namespace dht
 		Uint32 getNumEntries() const {return entries.count();}
 	
 		/// See if this bucket contains an entry
-		bool tqcontains(const KBucketEntry & entry) const;
+		bool contains(const KBucketEntry & entry) const;
 		
 		/**
 		 * Find the K closest entries to a key and store them in the KClosestNodesSearch

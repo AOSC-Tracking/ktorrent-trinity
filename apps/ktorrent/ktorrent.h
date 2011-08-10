@@ -182,7 +182,7 @@ private slots:
 	void currentTabChanged(TQWidget* w);
 	void openDefaultView();
 	void statusBarMsgExpired();
-	void tqfind();
+	void find();
 	
 private:
 	void setupAccel();
@@ -231,7 +231,7 @@ private:
 	KAction* m_queueaction;
 	KAction* m_datacheck;
 	KAction* m_ipfilter;
-	KAction* m_tqfind;
+	KAction* m_find;
 	
 	KProgress* m_status_prog;
 };

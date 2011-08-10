@@ -262,7 +262,7 @@ namespace bt
 		int ret = 0;
 		TQMutexLocker lock(&mutex);
 		// see if it wasn't an offsetted mapping
-		if (mappings.tqcontains(ptr))
+		if (mappings.contains(ptr))
 		{
 			CacheFile::Entry & e = mappings[ptr];
 #if HAVE_MUNMAP64

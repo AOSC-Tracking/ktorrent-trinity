@@ -65,7 +65,7 @@ void IPFilterWidget::btnAdd_clicked()
 
 	if(v.validate( ip, var ) == TQValidator::Acceptable)
 	{
-		if(lstPeers->tqfindItem(ip, 0) == 0)
+		if(lstPeers->findItem(ip, 0) == 0)
 			new KListViewItem(lstPeers, ip);
 	}
 	else

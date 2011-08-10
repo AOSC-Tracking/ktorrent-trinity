@@ -118,7 +118,7 @@ namespace dht
 		bool checkToken(const dht::Key & token,bt::Uint32 ip,bt::Uint16 port);
 		
 		/// Test wether or not the DB contains a key
-		bool tqcontains(const dht::Key & key) const;
+		bool contains(const dht::Key & key) const;
 		
 		/// Insert an empty item (only if it isn't already in the DB)
 		void insert(const dht::Key & key);

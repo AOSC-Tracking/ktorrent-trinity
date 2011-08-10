@@ -363,7 +363,7 @@ void KTorrent::addTabPage(TQWidget* page,const TQPixmap & icon,
 
 void KTorrent::removeTabPage(TQWidget* page)
 {
-	if (!m_tab_map.tqcontains(page))
+	if (!m_tab_map.contains(page))
 		return;
 	
 	m_tab_map.erase(page);
@@ -558,7 +558,7 @@ void KTorrent::setupActions()
 			i18n("Check Data Integrity"),
 	TQString(),0,m_view_man,TQT_SLOT(checkDataIntegrity()),actionCollection(),"check_data");
 	
-	m_tqfind = KStdAction::find(TQT_TQOBJECT(this),TQT_SLOT(tqfind()),actionCollection());
+	m_find = KStdAction::find(TQT_TQOBJECT(this),TQT_SLOT(find()),actionCollection());
 	
 	//Plug actions to systemtray context menu
 	m_startall_systray->plug(m_systray_icon->contextMenu());
@@ -1006,7 +1006,7 @@ void KTorrent::statusBarMsgExpired()
 	m_statusInfo->clear();
 }
 
-void KTorrent::tqfind()
+void KTorrent::find()
 {
 	KTorrentView* v = m_view_man->getCurrentView();
 	if (v)

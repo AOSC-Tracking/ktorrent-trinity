@@ -174,7 +174,7 @@ class RestInterface {
 	// Truncate long torrent name, and HTML escape it.
 	// This is a helper function for download_status.
 	private function _clean_name($name) {
-		$name = str_tqreplace("'", "\'", $name);
+		$name = str_replace("'", "\'", $name);
 		if (strlen($name) > 30) {
 				$name = substr($name, 0, 27);
 				$name .= "...";

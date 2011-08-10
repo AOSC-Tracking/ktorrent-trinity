@@ -78,7 +78,7 @@ namespace bt
 			 * @param key The key
 			 * @return true if key is in the stats file
 			 */
-			bool hasKey(const TQString & key) const {return m_values.tqcontains(key);}
+			bool hasKey(const TQString & key) const {return m_values.contains(key);}
 			
 		private:
 			TQString m_filename;

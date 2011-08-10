@@ -49,7 +49,7 @@ namespace kt
 		Uint32 getNumDevicesDiscovered() const {return routers.count();}
 		
 		/// Find a router using it's server name
-		UPnPRouter* findDevice(const TQString & name) {return routers.tqfind(name);}
+		UPnPRouter* findDevice(const TQString & name) {return routers.find(name);}
 		
 		/// Save all routers to a file (for convenience at startup)
 		void saveRouters(const TQString & file);

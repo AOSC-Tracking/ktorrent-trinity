@@ -249,7 +249,7 @@ void ButtonBar::deshrink(int preferredDimension, int actualDimension)
         int i = 0;
         for (TQValueList<uint>::iterator it = texts.begin(); it != texts.end(); ++it, i++)
         {
-            if (m_buttons[i]->text().tqcontains("..."))
+            if (m_buttons[i]->text().contains("..."))
                 (*it)++;
             newTextLength += *it;
         }
@@ -309,7 +309,7 @@ Button *ButtonBar::firstButton()
 
 Button *ButtonBar::nextTo(Button *button)
 {
-    ButtonList::iterator it = m_buttons.tqfind(button);
+    ButtonList::iterator it = m_buttons.find(button);
     Button *next = 0;
     if ((*it) == m_buttons.last())
         next = m_buttons.first();
@@ -326,7 +326,7 @@ Button *ButtonBar::nextTo(Button *button)
 
 Button *ButtonBar::prevTo(Button *button)
 {
-    ButtonList::iterator it = m_buttons.tqfind(button);
+    ButtonList::iterator it = m_buttons.find(button);
     Button *prev = 0;
     if (it == m_buttons.begin())
         prev = m_buttons.last();

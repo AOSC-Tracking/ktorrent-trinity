@@ -51,9 +51,9 @@ namespace kt
 
 			// replace spaces by %20
 			TQString name = e.name;
-			name = name.tqreplace(" ","%20");
+			name = name.replace(" ","%20");
 			TQString u = e.url.prettyURL();
-			u = u.tqreplace(" ","%20");
+			u = u.replace(" ","%20");
 			out << name << " " << u << ::endl;
 			i++;
 		}
@@ -85,7 +85,7 @@ namespace kt
 		
 			SearchEngine se;
 			se.name = tokens[0];
-			se.name = se.name.tqreplace("%20"," ");
+			se.name = se.name.replace("%20"," ");
 			se.url = KURL::fromPathOrURL(tokens[1]);
 		
 			for(Uint32 i=2; i<tokens.count(); ++i)

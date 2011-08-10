@@ -444,6 +444,6 @@ namespace bt
 	bool Torrent::checkPathForDirectoryTraversal(const TQString & p)
 	{
 		TQStringList sl = TQStringList::split(bt::DirSeparator(),p);
-		return !sl.tqcontains("..");
+		return !sl.contains("..");
 	}
 }

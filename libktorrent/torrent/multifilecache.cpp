@@ -114,7 +114,7 @@ namespace bt
 			{
 				if (!tf.doNotDownload())
 				{
-					if (files.tqcontains(i))
+					if (files.contains(i))
 						files.erase(i);
 					
 					fd = new CacheFile();
@@ -123,7 +123,7 @@ namespace bt
 				}
 				else
 				{
-					if (dnd_files.tqcontains(i))
+					if (dnd_files.contains(i))
 						dnd_files.erase(i);
 					
 					dfd = new DNDFile(dnd_dir + tf.getPath() + ".dnd");
@@ -155,13 +155,13 @@ namespace bt
 			TorrentFile & tf = tor.getFile(i);
 			if (tf.doNotDownload())
 			{
-				DNDFile* dfd = dnd_files.tqfind(i);
+				DNDFile* dfd = dnd_files.find(i);
 				if (dfd)
 					dfd->changePath(dnd_dir + tf.getPath() + ".dnd");
 			}
 			else
 			{
-				CacheFile* fd = files.tqfind(i);
+				CacheFile* fd = files.find(i);
 				if (fd)
 					fd->changePath(cache_dir + tf.getPath());
 			}
@@ -332,7 +332,7 @@ namespace bt
 		if (tflist.count() == 1)
 		{
 			const TorrentFile & f = tor.getFile(tflist.first());
-			CacheFile* fd = files.tqfind(tflist.first());
+			CacheFile* fd = files.find(tflist.first());
 			if (!fd)
 				return;
 			
@@ -357,8 +357,8 @@ namespace bt
 		for (Uint32 i = 0;i < tflist.count();i++)
 		{
 			const TorrentFile & f = tor.getFile(tflist[i]);
-			CacheFile* fd = files.tqfind(tflist[i]);
-			DNDFile* dfd = dnd_files.tqfind(tflist[i]);
+			CacheFile* fd = files.find(tflist[i]);
+			DNDFile* dfd = dnd_files.find(tflist[i]);
 				
 			// first calculate offset into file
 			// only the first file can have an offset
@@ -412,7 +412,7 @@ namespace bt
 		{
 			// in one so just mmap it
 			Uint64 off = FileOffset(c,tor.getFile(tflist.first()),tor.getChunkSize());
-			CacheFile* fd = files.tqfind(tflist.first());
+			CacheFile* fd = files.find(tflist.first());
 			Uint8* buf = 0;
 			if (fd && Cache::mappedModeAllowed() && mmap_failures < 3)
 			{
@@ -449,7 +449,7 @@ namespace bt
 		if (c->gettqStatus() == Chunk::MMAPPED)
 		{
 			// mapped chunks are easy
-			CacheFile* fd = files.tqfind(tflist[0]);
+			CacheFile* fd = files.find(tflist[0]);
 			if (!fd)
 				return;
 			
@@ -464,8 +464,8 @@ namespace bt
 		for (Uint32 i = 0;i < tflist.count();i++)
 		{
 			const TorrentFile & f = tor.getFile(tflist[i]);
-			CacheFile* fd = files.tqfind(tflist[i]);
-			DNDFile* dfd = dnd_files.tqfind(tflist[i]);
+			CacheFile* fd = files.find(tflist[i]);
+			DNDFile* dfd = dnd_files.find(tflist[i]);
 
 			// first calculate offset into file
 			// only the first file can have an offset
@@ -828,7 +828,7 @@ namespace bt
 
 			try
 			{
-				CacheFile* cf = files.tqfind(i);
+				CacheFile* cf = files.find(i);
 				if (cf)
 				{
 					sum += cf->diskUsage();

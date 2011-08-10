@@ -267,7 +267,7 @@ namespace kt
 	
 	void PeerView::removePeer(kt::PeerInterface* peer)
 	{
-		TQMap<kt::PeerInterface*,PeerViewItem*>::iterator it = items.tqfind(peer);
+		TQMap<kt::PeerInterface*,PeerViewItem*>::iterator it = items.find(peer);
 		if (it == items.end())
 		{
 			return;

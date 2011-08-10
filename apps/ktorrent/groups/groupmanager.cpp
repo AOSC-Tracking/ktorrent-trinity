@@ -99,7 +99,7 @@ namespace kt
 
 	Group* GroupManager::newGroup(const TQString & name)
 	{
-		if (tqfind(name))
+		if (find(name))
 			return 0;
 		
 		Group* g = new TorrentGroup(name);
@@ -109,7 +109,7 @@ namespace kt
 	
 	bool GroupManager::canRemove(const Group* g) const
 	{
-		return default_groups.tqfind(g->groupName()) == 0;
+		return default_groups.find(g->groupName()) == 0;
 	}
 	
 	
@@ -180,7 +180,7 @@ namespace kt
 					throw;
 				}
 				
-				if (!tqfind(g->groupName()))
+				if (!find(g->groupName()))
 					insert(g->groupName(),g);
 				else
 					delete g;
@@ -203,7 +203,7 @@ namespace kt
 	
 	void GroupManager::renameGroup(const TQString & old_name,const TQString & new_name)
 	{
-		Group* g = tqfind(old_name);
+		Group* g = find(old_name);
 		if (!g)
 			return;
 		
@@ -216,6 +216,6 @@ namespace kt
 	
 	Group* GroupManager::findDefault(const TQString & name)
 	{
-		return default_groups.tqfind(name);
+		return default_groups.find(name);
 	}
 }

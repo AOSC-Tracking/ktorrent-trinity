@@ -97,7 +97,7 @@ bool FilterBar::matchesFilter(kt::TorrentInterface* tc)
 	if (m_name_filter.length() == 0)
 		 return true;
 	else
-		return tc->getStats().torrent_name.tqcontains(m_name_filter,cs);
+		return tc->getStats().torrent_name.contains(m_name_filter,cs);
 }
 
 void FilterBar::slotChangeFilter(const TQString& nameFilter)

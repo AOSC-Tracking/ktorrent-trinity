@@ -80,7 +80,7 @@ namespace kt
 			}
 
 			unloaded.insert(plugin->getName(),plugin);
-			if (pltoload.tqcontains(plugin->getName()))
+			if (pltoload.contains(plugin->getName()))
 				load(plugin->getName());
 		}
 		
@@ -95,7 +95,7 @@ namespace kt
 
 	void PluginManager::load(const TQString & name)
 	{
-		Plugin* p = unloaded.tqfind(name);
+		Plugin* p = unloaded.find(name);
 		if (!p)
 			return;
 
@@ -114,7 +114,7 @@ namespace kt
 
 	void PluginManager::unload(const TQString & name)
 	{
-		Plugin* p = plugins.tqfind(name);
+		Plugin* p = plugins.find(name);
 		if (!p)
 			return;
 		
@@ -236,7 +236,7 @@ namespace kt
 
 	bool PluginManager::isLoaded(const TQString & name) const
 	{
-		const Plugin* p = plugins.tqfind(name);
+		const Plugin* p = plugins.find(name);
 		return p != 0;
 	}
 

@@ -119,7 +119,7 @@ namespace dht
 	
 	void KBucket::insert(const KBucketEntry & entry)
 	{
-		TQValueList<KBucketEntry>::iterator i = entries.tqfind(entry);
+		TQValueList<KBucketEntry>::iterator i = entries.find(entry);
 	
 		// If in the list, move it to the end
 		if (i != entries.end())
@@ -149,7 +149,7 @@ namespace dht
 	{
 		last_modified = bt::GetCurrentTime();
 		
-		if (!pending_entries_busy_pinging.tqcontains(c))
+		if (!pending_entries_busy_pinging.contains(c))
 			return;
 		
 		KBucketEntry entry = pending_entries_busy_pinging[c];
@@ -166,7 +166,7 @@ namespace dht
 	
 	void KBucket::onTimeout(RPCCall* c)
 	{
-		if (!pending_entries_busy_pinging.tqcontains(c))
+		if (!pending_entries_busy_pinging.contains(c))
 			return;
 		
 		KBucketEntry entry = pending_entries_busy_pinging[c];
@@ -244,9 +244,9 @@ namespace dht
 		return false;
 	}
 
-	bool KBucket::tqcontains(const KBucketEntry & entry) const
+	bool KBucket::contains(const KBucketEntry & entry) const
 	{
-		return entries.tqcontains(entry);
+		return entries.contains(entry);
 	}
 	
 	void KBucket::findKClosestNodes(KClosestNodesSearch & kns)

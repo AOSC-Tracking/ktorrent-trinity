@@ -147,7 +147,7 @@ namespace bt
 	{
 // 		Out() << "Blocked range: " << key.m_ip << " - " << key.m_tqmask << endl;
 		TQMap<IPKey, int>::iterator it;
-		if ((it = m_peers.tqfind(key)) != m_peers.end())
+		if ((it = m_peers.find(key)) != m_peers.end())
 		{
 
 			if(it.key().m_tqmask != key.m_tqmask)
@@ -224,7 +224,7 @@ namespace bt
 		
 		IPKey key(addr, tqmask); 
 		
-		TQMap<IPKey, int>::iterator it = m_peers.tqfind(key);
+		TQMap<IPKey, int>::iterator it = m_peers.find(key);
 		if (it == m_peers.end())
 			return;
 		
@@ -264,7 +264,7 @@ namespace bt
 		IPKey key(ipi);
 
 		TQMap<IPKey, int>::iterator it;
-		it = m_peers.tqfind(key);
+		it = m_peers.find(key);
 		if (it==m_peers.end())
 			return false;
 

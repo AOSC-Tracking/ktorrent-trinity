@@ -58,7 +58,7 @@ namespace net
 		
 	void PortList::removePort(bt::Uint16 number,Protocol proto)
 	{
-		PortList::iterator itr = tqfind(Port(number,proto,false));
+		PortList::iterator itr = find(Port(number,proto,false));
 		if (itr == end())
 			return;
 		

@@ -72,7 +72,7 @@ namespace dht
 
 	void Database::store(const dht::Key & key,const DBItem & dbi)
 	{
-		DBItemList* dbl = items.tqfind(key);
+		DBItemList* dbl = items.find(key);
 		if (!dbl)
 		{
 			dbl = new DBItemList();
@@ -83,7 +83,7 @@ namespace dht
 	
 	void Database::sample(const dht::Key & key,DBItemList & tdbl,bt::Uint32 max_entries)
 	{
-		DBItemList* dbl = items.tqfind(key);
+		DBItemList* dbl = items.find(key);
 		if (!dbl)
 			return;
 		
@@ -144,7 +144,7 @@ namespace dht
 	bool Database::checkToken(const dht::Key & token,Uint32 ip,Uint16 port)
 	{
 		// the token must be in the map
-		if (!tokens.tqcontains(token))
+		if (!tokens.contains(token))
 		{
 			Out(SYS_DHT|LOG_DEBUG) << "Unknown token" << endl;
 			return false;
@@ -169,14 +169,14 @@ namespace dht
 		return true;
 	}
 	
-	bool Database::tqcontains(const dht::Key & key) const
+	bool Database::contains(const dht::Key & key) const
 	{
-		return items.tqfind(key) != 0;
+		return items.find(key) != 0;
 	}
 	
 	void Database::insert(const dht::Key & key)
 	{
-		DBItemList* dbl = items.tqfind(key);
+		DBItemList* dbl = items.find(key);
 		if (!dbl)
 		{
 			dbl = new DBItemList();

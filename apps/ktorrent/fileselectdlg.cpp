@@ -161,7 +161,7 @@ void FileSelectDlg::accept()
 	{
 		TQString groupName = m_cmbGroups->currentText();
 		
-		Group* group = m_gman->tqfind(groupName);
+		Group* group = m_gman->find(groupName);
 		if(group)
 		{
 			group->addTorrent(tc);	

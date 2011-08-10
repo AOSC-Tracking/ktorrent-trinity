@@ -130,7 +130,7 @@ void KTorrentPreferences::addPrefPage(kt::PrefPageInterface* prefInterface)
 
 void KTorrentPreferences::removePrefPage(kt::PrefPageInterface* pp)
 {
-	if (!pages.tqcontains(pp))
+	if (!pages.contains(pp))
 		return;
 
 	TQFrame* fr = pages[pp];

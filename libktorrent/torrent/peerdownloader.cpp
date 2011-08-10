@@ -126,11 +126,11 @@ namespace bt
 		if (!peer)
 			return;
 		
-		if (wait_queue.tqcontains(req))
+		if (wait_queue.contains(req))
 		{
 			wait_queue.remove(req);
 		}
-		else if (reqs.tqcontains(req))
+		else if (reqs.contains(req))
 		{
 			reqs.remove(req);
 			peer->getPacketWriter().sendCancel(req);
@@ -144,7 +144,7 @@ namespace bt
 
 //		Out(SYS_CON|LOG_DEBUG) << "Rejected : " << req.getIndex() << " " 
 //				<< req.getOffset() << " " << req.getLength() << endl;
-		if (reqs.tqcontains(req))
+		if (reqs.contains(req))
 		{
 			reqs.remove(req);
 			rejected(req);
@@ -171,9 +171,9 @@ namespace bt
 	void PeerDownloader::piece(const Piece & p)
 	{
 		Request r(p);
-		if (wait_queue.tqcontains(r))
+		if (wait_queue.contains(r))
 			wait_queue.remove(r);
-		else if (reqs.tqcontains(r))
+		else if (reqs.contains(r))
 			reqs.remove(r);
 			
 		downloaded(p);

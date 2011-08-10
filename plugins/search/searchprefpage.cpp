@@ -112,7 +112,7 @@ namespace kt
 			TQListViewItem* item = itr.current();
 			TQString u = item->text(1);
 			TQString name = item->text(0);
-			out << name.tqreplace(" ","%20") << " " << u.tqreplace(" ","%20") <<  endl;
+			out << name.replace(" ","%20") << " " << u.replace(" ","%20") <<  endl;
 			itr++;
 		}
 	}
@@ -123,7 +123,7 @@ namespace kt
 		{
 			KMessageBox::error(this, i18n("You must enter the search engine's name and URL"));
 		}
-		else if ( m_engine_url->text().tqcontains("FOOBAR")  )
+		else if ( m_engine_url->text().contains("FOOBAR")  )
 		{
 			KURL url = KURL::fromPathOrURL(m_engine_url->text());
 			if ( !url.isValid() ) 
@@ -132,7 +132,7 @@ namespace kt
 				return; 
 			}
 			
-			if (m_engines->tqfindItem(m_engine_name->text(), 0)) 
+			if (m_engines->findItem(m_engine_name->text(), 0)) 
 			{
 				KMessageBox::error(this, i18n("A search engine with the same name already exists. Please use a different name.")); return; 
 			}
@@ -217,7 +217,7 @@ namespace kt
 
 			TQStringList tokens = TQStringList::split(" ", line);
 			TQString name = tokens[0];
-			name = name.tqreplace("%20"," ");
+			name = name.replace("%20"," ");
 			
 			KURL url = KURL::fromPathOrURL(tokens[1]);
 			for(Uint32 i=2; i<tokens.count(); ++i)
@@ -229,7 +229,7 @@ namespace kt
 		TQMap<TQString,KURL>::iterator i = engines.begin();
 		while (i != engines.end())
 		{	
-			TQListViewItem* item = m_engines->tqfindItem(i.key(),0);
+			TQListViewItem* item = m_engines->findItem(i.key(),0);
 			// if we have found the item, replace it if not make a new one
 			if (item)
 				item->setText(1, i.data().prettyURL());

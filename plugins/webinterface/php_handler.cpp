@@ -48,7 +48,7 @@ namespace kt
 	bool PhpHandler::executeScript(const TQString & path,const TQMap<TQString,TQString> & args)
 	{
 		TQByteArray php_s;
-		if (!scripts.tqcontains(path))
+		if (!scripts.contains(path))
 		{
 			TQFile fptr(path);
 			if (!fptr.open(IO_ReadOnly))
@@ -66,7 +66,7 @@ namespace kt
 		
 		output.resize(0);
 	
-		int firstphptag = TQCString(php_s).tqfind("<?php");
+		int firstphptag = TQCString(php_s).find("<?php");
 		if (firstphptag == -1)
 			return false;
 		

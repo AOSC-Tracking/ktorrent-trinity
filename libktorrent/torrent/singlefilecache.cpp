@@ -65,7 +65,7 @@ namespace bt
 	{
 		bt::Delete(cache_file);
 		output_file = outputpath;
-		datadir = output_file.left(output_file.tqfindRev(bt::DirSeparator()));
+		datadir = output_file.left(output_file.findRev(bt::DirSeparator()));
 		
 		bt::SymLink(output_file, cache_file);
 	}

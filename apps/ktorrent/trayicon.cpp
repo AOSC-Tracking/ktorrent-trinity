@@ -356,7 +356,7 @@ void SetMaxRate::rateSelected(int id)
 {
 	int rate;
 	TQString ratestr = text(id).remove('&');
-	if (ratestr.tqcontains(i18n("Unlimited")))
+	if (ratestr.contains(i18n("Unlimited")))
 		rate = 0;
 	else
 		rate = ratestr.toInt();

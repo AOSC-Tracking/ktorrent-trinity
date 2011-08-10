@@ -354,7 +354,7 @@ namespace bt
 
 	bool Downloader::areWeDownloading(Uint32 chunk) const
 	{
-		return current_chunks.tqfind(chunk) != 0;
+		return current_chunks.find(chunk) != 0;
 	}
 	
 	void Downloader::onNewPeer(Peer* peer)
@@ -531,7 +531,7 @@ namespace bt
 				return;
 			}
 			
-			if (!cman.getChunk(hdr.index) || current_chunks.tqcontains(hdr.index))
+			if (!cman.getChunk(hdr.index) || current_chunks.contains(hdr.index))
 			{
 				Out() << "Illegal chunk " << hdr.index << endl;
 				return;
@@ -628,7 +628,7 @@ namespace bt
 	{
 		for (Uint32 i = from;i <= to;i++)
 		{
-			ChunkDownload* cd = current_chunks.tqfind(i);
+			ChunkDownload* cd = current_chunks.find(i);
 			// let only seed chunks finish
 			if (!cd || cman.getChunk(i)->getPriority() == ONLY_SEED_PRIORITY)
 				continue;
@@ -664,7 +664,7 @@ namespace bt
 	{
 		for (Uint32 i = 0;i < ok_chunks.getNumBits();i++)
 		{
-			ChunkDownload* cd = current_chunks.tqfind(i);
+			ChunkDownload* cd = current_chunks.find(i);
 			if (ok_chunks.get(i) && cd)
 			{
 				// we have a chunk and we are downloading it so kill it

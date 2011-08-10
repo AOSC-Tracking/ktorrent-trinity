@@ -207,7 +207,7 @@ namespace bt
 	
 	void PeerSourceManager::addTracker(KURL url, bool custom,int tier)
 	{
-		if (trackers.tqcontains(url))
+		if (trackers.contains(url))
 			return;
 		
 		Tracker* trk = 0;
@@ -227,11 +227,11 @@ namespace bt
 	
 	bool PeerSourceManager::removeTracker(KURL url)
 	{
-		if (!custom_trackers.tqcontains(url))
+		if (!custom_trackers.contains(url))
 			return false;
 		
 		custom_trackers.remove(url);
-		Tracker* trk = trackers.tqfind(url);
+		Tracker* trk = trackers.find(url);
 		if (curr == trk)
 		{
 			// do a timed delete on the tracker, so the stop signal
@@ -260,7 +260,7 @@ namespace bt
 	
 	void PeerSourceManager::setTracker(KURL url)
 	{
-		Tracker* trk = trackers.tqfind(url);
+		Tracker* trk = trackers.find(url);
 		if (!trk)
 			return;
 		
@@ -279,7 +279,7 @@ namespace bt
 		KURL::List::iterator i = custom_trackers.begin();
 		while (i != custom_trackers.end())
 		{
-			Tracker* t = trackers.tqfind(*i);
+			Tracker* t = trackers.find(*i);
 			if (t)
 			{
 				if (curr == t)

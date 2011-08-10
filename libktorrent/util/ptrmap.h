@@ -129,7 +129,7 @@ namespace bt
 		* @param k The key
 		* @return The data of the key, 0 if the key isn't in the map
 		*/
-		Data* tqfind(const Key & k)
+		Data* find(const Key & k)
 		{
 			iterator i = pmap.find(k);
 			return (i == pmap.end()) ? 0 : i->second;
@@ -140,7 +140,7 @@ namespace bt
 		* @param k The key
 		* @return The data of the key, 0 if the key isn't in the map
 		*/
-		const Data* tqfind(const Key & k) const
+		const Data* find(const Key & k) const
 		{
 			const_iterator i = pmap.find(k);
 			return (i == pmap.end()) ? 0 : i->second;
@@ -151,7 +151,7 @@ namespace bt
 		* @param k The key
 		* @return true if it is part of the map
 		*/
-		bool tqcontains(const Key & k) const
+		bool contains(const Key & k) const
 		{
 			const_iterator i = pmap.find(k);
 			return i != pmap.end();

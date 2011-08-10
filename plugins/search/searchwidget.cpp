@@ -172,7 +172,7 @@ namespace kt
 			engine = sbar->m_search_engine->currentItem();
 		
 		TQString s_url = sl.getSearchURL(engine).prettyURL();
-		s_url.tqreplace("FOOBAR", KURL::encode_string(text), true);
+		s_url.replace("FOOBAR", KURL::encode_string(text), true);
 		KURL url = KURL::fromPathOrURL(s_url);
 	
 		statusBarMsg(i18n("Searching for %1...").tqarg(text));

@@ -97,7 +97,7 @@ namespace bt
 		while (!in.atEnd())
 		{
 			TQString line = in.readLine();
-			TQString tmp = line.left(line.tqfind('='));
+			TQString tmp = line.left(line.find('='));
 			m_values.insert(tmp, line.mid(tmp.length()+1));
 		}
 		close();

@@ -153,7 +153,7 @@ namespace bt
 		bool getOnlyDownloader(Uint32 & pid);
 		
 		/// See if a PeerDownloader is assigned to this chunk
-		bool containsPeer(PeerDownloader *pd) {return pdown.tqcontains(pd);} 
+		bool containsPeer(PeerDownloader *pd) {return pdown.contains(pd);} 
 		
 		/// See if the download is choked (i.e. all downloaders are choked)
 		bool isChoked() const;

@@ -87,7 +87,7 @@ namespace bt
 	
 	bool AnnounceList::removeTracker(KURL url)
 	{
-		KURL::List::iterator i = custom_trackers.tqfind(url);
+		KURL::List::iterator i = custom_trackers.find(url);
 		if(i != custom_trackers.end())
 		{
 			custom_trackers.remove(i);
@@ -187,7 +187,7 @@ namespace bt
 		for (Uint32 i = 0;i < al->getNumTrackerURLs();i++)
 		{
 			KURL url = *al->trackers.at(i);
-			if (!trackers.tqcontains(url) && !custom_trackers.tqcontains(url))
+			if (!trackers.contains(url) && !custom_trackers.contains(url))
 				custom_trackers.append(url);
 		}
 	}

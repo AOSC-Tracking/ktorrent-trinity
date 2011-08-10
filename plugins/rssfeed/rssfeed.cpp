@@ -182,7 +182,7 @@ namespace kt
 	{
 		TQDir directory;
 		directory.mkdir(KGlobal::dirs()->saveLocation("data","ktorrent") + "rssfeeds");
-		return KGlobal::dirs()->saveLocation("data","ktorrent") + "rssfeeds/" + m_feedUrl.prettyURL(-1).tqreplace("/", "_").tqreplace(":", "_") + ".ktr";
+		return KGlobal::dirs()->saveLocation("data","ktorrent") + "rssfeeds/" + m_feedUrl.prettyURL(-1).replace("/", "_").replace(":", "_") + ".ktr";
 		
 	}
 	
@@ -290,7 +290,7 @@ namespace kt
 			for (int i=doc.articles().count()-1; i>=0; i--)
 			{
 				curArticle = doc.articles()[i];
-				if (curArticle.pubDate().daysTo(TQDateTime::tqcurrentDateTime()) < m_articleAge && !m_articles.tqcontains(curArticle))
+				if (curArticle.pubDate().daysTo(TQDateTime::tqcurrentDateTime()) < m_articleAge && !m_articles.contains(curArticle))
 				{
 					m_articles.prepend(curArticle);
 					emit scanRssArticle(curArticle);

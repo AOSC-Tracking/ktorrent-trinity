@@ -88,7 +88,7 @@ namespace kt
 	void HttpServer::slotSocketReadyToRead()
 	{
 		TQSocket* client = (TQSocket*)sender();
-		HttpClientHandler* handler = clients.tqfind(client);
+		HttpClientHandler* handler = clients.find(client);
 		if (!handler)
 		{
 			client->deleteLater();
@@ -112,7 +112,7 @@ namespace kt
 		Uint8 h = (a.latin1() - (a.isNumber() ? '0' : 'a')) << 4;
 		Uint8 l = (b.latin1() - (b.isNumber() ? '0' : 'a'));
 		char r = (char) h | l; // combine them and cast to a char
-		password.tqreplace(idx,3,r);
+		password.replace(idx,3,r);
 		return idx + 1;
 	}
 	
@@ -134,7 +134,7 @@ namespace kt
 			
 			// check for passwords with url encoded stuff in them and decode them if necessary
 			int idx = 0;
-			while ((idx = password.tqfind('%',idx)) > 0)
+			while ((idx = password.find('%',idx)) > 0)
 			{
 				if (idx + 2 < password.length())
 				{
@@ -170,7 +170,7 @@ namespace kt
 		if (hdr.hasKey("Cookie"))
 		{
 			TQString cookie = hdr.value("Cookie");
-			int idx = cookie.tqfind("KT_SESSID=");
+			int idx = cookie.find("KT_SESSID=");
 			if (idx == -1)
 				return false;
 			
@@ -432,7 +432,7 @@ namespace kt
 	{
 		const char* ptr = data.data();
 		Uint32 len = data.size();
-		int pos = TQString(data).tqfind("\r\n\r\n");
+		int pos = TQString(data).find("\r\n\r\n");
 		
 		if (pos == -1 || pos + 4 >= len || ptr[pos + 4] != 'd')
 		{
@@ -540,7 +540,7 @@ namespace kt
 	
 	bt::MMapFile* HttpServer::cacheLookup(const TQString & name)
 	{
-		return cache.tqfind(name);
+		return cache.find(name);
 	}
 	
 	void HttpServer::insertIntoCache(const TQString & name,bt::MMapFile* file)

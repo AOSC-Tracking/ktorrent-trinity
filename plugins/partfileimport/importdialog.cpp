@@ -146,7 +146,7 @@ namespace kt
 				TQString durl = data_url.path();
 				if (durl.endsWith(bt::DirSeparator()))
 					durl = durl.left(durl.length() - 1);
-				int ds = durl.tqfindRev(bt::DirSeparator());
+				int ds = durl.findRev(bt::DirSeparator());
 				if (durl.mid(ds+1) == tor.getNameSuggestion())
 				{
 					durl = durl.left(ds);
@@ -163,7 +163,7 @@ namespace kt
 				// single file, just symlink the data_url to tor_dir/cache
 				bt::SymLink(data_url.path(),tor_dir + "cache");
 				TQString durl = data_url.path();
-				int ds = durl.tqfindRev(bt::DirSeparator());
+				int ds = durl.findRev(bt::DirSeparator());
 				durl = durl.left(ds);
 				saveStats(tor_dir + "stats",durl,imported,false);
 			}

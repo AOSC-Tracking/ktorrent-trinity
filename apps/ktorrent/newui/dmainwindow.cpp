@@ -121,10 +121,10 @@ void DMainWindow::addWidget(DTabWidget *tab, TQWidget *widget, const TQString &t
 
 void DMainWindow::removeWidget(TQWidget *widget)
 {
-    if (!m_widgets.tqcontains(widget))
+    if (!m_widgets.contains(widget))
         return; //not a widget in main window
 
-    if (m_widgetTabs.tqcontains(widget))
+    if (m_widgetTabs.contains(widget))
     {
         DTabWidget *tab = m_widgetTabs[widget];
         if (tab->indexOf(widget) >= 0)
@@ -193,12 +193,12 @@ void DMainWindow::invalidateActiveTabWidget()
     kdDebug(9000) << "tqinvalidate: " << focused << endl;
     if (focused == 0)
         return;
-    if (!m_widgets.tqcontains(focused))
+    if (!m_widgets.contains(focused))
     {
         kdDebug(9000) << "    focused is not in m_widgets" << endl;
         return;
     }
-    if (m_widgetTabs.tqcontains(focused))
+    if (m_widgetTabs.contains(focused))
     {
         kdDebug(9000) << "    focused is in m_widgets and m_widgetTabs" << endl;
         DTabWidget *tab = m_widgetTabs[focused];
@@ -223,7 +223,7 @@ DTabWidget *DMainWindow::createTab()
 bool DMainWindow::eventFilter(TQObject *obj, TQEvent *ev)
 {
     TQWidget *w = (TQWidget*)obj;
-    if (!m_widgets.tqcontains(w))
+    if (!m_widgets.contains(w))
         return KParts::MainWindow::eventFilter(obj, ev);
 
     if ((m_currentWidget != w) && (ev->type() == TQEvent::FocusIn))
@@ -233,7 +233,7 @@ bool DMainWindow::eventFilter(TQObject *obj, TQEvent *ev)
     }
     else if (ev->type() == TQEvent::IconChange)
     {
-        if (m_widgetTabs.tqcontains(w))
+        if (m_widgetTabs.contains(w))
         {
             DTabWidget *tab = m_widgetTabs[w];
             tab->setTabIconSet(w, w->icon() ? (*(w->icon())) : TQPixmap());
@@ -266,7 +266,7 @@ void DMainWindow::closeTab(TQWidget *)
 
 void DMainWindow::moveWidget(DDockWindow::Position position, TQWidget * view, const TQString & title)
 {
-    if (m_docks.tqcontains(view))
+    if (m_docks.contains(view))
     {
         toolWindow(m_docks[view])->removeWidget(view);
 
@@ -296,7 +296,7 @@ void DMainWindow::removeDockWidget(TQWidget *view)
 
 bool DMainWindow::hasDockWidget(TQWidget *view)
 {
-    return m_docks.tqcontains(view);
+    return m_docks.contains(view);
 }
 
 DDockWindow::Position DMainWindow::dockWidgetPosition(TQWidget *view)
@@ -308,7 +308,7 @@ void DMainWindow::widgetDestroyed()
 {
     TQWidget *w = TQT_TQWIDGET(const_cast<TQT_BASE_OBJECT_NAME*>(sender()));
 
-    if (m_docks.tqcontains(w))
+    if (m_docks.contains(w))
     {
         kdError() << "Widget destroyed before being removed from UI!" << endl;
         m_docks.remove(w);
@@ -317,4 +317,4 @@ void DMainWindow::widgetDestroyed()
 
 #include "dmainwindow.moc"
 
-// kate: space-indent on; indent-width 4; tab-width 4; tqreplace-tabs on
+// kate: space-indent on; indent-width 4; tab-width 4; replace-tabs on

@@ -103,7 +103,7 @@ namespace kt
 		else
 		{
 			// add it to the list and emit the signal
-			if (!routers.tqcontains(r->getServer()))
+			if (!routers.contains(r->getServer()))
 			{
 				routers.insert(r->getServer(),r);
 				discovered(r);
@@ -164,13 +164,13 @@ namespace kt
 		
 		// first read first line and see if contains a HTTP 200 OK message
 		TQString line = lines.first();
-		if (!line.tqcontains("HTTP"))
+		if (!line.contains("HTTP"))
 		{
 			// it is either a 200 OK or a NOTIFY
-			if (!line.tqcontains("NOTIFY") && !line.tqcontains("200")) 
+			if (!line.contains("NOTIFY") && !line.contains("200")) 
 				return 0;
 		}
-		else if (line.tqcontains("M-SEARCH")) // ignore M-SEARCH 
+		else if (line.contains("M-SEARCH")) // ignore M-SEARCH 
 			return 0;
 		
 		// quick check that the response being parsed is valid 
@@ -178,7 +178,7 @@ namespace kt
 		for (Uint32 idx = 0;idx < lines.count() && !validDevice; idx++) 
 		{ 
 			line = lines[idx]; 
-			if ((line.tqcontains("ST:") || line.tqcontains("NT:")) && line.tqcontains("InternetGatewayDevice")) 
+			if ((line.contains("ST:") || line.contains("NT:")) && line.contains("InternetGatewayDevice")) 
 			{
 				validDevice = true; 
 			}
@@ -195,20 +195,20 @@ namespace kt
 			line = lines[i];
 			if (line.startsWith("Location") || line.startsWith("LOCATION") || line.startsWith("location"))
 			{
-				location = line.mid(line.tqfind(':') + 1).stripWhiteSpace();
+				location = line.mid(line.find(':') + 1).stripWhiteSpace();
 				if (!location.isValid())
 					return 0;
 			}
 			else if (line.startsWith("Server") || line.startsWith("server") || line.startsWith("SERVER"))
 			{
-				server = line.mid(line.tqfind(':') + 1).stripWhiteSpace();
+				server = line.mid(line.find(':') + 1).stripWhiteSpace();
 				if (server.length() == 0)
 					return 0;
 				
 			}
 		}
 		
-		if (routers.tqcontains(server))
+		if (routers.contains(server))
 		{
 			return 0;
 		}
@@ -265,7 +265,7 @@ namespace kt
 			TQString server, location;
 			server = fin.readLine();
 			location = fin.readLine();
-			if (!routers.tqcontains(server))
+			if (!routers.contains(server))
 			{
 				UPnPRouter* r = new UPnPRouter(server,location);
 				// download it's xml file

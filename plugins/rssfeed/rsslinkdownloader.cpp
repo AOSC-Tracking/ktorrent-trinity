@@ -83,7 +83,7 @@ namespace kt
 						hrefTags.setMinimal(true);
 						
 						int matchPos = 0;
-						while (htmlline.tqfind(hrefTags, matchPos) >= 0)
+						while (htmlline.find(hrefTags, matchPos) >= 0)
 							{
 							matchPos += hrefTags.matchedLength();
 							//we're found an <a href tag - let's check it if contains download
@@ -100,7 +100,7 @@ namespace kt
 							hrefText = TQString("HREF=\"?([^\">< ]*)[\" ]");
 							hrefText.setCaseSensitive(false);
 				
-							hrefTags.tqcapturedTexts()[0].tqfind(hrefText);
+							hrefTags.tqcapturedTexts()[0].find(hrefText);
 							//lets get the captured
 							TQString hrefLink = hrefText.capturedTexts()[1];
 								
@@ -110,7 +110,7 @@ namespace kt
 								} 
 							else if (!hrefLink.tqstartsWith("http://", false)) 
 								{
-								hrefLink = url.url().left(url.url().tqfindRev("/")+1) + hrefLink;
+								hrefLink = url.url().left(url.url().findRev("/")+1) + hrefLink;
 								}
 								
 							subLinks.append(hrefLink);

@@ -206,7 +206,7 @@ namespace bt
 			peer_id.tqat(2).isLetter() ) //AZ style
 		{
 			TQString ID(peer_id.mid(1,2));
-			if (Map.tqcontains(ID))
+			if (Map.contains(ID))
 				name = Map[ID] + " " + peer_id.tqat(3) + "." + peer_id.tqat(4) + "."
 					+ peer_id.tqat(5) + "." + peer_id.tqat(6);
 		}
@@ -215,7 +215,7 @@ namespace bt
 				peer_id.tqat(2).isDigit() )  //Shadow's style
 		{
 			TQString ID = TQString(peer_id.tqat(0));
-			if (Map.tqcontains(ID))
+			if (Map.contains(ID))
 				name = Map[ID] + " " + peer_id.tqat(1) + "." +
 						peer_id.tqat(2) + "." + peer_id.tqat(3);
 		}

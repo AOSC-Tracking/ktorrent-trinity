@@ -78,7 +78,7 @@ Button::~Button()
     if (r.search(m_realText) > -1)
     {
         TQString text = m_realText;
-        if (text.tqcontains(r2))
+        if (text.contains(r2))
             text.remove(r2);
         config->writeEntry(TQString("button_%1").tqarg(text), r.cap(1));
     }
@@ -304,7 +304,7 @@ void Button::contextMenuEvent(TQContextMenuEvent *e)
 /*    TQPopupMenu menu;
 
     m_assignAccelAction->plug(&menu);
-    if (m_realText.tqcontains(TQRegExp("^&[0-9]\\s")))
+    if (m_realText.contains(TQRegExp("^&[0-9]\\s")))
         m_clearAccelAction->plug(&menu);
 
     emit contextMenu( &menu );
@@ -341,7 +341,7 @@ TQString Button::realTextWithoutAccel() const
 {
     TQString text = m_realText;
     TQRegExp r("^&[0-9]\\s");
-    if (text.tqcontains(r))
+    if (text.contains(r))
         text.remove(r);
     return text;
 }

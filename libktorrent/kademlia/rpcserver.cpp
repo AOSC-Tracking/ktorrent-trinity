@@ -134,10 +134,10 @@ namespace dht
 				msg->setOrigin(pck.address());
 				msg->apply(dh_table);
 			// erase an existing call
-				if (msg->getType() == RSP_MSG && calls.tqcontains(msg->getMTID()))
+				if (msg->getType() == RSP_MSG && calls.contains(msg->getMTID()))
 				{
 				// delete the call, but first notify it off the response
-					RPCCall* c = calls.tqfind(msg->getMTID());
+					RPCCall* c = calls.find(msg->getMTID());
 					c->response(msg);
 					calls.erase(msg->getMTID());
 					c->deleteLater();
@@ -165,7 +165,7 @@ namespace dht
 	RPCCall* RPCServer::doCall(MsgBase* msg)
 	{
 		Uint8 start = next_mtid;
-		while (calls.tqcontains(next_mtid))
+		while (calls.contains(next_mtid))
 		{
 			next_mtid++;
 			if (next_mtid == start) // if this happens we cannot do any calls
@@ -197,7 +197,7 @@ namespace dht
 	void RPCServer::timedOut(Uint8 mtid)
 	{
 		// delete the call
-		RPCCall* c = calls.tqfind(mtid);
+		RPCCall* c = calls.find(mtid);
 		if (c)
 		{
 			dh_table->timeout(c->getRequest());
@@ -214,7 +214,7 @@ namespace dht
 			RPCCall* c = call_queue.first();
 			call_queue.removeFirst();
 			
-			while (calls.tqcontains(next_mtid))
+			while (calls.contains(next_mtid))
 				next_mtid++;
 			
 			MsgBase* msg = c->getRequest();
@@ -227,7 +227,7 @@ namespace dht
 	
 	const RPCCall* RPCServer::findCall(Uint8 mtid) const
 	{
-		return calls.tqfind(mtid);
+		return calls.find(mtid);
 	}
 	
 	void RPCServer::ping(const dht::Key & our_id,const KNetwork::KSocketAddress & addr)

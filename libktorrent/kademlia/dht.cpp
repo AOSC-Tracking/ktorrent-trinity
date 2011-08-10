@@ -264,7 +264,7 @@ namespace dht
 			AnnounceTask* at = new AnnounceTask(db,srv,node,info_hash,port);
 			at->start(kns,!canStartTask());
 			tman->addTask(at);
-			if (!db->tqcontains(info_hash))
+			if (!db->contains(info_hash))
 				db->insert(info_hash);
 			return at;
 		}

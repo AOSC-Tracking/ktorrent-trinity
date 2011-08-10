@@ -138,7 +138,7 @@ namespace kt
 	
 	void RssFeedManager::clearArticles()
 	{
-		int pos = feeds.tqfind((RssFeed *)sender());
+		int pos = feeds.find((RssFeed *)sender());
 			
 		if (pos >= 0)
 		{
@@ -606,7 +606,7 @@ namespace kt
 		if (item < 0)
 		{
 			//let's check which one sent the signal - if we can't figure it all then update them all
-			int pos = feeds.tqfind((RssFeed *)sender());
+			int pos = feeds.find((RssFeed *)sender());
 			
 			if (pos < 0)
 			{
@@ -639,7 +639,7 @@ namespace kt
 		if (item < 0)
 		{
 			//let's check which one sent the signal - if we can't figure it all then update them all
-			int pos = acceptFilters.tqfind((RssFilter *)sender());
+			int pos = acceptFilters.find((RssFilter *)sender());
 			
 			if (pos < 0)
 			{
@@ -672,7 +672,7 @@ namespace kt
 		if (item < 0)
 		{
 			//let's check which one sent the signal - if we can't figure it all then update them all
-			int pos = rejectFilters.tqfind((RssFilter *)sender());
+			int pos = rejectFilters.find((RssFilter *)sender());
 			
 			if (pos < 0)
 			{
@@ -1254,7 +1254,7 @@ namespace kt
 	
 	void RssFeedManager::rescanFilter()
 	{
-		int pos = acceptFilters.tqfind((RssFilter *)sender());
+		int pos = acceptFilters.find((RssFilter *)sender());
 		
 		if (pos >= 0)
 		{

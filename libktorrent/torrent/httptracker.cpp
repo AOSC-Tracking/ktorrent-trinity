@@ -105,7 +105,7 @@ namespace bt
 		}
 		
 		KURL scrape_url = url;
-		scrape_url.setFileName(url.fileName(false).tqreplace("announce","scrape"));
+		scrape_url.setFileName(url.fileName(false).replace("announce","scrape"));
 		
 		TQString epq = scrape_url.encodedPathAndQuery();
 		const SHA1Hash & info_hash = tor->getInfoHash();

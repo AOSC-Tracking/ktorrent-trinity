@@ -56,7 +56,7 @@ namespace dht
 				// unpack an entry and add it to the todo list
 				KBucketEntry e = UnpackBucketEntry(nodes,j*26);
 				// lets not talk to ourself
-				if (e.getID() != node->getOurID() && !todo.tqcontains(e) && !visited.tqcontains(e))
+				if (e.getID() != node->getOurID() && !todo.contains(e) && !visited.contains(e))
 					todo.append(e);
 			}
 			num_nodes_rsp++;
@@ -78,7 +78,7 @@ namespace dht
 		{
 			KBucketEntry e = todo.first();
 			// only send a findNode if we haven't allrready visited the node
-			if (!visited.tqcontains(e))
+			if (!visited.contains(e))
 			{
 				// send a findNode to the node
 				FindNodeReq* fnr = new FindNodeReq(node->getOurID(),node_id);

@@ -276,14 +276,14 @@ namespace kt
 			
 			if (!invert)
 			{
-				if (!article.title().tqcontains(regEx) && !article.link().prettyURL().tqcontains(regEx) && !article.description().tqcontains(regEx) )
+				if (!article.title().contains(regEx) && !article.link().prettyURL().contains(regEx) && !article.description().contains(regEx) )
 				{
 					return false;
 				}
 			}
 			else
 			{
-				if (article.title().tqcontains(regEx) || article.link().prettyURL().tqcontains(regEx) || article.description().tqcontains(regEx) )
+				if (article.title().contains(regEx) || article.link().prettyURL().contains(regEx) || article.description().contains(regEx) )
 				{
 					return false;
 				}

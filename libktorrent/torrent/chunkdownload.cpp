@@ -59,7 +59,7 @@ namespace bt
 			erase(p);
 		}
 		
-		bool tqcontains(Uint32 p)
+		bool contains(Uint32 p)
 		{
 			return count(p) > 0;
 		}
@@ -111,7 +111,7 @@ namespace bt
 			return false;
 
 	
-		DownloadtqStatus* ds = dstatus.tqfind(p.getPeer());
+		DownloadtqStatus* ds = dstatus.find(p.getPeer());
 		if (ds)
 			ds->remove(pp);
 		
@@ -164,7 +164,7 @@ namespace bt
 	
 	bool ChunkDownload::assignPeer(PeerDownloader* pd)
 	{
-		if (!pd || pdown.tqcontains(pd))
+		if (!pd || pdown.contains(pd))
 			return false;
 			
 		pd->grab();
@@ -179,7 +179,7 @@ namespace bt
 	void ChunkDownload::notDownloaded(const Request & r,bool reject)
 	{
 		// find the peer 
-		DownloadtqStatus* ds = dstatus.tqfind(r.getPeer());
+		DownloadtqStatus* ds = dstatus.find(r.getPeer());
 		if (ds)
 		{
 			//	Out() << "ds != 0"  << endl;
@@ -216,7 +216,7 @@ namespace bt
 	void ChunkDownload::sendRequests(PeerDownloader* pd)
 	{
 		timer.update();
-		DownloadtqStatus* ds = dstatus.tqfind(pd->getPeer()->getID());
+		DownloadtqStatus* ds = dstatus.find(pd->getPeer()->getID());
 		if (!ds)
 			return;
 			
@@ -229,7 +229,7 @@ namespace bt
 		{
 			// get the first one in the queue
 			Uint32 i = piece_queue.first();
-			if (!ds->tqcontains(i))
+			if (!ds->contains(i))
 			{
 				// send request
 				pd->download(
@@ -262,7 +262,7 @@ namespace bt
 	
 	void ChunkDownload::sendCancels(PeerDownloader* pd)
 	{
-		DownloadtqStatus* ds = dstatus.tqfind(pd->getPeer()->getID());
+		DownloadtqStatus* ds = dstatus.find(pd->getPeer()->getID());
 		if (!ds)
 			return;
 		
@@ -287,9 +287,9 @@ namespace bt
 		while (i != pdown.end())
 		{
 			PeerDownloader* pd = *i;
-			DownloadtqStatus* ds = dstatus.tqfind(pd->getPeer()->getID());
+			DownloadtqStatus* ds = dstatus.find(pd->getPeer()->getID());
 			Uint32 pp = p.getOffset() / MAX_PIECE_LEN;
-			if (ds && ds->tqcontains(pp))
+			if (ds && ds->contains(pp))
 			{
 				pd->cancel(Request(p));
 				ds->remove(pp);
@@ -300,7 +300,7 @@ namespace bt
 
 	void ChunkDownload::peerKilled(PeerDownloader* pd)
 	{
-		if (!pdown.tqcontains(pd))
+		if (!pdown.contains(pd))
 			return;
 
 		dstatus.erase(pd->getPeer()->getID());

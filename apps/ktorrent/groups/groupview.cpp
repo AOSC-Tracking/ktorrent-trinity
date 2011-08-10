@@ -161,7 +161,7 @@ namespace kt
 		if (name.isNull() || name.length() == 0)
 			return;
 		
-		if (gman->tqfind(name))
+		if (gman->find(name))
 		{
 			KMessageBox::error(this,i18n("The group %1 already exists.").tqarg(name));
 			return;
@@ -177,7 +177,7 @@ namespace kt
 		if (!current_item)
 			return;
 		
-		Group* g = groups.tqfind(current_item);
+		Group* g = groups.find(current_item);
 		if (!g)
 			return;
 		
@@ -200,7 +200,7 @@ namespace kt
 		if (!current_item)
 			return;
 		
-		Group* g = groups.tqfind(current_item);
+		Group* g = groups.find(current_item);
 		if (!g)
 			return;
 		
@@ -212,7 +212,7 @@ namespace kt
 		if (g->groupName() == name)
 			return;
 		
-		if (gman->tqfind(name)) 
+		if (gman->find(name)) 
 		{
 			KMessageBox::error(this,i18n("The group %1 already exists.").tqarg(name));
 		}
@@ -252,7 +252,7 @@ namespace kt
 		
 		Group* g = 0;
 		if (current_item)
-			g = groups.tqfind(current_item);
+			g = groups.find(current_item);
 		
 		if (!g ||!gman->canRemove(g))
 		{
@@ -278,7 +278,7 @@ namespace kt
 		if (!li)
 			return;
 		
-		Group* g = groups.tqfind(li);
+		Group* g = groups.find(li);
 		if (g)
 		{
 			current = g;
@@ -292,7 +292,7 @@ namespace kt
 		if (!li)
 			return;
 		
-		TorrentGroup* g = dynamic_cast<TorrentGroup*>(groups.tqfind(li));
+		TorrentGroup* g = dynamic_cast<TorrentGroup*>(groups.find(li));
 		if (g)
 		{
 			TQValueList<TorrentInterface*> sel;
@@ -329,7 +329,7 @@ namespace kt
 	
 	void GroupView::onGroupsSubMenuItemActivated(KTorrentView* v,const TQString & group)
 	{
-		Group* g = gman->tqfind(group);
+		Group* g = gman->find(group);
 		if (g)
 		{
 			v->addSelectionToGroup(g);
@@ -339,7 +339,7 @@ namespace kt
 	
 	const Group* GroupView::findGroup(const TQString & name) const
 	{
-		Group* g = gman->tqfind(name);
+		Group* g = gman->find(name);
 		if (!g)
 			g = gman->findDefault(name);
 		
@@ -351,7 +351,7 @@ namespace kt
 		if (!current_item)
 			return;
 		
-		Group* g = groups.tqfind(current_item);
+		Group* g = groups.find(current_item);
 		if (g)
 			openNewTab(g);
 	}

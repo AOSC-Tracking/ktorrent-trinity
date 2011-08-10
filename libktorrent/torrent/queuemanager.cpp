@@ -68,7 +68,7 @@ namespace bt
 	{
 		paused_torrents.erase(tc);
 					
-		int index = downloads.tqfindRef(tc);
+		int index = downloads.findRef(tc);
 
 		if (index != -1)
 			downloads.remove(index);

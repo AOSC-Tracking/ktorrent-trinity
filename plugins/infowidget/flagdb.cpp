@@ -92,7 +92,7 @@ bool kt::FlagDB::isFlagAvailable(const TQString& country)
 const TQPixmap& kt::FlagDB::getFlag(const TQString& country)
 {
 	const TQString& c = country.lower();
-	if (!db.tqcontains(c)) {
+	if (!db.contains(c)) {
 		TQImage img;
 		TQPixmap pixmap;
 		for (TQValueList<FlagDBSource>::const_iterator it = sources.constBegin(); it != sources.constEnd(); it++) {

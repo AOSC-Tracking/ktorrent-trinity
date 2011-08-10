@@ -347,7 +347,7 @@ void KTorrentCore::downloadFinishedSilently(KIO::Job *job)
 	else
 	{
 		TQString dir;
-		if (custom_save_locations.tqcontains(j))
+		if (custom_save_locations.contains(j))
 		{
 			// we have a custom save location so save to that
 			dir = custom_save_locations[j].path();

@@ -404,7 +404,7 @@ void DDockWindow::moveToDockBottom()
 
 void DDockWindow::moveToDock(DDockWindow::Position position )
 {
-    if (  m_widgets.tqcontains( m_lastContextMenuButton ) )
+    if (  m_widgets.contains( m_lastContextMenuButton ) )
     {
         mainWindow()->moveWidget( position, m_widgets[ m_lastContextMenuButton ], m_lastContextMenuButton->realTextWithoutAccel() );
     }

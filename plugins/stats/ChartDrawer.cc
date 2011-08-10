@@ -433,8 +433,8 @@ void ChartDrawer::MakeLegendTooltip()
 			img[i].setPixel(15, px, 0); //r
 		}
 		
-		factory->setImage(mEls[i].GetName().tqreplace(' ', '_') + "-" + TQString::number(i), img[i]);
-		helpstr += TQString("<img src='%1'>&nbsp;&nbsp;-&nbsp;&nbsp;%2<br>").tqarg(mEls[i].GetName().tqreplace(" ", "_") + "-" + TQString::number(i)).tqarg( mEls[i].GetName() );	
+		factory->setImage(mEls[i].GetName().replace(' ', '_') + "-" + TQString::number(i), img[i]);
+		helpstr += TQString("<img src='%1'>&nbsp;&nbsp;-&nbsp;&nbsp;%2<br>").tqarg(mEls[i].GetName().replace(" ", "_") + "-" + TQString::number(i)).tqarg( mEls[i].GetName() );	
 	}
 	
 	TQToolTip::add(this, helpstr);

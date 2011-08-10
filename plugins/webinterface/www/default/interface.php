@@ -118,7 +118,7 @@ function generate_button_code($img, $alt, $href='')
 		foreach ($stats as $torrent) {
 			echo "\t\t".'<tr>'."\n\t\t\t";
 
-			$torrent_name = str_tqreplace("'", "\'", $torrent['torrent_name']);
+			$torrent_name = str_replace("'", "\'", $torrent['torrent_name']);
 			if($torrent['total_bytes_to_download']!=0) $perc = round(100.0 - ($torrent['bytes_left_to_download'] / $torrent['total_bytes_to_download']) * 100.0, 2);
 			else $perc = 0;
 			if(strlen($torrent['torrent_name'])>30) $display_name=substr($torrent['torrent_name'], 0, 30)." ...";

@@ -114,13 +114,13 @@ namespace kt
 			out << TQString("\"leechers_connected_to\" => %1,\n").tqarg(stats.leechers_connected_to);
 			out << TQString("\"status\" => %1,\n").tqarg(stats.status);
 			out << TQString("\"running\" => %1,\n").tqarg(stats.running);
-			out << TQString("\"trackerstatus\" => \"%1\",\n").tqarg(stats.trackerstatus.tqreplace("\\", "\\\\").tqreplace("\"", "\\\"").tqreplace("$", "\\$"));
+			out << TQString("\"trackerstatus\" => \"%1\",\n").tqarg(stats.trackerstatus.replace("\\", "\\\\").replace("\"", "\\\"").replace("$", "\\$"));
 			out << TQString("\"session_bytes_downloaded\" => %1,\n").tqarg(stats.session_bytes_downloaded);
 			out << TQString("\"session_bytes_uploaded\" => %1,\n").tqarg(stats.session_bytes_uploaded);
 			out << TQString("\"trk_bytes_downloaded\" => %1,\n").tqarg(stats.trk_bytes_downloaded);
 			out << TQString("\"trk_bytes_uploaded\" => %1,\n").tqarg(stats.trk_bytes_uploaded);
-			out << TQString("\"torrent_name\" => \"%1\",\n").tqarg(stats.torrent_name.tqreplace("\\", "\\\\").tqreplace("\"", "\\\"").tqreplace("$", "\\$"));
-			out << TQString("\"output_path\" => \"%1\",\n").tqarg(stats.output_path.tqreplace("\\", "\\\\").tqreplace("\"", "\\\"").tqreplace("$", "\\$"));
+			out << TQString("\"torrent_name\" => \"%1\",\n").tqarg(stats.torrent_name.replace("\\", "\\\\").replace("\"", "\\\"").replace("$", "\\$"));
+			out << TQString("\"output_path\" => \"%1\",\n").tqarg(stats.output_path.replace("\\", "\\\\").replace("\"", "\\\"").replace("$", "\\$"));
 			out << TQString("\"stopped_by_error\" => \"%1\",\n").tqarg(stats.stopped_by_error);
 			out << TQString("\"completed\" => \"%1\",\n").tqarg(stats.completed);
 			out << TQString("\"user_controlled\" => \"%1\",\n").tqarg(stats.user_controlled);
@@ -263,7 +263,7 @@ namespace kt
 					break;
 				case 'f':
 					//parse argument into torrent number and file number
-					separator_loc=it.data().tqfind('-');
+					separator_loc=it.data().find('-');
 					parse=it.data();
 					torrent_num.append(parse.left(separator_loc));
 					file_num.append(parse.right(parse.length()-(separator_loc+1)));

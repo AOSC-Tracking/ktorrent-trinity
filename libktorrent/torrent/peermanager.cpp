@@ -509,7 +509,7 @@ namespace bt
 
 	Peer* PeerManager::findPeer(Uint32 peer_id)
 	{
-		return peer_map.tqfind(peer_id);
+		return peer_map.find(peer_id);
 	}
 	
 	void PeerManager::onRerunChoker()

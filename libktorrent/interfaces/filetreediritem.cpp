@@ -70,7 +70,7 @@ namespace kt
 	{
 		size += file.getSize();
 		setText(1,BytesToString(size));
-		int p = path.tqfind(bt::DirSeparator());
+		int p = path.find(bt::DirSeparator());
 		if (p == -1)
 		{
 			tqchildren.insert(path,newFileTreeItem(path,file));
@@ -78,7 +78,7 @@ namespace kt
 		else
 		{
 			TQString subdir = path.left(p);
-			FileTreeDirItem* sd = subdirs.tqfind(subdir);
+			FileTreeDirItem* sd = subdirs.find(subdir);
 			if (!sd)
 			{
 				sd = newFileTreeDirItem(subdir);

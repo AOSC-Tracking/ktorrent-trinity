@@ -95,7 +95,7 @@ namespace kt
 		
 	void ChunkDownloadView::removeDownload(kt::ChunkDownloadInterface* cd)
 	{
-		if (!items.tqcontains(cd))
+		if (!items.contains(cd))
 			return;
 		
 		ChunkDownloadViewItem* it = items[cd];

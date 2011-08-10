@@ -105,7 +105,7 @@ namespace bt
 		
 		// Read the transaction_id and check it
 		Int32 tid = ReadInt32(buf,4);
-		TQMap<Int32,Action>::iterator i = transactions.tqfind(tid);
+		TQMap<Int32,Action>::iterator i = transactions.find(tid);
 		// if we can't find the transaction, just return
 		if (i == transactions.end())
 		{
@@ -131,7 +131,7 @@ namespace bt
 		
 		// Read the transaction_id and check it
 		Int32 tid = ReadInt32(buf,4);
-		TQMap<Int32,Action>::iterator i = transactions.tqfind(tid);
+		TQMap<Int32,Action>::iterator i = transactions.find(tid);
 		// if we can't find the transaction, just return
 		if (i == transactions.end())
 			return;
@@ -154,7 +154,7 @@ namespace bt
 		const Uint8* buf = (const Uint8*)data.data();
 		// Read the transaction_id and check it
 		Int32 tid = ReadInt32(buf,4);
-		TQMap<Int32,Action>::iterator it = transactions.tqfind(tid);
+		TQMap<Int32,Action>::iterator it = transactions.find(tid);
 		// if we can't find the transaction, just return
 		if (it == transactions.end())
 			return;
@@ -203,7 +203,7 @@ namespace bt
 	Int32 UDPTrackerSocket::newTransactionID()
 	{
 		Int32 transaction_id = rand() * time(0);
-		while (transactions.tqcontains(transaction_id))
+		while (transactions.contains(transaction_id))
 			transaction_id++;
 		return transaction_id;
 	}

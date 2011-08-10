@@ -132,7 +132,7 @@ namespace kt
 			return;
 		
 		//search for entry
-		TQValueList<KURL>::iterator it = m_pendingURLs.tqfind(url);
+		TQValueList<KURL>::iterator it = m_pendingURLs.find(url);
 		
 		//if no entry is found than this torrent was not started by this plugin so - quit
 		if(it == m_pendingURLs.end())

@@ -52,9 +52,9 @@ namespace net
 			BufferedSocket* s = *itr;
 			if (s && s->ok() && s->bytesReadyToWrite())
 			{
-				SocketGroup* g = groups.tqfind(s->uploadGroupID());
+				SocketGroup* g = groups.find(s->uploadGroupID());
 				if (!g)
-					g = groups.tqfind(0);
+					g = groups.find(0);
 				
 				g->add(s);
 				num_ready++;

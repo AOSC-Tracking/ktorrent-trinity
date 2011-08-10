@@ -43,7 +43,7 @@ void PeerMonitor::peerRemoved (kt::PeerInterface *peer)
 
 	TQMutexLocker lock(&mtx);
 
-	data_t::iterator it = std::tqfind(mPeers.begin(), mPeers.end(), peer);
+	data_t::iterator it = std::find(mPeers.begin(), mPeers.end(), peer);
 	
 	if(it != mPeers.end())
 	{
@@ -73,7 +73,7 @@ void PeerMonitor::stopped ()
 
 void PeerMonitor::destroyed () 
 { 
-	if(pmPeerMMgr -> tqfind(pmTorIface -> getInfoHash()) != pmPeerMMgr -> end() )
+	if(pmPeerMMgr -> find(pmTorIface -> getInfoHash()) != pmPeerMMgr -> end() )
 	{
 		pmTorIface -> setMonitor(0);
 		pmPeerMMgr -> erase(pmTorIface -> getInfoHash());

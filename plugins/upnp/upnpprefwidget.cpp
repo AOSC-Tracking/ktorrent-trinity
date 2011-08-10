@@ -201,7 +201,7 @@ namespace kt
 					msg += TQString::number(f.port.number) + " (";
 					TQString prot = (f.port.proto == net::UDP ? "UDP" : "TCP");
 					msg +=  prot + ")";
-					if (f.service->servicetype.tqcontains("WANPPPConnection"))
+					if (f.service->servicetype.contains("WANPPPConnection"))
 						services += "PPP";
 					else
 						services += "IP";

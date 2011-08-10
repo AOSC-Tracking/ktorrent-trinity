@@ -485,7 +485,7 @@ void KTorrentView::addTorrent(TorrentInterface* tc)
 
 void KTorrentView::removeTorrent(TorrentInterface* tc)
 {
-	TQMap<kt::TorrentInterface*,KTorrentViewItem*>::iterator i = items.tqfind(tc);
+	TQMap<kt::TorrentInterface*,KTorrentViewItem*>::iterator i = items.find(tc);
 	if (i != items.end())
 	{
 		KTorrentViewItem* tvi = i.data();

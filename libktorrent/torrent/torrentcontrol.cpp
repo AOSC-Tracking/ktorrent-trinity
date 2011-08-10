@@ -785,7 +785,7 @@ namespace bt
 
 	bool TorrentControl::changeDataDir(const TQString & new_dir)
 	{
-		int pos = datadir.tqfindRev(bt::DirSeparator(),-2);
+		int pos = datadir.findRev(bt::DirSeparator(),-2);
 		if (pos == -1)
 		{
 			Out(SYS_GEN|LOG_DEBUG) << "Could not find torX part in " << datadir << endl;
@@ -833,7 +833,7 @@ namespace bt
 			TQString nd;
 			if (istats.custom_output_name)
 			{
-				int slash_pos = stats.output_path.tqfindRev(bt::DirSeparator(),-2);
+				int slash_pos = stats.output_path.findRev(bt::DirSeparator(),-2);
 				nd = new_dir + stats.output_path.mid(slash_pos + 1);
 			}
 			else
@@ -1255,10 +1255,10 @@ namespace bt
 		{
 			// in case of error copy torX dir to migrate-failed-tor
 			TQString dd = datadir;
-			int pos = dd.tqfindRev("tor");
+			int pos = dd.findRev("tor");
 			if (pos != - 1)
 			{
-				dd = dd.tqreplace(pos,3,"migrate-failed-tor");
+				dd = dd.replace(pos,3,"migrate-failed-tor");
 				Out() << "Copying " << datadir << " to " << dd << endl;
 				bt::CopyDir(datadir,dd,true);
 			}

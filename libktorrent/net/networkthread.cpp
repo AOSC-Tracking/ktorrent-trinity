@@ -51,7 +51,7 @@ namespace net
 	void NetworkThread::addGroup(Uint32 gid,Uint32 limit)
 	{
 		// if group already exists, just change the limit
-		SocketGroup* g = groups.tqfind(gid);
+		SocketGroup* g = groups.find(gid);
 		if (g)
 		{
 			g->setLimit(limit);
@@ -72,7 +72,7 @@ namespace net
 		
 	void NetworkThread::setGroupLimit(Uint32 gid,Uint32 limit)
 	{
-		SocketGroup* g = groups.tqfind(gid);
+		SocketGroup* g = groups.find(gid);
 		if (g)
 		{
 			g->setLimit(limit);

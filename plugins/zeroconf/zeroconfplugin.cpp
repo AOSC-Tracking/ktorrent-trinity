@@ -84,7 +84,7 @@ namespace kt
 	
 	void ZeroConfPlugin::torrentAdded(kt::TorrentInterface* tc)
 	{
-		if (services.tqcontains(tc))
+		if (services.contains(tc))
 			return;
 		
 		bt::Uint16 port = bt::Globals::instance().getServer().getPortInUse();
@@ -100,7 +100,7 @@ namespace kt
 		
 	void ZeroConfPlugin::torrentRemoved(kt::TorrentInterface* tc)
 	{
-		AvahiService* av = services.tqfind(tc);
+		AvahiService* av = services.find(tc);
 		if (!av)
 			return;
 		Out(SYS_ZCO|LOG_NOTICE) << "ZeroConf service removed for " 

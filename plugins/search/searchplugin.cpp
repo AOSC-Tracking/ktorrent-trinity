@@ -102,7 +102,7 @@ namespace kt
 				engine = 0;
 		
 			TQString s_url = sl.getSearchURL(engine).prettyURL();
-			s_url.tqreplace("FOOBAR", KURL::encode_string(text), true);
+			s_url.replace("FOOBAR", KURL::encode_string(text), true);
 			KURL url = KURL::fromPathOrURL(s_url);
 			
 			if(SearchPluginSettings::useDefaultBrowser())
@@ -141,7 +141,7 @@ namespace kt
 	
 	void SearchPlugin::tabCloseRequest(kt::GUIInterface* gui,TQWidget* tab)
 	{
-		if (searches.tqcontains((SearchWidget*)tab))
+		if (searches.contains((SearchWidget*)tab))
 		{
 			searches.remove((SearchWidget*)tab);
 			gui->removeTabPage(tab);

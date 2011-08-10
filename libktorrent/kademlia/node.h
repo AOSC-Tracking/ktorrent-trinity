@@ -37,7 +37,7 @@ namespace dht
 	/**
 	 * @author Joris Guisson
 	 *
-	 * A Node represents us in the kademlia network. It tqcontains
+	 * A Node represents us in the kademlia network. It contains
 	 * our id and 160 KBucket's.
 	 * A KBucketEntry is in node i, when the difference between our id and
 	 * the KBucketEntry's id is between 2 to the power i and 2 to the power i+1.
