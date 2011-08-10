@@ -39,7 +39,7 @@ class ScanDialog : public ScanDlgBase, public bt::DataCheckerListener
 	Q_OBJECT
   TQ_OBJECT
 public:
-	ScanDialog(KTorrentCore* core,bool auto_import,TQWidget* tqparent = 0, const char* name = 0, bool modal = false, WFlags fl = WDestructiveClose  );
+	ScanDialog(KTorrentCore* core,bool auto_import,TQWidget* parent = 0, const char* name = 0, bool modal = false, WFlags fl = WDestructiveClose  );
 	virtual ~ScanDialog();
 
 	/// Starts the scan thread

@@ -33,7 +33,7 @@ namespace kt
   TQ_OBJECT
 
 		public:
-			ConvertDialog( IPFilterPlugin* p, TQWidget *tqparent = 0, const char *name = 0 );
+			ConvertDialog( IPFilterPlugin* p, TQWidget *parent = 0, const char *name = 0 );
 
 		public slots:
 			virtual void btnClose_clicked();

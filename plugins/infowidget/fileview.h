@@ -37,7 +37,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		FileView(TQWidget *tqparent = 0, const char *name = 0);
+		FileView(TQWidget *parent = 0, const char *name = 0);
 		virtual ~FileView();
 
 		void update();

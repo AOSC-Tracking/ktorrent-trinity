@@ -203,7 +203,7 @@ class RestInterface {
 class KTorrentXML extends DomDocument { 
 	private $root_element;
 	public function __construct($root, $value = null, $attributes = null) {
-		tqparent::__construct('1.0');
+		parent::__construct('1.0');
 		$this->root_element = $this->createElement($root);
 		$this->appendChild($this->root_element);
 		$this->formatOutput = true;

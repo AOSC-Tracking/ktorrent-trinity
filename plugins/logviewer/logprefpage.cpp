@@ -46,9 +46,9 @@ namespace kt
 		return true;
 	}
 
-	void LogPrefPage::createWidget(TQWidget* tqparent)
+	void LogPrefPage::createWidget(TQWidget* parent)
 	{
-		m_widget = new LogPrefWidget(tqparent);
+		m_widget = new LogPrefWidget(parent);
 	}
 
 	void LogPrefPage::updateData()

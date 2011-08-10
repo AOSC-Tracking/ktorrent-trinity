@@ -132,7 +132,7 @@ namespace RSS
 		 TQString meta(const TQString &key) const;
          
          /**
-          * @param tqparent The tqparent widget for the KURLLabel.
+          * @param parent The parent widget for the KURLLabel.
           * @param name A name for the widget which will be used internally.
           * @return a widget (a KURLLabel in this case) for the Article.
           * This makes building a user-interface which contains the
@@ -145,7 +145,7 @@ namespace RSS
           * Note that you have to delete the KURLLabel object returned by
           * this method yourself.
           */
-         KURLLabel *widget(TQWidget *tqparent = 0, const char *name = 0) const;
+         KURLLabel *widget(TQWidget *parent = 0, const char *name = 0) const;
          
          typedef TQMap<TQString, TQString> MetaInfoMap;
          

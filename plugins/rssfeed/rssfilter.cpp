@@ -53,7 +53,7 @@ namespace kt
 		return m_link==other.link() && m_season==other.season() && m_episode==other.episode();
 	}
 		
-	RssFilter::RssFilter(TQObject * tqparent) : TQObject(tqparent)
+	RssFilter::RssFilter(TQObject * parent) : TQObject(parent)
 	{
 		m_title = "New";
 		m_active = false;

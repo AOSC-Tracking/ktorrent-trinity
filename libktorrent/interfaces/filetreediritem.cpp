@@ -37,7 +37,7 @@ namespace kt
 	FileTreeDirItem::FileTreeDirItem(KListView* klv,const TQString & name,FileTreeRootListener* rl)
 	: TQCheckListItem(klv,TQString(),TQCheckListItem::CheckBox),name(name),root_listener(rl)
 	{
-		tqparent = 0;
+		parent = 0;
 		size = 0;
 		setPixmap(0,KGlobal::iconLoader()->loadIcon("folder",KIcon::Small));
 		setText(0,name);
@@ -48,9 +48,9 @@ namespace kt
 		manual_change = false;
 	}
 
-	FileTreeDirItem::FileTreeDirItem(FileTreeDirItem* tqparent,const TQString & name)
-	: TQCheckListItem(tqparent,TQString(),TQCheckListItem::CheckBox),
-	name(name),tqparent(tqparent)
+	FileTreeDirItem::FileTreeDirItem(FileTreeDirItem* parent,const TQString & name)
+	: TQCheckListItem(parent,TQString(),TQCheckListItem::CheckBox),
+	name(name),parent(parent)
 	{
 		size = 0;
 		setPixmap(0,KGlobal::iconLoader()->loadIcon("folder",KIcon::Small));
@@ -161,8 +161,8 @@ namespace kt
 						return;
 				}
 			}
-			if (tqparent)
-				tqparent->childStateChange();
+			if (parent)
+				parent->childStateChange();
 		}
 		setText(2,on ? i18n("Yes") : i18n("No"));
 	}
@@ -219,8 +219,8 @@ namespace kt
 		setOn(allChildrenOn());
 		manual_change = false;
 	
-		if (tqparent)
-			tqparent->childStateChange();
+		if (parent)
+			parent->childStateChange();
 		else if (root_listener)
 			root_listener->treeItemChanged();
 			
@@ -286,10 +286,10 @@ namespace kt
 	
 	TQString FileTreeDirItem::getPath() const
 	{
-		if (!tqparent)
+		if (!parent)
 			return bt::DirSeparator();
 		else
-			return tqparent->getPath() + name + bt::DirSeparator();
+			return parent->getPath() + name + bt::DirSeparator();
 	}
 }
 

@@ -42,8 +42,8 @@ K_EXPORT_COMPONENT_FACTORY(ktupnpplugin,KGenericFactory<kt::UPnPPlugin>("ktupnpp
 namespace kt
 {
 
-	UPnPPlugin::UPnPPlugin(TQObject* tqparent, const char* name, const TQStringList& args)
-	: Plugin(tqparent, name, args,NAME,i18n("UPnP"),AUTHOR,EMAIL,i18n("Uses UPnP to automatically forward ports on your router"),"ktupnp")
+	UPnPPlugin::UPnPPlugin(TQObject* parent, const char* name, const TQStringList& args)
+	: Plugin(parent, name, args,NAME,i18n("UPnP"),AUTHOR,EMAIL,i18n("Uses UPnP to automatically forward ports on your router"),"ktupnp")
 	{
 		sock = 0;
 		pref = 0;

@@ -37,7 +37,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		LogViewerPlugin(TQObject* tqparent, const char* qt_name, const TQStringList& args);
+		LogViewerPlugin(TQObject* parent, const char* qt_name, const TQStringList& args);
 		virtual ~LogViewerPlugin();
 			
 		virtual void load();

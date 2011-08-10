@@ -36,7 +36,7 @@ public slots:
     virtual void btnOK_clicked();
 	
 	public:
-		PasteDialog(KTorrentCore* core, TQWidget *tqparent = 0, const char *name = 0);
+		PasteDialog(KTorrentCore* core, TQWidget *parent = 0, const char *name = 0);
 		
 	private:
 		KTorrentCore* m_core;

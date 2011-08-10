@@ -48,8 +48,8 @@ namespace kt
 	const TQString EMAIL = "ivasic@gmail.com";
 	const TQString DESCRIPTION = i18n("Automatically scans directories for torrent files and loads them.");
 
-	ScanFolderPlugin::ScanFolderPlugin(TQObject* tqparent, const char* name, const TQStringList& args)
-	: Plugin(tqparent, name, args,NAME,i18n("Scan Folder"),AUTHOR,EMAIL,DESCRIPTION,"view_sidetree")
+	ScanFolderPlugin::ScanFolderPlugin(TQObject* parent, const char* name, const TQStringList& args)
+	: Plugin(parent, name, args,NAME,i18n("Scan Folder"),AUTHOR,EMAIL,DESCRIPTION,"view_sidetree")
 	{
 // 		setXMLFile("ktscanfolderpluginui.rc");
 		m_sf1 = 0;

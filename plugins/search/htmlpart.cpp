@@ -36,8 +36,8 @@ using namespace bt;
 namespace kt
 {
 	
-	HTMLPart::HTMLPart(TQWidget *tqparent)
-			: KHTMLPart(tqparent)
+	HTMLPart::HTMLPart(TQWidget *parent)
+			: KHTMLPart(parent)
 	{
 		setJScriptEnabled(true);
 		setJavaEnabled(true);

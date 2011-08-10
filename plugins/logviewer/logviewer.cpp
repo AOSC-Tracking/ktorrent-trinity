@@ -41,8 +41,8 @@ namespace kt
 		const TQString & msg() const {return str;}
 	};
 
-	LogViewer::LogViewer(TQWidget *tqparent, const char *name)
-			: KTextBrowser(tqparent, name), LogMonitorInterface()
+	LogViewer::LogViewer(TQWidget *parent, const char *name)
+			: KTextBrowser(parent, name), LogMonitorInterface()
 	{
 		/*
 		IMPORTANT: use LogText mode, so that setMaxLogLines will work, if not everything will be kept in memory.

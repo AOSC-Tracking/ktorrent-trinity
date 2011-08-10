@@ -52,7 +52,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		ChunkBar(TQWidget *tqparent = 0, const char *name = 0);
+		ChunkBar(TQWidget *parent = 0, const char *name = 0);
 		virtual ~ChunkBar();
 	
 		void setTC(kt::TorrentInterface* tc);

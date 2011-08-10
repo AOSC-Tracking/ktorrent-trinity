@@ -23,8 +23,8 @@
 
 namespace Ideal {
 
-DockSplitter::DockSplitter(Qt::Orientation orientation, TQWidget *tqparent, const char *name)
-    :TQSplitter(tqparent, name), m_orientation(orientation)
+DockSplitter::DockSplitter(Qt::Orientation orientation, TQWidget *parent, const char *name)
+    :TQSplitter(parent, name), m_orientation(orientation)
 {
     switch (m_orientation)
     {

@@ -53,7 +53,7 @@ namespace kt
 			/**
 			 * Default constructor.
 			 */
-			RssLinkDownloader(CoreInterface* core, TQString link, RssFilter * filter = 0, TQObject * tqparent = 0);
+			RssLinkDownloader(CoreInterface* core, TQString link, RssFilter * filter = 0, TQObject * parent = 0);
 			
  			~RssLinkDownloader();
  			

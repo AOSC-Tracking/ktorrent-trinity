@@ -34,8 +34,8 @@
 
 namespace kt
 {
-	BWSWidget::BWSWidget(TQWidget* tqparent, const char* name, bool useColors)
-			: TQTable(tqparent,name), m_leftCategory(1), m_rightCategory(0), draw_focus(true), right_click(false), use_colors(useColors)
+	BWSWidget::BWSWidget(TQWidget* parent, const char* name, bool useColors)
+			: TQTable(parent,name), m_leftCategory(1), m_rightCategory(0), draw_focus(true), right_click(false), use_colors(useColors)
 	{
 		use_colors = SchedulerPluginSettings::useColors();
 		

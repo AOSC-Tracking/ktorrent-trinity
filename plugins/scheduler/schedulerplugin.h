@@ -45,7 +45,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		SchedulerPlugin(TQObject* tqparent, const char* name, const TQStringList& args);
+		SchedulerPlugin(TQObject* parent, const char* name, const TQStringList& args);
 		virtual ~SchedulerPlugin();
 
 		virtual void load();

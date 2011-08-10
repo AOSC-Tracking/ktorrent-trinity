@@ -42,7 +42,7 @@ namespace dht
 	
 
 
-	RPCServer::RPCServer(DHT* dh_table,Uint16 port,TQObject *tqparent) : TQObject(tqparent),dh_table(dh_table),next_mtid(0),port(port)
+	RPCServer::RPCServer(DHT* dh_table,Uint16 port,TQObject *parent) : TQObject(parent),dh_table(dh_table),next_mtid(0),port(port)
 	{
 		sock = new KDatagramSocket(this);
 		sock->setBlocking(false);

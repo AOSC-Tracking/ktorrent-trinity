@@ -41,7 +41,7 @@ class Button : public TQPushButton {
     Q_OBJECT
   TQ_OBJECT
 public:
-    Button(ButtonBar *tqparent, const TQString text, const TQIconSet &icon = TQIconSet(),
+    Button(ButtonBar *parent, const TQString text, const TQIconSet &icon = TQIconSet(),
         const TQString &description = TQString());
 
     /**Sets the description used as a tooltip.*/

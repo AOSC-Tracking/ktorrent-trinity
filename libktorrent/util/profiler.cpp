@@ -25,7 +25,7 @@
 
 namespace bt
 {
-	Profile::Profile(Profile* tqparent,const TQString & name) : tqparent(tqparent),name(name)
+	Profile::Profile(Profile* parent,const TQString & name) : parent(parent),name(name)
 	{
 		min = max = avg = 0.0;
 		count = 0;

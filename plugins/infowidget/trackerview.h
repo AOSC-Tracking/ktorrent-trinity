@@ -37,7 +37,7 @@ namespace kt
 			Q_OBJECT
   TQ_OBJECT
 		public:
-			TrackerView(TQWidget *tqparent = 0, const char *name = 0);
+			TrackerView(TQWidget *parent = 0, const char *name = 0);
 			virtual ~TrackerView();
 			
 			void update();

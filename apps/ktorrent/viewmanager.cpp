@@ -28,8 +28,8 @@
 		
 typedef TQValueList<KTorrentView*>::iterator ViewItr;
 
-ViewManager::ViewManager ( TQObject *tqparent, const char *name )
-		: TQObject ( tqparent, name ),current(0)
+ViewManager::ViewManager ( TQObject *parent, const char *name )
+		: TQObject ( parent, name ),current(0)
 {}
 
 

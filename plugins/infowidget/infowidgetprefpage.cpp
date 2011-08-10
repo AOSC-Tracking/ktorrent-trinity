@@ -53,9 +53,9 @@ namespace kt
 		return true;
 	}
 
-	void InfoWidgetPrefPage::createWidget(TQWidget* tqparent)
+	void InfoWidgetPrefPage::createWidget(TQWidget* parent)
 	{
-		pref = new IWPref(tqparent);
+		pref = new IWPref(parent);
 		updateData();
 	}
 

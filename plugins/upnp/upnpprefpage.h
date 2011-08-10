@@ -46,7 +46,7 @@ namespace kt
 		virtual ~UPnPPrefPage();
 
 		virtual bool apply();
-		virtual void createWidget(TQWidget* tqparent);
+		virtual void createWidget(TQWidget* parent);
 		virtual void deleteWidget();
 		virtual void updateData();
 		

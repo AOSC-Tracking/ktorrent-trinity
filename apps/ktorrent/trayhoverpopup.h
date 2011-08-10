@@ -36,7 +36,7 @@ class TrayHoverPopup : public KPassivePopup
 	Q_OBJECT
   TQ_OBJECT
 public:
-	TrayHoverPopup(const TQPixmap & pix,TQWidget *tqparent = 0, const char *name = 0 );
+	TrayHoverPopup(const TQPixmap & pix,TQWidget *parent = 0, const char *name = 0 );
 	virtual ~TrayHoverPopup();
 	
 	/// Cursor entered system tray icon

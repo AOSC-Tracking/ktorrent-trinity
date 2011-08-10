@@ -74,8 +74,8 @@ namespace kt
 		return block;
 	}
 
-	ConvertDialog::ConvertDialog( IPFilterPlugin* p, TQWidget *tqparent, const char *name )
-			: ConvertingDlg( tqparent, name )
+	ConvertDialog::ConvertDialog( IPFilterPlugin* p, TQWidget *parent, const char *name )
+			: ConvertingDlg( parent, name )
 	{
 		m_plugin = p;
 		btnClose->setText(i18n("Convert"));

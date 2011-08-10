@@ -40,8 +40,8 @@ using namespace bt;
 namespace kt
 {
 
-	FileView::FileView(TQWidget *tqparent, const char *name)
-	    : KListView(tqparent, name),curr_tc(0),multi_root(0),pending_fill(0),next_fill_item(0)
+	FileView::FileView(TQWidget *parent, const char *name)
+	    : KListView(parent, name),curr_tc(0),multi_root(0),pending_fill(0),next_fill_item(0)
 	{
 		setFrameShape(TQFrame::NoFrame);
 		addColumn( i18n( "File" ) );

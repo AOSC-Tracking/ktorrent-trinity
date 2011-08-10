@@ -48,9 +48,9 @@ namespace kt
 		return true;
 	}
 
-	void SchedulerPrefPage::createWidget( TQWidget * tqparent )
+	void SchedulerPrefPage::createWidget( TQWidget * parent )
 	{
-		widget = new SchedulerPrefPageWidget(tqparent);
+		widget = new SchedulerPrefPageWidget(parent);
 	}
 
 	void SchedulerPrefPage::updateData()

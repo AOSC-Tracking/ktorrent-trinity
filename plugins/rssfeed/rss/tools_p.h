@@ -26,7 +26,7 @@ namespace RSS
 		unsigned int count;
 	};
 
-	TQString extractNode(const TQDomNode &tqparent, const TQString &elemName, bool isInlined=true);
+	TQString extractNode(const TQDomNode &parent, const TQString &elemName, bool isInlined=true);
 	time_t parseISO8601Date(const TQString &s);
 }
 

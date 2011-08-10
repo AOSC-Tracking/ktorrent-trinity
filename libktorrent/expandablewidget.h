@@ -48,23 +48,23 @@ namespace kt
 		/**
 		 * Constructor, the first child must be provided.
 		 * @param child The first child
-		 * @param tqparent The tqparent
+		 * @param parent The parent
 		 * @param name The name
 		 */
-		ExpandableWidget(TQWidget* child,TQWidget *tqparent = 0, const char *name = 0);
+		ExpandableWidget(TQWidget* child,TQWidget *parent = 0, const char *name = 0);
 		virtual ~ExpandableWidget();
 
 
 
 		/**
-		 * Expand the widget. This will ensure the proper tqparent child relations.
+		 * Expand the widget. This will ensure the proper parent child relations.
 		 * @param w The widget
 		 * @param pos It's position relative to the current widget
 		 */
 		void expand(TQWidget* w,Position pos);
 
 		/**
-		 * Remove a widget. This will ensure the proper tqparent child relations.
+		 * Remove a widget. This will ensure the proper parent child relations.
 		 * The widget w will become parentless. Note the first child will never be removed.
 		 * @param w The widget
 		 */

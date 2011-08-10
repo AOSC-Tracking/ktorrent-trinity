@@ -85,7 +85,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		LabelView(TQWidget *tqparent = 0, const char *name = 0);
+		LabelView(TQWidget *parent = 0, const char *name = 0);
 		virtual ~LabelView();
 		
 		/// Add an item to the label view

@@ -34,7 +34,7 @@ namespace bt
 	 */
 	class Profile
 	{
-		Profile* tqparent;
+		Profile* parent;
 		TQPtrList<Profile> tqchildren;
 		
 		TQString name;
@@ -42,7 +42,7 @@ namespace bt
 		Uint32 count;
 		double start_time;
 	public:	
-		Profile(Profile* tqparent,const TQString & name);
+		Profile(Profile* parent,const TQString & name);
 		virtual ~Profile();
 		
 		/**
@@ -63,9 +63,9 @@ namespace bt
 		Profile* child(const TQString & name);
 		
 		/**
-		 * Get the tqparent of the current profile.
+		 * Get the parent of the current profile.
 		 */
-		Profile* getParent() const {return tqparent;}
+		Profile* getParent() const {return parent;}
 		
 		/**
 		 * Save profile information to a file.

@@ -34,7 +34,7 @@ namespace kt
 			Q_OBJECT
   TQ_OBJECT
 		public:
-			LogViewer(TQWidget *tqparent = 0, const char *name = 0);
+			LogViewer(TQWidget *parent = 0, const char *name = 0);
 			virtual ~LogViewer();
 
 			virtual void message(const TQString& line, unsigned int arg);

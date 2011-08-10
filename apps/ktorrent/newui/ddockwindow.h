@@ -44,7 +44,7 @@ class DDockWindow : public TQDockWindow {
 public:
     enum Position { Bottom, Left, Right };
 
-    DDockWindow(DMainWindow *tqparent, Position position);
+    DDockWindow(DMainWindow *parent, Position position);
     virtual ~DDockWindow();
 
     virtual void setVisible(bool v);

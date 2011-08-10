@@ -54,7 +54,7 @@ namespace kt
 			/**
 			 * Default constructor.
 			 */
-			RssFeed(TQObject * tqparent = 0);
+			RssFeed(TQObject * parent = 0);
 			RssFeed(KURL feedUrl, TQString title = "", bool active = false, int articleAge = 3, bool ignoreTTL = false, TQTime autoRefresh = TQTime());
 			RssFeed(const RssFeed &other);
  			RssFeed &operator=(const RssFeed &other);

@@ -42,8 +42,8 @@ namespace kt
 	const TQString EMAIL = "ivasic@gmail.com";
 	const TQString DESCRIPTION = i18n("Filters out unwanted peers based on their IP address");
 
-	IPFilterPlugin::IPFilterPlugin(TQObject* tqparent, const char* name, const TQStringList& args)
-	: Plugin(tqparent, name, args,NAME,i18n("IP Filter"),AUTHOR,EMAIL,DESCRIPTION,"filter")
+	IPFilterPlugin::IPFilterPlugin(TQObject* parent, const char* name, const TQStringList& args)
+	: Plugin(parent, name, args,NAME,i18n("IP Filter"),AUTHOR,EMAIL,DESCRIPTION,"filter")
 	{
 		// setXMLFile("ktpluginui.rc");
 		level1 = 0;

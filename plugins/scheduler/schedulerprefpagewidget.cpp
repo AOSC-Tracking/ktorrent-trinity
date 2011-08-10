@@ -30,8 +30,8 @@
 namespace kt
 {
 
-	SchedulerPrefPageWidget::SchedulerPrefPageWidget(TQWidget* tqparent, const char* name, WFlags fl)
-			: SchedulerPage(tqparent,name,fl)
+	SchedulerPrefPageWidget::SchedulerPrefPageWidget(TQWidget* parent, const char* name, WFlags fl)
+			: SchedulerPage(parent,name,fl)
 	{
 		groupBWS->setEnabled(false);
 		bool useit = SchedulerPluginSettings::enableBWS();

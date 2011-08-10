@@ -37,8 +37,8 @@ using namespace bt;
 namespace kt
 {
 
-	ZeroConfPlugin::ZeroConfPlugin(TQObject* tqparent, const char* name, const TQStringList& args)
-	: Plugin(tqparent, name,args,NAME,i18n("Zeroconf"),AUTHOR,TQString(),i18n("Finds peers running ktorrent on the local network to share torrents with"),"ktplugins")
+	ZeroConfPlugin::ZeroConfPlugin(TQObject* parent, const char* name, const TQStringList& args)
+	: Plugin(parent, name,args,NAME,i18n("Zeroconf"),AUTHOR,TQString(),i18n("Finds peers running ktorrent on the local network to share torrents with"),"ktplugins")
 	{
 		services.setAutoDelete(true);
 	}

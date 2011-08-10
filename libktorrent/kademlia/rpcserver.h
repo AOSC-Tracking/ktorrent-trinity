@@ -57,7 +57,7 @@ namespace dht
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		RPCServer(DHT* dh_table,Uint16 port,TQObject *tqparent = 0);
+		RPCServer(DHT* dh_table,Uint16 port,TQObject *parent = 0);
 		virtual ~RPCServer();
 		
 		/// Start the server

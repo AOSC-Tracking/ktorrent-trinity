@@ -25,8 +25,8 @@ K_EXPORT_COMPONENT_FACTORY(ktstatsplugin, KGenericFactory<kt::StatsPlugin>("ktst
 namespace kt
 {
 
-StatsPlugin::StatsPlugin(TQObject* tqparent, const char* qt_name, const TQStringList& args):
-		Plugin(tqparent, qt_name, args, "Statistics", i18n("Statistics"),"Krzysztof Kundzicz", "athantor@gmail.com", i18n("Shows transfers statistics"),"ktimemon"), pmUiSpd(0), pmUiCon(0), pmPrefsUi(0), pmUpdTmr(0)
+StatsPlugin::StatsPlugin(TQObject* parent, const char* qt_name, const TQStringList& args):
+		Plugin(parent, qt_name, args, "Statistics", i18n("Statistics"),"Krzysztof Kundzicz", "athantor@gmail.com", i18n("Shows transfers statistics"),"ktimemon"), pmUiSpd(0), pmUiCon(0), pmPrefsUi(0), pmUpdTmr(0)
 { 
 	mUpAvg = std::make_pair(0.0, 0.0);
 	mDownAvg = std::make_pair(0.0, 0.0);
@@ -46,8 +46,8 @@ void StatsPlugin::load()
 	mUpdCtr = 1;
 	mPeerSpdUpdCtr = 1;
 	
-	pmUiSpd = new StatsSpd(dynamic_cast<TQWidget *>(tqparent()));
-	pmUiCon = new StatsCon(dynamic_cast<TQWidget *>(tqparent()));
+	pmUiSpd = new StatsSpd(dynamic_cast<TQWidget *>(parent()));
+	pmUiCon = new StatsCon(dynamic_cast<TQWidget *>(parent()));
 	pmPrefsUi = new StatsPluginPrefs();
 	pmUpdTmr = new TQTimer(this);
 	

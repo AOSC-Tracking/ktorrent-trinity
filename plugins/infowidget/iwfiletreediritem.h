@@ -50,7 +50,7 @@ namespace kt
 	{
 	public:
 		IWFileTreeDirItem(KListView* klv,const TQString & name);
-		IWFileTreeDirItem(IWFileTreeDirItem* tqparent,const TQString & name);
+		IWFileTreeDirItem(IWFileTreeDirItem* parent,const TQString & name);
 		virtual ~IWFileTreeDirItem();
 	
 		/**

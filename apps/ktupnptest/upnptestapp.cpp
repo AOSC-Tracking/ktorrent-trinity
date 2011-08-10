@@ -29,8 +29,8 @@
 using namespace bt;
 using namespace kt;
 
-UPnPTestApp::UPnPTestApp(TQWidget *tqparent, const char *name)
-		: KMainWindow(tqparent, name)
+UPnPTestApp::UPnPTestApp(TQWidget *parent, const char *name)
+		: KMainWindow(parent, name)
 {
 	sock = new UPnPMCastSocket(true);
 	connect(sock,TQT_SIGNAL(discovered( UPnPRouter* )),this,TQT_SLOT(discovered( UPnPRouter* )));

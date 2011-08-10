@@ -30,7 +30,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		WebInterfacePrefWidget(TQWidget *tqparent = 0, const char *name = 0);
+		WebInterfacePrefWidget(TQWidget *parent = 0, const char *name = 0);
 		bool apply();
 		TQCString password;
 	public slots:

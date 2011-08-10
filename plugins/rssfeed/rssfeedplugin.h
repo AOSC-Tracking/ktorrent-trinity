@@ -39,7 +39,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		RssFeedPlugin(TQObject* tqparent, const char* name, const TQStringList& args);
+		RssFeedPlugin(TQObject* parent, const char* name, const TQStringList& args);
 		virtual ~RssFeedPlugin();
 
 		virtual void load();

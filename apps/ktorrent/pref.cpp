@@ -152,9 +152,9 @@ DownloadPrefPage::~ DownloadPrefPage()
 	delete dp;
 }
 
-void DownloadPrefPage::createWidget(TQWidget* tqparent)
+void DownloadPrefPage::createWidget(TQWidget* parent)
 {
-	dp = new DownloadPref(tqparent);
+	dp = new DownloadPref(parent);
 	updateData();
 }
 
@@ -222,9 +222,9 @@ GeneralPrefPage::~GeneralPrefPage()
 	delete gp;
 }
 
-void GeneralPrefPage::createWidget(TQWidget* tqparent)
+void GeneralPrefPage::createWidget(TQWidget* parent)
 {
-	gp = new GeneralPref(tqparent);
+	gp = new GeneralPref(parent);
 	updateData();
 	connect(gp->custom_ip_check, TQT_SIGNAL(toggled(bool)),
 			this, TQT_SLOT(customIPChecked(bool)));
@@ -459,9 +459,9 @@ void AdvancedPrefPage::updateData()
 	ap->max_con_setups->setValue(Settings::maxConnectingSockets());
 }
 
-void AdvancedPrefPage::createWidget(TQWidget* tqparent)
+void AdvancedPrefPage::createWidget(TQWidget* parent)
 {
-	ap = new AdvancedPref(tqparent);
+	ap = new AdvancedPref(parent);
 	updateData();
 	connect(ap->no_recheck, TQT_SIGNAL(toggled(bool)),
 			this, TQT_SLOT(noDataCheckChecked(bool)));

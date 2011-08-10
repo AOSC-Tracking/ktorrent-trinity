@@ -40,10 +40,10 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		FloatSpinBox( TQWidget* tqparent=0, const char* name=0 );
-		FloatSpinBox( int precision = 2, TQWidget* tqparent=0, const char* name=0 );
+		FloatSpinBox( TQWidget* parent=0, const char* name=0 );
+		FloatSpinBox( int precision = 2, TQWidget* parent=0, const char* name=0 );
 		FloatSpinBox( float minValue, float maxValue, float step = 0.5,  int precision = 2,
-			TQWidget* tqparent=0, const char* name=0 );
+			TQWidget* parent=0, const char* name=0 );
 		virtual ~FloatSpinBox();
 		
 		TQString mapValueToText( int value );

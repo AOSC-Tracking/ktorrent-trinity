@@ -116,10 +116,10 @@ static double Percentage(const TorrentStats & s)
 
 
 
-KTorrentViewItem::KTorrentViewItem(KTorrentView* tqparent,TorrentInterface* tc)
-	: KListViewItem(tqparent->listView()),tc(tc)
+KTorrentViewItem::KTorrentViewItem(KTorrentView* parent,TorrentInterface* tc)
+	: KListViewItem(parent->listView()),tc(tc)
 {
-	m_parent = tqparent;
+	m_parent = parent;
 	update();
 }
 

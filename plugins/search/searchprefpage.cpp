@@ -47,7 +47,7 @@ using namespace bt;
 
 namespace kt
 {
-	SearchPrefPageWidget::SearchPrefPageWidget(TQWidget *tqparent) : SEPreferences(tqparent)
+	SearchPrefPageWidget::SearchPrefPageWidget(TQWidget *parent) : SEPreferences(parent)
 	{
 		TQString info = i18n("Use your web browser to search for the string %1"
 				" (capital letters) on the search engine you want to add. <br> "
@@ -264,9 +264,9 @@ namespace kt
 		return ret;
 	}
 
-	void SearchPrefPage::createWidget(TQWidget* tqparent)
+	void SearchPrefPage::createWidget(TQWidget* parent)
 	{
-		widget = new SearchPrefPageWidget(tqparent);
+		widget = new SearchPrefPageWidget(parent);
 	}
 
 	void SearchPrefPage::deleteWidget()

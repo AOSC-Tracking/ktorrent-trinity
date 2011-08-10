@@ -32,7 +32,7 @@ class KTorrentViewMenu : public KPopupMenu
 	Q_OBJECT
   TQ_OBJECT
 public:
-	KTorrentViewMenu(KTorrentView *tqparent, const char *name = 0 );
+	KTorrentViewMenu(KTorrentView *parent, const char *name = 0 );
 	virtual ~KTorrentViewMenu();
 	
 	/// Show the menu at the given point

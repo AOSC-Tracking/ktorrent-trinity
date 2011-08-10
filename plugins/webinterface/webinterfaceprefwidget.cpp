@@ -44,7 +44,7 @@ using namespace bt;
 namespace kt
 {
 
-WebInterfacePrefWidget::WebInterfacePrefWidget(TQWidget *tqparent, const char *name):WebInterfacePreference(tqparent,name)
+WebInterfacePrefWidget::WebInterfacePrefWidget(TQWidget *parent, const char *name):WebInterfacePreference(parent,name)
 {
 	port->setValue(WebInterfacePluginSettings::port());
 	forward->setChecked(WebInterfacePluginSettings::forward());

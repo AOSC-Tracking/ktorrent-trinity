@@ -33,7 +33,7 @@ using namespace bt;
 namespace kt
 {
 
-	RssLinkDownloader::RssLinkDownloader(CoreInterface* core, TQString link, RssFilter * filter, TQObject * tqparent) : TQObject (tqparent)
+	RssLinkDownloader::RssLinkDownloader(CoreInterface* core, TQString link, RssFilter * filter, TQObject * parent) : TQObject (parent)
 		{
 			//tempFile.setAutoDelete(true);
 			m_core = core;

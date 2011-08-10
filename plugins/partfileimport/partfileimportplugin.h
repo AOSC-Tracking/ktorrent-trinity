@@ -35,7 +35,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		PartFileImportPlugin(TQObject* tqparent, const char* name, const TQStringList& args);
+		PartFileImportPlugin(TQObject* parent, const char* name, const TQStringList& args);
 		virtual ~PartFileImportPlugin();
 
 		virtual void load();

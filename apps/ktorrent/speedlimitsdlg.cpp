@@ -30,8 +30,8 @@
 using namespace bt;
 using namespace kt;
 
-SpeedLimitsDlg::SpeedLimitsDlg(kt::TorrentInterface* ti,TQWidget* tqparent, const char* name)
-		: SpeedLimitsDlgBase(tqparent,name,true,0),tor(ti)
+SpeedLimitsDlg::SpeedLimitsDlg(kt::TorrentInterface* ti,TQWidget* parent, const char* name)
+		: SpeedLimitsDlgBase(parent,name,true,0),tor(ti)
 {
 	m_main_caption->setText(i18n("Speed limits for <b>%1</b>:").tqarg(tor->getStats().torrent_name));
 	Uint32 up,down;

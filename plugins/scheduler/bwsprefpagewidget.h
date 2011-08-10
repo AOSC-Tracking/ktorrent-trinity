@@ -36,7 +36,7 @@ namespace kt
 			Q_OBJECT
   TQ_OBJECT
 		public:
-			BWSPrefPageWidget(TQWidget* tqparent = 0, const char* name = 0, WFlags fl = 0 );
+			BWSPrefPageWidget(TQWidget* parent = 0, const char* name = 0, WFlags fl = 0 );
 			~BWSPrefPageWidget();
 			/*$PUBLIC_FUNCTIONS$*/
 			

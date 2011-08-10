@@ -44,8 +44,8 @@
 using namespace bt;
 using namespace kt;
 
-QueueItem::QueueItem(kt::TorrentInterface* t, TQListView* tqparent)
-	:TQListViewItem(tqparent), tc(t)
+QueueItem::QueueItem(kt::TorrentInterface* t, TQListView* parent)
+	:TQListViewItem(parent), tc(t)
 {
 	setPriority(tc->getPriority());
 	setText(0, TQString(tc->getStats().torrent_name));
@@ -95,8 +95,8 @@ void QueueItem::paintCell(TQPainter* p,const TQColorGroup & cg,int column,int wi
 	TQListViewItem::paintCell(p,colorGrp,column,width,align);
 }
 
-QueueDialog::QueueDialog(bt::QueueManager* qm, TQWidget *tqparent, const char *name)
-	:QueueDlg(tqparent, name)
+QueueDialog::QueueDialog(bt::QueueManager* qm, TQWidget *parent, const char *name)
+	:QueueDlg(parent, name)
 {
 	KIconLoader* iload = KGlobal::iconLoader();
 	

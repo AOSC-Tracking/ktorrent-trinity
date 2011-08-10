@@ -39,10 +39,10 @@
 
 namespace Ideal {
 
-Button::Button(ButtonBar *tqparent, const TQString text, const TQIconSet &icon,
+Button::Button(ButtonBar *parent, const TQString text, const TQIconSet &icon,
     const TQString &description)
-    :TQPushButton(icon, text, tqparent), m_buttonBar(tqparent), m_description(description),
-    m_place(tqparent->place()), m_realText(text), m_realIconSet(icon)
+    :TQPushButton(icon, text, parent), m_buttonBar(parent), m_description(description),
+    m_place(parent->place()), m_realText(text), m_realIconSet(icon)
 {
     hide();
     setFlat(true);

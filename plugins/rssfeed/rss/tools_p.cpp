@@ -27,9 +27,9 @@ time_t RSS::parseISO8601Date(const TQString &s)
 }
 
 
-TQString RSS::extractNode(const TQDomNode &tqparent, const TQString &elemName, bool isInlined)
+TQString RSS::extractNode(const TQDomNode &parent, const TQString &elemName, bool isInlined)
 {
-	TQDomNode node = tqparent.namedItem(elemName);
+	TQDomNode node = parent.namedItem(elemName);
 	if (node.isNull())
 		return TQString();
 

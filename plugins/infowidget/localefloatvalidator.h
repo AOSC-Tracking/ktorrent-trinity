@@ -35,7 +35,7 @@ namespace kt{
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		LocaleFloatValidator( TQObject * tqparent, const char *name = 0 );
+		LocaleFloatValidator( TQObject * parent, const char *name = 0 );
 	
 		virtual TQValidator::State validate( TQString & str, int & pos) const;
 	private:

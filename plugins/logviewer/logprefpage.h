@@ -38,7 +38,7 @@ namespace kt
 			virtual ~LogPrefPage();
 
 			virtual bool apply();
-			virtual void createWidget(TQWidget* tqparent);
+			virtual void createWidget(TQWidget* parent);
 			virtual void updateData();
 			virtual void deleteWidget();
 			

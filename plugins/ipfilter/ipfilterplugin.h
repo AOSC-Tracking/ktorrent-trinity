@@ -44,7 +44,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		IPFilterPlugin(TQObject* tqparent, const char* name, const TQStringList& args);
+		IPFilterPlugin(TQObject* parent, const char* name, const TQStringList& args);
 		virtual ~IPFilterPlugin();
 
 		virtual void load();

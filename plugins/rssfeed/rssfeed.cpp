@@ -54,7 +54,7 @@ namespace kt
 		startFeed();
 	}
 	
-	RssFeed::RssFeed(TQObject * tqparent) : TQObject(tqparent)
+	RssFeed::RssFeed(TQObject * parent) : TQObject(parent)
 	{
 		m_active = false;
 		m_articleAge = 365;

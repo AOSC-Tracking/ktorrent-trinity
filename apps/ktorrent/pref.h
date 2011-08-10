@@ -44,7 +44,7 @@ public:
 	
 	virtual bool apply();
 	virtual void updateData();	
-	virtual void createWidget(TQWidget* tqparent);
+	virtual void createWidget(TQWidget* parent);
 	virtual void deleteWidget();
 };
 
@@ -59,7 +59,7 @@ public:
 	
 	virtual bool apply();
 	virtual void updateData();
-	virtual void createWidget(TQWidget* tqparent);
+	virtual void createWidget(TQWidget* parent);
 	virtual void deleteWidget();
 	
 private slots:
@@ -81,7 +81,7 @@ public:
 	
 	virtual bool apply();
 	virtual void updateData();
-	virtual void createWidget(TQWidget* tqparent);
+	virtual void createWidget(TQWidget* parent);
 	virtual void deleteWidget();
 	
 private slots:

@@ -43,8 +43,8 @@
 
 namespace kt
 {
-	TrackerView::TrackerView(TQWidget *tqparent, const char *name)
-		:TrackerViewBase(tqparent, name), tc(0)
+	TrackerView::TrackerView(TQWidget *parent, const char *name)
+		:TrackerViewBase(parent, name), tc(0)
 	{
 		KIconLoader* iload = KGlobal::iconLoader();
 		btnUpdate->setIconSet(iload->loadIconSet("apply", KIcon::Small));

@@ -39,7 +39,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		HTMLPart(TQWidget *tqparent = 0);
+		HTMLPart(TQWidget *parent = 0);
 		virtual ~HTMLPart();
 	
 	public slots:

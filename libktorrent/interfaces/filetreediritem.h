@@ -51,12 +51,12 @@ namespace kt
 		Uint64 size;
 		bt::PtrMap<TQString,FileTreeItem> tqchildren;
 		bt::PtrMap<TQString,FileTreeDirItem> subdirs;
-		FileTreeDirItem* tqparent;
+		FileTreeDirItem* parent;
 		bool manual_change;
 		FileTreeRootListener* root_listener;
 	public:
 		FileTreeDirItem(KListView* klv,const TQString & name,FileTreeRootListener* rl = 0);
-		FileTreeDirItem(FileTreeDirItem* tqparent,const TQString & name);
+		FileTreeDirItem(FileTreeDirItem* parent,const TQString & name);
 		virtual ~FileTreeDirItem();
 		
 		/// Get the path of the directory (if this is the root directory / will be returned)
@@ -93,11 +93,11 @@ namespace kt
 		void invertChecked();
 
 		/**
-		 * Called by the child to notify the tqparent it's state has changed.
+		 * Called by the child to notify the parent it's state has changed.
 		 */
 		void childStateChange();
 
-		FileTreeDirItem* getParent() {return tqparent;}
+		FileTreeDirItem* getParent() {return parent;}
 		
 		/// Recusively get the total number of bytes to download
 		Uint64 bytesToDownload() const;

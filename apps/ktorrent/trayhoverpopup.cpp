@@ -28,8 +28,8 @@
 
 using namespace bt;
 
-TrayHoverPopup::TrayHoverPopup(const TQPixmap & pix,TQWidget *tqparent, const char *name )
-	: KPassivePopup(KPassivePopup::Boxed,tqparent,name),pix(pix)
+TrayHoverPopup::TrayHoverPopup(const TQPixmap & pix,TQWidget *parent, const char *name )
+	: KPassivePopup(KPassivePopup::Boxed,parent,name),pix(pix)
 {
 	setTimeout(0);
 	setAutoDelete(false);

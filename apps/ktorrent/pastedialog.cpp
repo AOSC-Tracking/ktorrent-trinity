@@ -29,8 +29,8 @@
 #include <kmessagebox.h>
 #include <klocale.h>
 
-PasteDialog::PasteDialog(KTorrentCore* core, TQWidget *tqparent, const char *name)
-		:PasteDlgBase(tqparent, name)
+PasteDialog::PasteDialog(KTorrentCore* core, TQWidget *parent, const char *name)
+		:PasteDlgBase(parent, name)
 {
 	m_core = core;
 	TQClipboard *cb = TQApplication::tqclipboard();

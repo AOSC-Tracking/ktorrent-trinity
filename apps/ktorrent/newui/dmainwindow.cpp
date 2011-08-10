@@ -29,8 +29,8 @@
 #include "dtabwidget.h"
 #include "docksplitter.h"
 
-DMainWindow::DMainWindow(TQWidget *tqparent, const char *name)
-    :KParts::MainWindow(tqparent, name), m_firstRemoved(false), m_currentWidget(0)
+DMainWindow::DMainWindow(TQWidget *parent, const char *name)
+    :KParts::MainWindow(parent, name), m_firstRemoved(false), m_currentWidget(0)
 {
     loadSettings();
     createToolWindows();

@@ -44,7 +44,7 @@ namespace kt
   TQ_OBJECT
 	
 	public:
-		UPnPPrefWidget(TQWidget* tqparent = 0, const char* name = 0, WFlags fl = 0 );
+		UPnPPrefWidget(TQWidget* parent = 0, const char* name = 0, WFlags fl = 0 );
 		virtual ~UPnPPrefWidget();
 		
 		void shutdown(bt::WaitJob* job);

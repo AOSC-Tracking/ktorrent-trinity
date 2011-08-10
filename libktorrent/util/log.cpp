@@ -45,7 +45,7 @@ namespace bt
 	class Log::Private
 	{
 	public:
-		Log* tqparent;
+		Log* parent;
 		TQTextStream* out;
 		TQFile fptr;
 		bool to_cout;
@@ -55,7 +55,7 @@ namespace bt
 		unsigned int m_filter;
 		AutoRotateLogJob* rotate_job;
 	public:
-		Private(Log* tqparent) : tqparent(tqparent),out(0),to_cout(false),rotate_job(0)
+		Private(Log* parent) : parent(parent),out(0),to_cout(false),rotate_job(0)
 		{
 			out = new TQTextStream();
 		}
@@ -146,7 +146,7 @@ namespace bt
 				fptr.close(); // close the log file
 				out->setDevice(0);		
 				// start the rotate job
-				rotate_job = new AutoRotateLogJob(file,tqparent); 
+				rotate_job = new AutoRotateLogJob(file,parent); 
 			}
 		}
 		

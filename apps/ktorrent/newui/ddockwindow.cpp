@@ -39,9 +39,9 @@
 #include "button.h"
 #include "dmainwindow.h"
 
-DDockWindow::DDockWindow(DMainWindow *tqparent, Position position)
-    :TQDockWindow(TQDockWindow::InDock, tqparent), m_position(position), m_visible(false),
-    m_mainWindow(tqparent), m_doNotCloseActiveWidget(false), m_toggledButton(0), m_lastContextMenuButton(0)
+DDockWindow::DDockWindow(DMainWindow *parent, Position position)
+    :TQDockWindow(TQDockWindow::InDock, parent), m_position(position), m_visible(false),
+    m_mainWindow(parent), m_doNotCloseActiveWidget(false), m_toggledButton(0), m_lastContextMenuButton(0)
 {
     setMovingEnabled(false);
     setResizeEnabled(true);
@@ -347,7 +347,7 @@ bool DDockWindow::isActive()
         else
         {
             do {
-                w = (TQWidget*)w->tqparent();
+                w = (TQWidget*)w->parent();
                 if (w && (w == toolWidget)) return true;
             } while (w);
         }

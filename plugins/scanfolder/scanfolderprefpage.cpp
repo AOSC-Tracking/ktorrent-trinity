@@ -49,9 +49,9 @@ namespace kt
 		return true;
 	}
 
-	void ScanFolderPrefPage::createWidget(TQWidget* tqparent)
+	void ScanFolderPrefPage::createWidget(TQWidget* parent)
 	{
-		m_widget = new ScanFolderPrefPageWidget(tqparent);
+		m_widget = new ScanFolderPrefPageWidget(parent);
 	}
 
 	void ScanFolderPrefPage::updateData()

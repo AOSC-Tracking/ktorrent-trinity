@@ -75,7 +75,7 @@ namespace kt
 			/**
 			 * Default constructor.
 			 */
-			RssFilter(TQObject * tqparent = 0);
+			RssFilter(TQObject * parent = 0);
 			RssFilter(const RssFilter &other);
 			RssFilter(TQString title, bool active, TQStringList regexps, bool series, bool sansEpisode, 
 					int minSeason, int minEpisode, int maxSeason, int maxEpisode, 

@@ -38,8 +38,8 @@ namespace kt
 	{
 	}
 	
-	IWFileTreeDirItem::IWFileTreeDirItem(IWFileTreeDirItem* tqparent,const TQString & name)
-		: kt::FileTreeDirItem(tqparent,name)
+	IWFileTreeDirItem::IWFileTreeDirItem(IWFileTreeDirItem* parent,const TQString & name)
+		: kt::FileTreeDirItem(parent,name)
 	{
 	}
 	

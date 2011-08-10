@@ -36,8 +36,8 @@
 using namespace bt;
 using namespace kt;
 
-TrayIcon::TrayIcon( KTorrentCore* tc, TQWidget *tqparent, const char *name)
-		: KSystemTray(tqparent, name)
+TrayIcon::TrayIcon( KTorrentCore* tc, TQWidget *parent, const char *name)
+		: KSystemTray(parent, name)
 {
 	m_core = tc;
 	m_kt_pix = loadIcon("ktorrent");
@@ -282,7 +282,7 @@ void TrayIcon::lowDiskSpace(kt::TorrentInterface * tc, bool stopped)
 	showPassivePopup(msg,i18n("Device running out of space"));
 }
 
-SetMaxRate::SetMaxRate( KTorrentCore* tc, int t, TQWidget *tqparent, const char *name):KPopupMenu(tqparent, name)
+SetMaxRate::SetMaxRate( KTorrentCore* tc, int t, TQWidget *parent, const char *name):KPopupMenu(parent, name)
 {
 	m_core = tc;
 	type=t;

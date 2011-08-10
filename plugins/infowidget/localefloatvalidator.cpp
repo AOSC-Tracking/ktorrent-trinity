@@ -23,8 +23,8 @@
 #include <klocale.h>
 #include "localefloatvalidator.h"
 
-kt::LocaleFloatValidator::LocaleFloatValidator( TQObject * tqparent, const char * name )
-:TQValidator(tqparent, name)
+kt::LocaleFloatValidator::LocaleFloatValidator( TQObject * parent, const char * name )
+:TQValidator(parent, name)
 {
 	TQString decimalPoint = TQRegExp::escape(KGlobal::locale()->decimalSymbol());
 	regexp.setPattern("^-?\\d*(" + decimalPoint + "\\d*)?$");

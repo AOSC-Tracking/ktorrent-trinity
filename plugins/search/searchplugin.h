@@ -39,7 +39,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		SearchPlugin(TQObject* tqparent, const char* name, const TQStringList& args);
+		SearchPlugin(TQObject* parent, const char* name, const TQStringList& args);
 		virtual ~SearchPlugin();
 
 		virtual void load();

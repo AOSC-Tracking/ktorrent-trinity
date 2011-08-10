@@ -27,7 +27,7 @@
 namespace kt
 {
 	
-AvailabilityChunkBar::AvailabilityChunkBar(TQWidget* tqparent, const char* name): ChunkBar(tqparent, name)
+AvailabilityChunkBar::AvailabilityChunkBar(TQWidget* parent, const char* name): ChunkBar(parent, name)
 {
 	TQToolTip::add(this, i18n("<img src=\"available_color\">&nbsp; - Available Chunks<br><img src=\"unavailable_color\">&nbsp; - Unavailable Chunks<br><img src=\"excluded_color\">&nbsp; - Excluded Chunks"));
 }

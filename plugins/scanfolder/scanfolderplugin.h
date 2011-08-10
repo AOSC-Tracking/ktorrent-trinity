@@ -40,7 +40,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		ScanFolderPlugin(TQObject* tqparent, const char* name, const TQStringList& args);
+		ScanFolderPlugin(TQObject* parent, const char* name, const TQStringList& args);
 		virtual ~ScanFolderPlugin();
 
 		virtual void load();

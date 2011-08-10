@@ -58,9 +58,9 @@ namespace kt
 		
 		/**
 		 * Create the actual widget.
-		 * @param tqparent The tqparent of the widget
+		 * @param parent The parent of the widget
 		 */
-		virtual void createWidget(TQWidget* tqparent)=0;
+		virtual void createWidget(TQWidget* parent)=0;
 
 		/**
 		 * Update all data on the widget, gets called before

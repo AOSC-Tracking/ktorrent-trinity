@@ -36,8 +36,8 @@ using namespace kt;
 
 	
 ScanDialog::ScanDialog(KTorrentCore* core,bool auto_import,
-					   TQWidget* tqparent, const char* name, bool modal, WFlags fl)
-	: ScanDlgBase(tqparent,name, modal,fl),DataCheckerListener(auto_import),mutex(true),core(core)
+					   TQWidget* parent, const char* name, bool modal, WFlags fl)
+	: ScanDlgBase(parent,name, modal,fl),DataCheckerListener(auto_import),mutex(true),core(core)
 {
 	m_cancel->setGuiItem(KStdGuiItem::cancel());
 	connect(m_cancel,TQT_SIGNAL(clicked()),this,TQT_SLOT(onCancelPressed()));

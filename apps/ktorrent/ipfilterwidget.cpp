@@ -40,8 +40,8 @@
 
 using namespace bt;
 
-IPFilterWidget::IPFilterWidget(TQWidget *tqparent, const char *name)
-		:BlacklistWidgetBase(tqparent, name)
+IPFilterWidget::IPFilterWidget(TQWidget *parent, const char *name)
+		:BlacklistWidgetBase(parent, name)
 {
 	IPBlocklist& ipfilter = IPBlocklist::instance();
 	TQStringList* blocklist = ipfilter.getBlocklist();

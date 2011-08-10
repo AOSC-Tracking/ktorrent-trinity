@@ -60,7 +60,7 @@ using namespace bt;
 namespace kt
 {
 
-	RssFeedManager::RssFeedManager(CoreInterface* core, TQWidget * tqparent) : RssFeedWidget(tqparent)
+	RssFeedManager::RssFeedManager(CoreInterface* core, TQWidget * parent) : RssFeedWidget(parent)
 	{
 		//Construct the manager
 		m_core = core;

@@ -241,9 +241,9 @@ TQString Article::meta(const TQString &key) const
     return d->meta[key];
 }
 
-KURLLabel *Article::widget(TQWidget *tqparent, const char *name) const
+KURLLabel *Article::widget(TQWidget *parent, const char *name) const
 {
-	KURLLabel *label = new KURLLabel(d->link.url(), d->title, tqparent, name);
+	KURLLabel *label = new KURLLabel(d->link.url(), d->title, parent, name);
 	label->setUseTips(true);
 	if (!d->description.isNull())
 		label->setTipText(d->description);

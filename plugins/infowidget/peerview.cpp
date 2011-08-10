@@ -207,8 +207,8 @@ namespace kt
 		return 0;
 	}
 	
-	PeerView::PeerView(TQWidget *tqparent, const char *name)
-			: KListView(tqparent, name)
+	PeerView::PeerView(TQWidget *parent, const char *name)
+			: KListView(parent, name)
 	{
 		addColumn(i18n("IP"));
 		addColumn(i18n("Country"));

@@ -43,9 +43,9 @@ namespace kt
 		return true;
 	}
 
-	void UPnPPrefPage::createWidget(TQWidget* tqparent)
+	void UPnPPrefPage::createWidget(TQWidget* parent)
 	{
-		widget = new UPnPPrefWidget(tqparent);
+		widget = new UPnPPrefWidget(parent);
 		TQObject::connect(sock,TQT_SIGNAL(discovered(UPnPRouter* )),widget,TQT_SLOT(addDevice(UPnPRouter* )));
 		TQObject::connect(widget,TQT_SIGNAL(rescan()),sock,TQT_SLOT(discover()));
 	}

@@ -55,7 +55,7 @@ using namespace bt;
 using namespace kt;
 
 
-TorrentView::TorrentView(KTorrentView* tqparent) : KListView(tqparent),ktview(tqparent)
+TorrentView::TorrentView(KTorrentView* parent) : KListView(parent),ktview(parent)
 {}
 	
 TorrentView::~TorrentView() 
@@ -82,8 +82,8 @@ bool TorrentView::eventFilter(TQObject* watched, TQEvent* e)
 	return KListView::eventFilter(watched, e);
 }
 
-KTorrentView::KTorrentView(TQWidget *tqparent)
-	: TQWidget(tqparent),menu(0),current_group(0),running(0),total(0),view(0),filter_bar(0)
+KTorrentView::KTorrentView(TQWidget *parent)
+	: TQWidget(parent),menu(0),current_group(0),running(0),total(0),view(0),filter_bar(0)
 {
 	TQVBoxLayout* tqlayout = new TQVBoxLayout(this);
 	tqlayout->setAutoAdd(true);

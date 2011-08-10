@@ -350,7 +350,7 @@ namespace bt
 		TorrentControl* tc = new TorrentControl();
 		try
 		{
-			// get the tqparent dir of target
+			// get the parent dir of target
 			TQFileInfo fi = TQFileInfo(target);
 			
 			TQString odir;

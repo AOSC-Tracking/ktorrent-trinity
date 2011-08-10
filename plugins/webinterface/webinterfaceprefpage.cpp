@@ -43,9 +43,9 @@ namespace kt
 		return true;
 	}
 
-	void WebInterfacePrefPage::createWidget(TQWidget* tqparent)
+	void WebInterfacePrefPage::createWidget(TQWidget* parent)
 	{
-		m_widget = new WebInterfacePrefWidget(tqparent);
+		m_widget = new WebInterfacePrefWidget(parent);
 	}
 
 	void WebInterfacePrefPage::updateData()

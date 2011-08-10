@@ -31,8 +31,8 @@
 
 namespace kt
 {
-	LogPrefWidget::LogPrefWidget(TQWidget *tqparent, const char *name)
-			:LogPrefWidgetBase(tqparent, name)
+	LogPrefWidget::LogPrefWidget(TQWidget *parent, const char *name)
+			:LogPrefWidgetBase(parent, name)
 	{
 		m_sysgen->setCurrentItem(getLevel(LogViewerPluginSettings::sysGEN()));
 		m_syscon->setCurrentItem(getLevel(LogViewerPluginSettings::sysCON()));

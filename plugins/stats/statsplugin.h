@@ -134,11 +134,11 @@ class StatsPlugin : public Plugin
 	public:
 		/**
 		\brief Constructor
-		\param tqparent Parent
+		\param parent Parent
 		\param qt_name 
 		\param args
 		*/
-		StatsPlugin(TQObject* tqparent, const char* qt_name, const TQStringList& args);
+		StatsPlugin(TQObject* parent, const char* qt_name, const TQStringList& args);
 		///Destructor
 		virtual ~StatsPlugin();
 		

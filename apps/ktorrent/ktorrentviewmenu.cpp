@@ -28,76 +28,76 @@
 		
 using namespace kt;
 
-KTorrentViewMenu::KTorrentViewMenu (KTorrentView *tqparent, const char *name )
-		: KPopupMenu ( tqparent, name ),view(tqparent)
+KTorrentViewMenu::KTorrentViewMenu (KTorrentView *parent, const char *name )
+		: KPopupMenu ( parent, name ),view(parent)
 {
 	KIconLoader* iload = KGlobal::iconLoader();
 	
 	stop_id = insertItem(
 			iload->loadIconSet("ktstop",KIcon::Small),i18n("to stop", "Stop"),
-			tqparent,TQT_SLOT(stopDownloads()));
+			parent,TQT_SLOT(stopDownloads()));
 
 	start_id = insertItem(
 			iload->loadIconSet("ktstart",KIcon::Small),i18n("to start", "Start"),
-			tqparent,TQT_SLOT(startDownloads()));
+			parent,TQT_SLOT(startDownloads()));
 
 	remove_id = insertItem(
 			iload->loadIconSet("ktremove",KIcon::Small),i18n("Remove Torrent"),
-			tqparent,TQT_SLOT(removeDownloads()));
+			parent,TQT_SLOT(removeDownloads()));
 	
 	remove_all_id = insertItem(
 			iload->loadIconSet("ktremove",KIcon::Small),i18n("Remove Torrent and Data"),
-			tqparent,TQT_SLOT(removeDownloadsAndData()));
+			parent,TQT_SLOT(removeDownloadsAndData()));
 	
 	queue_id = insertItem(
 			iload->loadIconSet("player_playlist",KIcon::Small),i18n("Enqueue/Dequeue"),
-			tqparent,TQT_SLOT(queueSlot()));
+			parent,TQT_SLOT(queueSlot()));
 	
 	insertSeparator();
 	
 	add_peer_id = insertItem(
 			iload->loadIconSet("add", KIcon::Small), i18n("Add Peers"),
-			tqparent, TQT_SLOT(showAddPeersWidget())); 
+			parent, TQT_SLOT(showAddPeersWidget())); 
 	
 	peer_sources_menu = new KPopupMenu(this);
 	peer_sources_id = insertItem(i18n("Additional Peer Sources"), peer_sources_menu);
 	peer_sources_menu->insertTitle(i18n("Torrent Peer Sources:"));
 	peer_sources_menu->setCheckable(true);
-	dht_id = peer_sources_menu->insertItem(i18n("DHT"), tqparent, TQT_SLOT(dhtSlot()));
-	ut_pex_id = peer_sources_menu->insertItem(i18n("Peer Exchange"), tqparent, TQT_SLOT(utPexSlot()));
+	dht_id = peer_sources_menu->insertItem(i18n("DHT"), parent, TQT_SLOT(dhtSlot()));
+	ut_pex_id = peer_sources_menu->insertItem(i18n("Peer Exchange"), parent, TQT_SLOT(utPexSlot()));
 	
 	insertSeparator();
 	
 	announce_id = insertItem(
 			iload->loadIconSet("apply",KIcon::Small),i18n("Manual Announce"),
-			tqparent,TQT_SLOT(manualAnnounce())); 
+			parent,TQT_SLOT(manualAnnounce())); 
 	
 	preview_id = insertItem(
 			iload->loadIconSet("frame_image",KIcon::Small),i18n("Preview"), 
-			tqparent, TQT_SLOT(previewFiles()));
+			parent, TQT_SLOT(previewFiles()));
 	
 	insertSeparator();
 	dirs_sub_menu = new KPopupMenu(this);
 	dirs_id = insertItem(i18n("Open Directory"), dirs_sub_menu);
 	outputdir_id = dirs_sub_menu->insertItem(iload->loadIconSet("folder",KIcon::Small), i18n("Data Directory"), 
-											 tqparent, TQT_SLOT(openOutputDirectory()));
+											 parent, TQT_SLOT(openOutputDirectory()));
 	torxdir_id = dirs_sub_menu->insertItem(iload->loadIconSet("folder",KIcon::Small), i18n("Temporary Directory"),
-										   tqparent, TQT_SLOT(openTorXDirectory()));
+										   parent, TQT_SLOT(openTorXDirectory()));
 	
-	downloaddir_id = insertItem(i18n("Set Download Location"), tqparent, TQT_SLOT(setDownloadLocationSlot()));
+	downloaddir_id = insertItem(i18n("Set Download Location"), parent, TQT_SLOT(setDownloadLocationSlot()));
 	
 	insertSeparator();
-	remove_from_group_id =  insertItem(i18n("Remove From Group"),tqparent, TQT_SLOT(removeFromGroup()));
+	remove_from_group_id =  insertItem(i18n("Remove From Group"),parent, TQT_SLOT(removeFromGroup()));
 	groups_sub_menu = new KPopupMenu(this);
 	
 	add_to_group_id = insertItem(i18n("Add to Group"),groups_sub_menu);
 	
 	insertSeparator();
-	scan_id = insertItem(i18n("Check Data Integrity"),tqparent, TQT_SLOT(checkDataIntegrity()));	
+	scan_id = insertItem(i18n("Check Data Integrity"),parent, TQT_SLOT(checkDataIntegrity()));	
 	
 	connect(groups_sub_menu,TQT_SIGNAL(activated(int)),this,TQT_SLOT(gsmItemActived(int)));
 	
-	traffic_lim_id = insertItem(i18n("Speed Limits"),tqparent,TQT_SLOT(speedLimits()));
+	traffic_lim_id = insertItem(i18n("Speed Limits"),parent,TQT_SLOT(speedLimits()));
 }
 
 

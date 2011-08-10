@@ -35,7 +35,7 @@ class DMainWindow: public KParts::MainWindow {
     Q_OBJECT
   TQ_OBJECT
 public:
-    DMainWindow(TQWidget *tqparent = 0, const char *name = 0);
+    DMainWindow(TQWidget *parent = 0, const char *name = 0);
     virtual ~DMainWindow();
 
     /**@return The tool window in given @p position.*/

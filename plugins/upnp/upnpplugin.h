@@ -35,7 +35,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		UPnPPlugin(TQObject* tqparent, const char* name, const TQStringList& args);
+		UPnPPlugin(TQObject* parent, const char* name, const TQStringList& args);
 		virtual ~UPnPPlugin();
 
 		virtual void load();

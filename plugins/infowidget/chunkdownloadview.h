@@ -51,7 +51,7 @@ namespace kt
 		TQMap<kt::ChunkDownloadInterface*,ChunkDownloadViewItem*> items;
 		kt::TorrentInterface* curr_tc;
 	public:
-		ChunkDownloadView(TQWidget *tqparent = 0, const char *name = 0);
+		ChunkDownloadView(TQWidget *parent = 0, const char *name = 0);
 		virtual ~ChunkDownloadView();
 		
 		void saveLayout(KConfig* cfg,const TQString & group_name);

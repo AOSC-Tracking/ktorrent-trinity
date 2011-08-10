@@ -40,8 +40,8 @@ namespace kt
 		Group* g;
 		GroupView* gview;
 	public:
-		GroupViewItem(GroupView* tqparent,Group* g);
-		GroupViewItem(GroupView* gview,KListViewItem* tqparent,Group* g);
+		GroupViewItem(GroupView* parent,Group* g);
+		GroupViewItem(GroupView* gview,KListViewItem* parent,Group* g);
 		virtual ~GroupViewItem();
 		
 		virtual int compare(TQListViewItem* i,int col,bool ascending) const; 
@@ -55,7 +55,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		GroupView(ViewManager* view,KActionCollection* col,TQWidget *tqparent = 0, const char *name = 0);
+		GroupView(ViewManager* view,KActionCollection* col,TQWidget *parent = 0, const char *name = 0);
 		virtual ~GroupView();
 		
 		/// Get the current group
@@ -100,7 +100,7 @@ namespace kt
 		
 	private:
 		void createMenu(KActionCollection* col);
-		GroupViewItem* addGroup(Group* g,KListViewItem* tqparent);
+		GroupViewItem* addGroup(Group* g,KListViewItem* parent);
 			
 	private:
 		ViewManager* view;

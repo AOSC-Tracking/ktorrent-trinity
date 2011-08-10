@@ -35,7 +35,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		WebInterfacePlugin(TQObject* tqparent, const char* name, const TQStringList& args);
+		WebInterfacePlugin(TQObject* parent, const char* name, const TQStringList& args);
 		virtual ~WebInterfacePlugin();
 		
 		virtual void load();

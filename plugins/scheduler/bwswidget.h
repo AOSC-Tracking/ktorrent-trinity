@@ -46,7 +46,7 @@ namespace kt
 			Q_OBJECT
   TQ_OBJECT
 		public:
-			BWSWidget(TQWidget* tqparent = 0, const char* name = 0, bool useColors = true);
+			BWSWidget(TQWidget* parent = 0, const char* name = 0, bool useColors = true);
 			~BWSWidget();
 
 			///Repaints the whole widget

@@ -55,8 +55,8 @@ namespace kt
 	const TQString EMAIL = "ivasic@gmail.com";
 	const TQString DESCRIPTION = i18n("Bandwidth scheduling plugin");
 
-	SchedulerPlugin::SchedulerPlugin(TQObject* tqparent, const char* name, const TQStringList& args)
-	: Plugin(tqparent, name, args,NAME,i18n("Bandwidth Scheduler"),AUTHOR,EMAIL,DESCRIPTION, "clock")
+	SchedulerPlugin::SchedulerPlugin(TQObject* parent, const char* name, const TQStringList& args)
+	: Plugin(parent, name, args,NAME,i18n("Bandwidth Scheduler"),AUTHOR,EMAIL,DESCRIPTION, "clock")
 	{
 		setXMLFile("ktschedulerpluginui.rc");
 		bws_action = 0;

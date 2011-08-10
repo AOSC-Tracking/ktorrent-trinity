@@ -54,7 +54,7 @@ class FileSelectDlg : public FileSelectDlgBase, public kt::FileTreeRootListener
 		bool* m_start;
 
 	public:
-		FileSelectDlg(kt::GroupManager* gm, bool* user, bool* start, TQWidget* tqparent = 0, const char* name = 0,
+		FileSelectDlg(kt::GroupManager* gm, bool* user, bool* start, TQWidget* parent = 0, const char* name = 0,
 					  bool modal = true, WFlags fl = 0);
 
 		virtual ~FileSelectDlg();

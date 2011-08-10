@@ -107,7 +107,7 @@ namespace kt
 	{
 		TQVBoxLayout* tqlayout;
 	public:
-		LabelViewBox(TQWidget* tqparent) : TQWidget(tqparent)
+		LabelViewBox(TQWidget* parent) : TQWidget(parent)
 		{
 			setPaletteBackgroundColor(KGlobalSettings::baseColor());
 			tqlayout = new TQVBoxLayout(this);
@@ -145,8 +145,8 @@ namespace kt
 	
 	///////////////////////////////////////
 
-	LabelView::LabelView ( TQWidget *tqparent, const char *name )
-			: TQScrollView ( tqparent, name ),selected(0)
+	LabelView::LabelView ( TQWidget *parent, const char *name )
+			: TQScrollView ( parent, name ),selected(0)
 	{
 		item_box = new LabelViewBox(this->viewport());
 		setResizePolicy(TQScrollView::AutoOneFit);

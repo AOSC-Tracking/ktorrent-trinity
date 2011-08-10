@@ -58,8 +58,8 @@ void ManualPeerSource::signalPeersReady()
 
 //AddPeerWidget
 
-AddPeerWidget::AddPeerWidget(kt::TorrentInterface* tc, TQWidget *tqparent, const char *name)
-	:AddPeerWidgetBase(tqparent, name), m_tc(tc)
+AddPeerWidget::AddPeerWidget(kt::TorrentInterface* tc, TQWidget *parent, const char *name)
+	:AddPeerWidgetBase(parent, name), m_tc(tc)
 {
 	if(!tc)
 	{

@@ -42,8 +42,8 @@ using namespace bt;
 
 namespace kt
 {
-	ImportDialog::ImportDialog(CoreInterface* core,TQWidget* tqparent, const char* name, bool modal, WFlags fl)
-	: ImportDlgBase(tqparent,name, modal,fl),DataCheckerListener(false),core(core)
+	ImportDialog::ImportDialog(CoreInterface* core,TQWidget* parent, const char* name, bool modal, WFlags fl)
+	: ImportDlgBase(parent,name, modal,fl),DataCheckerListener(false),core(core)
 	{
 		KURLRequester* r = m_torrent_url;
 		r->setMode(KFile::File|KFile::LocalOnly);

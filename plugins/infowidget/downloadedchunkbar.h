@@ -32,7 +32,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		DownloadedChunkBar(TQWidget* tqparent, const char* name);
+		DownloadedChunkBar(TQWidget* parent, const char* name);
 		virtual ~DownloadedChunkBar();
 	
 		virtual const bt::BitSet & getBitSet() const;

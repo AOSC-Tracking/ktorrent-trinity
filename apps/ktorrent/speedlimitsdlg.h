@@ -35,7 +35,7 @@ class SpeedLimitsDlg : public SpeedLimitsDlgBase
 
 	kt::TorrentInterface* tor;
 public:
-	SpeedLimitsDlg(kt::TorrentInterface* ti,TQWidget* tqparent = 0, const char* name = 0);
+	SpeedLimitsDlg(kt::TorrentInterface* ti,TQWidget* parent = 0, const char* name = 0);
 	virtual ~SpeedLimitsDlg();
 		
 

@@ -69,8 +69,8 @@ namespace kt
 	}
 	
 	
-	ChunkDownloadView::ChunkDownloadView(TQWidget *tqparent, const char *name)
-	: ChunkDownloadViewBase(tqparent, name)
+	ChunkDownloadView::ChunkDownloadView(TQWidget *parent, const char *name)
+	: ChunkDownloadViewBase(parent, name)
 	{
 		m_list_view->setShowSortIndicator(true);
 		m_list_view->setAllColumnsShowFocus(true);

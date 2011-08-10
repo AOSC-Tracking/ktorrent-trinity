@@ -45,7 +45,7 @@ class FilterBar : public TQWidget
   TQ_OBJECT
 
 public:
-	FilterBar ( TQWidget *tqparent = 0, const char *name = 0 );
+	FilterBar ( TQWidget *parent = 0, const char *name = 0 );
 	virtual ~FilterBar();
 	
 	bool matchesFilter(kt::TorrentInterface* tc);

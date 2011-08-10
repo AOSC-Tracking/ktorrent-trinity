@@ -39,8 +39,8 @@ K_EXPORT_COMPONENT_FACTORY(ktpartfileimportplugin,KGenericFactory<kt::PartFileIm
 namespace kt
 {
 
-	PartFileImportPlugin::PartFileImportPlugin(TQObject* tqparent, const char* name, const TQStringList& args)
-	: Plugin(tqparent, name, args,NAME,i18n("Import"),AUTHOR,EMAIL,i18n("Imports partially or fully downloaded torrents from other clients"),"ktplugins")
+	PartFileImportPlugin::PartFileImportPlugin(TQObject* parent, const char* name, const TQStringList& args)
+	: Plugin(parent, name, args,NAME,i18n("Import"),AUTHOR,EMAIL,i18n("Imports partially or fully downloaded torrents from other clients"),"ktplugins")
 	{
 		setXMLFile("ktpartfileimportpluginui.rc");
 		import_action = 0;

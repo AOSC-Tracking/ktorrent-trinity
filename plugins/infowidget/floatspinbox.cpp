@@ -28,10 +28,10 @@
 
 
 kt::FloatSpinBox::FloatSpinBox( 
-	TQWidget * tqparent,
+	TQWidget * parent,
 	const char * name
 	)
-	:TQSpinBox( -100, 100, 1, tqparent, name), 
+	:TQSpinBox( -100, 100, 1, parent, name), 
 	m_precision_digits( 2 ),
 	m_value(0.0f),
 	m_minValue(0.0f),
@@ -48,10 +48,10 @@ kt::FloatSpinBox::FloatSpinBox(
 
 kt::FloatSpinBox::FloatSpinBox(
 	int precision,
-	TQWidget * tqparent,
+	TQWidget * parent,
 	const char * name
 	)
-	:TQSpinBox( -100, 100, 1, tqparent, name), 
+	:TQSpinBox( -100, 100, 1, parent, name), 
 	m_precision_digits( precision ),
 	m_value(0.0f),
 	m_minValue(0.0f),
@@ -71,10 +71,10 @@ kt::FloatSpinBox::FloatSpinBox(
 	float maxValue, 
 	float step, 
 	int precision,  
-	TQWidget * tqparent, 
+	TQWidget * parent, 
 	const char * name
 	)
-	:TQSpinBox( -100, 100, 1, tqparent, name), 
+	:TQSpinBox( -100, 100, 1, parent, name), 
 	m_precision_digits( precision ),
 	m_value(0.0f),
 	m_minValue(minValue),

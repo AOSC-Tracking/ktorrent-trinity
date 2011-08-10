@@ -55,7 +55,7 @@ namespace kt
 			 * @param core Pointer to core interface
 			 * @param openSilently Wheather to open torrent silently or nor.
 			 */
-			RssFeedManager(CoreInterface* core, TQWidget * tqparent = 0);
+			RssFeedManager(CoreInterface* core, TQWidget * parent = 0);
 			~RssFeedManager();
 
 		public slots:

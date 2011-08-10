@@ -33,7 +33,7 @@ namespace kt
   TQ_OBJECT
 	
 	public:
-		StatusTab(TQWidget* tqparent = 0, const char* name = 0, WFlags fl = 0 );
+		StatusTab(TQWidget* parent = 0, const char* name = 0, WFlags fl = 0 );
 		virtual ~StatusTab();
 		
 	

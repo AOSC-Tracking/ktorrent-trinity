@@ -37,7 +37,7 @@ class ButtonBar;
 Overrides tqminimumSize method to allow shrinking button bar buttons.*/
 class ButtonLayout: public TQBoxLayout{
 public:
-    ButtonLayout(ButtonBar *tqparent, Direction d, int margin = 0, int spacing = -1, const char * name = 0);
+    ButtonLayout(ButtonBar *parent, Direction d, int margin = 0, int spacing = -1, const char * name = 0);
 
     virtual TQSize tqminimumSize() const;
 
@@ -56,7 +56,7 @@ class ButtonBar : public TQWidget {
   TQ_OBJECT
 public:
     ButtonBar(Place place, ButtonMode mode = IconsAndText,
-        TQWidget *tqparent = 0, const char *name = 0);
+        TQWidget *parent = 0, const char *name = 0);
     virtual ~ButtonBar();
 
     /**Adds a button to the bar.*/

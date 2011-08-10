@@ -36,7 +36,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		SearchPrefPageWidget(TQWidget *tqparent = 0);
+		SearchPrefPageWidget(TQWidget *parent = 0);
 	
 		bool apply();
 		void saveSearchEngines();
@@ -65,7 +65,7 @@ namespace kt
 		virtual ~SearchPrefPage();
 
 		virtual bool apply();
-		virtual void createWidget(TQWidget* tqparent);
+		virtual void createWidget(TQWidget* parent);
 		virtual void updateData();
 		virtual void deleteWidget();
 

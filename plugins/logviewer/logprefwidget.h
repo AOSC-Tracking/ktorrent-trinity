@@ -29,7 +29,7 @@ namespace kt
 			Q_OBJECT
   TQ_OBJECT
 		public:
-			LogPrefWidget(TQWidget *tqparent = 0, const char *name = 0);
+			LogPrefWidget(TQWidget *parent = 0, const char *name = 0);
 			bool apply();
 			
 		private:

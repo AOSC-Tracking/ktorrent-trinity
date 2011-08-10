@@ -49,8 +49,8 @@
 
 using namespace kt;
 
-FileSelectDlg::FileSelectDlg(GroupManager* gm, bool* user, bool* start, TQWidget* tqparent, const char* name, bool modal, WFlags fl)
-		: FileSelectDlgBase(tqparent, name, modal, fl), m_gman(gm), m_user(user), m_start(start)
+FileSelectDlg::FileSelectDlg(GroupManager* gm, bool* user, bool* start, TQWidget* parent, const char* name, bool modal, WFlags fl)
+		: FileSelectDlgBase(parent, name, modal, fl), m_gman(gm), m_user(user), m_start(start)
 {
 	root = 0;
 	connect(m_select_all, TQT_SIGNAL(clicked()), this, TQT_SLOT(selectAll()));

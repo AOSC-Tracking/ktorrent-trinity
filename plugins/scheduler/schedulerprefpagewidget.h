@@ -34,7 +34,7 @@ namespace kt
 			Q_OBJECT
   TQ_OBJECT
 		public:
-			SchedulerPrefPageWidget(TQWidget* tqparent = 0, const char* name = 0, WFlags fl = 0 );
+			SchedulerPrefPageWidget(TQWidget* parent = 0, const char* name = 0, WFlags fl = 0 );
 
 			~SchedulerPrefPageWidget();
 

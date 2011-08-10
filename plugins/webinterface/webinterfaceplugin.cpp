@@ -40,8 +40,8 @@ K_EXPORT_COMPONENT_FACTORY(ktwebinterfaceplugin,KGenericFactory<kt::WebInterface
 using namespace bt;
 namespace kt
 {
-	WebInterfacePlugin::WebInterfacePlugin(TQObject* tqparent, const char* name, const TQStringList& args)
-	: Plugin(tqparent, name, args,NAME,i18n("Web Interface"),AUTHOR,EMAIL,i18n("Allow to control ktorrent through browser"),"toggle_log")
+	WebInterfacePlugin::WebInterfacePlugin(TQObject* parent, const char* name, const TQStringList& args)
+	: Plugin(parent, name, args,NAME,i18n("Web Interface"),AUTHOR,EMAIL,i18n("Allow to control ktorrent through browser"),"toggle_log")
 	{
 		http_server = 0;
 		pref=0;

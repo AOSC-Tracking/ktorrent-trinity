@@ -45,8 +45,8 @@ namespace kt
 
 	/* PREF PAGE WIDGET --------------------------------------------------------*/
 
-	BWSPrefPageWidget::BWSPrefPageWidget(TQWidget* tqparent, const char* name, WFlags fl)
-			: BWSPage(tqparent,name,fl)
+	BWSPrefPageWidget::BWSPrefPageWidget(TQWidget* parent, const char* name, WFlags fl)
+			: BWSPage(parent,name,fl)
 	{
 
 		loadDefault();

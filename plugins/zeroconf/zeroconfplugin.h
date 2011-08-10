@@ -38,7 +38,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		ZeroConfPlugin(TQObject* tqparent, const char* name, const TQStringList& args);
+		ZeroConfPlugin(TQObject* parent, const char* name, const TQStringList& args);
 		virtual ~ZeroConfPlugin();
 		
 		virtual void load();

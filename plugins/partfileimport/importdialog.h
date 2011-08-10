@@ -49,7 +49,7 @@ namespace kt
   TQ_OBJECT
 	
 	public:
-		ImportDialog(CoreInterface* core,TQWidget* tqparent = 0, const char* name = 0, bool modal = FALSE, WFlags fl = 0 );
+		ImportDialog(CoreInterface* core,TQWidget* parent = 0, const char* name = 0, bool modal = FALSE, WFlags fl = 0 );
 		virtual ~ImportDialog();
 		
 	public slots:

@@ -47,8 +47,8 @@ namespace kt
 	const TQString EMAIL = "skyphyr@gmail.com";
 	const TQString DESCRIPTION = i18n("Automatically scans RSS feeds for torrent matching regular expressions and loads them.");
 
-	RssFeedPlugin::RssFeedPlugin(TQObject* tqparent, const char* name, const TQStringList& args)
-	: Plugin(tqparent, name, args,NAME,i18n("RSS Feeds"),AUTHOR,EMAIL,DESCRIPTION,"player_playlist")
+	RssFeedPlugin::RssFeedPlugin(TQObject* parent, const char* name, const TQStringList& args)
+	: Plugin(parent, name, args,NAME,i18n("RSS Feeds"),AUTHOR,EMAIL,DESCRIPTION,"player_playlist")
 	{
 		m_rssFeedManager = 0;
 	}

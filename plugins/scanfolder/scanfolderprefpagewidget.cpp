@@ -32,8 +32,8 @@
 
 namespace kt
 {
-	ScanFolderPrefPageWidget::ScanFolderPrefPageWidget(TQWidget *tqparent, const char *name)
-			:SfPrefPageWidgetBase(tqparent, name)
+	ScanFolderPrefPageWidget::ScanFolderPrefPageWidget(TQWidget *parent, const char *name)
+			:SfPrefPageWidgetBase(parent, name)
 	{
 		use1->setChecked(ScanFolderPluginSettings::useFolder1());
 		use2->setChecked(ScanFolderPluginSettings::useFolder2());

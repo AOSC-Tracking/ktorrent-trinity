@@ -150,7 +150,7 @@ Document::Document(const TQDomDocument &doc) : d(new Private)
         d->link = elemText;
 
     
-    /* This is ugly but necessary since RSS 0.90 and 1.0 have a different tqparent
+    /* This is ugly but necessary since RSS 0.90 and 1.0 have a different parent
      * node for <image>, <textinput> and <item> than RSS 0.91-0.94 and RSS 2.0.
      */
     TQDomNode parentNode;

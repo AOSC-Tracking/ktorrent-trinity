@@ -16,8 +16,8 @@ Index: estimation-scripts/enable-logging.diff
 - using namespace bt;
 - 
 -@@ -77,6 +78,9 @@
-- KTorrentViewItem::KTorrentViewItem(QListView* tqparent,bt::TorrentControl* tc)
-- 	: KListViewItem(tqparent),tc(tc)
+- KTorrentViewItem::KTorrentViewItem(QListView* parent,bt::TorrentControl* tc)
+- 	: KListViewItem(parent),tc(tc)
 - {
 -+	toLog = true;
 -+	counter = 1;
@@ -125,8 +125,8 @@ Index: apps/ktorrent/ktorrentviewitem.cpp
  using namespace kt;
  
 @@ -78,6 +81,9 @@
- KTorrentViewItem::KTorrentViewItem(QListView* tqparent,TorrentInterface* tc)
- 	: KListViewItem(tqparent),tc(tc)
+ KTorrentViewItem::KTorrentViewItem(QListView* parent,TorrentInterface* tc)
+ 	: KListViewItem(parent),tc(tc)
  {
 +	toLog = true;
 +	counter = 1;

@@ -44,7 +44,7 @@ namespace kt
 		Q_OBJECT
   TQ_OBJECT
 	public:
-		InfoWidgetPlugin(TQObject* tqparent, const char* name, const TQStringList& args);
+		InfoWidgetPlugin(TQObject* parent, const char* name, const TQStringList& args);
 		virtual ~InfoWidgetPlugin();
 
 		virtual void load();

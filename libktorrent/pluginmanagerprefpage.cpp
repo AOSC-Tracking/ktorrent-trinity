@@ -38,8 +38,8 @@ namespace kt
 	{
 		Plugin* p;
 	public:
-		PluginViewItem(Plugin* p,LabelView* tqparent) 
-			: LabelViewItem(p->getIcon(),p->getGuiName(),p->getDescription(),tqparent),p(p)
+		PluginViewItem(Plugin* p,LabelView* parent) 
+			: LabelViewItem(p->getIcon(),p->getGuiName(),p->getDescription(),parent),p(p)
 		{
 			update();
 		}
@@ -74,9 +74,9 @@ namespace kt
 		return true;
 	}
 	
-	void PluginManagerPrefPage::createWidget(TQWidget* tqparent)
+	void PluginManagerPrefPage::createWidget(TQWidget* parent)
 	{
-		pmw = new PluginManagerWidget(tqparent);
+		pmw = new PluginManagerWidget(parent);
 
 		connect(pmw->load_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onLoad()));
 		connect(pmw->unload_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onUnload()));

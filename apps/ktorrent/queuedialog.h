@@ -30,7 +30,7 @@
 class QueueItem: public TQListViewItem
 {
 	public:
-		QueueItem(kt::TorrentInterface* t, TQListView* tqparent);
+		QueueItem(kt::TorrentInterface* t, TQListView* parent);
 		
 		int getPriority() { return torrentPriority; }
 		void setPriority(int p);
@@ -53,7 +53,7 @@ class QueueDialog: public QueueDlg
 	Q_OBJECT
   TQ_OBJECT
 	public:
-		QueueDialog(bt::QueueManager* qm, TQWidget *tqparent = 0, const char *name = 0);
+		QueueDialog(bt::QueueManager* qm, TQWidget *parent = 0, const char *name = 0);
 	public slots:
 		virtual void btnMoveUp_clicked();
 		virtual void btnClose_clicked();

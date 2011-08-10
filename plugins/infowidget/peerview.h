@@ -59,7 +59,7 @@ namespace kt
 		
 		TQMap<kt::PeerInterface*,PeerViewItem*> items;
 	public:
-		PeerView(TQWidget *tqparent = 0, const char *name = 0);
+		PeerView(TQWidget *parent = 0, const char *name = 0);
 		virtual ~PeerView();
 		
 	public slots:

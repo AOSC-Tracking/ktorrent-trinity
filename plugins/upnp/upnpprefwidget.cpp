@@ -37,8 +37,8 @@ using namespace bt;
 
 namespace kt
 {
-	UPnPPrefWidget::UPnPPrefWidget(TQWidget* tqparent, const char* name, WFlags fl)
-			: UPnPWidget(tqparent,name,fl)
+	UPnPPrefWidget::UPnPPrefWidget(TQWidget* parent, const char* name, WFlags fl)
+			: UPnPWidget(parent,name,fl)
 	{
 		def_router = 0;
 		connect(m_forward_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onForwardBtnClicked()));

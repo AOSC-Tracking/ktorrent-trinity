@@ -45,11 +45,11 @@ namespace kt
 	protected:
 		TQString name;
 		TorrentFileInterface & file;
-		FileTreeDirItem* tqparent;
+		FileTreeDirItem* parent;
 		bool manual_change;
 	public:
 		/**
-		 * Constructor, set the tqparent, name and file
+		 * Constructor, set the parent, name and file
 		 * @param item Parent item
 		 * @param name Name of file
 		 * @param file THe TorrentFileInterface

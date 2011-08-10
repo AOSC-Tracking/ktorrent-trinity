@@ -34,8 +34,8 @@
 
 
 
-FilterBar::FilterBar(TQWidget *tqparent, const char *name) :
-    TQWidget(tqparent, name)
+FilterBar::FilterBar(TQWidget *parent, const char *name) :
+    TQWidget(parent, name)
 {
 	const int gap = 3;
 	

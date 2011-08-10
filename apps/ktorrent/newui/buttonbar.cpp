@@ -32,8 +32,8 @@ namespace Ideal {
 
 //ButtonLayout class
 
-ButtonLayout::ButtonLayout(ButtonBar *tqparent, Direction d, int margin, int spacing, const char *name)
-    :TQBoxLayout(tqparent, d, margin, spacing, name), m_buttonBar(tqparent)
+ButtonLayout::ButtonLayout(ButtonBar *parent, Direction d, int margin, int spacing, const char *name)
+    :TQBoxLayout(parent, d, margin, spacing, name), m_buttonBar(parent)
 {
 }
 
@@ -62,8 +62,8 @@ TQSize ButtonLayout::tqminimumSize() const
 //ButtonBar class
 
 
-ButtonBar::ButtonBar(Place place, ButtonMode mode, TQWidget *tqparent, const char *name)
-    :TQWidget(tqparent, name), m_place(place), l(0), m_shrinked(false), m_autoResize(true)
+ButtonBar::ButtonBar(Place place, ButtonMode mode, TQWidget *parent, const char *name)
+    :TQWidget(parent, name), m_place(place), l(0), m_shrinked(false), m_autoResize(true)
 {
     switch (m_place)
     {

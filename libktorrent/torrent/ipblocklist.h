@@ -35,8 +35,8 @@ namespace bt
 	{
 		public:
 			IPKey();
-			IPKey(TQString& ip, Uint32 tqmask = 0xFFFFFFFF);
-			IPKey(Uint32 ip, Uint32 tqmask = 0xFFFFFFFF);
+			IPKey(TQString& ip, Uint32 mask = 0xFFFFFFFF);
+			IPKey(Uint32 ip, Uint32 mask = 0xFFFFFFFF);
 			IPKey(const IPKey& ip);
 			~IPKey();
 
@@ -48,7 +48,7 @@ namespace bt
 			TQString toString();
 
 			Uint32 m_ip;
-			Uint32 m_tqmask;
+			Uint32 m_mask;
 	};
 
 	/**
@@ -143,7 +143,7 @@ namespace bt
 			kt::IPBlockingInterface* pluginInterface;
 			
 			/**
-			 * @param IPKey - Key: Peer IP address and bit tqmask if it is a range
+			 * @param IPKey - Key: Peer IP address and bit mask if it is a range
 			 * @param int - Number of bad chunks sent.
 			**/
 			TQMap<IPKey, int> m_peers;

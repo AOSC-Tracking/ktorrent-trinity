@@ -55,7 +55,7 @@ using namespace bt;
 
 namespace kt
 {
-	IPBlockingPrefPageWidget::IPBlockingPrefPageWidget(TQWidget* tqparent) : IPBlockingPref(tqparent)
+	IPBlockingPrefPageWidget::IPBlockingPrefPageWidget(TQWidget* parent) : IPBlockingPref(parent)
 	{
 		m_url->setURL(IPBlockingPluginSettings::filterURL());
 		if (m_url->url() == "")
@@ -240,9 +240,9 @@ namespace kt
 		return true;
 	}
 	
-	void IPBlockingPrefPage::createWidget(TQWidget* tqparent)
+	void IPBlockingPrefPage::createWidget(TQWidget* parent)
 	{
-		widget = new IPBlockingPrefPageWidget(tqparent);
+		widget = new IPBlockingPrefPageWidget(parent);
 		widget->setPlugin(m_plugin);
 		widget->setPrefPage(this);
 	}

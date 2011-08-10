@@ -41,7 +41,7 @@ namespace kt
 	class IPBlockingPrefPageWidget : public IPBlockingPref
 	{
 		public:
-			IPBlockingPrefPageWidget(TQWidget *tqparent = 0);
+			IPBlockingPrefPageWidget(TQWidget *parent = 0);
 			void apply();
 			void convert();
 			void setPlugin(IPFilterPlugin* p);
@@ -70,7 +70,7 @@ namespace kt
 			virtual ~IPBlockingPrefPage();
 			
 			virtual bool apply();
-			virtual void createWidget(TQWidget* tqparent);
+			virtual void createWidget(TQWidget* parent);
 			virtual void updateData();
 			virtual void deleteWidget();
 

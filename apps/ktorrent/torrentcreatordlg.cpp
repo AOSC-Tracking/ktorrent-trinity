@@ -28,8 +28,8 @@
 #include <torrent/globals.h>
 #include <kademlia/dhtbase.h>
 		
-TorrentCreatorDlg::TorrentCreatorDlg(KTorrentCore* core,TQWidget *tqparent, const char *name)
-	:TorrentCreatorDlgBase(tqparent, name),core(core)
+TorrentCreatorDlg::TorrentCreatorDlg(KTorrentCore* core,TQWidget *parent, const char *name)
+	:TorrentCreatorDlgBase(parent, name),core(core)
 {
 	KURLRequester* r = m_file_or_dir;
 	r->fileDialog()->setMode(

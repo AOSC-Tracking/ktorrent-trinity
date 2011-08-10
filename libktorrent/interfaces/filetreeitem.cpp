@@ -35,7 +35,7 @@ namespace kt
 	FileTreeItem::FileTreeItem(FileTreeDirItem* item,const TQString & name,kt::TorrentFileInterface & file)
 	: TQCheckListItem(item,TQString(),TQCheckListItem::CheckBox),name(name),file(file)
 	{
-		tqparent = item;
+		parent = item;
 		manual_change = false;
 		init();
 	}
@@ -66,7 +66,7 @@ namespace kt
 		}
 		
 		updatePriorityText();
-		tqparent->childStateChange();
+		parent->childStateChange();
 	}
 	
 	void FileTreeItem::updatePriorityText()
@@ -141,7 +141,7 @@ namespace kt
 		}
 		
 		updatePriorityText();
-		tqparent->childStateChange();
+		parent->childStateChange();
 	}
 	
 	int FileTreeItem::compare(TQListViewItem* i, int col, bool ascending) const

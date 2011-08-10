@@ -37,7 +37,7 @@ class ViewManager : public TQObject, public kt::CloseTabListener
 	Q_OBJECT
   TQ_OBJECT
 public:
-	ViewManager(TQObject *tqparent = 0, const char *name = 0);
+	ViewManager(TQObject *parent = 0, const char *name = 0);
 	virtual ~ViewManager();
 	
 	/// Create a new view

@@ -46,8 +46,8 @@ K_EXPORT_COMPONENT_FACTORY(ktsearchplugin,KGenericFactory<kt::SearchPlugin>("kts
 namespace kt
 {
 
-	SearchPlugin::SearchPlugin(TQObject* tqparent, const char* name, const TQStringList& args)
-	: Plugin(tqparent, name, args,NAME,i18n("Search"),AUTHOR,EMAIL,
+	SearchPlugin::SearchPlugin(TQObject* parent, const char* name, const TQStringList& args)
+	: Plugin(parent, name, args,NAME,i18n("Search"),AUTHOR,EMAIL,
 			 i18n("Search for torrents on several popular torrent search engines"),"viewmag")
 	{
 		// setXMLFile("ktsearchpluginui.rc");

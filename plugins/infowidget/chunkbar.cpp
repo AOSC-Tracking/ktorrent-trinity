@@ -83,8 +83,8 @@ namespace kt
 		factory->setImage("unavailable_color", unavailable);
 	}
 	
-	ChunkBar::ChunkBar(TQWidget *tqparent, const char *name)
-		: TQFrame(tqparent, name),curr_tc(0)
+	ChunkBar::ChunkBar(TQWidget *parent, const char *name)
+		: TQFrame(parent, name),curr_tc(0)
 	{
 		setFrameShape(StyledPanel);
 		setFrameShadow(Sunken);

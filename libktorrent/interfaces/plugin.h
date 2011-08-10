@@ -60,7 +60,7 @@ namespace kt
 		 * @param description What does the plugin do
 		 * @param icon Name of the plugin's icon
 		 */
-		Plugin(TQObject *tqparent,const char* qt_name,const TQStringList & args,
+		Plugin(TQObject *parent,const char* qt_name,const TQStringList & args,
 			   const TQString & name,const TQString & gui_name,const TQString & author,
 			   const TQString & email,const TQString & description,
 			   const TQString & icon);

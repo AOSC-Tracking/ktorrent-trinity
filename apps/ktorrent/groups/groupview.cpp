@@ -41,13 +41,13 @@ using namespace bt;
 
 namespace kt
 {
-	GroupViewItem::GroupViewItem(GroupView* tqparent,Group* g) : KListViewItem(tqparent),gview(tqparent)
+	GroupViewItem::GroupViewItem(GroupView* parent,Group* g) : KListViewItem(parent),gview(parent)
 	{
 		setText(0,g->groupName());
 		setPixmap(0,g->groupIcon());
 	}
 	
-	GroupViewItem::GroupViewItem(GroupView* gview,KListViewItem* tqparent,Group* g) : KListViewItem(tqparent),gview(gview)
+	GroupViewItem::GroupViewItem(GroupView* gview,KListViewItem* parent,Group* g) : KListViewItem(parent),gview(gview)
 	{
 		setText(0,g->groupName());
 		setPixmap(0,g->groupIcon());
@@ -65,8 +65,8 @@ namespace kt
 			return TQString::compare(text(1),i->text(1));
 	}
 
-	GroupView::GroupView(ViewManager* view,KActionCollection* col,TQWidget *tqparent, const char *name)
-	: KListView(tqparent, name),view(view),custom_root(0)
+	GroupView::GroupView(ViewManager* view,KActionCollection* col,TQWidget *parent, const char *name)
+	: KListView(parent, name),view(view),custom_root(0)
 	{
 		setFullWidth(true);
 		setRootIsDecorated(true);
@@ -226,12 +226,12 @@ namespace kt
 		}
 	}
 
-	GroupViewItem* GroupView::addGroup(Group* g,KListViewItem* tqparent)
+	GroupViewItem* GroupView::addGroup(Group* g,KListViewItem* parent)
 	{
 		GroupViewItem* li = 0;
-		if (tqparent)
+		if (parent)
 		{
-			li = new GroupViewItem(this,tqparent,g);
+			li = new GroupViewItem(this,parent,g);
 		}
 		else
 		{
@@ -240,7 +240,7 @@ namespace kt
 		}
 		
 		groups.insert(li,g);
-		if (custom_root && custom_root->childCount() == 1 && custom_root == tqparent)
+		if (custom_root && custom_root->childCount() == 1 && custom_root == parent)
 			setOpen(custom_root,true);
 		
 		return li;

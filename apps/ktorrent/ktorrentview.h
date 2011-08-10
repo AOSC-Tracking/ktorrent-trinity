@@ -48,7 +48,7 @@ using namespace bt;
 class TorrentView : public KListView
 {
 public:
-	TorrentView(KTorrentView* tqparent);
+	TorrentView(KTorrentView* parent);
 	virtual ~TorrentView();
 	
 	virtual bool eventFilter(TQObject* watched, TQEvent* e);
@@ -81,7 +81,7 @@ public:
 	/**
 	 * Default constructor
 	 */
-	KTorrentView(TQWidget *tqparent);
+	KTorrentView(TQWidget *parent);
 
 	/**
 	 * Destructor

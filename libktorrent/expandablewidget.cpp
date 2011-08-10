@@ -24,8 +24,8 @@
 namespace kt
 {
 
-	ExpandableWidget::ExpandableWidget(TQWidget* child,TQWidget *tqparent, const char *name)
-			: TQWidget(tqparent, name)
+	ExpandableWidget::ExpandableWidget(TQWidget* child,TQWidget *parent, const char *name)
+			: TQWidget(parent, name)
 	{
 		top_layout = new TQHBoxLayout(this);
 		child->reparent(this,TQPoint(),true);
