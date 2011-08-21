@@ -27,7 +27,7 @@
       <useactivetarget>true</useactivetarget>
     </general>
     <run>
-      <mainprogram>/home/joris/ktorrent/trunk-kde3/debug/apps/ktorrent/ktorrent</mainprogram>
+      <mainprogram>/home/joris/ktorrent/trunk-trinity/debug/apps/ktorrent/ktorrent</mainprogram>
       <terminal>false</terminal>
       <directoryradio>executable</directoryradio>
       <customdirectory>/</customdirectory>

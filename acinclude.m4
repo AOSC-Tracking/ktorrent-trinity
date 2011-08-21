@@ -479,14 +479,14 @@ if test "$1" = "default"; then
     if test "$kde_qtver" = "2"; then
       kde_moduledir='\${libdir}/kde2'
     else
-      kde_moduledir='\${libdir}/kde3'
+      kde_moduledir='\${libdir}/trinity'
     fi
   fi
   if test -z "$kde_styledir"; then
-    kde_styledir='\${libdir}/kde3/plugins/styles'
+    kde_styledir='\${libdir}/trinity/plugins/styles'
   fi
   if test -z "$kde_widgetdir"; then
-    kde_widgetdir='\${libdir}/kde3/plugins/designer'
+    kde_widgetdir='\${libdir}/trinity/plugins/designer'
   fi
   if test -z "$xdg_appsdir"; then
     xdg_appsdir='\${datadir}/applications/kde'
@@ -546,7 +546,7 @@ Please check whether you installed aRts correctly or use
 
 AC_DEFUN([KDE_SET_DEFAULT_BINDIRS],
 [
-    kde_default_bindirs="/usr/bin /usr/local/bin /opt/local/bin /usr/X11R6/bin /opt/kde/bin /opt/kde3/bin /usr/kde/bin /usr/local/kde/bin"
+    kde_default_bindirs="/usr/bin /usr/local/bin /opt/local/bin /usr/X11R6/bin /opt/kde/bin /opt/trinity/bin /usr/kde/bin /usr/local/kde/bin"
     test -n "$KDEDIR" && kde_default_bindirs="$KDEDIR/bin $kde_default_bindirs"
     if test -n "$KDEDIRS"; then
        kde_save_IFS=$IFS
@@ -580,39 +580,39 @@ AC_DEFUN([KDE_SUBST_PROGRAMS],
         fi
         KDE_FIND_PATH(meinproc, MEINPROC, [$kde_default_bindirs])
 
-        kde32ornewer=1
-        kde33ornewer=1
+        trinity2ornewer=1
+        trinity3ornewer=1
         if test -n "$kde_qtver" && test "$kde_qtver" -lt 3; then
-            kde32ornewer=
-            kde33ornewer=
+            trinity2ornewer=
+            trinity3ornewer=
         else
             if test "$kde_qtver" = "3"; then
               if test "$kde_qtsubver" -le 1; then
-                kde32ornewer=
+                trinity2ornewer=
               fi
               if test "$kde_qtsubver" -le 2; then
-                kde33ornewer=
+                trinity3ornewer=
               fi
               if test "$KDECONFIG" != "compiled"; then
                 if test `$KDECONFIG --version | grep KDE | sed 's/KDE: \(...\).*/\1/'` = 3.2; then
-                  kde33ornewer=
+                  trinity3ornewer=
                 fi
               fi
             fi
         fi
 
-        if test -n "$kde32ornewer"; then
+        if test -n "$trinity2ornewer"; then
             KDE_FIND_PATH(kconfig_compiler, KCONFIG_COMPILER, [$kde_default_bindirs], [KDE_MISSING_PROG_ERROR(kconfig_compiler)])
             KDE_FIND_PATH(dcopidlng, DCOPIDLNG, [$kde_default_bindirs], [KDE_MISSING_PROG_ERROR(dcopidlng)])
         fi
-        if test -n "$kde33ornewer"; then
+        if test -n "$trinity3ornewer"; then
             KDE_FIND_PATH(makekdewidgets, MAKEKDEWIDGETS, [$kde_default_bindirs], [KDE_MISSING_PROG_ERROR(makekdewidgets)])
             AC_SUBST(MAKEKDEWIDGETS)
         fi
         KDE_FIND_PATH(xmllint, XMLLINT, [${prefix}/bin ${exec_prefix}/bin], [XMLLINT=""])
 
         if test -n "$MEINPROC" -a "$MEINPROC" != "compiled"; then
- 	    kde_sharedirs="/usr/share/kde /usr/local/share /usr/share /opt/kde3/share /opt/kde/share $prefix/share"
+ 	    kde_sharedirs="/usr/share/kde /usr/local/share /usr/share /opt/trinity/share /opt/kde/share $prefix/share"
             test -n "$KDEDIR" && kde_sharedirs="$KDEDIR/share $kde_sharedirs"
             AC_FIND_FILE(apps/ksgmltools2/customization/kde-chunk.xsl, $kde_sharedirs, KDE_XSL_STYLESHEET)
 	    if test "$KDE_XSL_STYLESHEET" = "NO"; then
@@ -623,7 +623,7 @@ AC_DEFUN([KDE_SUBST_PROGRAMS],
         fi
 
         DCOP_DEPENDENCIES='$(DCOPIDL)'
-        if test -n "$kde32ornewer"; then
+        if test -n "$trinity2ornewer"; then
             KCFG_DEPENDENCIES='$(KCONFIG_COMPILER)'
             DCOP_DEPENDENCIES='$(DCOPIDL) $(DCOPIDLNG)'
             AC_SUBST(KCONFIG_COMPILER)
@@ -1817,7 +1817,7 @@ fi
 
 if test -z "$1"; then
 
-kde_incdirs="$kde_libs_prefix/include /usr/lib/kde/include /usr/local/kde/include /usr/local/include /usr/kde/include /usr/include/kde /usr/include /opt/kde3/include /opt/kde/include $x_includes $qt_includes"
+kde_incdirs="$kde_libs_prefix/include /usr/lib/kde/include /usr/local/kde/include /usr/local/include /usr/kde/include /usr/include/kde /usr/include /opt/trinity/include /opt/kde/include $x_includes $qt_includes"
 test -n "$KDEDIR" && kde_incdirs="$KDEDIR/include $KDEDIR/include/kde $KDEDIR $kde_incdirs"
 kde_incdirs="$ac_kde_includes $kde_incdirs"
 AC_FIND_FILE($kde_check_header, $kde_incdirs, kde_incdir)
@@ -1829,7 +1829,7 @@ in the prefix, you've chosen, are no KDE headers installed. This will fail.
 So, check this please and use another prefix!])
 fi
 
-kde_libdirs="$kde_libs_prefix/lib${kdelibsuff} /usr/lib/kde/lib${kdelibsuff} /usr/local/kde/lib${kdelibsuff} /usr/kde/lib${kdelibsuff} /usr/lib${kdelibsuff}/kde /usr/lib${kdelibsuff}/kde3 /usr/lib${kdelibsuff} /usr/X11R6/lib${kdelibsuff} /usr/local/lib${kdelibsuff} /opt/kde3/lib${kdelibsuff} /opt/kde/lib${kdelibsuff} /usr/X11R6/kde/lib${kdelibsuff}"
+kde_libdirs="$kde_libs_prefix/lib${kdelibsuff} /usr/lib/kde/lib${kdelibsuff} /usr/local/kde/lib${kdelibsuff} /usr/kde/lib${kdelibsuff} /usr/lib${kdelibsuff}/kde /usr/lib${kdelibsuff}/trinity /usr/lib${kdelibsuff} /usr/X11R6/lib${kdelibsuff} /usr/local/lib${kdelibsuff} /opt/trinity/lib${kdelibsuff} /opt/kde/lib${kdelibsuff} /usr/X11R6/kde/lib${kdelibsuff}"
 test -n "$KDEDIR" && kde_libdirs="$KDEDIR/lib${kdelibsuff} $KDEDIR $kde_libdirs"
 kde_libdirs="$ac_kde_libraries $libdir $kde_libdirs"
 AC_FIND_FILE($kde_check_lib, $kde_libdirs, kde_libdir)
@@ -1837,7 +1837,7 @@ ac_kde_libraries="$kde_libdir"
 
 kde_widgetdir=NO
 dnl this might be somewhere else
-AC_FIND_FILE("kde3/plugins/designer/kdewidgets.la", $kde_libdirs, kde_widgetdir)
+AC_FIND_FILE("trinity/plugins/designer/kdewidgets.la", $kde_libdirs, kde_widgetdir)
 
 if test -n "$ac_kde_libraries" && test ! -r "$ac_kde_libraries/$kde_check_lib"; then
 AC_MSG_ERROR([
@@ -1845,14 +1845,14 @@ in the prefix, you've chosen, are no KDE libraries installed. This will fail.
 So, check this please and use another prefix!])
 fi
 
-if test -n "$kde_widgetdir" && test ! -r "$kde_widgetdir/kde3/plugins/designer/kdewidgets.la"; then
+if test -n "$kde_widgetdir" && test ! -r "$kde_widgetdir/trinity/plugins/designer/kdewidgets.la"; then
 AC_MSG_ERROR([
 I can't find the designer plugins. These are required and should have been installed
 by kdelibs])
 fi
 
 if test -n "$kde_widgetdir"; then
-    kde_widgetdir="$kde_widgetdir/kde3/plugins/designer"
+    kde_widgetdir="$kde_widgetdir/trinity/plugins/designer"
 fi
 
 
