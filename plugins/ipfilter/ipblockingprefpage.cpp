@@ -67,13 +67,13 @@ namespace kt
 		
 		if(use_level1)
 		{
-			lbl_status1->setText(i18n("tqStatus: Loaded and running."));
+			lbl_status1->setText(i18n("Status: Loaded and running."));
 			m_url->setEnabled(true);
 			btnDownload->setEnabled(true);
 		}
 		else
 		{
-			lbl_status1->setText(i18n("tqStatus: Not loaded."));
+			lbl_status1->setText(i18n("Status: Not loaded."));
 			m_url->setEnabled(false);
 			btnDownload->setEnabled(false);
 		}
@@ -91,12 +91,12 @@ namespace kt
 		{
 			TQFile target(KGlobal::dirs()->saveLocation("data","ktorrent") + "level1.dat");
 			if(target.exists())
-				lbl_status1->setText(i18n("tqStatus: Loaded and running."));
+				lbl_status1->setText(i18n("Status: Loaded and running."));
 			else
-				lbl_status1->setText(i18n("tqStatus: <font color=\"#ff0000\">Filter file not found.</font> Download and convert filter file."));
+				lbl_status1->setText(i18n("Status: <font color=\"#ff0000\">Filter file not found.</font> Download and convert filter file."));
 		}
 		else
-			lbl_status1->setText(i18n("tqStatus: Not loaded."));
+			lbl_status1->setText(i18n("Status: Not loaded."));
 	}
 
 	void IPBlockingPrefPageWidget::btnDownload_clicked()

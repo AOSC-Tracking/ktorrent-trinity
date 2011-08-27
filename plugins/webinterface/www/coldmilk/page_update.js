@@ -403,7 +403,7 @@ function _get_file_status_name(status_id)
 }
 
 function _torrents_details_header(row) {
-	headers = new Array("Actions", "File", "Size", "Perc done", "tqStatus");
+	headers = new Array("Actions", "File", "Size", "Perc done", "Status");
 	for (var i in headers) {
 		var header =  document.createElement("th");
 		header.appendChild(document.createTextNode(headers[i]));
@@ -414,7 +414,7 @@ function _torrents_details_header(row) {
 
 function _torrent_table_header(row) {
 	headers = new Array(
-		"Actions", "File", "tqStatus", 
+		"Actions", "File", "Status", 
 		"Speed", "Size", "Peers", 
 		"Transferred", "% done"
 	);

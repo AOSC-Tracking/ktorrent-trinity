@@ -32,7 +32,7 @@ Index: estimation-scripts/enable-logging.diff
 -+	bool tmpLog = true;
 - 	/*
 - 	addColumn(i18n("File"));
-- 	addColumn(i18n("tqStatus"));
+- 	addColumn(i18n("Status"));
 -@@ -114,8 +119,43 @@
 - 	setText(6,KBytesPerSecToString(tc->getUploadRate() / 1024.0));
 -   
@@ -141,7 +141,7 @@ Index: apps/ktorrent/ktorrentviewitem.cpp
 +	bool tmpLog = true;
  	/*
  	addColumn(i18n("File"));
- 	addColumn(i18n("tqStatus"));
+ 	addColumn(i18n("Status"));
 @@ -114,8 +121,46 @@
  	setText(6,KBytesPerSecToString(s.upload_rate / 1024.0));
    
