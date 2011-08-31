@@ -51,7 +51,7 @@ namespace kt
 		{
 			setTitle("<h3>" + p->getGuiName() + "</h3>");
 			setDescription(
-				i18n("%1<br>tqStatus: <b>%2</b><br>Author: %3").tqarg(p->getDescription())
+				i18n("%1<br>Status: <b>%2</b><br>Author: %3").tqarg(p->getDescription())
 					.tqarg(p->isLoaded() ? i18n("Loaded") : i18n("Not loaded"))
 					.tqarg(p->getAuthor()));
 		}

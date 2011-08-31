@@ -214,8 +214,8 @@ KTorrent::KTorrent()
 	
 	addToolWidget(m_group_view,"player_playlist",i18n("Groups"),DOCK_LEFT);
 	
-	setAutoSaveSettings("WindowtqStatus",true);
-	KGlobal::config()->setGroup("WindowtqStatus");
+	setAutoSaveSettings("WindowStatus",true);
+	KGlobal::config()->setGroup("WindowStatus");
 	bool hidden_on_exit = KGlobal::config()->readBoolEntry("hidden_on_exit",false);
 	if (Settings::showSystemTrayIcon())
 	{
@@ -598,7 +598,7 @@ bool KTorrent::queryExit()
 	// stop timers to prevent update
 	m_gui_update_timer.stop();
 	
-	KGlobal::config()->setGroup("WindowtqStatus");
+	KGlobal::config()->setGroup("WindowStatus");
 	KGlobal::config()->writeEntry("hidden_on_exit",this->isHidden());
 	KGlobal::config()->writeEntry("menubar_hidden",menuBar()->isHidden());
 	KGlobal::config()->writeEntry("statusbar_hidden",statusBar()->isHidden());

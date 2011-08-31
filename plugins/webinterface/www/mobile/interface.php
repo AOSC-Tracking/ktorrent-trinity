@@ -59,7 +59,7 @@
 							echo "<td>Checking Data</td>";
 							break;
 						default:
-							echo "<td>Not supported tqStatus</td>";
+							echo "<td>Not supported Status</td>";
 				}
 				echo "<td>$perc%</td>";
       		$a=$a+1;	

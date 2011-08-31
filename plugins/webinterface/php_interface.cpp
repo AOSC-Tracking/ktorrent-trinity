@@ -82,7 +82,7 @@ namespace kt
 		TorrentStats stats;
 		//Priority file_priority;
 		TQString status;
-		out << "function downloadtqStatus()\n{\nreturn array(";
+		out << "function downloadStatus()\n{\nreturn array(";
 
 		TQPtrList<TorrentInterface>::iterator i= core->getQueueManager()->begin();
 		for(int k=0; i != core->getQueueManager()->end(); i++, k++)

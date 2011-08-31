@@ -31,7 +31,7 @@
   <tbody>
       <?php
       	echo "<tr>";
-       	echo "<td><strong>tqStatus: </strong></td>";
+       	echo "<td><strong>Status: </strong></td>";
       	switch ($t['status']) {
 		case 0:
    			echo "<td>NOT_STARTED</td>";
@@ -67,7 +67,7 @@
 			echo "<td>CHECKING_DATA</td>";
 			break;
 		default:
-			echo "<td>Not supported tqStatus</td>";
+			echo "<td>Not supported Status</td>";
 		}
 	echo "</tr>";
 	echo "<tr>";
