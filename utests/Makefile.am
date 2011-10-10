@@ -3,7 +3,7 @@ METASOURCES = AUTO
 noinst_HEADERS = unittest.h testrunner.h upnpparsedescriptiontest.h \
 					upnpparseresponsetest.h dhtmsgparsetest.h biginttest.h rc4test.h difflehellmantest.h
 bin_PROGRAMS = ktutester
-ktutester_LDFLAGS = $(KDE_RPATH) $(all_libraries)
+ktutester_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_KDECORE) $(LIB_KDEUI) -lkdefx $(LIB_KIO) -lktexteditor
 ktutester_SOURCES = unittest.cpp testrunner.cpp main.cpp \
 					upnpparsedescriptiontest.cpp upnpparseresponsetest.cpp dhtmsgparsetest.cpp biginttest.cpp \
 		rc4test.cpp difflehellmantest.cpp
