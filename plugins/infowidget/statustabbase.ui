@@ -13,7 +13,7 @@
         </rect>
     </property>
     <property name="caption">
-        <string>tqStatus</string>
+        <string>Status</string>
     </property>
     <vbox>
         <property name="name">
@@ -200,7 +200,7 @@
                                 <cstring>textLabel1_5</cstring>
                             </property>
                             <property name="text">
-                                <string>Tracker tqStatus:</string>
+                                <string>Tracker Status:</string>
                             </property>
                         </widget>
                         <widget class="TQLabel" row="0" column="1">

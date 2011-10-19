@@ -200,7 +200,7 @@
                         </sizepolicy>
                     </property>
                     <property name="text">
-                        <string>tqStatus:</string>
+                        <string>Status:</string>
                     </property>
                 </widget>
                 <widget class="TQLabel">
