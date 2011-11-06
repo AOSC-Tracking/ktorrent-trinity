@@ -371,7 +371,7 @@ AC_DEFUN([KDE_1_CHECK_PATHS],
   fi
 
 AC_MSG_CHECKING([for KDE libraries installed])
-ac_link='$LIBTOOL_SHELL --silent --mode=link ${CXX-g++} -o conftest $CXXFLAGS $all_includes $CPPFLAGS $LDFLAGS $all_libraries conftest.$ac_ext $LIBS -lkdecore $LIBQT $KDE_TEST_RPATH 1>&5'
+ac_link='$LIBTOOL_SHELL --silent --mode=link ${CXX-g++} -o conftest $CXXFLAGS $all_includes $CPPFLAGS $LDFLAGS $all_libraries conftest.$ac_ext $LIBS -ltdecore $LIBQT $KDE_TEST_RPATH 1>&5'
 
 if AC_TRY_EVAL(ac_link) && test -s conftest; then
   AC_MSG_RESULT(yes)
@@ -710,7 +710,7 @@ AC_SUBST(kde_templatesdir)
 AC_SUBST(kde_servicesdir)
 AC_SUBST(kde_servicetypesdir)
 AC_SUBST(kde_moduledir)
-AC_SUBST(kdeinitdir, '$(kde_moduledir)')
+AC_SUBST(tdeinitdir, '$(kde_moduledir)')
 AC_SUBST(kde_styledir)
 AC_SUBST(kde_widgetdir)
 if test "$kde_qtver" = 1; then
@@ -2088,12 +2088,12 @@ AC_DEFUN([KDE_CREATE_LIBS_ALIASES],
 
 if test $kde_qtver = 3; then
    case $host in 
-               *cygwin*) lib_kded="-lkdeinit_kded" ;;
+               *cygwin*) lib_kded="-ltdeinit_kded" ;;
                *) lib_kded="" ;;
        esac
    AC_SUBST(LIB_KDED, $lib_kded)
-   AC_SUBST(LIB_KDECORE, "-lkdecore")
-   AC_SUBST(LIB_KDEUI, "-lkdeui")
+   AC_SUBST(LIB_KDECORE, "-ltdecore")
+   AC_SUBST(LIB_KDEUI, "-ltdeui")
    AC_SUBST(LIB_KIO, "-lkio")
    AC_SUBST(LIB_KJS, "-lkjs")
    AC_SUBST(LIB_SMB, "-lsmb")
@@ -2102,9 +2102,9 @@ if test $kde_qtver = 3; then
    AC_SUBST(LIB_KHTML, "-lkhtml")
    AC_SUBST(LIB_KSPELL, "-lkspell")
    AC_SUBST(LIB_KPARTS, "-lkparts")
-   AC_SUBST(LIB_KDEPRINT, "-lkdeprint")
+   AC_SUBST(LIB_KDEPRINT, "-ltdeprint")
    AC_SUBST(LIB_KUTILS, "-lkutils")
-   AC_SUBST(LIB_KDEPIM, "-lkdepim")
+   AC_SUBST(LIB_KDEPIM, "-ltdepim")
    AC_SUBST(LIB_KIMPROXY, "-lkimproxy")
    AC_SUBST(LIB_KNEWSTUFF, "-lknewstuff")
    AC_SUBST(LIB_KDNSSD, "-lkdnssd")
@@ -2113,8 +2113,8 @@ if test $kde_qtver = 3; then
    AC_SUBST(LIB_KSYCOCA, "-lkio")
    AC_SUBST(LIB_KFILE, "-lkio")
 elif test $kde_qtver = 2; then
-   AC_SUBST(LIB_KDECORE, "-lkdecore")
-   AC_SUBST(LIB_KDEUI, "-lkdeui")
+   AC_SUBST(LIB_KDECORE, "-ltdecore")
+   AC_SUBST(LIB_KDEUI, "-ltdeui")
    AC_SUBST(LIB_KIO, "-lkio")
    AC_SUBST(LIB_KSYCOCA, "-lksycoca")
    AC_SUBST(LIB_SMB, "-lsmb")
@@ -2123,10 +2123,10 @@ elif test $kde_qtver = 2; then
    AC_SUBST(LIB_KHTML, "-lkhtml")
    AC_SUBST(LIB_KSPELL, "-lkspell")
    AC_SUBST(LIB_KPARTS, "-lkparts")
-   AC_SUBST(LIB_KDEPRINT, "-lkdeprint")
+   AC_SUBST(LIB_KDEPRINT, "-ltdeprint")
 else
-   AC_SUBST(LIB_KDECORE, "-lkdecore -lXext $(LIB_QT)")
-   AC_SUBST(LIB_KDEUI, "-lkdeui $(LIB_KDECORE)")
+   AC_SUBST(LIB_KDECORE, "-ltdecore -lXext $(LIB_QT)")
+   AC_SUBST(LIB_KDEUI, "-ltdeui $(LIB_KDECORE)")
    AC_SUBST(LIB_KFM, "-lkfm $(LIB_KDECORE)")
    AC_SUBST(LIB_KFILE, "-lkfile $(LIB_KFM) $(LIB_KDEUI)")
    AC_SUBST(LIB_KAB, "-lkab $(LIB_KIMGIO) $(LIB_KDECORE)")
@@ -2513,7 +2513,7 @@ if eval "test \"`echo $ac_cv_lib_gif`\" = yes"; then
   AC_MSG_RESULT(yes)
   AC_DEFINE_UNQUOTED(HAVE_LIBGIF, 1, [Define if you have libgif])
 else
-  AC_MSG_ERROR(You need giflib30. Please install the kdesupport package)
+  AC_MSG_ERROR(You need giflib30. Please install the tdesupport package)
 fi
 ])
 

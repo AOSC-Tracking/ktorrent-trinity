@@ -52,7 +52,7 @@
       <globalcwd>/home/joris</globalcwd>
       <useglobalprogram>true</useglobalprogram>
       <autoinstall>false</autoinstall>
-      <autokdesu>false</autokdesu>
+      <autotdesu>false</autotdesu>
     </run>
     <make>
       <envvars>
