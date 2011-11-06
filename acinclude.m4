@@ -1809,7 +1809,7 @@ AC_CACHE_VAL(ac_cv_have_kde,
 
 if test "$kde_qtver" = 1; then
   kde_check_header="ksock.h"
-  kde_check_lib="libkdecore.la"
+  kde_check_lib="libtdecore.la"
 else
   kde_check_header="ksharedptr.h"
   kde_check_lib="libkio.la"
@@ -2194,7 +2194,7 @@ if test "x$kde_cv_func_$1" = xyes; then
 else
   case "$1" in
 	setenv|unsetenv|usleep|random|srandom|seteuid|mkstemps|mkstemp|revoke|vsnprintf|strlcpy|strlcat)
-		kde_cv_proto_$1="yes - in libkdefakes"
+		kde_cv_proto_$1="yes - in libtdefakes"
 		;;
 	*)
 		kde_cv_proto_$1=unknown
