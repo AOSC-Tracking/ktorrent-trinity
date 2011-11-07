@@ -8,7 +8,7 @@ ktpartfileimportplugin_la_SOURCES = partfileimportplugin.cpp importdlgbase.ui im
 # Libs needed by the plugin
 ktpartfileimportplugin_la_LIBADD = $(LIB_KHTML) $(LIB_KPARTS) \
 	../../libktorrent/libktorrent.la \
-	$(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE)
+	$(LIB_QT) $(LIB_TDECORE) $(LIB_TDEUI) $(LIB_KFILE)
 
 # LD flags for the plugin
 # -module says: this is a module, i.e. something you're going to dlopen

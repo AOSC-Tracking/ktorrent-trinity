@@ -2092,8 +2092,8 @@ if test $kde_qtver = 3; then
                *) lib_kded="" ;;
        esac
    AC_SUBST(LIB_KDED, $lib_kded)
-   AC_SUBST(LIB_KDECORE, "-ltdecore")
-   AC_SUBST(LIB_KDEUI, "-ltdeui")
+   AC_SUBST(LIB_TDECORE, "-ltdecore")
+   AC_SUBST(LIB_TDEUI, "-ltdeui")
    AC_SUBST(LIB_KIO, "-lkio")
    AC_SUBST(LIB_KJS, "-lkjs")
    AC_SUBST(LIB_SMB, "-lsmb")
@@ -2102,9 +2102,9 @@ if test $kde_qtver = 3; then
    AC_SUBST(LIB_KHTML, "-lkhtml")
    AC_SUBST(LIB_KSPELL, "-lkspell")
    AC_SUBST(LIB_KPARTS, "-lkparts")
-   AC_SUBST(LIB_KDEPRINT, "-ltdeprint")
+   AC_SUBST(LIB_TDEPRINT, "-ltdeprint")
    AC_SUBST(LIB_KUTILS, "-lkutils")
-   AC_SUBST(LIB_KDEPIM, "-ltdepim")
+   AC_SUBST(LIB_TDEPIM, "-ltdepim")
    AC_SUBST(LIB_KIMPROXY, "-lkimproxy")
    AC_SUBST(LIB_KNEWSTUFF, "-lknewstuff")
    AC_SUBST(LIB_KDNSSD, "-lkdnssd")
@@ -2113,8 +2113,8 @@ if test $kde_qtver = 3; then
    AC_SUBST(LIB_KSYCOCA, "-lkio")
    AC_SUBST(LIB_KFILE, "-lkio")
 elif test $kde_qtver = 2; then
-   AC_SUBST(LIB_KDECORE, "-ltdecore")
-   AC_SUBST(LIB_KDEUI, "-ltdeui")
+   AC_SUBST(LIB_TDECORE, "-ltdecore")
+   AC_SUBST(LIB_TDEUI, "-ltdeui")
    AC_SUBST(LIB_KIO, "-lkio")
    AC_SUBST(LIB_KSYCOCA, "-lksycoca")
    AC_SUBST(LIB_SMB, "-lsmb")
@@ -2123,13 +2123,13 @@ elif test $kde_qtver = 2; then
    AC_SUBST(LIB_KHTML, "-lkhtml")
    AC_SUBST(LIB_KSPELL, "-lkspell")
    AC_SUBST(LIB_KPARTS, "-lkparts")
-   AC_SUBST(LIB_KDEPRINT, "-ltdeprint")
+   AC_SUBST(LIB_TDEPRINT, "-ltdeprint")
 else
-   AC_SUBST(LIB_KDECORE, "-ltdecore -lXext $(LIB_QT)")
-   AC_SUBST(LIB_KDEUI, "-ltdeui $(LIB_KDECORE)")
-   AC_SUBST(LIB_KFM, "-lkfm $(LIB_KDECORE)")
-   AC_SUBST(LIB_KFILE, "-lkfile $(LIB_KFM) $(LIB_KDEUI)")
-   AC_SUBST(LIB_KAB, "-lkab $(LIB_KIMGIO) $(LIB_KDECORE)")
+   AC_SUBST(LIB_TDECORE, "-ltdecore -lXext $(LIB_QT)")
+   AC_SUBST(LIB_TDEUI, "-ltdeui $(LIB_TDECORE)")
+   AC_SUBST(LIB_KFM, "-lkfm $(LIB_TDECORE)")
+   AC_SUBST(LIB_KFILE, "-lkfile $(LIB_KFM) $(LIB_TDEUI)")
+   AC_SUBST(LIB_KAB, "-lkab $(LIB_KIMGIO) $(LIB_TDECORE)")
 fi
 ])
 
