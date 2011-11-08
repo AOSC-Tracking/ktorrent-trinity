@@ -155,15 +155,15 @@ msgstr "Procurar:"
 msgid "Case sensitive"
 msgstr "Distinguir capitalização"
 
-#: apps/ktorrent/newui/ddockwindow.cpp:88
+#: apps/ktorrent/newui/ddoctwindow.cpp:88
 msgid "Move to left dock"
 msgstr "Mover para o bloco esquerdo"
 
-#: apps/ktorrent/newui/ddockwindow.cpp:89
+#: apps/ktorrent/newui/ddoctwindow.cpp:89
 msgid "Move to right dock"
 msgstr "Mover para o bloco direito"
 
-#: apps/ktorrent/newui/ddockwindow.cpp:90
+#: apps/ktorrent/newui/ddoctwindow.cpp:90
 msgid "Move to bottom dock"
 msgstr "Mover para o bloco do fundo"
 

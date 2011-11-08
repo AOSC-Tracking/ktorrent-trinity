@@ -140,15 +140,15 @@ msgstr "Suchen:"
 msgid "Case sensitive"
 msgstr "Groß-/Kleinschreibung beachten"
 
-#: apps/ktorrent/newui/ddockwindow.cpp:88
+#: apps/ktorrent/newui/ddoctwindow.cpp:88
 msgid "Move to left dock"
 msgstr "In linken Docker verschieben"
 
-#: apps/ktorrent/newui/ddockwindow.cpp:89
+#: apps/ktorrent/newui/ddoctwindow.cpp:89
 msgid "Move to right dock"
 msgstr "In rechten Docker verschieben"
 
-#: apps/ktorrent/newui/ddockwindow.cpp:90
+#: apps/ktorrent/newui/ddoctwindow.cpp:90
 msgid "Move to bottom dock"
 msgstr "In unteren Docker verschieben"
 

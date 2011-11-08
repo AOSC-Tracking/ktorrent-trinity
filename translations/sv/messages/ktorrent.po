@@ -133,15 +133,15 @@ msgstr "Sök:"
 msgid "Case sensitive"
 msgstr "Skiftlägeskänslig"
 
-#: apps/ktorrent/newui/ddockwindow.cpp:88
+#: apps/ktorrent/newui/ddoctwindow.cpp:88
 msgid "Move to left dock"
 msgstr "Flytta till vänster kant"
 
-#: apps/ktorrent/newui/ddockwindow.cpp:89
+#: apps/ktorrent/newui/ddoctwindow.cpp:89
 msgid "Move to right dock"
 msgstr "Flytta till höger kant"
 
-#: apps/ktorrent/newui/ddockwindow.cpp:90
+#: apps/ktorrent/newui/ddoctwindow.cpp:90
 msgid "Move to bottom dock"
 msgstr "Flytta till nederkant"
 

@@ -137,15 +137,15 @@ msgstr "Buscar:"
 msgid "Case sensitive"
 msgstr "Diferenciar mayúsculas y minúsculas"
 
-#: apps/ktorrent/newui/ddockwindow.cpp:88
+#: apps/ktorrent/newui/ddoctwindow.cpp:88
 msgid "Move to left dock"
 msgstr "Mover al punto de anclaje izquierdo"
 
-#: apps/ktorrent/newui/ddockwindow.cpp:89
+#: apps/ktorrent/newui/ddoctwindow.cpp:89
 msgid "Move to right dock"
 msgstr "Mover al punto de anclaje derecho"
 
-#: apps/ktorrent/newui/ddockwindow.cpp:90
+#: apps/ktorrent/newui/ddoctwindow.cpp:90
 msgid "Move to bottom dock"
 msgstr "Mover al punto de anclaje inferior"
 

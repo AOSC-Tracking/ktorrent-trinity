@@ -134,15 +134,15 @@ msgstr "Търсене:"
 msgid "Case sensitive"
 msgstr "Чувствителен регистър"
 
-#: apps/ktorrent/newui/ddockwindow.cpp:88
+#: apps/ktorrent/newui/ddoctwindow.cpp:88
 msgid "Move to left dock"
 msgstr "Преместване отляво"
 
-#: apps/ktorrent/newui/ddockwindow.cpp:89
+#: apps/ktorrent/newui/ddoctwindow.cpp:89
 msgid "Move to right dock"
 msgstr "Преместване отдясно"
 
-#: apps/ktorrent/newui/ddockwindow.cpp:90
+#: apps/ktorrent/newui/ddoctwindow.cpp:90
 msgid "Move to bottom dock"
 msgstr "Преместване отдолу"
 

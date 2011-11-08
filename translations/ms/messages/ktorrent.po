@@ -147,17 +147,17 @@ msgstr ""
 msgid "Case sensitive"
 msgstr ""
 
-#: apps/ktorrent/newui/ddockwindow.cpp:88
+#: apps/ktorrent/newui/ddoctwindow.cpp:88
 #, fuzzy
 msgid "Move to left dock"
 msgstr "Menetapkan"
 
-#: apps/ktorrent/newui/ddockwindow.cpp:89
+#: apps/ktorrent/newui/ddoctwindow.cpp:89
 #, fuzzy
 msgid "Move to right dock"
 msgstr "Menetapkan"
 
-#: apps/ktorrent/newui/ddockwindow.cpp:90
+#: apps/ktorrent/newui/ddoctwindow.cpp:90
 #, fuzzy
 msgid "Move to bottom dock"
 msgstr "Menetapkan"

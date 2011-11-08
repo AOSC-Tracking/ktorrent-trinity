@@ -20,7 +20,7 @@
 #ifndef DDOCKWINDOW_H
 #define DDOCKWINDOW_H
 
-#include <tqdockwindow.h>
+#include <tqdoctwindow.h>
 #include <tqvaluelist.h>
 
 class TQBoxLayout;
