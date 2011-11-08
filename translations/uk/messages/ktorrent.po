@@ -135,15 +135,15 @@ msgstr "Знайти:"
 msgid "Case sensitive"
 msgstr "З урахуванням регістру"
 
-#: apps/ktorrent/newui/ddoctwindow.cpp:88
+#: apps/ktorrent/newui/ddockwindow.cpp:88
 msgid "Move to left dock"
 msgstr "Пересунути ліворуч"
 
-#: apps/ktorrent/newui/ddoctwindow.cpp:89
+#: apps/ktorrent/newui/ddockwindow.cpp:89
 msgid "Move to right dock"
 msgstr "Пересунути праворуч"
 
-#: apps/ktorrent/newui/ddoctwindow.cpp:90
+#: apps/ktorrent/newui/ddockwindow.cpp:90
 msgid "Move to bottom dock"
 msgstr "Пересунути донизу"
 

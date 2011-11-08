@@ -23,7 +23,7 @@
 #include <kxmlguiclient.h>
 #include <kparts/mainwindow.h>
 
-#include "ddoctwindow.h"
+#include "ddockwindow.h"
 
 class DTabWidget;
 namespace Ideal {

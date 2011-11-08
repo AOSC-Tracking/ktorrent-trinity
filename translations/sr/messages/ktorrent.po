@@ -136,15 +136,15 @@ msgstr "Нађи:"
 msgid "Case sensitive"
 msgstr "Разликуј мала и велика слова"
 
-#: apps/ktorrent/newui/ddoctwindow.cpp:88
+#: apps/ktorrent/newui/ddockwindow.cpp:88
 msgid "Move to left dock"
 msgstr "Помери на леви док"
 
-#: apps/ktorrent/newui/ddoctwindow.cpp:89
+#: apps/ktorrent/newui/ddockwindow.cpp:89
 msgid "Move to right dock"
 msgstr "Помери на десни док"
 
-#: apps/ktorrent/newui/ddoctwindow.cpp:90
+#: apps/ktorrent/newui/ddockwindow.cpp:90
 msgid "Move to bottom dock"
 msgstr "Помери на доњи док"
 

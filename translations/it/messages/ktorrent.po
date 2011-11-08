@@ -133,15 +133,15 @@ msgstr ""
 msgid "Case sensitive"
 msgstr ""
 
-#: apps/ktorrent/newui/ddoctwindow.cpp:88
+#: apps/ktorrent/newui/ddockwindow.cpp:88
 msgid "Move to left dock"
 msgstr "Sposta all'aggancio sinistro"
 
-#: apps/ktorrent/newui/ddoctwindow.cpp:89
+#: apps/ktorrent/newui/ddockwindow.cpp:89
 msgid "Move to right dock"
 msgstr "Sposta all'aggancio destro"
 
-#: apps/ktorrent/newui/ddoctwindow.cpp:90
+#: apps/ktorrent/newui/ddockwindow.cpp:90
 msgid "Move to bottom dock"
 msgstr "Sposta all'aggancio inferiore"
 

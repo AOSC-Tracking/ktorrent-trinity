@@ -17,7 +17,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-#include "ddoctwindow.h"
+#include "ddockwindow.h"
 
 #include <tqtoolbutton.h>
 #include <tqlayout.h>
@@ -415,4 +415,4 @@ bool DDockWindow::hasWidgets() const
 	return m_widgets.count() > 0;
 }
 
-#include "ddoctwindow.moc"
+#include "ddockwindow.moc"
