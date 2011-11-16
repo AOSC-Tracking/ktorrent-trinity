@@ -711,7 +711,7 @@ void KTorrent::optionsConfigureToolbars()
 {
 	// use the standard toolbar editor
 #if defined(KDE_MAKE_VERSION)
-# if KDE_VERSION >= KDE_MAKE_VERSION(3,1,0)
+# if TDE_VERSION >= KDE_MAKE_VERSION(3,1,0)
 	saveMainWindowSettings(KGlobal::config(), autoSaveGroup());
 # else
 	saveMainWindowSettings(KGlobal::config());
@@ -731,7 +731,7 @@ void KTorrent::newToolbarConfig()
 	createGUI(0);
 
 #if defined(KDE_MAKE_VERSION)
-# if KDE_VERSION >= KDE_MAKE_VERSION(3,1,0)
+# if TDE_VERSION >= KDE_MAKE_VERSION(3,1,0)
 	applyMainWindowSettings(KGlobal::config(), autoSaveGroup());
 # else
 	applyMainWindowSettings(KGlobal::config());
