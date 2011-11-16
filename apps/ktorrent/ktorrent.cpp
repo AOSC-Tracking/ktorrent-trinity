@@ -32,7 +32,7 @@
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kiconloader.h>
-#include <kdeversion.h>
+#include <tdeversion.h>
 #include <kmenubar.h>
 #include <kstatusbar.h>
 #include <kkeydialog.h>

@@ -1,6 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 2005 by Alexander Dymo                                  *
- *   adymo@kdevelop.org                                                    *
+ *   adymo@tdevelop.org                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU Library General Public License as       *
@@ -108,7 +108,7 @@ void DMainWindow::addWidget(DTabWidget *tab, TQWidget *widget, const TQString &t
     if (m_showIconsOnTabs)
     {
         const TQPixmap *pixmap = widget->icon();
-        const TQIconSet &icons = (pixmap && (pixmap->size().height() <= 16)) ? *(pixmap) : SmallIcon("kdevelop");
+        const TQIconSet &icons = (pixmap && (pixmap->size().height() <= 16)) ? *(pixmap) : SmallIcon("tdevelop");
         tab->insertTab(widget, icons, title, idx);
     }
     else

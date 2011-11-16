@@ -1,5 +1,5 @@
 <?xml version = '1.0'?>
-<kdevelop>
+<tdevelop>
   <general>
     <author>Joris Guisson</author>
     <email>joris.guisson@gmail.com</email>
@@ -311,4 +311,4 @@
     <graphicFilter>-f0</graphicFilter>
     <scaling>-1</scaling>
   </kdevvisualadvance>
-</kdevelop>
+</tdevelop>
