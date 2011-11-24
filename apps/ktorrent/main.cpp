@@ -57,13 +57,13 @@ void StupidWarningMessagesFromTQt( TQtMsgType type, const char *msg )
 {
 	switch ( type ) 
 	{
-		case QtDebugMsg:
+		case TQtDebugMsg:
 		//	printf("TQt: Debug: %s\n",msg);
 			break;
-		case QtWarningMsg:
+		case TQtWarningMsg:
 			printf("TQt: Warning: %s\n",msg);
 			break;
-		case QtFatalMsg:
+		case TQtFatalMsg:
 			printf("TQt: Fatal : %s\n",msg);
 			abort();                    // deliberately core dump
 			break;

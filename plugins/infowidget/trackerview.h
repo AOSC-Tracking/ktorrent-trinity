@@ -21,6 +21,8 @@
 #ifndef TRACKERVIEW_H
 #define TRACKERVIEW_H
 
+#include <tqlistview.h>
+
 #include <kurl.h>
 #include "trackerviewbase.h"
 

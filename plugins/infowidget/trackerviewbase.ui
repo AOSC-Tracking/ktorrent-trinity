@@ -298,6 +298,9 @@
         <slot>btnRestore_clicked()</slot>
     </connection>
 </connections>
+<forwards>
+    <forward>class TQListViewItem;</forward>
+</forwards>
 <Q_SLOTS>
     <slot>btnChange_clicked()</slot>
     <slot>listTrackers_currentChanged(TQListViewItem*)</slot>
