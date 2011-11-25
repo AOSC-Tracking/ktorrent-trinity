@@ -508,6 +508,9 @@
     <tabstop>m_create_btn</tabstop>
     <tabstop>m_cancel_btn</tabstop>
 </tabstops>
+<forwards>
+    <forward>class TQListViewItem;</forward>
+</forwards>
 <Q_SLOTS>
     <slot>btnRemoveNode_clicked()</slot>
     <slot>btnAddNode_clicked()</slot>
