@@ -382,13 +382,13 @@ same compiler to compile Qt and tdelibs as you did use now.
 For more details about this problem, look at the end of config.log.])
 fi
 
-if eval `KDEDIR= ./conftest 2>&5`; then
+if eval `TDEDIR= ./conftest 2>&5`; then
   kde_result=done
 else
   kde_result=problems
 fi
 
-KDEDIR= ./conftest 2> /dev/null >&5 # make an echo for config.log
+TDEDIR= ./conftest 2> /dev/null >&5 # make an echo for config.log
 kde_have_all_paths=yes
 
 KDE_SET_PATHS($kde_result)
@@ -547,11 +547,11 @@ Please check whether you installed aRts correctly or use
 AC_DEFUN([KDE_SET_DEFAULT_BINDIRS],
 [
     kde_default_bindirs="/usr/bin /usr/local/bin /opt/local/bin /usr/X11R6/bin /opt/kde/bin /opt/trinity/bin /usr/kde/bin /usr/local/kde/bin"
-    test -n "$KDEDIR" && kde_default_bindirs="$KDEDIR/bin $kde_default_bindirs"
-    if test -n "$KDEDIRS"; then
+    test -n "$TDEDIR" && kde_default_bindirs="$TDEDIR/bin $kde_default_bindirs"
+    if test -n "$TDEDIRS"; then
        kde_save_IFS=$IFS
        IFS=:
-       for dir in $KDEDIRS; do
+       for dir in $TDEDIRS; do
             kde_default_bindirs="$dir/bin $kde_default_bindirs "
        done
        IFS=$kde_save_IFS
@@ -613,7 +613,7 @@ AC_DEFUN([KDE_SUBST_PROGRAMS],
 
         if test -n "$MEINPROC" -a "$MEINPROC" != "compiled"; then
  	    kde_sharedirs="/usr/share/kde /usr/local/share /usr/share /opt/trinity/share /opt/kde/share $prefix/share"
-            test -n "$KDEDIR" && kde_sharedirs="$KDEDIR/share $kde_sharedirs"
+            test -n "$TDEDIR" && kde_sharedirs="$TDEDIR/share $kde_sharedirs"
             AC_FIND_FILE(apps/ksgmltools2/customization/kde-chunk.xsl, $kde_sharedirs, KDE_XSL_STYLESHEET)
 	    if test "$KDE_XSL_STYLESHEET" = "NO"; then
 		KDE_XSL_STYLESHEET=""
@@ -1818,7 +1818,7 @@ fi
 if test -z "$1"; then
 
 kde_incdirs="$kde_libs_prefix/include /usr/lib/kde/include /usr/local/kde/include /usr/local/include /usr/kde/include /usr/include/kde /usr/include /opt/trinity/include /opt/kde/include $x_includes $qt_includes"
-test -n "$KDEDIR" && kde_incdirs="$KDEDIR/include $KDEDIR/include/kde $KDEDIR $kde_incdirs"
+test -n "$TDEDIR" && kde_incdirs="$TDEDIR/include $TDEDIR/include/kde $TDEDIR $kde_incdirs"
 kde_incdirs="$ac_kde_includes $kde_incdirs"
 AC_FIND_FILE($kde_check_header, $kde_incdirs, kde_incdir)
 ac_kde_includes="$kde_incdir"
@@ -1830,7 +1830,7 @@ So, check this please and use another prefix!])
 fi
 
 kde_libdirs="$kde_libs_prefix/lib${tdelibsuff} /usr/lib/kde/lib${tdelibsuff} /usr/local/kde/lib${tdelibsuff} /usr/kde/lib${tdelibsuff} /usr/lib${tdelibsuff}/kde /usr/lib${tdelibsuff}/trinity /usr/lib${tdelibsuff} /usr/X11R6/lib${tdelibsuff} /usr/local/lib${tdelibsuff} /opt/trinity/lib${tdelibsuff} /opt/kde/lib${tdelibsuff} /usr/X11R6/kde/lib${tdelibsuff}"
-test -n "$KDEDIR" && kde_libdirs="$KDEDIR/lib${tdelibsuff} $KDEDIR $kde_libdirs"
+test -n "$TDEDIR" && kde_libdirs="$TDEDIR/lib${tdelibsuff} $TDEDIR $kde_libdirs"
 kde_libdirs="$ac_kde_libraries $libdir $kde_libdirs"
 AC_FIND_FILE($kde_check_lib, $kde_libdirs, kde_libdir)
 ac_kde_libraries="$kde_libdir"
@@ -3574,7 +3574,7 @@ AC_CANONICAL_SYSTEM
 AC_ARG_PROGRAM
 AM_INIT_AUTOMAKE($1, $2)
 AM_DISABLE_LIBRARIES
-AC_PREFIX_DEFAULT(${KDEDIR:-/usr/local/kde})
+AC_PREFIX_DEFAULT(${TDEDIR:-/usr/local/kde})
 AC_CHECK_COMPILERS
 KDE_PROG_LIBTOOL
 AM_KDE_WITH_NLS
@@ -4973,12 +4973,12 @@ AC_DEFUN([KDE_CONF_FILES],
 
 dnl This sets the prefix, for arts and tdelibs
 dnl Do NOT use in any other module.
-dnl It only looks at --prefix, KDEDIR and falls back to /usr/local/kde
+dnl It only looks at --prefix, TDEDIR and falls back to /usr/local/kde
 AC_DEFUN([KDE_SET_PREFIX_CORE],
 [
   unset CDPATH
-  dnl make $KDEDIR the default for the installation
-  AC_PREFIX_DEFAULT(${KDEDIR:-/usr/local/kde})
+  dnl make $TDEDIR the default for the installation
+  AC_PREFIX_DEFAULT(${TDEDIR:-/usr/local/kde})
 
   if test "x$prefix" = "xNONE"; then
     prefix=$ac_default_prefix
@@ -5002,7 +5002,7 @@ AC_DEFUN([KDE_SET_PREFIX],
   unset CDPATH
   dnl We can't give real code to that macro, only a value.
   dnl It only matters for --help, since we set the prefix in this function anyway.
-  AC_PREFIX_DEFAULT(${KDEDIR:-the kde prefix})
+  AC_PREFIX_DEFAULT(${TDEDIR:-the kde prefix})
 
   KDE_SET_DEFAULT_BINDIRS
   if test "x$prefix" = "xNONE"; then

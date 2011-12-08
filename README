@@ -3,7 +3,7 @@ KTorrent - A KDE BitTorrent client
 
 For installation follow the instructions from INSTALL file, but simple
 
-./configure --prefix=$KDEDIR
+./configure --prefix=$TDEDIR
 make
 make install (as root)
 

@@ -69,7 +69,7 @@ http://developer.kde.org/documentation/tutorials/dot/dcopiface/dcop-interface.ht
  http://public.kde.planetmirror.com/pub/kde/devel/gettext-kde/
 2. Install that gettext in ~/bin/
 3. cd ~/yourproject, export PATH=~/bin:$PATH, export
-KDEDIR=/where_your_KDE3_is
+TDEDIR=/where_your_KDE3_is
 4. make -f admin/Makefile.common package-messages
 5. make package-messages
 6. Translate the po files (not the pot!!) with kbabel or xemacs
