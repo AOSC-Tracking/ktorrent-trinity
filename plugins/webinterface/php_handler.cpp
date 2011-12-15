@@ -76,13 +76,13 @@ namespace kt
 		ts.setEncoding( TQTextStream::UnicodeUTF8 );
 		ts.writeRawBytes(php_s.data(),off); // first write the opening tag from the script
 		php_i->globalInfo(ts);
-		php_i->downloadtqStatus(ts);
+		php_i->downloadStatus(ts);
 		
 		TQMap<TQString,TQString>::const_iterator it;
 			
 		for ( it = args.begin(); it != args.end(); ++it )
 		{
-			ts << TQString("$_REQUEST['%1']=\"%2\";\n").tqarg(it.key()).tqarg(it.data());
+			ts << TQString("$_REQUEST['%1']=\"%2\";\n").arg(it.key()).arg(it.data());
 		}
 		ts.writeRawBytes(php_s.data() + off,php_s.size() - off); // the rest of the script
 		ts << flush;

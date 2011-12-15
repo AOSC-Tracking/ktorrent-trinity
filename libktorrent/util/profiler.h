@@ -35,7 +35,7 @@ namespace bt
 	class Profile
 	{
 		Profile* parent;
-		TQPtrList<Profile> tqchildren;
+		TQPtrList<Profile> children;
 		
 		TQString name;
 		double min,max,avg;

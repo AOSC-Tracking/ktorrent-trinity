@@ -20,7 +20,7 @@
  ***************************************************************************/
 #include <tqpainter.h>
 #include <tqpen.h>
-#include <tqbrush.h>
+#include <brush.h>
 #include <tqvaluelist.h>
 #include <tqpixmap.h>
 #include <math.h>
@@ -71,15 +71,15 @@ namespace kt
 		TQMimeSourceFactory* factory = TQMimeSourceFactory::defaultFactory();
 		
 		TQImage excluded(16, 16, 32);
-		FillAndFrameBlack(&excluded, TQColor(bar->tqcolorGroup().color(TQColorGroup::Mid)).pixel(), 16);
+		FillAndFrameBlack(&excluded, TQColor(bar->colorGroup().color(TQColorGroup::Mid)).pixel(), 16);
 		factory->setImage("excluded_color", excluded);
 		
 		TQImage available(16, 16, 32);
-		FillAndFrameBlack(&available, bar->tqcolorGroup().highlight().pixel(), 16);
+		FillAndFrameBlack(&available, bar->colorGroup().highlight().pixel(), 16);
 		factory->setImage("available_color", available);
 		
 		TQImage unavailable(16, 16, 32);
-		FillAndFrameBlack(&unavailable, bar->tqcolorGroup().base().pixel(), 16);
+		FillAndFrameBlack(&unavailable, bar->colorGroup().base().pixel(), 16);
 		factory->setImage("unavailable_color", unavailable);
 	}
 	
@@ -121,7 +121,7 @@ namespace kt
 		//	PROFILE("ChunkBar::updateBar");
 		//	Out() << "Pixmap : " << s.width() << " " << s.height() << endl;
 			pixmap.resize(s);
-			pixmap.fill(tqcolorGroup().color(TQColorGroup::Base));
+			pixmap.fill(colorGroup().color(TQColorGroup::Base));
 			TQPainter painter(&pixmap);
 			drawBarContents(&painter);
 			update();
@@ -132,9 +132,9 @@ namespace kt
 	{
 		// first draw background
 		if (isEnabled())
-			p->setBrush(tqcolorGroup().base());
+			p->setBrush(colorGroup().base());
 		else
-			p->setBrush(tqcolorGroup().background());
+			p->setBrush(colorGroup().background());
 	
 		p->setPen(TQt::NoPen);
 		p->drawRect(contentsRect());
@@ -148,7 +148,7 @@ namespace kt
 		TQSize s = contentsRect().size();
 		//Out() << "Pixmap : " << s.width() << " " << s.height() << endl;
 		pixmap.resize(s);
-		pixmap.fill(tqcolorGroup().color(TQColorGroup::Base));
+		pixmap.fill(colorGroup().color(TQColorGroup::Base));
 		TQPainter painter(&pixmap);
 		drawBarContents(&painter);
 		update();
@@ -164,15 +164,15 @@ namespace kt
 			const BitSet & bs = getBitSet();
 			curr = bs;
 			if (bs.allOn())
-				drawAllOn(p,tqcolorGroup().highlight());
+				drawAllOn(p,colorGroup().highlight());
 			else if (s.total_chunks > w)
-				drawMoreChunksThenPixels(p,bs,tqcolorGroup().highlight());
+				drawMoreChunksThenPixels(p,bs,colorGroup().highlight());
 			else
-				drawEqual(p,bs,tqcolorGroup().highlight());
+				drawEqual(p,bs,colorGroup().highlight());
 	
 			if (show_excluded && s.num_chunks_excluded > 0)
 			{
-				TQColor c = tqcolorGroup().color(TQColorGroup::Mid);
+				TQColor c = colorGroup().color(TQColorGroup::Mid);
 				if (curr_ebs.allOn())
 					drawAllOn(p,c);
 				else if (s.total_chunks > w)
@@ -186,7 +186,7 @@ namespace kt
 	
 	void ChunkBar::drawEqual(TQPainter *p,const BitSet & bs,const TQColor & color)
 	{
-		//p->setPen(TQPen(tqcolorGroup().highlight(),1,TQt::SolidLine));
+		//p->setPen(TQPen(colorGroup().highlight(),1,TQt::SolidLine));
 		TQColor c = color;
 	
 		Uint32 w = contentsRect().width();

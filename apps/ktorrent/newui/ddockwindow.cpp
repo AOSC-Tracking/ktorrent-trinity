@@ -20,7 +20,7 @@
 #include "ddockwindow.h"
 
 #include <tqtoolbutton.h>
-#include <tqlayout.h>
+#include <layout.h>
 #include <tqstyle.h>
 #include <tqwidgetstack.h>
 #include <tqimage.h>
@@ -104,7 +104,7 @@ void DDockWindow::setVisible(bool v)
 {
     //write dock width to the config file
     KConfig *config = kapp->config();
-    TQString group = TQString("%1").tqarg(m_name);
+    TQString group = TQString("%1").arg(m_name);
     config->setGroup(group);
 
     if (m_visible)
@@ -115,13 +115,13 @@ void DDockWindow::setVisible(bool v)
     v ? m_widgetStack->show() : m_widgetStack->hide();
     m_visible = v;
 
-    m_internalLayout->tqinvalidate();
+    m_internalLayout->invalidate();
     if (!m_visible)
     {
         if (m_position == DDockWindow::Bottom)
-            setFixedExtentHeight(m_internalLayout->tqsizeHint().height());
+            setFixedExtentHeight(m_internalLayout->sizeHint().height());
         else
-            setFixedExtentWidth(m_internalLayout->tqsizeHint().width());
+            setFixedExtentWidth(m_internalLayout->sizeHint().width());
         emit hidden();
     }
     else
@@ -130,12 +130,12 @@ void DDockWindow::setVisible(bool v)
         int size = 0;
         if (m_position == DDockWindow::Bottom)
         {
-            size = config->readNumEntry("ViewWidth", m_internalLayout->tqminimumSize().height());
+            size = config->readNumEntry("ViewWidth", m_internalLayout->minimumSize().height());
             setFixedExtentHeight(size);
         }
         else
         {
-            size = config->readNumEntry("ViewWidth", m_internalLayout->tqminimumSize().width());
+            size = config->readNumEntry("ViewWidth", m_internalLayout->minimumSize().width());
             setFixedExtentWidth(size);
         }
     }
@@ -148,7 +148,7 @@ void DDockWindow::loadSettings()
 void DDockWindow::saveSettings()
 {
     KConfig *config = kapp->config();
-    TQString group = TQString("%1").tqarg(m_name);
+    TQString group = TQString("%1").arg(m_name);
     int invisibleWidth = 0;
     config->setGroup(group);
     if (config->hasKey("ViewWidth"))
@@ -200,7 +200,7 @@ void DDockWindow::addWidget(const TQString &title, TQWidget *widget, bool skipAc
         //if the widget was selected last time the dock is deleted
         //we need to show it
         KConfig *config = kapp->config();
-        TQString group = TQString("%1").tqarg(m_name);
+        TQString group = TQString("%1").arg(m_name);
         config->setGroup(group);
         if (config->readEntry("ViewLastWidget") == title)
         {
@@ -338,7 +338,7 @@ bool DDockWindow::isActive()
 {
     if (m_toggledButton)
     {
-        TQWidget *w = tqApp->tqfocusWidget();
+        TQWidget *w = tqApp->focusWidget();
         if (!w)
             return false;
         TQWidget *toolWidget = m_widgets[m_toggledButton];

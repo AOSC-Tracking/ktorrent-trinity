@@ -10,7 +10,7 @@
 
 using RSS::Loader;
 using RSS::Document;
-using RSS::tqStatus;
+using RSS::Status;
 
 class Tester : public TQObject
 {
@@ -20,7 +20,7 @@ class Tester : public TQObject
 		void test( const TQString &url );
 
 	private slots:
-		void slotLoadingComplete( Loader *loader, Document doc, tqStatus status );
+		void slotLoadingComplete( Loader *loader, Document doc, Status status );
 };
 
 #endif

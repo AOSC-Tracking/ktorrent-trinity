@@ -40,7 +40,7 @@ namespace kt
 			PhpCodeGenerator(CoreInterface *c);
 			virtual ~PhpCodeGenerator(){}
 			
-			void downloadtqStatus(TQTextStream & out);
+			void downloadStatus(TQTextStream & out);
 			void globalInfo(TQTextStream & out);
 		private:
 			CoreInterface *core;

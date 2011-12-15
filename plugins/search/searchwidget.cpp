@@ -21,9 +21,9 @@
 
 #include <kapplication.h>
 #include <khtmlview.h>
-#include <tqlayout.h>
+#include <layout.h>
 #include <tqfile.h> 
-#include <tqtextstream.h> 
+#include <textstream.h> 
 #include <tqstring.h> 
 #include <tqstringlist.h> 
 #include <klineedit.h>
@@ -59,8 +59,8 @@ namespace kt
 	
 	SearchWidget::SearchWidget(SearchPlugin* sp) : html_part(0),sp(sp)
 	{
-		TQVBoxLayout* tqlayout = new TQVBoxLayout(this);
-		tqlayout->setAutoAdd(true);
+		TQVBoxLayout* layout = new TQVBoxLayout(this);
+		layout->setAutoAdd(true);
 		sbar = new SearchBar(this);
 		html_part = new HTMLPart(this);
 	
@@ -175,7 +175,7 @@ namespace kt
 		s_url.replace("FOOBAR", KURL::encode_string(text), true);
 		KURL url = KURL::fromPathOrURL(s_url);
 	
-		statusBarMsg(i18n("Searching for %1...").tqarg(text));
+		statusBarMsg(i18n("Searching for %1...").arg(text));
 		//html_part->openURL(url);
  		html_part->openURLRequest(url,KParts::URLArgs());
 	}	

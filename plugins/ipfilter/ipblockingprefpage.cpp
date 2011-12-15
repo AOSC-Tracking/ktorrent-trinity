@@ -45,7 +45,7 @@
 #include <tqcheckbox.h>
 #include <tqregexp.h>
 #include <tqvalidator.h>
-#include <tqlayout.h>
+#include <layout.h>
 #include <tqdialog.h>
 #include <tqobject.h>
 

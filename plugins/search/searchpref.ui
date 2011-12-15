@@ -20,7 +20,7 @@
             <verstretch>0</verstretch>
         </sizepolicy>
     </property>
-    <property name="tqminimumSize">
+    <property name="minimumSize">
         <size>
             <width>500</width>
             <height>350</height>
@@ -65,7 +65,7 @@
                 </widget>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>tqlayout29</cstring>
+                        <cstring>layout29</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -97,7 +97,7 @@
                             <property name="sizeType">
                                 <enum>Expanding</enum>
                             </property>
-                            <property name="tqsizeHint">
+                            <property name="sizeHint">
                                 <size>
                                     <width>40</width>
                                     <height>20</height>
@@ -129,7 +129,7 @@
                 </widget>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>tqlayout22</cstring>
+                        <cstring>layout22</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -152,7 +152,7 @@
                 </widget>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>tqlayout23</cstring>
+                        <cstring>layout23</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -223,7 +223,7 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="tqminimumSize">
+                    <property name="minimumSize">
                         <size>
                             <width>0</width>
                             <height>50</height>
@@ -235,7 +235,7 @@
                 </widget>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>tqlayout5</cstring>
+                        <cstring>layout5</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -267,7 +267,7 @@
                             <property name="sizeType">
                                 <enum>Maximum</enum>
                             </property>
-                            <property name="tqsizeHint">
+                            <property name="sizeHint">
                                 <size>
                                     <width>16</width>
                                     <height>20</height>

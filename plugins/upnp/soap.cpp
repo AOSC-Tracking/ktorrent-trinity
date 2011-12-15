@@ -29,7 +29,7 @@ namespace kt
 				"<SOAP-ENV:Body>"
 				"<m:%1 xmlns:m=\"%2\"/>"
 				"</SOAP-ENV:Body></SOAP-ENV:Envelope>"
-				"\r\n").tqarg(action).tqarg(service);
+				"\r\n").arg(action).arg(service);
 		
 		return comm;
 	}
@@ -39,7 +39,7 @@ namespace kt
 		TQString comm = TQString("<?xml version=\"1.0\"?>\r\n"
 				"<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" SOAP-ENV:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">"
 				"<SOAP-ENV:Body>"
-				"<m:%1 xmlns:m=\"%2\">").tqarg(action).tqarg(service);
+				"<m:%1 xmlns:m=\"%2\">").arg(action).arg(service);
 		
 		for (TQValueList<Arg>::const_iterator i = args.begin();i != args.end();i++)
 		{
@@ -47,7 +47,7 @@ namespace kt
 			comm += "<" + a.element + ">" + a.value + "</" + a.element + ">";
 		}
 		
-		comm += TQString("</m:%1></SOAP-ENV:Body></SOAP-ENV:Envelope>\r\n").tqarg(action);
+		comm += TQString("</m:%1></SOAP-ENV:Body></SOAP-ENV:Envelope>\r\n").arg(action);
 		return comm;
 	}
 }

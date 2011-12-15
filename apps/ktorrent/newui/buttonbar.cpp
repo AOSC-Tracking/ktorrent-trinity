@@ -19,7 +19,7 @@
  ***************************************************************************/
 #include "buttonbar.h"
 
-#include <tqlayout.h>
+#include <layout.h>
 
 #include <kdebug.h>
 #include <kconfig.h>
@@ -37,9 +37,9 @@ ButtonLayout::ButtonLayout(ButtonBar *parent, Direction d, int margin, int spaci
 {
 }
 
-TQSize ButtonLayout::tqminimumSize() const
+TQSize ButtonLayout::minimumSize() const
 {
-    TQSize size = TQBoxLayout::tqminimumSize();
+    TQSize size = TQBoxLayout::minimumSize();
 
     if (!m_buttonBar->autoResize())
         return size;
@@ -54,7 +54,7 @@ TQSize ButtonLayout::tqminimumSize() const
         case Ideal::Bottom:
             return TQSize(0,size.height());
     }
-    return TQBoxLayout::tqminimumSize();
+    return TQBoxLayout::minimumSize();
 }
 
 
@@ -128,14 +128,14 @@ void ButtonBar::fixDimensions()
     {
         case Ideal::Left:
         case Ideal::Right:
-            setFixedWidth(tqsizeHint().width());
-            setMinimumHeight(tqsizeHint().height());
+            setFixedWidth(sizeHint().width());
+            setMinimumHeight(sizeHint().height());
             setMaximumHeight(32767);
             break;
         case Ideal::Top:
         case Ideal::Bottom:
-            setFixedHeight(tqsizeHint().height());
-            setMinimumWidth(tqsizeHint().width());
+            setFixedHeight(sizeHint().height());
+            setMinimumWidth(sizeHint().width());
             setMaximumWidth(32767);
             break;
     }
@@ -156,13 +156,13 @@ void ButtonBar::resizeEvent(TQResizeEvent *ev)
     {
         case Ideal::Left:
         case Ideal::Right:
-            preferredDimension = l->TQBoxLayout::tqminimumSize().height();
+            preferredDimension = l->TQBoxLayout::minimumSize().height();
             actualDimension = size().height();
             oldDimension = ev->oldSize().height();
             break;
         case Ideal::Top:
         case Ideal::Bottom:
-            preferredDimension = l->TQBoxLayout::tqminimumSize().width();
+            preferredDimension = l->TQBoxLayout::minimumSize().width();
             actualDimension = size().width();
             oldDimension = ev->oldSize().width();
             break;
@@ -285,7 +285,7 @@ int ButtonBar::originalDimension()
     int size = 0;
     for (ButtonList::const_iterator it = m_buttons.constBegin(); it != m_buttons.constEnd(); ++it)
     {
-        size += (*it)->tqsizeHint((*it)->realText()).width();
+        size += (*it)->sizeHint((*it)->realText()).width();
     }
     return size;
 }

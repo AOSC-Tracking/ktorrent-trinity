@@ -30,7 +30,7 @@
 using namespace bt;
 using namespace kt;
 /*
-static TQString StatusToString(TorrentInterface* tc,TorrenttqStatus s)
+static TQString StatusToString(TorrentInterface* tc,TorrentStatus s)
 {
 	switch (s)
 	{
@@ -55,7 +55,7 @@ static TQString StatusToString(TorrentInterface* tc,TorrenttqStatus s)
 }
 */
 
-static TQColor StatusToColor(TorrenttqStatus s,const TQColorGroup & cg)
+static TQColor StatusToColor(TorrentStatus s,const TQColorGroup & cg)
 {
 	TQColor green(40,205,40);
 	TQColor yellow(255,174,0);
@@ -222,7 +222,7 @@ void KTorrentViewItem::update()
 			Uint32 secs = tc->getETA();
 			if(secs == -1)
 			{
-				setText(7,TQString("%1").tqarg(TQChar(0x221E)));
+				setText(7,TQString("%1").arg(TQChar(0x221E)));
 				eta = -2;
 			}
 			else
@@ -233,7 +233,7 @@ void KTorrentViewItem::update()
 		}
 		else
 		{
-			setText(7,TQString("%1").tqarg(TQChar(0x221E)));
+			setText(7,TQString("%1").arg(TQChar(0x221E)));
 			eta = -2;
 		}
 	}
@@ -242,23 +242,23 @@ void KTorrentViewItem::update()
 	
 	if(m_parent->columnVisible(8))
 	{
-		setText(8,TQString("%1 (%2)").tqarg(TQString::number(s.seeders_connected_to)).tqarg(TQString::number(s.seeders_total)));	
+		setText(8,TQString("%1 (%2)").arg(TQString::number(s.seeders_connected_to)).arg(TQString::number(s.seeders_total)));	
 	}
 
 	if(m_parent->columnVisible(9))
 	{
-		setText(9,TQString("%1 (%2)").tqarg(TQString::number(s.leechers_connected_to)).tqarg(TQString::number(s.leechers_total)));
+		setText(9,TQString("%1 (%2)").arg(TQString::number(s.leechers_connected_to)).arg(TQString::number(s.leechers_total)));
 	}
 
 	if(m_parent->columnVisible(10))
 	{
-		setText(10,i18n("%1 %").tqarg(KGlobal::locale()->formatNumber(Percentage(s),2)));
+		setText(10,i18n("%1 %").arg(KGlobal::locale()->formatNumber(Percentage(s),2)));
 	}
 	
 	if(m_parent->columnVisible(11))
 	{
 		float ratio = kt::ShareRatio(s);
-		setText(11,TQString("%1").tqarg(KGlobal::locale()->formatNumber(ratio,2)));
+		setText(11,TQString("%1").arg(KGlobal::locale()->formatNumber(ratio,2)));
 	}
 	
 	if (m_parent->columnVisible(12))

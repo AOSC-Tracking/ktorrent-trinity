@@ -189,7 +189,7 @@ namespace bt
 				Chunk* c = getChunk(hdr.index);
 				if (c)
 				{
-					c->settqStatus(Chunk::ON_DISK);
+					c->setStatus(Chunk::ON_DISK);
 					bitset.set(hdr.index,true);
 					todo.set(hdr.index,false);
 					recalc_chunks_left = true;
@@ -204,12 +204,12 @@ namespace bt
 	{
 		File fptr;
 		if (!fptr.open(index_file,"wb"))
-			throw Error(i18n("Cannot open index file %1 : %2").tqarg(index_file).tqarg(fptr.errorString()));
+			throw Error(i18n("Cannot open index file %1 : %2").arg(index_file).arg(fptr.errorString()));
 		
 		for (unsigned int i = 0;i < tor.getNumChunks();i++)
 		{
 			Chunk* c = getChunk(i);
-			if (c->gettqStatus() != Chunk::NOT_DOWNLOADED)
+			if (c->getStatus() != Chunk::NOT_DOWNLOADED)
 			{
 				NewChunkHeader hdr;
 				hdr.index = i;
@@ -267,16 +267,16 @@ namespace bt
 		for (Uint32 i = 0;i < bitset.getNumBits();i++)
 		{
 			Chunk* c = chunks[i];
-			if (c->gettqStatus() == Chunk::MMAPPED)
+			if (c->getStatus() == Chunk::MMAPPED)
 			{
 				cache->save(c);
 				c->clear();
-				c->settqStatus(Chunk::ON_DISK);
+				c->setStatus(Chunk::ON_DISK);
 			}
-			else if (c->gettqStatus() == Chunk::BUFFERED)
+			else if (c->getStatus() == Chunk::BUFFERED)
 			{
 				c->clear();
-				c->settqStatus(Chunk::ON_DISK);
+				c->setStatus(Chunk::ON_DISK);
 			}
 		}
 		cache->close();
@@ -288,11 +288,11 @@ namespace bt
 			return 0;
 		
 		Chunk* c = chunks[i];
-		if (c->gettqStatus() == Chunk::NOT_DOWNLOADED || c->isExcluded())
+		if (c->getStatus() == Chunk::NOT_DOWNLOADED || c->isExcluded())
 		{
 			return 0;
 		}
-		else if (c->gettqStatus() == Chunk::ON_DISK)
+		else if (c->getStatus() == Chunk::ON_DISK)
 		{
 			// load the chunk if it is on disk
 			cache->load(c);
@@ -338,10 +338,10 @@ namespace bt
 		Chunk* c = chunks[i];
 		if (!c->taken())
 		{
-			if (c->gettqStatus() == Chunk::MMAPPED)
+			if (c->getStatus() == Chunk::MMAPPED)
 				cache->save(c);
 			c->clear();
-			c->settqStatus(Chunk::ON_DISK);
+			c->setStatus(Chunk::ON_DISK);
 			loaded.remove(i);
 		}
 	}
@@ -352,10 +352,10 @@ namespace bt
 			return;
 		
 		Chunk* c = chunks[i];
-		if (c->gettqStatus() == Chunk::MMAPPED)
+		if (c->getStatus() == Chunk::MMAPPED)
 			cache->save(c);
 		c->clear();
-		c->settqStatus(Chunk::NOT_DOWNLOADED);
+		c->setStatus(Chunk::NOT_DOWNLOADED);
 		bitset.set(i,false);
 		todo.set(i,!excluded_chunks.get(i) && !only_seed_chunks.get(i));
 		loaded.remove(i);
@@ -372,10 +372,10 @@ namespace bt
 			// get rid of chunk if nobody asked for it in the last 5 seconds
 			if (!c->taken() && bt::GetCurrentTime() - i.data() > 5000)
 			{
-				if (c->gettqStatus() == Chunk::MMAPPED)
+				if (c->getStatus() == Chunk::MMAPPED)
 					cache->save(c);
 				c->clear();
-				c->settqStatus(Chunk::ON_DISK);
+				c->setStatus(Chunk::ON_DISK);
 				TQMap<Uint32,TimeStamp>::iterator j = i;
 				i++;
 				loaded.erase(j);
@@ -387,7 +387,7 @@ namespace bt
 			}
 		}
 	//	Uint32 num_in_mem = loaded.count();
-	//	Out() << TQString("Cleaned %1 chunks, %2 still in memory").tqarg(num_removed).tqarg(num_in_mem) << endl;
+	//	Out() << TQString("Cleaned %1 chunks, %2 still in memory").arg(num_removed).arg(num_in_mem) << endl;
 	}
 	
 	void ChunkManager::saveChunk(unsigned int i,bool update_index)
@@ -413,7 +413,7 @@ namespace bt
 		else
 		{
 			c->clear();
-			c->settqStatus(Chunk::NOT_DOWNLOADED);
+			c->setStatus(Chunk::NOT_DOWNLOADED);
 			Out(SYS_DIO|LOG_IMPORTANT) << "Warning: attempted to save a chunk which was excluded" << endl;
 		}
 	}
@@ -429,7 +429,7 @@ namespace bt
 			// try again
 			if (!fptr.open(index_file,"r+b"))
 				// panick if it failes
-				throw Error(i18n("Cannot open index file %1 : %2").tqarg(index_file).tqarg(fptr.errorString()));
+				throw Error(i18n("Cannot open index file %1 : %2").arg(index_file).arg(fptr.errorString()));
 		}
 
 		
@@ -1016,7 +1016,7 @@ namespace bt
 	
 	bool ChunkManager::prepareChunk(Chunk* c,bool allways)
 	{
-		if (!allways && c->gettqStatus() != Chunk::NOT_DOWNLOADED)
+		if (!allways && c->getStatus() != Chunk::NOT_DOWNLOADED)
 			return false;
 		
 		return cache->prep(c);
@@ -1044,7 +1044,7 @@ namespace bt
 				bitset.set(i,true);
 				todo.set(i,false);
 				// the chunk must be on disk
-				c->settqStatus(Chunk::ON_DISK);
+				c->setStatus(Chunk::ON_DISK);
 				tor.updateFilePercentage(i,bitset); 
 			}
 			else if (!ok_chunks.get(i) && bitset.get(i))
@@ -1053,12 +1053,12 @@ namespace bt
 				// We think we have a chunk, but we don't
 				bitset.set(i,false);
 				todo.set(i,!only_seed_chunks.get(i) && !excluded_chunks.get(i));
-				if (c->gettqStatus() == Chunk::ON_DISK)
+				if (c->getStatus() == Chunk::ON_DISK)
 				{
-					c->settqStatus(Chunk::NOT_DOWNLOADED);
+					c->setStatus(Chunk::NOT_DOWNLOADED);
 					tor.updateFilePercentage(i,bitset);
 				}
-				else if (c->gettqStatus() == Chunk::MMAPPED || c->gettqStatus() == Chunk::BUFFERED)
+				else if (c->getStatus() == Chunk::MMAPPED || c->getStatus() == Chunk::BUFFERED)
 				{
 					resetChunk(i);
 				}

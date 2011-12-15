@@ -40,9 +40,9 @@ kt::FlagDBSource::FlagDBSource()
 TQString kt::FlagDBSource::FlagDBSource::getPath(const TQString& country) const
 {
 	if (type) {
-		return locate(type, pathPattern.tqarg(country));
+		return locate(type, pathPattern.arg(country));
 	} else {
-		return pathPattern.tqarg(country);
+		return pathPattern.arg(country);
 	}
 }
 

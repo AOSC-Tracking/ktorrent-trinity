@@ -42,7 +42,7 @@ namespace kt
 			if (!KURL(link).isValid())
 			{
 				// no valid URL, so just display an error message
-				KMessageBox::error(0,i18n("Failed to find and download a valid torrent for %1").tqarg(curLink));
+				KMessageBox::error(0,i18n("Failed to find and download a valid torrent for %1").arg(curLink));
 				TQTimer::singleShot(50,this,TQT_SLOT(suicide()));
 			}
 			else
@@ -59,10 +59,10 @@ namespace kt
 			
 		}
 		
-	void RssLinkDownloader::processLink(KIO::Job* jobtqStatus)
+	void RssLinkDownloader::processLink(KIO::Job* jobStatus)
 		{
 		
-		if (!jobtqStatus->error())
+		if (!jobStatus->error())
 			{
 			//the file downloaded ok - so let's check if it's a torrent
 			KMimeType linkType = *KMimeType::findByContent(curFile->data());
@@ -100,15 +100,15 @@ namespace kt
 							hrefText = TQString("HREF=\"?([^\">< ]*)[\" ]");
 							hrefText.setCaseSensitive(false);
 				
-							hrefTags.tqcapturedTexts()[0].find(hrefText);
+							hrefTags.capturedTexts()[0].find(hrefText);
 							//lets get the captured
 							TQString hrefLink = hrefText.capturedTexts()[1];
 								
-							if (hrefLink.tqstartsWith("/"))
+							if (hrefLink.startsWith("/"))
 								{
 								hrefLink = url.protocol() + "://" + url.host() + hrefLink;
 								} 
-							else if (!hrefLink.tqstartsWith("http://", false)) 
+							else if (!hrefLink.startsWith("http://", false)) 
 								{
 								hrefLink = url.url().left(url.url().findRev("/")+1) + hrefLink;
 								}
@@ -180,7 +180,7 @@ namespace kt
 			else
 				{
 				//failed to download a selected article from a feed
-				KMessageBox::error(0,i18n("Failed to find and download a valid torrent for %1").tqarg(curLink));
+				KMessageBox::error(0,i18n("Failed to find and download a valid torrent for %1").arg(curLink));
 				}
 				deleteLater();
 			}

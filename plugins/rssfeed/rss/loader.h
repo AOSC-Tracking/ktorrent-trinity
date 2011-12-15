@@ -209,8 +209,8 @@ namespace RSS
 	 *
 	 * \code
 	 * Loader *loader = Loader::create();
-	 * connect(loader, TQT_SIGNAL(loadingComplete(Loader *, Document, tqStatus)),
-	 *         this, TQT_SLOT(slotLoadingComplete(Loader *, Document, tqStatus)));
+	 * connect(loader, TQT_SIGNAL(loadingComplete(Loader *, Document, Status)),
+	 *         this, TQT_SLOT(slotLoadingComplete(Loader *, Document, Status)));
 	 * loader->loadFrom("http://www.blah.org/foobar.rdf", new FileRetriever);
 	 * \endcode
 	 *
@@ -234,7 +234,7 @@ namespace RSS
 	 * 'slotLoadingComplete' method might look like this:
 	 *
 	 * \code
-	 * void MyClass::slotLoadingComplete(Loader *loader, Document doc, tqStatus status)
+	 * void MyClass::slotLoadingComplete(Loader *loader, Document doc, Status status)
 	 * {
 	 *     // Note that Loader::~Loader() is private, so you cannot delete Loader instances.
 	 *     // You don't need to do that anyway since Loader instances delete themselves.
@@ -320,9 +320,9 @@ namespace RSS
 			 * the case if you intend to call getPixmap() on Document::image()!
 			 * @param status A status byte telling whether there were any problems
 			 * while retrieving or parsing the data.
-			 * @see Document, tqStatus
+			 * @see Document, Status
 			 */
-			void loadingComplete(Loader *loader, Document doc, tqStatus status);
+			void loadingComplete(Loader *loader, Document doc, Status status);
 
 		private slots:
 			void slotRetrieverDone(const TQByteArray &data, bool success);

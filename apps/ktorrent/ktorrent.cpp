@@ -791,14 +791,14 @@ void KTorrent::updatedStats()
 	
 	//m_statusInfo->setText(i18n("Some info here e.g. connected/disconnected"));
 	TQString tmp = i18n("Speed down: %1 / up: %2")
-			.tqarg(KBytesPerSecToString((double)stats.download_speed/1024.0))
-			.tqarg(KBytesPerSecToString((double)stats.upload_speed/1024.0));
+			.arg(KBytesPerSecToString((double)stats.download_speed/1024.0))
+			.arg(KBytesPerSecToString((double)stats.upload_speed/1024.0));
 
 	m_statusSpeed->setText(tmp);
 
 	TQString tmp1 = i18n("Transferred down: %1 / up: %2")
-			.tqarg(BytesToString(stats.bytes_downloaded))
-			.tqarg(BytesToString(stats.bytes_uploaded));
+			.arg(BytesToString(stats.bytes_downloaded))
+			.arg(BytesToString(stats.bytes_uploaded));
 	m_statusTransfer->setText(tmp1);
 	
 	if (ServerAuthenticate::isFirewalled() && m_core->getNumTorrentsRunning() > 0) 
@@ -817,7 +817,7 @@ void KTorrent::updatedStats()
 	{
 		const dht::Stats & s = Globals::instance().getDHT().getStats();
 		m_statusDHT->setText(i18n("DHT: %1 nodes, %2 tasks")
-				.tqarg(s.num_peers).tqarg(s.num_tasks));
+				.arg(s.num_peers).arg(s.num_tasks));
 	}
 	else
 		m_statusDHT->setText(i18n("DHT: off"));

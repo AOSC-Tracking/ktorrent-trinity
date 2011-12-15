@@ -21,7 +21,7 @@
 #include <klocale.h>
 #include <kapplication.h>
 #include <kmessagebox.h>
-#include <tqtextbrowser.h>
+#include <textbrowser.h>
 #include <util/error.h>
 #include "upnptestapp.h"
 #include "mainwidget.h"

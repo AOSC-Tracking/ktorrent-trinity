@@ -47,7 +47,7 @@
                             </property>
                             <widget class="TQLayoutWidget" row="0" column="0">
                                 <property name="name">
-                                    <cstring>tqlayout25</cstring>
+                                    <cstring>layout25</cstring>
                                 </property>
                                 <vbox>
                                     <property name="name">
@@ -121,7 +121,7 @@
                             </widget>
                             <widget class="TQLayoutWidget" row="0" column="1">
                                 <property name="name">
-                                    <cstring>tqlayout26</cstring>
+                                    <cstring>layout26</cstring>
                                 </property>
                                 <vbox>
                                     <property name="name">
@@ -129,7 +129,7 @@
                                     </property>
                                     <widget class="TQLabel">
                                         <property name="name">
-                                            <cstring>dltqStatus</cstring>
+                                            <cstring>dlStatus</cstring>
                                         </property>
                                         <property name="text">
                                             <string></string>
@@ -263,7 +263,7 @@
                             </property>
                             <widget class="TQLayoutWidget" row="0" column="0">
                                 <property name="name">
-                                    <cstring>tqlayout15</cstring>
+                                    <cstring>layout15</cstring>
                                 </property>
                                 <vbox>
                                     <property name="name">
@@ -337,7 +337,7 @@
                             </widget>
                             <widget class="TQLayoutWidget" row="0" column="1">
                                 <property name="name">
-                                    <cstring>tqlayout27</cstring>
+                                    <cstring>layout27</cstring>
                                 </property>
                                 <vbox>
                                     <property name="name">
@@ -345,7 +345,7 @@
                                     </property>
                                     <widget class="TQLabel">
                                         <property name="name">
-                                            <cstring>ultqStatus</cstring>
+                                            <cstring>ulStatus</cstring>
                                         </property>
                                         <property name="text">
                                             <string></string>
@@ -392,7 +392,7 @@
         </widget>
         <widget class="TQLayoutWidget" row="0" column="1">
             <property name="name">
-                <cstring>tqlayout7</cstring>
+                <cstring>layout7</cstring>
             </property>
             <vbox>
                 <property name="name">
@@ -400,7 +400,7 @@
                 </property>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>tqlayout49</cstring>
+                        <cstring>layout49</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -416,7 +416,7 @@
                             <property name="sizeType">
                                 <enum>Preferred</enum>
                             </property>
-                            <property name="tqsizeHint">
+                            <property name="sizeHint">
                                 <size>
                                     <width>20</width>
                                     <height>20</height>
@@ -452,7 +452,7 @@
                             <property name="sizeType">
                                 <enum>Preferred</enum>
                             </property>
-                            <property name="tqsizeHint">
+                            <property name="sizeHint">
                                 <size>
                                     <width>40</width>
                                     <height>20</height>
@@ -471,7 +471,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="tqsizeHint">
+                    <property name="sizeHint">
                         <size>
                             <width>20</width>
                             <height>30</height>
@@ -504,7 +504,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="tqsizeHint">
+                    <property name="sizeHint">
                         <size>
                             <width>20</width>
                             <height>20</height>
@@ -540,7 +540,7 @@
                     <property name="sizeType">
                         <enum>Preferred</enum>
                     </property>
-                    <property name="tqsizeHint">
+                    <property name="sizeHint">
                         <size>
                             <width>20</width>
                             <height>20</height>
@@ -573,7 +573,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="tqsizeHint">
+                    <property name="sizeHint">
                         <size>
                             <width>20</width>
                             <height>20</height>

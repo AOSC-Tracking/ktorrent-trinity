@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 #include <tqfile.h>
-#include <tqtextstream.h>
+#include <textstream.h>
 #include <kparts/componentfactory.h>
 #include <util/log.h>
 #include <util/error.h>
@@ -71,7 +71,7 @@ namespace kt
 			{
 				Out(SYS_GEN|LOG_NOTICE) <<
 						TQString("Plugin %1 version does not match KTorrent version, unloading it.")
-						.tqarg(service->library()) << endl;
+						.arg(service->library()) << endl;
 
 				delete plugin;
 				// unload the library again, no need to have it loaded

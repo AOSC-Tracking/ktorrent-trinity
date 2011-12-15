@@ -66,7 +66,7 @@ namespace mse
 		lg << name << " (" << nb << ") = ";
 		for (Uint32 i = 0;i < nb;i++)
 		{
-			lg << TQString("0x%1 ").tqarg(buf[i],0,16);
+			lg << TQString("0x%1 ").arg(buf[i],0,16);
 		}
 		lg << endl;
 	}

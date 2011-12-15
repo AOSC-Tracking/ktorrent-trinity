@@ -165,7 +165,7 @@ namespace bt
 		for (Uint32 i = from;i <= to;i++)
 		{
 			bool in_chunks = std::find(chunks.begin(),chunks.end(),i) != chunks.end();
-			if (!in_chunks && cman.getChunk(i)->gettqStatus() != Chunk::ON_DISK)
+			if (!in_chunks && cman.getChunk(i)->getStatus() != Chunk::ON_DISK)
 			{
 			//	Out(SYS_DIO|LOG_DEBUG) << "ChunkSelector::reIncluded " << i << endl;
 				chunks.push_back(i);

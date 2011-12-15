@@ -46,7 +46,7 @@
             <property name="scaledContents">
                 <bool>false</bool>
             </property>
-            <property name="tqalignment">
+            <property name="alignment">
                 <set>WordBreak|AlignVCenter</set>
             </property>
             <property name="indent">
@@ -73,7 +73,7 @@
                     <verstretch>0</verstretch>
                 </sizepolicy>
             </property>
-            <property name="tqminimumSize">
+            <property name="minimumSize">
                 <size>
                     <width>390</width>
                     <height>0</height>
@@ -82,7 +82,7 @@
         </widget>
         <widget class="TQLayoutWidget" row="3" column="0">
             <property name="name">
-                <cstring>tqlayout6</cstring>
+                <cstring>layout6</cstring>
             </property>
             <hbox>
                 <property name="name">

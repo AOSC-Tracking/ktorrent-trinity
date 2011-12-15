@@ -59,7 +59,7 @@ namespace bt
 		}
 		else
 		{
-			throw Error(i18n("Illegal token: %1").tqarg(data[pos]));
+			throw Error(i18n("Illegal token: %1").arg(data[pos]));
 		}
 	}
 
@@ -161,7 +161,7 @@ namespace bt
 			Int64 bi = 0LL;
 			bi = n.toLongLong(&ok);
 			if (!ok)
-				throw Error(i18n("Cannot convert %1 to an int").tqarg(n));
+				throw Error(i18n("Cannot convert %1 to an int").arg(n));
 
 			pos++;
 			if (verbose) Out() << "INT64 = " << n << endl;
@@ -195,7 +195,7 @@ namespace bt
 		len = n.toInt(&ok);
 		if (!ok)
 		{
-			throw Error(i18n("Cannot convert %1 to an int").tqarg(n));
+			throw Error(i18n("Cannot convert %1 to an int").arg(n));
 		}
 		// move pos to the first part of the string
 		pos++;
@@ -204,7 +204,7 @@ namespace bt
 			
 		TQByteArray arr(len);
 		for (unsigned int i = pos;i < pos + len;i++)
-			arr.tqat(i-pos) = data[i];
+			arr.at(i-pos) = data[i];
 		pos += len;
 		// read the string into n
 

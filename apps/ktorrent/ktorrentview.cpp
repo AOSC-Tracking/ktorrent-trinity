@@ -40,7 +40,7 @@
 #include <tqcursor.h>
 #include <tqheader.h>
 #include <tqvaluelist.h>
-#include <tqlayout.h>
+#include <layout.h>
 		
 #include "ktorrentview.h"
 #include "ktorrentviewitem.h"
@@ -85,8 +85,8 @@ bool TorrentView::eventFilter(TQObject* watched, TQEvent* e)
 KTorrentView::KTorrentView(TQWidget *parent)
 	: TQWidget(parent),menu(0),current_group(0),running(0),total(0),view(0),filter_bar(0)
 {
-	TQVBoxLayout* tqlayout = new TQVBoxLayout(this);
-	tqlayout->setAutoAdd(true);
+	TQVBoxLayout* layout = new TQVBoxLayout(this);
+	layout->setAutoAdd(true);
 	view = new TorrentView(this);
 	filter_bar = new FilterBar(this);
 	filter_bar->setHidden(true);
@@ -198,9 +198,9 @@ void KTorrentView::setCurrentGroup(Group* group)
 	}
 	
 	if (current_group)
-		setCaption(TQString("%1 %2/%3").tqarg(current_group->groupName()).tqarg(running).tqarg(total));
+		setCaption(TQString("%1 %2/%3").arg(current_group->groupName()).arg(running).arg(total));
 	else
-		setCaption(i18n("All Torrents %1/%2").tqarg(running).tqarg(total));
+		setCaption(i18n("All Torrents %1/%2").arg(running).arg(total));
 	
 	onSelectionChanged();
 	onExecuted(view->currentItem());
@@ -208,7 +208,7 @@ void KTorrentView::setCurrentGroup(Group* group)
 
 void KTorrentView::saveSettings(KConfig* cfg,int idx)
 {
-	TQString group = TQString("KTorrentView-%1").tqarg(idx);
+	TQString group = TQString("KTorrentView-%1").arg(idx);
 	view->saveLayout(cfg,group);
 	cfg->setGroup(group);
 	filter_bar->saveSettings(cfg);
@@ -217,7 +217,7 @@ void KTorrentView::saveSettings(KConfig* cfg,int idx)
 
 void KTorrentView::loadSettings(KConfig* cfg,int idx)
 {
-	TQString group = TQString("KTorrentView-%1").tqarg(idx);
+	TQString group = TQString("KTorrentView-%1").arg(idx);
 	view->restoreLayout(cfg,group);
 	view->setDragEnabled(true);
 
@@ -373,7 +373,7 @@ void KTorrentView::removeDownloads()
 			if (!s.completed)
 			{
 				TQString msg = i18n("The torrent %1 has not finished downloading, "
-						"do you want to delete the incomplete data, too?").tqarg(s.torrent_name);
+						"do you want to delete the incomplete data, too?").arg(s.torrent_name);
 				int ret = KMessageBox::questionYesNoCancel(
 						this,msg,i18n("Remove Download"),
 						i18n("Delete Data"),i18n("Keep Data"));
@@ -546,9 +546,9 @@ void KTorrentView::update()
 		total = t;
 		
 		if (current_group)
-			setCaption(TQString("%1 %2/%3").tqarg(current_group->groupName()).tqarg(running).tqarg(total));
+			setCaption(TQString("%1 %2/%3").arg(current_group->groupName()).arg(running).arg(total));
 		else
-			setCaption(i18n("All Torrents %1/%2").tqarg(running).tqarg(total));
+			setCaption(i18n("All Torrents %1/%2").arg(running).arg(total));
 		onSelectionChanged();
 	}
 	
@@ -628,7 +628,7 @@ void KTorrentView::checkDataIntegrity()
 	}
 	else
 	{
-		KMessageBox::error(0,i18n("You are already checking the data of the torrent %1 !").tqarg(tc->getStats().torrent_name));
+		KMessageBox::error(0,i18n("You are already checking the data of the torrent %1 !").arg(tc->getStats().torrent_name));
 	}
 }
 
@@ -748,7 +748,7 @@ void KTorrentView::setDownloadLocationSlot()
 		if (tc)
 		{
 			TQString dn;
-			dn = KFileDialog::getExistingDirectory(tc->getStats().output_path, this, i18n("Choose download location for %1").tqarg(tc->getStats().torrent_name));
+			dn = KFileDialog::getExistingDirectory(tc->getStats().output_path, this, i18n("Choose download location for %1").arg(tc->getStats().torrent_name));
 								
 			if(dn.isNull() || dn.isEmpty())
 				continue;
@@ -872,9 +872,9 @@ void KTorrentView::updateCaption()
 		total = t;
 		
 		if (current_group)
-			setCaption(TQString("%1 %2/%3").tqarg(current_group->groupName()).tqarg(running).tqarg(total));
+			setCaption(TQString("%1 %2/%3").arg(current_group->groupName()).arg(running).arg(total));
 		else
-			setCaption(i18n("All Torrents %1/%2").tqarg(running).tqarg(total));
+			setCaption(i18n("All Torrents %1/%2").arg(running).arg(total));
 	}
 }
 

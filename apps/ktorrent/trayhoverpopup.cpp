@@ -114,7 +114,7 @@ void TrayHoverPopup::create()
 		hb->setSpacing(KDialog::spacingHint());
 		TQLabel* pix_lbl = new TQLabel(hb,"title_icon");
 		pix_lbl->setPixmap(pix);
-		pix_lbl->tqsetAlignment(AlignLeft);
+		pix_lbl->setAlignment(AlignLeft);
 	}
 	 
 	
@@ -122,13 +122,13 @@ void TrayHoverPopup::create()
 	TQFont fnt = title->font();
 	fnt.setBold( true );
 	title->setFont( fnt );
-	title->tqsetAlignment( TQt::AlignHCenter );
+	title->setAlignment( TQt::AlignHCenter );
 	if ( hb )
 		hb->setStretchFactor(title, 10 ); // enforce centering
 
 	// text will be filled later
 	text = new TQLabel( "Dummy", vb, "msg_label" );
-				text->tqsetAlignment( AlignLeft );
+				text->setAlignment( AlignLeft );
 	setView(vb);
 }
 	

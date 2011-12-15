@@ -22,7 +22,7 @@
 #define STATSSPD_H_
 
 #include <tqwidget.h>
-#include <tqlayout.h>
+#include <layout.h>
 #include <tqtabwidget.h>
 #include <tqgroupbox.h>
 

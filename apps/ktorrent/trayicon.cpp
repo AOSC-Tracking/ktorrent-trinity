@@ -88,24 +88,24 @@ void TrayIcon::leaveEvent(TQEvent* )
 void TrayIcon::updateStats(const CurrentStats stats, bool showBars,int downloadBandwidth, int uploadBandwidth )
 {
 	TQString tip = i18n("<table cellpadding='2' cellspacing='2' align='center'><tr><td><b>Speed:</b></td><td></td></tr><tr><td>Download: <font color='#1c9a1c'>%1</font></td><td>Upload: <font color='#990000'>%2</font></td></tr><tr><td><b>Transfer:</b></td><td></td></tr><tr><td>Download: <font color='#1c9a1c'>%3</font></td><td>Upload: <font color='#990000'>%4</font></td></tr></table>")
-			.tqarg(KBytesPerSecToString((double)stats.download_speed/1024.0))
-			.tqarg(KBytesPerSecToString((double)stats.upload_speed/1024.0))
-			.tqarg(BytesToString(stats.bytes_downloaded))
-			.tqarg(BytesToString(stats.bytes_uploaded));
+			.arg(KBytesPerSecToString((double)stats.download_speed/1024.0))
+			.arg(KBytesPerSecToString((double)stats.upload_speed/1024.0))
+			.arg(BytesToString(stats.bytes_downloaded))
+			.arg(BytesToString(stats.bytes_uploaded));
 	m_hover_popup->updateText(tip);
 	
 	if(showBars)
 		drawSpeedBar(stats.download_speed/1024,stats.upload_speed/1024, downloadBandwidth, uploadBandwidth);
 	else if (previousDownloadHeight > 0 || previousUploadHeight > 0)
 	{
-		tqrepaint(); // clear the bars if they are disabled
+		repaint(); // clear the bars if they are disabled
 		previousDownloadHeight = previousUploadHeight = 0;
 	}
 }
 
 void TrayIcon::drawSpeedBar(int downloadSpeed, int uploadSpeed, int downloadBandwidth, int uploadBandwidth )
 {
-	//check if need tqrepaint
+	//check if need repaint
 	if (uploadBandwidth == 0)
 		 uploadBandwidth = 1;
 	if (downloadBandwidth == 0)
@@ -116,7 +116,7 @@ void TrayIcon::drawSpeedBar(int downloadSpeed, int uploadSpeed, int downloadBand
 	if(previousDownloadHeight==DownloadHeight && previousUploadHeight==UploadHeight)
 		return;
 	
-	tqrepaint ();
+	repaint ();
 
 	TQBrush brushD(green);
 	TQBrush brushU(red);
@@ -146,9 +146,9 @@ void TrayIcon::finished(TorrentInterface* tc)
 
 	TQString msg = i18n("<b>%1</b> has completed downloading."
 						"<br>Average speed: %2 DL / %3 UL.")
-						.tqarg(s.torrent_name)
-						.tqarg(KBytesPerSecToString(speed_down / tc->getRunningTimeDL()))
-						.tqarg(KBytesPerSecToString(speed_up / tc->getRunningTimeUL()));
+						.arg(s.torrent_name)
+						.arg(KBytesPerSecToString(speed_down / tc->getRunningTimeDL()))
+						.arg(KBytesPerSecToString(speed_up / tc->getRunningTimeUL()));
 
 	showPassivePopup(msg,i18n("Download completed"));
 }
@@ -164,10 +164,10 @@ void TrayIcon::maxShareRatioReached(kt::TorrentInterface* tc)
 	
 	TQString msg = i18n("<b>%1</b> has reached its maximum share ratio of %2 and has been stopped."
 			"<br>Uploaded %3 at an average speed of %4.")
-			.tqarg(s.torrent_name)
-			.tqarg(loc->formatNumber(s.max_share_ratio,2))
-			.tqarg(BytesToString(s.bytes_uploaded))
-			.tqarg(KBytesPerSecToString(speed_up / tc->getRunningTimeUL()));
+			.arg(s.torrent_name)
+			.arg(loc->formatNumber(s.max_share_ratio,2))
+			.arg(BytesToString(s.bytes_uploaded))
+			.arg(KBytesPerSecToString(speed_up / tc->getRunningTimeUL()));
 	
 	showPassivePopup(msg,i18n("Seeding completed"));
 }
@@ -183,10 +183,10 @@ void TrayIcon::maxSeedTimeReached(kt::TorrentInterface* tc)
 	
 	TQString msg = i18n("<b>%1</b> has reached its maximum seed time of %2 hours and has been stopped."
 			"<br>Uploaded %3 at an average speed of %4.")
-			.tqarg(s.torrent_name)
-			.tqarg(loc->formatNumber(s.max_seed_time,2))
-			.tqarg(BytesToString(s.bytes_uploaded))
-			.tqarg(KBytesPerSecToString(speed_up / tc->getRunningTimeUL()));
+			.arg(s.torrent_name)
+			.arg(loc->formatNumber(s.max_seed_time,2))
+			.arg(BytesToString(s.bytes_uploaded))
+			.arg(KBytesPerSecToString(speed_up / tc->getRunningTimeUL()));
 	
 	showPassivePopup(msg,i18n("Seeding completed"));
 }
@@ -198,7 +198,7 @@ void TrayIcon::torrentStoppedByError(kt::TorrentInterface* tc, TQString msg)
 	
 	const TorrentStats & s = tc->getStats();
 	TQString err_msg = i18n("<b>%1</b> has been stopped with the following error: <br>%2")
-				.tqarg(s.torrent_name).tqarg(msg);
+				.arg(s.torrent_name).arg(msg);
 	
 	showPassivePopup(err_msg,i18n("Error"));
 }
@@ -211,7 +211,7 @@ void TrayIcon::corruptedData(kt::TorrentInterface* tc)
 	const TorrentStats & s = tc->getStats();
 	TQString err_msg = i18n("Corrupted data has been found in the torrent <b>%1</b>"
 			"<br>It would be a good idea to do a data integrity check on the torrent.")
-			.tqarg(s.torrent_name);
+			.arg(s.torrent_name);
 	showPassivePopup(err_msg,i18n("Error"));
 }
 
@@ -227,10 +227,10 @@ void TrayIcon::queuingNotPossible(kt::TorrentInterface* tc)
 	 
 	if (tc->overMaxRatio())
 		msg = i18n("<b>%1</b> has reached its maximum share ratio of %2 and cannot be enqueued. Remove the limit manually if you want to continue seeding.")
-				.tqarg(s.torrent_name).tqarg(loc->formatNumber(s.max_share_ratio,2));
+				.arg(s.torrent_name).arg(loc->formatNumber(s.max_share_ratio,2));
 	else
 		msg = i18n("<b>%1</b> has reached its maximum seed time of %2 hours and cannot be enqueued. Remove the limit manually if you want to continue seeding.")
-				.tqarg(s.torrent_name).tqarg(loc->formatNumber(s.max_seed_time,2));
+				.arg(s.torrent_name).arg(loc->formatNumber(s.max_seed_time,2));
 	
 	showPassivePopup(msg,i18n("Torrent cannot be enqueued."));
 }
@@ -240,7 +240,7 @@ void TrayIcon::canNotStart(kt::TorrentInterface* tc,kt::TorrentStartResponse rea
 	if (!Settings::showPopups())
 		return;
 	
-	TQString msg = i18n("Cannot start <b>%1</b> : <br>").tqarg(tc->getStats().torrent_name);
+	TQString msg = i18n("Cannot start <b>%1</b> : <br>").arg(tc->getStats().torrent_name);
 	switch (reason)
 	{
 	case kt::TQM_LIMITS_REACHED:
@@ -274,7 +274,7 @@ void TrayIcon::lowDiskSpace(kt::TorrentInterface * tc, bool stopped)
 	
 	const TorrentStats & s = tc->getStats();
 	
-	TQString msg = i18n("Your disk is running out of space.<br /><b>%1</b> is being downloaded to '%2'.").tqarg(s.torrent_name).tqarg(tc->getDataDir());
+	TQString msg = i18n("Your disk is running out of space.<br /><b>%1</b> is being downloaded to '%2'.").arg(s.torrent_name).arg(tc->getDataDir());
 	
 	if(stopped)
 		msg.prepend(i18n("Torrent has been stopped.<br />"));
@@ -335,10 +335,10 @@ void SetMaxRate::makeMenu()
 			{
 				if(rate == valuePair[j] && j==0)
 				{
-					setItemChecked(insertItem(TQString("%1").tqarg(valuePair[j]),-1, (j == 0) ? 2 : count()), true);
+					setItemChecked(insertItem(TQString("%1").arg(valuePair[j]),-1, (j == 0) ? 2 : count()), true);
 				}
 				else
-					insertItem(TQString("%1").tqarg(valuePair[j]),-1, (j == 0) ? 2 : count());
+					insertItem(TQString("%1").arg(valuePair[j]),-1, (j == 0) ? 2 : count());
 			}
 		}
 
