@@ -67,14 +67,14 @@ void ScanDialog::scan()
 	}
 	catch (bt::Error & err)
 	{
-		KMessageBox::error(0,i18n("Error scanning data: %1").arg(err.toString()));
+		KMessageBox::error(0,i18n("Error scanning data: %1").tqarg(err.toString()));
 	}
 	
 }
 
 void ScanDialog::execute(kt::TorrentInterface* tc,bool silently)
 {
-	m_torrent_label->setText(i18n("Scanning data of <b>%1</b> :").arg(tc->getStats().torrent_name));
+	m_torrent_label->setText(i18n("Scanning data of <b>%1</b> :").tqarg(tc->getStats().torrent_name));
 	adjustSize();
 	m_cancel->setEnabled(true);
 	this->silently = silently;

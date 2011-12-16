@@ -39,7 +39,7 @@ namespace RSS
 	 * Possible status values returned by the signal
 	 * Loader::loadingComplete().
 	 */
-	enum Status {
+	enum tqStatus {
 		Success,	   /**
 						* Nothing went wrong so far, but you still have to check
 						* what values are returned by the classes since it's not

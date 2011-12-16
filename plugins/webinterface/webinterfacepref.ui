@@ -20,7 +20,7 @@
             <verstretch>0</verstretch>
         </sizepolicy>
     </property>
-    <property name="minimumSize">
+    <property name="tqminimumSize">
         <size>
             <width>500</width>
             <height>350</height>
@@ -46,7 +46,7 @@
                 </property>
                 <widget class="TQLayoutWidget" row="0" column="0">
                     <property name="name">
-                        <cstring>layout5</cstring>
+                        <cstring>tqlayout5</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -92,7 +92,7 @@
                             <property name="sizeType">
                                 <enum>Expanding</enum>
                             </property>
-                            <property name="sizeHint">
+                            <property name="tqsizeHint">
                                 <size>
                                     <width>54</width>
                                     <height>21</height>
@@ -128,7 +128,7 @@
                 </widget>
                 <widget class="TQLayoutWidget" row="1" column="0">
                     <property name="name">
-                        <cstring>layout4</cstring>
+                        <cstring>tqlayout4</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -151,7 +151,7 @@
                 </widget>
                 <widget class="TQLayoutWidget" row="3" column="0">
                     <property name="name">
-                        <cstring>layout6</cstring>
+                        <cstring>tqlayout6</cstring>
                     </property>
                     <grid>
                         <property name="name">
@@ -159,7 +159,7 @@
                         </property>
                         <widget class="TQLayoutWidget" row="0" column="0">
                             <property name="name">
-                                <cstring>layout5</cstring>
+                                <cstring>tqlayout5</cstring>
                             </property>
                             <hbox>
                                 <property name="name">
@@ -192,7 +192,7 @@
                 </widget>
                 <widget class="TQLayoutWidget" row="2" column="0">
                     <property name="name">
-                        <cstring>layout7</cstring>
+                        <cstring>tqlayout7</cstring>
                     </property>
                     <hbox>
                         <property name="name">

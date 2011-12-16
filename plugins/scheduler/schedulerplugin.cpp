@@ -74,7 +74,7 @@ namespace kt
 		getGUI()->addPrefPage(Pref);
 		BWScheduler::instance().setCoreInterface(getCore());
 		
-		TQDateTime now = TQDateTime::currentDateTime();
+		TQDateTime now = TQDateTime::tqcurrentDateTime();
 		
 		//each hour
 		TQDateTime hour = now.addSecs(3600);
@@ -115,7 +115,7 @@ namespace kt
 	void SchedulerPlugin::timer_triggered()
 	{
 		m_timer.changeInterval(3600*1000);
-		TQDateTime now = TQDateTime::currentDateTime();
+		TQDateTime now = TQDateTime::tqcurrentDateTime();
 		BWScheduler::instance().trigger();
 	}
 	

@@ -48,19 +48,19 @@ namespace kt
 	{
 		KLocale* loc = KGlobal::locale();
 		if (bytes >= 1024 * 1024 * 1024)
-			return TQString("%1 GB").arg(loc->formatNumber(bytes / TO_GIG,precision < 0 ? 2 : precision));
+			return TQString("%1 GB").tqarg(loc->formatNumber(bytes / TO_GIG,precision < 0 ? 2 : precision));
 		else if (bytes >= 1024*1024)
-			return TQString("%1 MB").arg(loc->formatNumber(bytes / TO_MEG,precision < 0 ? 1 : precision));
+			return TQString("%1 MB").tqarg(loc->formatNumber(bytes / TO_MEG,precision < 0 ? 1 : precision));
 		else if (bytes >= 1024)
-			return TQString("%1 KB").arg(loc->formatNumber(bytes / TO_KB,precision < 0 ? 1 : precision));
+			return TQString("%1 KB").tqarg(loc->formatNumber(bytes / TO_KB,precision < 0 ? 1 : precision));
 		else
-			return TQString("%1 B").arg(bytes);
+			return TQString("%1 B").tqarg(bytes);
 	}
 
 	TQString KBytesPerSecToString2(double speed,int precision = 2)
 	{
 		KLocale* loc = KGlobal::locale();
-		return TQString("%1 KB/s").arg(loc->formatNumber(speed,precision));
+		return TQString("%1 KB/s").tqarg(loc->formatNumber(speed,precision));
 	}
 
 	/************************
@@ -72,12 +72,12 @@ namespace kt
 	}
 	
 	/*Generate php code
-	* function downloadStatus()
+	* function downloadtqStatus()
 	* {
 	*	return array( ... );
 	* }
 	*/
-	void PhpCodeGenerator::downloadStatus(TQTextStream & out)
+	void PhpCodeGenerator::downloadtqStatus(TQTextStream & out)
 	{
 		TorrentStats stats;
 		//Priority file_priority;
@@ -91,42 +91,42 @@ namespace kt
 				out << ",\n";
 			
 			stats=(*i)->getStats();
-			out << TQString("\n%1 => array(").arg(k);
+			out << TQString("\n%1 => array(").tqarg(k);
 			
-			out << TQString("\"imported_bytes\" => %1,\n").arg(stats.imported_bytes);
-			out << TQString("\"bytes_downloaded\" => \"%1\",\n").arg(BytesToString2(stats.bytes_downloaded));
-			out << TQString("\"bytes_uploaded\" => \"%1\",\n").arg(BytesToString2(stats.bytes_uploaded));
-			out << TQString("\"bytes_left\" => %1,\n").arg(stats.bytes_left);
-			out << TQString("\"bytes_left_to_download\" => %1,\n").arg(stats.bytes_left_to_download);
-			out << TQString("\"total_bytes\" => \"%1\",\n").arg(BytesToString2(stats.total_bytes));
-			out << TQString("\"total_bytes_to_download\" => %1,\n").arg(stats.total_bytes_to_download);
-			out << TQString("\"download_rate\" => \"%1\",\n").arg(KBytesPerSecToString2(stats.download_rate / 1024.0));
-			out << TQString("\"upload_rate\" => \"%1\",\n").arg(KBytesPerSecToString2(stats.upload_rate / 1024.0));
-			out << TQString("\"num_peers\" => %1,\n").arg(stats.num_peers);
-			out << TQString("\"num_chunks_downloading\" => %1,\n").arg(stats.num_chunks_downloading);
-			out << TQString("\"total_chunks\" => %1,\n").arg(stats.total_chunks);
-			out << TQString("\"num_chunks_downloaded\" => %1,\n").arg(stats.num_chunks_downloaded);
-			out << TQString("\"num_chunks_excluded\" => %1,\n").arg(stats.num_chunks_excluded);
-			out << TQString("\"chunk_size\" => %1,\n").arg(stats.chunk_size);
-			out << TQString("\"seeders_total\" => %1,\n").arg(stats.seeders_total);
-			out << TQString("\"seeders_connected_to\" => %1,\n").arg(stats.seeders_connected_to);
-			out << TQString("\"leechers_total\" => %1,\n").arg(stats.leechers_total);
-			out << TQString("\"leechers_connected_to\" => %1,\n").arg(stats.leechers_connected_to);
-			out << TQString("\"status\" => %1,\n").arg(stats.status);
-			out << TQString("\"running\" => %1,\n").arg(stats.running);
-			out << TQString("\"trackerstatus\" => \"%1\",\n").arg(stats.trackerstatus.replace("\\", "\\\\").replace("\"", "\\\"").replace("$", "\\$"));
-			out << TQString("\"session_bytes_downloaded\" => %1,\n").arg(stats.session_bytes_downloaded);
-			out << TQString("\"session_bytes_uploaded\" => %1,\n").arg(stats.session_bytes_uploaded);
-			out << TQString("\"trk_bytes_downloaded\" => %1,\n").arg(stats.trk_bytes_downloaded);
-			out << TQString("\"trk_bytes_uploaded\" => %1,\n").arg(stats.trk_bytes_uploaded);
-			out << TQString("\"torrent_name\" => \"%1\",\n").arg(stats.torrent_name.replace("\\", "\\\\").replace("\"", "\\\"").replace("$", "\\$"));
-			out << TQString("\"output_path\" => \"%1\",\n").arg(stats.output_path.replace("\\", "\\\\").replace("\"", "\\\"").replace("$", "\\$"));
-			out << TQString("\"stopped_by_error\" => \"%1\",\n").arg(stats.stopped_by_error);
-			out << TQString("\"completed\" => \"%1\",\n").arg(stats.completed);
-			out << TQString("\"user_controlled\" => \"%1\",\n").arg(stats.user_controlled);
-			out << TQString("\"max_share_ratio\" => %1,\n").arg(stats.max_share_ratio);
-			out << TQString("\"priv_torrent\" => \"%1\",\n").arg(stats.priv_torrent);
-			out << TQString("\"num_files\" => \"%1\",\n").arg((*i)->getNumFiles());			
+			out << TQString("\"imported_bytes\" => %1,\n").tqarg(stats.imported_bytes);
+			out << TQString("\"bytes_downloaded\" => \"%1\",\n").tqarg(BytesToString2(stats.bytes_downloaded));
+			out << TQString("\"bytes_uploaded\" => \"%1\",\n").tqarg(BytesToString2(stats.bytes_uploaded));
+			out << TQString("\"bytes_left\" => %1,\n").tqarg(stats.bytes_left);
+			out << TQString("\"bytes_left_to_download\" => %1,\n").tqarg(stats.bytes_left_to_download);
+			out << TQString("\"total_bytes\" => \"%1\",\n").tqarg(BytesToString2(stats.total_bytes));
+			out << TQString("\"total_bytes_to_download\" => %1,\n").tqarg(stats.total_bytes_to_download);
+			out << TQString("\"download_rate\" => \"%1\",\n").tqarg(KBytesPerSecToString2(stats.download_rate / 1024.0));
+			out << TQString("\"upload_rate\" => \"%1\",\n").tqarg(KBytesPerSecToString2(stats.upload_rate / 1024.0));
+			out << TQString("\"num_peers\" => %1,\n").tqarg(stats.num_peers);
+			out << TQString("\"num_chunks_downloading\" => %1,\n").tqarg(stats.num_chunks_downloading);
+			out << TQString("\"total_chunks\" => %1,\n").tqarg(stats.total_chunks);
+			out << TQString("\"num_chunks_downloaded\" => %1,\n").tqarg(stats.num_chunks_downloaded);
+			out << TQString("\"num_chunks_excluded\" => %1,\n").tqarg(stats.num_chunks_excluded);
+			out << TQString("\"chunk_size\" => %1,\n").tqarg(stats.chunk_size);
+			out << TQString("\"seeders_total\" => %1,\n").tqarg(stats.seeders_total);
+			out << TQString("\"seeders_connected_to\" => %1,\n").tqarg(stats.seeders_connected_to);
+			out << TQString("\"leechers_total\" => %1,\n").tqarg(stats.leechers_total);
+			out << TQString("\"leechers_connected_to\" => %1,\n").tqarg(stats.leechers_connected_to);
+			out << TQString("\"status\" => %1,\n").tqarg(stats.status);
+			out << TQString("\"running\" => %1,\n").tqarg(stats.running);
+			out << TQString("\"trackerstatus\" => \"%1\",\n").tqarg(stats.trackerstatus.replace("\\", "\\\\").replace("\"", "\\\"").replace("$", "\\$"));
+			out << TQString("\"session_bytes_downloaded\" => %1,\n").tqarg(stats.session_bytes_downloaded);
+			out << TQString("\"session_bytes_uploaded\" => %1,\n").tqarg(stats.session_bytes_uploaded);
+			out << TQString("\"trk_bytes_downloaded\" => %1,\n").tqarg(stats.trk_bytes_downloaded);
+			out << TQString("\"trk_bytes_uploaded\" => %1,\n").tqarg(stats.trk_bytes_uploaded);
+			out << TQString("\"torrent_name\" => \"%1\",\n").tqarg(stats.torrent_name.replace("\\", "\\\\").replace("\"", "\\\"").replace("$", "\\$"));
+			out << TQString("\"output_path\" => \"%1\",\n").tqarg(stats.output_path.replace("\\", "\\\\").replace("\"", "\\\"").replace("$", "\\$"));
+			out << TQString("\"stopped_by_error\" => \"%1\",\n").tqarg(stats.stopped_by_error);
+			out << TQString("\"completed\" => \"%1\",\n").tqarg(stats.completed);
+			out << TQString("\"user_controlled\" => \"%1\",\n").tqarg(stats.user_controlled);
+			out << TQString("\"max_share_ratio\" => %1,\n").tqarg(stats.max_share_ratio);
+			out << TQString("\"priv_torrent\" => \"%1\",\n").tqarg(stats.priv_torrent);
+			out << TQString("\"num_files\" => \"%1\",\n").tqarg((*i)->getNumFiles());			
 			out << TQString("\"files\" => array(");
 			out << flush;
 			if (stats.multi_file_torrent)
@@ -138,11 +138,11 @@ namespace kt
 						out << ",\n";
 					
 					TorrentFileInterface & file = (*i)->getTorrentFile(j);
-					out << TQString("\"%1\" => array(\n").arg(j);
-					out << TQString("\"name\" => \"%1\",\n").arg(file.getPath());
-					out << TQString("\"size\" => \"%1\",\n").arg(KIO::convertSize(file.getSize()));
-					out << TQString("\"perc_done\" => \"%1\",\n").arg(file.getDownloadPercentage());
-					out << TQString("\"status\" => \"%1\"\n").arg(file.getPriority());
+					out << TQString("\"%1\" => array(\n").tqarg(j);
+					out << TQString("\"name\" => \"%1\",\n").tqarg(file.getPath());
+					out << TQString("\"size\" => \"%1\",\n").tqarg(KIO::convertSize(file.getSize()));
+					out << TQString("\"perc_done\" => \"%1\",\n").tqarg(file.getDownloadPercentage());
+					out << TQString("\"status\" => \"%1\"\n").tqarg(file.getPriority());
 					out << TQString(")\n");
 					out << flush;
 				}
@@ -156,7 +156,7 @@ namespace kt
 	}
 	
 	/*Generate php code
-	* function globalStatus()
+	* function globaltqStatus()
 	* {
 	*	return array( ... );
 	* }
@@ -166,16 +166,16 @@ namespace kt
 		out << "function globalInfo()\n{\nreturn array(";
 		CurrentStats stats=core->getStats();
 	
-		out << TQString("\"download_speed\" => \"%1\",").arg(KBytesPerSecToString2(stats.download_speed / 1024.0));
-		out << TQString("\"upload_speed\" => \"%1\",").arg(KBytesPerSecToString2(stats.upload_speed / 1024.0));
-		out << TQString("\"bytes_downloaded\" => \"%1\",").arg(stats.bytes_downloaded);
-		out << TQString("\"bytes_uploaded\" => \"%1\",").arg(stats.bytes_uploaded);
-		out << TQString("\"max_download_speed\" => \"%1\",").arg(core->getMaxDownloadSpeed());
-		out << TQString("\"max_upload_speed\" => \"%1\",").arg(core->getMaxUploadSpeed());
-		out << TQString("\"max_downloads\" => \"%1\",").arg(Settings::maxDownloads());
-		out << TQString("\"max_seeds\"=> \"%1\",").arg(Settings::maxSeeds());
-		out << TQString("\"dht_support\" => \"%1\",").arg(Settings::dhtSupport());
-		out << TQString("\"use_encryption\" => \"%1\"").arg(Settings::useEncryption());
+		out << TQString("\"download_speed\" => \"%1\",").tqarg(KBytesPerSecToString2(stats.download_speed / 1024.0));
+		out << TQString("\"upload_speed\" => \"%1\",").tqarg(KBytesPerSecToString2(stats.upload_speed / 1024.0));
+		out << TQString("\"bytes_downloaded\" => \"%1\",").tqarg(stats.bytes_downloaded);
+		out << TQString("\"bytes_uploaded\" => \"%1\",").tqarg(stats.bytes_uploaded);
+		out << TQString("\"max_download_speed\" => \"%1\",").tqarg(core->getMaxDownloadSpeed());
+		out << TQString("\"max_upload_speed\" => \"%1\",").tqarg(core->getMaxUploadSpeed());
+		out << TQString("\"max_downloads\" => \"%1\",").tqarg(Settings::maxDownloads());
+		out << TQString("\"max_seeds\"=> \"%1\",").tqarg(Settings::maxSeeds());
+		out << TQString("\"dht_support\" => \"%1\",").tqarg(Settings::dhtSupport());
+		out << TQString("\"use_encryption\" => \"%1\"").tqarg(Settings::useEncryption());
 		out << ");\n}\n";
 	}
 	

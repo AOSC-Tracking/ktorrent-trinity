@@ -425,7 +425,7 @@ namespace bt
 			{
 				// if mmap fails or is not possible use buffered mode
 				c->allocate();
-				c->setStatus(Chunk::BUFFERED);
+				c->settqStatus(Chunk::BUFFERED);
 			}
 			else
 			{
@@ -436,7 +436,7 @@ namespace bt
 		{
 			// just allocate it
 			c->allocate();
-			c->setStatus(Chunk::BUFFERED);
+			c->settqStatus(Chunk::BUFFERED);
 		}
 		return true;
 	}
@@ -446,7 +446,7 @@ namespace bt
 		TQValueList<Uint32> tflist;
 		tor.calcChunkPos(c->getIndex(),tflist);
 		
-		if (c->getStatus() == Chunk::MMAPPED)
+		if (c->gettqStatus() == Chunk::MMAPPED)
 		{
 			// mapped chunks are easy
 			CacheFile* fd = files.find(tflist[0]);
@@ -455,7 +455,7 @@ namespace bt
 			
 			fd->unmap(c->getData(),c->getSize());
 			c->clear();
-			c->setStatus(Chunk::ON_DISK);
+			c->settqStatus(Chunk::ON_DISK);
 			return;
 		}
 	
@@ -506,7 +506,7 @@ namespace bt
 		
 		// set the chunk to on disk and clear it
 		c->clear();
-		c->setStatus(Chunk::ON_DISK);
+		c->settqStatus(Chunk::ON_DISK);
 	}
 	
 	void MultiFileCache::downloadStatusChanged(TorrentFile* tf, bool download)
@@ -592,7 +592,7 @@ namespace bt
 		DNDFile out(dst_file);
 		File fptr;
 		if (!fptr.open(src_file,"rb"))
-			throw Error(i18n("Cannot open file %1 : %2").arg(src_file).arg(fptr.errorString()));
+			throw Error(i18n("Cannot open file %1 : %2").tqarg(src_file).tqarg(fptr.errorString()));
 		
 		Uint32 cs = 0;
 		if (tf->getFirstChunk() == tor.getNumChunks() - 1)
@@ -654,7 +654,7 @@ namespace bt
 			// first attempt failed, must be fat so try that
 			if (!FatPreallocate(output_file,tf->getSize()))
 			{	
-				throw Error(i18n("Cannot preallocate diskspace : %1").arg(strerror(errno)));
+				throw Error(i18n("Cannot preallocate diskspace : %1").tqarg(strerror(errno)));
 			}
 		}
 		
@@ -670,7 +670,7 @@ namespace bt
 		
 		File fptr;
 		if (!fptr.open(output_file,"r+b"))
-			throw Error(i18n("Cannot open file %1 : %2").arg(output_file).arg(fptr.errorString()));
+			throw Error(i18n("Cannot open file %1 : %2").tqarg(output_file).tqarg(fptr.errorString()));
 			
 		
 		Uint32 ts = cs - tf->getFirstChunkOffset() > tf->getLastChunkSize() ? 
@@ -782,7 +782,7 @@ namespace bt
 			else
 			{
 				
-				// children, so we cannot delete any more directories higher up
+				// tqchildren, so we cannot delete any more directories higher up
 				return;
 			}
 		}

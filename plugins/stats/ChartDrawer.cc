@@ -416,7 +416,7 @@ void ChartDrawer::MakeLegendTooltip()
 {
 	TQToolTip::remove(this);
 	
-	TQString helpstr(TQString("<b>%1:</b><br><br>").arg(i18n("Legend")));
+	TQString helpstr(TQString("<b>%1:</b><br><br>").tqarg(i18n("Legend")));
 	TQMimeSourceFactory* factory = TQMimeSourceFactory::defaultFactory();
 	std::vector<TQImage> img;
 	
@@ -434,7 +434,7 @@ void ChartDrawer::MakeLegendTooltip()
 		}
 		
 		factory->setImage(mEls[i].GetName().replace(' ', '_') + "-" + TQString::number(i), img[i]);
-		helpstr += TQString("<img src='%1'>&nbsp;&nbsp;-&nbsp;&nbsp;%2<br>").arg(mEls[i].GetName().replace(" ", "_") + "-" + TQString::number(i)).arg( mEls[i].GetName() );	
+		helpstr += TQString("<img src='%1'>&nbsp;&nbsp;-&nbsp;&nbsp;%2<br>").tqarg(mEls[i].GetName().replace(" ", "_") + "-" + TQString::number(i)).tqarg( mEls[i].GetName() );	
 	}
 	
 	TQToolTip::add(this, helpstr);

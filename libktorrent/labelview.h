@@ -110,7 +110,7 @@ namespace kt
 		void onItemClicked(LabelViewItem* it);
 		
 	private:
-		void updateOddStatus();
+		void updateOddtqStatus();
 		
 	signals:
 		/// The current item has changed

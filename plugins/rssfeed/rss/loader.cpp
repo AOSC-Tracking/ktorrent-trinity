@@ -240,7 +240,7 @@ Loader *Loader::create()
 Loader *Loader::create(TQObject *object, const char *slot)
 {
    Loader *loader = create();
-   connect(loader, TQT_SIGNAL(loadingComplete(Loader *, Document, Status)),
+   connect(loader, TQT_SIGNAL(loadingComplete(Loader *, Document, tqStatus)),
            object, slot);
    return loader;
 }
@@ -300,7 +300,7 @@ void Loader::slotRetrieverDone(const TQByteArray &data, bool success)
    d->retriever = NULL;
 
    Document rssDoc;
-   Status status = Success;
+   tqStatus status = Success;
 
    if (success) {
       TQDomDocument doc;

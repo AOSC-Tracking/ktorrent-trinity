@@ -33,7 +33,7 @@ using namespace kt;
 SpeedLimitsDlg::SpeedLimitsDlg(kt::TorrentInterface* ti,TQWidget* parent, const char* name)
 		: SpeedLimitsDlgBase(parent,name,true,0),tor(ti)
 {
-	m_main_caption->setText(i18n("Speed limits for <b>%1</b>:").arg(tor->getStats().torrent_name));
+	m_main_caption->setText(i18n("Speed limits for <b>%1</b>:").tqarg(tor->getStats().torrent_name));
 	Uint32 up,down;
 	tor->getTrafficLimits(up,down);
 	m_upload_rate->setValue(up / 1024);

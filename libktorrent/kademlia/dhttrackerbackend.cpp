@@ -137,7 +137,7 @@ namespace dht
 			{
 				Out(SYS_DHT|LOG_NOTICE) << 
 						TQString("DHT: Got %1 potential peers for torrent %2")
-						.arg(cnt).arg(tor->getStats().torrent_name) << endl;
+						.tqarg(cnt).tqarg(tor->getStats().torrent_name) << endl;
 				peersReady(this);
 			}
 		}

@@ -58,10 +58,10 @@ namespace net
 	TQString Address::toString() const
 	{
 		return TQString("%1.%2.%3.%4")
-				.arg((m_ip & 0xFF000000) >> 24)
-				.arg((m_ip & 0x00FF0000) >> 16)
-				.arg((m_ip & 0x0000FF00) >> 8)
-				.arg(m_ip & 0x000000FF);
+				.tqarg((m_ip & 0xFF000000) >> 24)
+				.tqarg((m_ip & 0x00FF0000) >> 16)
+				.tqarg((m_ip & 0x0000FF00) >> 8)
+				.tqarg(m_ip & 0x000000FF);
 	}
 
 }

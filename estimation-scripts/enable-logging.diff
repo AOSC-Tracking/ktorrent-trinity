@@ -45,7 +45,7 @@ Index: estimation-scripts/enable-logging.diff
 -+ 		{
 -+ 			if(!started)
 -+ 			{
--+ 				Out() << "{" << tc->getTorrentName() << "}," << QDateTime::currentDateTime().toTime_t() << "," << tc->getDownloadRate() << "," << tc->getBytesDownloaded() << "," << tc->getBytesLeft() << "," << tc->getNumPeers() << ",ACTIVATED" << endl;
+-+ 				Out() << "{" << tc->getTorrentName() << "}," << QDateTime::tqcurrentDateTime().toTime_t() << "," << tc->getDownloadRate() << "," << tc->getBytesDownloaded() << "," << tc->getBytesLeft() << "," << tc->getNumPeers() << ",ACTIVATED" << endl;
 -+ 				tmpLog = false;
 -+ 				started = true;
 -+ 				toLog = true;
@@ -56,7 +56,7 @@ Index: estimation-scripts/enable-logging.diff
 -+ 		{
 -+ 			if(started)
 -+ 			{
--+ 				Out() << "{" << tc->getTorrentName() << "}," << QDateTime::currentDateTime().toTime_t() << "," << tc->getDownloadRate() << "," << tc->getBytesDownloaded() << "," << tc->getBytesLeft() << "," << tc->getNumPeers() << ",DEACTIVATED" <<endl;
+-+ 				Out() << "{" << tc->getTorrentName() << "}," << QDateTime::tqcurrentDateTime().toTime_t() << "," << tc->getDownloadRate() << "," << tc->getBytesDownloaded() << "," << tc->getBytesLeft() << "," << tc->getNumPeers() << ",DEACTIVATED" <<endl;
 -+ 				tmpLog = false;
 -+ 				started = false;
 -+ 			}
@@ -71,7 +71,7 @@ Index: estimation-scripts/enable-logging.diff
 - 	if (tc->getBytesLeft() == 0)
 - 	{
 -+ 		if(toLog && tmpLog) 
--+ 			Out() << "{" << tc->getTorrentName() << "}," << QDateTime::currentDateTime().toTime_t() << "," << tc->getDownloadRate() << "," << tc->getBytesDownloaded() << "," << 0 << "," << tc->getNumPeers() << ",FINISHED" << endl;
+-+ 			Out() << "{" << tc->getTorrentName() << "}," << QDateTime::tqcurrentDateTime().toTime_t() << "," << tc->getDownloadRate() << "," << tc->getBytesDownloaded() << "," << 0 << "," << tc->getNumPeers() << ",FINISHED" << endl;
 -+ 		toLog = false;
 -+
 - 		setText(7,i18n("finished"));
@@ -83,13 +83,13 @@ Index: estimation-scripts/enable-logging.diff
 - 			if (tc->getDownloadRate() == 0)
 -+			{
 -+ 				if(toLog && tmpLog) 
--+ 					Out() << "{" << tc->getTorrentName() << "}," << QDateTime::currentDateTime().toTime_t() << "," << 0 << "," << tc->getBytesDownloaded() << "," << tc->getBytesLeft() << "," << tc->getNumPeers() << ",RUNNING" << endl;
+-+ 					Out() << "{" << tc->getTorrentName() << "}," << QDateTime::tqcurrentDateTime().toTime_t() << "," << 0 << "," << tc->getBytesDownloaded() << "," << tc->getBytesLeft() << "," << tc->getNumPeers() << ",RUNNING" << endl;
 - 				setText(7,i18n("infinity"));
 -+			}
 - 			else
 - 			{
 -+				if(toLog && tmpLog) 
--+ 					Out() << "{" << tc->getTorrentName() << "}," << QDateTime::currentDateTime().toTime_t() << "," << tc->getDownloadRate() << "," << tc->getBytesDownloaded() << "," << tc->getBytesLeft() << "," << tc->getNumPeers() << ",RUNNING" << endl;
+-+ 					Out() << "{" << tc->getTorrentName() << "}," << QDateTime::tqcurrentDateTime().toTime_t() << "," << tc->getDownloadRate() << "," << tc->getBytesDownloaded() << "," << tc->getBytesLeft() << "," << tc->getNumPeers() << ",RUNNING" << endl;
 -+
 - 				Uint32 secs = (int)floor( (float)tc->getBytesLeft() / (float)tc->getDownloadRate() );
 - 				QTime t;
@@ -155,7 +155,7 @@ Index: apps/ktorrent/ktorrentviewitem.cpp
 +  		{
 +  			if(!started)
 +  			{
-+  				Out() << "{" << s.torrent_name << "}," << QDateTime::currentDateTime().toTime_t() << "," << s.download_rate << "," << s.bytes_downloaded << "," << s.bytes_left << "," << s.num_peers << ",ACTIVATED" << endl;
++  				Out() << "{" << s.torrent_name << "}," << QDateTime::tqcurrentDateTime().toTime_t() << "," << s.download_rate << "," << s.bytes_downloaded << "," << s.bytes_left << "," << s.num_peers << ",ACTIVATED" << endl;
 +  				tmpLog = false;
 +  				started = true;
 +  				toLog = true;
@@ -166,7 +166,7 @@ Index: apps/ktorrent/ktorrentviewitem.cpp
 +  		{
 +  			if(started)
 +  			{
-+  				Out() << "{" << s.torrent_name << "}," << QDateTime::currentDateTime().toTime_t() << "," << s.download_rate << "," << s.bytes_downloaded << "," << s.bytes_left << "," << s.num_peers << ",DEACTIVATED" <<endl;
++  				Out() << "{" << s.torrent_name << "}," << QDateTime::tqcurrentDateTime().toTime_t() << "," << s.download_rate << "," << s.bytes_downloaded << "," << s.bytes_left << "," << s.num_peers << ",DEACTIVATED" <<endl;
 +  				tmpLog = false;
 +  				started = false;
 +  			}
@@ -182,7 +182,7 @@ Index: apps/ktorrent/ktorrentviewitem.cpp
  	if (s.bytes_left == 0)
  	{
 +  		if(toLog && tmpLog) 
-+  			Out() << "{" << s.torrent_name << "}," << QDateTime::currentDateTime().toTime_t() << "," << s.download_rate << "," << s.bytes_downloaded << "," << 0 << "," << s.num_peers << ",FINISHED" << endl;
++  			Out() << "{" << s.torrent_name << "}," << QDateTime::tqcurrentDateTime().toTime_t() << "," << s.download_rate << "," << s.bytes_downloaded << "," << 0 << "," << s.num_peers << ",FINISHED" << endl;
 +  		toLog = false;
 + 
 +
@@ -195,14 +195,14 @@ Index: apps/ktorrent/ktorrentviewitem.cpp
  			if (s.download_rate == 0)
 +			{
 +  				if(toLog && tmpLog) 
-+  					Out() << "{" << s.torrent_name << "}," << QDateTime::currentDateTime().toTime_t() << "," << 0 << "," << s.bytes_downloaded << "," << s.bytes_left << "," << s.num_peers << ",RUNNING" << endl;
++  					Out() << "{" << s.torrent_name << "}," << QDateTime::tqcurrentDateTime().toTime_t() << "," << 0 << "," << s.bytes_downloaded << "," << s.bytes_left << "," << s.num_peers << ",RUNNING" << endl;
 +
  				setText(7,i18n("infinity"));
 +			}
  			else
  			{
 + 				if(toLog && tmpLog) 
-+  					Out() << "{" << s.torrent_name << "}," << QDateTime::currentDateTime().toTime_t() << "," << s.download_rate << "," << s.bytes_downloaded << "," << s.bytes_left << "," << s.num_peers << ",RUNNING" << endl;
++  					Out() << "{" << s.torrent_name << "}," << QDateTime::tqcurrentDateTime().toTime_t() << "," << s.download_rate << "," << s.bytes_downloaded << "," << s.bytes_left << "," << s.num_peers << ",RUNNING" << endl;
 +
  				Uint32 secs = (int)floor( (float)s.bytes_left / (float)s.download_rate);
  				setText(7,DurationToString(secs));

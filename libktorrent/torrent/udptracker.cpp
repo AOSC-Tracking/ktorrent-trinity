@@ -144,10 +144,10 @@ namespace bt
 		{
 			Uint32 ip = ReadUint32(buf,i);
 			addPeer(TQString("%1.%2.%3.%4")
-					.arg((ip & (0xFF000000)) >> 24)
-					.arg((ip & (0x00FF0000)) >> 16)
-					.arg((ip & (0x0000FF00)) >> 8)
-					.arg(ip & 0x000000FF),
+					.tqarg((ip & (0xFF000000)) >> 24)
+					.tqarg((ip & (0x00FF0000)) >> 16)
+					.tqarg((ip & (0x0000FF00)) >> 8)
+					.tqarg(ip & 0x000000FF),
 					ReadUint16(buf,i+4));
 		}
 		

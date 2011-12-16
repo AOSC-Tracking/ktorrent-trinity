@@ -24,7 +24,7 @@
         </property>
         <widget class="TQLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>layout2</cstring>
+                <cstring>tqlayout2</cstring>
             </property>
             <vbox>
                 <property name="name">
@@ -66,7 +66,7 @@
                 </property>
                 <widget class="TQLayoutWidget" row="0" column="0">
                     <property name="name">
-                        <cstring>layout7</cstring>
+                        <cstring>tqlayout7</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -148,7 +148,7 @@
                             <property name="sizeType">
                                 <enum>Expanding</enum>
                             </property>
-                            <property name="sizeHint">
+                            <property name="tqsizeHint">
                                 <size>
                                     <width>21</width>
                                     <height>20</height>
@@ -188,7 +188,7 @@
         </widget>
         <widget class="TQLayoutWidget" row="5" column="0">
             <property name="name">
-                <cstring>layout9</cstring>
+                <cstring>tqlayout9</cstring>
             </property>
             <hbox>
                 <property name="name">
@@ -233,7 +233,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>20</width>
                             <height>20</height>
@@ -319,7 +319,7 @@
                 </widget>
                 <widget class="TQLayoutWidget" row="0" column="0">
                     <property name="name">
-                        <cstring>layout9</cstring>
+                        <cstring>tqlayout9</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -372,7 +372,7 @@
                     <property name="sizeType">
                         <enum>Maximum</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>40</width>
                             <height>20</height>
@@ -422,7 +422,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>20</width>
                             <height>40</height>
@@ -436,7 +436,7 @@
                     <property name="text">
                         <string>NOTE: Some known good DHT nodes are already inserted. You should probably insert your own IP address and port too if you plan to seed this torrent.</string>
                     </property>
-                    <property name="alignment">
+                    <property name="tqalignment">
                         <set>WordBreak|AlignVCenter</set>
                     </property>
                 </widget>

@@ -19,7 +19,7 @@
  ***************************************************************************/
 #ifdef KT_PROFILE
 #include <tqfile.h>
-#include <textstream.h>
+#include <tqtextstream.h>
 #include <sys/time.h>
 #include "profiler.h"
 
@@ -30,7 +30,7 @@ namespace bt
 		min = max = avg = 0.0;
 		count = 0;
 		start_time = 0.0;
-		children.setAutoDelete(true);
+		tqchildren.setAutoDelete(true);
 	}
 	
 	Profile::~Profile()
@@ -63,8 +63,8 @@ namespace bt
 		
 	Profile* Profile::child(const TQString & name)
 	{
-		TQPtrList<Profile>::iterator i = children.begin();
-		while (i != children.end())
+		TQPtrList<Profile>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			Profile* p = *i;
 			if (p->name == name)
@@ -73,7 +73,7 @@ namespace bt
 		}
 		
 		Profile* p = new Profile(this,name);
-		children.append(p);
+		tqchildren.append(p);
 		return p;
 	}
 	
@@ -84,8 +84,8 @@ namespace bt
 		out.precision(5);
 		out << qSetW(60) << nb << qSetW(10) << min << qSetW(10) << max << qSetW(10) << avg << qSetW(10) << count << endl;
 		
-		TQPtrList<Profile>::iterator i = children.begin();
-		while (i != children.end())
+		TQPtrList<Profile>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			Profile* p = *i;
 			p->save(out,nb);

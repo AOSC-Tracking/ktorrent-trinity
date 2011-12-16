@@ -18,7 +18,7 @@
 <table  width="100%">
   <tbody>
     	<?php
-		$stats=downloadStatus();
+		$stats=downloadtqStatus();
 		$a = 0;
 		foreach ($stats as $torrent) {
 			echo "<tr>";

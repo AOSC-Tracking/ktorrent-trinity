@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 #include <algorithm>
-#include <layout.h>
+#include <tqlayout.h>
 #include <tqlabel.h>
 #include <kiconloader.h>
 #include <kglobalsettings.h>
@@ -105,13 +105,13 @@ namespace kt
 	
 	class LabelViewBox : public TQWidget
 	{
-		TQVBoxLayout* layout;
+		TQVBoxLayout* tqlayout;
 	public:
 		LabelViewBox(TQWidget* parent) : TQWidget(parent)
 		{
 			setPaletteBackgroundColor(KGlobalSettings::baseColor());
-			layout = new TQVBoxLayout(this);
-			layout->setMargin(0);
+			tqlayout = new TQVBoxLayout(this);
+			tqlayout->setMargin(0);
 		}
 		
 		virtual ~LabelViewBox()
@@ -120,24 +120,24 @@ namespace kt
 		void add(LabelViewItem* item)
 		{
 			item->reparent(this,TQPoint(0,0));
-			layout->add(item);
+			tqlayout->add(item);
 			item->show();
 		}
 		
 		void remove(LabelViewItem* item)
 		{
 			item->hide();
-			layout->remove(item);
+			tqlayout->remove(item);
 			item->reparent(0,TQPoint(0,0));
 		}
 		
 		void sorted(const std::list<LabelViewItem*> items)
 		{
 			for (LabelViewCItr i = items.begin();i != items.end();i++)
-				layout->remove(*i);
+				tqlayout->remove(*i);
 			
 			for (LabelViewCItr i = items.begin();i != items.end();i++)
-				layout->add(*i);
+				tqlayout->add(*i);
 		}
 	};
 	
@@ -184,11 +184,11 @@ namespace kt
 				selected = 0;
 			
 			// update odd status of each item
-			updateOddStatus();	
+			updateOddtqStatus();	
 		}
 	}
 	
-	void LabelView::updateOddStatus()
+	void LabelView::updateOddtqStatus()
 	{
 		bool odd = true;
 		LabelViewItr i = items.begin();
@@ -250,7 +250,7 @@ namespace kt
 	{
 		items.sort(LabelViewItemCmp());
 		item_box->sorted(items);
-		updateOddStatus();
+		updateOddtqStatus();
 	}
 
 }

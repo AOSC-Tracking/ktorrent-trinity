@@ -102,7 +102,7 @@ namespace bt
 			TQByteArray key;
 			BNode* node;
 		};
-		TQValueList<DictEntry> children;
+		TQValueList<DictEntry> tqchildren;
 	public:
 		BDictNode(Uint32 off);
 		virtual ~BDictNode();
@@ -159,7 +159,7 @@ namespace bt
 	 */
 	class BListNode : public BNode
 	{
-		TQPtrList<BNode> children;
+		TQPtrList<BNode> tqchildren;
 	public:
 		BListNode(Uint32 off);
 		virtual ~BListNode();
@@ -172,14 +172,14 @@ namespace bt
 		void printDebugInfo();
 
 		/// Get the number of nodes in the list.
-		Uint32 getNumChildren() const {return children.count();}
+		Uint32 getNumChildren() const {return tqchildren.count();}
 		
 		/**
 		 * Get a node from the list
 		 * @param idx The index
 		 * @return The node or 0 if idx is out of bounds
 		 */
-		BNode* getChild(Uint32 idx) {return children.at(idx);}
+		BNode* getChild(Uint32 idx) {return tqchildren.at(idx);}
 
 		/**
 		 * Get a BListNode.

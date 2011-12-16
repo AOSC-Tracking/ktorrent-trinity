@@ -29,7 +29,7 @@
             <property name="sizeType">
                 <enum>Expanding</enum>
             </property>
-            <property name="sizeHint">
+            <property name="tqsizeHint">
                 <size>
                     <width>20</width>
                     <height>20</height>
@@ -63,7 +63,7 @@
                 </widget>
                 <widget class="TQLayoutWidget" row="1" column="0">
                     <property name="name">
-                        <cstring>layout5</cstring>
+                        <cstring>tqlayout5</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -92,7 +92,7 @@
                 </widget>
                 <widget class="TQLayoutWidget" row="2" column="0">
                     <property name="name">
-                        <cstring>layout3</cstring>
+                        <cstring>tqlayout3</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -108,7 +108,7 @@
                             <property name="sizeType">
                                 <enum>Expanding</enum>
                             </property>
-                            <property name="sizeHint">
+                            <property name="tqsizeHint">
                                 <size>
                                     <width>361</width>
                                     <height>20</height>
@@ -152,7 +152,7 @@ NOTE: ZIP file from bluetack.co.uk is supported.</string>
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>20</width>
                             <height>20</height>

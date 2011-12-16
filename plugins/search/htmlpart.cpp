@@ -21,7 +21,7 @@
 #include <kio/job.h>
 #include <kio/jobclasses.h>
 //#include <tqfile.h>
-#include <clipboard.h>
+#include <tqclipboard.h>
 #include <tqapplication.h>
 #include <kio/netaccess.h>
 #include <klocale.h>
@@ -60,7 +60,7 @@ namespace kt
 	void HTMLPart::copy()
 	{
 		TQString txt = selectedText();
-		TQClipboard *cb = TQApplication::clipboard();
+		TQClipboard *cb = TQApplication::tqclipboard();
 		// Copy text into the clipboard
 		if (cb)
 			cb->setText(txt,TQClipboard::Clipboard);

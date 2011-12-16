@@ -29,7 +29,7 @@
             <property name="text">
                 <string>Note: Blacklist applies to current session only. Use save/open to save your entries or use IPFilter plugin (PeerGuardian).</string>
             </property>
-            <property name="alignment">
+            <property name="tqalignment">
                 <set>WordBreak|AlignVCenter</set>
             </property>
         </widget>
@@ -73,7 +73,7 @@
                     <property name="sizeType">
                         <enum>Fixed</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>20</width>
                             <height>20</height>
@@ -82,7 +82,7 @@
                 </spacer>
                 <widget class="TQLayoutWidget" row="0" column="0">
                     <property name="name">
-                        <cstring>layout8</cstring>
+                        <cstring>tqlayout8</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -111,7 +111,7 @@
                 </widget>
                 <widget class="TQLayoutWidget" row="0" column="1" rowspan="3" colspan="1">
                     <property name="name">
-                        <cstring>layout7</cstring>
+                        <cstring>tqlayout7</cstring>
                     </property>
                     <vbox>
                         <property name="name">
@@ -144,7 +144,7 @@
                             <property name="sizeType">
                                 <enum>Fixed</enum>
                             </property>
-                            <property name="sizeHint">
+                            <property name="tqsizeHint">
                                 <size>
                                     <width>20</width>
                                     <height>20</height>
@@ -192,7 +192,7 @@
                             <property name="sizeType">
                                 <enum>Fixed</enum>
                             </property>
-                            <property name="sizeHint">
+                            <property name="tqsizeHint">
                                 <size>
                                     <width>20</width>
                                     <height>16</height>
@@ -234,7 +234,7 @@
                             <property name="sizeType">
                                 <enum>Expanding</enum>
                             </property>
-                            <property name="sizeHint">
+                            <property name="tqsizeHint">
                                 <size>
                                     <width>20</width>
                                     <height>30</height>

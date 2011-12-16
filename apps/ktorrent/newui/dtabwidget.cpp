@@ -90,7 +90,7 @@ void DTabWidget::insertTab(TQWidget *child, const TQString &label, int index)
     if (m_closeButton && m_closeButtonShown)
         m_closeButton->show();
     KTabWidget::insertTab(child, label, index);
-    if (index != -1) tabBar()->repaint();
+    if (index != -1) tabBar()->tqrepaint();
 }
 
 void DTabWidget::insertTab(TQWidget *child, const TQIconSet &iconset, 
@@ -99,7 +99,7 @@ void DTabWidget::insertTab(TQWidget *child, const TQIconSet &iconset,
     if (m_closeButton && m_closeButtonShown)
         m_closeButton->show();
     KTabWidget::insertTab(child, iconset, label, index);
-    if (index != -1) tabBar()->repaint();
+    if (index != -1) tabBar()->tqrepaint();
 }
 
 /*void DTabWidget::updateHistory(TQWidget *w)

@@ -29,22 +29,22 @@ StatsSpd::StatsSpd(TQWidget *p) : StatsSpdWgt(p),
 {
 
 	DownSpeedGbw->setColumnLayout(0, Qt::Vertical );
-	DownSpeedGbw->layout()->setSpacing( 6 );
-	DownSpeedGbw->layout()->setMargin( 11 );
+	DownSpeedGbw->tqlayout()->setSpacing( 6 );
+	DownSpeedGbw->tqlayout()->setMargin( 11 );
 	
-	pmDSpdLay = new TQVBoxLayout(DownSpeedGbw -> layout());
+	pmDSpdLay = new TQVBoxLayout(DownSpeedGbw -> tqlayout());
 	
 	UpSpeedGbw->setColumnLayout(0, Qt::Vertical );
-	UpSpeedGbw->layout()->setSpacing( 6 );
-	UpSpeedGbw->layout()->setMargin( 11 );
+	UpSpeedGbw->tqlayout()->setSpacing( 6 );
+	UpSpeedGbw->tqlayout()->setMargin( 11 );
 	
-	pmUSpdLay = new TQVBoxLayout(UpSpeedGbw -> layout());
+	pmUSpdLay = new TQVBoxLayout(UpSpeedGbw -> tqlayout());
 	
 	PeersSpdGbw->setColumnLayout(0, Qt::Vertical );
-	PeersSpdGbw->layout()->setSpacing( 6 );
-	PeersSpdGbw->layout()->setMargin( 11 );
+	PeersSpdGbw->tqlayout()->setSpacing( 6 );
+	PeersSpdGbw->tqlayout()->setMargin( 11 );
 	
-	pmPeersSpdLay = new TQVBoxLayout(PeersSpdGbw -> layout());
+	pmPeersSpdLay = new TQVBoxLayout(PeersSpdGbw -> tqlayout());
 
 	//-----------------
 	

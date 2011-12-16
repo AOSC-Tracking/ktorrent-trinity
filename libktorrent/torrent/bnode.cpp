@@ -56,8 +56,8 @@ namespace bt
 	
 	BDictNode::~BDictNode()
 	{
-		TQValueList<DictEntry>::iterator i = children.begin();
-		while (i != children.end())
+		TQValueList<DictEntry>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			DictEntry & e = *i;
 			delete e.node;
@@ -70,13 +70,13 @@ namespace bt
 		DictEntry entry;
 		entry.key = key;
 		entry.node = node;
-		children.append(entry);
+		tqchildren.append(entry);
 	}
 	
 	BNode* BDictNode::getData(const TQString & key)
 	{
-		TQValueList<DictEntry>::iterator i = children.begin();
-		while (i != children.end())
+		TQValueList<DictEntry>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			DictEntry & e = *i;
 			if (TQString(e.key) == key)
@@ -88,8 +88,8 @@ namespace bt
 	
 	BDictNode* BDictNode::getDict(const TQByteArray & key)
 	{
-		TQValueList<DictEntry>::iterator i = children.begin();
-		while (i != children.end())
+		TQValueList<DictEntry>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			DictEntry & e = *i;
 			if (e.key == key)
@@ -120,8 +120,8 @@ namespace bt
 	void BDictNode::printDebugInfo()
 	{
 		Out() << "DICT" << endl;
-		TQValueList<DictEntry>::iterator i = children.begin();
-		while (i != children.end())
+		TQValueList<DictEntry>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			DictEntry & e = *i;
 			Out() << TQString(e.key) << ": " << endl;
@@ -135,7 +135,7 @@ namespace bt
 
 	BListNode::BListNode(Uint32 off) : BNode(LIST,off)
 	{
-		children.setAutoDelete(true);
+		tqchildren.setAutoDelete(true);
 	}
 	
 	
@@ -145,7 +145,7 @@ namespace bt
 	
 	void BListNode::append(BNode* node)
 	{
-		children.append(node);
+		tqchildren.append(node);
 	}
 
 	BListNode* BListNode::getList(Uint32 idx)
@@ -165,10 +165,10 @@ namespace bt
 	
 	void BListNode::printDebugInfo()
 	{
-		Out() << "LIST " <<  children.count() << endl;
-		for (Uint32 i = 0;i < children.count();i++)
+		Out() << "LIST " <<  tqchildren.count() << endl;
+		for (Uint32 i = 0;i < tqchildren.count();i++)
 		{
-			BNode* n = children.at(i);
+			BNode* n = tqchildren.at(i);
 			n->printDebugInfo();
 		}
 		Out() << "END" << endl;

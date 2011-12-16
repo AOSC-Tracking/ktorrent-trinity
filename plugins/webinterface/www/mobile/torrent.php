@@ -8,7 +8,7 @@
     <tr>
       <td align="center"><IMG src="ktorrentwebinterfacelogo.png" width="340" height="150" align="top" border="0"></td>
       <?php
-      	$stats=downloadStatus();
+      	$stats=downloadtqStatus();
       	$t=$stats[$_REQUEST['id']];
       	echo "<td><strong>ktorrent-><a href=\"interface.php\">transfers</a></strong>->{$t['torrent_name']}</td>";
       	echo "<td><a href=\"torrent.php?id={$_REQUEST['id']}\" >refresh</a></td>";

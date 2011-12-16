@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 #include <tqfile.h>
-#include <textstream.h>
+#include <tqtextstream.h>
 #include <tqstringlist.h>
 #include "searchenginelist.h"
 

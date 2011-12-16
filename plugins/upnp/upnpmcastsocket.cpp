@@ -35,7 +35,7 @@ extern "C" {
 #include <util/log.h>
 #include <torrent/globals.h>
 #include <tqfile.h>
-#include <textstream.h>
+#include <tqtextstream.h>
 #include "upnpmcastsocket.h"
 
 using namespace KNetwork;

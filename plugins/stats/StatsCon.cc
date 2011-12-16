@@ -26,16 +26,16 @@ StatsCon::StatsCon(TQWidget * p) :  StatsConWgt(p), pmPeersConCht(new ChartDrawe
 				pmDHTCht(new ChartDrawer(DHTGbw, StatsPluginSettings::dHTMeasurements()))
 {
 	PeersConGbw->setColumnLayout(0, Qt::Vertical );
-	PeersConGbw->layout()->setSpacing( 6 );
-	PeersConGbw->layout()->setMargin( 11 );
+	PeersConGbw->tqlayout()->setSpacing( 6 );
+	PeersConGbw->tqlayout()->setMargin( 11 );
 	
-	pmPeersConLay = new TQVBoxLayout(PeersConGbw -> layout());
+	pmPeersConLay = new TQVBoxLayout(PeersConGbw -> tqlayout());
 	
 	DHTGbw->setColumnLayout(0, Qt::Vertical );
-	DHTGbw->layout()->setSpacing( 6 );
-	DHTGbw->layout()->setMargin( 11 );
+	DHTGbw->tqlayout()->setSpacing( 6 );
+	DHTGbw->tqlayout()->setMargin( 11 );
 	
-	pmDHTLay = new TQVBoxLayout(DHTGbw -> layout());
+	pmDHTLay = new TQVBoxLayout(DHTGbw -> tqlayout());
 	
 	//-------------
 	

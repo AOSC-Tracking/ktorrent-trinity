@@ -48,7 +48,7 @@ namespace ktdebug
 		if (!fptr.open(cache,"rb"))
 		{
 			throw Error(TQString("Cannot open file : %1 : %2")
-					.arg(cache).arg( fptr.errorString()));
+					.tqarg(cache).tqarg( fptr.errorString()));
 		}
 
 		Uint32 num_ok = 0,num_not_ok = 0,num_not_downloaded = 0,extra_ok = 0;

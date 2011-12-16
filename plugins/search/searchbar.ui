@@ -63,7 +63,7 @@
             <property name="sizeType">
                 <enum>Maximum</enum>
             </property>
-            <property name="sizeHint">
+            <property name="tqsizeHint">
                 <size>
                     <width>60</width>
                     <height>20</height>

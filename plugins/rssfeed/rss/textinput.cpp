@@ -38,13 +38,13 @@ TextInput::TextInput(const TQDomNode &node) : d(new Private)
 {
 	TQString elemText;
 
-	if (!(elemText = extractNode(node, TQString::fromLatin1("title"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("title"))).isNull())
 		d->title = elemText;
-	if (!(elemText = extractNode(node, TQString::fromLatin1("description"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("description"))).isNull())
 		d->description = elemText;
-	if (!(elemText = extractNode(node, TQString::fromLatin1("name"))))
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("name"))))
 		d->name = elemText;
-	if (!(elemText = extractNode(node, TQString::fromLatin1("link"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("link"))).isNull())
 		d->link = elemText;
 }
 

@@ -73,7 +73,7 @@ namespace kt
 		int p = path.find(bt::DirSeparator());
 		if (p == -1)
 		{
-			children.insert(path,newFileTreeItem(path,file));
+			tqchildren.insert(path,newFileTreeItem(path,file));
 		}
 		else
 		{
@@ -98,8 +98,8 @@ namespace kt
 			manual_change = false;
 		}
 	// first set all the child items
-		bt::PtrMap<TQString,FileTreeItem>::iterator i = children.begin();
-		while (i != children.end())
+		bt::PtrMap<TQString,FileTreeItem>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			i->second->setChecked(on,keep_data);
 			i++;
@@ -118,8 +118,8 @@ namespace kt
 	void FileTreeDirItem::invertChecked()
 	{
 	// first set all the child items
-		bt::PtrMap<TQString,FileTreeItem>::iterator i = children.begin();
-		while (i != children.end())
+		bt::PtrMap<TQString,FileTreeItem>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			FileTreeItem* item = i->second;
 			item->setChecked(!item->isOn());
@@ -171,8 +171,8 @@ namespace kt
 	{
 		Uint64 tot = 0;
 		// first check all the child items
-		bt::PtrMap<TQString,FileTreeItem>::const_iterator i = children.begin();
-		while (i != children.end())
+		bt::PtrMap<TQString,FileTreeItem>::const_iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			const FileTreeItem* item = i->second;
 			tot += item->bytesToDownload();
@@ -192,8 +192,8 @@ namespace kt
 	bool FileTreeDirItem::allChildrenOn()
 	{
 		// first check all the child items
-		bt::PtrMap<TQString,FileTreeItem>::iterator i = children.begin();
-		while (i != children.end())
+		bt::PtrMap<TQString,FileTreeItem>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			FileTreeItem* item = i->second;
 			if (!item->isOn())
@@ -214,7 +214,7 @@ namespace kt
 
 	void FileTreeDirItem::childStateChange()
 	{
-	// only set this dir on if all children are on
+	// only set this dir on if all tqchildren are on
 		manual_change = true;
 		setOn(allChildrenOn());
 		manual_change = false;
@@ -248,8 +248,8 @@ namespace kt
 	{
 	// first check all the child items
 		TorrentFileInterface & nullfile = (TorrentFileInterface &)TorrentFile::null;
-		bt::PtrMap<TQString,FileTreeItem>::iterator i = children.begin();
-		while (i != children.end())
+		bt::PtrMap<TQString,FileTreeItem>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			FileTreeItem* file = i->second;
 			if (file == (FileTreeItem*)item)

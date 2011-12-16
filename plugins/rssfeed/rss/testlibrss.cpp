@@ -19,12 +19,12 @@ static const KCmdLineOptions options[] =
 void Tester::test( const TQString &url )
 {
 	Loader *loader = Loader::create();
-	connect( loader, TQT_SIGNAL( loadingComplete( Loader *, Document, Status ) ),
-	         this, TQT_SLOT( slotLoadingComplete( Loader *, Document, Status ) ) );
+	connect( loader, TQT_SIGNAL( loadingComplete( Loader *, Document, tqStatus ) ),
+	         this, TQT_SLOT( slotLoadingComplete( Loader *, Document, tqStatus ) ) );
 	loader->loadFrom( url, new FileRetriever );
 }
 
-void Tester::slotLoadingComplete( Loader *loader, Document doc, Status status )
+void Tester::slotLoadingComplete( Loader *loader, Document doc, tqStatus status )
 {
 	if ( status == Success )
 	{

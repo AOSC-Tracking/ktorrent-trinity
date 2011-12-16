@@ -338,7 +338,7 @@ namespace bt
 		if(tmpmask == 0)
 			out.prepend("*");
 		else
-			out.prepend(TQString("%1").arg(tmp));
+			out.prepend(TQString("%1").tqarg(tmp));
 		ip >>= 8;
 		mask >>= 8;
 		tmp = ip;
@@ -348,7 +348,7 @@ namespace bt
 		if(tmpmask == 0)
 			out.prepend("*.");
 		else
-			out.prepend(TQString("%1.").arg(tmp));
+			out.prepend(TQString("%1.").tqarg(tmp));
 		ip >>= 8;
 		mask >>= 8;
 		tmp = ip;
@@ -358,7 +358,7 @@ namespace bt
 		if(tmpmask == 0)
 			out.prepend("*.");
 		else
-			out.prepend(TQString("%1.").arg(tmp));
+			out.prepend(TQString("%1.").tqarg(tmp));
 		ip >>= 8;
 		mask >>= 8;
 		tmp = ip;
@@ -368,7 +368,7 @@ namespace bt
 		if(tmpmask == 0)
 			out.prepend("*.");
 		else
-			out.prepend(TQString("%1.").arg(tmp));
+			out.prepend(TQString("%1.").tqarg(tmp));
 	
 		return out;
 	}

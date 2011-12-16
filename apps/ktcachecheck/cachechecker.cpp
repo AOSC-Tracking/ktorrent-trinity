@@ -44,7 +44,7 @@ namespace ktdebug
 		this->index_file = index_file;
 		File fptr;
 		if (!fptr.open(index_file,"rb"))
-			throw Error(i18n("Cannot open index file %1 : %2").arg(index_file).arg(fptr.errorString()));
+			throw Error(i18n("Cannot open index file %1 : %2").tqarg(index_file).tqarg(fptr.errorString()));
 
 		if (fptr.seek(File::END,0) != 0)
 		{
@@ -73,7 +73,7 @@ namespace ktdebug
 
 		File fptr;
 		if (!fptr.open(index_file,"wb"))
-			throw Error(i18n("Cannot open index file %1 : %2").arg(index_file).arg(fptr.errorString()));
+			throw Error(i18n("Cannot open index file %1 : %2").tqarg(index_file).tqarg(fptr.errorString()));
 
 		std::set<bt::Uint32>::iterator i;
 		// first remove failed chunks from downloaded

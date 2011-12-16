@@ -87,7 +87,7 @@ namespace bt
 	{
 		if (!out) return;
 		
-		TQCString s = TQString("i%1e").arg(val).utf8();
+		TQCString s = TQString("i%1e").tqarg(val).utf8();
 		out->write(s,s.length());
 	}
 
@@ -95,7 +95,7 @@ namespace bt
 	{
 		if (!out) return;
 		
-		TQCString s = TQString("i%1e").arg(val).utf8();
+		TQCString s = TQString("i%1e").tqarg(val).utf8();
 		out->write(s,s.length());
 	}
 	
@@ -104,7 +104,7 @@ namespace bt
 		if (!out) return;
 		
 		TQCString u = str.utf8();
-		TQCString s = TQString("%1:").arg(u.length()).utf8();
+		TQCString s = TQString("%1:").tqarg(u.length()).utf8();
 		out->write(s,s.length());
 		out->write(u,u.length());
 	}
@@ -123,7 +123,7 @@ namespace bt
 	{
 		if (!out) return;
 		
-		TQCString s = TQString("%1:").arg(size).utf8();
+		TQCString s = TQString("%1:").tqarg(size).utf8();
 		out->write(s,s.length());
 		out->write((const char*)data,size);
 	}

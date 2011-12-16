@@ -174,7 +174,7 @@ namespace bt
 			Map["TS"] = "Torrent Storm";
 			Map["TT"] = "TuoTu";
 			Map["UL"] = "uLeecher!";
-			Map["UT"] = TQString("%1Torrent").arg(TQChar(0x00B5)); // µTorrent, 0x00B5 is unicode for µ
+			Map["UT"] = TQString("%1Torrent").tqarg(TQChar(0x00B5)); // µTorrent, 0x00B5 is tqunicode for µ
 			Map["WT"] = "BitLet";
 			Map["WY"] = "FireTorrent";
 			Map["XL"] = "Xunlei";
@@ -201,31 +201,31 @@ namespace bt
 		}
 
 		TQString name = i18n("Unknown client");
-		if (peer_id.at(0) == '-' &&
-			peer_id.at(1).isLetter() &&
-			peer_id.at(2).isLetter() ) //AZ style
+		if (peer_id.tqat(0) == '-' &&
+			peer_id.tqat(1).isLetter() &&
+			peer_id.tqat(2).isLetter() ) //AZ style
 		{
 			TQString ID(peer_id.mid(1,2));
 			if (Map.contains(ID))
-				name = Map[ID] + " " + peer_id.at(3) + "." + peer_id.at(4) + "."
-					+ peer_id.at(5) + "." + peer_id.at(6);
+				name = Map[ID] + " " + peer_id.tqat(3) + "." + peer_id.tqat(4) + "."
+					+ peer_id.tqat(5) + "." + peer_id.tqat(6);
 		}
-		else if (peer_id.at(0).isLetter() &&
-				peer_id.at(1).isDigit() &&
-				peer_id.at(2).isDigit() )  //Shadow's style
+		else if (peer_id.tqat(0).isLetter() &&
+				peer_id.tqat(1).isDigit() &&
+				peer_id.tqat(2).isDigit() )  //Shadow's style
 		{
-			TQString ID = TQString(peer_id.at(0));
+			TQString ID = TQString(peer_id.tqat(0));
 			if (Map.contains(ID))
-				name = Map[ID] + " " + peer_id.at(1) + "." +
-						peer_id.at(2) + "." + peer_id.at(3);
+				name = Map[ID] + " " + peer_id.tqat(1) + "." +
+						peer_id.tqat(2) + "." + peer_id.tqat(3);
 		}
-		else if (peer_id.at(0) == 'M' && peer_id.at(2) == '-' && (peer_id.at(4) == '-' || peer_id.at(5) == '-'))
+		else if (peer_id.tqat(0) == 'M' && peer_id.tqat(2) == '-' && (peer_id.tqat(4) == '-' || peer_id.tqat(5) == '-'))
 		{
-			name = Map["M"] + " " + peer_id.at(1) + "." + peer_id.at(3);
-			if(peer_id.at(4) == '-')
-				name += "." + peer_id.at(5);
+			name = Map["M"] + " " + peer_id.tqat(1) + "." + peer_id.tqat(3);
+			if(peer_id.tqat(4) == '-')
+				name += "." + peer_id.tqat(5);
 			else
-				name += peer_id.at(4) + "." + peer_id.at(6);
+				name += peer_id.tqat(4) + "." + peer_id.tqat(6);
 		}
 		else if (peer_id.startsWith("OP"))
 		{
@@ -245,7 +245,7 @@ namespace bt
 		}
 		else if ( peer_id.startsWith("Mbrst"))
 		{
-			name = Map["Mbrst"] + " " + peer_id.at(5) + "." + peer_id.at(7);
+			name = Map["Mbrst"] + " " + peer_id.tqat(5) + "." + peer_id.tqat(7);
 		}
 			
 		return name;

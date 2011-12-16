@@ -120,7 +120,7 @@ namespace bt
 	{
 		File fptr;
 		if (!fptr.open(url,"wb"))
-			throw Error(i18n("Cannot open file %1: %2").arg(url).arg(fptr.errorString()));
+			throw Error(i18n("Cannot open file %1: %2").tqarg(url).tqarg(fptr.errorString()));
 
 		BEncoder enc(&fptr);
 		enc.beginDict(); // top dict
@@ -147,7 +147,7 @@ namespace bt
 			enc.write(TQString("comments"));
 			enc.write(comments);
 		}
-		enc.write(TQString("created by"));enc.write(TQString("KTorrent %1").arg(kt::VERSION_STRING));
+		enc.write(TQString("created by"));enc.write(TQString("KTorrent %1").tqarg(kt::VERSION_STRING));
 		enc.write(TQString("creation date"));enc.write((Uint64)time(0));
 		enc.write(TQString("info"));
 		saveInfo(enc);
@@ -237,7 +237,7 @@ namespace bt
 		File fptr;
 		if (!fptr.open(target,"rb"))
 			throw Error(i18n("Cannot open file %1: %2")
-					.arg(target).arg(fptr.errorString()));
+					.tqarg(target).tqarg(fptr.errorString()));
 
 		Uint32 s = cur_chunk != num_chunks - 1 ? chunk_size : last_size;
 		fptr.seek(File::BEGIN,(Int64)cur_chunk*chunk_size);
@@ -275,7 +275,7 @@ namespace bt
 			if (!fptr.open(target + f.getPath(),"rb"))
 			{
 				throw Error(i18n("Cannot open file %1: %2")
-						.arg(f.getPath()).arg(fptr.errorString()));
+						.tqarg(f.getPath()).tqarg(fptr.errorString()));
 			}
 
 			// first calculate offset into file
@@ -336,7 +336,7 @@ namespace bt
 		// write full index file
 		File fptr;
 		if (!fptr.open(dd + "index","wb"))
-			throw Error(i18n("Cannot create index file: %1").arg(fptr.errorString()));
+			throw Error(i18n("Cannot create index file: %1").tqarg(fptr.errorString()));
 
 		for (Uint32 i = 0;i < num_chunks;i++)
 		{

@@ -76,10 +76,10 @@ namespace bt
 		{
 			if (!nothrow)
 				throw Error(i18n("Cannot create directory %1: %2")
-					.arg(dir).arg(strerror(errno)));
+					.tqarg(dir).tqarg(strerror(errno)));
 			else
 			{
-				Out() << TQString("Error : Cannot create directory %1 : %2").arg(dir).arg(strerror(errno))<< endl;
+				Out() << TQString("Error : Cannot create directory %1 : %2").tqarg(dir).tqarg(strerror(errno))<< endl;
 			}
 		}
 	}
@@ -90,12 +90,12 @@ namespace bt
 		{
 			if (!nothrow)
 				throw Error(i18n("Cannot symlink %1 to %2: %3")
-					.arg(link_url.utf8().data()).arg(link_to.utf8().data())
-					.arg(strerror(errno)));
+					.tqarg(link_url.utf8().data()).tqarg(link_to.utf8().data())
+					.tqarg(strerror(errno)));
 			else
 				Out() << TQString("Error : Cannot symlink %1 to %2: %3")
-						.arg(link_url.utf8().data()).arg(link_to.utf8().data())
-				.arg(strerror(errno)) << endl;
+						.tqarg(link_url.utf8().data()).tqarg(link_to.utf8().data())
+				.tqarg(strerror(errno)) << endl;
 		}
 	}
 
@@ -106,12 +106,12 @@ namespace bt
 		{
 			if (!nothrow)
 				throw Error(i18n("Cannot move %1 to %2: %3")
-					.arg(src).arg(dst)
-						.arg(KIO::NetAccess::lastErrorString()));
+					.tqarg(src).tqarg(dst)
+						.tqarg(KIO::NetAccess::lastErrorString()));
 			else
 				Out() << TQString("Error : Cannot move %1 to %2: %3")
-						.arg(src).arg(dst)
-						.arg(KIO::NetAccess::lastErrorString()) << endl;
+						.tqarg(src).tqarg(dst)
+						.tqarg(KIO::NetAccess::lastErrorString()) << endl;
 		
 		}
 	}
@@ -122,12 +122,12 @@ namespace bt
 		{
 			if (!nothrow)
 				throw Error(i18n("Cannot copy %1 to %2: %3")
-						.arg(src).arg(dst)
-						.arg(KIO::NetAccess::lastErrorString()));
+						.tqarg(src).tqarg(dst)
+						.tqarg(KIO::NetAccess::lastErrorString()));
 			else
 				Out() << TQString("Error : Cannot copy %1 to %2: %3")
-						.arg(src).arg(dst)
-						.arg(KIO::NetAccess::lastErrorString()) << endl;
+						.tqarg(src).tqarg(dst)
+						.tqarg(KIO::NetAccess::lastErrorString()) << endl;
 	
 		}
 	}
@@ -138,12 +138,12 @@ namespace bt
 		{
 			if (!nothrow)
 				throw Error(i18n("Cannot copy %1 to %2: %3")
-						.arg(src).arg(dst)
-						.arg(KIO::NetAccess::lastErrorString()));
+						.tqarg(src).tqarg(dst)
+						.tqarg(KIO::NetAccess::lastErrorString()));
 			else
 				Out() << TQString("Error : Cannot copy %1 to %2: %3")
-						.arg(src).arg(dst)
-						.arg(KIO::NetAccess::lastErrorString()) << endl;
+						.tqarg(src).tqarg(dst)
+						.tqarg(KIO::NetAccess::lastErrorString()) << endl;
 	
 		}
 	}
@@ -230,8 +230,8 @@ namespace bt
 		if (!ok)
 		{
 			TQString err = i18n("Cannot delete %1: %2")
-					.arg(url)
-					.arg(strerror(errno));
+					.tqarg(url)
+					.tqarg(strerror(errno));
 			if (!nothrow)
 				throw Error(err);
 			else
@@ -249,8 +249,8 @@ namespace bt
 		{
 			if (!nothrow)
 				throw Error(i18n("Cannot create %1: %2")
-						.arg(url)
-						.arg(fptr.errorString()));
+						.tqarg(url)
+						.tqarg(fptr.errorString()));
 			else
 				Out() << "Error : Cannot create " << url << " : "
 						<< fptr.errorString() << endl;
@@ -270,7 +270,7 @@ namespace bt
 #endif
 		if (ret < 0)
 			throw Error(i18n("Cannot calculate the filesize of %1: %2")
-					.arg(url).arg(strerror(errno)));
+					.tqarg(url).tqarg(strerror(errno)));
 		
 		return (Uint64)sb.st_size;
 	}
@@ -286,7 +286,7 @@ namespace bt
 		ret = fstat(fd,&sb);
 #endif
 		if (ret < 0)
-			throw Error(i18n("Cannot calculate the filesize : %2").arg(strerror(errno)));
+			throw Error(i18n("Cannot calculate the filesize : %2").tqarg(strerror(errno)));
 		
 		return (Uint64)sb.st_size;
 	}
@@ -314,7 +314,7 @@ namespace bt
 	{
 		int fd = ::open(TQFile::encodeName(path),O_RDWR | O_LARGEFILE);
 		if (fd < 0)
-			throw Error(i18n("Cannot open %1 : %2").arg(path).arg(strerror(errno)));
+			throw Error(i18n("Cannot open %1 : %2").tqarg(path).tqarg(strerror(errno)));
 		
 		bool ret = FatPreallocate(fd,size);
 		close(fd);
@@ -343,7 +343,7 @@ namespace bt
 	{
 		int fd = ::open(TQFile::encodeName(path), O_RDWR | O_LARGEFILE);
 		if (fd < 0)
-			throw Error(i18n("Cannot open %1 : %2").arg(path).arg(strerror(errno)));
+			throw Error(i18n("Cannot open %1 : %2").tqarg(path).tqarg(strerror(errno)));
 		
 		bool ret = XfsPreallocate(fd,size);
 		close(fd);
@@ -364,16 +364,16 @@ namespace bt
 #else
 			if (ftruncate(fd,size) == -1)
 #endif	
-				throw Error(i18n("Cannot expand file : %1").arg(strerror(errno)));
+				throw Error(i18n("Cannot expand file : %1").tqarg(strerror(errno)));
 		}
 		else
 		{
 #if HAVE_POSIX_FALLOCATE64
 			if (posix_fallocate64(fd,0,size) != 0)
-				throw Error(i18n("Cannot expand file : %1").arg(strerror(errno)));
+				throw Error(i18n("Cannot expand file : %1").tqarg(strerror(errno)));
 #elif HAVE_POSIX_FALLOCATE
 			if (posix_fallocate(fd,0,size) != 0)
-				throw Error(i18n("Cannot expand file : %1").arg(strerror(errno)));
+				throw Error(i18n("Cannot expand file : %1").tqarg(strerror(errno)));
 #else
 			SeekFile(fd,0,SEEK_SET);
 			bt::Array<Uint8> buf(4096);
@@ -388,9 +388,9 @@ namespace bt
 				
 				int ret = write(fd,buf,to_write);
 				if (ret < 0)
-					throw Error(i18n("Cannot expand file : %1").arg(strerror(errno)));
+					throw Error(i18n("Cannot expand file : %1").tqarg(strerror(errno)));
 				else if (ret == 0 || ret != (int)to_write)
-					throw Error(i18n("Cannot expand file").arg(strerror(errno)));
+					throw Error(i18n("Cannot expand file").tqarg(strerror(errno)));
 				else
 					written += to_write;
 			}
@@ -402,7 +402,7 @@ namespace bt
 	{
 		int fd = ::open(TQFile::encodeName(path),O_RDWR | O_LARGEFILE);
 		if (fd < 0)
-			throw Error(i18n("Cannot open %1 : %2").arg(path).arg(strerror(errno)));
+			throw Error(i18n("Cannot open %1 : %2").tqarg(path).tqarg(strerror(errno)));
 		
 		try
 		{
@@ -423,7 +423,7 @@ namespace bt
 #else
 		if (lseek(fd,off,whence) == -1)
 #endif
-			throw Error(i18n("Cannot seek in file : %1").arg(strerror(errno)));
+			throw Error(i18n("Cannot seek in file : %1").tqarg(strerror(errno)));
 	}
 	
 	bool FreeDiskSpace(const TQString & path,Uint64 & bytes_free)

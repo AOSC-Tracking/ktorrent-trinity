@@ -60,7 +60,7 @@ namespace net
 		int val = 1; 
 		if (setsockopt(m_fd,SOL_SOCKET,SO_NOSIGPIPE,&val,sizeof(int)) < 0)
 		{
-			Out(SYS_CON|LOG_NOTICE) << TQString("Failed to set the NOSIGPIPE option : %1").arg(strerror(errno)) << endl;
+			Out(SYS_CON|LOG_NOTICE) << TQString("Failed to set the NOSIGPIPE option : %1").tqarg(strerror(errno)) << endl;
 		}
 #endif
 		cacheAddress();
@@ -71,14 +71,14 @@ namespace net
 		int fd = socket(PF_INET,tcp ? SOCK_STREAM : SOCK_DGRAM,0);
 		if (fd < 0)
 		{
-			Out(SYS_GEN|LOG_IMPORTANT) << TQString("Cannot create socket : %1").arg(strerror(errno)) << endl;
+			Out(SYS_GEN|LOG_IMPORTANT) << TQString("Cannot create socket : %1").tqarg(strerror(errno)) << endl;
 		}
 		m_fd = fd;
 #if defined(Q_OS_MACX) || defined(Q_OS_DARWIN) || (defined(Q_OS_FREEBSD) && !defined(__DragonFly__) && __FreeBSD_version < 600020)
 		int val = 1;
 		if (setsockopt(m_fd,SOL_SOCKET,SO_NOSIGPIPE,&val,sizeof(int)) < 0)
 		{
-			Out(SYS_CON|LOG_NOTICE) << TQString("Failed to set the NOSIGPIPE option : %1").arg(strerror(errno)) << endl;
+			Out(SYS_CON|LOG_NOTICE) << TQString("Failed to set the NOSIGPIPE option : %1").tqarg(strerror(errno)) << endl;
 		}
 #endif	
 	}
@@ -127,7 +127,7 @@ namespace net
 			else
 			{
 				Out(SYS_CON|LOG_NOTICE) << TQString("Cannot connect to host %1:%2 : %3")
-					.arg(a.toString()).arg(a.port()).arg(strerror(errno)) << endl;
+					.tqarg(a.toString()).tqarg(a.port()).tqarg(strerror(errno)) << endl;
 				return false;
 			}
 		}
@@ -145,20 +145,20 @@ namespace net
 	
 		if (::bind(m_fd,(struct sockaddr*)&addr,sizeof(struct sockaddr)) < 0)
 		{
-			Out(SYS_CON|LOG_IMPORTANT) << TQString("Cannot bind to port %1 : %2").arg(port).arg(strerror(errno)) << endl;
+			Out(SYS_CON|LOG_IMPORTANT) << TQString("Cannot bind to port %1 : %2").tqarg(port).tqarg(strerror(errno)) << endl;
 			return false;
 		}
 
 		if (also_listen && listen(m_fd,5) < 0)
 		{
-			Out(SYS_CON|LOG_IMPORTANT) << TQString("Cannot listen to port %1 : %2").arg(port).arg(strerror(errno)) << endl;
+			Out(SYS_CON|LOG_IMPORTANT) << TQString("Cannot listen to port %1 : %2").tqarg(port).tqarg(strerror(errno)) << endl;
 			return false;
 		}
 
 		int val = 1;
 		if (setsockopt(m_fd,SOL_SOCKET,SO_REUSEADDR,&val,sizeof(int)) < 0)
 		{
-			Out(SYS_CON|LOG_NOTICE) << TQString("Failed to set the reuseaddr option : %1").arg(strerror(errno)) << endl;
+			Out(SYS_CON|LOG_NOTICE) << TQString("Failed to set the reuseaddr option : %1").tqarg(strerror(errno)) << endl;
 		}
 		m_state = BOUND;
 		return true;
@@ -272,7 +272,7 @@ namespace net
 		if (setsockopt(m_fd,IPPROTO_IP,IP_TOS,&c,sizeof(c)) < 0)
 		{
 			Out(SYS_CON|LOG_NOTICE) << TQString("Failed to set TOS to %1 : %2")
-					.arg(type_of_service).arg(strerror(errno)) << endl;
+					.tqarg(type_of_service).tqarg(strerror(errno)) << endl;
 			return false;
 		}
 		return true;

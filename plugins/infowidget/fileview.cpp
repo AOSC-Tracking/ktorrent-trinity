@@ -186,7 +186,7 @@ namespace kt
 			else if (percent > 100.0)
 				percent = 100.0;
 			KLocale* loc = KGlobal::locale();
-			it.current()->setText(4,i18n("%1 %").arg(loc->formatNumber(percent,2)));
+			it.current()->setText(4,i18n("%1 %").tqarg(loc->formatNumber(percent,2)));
 		}
 	}
 

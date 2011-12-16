@@ -40,7 +40,7 @@
 #include <tqdatetimeedit.h>
 #include <tqtable.h>
 #include <tqregexp.h>
-#include <layout.h>
+#include <tqlayout.h>
 
 #include <torrent/globals.h>
 #include <util/log.h>

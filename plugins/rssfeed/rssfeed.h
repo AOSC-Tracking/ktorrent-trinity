@@ -73,7 +73,7 @@ namespace kt
 
 		public slots:
 			void refreshFeed();
-			void feedLoaded(Loader *feedLoader, Document doc, Status status);
+			void feedLoaded(Loader *feedLoader, Document doc, tqStatus status);
 			
 			void clearArticles();
 			

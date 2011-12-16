@@ -49,8 +49,8 @@ Button::Button(ButtonBar *parent, const TQString text, const TQIconSet &icon,
     setToggleButton(true);
     setFocusPolicy(TQ_NoFocus);
     setDescription(m_description);
-    setSizePolicy(TQSizePolicy::Minimum, TQSizePolicy::Minimum);
-    resize(sizeHint());
+    tqsetSizePolicy(TQSizePolicy::Minimum, TQSizePolicy::Minimum);
+    resize(tqsizeHint());
     fixDimensions(Ideal::Bottom);
 
     TQToolTip::add(this, m_realText);
@@ -62,9 +62,9 @@ Button::Button(ButtonBar *parent, const TQString text, const TQIconSet &icon,
 
     KConfig *config = kapp->config();
     config->setGroup("UI");
-    TQString accel = config->readEntry(TQString("button_%1").arg(text), "");
+    TQString accel = config->readEntry(TQString("button_%1").tqarg(text), "");
     if (!accel.isEmpty())
-        setRealText(TQString("&%1 %2").arg(accel).arg(m_realText));
+        setRealText(TQString("&%1 %2").tqarg(accel).tqarg(m_realText));
 }
 
 Button::~Button()
@@ -80,11 +80,11 @@ Button::~Button()
         TQString text = m_realText;
         if (text.contains(r2))
             text.remove(r2);
-        config->writeEntry(TQString("button_%1").arg(text), r.cap(1));
+        config->writeEntry(TQString("button_%1").tqarg(text), r.cap(1));
     }
     else
     {
-        config->writeEntry(TQString("button_%1").arg(m_realText), "");
+        config->writeEntry(TQString("button_%1").tqarg(m_realText), "");
     }
 }
 
@@ -131,11 +131,11 @@ void Button::drawButton(TQPainter *p)
     pm.fill(eraseColor());
     TQPainter p2(&pm);
 
-    tqstyle().drawControl(TQStyle::CE_PushButton,&p2,this, TQRect(0,0,pm.width(),pm.height()), colorGroup(),flags);
+    tqstyle().tqdrawControl(TQStyle::CE_PushButton,&p2,this, TQRect(0,0,pm.width(),pm.height()), tqcolorGroup(),flags);
 
-    tqstyle().drawControl(TQStyle::CE_PushButtonLabel, &p2, this,
+    tqstyle().tqdrawControl(TQStyle::CE_PushButtonLabel, &p2, this,
                         TQRect(0,0,pm.width(),pm.height()),
-                        colorGroup(), flags, TQStyleOption());
+                        tqcolorGroup(), flags, TQStyleOption());
 
     switch (m_place)
     {
@@ -178,7 +178,7 @@ void Button::fixDimensions(Place oldPlace)
             if ((oldPlace == Ideal::Bottom) || (oldPlace == Ideal::Top))
             {
                 setFixedWidth(height());
-                setMinimumHeight(sizeHint().width());
+                setMinimumHeight(tqsizeHint().width());
                 setMaximumHeight(32767);
             }
             break;
@@ -187,19 +187,19 @@ void Button::fixDimensions(Place oldPlace)
             if ((oldPlace == Ideal::Left) || (oldPlace == Ideal::Right))
             {
                 setFixedHeight(width());
-                setMinimumWidth(sizeHint().height());
+                setMinimumWidth(tqsizeHint().height());
                 setMaximumWidth(32767);
             }
             break;
     }
 }
 
-TQSize Button::sizeHint() const
+TQSize Button::tqsizeHint() const
 {
-    return sizeHint(text());
+    return tqsizeHint(text());
 }
 
-TQSize Button::sizeHint(const TQString &text) const
+TQSize Button::tqsizeHint(const TQString &text) const
 {
     constPolish();
     int w = 0, h = 0;
@@ -211,7 +211,7 @@ TQSize Button::sizeHint(const TQString &text) const
         h = TQMAX( h, ih );
     }
     if ( isMenuButton() )
-        w += tqstyle().pixelMetric(TQStyle::PM_MenuButtonIndicator, this);
+        w += tqstyle().tqpixelMetric(TQStyle::PM_MenuButtonIndicator, this);
     if ( pixmap() ) {
         TQPixmap *pm = (TQPixmap *)pixmap();
         w += pm->width();
@@ -220,7 +220,7 @@ TQSize Button::sizeHint(const TQString &text) const
         TQString s( text );
         bool empty = s.isEmpty();
         if ( empty )
-            s = TQString::fromLatin1("XXXX");
+            s = TQString::tqfromLatin1("XXXX");
         TQFontMetrics fm = fontMetrics();
         TQSize sz = fm.size( ShowPrefix, s );
         if(!empty || !w)
@@ -239,12 +239,12 @@ void Button::updateSize()
     {
         case Ideal::Left:
         case Ideal::Right:
-             setMinimumHeight(sizeHint().width());
-             resize(sizeHint().height(), sizeHint().width());
+             setMinimumHeight(tqsizeHint().width());
+             resize(tqsizeHint().height(), tqsizeHint().width());
             break;
         case Ideal::Top:
         case Ideal::Bottom:
-            resize(sizeHint().width(), sizeHint().height());
+            resize(tqsizeHint().width(), tqsizeHint().height());
             break;
     }
 }
@@ -320,7 +320,7 @@ void Button::assignAccel()
     if (ok)
     {
         TQString text = realTextWithoutAccel();
-        text = TQString("&%1 %2").arg(num).arg(text);
+        text = TQString("&%1 %2").tqarg(num).tqarg(text);
         setRealText(text);
     }
 }

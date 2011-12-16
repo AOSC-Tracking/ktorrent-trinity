@@ -35,17 +35,17 @@
 namespace bt
 {	
 
-	class DownloadStatus : public std::set<Uint32>
+	class DownloadtqStatus : public std::set<Uint32>
 	{
 	public:
 	//	typedef std::set<Uint32>::iterator iterator;
 		
-		DownloadStatus()
+		DownloadtqStatus()
 		{
 	
 		}
 
-		~DownloadStatus()
+		~DownloadtqStatus()
 		{
 		}
 
@@ -111,7 +111,7 @@ namespace bt
 			return false;
 
 	
-		DownloadStatus* ds = dstatus.find(p.getPeer());
+		DownloadtqStatus* ds = dstatus.find(p.getPeer());
 		if (ds)
 			ds->remove(pp);
 		
@@ -169,7 +169,7 @@ namespace bt
 			
 		pd->grab();
 		pdown.append(pd);
-		dstatus.insert(pd->getPeer()->getID(),new DownloadStatus());
+		dstatus.insert(pd->getPeer()->getID(),new DownloadtqStatus());
 		sendRequests(pd);
 		connect(pd,TQT_SIGNAL(timedout(const Request& )),this,TQT_SLOT(onTimeout(const Request& )));
 		connect(pd,TQT_SIGNAL(rejected( const Request& )),this,TQT_SLOT(onRejected( const Request& )));
@@ -179,7 +179,7 @@ namespace bt
 	void ChunkDownload::notDownloaded(const Request & r,bool reject)
 	{
 		// find the peer 
-		DownloadStatus* ds = dstatus.find(r.getPeer());
+		DownloadtqStatus* ds = dstatus.find(r.getPeer());
 		if (ds)
 		{
 			//	Out() << "ds != 0"  << endl;
@@ -196,7 +196,7 @@ namespace bt
 	{
 		if (chunk->getIndex() == r.getIndex())
 		{
-//			Out(SYS_CON|LOG_DEBUG) << TQString("Request rejected %1 %2 %3 %4").arg(r.getIndex()).arg(r.getOffset()).arg(r.getLength()).arg(r.getPeer()) << endl;
+//			Out(SYS_CON|LOG_DEBUG) << TQString("Request rejected %1 %2 %3 %4").tqarg(r.getIndex()).tqarg(r.getOffset()).tqarg(r.getLength()).tqarg(r.getPeer()) << endl;
 		
 			notDownloaded(r,true);
 		}
@@ -207,7 +207,7 @@ namespace bt
 		// see if we are dealing with a piece of ours
 		if (chunk->getIndex() == r.getIndex())
 		{
-			Out(SYS_CON|LOG_DEBUG) << TQString("Request timed out %1 %2 %3 %4").arg(r.getIndex()).arg(r.getOffset()).arg(r.getLength()).arg(r.getPeer()) << endl;
+			Out(SYS_CON|LOG_DEBUG) << TQString("Request timed out %1 %2 %3 %4").tqarg(r.getIndex()).tqarg(r.getOffset()).tqarg(r.getLength()).tqarg(r.getPeer()) << endl;
 		
 			notDownloaded(r,false);
 		}
@@ -216,7 +216,7 @@ namespace bt
 	void ChunkDownload::sendRequests(PeerDownloader* pd)
 	{
 		timer.update();
-		DownloadStatus* ds = dstatus.find(pd->getPeer()->getID());
+		DownloadtqStatus* ds = dstatus.find(pd->getPeer()->getID());
 		if (!ds)
 			return;
 			
@@ -262,11 +262,11 @@ namespace bt
 	
 	void ChunkDownload::sendCancels(PeerDownloader* pd)
 	{
-		DownloadStatus* ds = dstatus.find(pd->getPeer()->getID());
+		DownloadtqStatus* ds = dstatus.find(pd->getPeer()->getID());
 		if (!ds)
 			return;
 		
-		DownloadStatus::iterator itr = ds->begin();
+		DownloadtqStatus::iterator itr = ds->begin();
 		while (itr != ds->end())
 		{
 			Uint32 i = *itr;
@@ -287,7 +287,7 @@ namespace bt
 		while (i != pdown.end())
 		{
 			PeerDownloader* pd = *i;
-			DownloadStatus* ds = dstatus.find(pd->getPeer()->getID());
+			DownloadtqStatus* ds = dstatus.find(pd->getPeer()->getID());
 			Uint32 pp = p.getOffset() / MAX_PIECE_LEN;
 			if (ds && ds->contains(pp))
 			{
@@ -360,7 +360,7 @@ namespace bt
 		ChunkDownloadHeader hdr;
 		hdr.index = chunk->getIndex();
 		hdr.num_bits = pieces.getNumBits();
-		hdr.buffered = chunk->getStatus() == Chunk::BUFFERED ? 1 : 0;
+		hdr.buffered = chunk->gettqStatus() == Chunk::BUFFERED ? 1 : 0;
 		// save the chunk header
 		file.write(&hdr,sizeof(ChunkDownloadHeader));
 		// save the bitset
@@ -370,7 +370,7 @@ namespace bt
 			// if it's a buffered chunk, save the contents to
 			file.write(chunk->getData(),chunk->getSize());
 			chunk->clear();
-			chunk->setStatus(Chunk::ON_DISK);
+			chunk->settqStatus(Chunk::ON_DISK);
 		}
 	}
 		

@@ -195,7 +195,7 @@ namespace bt
 		else
 		{
 	/*		Out(SYS_CON|LOG_DEBUG) << TQString("Uploading %1 %2 %3 %4 %5")
-					.arg(index).arg(begin).arg(len).arg((TQ_ULLONG)ch,0,16).arg((TQ_ULLONG)ch->getData(),0,16) 
+					.tqarg(index).tqarg(begin).tqarg(len).tqarg((TQ_ULLONG)ch,0,16).tqarg((TQ_ULLONG)ch->getData(),0,16) 
 					<< endl;;
 	*/
 			queuePacket(new Packet(index,begin,len,ch));
@@ -218,7 +218,7 @@ namespace bt
 			enc.write(TQString("p")); 
 			enc.write((Uint32)port);
 		}
-		enc.write(TQString("v")); enc.write(TQString("KTorrent %1").arg(kt::VERSION_STRING));
+		enc.write(TQString("v")); enc.write(TQString("KTorrent %1").tqarg(kt::VERSION_STRING));
 		enc.end();
 		sendExtProtMsg(0,arr);
 	}

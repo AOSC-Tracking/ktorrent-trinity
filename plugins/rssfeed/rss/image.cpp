@@ -48,17 +48,17 @@ Image::Image(const TQDomNode &node) : TQObject(), d(new Private)
 {
 	TQString elemText;
 
-	if (!(elemText = extractNode(node, TQString::fromLatin1("title"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("title"))).isNull())
 		d->title = elemText;
-	if (!(elemText = extractNode(node, TQString::fromLatin1("url"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("url"))).isNull())
 		d->url = elemText;
-	if (!(elemText = extractNode(node, TQString::fromLatin1("link"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("link"))).isNull())
 		d->link = elemText;
-	if (!(elemText = extractNode(node, TQString::fromLatin1("description"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("description"))).isNull())
 		d->description = elemText;
-	if (!(elemText = extractNode(node, TQString::fromLatin1("height"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("height"))).isNull())
 		d->height = elemText.toUInt();
-	if (!(elemText = extractNode(node, TQString::fromLatin1("width"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("width"))).isNull())
 		d->width = elemText.toUInt();
 }
 

@@ -475,10 +475,10 @@ namespace bt
 				
 				// convert IP address to string 
 				pp.ip = TQString("%1.%2.%3.%4")
-						.arg((e.ip & 0xFF000000) >> 24)
-						.arg((e.ip & 0x00FF0000) >> 16)
-						.arg((e.ip & 0x0000FF00) >> 8)
-						.arg( e.ip & 0x000000FF);
+						.tqarg((e.ip & 0xFF000000) >> 24)
+						.tqarg((e.ip & 0x00FF0000) >> 16)
+						.tqarg((e.ip & 0x0000FF00) >> 8)
+						.tqarg( e.ip & 0x000000FF);
 				pp.port = e.port;
 				addPotentialPeer(pp);
 			}
@@ -564,10 +564,10 @@ namespace bt
 			pp.port = ReadUint16(tmp,4);
 			Uint32 ip = ReadUint32(tmp,0);
 			pp.ip = TQString("%1.%2.%3.%4")
-						.arg((ip & 0xFF000000) >> 24)
-						.arg((ip & 0x00FF0000) >> 16)
-						.arg((ip & 0x0000FF00) >> 8)
-						.arg( ip & 0x000000FF);
+						.tqarg((ip & 0xFF000000) >> 24)
+						.tqarg((ip & 0x00FF0000) >> 16)
+						.tqarg((ip & 0x0000FF00) >> 8)
+						.tqarg( ip & 0x000000FF);
 			pp.local = false;
 			
 			addPotentialPeer(pp);

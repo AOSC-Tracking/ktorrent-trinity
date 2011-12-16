@@ -300,7 +300,7 @@ function tt_DeAlt(t_tag)
 	{
 		if(t_tag.alt) t_tag.alt = "";
 		if(t_tag.title) t_tag.title = "";
-		var t_c = t_tag.children || t_tag.childNodes || null;
+		var t_c = t_tag.tqchildren || t_tag.childNodes || null;
 		if(t_c)
 		{
 			for(var t_i = t_c.length; t_i; )

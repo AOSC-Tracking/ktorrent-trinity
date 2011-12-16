@@ -114,7 +114,7 @@ KTorrentCore::KTorrentCore(kt::GUIInterface* gui) : max_downloads(0),keep_seedin
 			KMessageBox::information(0,
 			                         i18n("Specified port (%1) is unavailable or in"
 			                              " use by another application. KTorrent is now using port %2.")
-			                         .arg(port).arg(port + i - 1));
+			                         .tqarg(port).tqarg(port + i - 1));
 
 		Out(SYS_GEN|LOG_NOTICE) << "Bound to port " << (port + i - 1) << endl;
 	}
@@ -122,7 +122,7 @@ KTorrentCore::KTorrentCore(kt::GUIInterface* gui) : max_downloads(0),keep_seedin
 	{
 		KMessageBox::error(0,
 			i18n("KTorrent is unable to accept connections because the ports %1 to %2 are "
-			   "already in use by another program.").arg(port).arg(port + i - 1));
+			   "already in use by another program.").tqarg(port).tqarg(port + i - 1));
 		Out(SYS_GEN|LOG_IMPORTANT) << "Cannot find free port" << endl;
 	}
 
@@ -465,7 +465,7 @@ TQString KTorrentCore::findNewTorrentDir() const
 	while (true)
 	{
 		TQDir d;
-		TQString dir = data_dir + TQString("tor%1/").arg(i);
+		TQString dir = data_dir + TQString("tor%1/").tqarg(i);
 		if (!d.exists(dir))
 		{
 			return dir;
@@ -764,7 +764,7 @@ void KTorrentCore::makeTorrent(const TQString & file,const TQStringList & tracke
 
 		// Show error message
 		KMessageBox::error(0,
-		                   i18n("Cannot create torrent: %1").arg(e.toString()),
+		                   i18n("Cannot create torrent: %1").tqarg(e.toString()),
 		                   i18n("Error"));
 	}
 }
@@ -889,7 +889,7 @@ void KTorrentCore::queue(kt::TorrentInterface* tc)
 
 TorrentInterface* KTorrentCore::getTorFromNumber(int tornumber)
 {
-        TQString tordir = data_dir + "tor" + TQString("%1").arg(tornumber) + "/";
+        TQString tordir = data_dir + "tor" + TQString("%1").tqarg(tornumber) + "/";
 	Out() << "tordir " << tordir << endl;
         TQPtrList<TorrentInterface>::iterator i = qman->begin();
         while(i != qman->end())
@@ -1025,7 +1025,7 @@ void KTorrentCore::aboutToBeStarted(kt::TorrentInterface* tc,bool & ret)
 	
 	if (tc->getStats().multi_file_torrent)
 	{
-		TQString msg = i18n("Several data files of the torrent \"%1\" are missing, do you want to recreate them, or do you want to not download them?").arg(tc->getStats().torrent_name);
+		TQString msg = i18n("Several data files of the torrent \"%1\" are missing, do you want to recreate them, or do you want to not download them?").tqarg(tc->getStats().torrent_name);
 					
 		int ret = KMessageBox::warningYesNoCancelList(0,msg,missing,TQString(),
 				KGuiItem(i18n("Recreate")),KGuiItem(i18n("Do Not Download")));
@@ -1038,7 +1038,7 @@ void KTorrentCore::aboutToBeStarted(kt::TorrentInterface* tc,bool & ret)
 			}
 			catch (bt::Error & e)
 			{
-				KMessageBox::error(0,i18n("Cannot recreate missing files: %1").arg(e.toString()));
+				KMessageBox::error(0,i18n("Cannot recreate missing files: %1").tqarg(e.toString()));
 				tc->handleError(i18n("Data files are missing"));
 				ret = false;
 			}
@@ -1052,7 +1052,7 @@ void KTorrentCore::aboutToBeStarted(kt::TorrentInterface* tc,bool & ret)
 			}
 			catch (bt::Error & e)
 			{
-				KMessageBox::error(0,i18n("Cannot deselect missing files: %1").arg(e.toString()));
+				KMessageBox::error(0,i18n("Cannot deselect missing files: %1").tqarg(e.toString()));
 				tc->handleError(i18n("Data files are missing"));
 				ret = false;
 			}
@@ -1065,7 +1065,7 @@ void KTorrentCore::aboutToBeStarted(kt::TorrentInterface* tc,bool & ret)
 	}
 	else
 	{
-		TQString msg = i18n("The file where the data is saved of the torrent \"%1\" is missing, do you want to recreate it?").arg(tc->getStats().torrent_name);
+		TQString msg = i18n("The file where the data is saved of the torrent \"%1\" is missing, do you want to recreate it?").tqarg(tc->getStats().torrent_name);
 		int ret = KMessageBox::warningYesNo(0,msg, i18n("Recreate"),KGuiItem(i18n("Recreate")),KGuiItem(i18n("Do Not Recreate")));
 		if (ret == KMessageBox::Yes)
 		{
@@ -1075,7 +1075,7 @@ void KTorrentCore::aboutToBeStarted(kt::TorrentInterface* tc,bool & ret)
 			}
 			catch (bt::Error & e)
 			{
-				KMessageBox::error(0,i18n("Cannot recreate data file: %1").arg(e.toString()));
+				KMessageBox::error(0,i18n("Cannot recreate data file: %1").tqarg(e.toString()));
 				tc->handleError(i18n("Data file is missing"));
 				ret = false;
 			}

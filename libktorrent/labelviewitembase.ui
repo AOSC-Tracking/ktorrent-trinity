@@ -23,7 +23,7 @@
             <property name="name">
                 <cstring>icon_lbl</cstring>
             </property>
-            <property name="minimumSize">
+            <property name="tqminimumSize">
                 <size>
                     <width>64</width>
                     <height>64</height>
@@ -35,7 +35,7 @@
         </widget>
         <widget class="TQLayoutWidget">
             <property name="name">
-                <cstring>layout3</cstring>
+                <cstring>tqlayout3</cstring>
             </property>
             <vbox>
                 <property name="name">

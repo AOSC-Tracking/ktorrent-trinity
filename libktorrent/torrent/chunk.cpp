@@ -37,7 +37,7 @@ namespace bt
 		clear();
 	}
 
-	void Chunk::setData(Uint8* d,Status nstatus)
+	void Chunk::setData(Uint8* d,tqStatus nstatus)
 	{
 		clear();
 		status = nstatus;

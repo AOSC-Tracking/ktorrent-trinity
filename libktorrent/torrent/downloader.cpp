@@ -87,7 +87,7 @@ namespace bt
 		}
 		
 		// if the chunk is not in memory, reload it
-		if (cd->getChunk()->getStatus() == Chunk::ON_DISK)
+		if (cd->getChunk()->gettqStatus() == Chunk::ON_DISK)
 		{
 			cman.prepareChunk(cd->getChunk(),true);
 		}
@@ -119,7 +119,7 @@ namespace bt
 				downloaded += p.getLength();
 			
 			// save to disk again, if it is idle
-			if (cd->isIdle() && cd->getChunk()->getStatus() == Chunk::MMAPPED)
+			if (cd->isIdle() && cd->getChunk()->gettqStatus() == Chunk::MMAPPED)
 			{
 				cman.saveChunk(cd->getChunk()->getIndex(),false);
 			}
@@ -160,7 +160,7 @@ namespace bt
 			if (cd->isIdle()) // idle chunks do not need to be in memory
 			{
 				Chunk* c = cd->getChunk();
-				if (c->getStatus() == Chunk::MMAPPED)
+				if (c->gettqStatus() == Chunk::MMAPPED)
 				{
 					cman.saveChunk(cd->getChunk()->getIndex(),false);
 				}
@@ -169,7 +169,7 @@ namespace bt
 			{
 				cd->releaseAllPDs();
 				Chunk* c = cd->getChunk();
-				if (c->getStatus() == Chunk::MMAPPED)
+				if (c->gettqStatus() == Chunk::MMAPPED)
 				{
 					cman.saveChunk(cd->getChunk()->getIndex(),false);
 				}
@@ -277,7 +277,7 @@ namespace bt
 		if (sel)
 		{
 			// if it is on disk, reload it
-			if (sel->getChunk()->getStatus() == Chunk::ON_DISK)
+			if (sel->getChunk()->gettqStatus() == Chunk::ON_DISK)
 				cman.prepareChunk(sel->getChunk(),true);
 			
 			sel->assignPeer(pd);
@@ -341,7 +341,7 @@ namespace bt
 			if (cdmin) 
 			{
 				// if it is on disk, reload it
-				if (cdmin->getChunk()->getStatus() == Chunk::ON_DISK)
+				if (cdmin->getChunk()->gettqStatus() == Chunk::ON_DISK)
 				{
 					cman.prepareChunk(cdmin->getChunk(),true);
 				}
@@ -438,10 +438,10 @@ namespace bt
 		{
 			Uint32 ch = i->first;
 			Chunk* c = i->second->getChunk();
-			if (c->getStatus() == Chunk::MMAPPED)
+			if (c->gettqStatus() == Chunk::MMAPPED)
 				cman.saveChunk(ch,false);
 			
-			c->setStatus(Chunk::NOT_DOWNLOADED);
+			c->settqStatus(Chunk::NOT_DOWNLOADED);
 		}
 		current_chunks.clear();
 	}

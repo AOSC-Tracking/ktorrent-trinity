@@ -46,7 +46,7 @@ TorrentCreatorDlg::TorrentCreatorDlg(KTorrentCore* core,TQWidget *parent, const 
 	TQMap<TQString, int> n = bt::Globals::instance().getDHT().getClosestGoodNodes(10);
 	
 	for(TQMap<TQString, int>::iterator it = n.begin(); it!=n.end(); ++it)
-		new TQListViewItem(m_nodeList, it.key(), TQString("%1").arg(it.data()));
+		new TQListViewItem(m_nodeList, it.key(), TQString("%1").tqarg(it.data()));
 }
 
 TorrentCreatorDlg::~TorrentCreatorDlg()
@@ -105,7 +105,7 @@ void TorrentCreatorDlg::onCreate()
 		s += ".torrent";
 
 	KProgressDialog* dlg = new KProgressDialog(this,0);
-	dlg->setLabel(i18n("Creating %1...").arg(s));
+	dlg->setLabel(i18n("Creating %1...").tqarg(s));
 	dlg->setModal(true);
 	dlg->setAllowCancel(false);
 	dlg->show();
@@ -136,7 +136,7 @@ void TorrentCreatorDlg::btnRemoveNode_clicked()
 
 void TorrentCreatorDlg::btnAddNode_clicked()
 {
-	new TQListViewItem(m_nodeList, m_node->text(), TQString("%1").arg(m_port->value()));
+	new TQListViewItem(m_nodeList, m_node->text(), TQString("%1").tqarg(m_port->value()));
 }
 
 void TorrentCreatorDlg::m_nodeList_selectionChanged(TQListViewItem*)

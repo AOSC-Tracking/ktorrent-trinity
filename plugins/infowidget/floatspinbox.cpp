@@ -43,7 +43,7 @@ kt::FloatSpinBox::FloatSpinBox(
 	setStep( 0.25f );
 	connect(this, TQT_SIGNAL(valueChanged ( int )), this, TQT_SLOT(internalValueChanged( int )));
 	setValidator( new LocaleFloatValidator( TQT_TQOBJECT(dynamic_cast<TQSpinBox * > (this)) ));
-	editor()->setAlignment(TQt::AlignRight);
+	editor()->tqsetAlignment(TQt::AlignRight);
 }
 
 kt::FloatSpinBox::FloatSpinBox(

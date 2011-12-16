@@ -46,8 +46,8 @@ namespace bt
 	{
 		while (cnt > 1)
 		{
-			TQString prev = TQString("%1-%2.gz").arg(file).arg(cnt - 1);
-			TQString curr = TQString("%1-%2.gz").arg(file).arg(cnt);
+			TQString prev = TQString("%1-%2.gz").tqarg(file).tqarg(cnt - 1);
+			TQString curr = TQString("%1-%2.gz").tqarg(file).tqarg(cnt);
 			if (bt::Exists(prev)) // if file exists start the move job
 			{
 				KIO::Job* sj = KIO::file_move(KURL::fromPathOrURL(prev),KURL::fromPathOrURL(curr),-1,true,false,false);

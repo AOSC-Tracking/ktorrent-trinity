@@ -20,7 +20,7 @@
 #include "filterbar.h"
 
 #include <tqlabel.h>
-#include <layout.h>
+#include <tqlayout.h>
 #include <tqcheckbox.h>
 
 #include <kdialog.h>
@@ -42,30 +42,30 @@ FilterBar::FilterBar(TQWidget *parent, const char *name) :
 	TQVBoxLayout* foo = new TQVBoxLayout(this);
 	foo->addSpacing(gap);
 	
-	TQHBoxLayout* layout = new TQHBoxLayout(foo);
-	layout->addSpacing(gap);
+	TQHBoxLayout* tqlayout = new TQHBoxLayout(foo);
+	tqlayout->addSpacing(gap);
 	
 	m_close = new KToolBarButton("fileclose",0,this);
 	connect(m_close,TQT_SIGNAL(clicked()),this,TQT_SLOT(hide()));
-	layout->addWidget(m_close);
+	tqlayout->addWidget(m_close);
 	
 	m_filter = new TQLabel(i18n("Find:"), this);
-	layout->addWidget(m_filter);
-	layout->addSpacing(KDialog::spacingHint());
+	tqlayout->addWidget(m_filter);
+	tqlayout->addSpacing(KDialog::spacingHint());
 	
 	m_filterInput = new KLineEdit(this);
-	layout->addWidget(m_filterInput);
+	tqlayout->addWidget(m_filterInput);
 	
 	m_clear = new KPushButton(this);
 	m_clear->setIconSet(SmallIcon("clear_left"));
 	m_clear->setFlat(true);
-	layout->addWidget(m_clear);
-	layout->addSpacing(gap);
+	tqlayout->addWidget(m_clear);
+	tqlayout->addSpacing(gap);
 	
 	m_case_sensitive = new TQCheckBox(i18n("Case sensitive"),this);
 	m_case_sensitive->setChecked(true);
-	layout->addWidget(m_case_sensitive);
-	layout->addItem(new TQSpacerItem(10,10,TQSizePolicy::Expanding));
+	tqlayout->addWidget(m_case_sensitive);
+	tqlayout->addItem(new TQSpacerItem(10,10,TQSizePolicy::Expanding));
 		
 	connect(m_filterInput, TQT_SIGNAL(textChanged(const TQString&)),
 		this, TQT_SLOT(slotChangeFilter(const TQString&)));

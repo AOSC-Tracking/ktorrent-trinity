@@ -36,7 +36,7 @@
 
 #include <tqfile.h>
 #include <tqstringlist.h>
-#include <textstream.h>
+#include <tqtextstream.h>
 #include <tqregexp.h>
 #include <tqvalidator.h>
 #include <tqlabel.h>

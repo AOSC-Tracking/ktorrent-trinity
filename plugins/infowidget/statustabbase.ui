@@ -41,7 +41,7 @@
         </widget>
         <widget class="TQLayoutWidget">
             <property name="name">
-                <cstring>layout16</cstring>
+                <cstring>tqlayout16</cstring>
             </property>
             <hbox>
                 <property name="name">
@@ -49,7 +49,7 @@
                 </property>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout15</cstring>
+                        <cstring>tqlayout15</cstring>
                     </property>
                     <grid>
                         <property name="name">
@@ -75,7 +75,7 @@
                             <property name="name">
                                 <cstring>m_seeders</cstring>
                             </property>
-                            <property name="minimumSize">
+                            <property name="tqminimumSize">
                                 <size>
                                     <width>100</width>
                                     <height>0</height>
@@ -87,7 +87,7 @@
                             <property name="text">
                                 <string></string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                         </widget>
@@ -95,7 +95,7 @@
                             <property name="name">
                                 <cstring>m_leechers</cstring>
                             </property>
-                            <property name="minimumSize">
+                            <property name="tqminimumSize">
                                 <size>
                                     <width>100</width>
                                     <height>0</height>
@@ -107,7 +107,7 @@
                             <property name="text">
                                 <string></string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                         </widget>
@@ -115,7 +115,7 @@
                 </widget>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout14</cstring>
+                        <cstring>tqlayout14</cstring>
                     </property>
                     <grid>
                         <property name="name">
@@ -133,7 +133,7 @@
                             <property name="name">
                                 <cstring>m_avg_down</cstring>
                             </property>
-                            <property name="minimumSize">
+                            <property name="tqminimumSize">
                                 <size>
                                     <width>100</width>
                                     <height>0</height>
@@ -145,7 +145,7 @@
                             <property name="text">
                                 <string></string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                         </widget>
@@ -153,7 +153,7 @@
                             <property name="name">
                                 <cstring>m_avg_up</cstring>
                             </property>
-                            <property name="minimumSize">
+                            <property name="tqminimumSize">
                                 <size>
                                     <width>100</width>
                                     <height>0</height>
@@ -165,7 +165,7 @@
                             <property name="text">
                                 <string></string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                         </widget>
@@ -181,7 +181,7 @@
                 </widget>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout12</cstring>
+                        <cstring>tqlayout12</cstring>
                     </property>
                     <grid>
                         <property name="name">
@@ -207,7 +207,7 @@
                             <property name="name">
                                 <cstring>m_tracker_status</cstring>
                             </property>
-                            <property name="minimumSize">
+                            <property name="tqminimumSize">
                                 <size>
                                     <width>100</width>
                                     <height>0</height>
@@ -219,7 +219,7 @@
                             <property name="text">
                                 <string></string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                         </widget>
@@ -227,7 +227,7 @@
                             <property name="name">
                                 <cstring>m_tracker_update_time</cstring>
                             </property>
-                            <property name="minimumSize">
+                            <property name="tqminimumSize">
                                 <size>
                                     <width>100</width>
                                     <height>0</height>
@@ -239,7 +239,7 @@
                             <property name="text">
                                 <string></string>
                             </property>
-                            <property name="alignment">
+                            <property name="tqalignment">
                                 <set>AlignVCenter|AlignRight</set>
                             </property>
                         </widget>
@@ -255,7 +255,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="sizeHint">
+                    <property name="tqsizeHint">
                         <size>
                             <width>207</width>
                             <height>20</height>
@@ -266,7 +266,7 @@
         </widget>
         <widget class="TQLayoutWidget">
             <property name="name">
-                <cstring>layout17</cstring>
+                <cstring>tqlayout17</cstring>
             </property>
             <hbox>
                 <property name="name">
@@ -274,7 +274,7 @@
                 </property>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout23</cstring>
+                        <cstring>tqlayout23</cstring>
                     </property>
                     <vbox>
                         <property name="name">
@@ -282,7 +282,7 @@
                         </property>
                         <widget class="TQLayoutWidget">
                             <property name="name">
-                                <cstring>layout25</cstring>
+                                <cstring>tqlayout25</cstring>
                             </property>
                             <vbox>
                                 <property name="name">
@@ -344,7 +344,7 @@
                                             <verstretch>0</verstretch>
                                         </sizepolicy>
                                     </property>
-                                    <property name="minimumSize">
+                                    <property name="tqminimumSize">
                                         <size>
                                             <width>0</width>
                                             <height>20</height>
@@ -379,7 +379,7 @@
                                             <verstretch>0</verstretch>
                                         </sizepolicy>
                                     </property>
-                                    <property name="minimumSize">
+                                    <property name="tqminimumSize">
                                         <size>
                                             <width>0</width>
                                             <height>20</height>
@@ -398,7 +398,7 @@
                             <property name="sizeType">
                                 <enum>Expanding</enum>
                             </property>
-                            <property name="sizeHint">
+                            <property name="tqsizeHint">
                                 <size>
                                     <width>20</width>
                                     <height>16</height>
@@ -431,7 +431,7 @@
                 </widget>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>layout16</cstring>
+                        <cstring>tqlayout16</cstring>
                     </property>
                     <vbox>
                         <property name="name">
@@ -459,7 +459,7 @@
                         </widget>
                         <widget class="TQLayoutWidget">
                             <property name="name">
-                                <cstring>layout15</cstring>
+                                <cstring>tqlayout15</cstring>
                             </property>
                             <grid>
                                 <property name="name">
@@ -477,7 +477,7 @@
                                             <verstretch>0</verstretch>
                                         </sizepolicy>
                                     </property>
-                                    <property name="minimumSize">
+                                    <property name="tqminimumSize">
                                         <size>
                                             <width>20</width>
                                             <height>0</height>
@@ -497,7 +497,7 @@
                                 </widget>
                                 <widget class="TQLayoutWidget" row="2" column="1">
                                     <property name="name">
-                                        <cstring>layout11</cstring>
+                                        <cstring>tqlayout11</cstring>
                                     </property>
                                     <hbox>
                                         <property name="name">
@@ -515,7 +515,7 @@
                                                     <verstretch>0</verstretch>
                                                 </sizepolicy>
                                             </property>
-                                            <property name="minimumSize">
+                                            <property name="tqminimumSize">
                                                 <size>
                                                     <width>20</width>
                                                     <height>0</height>
@@ -561,7 +561,7 @@
                                     <property name="name">
                                         <cstring>m_share_ratio</cstring>
                                     </property>
-                                    <property name="minimumSize">
+                                    <property name="tqminimumSize">
                                         <size>
                                             <width>50</width>
                                             <height>0</height>
@@ -573,7 +573,7 @@
                                     <property name="text">
                                         <string></string>
                                     </property>
-                                    <property name="alignment">
+                                    <property name="tqalignment">
                                         <set>AlignVCenter|AlignRight</set>
                                     </property>
                                 </widget>
@@ -589,7 +589,7 @@
                             <property name="sizeType">
                                 <enum>MinimumExpanding</enum>
                             </property>
-                            <property name="sizeHint">
+                            <property name="tqsizeHint">
                                 <size>
                                     <width>20</width>
                                     <height>20</height>

@@ -32,7 +32,7 @@ namespace kt
 	
 	class XMLContentHandler : public TQXmlDefaultHandler
 	{
-		enum Status
+		enum tqStatus
 		{
 		    TOPLEVEL,ROOT,DEVICE,SERVICE,FIELD,OTHER
 		};
@@ -40,7 +40,7 @@ namespace kt
 		TQString tmp;
 		UPnPRouter* router;
 		UPnPService curr_service;
-		TQValueStack<Status> status_stack;
+		TQValueStack<tqStatus> status_stack;
 	public:
 		XMLContentHandler(UPnPRouter* router);
 		virtual ~XMLContentHandler();

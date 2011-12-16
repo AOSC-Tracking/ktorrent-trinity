@@ -92,7 +92,7 @@ namespace bt
 		
 		if (fd < 0)
 		{
-			throw Error(i18n("Cannot open %1 : %2").arg(path).arg(strerror(errno)));
+			throw Error(i18n("Cannot open %1 : %2").tqarg(path).tqarg(strerror(errno)));
 		}
 		
 		file_size = FileSize(fd);
@@ -118,7 +118,7 @@ namespace bt
 		
 		if (read_only && mode != READ)
 		{
-			throw Error(i18n("Cannot open %1 for writing : readonly filesystem").arg(path));
+			throw Error(i18n("Cannot open %1 for writing : readonly filesystem").tqarg(path));
 		}
 		
 		if (off + size > max_size)
@@ -217,7 +217,7 @@ namespace bt
 		}
 		
 		if (read_only)
-			throw Error(i18n("Cannot open %1 for writing : readonly filesystem").arg(path));
+			throw Error(i18n("Cannot open %1 for writing : readonly filesystem").tqarg(path));
 		
 		// jump to the end of the file
 		SeekFile(fd,0,SEEK_END);
@@ -237,22 +237,22 @@ namespace bt
 			int nb = to_write > 1024 ? 1024 : to_write;
 			int ret = ::write(fd,buf,nb);
 			if (ret < 0)
-				throw Error(i18n("Cannot expand file %1 : %2").arg(path).arg(strerror(errno)));
+				throw Error(i18n("Cannot expand file %1 : %2").tqarg(path).tqarg(strerror(errno)));
 			else if (ret != nb)
-				throw Error(i18n("Cannot expand file %1 : incomplete write").arg(path));
+				throw Error(i18n("Cannot expand file %1 : incomplete write").tqarg(path));
 			to_write -= nb;
 		}
 		file_size += num;
 //		
-	//	Out() << TQString("growing %1 = %2").arg(path).arg(kt::BytesToString(file_size)) << endl;
+	//	Out() << TQString("growing %1 = %2").tqarg(path).tqarg(kt::BytesToString(file_size)) << endl;
 
 		if (file_size != FileSize(fd))
 		{
-//			Out() << TQString("Homer Simpson %1 %2").arg(file_size).arg(sb.st_size) << endl;
+//			Out() << TQString("Homer Simpson %1 %2").tqarg(file_size).tqarg(sb.st_size) << endl;
 			fsync(fd);
 			if (file_size != FileSize(fd))
 			{
-				throw Error(i18n("Cannot expand file %1").arg(path));
+				throw Error(i18n("Cannot expand file %1").tqarg(path));
 			}
 		}
 	}
@@ -292,7 +292,7 @@ namespace bt
 		
 		if (ret < 0)
 		{
-			Out(SYS_DIO|LOG_IMPORTANT) << TQString("Munmap failed with error %1 : %2").arg(errno).arg(strerror(errno)) << endl;
+			Out(SYS_DIO|LOG_IMPORTANT) << TQString("Munmap failed with error %1 : %2").tqarg(errno).tqarg(strerror(errno)) << endl;
 		}
 	}
 		
@@ -326,7 +326,7 @@ namespace bt
 						
 			if (ret < 0)
 			{
-				Out(SYS_DIO|LOG_IMPORTANT) << TQString("Munmap failed with error %1 : %2").arg(errno).arg(strerror(errno)) << endl;
+				Out(SYS_DIO|LOG_IMPORTANT) << TQString("Munmap failed with error %1 : %2").tqarg(errno).tqarg(strerror(errno)) << endl;
 			}	
 		}
 		::close(fd);
@@ -348,7 +348,7 @@ namespace bt
 		
 		if (off >= file_size || off >= max_size)
 		{
-			throw Error(i18n("Error : Reading past the end of the file %1").arg(path));
+			throw Error(i18n("Error : Reading past the end of the file %1").tqarg(path));
 		}
 		
 		// jump to right position
@@ -358,7 +358,7 @@ namespace bt
 			if (close_again)
 				closeTemporary();
 			
-			throw Error(i18n("Error reading from %1").arg(path));
+			throw Error(i18n("Error reading from %1").tqarg(path));
 		}
 		
 		if (close_again)
@@ -379,7 +379,7 @@ namespace bt
 		}
 		
 		if (read_only)
-			throw Error(i18n("Cannot open %1 for writing : readonly filesystem").arg(path));
+			throw Error(i18n("Cannot open %1 for writing : readonly filesystem").tqarg(path));
 		
 		if (off + size > max_size)
 		{
@@ -389,7 +389,7 @@ namespace bt
 		
 		if (file_size < off)
 		{
-			//Out() << TQString("Writing %1 bytes at %2").arg(size).arg(off) << endl;
+			//Out() << TQString("Writing %1 bytes at %2").tqarg(size).tqarg(off) << endl;
 			growFile(off - file_size);
 		}
 		
@@ -400,11 +400,11 @@ namespace bt
 			closeTemporary();
 		
 		if (ret == -1)
-			throw Error(i18n("Error writing to %1 : %2").arg(path).arg(strerror(errno)));
+			throw Error(i18n("Error writing to %1 : %2").tqarg(path).tqarg(strerror(errno)));
 		else if ((Uint32)ret != size)
 		{
-			Out() << TQString("Incomplete write of %1 bytes, should be %2").arg(ret).arg(size) << endl;
-			throw Error(i18n("Error writing to %1").arg(path));
+			Out() << TQString("Incomplete write of %1 bytes, should be %2").tqarg(ret).tqarg(size) << endl;
+			throw Error(i18n("Error writing to %1").tqarg(path));
 		}
 		
 		if (off + size > file_size)
@@ -445,7 +445,7 @@ namespace bt
 			if (close_again)
 				closeTemporary();
 			
-			throw Error(i18n("Cannot open %1 for writing : readonly filesystem").arg(path));
+			throw Error(i18n("Cannot open %1 for writing : readonly filesystem").tqarg(path));
 		}
 
 		try
@@ -472,7 +472,7 @@ namespace bt
 				if (close_again)
 					closeTemporary();
 				
-				throw Error(i18n("Cannot preallocate diskspace : %1").arg(strerror(errno)));
+				throw Error(i18n("Cannot preallocate diskspace : %1").tqarg(strerror(errno)));
 			}
 		}
 

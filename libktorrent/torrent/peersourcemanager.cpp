@@ -386,7 +386,7 @@ namespace bt
 				// 30 minutes
 				curr->setInterval(FINAL_WAIT_TIME);
 				timer.start(FINAL_WAIT_TIME * 1000,true);
-				request_time = TQDateTime::currentDateTime();
+				request_time = TQDateTime::tqcurrentDateTime();
 			}
 			else if (curr->failureCount() > 2)
 			{
@@ -394,14 +394,14 @@ namespace bt
 				// a minute or 5, no need for hammering every 30 seconds
 				curr->setInterval(LONGER_WAIT_TIME);
 				timer.start(LONGER_WAIT_TIME * 1000,true);
-				request_time = TQDateTime::currentDateTime();
+				request_time = TQDateTime::tqcurrentDateTime();
 			}
 			else
 			{
 				// lets not hammer and wait 30 seconds
 				curr->setInterval(INITIAL_WAIT_TIME);
 				timer.start(INITIAL_WAIT_TIME * 1000,true);
-				request_time = TQDateTime::currentDateTime();
+				request_time = TQDateTime::tqcurrentDateTime();
 			}
 		}
 		else
@@ -418,7 +418,7 @@ namespace bt
 			{
 				curr->setInterval(FINAL_WAIT_TIME);
 				timer.start(FINAL_WAIT_TIME * 1000,true);
-				request_time = TQDateTime::currentDateTime();
+				request_time = TQDateTime::tqcurrentDateTime();
 			}
 			else if (trk->failureCount() > 2)
 			{
@@ -426,14 +426,14 @@ namespace bt
 				// wait 5 minutes and try again
 				curr->setInterval(LONGER_WAIT_TIME);
 				timer.start(LONGER_WAIT_TIME * 1000,true);
-				request_time = TQDateTime::currentDateTime();
+				request_time = TQDateTime::tqcurrentDateTime();
 			}
 			else
 			{
 				// wait 30 seconds and try again
 				curr->setInterval(INITIAL_WAIT_TIME);
 				timer.start(INITIAL_WAIT_TIME * 1000,true);
-				request_time = TQDateTime::currentDateTime();
+				request_time = TQDateTime::tqcurrentDateTime();
 			}
 		}
 	}
@@ -449,7 +449,7 @@ namespace bt
 		pending = false;
 		if (started)
 			statusChanged(i18n("OK"));
-		request_time = TQDateTime::currentDateTime();
+		request_time = TQDateTime::tqcurrentDateTime();
 	}
 		
 	void PeerSourceManager::onTrackerRequestPending()
@@ -504,7 +504,7 @@ namespace bt
 		if (pending || !started || !curr)
 			return 0;
 		
-		return curr->getInterval() - request_time.secsTo(TQDateTime::currentDateTime());
+		return curr->getInterval() - request_time.secsTo(TQDateTime::tqcurrentDateTime());
 	}
 	
 	Uint32 PeerSourceManager::getNumSeeders() const

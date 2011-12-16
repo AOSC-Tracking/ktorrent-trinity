@@ -23,7 +23,7 @@
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kfiledialog.h>
-#include <textstream.h>
+#include <tqtextstream.h>
 #include <util/log.h>
 #include <util/error.h>
 #include <util/bitset.h>
@@ -200,7 +200,7 @@ namespace bt
 			if (stats.completed && !comp)
 			{
 				pman->killSeeders();
-				TQDateTime now = TQDateTime::currentDateTime();
+				TQDateTime now = TQDateTime::tqcurrentDateTime();
 				istats.running_time_dl += istats.time_started_dl.secsTo(now);
 				updateStatusMsg();
 				updateStats();
@@ -228,7 +228,7 @@ namespace bt
 				else
 					psman->manualUpdate();
 				istats.last_announce = bt::GetCurrentTime();
-				istats.time_started_dl = TQDateTime::currentDateTime();
+				istats.time_started_dl = TQDateTime::tqcurrentDateTime();
 			}
 			updateStatusMsg();
 			
@@ -351,7 +351,7 @@ namespace bt
 			throw;
 		}
 		
-		istats.time_started_ul = istats.time_started_dl = TQDateTime::currentDateTime();
+		istats.time_started_ul = istats.time_started_dl = TQDateTime::tqcurrentDateTime();
 		resetTrackerStats();
 		
 		if (prealloc)
@@ -408,7 +408,7 @@ namespace bt
 
 	void TorrentControl::stop(bool user,WaitJob* wjob)
 	{
-		TQDateTime now = TQDateTime::currentDateTime();
+		TQDateTime now = TQDateTime::tqcurrentDateTime();
 		if(!stats.completed)
 			istats.running_time_dl += istats.time_started_dl.secsTo(now);
 		istats.running_time_ul += istats.time_started_ul.secsTo(now);
@@ -506,7 +506,7 @@ namespace bt
 			delete tor;
 			tor = 0;
 			throw Error(i18n("An error occurred while loading the torrent."
-					" The torrent is probably corrupt or is not a torrent file.\n%1").arg(torrent));
+					" The torrent is probably corrupt or is not a torrent file.\n%1").tqarg(torrent));
 		}
 		
 		initInternal(qman,tmpdir,ddir,default_save_dir,torrent.startsWith(tmpdir));
@@ -544,7 +544,7 @@ namespace bt
 		TQFile fptr(tor_copy);
 		if (!fptr.open(IO_WriteOnly))
 			throw Error(i18n("Unable to create %1 : %2")
-					.arg(tor_copy).arg(fptr.errorString()));
+					.tqarg(tor_copy).tqarg(fptr.errorString()));
 	
 		fptr.writeBlock(data.data(),data.size());
 	}
@@ -559,12 +559,12 @@ namespace bt
 			{
 				qman->mergeAnnounceList(tor->getInfoHash(),tor->getTrackerList());
 
-				throw Error(i18n("You are already downloading this torrent %1, the list of trackers of both torrents has been merged.").arg(tor->getNameSuggestion()));
+				throw Error(i18n("You are already downloading this torrent %1, the list of trackers of both torrents has been merged.").tqarg(tor->getNameSuggestion()));
 			}
 			else
 			{
 				throw Error(i18n("You are already downloading the torrent %1")
-						.arg(tor->getNameSuggestion()));
+						.tqarg(tor->getNameSuggestion()));
 			}
 		}
 	}
@@ -670,7 +670,7 @@ namespace bt
 				
 				throw Error(
 						i18n("Cannot migrate %1 : %2")
-						.arg(tor->getNameSuggestion()).arg(err.toString()));
+						.tqarg(tor->getNameSuggestion()).tqarg(err.toString()));
 			}
 		}
 		setupData(ddir);
@@ -992,21 +992,21 @@ namespace bt
 		
 		if (stats.running)
 		{
-			TQDateTime now = TQDateTime::currentDateTime();
-			st.write("RUNNING_TIME_DL",TQString("%1").arg(istats.running_time_dl + istats.time_started_dl.secsTo(now)));
-			st.write("RUNNING_TIME_UL",TQString("%1").arg(istats.running_time_ul + istats.time_started_ul.secsTo(now)));
+			TQDateTime now = TQDateTime::tqcurrentDateTime();
+			st.write("RUNNING_TIME_DL",TQString("%1").tqarg(istats.running_time_dl + istats.time_started_dl.secsTo(now)));
+			st.write("RUNNING_TIME_UL",TQString("%1").tqarg(istats.running_time_ul + istats.time_started_ul.secsTo(now)));
 		}
 		else
 		{
-			st.write("RUNNING_TIME_DL", TQString("%1").arg(istats.running_time_dl));
-			st.write("RUNNING_TIME_UL", TQString("%1").arg(istats.running_time_ul));
+			st.write("RUNNING_TIME_DL", TQString("%1").tqarg(istats.running_time_dl));
+			st.write("RUNNING_TIME_UL", TQString("%1").tqarg(istats.running_time_ul));
 		}
 		
-		st.write("PRIORITY", TQString("%1").arg(istats.priority));
-		st.write("AUTOSTART", TQString("%1").arg(stats.autostart));
-		st.write("IMPORTED", TQString("%1").arg(stats.imported_bytes));
+		st.write("PRIORITY", TQString("%1").tqarg(istats.priority));
+		st.write("AUTOSTART", TQString("%1").tqarg(stats.autostart));
+		st.write("IMPORTED", TQString("%1").tqarg(stats.imported_bytes));
 		st.write("CUSTOM_OUTPUT_NAME",istats.custom_output_name ? "1" : "0");
-		st.write("MAX_RATIO", TQString("%1").arg(stats.max_share_ratio,0,'f',2));
+		st.write("MAX_RATIO", TQString("%1").tqarg(stats.max_share_ratio,0,'f',2));
 		st.write("MAX_SEED_TIME",TQString::number(stats.max_seed_time));
 		st.write("RESTART_DISK_PREALLOCATION",prealloc ? "1" : "0");
 		
@@ -1222,7 +1222,7 @@ namespace bt
 		if (!stats.running || stats.completed)
 			return istats.running_time_dl;
 		else
-			return istats.running_time_dl + istats.time_started_dl.secsTo(TQDateTime::currentDateTime());
+			return istats.running_time_dl + istats.time_started_dl.secsTo(TQDateTime::tqcurrentDateTime());
 	}
 
 	Uint32 TorrentControl::getRunningTimeUL() const
@@ -1230,7 +1230,7 @@ namespace bt
 		if (!stats.running)
 			return istats.running_time_ul;
 		else
-			return istats.running_time_ul + istats.time_started_ul.secsTo(TQDateTime::currentDateTime());
+			return istats.running_time_ul + istats.time_started_ul.secsTo(TQDateTime::tqcurrentDateTime());
 	}
 
 	Uint32 TorrentControl::getNumFiles() const
@@ -1274,7 +1274,7 @@ namespace bt
 							" To make sure this torrent still works with this version of KTorrent, "
 							"we will migrate this torrent. You will be asked for a location to save "
 							"the torrent to. If you press cancel, we will select your home directory.")
-								.arg(tor->getNameSuggestion()));
+								.tqarg(tor->getNameSuggestion()));
 					outputdir = KFileDialog::getExistingDirectory(TQString(), 0,i18n("Select Folder to Save To"));
 					if (outputdir.isNull())
 						outputdir = TQDir::homeDirPath();

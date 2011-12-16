@@ -22,7 +22,7 @@
 #include <kactivelabel.h>
 #include <kglobal.h>
 #include <kcombobox.h>
-#include <layout.h>
+#include <tqlayout.h>
 #include <tqlabel.h>
 #include <tqcheckbox.h>
 #include <knuminput.h>
@@ -281,7 +281,7 @@ bool GeneralPrefPage::apply()
 		{
 			TQString err = KResolver::errorString(res.error());
 			TQString msg = i18n("Cannot lookup %1: %2\n"
-							   "Please provide a valid IP address or hostname.").arg(externalIP).arg(err);
+							   "Please provide a valid IP address or hostname.").tqarg(externalIP).tqarg(err);
 			KMessageBox::error(0, msg, i18n("Error"));
 			return false;
 		}

@@ -165,7 +165,7 @@ namespace bt
 		
 	signals:
 		/**
-		 * Status has changed of the tracker.
+		 * tqStatus has changed of the tracker.
 		 * @param ns The new status
 		 */
 		void statusChanged(const TQString & ns);

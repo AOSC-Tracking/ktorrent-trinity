@@ -79,7 +79,7 @@ namespace ktdebug
 					// we can read the chunk from this file
 					File fptr;
 					if (!fptr.open(cache + tf.getPath(),"rb"))
-						throw Error(TQString("Cannot open %1 : %2").arg(cache + tf.getPath()).arg(fptr.errorString()));
+						throw Error(TQString("Cannot open %1 : %2").tqarg(cache + tf.getPath()).tqarg(fptr.errorString()));
 
 					fptr.seek(File::BEGIN,curr_file_off);
 					fptr.read(buf + bytes_offset,to_read);
@@ -94,7 +94,7 @@ namespace ktdebug
 // 					Out() << "Partially reading " << to_read << endl;
 					File fptr;
 					if (!fptr.open(cache + tf.getPath(),"rb"))
-						throw Error(TQString("Cannot open %1 : %2").arg(cache + tf.getPath()).arg(fptr.errorString()));
+						throw Error(TQString("Cannot open %1 : %2").tqarg(cache + tf.getPath()).tqarg(fptr.errorString()));
 
 					fptr.seek(File::BEGIN,curr_file_off);
 					fptr.read(buf + bytes_offset,to_read);

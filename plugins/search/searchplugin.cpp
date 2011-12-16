@@ -108,7 +108,7 @@ namespace kt
 			if(SearchPluginSettings::useDefaultBrowser())
 				kapp->invokeBrowser(url.url());
 			else
-				KRun::runCommand(TQString("%1 \"%2\"").arg(SearchPluginSettings::customBrowser()).arg(url.url()), SearchPluginSettings::customBrowser(), "viewmag" );
+				KRun::runCommand(TQString("%1 \"%2\"").tqarg(SearchPluginSettings::customBrowser()).tqarg(url.url()), SearchPluginSettings::customBrowser(), "viewmag" );
 			
 			return;
 		}

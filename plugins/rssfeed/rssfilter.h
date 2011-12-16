@@ -42,8 +42,8 @@ namespace kt
 	{
 		public:
 		
-			FilterMatch() { m_season = 0; m_episode = 0; m_time = TQDateTime::currentDateTime().toString(); m_link=TQString(); };
-			FilterMatch(int season, int episode, TQString link, TQString time = TQDateTime::currentDateTime().toString());
+			FilterMatch() { m_season = 0; m_episode = 0; m_time = TQDateTime::tqcurrentDateTime().toString(); m_link=TQString(); };
+			FilterMatch(int season, int episode, TQString link, TQString time = TQDateTime::tqcurrentDateTime().toString());
 			FilterMatch(const FilterMatch &other);
 			FilterMatch &operator=(const FilterMatch &other);
 			bool operator==(const FilterMatch &other) const;

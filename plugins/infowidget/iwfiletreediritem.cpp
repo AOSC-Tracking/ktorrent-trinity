@@ -51,8 +51,8 @@ namespace kt
 	void IWFileTreeDirItem::updatePercentageInformation()
 	{
 		// first set all the child items
-		bt::PtrMap<TQString,FileTreeItem>::iterator i = children.begin();
-		while (i != children.end())
+		bt::PtrMap<TQString,FileTreeItem>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			IWFileTreeItem* item = (IWFileTreeItem*)i->second;
 			item->updatePercentageInformation();
@@ -71,8 +71,8 @@ namespace kt
 	void IWFileTreeDirItem::updatePreviewInformation(kt::TorrentInterface* tc)
 	{
 		// first set all the child items
-		bt::PtrMap<TQString,FileTreeItem>::iterator i = children.begin();
-		while (i != children.end())
+		bt::PtrMap<TQString,FileTreeItem>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			IWFileTreeItem* item = (IWFileTreeItem*)i->second;
 			item->updatePreviewInformation(tc);
@@ -91,11 +91,11 @@ namespace kt
 	Priority IWFileTreeDirItem::updatePriorityInformation(kt::TorrentInterface* tc)
 	{
                 // first set all the child items
-		bt::PtrMap<TQString,FileTreeItem>::iterator i = children.begin();
+		bt::PtrMap<TQString,FileTreeItem>::iterator i = tqchildren.begin();
 		bool setpriority = false;
 		bool oneexcluded = false;
 		Priority priority = PREVIEW_PRIORITY;
-		if(i != children.end())
+		if(i != tqchildren.end())
 		{
 			IWFileTreeItem* item = (IWFileTreeItem*)i->second;
 			item->updatePriorityInformation(tc);
@@ -105,7 +105,7 @@ namespace kt
 				oneexcluded = true;
 			setpriority = true;
 		}
-		while (i != children.end())
+		while (i != tqchildren.end())
 		{
 			IWFileTreeItem* item = (IWFileTreeItem*)i->second;
 			item->updatePriorityInformation(tc);
@@ -118,7 +118,7 @@ namespace kt
 
                 // then recursivly move on to subdirs
 		bt::PtrMap<TQString,FileTreeDirItem>::iterator j = subdirs.begin();
-		if(j != subdirs.end() && children.begin() == children.end())
+		if(j != subdirs.end() && tqchildren.begin() == tqchildren.end())
 		{
 			Priority priority =
 					((IWFileTreeDirItem*)j->second)->updatePriorityInformation(tc);
@@ -189,8 +189,8 @@ namespace kt
 	void IWFileTreeDirItem::updateDNDInformation()
 	{
 			// first set all the child items
-		bt::PtrMap<TQString,FileTreeItem>::iterator i = children.begin();
-		while (i != children.end())
+		bt::PtrMap<TQString,FileTreeItem>::iterator i = tqchildren.begin();
+		while (i != tqchildren.end())
 		{
 			IWFileTreeItem* item = (IWFileTreeItem*)i->second;
 			item->updateDNDInformation();

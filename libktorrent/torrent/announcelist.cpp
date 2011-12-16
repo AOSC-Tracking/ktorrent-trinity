@@ -27,7 +27,7 @@
 #include <klocale.h>
 #include <tqstringlist.h>
 #include <tqfile.h>
-#include <textstream.h>
+#include <tqtextstream.h>
 
 namespace bt
 {

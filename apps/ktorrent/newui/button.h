@@ -54,8 +54,8 @@ public:
     /**Sets the mode of a button.*/
     void setMode(Ideal::ButtonMode mode);
 
-    TQSize sizeHint() const;
-    TQSize sizeHint(const TQString &text) const;
+    TQSize tqsizeHint() const;
+    TQSize tqsizeHint(const TQString &text) const;
 
     /**Updates size of a widget. Used after squeezing button's text.*/
     void updateSize();

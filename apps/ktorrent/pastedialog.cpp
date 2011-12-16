@@ -22,7 +22,7 @@
 #include "ktorrentcore.h"
 #include <kpushbutton.h>
 #include <kstdguiitem.h>
-#include <clipboard.h>
+#include <tqclipboard.h>
 #include <tqapplication.h>
 #include <kurl.h>
 #include <klineedit.h>
@@ -33,7 +33,7 @@ PasteDialog::PasteDialog(KTorrentCore* core, TQWidget *parent, const char *name)
 		:PasteDlgBase(parent, name)
 {
 	m_core = core;
-	TQClipboard *cb = TQApplication::clipboard();
+	TQClipboard *cb = TQApplication::tqclipboard();
 	TQString text = cb->text(TQClipboard::Clipboard);
 	KURL url = KURL::fromPathOrURL(text);
 	if ( url.isValid() )

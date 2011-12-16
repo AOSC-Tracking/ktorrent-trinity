@@ -54,7 +54,7 @@ Article::Article(const TQDomNode &node, Format format) : d(new Private)
 
 	d->numComments=0;
 
-	if (!(elemText = extractNode(node, TQString::fromLatin1("title"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("title"))).isNull())
 		d->title = elemText;
    
 
@@ -62,14 +62,14 @@ Article::Article(const TQDomNode &node, Format format) : d(new Private)
 	bool foundTorrentEnclosure = false;
 	for (n = node.firstChild(); !n.isNull(); n = n.nextSibling()) {
 		const TQDomElement e = n.toElement();
-		if ( (e.tagName()==TQString::fromLatin1("enclosure") ) )
+		if ( (e.tagName()==TQString::tqfromLatin1("enclosure") ) )
 			{
-			TQString enclosureAttr = e.attribute(TQString::fromLatin1("type"));
+			TQString enclosureAttr = e.attribute(TQString::tqfromLatin1("type"));
 			if (!enclosureAttr.isNull() )
 				{
 				if (enclosureAttr == "application/x-bittorrent")
 					{
-					enclosureAttr = e.attribute(TQString::fromLatin1("url"));
+					enclosureAttr = e.attribute(TQString::tqfromLatin1("url"));
 					if (!enclosureAttr.isNull() )
 						{
 						d->link=enclosureAttr;
@@ -88,41 +88,41 @@ Article::Article(const TQDomNode &node, Format format) : d(new Private)
 			TQDomNode n;
 			for (n = node.firstChild(); !n.isNull(); n = n.nextSibling()) {
 				const TQDomElement e = n.toElement();
-				if ( (e.tagName()==TQString::fromLatin1("link")) &&
-					(e.attribute(TQString::fromLatin1("rel"))==TQString::fromLatin1("alternate")))
+				if ( (e.tagName()==TQString::tqfromLatin1("link")) &&
+					(e.attribute(TQString::tqfromLatin1("rel"))==TQString::tqfromLatin1("alternate")))
 					{   
-						d->link=n.toElement().attribute(TQString::fromLatin1("href"));
+						d->link=n.toElement().attribute(TQString::tqfromLatin1("href"));
 						break;
 					}
 			}
 		}
 		else
 		{
-			if (!(elemText = extractNode(node, TQString::fromLatin1("link"))).isNull())
+			if (!(elemText = extractNode(node, TQString::tqfromLatin1("link"))).isNull())
 				d->link = elemText;
 		}
 	}
 
 
     // prefer content/content:encoded over summary/description for feeds that provide it
-    TQString tagName=(format==AtomFeed)? TQString::fromLatin1("content"): TQString::fromLatin1("content:encoded");
+    TQString tagName=(format==AtomFeed)? TQString::tqfromLatin1("content"): TQString::tqfromLatin1("content:encoded");
     
     if (!(elemText = extractNode(node, tagName, false)).isNull())
         d->description = elemText;
     
     if (d->description.isEmpty())
     {
-		if (!(elemText = extractNode(node, TQString::fromLatin1("body"), false)).isNull())
+		if (!(elemText = extractNode(node, TQString::tqfromLatin1("body"), false)).isNull())
 	    	d->description = elemText;
     
 		if (d->description.isEmpty())  // 3rd try: see http://www.intertwingly.net/blog/1299.html
 		{
-			if (!(elemText = extractNode(node, TQString::fromLatin1((format==AtomFeed)? "summary" : "description"), false)).isNull())
+			if (!(elemText = extractNode(node, TQString::tqfromLatin1((format==AtomFeed)? "summary" : "description"), false)).isNull())
 				d->description = elemText;
 		}
     }
     
-	if (!(elemText = extractNode(node, TQString::fromLatin1((format==AtomFeed)? "created": "pubDate"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1((format==AtomFeed)? "created": "pubDate"))).isNull())
     {
 		time_t _time;
 		if (format==AtomFeed)
@@ -134,7 +134,7 @@ Article::Article(const TQDomNode &node, Format format) : d(new Private)
         if (_time != 0)
 		  d->pubDate.setTime_t(_time);
 	}
-	if (!(elemText = extractNode(node, TQString::fromLatin1("dc:date"))).isNull())
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("dc:date"))).isNull())
     {
 		time_t _time = parseISO8601Date(elemText);
 
@@ -146,23 +146,23 @@ Article::Article(const TQDomNode &node, Format format) : d(new Private)
 	//no luck so far - so let's set it to the current time
 	if (!d->pubDate.isValid())
 	{
-		d->pubDate = TQDateTime::currentDateTime();
+		d->pubDate = TQDateTime::tqcurrentDateTime();
 	}
 	
 
-	if (!(elemText = extractNode(node, TQString::fromLatin1("wfw:comment"))).isNull()) {
+	if (!(elemText = extractNode(node, TQString::tqfromLatin1("wfw:comment"))).isNull()) {
 		d->commentsLink = elemText;
 	}
 
-    if (!(elemText = extractNode(node, TQString::fromLatin1("slash:comments"))).isNull()) {
+    if (!(elemText = extractNode(node, TQString::tqfromLatin1("slash:comments"))).isNull()) {
         d->numComments = elemText.toInt();
     }
 
-    tagName=(format==AtomFeed)? TQString::fromLatin1("id"): TQString::fromLatin1("guid");
+    tagName=(format==AtomFeed)? TQString::tqfromLatin1("id"): TQString::tqfromLatin1("guid");
     n = node.namedItem(tagName);
 	if (!n.isNull()) {
 		d->guidIsPermaLink = (format==AtomFeed)? false : true;
-		if (n.toElement().attribute(TQString::fromLatin1("isPermaLink"), "true") == "false") d->guidIsPermaLink = false;
+		if (n.toElement().attribute(TQString::tqfromLatin1("isPermaLink"), "true") == "false") d->guidIsPermaLink = false;
 
 		if (!(elemText = extractNode(node, tagName)).isNull())
 			d->guid = elemText;
@@ -176,14 +176,14 @@ Article::Article(const TQDomNode &node, Format format) : d(new Private)
 		md5Machine.update(d->title.utf8());
 		md5Machine.update(d->description.utf8());
 		d->guid = TQString(md5Machine.hexDigest().data());
-        d->meta[TQString::fromLatin1("guidIsHash")] = TQString::fromLatin1("true");
+        d->meta[TQString::tqfromLatin1("guidIsHash")] = TQString::tqfromLatin1("true");
 	}
 
     for (TQDomNode i = node.firstChild(); !i.isNull(); i = i.nextSibling())
     {
-        if (i.isElement() && i.toElement().tagName() == TQString::fromLatin1("metaInfo:meta"))
+        if (i.isElement() && i.toElement().tagName() == TQString::tqfromLatin1("metaInfo:meta"))
         {
-            TQString type = i.toElement().attribute(TQString::fromLatin1("type"));
+            TQString type = i.toElement().attribute(TQString::tqfromLatin1("type"));
             d->meta[type] = i.toElement().text();
         }
     }

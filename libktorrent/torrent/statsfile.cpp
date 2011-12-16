@@ -25,7 +25,7 @@
 
 #include <tqstring.h>
 #include <tqfile.h>
-#include <textstream.h>
+#include <tqtextstream.h>
 
 namespace bt
 {

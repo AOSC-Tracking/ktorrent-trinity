@@ -25,21 +25,21 @@
 
 #include "comdefs.h"
 
-#include <layout.h>
+#include <tqlayout.h>
 
 namespace Ideal {
 
 class Button;
 class ButtonBar;
 
-/**@short A layout for a ButtonBar class.
+/**@short A tqlayout for a ButtonBar class.
 
-Overrides minimumSize method to allow shrinking button bar buttons.*/
+Overrides tqminimumSize method to allow shrinking button bar buttons.*/
 class ButtonLayout: public TQBoxLayout{
 public:
     ButtonLayout(ButtonBar *parent, Direction d, int margin = 0, int spacing = -1, const char * name = 0);
 
-    virtual TQSize minimumSize() const;
+    virtual TQSize tqminimumSize() const;
 
 private:
     ButtonBar *m_buttonBar;

@@ -66,7 +66,7 @@ namespace kt
 			}
 		}
 	
-		const char* name    = avahi_strdup(TQString("%1__%2%3").arg(service->id).arg((rand() % 26) + 65).arg((rand() % 26) + 65).ascii());
+		const char* name    = avahi_strdup(TQString("%1__%2%3").tqarg(service->id).tqarg((rand() % 26) + 65).tqarg((rand() % 26) + 65).ascii());
 		const char* type    = avahi_strdup("_bittorrent._tcp");
 		const char* subtype = avahi_strdup(TQString("_" + service->infoHash + "._sub._bittorrent._tcp").ascii());
 	
@@ -75,7 +75,7 @@ namespace kt
 				(AvahiPublishFlags)0, name, type, NULL, NULL, service->port, NULL)) 
 		{
 			if (avahi_client_errno(c) != -8) 
-				Out(SYS_ZCO|LOG_DEBUG) << TQString("ZC: Failed to add the service (%i).").arg(avahi_client_errno(c)) << endl;
+				Out(SYS_ZCO|LOG_DEBUG) << TQString("ZC: Failed to add the service (%i).").tqarg(avahi_client_errno(c)) << endl;
 			else
 				publish_service(service, c);
 			return;
@@ -85,7 +85,7 @@ namespace kt
 				service->group, AVAHI_IF_UNSPEC, AVAHI_PROTO_UNSPEC,
 				(AvahiPublishFlags)0, name, type, NULL, subtype)) 
 		{
-			Out(SYS_ZCO|LOG_DEBUG) << TQString("ZC: Failed to add the service subtype (%i).").arg( avahi_client_errno(c)) << endl;
+			Out(SYS_ZCO|LOG_DEBUG) << TQString("ZC: Failed to add the service subtype (%i).").tqarg( avahi_client_errno(c)) << endl;
 			return;
 		}
 	

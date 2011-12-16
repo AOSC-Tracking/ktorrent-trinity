@@ -67,19 +67,19 @@ namespace kt
 	
 		tmp = ip;
 		tmp &= 0x000000FF;
-		out.prepend(TQString("%1").arg(tmp));
+		out.prepend(TQString("%1").tqarg(tmp));
 		ip >>= 8;
 		tmp = ip;
 		tmp &= 0x000000FF;
-		out.prepend(TQString("%1.").arg(tmp));
+		out.prepend(TQString("%1.").tqarg(tmp));
 		ip >>= 8;
 		tmp = ip;
 		tmp &= 0x000000FF;
-		out.prepend(TQString("%1.").arg(tmp));
+		out.prepend(TQString("%1.").tqarg(tmp));
 		ip >>= 8;
 		tmp = ip;
 		tmp &= 0x000000FF;
-		out.prepend(TQString("%1.").arg(tmp));
+		out.prepend(TQString("%1.").tqarg(tmp));
 	
 		return out;
 	}

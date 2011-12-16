@@ -51,7 +51,7 @@ namespace kt
 
 		loadDefault();
 
-		lblStatus->clear();
+		lbltqStatus->clear();
 
 		pix_icon->setPixmap(KGlobal::iconLoader()->loadIcon("clock",KIcon::NoGroup));
 		
@@ -162,7 +162,7 @@ namespace kt
 				stream << (int) schedule.getCategory(i, j);
 
 		file.close();
-		lblStatus->setText(i18n("Schedule saved."));
+		lbltqStatus->setText(i18n("Schedule saved."));
 	}
 
 	void BWSPrefPageWidget::loadSchedule(TQString& fn, bool showmsg)
@@ -205,7 +205,7 @@ namespace kt
 		file.close();
 
 		m_bwsWidget->setSchedule(schedule);
-		lblStatus->setText(i18n("Schedule loaded."));
+		lbltqStatus->setText(i18n("Schedule loaded."));
 	}
 
 	void BWSPrefPageWidget::loadDefault()
@@ -228,7 +228,7 @@ namespace kt
 		ulCat2->setValue(0);
 		ulCat3->setValue(0);
 
-		lblStatus->clear();
+		lbltqStatus->clear();
 	}
 
 	void BWSPrefPageWidget::apply()

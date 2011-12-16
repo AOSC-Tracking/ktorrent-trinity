@@ -50,7 +50,7 @@ namespace kt
 		setTextFormat(TQt::LogText);
 		setMaxLogLines(200);
 		setMinimumSize(TQSize(0,50));
-		setSizePolicy(TQSizePolicy::Expanding,TQSizePolicy::Expanding);
+		tqsetSizePolicy(TQSizePolicy::Expanding,TQSizePolicy::Expanding);
 		KGlobal::config()->setGroup("LogViewer");
 		if (KGlobal::config()->hasKey("LogViewerWidgetSize"))
 		{
