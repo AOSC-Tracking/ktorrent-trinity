@@ -104,7 +104,7 @@ void DDockWindow::setVisible(bool v)
 {
     //write dock width to the config file
     KConfig *config = kapp->config();
-    TQString group = TQString("%1").tqarg(m_name);
+    TQString group = TQString("%1").arg(m_name);
     config->setGroup(group);
 
     if (m_visible)
@@ -115,7 +115,7 @@ void DDockWindow::setVisible(bool v)
     v ? m_widgetStack->show() : m_widgetStack->hide();
     m_visible = v;
 
-    m_internalLayout->tqinvalidate();
+    m_internalLayout->invalidate();
     if (!m_visible)
     {
         if (m_position == DDockWindow::Bottom)
@@ -148,7 +148,7 @@ void DDockWindow::loadSettings()
 void DDockWindow::saveSettings()
 {
     KConfig *config = kapp->config();
-    TQString group = TQString("%1").tqarg(m_name);
+    TQString group = TQString("%1").arg(m_name);
     int invisibleWidth = 0;
     config->setGroup(group);
     if (config->hasKey("ViewWidth"))
@@ -200,7 +200,7 @@ void DDockWindow::addWidget(const TQString &title, TQWidget *widget, bool skipAc
         //if the widget was selected last time the dock is deleted
         //we need to show it
         KConfig *config = kapp->config();
-        TQString group = TQString("%1").tqarg(m_name);
+        TQString group = TQString("%1").arg(m_name);
         config->setGroup(group);
         if (config->readEntry("ViewLastWidget") == title)
         {

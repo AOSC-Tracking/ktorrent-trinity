@@ -113,7 +113,7 @@ namespace kt
 	UPnPRouter::UPnPRouter(const TQString & server,const KURL & location,bool verbose) : server(server),location(location),verbose(verbose)
 	{
 		// make the tmp_file unique, current time * a random number should be enough
-		tmp_file = TQString("/tmp/ktorrent_upnp_description-%1.xml").tqarg(bt::GetCurrentTime() * rand());
+		tmp_file = TQString("/tmp/ktorrent_upnp_description-%1.xml").arg(bt::GetCurrentTime() * rand());
 	}
 	
 	
@@ -227,7 +227,7 @@ namespace kt
 		
 		a.element = "NewPortMappingDescription";
 		static Uint32 cnt = 0;
-		a.value = TQString("KTorrent UPNP %1").tqarg(cnt++);	// TODO: change this
+		a.value = TQString("KTorrent UPNP %1").arg(cnt++);	// TODO: change this
 		args.append(a);
 		
 		a.element = "NewLeaseDuration";
@@ -335,7 +335,7 @@ namespace kt
 				"Content-length: $CONTENT_LENGTH\r\n"
 				"Content-Type: text/xml\r\n"
 				"SOAPAction: \"%4\"\r\n"
-				"\r\n").tqarg(controlurl).tqarg(location.host()).tqarg(location.port()).tqarg(soapact);
+				"\r\n").arg(controlurl).arg(location.host()).arg(location.port()).arg(soapact);
 
 		
 		HTTPRequest* r = new HTTPRequest(http_hdr,query,location.host(),location.port(),verbose);

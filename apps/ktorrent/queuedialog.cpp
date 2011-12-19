@@ -300,7 +300,7 @@ void QueueDialog::downloadList_currentChanged(TQListViewItem* item)
 	
 	dlStatus->setText(tc->statusToString());
 	dlTracker->setText(tc->getTrackersList()->getTrackerURL().prettyURL());
-	dlRatio->setText(TQString("%1").tqarg((float)s.bytes_uploaded / s.bytes_downloaded,0,'f',2));
+	dlRatio->setText(TQString("%1").arg((float)s.bytes_uploaded / s.bytes_downloaded,0,'f',2));
 	dlBytes->setText(BytesToString(s.bytes_left_to_download));
 	dlDHT->setText(s.priv_torrent ? i18n("No (private torrent)") : i18n("Yes"));
 }
@@ -321,7 +321,7 @@ void QueueDialog::seedList_currentChanged(TQListViewItem* item)
 	
 	ulStatus->setText(tc->statusToString());
 	ulTracker->setText(tc->getTrackersList()->getTrackerURL().prettyURL());
-	ulRatio->setText(TQString("%1").tqarg((float)s.bytes_uploaded / s.bytes_downloaded,0,'f',2));
+	ulRatio->setText(TQString("%1").arg((float)s.bytes_uploaded / s.bytes_downloaded,0,'f',2));
 	ulBytes->setText(BytesToString(s.bytes_uploaded));
 	ulDHT->setText(s.priv_torrent ? i18n("No (private torrent)") : i18n("Yes"));
 }

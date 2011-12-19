@@ -51,7 +51,7 @@ namespace kt
 			if (hashes.count(tor->getInfoHash()))
 			{
 		/*		bt::Out(SYS_GEN|LOG_DEBUG) << 
-						TQString("TG %1 : Torrent %2 from hashes list").tqarg(groupName()).tqarg(tor->getStats().torrent_name) << endl;
+						TQString("TG %1 : Torrent %2 from hashes list").arg(groupName()).arg(tor->getStats().torrent_name) << endl;
 		*/ 
 				hashes.erase(tor->getInfoHash());
 				torrents.insert(tor);

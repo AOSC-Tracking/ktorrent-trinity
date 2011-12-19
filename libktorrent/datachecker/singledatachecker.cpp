@@ -48,7 +48,7 @@ namespace bt
 		if (!fptr.open(path,"rb"))
 		{
 			throw Error(i18n("Cannot open file : %1 : %2")
-					.tqarg(path).tqarg( fptr.errorString()));
+					.arg(path).arg( fptr.errorString()));
 		}
 
 		// initialize the bitsets

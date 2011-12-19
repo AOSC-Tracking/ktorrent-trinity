@@ -281,7 +281,7 @@ bool GeneralPrefPage::apply()
 		{
 			TQString err = KResolver::errorString(res.error());
 			TQString msg = i18n("Cannot lookup %1: %2\n"
-							   "Please provide a valid IP address or hostname.").tqarg(externalIP).tqarg(err);
+							   "Please provide a valid IP address or hostname.").arg(externalIP).arg(err);
 			KMessageBox::error(0, msg, i18n("Error"));
 			return false;
 		}

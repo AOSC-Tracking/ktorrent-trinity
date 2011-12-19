@@ -113,23 +113,23 @@ void WebInterfacePrefWidget::changeLedState()
 {
        TQFileInfo fi(phpExecutablePath->url());
        if(fi.isExecutable() && (fi.isFile() || fi.isSymLink())){
-               TQToolTip::add( kled, i18n("%1 exists and it is executable").tqarg(phpExecutablePath->url()));
+               TQToolTip::add( kled, i18n("%1 exists and it is executable").arg(phpExecutablePath->url()));
                kled->setColor(green);
        }
        else if (!fi.exists()){
-               TQToolTip::add( kled, i18n("%1 does not exist").tqarg(phpExecutablePath->url()) );
+               TQToolTip::add( kled, i18n("%1 does not exist").arg(phpExecutablePath->url()) );
                kled->setColor(red);
        }
        else if (!fi.isExecutable()){
-               TQToolTip::add( kled, i18n("%1 is not executable").tqarg(phpExecutablePath->url()) );
+               TQToolTip::add( kled, i18n("%1 is not executable").arg(phpExecutablePath->url()) );
                kled->setColor(red);
        }
        else if (fi.isDir()){
-               TQToolTip::add( kled, i18n("%1 is a directory").tqarg(phpExecutablePath->url()) );
+               TQToolTip::add( kled, i18n("%1 is a directory").arg(phpExecutablePath->url()) );
                kled->setColor(red);
        }
        else{
-               TQToolTip::add( kled, i18n("%1 is not php executable path").tqarg(phpExecutablePath->url()) );
+               TQToolTip::add( kled, i18n("%1 is not php executable path").arg(phpExecutablePath->url()) );
                kled->setColor(red);
        }
 }

@@ -109,8 +109,8 @@ namespace bt
 		File fptr;
 		if (!fptr.open(cache + tf.getPath(), "rb"))
 		{
-			Out() << TQString("Warning : Cannot open %1 : %2").tqarg(cache + 
-					tf.getPath()).tqarg(fptr.errorString()) << endl;
+			Out() << TQString("Warning : Cannot open %1 : %2").arg(cache + 
+					tf.getPath()).arg(fptr.errorString()) << endl;
 			return 0;
 		}
 		
@@ -183,8 +183,8 @@ namespace bt
 				File fptr;
 				if (!fptr.open(cache + f.getPath(), "rb"))
 				{
-					Out() << TQString("Warning : Cannot open %1 : %2").tqarg(cache + 
-							f.getPath()).tqarg(fptr.errorString()) << endl;
+					Out() << TQString("Warning : Cannot open %1 : %2").arg(cache + 
+							f.getPath()).arg(fptr.errorString()) << endl;
 					return false;
 				}
 				else

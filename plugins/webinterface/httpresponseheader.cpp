@@ -61,12 +61,12 @@ namespace kt
 	TQString HttpResponseHeader::toString() const
 	{
 		TQString str;
-		str += TQString("HTTP/1.1 %1 %2\r\n").tqarg(response_code).tqarg(ResponseCodeToString(response_code));
+		str += TQString("HTTP/1.1 %1 %2\r\n").arg(response_code).arg(ResponseCodeToString(response_code));
 		
 		TQMap<TQString,TQString>::const_iterator itr = fields.begin();
 		while (itr != fields.end())
 		{
-			str += TQString("%1: %2\r\n").tqarg(itr.key()).tqarg(itr.data());
+			str += TQString("%1: %2\r\n").arg(itr.key()).arg(itr.data());
 			itr++;
 		}
 		str += "\r\n";

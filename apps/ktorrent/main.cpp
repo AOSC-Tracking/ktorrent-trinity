@@ -79,7 +79,7 @@ static const char description[] =
 bool GrabPIDLock()
 {
 	// create a lock file in /tmp/ with the user id of the current user included in the name
-	TQString pid_file = TQString("/tmp/.ktorrent_%1.lock").tqarg(getuid());
+	TQString pid_file = TQString("/tmp/.ktorrent_%1.lock").arg(getuid());
 		
 	int fd = open(TQFile::encodeName(pid_file),O_RDWR|O_CREAT,0640);
 	if (fd < 0)

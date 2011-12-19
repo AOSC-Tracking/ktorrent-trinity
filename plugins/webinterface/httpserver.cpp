@@ -237,12 +237,12 @@ namespace kt
 	{
 		if (!cookie)
 			return now.toString("%1, dd %2 yyyy hh:mm:ss UTC")
-				.tqarg(days[now.date().dayOfWeek() - 1])
-				.tqarg(months[now.date().month() - 1]);
+				.arg(days[now.date().dayOfWeek() - 1])
+				.arg(months[now.date().month() - 1]);
 		else
 			return now.toString("%1, dd-%2-yyyy hh:mm:ss GMT")
-				.tqarg(days[now.date().dayOfWeek() - 1])
-				.tqarg(months[now.date().month() - 1]);
+				.arg(days[now.date().dayOfWeek() - 1])
+				.arg(months[now.date().month() - 1]);
 	}
 		
 	void HttpServer::setDefaultResponseHeaders(HttpResponseHeader & hdr,const TQString & content_type,bool with_session_info)
@@ -253,7 +253,7 @@ namespace kt
 		hdr.setValue("Connection","keep-alive");
 		if (with_session_info && session.sessionId && session.logged_in)
 		{
-			hdr.setValue("Set-Cookie",TQString("KT_SESSID=%1").tqarg(session.sessionId));
+			hdr.setValue("Set-Cookie",TQString("KT_SESSID=%1").arg(session.sessionId));
 		}
 	}
 	
@@ -329,7 +329,7 @@ namespace kt
 			{
 				// clear cookie in case of login page
 				TQDateTime dt = TQDateTime::currentDateTime().addDays(-1);
-				TQString cookie = TQString("KT_SESSID=666; expires=%1 +0000").tqarg(DateTimeToString(dt,true));
+				TQString cookie = TQString("KT_SESSID=666; expires=%1 +0000").arg(DateTimeToString(dt,true));
 				rhdr.setValue("Set-Cookie",cookie);
 			}
 			

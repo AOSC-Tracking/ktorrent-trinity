@@ -592,7 +592,7 @@ namespace bt
 		DNDFile out(dst_file);
 		File fptr;
 		if (!fptr.open(src_file,"rb"))
-			throw Error(i18n("Cannot open file %1 : %2").tqarg(src_file).tqarg(fptr.errorString()));
+			throw Error(i18n("Cannot open file %1 : %2").arg(src_file).arg(fptr.errorString()));
 		
 		Uint32 cs = 0;
 		if (tf->getFirstChunk() == tor.getNumChunks() - 1)
@@ -654,7 +654,7 @@ namespace bt
 			// first attempt failed, must be fat so try that
 			if (!FatPreallocate(output_file,tf->getSize()))
 			{	
-				throw Error(i18n("Cannot preallocate diskspace : %1").tqarg(strerror(errno)));
+				throw Error(i18n("Cannot preallocate diskspace : %1").arg(strerror(errno)));
 			}
 		}
 		
@@ -670,7 +670,7 @@ namespace bt
 		
 		File fptr;
 		if (!fptr.open(output_file,"r+b"))
-			throw Error(i18n("Cannot open file %1 : %2").tqarg(output_file).tqarg(fptr.errorString()));
+			throw Error(i18n("Cannot open file %1 : %2").arg(output_file).arg(fptr.errorString()));
 			
 		
 		Uint32 ts = cs - tf->getFirstChunkOffset() > tf->getLastChunkSize() ? 
@@ -782,7 +782,7 @@ namespace bt
 			else
 			{
 				
-				// tqchildren, so we cannot delete any more directories higher up
+				// children, so we cannot delete any more directories higher up
 				return;
 			}
 		}

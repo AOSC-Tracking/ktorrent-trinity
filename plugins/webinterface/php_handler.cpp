@@ -82,7 +82,7 @@ namespace kt
 			
 		for ( it = args.begin(); it != args.end(); ++it )
 		{
-			ts << TQString("$_REQUEST['%1']=\"%2\";\n").tqarg(it.key()).tqarg(it.data());
+			ts << TQString("$_REQUEST['%1']=\"%2\";\n").arg(it.key()).arg(it.data());
 		}
 		ts.writeRawBytes(php_s.data() + off,php_s.size() - off); // the rest of the script
 		ts << flush;

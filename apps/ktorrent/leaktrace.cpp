@@ -180,7 +180,7 @@ static void DeregisterAlloc(void* ptr)
 				
 		if (!p->left && !p->right)
 		{
-			// no tqchildren so just free p
+			// no children so just free p
 			if (prev->left == p)
 			{
 				free(prev->left);
@@ -214,7 +214,7 @@ static void DeregisterAlloc(void* ptr)
 		}
 		else
 		{
-			// both tqchildren exist
+			// both children exist
 			if (prev->left == p)
 			{
 				// attach the left child of p

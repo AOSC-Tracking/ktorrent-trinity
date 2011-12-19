@@ -196,7 +196,7 @@ namespace bt
 	{
 		if (chunk->getIndex() == r.getIndex())
 		{
-//			Out(SYS_CON|LOG_DEBUG) << TQString("Request rejected %1 %2 %3 %4").tqarg(r.getIndex()).tqarg(r.getOffset()).tqarg(r.getLength()).tqarg(r.getPeer()) << endl;
+//			Out(SYS_CON|LOG_DEBUG) << TQString("Request rejected %1 %2 %3 %4").arg(r.getIndex()).arg(r.getOffset()).arg(r.getLength()).arg(r.getPeer()) << endl;
 		
 			notDownloaded(r,true);
 		}
@@ -207,7 +207,7 @@ namespace bt
 		// see if we are dealing with a piece of ours
 		if (chunk->getIndex() == r.getIndex())
 		{
-			Out(SYS_CON|LOG_DEBUG) << TQString("Request timed out %1 %2 %3 %4").tqarg(r.getIndex()).tqarg(r.getOffset()).tqarg(r.getLength()).tqarg(r.getPeer()) << endl;
+			Out(SYS_CON|LOG_DEBUG) << TQString("Request timed out %1 %2 %3 %4").arg(r.getIndex()).arg(r.getOffset()).arg(r.getLength()).arg(r.getPeer()) << endl;
 		
 			notDownloaded(r,false);
 		}

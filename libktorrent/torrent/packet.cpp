@@ -138,16 +138,16 @@ namespace bt
 		
 		switch (data[4])
 		{
-			case CHOKE : return TQString("CHOKE %1 %2").tqarg(hdr_length).tqarg(data_length);
-			case UNCHOKE : return TQString("UNCHOKE %1 %2").tqarg(hdr_length).tqarg(data_length);
-			case INTERESTED : return TQString("INTERESTED %1 %2").tqarg(hdr_length).tqarg(data_length);
-			case NOT_INTERESTED : return TQString("NOT_INTERESTED %1 %2").tqarg(hdr_length).tqarg(data_length);
-			case HAVE : return TQString("HAVE %1 %2").tqarg(hdr_length).tqarg(data_length);
-			case BITFIELD : return TQString("BITFIELD %1 %2").tqarg(hdr_length).tqarg(data_length);
-			case PIECE : return TQString("PIECE %1 %2").tqarg(hdr_length).tqarg(data_length);
-			case REQUEST : return TQString("REQUEST %1 %2").tqarg(hdr_length).tqarg(data_length);
-			case CANCEL : return TQString("CANCEL %1 %2").tqarg(hdr_length).tqarg(data_length);
-			default: return TQString("UNKNOWN %1 %2").tqarg(hdr_length).tqarg(data_length);
+			case CHOKE : return TQString("CHOKE %1 %2").arg(hdr_length).arg(data_length);
+			case UNCHOKE : return TQString("UNCHOKE %1 %2").arg(hdr_length).arg(data_length);
+			case INTERESTED : return TQString("INTERESTED %1 %2").arg(hdr_length).arg(data_length);
+			case NOT_INTERESTED : return TQString("NOT_INTERESTED %1 %2").arg(hdr_length).arg(data_length);
+			case HAVE : return TQString("HAVE %1 %2").arg(hdr_length).arg(data_length);
+			case BITFIELD : return TQString("BITFIELD %1 %2").arg(hdr_length).arg(data_length);
+			case PIECE : return TQString("PIECE %1 %2").arg(hdr_length).arg(data_length);
+			case REQUEST : return TQString("REQUEST %1 %2").arg(hdr_length).arg(data_length);
+			case CANCEL : return TQString("CANCEL %1 %2").arg(hdr_length).arg(data_length);
+			default: return TQString("UNKNOWN %1 %2").arg(hdr_length).arg(data_length);
 		}
 	}
 	*/
