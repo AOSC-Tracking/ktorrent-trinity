@@ -41,7 +41,7 @@ namespace bt
 	class Peer;
 	class Request;
 	class PeerDownloader;
-	class DownloadtqStatus;
+	class DownloadStatus;
 	
 	struct ChunkDownloadHeader
 	{
@@ -193,7 +193,7 @@ namespace bt
 		Uint32 last_size;
 		Timer timer;
 		TQPtrList<PeerDownloader> pdown;
-		PtrMap<Uint32,DownloadtqStatus> dstatus;
+		PtrMap<Uint32,DownloadStatus> dstatus;
 		std::set<Uint32> piece_providers;
 		
 

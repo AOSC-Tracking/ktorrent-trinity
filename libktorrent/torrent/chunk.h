@@ -45,7 +45,7 @@ namespace bt
 		Chunk(unsigned int index,Uint32 size);
 		~Chunk();
 
-		enum tqStatus
+		enum Status
 		{
 			MMAPPED,
 			BUFFERED,
@@ -54,13 +54,13 @@ namespace bt
 		};
 
 		/// Get the chunks status.
-		tqStatus gettqStatus() const;
+		Status getStatus() const;
 
 		/**
 		 * Set the chunks status
 		 * @param s 
 		 */
-		void settqStatus(tqStatus s);
+		void setStatus(Status s);
 
 		/// Get the data
 		const Uint8* getData() const;
@@ -69,7 +69,7 @@ namespace bt
 		Uint8* getData();
 
 		/// Set the data and the new status
-		void setData(Uint8* d,tqStatus nstatus);
+		void setData(Uint8* d,Status nstatus);
 
 		/// Clear the chunk (delete data depending on the mode)
 		void clear();
@@ -118,7 +118,7 @@ namespace bt
 		virtual void unmapped();
 		
 	private:
-		tqStatus status;
+		Status status;
 		Uint32 index;
 		Uint8* data;
 		Uint32 size;
@@ -126,12 +126,12 @@ namespace bt
 		Priority priority;
 	};
 
-	inline Chunk::tqStatus Chunk::gettqStatus() const
+	inline Chunk::Status Chunk::getStatus() const
 	{
 		return status;
 	}
 
-	inline void Chunk::settqStatus(Chunk::tqStatus s)
+	inline void Chunk::setStatus(Chunk::Status s)
 	{
 		status = s;
 	}

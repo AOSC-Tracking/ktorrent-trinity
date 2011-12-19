@@ -223,7 +223,7 @@ namespace kt
 		RssArticle::List::iterator it;
 		for ( it = m_articles.begin(); it != m_articles.end();  )
 			{
-			if ((*it).pubDate().daysTo(TQDateTime::tqcurrentDateTime()) > m_articleAge)
+			if ((*it).pubDate().daysTo(TQDateTime::currentDateTime()) > m_articleAge)
 				{
 				it = m_articles.erase(it);
 				removed = true;
@@ -254,12 +254,12 @@ namespace kt
 		feedLoading = true;
 		cleanArticles();
 		Loader * feedLoader = Loader::create();
-		connect( feedLoader, TQT_SIGNAL( loadingComplete( Loader *, Document, tqStatus ) ),
-			this, TQT_SLOT( feedLoaded( Loader *, Document, tqStatus ) ) );
+		connect( feedLoader, TQT_SIGNAL( loadingComplete( Loader *, Document, Status ) ),
+			this, TQT_SLOT( feedLoaded( Loader *, Document, Status ) ) );
 		feedLoader->loadFrom( m_feedUrl, new FileRetriever );
 	}
 	
-	void RssFeed::feedLoaded(Loader *feedLoader, Document doc, tqStatus status)
+	void RssFeed::feedLoaded(Loader *feedLoader, Document doc, Status status)
 	{
 		feedLoading = false;
 
@@ -290,7 +290,7 @@ namespace kt
 			for (int i=doc.articles().count()-1; i>=0; i--)
 			{
 				curArticle = doc.articles()[i];
-				if (curArticle.pubDate().daysTo(TQDateTime::tqcurrentDateTime()) < m_articleAge && !m_articles.contains(curArticle))
+				if (curArticle.pubDate().daysTo(TQDateTime::currentDateTime()) < m_articleAge && !m_articles.contains(curArticle))
 				{
 					m_articles.prepend(curArticle);
 					emit scanRssArticle(curArticle);
@@ -306,8 +306,8 @@ namespace kt
 			qDebug( "There was and error loading the feed\n");
 		}
 		
-		disconnect( feedLoader, TQT_SIGNAL( loadingComplete( Loader *, Document, tqStatus ) ),
-			this, TQT_SLOT( feedLoaded( Loader *, Document, tqStatus ) ) );
+		disconnect( feedLoader, TQT_SIGNAL( loadingComplete( Loader *, Document, Status ) ),
+			this, TQT_SLOT( feedLoaded( Loader *, Document, Status ) ) );
 		feedLoader->deleteLater();
 
 	}

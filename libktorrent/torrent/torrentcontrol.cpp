@@ -200,7 +200,7 @@ namespace bt
 			if (stats.completed && !comp)
 			{
 				pman->killSeeders();
-				TQDateTime now = TQDateTime::tqcurrentDateTime();
+				TQDateTime now = TQDateTime::currentDateTime();
 				istats.running_time_dl += istats.time_started_dl.secsTo(now);
 				updateStatusMsg();
 				updateStats();
@@ -228,7 +228,7 @@ namespace bt
 				else
 					psman->manualUpdate();
 				istats.last_announce = bt::GetCurrentTime();
-				istats.time_started_dl = TQDateTime::tqcurrentDateTime();
+				istats.time_started_dl = TQDateTime::currentDateTime();
 			}
 			updateStatusMsg();
 			
@@ -351,7 +351,7 @@ namespace bt
 			throw;
 		}
 		
-		istats.time_started_ul = istats.time_started_dl = TQDateTime::tqcurrentDateTime();
+		istats.time_started_ul = istats.time_started_dl = TQDateTime::currentDateTime();
 		resetTrackerStats();
 		
 		if (prealloc)
@@ -408,7 +408,7 @@ namespace bt
 
 	void TorrentControl::stop(bool user,WaitJob* wjob)
 	{
-		TQDateTime now = TQDateTime::tqcurrentDateTime();
+		TQDateTime now = TQDateTime::currentDateTime();
 		if(!stats.completed)
 			istats.running_time_dl += istats.time_started_dl.secsTo(now);
 		istats.running_time_ul += istats.time_started_ul.secsTo(now);
@@ -992,7 +992,7 @@ namespace bt
 		
 		if (stats.running)
 		{
-			TQDateTime now = TQDateTime::tqcurrentDateTime();
+			TQDateTime now = TQDateTime::currentDateTime();
 			st.write("RUNNING_TIME_DL",TQString("%1").tqarg(istats.running_time_dl + istats.time_started_dl.secsTo(now)));
 			st.write("RUNNING_TIME_UL",TQString("%1").tqarg(istats.running_time_ul + istats.time_started_ul.secsTo(now)));
 		}
@@ -1222,7 +1222,7 @@ namespace bt
 		if (!stats.running || stats.completed)
 			return istats.running_time_dl;
 		else
-			return istats.running_time_dl + istats.time_started_dl.secsTo(TQDateTime::tqcurrentDateTime());
+			return istats.running_time_dl + istats.time_started_dl.secsTo(TQDateTime::currentDateTime());
 	}
 
 	Uint32 TorrentControl::getRunningTimeUL() const
@@ -1230,7 +1230,7 @@ namespace bt
 		if (!stats.running)
 			return istats.running_time_ul;
 		else
-			return istats.running_time_ul + istats.time_started_ul.secsTo(TQDateTime::tqcurrentDateTime());
+			return istats.running_time_ul + istats.time_started_ul.secsTo(TQDateTime::currentDateTime());
 	}
 
 	Uint32 TorrentControl::getNumFiles() const

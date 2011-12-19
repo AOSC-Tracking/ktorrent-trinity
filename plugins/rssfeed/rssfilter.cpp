@@ -302,8 +302,8 @@ namespace kt
 				regEx.setPattern(*episodeFormats.at(i));
 				if (regEx.search(article.title()) >= 0)
 				{
-					season = (*regEx.tqcapturedTexts().at(1)).toInt();
-					episode = (*regEx.tqcapturedTexts().at(2)).toInt();
+					season = (*regEx.capturedTexts().at(1)).toInt();
+					episode = (*regEx.capturedTexts().at(2)).toInt();
 					if (!episodeInRange(season,episode,ignoreMatches,alreadyDownloaded))
 					{
 						return false;
@@ -313,8 +313,8 @@ namespace kt
 			
 				if (regEx.search(article.link().prettyURL()) >= 0)
 				{
-					season = (*regEx.tqcapturedTexts().at(1)).toInt();
-					episode = (*regEx.tqcapturedTexts().at(2)).toInt();
+					season = (*regEx.capturedTexts().at(1)).toInt();
+					episode = (*regEx.capturedTexts().at(2)).toInt();
 					if (!episodeInRange(season,episode,ignoreMatches,alreadyDownloaded))
 					{
 						return false;
@@ -324,8 +324,8 @@ namespace kt
 			
 				if (regEx.search(article.description()) >= 0)
 				{
-					season = (*regEx.tqcapturedTexts().at(1)).toInt();
-					episode = (*regEx.tqcapturedTexts().at(2)).toInt();
+					season = (*regEx.capturedTexts().at(1)).toInt();
+					episode = (*regEx.capturedTexts().at(2)).toInt();
 					if (!episodeInRange(season,episode,ignoreMatches,alreadyDownloaded))
 					{
 						return false;

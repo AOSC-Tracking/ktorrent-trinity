@@ -34,12 +34,12 @@ class ButtonBar;
 
 /**@short A tqlayout for a ButtonBar class.
 
-Overrides tqminimumSize method to allow shrinking button bar buttons.*/
+Overrides minimumSize method to allow shrinking button bar buttons.*/
 class ButtonLayout: public TQBoxLayout{
 public:
     ButtonLayout(ButtonBar *parent, Direction d, int margin = 0, int spacing = -1, const char * name = 0);
 
-    virtual TQSize tqminimumSize() const;
+    virtual TQSize minimumSize() const;
 
 private:
     ButtonBar *m_buttonBar;

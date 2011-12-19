@@ -152,7 +152,7 @@
                                             <property name="sizeType">
                                                 <enum>Expanding</enum>
                                             </property>
-                                            <property name="tqsizeHint">
+                                            <property name="sizeHint">
                                                 <size>
                                                     <width>90</width>
                                                     <height>21</height>
@@ -252,7 +252,7 @@
                                             <property name="sizeType">
                                                 <enum>Expanding</enum>
                                             </property>
-                                            <property name="tqsizeHint">
+                                            <property name="sizeHint">
                                                 <size>
                                                     <width>60</width>
                                                     <height>21</height>
@@ -600,7 +600,7 @@
                                                         <property name="sizeType">
                                                             <enum>Preferred</enum>
                                                         </property>
-                                                        <property name="tqsizeHint">
+                                                        <property name="sizeHint">
                                                             <size>
                                                                 <width>50</width>
                                                                 <height>21</height>
@@ -614,7 +614,7 @@
                                                         <property name="enabled">
                                                             <bool>true</bool>
                                                         </property>
-                                                        <property name="tqmaximumSize">
+                                                        <property name="maximumSize">
                                                             <size>
                                                                 <width>60</width>
                                                                 <height>32767</height>
@@ -633,7 +633,7 @@
                                                 <property name="name">
                                                     <cstring>seriesBox</cstring>
                                                 </property>
-                                                <property name="tqmaximumSize">
+                                                <property name="maximumSize">
                                                     <size>
                                                         <width>32000</width>
                                                         <height>32000</height>
@@ -664,7 +664,7 @@
                                                                 <property name="sizeType">
                                                                     <enum>Expanding</enum>
                                                                 </property>
-                                                                <property name="tqsizeHint">
+                                                                <property name="sizeHint">
                                                                     <size>
                                                                         <width>20</width>
                                                                         <height>21</height>
@@ -910,7 +910,7 @@
                                                 <property name="sizeType">
                                                     <enum>Expanding</enum>
                                                 </property>
-                                                <property name="tqsizeHint">
+                                                <property name="sizeHint">
                                                     <size>
                                                         <width>170</width>
                                                         <height>21</height>

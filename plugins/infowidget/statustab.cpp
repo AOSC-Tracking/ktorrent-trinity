@@ -37,7 +37,7 @@ namespace kt
 	StatusTab::StatusTab(TQWidget* parent, const char* name, WFlags fl)
 			: StatusTabBase(parent,name,fl),curr_tc(0)
 	{
-		TQColorGroup cg = tqcolorGroup();
+		TQColorGroup cg = colorGroup();
 		// do not use hardcoded colors
 		m_info_caption->setPaletteBackgroundColor(cg.mid());
 		m_chunks_caption->setPaletteBackgroundColor(cg.mid());

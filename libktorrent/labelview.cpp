@@ -184,11 +184,11 @@ namespace kt
 				selected = 0;
 			
 			// update odd status of each item
-			updateOddtqStatus();	
+			updateOddStatus();	
 		}
 	}
 	
-	void LabelView::updateOddtqStatus()
+	void LabelView::updateOddStatus()
 	{
 		bool odd = true;
 		LabelViewItr i = items.begin();
@@ -250,7 +250,7 @@ namespace kt
 	{
 		items.sort(LabelViewItemCmp());
 		item_box->sorted(items);
-		updateOddtqStatus();
+		updateOddStatus();
 	}
 
 }

@@ -76,7 +76,7 @@ namespace kt
 		ts.setEncoding( TQTextStream::UnicodeUTF8 );
 		ts.writeRawBytes(php_s.data(),off); // first write the opening tag from the script
 		php_i->globalInfo(ts);
-		php_i->downloadtqStatus(ts);
+		php_i->downloadStatus(ts);
 		
 		TQMap<TQString,TQString>::const_iterator it;
 			

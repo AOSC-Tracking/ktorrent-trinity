@@ -207,7 +207,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="tqsizeHint">
+                    <property name="sizeHint">
                         <size>
                             <width>20</width>
                             <height>135</height>
@@ -237,7 +237,7 @@
                     <property name="sizeType">
                         <enum>Preferred</enum>
                     </property>
-                    <property name="tqsizeHint">
+                    <property name="sizeHint">
                         <size>
                             <width>40</width>
                             <height>20</height>
@@ -298,7 +298,7 @@
                         </widget>
                         <widget class="TQLabel">
                             <property name="name">
-                                <cstring>lbltqStatus</cstring>
+                                <cstring>lblStatus</cstring>
                             </property>
                         </widget>
                     </vbox>
@@ -315,7 +315,7 @@
             <property name="sizeType">
                 <enum>Expanding</enum>
             </property>
-            <property name="tqsizeHint">
+            <property name="sizeHint">
                 <size>
                     <width>220</width>
                     <height>20</height>

@@ -123,7 +123,7 @@ QueueDialog::QueueDialog(bt::QueueManager* qm, TQWidget *parent, const char *nam
 	for( ; it != qman->end(); ++it)
 	{
 		TorrentInterface* tc = *it;
-		TorrenttqStatus ts = tc->getStats().status;
+		TorrentStatus ts = tc->getStats().status;
 		
 		if(ts == kt::SEEDING || ts == kt::DOWNLOAD_COMPLETE || 
 			ts == kt::SEEDING_COMPLETE || tc->getStats().completed)
@@ -288,7 +288,7 @@ void QueueDialog::downloadList_currentChanged(TQListViewItem* item)
 {
 	if(!item)
 	{
-		dltqStatus->clear();
+		dlStatus->clear();
 		dlTracker->clear();
 		dlRatio->clear();
 		dlDHT->clear();
@@ -298,7 +298,7 @@ void QueueDialog::downloadList_currentChanged(TQListViewItem* item)
 	const TorrentInterface* tc = ((QueueItem*)item)->getTC();
 	TorrentStats s = tc->getStats();
 	
-	dltqStatus->setText(tc->statusToString());
+	dlStatus->setText(tc->statusToString());
 	dlTracker->setText(tc->getTrackersList()->getTrackerURL().prettyURL());
 	dlRatio->setText(TQString("%1").tqarg((float)s.bytes_uploaded / s.bytes_downloaded,0,'f',2));
 	dlBytes->setText(BytesToString(s.bytes_left_to_download));
@@ -309,7 +309,7 @@ void QueueDialog::seedList_currentChanged(TQListViewItem* item)
 {
 	if(!item)
 	{
-		ultqStatus->clear();
+		ulStatus->clear();
 		ulTracker->clear();
 		ulRatio->clear();
 		ulDHT->clear();
@@ -319,7 +319,7 @@ void QueueDialog::seedList_currentChanged(TQListViewItem* item)
 	const TorrentInterface* tc = ((QueueItem*)item)->getTC();
 	TorrentStats s = tc->getStats();
 	
-	ultqStatus->setText(tc->statusToString());
+	ulStatus->setText(tc->statusToString());
 	ulTracker->setText(tc->getTrackersList()->getTrackerURL().prettyURL());
 	ulRatio->setText(TQString("%1").tqarg((float)s.bytes_uploaded / s.bytes_downloaded,0,'f',2));
 	ulBytes->setText(BytesToString(s.bytes_uploaded));
