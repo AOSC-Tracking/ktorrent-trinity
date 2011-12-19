@@ -625,7 +625,7 @@
                     <property name="text">
                         <string>* zero means no limit</string>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>AlignVCenter|AlignRight</set>
                     </property>
                 </widget>

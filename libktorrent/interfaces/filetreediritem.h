@@ -49,7 +49,7 @@ namespace kt
 	protected:
 		TQString name;
 		Uint64 size;
-		bt::PtrMap<TQString,FileTreeItem> tqchildren;
+		bt::PtrMap<TQString,FileTreeItem> children;
 		bt::PtrMap<TQString,FileTreeDirItem> subdirs;
 		FileTreeDirItem* parent;
 		bool manual_change;

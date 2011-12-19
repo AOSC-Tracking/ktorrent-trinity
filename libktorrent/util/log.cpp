@@ -79,8 +79,8 @@ namespace bt
 			// move all log files one up
 			for (Uint32 i = 10;i > 1;i--)
 			{
-				TQString prev = TQString("%1-%2.gz").tqarg(file).tqarg(i - 1);
-				TQString curr = TQString("%1-%2.gz").tqarg(file).tqarg(i);
+				TQString prev = TQString("%1-%2.gz").arg(file).arg(i - 1);
+				TQString curr = TQString("%1-%2.gz").arg(file).arg(i);
 				if (bt::Exists(prev))
 					bt::Move(prev,curr,true);
 			}
@@ -100,7 +100,7 @@ namespace bt
 
 			fptr.setName(file);
 			if (!fptr.open(IO_WriteOnly))
-				throw Error(i18n("Cannot open log file %1 : %2").tqarg(file).tqarg(fptr.errorString()));
+				throw Error(i18n("Cannot open log file %1 : %2").arg(file).arg(fptr.errorString()));
 
 			out->setDevice(TQT_TQIODEVICE(&fptr));
 		}

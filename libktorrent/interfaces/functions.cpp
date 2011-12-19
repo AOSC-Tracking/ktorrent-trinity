@@ -32,19 +32,19 @@ namespace kt
 	{
 		KLocale* loc = KGlobal::locale();
 		if (bytes >= 1024 * 1024 * 1024)
-			return i18n("%1 GB").tqarg(loc->formatNumber(bytes / TO_GIG,precision < 0 ? 2 : precision));
+			return i18n("%1 GB").arg(loc->formatNumber(bytes / TO_GIG,precision < 0 ? 2 : precision));
 		else if (bytes >= 1024*1024)
-			return i18n("%1 MB").tqarg(loc->formatNumber(bytes / TO_MEG,precision < 0 ? 1 : precision));
+			return i18n("%1 MB").arg(loc->formatNumber(bytes / TO_MEG,precision < 0 ? 1 : precision));
 		else if (bytes >= 1024)
-			return i18n("%1 KB").tqarg(loc->formatNumber(bytes / TO_KB,precision < 0 ? 1 : precision));
+			return i18n("%1 KB").arg(loc->formatNumber(bytes / TO_KB,precision < 0 ? 1 : precision));
 		else
-			return i18n("%1 B").tqarg(bytes);
+			return i18n("%1 B").arg(bytes);
 	}
 
 	TQString KBytesPerSecToString(double speed,int precision)
 	{
 		KLocale* loc = KGlobal::locale();
-		return i18n("%1 KB/s").tqarg(loc->formatNumber(speed,precision));
+		return i18n("%1 KB/s").arg(loc->formatNumber(speed,precision));
 	}
 
 	TQString DurationToString(Uint32 nsecs)

@@ -204,7 +204,7 @@ namespace bt
 	{
 		File fptr;
 		if (!fptr.open(index_file,"wb"))
-			throw Error(i18n("Cannot open index file %1 : %2").tqarg(index_file).tqarg(fptr.errorString()));
+			throw Error(i18n("Cannot open index file %1 : %2").arg(index_file).arg(fptr.errorString()));
 		
 		for (unsigned int i = 0;i < tor.getNumChunks();i++)
 		{
@@ -387,7 +387,7 @@ namespace bt
 			}
 		}
 	//	Uint32 num_in_mem = loaded.count();
-	//	Out() << TQString("Cleaned %1 chunks, %2 still in memory").tqarg(num_removed).tqarg(num_in_mem) << endl;
+	//	Out() << TQString("Cleaned %1 chunks, %2 still in memory").arg(num_removed).arg(num_in_mem) << endl;
 	}
 	
 	void ChunkManager::saveChunk(unsigned int i,bool update_index)
@@ -429,7 +429,7 @@ namespace bt
 			// try again
 			if (!fptr.open(index_file,"r+b"))
 				// panick if it failes
-				throw Error(i18n("Cannot open index file %1 : %2").tqarg(index_file).tqarg(fptr.errorString()));
+				throw Error(i18n("Cannot open index file %1 : %2").arg(index_file).arg(fptr.errorString()));
 		}
 
 		

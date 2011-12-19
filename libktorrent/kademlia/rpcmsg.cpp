@@ -192,7 +192,7 @@ namespace dht
 		if (mt_id.length() == 0)
 			return 0;
 		
-		Uint8 mtid = (char)mt_id.tqat(0).latin1();
+		Uint8 mtid = (char)mt_id.at(0).latin1();
 		TQString str = vn->data().toString();
 		
 		return new ErrMsg(mtid,id,str);
@@ -266,7 +266,7 @@ namespace dht
 	
 	void PingReq::print()
 	{
-		Out(SYS_DHT|LOG_DEBUG) << TQString("REQ: %1 %2 : ping").tqarg(mtid).tqarg(id.toString()) << endl;
+		Out(SYS_DHT|LOG_DEBUG) << TQString("REQ: %1 %2 : ping").arg(mtid).arg(id.toString()) << endl;
 	}
 	
 	void PingReq::encode(TQByteArray & arr)
@@ -303,7 +303,7 @@ namespace dht
 	void FindNodeReq::print()
 	{
 		Out(SYS_DHT|LOG_NOTICE) << TQString("REQ: %1 %2 : find_node %3")
-				.tqarg(mtid).tqarg(id.toString()).tqarg(target.toString()) << endl;
+				.arg(mtid).arg(id.toString()).arg(target.toString()) << endl;
 	}
 	
 	void FindNodeReq::encode(TQByteArray & arr)
@@ -342,7 +342,7 @@ namespace dht
 	void GetPeersReq::print()
 	{
 		Out(SYS_DHT|LOG_DEBUG) << TQString("REQ: %1 %2 : get_peers %3")
-				.tqarg(mtid).tqarg(id.toString()).tqarg(info_hash.toString()) << endl;
+				.arg(mtid).arg(id.toString()).arg(info_hash.toString()) << endl;
 	}
 	
 	void GetPeersReq::encode(TQByteArray & arr)
@@ -381,8 +381,8 @@ namespace dht
 	void AnnounceReq::print()
 	{
 		Out(SYS_DHT|LOG_DEBUG) << TQString("REQ: %1 %2 : announce_peer %3 %4 %5")
-				.tqarg(mtid).tqarg(id.toString()).tqarg(info_hash.toString())
-				.tqarg(port).tqarg(token.toString()) << endl;
+				.arg(mtid).arg(id.toString()).arg(info_hash.toString())
+				.arg(port).arg(token.toString()) << endl;
 	}
 	
 	void AnnounceReq::encode(TQByteArray & arr)
@@ -421,7 +421,7 @@ namespace dht
 	void PingRsp::print()
 	{
 		Out(SYS_DHT|LOG_DEBUG) << TQString("RSP: %1 %2 : ping")
-					.tqarg(mtid).tqarg(id.toString()) << endl;
+					.arg(mtid).arg(id.toString()) << endl;
 	}
 	
 	void PingRsp::encode(TQByteArray & arr)
@@ -456,7 +456,7 @@ namespace dht
 	void FindNodeRsp::print()
 	{
 		Out(SYS_DHT|LOG_DEBUG) << TQString("RSP: %1 %2 : find_node")
-				.tqarg(mtid).tqarg(id.toString()) << endl;
+				.arg(mtid).arg(id.toString()) << endl;
 	}
 	
 	void FindNodeRsp::encode(TQByteArray & arr)
@@ -498,7 +498,7 @@ namespace dht
 	void GetPeersRsp::print()
 	{
 		Out() << TQString("RSP: %1 %2 : get_peers(%3)")
-				.tqarg(mtid).tqarg(id.toString()).tqarg(data.size() > 0 ? "nodes" : "values") << endl;
+				.arg(mtid).arg(id.toString()).arg(data.size() > 0 ? "nodes" : "values") << endl;
 	}
 
 	void GetPeersRsp::encode(TQByteArray & arr)
@@ -552,7 +552,7 @@ namespace dht
 	void AnnounceRsp::print()
 	{
 		Out() << TQString("RSP: %1 %2 : announce_peer")
-				.tqarg(mtid).tqarg(id.toString()) << endl;
+				.arg(mtid).arg(id.toString()) << endl;
 	}
 	
 	void AnnounceRsp::encode(TQByteArray & arr)

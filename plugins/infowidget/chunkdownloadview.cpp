@@ -43,7 +43,7 @@ namespace kt
 		cd->getStats(s);
 			
 		setText(0,TQString::number(s.chunk_index));
-		setText(1,TQString("%1 / %2").tqarg(s.pieces_downloaded).tqarg(s.total_pieces));
+		setText(1,TQString("%1 / %2").arg(s.pieces_downloaded).arg(s.total_pieces));
 		setText(2,s.current_peer_id);
 		setText(3,KBytesPerSecToString(s.download_speed / 1024.0));
 		setText(4,TQString::number(s.num_downloaders));

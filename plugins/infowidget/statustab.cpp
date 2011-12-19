@@ -142,16 +142,16 @@ namespace kt
 		m_tracker_status->setText(s.trackerstatus);
 		
 		m_seeders->setText(TQString("%1 (%2)")
-				.tqarg(s.seeders_connected_to).tqarg(s.seeders_total));
+				.arg(s.seeders_connected_to).arg(s.seeders_total));
 	
 		m_leechers->setText(TQString("%1 (%2)")
-				.tqarg(s.leechers_connected_to).tqarg(s.leechers_total));
+				.arg(s.leechers_connected_to).arg(s.leechers_total));
 	
 		float ratio = kt::ShareRatio(s);
 		if(!maxRatio->hasFocus() && useLimit->isChecked())
 			maxRatioUpdate();
 		
-		m_share_ratio->setText(TQString("<font color=\"%1\">%2</font>").tqarg(ratio <= 0.8 ? "#ff0000" : "#1c9a1c").tqarg(KGlobal::locale()->formatNumber(ratio,2)));
+		m_share_ratio->setText(TQString("<font color=\"%1\">%2</font>").arg(ratio <= 0.8 ? "#ff0000" : "#1c9a1c").arg(KGlobal::locale()->formatNumber(ratio,2)));
 	
 		Uint32 secs = curr_tc->getRunningTimeUL(); 
 		if (secs == 0)

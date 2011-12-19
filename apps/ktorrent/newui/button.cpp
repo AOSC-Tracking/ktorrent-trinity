@@ -62,9 +62,9 @@ Button::Button(ButtonBar *parent, const TQString text, const TQIconSet &icon,
 
     KConfig *config = kapp->config();
     config->setGroup("UI");
-    TQString accel = config->readEntry(TQString("button_%1").tqarg(text), "");
+    TQString accel = config->readEntry(TQString("button_%1").arg(text), "");
     if (!accel.isEmpty())
-        setRealText(TQString("&%1 %2").tqarg(accel).tqarg(m_realText));
+        setRealText(TQString("&%1 %2").arg(accel).arg(m_realText));
 }
 
 Button::~Button()
@@ -80,11 +80,11 @@ Button::~Button()
         TQString text = m_realText;
         if (text.contains(r2))
             text.remove(r2);
-        config->writeEntry(TQString("button_%1").tqarg(text), r.cap(1));
+        config->writeEntry(TQString("button_%1").arg(text), r.cap(1));
     }
     else
     {
-        config->writeEntry(TQString("button_%1").tqarg(m_realText), "");
+        config->writeEntry(TQString("button_%1").arg(m_realText), "");
     }
 }
 
@@ -320,7 +320,7 @@ void Button::assignAccel()
     if (ok)
     {
         TQString text = realTextWithoutAccel();
-        text = TQString("&%1 %2").tqarg(num).tqarg(text);
+        text = TQString("&%1 %2").arg(num).arg(text);
         setRealText(text);
     }
 }

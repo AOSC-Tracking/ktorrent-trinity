@@ -170,11 +170,11 @@ namespace kt
 		setText(5,s.choked ? i18n("Yes") : i18n("No"));
 		//setPixmap(6,!s.snubbed ? yes_pix : no_pix);
 		setText(6,s.snubbed ? i18n("Yes") : i18n("No"));
-		setText(7,TQString("%1 %").tqarg(loc->formatNumber(s.perc_of_file,2)));
+		setText(7,TQString("%1 %").arg(loc->formatNumber(s.perc_of_file,2)));
 		setPixmap(8,s.dht_support ? yes_pix : no_pix);
 		setText(9,loc->formatNumber(s.aca_score,2));
 		setPixmap(10,s.has_upload_slot ? yes_pix : TQPixmap());
-		setText(11,TQString("%1 / %2").tqarg(s.num_down_requests).tqarg(s.num_up_requests));
+		setText(11,TQString("%1 / %2").arg(s.num_down_requests).arg(s.num_up_requests));
 		setText(12, BytesToString(s.bytes_downloaded));
 		setText(13, BytesToString(s.bytes_uploaded));
 	}

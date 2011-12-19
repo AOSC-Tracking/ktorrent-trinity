@@ -436,7 +436,7 @@
                     <property name="text">
                         <string>NOTE: Some known good DHT nodes are already inserted. You should probably insert your own IP address and port too if you plan to seed this torrent.</string>
                     </property>
-                    <property name="tqalignment">
+                    <property name="alignment">
                         <set>WordBreak|AlignVCenter</set>
                     </property>
                 </widget>

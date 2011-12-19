@@ -97,7 +97,7 @@ namespace kt
 		catch (Error & e)
 		{
 			delete dc;
-			KMessageBox::error(this,i18n("Cannot verify data : %1").tqarg(e.toString()),i18n("Error"));
+			KMessageBox::error(this,i18n("Cannot verify data : %1").arg(e.toString()),i18n("Error"));
 			reject();
 			return;
 		}
@@ -204,7 +204,7 @@ namespace kt
 			}
 			catch (Error & e)
 			{
-				KMessageBox::error(this,i18n("Cannot load the torrent file : %1").tqarg(e.toString()),
+				KMessageBox::error(this,i18n("Cannot load the torrent file : %1").arg(e.toString()),
 								   i18n("Error"));
 				reject();
 				return;
@@ -240,7 +240,7 @@ namespace kt
 			}
 			catch (Error & e)
 			{
-				KMessageBox::error(this,i18n("Cannot load the torrent file : %1").tqarg(e.toString()),
+				KMessageBox::error(this,i18n("Cannot load the torrent file : %1").arg(e.toString()),
 								   i18n("Error"));
 				reject();
 				return;
@@ -254,7 +254,7 @@ namespace kt
 		// first try to open it
 		File fptr;
 		if (!fptr.open(file,"wb"))
-			throw Error(i18n("Cannot open %1 : %2").tqarg(file).tqarg(fptr.errorString()));
+			throw Error(i18n("Cannot open %1 : %2").arg(file).arg(fptr.errorString()));
 		
 		// write all chunks to the file
 		for (Uint32 i = 0;i < chunks.getNumBits();i++)
@@ -332,8 +332,8 @@ namespace kt
 		out << "PRIORITY=0" << ::endl;
 		out << "AUTOSTART=1" << ::endl;
 		if (core->getGlobalMaxShareRatio() > 0)
-			out << TQString("MAX_RATIO=%1").tqarg(core->getGlobalMaxShareRatio(),0,'f',2) << ::endl;
-		out << TQString("IMPORTED=%1").tqarg(imported) << ::endl;
+			out << TQString("MAX_RATIO=%1").arg(core->getGlobalMaxShareRatio(),0,'f',2) << ::endl;
+		out << TQString("IMPORTED=%1").arg(imported) << ::endl;
 		if (custom_output_name)
 			out << "CUSTOM_OUTPUT_NAME=1" << endl;
 	}

@@ -171,7 +171,7 @@ namespace kt
 	void HttpClientHandler::send500(HttpResponseHeader & hdr)
 	{
 	//	Out(SYS_WEB|LOG_DEBUG) << "Sending 500 " << endl;
-		TQString data = TQString(HTTP_500_ERROR).tqarg("An internal server error occured !");
+		TQString data = TQString(HTTP_500_ERROR).arg("An internal server error occured !");
 		hdr.setValue("Content-Length",TQString::number(data.length()));
 
 		TQTextStream os(client);
@@ -199,7 +199,7 @@ namespace kt
 		php = new PhpHandler(php_exe,php_iface);
 		if (!php->executeScript(php_file,args))
 		{
-			TQString data = TQString(HTTP_500_ERROR).tqarg("Failed to launch PHP executable !");
+			TQString data = TQString(HTTP_500_ERROR).arg("Failed to launch PHP executable !");
 			hdr.setResponseCode(500);
 			hdr.setValue("Content-Length",TQString::number(data.utf8().length()));
 			

@@ -42,7 +42,7 @@ namespace kt
 			if (!KURL(link).isValid())
 			{
 				// no valid URL, so just display an error message
-				KMessageBox::error(0,i18n("Failed to find and download a valid torrent for %1").tqarg(curLink));
+				KMessageBox::error(0,i18n("Failed to find and download a valid torrent for %1").arg(curLink));
 				TQTimer::singleShot(50,this,TQT_SLOT(suicide()));
 			}
 			else
@@ -180,7 +180,7 @@ namespace kt
 			else
 				{
 				//failed to download a selected article from a feed
-				KMessageBox::error(0,i18n("Failed to find and download a valid torrent for %1").tqarg(curLink));
+				KMessageBox::error(0,i18n("Failed to find and download a valid torrent for %1").arg(curLink));
 				}
 				deleteLater();
 			}

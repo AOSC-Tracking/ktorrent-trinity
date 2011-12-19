@@ -73,7 +73,7 @@ namespace kt
 		TQString message = i18n( "ScanFolder - Folder %1: Invalid URL or folder does not exist. Please, choose a valid directory." );
 		if(!TQFile::exists(sfPath1) && usesf1)
 		{
-			KMessageBox::sorry(0, message.tqarg( 1 ) );
+			KMessageBox::sorry(0, message.arg( 1 ) );
 			usesf1 = false;
 		}
 		else
@@ -81,7 +81,7 @@ namespace kt
 
 		if(!TQFile::exists(sfPath2) && usesf2)
 		{
-			KMessageBox::sorry(0, message.tqarg( 2 ) );
+			KMessageBox::sorry(0, message.arg( 2 ) );
 			usesf2 = false;
 		}
 		else
@@ -89,7 +89,7 @@ namespace kt
 
 		if(!TQFile::exists(sfPath3) && usesf3)
 		{
-			KMessageBox::sorry(0, message.tqarg( 3 ) );
+			KMessageBox::sorry(0, message.arg( 3 ) );
 			usesf3 = false;
 		}
 		else

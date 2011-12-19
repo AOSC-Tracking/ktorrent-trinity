@@ -45,7 +45,7 @@ namespace bt
 	void PeerUploader::addRequest(const Request & r)
 	{
 	//	Out(SYS_CON|LOG_DEBUG) << 
-	//			TQString("PeerUploader::addRequest %1 %2 %3\n").tqarg(r.getIndex()).tqarg(r.getOffset()).tqarg(r.getLength()) << endl;
+	//			TQString("PeerUploader::addRequest %1 %2 %3\n").arg(r.getIndex()).arg(r.getOffset()).arg(r.getLength()) << endl;
 		
 		// allowed fast chunks go to the front of the queue
 		requests.append(r);
@@ -54,7 +54,7 @@ namespace bt
 	void PeerUploader::removeRequest(const Request & r)
 	{
 	//	Out(SYS_CON|LOG_DEBUG) << 
-	//			TQString("PeerUploader::removeRequest %1 %2 %3\n").tqarg(r.getIndex()).tqarg(r.getOffset()).tqarg(r.getLength()) << endl;
+	//			TQString("PeerUploader::removeRequest %1 %2 %3\n").arg(r.getIndex()).arg(r.getOffset()).arg(r.getLength()) << endl;
 		requests.remove(r);
 		peer->getPacketWriter().doNotSendPiece(r,peer->getStats().fast_extensions);
 	}

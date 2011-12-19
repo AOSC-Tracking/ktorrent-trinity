@@ -101,7 +101,7 @@ namespace bt
 		TQFile fptr(file);
 		if (!fptr.open(IO_ReadOnly))
 			throw Error(i18n(" Unable to open torrent file %1 : %2")
-					.tqarg(file).tqarg(fptr.errorString()));
+					.arg(file).arg(fptr.errorString()));
 		
 		TQByteArray data(fptr.size());
 	//	Out() << "File size = " << fptr.size() << endl;
@@ -366,7 +366,7 @@ namespace bt
 	const SHA1Hash & Torrent::getHash(Uint32 idx) const
 	{
 		if (idx >= hash_pieces.count())
-			throw Error(TQString("Torrent::getHash %1 is out of bounds").tqarg(idx));
+			throw Error(TQString("Torrent::getHash %1 is out of bounds").arg(idx));
 		
 		return hash_pieces[idx];
 	}
