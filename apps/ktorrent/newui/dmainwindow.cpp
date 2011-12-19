@@ -189,7 +189,7 @@ DTabWidget *DMainWindow::splitVertical()
 
 void DMainWindow::invalidateActiveTabWidget()
 {
-/*    TQWidget *focused = m_central->tqfocusWidget();
+/*    TQWidget *focused = m_central->focusWidget();
     kdDebug(9000) << "tqinvalidate: " << focused << endl;
     if (focused == 0)
         return;

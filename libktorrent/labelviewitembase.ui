@@ -23,7 +23,7 @@
             <property name="name">
                 <cstring>icon_lbl</cstring>
             </property>
-            <property name="tqminimumSize">
+            <property name="minimumSize">
                 <size>
                     <width>64</width>
                     <height>64</height>

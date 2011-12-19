@@ -217,9 +217,9 @@ void FileSelectDlg::updateSizeLabels()
 	lblRequired->setText(kt::BytesToString(bytes_to_download));
 
 	if (bytes_to_download > bytes_free)
-		lbltqStatus->setText("<font color=\"#ff0000\">" + kt::BytesToString(-1*(long long)(bytes_free - bytes_to_download)) + i18n(" short!"));
+		lblStatus->setText("<font color=\"#ff0000\">" + kt::BytesToString(-1*(long long)(bytes_free - bytes_to_download)) + i18n(" short!"));
 	else
-		lbltqStatus->setText(kt::BytesToString(bytes_free - bytes_to_download));
+		lblStatus->setText(kt::BytesToString(bytes_free - bytes_to_download));
 }
 
 void FileSelectDlg::treeItemChanged()

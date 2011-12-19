@@ -119,9 +119,9 @@ void DDockWindow::setVisible(bool v)
     if (!m_visible)
     {
         if (m_position == DDockWindow::Bottom)
-            setFixedExtentHeight(m_internalLayout->tqsizeHint().height());
+            setFixedExtentHeight(m_internalLayout->sizeHint().height());
         else
-            setFixedExtentWidth(m_internalLayout->tqsizeHint().width());
+            setFixedExtentWidth(m_internalLayout->sizeHint().width());
         emit hidden();
     }
     else
@@ -130,12 +130,12 @@ void DDockWindow::setVisible(bool v)
         int size = 0;
         if (m_position == DDockWindow::Bottom)
         {
-            size = config->readNumEntry("ViewWidth", m_internalLayout->tqminimumSize().height());
+            size = config->readNumEntry("ViewWidth", m_internalLayout->minimumSize().height());
             setFixedExtentHeight(size);
         }
         else
         {
-            size = config->readNumEntry("ViewWidth", m_internalLayout->tqminimumSize().width());
+            size = config->readNumEntry("ViewWidth", m_internalLayout->minimumSize().width());
             setFixedExtentWidth(size);
         }
     }
@@ -338,7 +338,7 @@ bool DDockWindow::isActive()
 {
     if (m_toggledButton)
     {
-        TQWidget *w = tqApp->tqfocusWidget();
+        TQWidget *w = tqApp->focusWidget();
         if (!w)
             return false;
         TQWidget *toolWidget = m_widgets[m_toggledButton];

@@ -20,7 +20,7 @@
             <verstretch>0</verstretch>
         </sizepolicy>
     </property>
-    <property name="tqminimumSize">
+    <property name="minimumSize">
         <size>
             <width>500</width>
             <height>350</height>
@@ -92,7 +92,7 @@
                             <property name="sizeType">
                                 <enum>Expanding</enum>
                             </property>
-                            <property name="tqsizeHint">
+                            <property name="sizeHint">
                                 <size>
                                     <width>54</width>
                                     <height>21</height>

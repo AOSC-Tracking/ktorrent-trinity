@@ -1,5 +1,5 @@
 <?php
-$stats=downloadtqStatus();
+$stats=downloadStatus();
 $num_torrent=$_REQUEST['torrent'];
 
 function cut_name_if_long($string)
@@ -61,7 +61,7 @@ $display_name=cut_name_if_long($stats[$num_torrent]['torrent_name']);
 		<tr>
 			<th>Actions</th>
 			<th>File</th>
-			<th>tqStatus</th>
+			<th>Status</th>
 			<th>Size</th>
 			<th>Complete</th>
 		</tr>

@@ -129,7 +129,7 @@
                                     </property>
                                     <widget class="TQLabel">
                                         <property name="name">
-                                            <cstring>dltqStatus</cstring>
+                                            <cstring>dlStatus</cstring>
                                         </property>
                                         <property name="text">
                                             <string></string>
@@ -345,7 +345,7 @@
                                     </property>
                                     <widget class="TQLabel">
                                         <property name="name">
-                                            <cstring>ultqStatus</cstring>
+                                            <cstring>ulStatus</cstring>
                                         </property>
                                         <property name="text">
                                             <string></string>
@@ -416,7 +416,7 @@
                             <property name="sizeType">
                                 <enum>Preferred</enum>
                             </property>
-                            <property name="tqsizeHint">
+                            <property name="sizeHint">
                                 <size>
                                     <width>20</width>
                                     <height>20</height>
@@ -452,7 +452,7 @@
                             <property name="sizeType">
                                 <enum>Preferred</enum>
                             </property>
-                            <property name="tqsizeHint">
+                            <property name="sizeHint">
                                 <size>
                                     <width>40</width>
                                     <height>20</height>
@@ -471,7 +471,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="tqsizeHint">
+                    <property name="sizeHint">
                         <size>
                             <width>20</width>
                             <height>30</height>
@@ -504,7 +504,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="tqsizeHint">
+                    <property name="sizeHint">
                         <size>
                             <width>20</width>
                             <height>20</height>
@@ -540,7 +540,7 @@
                     <property name="sizeType">
                         <enum>Preferred</enum>
                     </property>
-                    <property name="tqsizeHint">
+                    <property name="sizeHint">
                         <size>
                             <width>20</width>
                             <height>20</height>
@@ -573,7 +573,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="tqsizeHint">
+                    <property name="sizeHint">
                         <size>
                             <width>20</width>
                             <height>20</height>

@@ -248,7 +248,7 @@ namespace kt
 	void HttpServer::setDefaultResponseHeaders(HttpResponseHeader & hdr,const TQString & content_type,bool with_session_info)
 	{
 		hdr.setValue("Server","KTorrent/" KT_VERSION_MACRO);
-		hdr.setValue("Date",DateTimeToString(TQDateTime::tqcurrentDateTime(Qt::UTC),false));
+		hdr.setValue("Date",DateTimeToString(TQDateTime::currentDateTime(Qt::UTC),false));
 		hdr.setValue("Content-Type",content_type);
 		hdr.setValue("Connection","keep-alive");
 		if (with_session_info && session.sessionId && session.logged_in)
@@ -328,7 +328,7 @@ namespace kt
 			if (path.endsWith("login.html"))
 			{
 				// clear cookie in case of login page
-				TQDateTime dt = TQDateTime::tqcurrentDateTime().addDays(-1);
+				TQDateTime dt = TQDateTime::currentDateTime().addDays(-1);
 				TQString cookie = TQString("KT_SESSID=666; expires=%1 +0000").tqarg(DateTimeToString(dt,true));
 				rhdr.setValue("Set-Cookie",cookie);
 			}
@@ -351,7 +351,7 @@ namespace kt
 					setDefaultResponseHeaders(rhdr,"text/html",true);
 					rhdr.setValue("Cache-Control","max-age=0");
 					rhdr.setValue("Last-Modified",DateTimeToString(fi.lastModified(),false));
-					rhdr.setValue("Expires",DateTimeToString(TQDateTime::tqcurrentDateTime(Qt::UTC).addSecs(3600),false));
+					rhdr.setValue("Expires",DateTimeToString(TQDateTime::currentDateTime(Qt::UTC).addSecs(3600),false));
 					hdlr->sendResponse(rhdr);
 					return;
 				}
@@ -361,7 +361,7 @@ namespace kt
 			HttpResponseHeader rhdr(200);
 			setDefaultResponseHeaders(rhdr,ExtensionToContentType(ext),true);
 			rhdr.setValue("Last-Modified",DateTimeToString(fi.lastModified(),false));
-			rhdr.setValue("Expires",DateTimeToString(TQDateTime::tqcurrentDateTime(Qt::UTC).addSecs(3600),false));
+			rhdr.setValue("Expires",DateTimeToString(TQDateTime::currentDateTime(Qt::UTC).addSecs(3600),false));
 			rhdr.setValue("Cache-Control","private");
 			if (!hdlr->sendFile(rhdr,path))
 			{

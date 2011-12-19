@@ -35,17 +35,17 @@
 namespace bt
 {	
 
-	class DownloadtqStatus : public std::set<Uint32>
+	class DownloadStatus : public std::set<Uint32>
 	{
 	public:
 	//	typedef std::set<Uint32>::iterator iterator;
 		
-		DownloadtqStatus()
+		DownloadStatus()
 		{
 	
 		}
 
-		~DownloadtqStatus()
+		~DownloadStatus()
 		{
 		}
 
@@ -111,7 +111,7 @@ namespace bt
 			return false;
 
 	
-		DownloadtqStatus* ds = dstatus.find(p.getPeer());
+		DownloadStatus* ds = dstatus.find(p.getPeer());
 		if (ds)
 			ds->remove(pp);
 		
@@ -169,7 +169,7 @@ namespace bt
 			
 		pd->grab();
 		pdown.append(pd);
-		dstatus.insert(pd->getPeer()->getID(),new DownloadtqStatus());
+		dstatus.insert(pd->getPeer()->getID(),new DownloadStatus());
 		sendRequests(pd);
 		connect(pd,TQT_SIGNAL(timedout(const Request& )),this,TQT_SLOT(onTimeout(const Request& )));
 		connect(pd,TQT_SIGNAL(rejected( const Request& )),this,TQT_SLOT(onRejected( const Request& )));
@@ -179,7 +179,7 @@ namespace bt
 	void ChunkDownload::notDownloaded(const Request & r,bool reject)
 	{
 		// find the peer 
-		DownloadtqStatus* ds = dstatus.find(r.getPeer());
+		DownloadStatus* ds = dstatus.find(r.getPeer());
 		if (ds)
 		{
 			//	Out() << "ds != 0"  << endl;
@@ -216,7 +216,7 @@ namespace bt
 	void ChunkDownload::sendRequests(PeerDownloader* pd)
 	{
 		timer.update();
-		DownloadtqStatus* ds = dstatus.find(pd->getPeer()->getID());
+		DownloadStatus* ds = dstatus.find(pd->getPeer()->getID());
 		if (!ds)
 			return;
 			
@@ -262,11 +262,11 @@ namespace bt
 	
 	void ChunkDownload::sendCancels(PeerDownloader* pd)
 	{
-		DownloadtqStatus* ds = dstatus.find(pd->getPeer()->getID());
+		DownloadStatus* ds = dstatus.find(pd->getPeer()->getID());
 		if (!ds)
 			return;
 		
-		DownloadtqStatus::iterator itr = ds->begin();
+		DownloadStatus::iterator itr = ds->begin();
 		while (itr != ds->end())
 		{
 			Uint32 i = *itr;
@@ -287,7 +287,7 @@ namespace bt
 		while (i != pdown.end())
 		{
 			PeerDownloader* pd = *i;
-			DownloadtqStatus* ds = dstatus.find(pd->getPeer()->getID());
+			DownloadStatus* ds = dstatus.find(pd->getPeer()->getID());
 			Uint32 pp = p.getOffset() / MAX_PIECE_LEN;
 			if (ds && ds->contains(pp))
 			{
@@ -360,7 +360,7 @@ namespace bt
 		ChunkDownloadHeader hdr;
 		hdr.index = chunk->getIndex();
 		hdr.num_bits = pieces.getNumBits();
-		hdr.buffered = chunk->gettqStatus() == Chunk::BUFFERED ? 1 : 0;
+		hdr.buffered = chunk->getStatus() == Chunk::BUFFERED ? 1 : 0;
 		// save the chunk header
 		file.write(&hdr,sizeof(ChunkDownloadHeader));
 		// save the bitset
@@ -370,7 +370,7 @@ namespace bt
 			// if it's a buffered chunk, save the contents to
 			file.write(chunk->getData(),chunk->getSize());
 			chunk->clear();
-			chunk->settqStatus(Chunk::ON_DISK);
+			chunk->setStatus(Chunk::ON_DISK);
 		}
 	}
 		

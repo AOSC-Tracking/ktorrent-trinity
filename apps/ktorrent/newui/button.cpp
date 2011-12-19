@@ -49,8 +49,8 @@ Button::Button(ButtonBar *parent, const TQString text, const TQIconSet &icon,
     setToggleButton(true);
     setFocusPolicy(TQ_NoFocus);
     setDescription(m_description);
-    tqsetSizePolicy(TQSizePolicy::Minimum, TQSizePolicy::Minimum);
-    resize(tqsizeHint());
+    setSizePolicy(TQSizePolicy::Minimum, TQSizePolicy::Minimum);
+    resize(sizeHint());
     fixDimensions(Ideal::Bottom);
 
     TQToolTip::add(this, m_realText);
@@ -131,11 +131,11 @@ void Button::drawButton(TQPainter *p)
     pm.fill(eraseColor());
     TQPainter p2(&pm);
 
-    tqstyle().tqdrawControl(TQStyle::CE_PushButton,&p2,this, TQRect(0,0,pm.width(),pm.height()), tqcolorGroup(),flags);
+    tqstyle().drawControl(TQStyle::CE_PushButton,&p2,this, TQRect(0,0,pm.width(),pm.height()), colorGroup(),flags);
 
-    tqstyle().tqdrawControl(TQStyle::CE_PushButtonLabel, &p2, this,
+    tqstyle().drawControl(TQStyle::CE_PushButtonLabel, &p2, this,
                         TQRect(0,0,pm.width(),pm.height()),
-                        tqcolorGroup(), flags, TQStyleOption());
+                        colorGroup(), flags, TQStyleOption());
 
     switch (m_place)
     {
@@ -178,7 +178,7 @@ void Button::fixDimensions(Place oldPlace)
             if ((oldPlace == Ideal::Bottom) || (oldPlace == Ideal::Top))
             {
                 setFixedWidth(height());
-                setMinimumHeight(tqsizeHint().width());
+                setMinimumHeight(sizeHint().width());
                 setMaximumHeight(32767);
             }
             break;
@@ -187,19 +187,19 @@ void Button::fixDimensions(Place oldPlace)
             if ((oldPlace == Ideal::Left) || (oldPlace == Ideal::Right))
             {
                 setFixedHeight(width());
-                setMinimumWidth(tqsizeHint().height());
+                setMinimumWidth(sizeHint().height());
                 setMaximumWidth(32767);
             }
             break;
     }
 }
 
-TQSize Button::tqsizeHint() const
+TQSize Button::sizeHint() const
 {
-    return tqsizeHint(text());
+    return sizeHint(text());
 }
 
-TQSize Button::tqsizeHint(const TQString &text) const
+TQSize Button::sizeHint(const TQString &text) const
 {
     constPolish();
     int w = 0, h = 0;
@@ -211,7 +211,7 @@ TQSize Button::tqsizeHint(const TQString &text) const
         h = TQMAX( h, ih );
     }
     if ( isMenuButton() )
-        w += tqstyle().tqpixelMetric(TQStyle::PM_MenuButtonIndicator, this);
+        w += tqstyle().pixelMetric(TQStyle::PM_MenuButtonIndicator, this);
     if ( pixmap() ) {
         TQPixmap *pm = (TQPixmap *)pixmap();
         w += pm->width();
@@ -220,7 +220,7 @@ TQSize Button::tqsizeHint(const TQString &text) const
         TQString s( text );
         bool empty = s.isEmpty();
         if ( empty )
-            s = TQString::tqfromLatin1("XXXX");
+            s = TQString::fromLatin1("XXXX");
         TQFontMetrics fm = fontMetrics();
         TQSize sz = fm.size( ShowPrefix, s );
         if(!empty || !w)
@@ -239,12 +239,12 @@ void Button::updateSize()
     {
         case Ideal::Left:
         case Ideal::Right:
-             setMinimumHeight(tqsizeHint().width());
-             resize(tqsizeHint().height(), tqsizeHint().width());
+             setMinimumHeight(sizeHint().width());
+             resize(sizeHint().height(), sizeHint().width());
             break;
         case Ideal::Top:
         case Ideal::Bottom:
-            resize(tqsizeHint().width(), tqsizeHint().height());
+            resize(sizeHint().width(), sizeHint().height());
             break;
     }
 }

@@ -72,12 +72,12 @@ namespace kt
 	}
 	
 	/*Generate php code
-	* function downloadtqStatus()
+	* function downloadStatus()
 	* {
 	*	return array( ... );
 	* }
 	*/
-	void PhpCodeGenerator::downloadtqStatus(TQTextStream & out)
+	void PhpCodeGenerator::downloadStatus(TQTextStream & out)
 	{
 		TorrentStats stats;
 		//Priority file_priority;
@@ -156,7 +156,7 @@ namespace kt
 	}
 	
 	/*Generate php code
-	* function globaltqStatus()
+	* function globalStatus()
 	* {
 	*	return array( ... );
 	* }

@@ -113,7 +113,7 @@ void DockSplitter::removeDock(uint row, uint col, bool alsoDelete)
         w->hide();
     }
 
-    m_splitters[row]->setMinimumSize(m_splitters[row]->tqminimumSizeHint());
+    m_splitters[row]->setMinimumSize(m_splitters[row]->minimumSizeHint());
 
     if (isRowEmpty(row))
     {

@@ -12,13 +12,13 @@
             <height>530</height>
         </rect>
     </property>
-    <property name="tqminimumSize">
+    <property name="minimumSize">
         <size>
             <width>0</width>
             <height>0</height>
         </size>
     </property>
-    <property name="tqmaximumSize">
+    <property name="maximumSize">
         <size>
             <width>750</width>
             <height>540</height>
@@ -73,7 +73,7 @@
                                     <verstretch>0</verstretch>
                                 </sizepolicy>
                             </property>
-                            <property name="tqminimumSize">
+                            <property name="minimumSize">
                                 <size>
                                     <width>30</width>
                                     <height>15</height>
@@ -95,7 +95,7 @@
                                     <verstretch>0</verstretch>
                                 </sizepolicy>
                             </property>
-                            <property name="tqminimumSize">
+                            <property name="minimumSize">
                                 <size>
                                     <width>30</width>
                                     <height>15</height>
@@ -117,7 +117,7 @@
                                     <verstretch>0</verstretch>
                                 </sizepolicy>
                             </property>
-                            <property name="tqminimumSize">
+                            <property name="minimumSize">
                                 <size>
                                     <width>30</width>
                                     <height>15</height>
@@ -139,7 +139,7 @@
                                     <verstretch>0</verstretch>
                                 </sizepolicy>
                             </property>
-                            <property name="tqminimumSize">
+                            <property name="minimumSize">
                                 <size>
                                     <width>30</width>
                                     <height>15</height>
@@ -177,7 +177,7 @@
                                     <verstretch>0</verstretch>
                                 </sizepolicy>
                             </property>
-                            <property name="tqminimumSize">
+                            <property name="minimumSize">
                                 <size>
                                     <width>30</width>
                                     <height>15</height>
@@ -245,7 +245,7 @@
                                     <verstretch>0</verstretch>
                                 </sizepolicy>
                             </property>
-                            <property name="tqminimumSize">
+                            <property name="minimumSize">
                                 <size>
                                     <width>30</width>
                                     <height>15</height>
@@ -267,7 +267,7 @@
                                     <verstretch>0</verstretch>
                                 </sizepolicy>
                             </property>
-                            <property name="tqminimumSize">
+                            <property name="minimumSize">
                                 <size>
                                     <width>30</width>
                                     <height>15</height>
@@ -289,7 +289,7 @@
                                     <verstretch>0</verstretch>
                                 </sizepolicy>
                             </property>
-                            <property name="tqminimumSize">
+                            <property name="minimumSize">
                                 <size>
                                     <width>30</width>
                                     <height>15</height>
@@ -311,7 +311,7 @@
                                     <verstretch>0</verstretch>
                                 </sizepolicy>
                             </property>
-                            <property name="tqminimumSize">
+                            <property name="minimumSize">
                                 <size>
                                     <width>30</width>
                                     <height>15</height>
@@ -349,7 +349,7 @@
                                     <verstretch>0</verstretch>
                                 </sizepolicy>
                             </property>
-                            <property name="tqminimumSize">
+                            <property name="minimumSize">
                                 <size>
                                     <width>30</width>
                                     <height>15</height>
@@ -581,13 +581,13 @@
                     <verstretch>0</verstretch>
                 </sizepolicy>
             </property>
-            <property name="tqminimumSize">
+            <property name="minimumSize">
                 <size>
                     <width>379</width>
                     <height>510</height>
                 </size>
             </property>
-            <property name="tqmaximumSize">
+            <property name="maximumSize">
                 <size>
                     <width>379</width>
                     <height>508</height>
@@ -604,7 +604,7 @@
                 </property>
                 <widget class="TQLabel">
                     <property name="name">
-                        <cstring>lbltqStatus</cstring>
+                        <cstring>lblStatus</cstring>
                     </property>
                     <property name="text">
                         <string></string>
@@ -641,7 +641,7 @@
             <property name="sizeType">
                 <enum>Expanding</enum>
             </property>
-            <property name="tqsizeHint">
+            <property name="sizeHint">
                 <size>
                     <width>20</width>
                     <height>16</height>
@@ -700,7 +700,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="tqsizeHint">
+                    <property name="sizeHint">
                         <size>
                             <width>36</width>
                             <height>20</height>
@@ -728,7 +728,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="tqsizeHint">
+                    <property name="sizeHint">
                         <size>
                             <width>35</width>
                             <height>20</height>

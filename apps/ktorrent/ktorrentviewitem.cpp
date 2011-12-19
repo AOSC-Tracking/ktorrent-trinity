@@ -30,7 +30,7 @@
 using namespace bt;
 using namespace kt;
 /*
-static TQString StatusToString(TorrentInterface* tc,TorrenttqStatus s)
+static TQString StatusToString(TorrentInterface* tc,TorrentStatus s)
 {
 	switch (s)
 	{
@@ -55,7 +55,7 @@ static TQString StatusToString(TorrentInterface* tc,TorrenttqStatus s)
 }
 */
 
-static TQColor StatusToColor(TorrenttqStatus s,const TQColorGroup & cg)
+static TQColor StatusToColor(TorrentStatus s,const TQColorGroup & cg)
 {
 	TQColor green(40,205,40);
 	TQColor yellow(255,174,0);

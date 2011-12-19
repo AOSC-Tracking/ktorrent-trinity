@@ -160,7 +160,7 @@ namespace kt
 		if(!m_enabled)
 			return;
 		
-		TQDateTime now = TQDateTime::tqcurrentDateTime();
+		TQDateTime now = TQDateTime::currentDateTime();
 
 		TQString prefix = TQString("BWS: %1 :: ").tqarg(now.toString());
 		

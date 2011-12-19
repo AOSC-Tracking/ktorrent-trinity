@@ -91,7 +91,7 @@ static void WriteLeakReport()
 	fclose(report);
 }
 
-static void PrinttqStatus()
+static void PrintStatus()
 {
 	if (mtree.count == 0)
 	{
@@ -124,7 +124,7 @@ static void RegisterAlloc(void* ptr,Uint32 size)
 		for (Uint32 b = 0;b < SOME_PRIME;b++)
 			mtree.buckets[b] = 0;
 		mtree.num_buckets = SOME_PRIME;
-		atexit(PrinttqStatus);
+		atexit(PrintStatus);
 	}
 	
 	// hash the address

@@ -75,7 +75,7 @@
                             <property name="name">
                                 <cstring>m_seeders</cstring>
                             </property>
-                            <property name="tqminimumSize">
+                            <property name="minimumSize">
                                 <size>
                                     <width>100</width>
                                     <height>0</height>
@@ -95,7 +95,7 @@
                             <property name="name">
                                 <cstring>m_leechers</cstring>
                             </property>
-                            <property name="tqminimumSize">
+                            <property name="minimumSize">
                                 <size>
                                     <width>100</width>
                                     <height>0</height>
@@ -133,7 +133,7 @@
                             <property name="name">
                                 <cstring>m_avg_down</cstring>
                             </property>
-                            <property name="tqminimumSize">
+                            <property name="minimumSize">
                                 <size>
                                     <width>100</width>
                                     <height>0</height>
@@ -153,7 +153,7 @@
                             <property name="name">
                                 <cstring>m_avg_up</cstring>
                             </property>
-                            <property name="tqminimumSize">
+                            <property name="minimumSize">
                                 <size>
                                     <width>100</width>
                                     <height>0</height>
@@ -207,7 +207,7 @@
                             <property name="name">
                                 <cstring>m_tracker_status</cstring>
                             </property>
-                            <property name="tqminimumSize">
+                            <property name="minimumSize">
                                 <size>
                                     <width>100</width>
                                     <height>0</height>
@@ -227,7 +227,7 @@
                             <property name="name">
                                 <cstring>m_tracker_update_time</cstring>
                             </property>
-                            <property name="tqminimumSize">
+                            <property name="minimumSize">
                                 <size>
                                     <width>100</width>
                                     <height>0</height>
@@ -255,7 +255,7 @@
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
-                    <property name="tqsizeHint">
+                    <property name="sizeHint">
                         <size>
                             <width>207</width>
                             <height>20</height>
@@ -344,7 +344,7 @@
                                             <verstretch>0</verstretch>
                                         </sizepolicy>
                                     </property>
-                                    <property name="tqminimumSize">
+                                    <property name="minimumSize">
                                         <size>
                                             <width>0</width>
                                             <height>20</height>
@@ -379,7 +379,7 @@
                                             <verstretch>0</verstretch>
                                         </sizepolicy>
                                     </property>
-                                    <property name="tqminimumSize">
+                                    <property name="minimumSize">
                                         <size>
                                             <width>0</width>
                                             <height>20</height>
@@ -398,7 +398,7 @@
                             <property name="sizeType">
                                 <enum>Expanding</enum>
                             </property>
-                            <property name="tqsizeHint">
+                            <property name="sizeHint">
                                 <size>
                                     <width>20</width>
                                     <height>16</height>
@@ -477,7 +477,7 @@
                                             <verstretch>0</verstretch>
                                         </sizepolicy>
                                     </property>
-                                    <property name="tqminimumSize">
+                                    <property name="minimumSize">
                                         <size>
                                             <width>20</width>
                                             <height>0</height>
@@ -515,7 +515,7 @@
                                                     <verstretch>0</verstretch>
                                                 </sizepolicy>
                                             </property>
-                                            <property name="tqminimumSize">
+                                            <property name="minimumSize">
                                                 <size>
                                                     <width>20</width>
                                                     <height>0</height>
@@ -561,7 +561,7 @@
                                     <property name="name">
                                         <cstring>m_share_ratio</cstring>
                                     </property>
-                                    <property name="tqminimumSize">
+                                    <property name="minimumSize">
                                         <size>
                                             <width>50</width>
                                             <height>0</height>
@@ -589,7 +589,7 @@
                             <property name="sizeType">
                                 <enum>MinimumExpanding</enum>
                             </property>
-                            <property name="tqsizeHint">
+                            <property name="sizeHint">
                                 <size>
                                     <width>20</width>
                                     <height>20</height>

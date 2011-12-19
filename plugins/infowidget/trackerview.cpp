@@ -167,7 +167,7 @@ namespace kt
 		// only enable change when we can actually change and the torrent is running
 		btnChange->setEnabled(s.running && listTrackers->childCount() > 1);
 
-		lbltqStatus->setText("<b>" + s.trackerstatus + "</b>");
+		lblStatus->setText("<b>" + s.trackerstatus + "</b>");
 		if (tc->getTrackersList())
 		{
 			TQString t = tc->getTrackersList()->getTrackerURL().prettyURL();
@@ -191,7 +191,7 @@ namespace kt
 		listTrackers->clear();
 		if(!tc)
 		{
-			lbltqStatus->clear();
+			lblStatus->clear();
 			lblCurrent->clear();
 			lblUpdate->clear();
 			txtTracker->clear();

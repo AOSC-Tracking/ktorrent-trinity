@@ -76,7 +76,7 @@ namespace bt
 		{
 			// mmap continuously fails, so stop using it
 			c->allocate();
-			c->settqStatus(Chunk::BUFFERED);
+			c->setStatus(Chunk::BUFFERED);
 		}
 		else
 		{
@@ -88,7 +88,7 @@ namespace bt
 				// buffer it if mmapping fails
 				Out(SYS_GEN|LOG_IMPORTANT) << "Warning : mmap failure, falling back to buffered mode" << endl;
 				c->allocate();
-				c->settqStatus(Chunk::BUFFERED);
+				c->setStatus(Chunk::BUFFERED);
 			}
 			else
 			{
@@ -105,7 +105,7 @@ namespace bt
 		if (mmap_failures >= 3 || !(buf = (Uint8*)fd->map(c,off,c->getSize(),CacheFile::READ)))
 		{
 			c->allocate();
-			c->settqStatus(Chunk::BUFFERED);
+			c->setStatus(Chunk::BUFFERED);
 			fd->read(c->getData(),c->getSize(),off);
 			if (mmap_failures < 3)
 				mmap_failures++;
@@ -119,18 +119,18 @@ namespace bt
 	void SingleFileCache::save(Chunk* c)
 	{
 		// unmap the chunk if it is mapped
-		if (c->gettqStatus() == Chunk::MMAPPED)
+		if (c->getStatus() == Chunk::MMAPPED)
 		{
 			fd->unmap(c->getData(),c->getSize());
 			c->clear();
-			c->settqStatus(Chunk::ON_DISK);
+			c->setStatus(Chunk::ON_DISK);
 		}
-		else if (c->gettqStatus() == Chunk::BUFFERED)
+		else if (c->getStatus() == Chunk::BUFFERED)
 		{
 			Uint64 off = c->getIndex() * tor.getChunkSize();
 			fd->write(c->getData(),c->getSize(),off);
 			c->clear();
-			c->settqStatus(Chunk::ON_DISK);
+			c->setStatus(Chunk::ON_DISK);
 		}
 	}
 

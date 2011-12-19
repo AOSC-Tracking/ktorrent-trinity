@@ -116,7 +116,7 @@ namespace bt
 			// this could result in the loss of some messages
 			if (!rotate_job) 
 			{
-				*out << TQDateTime::tqcurrentDateTime().toString() << ": " << tmp << ::endl;
+				*out << TQDateTime::currentDateTime().toString() << ": " << tmp << ::endl;
 				fptr.flush();
 				if (to_cout)
 					std::cout << TQString(tmp.local8Bit()) << std::endl;

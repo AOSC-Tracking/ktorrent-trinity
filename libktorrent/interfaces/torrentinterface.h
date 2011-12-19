@@ -44,7 +44,7 @@ namespace kt
 	class TorrentFileInterface;
 	class PeerSource;
 	
-	enum TorrenttqStatus
+	enum TorrentStatus
 	{
 		NOT_STARTED,
 		SEEDING_COMPLETE,
@@ -118,8 +118,8 @@ namespace kt
 		Uint32 leechers_total;
 		/// Num leechers connected to
 		Uint32 leechers_connected_to;
-		/// tqStatus of the download
-		TorrenttqStatus status;
+		/// Status of the download
+		TorrentStatus status;
 		/// The status of the tracker
 		TQString trackerstatus;
 		/// The number of bytes downloaded in this session

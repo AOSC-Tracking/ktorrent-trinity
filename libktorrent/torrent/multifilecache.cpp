@@ -425,7 +425,7 @@ namespace bt
 			{
 				// if mmap fails or is not possible use buffered mode
 				c->allocate();
-				c->settqStatus(Chunk::BUFFERED);
+				c->setStatus(Chunk::BUFFERED);
 			}
 			else
 			{
@@ -436,7 +436,7 @@ namespace bt
 		{
 			// just allocate it
 			c->allocate();
-			c->settqStatus(Chunk::BUFFERED);
+			c->setStatus(Chunk::BUFFERED);
 		}
 		return true;
 	}
@@ -446,7 +446,7 @@ namespace bt
 		TQValueList<Uint32> tflist;
 		tor.calcChunkPos(c->getIndex(),tflist);
 		
-		if (c->gettqStatus() == Chunk::MMAPPED)
+		if (c->getStatus() == Chunk::MMAPPED)
 		{
 			// mapped chunks are easy
 			CacheFile* fd = files.find(tflist[0]);
@@ -455,7 +455,7 @@ namespace bt
 			
 			fd->unmap(c->getData(),c->getSize());
 			c->clear();
-			c->settqStatus(Chunk::ON_DISK);
+			c->setStatus(Chunk::ON_DISK);
 			return;
 		}
 	
@@ -506,7 +506,7 @@ namespace bt
 		
 		// set the chunk to on disk and clear it
 		c->clear();
-		c->settqStatus(Chunk::ON_DISK);
+		c->setStatus(Chunk::ON_DISK);
 	}
 	
 	void MultiFileCache::downloadStatusChanged(TorrentFile* tf, bool download)

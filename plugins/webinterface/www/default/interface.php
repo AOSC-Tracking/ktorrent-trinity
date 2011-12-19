@@ -1,6 +1,6 @@
 <?php
 $globalinfo=globalInfo();
-$stats=downloadtqStatus();
+$stats=downloadStatus();
 
 function get_torrent_status_name($status_id)
 {
@@ -18,7 +18,7 @@ function get_torrent_status_name($status_id)
 	10 => 'Checking Data'
 	);
 	if (array_key_exists($status_id, $table)) return $table[$status_id];
-	else return 'Not supported tqStatus';
+	else return 'Not supported Status';
 }
 
 function generate_button_code($img, $alt, $href='')
@@ -104,7 +104,7 @@ function generate_button_code($img, $alt, $href='')
 		<tr>
 			<th>Actions</th>
 			<th>File</th>
-			<th>tqStatus</th>
+			<th>Status</th>
 			<th>Downloaded</th>
 			<th>Size</th>
 			<th>Uploaded</th>
