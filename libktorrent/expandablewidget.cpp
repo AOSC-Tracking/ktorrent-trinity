@@ -53,7 +53,7 @@ namespace kt
 		se->pos = pos;
 		se->next = begin;
 
-		// remove old top from tqlayout
+		// remove old top from layout
 		top_layout->remove(begin->w);
 			
 		// create new toplevel splitter
@@ -84,7 +84,7 @@ namespace kt
 		// make se new top of stack
 		begin = se;
 
-		// add toplevel splitter to tqlayout
+		// add toplevel splitter to layout
 		top_layout->add(s);
 		
 		// show s

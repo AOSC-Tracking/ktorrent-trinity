@@ -32,7 +32,7 @@ namespace Ideal {
 class Button;
 class ButtonBar;
 
-/**@short A tqlayout for a ButtonBar class.
+/**@short A layout for a ButtonBar class.
 
 Overrides minimumSize method to allow shrinking button bar buttons.*/
 class ButtonLayout: public TQBoxLayout{

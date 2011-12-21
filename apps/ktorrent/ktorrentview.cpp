@@ -85,8 +85,8 @@ bool TorrentView::eventFilter(TQObject* watched, TQEvent* e)
 KTorrentView::KTorrentView(TQWidget *parent)
 	: TQWidget(parent),menu(0),current_group(0),running(0),total(0),view(0),filter_bar(0)
 {
-	TQVBoxLayout* tqlayout = new TQVBoxLayout(this);
-	tqlayout->setAutoAdd(true);
+	TQVBoxLayout* layout = new TQVBoxLayout(this);
+	layout->setAutoAdd(true);
 	view = new TorrentView(this);
 	filter_bar = new FilterBar(this);
 	filter_bar->setHidden(true);

@@ -82,7 +82,7 @@
         </widget>
         <widget class="TQLayoutWidget" row="3" column="0">
             <property name="name">
-                <cstring>tqlayout6</cstring>
+                <cstring>layout6</cstring>
             </property>
             <hbox>
                 <property name="name">

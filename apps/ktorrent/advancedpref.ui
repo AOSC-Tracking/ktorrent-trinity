@@ -32,7 +32,7 @@
                 </property>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>tqlayout15</cstring>
+                        <cstring>layout15</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -127,7 +127,7 @@
                 </widget>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>tqlayout25</cstring>
+                        <cstring>layout25</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -179,7 +179,7 @@
                 </property>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>tqlayout5</cstring>
+                        <cstring>layout5</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -234,7 +234,7 @@
                 </widget>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>tqlayout5_2</cstring>
+                        <cstring>layout5_2</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -294,7 +294,7 @@
                 </widget>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>tqlayout8</cstring>
+                        <cstring>layout8</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -359,7 +359,7 @@
                 </property>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>tqlayout7</cstring>
+                        <cstring>layout7</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -416,7 +416,7 @@
                 </widget>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>tqlayout10</cstring>
+                        <cstring>layout10</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -483,7 +483,7 @@
                 </property>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>tqlayout33</cstring>
+                        <cstring>layout33</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -491,7 +491,7 @@
                         </property>
                         <widget class="TQLayoutWidget">
                             <property name="name">
-                                <cstring>tqlayout32</cstring>
+                                <cstring>layout32</cstring>
                             </property>
                             <grid>
                                 <property name="name">
@@ -572,7 +572,7 @@
                 </widget>
                 <widget class="TQLayoutWidget">
                     <property name="name">
-                        <cstring>tqlayout7</cstring>
+                        <cstring>layout7</cstring>
                     </property>
                     <hbox>
                         <property name="name">

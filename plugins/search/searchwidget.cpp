@@ -59,8 +59,8 @@ namespace kt
 	
 	SearchWidget::SearchWidget(SearchPlugin* sp) : html_part(0),sp(sp)
 	{
-		TQVBoxLayout* tqlayout = new TQVBoxLayout(this);
-		tqlayout->setAutoAdd(true);
+		TQVBoxLayout* layout = new TQVBoxLayout(this);
+		layout->setAutoAdd(true);
 		sbar = new SearchBar(this);
 		html_part = new HTMLPart(this);
 	

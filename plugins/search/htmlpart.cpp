@@ -60,7 +60,7 @@ namespace kt
 	void HTMLPart::copy()
 	{
 		TQString txt = selectedText();
-		TQClipboard *cb = TQApplication::tqclipboard();
+		TQClipboard *cb = TQApplication::clipboard();
 		// Copy text into the clipboard
 		if (cb)
 			cb->setText(txt,TQClipboard::Clipboard);
