@@ -33,7 +33,7 @@ PasteDialog::PasteDialog(KTorrentCore* core, TQWidget *parent, const char *name)
 		:PasteDlgBase(parent, name)
 {
 	m_core = core;
-	TQClipboard *cb = TQApplication::tqclipboard();
+	TQClipboard *cb = TQApplication::clipboard();
 	TQString text = cb->text(TQClipboard::Clipboard);
 	KURL url = KURL::fromPathOrURL(text);
 	if ( url.isValid() )

@@ -133,7 +133,7 @@ void Button::drawButton(TQPainter *p)
 
     tqstyle().drawControl(TQStyle::CE_PushButton,&p2,this, TQRect(0,0,pm.width(),pm.height()), colorGroup(),flags);
 
-    tqstyle().drawControl(TQStyle::CE_PushButtonLabel, &p2, this,
+    style().drawControl(TQStyle::CE_PushButtonLabel, &p2, this,
                         TQRect(0,0,pm.width(),pm.height()),
                         colorGroup(), flags, TQStyleOption());
 
@@ -211,7 +211,7 @@ TQSize Button::sizeHint(const TQString &text) const
         h = TQMAX( h, ih );
     }
     if ( isMenuButton() )
-        w += tqstyle().pixelMetric(TQStyle::PM_MenuButtonIndicator, this);
+        w += style().pixelMetric(TQStyle::PM_MenuButtonIndicator, this);
     if ( pixmap() ) {
         TQPixmap *pm = (TQPixmap *)pixmap();
         w += pm->width();
@@ -229,7 +229,7 @@ TQSize Button::sizeHint(const TQString &text) const
             h = TQMAX(h, sz.height());
     }
 
-    return (tqstyle().tqsizeFromContents(TQStyle::CT_ToolButton, this, TQSize(w, h)).
+    return (style().tqsizeFromContents(TQStyle::CT_ToolButton, this, TQSize(w, h)).
             expandedTo(TQApplication::globalStrut()));
 }
 

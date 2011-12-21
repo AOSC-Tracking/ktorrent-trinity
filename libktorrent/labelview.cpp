@@ -105,13 +105,13 @@ namespace kt
 	
 	class LabelViewBox : public TQWidget
 	{
-		TQVBoxLayout* tqlayout;
+		TQVBoxLayout* layout;
 	public:
 		LabelViewBox(TQWidget* parent) : TQWidget(parent)
 		{
 			setPaletteBackgroundColor(KGlobalSettings::baseColor());
-			tqlayout = new TQVBoxLayout(this);
-			tqlayout->setMargin(0);
+			layout = new TQVBoxLayout(this);
+			layout->setMargin(0);
 		}
 		
 		virtual ~LabelViewBox()
@@ -120,24 +120,24 @@ namespace kt
 		void add(LabelViewItem* item)
 		{
 			item->reparent(this,TQPoint(0,0));
-			tqlayout->add(item);
+			layout->add(item);
 			item->show();
 		}
 		
 		void remove(LabelViewItem* item)
 		{
 			item->hide();
-			tqlayout->remove(item);
+			layout->remove(item);
 			item->reparent(0,TQPoint(0,0));
 		}
 		
 		void sorted(const std::list<LabelViewItem*> items)
 		{
 			for (LabelViewCItr i = items.begin();i != items.end();i++)
-				tqlayout->remove(*i);
+				layout->remove(*i);
 			
 			for (LabelViewCItr i = items.begin();i != items.end();i++)
-				tqlayout->add(*i);
+				layout->add(*i);
 		}
 	};
 	

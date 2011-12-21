@@ -174,7 +174,7 @@ namespace bt
 			Map["TS"] = "Torrent Storm";
 			Map["TT"] = "TuoTu";
 			Map["UL"] = "uLeecher!";
-			Map["UT"] = TQString("%1Torrent").arg(TQChar(0x00B5)); // µTorrent, 0x00B5 is tqunicode for µ
+			Map["UT"] = TQString("%1Torrent").arg(TQChar(0x00B5)); // µTorrent, 0x00B5 is unicode for µ
 			Map["WT"] = "BitLet";
 			Map["WY"] = "FireTorrent";
 			Map["XL"] = "Xunlei";

@@ -21,7 +21,7 @@
         </property>
         <widget class="TQLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>tqlayout16</cstring>
+                <cstring>layout16</cstring>
             </property>
             <vbox>
                 <property name="name">
