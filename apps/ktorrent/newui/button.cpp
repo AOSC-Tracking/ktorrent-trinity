@@ -131,7 +131,7 @@ void Button::drawButton(TQPainter *p)
     pm.fill(eraseColor());
     TQPainter p2(&pm);
 
-    tqstyle().drawControl(TQStyle::CE_PushButton,&p2,this, TQRect(0,0,pm.width(),pm.height()), colorGroup(),flags);
+    style().drawControl(TQStyle::CE_PushButton,&p2,this, TQRect(0,0,pm.width(),pm.height()), colorGroup(),flags);
 
     style().drawControl(TQStyle::CE_PushButtonLabel, &p2, this,
                         TQRect(0,0,pm.width(),pm.height()),
