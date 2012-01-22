@@ -170,7 +170,7 @@ namespace kt
 		if (show && !peer_view)
 		{
 			peer_view = new PeerView(0);
-			getGUI()->addToolWidget(peer_view,"kdmconfig",i18n("Peers"),GUIInterface::DOCK_BOTTOM);
+			getGUI()->addToolWidget(peer_view,"tdmconfig",i18n("Peers"),GUIInterface::DOCK_BOTTOM);
 			
 			peer_view->restoreLayout(KGlobal::config(),"PeerView");
 			createMonitor(tc);
