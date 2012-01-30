@@ -26,7 +26,7 @@
 #include <kiconloader.h>
 #include <kstandarddirs.h>
 #include <kmessagebox.h>
-#include <ksocketaddress.h>
+#include <tdesocketaddress.h>
 #include <tqpoint.h>
 #include <tqlistview.h>
 #include <kpopupmenu.h>

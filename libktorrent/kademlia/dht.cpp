@@ -24,7 +24,7 @@
 #include <util/functions.h>
 #include <torrent/bnode.h>
 #include <torrent/globals.h>
-#include <ksocketaddress.h>
+#include <tdesocketaddress.h>
 #include "announcetask.h"
 #include "dht.h"
 #include "node.h"

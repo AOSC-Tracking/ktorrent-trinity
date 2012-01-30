@@ -21,7 +21,7 @@
 #include <kresolver.h>
 #include <util/functions.h>
 #include <util/log.h>
-#include <ksocketaddress.h>
+#include <tdesocketaddress.h>
 #include "peermanager.h"
 #include "udptracker.h"
 #include "torrentcontrol.h"

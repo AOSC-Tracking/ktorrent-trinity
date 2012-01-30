@@ -22,7 +22,7 @@
 
 #include <tqvaluelist.h>
 #include <util/constants.h>
-#include <ksocketaddress.h>
+#include <tdesocketaddress.h>
 #include "key.h"
 #include "rpccall.h"
 #include "task.h"

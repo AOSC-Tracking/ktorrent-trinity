@@ -26,7 +26,7 @@
 #include <torrent/bnode.h>
 #include <torrent/bdecoder.h>
 #include <torrent/bencoder.h>
-#include <ksocketdevice.h>
+#include <tdesocketdevice.h>
 #include "rpcserver.h"
 #include "rpccall.h"
 #include "rpcmsg.h"

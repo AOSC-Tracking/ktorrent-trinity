@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 #include <set>
-#include <ksocketaddress.h>
+#include <tdesocketaddress.h>
 #include <util/log.h>
 #include <util/functions.h>
 #include <util/sha1hash.h>

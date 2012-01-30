@@ -30,8 +30,8 @@ extern "C" {
 #include <arpa/inet.h>
 #include <netinet/ip.h>
 #include <tqstringlist.h>
-#include <ksocketdevice.h>
-#include <ksocketaddress.h>
+#include <tdesocketdevice.h>
+#include <tdesocketaddress.h>
 #include <util/log.h>
 #include <torrent/globals.h>
 #include <tqfile.h>

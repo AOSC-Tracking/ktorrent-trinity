@@ -20,7 +20,7 @@
 #ifndef DHTRPCMSG_H
 #define DHTRPCMSG_H
 
-#include <ksocketaddress.h>
+#include <tdesocketaddress.h>
 #include <util/constants.h>
 #include "key.h"
 #include "database.h"

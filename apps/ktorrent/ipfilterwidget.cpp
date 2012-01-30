@@ -31,7 +31,7 @@
 
 #include <klistview.h>
 #include <klineedit.h>
-#include <ksocketaddress.h>
+#include <tdesocketaddress.h>
 #include <kfiledialog.h>
 #include <klocale.h>
 #include <kmessagebox.h>

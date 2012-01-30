@@ -21,9 +21,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <util/array.h>
-#include <ksocketaddress.h>
+#include <tdesocketaddress.h>
 #include <kdatagramsocket.h>
-#include <ksocketdevice.h>
+#include <tdesocketdevice.h>
 #include <net/portlist.h>
 #include <util/log.h>
 #include <util/functions.h>

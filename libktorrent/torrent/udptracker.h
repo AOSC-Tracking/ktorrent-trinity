@@ -24,7 +24,7 @@
 #include <tqvaluelist.h>
 #include <tqcstring.h>
 #include <tqtimer.h>
-#include <ksocketaddress.h>
+#include <tdesocketaddress.h>
 #include "tracker.h"
 #include "globals.h"
 #include "peermanager.h"
