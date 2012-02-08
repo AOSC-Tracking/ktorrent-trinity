@@ -1817,8 +1817,8 @@ fi
 
 if test -z "$1"; then
 
-kde_incdirs="$kde_libs_prefix/include /usr/lib/kde/include /usr/local/kde/include /usr/local/include /usr/kde/include /usr/include/kde /usr/include /opt/trinity/include /opt/kde/include $x_includes $qt_includes"
-test -n "$TDEDIR" && kde_incdirs="$TDEDIR/include $TDEDIR/include/kde $TDEDIR $kde_incdirs"
+kde_incdirs="$kde_libs_prefix/include /usr/lib/kde/include /usr/local/kde/include /usr/local/include /usr/kde/include /usr/include/tde /usr/include /opt/trinity/include /opt/kde/include $x_includes $qt_includes"
+test -n "$TDEDIR" && kde_incdirs="$TDEDIR/include $TDEDIR/include/tde $TDEDIR $kde_incdirs"
 kde_incdirs="$ac_kde_includes $kde_incdirs"
 AC_FIND_FILE($kde_check_header, $kde_incdirs, kde_incdir)
 ac_kde_includes="$kde_incdir"
@@ -2054,7 +2054,7 @@ AC_CACHE_VAL(kde_cv_have_kdeqtaddon,
  kde_cxxflags_safe="$CXXFLAGS"
 
  LIBS="-lkde-qt-addon $LIBQT $LIBS"
- CXXFLAGS="$CXXFLAGS -I$prefix/include -I$prefix/include/kde $all_includes"
+ CXXFLAGS="$CXXFLAGS -I$prefix/include -I$prefix/include/tde $all_includes"
  LDFLAGS="$LDFLAGS $all_libraries $USER_LDFLAGS"
 
  AC_TRY_LINK([
