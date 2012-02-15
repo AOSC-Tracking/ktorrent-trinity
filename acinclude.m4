@@ -1104,7 +1104,7 @@ EOF
 
 if test $kde_qtsubver -gt 0; then
 cat >> conftest.$ac_ext <<EOF
-#if QT_VERSION < 210
+#if TQT_VERSION < 210
 #error 1
 #endif
 EOF
@@ -1201,22 +1201,22 @@ fi
 if test -z "$3"; then
    if test $kde_qtver = 3; then
      if test $kde_qtsubver -gt 0; then
-       kde_qt_verstring="QT_VERSION >= 0x03@VER@00 && QT_VERSION < 0x040000"
+       kde_qt_verstring="TQT_VERSION >= 0x03@VER@00 && TQT_VERSION < 0x040000"
        qtsubver=`echo "00$kde_qtsubver" | sed -e 's,.*\(..\)$,\1,'`
        kde_qt_verstring=`echo $kde_qt_verstring | sed -e "s,@VER@,$qtsubver,"`
      else
-       kde_qt_verstring="QT_VERSION >= 300 && QT_VERSION < 0x040000"
+       kde_qt_verstring="TQT_VERSION >= 300 && TQT_VERSION < 0x040000"
      fi
    fi
    if test $kde_qtver = 2; then
      if test $kde_qtsubver -gt 0; then
-       kde_qt_verstring="QT_VERSION >= 222"
+       kde_qt_verstring="TQT_VERSION >= 222"
      else
-       kde_qt_verstring="QT_VERSION >= 200"
+       kde_qt_verstring="TQT_VERSION >= 200"
      fi
    fi
    if test $kde_qtver = 1; then
-    kde_qt_verstring="QT_VERSION >= 142 && QT_VERSION < 200"
+    kde_qt_verstring="TQT_VERSION >= 142 && TQT_VERSION < 200"
    fi
 else
    kde_qt_verstring="$3"
