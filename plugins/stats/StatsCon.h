@@ -35,7 +35,7 @@ namespace kt {
 class StatsCon : public StatsConWgt
 {
 	Q_OBJECT
-  TQ_OBJECT
+  
 	private:
 		///Layout of peers connections
 		TQVBoxLayout * pmPeersConLay;

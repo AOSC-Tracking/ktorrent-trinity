@@ -44,7 +44,7 @@ namespace bt
 class ManualPeerSource: public kt::PeerSource
 {
 	Q_OBJECT
-  TQ_OBJECT
+  
 			
 	public:
 		ManualPeerSource();
@@ -79,7 +79,7 @@ class ManualPeerSource: public kt::PeerSource
 class AddPeerWidget: public AddPeerWidgetBase
 {
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		AddPeerWidget(kt::TorrentInterface* tc, TQWidget *parent = 0, const char *name = 0);
 		~AddPeerWidget();

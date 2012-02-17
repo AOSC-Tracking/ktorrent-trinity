@@ -45,7 +45,7 @@ namespace bt
 	class Server : public TQObject
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 
 		TQPtrList<PeerManager> peer_managers;
 		ServerSocket* sock;

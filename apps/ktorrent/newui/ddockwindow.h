@@ -40,7 +40,7 @@ namespace Ideal {
 
 class DDockWindow : public TQDockWindow {
     Q_OBJECT
-  TQ_OBJECT
+  
 public:
     enum Position { Bottom, Left, Right };
 

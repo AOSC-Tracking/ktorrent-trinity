@@ -33,7 +33,7 @@ namespace kt
 	class PartFileImportPlugin : public Plugin
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		PartFileImportPlugin(TQObject* parent, const char* name, const TQStringList& args);
 		virtual ~PartFileImportPlugin();

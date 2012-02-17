@@ -50,7 +50,7 @@ namespace kt
 	class ChunkBar : public TQFrame
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		ChunkBar(TQWidget *parent = 0, const char *name = 0);
 		virtual ~ChunkBar();

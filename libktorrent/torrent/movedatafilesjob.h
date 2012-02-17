@@ -32,7 +32,7 @@ namespace bt
 	class MoveDataFilesJob : public KIO::Job
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		MoveDataFilesJob();
 		virtual ~MoveDataFilesJob();

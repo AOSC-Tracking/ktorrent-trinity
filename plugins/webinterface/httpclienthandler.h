@@ -41,7 +41,7 @@ namespace kt
 	class HttpClientHandler : public TQObject
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 		enum State
 		{
 			WAITING_FOR_REQUEST,

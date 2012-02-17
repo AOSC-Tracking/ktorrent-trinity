@@ -56,7 +56,7 @@ namespace bt
 	class PeerManager : public TQObject
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		/**
 		 * Constructor.

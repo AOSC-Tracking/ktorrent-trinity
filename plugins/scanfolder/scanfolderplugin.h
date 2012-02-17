@@ -38,7 +38,7 @@ namespace kt
 	class ScanFolderPlugin : public Plugin
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		ScanFolderPlugin(TQObject* parent, const char* name, const TQStringList& args);
 		virtual ~ScanFolderPlugin();

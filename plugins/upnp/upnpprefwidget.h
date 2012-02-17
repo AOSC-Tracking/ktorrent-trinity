@@ -41,7 +41,7 @@ namespace kt
 	class UPnPPrefWidget : public UPnPWidget,public net::PortListener
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	
 	public:
 		UPnPPrefWidget(TQWidget* parent = 0, const char* name = 0, WFlags fl = 0 );

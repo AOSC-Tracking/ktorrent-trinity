@@ -55,7 +55,7 @@ namespace dht
 	class RPCServer : public TQObject
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		RPCServer(DHT* dh_table,Uint16 port,TQObject *parent = 0);
 		virtual ~RPCServer();

@@ -32,7 +32,7 @@ namespace kt
 	class TorrentDrag : public TQStoredDrag
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		TorrentDrag(TQWidget* src,const char *name = 0);
 		virtual ~TorrentDrag();

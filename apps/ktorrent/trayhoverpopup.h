@@ -34,7 +34,7 @@ class TQPixmap;
 class TrayHoverPopup : public KPassivePopup
 {
 	Q_OBJECT
-  TQ_OBJECT
+  
 public:
 	TrayHoverPopup(const TQPixmap & pix,TQWidget *parent = 0, const char *name = 0 );
 	virtual ~TrayHoverPopup();

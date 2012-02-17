@@ -42,7 +42,7 @@ namespace kt
 class FilterBar : public TQWidget
 {
 	Q_OBJECT
-  TQ_OBJECT
+  
 
 public:
 	FilterBar ( TQWidget *parent = 0, const char *name = 0 );

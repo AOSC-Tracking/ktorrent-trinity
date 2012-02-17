@@ -30,7 +30,7 @@ class KTorrentView;
 class KTorrentViewMenu : public KPopupMenu
 {
 	Q_OBJECT
-  TQ_OBJECT
+  
 public:
 	KTorrentViewMenu(KTorrentView *parent, const char *name = 0 );
 	virtual ~KTorrentViewMenu();

@@ -56,7 +56,7 @@ namespace kt
 	class ScanFolder : public TQObject
 	{
 			Q_OBJECT
-  TQ_OBJECT
+  
 		public:
 			
 			/**

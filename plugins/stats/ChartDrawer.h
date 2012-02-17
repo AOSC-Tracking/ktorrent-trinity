@@ -47,7 +47,7 @@ namespace kt {
 class ChartDrawer : public TQWidget
 {
 	Q_OBJECT
-  TQ_OBJECT
+  
 	
 	public:
 		///Type used as widget size unit

@@ -36,7 +36,7 @@ namespace bt
 	class AutoRotateLogJob : public KIO::Job
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		AutoRotateLogJob(const TQString & file,Log* lg);
 		virtual ~AutoRotateLogJob();

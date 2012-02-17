@@ -64,7 +64,7 @@ namespace dht
 	class DHT : public DHTBase
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		DHT();
 		virtual ~DHT();

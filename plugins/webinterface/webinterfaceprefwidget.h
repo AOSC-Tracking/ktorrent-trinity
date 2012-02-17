@@ -28,7 +28,7 @@ namespace kt
 	class WebInterfacePrefWidget:public WebInterfacePreference
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		WebInterfacePrefWidget(TQWidget *parent = 0, const char *name = 0);
 		bool apply();

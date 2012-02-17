@@ -53,7 +53,7 @@ namespace kt
 	class GroupView : public KListView
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		GroupView(ViewManager* view,KActionCollection* col,TQWidget *parent = 0, const char *name = 0);
 		virtual ~GroupView();

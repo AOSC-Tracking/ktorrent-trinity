@@ -41,7 +41,7 @@ namespace bt
 	class Uploader : public TQObject
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		/**
 		 * Constructor, sets the ChunkManager. 

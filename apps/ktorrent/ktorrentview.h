@@ -66,7 +66,7 @@ private:
 class KTorrentView : public TQWidget
 {
 	Q_OBJECT
-  TQ_OBJECT
+  
 public:
 	enum ActionEnableFlags
 	{

@@ -52,7 +52,7 @@ namespace kt {
 class StatsPlugin : public Plugin
 {
 	Q_OBJECT
-  TQ_OBJECT
+  
 
 	private:
 		///Speed UI of the plugin

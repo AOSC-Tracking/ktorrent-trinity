@@ -38,7 +38,7 @@ namespace kt
 	class LabelViewItem : public LabelViewItemBase
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		LabelViewItem(const TQString & icon,const TQString & title,const TQString & description,LabelView* view);
 		virtual ~LabelViewItem();
@@ -83,7 +83,7 @@ namespace kt
 	class LabelView : public TQScrollView
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		LabelView(TQWidget *parent = 0, const char *name = 0);
 		virtual ~LabelView();

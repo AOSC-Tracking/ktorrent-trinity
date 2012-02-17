@@ -38,7 +38,7 @@ namespace kt
 	class ExitOperation : public TQObject
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		ExitOperation();
 		virtual ~ExitOperation();
@@ -55,7 +55,7 @@ namespace kt
 	class ExitJobOperation : public ExitOperation
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		ExitJobOperation(KIO::Job* j);
 		virtual ~ExitJobOperation();

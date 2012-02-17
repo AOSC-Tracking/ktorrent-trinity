@@ -68,7 +68,7 @@ namespace bt
 	class TorrentControl : public kt::TorrentInterface
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		TorrentControl();
 		virtual ~TorrentControl();

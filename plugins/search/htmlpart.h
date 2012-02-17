@@ -37,7 +37,7 @@ namespace kt
 	class HTMLPart : public KHTMLPart
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		HTMLPart(TQWidget *parent = 0);
 		virtual ~HTMLPart();

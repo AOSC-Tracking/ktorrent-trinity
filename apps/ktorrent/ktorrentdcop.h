@@ -30,7 +30,7 @@ class KTorrent;
 class KTorrentDCOP : public TQObject,virtual public DCOPInterface
 {
 	Q_OBJECT
-  TQ_OBJECT
+  
 	KTorrent* app;
 public:
 	KTorrentDCOP(KTorrent* app);

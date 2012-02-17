@@ -48,7 +48,7 @@ namespace kt
 	class SearchWidget : public TQWidget
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		SearchWidget(SearchPlugin* sp);
 		virtual ~SearchWidget();

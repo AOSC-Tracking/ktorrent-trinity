@@ -143,7 +143,7 @@ namespace dht
 	class KBucket : public RPCCallListener
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 				
 		Uint32 idx;
 		TQValueList<KBucketEntry> entries,pending_entries;

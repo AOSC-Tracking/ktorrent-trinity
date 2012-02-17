@@ -39,7 +39,7 @@ namespace kt
 	class IWFileTreeItem : public TQObject, public kt::FileTreeItem
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 				
 		double perc_complete;
 	public:

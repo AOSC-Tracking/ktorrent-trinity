@@ -35,7 +35,7 @@ namespace kt
 	class FileView : public KListView
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		FileView(TQWidget *parent = 0, const char *name = 0);
 		virtual ~FileView();

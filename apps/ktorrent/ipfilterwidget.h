@@ -30,7 +30,7 @@
 class IPFilterWidget: public BlacklistWidgetBase
 {
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		IPFilterWidget(TQWidget *parent = 0, const char *name = 0);
 		

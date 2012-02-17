@@ -35,7 +35,7 @@ namespace RSS
 	class DataRetriever : public TQObject
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 		public:
 			/**
 			 * Default constructor.
@@ -90,7 +90,7 @@ namespace RSS
 	class FileRetriever : public DataRetriever
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 		public:
 			/**
 			 * Default constructor.
@@ -160,7 +160,7 @@ namespace RSS
 	class OutputRetriever : public DataRetriever
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 		public:
 			/**
 			 * Default constructor.
@@ -255,7 +255,7 @@ namespace RSS
 	class Loader : public TQObject
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 		friend class someClassWhichDoesNotExist;
 		public:
 			/**

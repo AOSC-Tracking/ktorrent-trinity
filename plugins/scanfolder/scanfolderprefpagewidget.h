@@ -27,7 +27,7 @@ namespace kt
 	class ScanFolderPrefPageWidget: public SfPrefPageWidgetBase
 	{
 			Q_OBJECT
-  TQ_OBJECT
+  
 		public:
 			ScanFolderPrefPageWidget(TQWidget *parent = 0, const char *name = 0);
 

@@ -41,7 +41,7 @@ namespace bt
 	class HTTPRequest : public kt::ExitOperation
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		/**
 		 * Constructor, set the url and the request header.

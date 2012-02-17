@@ -62,7 +62,7 @@ namespace bt
 	class UDPTracker : public Tracker
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		UDPTracker(const KURL & url,kt::TorrentInterface* tor,const PeerID & id,int tier);
 		virtual ~UDPTracker();

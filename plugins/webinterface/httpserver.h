@@ -65,7 +65,7 @@ namespace kt
 	class HttpServer : public TQServerSocket
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		HttpServer(CoreInterface *core, int port);
 		virtual ~HttpServer();

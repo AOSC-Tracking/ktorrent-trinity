@@ -30,7 +30,7 @@ namespace kt
 	class ConvertDialog: public ConvertingDlg
 	{
 			Q_OBJECT
-  TQ_OBJECT
+  
 
 		public:
 			ConvertDialog( IPFilterPlugin* p, TQWidget *parent = 0, const char *name = 0 );

@@ -27,7 +27,7 @@
 class KTorrentApp : public KUniqueApplication
 {
 	Q_OBJECT
-  TQ_OBJECT
+  
 public:
 	KTorrentApp();
 	virtual ~KTorrentApp();

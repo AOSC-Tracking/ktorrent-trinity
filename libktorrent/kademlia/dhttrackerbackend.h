@@ -47,7 +47,7 @@ namespace dht
 	class DHTTrackerBackend : public kt::PeerSource
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		DHTTrackerBackend(DHTBase & dh_table,kt::TorrentInterface* tor);
 		virtual ~DHTTrackerBackend();

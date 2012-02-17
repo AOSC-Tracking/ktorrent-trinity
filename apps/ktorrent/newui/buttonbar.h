@@ -53,7 +53,7 @@ placing on the left(right, bottom, top) corners of a window as a bar with slider
 */
 class ButtonBar : public TQWidget {
     Q_OBJECT
-  TQ_OBJECT
+  
 public:
     ButtonBar(Place place, ButtonMode mode = IconsAndText,
         TQWidget *parent = 0, const char *name = 0);

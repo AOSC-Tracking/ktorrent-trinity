@@ -46,7 +46,7 @@ namespace kt
 	class ChunkDownloadView : public ChunkDownloadViewBase
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	
 		TQMap<kt::ChunkDownloadInterface*,ChunkDownloadViewItem*> items;
 		kt::TorrentInterface* curr_tc;

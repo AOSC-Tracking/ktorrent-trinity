@@ -45,7 +45,7 @@ namespace kt
 	class AvahiService : public kt::PeerSource
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		AvahiService(const bt::PeerID&, bt::Uint16, const bt::SHA1Hash&);
 		virtual ~AvahiService();

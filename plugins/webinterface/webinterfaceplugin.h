@@ -33,7 +33,7 @@ namespace kt
 	class WebInterfacePlugin : public Plugin
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		WebInterfacePlugin(TQObject* parent, const char* name, const TQStringList& args);
 		virtual ~WebInterfacePlugin();

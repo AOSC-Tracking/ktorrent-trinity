@@ -32,7 +32,7 @@ namespace kt
 	class PhpHandler : public TQProcess 
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		PhpHandler(const TQString & php_exe,PhpInterface *php);
 		virtual ~PhpHandler();

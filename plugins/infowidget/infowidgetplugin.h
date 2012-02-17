@@ -42,7 +42,7 @@ namespace kt
 	class InfoWidgetPlugin : public Plugin,public ViewListener
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		InfoWidgetPlugin(TQObject* parent, const char* name, const TQStringList& args);
 		virtual ~InfoWidgetPlugin();

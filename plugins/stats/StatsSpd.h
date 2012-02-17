@@ -39,7 +39,7 @@ namespace kt {
 class StatsSpd : public StatsSpdWgt
 {	
 	Q_OBJECT
-  TQ_OBJECT
+  
 	
 	private:
 		///Layout of upload speed

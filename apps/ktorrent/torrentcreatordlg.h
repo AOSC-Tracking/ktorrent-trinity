@@ -19,7 +19,7 @@ class KTorrentCore;
 class TorrentCreatorDlg: public TorrentCreatorDlgBase
 {
 	Q_OBJECT
-  TQ_OBJECT
+  
 public:
 	TorrentCreatorDlg(KTorrentCore* core,TQWidget *parent = 0, const char *name = 0);
 	virtual ~TorrentCreatorDlg();

@@ -54,7 +54,7 @@ namespace bt
 	class UDPTrackerSocket : public TQObject
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		UDPTrackerSocket();
 		virtual ~UDPTrackerSocket();

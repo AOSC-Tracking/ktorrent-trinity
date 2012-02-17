@@ -34,7 +34,7 @@ namespace RSS
    class Image : public TQObject
    {
       Q_OBJECT
-  TQ_OBJECT
+  
       public:
          /**
           * Default constructor.

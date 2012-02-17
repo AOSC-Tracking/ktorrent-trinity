@@ -38,7 +38,7 @@ namespace bt
 	class WaitJob : public KIO::Job
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		WaitJob(Uint32 millis);
 		virtual ~WaitJob();

@@ -48,7 +48,7 @@ namespace kt
 	class Plugin : public KParts::Plugin
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		/**
 		 * Constructor, set the name of the plugin, the name and e-mail of the author and

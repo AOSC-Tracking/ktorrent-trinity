@@ -68,7 +68,7 @@ namespace bt
 			  //,public Object
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		/**
 		 * Constructor, set the socket.

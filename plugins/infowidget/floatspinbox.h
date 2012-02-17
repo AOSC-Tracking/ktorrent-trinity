@@ -38,7 +38,7 @@ namespace kt
 	class FloatSpinBox : public TQSpinBox
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		FloatSpinBox( TQWidget* parent=0, const char* name=0 );
 		FloatSpinBox( int precision = 2, TQWidget* parent=0, const char* name=0 );

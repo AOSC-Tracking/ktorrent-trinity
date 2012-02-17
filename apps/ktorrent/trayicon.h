@@ -50,7 +50,7 @@ struct TrayStats
 class TrayIcon : public KSystemTray
 {
 	Q_OBJECT
-  TQ_OBJECT
+  
 public:
 	TrayIcon(KTorrentCore* tc, TQWidget *parent = 0, const char *name = 0);
 	virtual ~TrayIcon();
@@ -124,7 +124,7 @@ private:
 class SetMaxRate : public KPopupMenu
 {
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		SetMaxRate(KTorrentCore* tc, int t, TQWidget *parent=0, const char *name=0); // type: 0 Upload; 1 Download
 		~SetMaxRate()

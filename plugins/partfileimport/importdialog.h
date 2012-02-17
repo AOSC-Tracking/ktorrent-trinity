@@ -46,7 +46,7 @@ namespace kt
 	class ImportDialog : public ImportDlgBase,public bt::DataCheckerListener
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	
 	public:
 		ImportDialog(CoreInterface* core,TQWidget* parent = 0, const char* name = 0, bool modal = FALSE, WFlags fl = 0 );

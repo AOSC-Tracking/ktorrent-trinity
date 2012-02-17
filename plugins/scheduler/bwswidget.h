@@ -44,7 +44,7 @@ namespace kt
 	class BWSWidget : public TQTable
 	{
 			Q_OBJECT
-  TQ_OBJECT
+  
 		public:
 			BWSWidget(TQWidget* parent = 0, const char* name = 0, bool useColors = true);
 			~BWSWidget();

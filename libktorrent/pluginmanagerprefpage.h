@@ -39,7 +39,7 @@ namespace kt
 	class PluginManagerPrefPage : public TQObject,public PrefPageInterface
 	{
 		Q_OBJECT
-  TQ_OBJECT
+  
 	public:
 		PluginManagerPrefPage(PluginManager* pman);
 		virtual ~PluginManagerPrefPage();
