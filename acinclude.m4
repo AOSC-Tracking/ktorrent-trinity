@@ -5006,13 +5006,13 @@ AC_DEFUN([KDE_SET_PREFIX],
 
   KDE_SET_DEFAULT_BINDIRS
   if test "x$prefix" = "xNONE"; then
-    dnl no prefix given: look for kde-config in the PATH and deduce the prefix from it
-    KDE_FIND_PATH(kde-config, KDECONFIG, [$kde_default_bindirs], [KDE_MISSING_PROG_ERROR(kde-config)], [], prepend)
+    dnl no prefix given: look for tde-config in the PATH and deduce the prefix from it
+    KDE_FIND_PATH(tde-config, KDECONFIG, [$kde_default_bindirs], [KDE_MISSING_PROG_ERROR(tde-config)], [], prepend)
   else
-    dnl prefix given: look for kde-config, preferrably in prefix, otherwise in PATH
+    dnl prefix given: look for tde-config, preferrably in prefix, otherwise in PATH
     kde_save_PATH="$PATH"
     PATH="$exec_prefix/bin:$prefix/bin:$PATH"
-    KDE_FIND_PATH(kde-config, KDECONFIG, [$kde_default_bindirs], [KDE_MISSING_PROG_ERROR(kde-config)], [], prepend)
+    KDE_FIND_PATH(tde-config, KDECONFIG, [$kde_default_bindirs], [KDE_MISSING_PROG_ERROR(tde-config)], [], prepend)
     PATH="$kde_save_PATH"
   fi
 
@@ -5028,7 +5028,7 @@ AC_DEFUN([KDE_SET_PREFIX],
   AC_MSG_CHECKING([where to install])
   if test "x$prefix" = "xNONE"; then
     prefix=$kde_libs_prefix
-    AC_MSG_RESULT([$prefix (as returned by kde-config)])
+    AC_MSG_RESULT([$prefix (as returned by tde-config)])
   else
     dnl --prefix was given. Compare prefixes and warn (in configure.in.bot.end) if different
     given_prefix=$prefix
