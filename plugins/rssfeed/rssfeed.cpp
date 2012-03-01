@@ -303,7 +303,7 @@ namespace kt
 				emit articlesChanged(m_articles);
 			}
 		} else {
-			qDebug( "There was and error loading the feed\n");
+			tqDebug( "There was and error loading the feed\n");
 		}
 		
 		disconnect( feedLoader, TQT_SIGNAL( loadingComplete( Loader *, Document, Status ) ),
