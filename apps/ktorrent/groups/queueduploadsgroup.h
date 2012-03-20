@@ -17,8 +17,8 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
-#ifndef KTQUEUEDUPLOADSGROUP_H
-#define KTQUEUEDUPLOADSGROUP_H
+#ifndef KQUEUEDUPLOADSGROUP_H
+#define KQUEUEDUPLOADSGROUP_H
 
 #include <group.h>
 

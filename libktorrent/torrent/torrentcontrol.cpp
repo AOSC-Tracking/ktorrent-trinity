@@ -932,7 +932,7 @@ namespace bt
 		else if (!stats.started)
 			stats.status = kt::NOT_STARTED;
 		else if(!stats.running && !stats.user_controlled)
-			stats.status = kt::TQUEUED;
+			stats.status = kt::QUEUED;
 		else if (!stats.running && stats.completed && (overMaxRatio() || overMaxSeedTime()))
 			stats.status = kt::SEEDING_COMPLETE;
 		else if (!stats.running && stats.completed)
@@ -1301,7 +1301,7 @@ namespace bt
 		istats.priority = p;
 		stats.user_controlled = p == 0 ? true : false;
 		if(p)
-			stats.status = kt::TQUEUED;
+			stats.status = kt::QUEUED;
 		else
 			updateStatusMsg();
 		
@@ -1378,7 +1378,7 @@ namespace bt
 				return i18n("Error: ") + getShortErrorMessage(); 
 			case kt::ALLOCATING_DISKSPACE:
 				return i18n("Allocating diskspace");
-			case kt::TQUEUED:
+			case kt::QUEUED:
 				return i18n("Queued");
 			case kt::CHECKING_DATA:
 				return i18n("Checking data");
