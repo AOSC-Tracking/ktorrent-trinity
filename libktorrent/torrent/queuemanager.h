@@ -18,8 +18,8 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#ifndef TQUEUEMANAGER_H
-#define TQUEUEMANAGER_H
+#ifndef QUEUEMANAGER_H
+#define QUEUEMANAGER_H
 
 #include <set>
 #include <tqobject.h>

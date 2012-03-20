@@ -72,7 +72,7 @@ static TQColor StatusToColor(TorrentStatus s,const TQColorGroup & cg)
 			return TQt::red;
 		case kt::NOT_STARTED :
 		case kt::STOPPED:
-		case kt::TQUEUED:
+		case kt::QUEUED:
 		case kt::DOWNLOAD_COMPLETE :
 		case kt::SEEDING_COMPLETE :
 		default:

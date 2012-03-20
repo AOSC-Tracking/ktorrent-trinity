@@ -17,8 +17,8 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
-#ifndef TQUEUEDIALOG_H
-#define TQUEUEDIALOG_H
+#ifndef QUEUEDIALOG_H
+#define QUEUEDIALOG_H
 
 #include "queuedlg.h"
 #include <interfaces/torrentinterface.h>

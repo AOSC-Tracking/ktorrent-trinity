@@ -17,8 +17,8 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
-#ifndef KTQUEUEDDOWNLOADSGROUP_H
-#define KTQUEUEDDOWNLOADSGROUP_H
+#ifndef KQUEUEDDOWNLOADSGROUP_H
+#define KQUEUEDDOWNLOADSGROUP_H
 
 #include <group.h>
 
