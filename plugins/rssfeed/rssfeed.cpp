@@ -195,11 +195,18 @@ namespace kt
 		
 		if (file.exists())
 			{
-			file.open( IO_ReadOnly );
+			try
+				{
+				file.open( IO_ReadOnly );
 			TQDataStream in(&file);
 			
-			in >> m_articles;
-			emit articlesChanged( m_articles );
+				in >> m_articles;
+				emit articlesChanged( m_articles );
+				}
+			catch (...)
+				{
+				m_articles.clear();
+				}
 			}
 	}
 	

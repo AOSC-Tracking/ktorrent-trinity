@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2008-04-18 19:40+0200\n"
+"POT-Creation-Date: 2008-07-08 22:20+0200\n"
 "PO-Revision-Date: 2008-02-26 13:59+0100\n"
 "Last-Translator: Slobodan Simic <simicsl@verat.net>\n"
 "Language-Team: Serbian <tde-i18n-sr@kde.org>\n"
@@ -22,7 +22,7 @@ msgid "No incoming connections (possibly firewalled)"
 msgstr "Нема долазних веза (вероватно сте иза заштитног зида)"
 
 #. i18n: file ./apps/ktorrent/queuedlg.ui line 42
-#: apps/ktorrent/ktorrent.cpp:184 rc.cpp:345 rc.cpp:383 rc.cpp:1019
+#: apps/ktorrent/ktorrent.cpp:184 rc.cpp:336 rc.cpp:369 rc.cpp:989
 #, no-c-format
 msgid "Info"
 msgstr "Инфо"
@@ -190,7 +190,7 @@ msgstr "Лоше формиран URL."
 #. i18n: file ./apps/ktorrent/ktorrentui.rc line 9
 #: apps/ktorrent/groups/downloadgroup.cpp:27
 #: apps/ktorrent/groups/groupmanager.h:57 apps/ktorrent/pref.cpp:147
-#: apps/ktorrent/viewmanager.cpp:62 rc.cpp:138 rc.cpp:342
+#: apps/ktorrent/viewmanager.cpp:62 rc.cpp:132 rc.cpp:333
 #, no-c-format
 msgid "Downloads"
 msgstr "Преузимања"
@@ -313,7 +313,7 @@ msgid "Document to open"
 msgstr "Документ за отварање"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 59
-#: apps/ktorrent/main.cpp:120 rc.cpp:553
+#: apps/ktorrent/main.cpp:120 rc.cpp:532
 #, no-c-format
 msgid "KTorrent"
 msgstr "КТорент"
@@ -577,7 +577,7 @@ msgstr "Извори вршњака за торент:"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 85
 #: apps/ktorrent/ktorrentviewmenu.cpp:66 plugins/infowidget/peerview.cpp:221
-#: rc.cpp:77 rc.cpp:1256 rc.cpp:1307
+#: rc.cpp:75 rc.cpp:1208 rc.cpp:1259
 #, no-c-format
 msgid "DHT"
 msgstr "DHT"
@@ -619,7 +619,7 @@ msgid "Add to Group"
 msgstr "Додај у групу"
 
 #. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 16
-#: apps/ktorrent/ktorrentviewmenu.cpp:100 rc.cpp:147
+#: apps/ktorrent/ktorrentviewmenu.cpp:100 rc.cpp:141
 #, no-c-format
 msgid "Speed Limits"
 msgstr "Ограничења брзине"
@@ -637,7 +637,7 @@ msgid "Malformed IP address."
 msgstr "Лоше формирана адреса."
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 311
-#: apps/ktorrent/pref.cpp:58 rc.cpp:282
+#: apps/ktorrent/pref.cpp:58 rc.cpp:273
 #, no-c-format
 msgid "Preferences"
 msgstr "Подешавања"
@@ -673,7 +673,7 @@ msgid "Advanced"
 msgstr "Напредно"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 27
-#: apps/ktorrent/pref.cpp:411 rc.cpp:540
+#: apps/ktorrent/pref.cpp:411 rc.cpp:519
 #, no-c-format
 msgid "Advanced Options"
 msgstr "Напредне опције"
@@ -684,7 +684,7 @@ msgstr "Видљиве колоне"
 
 #. i18n: file ./plugins/infowidget/statustabbase.ui line 16
 #: apps/ktorrent/ktorrentview.cpp:135
-#: plugins/infowidget/infowidgetplugin.cpp:76 rc.cpp:1016
+#: plugins/infowidget/infowidgetplugin.cpp:76 rc.cpp:986
 #, no-c-format
 msgid "Status"
 msgstr "Стање"
@@ -706,7 +706,7 @@ msgstr "Послато"
 
 #. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 313
 #: apps/ktorrent/ktorrentview.cpp:139 plugins/infowidget/peerview.cpp:216
-#: rc.cpp:1010
+#: rc.cpp:980
 #, no-c-format
 msgid "Down Speed"
 msgstr "Преузимање"
@@ -832,7 +832,7 @@ msgid "User"
 msgstr "Корисник"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 24
-#: apps/ktorrent/queuedialog.cpp:75 rc.cpp:249
+#: apps/ktorrent/queuedialog.cpp:75 rc.cpp:240
 #, no-c-format
 msgid "Queue Manager"
 msgstr "Управник редоследа"
@@ -1057,8 +1057,8 @@ msgid "Start torrent"
 msgstr "Покрени торент"
 
 #. i18n: file ./apps/ktorrent/fileselectdlgbase.ui line 160
-#: plugins/infowidget/fileview.cpp:49 rc.cpp:27 rc.cpp:1244 rc.cpp:1259
-#: rc.cpp:1349 rc.cpp:1439
+#: plugins/infowidget/fileview.cpp:49 rc.cpp:27 rc.cpp:1196 rc.cpp:1211
+#: rc.cpp:1301 rc.cpp:1385
 #, no-c-format
 msgid "Download"
 msgstr "Преузимање"
@@ -1112,13 +1112,13 @@ msgid "Encryption"
 msgstr "Шифровање"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 58
-#: rc.cpp:64 rc.cpp:787
+#: rc.cpp:63 rc.cpp:764
 #, no-c-format
 msgid "Use protocol encryption"
 msgstr "Користи шифровање протокола"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 64
-#: rc.cpp:68
+#: rc.cpp:66
 #, no-c-format
 msgid ""
 "Protocol encryption is used to prevent ISP's from slowing down bittorrent "
@@ -1128,13 +1128,13 @@ msgstr ""
 "вашег интернет провајдера."
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 72
-#: rc.cpp:71 rc.cpp:790
+#: rc.cpp:69 rc.cpp:767
 #, no-c-format
 msgid "Allow unencrypted connections"
 msgstr "Дозволи не-шифроване везе"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 75
-#: rc.cpp:74
+#: rc.cpp:72
 #, no-c-format
 msgid ""
 "If unchecked, you'll be able to connect only to clients supporting encryption."
@@ -1143,7 +1143,7 @@ msgstr ""
 "шифровање."
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 88
-#: rc.cpp:80
+#: rc.cpp:78
 #, no-c-format
 msgid ""
 "<b>D</b>istributed <b>H</b>ash <b>T</b>able protocol."
@@ -1154,169 +1154,169 @@ msgstr ""
 "детаља."
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 99
-#: rc.cpp:83
+#: rc.cpp:81
 #, no-c-format
 msgid "&Use DHT to get additional peers"
 msgstr "&Користи DHT да добијеш више вршњака"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 118
-#: rc.cpp:87
+#: rc.cpp:84
 #, no-c-format
 msgid "UDP port for DHT communication:"
 msgstr "UDP порт за DHT комуникацију:"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 161
-#: rc.cpp:90
+#: rc.cpp:87
 #, no-c-format
 msgid "Custom IP"
 msgstr "Посебан IP"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 172
-#: rc.cpp:93
+#: rc.cpp:90
 #, no-c-format
 msgid "Se&nd the tracker a custom IP address or hostname"
 msgstr "&Пошаљи пратиоцу посебан ИП или име домаћина"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 188
-#: rc.cpp:96
+#: rc.cpp:93
 #, no-c-format
 msgid "Custom IP address or hostname:"
 msgstr "Посебан IP или име домаћина:"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 205
-#: rc.cpp:99
+#: rc.cpp:96
 #, no-c-format
 msgid "System Tray Icon"
 msgstr "Икона системске касете"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 216
-#: rc.cpp:102
+#: rc.cpp:99
 #, no-c-format
 msgid "Show s&ystem tray icon"
 msgstr "Прикажи икону с&истемске касете"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 224
-#: rc.cpp:105
+#: rc.cpp:102
 #, no-c-format
 msgid "Show speed &bar in tray icon"
 msgstr "Прикажи &брзиномер у икони"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 232
-#: rc.cpp:108
+#: rc.cpp:105
 #, no-c-format
 msgid "Show system tray popup messages"
 msgstr "Прикажи искачуће поруке системске касете"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 251
-#: rc.cpp:112
+#: rc.cpp:108
 #, no-c-format
 msgid "Upload bandwidth (in KB/sec):"
 msgstr "Проток слања (у KB/s):"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 276
-#: rc.cpp:115
+#: rc.cpp:111
 #, no-c-format
 msgid "Download bandwidth (in KB/sec):"
 msgstr "Проток преузимања (у KB/s):"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 305
-#: rc.cpp:118
+#: rc.cpp:114
 #, no-c-format
 msgid "Folders"
 msgstr "Фасцикле"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 324
-#: rc.cpp:121
+#: rc.cpp:117
 #, no-c-format
 msgid "Folder to store temporary files:"
 msgstr "Фасцикла за привремене фајлове:"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 342
-#: rc.cpp:124
+#: rc.cpp:120
 #, no-c-format
 msgid "Move completed downloads to:"
 msgstr "Премести завршена преузимања у:"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 353
-#: rc.cpp:128
+#: rc.cpp:123
 #, no-c-format
 msgid "&Automatically save downloads to:"
 msgstr "&Аутоматски сними преузимања у:"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 395
-#: rc.cpp:131
+#: rc.cpp:126
 #, no-c-format
 msgid "Copy .torrent files to:"
 msgstr "Копирај .torrent фајлове у:"
 
 #. i18n: file ./apps/ktorrent/ktorrentui.rc line 34
-#: rc.cpp:144
+#: rc.cpp:138
 #, no-c-format
 msgid "Download Toolbar"
 msgstr "Трака преузимања"
 
 #. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 27
-#: rc.cpp:150
+#: rc.cpp:144
 #, no-c-format
 msgid "Set the speed limits for torrent"
 msgstr "Поставите ограничења брзине за торент"
 
 #. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 51
-#: rc.cpp:153
+#: rc.cpp:147
 #, no-c-format
 msgid "Max upload rate:"
 msgstr "Највећа брзина слања:"
 
 #. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 59
-#: rc.cpp:156
+#: rc.cpp:150
 #, no-c-format
 msgid "Max download rate:"
 msgstr "Највећа брзина преузимања:"
 
 #. i18n: file ./apps/ktorrent/speedlimitsdlgbase.ui line 97
-#: rc.cpp:159 rc.cpp:162
+#: rc.cpp:153 rc.cpp:156
 #, no-c-format
 msgid "KB/s (0 is no limit)"
 msgstr "KB/s (0 је без ограничења)"
 
 #. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 16
-#: rc.cpp:171
+#: rc.cpp:165
 #, no-c-format
 msgid "Add potential peer"
 msgstr "Додај могућег вршњака"
 
 #. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 35
-#: rc.cpp:174
+#: rc.cpp:168
 #, no-c-format
 msgid "Peer IP:"
 msgstr "IP вршњака:"
 
 #. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 43
-#: rc.cpp:177 rc.cpp:208
+#: rc.cpp:171 rc.cpp:201
 #, no-c-format
 msgid "127.0.0.1"
 msgstr "127.0.0.1"
 
 #. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 51
-#: rc.cpp:180 rc.cpp:288 rc.cpp:525 rc.cpp:931
+#: rc.cpp:174 rc.cpp:279 rc.cpp:504 rc.cpp:908
 #, no-c-format
 msgid "Port:"
 msgstr "Порт:"
 
 #. i18n: file ./apps/ktorrent/addpeerwidgetbase.ui line 100
-#: rc.cpp:183
+#: rc.cpp:177
 #, no-c-format
 msgid "Enter peer IP and port."
 msgstr "Унесите IP и порт вршњака."
 
 #. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 16
-#: rc.cpp:193
+#: rc.cpp:186
 #, no-c-format
 msgid "KTorrent Blacklist"
 msgstr "КТорентова црна листа"
 
 #. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 30
-#: rc.cpp:196
+#: rc.cpp:189
 #, no-c-format
 msgid ""
 "Note: Blacklist applies to current session only. Use save/open to save your "
@@ -1326,187 +1326,187 @@ msgstr ""
 "да би сте сачували уносе или користите IPFilter прикључак (PeerGuardian)."
 
 #. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 41
-#: rc.cpp:199
+#: rc.cpp:192
 #, no-c-format
 msgid "Banned Peers"
 msgstr "Блокирани вршњаци"
 
 #. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 50
-#: rc.cpp:202
+#: rc.cpp:195
 #, no-c-format
 msgid "Peer IP address"
 msgstr "IP адреса вршњака"
 
 #. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 96
-#: rc.cpp:205
+#: rc.cpp:198
 #, no-c-format
 msgid "Add peer:"
 msgstr "Додај вршњака:"
 
 #. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 134
-#: rc.cpp:215
+#: rc.cpp:207
 #, no-c-format
 msgid "Adds a peer to blacklist"
 msgstr "Додаје вршњака на црну листу"
 
 #. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 168
-#: rc.cpp:222
+#: rc.cpp:213
 #, no-c-format
 msgid "Removes selected peer from blacklist"
 msgstr "Уклања изабраног вршњака са црне листе"
 
 #. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 176
-#: rc.cpp:225
+#: rc.cpp:216
 #, no-c-format
 msgid "C&lear"
 msgstr "Оч&исти"
 
 #. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 182
-#: rc.cpp:228
+#: rc.cpp:219
 #, no-c-format
 msgid "Clears this list"
 msgstr "Чисти ову листу"
 
 #. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 218
-#: rc.cpp:234
+#: rc.cpp:225
 #, no-c-format
 msgid "Save &As..."
 msgstr "Сачувај к&ао..."
 
 #. i18n: file ./apps/ktorrent/ipfilterwidgetbase.ui line 224
-#: rc.cpp:237
+#: rc.cpp:228
 #, no-c-format
 msgid "Save this blacklist to use with KTorrent IPFilter plugin"
 msgstr "Снима ову црну листу да се може користити са прикључком ИП филтер"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 59
-#: rc.cpp:252
+#: rc.cpp:243
 #, no-c-format
 msgid "Maximum downloads:"
 msgstr "Највише преузимања:"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 86
-#: rc.cpp:255
+#: rc.cpp:246
 #, no-c-format
 msgid "Maximum seeds:"
 msgstr "Највише сејања:"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 94
-#: rc.cpp:258
+#: rc.cpp:249
 #, no-c-format
 msgid "Start download on low disk space :"
 msgstr "Преузимање при малом простору на диску :"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 102
-#: rc.cpp:261
+#: rc.cpp:252
 #, no-c-format
 msgid "Minimum disk space:"
 msgstr "Минимум простора на диску:"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 140
-#: rc.cpp:264
+#: rc.cpp:255
 #, no-c-format
 msgid "Don't start"
 msgstr "Не покрећи"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 145
-#: rc.cpp:267
+#: rc.cpp:258
 #, no-c-format
 msgid "Always ask"
 msgstr "Увек питај"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 150
-#: rc.cpp:270
+#: rc.cpp:261
 #, no-c-format
 msgid "Force start"
 msgstr "Форсирај"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 208
-#: rc.cpp:273
+#: rc.cpp:264
 #, no-c-format
 msgid "MB"
 msgstr "MB"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 236
-#: rc.cpp:276 rc.cpp:279 rc.cpp:312 rc.cpp:315 rc.cpp:324
+#: rc.cpp:267 rc.cpp:270 rc.cpp:303 rc.cpp:306 rc.cpp:315
 #, no-c-format
 msgid "(0 is no limit)"
 msgstr "(0 је без ограничења)"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 330
-#: rc.cpp:285
+#: rc.cpp:276
 #, no-c-format
 msgid "Maximum download rate:"
 msgstr "Највећа брзина преузимања:"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 346
-#: rc.cpp:291
+#: rc.cpp:282
 #, no-c-format
 msgid "Global connection limit:"
 msgstr "Глобално ограничење веза:"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 354
-#: rc.cpp:294
+#: rc.cpp:285
 #, no-c-format
 msgid "Max seed time:"
 msgstr "Најдуже време сејања:"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 370
-#: rc.cpp:297
+#: rc.cpp:288
 #, no-c-format
 msgid "Maximum connections per torrent:"
 msgstr "Највише веза по торенту:"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 397
-#: rc.cpp:300
+#: rc.cpp:291
 #, no-c-format
 msgid "Number of upload slots:"
 msgstr "Број веза слања:"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 405
-#: rc.cpp:303
+#: rc.cpp:294
 #, no-c-format
 msgid "UDP tracker port:"
 msgstr "UDP порт пратиоца:"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 413
-#: rc.cpp:306
+#: rc.cpp:297
 #, no-c-format
 msgid "Max share ratio:"
 msgstr "Највећи однос дељења:"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 421
-#: rc.cpp:309
+#: rc.cpp:300
 #, no-c-format
 msgid "Maximum upload rate:"
 msgstr "Највећа брзина слања:"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 576
-#: rc.cpp:318 rc.cpp:321
+#: rc.cpp:309 rc.cpp:312
 #, no-c-format
 msgid "KB/sec (0 is no limit)"
 msgstr "KB/s (0 је без ограничења)"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 651
-#: rc.cpp:327
+#: rc.cpp:318
 #, no-c-format
 msgid "Hours (0 is no limit)"
 msgstr "часова (0 је без ограничења)"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 663
-#: rc.cpp:330
+#: rc.cpp:321
 #, no-c-format
 msgid "&Keep seeding after download is finished"
 msgstr "&Настави сејање након завршеног преузимања"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 674
-#: rc.cpp:333
+#: rc.cpp:324
 #, no-c-format
 msgid "Attention"
 msgstr "Пажња"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 685
-#: rc.cpp:336
+#: rc.cpp:327
 #, no-c-format
 msgid ""
 "The above ports must also be forwarded if you are behind a router. The UPnP "
@@ -1516,283 +1516,283 @@ msgstr ""
 "може то да учини за вас."
 
 #. i18n: file ./apps/ktorrent/queuedlg.ui line 16
-#: rc.cpp:339
+#: rc.cpp:330
 #, no-c-format
 msgid "KT Queue Dialog"
 msgstr "KT прозор редоследа"
 
 #. i18n: file ./apps/ktorrent/queuedlg.ui line 69
-#: rc.cpp:348 rc.cpp:386 rc.cpp:1107
+#: rc.cpp:339 rc.cpp:372 rc.cpp:1067
 #, no-c-format
 msgid "Status:"
 msgstr "Стање:"
 
 #. i18n: file ./apps/ktorrent/queuedlg.ui line 85
-#: rc.cpp:351 rc.cpp:389 rc.cpp:1808
+#: rc.cpp:342 rc.cpp:375 rc.cpp:1751
 #, no-c-format
 msgid "Tracker:"
 msgstr "Пратилац:"
 
 #. i18n: file ./apps/ktorrent/queuedlg.ui line 93
-#: rc.cpp:354 rc.cpp:392 rc.cpp:1805
+#: rc.cpp:345 rc.cpp:378 rc.cpp:1748
 #, no-c-format
 msgid "DHT:"
 msgstr "DHT:"
 
 #. i18n: file ./apps/ktorrent/queuedlg.ui line 109
-#: rc.cpp:357 rc.cpp:395 rc.cpp:1061
+#: rc.cpp:348 rc.cpp:381 rc.cpp:1025
 #, no-c-format
 msgid "Share ratio:"
 msgstr "Однос:"
 
 #. i18n: file ./apps/ktorrent/queuedlg.ui line 117
-#: rc.cpp:360
+#: rc.cpp:351
 #, no-c-format
 msgid "Bytes left:"
 msgstr "Преостало:"
 
 #. i18n: file ./apps/ktorrent/queuedlg.ui line 177
-#: rc.cpp:368 rc.cpp:377
+#: rc.cpp:354 rc.cpp:363
 #, no-c-format
 msgid "Torrent"
 msgstr "Торент"
 
 #. i18n: file ./apps/ktorrent/queuedlg.ui line 188
-#: rc.cpp:371 rc.cpp:380
+#: rc.cpp:357 rc.cpp:366
 #, no-c-format
 msgid "Controlled by"
 msgstr "Контролише"
 
 #. i18n: file ./apps/ktorrent/queuedlg.ui line 214
-#: rc.cpp:374
+#: rc.cpp:360
 #, no-c-format
 msgid "Upload&s"
 msgstr "&Слања"
 
 #. i18n: file ./apps/ktorrent/queuedlg.ui line 333
-#: rc.cpp:398
+#: rc.cpp:384
 #, no-c-format
 msgid "Uploaded:"
 msgstr "Послато:"
 
 #. i18n: file ./apps/ktorrent/queuedlg.ui line 486
-#: rc.cpp:406
+#: rc.cpp:387
 #, no-c-format
 msgid "M&ove up"
 msgstr "П&омери горе"
 
 #. i18n: file ./apps/ktorrent/queuedlg.ui line 494
-#: rc.cpp:409
+#: rc.cpp:390
 #, no-c-format
 msgid "Move dow&n"
 msgstr "Помери до&ле"
 
 #. i18n: file ./apps/ktorrent/queuedlg.ui line 519
-#: rc.cpp:412
+#: rc.cpp:393
 #, no-c-format
 msgid "Move to top"
 msgstr "Помери на врх"
 
 #. i18n: file ./apps/ktorrent/queuedlg.ui line 530
-#: rc.cpp:416
+#: rc.cpp:396
 #, no-c-format
 msgid "Move to &bottom"
 msgstr "Помери на &дно"
 
 #. i18n: file ./apps/ktorrent/queuedlg.ui line 555
-#: rc.cpp:419
+#: rc.cpp:399
 #, no-c-format
 msgid "&QM Controlled"
 msgstr "&Контролише управник"
 
 #. i18n: file ./apps/ktorrent/queuedlg.ui line 563
-#: rc.cpp:422
+#: rc.cpp:402
 #, no-c-format
 msgid "&User Controlled"
 msgstr "Контролише ко&рисник"
 
 #. i18n: file ./apps/ktorrent/pastedlgbase.ui line 30
-#: rc.cpp:434
+#: rc.cpp:414
 #, no-c-format
 msgid "Paste URL"
 msgstr "Пренеси URL"
 
 #. i18n: file ./apps/ktorrent/pastedlgbase.ui line 52
-#: rc.cpp:437 rc.cpp:1104 rc.cpp:1919
+#: rc.cpp:417 rc.cpp:1064 rc.cpp:1859
 #, no-c-format
 msgid "URL:"
 msgstr "URL:"
 
 #. i18n: file ./apps/ktorrent/pastedlgbase.ui line 106
-#: rc.cpp:440
+#: rc.cpp:420
 #, no-c-format
 msgid "O&K"
 msgstr "У &реду"
 
 #. i18n: file ./apps/ktorrent/pastedlgbase.ui line 114
-#: rc.cpp:443 rc.cpp:675 rc.cpp:1176
+#: rc.cpp:423 rc.cpp:653 rc.cpp:1128
 #, no-c-format
 msgid "C&ancel"
 msgstr "Отк&ажи"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 16
-#: rc.cpp:446
+#: rc.cpp:426
 #, no-c-format
 msgid "Create Torrent"
 msgstr "Направи торент"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 38
-#: rc.cpp:449
+#: rc.cpp:429
 #, no-c-format
 msgid "The file or folder of which you want to create a torrent:"
 msgstr "Фајл или фасцикла за које хоћете да направите торент:"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 53
-#: rc.cpp:452
+#: rc.cpp:432
 #, no-c-format
 msgid "You must add at least one tracker or node."
 msgstr "Морате додати бар једног пратиоца или чвор."
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 61
-#: rc.cpp:455
+#: rc.cpp:435
 #, no-c-format
 msgid "File Options"
 msgstr "Опције фајла"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 80
-#: rc.cpp:458
+#: rc.cpp:438
 #, no-c-format
 msgid "Size of each chunk:"
 msgstr "Величина сваког парчета:"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 86
-#: rc.cpp:461
+#: rc.cpp:441
 #, no-c-format
 msgid "32"
 msgstr "32"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 91
-#: rc.cpp:464
+#: rc.cpp:444
 #, no-c-format
 msgid "64"
 msgstr "64"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 96
-#: rc.cpp:467
+#: rc.cpp:447
 #, no-c-format
 msgid "128"
 msgstr "128"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 101
-#: rc.cpp:470
+#: rc.cpp:450
 #, no-c-format
 msgid "256"
 msgstr "256"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 106
-#: rc.cpp:473
+#: rc.cpp:453
 #, no-c-format
 msgid "512"
 msgstr "512"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 111
-#: rc.cpp:476
+#: rc.cpp:456
 #, no-c-format
 msgid "1024"
 msgstr "1024"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 116
-#: rc.cpp:479
+#: rc.cpp:459
 #, no-c-format
 msgid "2048"
 msgstr "2048"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 121
-#: rc.cpp:482
+#: rc.cpp:462
 #, no-c-format
 msgid "4096"
 msgstr "4096"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 126
-#: rc.cpp:485
+#: rc.cpp:465
 #, no-c-format
 msgid "8192"
 msgstr "8192"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 138
-#: rc.cpp:488 rc.cpp:633
+#: rc.cpp:468 rc.cpp:611
 #, no-c-format
 msgid "KB"
 msgstr "KB"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 165
-#: rc.cpp:491
+#: rc.cpp:471
 #, no-c-format
 msgid "Start seedin&g the torrent"
 msgstr "Почни се&јање торента"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 176
-#: rc.cpp:494
+#: rc.cpp:474
 #, no-c-format
 msgid "Decentrali&zed (DHT only)"
 msgstr "Децентрали&зовано (само DHT)"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 184
-#: rc.cpp:497
+#: rc.cpp:477
 #, no-c-format
 msgid "Private torrent (DHT not allowed)"
 msgstr "Лични торент (DHT није дозвољен)"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 202
-#: rc.cpp:500
+#: rc.cpp:480
 #, no-c-format
 msgid "Comments:"
 msgstr "Коментари:"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 248
-#: rc.cpp:503
+#: rc.cpp:483
 #, no-c-format
 msgid "&Create"
 msgstr "&Направи"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 262
-#: rc.cpp:506 rc.cpp:1325
+#: rc.cpp:486 rc.cpp:1277
 #, no-c-format
 msgid "Ca&ncel"
 msgstr "О&ткажи"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 275
-#: plugins/infowidget/infowidgetplugin.cpp:214 rc.cpp:509 rc.cpp:1101
+#: plugins/infowidget/infowidgetplugin.cpp:214 rc.cpp:489 rc.cpp:1061
 #, no-c-format
 msgid "Trackers"
 msgstr "Пратиоци"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 283
-#: rc.cpp:512
+#: rc.cpp:492
 #, no-c-format
 msgid "DHT nodes"
 msgstr "DHT чворишта"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 333
-#: rc.cpp:522
+#: rc.cpp:501
 #, no-c-format
 msgid "Node:"
 msgstr "Чвор:"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 385
-#: rc.cpp:528
+#: rc.cpp:507
 #, no-c-format
 msgid "IP or hostname"
 msgstr "IP или име домаћина"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 396
-#: rc.cpp:531 rc.cpp:718 rc.cpp:721
+#: rc.cpp:510 rc.cpp:695 rc.cpp:698
 #, no-c-format
 msgid "Port"
 msgstr "Порт"
 
 #. i18n: file ./apps/ktorrent/torrentcreatordlgbase.ui line 437
-#: rc.cpp:534
+#: rc.cpp:513
 #, no-c-format
 msgid ""
 "NOTE: Some known good DHT nodes are already inserted. You should probably "
@@ -1802,19 +1802,19 @@ msgstr ""
 "и вашу IP адресу и порт ако намеравате да сејете овај торент."
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 16
-#: rc.cpp:537
+#: rc.cpp:516
 #, no-c-format
 msgid "Advanced Preferences"
 msgstr "Напредна подешавања"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 46
-#: rc.cpp:543
+#: rc.cpp:522
 #, no-c-format
 msgid "Time left estimation algorithm:"
 msgstr "Алгоритам процене преосталог времена:"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 53
-#: rc.cpp:546 rc.cpp:568
+#: rc.cpp:525 rc.cpp:547
 #, no-c-format
 msgid ""
 "<b>KTorrent algorithm:</b> Default algorithm using combination of other "
@@ -1842,429 +1842,429 @@ msgstr ""
 "<b>Алгоритам просека померања:</b> Просек померања се рачуна из X (икс) узорака"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 64
-#: rc.cpp:556
+#: rc.cpp:535
 #, no-c-format
 msgid "Current speed"
 msgstr "Тренутна брзина"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 69
-#: rc.cpp:559
+#: rc.cpp:538
 #, no-c-format
 msgid "Global average speed"
 msgstr "Општа просечна брзина"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 74
-#: rc.cpp:562
+#: rc.cpp:541
 #, no-c-format
 msgid "Window of X"
 msgstr "Прозор Икса"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 79
-#: rc.cpp:565
+#: rc.cpp:544
 #, no-c-format
 msgid "Moving average"
 msgstr "Просек померања"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 98
-#: rc.cpp:575
+#: rc.cpp:554
 #, no-c-format
 msgid "(takes effect after restart)"
 msgstr "(делује након поновног покретања)"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 125
-#: rc.cpp:578
+#: rc.cpp:557
 #, no-c-format
 msgid "Disa&ble diskspace preallocation"
 msgstr "Искључи &резервисање простора"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 141
-#: rc.cpp:581
+#: rc.cpp:560
 #, no-c-format
 msgid "F&ully preallocate diskspace (avoids fragmentation)"
 msgstr "У потпуности ре&зервиши простор (избегава фрагментацију)"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 147
-#: rc.cpp:584
+#: rc.cpp:563
 #, no-c-format
 msgid "Basic (slow)"
 msgstr "Основно (споро)"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 152
-#: rc.cpp:587
+#: rc.cpp:566
 #, no-c-format
 msgid "Filesystem specific"
 msgstr "Својствено за фајл-систем"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 174
-#: rc.cpp:590
+#: rc.cpp:569
 #, no-c-format
 msgid "Performance"
 msgstr "Могућности"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 193
-#: rc.cpp:593
+#: rc.cpp:572
 #, no-c-format
 msgid "Memory usage:"
 msgstr "Заузетост меморије:"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 199
-#: rc.cpp:596
+#: rc.cpp:575
 #, no-c-format
 msgid "Low"
 msgstr "Ниска"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 204
-#: rc.cpp:599
+#: rc.cpp:578
 #, no-c-format
 msgid "Medium"
 msgstr "Средња"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 209
-#: rc.cpp:602
+#: rc.cpp:581
 #, no-c-format
 msgid "High"
 msgstr "Висока"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 248
-#: rc.cpp:605
+#: rc.cpp:584
 #, no-c-format
 msgid "GUI update interval:"
 msgstr "Освежавање приказа:"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 254
-#: rc.cpp:608
+#: rc.cpp:587
 #, no-c-format
 msgid "500ms"
 msgstr "500ms"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 259
-#: rc.cpp:611
+#: rc.cpp:590
 #, no-c-format
 msgid "1s"
 msgstr "1s"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 264
-#: rc.cpp:614
+#: rc.cpp:593
 #, no-c-format
 msgid "2s"
 msgstr "2s"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 269
-#: rc.cpp:617
+#: rc.cpp:596
 #, no-c-format
 msgid "5s"
 msgstr "5s"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 308
-#: rc.cpp:620
+#: rc.cpp:599
 #, no-c-format
 msgid "Fast CPU"
 msgstr "Брз процесор"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 342
-#: rc.cpp:624
+#: rc.cpp:602
 #, no-c-format
 msgid "Slow CPU"
 msgstr "Спор процесор"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 354
-#: rc.cpp:627
+#: rc.cpp:605
 #, no-c-format
 msgid "Data Checking"
 msgstr "Провера података"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 373
-#: rc.cpp:630
+#: rc.cpp:608
 #, no-c-format
 msgid "During uploading, do &not recheck chunks bigger than"
 msgstr "Приликом слања &не проверавај поново парчиће веће од"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 430
-#: rc.cpp:636
+#: rc.cpp:614
 #, no-c-format
 msgid "Do a data integrit&y check after"
 msgstr "Провери &исправност података након"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 449
-#: rc.cpp:639
+#: rc.cpp:617
 #, no-c-format
 msgid "corrupted chunks"
 msgstr "оштећених парчића"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 478
-#: rc.cpp:642
+#: rc.cpp:620
 #, no-c-format
 msgid "Networking"
 msgstr "Мрежа"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 505
-#: rc.cpp:645
+#: rc.cpp:623
 #, no-c-format
 msgid "Maximum number of connection setups:"
 msgstr "Највећи број подешавања везе:"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 527
-#: rc.cpp:648
+#: rc.cpp:626
 #, no-c-format
 msgid "DSCP for IP packets:"
 msgstr "DSCP за IP пакете:"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 570
-#: rc.cpp:651
+#: rc.cpp:629
 #, no-c-format
 msgid "Do not use the KDE pro&xy settings for HTTP tracker connections"
 msgstr "Не користи KDE-ов про&кси за везе HTTP пратиоца"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 586
-#: rc.cpp:654
+#: rc.cpp:632
 #, no-c-format
 msgid "HTTP tracker proxy:"
 msgstr "Прокси HTTP пратиоца:"
 
 #. i18n: file ./apps/ktorrent/scandlgbase.ui line 24
-#: rc.cpp:657
+#: rc.cpp:635
 #, no-c-format
 msgid "Scanning data"
 msgstr "Проверавам податке"
 
 #. i18n: file ./apps/ktorrent/scandlgbase.ui line 38
-#: rc.cpp:660
+#: rc.cpp:638
 #, no-c-format
 msgid "Scanning data of torrent :"
 msgstr "Проверавам податке торента :"
 
 #. i18n: file ./apps/ktorrent/scandlgbase.ui line 62
-#: rc.cpp:663
+#: rc.cpp:641
 #, no-c-format
 msgid "Number of chunks found :"
 msgstr "Број нађених парчића :"
 
 #. i18n: file ./apps/ktorrent/scandlgbase.ui line 70
-#: rc.cpp:666
+#: rc.cpp:644
 #, no-c-format
 msgid "Number of chunks failed / not downloaded :"
 msgstr "Број лоших / непреузетих :"
 
 #. i18n: file ./apps/ktorrent/scandlgbase.ui line 97
-#: rc.cpp:669 rc.cpp:672
+#: rc.cpp:647 rc.cpp:650
 #, no-c-format
 msgid "0"
 msgstr "0"
 
 #. i18n: file ./apps/ktupnptest/mainwidget.ui line 54
-#: rc.cpp:678
+#: rc.cpp:656
 #, no-c-format
 msgid "Test"
 msgstr "Тест"
 
 #. i18n: file ./libktorrent/labelviewitembase.ui line 49
-#: rc.cpp:685
+#: rc.cpp:662
 #, no-c-format
 msgid "textLabel2"
 msgstr "textLabel2"
 
 #. i18n: file ./libktorrent/labelviewitembase.ui line 65
-#: rc.cpp:688
+#: rc.cpp:665
 #, no-c-format
 msgid "textLabel3"
 msgstr "textLabel3"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 10
-#: rc.cpp:691
+#: rc.cpp:668
 #, no-c-format
 msgid "Maximum number of downloads (0 = no limit)"
 msgstr "Највећи број преузимања (0 = без ограничења)"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 15
-#: rc.cpp:694
+#: rc.cpp:671
 #, no-c-format
 msgid "Maximum number of seeds (0 = no limit)"
 msgstr "Највећи број сејања (0 = без ограничења)"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 20
-#: rc.cpp:697
+#: rc.cpp:674
 #, no-c-format
 msgid "Start downloads on low disk space?"
 msgstr "Да покрећем преузимања када је мало простора на диску?"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 24
-#: rc.cpp:700
+#: rc.cpp:677
 #, no-c-format
 msgid "Maximum number of connections per torrent (0 = no limit)"
 msgstr "Највећи број веза по торенту (0 = без ограничења)"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 29
-#: rc.cpp:703
+#: rc.cpp:680
 #, no-c-format
 msgid "Maximum number of connections for all torrents (0 = no limit) "
 msgstr "Највећи број веза за све торенте (0 = без ограничења) "
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 34
-#: rc.cpp:706
+#: rc.cpp:683
 #, no-c-format
 msgid "Maximum upload speed in KB/sec (0 = no limit)"
 msgstr "Највећа брзина слања у KB/s (0 = no limit)"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 39
-#: rc.cpp:709
+#: rc.cpp:686
 #, no-c-format
 msgid "Maximum download speed in KB/sec (0 = no limit)"
 msgstr "Највећа брзина преузимања у KB/s (0 = no limit)"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 44
-#: rc.cpp:712
+#: rc.cpp:689
 #, no-c-format
 msgid "Maximum share ratio(0 = no limit)"
 msgstr "Максимум односа дељења(0 = без ограничења)"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 49
-#: rc.cpp:715
+#: rc.cpp:692
 #, no-c-format
 msgid "Maximum seed time in hours (0 = no limit)"
 msgstr "Максимално време сејања у часовима (0 = без ограничења)"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 66
-#: rc.cpp:724
+#: rc.cpp:701
 #, no-c-format
 msgid "Show a system tray icon"
 msgstr "Прикажи икону системске касете"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 70
-#: rc.cpp:727
+#: rc.cpp:704
 #, no-c-format
 msgid "Show speed bar in tray icon"
 msgstr "Прикажи брзиномер у икони"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 74
-#: rc.cpp:730
+#: rc.cpp:707
 #, no-c-format
 msgid "Download bandwidth (in kb/s):"
 msgstr "Проток преузимања (у kb/s):"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 80
-#: rc.cpp:733
+#: rc.cpp:710
 #, no-c-format
 msgid "Upload bandwidth (in kb/s):"
 msgstr "Проток слања (у kb/s):"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 86
-#: rc.cpp:736
+#: rc.cpp:713
 #, no-c-format
 msgid "Show popup messages when torrent is finished."
 msgstr "Прикажи искачућу поруку када се торент заврши."
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 90
-#: rc.cpp:739
+#: rc.cpp:716
 #, no-c-format
 msgid "Keep seeding after download has finished"
 msgstr "Настави сејање након завршеног преузимања"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 94
-#: rc.cpp:742
+#: rc.cpp:719
 #, no-c-format
 msgid "Folder to store temporary files"
 msgstr "Фасцикла за смештање привремених фајлова"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 98
-#: rc.cpp:745
+#: rc.cpp:722
 #, no-c-format
 msgid "Whether to automatically save downloads to saveDir"
 msgstr "Да ли да се преузимање аутоматски сними у директоријум"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 102
-#: rc.cpp:748
+#: rc.cpp:725
 #, no-c-format
 msgid "Folder to store downloaded files"
 msgstr "Фасцикла за смештање преузетих фајлова"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 106
-#: rc.cpp:751
+#: rc.cpp:728
 #, no-c-format
 msgid "Whether to automatically move completed downloads to completedDir"
 msgstr ""
 "Да ли да се завршено преузимање аутоматски пребаци у одређени директоријум"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 110
-#: rc.cpp:754
+#: rc.cpp:731
 #, no-c-format
 msgid "Folder to move completed downloaded files to"
 msgstr "Фасцикла где се премештају завршени преузети фајлови"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 114
-#: rc.cpp:757
+#: rc.cpp:734
 #, no-c-format
 msgid "Whether to automatically copy .torrent files to torrentCopyDir"
 msgstr ""
 "Да ли да се .torrent фајлови аутоматски пребаце у назначени директоријум"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 118
-#: rc.cpp:760
+#: rc.cpp:737
 #, no-c-format
 msgid "Folder to copy .torrent files to"
 msgstr "Фасцикла где се копирају .torrent фајлови"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 122
-#: rc.cpp:763
+#: rc.cpp:740
 #, no-c-format
 msgid "Whether to use a custom IP to pass to the tracker"
 msgstr "Да ли да се користи посебан IP за прослеђивање пратиоцу"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 126
-#: rc.cpp:766
+#: rc.cpp:743
 #, no-c-format
 msgid "Directory which was used as the last save directory"
 msgstr "Директоријум који је последњи коришћен за снимање"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 130
-#: rc.cpp:769
+#: rc.cpp:746
 #, no-c-format
 msgid "IP to pass to the tracker"
 msgstr "IP који се прослеђује пратиоцу"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 134
-#: rc.cpp:772
+#: rc.cpp:749
 #, no-c-format
 msgid "Memory usage"
 msgstr "Заузетост меморије"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 138
-#: rc.cpp:775
+#: rc.cpp:752
 #, no-c-format
 msgid "GUI update interval"
 msgstr "Освежавање приказа"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 142
-#: rc.cpp:778
+#: rc.cpp:755
 #, no-c-format
 msgid "Support for DHT"
 msgstr "Подршка за DHT"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 146
-#: rc.cpp:781
+#: rc.cpp:758
 #, no-c-format
 msgid "DHT port"
 msgstr "DHT порт"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 152
-#: rc.cpp:784
+#: rc.cpp:761
 #, no-c-format
 msgid "Number of upload slots"
 msgstr "Број веза слања"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 196
-#: rc.cpp:793
+#: rc.cpp:770
 #, no-c-format
 msgid "Columns shown in KTorrentView"
 msgstr "Колоне приказане у КТорент прегледу"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 205
-#: rc.cpp:796
+#: rc.cpp:773
 #, no-c-format
 msgid "ET algorithm"
 msgstr "ET алгоритам"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 227
-#: rc.cpp:799
+#: rc.cpp:776
 #, no-c-format
 msgid ""
 "When there's no space left to complete download and free diskspace is less than "
@@ -2274,457 +2274,457 @@ msgstr ""
 "мањи од minDiskSpace, торент ће бити заустављен."
 
 #. i18n: file ./libktorrent/pluginmanagerwidget.ui line 16
-#: rc.cpp:802
+#: rc.cpp:779
 #, no-c-format
 msgid "Plugin Manager"
 msgstr "Управљач прикључцима"
 
 #. i18n: file ./libktorrent/pluginmanagerwidget.ui line 48
-#: rc.cpp:805
+#: rc.cpp:782
 #, no-c-format
 msgid "Load"
 msgstr "Учитај"
 
 #. i18n: file ./libktorrent/pluginmanagerwidget.ui line 56
-#: rc.cpp:808
+#: rc.cpp:785
 #, no-c-format
 msgid "U&nload"
 msgstr "И&збаци"
 
 #. i18n: file ./libktorrent/pluginmanagerwidget.ui line 64
-#: rc.cpp:811
+#: rc.cpp:788
 #, no-c-format
 msgid "Load &All"
 msgstr "Учитај &све"
 
 #. i18n: file ./libktorrent/pluginmanagerwidget.ui line 72
-#: rc.cpp:814
+#: rc.cpp:791
 #, no-c-format
 msgid "&Unload All"
 msgstr "&Избаци све"
 
 #. i18n: file ./plugins/upnp/ktupnpplugin.kcfg line 10
-#: rc.cpp:817
+#: rc.cpp:794
 #, no-c-format
 msgid "Default UPnP device to use"
 msgstr "Подразумеван UPnP уређај"
 
 #. i18n: file ./plugins/upnp/upnpwidget.ui line 16
-#: plugins/upnp/upnpplugin.cpp:46 plugins/upnp/upnpprefpage.cpp:31 rc.cpp:820
+#: plugins/upnp/upnpplugin.cpp:46 plugins/upnp/upnpprefpage.cpp:31 rc.cpp:797
 #, no-c-format
 msgid "UPnP"
 msgstr "UPnP"
 
 #. i18n: file ./plugins/upnp/upnpwidget.ui line 35
-#: rc.cpp:823
+#: rc.cpp:800
 #, no-c-format
 msgid "Detected devices:"
 msgstr "Нађени уређаји:"
 
 #. i18n: file ./plugins/upnp/upnpwidget.ui line 41
-#: rc.cpp:826
+#: rc.cpp:803
 #, no-c-format
 msgid "Device"
 msgstr "Уређај"
 
 #. i18n: file ./plugins/upnp/upnpwidget.ui line 52
-#: rc.cpp:829
+#: rc.cpp:806
 #, no-c-format
 msgid "Ports Forwarded"
 msgstr "Портови прослеђени"
 
 #. i18n: file ./plugins/upnp/upnpwidget.ui line 63
-#: rc.cpp:832
+#: rc.cpp:809
 #, no-c-format
 msgid "WAN Connection"
 msgstr "WAN везе"
 
 #. i18n: file ./plugins/upnp/upnpwidget.ui line 91
-#: rc.cpp:835
+#: rc.cpp:812
 #, no-c-format
 msgid "Forw&ard Ports"
 msgstr "Пр&оследи портове"
 
 #. i18n: file ./plugins/upnp/upnpwidget.ui line 99
-#: rc.cpp:838
+#: rc.cpp:815
 #, no-c-format
 msgid "Undo Port Forwarding"
 msgstr "Врати прослеђивање портова"
 
 #. i18n: file ./plugins/upnp/upnpwidget.ui line 124
-#: rc.cpp:841
+#: rc.cpp:818
 #, no-c-format
 msgid "Rescan"
 msgstr "Потражи"
 
 #. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 9
-#: rc.cpp:844
+#: rc.cpp:821
 #, no-c-format
 msgid "Enable scanning of folder1?"
 msgstr "Укључити прегледање фасцикле1?"
 
 #. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 14
-#: rc.cpp:847
+#: rc.cpp:824
 #, no-c-format
 msgid "Enable scanning of folder2?"
 msgstr "Укључити прегледање фасцикле2?"
 
 #. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 19
-#: rc.cpp:850
+#: rc.cpp:827
 #, no-c-format
 msgid "Enable scanning of folder3?"
 msgstr "Укључити прегледање фасцикле3?"
 
 #. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 24
-#: rc.cpp:853
+#: rc.cpp:830
 #, no-c-format
 msgid "Folder1 path"
 msgstr "Путања фасцикле1"
 
 #. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 29
-#: rc.cpp:856
+#: rc.cpp:833
 #, no-c-format
 msgid "Folder2 path"
 msgstr "Путања фасцикле2"
 
 #. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 34
-#: rc.cpp:859
+#: rc.cpp:836
 #, no-c-format
 msgid "Folder3 path"
 msgstr "Путања фасцикле3"
 
 #. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 39
-#: rc.cpp:862
+#: rc.cpp:839
 #, no-c-format
 msgid "Whether to open torrent silently or not."
 msgstr "Да ли да се торент отвори без узнемиравања или не."
 
 #. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 44
-#: rc.cpp:865
+#: rc.cpp:842
 #, no-c-format
 msgid "Delete action checked."
 msgstr "Радња брисања означена."
 
 #. i18n: file ./plugins/scanfolder/ktscanfolderplugin.kcfg line 49
-#: rc.cpp:868
+#: rc.cpp:845
 #, no-c-format
 msgid "Move action checked."
 msgstr "Радња премештања означена."
 
 #. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 16
-#: rc.cpp:871
+#: rc.cpp:848
 #, no-c-format
 msgid "ScanFolder Preferences"
 msgstr "Подешавања прегледа фасцикле"
 
 #. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 35
-#: rc.cpp:874
+#: rc.cpp:851
 #, no-c-format
 msgid "Scan folder &1"
 msgstr "Прегледај фасциклу &1"
 
 #. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 38
-#: rc.cpp:877 rc.cpp:1480
+#: rc.cpp:854 rc.cpp:1424
 #, no-c-format
 msgid "Alt+1"
 msgstr "Alt+1"
 
 #. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 46
-#: rc.cpp:880
+#: rc.cpp:857
 #, no-c-format
 msgid "Scan folder &2"
 msgstr "Прегледај фасциклу &2"
 
 #. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 49
-#: rc.cpp:883 rc.cpp:1471 rc.cpp:1495
+#: rc.cpp:860 rc.cpp:1415 rc.cpp:1439
 #, no-c-format
 msgid "Alt+2"
 msgstr "Alt+2"
 
 #. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 57
-#: rc.cpp:886
+#: rc.cpp:863
 #, no-c-format
 msgid "Scan folder &3"
 msgstr "Прегледај фасциклу &3"
 
 #. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 60
-#: rc.cpp:889 rc.cpp:1465
+#: rc.cpp:866 rc.cpp:1409
 #, no-c-format
 msgid "Alt+3"
 msgstr "Alt+3"
 
 #. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 81
-#: rc.cpp:895
+#: rc.cpp:872
 #, no-c-format
 msgid "Move to \"loaded\" directory &after loading"
 msgstr "Премести у директоријум „учитано“ н&акон учитавања"
 
 #. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 84
-#: rc.cpp:898
+#: rc.cpp:875
 #, no-c-format
 msgid "Move torrent to \"loaded\" directory after loading it"
 msgstr "Премешта торент у директоријум „учитано“ након што га учита"
 
 #. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 92
-#: rc.cpp:901
+#: rc.cpp:878
 #, no-c-format
 msgid "Open torrents silentl&y"
 msgstr "Отвори торенте ти&хо"
 
 #. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 95
-#: rc.cpp:904
+#: rc.cpp:881
 #, no-c-format
 msgid "Do not show 'Select files to download' dialog"
 msgstr "Не приказуј прозор „Изаберите фајлове за преузимање“"
 
 #. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 103
-#: rc.cpp:907
+#: rc.cpp:884
 #, no-c-format
 msgid "Delete after loadin&g"
 msgstr "Обриши након учита&вања"
 
 #. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 106
-#: rc.cpp:910
+#: rc.cpp:887
 #, no-c-format
 msgid "Deletes torrent after loading"
 msgstr "Брише торенте након учитавања"
 
 #. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 116
-#: rc.cpp:913
+#: rc.cpp:890
 #, no-c-format
 msgid "Folders to scan"
 msgstr "Фасцикле за преглед"
 
 #. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 151
-#: rc.cpp:916
+#: rc.cpp:893
 #, no-c-format
 msgid "Folder 1:"
 msgstr "Фасцикла 1:"
 
 #. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 162
-#: rc.cpp:919
+#: rc.cpp:896
 #, no-c-format
 msgid "Folder 2:"
 msgstr "Фасцикла 2:"
 
 #. i18n: file ./plugins/scanfolder/sfprefwidgetbase.ui line 173
-#: rc.cpp:922
+#: rc.cpp:899
 #, no-c-format
 msgid "Folder 3:"
 msgstr "Фасцикла 3:"
 
 #. i18n: file ./plugins/webinterface/webinterfacepref.ui line 30
-#: rc.cpp:925 rc.cpp:1895
+#: rc.cpp:902 rc.cpp:1838
 #, no-c-format
 msgid "Search Preferences"
 msgstr "Подешавања претраге"
 
 #. i18n: file ./plugins/webinterface/webinterfacepref.ui line 41
-#: rc.cpp:928
+#: rc.cpp:905
 #, no-c-format
 msgid "Web Server"
 msgstr "Веб сервер"
 
 #. i18n: file ./plugins/webinterface/webinterfacepref.ui line 82
-#: rc.cpp:934
+#: rc.cpp:911
 #, no-c-format
 msgid "Forward port"
 msgstr "Проследи порт"
 
 #. i18n: file ./plugins/webinterface/webinterfacepref.ui line 107
-#: rc.cpp:937
+#: rc.cpp:914
 #, no-c-format
 msgid "Session TTL (in sec):"
 msgstr "Трајање сесије (у секундама):"
 
 #. i18n: file ./plugins/webinterface/webinterfacepref.ui line 142
-#: rc.cpp:940
+#: rc.cpp:917
 #, no-c-format
 msgid "Select interface:"
 msgstr "Изаберите интерфејс:"
 
 #. i18n: file ./plugins/webinterface/webinterfacepref.ui line 173
-#: rc.cpp:943
+#: rc.cpp:920
 #, no-c-format
 msgid "Username:"
 msgstr "Корисничко име:"
 
 #. i18n: file ./plugins/webinterface/webinterfacepref.ui line 188
-#: rc.cpp:946
+#: rc.cpp:923
 #, no-c-format
 msgid "Change password ..."
 msgstr "Измени лозинку ..."
 
 #. i18n: file ./plugins/webinterface/webinterfacepref.ui line 206
-#: rc.cpp:949
+#: rc.cpp:926
 #, no-c-format
 msgid "Php executable path:"
 msgstr "Путања до програма за PHP:"
 
 #. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 10
-#: rc.cpp:953
+#: rc.cpp:929
 #, no-c-format
 msgid "Port number"
 msgstr "Број порта"
 
 #. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 15
-#: rc.cpp:956
+#: rc.cpp:932
 #, no-c-format
 msgid "forward Port"
 msgstr "проследи порт"
 
 #. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 20
-#: rc.cpp:959
+#: rc.cpp:935
 #, no-c-format
 msgid "Session time to live"
 msgstr "Време трајања сесије"
 
 #. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 24
-#: rc.cpp:962
+#: rc.cpp:938
 #, no-c-format
 msgid "interface skin"
 msgstr "маска интерфејса"
 
 #. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 28
-#: rc.cpp:965
+#: rc.cpp:941
 #, no-c-format
 msgid "php executable path"
 msgstr "Путања до програма за PHP"
 
 #. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 33
-#: rc.cpp:968
+#: rc.cpp:944
 #, no-c-format
 msgid "username"
 msgstr "корисничко име"
 
 #. i18n: file ./plugins/webinterface/ktwebinterfaceplugin.kcfg line 37
-#: rc.cpp:971
+#: rc.cpp:947
 #, no-c-format
 msgid "password"
 msgstr "лозинка"
 
 #. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 16
-#: plugins/infowidget/infowidgetplugin.cpp:194 rc.cpp:974 rc.cpp:1046
+#: plugins/infowidget/infowidgetplugin.cpp:194 rc.cpp:950 rc.cpp:1010
 #, no-c-format
 msgid "Chunks"
 msgstr "Парчићи"
 
 #. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 43
-#: rc.cpp:977
+#: rc.cpp:953
 #, no-c-format
 msgid "Total:"
 msgstr "Укупно:"
 
 #. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 81
-#: rc.cpp:981
+#: rc.cpp:956
 #, no-c-format
 msgid "Currently downloading:"
 msgstr "Тренутно се преузима:"
 
 #. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 119
-#: rc.cpp:985
+#: rc.cpp:959
 #, no-c-format
 msgid "Downloaded:"
 msgstr "Преузето:"
 
 #. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 157
-#: rc.cpp:989
+#: rc.cpp:962
 #, no-c-format
 msgid "Excluded:"
 msgstr "Изузето:"
 
 #. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 195
-#: rc.cpp:993
+#: rc.cpp:965
 #, no-c-format
 msgid "Left:"
 msgstr "Преостало:"
 
 #. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 233
-#: rc.cpp:997
+#: rc.cpp:968
 #, no-c-format
 msgid "Size:"
 msgstr "Величина:"
 
 #. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 280
-#: rc.cpp:1001
+#: rc.cpp:971
 #, no-c-format
 msgid "Chunk"
 msgstr "Парче"
 
 #. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 291
-#: rc.cpp:1004
+#: rc.cpp:974
 #, no-c-format
 msgid "Progress"
 msgstr "Напредак"
 
 #. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 302
-#: rc.cpp:1007
+#: rc.cpp:977
 #, no-c-format
 msgid "Peer"
 msgstr "Вршњак"
 
 #. i18n: file ./plugins/infowidget/chunkdownloadviewbase.ui line 324
-#: rc.cpp:1013
+#: rc.cpp:983
 #, no-c-format
 msgid "Assigned Peers"
 msgstr "Додељени вршњаци"
 
 #. i18n: file ./plugins/infowidget/statustabbase.ui line 63
-#: rc.cpp:1022
+#: rc.cpp:992
 #, no-c-format
 msgid "Seeders:"
 msgstr "Сејачи:"
 
 #. i18n: file ./plugins/infowidget/statustabbase.ui line 71
-#: rc.cpp:1025
+#: rc.cpp:995
 #, no-c-format
 msgid "Leechers:"
 msgstr "Пијавице:"
 
 #. i18n: file ./plugins/infowidget/statustabbase.ui line 129
-#: rc.cpp:1030
+#: rc.cpp:998
 #, no-c-format
 msgid "Average Down Speed:"
 msgstr "Просечна брзина преузимања:"
 
 #. i18n: file ./plugins/infowidget/statustabbase.ui line 177
-#: rc.cpp:1035
+#: rc.cpp:1001
 #, no-c-format
 msgid "Average Up Speed:"
 msgstr "Просечна брзина слања:"
 
 #. i18n: file ./plugins/infowidget/statustabbase.ui line 195
-#: rc.cpp:1038 rc.cpp:1111
+#: rc.cpp:1004 rc.cpp:1070
 #, no-c-format
 msgid "Next update in:"
 msgstr "Освежавам за:"
 
 #. i18n: file ./plugins/infowidget/statustabbase.ui line 203
-#: rc.cpp:1041
+#: rc.cpp:1007
 #, no-c-format
 msgid "Tracker Status:"
 msgstr "Стање пратиоца:"
 
 #. i18n: file ./plugins/infowidget/statustabbase.ui line 332
-#: rc.cpp:1049
+#: rc.cpp:1013
 #, no-c-format
 msgid "Parts of the torrent which have been downloaded:"
 msgstr "Делови торента који су преузети:"
 
 #. i18n: file ./plugins/infowidget/statustabbase.ui line 367
-#: rc.cpp:1052
+#: rc.cpp:1016
 #, no-c-format
 msgid "Parts of the torrent which are available:"
 msgstr "Делови торента који су доступни:"
 
 #. i18n: file ./plugins/infowidget/statustabbase.ui line 457
-#: rc.cpp:1055
+#: rc.cpp:1019
 #, no-c-format
 msgid "Sharing"
 msgstr "Дељење"
 
 #. i18n: file ./plugins/infowidget/statustabbase.ui line 487
-#: rc.cpp:1058
+#: rc.cpp:1022
 #, no-c-format
 msgid ""
 "Your upload will stop when share ratio gets to this value. Zero means no limit."
@@ -2733,145 +2733,145 @@ msgstr ""
 "ограничења."
 
 #. i18n: file ./plugins/infowidget/statustabbase.ui line 525
-#: rc.cpp:1064
+#: rc.cpp:1028
 #, no-c-format
 msgid "Your upload will stop when you have uploaded for this many hours."
 msgstr "Ваше слање ће престати када протекне оволико часова у слању."
 
 #. i18n: file ./plugins/infowidget/statustabbase.ui line 533
-#: rc.cpp:1067
+#: rc.cpp:1031
 #, no-c-format
 msgid "Hours"
 msgstr "Часова"
 
 #. i18n: file ./plugins/infowidget/statustabbase.ui line 543
-#: rc.cpp:1070
+#: rc.cpp:1034
 #, no-c-format
 msgid "Ratio limit:"
 msgstr "Ограничење односа:"
 
 #. i18n: file ./plugins/infowidget/statustabbase.ui line 549
-#: rc.cpp:1074
+#: rc.cpp:1037
 #, no-c-format
 msgid "Limit works only in seed mode"
 msgstr "Ограничење ради само при сејању"
 
 #. i18n: file ./plugins/infowidget/statustabbase.ui line 557
-#: rc.cpp:1077
+#: rc.cpp:1040
 #, no-c-format
 msgid "Time &limit:"
 msgstr "Временско &ограничење:"
 
 #. i18n: file ./plugins/infowidget/trackerviewbase.ui line 37
-#: rc.cpp:1081
+#: rc.cpp:1043
 #, no-c-format
 msgid "&Update Tracker"
 msgstr "&Освежи пратиоца"
 
 #. i18n: file ./plugins/infowidget/trackerviewbase.ui line 40
-#: rc.cpp:1084
+#: rc.cpp:1046
 #, no-c-format
 msgid "Minimum update interval - 60 seconds"
 msgstr "Најмањи размак освежења - 60 секунди"
 
 #. i18n: file ./plugins/infowidget/trackerviewbase.ui line 48
-#: rc.cpp:1087
+#: rc.cpp:1049
 #, no-c-format
 msgid "Add Trac&ker"
 msgstr "Додај п&ратиоца"
 
 #. i18n: file ./plugins/infowidget/trackerviewbase.ui line 64
-#: rc.cpp:1090
+#: rc.cpp:1052
 #, no-c-format
 msgid "Remove Tracker"
 msgstr "Уклони пратиоца"
 
 #. i18n: file ./plugins/infowidget/trackerviewbase.ui line 75
-#: rc.cpp:1094
+#: rc.cpp:1055
 #, no-c-format
 msgid "Ch&ange Tracker"
 msgstr "Проме&ни пратиоца"
 
 #. i18n: file ./plugins/infowidget/trackerviewbase.ui line 100
-#: rc.cpp:1097
+#: rc.cpp:1058
 #, no-c-format
 msgid "Restore Defaults"
 msgstr "Врати подразумевано"
 
 #. i18n: file ./plugins/infowidget/ktinfowidgetplugin.kcfg line 10
-#: rc.cpp:1115
+#: rc.cpp:1073
 #, no-c-format
 msgid "Show peer view tab in main window"
 msgstr "Прикажи језичак за приказ вршњака у главном прозору"
 
 #. i18n: file ./plugins/infowidget/ktinfowidgetplugin.kcfg line 14
-#: rc.cpp:1118
+#: rc.cpp:1076
 #, no-c-format
 msgid "Show chunk download view tab in main window"
 msgstr "Прикажи језичак за приказ преузимања парчића у главном прозору"
 
 #. i18n: file ./plugins/infowidget/ktinfowidgetplugin.kcfg line 18
-#: rc.cpp:1121
+#: rc.cpp:1079
 #, no-c-format
 msgid "Show trackers view tab in main window"
 msgstr "Прикажи језичак за приказ пратилаца у главном прозору"
 
 #. i18n: file ./plugins/infowidget/iwpref.ui line 24
-#: rc.cpp:1124
+#: rc.cpp:1082
 #, no-c-format
 msgid "Show list of peers"
 msgstr "Прикажи листу вршњака"
 
 #. i18n: file ./plugins/infowidget/iwpref.ui line 35
-#: rc.cpp:1128
+#: rc.cpp:1085
 #, no-c-format
 msgid "Show list of chunks currentl&y downloading"
 msgstr "Прикажи листу парчића који се трен&утно преузимају"
 
 #. i18n: file ./plugins/infowidget/iwpref.ui line 60
-#: rc.cpp:1131
+#: rc.cpp:1088
 #, no-c-format
 msgid "Show list of trackers"
 msgstr "Прикажи листу пратилаца"
 
 #. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 16
-#: rc.cpp:1135
+#: rc.cpp:1091
 #, no-c-format
 msgid "IPBlocking Preferences"
 msgstr "Подешавања IP блокирања"
 
 #. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 47
-#: rc.cpp:1138
+#: rc.cpp:1094
 #, no-c-format
 msgid "Select PeerGuardian Filter File "
 msgstr "Изаберите филтерски фајл PeerGuardian-а "
 
 #. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 58
-#: rc.cpp:1141
+#: rc.cpp:1097
 #, no-c-format
 msgid "Use PeerGuardian filter?"
 msgstr "Користи PeerGuardian филтер?"
 
 #. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 77
-#: rc.cpp:1145
+#: rc.cpp:1100
 #, no-c-format
 msgid "IP filter file:"
 msgstr "Фајл IP филтера:"
 
 #. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 85
-#: rc.cpp:1148
+#: rc.cpp:1103
 #, no-c-format
 msgid "http://www.bluetack.co.uk/modules.php?name=Downloads&d_op=getit&lid=8"
 msgstr "http://www.bluetack.co.uk/modules.php?name=Downloads&d_op=getit&lid=8"
 
 #. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 123
-#: rc.cpp:1151
+#: rc.cpp:1106
 #, no-c-format
 msgid "Dow&nload/Convert"
 msgstr "Преуз&ми/Претвори"
 
 #. i18n: file ./plugins/ipfilter/ipblockingpref.ui line 134
-#: rc.cpp:1154
+#: rc.cpp:1109
 #, no-c-format
 msgid ""
 "Download PeerGuardian filter from bluetack.co.uk or blocklist.org.\n"
@@ -2881,25 +2881,25 @@ msgstr ""
 "Белешка: ZIP фајл са bluetack.co.uk је подржан."
 
 #. i18n: file ./plugins/ipfilter/ktipfilterplugin.kcfg line 10
-#: rc.cpp:1159
+#: rc.cpp:1113
 #, no-c-format
 msgid "Level1 filter url"
 msgstr "URL филтера Level1"
 
 #. i18n: file ./plugins/ipfilter/ktipfilterplugin.kcfg line 14
-#: rc.cpp:1162
+#: rc.cpp:1116
 #, no-c-format
 msgid "Use level1 filter?"
 msgstr "Користи филтер level1?"
 
 #. i18n: file ./plugins/ipfilter/convert_dlg.ui line 24
-#: plugins/ipfilter/convertdialog.cpp:155 rc.cpp:1165
+#: plugins/ipfilter/convertdialog.cpp:155 rc.cpp:1119
 #, no-c-format
 msgid "Converting..."
 msgstr "Претварам..."
 
 #. i18n: file ./plugins/ipfilter/convert_dlg.ui line 41
-#: rc.cpp:1168
+#: rc.cpp:1122
 #, no-c-format
 msgid ""
 "Click on the 'convert' button to start converting antip2p file. NOTE: This "
@@ -2911,61 +2911,61 @@ msgstr ""
 "КТорент."
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 27
-#: rc.cpp:1179
+#: rc.cpp:1131
 #, no-c-format
 msgid "Update"
 msgstr "Освежавање"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 46
-#: rc.cpp:1182 rc.cpp:1268
+#: rc.cpp:1134 rc.cpp:1220
 #, no-c-format
 msgid "Update charts every"
 msgstr "Освежи графикон сваких"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 71
-#: rc.cpp:1185
+#: rc.cpp:1137
 #, no-c-format
 msgid "GUI updates"
 msgstr "освежавања приказа"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 92
-#: rc.cpp:1188 rc.cpp:1271
+#: rc.cpp:1140 rc.cpp:1223
 #, no-c-format
 msgid "Gather data every"
 msgstr "Прикупи податке сваких"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 120
-#: rc.cpp:1191
+#: rc.cpp:1143
 #, no-c-format
 msgid "miliseconds"
 msgstr "милисекунди"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 135
-#: rc.cpp:1194
+#: rc.cpp:1146
 #, no-c-format
 msgid "Maximum"
 msgstr "Максимум"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 154
-#: rc.cpp:1197
+#: rc.cpp:1149
 #, no-c-format
 msgid "Maximum speed scale mode:"
 msgstr "Режим размере највеће брзине:"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 165
-#: rc.cpp:1203
+#: rc.cpp:1155
 #, no-c-format
 msgid "Exact"
 msgstr "Тачно"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 175
-#: rc.cpp:1206
+#: rc.cpp:1158
 #, no-c-format
 msgid "See 'What's this' for more help"
 msgstr "Погледајте „Шта је ово“ за више помоћи"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 180
-#: rc.cpp:1209
+#: rc.cpp:1161
 #, no-c-format
 msgid ""
 "Set maximum value on OY scale as:\n"
@@ -2977,848 +2977,848 @@ msgstr ""
 "- Тачно: Највећа достигнута брзина се види на графикону"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 192
-#: rc.cpp:1214 rc.cpp:1247
+#: rc.cpp:1166 rc.cpp:1199
 #, no-c-format
 msgid "Peers speed"
 msgstr "Брзина вршњака"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 211
-#: rc.cpp:1217
+#: rc.cpp:1169
 #, no-c-format
 msgid "Peers speed:"
 msgstr "Брзина вршњака:"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 222
-#: rc.cpp:1220
+#: rc.cpp:1172
 #, no-c-format
 msgid "update every"
 msgstr "освежи сваких"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 244
-#: rc.cpp:1223
+#: rc.cpp:1175
 #, no-c-format
 msgid "chart data updates"
 msgstr "освежавања графикона"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 254
-#: rc.cpp:1226
+#: rc.cpp:1178
 #, no-c-format
 msgid "Gathering data about many connected peers can be CPU consuming."
 msgstr ""
 "Прикупљање података о много повезаних вршњака може оптеретити процесор."
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 267
-#: rc.cpp:1229
+#: rc.cpp:1181
 #, no-c-format
 msgid "Peers connections"
 msgstr "Везе вршњака"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 270
-#: rc.cpp:1232
+#: rc.cpp:1184
 #, no-c-format
 msgid "Large values can obscure charts of connected peers"
 msgstr "Велике вредности могу загушити графикон повезаних вршњака"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 289
-#: rc.cpp:1235
+#: rc.cpp:1187
 #, no-c-format
 msgid "Show seeders in swarms"
 msgstr "Прикажи сејаче у ројевима"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 297
-#: rc.cpp:1238
+#: rc.cpp:1190
 #, no-c-format
 msgid "Show leechers in swarms"
 msgstr "Прикажи пијавице у ројевима"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 309
-#: rc.cpp:1241
+#: rc.cpp:1193
 #, no-c-format
 msgid "Measurements count"
 msgstr "Број мерења"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 392
-#: rc.cpp:1250 rc.cpp:1265
+#: rc.cpp:1202 rc.cpp:1217
 #, no-c-format
 msgid "Upload"
 msgstr "Слање"
 
 #. i18n: file ./plugins/stats/sprefwgt.ui line 424
-#: rc.cpp:1253
+#: rc.cpp:1205
 #, no-c-format
 msgid "Connections"
 msgstr "Везе"
 
 #. i18n: file ./plugins/stats/statsspdwgt.ui line 40
-#: plugins/infowidget/infowidgetplugin.cpp:173 rc.cpp:1262 rc.cpp:1304
+#: plugins/infowidget/infowidgetplugin.cpp:173 rc.cpp:1214 rc.cpp:1256
 #, no-c-format
 msgid "Peers"
 msgstr "Вршњаци"
 
 #. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 18
-#: rc.cpp:1274
+#: rc.cpp:1226
 #, no-c-format
 msgid "Toggle peers speed charts"
 msgstr "Укљ/искљ. графикон брзине вршњака"
 
 #. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 22
-#: rc.cpp:1277
+#: rc.cpp:1229
 #, no-c-format
 msgid "Interval between getting data about peers speed"
 msgstr "Размак између узимања података о брзини вршњака"
 
 #. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 26
-#: rc.cpp:1280
+#: rc.cpp:1232
 #, no-c-format
 msgid "Toggle drawing of leechers in swarms"
 msgstr "Укљ/искљ. исцртавање пијавица у ројевима"
 
 #. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 30
-#: rc.cpp:1283
+#: rc.cpp:1235
 #, no-c-format
 msgid "Toggle drawing of seeders in swarms"
 msgstr "Укљ/искљ. исцртавање сејача у ројевима"
 
 #. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 35
-#: rc.cpp:1286
+#: rc.cpp:1238
 #, no-c-format
 msgid "Download mesurments count"
 msgstr "Број мерења преузимања"
 
 #. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 39
-#: rc.cpp:1289
+#: rc.cpp:1241
 #, no-c-format
 msgid "Peers speed mesurments count"
 msgstr "Број мерења брзине вршњака"
 
 #. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 43
-#: rc.cpp:1292
+#: rc.cpp:1244
 #, no-c-format
 msgid "Upload mesurments count"
 msgstr "Број мерења слања"
 
 #. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 47
-#: rc.cpp:1295
+#: rc.cpp:1247
 #, no-c-format
 msgid "Connections mesurments count"
 msgstr "Број мерења веза"
 
 #. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 51
-#: rc.cpp:1298
+#: rc.cpp:1250
 #, no-c-format
 msgid "DHT mesurments count"
 msgstr "Број мерења DHT-а"
 
 #. i18n: file ./plugins/stats/ktstatsplugin.kcfg line 56
-#: rc.cpp:1301
+#: rc.cpp:1253
 #, no-c-format
 msgid "OY axis max mode"
 msgstr "Макс. режим OY осе"
 
 #. i18n: file ./plugins/partfileimport/importdlgbase.ui line 16
-#: rc.cpp:1310
+#: rc.cpp:1262
 #, no-c-format
 msgid "Import an existing download"
 msgstr "Увези постојеће преузимање"
 
 #. i18n: file ./plugins/partfileimport/importdlgbase.ui line 49
-#: rc.cpp:1313
+#: rc.cpp:1265
 #, no-c-format
 msgid "Torrent:"
 msgstr "Торент:"
 
 #. i18n: file ./plugins/partfileimport/importdlgbase.ui line 63
-#: rc.cpp:1316
+#: rc.cpp:1268
 #, no-c-format
 msgid "Data:"
 msgstr "Подаци:"
 
 #. i18n: file ./plugins/partfileimport/importdlgbase.ui line 95
-#: rc.cpp:1319
+#: rc.cpp:1271
 #, no-c-format
 msgid ""
 "Please specify the torrent and the data already downloaded for that torrent."
 msgstr "Наведите торент и већ преузете податке за тај торент."
 
 #. i18n: file ./plugins/partfileimport/importdlgbase.ui line 133
-#: rc.cpp:1322
+#: rc.cpp:1274
 #, no-c-format
 msgid "&Import"
 msgstr "&Увези"
 
 #. i18n: file ./plugins/rssfeed/ktrssfeedplugin.kcfg line 10
-#: rc.cpp:1328
+#: rc.cpp:1280
 #, no-c-format
 msgid "default"
 msgstr "подразумевано"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 18
-#: rc.cpp:1331
+#: rc.cpp:1283
 #, no-c-format
 msgid "Rss Feeds"
 msgstr "RSS доводи"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 36
-#: rc.cpp:1334
+#: rc.cpp:1286
 #, no-c-format
 msgid "Feeds"
 msgstr "Доводи"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 78
-#: rc.cpp:1337
+#: rc.cpp:1289
 #, no-c-format
 msgid "De&lete"
 msgstr "О&бриши"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 86
-#: rc.cpp:1340 rc.cpp:1382 rc.cpp:1392
+#: rc.cpp:1292 rc.cpp:1331 rc.cpp:1340
 #, no-c-format
 msgid "&New"
 msgstr "&Нов"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 117
-#: rc.cpp:1343
+#: rc.cpp:1295
 #, no-c-format
 msgid "&URL"
 msgstr "&URL"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 139
-#: rc.cpp:1346
+#: rc.cpp:1298
 #, no-c-format
 msgid "Articles"
 msgstr "Чланци"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 216
-#: rc.cpp:1353
+#: rc.cpp:1304
 #, no-c-format
 msgid "Auto&refresh"
 msgstr "Ауто&освежавање"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 242
-#: rc.cpp:1356
+#: rc.cpp:1307
 #, no-c-format
 msgid "I&gnore TTL"
 msgstr "Зане&мари TTL"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 270
-#: rc.cpp:1359
+#: rc.cpp:1310
 #, no-c-format
 msgid "Refresh"
 msgstr "Освежи"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 299
-#: rc.cpp:1363 rc.cpp:1395
+#: rc.cpp:1313 rc.cpp:1343
 #, no-c-format
 msgid "&Title"
 msgstr "&Наслов"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 323
-#: rc.cpp:1366
+#: rc.cpp:1316
 #, no-c-format
 msgid "Keep Articles (days)"
 msgstr "Чувај чланке (дана)"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 347
-#: rc.cpp:1369 rc.cpp:1398
+#: rc.cpp:1319 rc.cpp:1346
 #, no-c-format
 msgid "&Active"
 msgstr "&Активан"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 362
-#: rc.cpp:1372
+#: rc.cpp:1322
 #, no-c-format
 msgid "Filters"
 msgstr "Филтери"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 389
-#: rc.cpp:1375
+#: rc.cpp:1325
 #, no-c-format
 msgid "Accept Filters"
 msgstr "Прихвати филтере"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 440
-#: rc.cpp:1385
+#: rc.cpp:1334
 #, no-c-format
 msgid "Reject Filters"
 msgstr "Одбиј филтере"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 557
-#: rc.cpp:1401
+#: rc.cpp:1349
 #, no-c-format
 msgid "Regular Expressions"
 msgstr "Регуларни израз"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 587
-#: rc.cpp:1404
+#: rc.cpp:1352
 #, no-c-format
 msgid "Treat as &Series"
 msgstr "Третирај као &серије"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 624
-#: rc.cpp:1407
+#: rc.cpp:1355
 #, no-c-format
 msgid "Process"
 msgstr "Процес"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 643
-#: rc.cpp:1411
+#: rc.cpp:1358
 #, no-c-format
 msgid "Series Criteria"
 msgstr "Критеријум серије"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 679
-#: rc.cpp:1414
+#: rc.cpp:1361
 #, no-c-format
 msgid "Match Without Episode"
 msgstr "Поклапања без епизоде"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 713
-#: rc.cpp:1418
+#: rc.cpp:1364
 #, no-c-format
 msgid "Max Episode"
 msgstr "Макс. епизода"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 739
-#: rc.cpp:1421
+#: rc.cpp:1367
 #, no-c-format
 msgid "Max Season"
 msgstr "Макс. сезона"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 758
-#: rc.cpp:1424
+#: rc.cpp:1370
 #, no-c-format
 msgid "Min Season"
 msgstr "Мин. сезона"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 782
-#: rc.cpp:1427
+#: rc.cpp:1373
 #, no-c-format
 msgid "Min Episode"
 msgstr "Мин. епизода"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 814
-#: rc.cpp:1430
+#: rc.cpp:1376
 #, no-c-format
 msgid "Test te&xt"
 msgstr "Тестирај те&кст"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 840
-#: rc.cpp:1433
+#: rc.cpp:1379
 #, no-c-format
 msgid "Te&st"
 msgstr "Те&ст"
 
 #. i18n: file ./plugins/rssfeed/rssfeedwidget.ui line 858
-#: rc.cpp:1436
+#: rc.cpp:1382
 #, no-c-format
 msgid "Filter Matches"
 msgstr "Филтрирај поклапања"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 28
-#: rc.cpp:1447
+#: rc.cpp:1391
 #, no-c-format
 msgid "Bandwidth scheduler"
 msgstr "Распоређивач протока"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 50
-#: rc.cpp:1450
+#: rc.cpp:1394
 #, no-c-format
 msgid "Left click category"
 msgstr "Категорија за леви клик"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 61
-#: rc.cpp:1453
+#: rc.cpp:1397
 #, no-c-format
 msgid "Categor&y 1"
 msgstr "Категор&ија 1"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 157
-#: rc.cpp:1456 rc.cpp:1483
+#: rc.cpp:1400 rc.cpp:1427
 #, no-c-format
 msgid "T&urn off"
 msgstr "И&скључи"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 165
-#: rc.cpp:1459 rc.cpp:1486
+#: rc.cpp:1403 rc.cpp:1430
 #, no-c-format
 msgid "&Normal"
 msgstr "&Нормално"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 195
-#: rc.cpp:1462
+#: rc.cpp:1406
 #, no-c-format
 msgid "Category &3"
 msgstr "Категорија &3"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 206
-#: rc.cpp:1468 rc.cpp:1492
+#: rc.cpp:1412 rc.cpp:1436
 #, no-c-format
 msgid "Category &2"
 msgstr "Категорија &2"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 219
-#: rc.cpp:1474
+#: rc.cpp:1418
 #, no-c-format
 msgid "Right click category"
 msgstr "Категорија за десни клик"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 230
-#: rc.cpp:1477
+#: rc.cpp:1421
 #, no-c-format
 msgid "Category &1"
 msgstr "Категорија &1"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 367
-#: rc.cpp:1489
+#: rc.cpp:1433
 #, no-c-format
 msgid "&Category 3"
 msgstr "&Категорија 3"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 390
-#: rc.cpp:1498
+#: rc.cpp:1442
 #, no-c-format
 msgid "Categories"
 msgstr "Категорије"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 401
-#: rc.cpp:1501
+#: rc.cpp:1445
 #, no-c-format
 msgid "<b>1. Category</b>"
 msgstr "<b>1. категорија</b>"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 409
-#: rc.cpp:1504
+#: rc.cpp:1448
 #, no-c-format
 msgid "<b>3. Category</b>"
 msgstr "<b>3. категорија</b>"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 425
-#: rc.cpp:1507 rc.cpp:1516 rc.cpp:1525
+#: rc.cpp:1451 rc.cpp:1460 rc.cpp:1469
 #, no-c-format
 msgid "download:"
 msgstr "преузимање:"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 441
-#: rc.cpp:1510 rc.cpp:1519 rc.cpp:1528
+#: rc.cpp:1454 rc.cpp:1463 rc.cpp:1472
 #, no-c-format
 msgid "upload:"
 msgstr "слање:"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 457
-#: rc.cpp:1513 rc.cpp:1522 rc.cpp:1531
+#: rc.cpp:1457 rc.cpp:1466 rc.cpp:1475
 #, no-c-format
 msgid "KB/s *"
 msgstr "KB/s *"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 567
-#: rc.cpp:1534
+#: rc.cpp:1478
 #, no-c-format
 msgid "<b>2. Category</b>"
 msgstr "<b>2. категорија</b>"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 626
-#: rc.cpp:1538
+#: rc.cpp:1481
 #, no-c-format
 msgid "* zero means no limit"
 msgstr "* нула је без ограничења"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 672
-#: rc.cpp:1541
+#: rc.cpp:1484
 #, no-c-format
 msgid "Save to file"
 msgstr "Сними у фајл"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 680
-#: rc.cpp:1544
+#: rc.cpp:1487
 #, no-c-format
 msgid "&Load from file"
 msgstr "&Учитај из фајла"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 688
-#: rc.cpp:1547
+#: rc.cpp:1490
 #, no-c-format
 msgid "Reset schedule"
 msgstr "Ресетуј распоред"
 
 #. i18n: file ./plugins/scheduler/bwspage.ui line 751
-#: rc.cpp:1550
+#: rc.cpp:1493
 #, no-c-format
 msgid "O&k"
 msgstr "У &реду"
 
 #. i18n: file ./plugins/scheduler/schedulerpage.ui line 16
-#: rc.cpp:1559
+#: rc.cpp:1502
 #, no-c-format
 msgid "Scheduler Plugin Pref Page"
 msgstr "Страна за подешавање прикључка распоређивача"
 
 #. i18n: file ./plugins/scheduler/schedulerpage.ui line 27
-#: rc.cpp:1562
+#: rc.cpp:1505
 #, no-c-format
 msgid "Use &bandwidth scheduler?"
 msgstr "Користи &распоређивач протока?"
 
 #. i18n: file ./plugins/scheduler/schedulerpage.ui line 35
-#: plugins/scheduler/schedulerplugin.cpp:59 rc.cpp:1565
+#: plugins/scheduler/schedulerplugin.cpp:59 rc.cpp:1508
 #, no-c-format
 msgid "Bandwidth Scheduler"
 msgstr "Распоређивач протока"
 
 #. i18n: file ./plugins/scheduler/schedulerpage.ui line 46
-#: rc.cpp:1568
+#: rc.cpp:1511
 #, no-c-format
 msgid "Use colors instead of pi&xmaps?"
 msgstr "Користи боје уместо &сличица?"
 
 #. i18n: file ./plugins/scheduler/schedulerpage.ui line 54
-#: rc.cpp:1571
+#: rc.cpp:1514
 #, no-c-format
 msgid "(Recommended for slower systems)"
 msgstr "(Препоручено за спорије системе)"
 
 #. i18n: file ./plugins/scheduler/schedulerpage.ui line 62
-#: rc.cpp:1574
+#: rc.cpp:1517
 #, no-c-format
 msgid "Edit s&chedule"
 msgstr "Уреди р&аспоред"
 
 #. i18n: file ./plugins/scheduler/ktschedulerplugin.kcfg line 10
-#: rc.cpp:1577
+#: rc.cpp:1520
 #, no-c-format
 msgid "Enable bandwidth scheduler?"
 msgstr "Укључи распоређивач протока?"
 
 #. i18n: file ./plugins/scheduler/ktschedulerplugin.kcfg line 14
-#: rc.cpp:1580
+#: rc.cpp:1523
 #, no-c-format
 msgid "Use colors instead of pixmaps?"
 msgstr "Користи боје уместо сличица?"
 
 #. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 10
-#: rc.cpp:1583
+#: rc.cpp:1526
 #, no-c-format
 msgid "Use rich log text"
 msgstr "Користи богати текст дневника"
 
 #. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 15
-#: rc.cpp:1586
+#: rc.cpp:1529
 #, no-c-format
 msgid "General info messages flag"
 msgstr "Заставица општих информација"
 
 #. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 19
-#: rc.cpp:1589
+#: rc.cpp:1532
 #, no-c-format
 msgid "Connections messages flag"
 msgstr "Заставица порука о везама"
 
 #. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 23
-#: rc.cpp:1592
+#: rc.cpp:1535
 #, no-c-format
 msgid "DHT messages flag"
 msgstr "Заставица DHT порука"
 
 #. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 27
-#: rc.cpp:1595
+#: rc.cpp:1538
 #, no-c-format
 msgid "Tracker info messages flag"
 msgstr "Заставица информација о пратиоцу"
 
 #. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 31
-#: rc.cpp:1598
+#: rc.cpp:1541
 #, no-c-format
 msgid "Disk IO info messages flag"
 msgstr "Заставица информација о диску"
 
 #. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 35
-#: rc.cpp:1601
+#: rc.cpp:1544
 #, no-c-format
 msgid "IPFilter plugin messages flag"
 msgstr "Заставица за поруке IPFilter прикључка"
 
 #. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 39
-#: rc.cpp:1604
+#: rc.cpp:1547
 #, no-c-format
 msgid "Search plugin messages flag"
 msgstr "Заставица за поруке прикључка претраживања"
 
 #. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 43
-#: rc.cpp:1607
+#: rc.cpp:1550
 #, no-c-format
 msgid "PartFileImport plugin messages flag"
 msgstr "Заставица порука прикључка Увоз делимичних фајлова"
 
 #. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 47
-#: rc.cpp:1610
+#: rc.cpp:1553
 #, no-c-format
 msgid "InfoWidget plugin messages flag"
 msgstr "Заставица за поруке прикључка Додатне информације"
 
 #. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 51
-#: rc.cpp:1613
+#: rc.cpp:1556
 #, no-c-format
 msgid "UPnP plugin messages flag"
 msgstr "Заставица за поруке прикључка UPnP"
 
 #. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 55
-#: rc.cpp:1616
+#: rc.cpp:1559
 #, no-c-format
 msgid "ScanFolder plugin messages flag"
 msgstr "Заставица за поруке прикључка Преглед фасцикле"
 
 #. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 59
-#: rc.cpp:1619
+#: rc.cpp:1562
 #, no-c-format
 msgid "Scheduler plugin messages flag"
 msgstr "Заставица за поруке прикључка распоређивача"
 
 #. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 63
-#: rc.cpp:1622
+#: rc.cpp:1565
 #, no-c-format
 msgid "RSS plugin messages flag"
 msgstr "Заставица за поруке RSS прикључка"
 
 #. i18n: file ./plugins/logviewer/ktlogviewerplugin.kcfg line 67
-#: rc.cpp:1625
+#: rc.cpp:1568
 #, no-c-format
 msgid "WebInterface plugin messages flag"
 msgstr "Заставица за поруке прикључка веб интерфејса"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 16
-#: plugins/logviewer/logprefpage.cpp:31 rc.cpp:1628
+#: plugins/logviewer/logprefpage.cpp:31 rc.cpp:1571
 #, no-c-format
 msgid "LogViewer Options"
 msgstr "Опције прегледача дневника"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 44
-#: libktorrent/pluginmanagerprefpage.cpp:63 rc.cpp:1631
+#: libktorrent/pluginmanagerprefpage.cpp:63 rc.cpp:1574
 #, no-c-format
 msgid "Plugins"
 msgstr "Прикључци"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 53
-#: rc.cpp:1634 rc.cpp:1652 rc.cpp:1670 rc.cpp:1691 rc.cpp:1706 rc.cpp:1724
-#: rc.cpp:1745 rc.cpp:1763 rc.cpp:1778 rc.cpp:1811 rc.cpp:1826 rc.cpp:1841
-#: rc.cpp:1859 rc.cpp:1874
+#: rc.cpp:1577 rc.cpp:1595 rc.cpp:1613 rc.cpp:1634 rc.cpp:1649 rc.cpp:1667
+#: rc.cpp:1688 rc.cpp:1706 rc.cpp:1721 rc.cpp:1754 rc.cpp:1769 rc.cpp:1784
+#: rc.cpp:1802 rc.cpp:1817
 #, no-c-format
 msgid "All"
 msgstr "Све"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 58
-#: rc.cpp:1637 rc.cpp:1655 rc.cpp:1673 rc.cpp:1694 rc.cpp:1709 rc.cpp:1727
-#: rc.cpp:1748 rc.cpp:1766 rc.cpp:1781 rc.cpp:1814 rc.cpp:1829 rc.cpp:1844
-#: rc.cpp:1862 rc.cpp:1877
+#: rc.cpp:1580 rc.cpp:1598 rc.cpp:1616 rc.cpp:1637 rc.cpp:1652 rc.cpp:1670
+#: rc.cpp:1691 rc.cpp:1709 rc.cpp:1724 rc.cpp:1757 rc.cpp:1772 rc.cpp:1787
+#: rc.cpp:1805 rc.cpp:1820
 #, no-c-format
 msgid "Debug"
 msgstr "Исправљање грешака"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 63
-#: rc.cpp:1640 rc.cpp:1658 rc.cpp:1676 rc.cpp:1697 rc.cpp:1712 rc.cpp:1730
-#: rc.cpp:1751 rc.cpp:1769 rc.cpp:1784 rc.cpp:1817 rc.cpp:1832 rc.cpp:1847
-#: rc.cpp:1865 rc.cpp:1880
+#: rc.cpp:1583 rc.cpp:1601 rc.cpp:1619 rc.cpp:1640 rc.cpp:1655 rc.cpp:1673
+#: rc.cpp:1694 rc.cpp:1712 rc.cpp:1727 rc.cpp:1760 rc.cpp:1775 rc.cpp:1790
+#: rc.cpp:1808 rc.cpp:1823
 #, no-c-format
 msgid "Notice"
 msgstr "Обавештења"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 68
-#: rc.cpp:1643 rc.cpp:1661 rc.cpp:1679 rc.cpp:1700 rc.cpp:1715 rc.cpp:1733
-#: rc.cpp:1754 rc.cpp:1772 rc.cpp:1787 rc.cpp:1820 rc.cpp:1835 rc.cpp:1850
-#: rc.cpp:1868 rc.cpp:1883
+#: rc.cpp:1586 rc.cpp:1604 rc.cpp:1622 rc.cpp:1643 rc.cpp:1658 rc.cpp:1676
+#: rc.cpp:1697 rc.cpp:1715 rc.cpp:1730 rc.cpp:1763 rc.cpp:1778 rc.cpp:1793
+#: rc.cpp:1811 rc.cpp:1826
 #, no-c-format
 msgid "Important"
 msgstr "Важно"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 73
-#: rc.cpp:1646 rc.cpp:1664 rc.cpp:1682 rc.cpp:1703 rc.cpp:1718 rc.cpp:1736
-#: rc.cpp:1757 rc.cpp:1775 rc.cpp:1790 rc.cpp:1823 rc.cpp:1838 rc.cpp:1853
-#: rc.cpp:1871 rc.cpp:1886
+#: rc.cpp:1589 rc.cpp:1607 rc.cpp:1625 rc.cpp:1646 rc.cpp:1661 rc.cpp:1679
+#: rc.cpp:1700 rc.cpp:1718 rc.cpp:1733 rc.cpp:1766 rc.cpp:1781 rc.cpp:1796
+#: rc.cpp:1814 rc.cpp:1829
 #, no-c-format
 msgid "None"
 msgstr "Ништа"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 85
-#: rc.cpp:1649
+#: rc.cpp:1592
 #, no-c-format
 msgid "IPFilter:"
 msgstr "IP филтер:"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 126
-#: rc.cpp:1667
+#: rc.cpp:1610
 #, no-c-format
 msgid "Search:"
 msgstr "Тражење:"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 167
-#: rc.cpp:1685
+#: rc.cpp:1628
 #, no-c-format
 msgid "UPnP:"
 msgstr "UPnP:"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 178
-#: rc.cpp:1688
+#: rc.cpp:1631
 #, no-c-format
 msgid "ScanFolder:"
 msgstr "Преглед фасцикле:"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 249
-#: rc.cpp:1721
+#: rc.cpp:1664
 #, no-c-format
 msgid "Scheduler:"
 msgstr "Распоређивач:"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 290
-#: rc.cpp:1739
+#: rc.cpp:1682
 #, no-c-format
 msgid "PartFileImport:"
 msgstr "Увоз делимичних фајлова:"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 301
-#: rc.cpp:1742
+#: rc.cpp:1685
 #, no-c-format
 msgid "InfoWidget:"
 msgstr "Инфо прозор:"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 342
-#: rc.cpp:1760
+#: rc.cpp:1703
 #, no-c-format
 msgid "RSS plugin:"
 msgstr "RSS прикључак:"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 413
-#: rc.cpp:1793
+#: rc.cpp:1736
 #, no-c-format
 msgid "WebInterface plugin:"
 msgstr "Прикључак веб интерфејса:"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 426
-#: rc.cpp:1796
+#: rc.cpp:1739
 #, no-c-format
 msgid "System"
 msgstr "Систем"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 437
-#: rc.cpp:1799
+#: rc.cpp:1742
 #, no-c-format
 msgid "General:"
 msgstr "Опште:"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 445
-#: rc.cpp:1802
+#: rc.cpp:1745
 #, no-c-format
 msgid "Connections:"
 msgstr "Везе:"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 559
-#: rc.cpp:1856
+#: rc.cpp:1799
 #, no-c-format
 msgid "Disk I/O:"
 msgstr "Ул/Изл диска:"
 
 #. i18n: file ./plugins/logviewer/logprefwidgetbase.ui line 640
-#: rc.cpp:1892
+#: rc.cpp:1835
 #, no-c-format
 msgid "Use rich te&xt for log"
 msgstr "Користи обогаћени те&кст за дневник"
 
 #. i18n: file ./plugins/search/searchpref.ui line 41
-#: rc.cpp:1898
+#: rc.cpp:1841
 #, no-c-format
 msgid "External Browser"
 msgstr "Спољни прегледач"
 
 #. i18n: file ./plugins/search/searchpref.ui line 52
-#: rc.cpp:1901
+#: rc.cpp:1844
 #, no-c-format
 msgid "Open searches in external browser"
 msgstr "Отвори резултате претраге у спољном прегледачу"
 
 #. i18n: file ./plugins/search/searchpref.ui line 60
-#: rc.cpp:1904 rc.cpp:1955
+#: rc.cpp:1847 rc.cpp:1892
 #, no-c-format
 msgid "Use default browser"
 msgstr "Користи подразумевани"
 
 #. i18n: file ./plugins/search/searchpref.ui line 79
-#: rc.cpp:1908
+#: rc.cpp:1850
 #, no-c-format
 msgid "Custom browser path:"
 msgstr "Путања до прегледача:"
 
 #. i18n: file ./plugins/search/searchpref.ui line 116
-#: rc.cpp:1912
+#: rc.cpp:1853
 #, no-c-format
 msgid "Search Engines"
 msgstr "Мотори претраге"
 
 #. i18n: file ./plugins/search/searchpref.ui line 143
-#: rc.cpp:1916
+#: rc.cpp:1856
 #, no-c-format
 msgid "Search engine name:"
 msgstr "Име мотора тражења:"
 
 #. i18n: file ./plugins/search/searchpref.ui line 187
-#: rc.cpp:1922
+#: rc.cpp:1862
 #, no-c-format
 msgid "&Add"
 msgstr "Дод&ај"
 
 #. i18n: file ./plugins/search/searchpref.ui line 195
-#: rc.cpp:1925
+#: rc.cpp:1865
 #, no-c-format
 msgid "Engines"
 msgstr "Мотори"
 
 #. i18n: file ./plugins/search/searchpref.ui line 206
-#: rc.cpp:1928
+#: rc.cpp:1868
 #, no-c-format
 msgid "URL"
 msgstr "URL"
 
 #. i18n: file ./plugins/search/searchpref.ui line 257
-#: rc.cpp:1934
+#: rc.cpp:1874
 #, no-c-format
 msgid "R&emove All"
 msgstr "Уклони св&е"
 
 #. i18n: file ./plugins/search/searchpref.ui line 282
-#: rc.cpp:1937
+#: rc.cpp:1877
 #, no-c-format
 msgid "Add Defau&lt"
 msgstr "Додај под&разумевано"
 
 #. i18n: file ./plugins/search/searchpref.ui line 290
-#: rc.cpp:1940
+#: rc.cpp:1880
 #, no-c-format
 msgid "Update From Internet"
 msgstr "Освежи са интернета"
 
 #. i18n: file ./plugins/search/searchbar.ui line 53
 #: plugins/search/searchplugin.cpp:50 plugins/search/searchtab.cpp:48
-#: rc.cpp:1946
+#: rc.cpp:1883
 #, no-c-format
 msgid "Search"
 msgstr "Тражи"
 
 #. i18n: file ./plugins/search/searchbar.ui line 78
-#: rc.cpp:1949
+#: rc.cpp:1886
 #, no-c-format
 msgid "Search engine:"
 msgstr "Мотор тражења:"
 
 #. i18n: file ./plugins/search/ktsearchplugin.kcfg line 10
-#: rc.cpp:1952
+#: rc.cpp:1889
 #, no-c-format
 msgid "Current search engine"
 msgstr "Тренутни мотор претраге"
 
 #. i18n: file ./plugins/search/ktsearchplugin.kcfg line 19
-#: rc.cpp:1958
+#: rc.cpp:1895
 #, no-c-format
 msgid "Use custom browser"
 msgstr "Користи посебан прегледач"
 
 #. i18n: file ./plugins/search/ktsearchplugin.kcfg line 23
-#: rc.cpp:1961
+#: rc.cpp:1898
 #, no-c-format
 msgid "Custom browser executable path"
 msgstr "Путања до програма посебног прегледача"
@@ -3849,9 +3849,9 @@ msgid ""
 "_n: 1 day \n"
 "%n days "
 msgstr ""
-"%n дан\n"
-"%n дана\n"
-"%n дана"
+"%n дан \n"
+"%n дана \n"
+"%n дана "
 
 #: libktorrent/interfaces/filetreeitem.cpp:77
 #: plugins/infowidget/iwfiletreediritem.cpp:148
@@ -4106,7 +4106,7 @@ msgstr "Проверавам податке"
 msgid "Stopped. No space left on device."
 msgstr "Заустављен. Нема слободног простора."
 
-#: libktorrent/torrent/queuemanager.cpp:135
+#: libktorrent/torrent/queuemanager.cpp:136
 msgid ""
 "You don't have enough disk space to download this torrent. Are you sure you "
 "want to continue?"
@@ -4114,12 +4114,12 @@ msgstr ""
 "Немате довољно простора да би сте преузели овај торент. Желите ли заиста да "
 "наставите?"
 
-#: libktorrent/torrent/queuemanager.cpp:135
+#: libktorrent/torrent/queuemanager.cpp:136
 #, c-format
 msgid "Insufficient disk space for %1"
 msgstr "Недовољно простора за %1"
 
-#: libktorrent/torrent/queuemanager.cpp:157
+#: libktorrent/torrent/queuemanager.cpp:158
 msgid ""
 "Torrent \"%1\" has reached its maximum share ratio. Ignore the limit and start "
 "seeding anyway?"
@@ -4127,16 +4127,16 @@ msgstr ""
 "Торент „%1“ је достигао максимум односа дељења. Да занемарим ограничење и "
 "започнем сејање?"
 
-#: libktorrent/torrent/queuemanager.cpp:157
+#: libktorrent/torrent/queuemanager.cpp:158
 msgid "Maximum share ratio limit reached."
 msgstr "Максимум ограничења односа дељења је достигнут."
 
-#: libktorrent/torrent/queuemanager.cpp:236
-#: libktorrent/torrent/queuemanager.cpp:760
+#: libktorrent/torrent/queuemanager.cpp:237
+#: libktorrent/torrent/queuemanager.cpp:763
 msgid "Error stopping torrent %1 : %2"
 msgstr "Грешка при заустављању торента %1 : %2"
 
-#: libktorrent/torrent/queuemanager.cpp:742
+#: libktorrent/torrent/queuemanager.cpp:745
 msgid "Error starting torrent %1 : %2"
 msgstr "Грешка при покретању торента %1 : %2"
 
