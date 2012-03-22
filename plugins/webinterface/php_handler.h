@@ -46,6 +46,9 @@ namespace kt
 		
 	signals:
 		void finished();
+
+	private:
+		bool containsDelimiters(const QString & str);
 		
 	private:
 		TQByteArray output;

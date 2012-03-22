@@ -23,6 +23,8 @@
 
 #include <stdint.h> 
 
+#include <stdint.h> //uint32_t, int64_t
+
 #include <tqwidget.h>
 #include <tqpainter.h>
 #include <tqstring.h>
