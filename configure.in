@@ -191,7 +191,7 @@ AC_ARG_ENABLE(geoip,
      esac],[geoip=true])
 
 AC_ARG_ENABLE(system-geoip,
-    [AS_HELP_STRING(--enable-system-geoip,[Enables use of system-wide GeoIP database (implies --disable-geoip) (no by default)])],
+    [AS_HELP_STRING(--enable-system-geoip,[Enables use of system-wide GeoIP database (implies --disable-geoip) (auto by default)])],
     [case "${enableval}" in
         yes) if test "$have_system_geoip" = yes; then
                 system_geoip=true
@@ -199,9 +199,18 @@ AC_ARG_ENABLE(system-geoip,
              else
                 AC_MSG_ERROR(cannot enable system geoip. GeoIP library headers were not found on your system)
              fi ;;
-        no) system_geoip=true ;;
+        no) system_geoip=false ;;
         *) AC_MSG_ERROR(bad value ${enableval} for --enable-system-geoip) ;;
-    esac],[system_geoip=false])
+    esac],[system_geoip=auto])
+
+if test x$system_geoip = xauto; then
+    if test "$have_system_geoip" = yes; then
+        system_geoip=true
+        geoip=false
+    else
+        system_geoip=false
+    fi
+fi
 
 AM_CONDITIONAL(ENABLE_GEOIP, test x$geoip = xtrue)
 AM_CONDITIONAL(USE_SYSTEM_GEOIP, test x$system_geoip = xtrue)
@@ -212,12 +221,20 @@ fi
 
 
 AC_ARG_ENABLE(builtin-country-flags,
-    [AS_HELP_STRING(--enable-builtin-country-flags,[Install and prefer builtin country flags to the ones provided by KDE (yes by default)])],
+    [AS_HELP_STRING(--enable-builtin-country-flags,[Install and prefer builtin country flags to the ones provided by KDE (auto by default)])],
     [case "${enableval}" in
         yes) builtin_country_flags=true ;;
         no) builtin_country_flags=false ;;
         *) AC_MSG_ERROR(bad value ${enableval} for --enable-builtin-country-flags) ;;
-    esac],[builtin_country_flags=true])
+    esac],[builtin_country_flags=auto])
+
+if test x$builtin_country_flags = xauto; then
+    if test x$geoip = xtrue; then
+        builtin_country_flags=true
+    else
+        builtin_country_flags=false
+    fi
+fi
 
 AM_CONDITIONAL(ENABLE_BUILTIN_COUNTRY_FLAGS, test x$builtin_country_flags = xtrue)
 
