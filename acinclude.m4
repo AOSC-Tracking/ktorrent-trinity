@@ -428,7 +428,7 @@ AC_DEFUN([KDE_SET_DEFAULT_PATHS],
 if test "$1" = "default"; then
 
   if test -z "$kde_htmldir"; then
-    kde_htmldir='\${datadir}/doc/HTML'
+    kde_htmldir='\${datadir}/doc/tde/HTML'
   fi
   if test -z "$kde_appsdir"; then
     kde_appsdir='\${datadir}/applnk'
