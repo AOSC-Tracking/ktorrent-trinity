@@ -73,7 +73,7 @@ void StupidWarningMessagesFromTQt( TQtMsgType type, const char *msg )
 
 
 static const char description[] =
-    I18N_NOOP("A BitTorrent program for KDE");
+    I18N_NOOP("A BitTorrent program for TDE");
 
 
 bool GrabPIDLock()

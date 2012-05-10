@@ -32,7 +32,7 @@ using namespace kt;
 using namespace bt;
 
 static const char description[] =
-		I18N_NOOP("A KDE KPart Application");
+		I18N_NOOP("A TDE KPart Application");
 
 static const char version[] = "1.3dev";
 
