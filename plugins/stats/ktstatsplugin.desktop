@@ -21,4 +21,4 @@ Name[zh_CN]=统计插件
 Comment=
 Comment[xx]=xxxx
 ServiceTypes=KTorrent/Plugin
-X-KDE-Library=ktstatsplugin
+X-TDE-Library=ktstatsplugin

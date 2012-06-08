@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=ServiceType
-X-KDE-ServiceType=KTorrent/Plugin
+X-TDE-ServiceType=KTorrent/Plugin
 Name=KTorrent Plugin
 Name[ar]=قابس KTorrent
 Name[bg]=Приставка за KTorrent

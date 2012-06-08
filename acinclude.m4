@@ -489,7 +489,7 @@ if test "$1" = "default"; then
     kde_widgetdir='\${libdir}/trinity/plugins/designer'
   fi
   if test -z "$xdg_appsdir"; then
-    xdg_appsdir='\${datadir}/applications/kde'
+    xdg_appsdir='\${datadir}/applications/tde'
   fi
   if test -z "$xdg_menudir"; then
     xdg_menudir='\${sysconfdir}/xdg/menus'

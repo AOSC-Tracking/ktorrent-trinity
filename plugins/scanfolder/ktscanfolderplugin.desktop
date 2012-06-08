@@ -23,4 +23,4 @@ Name[zh_CN]=扫描文件夹插件
 Name[zh_TW]=掃描資料夾外掛程式
 ServiceTypes=KTorrent/Plugin
 Type=Service
-X-KDE-Library=ktscanfolderplugin
+X-TDE-Library=ktscanfolderplugin

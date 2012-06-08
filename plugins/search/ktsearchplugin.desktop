@@ -57,4 +57,4 @@ Comment[zh_CN]=KTorrent 的搜索插件
 Comment[zh_TW]=KTorrent 搜尋外掛程式
 ServiceTypes=KTorrent/Plugin
 Type=Service
-X-KDE-Library=ktsearchplugin
+X-TDE-Library=ktsearchplugin

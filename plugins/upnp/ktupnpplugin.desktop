@@ -23,4 +23,4 @@ Name[zh_CN]=UPnP 插件
 Name[zh_TW]=UPnP外掛程式
 ServiceTypes=KTorrent/Plugin
 Type=Service
-X-KDE-Library=ktupnpplugin
+X-TDE-Library=ktupnpplugin

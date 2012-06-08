@@ -19,4 +19,4 @@ Name[xx]=xxWebInterfacexx
 Name[zh_CN]=Web 界面
 ServiceTypes=KTorrent/Plugin
 Type=Service
-X-KDE-Library=ktwebinterfaceplugin
+X-TDE-Library=ktwebinterfaceplugin

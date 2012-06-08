@@ -36,4 +36,4 @@ MimeType=application/x-bittorrent
 Icon=torrent
 Type=MimeType
 Patterns=*.torrent;*.tor
-X-KDE-AutoEmbed=false
+X-TDE-AutoEmbed=false

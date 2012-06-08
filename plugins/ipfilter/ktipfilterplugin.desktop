@@ -53,4 +53,4 @@ Comment[zh_CN]=KTorrent 的 IP 过滤器插件
 Comment[zh_TW]=KTorrent IP 過濾器外掛程式
 ServiceTypes=KTorrent/Plugin
 Type=Service
-X-KDE-Library=ktipfilterplugin
+X-TDE-Library=ktipfilterplugin

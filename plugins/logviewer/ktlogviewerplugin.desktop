@@ -23,4 +23,4 @@ Name[zh_CN]=日志查看器插件
 Name[zh_TW]=紀錄檢視器外掛程式
 ServiceTypes=KTorrent/Plugin
 Type=Service
-X-KDE-Library=ktlogviewerplugin
+X-TDE-Library=ktlogviewerplugin

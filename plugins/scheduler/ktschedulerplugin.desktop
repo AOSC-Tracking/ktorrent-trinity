@@ -23,4 +23,4 @@ Name[zh_CN]=带宽规划器插件
 Name[zh_TW]=排程器外掛程式
 ServiceTypes=KTorrent/Plugin
 Type=Service
-X-KDE-Library=ktschedulerplugin
+X-TDE-Library=ktschedulerplugin

@@ -19,4 +19,4 @@ Name[xx]=xxZeroConfPluginxx
 Name[zh_CN]=ZeroConf 插件
 ServiceTypes=KTorrent/Plugin
 Type=Service
-X-KDE-Library=ktzeroconfplugin
+X-TDE-Library=ktzeroconfplugin

@@ -26,4 +26,4 @@ Name[zh_CN]=搜索插件
 Name[zh_TW]=搜尋外掛程式
 ServiceTypes=KTorrent/Plugin
 Type=Service
-X-KDE-Library=ktinfowidgetplugin
+X-TDE-Library=ktinfowidgetplugin
