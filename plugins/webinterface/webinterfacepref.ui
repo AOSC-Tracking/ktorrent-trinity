@@ -234,7 +234,7 @@
     </connection>
     <connection>
         <sender>phpExecutablePath</sender>
-        <signal>textChanged(const QString&amp;)</signal>
+        <signal>textChanged(const TQString&amp;)</signal>
         <receiver>WebInterfacePreference</receiver>
         <slot>changeLedState()</slot>
     </connection>

@@ -483,9 +483,9 @@
     </connection>
     <connection>
         <sender>m_node</sender>
-        <signal>textChanged(const QString&amp;)</signal>
+        <signal>textChanged(const TQString&amp;)</signal>
         <receiver>TorrentCreatorDlgBase</receiver>
-        <slot>m_node_textChanged(const QString&amp;)</slot>
+        <slot>m_node_textChanged(const TQString&amp;)</slot>
     </connection>
     <connection>
         <sender>m_nodeList</sender>
@@ -514,7 +514,7 @@
 <Q_SLOTS>
     <slot>btnRemoveNode_clicked()</slot>
     <slot>btnAddNode_clicked()</slot>
-    <slot>m_node_textChanged(const QString&amp;)</slot>
+    <slot>m_node_textChanged(const TQString&amp;)</slot>
     <slot>m_nodeList_selectionChanged(TQListViewItem*)</slot>
 </Q_SLOTS>
 <layoutdefaults spacing="6" margin="11"/>
