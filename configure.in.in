@@ -90,6 +90,8 @@ else
     AC_DEFINE(HAVE_STATVFS64, 0)
 fi
 
+KDE_ENABLE_HIDDEN_VISIBILITY
+
 KDE_CHECK_LIB(gmp, __gmpz_init,	[have_gmp=yes],
 	[
 		have_gmp=no
