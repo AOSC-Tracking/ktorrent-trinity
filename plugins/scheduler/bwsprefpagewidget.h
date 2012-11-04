@@ -42,7 +42,7 @@ namespace kt
 			
 			/**
 			 * @brief Loads default schedule.
-			 * Default schedule is currently active (if enabled) and it's in ~/.kde/share/apps/ktorrent/bwschedule
+			 * Default schedule is currently active (if enabled) and it's in ~/.trinity/share/apps/ktorrent/bwschedule
 			 */
 			void loadDefault();
 			

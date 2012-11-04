@@ -27,7 +27,7 @@ namespace kt
 {
 	/**
 	 * Will return the data directory
-	 * @return ~/.kde/share/apps/ktorrent/
+	 * @return ~/.trinity/share/apps/ktorrent/
 	 */
 	TQString DataDir();
 }
