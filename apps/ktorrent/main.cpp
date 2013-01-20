@@ -166,8 +166,8 @@ int main(int argc, char **argv)
 	about.addCredit("Markus Brueffer",I18N_NOOP("Patch to fix free diskspace calculation on FreeBSD"),"markus@brueffer.de");
 	about.addCredit("caruccio",I18N_NOOP("Patch to load torrents silently from the command line"),"mateus@caruccio.com");
 
-	KCmdLineArgs::init(argc, argv, &about);
-	KCmdLineArgs::addCmdLineOptions(options);
+	TDECmdLineArgs::init(argc, argv, &about);
+	TDECmdLineArgs::addCmdLineOptions(options);
 	
 	KTorrentApp::addCmdLineOptions();
 	if (!KTorrentApp::start())

@@ -59,11 +59,11 @@ void Tester::slotLoadingComplete( Loader *loader, Document doc, Status status )
 int main( int argc, char **argv )
 {
 	KAboutData aboutData( "testlibrss", "testlibrss", "0.1" );
-	KCmdLineArgs::init( argc, argv, &aboutData );
-    KCmdLineArgs::addCmdLineOptions( options );
+	TDECmdLineArgs::init( argc, argv, &aboutData );
+    TDECmdLineArgs::addCmdLineOptions( options );
 	KApplication app;
 
-        KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+        TDECmdLineArgs *args = TDECmdLineArgs::parsedArgs();
         if ( args->count() != 1 ) args->usage();
 
 	Tester tester;

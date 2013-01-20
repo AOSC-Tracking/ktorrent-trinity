@@ -51,8 +51,8 @@ int main(int argc,char** argv)
 	KAboutData about("ktupnptest", I18N_NOOP("KTUPnPTest"), version, description,
 					 KAboutData::License_GPL, "(C) 2005 Joris Guisson", 0,
 					 "http://ktorrent.org/");
-	KCmdLineArgs::init(argc, argv,&about);
-	KCmdLineArgs::addCmdLineOptions( options );
+	TDECmdLineArgs::init(argc, argv,&about);
+	TDECmdLineArgs::addCmdLineOptions( options );
 	KApplication app;
 	Globals::instance().initLog(kt::DataDir() + "ktupnptest.log");
 	UPnPTestApp* mwnd = new UPnPTestApp();

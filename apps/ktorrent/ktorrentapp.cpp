@@ -45,7 +45,7 @@ int KTorrentApp::newInstance()
 	if (!dcopClient()->isRegistered() )
 		dcopClient()->registerAs(name(), false);
 
-	KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+	TDECmdLineArgs *args = TDECmdLineArgs::parsedArgs();
 	bt::Globals::instance().setDebugMode(args->isSet("debug"));
 
 	TQString data_dir = KGlobal::dirs()->saveLocation("data","ktorrent");
