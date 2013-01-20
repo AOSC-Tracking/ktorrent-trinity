@@ -122,7 +122,7 @@ namespace kt
 				if(canceled)
 					return;
 				
-				KApplication::kApplication() ->processEvents();
+				TDEApplication::kApplication() ->processEvents();
 				TQString line = stream.readLine();
 				i += line.length() * sizeof( char ); //rough estimation of string size
 				kProgress1->setProgress( i * 100 / source_size );
@@ -184,7 +184,7 @@ namespace kt
 					if ( i % 10000 == 0 )
 						Out(SYS_IPF|LOG_DEBUG) << "Block " << i << " written." << endl;
 				}
-				KApplication::kApplication()->processEvents();
+				TDEApplication::kApplication()->processEvents();
 				
 				if(canceled)
 					return;
@@ -206,7 +206,7 @@ namespace kt
 			converting = false;
 		}
 
-		KApplication::kApplication()->processEvents();
+		TDEApplication::kApplication()->processEvents();
 		//reload level1 filter
 		if ( m_plugin )
 			m_plugin->loadAntiP2P();

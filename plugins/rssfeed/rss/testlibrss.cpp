@@ -61,7 +61,7 @@ int main( int argc, char **argv )
 	KAboutData aboutData( "testlibrss", "testlibrss", "0.1" );
 	TDECmdLineArgs::init( argc, argv, &aboutData );
     TDECmdLineArgs::addCmdLineOptions( options );
-	KApplication app;
+	TDEApplication app;
 
         TDECmdLineArgs *args = TDECmdLineArgs::parsedArgs();
         if ( args->count() != 1 ) args->usage();

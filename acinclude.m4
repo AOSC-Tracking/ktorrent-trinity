@@ -2003,20 +2003,20 @@ cat > conftest.$ac_ext <<EOF
 #include <kapp.h>
 
 int main() {
-    printf("kde_htmldir=\\"%s\\"\n", KApplication::kde_htmldir().data());
-    printf("kde_appsdir=\\"%s\\"\n", KApplication::kde_appsdir().data());
-    printf("kde_icondir=\\"%s\\"\n", KApplication::kde_icondir().data());
-    printf("kde_sounddir=\\"%s\\"\n", KApplication::kde_sounddir().data());
-    printf("kde_datadir=\\"%s\\"\n", KApplication::kde_datadir().data());
-    printf("kde_locale=\\"%s\\"\n", KApplication::kde_localedir().data());
-    printf("kde_cgidir=\\"%s\\"\n", KApplication::kde_cgidir().data());
-    printf("kde_confdir=\\"%s\\"\n", KApplication::kde_configdir().data());
-    printf("kde_mimedir=\\"%s\\"\n", KApplication::kde_mimedir().data());
-    printf("kde_toolbardir=\\"%s\\"\n", KApplication::kde_toolbardir().data());
+    printf("kde_htmldir=\\"%s\\"\n", TDEApplication::kde_htmldir().data());
+    printf("kde_appsdir=\\"%s\\"\n", TDEApplication::kde_appsdir().data());
+    printf("kde_icondir=\\"%s\\"\n", TDEApplication::kde_icondir().data());
+    printf("kde_sounddir=\\"%s\\"\n", TDEApplication::kde_sounddir().data());
+    printf("kde_datadir=\\"%s\\"\n", TDEApplication::kde_datadir().data());
+    printf("kde_locale=\\"%s\\"\n", TDEApplication::kde_localedir().data());
+    printf("kde_cgidir=\\"%s\\"\n", TDEApplication::kde_cgidir().data());
+    printf("kde_confdir=\\"%s\\"\n", TDEApplication::kde_configdir().data());
+    printf("kde_mimedir=\\"%s\\"\n", TDEApplication::kde_mimedir().data());
+    printf("kde_toolbardir=\\"%s\\"\n", TDEApplication::kde_toolbardir().data());
     printf("kde_wallpaperdir=\\"%s\\"\n",
-	KApplication::kde_wallpaperdir().data());
-    printf("kde_bindir=\\"%s\\"\n", KApplication::kde_bindir().data());
-    printf("kde_partsdir=\\"%s\\"\n", KApplication::kde_partsdir().data());
+	TDEApplication::kde_wallpaperdir().data());
+    printf("kde_bindir=\\"%s\\"\n", TDEApplication::kde_bindir().data());
+    printf("kde_partsdir=\\"%s\\"\n", TDEApplication::kde_partsdir().data());
     printf("kde_servicesdir=\\"/tmp/dummy\\"\n");
     printf("kde_servicetypesdir=\\"/tmp/dummy\\"\n");
     printf("kde_moduledir=\\"/tmp/dummy\\"\n");

@@ -53,7 +53,7 @@ int main(int argc,char** argv)
 					 "http://ktorrent.org/");
 	TDECmdLineArgs::init(argc, argv,&about);
 	TDECmdLineArgs::addCmdLineOptions( options );
-	KApplication app;
+	TDEApplication app;
 	Globals::instance().initLog(kt::DataDir() + "ktupnptest.log");
 	UPnPTestApp* mwnd = new UPnPTestApp();
 

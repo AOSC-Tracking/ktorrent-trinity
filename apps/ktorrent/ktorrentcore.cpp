@@ -741,7 +741,7 @@ void KTorrentCore::makeTorrent(const TQString & file,const TQStringList & tracke
 			prog->setProgress(ns);
 			ns++;
 			if (ns % 10 == 0)
-				KApplication::kApplication()->processEvents();
+				TDEApplication::kApplication()->processEvents();
 		}
 
 		mktor.saveTorrent(output_file);

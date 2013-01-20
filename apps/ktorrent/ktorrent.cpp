@@ -582,7 +582,7 @@ void KTorrent::setupActions()
 
 bool KTorrent::queryClose()
 {
-	if (Settings::showSystemTrayIcon() && !KApplication::kApplication()->sessionSaving())
+	if (Settings::showSystemTrayIcon() && !TDEApplication::kApplication()->sessionSaving())
 	{
 		hide();
 		return false;
