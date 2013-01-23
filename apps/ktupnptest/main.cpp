@@ -48,8 +48,8 @@ static KCmdLineOptions options[] =
 int main(int argc,char** argv)
 {
 	Globals::instance().setDebugMode(true);
-	KAboutData about("ktupnptest", I18N_NOOP("KTUPnPTest"), version, description,
-					 KAboutData::License_GPL, "(C) 2005 Joris Guisson", 0,
+	TDEAboutData about("ktupnptest", I18N_NOOP("KTUPnPTest"), version, description,
+					 TDEAboutData::License_GPL, "(C) 2005 Joris Guisson", 0,
 					 "http://ktorrent.org/");
 	TDECmdLineArgs::init(argc, argv,&about);
 	TDECmdLineArgs::addCmdLineOptions( options );

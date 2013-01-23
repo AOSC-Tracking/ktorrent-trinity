@@ -58,7 +58,7 @@ void Tester::slotLoadingComplete( Loader *loader, Document doc, Status status )
 
 int main( int argc, char **argv )
 {
-	KAboutData aboutData( "testlibrss", "testlibrss", "0.1" );
+	TDEAboutData aboutData( "testlibrss", "testlibrss", "0.1" );
 	TDECmdLineArgs::init( argc, argv, &aboutData );
     TDECmdLineArgs::addCmdLineOptions( options );
 	TDEApplication app;
