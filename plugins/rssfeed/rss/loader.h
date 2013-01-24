@@ -21,7 +21,7 @@ namespace KIO
 {
 	class Job;
 }
-class KProcess;
+class TDEProcess;
 
 namespace RSS
 {
@@ -192,8 +192,8 @@ namespace RSS
 			virtual void abort() {}
 			
 		private slots:
-			void slotOutput(KProcess *process, char *data, int length);
-			void slotExited(KProcess *process);
+			void slotOutput(TDEProcess *process, char *data, int length);
+			void slotExited(TDEProcess *process);
 
 		private:
 			OutputRetriever(const OutputRetriever &other);

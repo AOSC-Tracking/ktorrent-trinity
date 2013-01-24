@@ -98,7 +98,7 @@ void QueueItem::paintCell(TQPainter* p,const TQColorGroup & cg,int column,int wi
 QueueDialog::QueueDialog(bt::QueueManager* qm, TQWidget *parent, const char *name)
 	:QueueDlg(parent, name)
 {
-	KIconLoader* iload = KGlobal::iconLoader();
+	KIconLoader* iload = TDEGlobal::iconLoader();
 	
 	m_tabs->setTabIconSet(m_tabs->page(0), iload->loadIconSet("down", KIcon::Small));
 	m_tabs->setTabIconSet(m_tabs->page(1), iload->loadIconSet("up", KIcon::Small));

@@ -25,7 +25,7 @@ namespace kt
 
 	WebInterfacePrefPage::WebInterfacePrefPage(WebInterfacePlugin* plugin)
 		: PrefPageInterface(i18n("WebInterface"), i18n("WebInterface Options"),
-						KGlobal::iconLoader()->loadIcon("toggle_log",KIcon::NoGroup))
+						TDEGlobal::iconLoader()->loadIcon("toggle_log",KIcon::NoGroup))
 	{
 		m_widget = 0;
 		w_plugin=plugin;

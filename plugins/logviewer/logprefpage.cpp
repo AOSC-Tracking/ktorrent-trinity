@@ -29,7 +29,7 @@ namespace kt
 
 	LogPrefPage::LogPrefPage()
 		: PrefPageInterface(i18n("LogViewer"), i18n("LogViewer Options"),
-						KGlobal::iconLoader()->loadIcon("toggle_log",KIcon::NoGroup))
+						TDEGlobal::iconLoader()->loadIcon("toggle_log",KIcon::NoGroup))
 	{
 		m_widget = 0;
 	}

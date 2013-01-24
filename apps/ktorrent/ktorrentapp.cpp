@@ -48,7 +48,7 @@ int KTorrentApp::newInstance()
 	TDECmdLineArgs *args = TDECmdLineArgs::parsedArgs();
 	bt::Globals::instance().setDebugMode(args->isSet("debug"));
 
-	TQString data_dir = KGlobal::dirs()->saveLocation("data","ktorrent");
+	TQString data_dir = TDEGlobal::dirs()->saveLocation("data","ktorrent");
 	if (!data_dir.endsWith(bt::DirSeparator()))
 		data_dir += bt::DirSeparator();
 	bt::Globals::instance().initLog(data_dir + "log");

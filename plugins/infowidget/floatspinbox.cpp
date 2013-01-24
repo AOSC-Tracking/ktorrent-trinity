@@ -94,7 +94,7 @@ TQString kt::FloatSpinBox::mapValueToText( int value )
 {
 	/// This is called from TQSpinBox, which passes an int.
 	/// As we don't use the TQSpinBox's internal value, we ignore it.
-	TQString t = KGlobal::locale()->formatNumber( m_value, m_precision_digits);
+	TQString t = TDEGlobal::locale()->formatNumber( m_value, m_precision_digits);
 	editor()->setText(t);
 	return t;
 }
@@ -104,7 +104,7 @@ int kt::FloatSpinBox::mapTextToValue( bool * ok )
 	/// This is called from TQSpinBox, which needs an int for return.
 	/// As we don't use the TQSpinBox's internal value, we only return 0.
 	
-	float value = KGlobal::locale()->readNumber(text(), ok);
+	float value = TDEGlobal::locale()->readNumber(text(), ok);
 	if (*ok)
 	{
 		setValue(value);

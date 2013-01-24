@@ -1082,12 +1082,12 @@ namespace kt
 	
 	TQString RssFeedManager::getFeedListFilename()
 	{
-		return KGlobal::dirs()->saveLocation("data","ktorrent") + "rssfeeds.ktr";
+		return TDEGlobal::dirs()->saveLocation("data","ktorrent") + "rssfeeds.ktr";
 	}
 	
 	TQString RssFeedManager::getFilterListFilename()
 	{
-		return KGlobal::dirs()->saveLocation("data","ktorrent") + "rssfilters.ktr";
+		return TDEGlobal::dirs()->saveLocation("data","ktorrent") + "rssfilters.ktr";
 	}
 	
 	void RssFeedManager::saveFeedList()

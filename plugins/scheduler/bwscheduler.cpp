@@ -222,7 +222,7 @@ namespace kt
 	
 	void BWScheduler::loadSchedule()
 	{
-		TQFile file(KGlobal::dirs()->saveLocation("data","ktorrent") + "bwschedule");
+		TQFile file(TDEGlobal::dirs()->saveLocation("data","ktorrent") + "bwschedule");
 
 		if(!file.exists())
 			return;
@@ -256,7 +256,7 @@ namespace kt
 
 	void BWScheduler::saveSchedule()
 	{
-		TQFile file(KGlobal::dirs()->saveLocation("data","ktorrent") + "bwschedule");
+		TQFile file(TDEGlobal::dirs()->saveLocation("data","ktorrent") + "bwschedule");
 
 		file.open(IO_WriteOnly);
 		TQDataStream stream(&file);

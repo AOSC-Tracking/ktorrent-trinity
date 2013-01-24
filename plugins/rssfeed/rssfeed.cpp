@@ -181,8 +181,8 @@ namespace kt
 	TQString RssFeed::getFilename()
 	{
 		TQDir directory;
-		directory.mkdir(KGlobal::dirs()->saveLocation("data","ktorrent") + "rssfeeds");
-		return KGlobal::dirs()->saveLocation("data","ktorrent") + "rssfeeds/" + m_feedUrl.prettyURL(-1).replace("/", "_").replace(":", "_") + ".ktr";
+		directory.mkdir(TDEGlobal::dirs()->saveLocation("data","ktorrent") + "rssfeeds");
+		return TDEGlobal::dirs()->saveLocation("data","ktorrent") + "rssfeeds/" + m_feedUrl.prettyURL(-1).replace("/", "_").replace(":", "_") + ".ktr";
 		
 	}
 	

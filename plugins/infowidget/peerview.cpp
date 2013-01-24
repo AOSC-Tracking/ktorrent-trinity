@@ -65,7 +65,7 @@ namespace kt
 	{	
 		if (!yes_no_pix_loaded)
 		{
-			KIconLoader* iload = KGlobal::iconLoader();
+			KIconLoader* iload = TDEGlobal::iconLoader();
 			/* Prefer builtin flag images to the ones provided by KDE */
 			flagDB.addFlagSource("data",  TQString("ktorrent/geoip/%1.png"));
 			flagDB.addFlagSource("locale", TQString("l10n/%1/flag.png"));
@@ -155,7 +155,7 @@ namespace kt
 	
 	void PeerViewItem::update()
 	{
-		KLocale* loc = KGlobal::locale();
+		KLocale* loc = TDEGlobal::locale();
 		const PeerInterface::Stats & s = peer->getStats();
 
 		if (s.download_rate >= 103) // lowest "visible" speed, all below will be 0,0 Kb/s
@@ -246,8 +246,8 @@ namespace kt
 		setShowSortIndicator(true);
 		
 		menu = new KPopupMenu(this);
-		kick_id = menu->insertItem(KGlobal::iconLoader()->loadIcon("delete_user", KIcon::NoGroup), i18n("to kick", "Kick peer"));
-		ban_id = menu->insertItem(KGlobal::iconLoader()->loadIcon("filter",KIcon::NoGroup), i18n("to ban", "Ban peer"));
+		kick_id = menu->insertItem(TDEGlobal::iconLoader()->loadIcon("delete_user", KIcon::NoGroup), i18n("to kick", "Kick peer"));
+		ban_id = menu->insertItem(TDEGlobal::iconLoader()->loadIcon("filter",KIcon::NoGroup), i18n("to ban", "Ban peer"));
 		
 		connect(this,TQT_SIGNAL(contextMenu(KListView*, TQListViewItem*, const TQPoint& )),
 				this,TQT_SLOT(showContextMenu(KListView*, TQListViewItem*, const TQPoint& )));

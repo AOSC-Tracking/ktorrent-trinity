@@ -30,7 +30,7 @@ namespace kt
 {
 	TQString DataDir()
 	{
-		TQString str = KGlobal::dirs()->saveLocation("data","ktorrent");
+		TQString str = TDEGlobal::dirs()->saveLocation("data","ktorrent");
 		if (!str.endsWith(bt::DirSeparator()))
 			return str + bt::DirSeparator();
 		else

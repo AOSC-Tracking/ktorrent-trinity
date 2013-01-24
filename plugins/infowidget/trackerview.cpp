@@ -46,7 +46,7 @@ namespace kt
 	TrackerView::TrackerView(TQWidget *parent, const char *name)
 		:TrackerViewBase(parent, name), tc(0)
 	{
-		KIconLoader* iload = KGlobal::iconLoader();
+		KIconLoader* iload = TDEGlobal::iconLoader();
 		btnUpdate->setIconSet(iload->loadIconSet("apply", KIcon::Small));
 		btnAdd->setIconSet(iload->loadIconSet("add", KIcon::Small));
 		btnRemove->setIconSet(iload->loadIconSet("remove", KIcon::Small));

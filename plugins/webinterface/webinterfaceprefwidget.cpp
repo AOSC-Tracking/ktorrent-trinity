@@ -50,7 +50,7 @@ WebInterfacePrefWidget::WebInterfacePrefWidget(TQWidget *parent, const char *nam
 	forward->setChecked(WebInterfacePluginSettings::forward());
 	sessionTTL->setValue(WebInterfacePluginSettings::sessionTTL());
 	
-	TQStringList dirList=KGlobal::instance()->dirs()->findDirs("data", "ktorrent/www");
+	TQStringList dirList=TDEGlobal::instance()->dirs()->findDirs("data", "ktorrent/www");
 	TQDir d(*(dirList.begin()));
 	TQStringList skinList=d.entryList(TQDir::Dirs);
 	for ( TQStringList::Iterator it = skinList.begin(); it != skinList.end(); ++it ){ 

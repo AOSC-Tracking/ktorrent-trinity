@@ -42,7 +42,7 @@ namespace kt
 	void Group::setIconByName(const TQString & in)
 	{
 		icon_name = in;
-		icon = KGlobal::iconLoader()->loadIcon(in,KIcon::Small);
+		icon = TDEGlobal::iconLoader()->loadIcon(in,KIcon::Small);
 	}
 	
 	void Group::rename(const TQString & nn)

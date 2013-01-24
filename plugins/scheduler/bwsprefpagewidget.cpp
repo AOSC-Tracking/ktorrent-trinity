@@ -53,7 +53,7 @@ namespace kt
 
 		lblStatus->clear();
 
-		pix_icon->setPixmap(KGlobal::iconLoader()->loadIcon("clock",KIcon::NoGroup));
+		pix_icon->setPixmap(TDEGlobal::iconLoader()->loadIcon("clock",KIcon::NoGroup));
 		
 		btnOk->setGuiItem(KStdGuiItem::ok());
 		btnCancel->setGuiItem(KStdGuiItem::cancel());
@@ -211,7 +211,7 @@ namespace kt
 	void BWSPrefPageWidget::loadDefault()
 	{
 		//read schedule from HD
-		TQString fn = KGlobal::dirs()->saveLocation("data","ktorrent") + "bwschedule";
+		TQString fn = TDEGlobal::dirs()->saveLocation("data","ktorrent") + "bwschedule";
 		loadSchedule(fn, false);
 	}
 

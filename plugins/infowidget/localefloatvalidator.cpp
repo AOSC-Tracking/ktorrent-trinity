@@ -26,7 +26,7 @@
 kt::LocaleFloatValidator::LocaleFloatValidator( TQObject * parent, const char * name )
 :TQValidator(parent, name)
 {
-	TQString decimalPoint = TQRegExp::escape(KGlobal::locale()->decimalSymbol());
+	TQString decimalPoint = TQRegExp::escape(TDEGlobal::locale()->decimalSymbol());
 	regexp.setPattern("^-?\\d*(" + decimalPoint + "\\d*)?$");
 }
 

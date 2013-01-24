@@ -89,7 +89,7 @@ namespace kt
 		
 		if(checkUseLevel1->isChecked())
 		{
-			TQFile target(KGlobal::dirs()->saveLocation("data","ktorrent") + "level1.dat");
+			TQFile target(TDEGlobal::dirs()->saveLocation("data","ktorrent") + "level1.dat");
 			if(target.exists())
 				lbl_status1->setText(i18n("Status: Loaded and running."));
 			else
@@ -101,12 +101,12 @@ namespace kt
 
 	void IPBlockingPrefPageWidget::btnDownload_clicked()
 	{
-		TQString target(KGlobal::dirs()->saveLocation("data","ktorrent") + "level1");
+		TQString target(TDEGlobal::dirs()->saveLocation("data","ktorrent") + "level1");
 		TQFile target_file(target);
 		TQFile txtfile(target + ".txt");
 		KURL url(m_url->url());
 		KURL dest(target);
-		KURL temp(KGlobal::dirs()->saveLocation("data","ktorrent") + "level1.tmp");
+		KURL temp(TDEGlobal::dirs()->saveLocation("data","ktorrent") + "level1.tmp");
 		if(KIO::NetAccess::exists(temp,false, this))
 			KIO::NetAccess::del(temp,this);
 
@@ -188,13 +188,13 @@ namespace kt
 	
 	void IPBlockingPrefPageWidget::convert()
 	{
-		TQFile target(KGlobal::dirs()->saveLocation("data","ktorrent") + "level1.dat");
+		TQFile target(TDEGlobal::dirs()->saveLocation("data","ktorrent") + "level1.dat");
 		if(target.exists())
 		{
 			if((KMessageBox::questionYesNo(this,i18n("Filter file (level1.dat) already exists, do you want to convert it again?"),i18n("File Exists")) == 4))
 				return;
 // 			else
-// 				KIO::NetAccess::del(KGlobal::dirs()->saveLocation("data","ktorrent") + "level1.dat", NULL);
+// 				KIO::NetAccess::del(TDEGlobal::dirs()->saveLocation("data","ktorrent") + "level1.dat", NULL);
 		}
 		ConvertDialog dlg(m_plugin);
 		dlg.exec();
@@ -220,7 +220,7 @@ namespace kt
 	////////////////////////////////////////////////////////////////////////////////////
 
 	IPBlockingPrefPage::IPBlockingPrefPage(CoreInterface* core, IPFilterPlugin* p)
-	: PrefPageInterface(i18n("IPBlocking Filter"), i18n("IPBlocking Filter Options"), KGlobal::iconLoader()->loadIcon("filter",KIcon::NoGroup)), m_core(core), m_plugin(p)
+	: PrefPageInterface(i18n("IPBlocking Filter"), i18n("IPBlocking Filter Options"), TDEGlobal::iconLoader()->loadIcon("filter",KIcon::NoGroup)), m_core(core), m_plugin(p)
 	{
 		widget = 0;
 	}

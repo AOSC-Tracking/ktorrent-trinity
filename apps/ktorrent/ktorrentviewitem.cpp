@@ -160,8 +160,8 @@ QCStringList KTorrentViewItem::getTorrentInfo(kt::TorrentInterface* tc)
 	}
 	
 	info.append(TQString::number(s.num_peers).local8Bit());
-	info.append(TQString(KGlobal::locale()->formatNumber(Percentage(s),2) + " %").local8Bit());
-	info.append(KGlobal::locale()->formatNumber(kt::ShareRatio(s),2).local8Bit());
+	info.append(TQString(TDEGlobal::locale()->formatNumber(Percentage(s),2) + " %").local8Bit());
+	info.append(TDEGlobal::locale()->formatNumber(kt::ShareRatio(s),2).local8Bit());
 	info.append(TQString::number(s.seeders_connected_to).local8Bit());
 	info.append(TQString::number(s.leechers_connected_to).local8Bit());
 	return info;
@@ -252,13 +252,13 @@ void KTorrentViewItem::update()
 
 	if(m_parent->columnVisible(10))
 	{
-		setText(10,i18n("%1 %").arg(KGlobal::locale()->formatNumber(Percentage(s),2)));
+		setText(10,i18n("%1 %").arg(TDEGlobal::locale()->formatNumber(Percentage(s),2)));
 	}
 	
 	if(m_parent->columnVisible(11))
 	{
 		float ratio = kt::ShareRatio(s);
-		setText(11,TQString("%1").arg(KGlobal::locale()->formatNumber(ratio,2)));
+		setText(11,TQString("%1").arg(TDEGlobal::locale()->formatNumber(ratio,2)));
 	}
 	
 	if (m_parent->columnVisible(12))

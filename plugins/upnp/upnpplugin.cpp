@@ -59,12 +59,12 @@ namespace kt
 
 	void UPnPPlugin::load()
 	{
-		//KIconLoader* iload = KGlobal::iconLoader();
+		//KIconLoader* iload = TDEGlobal::iconLoader();
 		sock = new UPnPMCastSocket();
 		pref = new UPnPPrefPage(sock);
 		this->getGUI()->addPrefPage(pref);
 		// load the routers list
-		TQString routers_file = KGlobal::dirs()->saveLocation("data","ktorrent") + "routers";
+		TQString routers_file = TDEGlobal::dirs()->saveLocation("data","ktorrent") + "routers";
 		if (bt::Exists(routers_file))
 			sock->loadRouters(routers_file);
 		sock->discover();
@@ -72,7 +72,7 @@ namespace kt
 
 	void UPnPPlugin::unload()
 	{
-		TQString routers_file = KGlobal::dirs()->saveLocation("data","ktorrent") + "routers";
+		TQString routers_file = TDEGlobal::dirs()->saveLocation("data","ktorrent") + "routers";
 		sock->saveRouters(routers_file);
 		this->getGUI()->removePrefPage(pref);
 		sock->close();

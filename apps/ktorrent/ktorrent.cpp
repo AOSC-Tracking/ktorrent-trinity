@@ -132,7 +132,7 @@ KTorrent::KTorrent()
 	m_systray_icon = new TrayIcon(m_core, this);
 	
 	m_group_view->loadGroups();
-	m_view_man->restoreViewState(KGlobal::config(),this);
+	m_view_man->restoreViewState(TDEGlobal::config(),this);
 	
 	TQToolButton* tb = new TQToolButton(m_activeTabWidget);
 	tb->setIconSet(SmallIcon("tab_new"));
@@ -215,8 +215,8 @@ KTorrent::KTorrent()
 	addToolWidget(m_group_view,"player_playlist",i18n("Groups"),DOCK_LEFT);
 	
 	setAutoSaveSettings("WindowStatus",true);
-	KGlobal::config()->setGroup("WindowStatus");
-	bool hidden_on_exit = KGlobal::config()->readBoolEntry("hidden_on_exit",false);
+	TDEGlobal::config()->setGroup("WindowStatus");
+	bool hidden_on_exit = TDEGlobal::config()->readBoolEntry("hidden_on_exit",false);
 	if (Settings::showSystemTrayIcon())
 	{
 		if (hidden_on_exit)
@@ -234,11 +234,11 @@ KTorrent::KTorrent()
 		show();
 	}
 
-	bool menubar_hidden = KGlobal::config()->readBoolEntry("menubar_hidden",false);
+	bool menubar_hidden = TDEGlobal::config()->readBoolEntry("menubar_hidden",false);
 	menuBar()->setHidden(menubar_hidden);
 	m_menubarAction->setChecked(!menubar_hidden);
 
-	bool statusbar_hidden = KGlobal::config()->readBoolEntry("statusbar_hidden",false);
+	bool statusbar_hidden = TDEGlobal::config()->readBoolEntry("statusbar_hidden",false);
 	statusBar()->setHidden(statusbar_hidden);
 	m_statusbarAction->setChecked(!statusbar_hidden);
 
@@ -598,11 +598,11 @@ bool KTorrent::queryExit()
 	// stop timers to prevent update
 	m_gui_update_timer.stop();
 	
-	KGlobal::config()->setGroup("WindowStatus");
-	KGlobal::config()->writeEntry("hidden_on_exit",this->isHidden());
-	KGlobal::config()->writeEntry("menubar_hidden",menuBar()->isHidden());
-	KGlobal::config()->writeEntry("statusbar_hidden",statusBar()->isHidden());
-	m_view_man->saveViewState(KGlobal::config());
+	TDEGlobal::config()->setGroup("WindowStatus");
+	TDEGlobal::config()->writeEntry("hidden_on_exit",this->isHidden());
+	TDEGlobal::config()->writeEntry("menubar_hidden",menuBar()->isHidden());
+	TDEGlobal::config()->writeEntry("statusbar_hidden",statusBar()->isHidden());
+	m_view_man->saveViewState(TDEGlobal::config());
 	saveSettings();
 	hide();
 	m_systray_icon->hide(); // hide system tray icon upon exit
@@ -712,12 +712,12 @@ void KTorrent::optionsConfigureToolbars()
 	// use the standard toolbar editor
 #if defined(TDE_MAKE_VERSION)
 # if TDE_VERSION >= TDE_MAKE_VERSION(3,1,0)
-	saveMainWindowSettings(KGlobal::config(), autoSaveGroup());
+	saveMainWindowSettings(TDEGlobal::config(), autoSaveGroup());
 # else
-	saveMainWindowSettings(KGlobal::config());
+	saveMainWindowSettings(TDEGlobal::config());
 # endif
 #else
-	saveMainWindowSettings(KGlobal::config());
+	saveMainWindowSettings(TDEGlobal::config());
 #endif
         KEditToolbar dlg(factory());
         connect(&dlg,TQT_SIGNAL(newToolbarConfig()),this,TQT_SLOT(newToolbarConfig()));
@@ -732,12 +732,12 @@ void KTorrent::newToolbarConfig()
 
 #if defined(TDE_MAKE_VERSION)
 # if TDE_VERSION >= TDE_MAKE_VERSION(3,1,0)
-	applyMainWindowSettings(KGlobal::config(), autoSaveGroup());
+	applyMainWindowSettings(TDEGlobal::config(), autoSaveGroup());
 # else
-	applyMainWindowSettings(KGlobal::config());
+	applyMainWindowSettings(TDEGlobal::config());
 # endif
 #else
-	applyMainWindowSettings(KGlobal::config());
+	applyMainWindowSettings(TDEGlobal::config());
 #endif
 }
 
@@ -859,7 +859,7 @@ void KTorrent::addToolWidget(TQWidget* w,const TQString & icon,const TQString & 
 	
 	
 	if (!icon.isNull())
-		w->setIcon(KGlobal::iconLoader()->loadIcon(icon,KIcon::Small));
+		w->setIcon(TDEGlobal::iconLoader()->loadIcon(icon,KIcon::Small));
 	
 	switch (dock)
 	{

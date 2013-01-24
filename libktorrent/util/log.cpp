@@ -87,7 +87,7 @@ namespace bt
 			
 			// move current log to 1 and zip it
 			bt::Move(file,file + "-1",true);
-			system(TQString("gzip " + KProcess::quote(file + "-1")).local8Bit());
+			system(TQString("gzip " + TDEProcess::quote(file + "-1")).local8Bit());
 		}
 
 		void setOutputFile(const TQString & file)

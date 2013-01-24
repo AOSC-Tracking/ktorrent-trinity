@@ -83,17 +83,17 @@ namespace kt
 		getGUI()->addPrefPage(pref);
 		currentTorrentChanged(const_cast<kt::TorrentInterface*>(getGUI()->getCurrentTorrent()));
 		
-		file_view->restoreLayout(KGlobal::config(),"FileView");
+		file_view->restoreLayout(TDEGlobal::config(),"FileView");
 	}
 
 	void InfoWidgetPlugin::unload()
 	{
 		if (cd_view)
-			cd_view->saveLayout(KGlobal::config(),"ChunkDownloadView");
+			cd_view->saveLayout(TDEGlobal::config(),"ChunkDownloadView");
 		if (peer_view)
-			peer_view->saveLayout(KGlobal::config(),"PeerView");
+			peer_view->saveLayout(TDEGlobal::config(),"PeerView");
 		if (file_view)
-			file_view->saveLayout(KGlobal::config(),"FileView");
+			file_view->saveLayout(TDEGlobal::config(),"FileView");
 		
 		getGUI()->removeViewListener(this);
 		getGUI()->removePrefPage(pref);
@@ -172,12 +172,12 @@ namespace kt
 			peer_view = new PeerView(0);
 			getGUI()->addToolWidget(peer_view,"tdmconfig",i18n("Peers"),GUIInterface::DOCK_BOTTOM);
 			
-			peer_view->restoreLayout(KGlobal::config(),"PeerView");
+			peer_view->restoreLayout(TDEGlobal::config(),"PeerView");
 			createMonitor(tc);
 		}
 		else if (!show && peer_view)
 		{
-			peer_view->saveLayout(KGlobal::config(),"PeerView");
+			peer_view->saveLayout(TDEGlobal::config(),"PeerView");
 			getGUI()->removeToolWidget(peer_view);
 			delete peer_view; peer_view = 0;
 			createMonitor(tc);
@@ -193,13 +193,13 @@ namespace kt
 			cd_view = new ChunkDownloadView(0);
 			getGUI()->addToolWidget(cd_view,"fifteenpieces",i18n("Chunks"),GUIInterface::DOCK_BOTTOM);
 			
-			cd_view->restoreLayout(KGlobal::config(),"ChunkDownloadView");
+			cd_view->restoreLayout(TDEGlobal::config(),"ChunkDownloadView");
 			cd_view->changeTC(tc);
 			createMonitor(tc);	
 		}
 		else if (!show && cd_view)
 		{
-			cd_view->saveLayout(KGlobal::config(),"ChunkDownloadView");
+			cd_view->saveLayout(TDEGlobal::config(),"ChunkDownloadView");
 			getGUI()->removeToolWidget(cd_view);
 			delete cd_view; cd_view = 0;
 			createMonitor(tc);

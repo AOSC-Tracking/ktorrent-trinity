@@ -62,7 +62,7 @@ namespace kt
 
 	void SearchPlugin::load()
 	{
-		engines.load(KGlobal::dirs()->saveLocation("data","ktorrent") + "search_engines");
+		engines.load(TDEGlobal::dirs()->saveLocation("data","ktorrent") + "search_engines");
 		KToolBar* tb = getGUI()->addToolBar("search");
 		tab = new SearchTab(tb);
 		connect(tab,TQT_SIGNAL(search( const TQString&, int, bool )),
@@ -113,7 +113,7 @@ namespace kt
 			return;
 		}
 		
-		KIconLoader* iload = KGlobal::iconLoader();
+		KIconLoader* iload = TDEGlobal::iconLoader();
 		
 		SearchWidget* search = new SearchWidget(this);
 		getGUI()->addTabPage(search,iload->loadIconSet("viewmag", KIcon::Small),text,this);
@@ -128,7 +128,7 @@ namespace kt
 	
 	void SearchPlugin::preferencesUpdated()
 	{
-		engines.load(KGlobal::dirs()->saveLocation("data","ktorrent") + "search_engines");
+		engines.load(TDEGlobal::dirs()->saveLocation("data","ktorrent") + "search_engines");
 		if (tab)
 			tab->updateSearchEngines(engines);
 		

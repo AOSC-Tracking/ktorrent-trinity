@@ -77,7 +77,7 @@ KTorrentCore::KTorrentCore(kt::GUIInterface* gui) : max_downloads(0),keep_seedin
 	bool dd_not_exist = !bt::Exists(data_dir);
 	if (data_dir == TQString() || dd_not_exist)
 	{
-		data_dir = KGlobal::dirs()->saveLocation("data","ktorrent");
+		data_dir = TDEGlobal::dirs()->saveLocation("data","ktorrent");
 		if (dd_not_exist)
 		{
 			Settings::setTempDir(data_dir);
@@ -139,7 +139,7 @@ KTorrentCore::~KTorrentCore()
 
 void KTorrentCore::loadPlugins()
 {
-	pman->loadConfigFile(KGlobal::dirs()->saveLocation("data","ktorrent") + "plugins");
+	pman->loadConfigFile(TDEGlobal::dirs()->saveLocation("data","ktorrent") + "plugins");
 	pman->loadPluginList();
 }
 

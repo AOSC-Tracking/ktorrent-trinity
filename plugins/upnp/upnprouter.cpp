@@ -155,7 +155,7 @@ namespace kt
 		if (!ret)
 		{
 			Out(SYS_PNP|LOG_IMPORTANT) << "Error parsing router description !" << endl;
-			TQString dest = KGlobal::dirs()->saveLocation("data","ktorrent") + "upnp_failure";
+			TQString dest = TDEGlobal::dirs()->saveLocation("data","ktorrent") + "upnp_failure";
 			KIO::file_copy(target,dest,-1,true,false,false);
 		}
 		else

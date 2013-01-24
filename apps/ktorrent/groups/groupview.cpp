@@ -89,7 +89,7 @@ namespace kt
 		current_item = 0;
 		menu = 0;
 		createMenu(col);
-		save_file = KGlobal::dirs()->saveLocation("data","ktorrent") + "groups";
+		save_file = TDEGlobal::dirs()->saveLocation("data","ktorrent") + "groups";
 		GroupViewItem* all = addGroup(gman->allGroup(),0);
 		GroupViewItem* dwnld = addGroup(gman->downloadGroup(),all);
 		GroupViewItem* upld = addGroup(gman->uploadGroup(),all);
@@ -105,7 +105,7 @@ namespace kt
 		addGroup(gman->activeUploadsGroup(), active);
 		
 		custom_root = new KListViewItem(all,i18n("Custom Groups"));
-		custom_root->setPixmap(0,KGlobal::iconLoader()->loadIcon("folder",KIcon::Small));
+		custom_root->setPixmap(0,TDEGlobal::iconLoader()->loadIcon("folder",KIcon::Small));
 		setOpen(custom_root,true);
 	}
 

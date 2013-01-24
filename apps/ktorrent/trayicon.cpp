@@ -159,7 +159,7 @@ void TrayIcon::maxShareRatioReached(kt::TorrentInterface* tc)
 		return;
 	
 	const TorrentStats & s = tc->getStats();
-	KLocale* loc = KGlobal::locale();
+	KLocale* loc = TDEGlobal::locale();
 	double speed_up = (double)s.bytes_uploaded / 1024.0;
 	
 	TQString msg = i18n("<b>%1</b> has reached its maximum share ratio of %2 and has been stopped."
@@ -178,7 +178,7 @@ void TrayIcon::maxSeedTimeReached(kt::TorrentInterface* tc)
 		return;
 	
 	const TorrentStats & s = tc->getStats();
-	KLocale* loc = KGlobal::locale();
+	KLocale* loc = TDEGlobal::locale();
 	double speed_up = (double)s.bytes_uploaded / 1024.0;
 	
 	TQString msg = i18n("<b>%1</b> has reached its maximum seed time of %2 hours and has been stopped."
@@ -223,7 +223,7 @@ void TrayIcon::queuingNotPossible(kt::TorrentInterface* tc)
 	const TorrentStats & s = tc->getStats();
 		
 	TQString msg;
-	KLocale* loc = KGlobal::locale();
+	KLocale* loc = TDEGlobal::locale();
 	 
 	if (tc->overMaxRatio())
 		msg = i18n("<b>%1</b> has reached its maximum share ratio of %2 and cannot be enqueued. Remove the limit manually if you want to continue seeding.")

@@ -70,7 +70,7 @@ namespace bt
 		else
 		{
 				// final log file is moved, now zip it and end the job
-			std::system(TQString("gzip " + KProcess::quote(file + "-1")).local8Bit());
+			std::system(TQString("gzip " + TDEProcess::quote(file + "-1")).local8Bit());
 			m_error = 0;
 			lg->logRotateDone();
 			emitResult();

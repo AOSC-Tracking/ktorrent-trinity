@@ -69,18 +69,18 @@ namespace kt
 
 		if (selected)
 		{
-			setPaletteBackgroundColor(KGlobalSettings::highlightColor());
-			setPaletteForegroundColor(KGlobalSettings::highlightedTextColor());
+			setPaletteBackgroundColor(TDEGlobalSettings::highlightColor());
+			setPaletteForegroundColor(TDEGlobalSettings::highlightedTextColor());
 		}
 		else if (odd)
 		{
-			setPaletteBackgroundColor(KGlobalSettings::baseColor());
-			setPaletteForegroundColor(KGlobalSettings::textColor());
+			setPaletteBackgroundColor(TDEGlobalSettings::baseColor());
+			setPaletteForegroundColor(TDEGlobalSettings::textColor());
 		}
 		else
 		{
-			setPaletteBackgroundColor(KGlobalSettings::alternateBackgroundColor());
-			setPaletteForegroundColor(KGlobalSettings::textColor());
+			setPaletteBackgroundColor(TDEGlobalSettings::alternateBackgroundColor());
+			setPaletteForegroundColor(TDEGlobalSettings::textColor());
 		}
 	}
 	
@@ -109,7 +109,7 @@ namespace kt
 	public:
 		LabelViewBox(TQWidget* parent) : TQWidget(parent)
 		{
-			setPaletteBackgroundColor(KGlobalSettings::baseColor());
+			setPaletteBackgroundColor(TDEGlobalSettings::baseColor());
 			layout = new TQVBoxLayout(this);
 			layout->setMargin(0);
 		}

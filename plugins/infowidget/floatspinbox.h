@@ -30,7 +30,7 @@ namespace kt
 	/**
 	* @author Jonas Widarsson
 	*
-	* A Spinbox for float values which respects KGlobal::locale().
+	* A Spinbox for float values which respects TDEGlobal::locale().
 	* TQSpinBox's internal integer value is only
 	* used for step detection.
 	*/

@@ -51,10 +51,10 @@ namespace kt
 		setMaxLogLines(200);
 		setMinimumSize(TQSize(0,50));
 		setSizePolicy(TQSizePolicy::Expanding,TQSizePolicy::Expanding);
-		KGlobal::config()->setGroup("LogViewer");
-		if (KGlobal::config()->hasKey("LogViewerWidgetSize"))
+		TDEGlobal::config()->setGroup("LogViewer");
+		if (TDEGlobal::config()->hasKey("LogViewerWidgetSize"))
 		{
-			TQSize s = KGlobal::config()->readSizeEntry("LogViewerWidgetSize",0);
+			TQSize s = TDEGlobal::config()->readSizeEntry("LogViewerWidgetSize",0);
 			resize(s);
 		}
 		
@@ -64,8 +64,8 @@ namespace kt
 
 	LogViewer::~LogViewer()
 	{
-		KGlobal::config()->setGroup("LogViewer");
-		KGlobal::config()->writeEntry("LogViewerWidgetSize",size());
+		TDEGlobal::config()->setGroup("LogViewer");
+		TDEGlobal::config()->writeEntry("LogViewerWidgetSize",size());
 		LogFlags::instance().setLog(0);
 	}
 

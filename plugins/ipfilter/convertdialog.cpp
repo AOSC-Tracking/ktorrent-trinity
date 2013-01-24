@@ -87,14 +87,14 @@ namespace kt
 
 	void ConvertDialog::convert()
 	{
-		TQFile source( KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.txt" );
-		TQFile target( KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat" );
-		TQFile temp( KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat.tmp" );
+		TQFile source( TDEGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.txt" );
+		TQFile target( TDEGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat" );
+		TQFile temp( TDEGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat.tmp" );
 		
 		if(target.exists())
 		{
 			//make backup
-			KIO::NetAccess::file_copy(KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat", KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat.tmp", -1, true);
+			KIO::NetAccess::file_copy(TDEGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat", TDEGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat.tmp", -1, true);
 		}
 
 		/*    READ INPUT FILE  */
@@ -238,14 +238,14 @@ namespace kt
 	{
 		if(converting)
 		{
-			TQFile target( KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat" );
+			TQFile target( TDEGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat" );
 			if(target.exists())
 				target.remove();
 			
-			TQFile temp( KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat.tmp");
+			TQFile temp( TDEGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat.tmp");
 			if(temp.exists())
 			{
-				KIO::NetAccess::file_copy(KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat.tmp", KGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat", -1, true);
+				KIO::NetAccess::file_copy(TDEGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat.tmp", TDEGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat", -1, true);
 				temp.remove();
 			}
 			

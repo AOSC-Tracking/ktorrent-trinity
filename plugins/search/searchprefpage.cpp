@@ -99,7 +99,7 @@ namespace kt
  
 	void SearchPrefPageWidget::saveSearchEngines()
 	{
-		TQFile fptr(KGlobal::dirs()->saveLocation("data","ktorrent") + "search_engines");
+		TQFile fptr(TDEGlobal::dirs()->saveLocation("data","ktorrent") + "search_engines");
 		if (!fptr.open(IO_WriteOnly))
 			return;
 		TQTextStream out(&fptr);
@@ -185,7 +185,7 @@ namespace kt
 	
 	void SearchPrefPageWidget::btnUpdate_clicked()
 	{
-		TQString fn = KGlobal::dirs()->saveLocation("data","ktorrent") + "search_engines.tmp";
+		TQString fn = TDEGlobal::dirs()->saveLocation("data","ktorrent") + "search_engines.tmp";
 		KURL source("http://www.ktorrent.org/downloads/search_engines");
 		
 		if (KIO::NetAccess::download(source,fn,NULL))
@@ -245,7 +245,7 @@ namespace kt
 
 	SearchPrefPage::SearchPrefPage(SearchPlugin* plugin)
 		: PrefPageInterface(i18n("a noun", "Search"), i18n("Search Engine Options"),
-							KGlobal::iconLoader()->loadIcon("viewmag",KIcon::NoGroup)), m_plugin(plugin)
+							TDEGlobal::iconLoader()->loadIcon("viewmag",KIcon::NoGroup)), m_plugin(plugin)
 	{
 		widget = 0;
 	}

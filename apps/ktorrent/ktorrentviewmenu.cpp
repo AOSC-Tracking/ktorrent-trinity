@@ -31,7 +31,7 @@ using namespace kt;
 KTorrentViewMenu::KTorrentViewMenu (KTorrentView *parent, const char *name )
 		: KPopupMenu ( parent, name ),view(parent)
 {
-	KIconLoader* iload = KGlobal::iconLoader();
+	KIconLoader* iload = TDEGlobal::iconLoader();
 	
 	stop_id = insertItem(
 			iload->loadIconSet("ktstop",KIcon::Small),i18n("to stop", "Stop"),

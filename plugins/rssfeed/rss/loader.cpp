@@ -179,12 +179,12 @@ void OutputRetriever::retrieveData(const KURL &url)
    d->buffer->open(IO_WriteOnly);
 
    d->process = new KShellProcess();
-   connect(d->process, TQT_SIGNAL(processExited(KProcess *)),
-                       TQT_SLOT(slotExited(KProcess *)));
-   connect(d->process, TQT_SIGNAL(receivedStdout(KProcess *, char *, int)),
-                       TQT_SLOT(slotOutput(KProcess *, char *, int)));
+   connect(d->process, TQT_SIGNAL(processExited(TDEProcess *)),
+                       TQT_SLOT(slotExited(TDEProcess *)));
+   connect(d->process, TQT_SIGNAL(receivedStdout(TDEProcess *, char *, int)),
+                       TQT_SLOT(slotOutput(TDEProcess *, char *, int)));
    *d->process << url.path();
-   d->process->start(KProcess::NotifyOnExit, KProcess::Stdout);
+   d->process->start(TDEProcess::NotifyOnExit, TDEProcess::Stdout);
 }
 
 int OutputRetriever::errorCode() const
@@ -192,12 +192,12 @@ int OutputRetriever::errorCode() const
    return d->lastError;
 }
 
-void OutputRetriever::slotOutput(KProcess *, char *data, int length)
+void OutputRetriever::slotOutput(TDEProcess *, char *data, int length)
 {
    d->buffer->writeBlock(data, length);
 }
 
-void OutputRetriever::slotExited(KProcess *p)
+void OutputRetriever::slotExited(TDEProcess *p)
 {
    if (!p->normalExit())
       d->lastError = p->exitStatus();

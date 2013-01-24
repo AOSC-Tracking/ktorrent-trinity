@@ -144,7 +144,7 @@ void KTorrentPreferences::removePrefPage(kt::PrefPageInterface* pp)
 
 ///////////////////////////////////////////////////////
 
-DownloadPrefPage::DownloadPrefPage() : kt::PrefPageInterface(i18n("Downloads"), i18n("Download Options"), KGlobal::iconLoader()->loadIcon("down", KIcon::NoGroup)), dp(0)
+DownloadPrefPage::DownloadPrefPage() : kt::PrefPageInterface(i18n("Downloads"), i18n("Download Options"), TDEGlobal::iconLoader()->loadIcon("down", KIcon::NoGroup)), dp(0)
 {}
 
 DownloadPrefPage::~ DownloadPrefPage()
@@ -214,7 +214,7 @@ void DownloadPrefPage::deleteWidget()
 //////////////////////////////////////
 GeneralPrefPage::GeneralPrefPage() :
 		kt::PrefPageInterface(i18n("General"), i18n("General Options"),
-							  KGlobal::iconLoader()->loadIcon("package_settings", KIcon::NoGroup)), gp(0)
+							  TDEGlobal::iconLoader()->loadIcon("package_settings", KIcon::NoGroup)), gp(0)
 {}
 
 GeneralPrefPage::~GeneralPrefPage()
@@ -338,7 +338,7 @@ void GeneralPrefPage::updateData()
 
 	if (Settings::tempDir() == TQString())
 	{
-		TQString data_dir = KGlobal::dirs()->saveLocation("data", "ktorrent");
+		TQString data_dir = TDEGlobal::dirs()->saveLocation("data", "ktorrent");
 
 		if (!data_dir.endsWith(bt::DirSeparator()))
 			data_dir += bt::DirSeparator();
@@ -409,7 +409,7 @@ void GeneralPrefPage::deleteWidget()
 
 AdvancedPrefPage::AdvancedPrefPage() :
 		kt::PrefPageInterface(i18n("Advanced"), i18n("Advanced Options"),
-							  KGlobal::iconLoader()->loadIcon("package_settings", KIcon::NoGroup)), ap(0)
+							  TDEGlobal::iconLoader()->loadIcon("package_settings", KIcon::NoGroup)), ap(0)
 {}
 
 AdvancedPrefPage::~AdvancedPrefPage()

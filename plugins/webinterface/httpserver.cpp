@@ -58,7 +58,7 @@ namespace kt
 		php_i = new PhpInterface(core);
 		clients.setAutoDelete(true);
 		
-		TQStringList dirList = KGlobal::instance()->dirs()->findDirs("data", "ktorrent/www");
+		TQStringList dirList = TDEGlobal::instance()->dirs()->findDirs("data", "ktorrent/www");
 		rootDir = *(dirList.begin());
 		Out(SYS_WEB|LOG_DEBUG) << "WWW Root Directory "<< rootDir <<endl;
 		session.logged_in = false;
