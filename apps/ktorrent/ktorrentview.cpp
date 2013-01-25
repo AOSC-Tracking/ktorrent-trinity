@@ -206,7 +206,7 @@ void KTorrentView::setCurrentGroup(Group* group)
 	onExecuted(view->currentItem());
 }
 
-void KTorrentView::saveSettings(KConfig* cfg,int idx)
+void KTorrentView::saveSettings(TDEConfig* cfg,int idx)
 {
 	TQString group = TQString("KTorrentView-%1").arg(idx);
 	view->saveLayout(cfg,group);
@@ -215,7 +215,7 @@ void KTorrentView::saveSettings(KConfig* cfg,int idx)
 }
 
 
-void KTorrentView::loadSettings(KConfig* cfg,int idx)
+void KTorrentView::loadSettings(TDEConfig* cfg,int idx)
 {
 	TQString group = TQString("KTorrentView-%1").arg(idx);
 	view->restoreLayout(cfg,group);

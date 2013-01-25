@@ -24,7 +24,7 @@
 
 class TQLabel;
 class TQCheckBox;
-class KConfig;
+class TDEConfig;
 class KLineEdit;
 class KPushButton;
 class KToolBarButton;
@@ -49,8 +49,8 @@ public:
 	virtual ~FilterBar();
 	
 	bool matchesFilter(kt::TorrentInterface* tc);
-	void saveSettings(KConfig* cfg);
-	void loadSettings(KConfig* cfg);
+	void saveSettings(TDEConfig* cfg);
+	void loadSettings(TDEConfig* cfg);
 
 private slots:
 	void slotChangeFilter(const TQString& nameFilter);

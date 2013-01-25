@@ -29,16 +29,16 @@ namespace kt
 	ExitOperation::~ExitOperation()
 	{}
 
-	ExitJobOperation::ExitJobOperation(KIO::Job* j)
+	ExitJobOperation::ExitJobOperation(TDEIO::Job* j)
 	{
-		connect(j,TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(onResult( KIO::Job* )));
+		connect(j,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(onResult( TDEIO::Job* )));
 	}
 	
 	ExitJobOperation::~ExitJobOperation()
 	{
 	}
 	
-	void ExitJobOperation::onResult(KIO::Job* )
+	void ExitJobOperation::onResult(TDEIO::Job* )
 	{
 		operationFinished(this);
 	}

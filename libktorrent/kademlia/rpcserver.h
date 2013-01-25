@@ -91,7 +91,7 @@ namespace dht
 		 * Ping a node, we don't care about the MTID.
 		 * @param addr The address
 		 */
-		void ping(const dht::Key & our_id,const KNetwork::KSocketAddress & addr);
+		void ping(const dht::Key & our_id,const KNetwork::TDESocketAddress & addr);
 		
 		/**
 		 * Find a RPC call, based on the mtid
@@ -106,7 +106,7 @@ namespace dht
 		void readPacket();
 		
 	private:
-		void send(const KNetwork::KSocketAddress & addr,const TQByteArray & msg);
+		void send(const KNetwork::TDESocketAddress & addr,const TQByteArray & msg);
 		void doQueuedCalls();
 			
 	private:

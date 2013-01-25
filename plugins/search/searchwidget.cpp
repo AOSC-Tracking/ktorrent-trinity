@@ -213,7 +213,7 @@ namespace kt
 		{
 			KURL save_url = fdlg.selectedURL();
 			// start a copy job
-			KIO::Job* j = KIO::file_copy(url,save_url,-1,true);
+			TDEIO::Job* j = TDEIO::file_copy(url,save_url,-1,true);
 			// let it deal with the errors
 			j->setAutoErrorHandlingEnabled(true,0);
 		}

@@ -103,7 +103,7 @@ namespace bt
 	
 	void HTTPRequest::onError(int)
 	{
-		Out() << "HTTPRequest error : " << sock->KSocketBase::errorString() << endl;
+		Out() << "HTTPRequest error : " << sock->TDESocketBase::errorString() << endl;
 		error(this,false);
 		sock->close();
 		operationFinished(this);

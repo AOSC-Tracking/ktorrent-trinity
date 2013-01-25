@@ -140,7 +140,7 @@ namespace kt
 		services.append(s);
 	}
 	
-	void UPnPRouter::downloadFinished(KIO::Job* j)
+	void UPnPRouter::downloadFinished(TDEIO::Job* j)
 	{
 		if (j->error())
 		{
@@ -156,7 +156,7 @@ namespace kt
 		{
 			Out(SYS_PNP|LOG_IMPORTANT) << "Error parsing router description !" << endl;
 			TQString dest = TDEGlobal::dirs()->saveLocation("data","ktorrent") + "upnp_failure";
-			KIO::file_copy(target,dest,-1,true,false,false);
+			TDEIO::file_copy(target,dest,-1,true,false,false);
 		}
 		else
 		{
@@ -170,8 +170,8 @@ namespace kt
 	void UPnPRouter::downloadXMLFile()
 	{
 		// downlaod XML description into a temporary file in /tmp
-		KIO::Job* job = KIO::file_copy(location,tmp_file,-1,true,false,false);
-		connect(job,TQT_SIGNAL(result(KIO::Job *)),this,TQT_SLOT(downloadFinished( KIO::Job* )));
+		TDEIO::Job* job = TDEIO::file_copy(location,tmp_file,-1,true,false,false);
+		connect(job,TQT_SIGNAL(result(TDEIO::Job *)),this,TQT_SLOT(downloadFinished( TDEIO::Job* )));
 	}
 	
 	void UPnPRouter::debugPrintData()

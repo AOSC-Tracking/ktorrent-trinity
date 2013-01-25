@@ -32,7 +32,7 @@ struct Image::Private : public Shared
 	unsigned int height;
 	unsigned int width;
 	TQBuffer *pixmapBuffer;
-	KIO::Job *job;
+	TDEIO::Job *job;
 };
 
 Image::Image() : TQObject(), d(new Private)
@@ -111,18 +111,18 @@ void Image::getPixmap()
 	d->pixmapBuffer = new TQBuffer;
 	d->pixmapBuffer->open(IO_WriteOnly);
 
-	d->job = KIO::get(d->url, false, false);
-	connect(d->job, TQT_SIGNAL(data(KIO::Job *, const TQByteArray &)),
-	        this, TQT_SLOT(slotData(KIO::Job *, const TQByteArray &)));
-	connect(d->job, TQT_SIGNAL(result(KIO::Job *)), this, TQT_SLOT(slotResult(KIO::Job *)));
+	d->job = TDEIO::get(d->url, false, false);
+	connect(d->job, TQT_SIGNAL(data(TDEIO::Job *, const TQByteArray &)),
+	        this, TQT_SLOT(slotData(TDEIO::Job *, const TQByteArray &)));
+	connect(d->job, TQT_SIGNAL(result(TDEIO::Job *)), this, TQT_SLOT(slotResult(TDEIO::Job *)));
 }
 
-void Image::slotData(KIO::Job *, const TQByteArray &data)
+void Image::slotData(TDEIO::Job *, const TQByteArray &data)
 {
 	d->pixmapBuffer->writeBlock(data.data(), data.size());
 }
 
-void Image::slotResult(KIO::Job *job)
+void Image::slotResult(TDEIO::Job *job)
 {
 	TQPixmap pixmap;
 	if (!job->error())

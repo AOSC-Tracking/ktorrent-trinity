@@ -27,9 +27,9 @@ namespace bt
 
 	/**
 	 * @author Joris Guisson <joris.guisson@gmail.com>
-	 * KIO::Job to move all the files of a torrent.
+	 * TDEIO::Job to move all the files of a torrent.
 	*/
-	class MoveDataFilesJob : public KIO::Job
+	class MoveDataFilesJob : public TDEIO::Job
 	{
 		Q_OBJECT
   
@@ -50,15 +50,15 @@ namespace bt
 		void startMoving();
 		
 	private slots:
-		void onJobDone(KIO::Job* j);
-		void onCanceled(KIO::Job* j);
+		void onJobDone(TDEIO::Job* j);
+		void onCanceled(TDEIO::Job* j);
 		
 	private:
 		void recover();
 
 	private:
 		bool err;
-		KIO::Job* active_job;
+		TDEIO::Job* active_job;
 		TQString active_src,active_dst;
 		TQMap<TQString,TQString> todo;
 		TQMap<TQString,TQString> success;		

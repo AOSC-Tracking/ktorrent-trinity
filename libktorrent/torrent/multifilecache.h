@@ -55,8 +55,8 @@ namespace bt
 		virtual void open();
 		virtual TQString getOutputPath() const;
 		virtual void changeOutputPath(const TQString & outputpath);
-		virtual KIO::Job* moveDataFiles(const TQString & ndir);
-		virtual void moveDataFilesCompleted(KIO::Job* job);
+		virtual TDEIO::Job* moveDataFiles(const TQString & ndir);
+		virtual void moveDataFilesCompleted(TDEIO::Job* job);
 		virtual void preallocateDiskSpace(PreallocationThread* prealloc);
 		virtual bool hasMissingFiles(TQStringList & sl);
 		virtual void deleteDataFiles();

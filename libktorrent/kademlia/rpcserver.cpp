@@ -157,7 +157,7 @@ namespace dht
 	}
 	
 	
-	void RPCServer::send(const KNetwork::KSocketAddress & addr,const TQByteArray & msg)
+	void RPCServer::send(const KNetwork::TDESocketAddress & addr,const TQByteArray & msg)
 	{
 		sock->send(KNetwork::KDatagramPacket(msg,addr));
 	}
@@ -230,7 +230,7 @@ namespace dht
 		return calls.find(mtid);
 	}
 	
-	void RPCServer::ping(const dht::Key & our_id,const KNetwork::KSocketAddress & addr)
+	void RPCServer::ping(const dht::Key & our_id,const KNetwork::TDESocketAddress & addr)
 	{
 		Out(SYS_DHT|LOG_NOTICE) << "DHT: pinging " << addr.nodeName() << endl;
 		PingReq* pr = new PingReq(our_id);

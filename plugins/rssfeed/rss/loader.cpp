@@ -47,7 +47,7 @@ struct FileRetriever::Private
 
    TQBuffer *buffer;
    int lastError;
-   KIO::Job *job;
+   TDEIO::Job *job;
 };
 
 FileRetriever::FileRetriever()
@@ -80,16 +80,16 @@ void FileRetriever::retrieveData(const KURL &url)
    if (u.protocol()=="feed")
        u.setProtocol("http");
 
-   d->job = KIO::get(u, !m_useCache, false);
+   d->job = TDEIO::get(u, !m_useCache, false);
 
    
    TQTimer::singleShot(1000*90, this, TQT_SLOT(slotTimeout()));
    
-   connect(d->job, TQT_SIGNAL(data(KIO::Job *, const TQByteArray &)),
-                TQT_SLOT(slotData(KIO::Job *, const TQByteArray &)));
-   connect(d->job, TQT_SIGNAL(result(KIO::Job *)), TQT_SLOT(slotResult(KIO::Job *)));
-   connect(d->job, TQT_SIGNAL(permanentRedirection(KIO::Job *, const KURL &, const KURL &)),
-                TQT_SLOT(slotPermanentRedirection(KIO::Job *, const KURL &, const KURL &)));
+   connect(d->job, TQT_SIGNAL(data(TDEIO::Job *, const TQByteArray &)),
+                TQT_SLOT(slotData(TDEIO::Job *, const TQByteArray &)));
+   connect(d->job, TQT_SIGNAL(result(TDEIO::Job *)), TQT_SLOT(slotResult(TDEIO::Job *)));
+   connect(d->job, TQT_SIGNAL(permanentRedirection(TDEIO::Job *, const KURL &, const KURL &)),
+                TQT_SLOT(slotPermanentRedirection(TDEIO::Job *, const KURL &, const KURL &)));
 }
 
 void FileRetriever::slotTimeout()
@@ -99,7 +99,7 @@ void FileRetriever::slotTimeout()
     delete d->buffer;
     d->buffer = NULL;
 
-    d->lastError = KIO::ERR_SERVER_TIMEOUT;
+    d->lastError = TDEIO::ERR_SERVER_TIMEOUT;
     
     emit dataRetrieved(TQByteArray(), false);
 }
@@ -109,12 +109,12 @@ int FileRetriever::errorCode() const
    return d->lastError;
 }
 
-void FileRetriever::slotData(KIO::Job *, const TQByteArray &data)
+void FileRetriever::slotData(TDEIO::Job *, const TQByteArray &data)
 {
    d->buffer->writeBlock(data.data(), data.size());
 }
 
-void FileRetriever::slotResult(KIO::Job *job)
+void FileRetriever::slotResult(TDEIO::Job *job)
 {
    TQByteArray data = d->buffer->buffer();
    data.detach();
@@ -126,7 +126,7 @@ void FileRetriever::slotResult(KIO::Job *job)
    emit dataRetrieved(data, d->lastError == 0);
 }
 
-void FileRetriever::slotPermanentRedirection(KIO::Job *, const KURL &, const KURL &newUrl)
+void FileRetriever::slotPermanentRedirection(TDEIO::Job *, const KURL &, const KURL &newUrl)
 {
    emit permanentRedirection(newUrl);
 }

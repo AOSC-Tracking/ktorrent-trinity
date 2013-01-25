@@ -60,7 +60,7 @@ Button::Button(ButtonBar *parent, const TQString text, const TQIconSet &icon,
     m_clearAccelAction = new KAction(i18n("Clear Accelerator"), 0,
         TQT_TQOBJECT(this), TQT_SLOT(clearAccel()), TQT_TQOBJECT(this));
 
-    KConfig *config = kapp->config();
+    TDEConfig *config = kapp->config();
     config->setGroup("UI");
     TQString accel = config->readEntry(TQString("button_%1").arg(text), "");
     if (!accel.isEmpty())
@@ -70,7 +70,7 @@ Button::Button(ButtonBar *parent, const TQString text, const TQIconSet &icon,
 Button::~Button()
 {
 //     m_buttonBar->removeButton(this);
-    KConfig *config = kapp->config();
+    TDEConfig *config = kapp->config();
     config->setGroup("UI");
 
     TQRegExp r("^&([0-9])\\s.*");

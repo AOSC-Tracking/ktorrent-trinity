@@ -42,7 +42,7 @@ For more details, consult :
 http://devel-home.kde.org/~larrosa/tutorial/p9.html
 http://developer.kde.org/documentation/tutorials/xmlui/preface.html
 
-* Use KConfig XT to create your configuration dialogs and make 
+* Use TDEConfig XT to create your configuration dialogs and make 
 them more maintainable.
 
 For more details, consult :

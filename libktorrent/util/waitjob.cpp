@@ -25,7 +25,7 @@
 namespace bt
 {
 
-	WaitJob::WaitJob(Uint32 millis) : KIO::Job(false)
+	WaitJob::WaitJob(Uint32 millis) : TDEIO::Job(false)
 	{
 		connect(&timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(timerDone()));
 		timer.start(millis,true);
@@ -70,14 +70,14 @@ namespace bt
 	
 	void WaitJob::execute(WaitJob* job)
 	{
-		KIO::NetAccess::synchronousRun(job,0);
+		TDEIO::NetAccess::synchronousRun(job,0);
 	}
 	
 	void SynchronousWait(Uint32 millis)
 	{
 		Out() << "SynchronousWait" << endl;
 		WaitJob* j = new WaitJob(millis);
-		KIO::NetAccess::synchronousRun(j,0);
+		TDEIO::NetAccess::synchronousRun(j,0);
 	}
 
 }

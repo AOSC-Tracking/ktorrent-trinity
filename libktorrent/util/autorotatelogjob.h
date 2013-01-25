@@ -33,7 +33,7 @@ namespace bt
 		Job which handles the rotation of the log file. 
 		This Job must do several move jobs which must be done sequentially.
 	*/
-	class AutoRotateLogJob : public KIO::Job
+	class AutoRotateLogJob : public TDEIO::Job
 	{
 		Q_OBJECT
   
@@ -44,7 +44,7 @@ namespace bt
 		virtual void kill(bool quietly=true);
 		
 	private slots:
-		void moveJobDone(KIO::Job*);
+		void moveJobDone(TDEIO::Job*);
 		
 	private:
 		void update();

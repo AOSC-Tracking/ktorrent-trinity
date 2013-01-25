@@ -23,7 +23,7 @@
 #include <tqtimer.h>
 #include "tracker.h"
 
-namespace KIO
+namespace TDEIO
 {
 	class Job;
 	class MetaData;
@@ -55,19 +55,19 @@ namespace bt
 		virtual void scrape();
 		
 	private slots:
-		void onAnnounceResult(KIO::Job* j);
-		void onScrapeResult(KIO::Job* j);
+		void onAnnounceResult(TDEIO::Job* j);
+		void onScrapeResult(TDEIO::Job* j);
 		void emitInvalidURLFailure();
 
 	private:
 		void doRequest(WaitJob* wjob = 0);
 		bool updateData(const TQByteArray & data);
-		void setupMetaData(KIO::MetaData & md);
+		void setupMetaData(TDEIO::MetaData & md);
 		void doAnnounceQueue();
 		void doAnnounce(const KURL & u);
 		
 	private:
-		KIO::Job* active_job;
+		TDEIO::Job* active_job;
 		KURL::List announce_queue;
 		TQString event;
 		Uint32 failures;

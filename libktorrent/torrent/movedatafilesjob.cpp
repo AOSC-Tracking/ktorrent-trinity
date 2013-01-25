@@ -23,7 +23,7 @@
 namespace bt
 {
 
-	MoveDataFilesJob::MoveDataFilesJob() : KIO::Job(false),err(false),active_job(0)
+	MoveDataFilesJob::MoveDataFilesJob() : TDEIO::Job(false),err(false),active_job(0)
 	{}
 
 
@@ -35,12 +35,12 @@ namespace bt
 		todo.insert(src,dst);
 	}
 		
-	void MoveDataFilesJob::onJobDone(KIO::Job* j)
+	void MoveDataFilesJob::onJobDone(TDEIO::Job* j)
 	{
 		if (j->error() || err)
 		{
 			if (!err)
-				m_error = KIO::ERR_INTERNAL;
+				m_error = TDEIO::ERR_INTERNAL;
 			
 			active_job = 0;
 			if (j->error())
@@ -59,9 +59,9 @@ namespace bt
 		}
 	}
 	
-	void MoveDataFilesJob::onCanceled(KIO::Job* j)
+	void MoveDataFilesJob::onCanceled(TDEIO::Job* j)
 	{
-		m_error = KIO::ERR_USER_CANCELED;
+		m_error = TDEIO::ERR_USER_CANCELED;
 		active_job = 0;
 		err = true;
 		recover();
@@ -77,12 +77,12 @@ namespace bt
 		}
 			
 		TQMap<TQString,TQString>::iterator i = todo.begin();	
-		active_job = KIO::move(KURL::fromPathOrURL(i.key()),KURL::fromPathOrURL(i.data()),false);
+		active_job = TDEIO::move(KURL::fromPathOrURL(i.key()),KURL::fromPathOrURL(i.data()),false);
 		active_src = i.key();
 		active_dst = i.data();
 		Out(SYS_GEN|LOG_DEBUG) << "Moving " << active_src << " -> " << active_dst << endl;
-		connect(active_job,TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(onJobDone(KIO::Job*)));
-		connect(active_job,TQT_SIGNAL(canceled(KIO::Job*)),this,TQT_SLOT(onCanceled(KIO::Job*)));
+		connect(active_job,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(onJobDone(TDEIO::Job*)));
+		connect(active_job,TQT_SIGNAL(canceled(TDEIO::Job*)),this,TQT_SLOT(onCanceled(TDEIO::Job*)));
 		todo.erase(i);
 	}
 	
@@ -94,9 +94,9 @@ namespace bt
 			return;
 		}
 		TQMap<TQString,TQString>::iterator i = success.begin();	
-		active_job = KIO::move(KURL::fromPathOrURL(i.data()),KURL::fromPathOrURL(i.key()),false);
-		connect(active_job,TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(onJobDone(KIO::Job*)));
-		connect(active_job,TQT_SIGNAL(canceled(KIO::Job*)),this,TQT_SLOT(onCanceled(KIO::Job*)));
+		active_job = TDEIO::move(KURL::fromPathOrURL(i.data()),KURL::fromPathOrURL(i.key()),false);
+		connect(active_job,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(onJobDone(TDEIO::Job*)));
+		connect(active_job,TQT_SIGNAL(canceled(TDEIO::Job*)),this,TQT_SLOT(onCanceled(TDEIO::Job*)));
 		success.erase(i);
 	}
 }

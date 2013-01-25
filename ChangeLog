@@ -18,7 +18,7 @@ Changes in 2.2.6 :
 - Added patch from carucciio to load torrents silently from the command line
 - Set output_path of torrent as default location when the users selects set download location in the viewmenu (157486)
 - Torrents with no file selected are now always shown as download
-- Ditch KIO::NetAccess when moving data files (157462)
+- Ditch TDEIO::NetAccess when moving data files (157462)
 - Fix stop all and start all from system tray menu (it used to apply to the current view, now it applies to all torrents) (157991)
 - Make sure that set download location and add to group are disabled when no torrent is selected 
 - Fix ktshell when there are multiple dcop sessions  (158115)

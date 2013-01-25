@@ -35,7 +35,7 @@ namespace bt
 	 * Job to wait for a certain amount of time or until one or more ExitOperation's have
 	 * finished.
 	*/
-	class WaitJob : public KIO::Job
+	class WaitJob : public TDEIO::Job
 	{
 		Q_OBJECT
   

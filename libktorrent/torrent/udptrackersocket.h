@@ -29,7 +29,7 @@
 namespace KNetwork
 {
 	class KDatagramSocket;
-	class KSocketAddress;
+	class TDESocketAddress;
 }
 
 namespace bt
@@ -66,7 +66,7 @@ namespace bt
 		 * @param tid The transaction_id 
 		 * @param addr The address to send to
 		 */
-		void sendConnect(Int32 tid,const KNetwork::KSocketAddress & addr);
+		void sendConnect(Int32 tid,const KNetwork::TDESocketAddress & addr);
 
 		/**
 		 * Send an announce message. As a response to this, the announceRecieved
@@ -76,7 +76,7 @@ namespace bt
 		 * @param data The data to send (connect input structure, in UDP Tracker specifaction)
 		 * @param addr The address to send to
 		 */
-		void sendAnnounce(Int32 tid,const Uint8* data,const KNetwork::KSocketAddress & addr);
+		void sendAnnounce(Int32 tid,const Uint8* data,const KNetwork::TDESocketAddress & addr);
 
 		/**
 		 * If a transaction times out, this should be used to cancel it.

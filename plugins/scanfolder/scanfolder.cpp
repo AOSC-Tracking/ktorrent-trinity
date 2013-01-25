@@ -164,7 +164,7 @@ namespace kt
 					TQFile::remove(dirname + "/." + name);
 
 				// NetAccess considered harmfull !!!
-				KIO::file_move(url, destination);
+				TDEIO::file_move(url, destination);
 				break;
 			case defaultAction:
 				TQFile f(dirname + "/." + name);

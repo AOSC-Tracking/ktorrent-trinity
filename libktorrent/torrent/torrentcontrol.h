@@ -34,7 +34,7 @@
 class TQStringList;
 class TQString;
 
-namespace KIO
+namespace TDEIO
 {
 	class Job;
 }
@@ -308,7 +308,7 @@ namespace bt
 		/// Update the stats of the torrent.
 		void updateStats();
 		void corrupted(Uint32 chunk);
-		void moveDataFilesJobDone(KIO::Job* job);
+		void moveDataFilesJobDone(TDEIO::Job* job);
 		
 	private:	
 		void updateTracker(const TQString & ev,bool last_succes = true);

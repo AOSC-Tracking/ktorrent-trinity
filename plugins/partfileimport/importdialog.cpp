@@ -185,7 +185,7 @@ namespace kt
 		accept();
 	}
 	
-	void ImportDialog::onTorrentGetReult(KIO::Job* j)
+	void ImportDialog::onTorrentGetReult(TDEIO::Job* j)
 	{
 		if (j->error())
 		{
@@ -194,7 +194,7 @@ namespace kt
 		}
 		else
 		{
-			KIO::StoredTransferJob* stj = (KIO::StoredTransferJob*)j;
+			TDEIO::StoredTransferJob* stj = (TDEIO::StoredTransferJob*)j;
 			Torrent tor;
 		
 			// try to load the torrent
@@ -225,8 +225,8 @@ namespace kt
 		if (!tor_url.isLocalFile())
 		{
 			// download the torrent file
-			KIO::StoredTransferJob* j = KIO::storedGet(tor_url);
-			connect(j,TQT_SIGNAL(result(KIO::Job* )),this,TQT_SLOT(onTorrentGetReult(KIO::Job*)));
+			TDEIO::StoredTransferJob* j = TDEIO::storedGet(tor_url);
+			connect(j,TQT_SIGNAL(result(TDEIO::Job* )),this,TQT_SLOT(onTorrentGetReult(TDEIO::Job*)));
 		}
 		else
 		{

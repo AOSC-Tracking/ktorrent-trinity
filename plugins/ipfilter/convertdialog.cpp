@@ -94,7 +94,7 @@ namespace kt
 		if(target.exists())
 		{
 			//make backup
-			KIO::NetAccess::file_copy(TDEGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat", TDEGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat.tmp", -1, true);
+			TDEIO::NetAccess::file_copy(TDEGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat", TDEGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat.tmp", -1, true);
 		}
 
 		/*    READ INPUT FILE  */
@@ -245,7 +245,7 @@ namespace kt
 			TQFile temp( TDEGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat.tmp");
 			if(temp.exists())
 			{
-				KIO::NetAccess::file_copy(TDEGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat.tmp", TDEGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat", -1, true);
+				TDEIO::NetAccess::file_copy(TDEGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat.tmp", TDEGlobal::dirs() ->saveLocation( "data", "ktorrent" ) + "level1.dat", -1, true);
 				temp.remove();
 			}
 			

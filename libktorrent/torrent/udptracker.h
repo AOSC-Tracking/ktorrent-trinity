@@ -87,7 +87,7 @@ namespace bt
 		bool doRequest();
 
 	private:
-		KNetwork::KSocketAddress address;
+		KNetwork::TDESocketAddress address;
 		
 		Int32 transaction_id;
 		Int64 connection_id;

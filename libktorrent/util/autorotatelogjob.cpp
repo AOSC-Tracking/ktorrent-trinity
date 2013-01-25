@@ -27,7 +27,7 @@ namespace bt
 {
 
 	AutoRotateLogJob::AutoRotateLogJob(const TQString & file,Log* lg)
-		: KIO::Job(false),file(file),cnt(10),lg(lg)
+		: TDEIO::Job(false),file(file),cnt(10),lg(lg)
 	{
 		update();
 	}
@@ -50,8 +50,8 @@ namespace bt
 			TQString curr = TQString("%1-%2.gz").arg(file).arg(cnt);
 			if (bt::Exists(prev)) // if file exists start the move job
 			{
-				KIO::Job* sj = KIO::file_move(KURL::fromPathOrURL(prev),KURL::fromPathOrURL(curr),-1,true,false,false);
-				connect(sj,TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(moveJobDone(KIO::Job* )));	
+				TDEIO::Job* sj = TDEIO::file_move(KURL::fromPathOrURL(prev),KURL::fromPathOrURL(curr),-1,true,false,false);
+				connect(sj,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(moveJobDone(TDEIO::Job* )));	
 				return;
 			}
 			else
@@ -64,8 +64,8 @@ namespace bt
 		{
 				// move current log to 1 and zip it
 			bt::Move(file,file + "-1",true);
-			KIO::Job* sj = KIO::file_move(KURL::fromPathOrURL(file),KURL::fromPathOrURL(file + "-1"),-1,true,false,false);
-			connect(sj,TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(moveJobDone(KIO::Job* )));
+			TDEIO::Job* sj = TDEIO::file_move(KURL::fromPathOrURL(file),KURL::fromPathOrURL(file + "-1"),-1,true,false,false);
+			connect(sj,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(moveJobDone(TDEIO::Job* )));
 		}
 		else
 		{
@@ -78,7 +78,7 @@ namespace bt
 	}
 		
 	
-	void AutoRotateLogJob::moveJobDone(KIO::Job*)
+	void AutoRotateLogJob::moveJobDone(TDEIO::Job*)
 	{
 		cnt--; // decrease counter so the newt file will be moved in update
 		update(); // don't care about result of job

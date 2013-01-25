@@ -76,14 +76,14 @@ FilterBar::~FilterBar()
 {
 }
 
-void FilterBar::saveSettings(KConfig* cfg)
+void FilterBar::saveSettings(TDEConfig* cfg)
 {
 	cfg->writeEntry("filter_bar_hidden",isHidden());
 	cfg->writeEntry("filter_bar_text",m_name_filter);
 	cfg->writeEntry("filter_bar_case_sensitive",m_case_sensitive->isChecked());
 }
 	
-void FilterBar::loadSettings(KConfig* cfg)
+void FilterBar::loadSettings(TDEConfig* cfg)
 {
 	setHidden(cfg->readBoolEntry("filter_bar_hidden",true));
 	m_case_sensitive->setChecked(cfg->readBoolEntry("filter_bar_case_sensitive",true));

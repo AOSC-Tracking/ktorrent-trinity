@@ -140,7 +140,7 @@ namespace kt
 					TorrentFileInterface & file = (*i)->getTorrentFile(j);
 					out << TQString("\"%1\" => array(\n").arg(j);
 					out << TQString("\"name\" => \"%1\",\n").arg(file.getPath());
-					out << TQString("\"size\" => \"%1\",\n").arg(KIO::convertSize(file.getSize()));
+					out << TQString("\"size\" => \"%1\",\n").arg(TDEIO::convertSize(file.getSize()));
 					out << TQString("\"perc_done\" => \"%1\",\n").arg(file.getDownloadPercentage());
 					out << TQString("\"status\" => \"%1\"\n").arg(file.getPriority());
 					out << TQString(")\n");

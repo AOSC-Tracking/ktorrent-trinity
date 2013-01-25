@@ -75,7 +75,7 @@ namespace bt
 		delete sock;
 	}
 
-	void UDPTrackerSocket::sendConnect(Int32 tid,const KNetwork::KSocketAddress & addr)
+	void UDPTrackerSocket::sendConnect(Int32 tid,const KNetwork::TDESocketAddress & addr)
 	{
 		Int64 cid = 0x41727101980LL;
 		Uint8 buf[16];
@@ -88,7 +88,7 @@ namespace bt
 		transactions.insert(tid,CONNECT);
 	}
 
-	void UDPTrackerSocket::sendAnnounce(Int32 tid,const Uint8* data,const KNetwork::KSocketAddress & addr)
+	void UDPTrackerSocket::sendAnnounce(Int32 tid,const Uint8* data,const KNetwork::TDESocketAddress & addr)
 	{
 		transactions.insert(tid,ANNOUNCE);
 		sock->send(KDatagramPacket((char*)data,98,addr));

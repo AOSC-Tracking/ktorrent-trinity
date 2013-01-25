@@ -282,11 +282,11 @@ bool KTorrentCore::load(const TQString & target,const TQString & dir,bool silent
 	}
 }
 
-void KTorrentCore::downloadFinished(KIO::Job *job)
+void KTorrentCore::downloadFinished(TDEIO::Job *job)
 {
-	KIO::StoredTransferJob* j = (KIO::StoredTransferJob*)job;
+	TDEIO::StoredTransferJob* j = (TDEIO::StoredTransferJob*)job;
 	int err = j->error();
-	if (err == KIO::ERR_USER_CANCELED)
+	if (err == TDEIO::ERR_USER_CANCELED)
 	{
 		loadingFinished(j->url(),false,true);
 		return;
@@ -327,16 +327,16 @@ void KTorrentCore::load(const KURL& url)
 	}
 	else
 	{
-		KIO::Job* j = KIO::storedGet(url,false,true);
-		connect(j,TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(downloadFinished( KIO::Job* )));
+		TDEIO::Job* j = TDEIO::storedGet(url,false,true);
+		connect(j,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(downloadFinished( TDEIO::Job* )));
 	}
 }
 
-void KTorrentCore::downloadFinishedSilently(KIO::Job *job)
+void KTorrentCore::downloadFinishedSilently(TDEIO::Job *job)
 {
-	KIO::StoredTransferJob* j = (KIO::StoredTransferJob*)job;
+	TDEIO::StoredTransferJob* j = (TDEIO::StoredTransferJob*)job;
 	int err = j->error();
-	if (err == KIO::ERR_USER_CANCELED)
+	if (err == TDEIO::ERR_USER_CANCELED)
 	{
 		loadingFinished(j->url(),false,true);
 	}
@@ -394,8 +394,8 @@ void KTorrentCore::loadSilently(const KURL& url)
 	else
 	{
 		// download to a random file in tmp
-		KIO::Job* j = KIO::storedGet(url,false,true);
-		connect(j,TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(downloadFinishedSilently( KIO::Job* )));
+		TDEIO::Job* j = TDEIO::storedGet(url,false,true);
+		connect(j,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(downloadFinishedSilently( TDEIO::Job* )));
 	}
 }
 
@@ -425,9 +425,9 @@ void KTorrentCore::loadSilentlyDir(const KURL& url, const KURL& savedir)
 	else
 	{
 		// download to a random file in tmp
-		KIO::Job* j = KIO::storedGet(url,false,true);
+		TDEIO::Job* j = TDEIO::storedGet(url,false,true);
 		custom_save_locations.insert(j,savedir); // keep track of save location
-		connect(j,TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(downloadFinishedSilently( KIO::Job* )));
+		connect(j,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(downloadFinishedSilently( TDEIO::Job* )));
 	}
 }
 

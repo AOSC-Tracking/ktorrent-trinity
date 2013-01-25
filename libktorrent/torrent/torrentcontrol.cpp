@@ -843,7 +843,7 @@ namespace bt
 			
 			if (stats.output_path != nd)
 			{
-				KIO::Job* j = 0;
+				TDEIO::Job* j = 0;
 				if(moveFiles)
 				{	
 					if (stats.multi_file_torrent)
@@ -855,7 +855,7 @@ namespace bt
 				move_data_files_destination_path = nd;
 				if (j)
 				{
-					connect(j,TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(moveDataFilesJobDone(KIO::Job*)));
+					connect(j,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(moveDataFilesJobDone(TDEIO::Job*)));
 					return true;
 				}
 				else
@@ -884,7 +884,7 @@ namespace bt
 		return true;
 	}
 	
-	void TorrentControl::moveDataFilesJobDone(KIO::Job* job)
+	void TorrentControl::moveDataFilesJobDone(TDEIO::Job* job)
 	{
 		if (job)
 			cman->moveDataFilesCompleted(job);

@@ -32,7 +32,7 @@ namespace bt
 
 	/**
 	 * Creates a directory. Convenience function around
-	 * KIO::NetAccess::mkdir .
+	 * TDEIO::NetAccess::mkdir .
 	 * @param dir The url of the dir
 	 * @param nothrow wether or not we shouldn't throw an Error upon failure
 	 * @throw Error upon error

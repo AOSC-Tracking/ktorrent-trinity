@@ -50,19 +50,19 @@ namespace kt
 	};
 
 	/**
-	 * Exit operation which waits for a KIO::Job
+	 * Exit operation which waits for a TDEIO::Job
 	 */
 	class ExitJobOperation : public ExitOperation
 	{
 		Q_OBJECT
   
 	public:
-		ExitJobOperation(KIO::Job* j);
+		ExitJobOperation(TDEIO::Job* j);
 		virtual ~ExitJobOperation();
 		
 		virtual bool deleteAllowed() const {return false;}
 	private slots:
-		virtual void onResult(KIO::Job* j);
+		virtual void onResult(TDEIO::Job* j);
 	};
 }
 

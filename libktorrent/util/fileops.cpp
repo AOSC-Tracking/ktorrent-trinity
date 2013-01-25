@@ -102,48 +102,48 @@ namespace bt
 	void Move(const TQString & src,const TQString & dst,bool nothrow)
 	{
 	//	Out() << "Moving " << src << " -> " << dst << endl;
-		if (!KIO::NetAccess::move(KURL::fromPathOrURL(src),KURL::fromPathOrURL(dst),0))
+		if (!TDEIO::NetAccess::move(KURL::fromPathOrURL(src),KURL::fromPathOrURL(dst),0))
 		{
 			if (!nothrow)
 				throw Error(i18n("Cannot move %1 to %2: %3")
 					.arg(src).arg(dst)
-						.arg(KIO::NetAccess::lastErrorString()));
+						.arg(TDEIO::NetAccess::lastErrorString()));
 			else
 				Out() << TQString("Error : Cannot move %1 to %2: %3")
 						.arg(src).arg(dst)
-						.arg(KIO::NetAccess::lastErrorString()) << endl;
+						.arg(TDEIO::NetAccess::lastErrorString()) << endl;
 		
 		}
 	}
 
 	void CopyFile(const TQString & src,const TQString & dst,bool nothrow)
 	{
-		if (!KIO::NetAccess::file_copy(KURL::fromPathOrURL(src),KURL::fromPathOrURL(dst)))
+		if (!TDEIO::NetAccess::file_copy(KURL::fromPathOrURL(src),KURL::fromPathOrURL(dst)))
 		{
 			if (!nothrow)
 				throw Error(i18n("Cannot copy %1 to %2: %3")
 						.arg(src).arg(dst)
-						.arg(KIO::NetAccess::lastErrorString()));
+						.arg(TDEIO::NetAccess::lastErrorString()));
 			else
 				Out() << TQString("Error : Cannot copy %1 to %2: %3")
 						.arg(src).arg(dst)
-						.arg(KIO::NetAccess::lastErrorString()) << endl;
+						.arg(TDEIO::NetAccess::lastErrorString()) << endl;
 	
 		}
 	}
 	
 	void CopyDir(const TQString & src,const TQString & dst,bool nothrow)
 	{
-		if (!KIO::NetAccess::dircopy(KURL::fromPathOrURL(src),KURL::fromPathOrURL(dst),0))
+		if (!TDEIO::NetAccess::dircopy(KURL::fromPathOrURL(src),KURL::fromPathOrURL(dst),0))
 		{
 			if (!nothrow)
 				throw Error(i18n("Cannot copy %1 to %2: %3")
 						.arg(src).arg(dst)
-						.arg(KIO::NetAccess::lastErrorString()));
+						.arg(TDEIO::NetAccess::lastErrorString()));
 			else
 				Out() << TQString("Error : Cannot copy %1 to %2: %3")
 						.arg(src).arg(dst)
-						.arg(KIO::NetAccess::lastErrorString()) << endl;
+						.arg(TDEIO::NetAccess::lastErrorString()) << endl;
 	
 		}
 	}

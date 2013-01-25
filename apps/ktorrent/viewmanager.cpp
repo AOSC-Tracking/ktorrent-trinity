@@ -43,7 +43,7 @@ KTorrentView* ViewManager::newView()
 	return v;
 }
 	
-void ViewManager::saveViewState(KConfig* cfg)
+void ViewManager::saveViewState(TDEConfig* cfg)
 {
 	TQStringList cv;
 	int idx = 0;
@@ -56,7 +56,7 @@ void ViewManager::saveViewState(KConfig* cfg)
 	cfg->writeEntry("current_views",cv);
 }
 	
-void ViewManager::restoreViewState(KConfig* cfg,KTorrent* ktor)
+void ViewManager::restoreViewState(TDEConfig* cfg,KTorrent* ktor)
 {
 	TQStringList def;
 	def.append(i18n("Downloads"));

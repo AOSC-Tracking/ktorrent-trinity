@@ -35,7 +35,7 @@ namespace bt
 	class TorrentControl;
 }
 
-namespace KIO
+namespace TDEIO
 {
 	class Job;
 }
@@ -339,8 +339,8 @@ private slots:
 	void torrentFinished(kt::TorrentInterface* tc);
 	void slotStoppedByError(kt::TorrentInterface* tc, TQString msg);
 	void torrentSeedAutoStopped(kt::TorrentInterface* tc,kt::AutoStopReason reason);
-	void downloadFinished(KIO::Job *job);
-	void downloadFinishedSilently(KIO::Job *job);
+	void downloadFinished(TDEIO::Job *job);
+	void downloadFinishedSilently(TDEIO::Job *job);
 	void emitCorruptedData(kt::TorrentInterface* tc);
 	
 private:
@@ -352,7 +352,7 @@ private:
 	kt::PluginManager* pman;
 	bt::QueueManager* qman;
 	kt::GroupManager* gman;
-	TQMap<KIO::Job*,KURL> custom_save_locations; // map to store save locations
+	TQMap<TDEIO::Job*,KURL> custom_save_locations; // map to store save locations
 };
 
 #endif

@@ -17,7 +17,7 @@
 
 class TQDomNode;
 
-namespace KIO
+namespace TDEIO
 {
    class Job;
 }
@@ -161,8 +161,8 @@ namespace RSS
          void gotPixmap(const TQPixmap &pixmap);
 
       private slots:
-         void slotData(KIO::Job *job, const TQByteArray &data);
-         void slotResult(KIO::Job *job);
+         void slotData(TDEIO::Job *job, const TQByteArray &data);
+         void slotResult(TDEIO::Job *job);
 
       private:
          struct Private;

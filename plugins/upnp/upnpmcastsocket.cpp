@@ -222,7 +222,7 @@ namespace kt
 	
 	void UPnPMCastSocket::onError(int)
 	{
-		Out(SYS_PNP|LOG_IMPORTANT) << "UPnPMCastSocket Error : " << KSocketBase::errorString() << endl;
+		Out(SYS_PNP|LOG_IMPORTANT) << "UPnPMCastSocket Error : " << TDESocketBase::errorString() << endl;
 	}
 	
 	void UPnPMCastSocket::saveRouters(const TQString & file)

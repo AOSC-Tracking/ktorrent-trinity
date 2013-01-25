@@ -101,10 +101,10 @@ public:
 	kt::TorrentInterface* getCurrentTC();
 	
 	/// Save the views settings
-	void saveSettings(KConfig* cfg,int idx);
+	void saveSettings(TDEConfig* cfg,int idx);
 	
 	/// Load the views settings
-	void loadSettings(KConfig* cfg,int idx);
+	void loadSettings(TDEConfig* cfg,int idx);
 	
 	/**
 	 * Put the current selection in a list.

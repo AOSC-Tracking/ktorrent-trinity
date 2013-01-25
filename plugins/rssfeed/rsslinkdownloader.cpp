@@ -49,8 +49,8 @@ namespace kt
 			{
 				//first let's download the link so we can process it to check for the actual torrent
 				curLink = curSubLink = link;
-				curFile = KIO::storedGet(link,false,false);
-				connect(curFile, TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(processLink( KIO::Job* )));
+				curFile = TDEIO::storedGet(link,false,false);
+				connect(curFile, TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(processLink( TDEIO::Job* )));
 			}
 		}
 	
@@ -59,7 +59,7 @@ namespace kt
 			
 		}
 		
-	void RssLinkDownloader::processLink(KIO::Job* jobStatus)
+	void RssLinkDownloader::processLink(TDEIO::Job* jobStatus)
 		{
 		
 		if (!jobStatus->error())
@@ -188,8 +188,8 @@ namespace kt
 			{
 			curSubLink = subLinks.first();
 			subLinks.pop_front();
-			curFile = KIO::storedGet(curSubLink,false,false);
-			connect(curFile, TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(processLink( KIO::Job* )));
+			curFile = TDEIO::storedGet(curSubLink,false,false);
+			connect(curFile, TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(processLink( TDEIO::Job* )));
 			}
 		}
 	

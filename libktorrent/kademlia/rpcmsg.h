@@ -86,13 +86,13 @@ namespace dht
 		virtual void encode(TQByteArray & arr) = 0;
 		
 		/// Set the origin (i.e. where the message came from)
-		void setOrigin(const KNetwork::KSocketAddress & o) {origin = o;}
+		void setOrigin(const KNetwork::TDESocketAddress & o) {origin = o;}
 		
 		/// Get the origin
 		const KNetwork::KInetSocketAddress & getOrigin() const {return origin;}
 		
 		/// Set the origin (i.e. where the message came from)
-		void setDestination(const KNetwork::KSocketAddress & o) {origin = o;}
+		void setDestination(const KNetwork::TDESocketAddress & o) {origin = o;}
 		
 		/// Get the origin
 		const KNetwork::KInetSocketAddress & getDestination() const {return origin;}

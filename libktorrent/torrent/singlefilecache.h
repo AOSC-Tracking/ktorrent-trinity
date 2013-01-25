@@ -49,8 +49,8 @@ namespace bt
 		virtual void close();
 		virtual void open();
 		virtual void changeTmpDir(const TQString & ndir);
-		virtual KIO::Job* moveDataFiles(const TQString & ndir);
-		virtual void moveDataFilesCompleted(KIO::Job* job);
+		virtual TDEIO::Job* moveDataFiles(const TQString & ndir);
+		virtual void moveDataFilesCompleted(TDEIO::Job* job);
 		virtual void changeOutputPath(const TQString& outputpath);
 		virtual TQString getOutputPath() const {return output_file;}
 		virtual void preallocateDiskSpace(PreallocationThread* prealloc);

@@ -59,14 +59,14 @@ namespace kt
  			
 
 		public slots:
-			void processLink(KIO::Job* jobStatus);
+			void processLink(TDEIO::Job* jobStatus);
 			void suicide();
 			
 		signals:
 			void linkDownloaded( TQString link, int downloaded );
 			
 		private:
-			KIO::StoredTransferJob * curFile;
+			TDEIO::StoredTransferJob * curFile;
 			TQString curLink, curSubLink;
 			TQStringList subLinks;
 			RssFilter * curFilter;

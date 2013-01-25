@@ -763,11 +763,11 @@ void KTorrent::changeCaption(const TQString& text)
 	setCaption(text);
 }
 
-void KTorrent::saveProperties(KConfig* )
+void KTorrent::saveProperties(TDEConfig* )
 {
 }
 
-void KTorrent::readProperties(KConfig*)
+void KTorrent::readProperties(TDEConfig*)
 {
 }
 

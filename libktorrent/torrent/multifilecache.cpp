@@ -195,7 +195,7 @@ namespace bt
 		}
 	}
 	
-	KIO::Job* MultiFileCache::moveDataFiles(const TQString & ndir)
+	TDEIO::Job* MultiFileCache::moveDataFiles(const TQString & ndir)
 	{
 		if (!bt::Exists(ndir))
 			bt::MakeDir(ndir);
@@ -239,7 +239,7 @@ namespace bt
 		return 0;
 	}
 	
-	void MultiFileCache::moveDataFilesCompleted(KIO::Job* job)
+	void MultiFileCache::moveDataFilesCompleted(TDEIO::Job* job)
 	{
 		if (!job->error())
 		{

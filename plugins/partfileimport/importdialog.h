@@ -33,7 +33,7 @@ namespace bt
 	class Torrent;
 }
 
-namespace KIO
+namespace TDEIO
 {
 	class Job;
 }
@@ -54,7 +54,7 @@ namespace kt
 		
 	public slots:
 		void onImport();
-		void onTorrentGetReult(KIO::Job* j);
+		void onTorrentGetReult(TDEIO::Job* j);
 	
 	private:
 		void writeIndex(const TQString & file,const bt::BitSet & chunks);

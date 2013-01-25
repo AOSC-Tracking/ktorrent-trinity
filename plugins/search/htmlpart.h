@@ -22,7 +22,7 @@
 
 #include <khtml_part.h>
 
-namespace KIO
+namespace TDEIO
 {
 	class Job;
 }
@@ -50,9 +50,9 @@ namespace kt
 	
 	private slots:
 		void addToHistory(const KURL & url);
-		void dataRecieved(KIO::Job* job,const TQByteArray & data);
-		void mimetype(KIO::Job* job,const TQString & mt);
-		void jobDone(KIO::Job* job);
+		void dataRecieved(TDEIO::Job* job,const TQByteArray & data);
+		void mimetype(TDEIO::Job* job,const TQString & mt);
+		void jobDone(TDEIO::Job* job);
 		
 	
 	signals:
@@ -63,7 +63,7 @@ namespace kt
 	
 	private:
 		KURL::List history;
-		KIO::Job* active_job;
+		TDEIO::Job* active_job;
 		TQByteArray curr_data;
 		TQString mime_type;
 		KURL curr_url;

@@ -54,8 +54,8 @@ namespace kt
 		ChunkDownloadView(TQWidget *parent = 0, const char *name = 0);
 		virtual ~ChunkDownloadView();
 		
-		void saveLayout(KConfig* cfg,const TQString & group_name);
-		void restoreLayout(KConfig* cfg,const TQString & group_name);
+		void saveLayout(TDEConfig* cfg,const TQString & group_name);
+		void restoreLayout(TDEConfig* cfg,const TQString & group_name);
 		void clear();
 		void update();
 		void changeTC(kt::TorrentInterface* tc);

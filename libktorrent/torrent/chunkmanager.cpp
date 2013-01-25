@@ -148,12 +148,12 @@ namespace bt
 		file_priority_file = data_dir + "file_priority";
 	}
 	
-	KIO::Job* ChunkManager::moveDataFiles(const TQString & ndir)
+	TDEIO::Job* ChunkManager::moveDataFiles(const TQString & ndir)
 	{
 		return cache->moveDataFiles(ndir);
 	}
 	
-	void ChunkManager::moveDataFilesCompleted(KIO::Job* job)
+	void ChunkManager::moveDataFilesCompleted(TDEIO::Job* job)
 	{
 		cache->moveDataFilesCompleted(job);
 	}

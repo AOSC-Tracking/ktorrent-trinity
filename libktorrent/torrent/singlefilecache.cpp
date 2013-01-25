@@ -52,12 +52,12 @@ namespace bt
 		cache_file = tmpdir + "cache";
 	}
 	
-	KIO::Job* SingleFileCache::moveDataFiles(const TQString & ndir)
+	TDEIO::Job* SingleFileCache::moveDataFiles(const TQString & ndir)
 	{
-		return KIO::move(KURL::fromPathOrURL(output_file),KURL::fromPathOrURL(ndir));
+		return TDEIO::move(KURL::fromPathOrURL(output_file),KURL::fromPathOrURL(ndir));
 	}
 	
-	void SingleFileCache::moveDataFilesCompleted(KIO::Job* /*job*/)
+	void SingleFileCache::moveDataFilesCompleted(TDEIO::Job* /*job*/)
 	{
 	}
 	

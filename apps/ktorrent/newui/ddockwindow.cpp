@@ -68,7 +68,7 @@ DDockWindow::DDockWindow(DMainWindow *parent, Position position)
             break;
     }
 
-    KConfig *config = kapp->config();
+    TDEConfig *config = kapp->config();
     config->setGroup("UI");
     int mode = config->readNumEntry("MDIStyle", 3);
     Ideal::ButtonMode buttonMode = Ideal::Text;
@@ -103,7 +103,7 @@ DDockWindow::~DDockWindow()
 void DDockWindow::setVisible(bool v)
 {
     //write dock width to the config file
-    KConfig *config = kapp->config();
+    TDEConfig *config = kapp->config();
     TQString group = TQString("%1").arg(m_name);
     config->setGroup(group);
 
@@ -147,7 +147,7 @@ void DDockWindow::loadSettings()
 
 void DDockWindow::saveSettings()
 {
-    KConfig *config = kapp->config();
+    TDEConfig *config = kapp->config();
     TQString group = TQString("%1").arg(m_name);
     int invisibleWidth = 0;
     config->setGroup(group);
@@ -199,7 +199,7 @@ void DDockWindow::addWidget(const TQString &title, TQWidget *widget, bool skipAc
     {
         //if the widget was selected last time the dock is deleted
         //we need to show it
-        KConfig *config = kapp->config();
+        TDEConfig *config = kapp->config();
         TQString group = TQString("%1").arg(m_name);
         config->setGroup(group);
         if (config->readEntry("ViewLastWidget") == title)

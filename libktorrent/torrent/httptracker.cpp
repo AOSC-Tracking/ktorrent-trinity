@@ -116,18 +116,18 @@ namespace bt
 		scrape_url.setEncodedPathAndQuery(epq);
 	
 		Out(SYS_TRK|LOG_NOTICE) << "Doing scrape request to url : " << scrape_url.prettyURL() << endl;
-		KIO::MetaData md;
+		TDEIO::MetaData md;
 		setupMetaData(md);
 		
-		KIO::StoredTransferJob* j = KIO::storedGet(scrape_url,false,false);
+		TDEIO::StoredTransferJob* j = TDEIO::storedGet(scrape_url,false,false);
 		// set the meta data
 		j->setMetaData(md);
-		KIO::Scheduler::scheduleJob(j);
+		TDEIO::Scheduler::scheduleJob(j);
 		
-		connect(j,TQT_SIGNAL(result(KIO::Job* )),this,TQT_SLOT(onScrapeResult( KIO::Job* )));
+		connect(j,TQT_SIGNAL(result(TDEIO::Job* )),this,TQT_SLOT(onScrapeResult( TDEIO::Job* )));
 	}
 	
-	void HTTPTracker::onScrapeResult(KIO::Job* j)
+	void HTTPTracker::onScrapeResult(TDEIO::Job* j)
 	{
 		if (j->error())
 		{
@@ -135,7 +135,7 @@ namespace bt
 			return;
 		}
 		
-		KIO::StoredTransferJob* st = (KIO::StoredTransferJob*)j;
+		TDEIO::StoredTransferJob* st = (TDEIO::StoredTransferJob*)j;
 		BDecoder dec(st->data(),false,0);
 		BNode* n = 0;
 		
@@ -355,11 +355,11 @@ namespace bt
 	}
 
 	
-	void HTTPTracker::onAnnounceResult(KIO::Job* j)
+	void HTTPTracker::onAnnounceResult(TDEIO::Job* j)
 	{
 		if (j->error())
 		{
-			KIO::StoredTransferJob* st = (KIO::StoredTransferJob*)j;
+			TDEIO::StoredTransferJob* st = (TDEIO::StoredTransferJob*)j;
 			KURL u = st->url();
 			active_job = 0;
 			
@@ -376,7 +376,7 @@ namespace bt
 		}
 		else
 		{
-			KIO::StoredTransferJob* st = (KIO::StoredTransferJob*)j;
+			TDEIO::StoredTransferJob* st = (TDEIO::StoredTransferJob*)j;
 			KURL u = st->url();
 			active_job = 0;
 			
@@ -415,7 +415,7 @@ namespace bt
 		requestFailed(i18n("Invalid tracker URL"));
 	}
 	
-	void HTTPTracker::setupMetaData(KIO::MetaData & md)
+	void HTTPTracker::setupMetaData(TDEIO::MetaData & md)
 	{
 		md["UserAgent"] = "ktorrent/" VERSION;
 		md["SendLanguageSettings"] = "false";
@@ -446,14 +446,14 @@ namespace bt
 	void HTTPTracker::doAnnounce(const KURL & u)
 	{
 		Out(SYS_TRK|LOG_NOTICE) << "Doing tracker request to url : " << u.prettyURL() << endl;
-		KIO::MetaData md;
+		TDEIO::MetaData md;
 		setupMetaData(md);
-		KIO::StoredTransferJob* j = KIO::storedGet(u,false,false);
+		TDEIO::StoredTransferJob* j = TDEIO::storedGet(u,false,false);
 		// set the meta data
 		j->setMetaData(md);
-		KIO::Scheduler::scheduleJob(j);
+		TDEIO::Scheduler::scheduleJob(j);
 		
-		connect(j,TQT_SIGNAL(result(KIO::Job* )),this,TQT_SLOT(onAnnounceResult( KIO::Job* )));
+		connect(j,TQT_SIGNAL(result(TDEIO::Job* )),this,TQT_SLOT(onAnnounceResult( TDEIO::Job* )));
 		
 		active_job = j;
 		requestPending();

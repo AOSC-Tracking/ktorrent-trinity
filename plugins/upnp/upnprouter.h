@@ -33,7 +33,7 @@ namespace bt
 	class WaitJob;
 }
 
-namespace KIO
+namespace TDEIO
 {
 	class Job;
 }
@@ -191,7 +191,7 @@ namespace kt
 		void onReplyOK(bt::HTTPRequest* r,const TQString &);
 		void onReplyError(bt::HTTPRequest* r,const TQString &);
 		void onError(bt::HTTPRequest* r,bool);
-		void downloadFinished(KIO::Job* j);
+		void downloadFinished(TDEIO::Job* j);
 		
 		
 		

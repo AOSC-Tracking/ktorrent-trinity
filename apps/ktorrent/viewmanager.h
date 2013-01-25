@@ -24,7 +24,7 @@
 #include <tqvaluelist.h>
 #include <interfaces/guiinterface.h>
 
-class KConfig;
+class TDEConfig;
 class KTabWidget;
 class KTorrentView;
 class KTorrent;
@@ -44,10 +44,10 @@ public:
 	KTorrentView* newView();
 	
 	/// Save all views
-	void saveViewState(KConfig* cfg);
+	void saveViewState(TDEConfig* cfg);
 	
 	/// Restore all views from configuration
-	void restoreViewState(KConfig* cfg,KTorrent* ktor);
+	void restoreViewState(TDEConfig* cfg,KTorrent* ktor);
 	
 	/// Start all selected downloads in the current view
 	void startDownloads();

@@ -107,8 +107,8 @@ namespace kt
 		KURL url(m_url->url());
 		KURL dest(target);
 		KURL temp(TDEGlobal::dirs()->saveLocation("data","ktorrent") + "level1.tmp");
-		if(KIO::NetAccess::exists(temp,false, this))
-			KIO::NetAccess::del(temp,this);
+		if(TDEIO::NetAccess::exists(temp,false, this))
+			TDEIO::NetAccess::del(temp,this);
 
 		bool download = true;
 
@@ -117,26 +117,26 @@ namespace kt
 			if((KMessageBox::questionYesNo(this, i18n("Selected file already exists, do you want to download it again?"),i18n("File Exists")) == 4))
 				download = false;
 			else
-				KIO::NetAccess::move(target, temp);
+				TDEIO::NetAccess::move(target, temp);
 		}
 
 		if(download)
 		{
 			if(!url.isLocalFile())
 			{
-				if (KIO::NetAccess::download(url,target,NULL))
+				if (TDEIO::NetAccess::download(url,target,NULL))
 				{
 					//Level1 list successfully downloaded, remove temporary file
-					KIO::NetAccess::removeTempFile(target);
-					KIO::NetAccess::del(temp, this);
+					TDEIO::NetAccess::removeTempFile(target);
+					TDEIO::NetAccess::del(temp, this);
 				}
 				else
 				{
-					TQString err = KIO::NetAccess::lastErrorString();
+					TQString err = TDEIO::NetAccess::lastErrorString();
 					if(err != TQString())
-						KMessageBox::error(0,KIO::NetAccess::lastErrorString(),i18n("Error"));
+						KMessageBox::error(0,TDEIO::NetAccess::lastErrorString(),i18n("Error"));
 					else
-						KIO::NetAccess::move(temp, target);
+						TDEIO::NetAccess::move(temp, target);
 					
 					
 					//we don't want to convert since download failed
@@ -145,9 +145,9 @@ namespace kt
 			}
 			else
 			{
-				if (!KIO::NetAccess::file_copy(url,dest, -1, true))
+				if (!TDEIO::NetAccess::file_copy(url,dest, -1, true))
 				{
-					KMessageBox::error(0,KIO::NetAccess::lastErrorString(),i18n("Error"));
+					KMessageBox::error(0,TDEIO::NetAccess::lastErrorString(),i18n("Error"));
 					return;
 				}
 			}
@@ -158,13 +158,13 @@ namespace kt
 			{
 				KURL zipfile("zip:" + target + "/splist.txt");
 				KURL destinationfile(target + ".txt");
-				KIO::NetAccess::file_copy(zipfile,destinationfile, -1, true);
+				TDEIO::NetAccess::file_copy(zipfile,destinationfile, -1, true);
 			}
 			else
 			{
 				KURL zipfile(target);
 				KURL destinationfile(target + ".txt");
-				KIO::NetAccess::file_copy(zipfile,destinationfile, -1, true);
+				TDEIO::NetAccess::file_copy(zipfile,destinationfile, -1, true);
 			}
 			
 		}
@@ -194,7 +194,7 @@ namespace kt
 			if((KMessageBox::questionYesNo(this,i18n("Filter file (level1.dat) already exists, do you want to convert it again?"),i18n("File Exists")) == 4))
 				return;
 // 			else
-// 				KIO::NetAccess::del(TDEGlobal::dirs()->saveLocation("data","ktorrent") + "level1.dat", NULL);
+// 				TDEIO::NetAccess::del(TDEGlobal::dirs()->saveLocation("data","ktorrent") + "level1.dat", NULL);
 		}
 		ConvertDialog dlg(m_plugin);
 		dlg.exec();

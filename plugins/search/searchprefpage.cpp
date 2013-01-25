@@ -188,12 +188,12 @@ namespace kt
 		TQString fn = TDEGlobal::dirs()->saveLocation("data","ktorrent") + "search_engines.tmp";
 		KURL source("http://www.ktorrent.org/downloads/search_engines");
 		
-		if (KIO::NetAccess::download(source,fn,NULL))
+		if (TDEIO::NetAccess::download(source,fn,NULL))
 		{
 			//list successfully downloaded, remove temporary file
 			updateList(fn);
 			saveSearchEngines();
-			KIO::NetAccess::removeTempFile(fn);
+			TDEIO::NetAccess::removeTempFile(fn);
 		}
 	}
 	

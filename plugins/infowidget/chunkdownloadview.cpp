@@ -143,12 +143,12 @@ namespace kt
 			m_size_chunks->setText(TQString::number(s.chunk_size / 1024 / 1024) + "." + TQString::number(((s.chunk_size / 1024) % 1024) / 100) + " MB");
 	}
 	
-	void ChunkDownloadView::saveLayout(KConfig* cfg,const TQString & group_name)
+	void ChunkDownloadView::saveLayout(TDEConfig* cfg,const TQString & group_name)
 	{
 		m_list_view->saveLayout(cfg,group_name);
 	}
 	
-	void ChunkDownloadView::restoreLayout(KConfig* cfg,const TQString & group_name)
+	void ChunkDownloadView::restoreLayout(TDEConfig* cfg,const TQString & group_name)
 	{
 		m_list_view->restoreLayout(cfg,group_name);
 	}

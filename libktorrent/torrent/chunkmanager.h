@@ -30,7 +30,7 @@
 
 class TQStringList;
 
-namespace KIO
+namespace TDEIO
 {
 	class Job;
 }
@@ -109,13 +109,13 @@ namespace bt
 		 * @param ndir The new directory
 		 * @return The job doing the move
 		 */
-		KIO::Job* moveDataFiles(const TQString & ndir);
+		TDEIO::Job* moveDataFiles(const TQString & ndir);
 		
 		/**
 		 * The move data files job has finished
 		 * @param job The move job
 		 */
-		void moveDataFilesCompleted(KIO::Job* job);
+		void moveDataFilesCompleted(TDEIO::Job* job);
 		
 		/**
 		 * Loads the index file.

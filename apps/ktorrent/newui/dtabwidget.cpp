@@ -56,7 +56,7 @@ DTabWidget::DTabWidget(TQWidget *parent, const char *name)
 void DTabWidget::loadSettings()
 {
 	/*
-    KConfig *config = kapp->config();
+    TDEConfig *config = kapp->config();
     config->setGroup("UI");
 //    m_tabBarShown = config->readBoolEntry("TabBarShown", true);
     m_tabBarShown = ! config->readNumEntry("TabWidgetVisibility", 0);

@@ -17,7 +17,7 @@ class KURL;
 
 #include <tqobject.h>
 
-namespace KIO
+namespace TDEIO
 {
 	class Job;
 }
@@ -137,9 +137,9 @@ namespace RSS
             void slotTimeout();
                 
 		private slots:
-			void slotData(KIO::Job *job, const TQByteArray &data);
-			void slotResult(KIO::Job *job);
-			void slotPermanentRedirection(KIO::Job *job, const KURL &fromUrl,
+			void slotData(TDEIO::Job *job, const TQByteArray &data);
+			void slotResult(TDEIO::Job *job);
+			void slotPermanentRedirection(TDEIO::Job *job, const KURL &fromUrl,
 			                                             const KURL &toUrl);
 
 		private:

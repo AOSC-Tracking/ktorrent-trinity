@@ -74,12 +74,12 @@ namespace kt
 			active_job = 0;
 		}
 		
-		KIO::TransferJob* j = KIO::get(u,false,false);
-		connect(j,TQT_SIGNAL(data(KIO::Job*,const TQByteArray &)),
-				this,TQT_SLOT(dataRecieved(KIO::Job*, const TQByteArray& )));
-		connect(j,TQT_SIGNAL(result(KIO::Job*)),this,TQT_SLOT(jobDone(KIO::Job* )));
-		connect(j,TQT_SIGNAL(mimetype(KIO::Job*, const TQString &)),
-				this,TQT_SLOT(mimetype(KIO::Job*, const TQString& )));
+		TDEIO::TransferJob* j = TDEIO::get(u,false,false);
+		connect(j,TQT_SIGNAL(data(TDEIO::Job*,const TQByteArray &)),
+				this,TQT_SLOT(dataRecieved(TDEIO::Job*, const TQByteArray& )));
+		connect(j,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(jobDone(TDEIO::Job* )));
+		connect(j,TQT_SIGNAL(mimetype(TDEIO::Job*, const TQString &)),
+				this,TQT_SLOT(mimetype(TDEIO::Job*, const TQString& )));
 	
 		active_job = j;
 		curr_data.resize(0);
@@ -115,7 +115,7 @@ namespace kt
 		openURL(url());
 	}
 	
-	void HTMLPart::dataRecieved(KIO::Job* job,const TQByteArray & data)
+	void HTMLPart::dataRecieved(TDEIO::Job* job,const TQByteArray & data)
 	{
 		if (job != active_job)
 		{
@@ -134,7 +134,7 @@ namespace kt
 		}
 	}
 	
-	void HTMLPart::mimetype(KIO::Job* job,const TQString & mt)
+	void HTMLPart::mimetype(TDEIO::Job* job,const TQString & mt)
 	{
 		if (job != active_job)
 		{
@@ -145,7 +145,7 @@ namespace kt
 		mime_type = mt;
 	}
 	
-	void HTMLPart::jobDone(KIO::Job* job)
+	void HTMLPart::jobDone(TDEIO::Job* job)
 	{
 		if (job != active_job)
 		{
@@ -185,7 +185,7 @@ namespace kt
 		else
 		{
 			begin(curr_url);
-			write(KIO::buildErrorString(job->error(),job->errorText()));/*,&curr_url));**/
+			write(TDEIO::buildErrorString(job->error(),job->errorText()));/*,&curr_url));**/
 			end();
 		}
 		active_job = 0;

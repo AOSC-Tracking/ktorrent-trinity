@@ -70,15 +70,15 @@ namespace bt
 		/**
 		 * Move the data files to a new directory.
 		 * @param ndir The directory
-		 * @return The KIO::Job doing the move
+		 * @return The TDEIO::Job doing the move
 		 */
-		virtual KIO::Job* moveDataFiles(const TQString & ndir) = 0;
+		virtual TDEIO::Job* moveDataFiles(const TQString & ndir) = 0;
 		
 		/**
 		 * The move data files job is done.
 		 * @param job The job that did it 
 		 */
-		virtual void moveDataFilesCompleted(KIO::Job* job) = 0;
+		virtual void moveDataFilesCompleted(TDEIO::Job* job) = 0;
 		
 		/**
 		 * Changes output path. All data files should already been moved.
