@@ -2111,16 +2111,16 @@ if test $kde_qtver = 3; then
    AC_SUBST(LIB_SMB, "-lsmb")
    AC_SUBST(LIB_KAB, "-lkab")
    AC_SUBST(LIB_KABC, "-lkabc")
-   AC_SUBST(LIB_KHTML, "-lkhtml")
-   AC_SUBST(LIB_KSPELL, "-lkspell")
-   AC_SUBST(LIB_KPARTS, "-lkparts")
+   AC_SUBST(LIB_KHTML, "-ltdehtml")
+   AC_SUBST(LIB_KSPELL, "-ltdespell")
+   AC_SUBST(LIB_KPARTS, "-ltdeparts")
    AC_SUBST(LIB_KDEPRINT, "-lkdeprint")
-   AC_SUBST(LIB_KUTILS, "-lkutils")
+   AC_SUBST(LIB_KUTILS, "-ltdeutils")
    AC_SUBST(LIB_KDEPIM, "-lkdepim")
-   AC_SUBST(LIB_KIMPROXY, "-lkimproxy")
+   AC_SUBST(LIB_KIMPROXY, "-ltdeimproxy")
    AC_SUBST(LIB_KNEWSTUFF, "-lknewstuff")
-   AC_SUBST(LIB_KDNSSD, "-lkdnssd")
-   AC_SUBST(LIB_KUNITTEST, "-lkunittest")
+   AC_SUBST(LIB_KDNSSD, "-ltdednssd")
+   AC_SUBST(LIB_KUNITTEST, "-ltdeunittest")
 # these are for backward compatibility
    AC_SUBST(LIB_KSYCOCA, "-lkio")
    AC_SUBST(LIB_KFILE, "-lkio")
@@ -2128,13 +2128,13 @@ elif test $kde_qtver = 2; then
    AC_SUBST(LIB_KDECORE, "-lkdecore")
    AC_SUBST(LIB_KDEUI, "-lkdeui")
    AC_SUBST(LIB_KIO, "-lkio")
-   AC_SUBST(LIB_KSYCOCA, "-lksycoca")
+   AC_SUBST(LIB_KSYCOCA, "-ltdesycoca")
    AC_SUBST(LIB_SMB, "-lsmb")
    AC_SUBST(LIB_KFILE, "-lkfile")
    AC_SUBST(LIB_KAB, "-lkab")
-   AC_SUBST(LIB_KHTML, "-lkhtml")
-   AC_SUBST(LIB_KSPELL, "-lkspell")
-   AC_SUBST(LIB_KPARTS, "-lkparts")
+   AC_SUBST(LIB_KHTML, "-ltdehtml")
+   AC_SUBST(LIB_KSPELL, "-ltdespell")
+   AC_SUBST(LIB_KPARTS, "-ltdeparts")
    AC_SUBST(LIB_KDEPRINT, "-lkdeprint")
 else
    AC_SUBST(LIB_KDECORE, "-lkdecore -lXext $(LIB_QT)")
@@ -2583,7 +2583,7 @@ AC_FIND_FILE(jpeglib.h, $jpeg_incdirs, jpeg_incdir)
 test "x$jpeg_incdir" = xNO && jpeg_incdir=
 
 dnl if headers _and_ libraries are missing, this is no error, and we
-dnl continue with a warning (the user will get no jpeg support in khtml)
+dnl continue with a warning (the user will get no jpeg support in tdehtml)
 dnl if only one is missing, it means a configuration error, but we still
 dnl only warn
 if test -n "$jpeg_incdir" && test -n "$LIBJPEG" ; then
@@ -3526,7 +3526,7 @@ LIBTOOL_SHELL="/bin/sh ./libtool"
 KDE_PLUGIN="-avoid-version -module -no-undefined \$(KDE_NO_UNDEFINED) \$(KDE_RPATH) \$(KDE_MT_LDFLAGS)"
 AC_SUBST(KDE_PLUGIN)
 
-# This hack ensures that libtool creates shared libs for kunittest plugins. By default check_LTLIBRARIES makes static libs.
+# This hack ensures that libtool creates shared libs for tdeunittest plugins. By default check_LTLIBRARIES makes static libs.
 KDE_CHECK_PLUGIN="\$(KDE_PLUGIN) -rpath \$(libdir)"
 AC_SUBST(KDE_CHECK_PLUGIN)
 

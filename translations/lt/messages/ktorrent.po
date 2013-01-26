@@ -185,7 +185,7 @@ msgstr "Pasirinkite bylą"
 #, fuzzy
 msgid "Choose a filename to save under"
 msgstr ""
-"#-#-#-#-#  ktexteditor_insertfile.po (ktexteditor_insertfile)  #-#-#-#-#\n"
+"#-#-#-#-#  tdetexteditor_insertfile.po (tdetexteditor_insertfile)  #-#-#-#-#\n"
 "Pasirinkite bylą įterpimui\n"
 "#-#-#-#-#  katepart.po (katepart)  #-#-#-#-#\n"
 "Pasirinkite įterpiamą bylą"

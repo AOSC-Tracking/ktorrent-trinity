@@ -21,7 +21,7 @@
 #define DMAINWINDOW_H
 
 #include <kxmlguiclient.h>
-#include <kparts/mainwindow.h>
+#include <tdeparts/mainwindow.h>
 
 #include "ddockwindow.h"
 

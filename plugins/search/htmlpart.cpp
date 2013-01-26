@@ -26,9 +26,9 @@
 #include <kio/netaccess.h>
 #include <klocale.h>
 #include <kfiledialog.h>
-#include <kparts/browserextension.h>
+#include <tdeparts/browserextension.h>
 #include <util/constants.h>
-#include <khtmlview.h>
+#include <tdehtmlview.h>
 #include "htmlpart.h"
 
 using namespace bt;

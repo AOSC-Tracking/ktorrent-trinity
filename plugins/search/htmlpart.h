@@ -20,7 +20,7 @@
 #ifndef HTMLPART_H
 #define HTMLPART_H
 
-#include <khtml_part.h>
+#include <tdehtml_part.h>
 
 namespace TDEIO
 {

@@ -20,7 +20,7 @@
  ***************************************************************************/
 
 #include <kapplication.h>
-#include <khtmlview.h>
+#include <tdehtmlview.h>
 #include <tqlayout.h>
 #include <tqfile.h> 
 #include <tqtextstream.h> 
@@ -34,7 +34,7 @@
 #include <kiconloader.h>
 #include <kcombobox.h>
 #include <kpopupmenu.h>
-#include <kparts/partmanager.h>
+#include <tdeparts/partmanager.h>
 #include <kio/job.h>
 #include <kmessagebox.h>
 #include <kfiledialog.h>

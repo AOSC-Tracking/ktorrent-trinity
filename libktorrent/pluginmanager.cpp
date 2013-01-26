@@ -19,7 +19,7 @@
  ***************************************************************************/
 #include <tqfile.h>
 #include <tqtextstream.h>
-#include <kparts/componentfactory.h>
+#include <tdeparts/componentfactory.h>
 #include <util/log.h>
 #include <util/error.h>
 #include <util/fileops.h>

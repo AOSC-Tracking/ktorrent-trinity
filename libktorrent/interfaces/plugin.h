@@ -21,7 +21,7 @@
 #define KTPLUGIN_H
 
 #include <ktversion.h>
-#include <kparts/plugin.h>
+#include <tdeparts/plugin.h>
 
 namespace bt
 {

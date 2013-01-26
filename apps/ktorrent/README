@@ -53,7 +53,7 @@ embeddable in other apps. For example, the kmplayer kpart can be called to play 
 in your app.
 
 For more details, consult :
-http://www-106.ibm.com/developerworks/library/l-kparts/
+http://www-106.ibm.com/developerworks/library/l-tdeparts/
 http://developer.kde.org/documentation/tutorials/dot/writing-plugins.html
 http://developer.kde.org/documentation/tutorials/developing-a-plugin-structure/index.html
 
