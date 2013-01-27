@@ -26,7 +26,7 @@
 #include <unistd.h>
 #include <errno.h>
 #include <klocale.h>
-#include <kio/netaccess.h>
+#include <tdeio/netaccess.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fcntl.h>

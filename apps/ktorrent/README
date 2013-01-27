@@ -46,7 +46,7 @@ http://developer.kde.org/documentation/tutorials/xmlui/preface.html
 them more maintainable.
 
 For more details, consult :
-http://developer.kde.org/documentation/tutorials/kconfigxt/kconfigxt.html
+http://developer.kde.org/documentation/tutorials/tdeconfigxt/tdeconfigxt.html
 
 * With KParts, you can embed other kde components in your program, or make your program
 embeddable in other apps. For example, the kmplayer kpart can be called to play videos

@@ -21,7 +21,7 @@
 #define KTEXITOPERATION_H
 
 #include <tqobject.h>
-#include <kio/job.h>
+#include <tdeio/job.h>
 
 namespace kt
 {

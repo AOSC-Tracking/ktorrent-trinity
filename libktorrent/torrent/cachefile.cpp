@@ -29,9 +29,9 @@
 #include <unistd.h>
 #include <errno.h>
 #include <tqfile.h>
-#include <kio/netaccess.h>
+#include <tdeio/netaccess.h>
 #include <klocale.h>
-#include <kfileitem.h>
+#include <tdefileitem.h>
 #include <util/array.h>
 #include <util/fileops.h>
 #include <torrent/globals.h>

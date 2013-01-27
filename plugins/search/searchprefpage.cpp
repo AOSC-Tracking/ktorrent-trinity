@@ -30,7 +30,7 @@
 #include <klistview.h>
 #include <klineedit.h>
 #include <kmessagebox.h>
-#include <kio/netaccess.h>
+#include <tdeio/netaccess.h>
 #include <klineedit.h>
 
 #include <tqlabel.h>

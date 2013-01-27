@@ -20,9 +20,9 @@
 #include "scanfolder.h"
 
 #include <kdirlister.h>
-#include <kfileitem.h>
+#include <tdefileitem.h>
 #include <klocale.h>
-#include <kio/job.h>
+#include <tdeio/job.h>
 
 #include <tqstring.h>
 #include <tqobject.h>

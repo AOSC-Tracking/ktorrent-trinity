@@ -614,7 +614,7 @@ AC_DEFUN([KDE_SUBST_PROGRAMS],
         fi
 
         if test -n "$kde32ornewer"; then
-            KDE_FIND_PATH(kconfig_compiler, KCONFIG_COMPILER, [$kde_default_bindirs], [KDE_MISSING_PROG_ERROR(kconfig_compiler)])
+            KDE_FIND_PATH(tdeconfig_compiler, KCONFIG_COMPILER, [$kde_default_bindirs], [KDE_MISSING_PROG_ERROR(tdeconfig_compiler)])
             KDE_FIND_PATH(dcopidlng, DCOPIDLNG, [$kde_default_bindirs], [KDE_MISSING_PROG_ERROR(dcopidlng)])
         fi
         if test -n "$kde33ornewer"; then
@@ -1824,7 +1824,7 @@ if test "$kde_qtver" = 1; then
   kde_check_lib="libkdecore.la"
 else
   kde_check_header="ksharedptr.h"
-  kde_check_lib="libkio.la"
+  kde_check_lib="libtdeio.la"
 fi
 
 if test -z "$1"; then
@@ -2130,7 +2130,7 @@ elif test $kde_qtver = 2; then
    AC_SUBST(LIB_KIO, "-lkio")
    AC_SUBST(LIB_KSYCOCA, "-ltdesycoca")
    AC_SUBST(LIB_SMB, "-lsmb")
-   AC_SUBST(LIB_KFILE, "-lkfile")
+   AC_SUBST(LIB_KFILE, "-ltdefile")
    AC_SUBST(LIB_KAB, "-lkab")
    AC_SUBST(LIB_KHTML, "-ltdehtml")
    AC_SUBST(LIB_KSPELL, "-ltdespell")
@@ -2140,7 +2140,7 @@ else
    AC_SUBST(LIB_KDECORE, "-lkdecore -lXext $(LIB_QT)")
    AC_SUBST(LIB_KDEUI, "-lkdeui $(LIB_KDECORE)")
    AC_SUBST(LIB_KFM, "-lkfm $(LIB_KDECORE)")
-   AC_SUBST(LIB_KFILE, "-lkfile $(LIB_KFM) $(LIB_KDEUI)")
+   AC_SUBST(LIB_KFILE, "-ltdefile $(LIB_KFM) $(LIB_KDEUI)")
    AC_SUBST(LIB_KAB, "-lkab $(LIB_KIMGIO) $(LIB_KDECORE)")
 fi
 ])

@@ -25,7 +25,7 @@
 #include <klocale.h>
 #include <kurl.h>
 #include <kmessagebox.h>
-#include <kio/netaccess.h>
+#include <tdeio/netaccess.h>
 #include <kprogress.h>
 #include <kmimetype.h>
 

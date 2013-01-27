@@ -22,13 +22,13 @@
 #include <tqdir.h>
 #include <klocale.h>
 #include <kglobal.h>
-#include <kfiledialog.h>
+#include <tdefiledialog.h>
 #include <kprogress.h>
 #include <kmessagebox.h>
 #include <kstandarddirs.h>
 #include <kapplication.h>
-#include <kio/job.h>
-#include <kio/netaccess.h>
+#include <tdeio/job.h>
+#include <tdeio/netaccess.h>
 #include <tqregexp.h>
 
 #include <util/log.h>

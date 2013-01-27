@@ -114,7 +114,7 @@ namespace RSS
 			/**
 			 * @return The error code for the last process of retrieving data.
 			 * The returned numbers correspond directly to the error codes
-			 * <a href="http://developer.kde.org/documentation/library/cvs-api/classref/kio/KIO.html#Error">as
+			 * <a href="http://developer.kde.org/documentation/library/cvs-api/classref/tdeio/KIO.html#Error">as
 			 * defined by KIO</a>.
 			 */
 			virtual int errorCode() const;

@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 
-#include <kio/global.h>
+#include <tdeio/global.h>
 #include <kglobal.h>
 #include <klocale.h>
 

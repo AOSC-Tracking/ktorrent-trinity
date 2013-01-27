@@ -22,7 +22,7 @@
 #include <tqstringlist.h>
 #include <tqfileinfo.h>
 #include <klocale.h>
-#include <kio/netaccess.h>
+#include <tdeio/netaccess.h>
 #include <util/file.h>
 #include <util/fileops.h>
 #include <util/functions.h>

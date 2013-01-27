@@ -22,8 +22,8 @@
 #include <kglobal.h>
 #include <kstandarddirs.h>
 #include <tqstringlist.h>
-#include <kio/netaccess.h>
-#include <kio/job.h>
+#include <tdeio/netaccess.h>
+#include <tdeio/job.h>
 #include <torrent/globals.h>
 #include <util/log.h>
 #include <util/array.h>

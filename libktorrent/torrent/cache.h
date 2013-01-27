@@ -20,7 +20,7 @@
 #ifndef BTCACHE_H
 #define BTCACHE_H
 
-#include <kio/job.h>
+#include <tdeio/job.h>
 
 class TQStringList;
 

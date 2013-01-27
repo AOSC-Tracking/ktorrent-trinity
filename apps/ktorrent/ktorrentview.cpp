@@ -27,7 +27,7 @@
 #include <kurldrag.h>
 #include <kmessagebox.h>
 #include <kstdguiitem.h>
-#include <kfiledialog.h>
+#include <tdefiledialog.h>
 
 #include <interfaces/torrentinterface.h>
 #include <torrent/globals.h>

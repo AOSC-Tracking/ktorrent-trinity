@@ -21,7 +21,7 @@
 #define BTWAITJOB_H
 
 #include <tqtimer.h>
-#include <kio/job.h>
+#include <tdeio/job.h>
 #include <tqvaluelist.h>
 #include <interfaces/exitoperation.h>
 #include "constants.h"

@@ -19,7 +19,7 @@
 #include <kurlrequester.h>
 #include <keditlistbox.h>
 #include <kpushbutton.h>
-#include <kfiledialog.h>
+#include <tdefiledialog.h>
 #include <kprogress.h>
 #include <klistview.h>
 #include <knuminput.h>

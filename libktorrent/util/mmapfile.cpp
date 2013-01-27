@@ -30,8 +30,8 @@
 #include <sys/stat.h>
 #include <errno.h>
 #include <tqfile.h>
-#include <kfileitem.h>
-#include <kio/netaccess.h>
+#include <tdefileitem.h>
+#include <tdeio/netaccess.h>
 #include <klocale.h>
 #include <util/error.h>
 #include <util/log.h>

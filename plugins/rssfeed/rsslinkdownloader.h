@@ -20,7 +20,7 @@
 #ifndef RSSLINKDOWNLOADER_H
 #define RSSLINKDOWNLOADER_H
 
-#include <kio/job.h>
+#include <tdeio/job.h>
 #include <ktempfile.h>
 
 #include <interfaces/coreinterface.h>

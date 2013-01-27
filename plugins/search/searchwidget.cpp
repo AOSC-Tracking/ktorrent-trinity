@@ -35,9 +35,9 @@
 #include <kcombobox.h>
 #include <kpopupmenu.h>
 #include <tdeparts/partmanager.h>
-#include <kio/job.h>
+#include <tdeio/job.h>
 #include <kmessagebox.h>
-#include <kfiledialog.h>
+#include <tdefiledialog.h>
 #include <kprogress.h>
 #include <util/log.h>
 #include <torrent/globals.h>

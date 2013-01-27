@@ -29,7 +29,7 @@
 #include <ktoolbarbutton.h>
 #include <klineedit.h>
 #include <kiconloader.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <interfaces/torrentinterface.h>
 
 

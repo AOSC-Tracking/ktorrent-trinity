@@ -21,7 +21,7 @@
 
 #include <kdebug.h>
 #include <kapplication.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <kiconloader.h>
 
 #include <tqtoolbutton.h>

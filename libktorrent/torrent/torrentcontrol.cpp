@@ -22,7 +22,7 @@
 #include <tqfile.h>
 #include <klocale.h>
 #include <kmessagebox.h>
-#include <kfiledialog.h>
+#include <tdefiledialog.h>
 #include <tqtextstream.h>
 #include <util/log.h>
 #include <util/error.h>

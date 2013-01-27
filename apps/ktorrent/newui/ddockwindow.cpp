@@ -29,7 +29,7 @@
 
 #include <kdebug.h>
 #include <kglobal.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <kcombobox.h>
 #include <klocale.h>
 #include <kiconloader.h>

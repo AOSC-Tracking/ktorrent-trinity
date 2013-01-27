@@ -27,9 +27,9 @@
 #include <util/error.h>
 #include <util/waitjob.h>
 #include <interfaces/exitoperation.h>
-#include <kio/job.h>
-#include <kio/netaccess.h>
-#include <kio/scheduler.h>
+#include <tdeio/job.h>
+#include <tdeio/netaccess.h>
+#include <tdeio/scheduler.h>
 #include "bnode.h"
 #include "httptracker.h"
 #include "torrentcontrol.h"

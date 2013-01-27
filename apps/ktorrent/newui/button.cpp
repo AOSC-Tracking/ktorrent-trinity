@@ -33,7 +33,7 @@
 #include <kinputdialog.h>
 #include <klocale.h>
 #include <kapplication.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 
 #include "buttonbar.h"
 

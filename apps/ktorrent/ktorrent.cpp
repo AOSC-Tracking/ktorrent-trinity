@@ -38,9 +38,9 @@
 #include <kkeydialog.h>
 #include <kaccel.h>
 #include <kstandarddirs.h>
-#include <kio/netaccess.h>
-#include <kfiledialog.h>
-#include <kconfig.h>
+#include <tdeio/netaccess.h>
+#include <tdefiledialog.h>
+#include <tdeconfig.h>
 #include <kurl.h>
 #include <kurldrag.h>
 #include <kprogress.h>

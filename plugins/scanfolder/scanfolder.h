@@ -21,7 +21,7 @@
 #define SCANFOLDER_H
 
 #include <kdirlister.h>
-#include <kfileitem.h>
+#include <tdefileitem.h>
 #include <tqstring.h>
 #include <tqobject.h>
 #include <tqdir.h>

@@ -28,7 +28,7 @@
 #include <knuminput.h>
 #include <kurlrequester.h>
 #include <kurl.h>
-#include <kfiledialog.h>
+#include <tdefiledialog.h>
 #include <kmessagebox.h>
 #include <klineedit.h>
 #include <tqlistview.h>

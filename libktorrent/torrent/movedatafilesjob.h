@@ -20,7 +20,7 @@
 #ifndef BTMOVEDATAFILESJOB_H
 #define BTMOVEDATAFILESJOB_H
 
-#include <kio/job.h>
+#include <tdeio/job.h>
 
 namespace bt
 {

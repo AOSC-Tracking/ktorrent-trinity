@@ -22,7 +22,7 @@
 #include <kglobal.h>
 #include <kstandarddirs.h>
 #include <krfcdate.h>
-#include <kio/netaccess.h>
+#include <tdeio/netaccess.h>
 #include <tqfile.h>
 #include <tqapplication.h>
 #include <tqdir.h>

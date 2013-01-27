@@ -22,7 +22,7 @@
 #include <tqtoolbutton.h>
 #include <tqtabbar.h>
 
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <kiconloader.h>
 #include <kapplication.h>
 

@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 #include <torrent/globals.h>
-#include <kio/netaccess.h>
+#include <tdeio/netaccess.h>
 #include "waitjob.h"
 #include "log.h"
 

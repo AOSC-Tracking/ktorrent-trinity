@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 #include <kglobal.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <tqapplication.h>
 #include "logviewer.h"
 #include "logflags.h"

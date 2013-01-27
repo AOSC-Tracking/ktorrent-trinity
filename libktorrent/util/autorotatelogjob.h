@@ -20,7 +20,7 @@
 #ifndef BTAUTOROTATELOGJOB_H
 #define BTAUTOROTATELOGJOB_H
 
-#include <kio/job.h>
+#include <tdeio/job.h>
 #include <cstdlib>
 
 namespace bt

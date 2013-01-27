@@ -22,7 +22,7 @@
 #include <tqlayout.h>
 
 #include <kdebug.h>
-#include <kconfig.h>
+#include <tdeconfig.h>
 #include <kstringhandler.h>
 #include <klocale.h>
 

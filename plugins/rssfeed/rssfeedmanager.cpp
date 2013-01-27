@@ -20,9 +20,9 @@
 #include "rssfeedmanager.h"
 
 #include <kdirlister.h>
-#include <kfileitem.h>
+#include <tdefileitem.h>
 #include <klocale.h>
-#include <kio/netaccess.h>
+#include <tdeio/netaccess.h>
 #include <kstandarddirs.h>
 #include <keditlistbox.h>
 // #include <kmimetype.h>

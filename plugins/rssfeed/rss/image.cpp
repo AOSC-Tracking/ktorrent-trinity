@@ -11,7 +11,7 @@
 #include "image.h"
 #include "tools_p.h"
 
-#include <kio/job.h>
+#include <tdeio/job.h>
 #include <kurl.h>
 
 #include <tqbuffer.h>

@@ -23,8 +23,8 @@
 #include <kurlrequester.h>
 #include <kpushbutton.h>
 #include <kmessagebox.h>
-#include <kio/job.h>
-#include <kio/jobclasses.h>
+#include <tdeio/job.h>
+#include <tdeio/jobclasses.h>
 #include <util/log.h>
 #include <util/error.h>
 #include <util/file.h>

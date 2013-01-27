@@ -11,7 +11,7 @@
 #include "loader.h"
 #include "document.h"
 
-#include <kio/job.h>
+#include <tdeio/job.h>
 #include <kprocess.h>
 #include <kurl.h>
 #include <kdebug.h>

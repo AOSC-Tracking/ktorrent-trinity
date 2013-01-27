@@ -18,14 +18,14 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 #include <kmessagebox.h>
-#include <kio/job.h>
-#include <kio/jobclasses.h>
+#include <tdeio/job.h>
+#include <tdeio/jobclasses.h>
 //#include <tqfile.h>
 #include <tqclipboard.h>
 #include <tqapplication.h>
-#include <kio/netaccess.h>
+#include <tdeio/netaccess.h>
 #include <klocale.h>
-#include <kfiledialog.h>
+#include <tdefiledialog.h>
 #include <tdeparts/browserextension.h>
 #include <util/constants.h>
 #include <tdehtmlview.h>
