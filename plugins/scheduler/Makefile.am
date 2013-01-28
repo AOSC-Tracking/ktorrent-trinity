@@ -8,7 +8,7 @@ ktschedulerplugin_la_SOURCES = schedulerplugin.cpp \
 	bwsprefpagewidget.cpp bwswidget.cpp schedulerprefpage.cpp
 
 # Libs needed by the plugin
-ktschedulerplugin_la_LIBADD = $(LIB_KHTML) $(LIB_KPARTS) \
+ktschedulerplugin_la_LIBADD = $(LIB_TDEHTML) $(LIB_KPARTS) \
 	../../libktorrent/libktorrent.la \
 	$(LIB_QT) $(LIB_TDECORE) $(LIB_TDEUI) $(LIB_KFILE)
 

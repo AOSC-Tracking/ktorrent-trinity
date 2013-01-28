@@ -34,7 +34,7 @@ namespace kt
 	/**
 	@author Joris Guisson
 	*/
-	class HTMLPart : public KHTMLPart
+	class HTMLPart : public TDEHTMLPart
 	{
 		Q_OBJECT
   

@@ -43,7 +43,7 @@ namespace kt
 	/**
 		@author Joris Guisson
 		
-		Widget which shows a KHTML window with the users search in it
+		Widget which shows a TDEHTML window with the users search in it
 	*/
 	class SearchWidget : public TQWidget
 	{

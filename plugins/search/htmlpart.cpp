@@ -37,7 +37,7 @@ namespace kt
 {
 	
 	HTMLPart::HTMLPart(TQWidget *parent)
-			: KHTMLPart(parent)
+			: TDEHTMLPart(parent)
 	{
 		setJScriptEnabled(true);
 		setJavaEnabled(true);

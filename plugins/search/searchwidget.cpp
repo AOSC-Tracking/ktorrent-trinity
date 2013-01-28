@@ -140,7 +140,7 @@ namespace kt
 	
 	void SearchWidget::onFrameAdded(KParts::Part* p)
 	{
-		KHTMLPart* frame = dynamic_cast<KHTMLPart*>(p);
+		TDEHTMLPart* frame = dynamic_cast<TDEHTMLPart*>(p);
 		if (frame)
 		{
 			connect(frame,TQT_SIGNAL(popupMenu(const TQString&, const TQPoint& )),
