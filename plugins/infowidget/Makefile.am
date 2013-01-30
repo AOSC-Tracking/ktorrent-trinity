@@ -12,7 +12,7 @@ ktinfowidgetplugin_la_SOURCES = infowidgetplugin.cpp availabilitychunkbar.cpp \
 # Libs needed by the plugin
 ktinfowidgetplugin_la_LIBADD = ../../libktorrent/libktorrent.la \
 			   $(LIB_TDEHTML) $(LIB_KPARTS) $(LIB_QT) \
-			   $(LIB_TDECORE) $(LIB_TDEUI) $(LIB_KFILE)
+			   $(LIB_TDECORE) $(LIB_TDEUI) $(LIB_TDEFILE)
 
 
 # LD flags for the plugin

@@ -2123,14 +2123,14 @@ if test $kde_qtver = 3; then
    AC_SUBST(LIB_KUNITTEST, "-ltdeunittest")
 # these are for backward compatibility
    AC_SUBST(LIB_KSYCOCA, "-ltdeio")
-   AC_SUBST(LIB_KFILE, "-ltdeio")
+   AC_SUBST(LIB_TDEFILE, "-ltdeio")
 elif test $kde_qtver = 2; then
    AC_SUBST(LIB_KDECORE, "-lkdecore")
    AC_SUBST(LIB_KDEUI, "-lkdeui")
    AC_SUBST(LIB_KIO, "-ltdeio")
    AC_SUBST(LIB_KSYCOCA, "-ltdesycoca")
    AC_SUBST(LIB_SMB, "-lsmb")
-   AC_SUBST(LIB_KFILE, "-ltdefile")
+   AC_SUBST(LIB_TDEFILE, "-ltdefile")
    AC_SUBST(LIB_KAB, "-lkab")
    AC_SUBST(LIB_TDEHTML, "-ltdehtml")
    AC_SUBST(LIB_KSPELL, "-ltdespell")
@@ -2140,7 +2140,7 @@ else
    AC_SUBST(LIB_KDECORE, "-lkdecore -lXext $(LIB_QT)")
    AC_SUBST(LIB_KDEUI, "-lkdeui $(LIB_KDECORE)")
    AC_SUBST(LIB_KFM, "-lkfm $(LIB_KDECORE)")
-   AC_SUBST(LIB_KFILE, "-ltdefile $(LIB_KFM) $(LIB_KDEUI)")
+   AC_SUBST(LIB_TDEFILE, "-ltdefile $(LIB_KFM) $(LIB_KDEUI)")
    AC_SUBST(LIB_KAB, "-lkab $(LIB_KIMGIO) $(LIB_KDECORE)")
 fi
 ])

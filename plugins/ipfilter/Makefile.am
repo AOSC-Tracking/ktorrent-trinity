@@ -10,7 +10,7 @@ ktipfilterplugin_la_SOURCES = ipfilterplugin.cpp ipblockingpref.ui \
 # Libs needed by the plugin
 ktipfilterplugin_la_LIBADD = $(LIB_TDEHTML) $(LIB_KPARTS) \
 	../../libktorrent/libktorrent.la $(LIB_QT) \
-	$(LIB_TDECORE) $(LIB_TDEUI) $(LIB_KFILE)
+	$(LIB_TDECORE) $(LIB_TDEUI) $(LIB_TDEFILE)
 
 
 

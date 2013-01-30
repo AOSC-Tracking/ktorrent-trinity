@@ -25,7 +25,7 @@ ktscanfolderplugin_la_SOURCES = scanfolderplugin.cpp \
 	scanfolderpluginsettings.kcfgc scanfolderprefpage.cpp sfprefwidgetbase.ui scanfolderprefpagewidget.cpp \
 	scanfolder.cpp
 ktscanfolderplugin_la_LIBADD = $(LIB_KPARTS) ../../libktorrent/libktorrent.la \
-		       $(LIB_QT) $(LIB_TDECORE) $(LIB_TDEUI) $(LIB_KFILE)
+		       $(LIB_QT) $(LIB_TDECORE) $(LIB_TDEUI) $(LIB_TDEFILE)
 
 
 KDE_CXXFLAGS = $(USE_EXCEPTIONS) $(USE_RTTI)

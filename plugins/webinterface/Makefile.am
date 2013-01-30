@@ -12,7 +12,7 @@ ktwebinterfaceplugin_la_SOURCES = webinterfaceplugin.cpp httpserver.cpp \
 # Libs needed by the plugin
 ktwebinterfaceplugin_la_LIBADD = ../../libktorrent/libktorrent.la \
 			   $(LIB_TDEHTML) $(LIB_KPARTS) $(LIB_QT) \
-			   $(LIB_TDECORE) $(LIB_TDEUI) $(LIB_KFILE)
+			   $(LIB_TDECORE) $(LIB_TDEUI) $(LIB_TDEFILE)
 
 # LD flags for the plugin
 # -module says: this is a module, i.e. something you're going to dlopen

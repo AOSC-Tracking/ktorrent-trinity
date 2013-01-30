@@ -4,7 +4,7 @@ METASOURCES = AUTO
 bin_PROGRAMS = kttorinfo
 kttorinfo_SOURCES = main.cpp
 kttorinfo_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_TDECORE) $(LIB_TDEUI) -ltdefx $(LIB_KIO) -ltdetexteditor
-kttorinfo_LDADD = ../../libktorrent/libktorrent.la $(LIB_KPARTS) $(LIB_KFILE) \
+kttorinfo_LDADD = ../../libktorrent/libktorrent.la $(LIB_KPARTS) $(LIB_TDEFILE) \
 	$(LIB_KIO)
 
 KDE_CXXFLAGS = $(USE_EXCEPTIONS) $(USE_RTTI)
