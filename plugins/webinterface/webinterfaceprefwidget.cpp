@@ -62,9 +62,9 @@ WebInterfacePrefWidget::WebInterfacePrefWidget(TQWidget *parent, const char *nam
    	interfaceSkinBox->setCurrentText (WebInterfacePluginSettings::skin());
 	
 	if(WebInterfacePluginSettings::phpExecutablePath().isEmpty()){
-		TQString phpPath=KStandardDirs::findExe("php");
+		TQString phpPath=TDEStandardDirs::findExe("php");
 		if(phpPath==TQString())
-			phpPath=KStandardDirs::findExe("php-cli");
+			phpPath=TDEStandardDirs::findExe("php-cli");
 		
 		if(phpPath==TQString())
 			phpExecutablePath->setURL (i18n("Php executable is not in default path, please enter the path manually"));
