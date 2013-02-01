@@ -155,7 +155,7 @@ namespace kt
 	
 	void PeerViewItem::update()
 	{
-		KLocale* loc = TDEGlobal::locale();
+		TDELocale* loc = TDEGlobal::locale();
 		const PeerInterface::Stats & s = peer->getStats();
 
 		if (s.download_rate >= 103) // lowest "visible" speed, all below will be 0,0 Kb/s

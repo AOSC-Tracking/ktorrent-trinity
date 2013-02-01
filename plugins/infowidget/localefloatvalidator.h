@@ -28,7 +28,7 @@ namespace kt{
 	/**
 	* @author Jonas Widarsson
 	*
-	* A float validator that respects KLocale::decimalSymbol()
+	* A float validator that respects TDELocale::decimalSymbol()
 	*/
 	class LocaleFloatValidator : public TQValidator
 	{

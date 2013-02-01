@@ -46,7 +46,7 @@ namespace kt
 	
 	TQString BytesToString2(Uint64 bytes,int precision = 2)
 	{
-		KLocale* loc = TDEGlobal::locale();
+		TDELocale* loc = TDEGlobal::locale();
 		if (bytes >= 1024 * 1024 * 1024)
 			return TQString("%1 GB").arg(loc->formatNumber(bytes / TO_GIG,precision < 0 ? 2 : precision));
 		else if (bytes >= 1024*1024)
@@ -59,7 +59,7 @@ namespace kt
 
 	TQString KBytesPerSecToString2(double speed,int precision = 2)
 	{
-		KLocale* loc = TDEGlobal::locale();
+		TDELocale* loc = TDEGlobal::locale();
 		return TQString("%1 KB/s").arg(loc->formatNumber(speed,precision));
 	}
 
