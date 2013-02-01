@@ -27,7 +27,7 @@ class TQCheckBox;
 class TDEConfig;
 class KLineEdit;
 class KPushButton;
-class KToolBarButton;
+class TDEToolBarButton;
 
 namespace kt
 {
@@ -64,7 +64,7 @@ private:
 	KLineEdit* m_filterInput;
 	KPushButton* m_clear;
 	TQCheckBox* m_case_sensitive;
-	KToolBarButton* m_close;
+	TDEToolBarButton* m_close;
 	TQString m_name_filter;
 };
 

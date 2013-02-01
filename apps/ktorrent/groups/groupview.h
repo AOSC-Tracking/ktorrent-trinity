@@ -23,8 +23,8 @@
 #include <klistview.h>
 #include <util/ptrmap.h>
 
-class KPopupMenu;
-class KActionCollection;
+class TDEPopupMenu;
+class TDEActionCollection;
 class ViewManager;
 class KTorrentView;
 
@@ -35,13 +35,13 @@ namespace kt
 	class GroupManager;
 	class TorrentInterface;
 	
-	class GroupViewItem : public KListViewItem
+	class GroupViewItem : public TDEListViewItem
 	{
 		Group* g;
 		GroupView* gview;
 	public:
 		GroupViewItem(GroupView* parent,Group* g);
-		GroupViewItem(GroupView* gview,KListViewItem* parent,Group* g);
+		GroupViewItem(GroupView* gview,TDEListViewItem* parent,Group* g);
 		virtual ~GroupViewItem();
 		
 		virtual int compare(TQListViewItem* i,int col,bool ascending) const; 
@@ -50,12 +50,12 @@ namespace kt
 	/**
 		@author Joris Guisson <joris.guisson@gmail.com>
 	*/
-	class GroupView : public KListView
+	class GroupView : public TDEListView
 	{
 		Q_OBJECT
   
 	public:
-		GroupView(ViewManager* view,KActionCollection* col,TQWidget *parent = 0, const char *name = 0);
+		GroupView(ViewManager* view,TDEActionCollection* col,TQWidget *parent = 0, const char *name = 0);
 		virtual ~GroupView();
 		
 		/// Get the current group
@@ -76,14 +76,14 @@ namespace kt
 		void onTorrentRemoved(kt::TorrentInterface* tc);
 		
 		/// Update a groups sub menu
-		void updateGroupsSubMenu(KPopupMenu* gsm);
+		void updateGroupsSubMenu(TDEPopupMenu* gsm);
 		
 		/// An item was activated in the groups sub menu of a KTorrentView
 		void onGroupsSubMenuItemActivated(KTorrentView* v,const TQString & group);
 		
 	private slots:
 		void onExecuted(TQListViewItem* item);
-		void showContextMenu(KListView* ,TQListViewItem* item,const TQPoint & p);
+		void showContextMenu(TDEListView* ,TQListViewItem* item,const TQPoint & p);
 		void addGroup();
 		void removeGroup();
 		void editGroupName();
@@ -99,12 +99,12 @@ namespace kt
 		void groupRemoved(kt::Group* g);
 		
 	private:
-		void createMenu(KActionCollection* col);
-		GroupViewItem* addGroup(Group* g,KListViewItem* parent);
+		void createMenu(TDEActionCollection* col);
+		GroupViewItem* addGroup(Group* g,TDEListViewItem* parent);
 			
 	private:
 		ViewManager* view;
-		KListViewItem* custom_root;
+		TDEListViewItem* custom_root;
 		bt::PtrMap<GroupViewItem*,Group> groups;
 		GroupManager* gman;
 		TQString save_file;
@@ -112,11 +112,11 @@ namespace kt
 		Group* current;
 		
 		GroupViewItem* current_item;
-		KPopupMenu* menu;
-		KAction* new_group;
-		KAction* edit_group;
-		KAction* remove_group;
-		KAction* open_in_new_tab;
+		TDEPopupMenu* menu;
+		TDEAction* new_group;
+		TDEAction* edit_group;
+		TDEAction* remove_group;
+		TDEAction* open_in_new_tab;
 		
 		friend class GroupViewItem;
 	};

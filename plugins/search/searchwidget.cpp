@@ -64,7 +64,7 @@ namespace kt
 		sbar = new SearchBar(this);
 		html_part = new HTMLPart(this);
 	
-		right_click_menu = new KPopupMenu(this);
+		right_click_menu = new TDEPopupMenu(this);
 		right_click_menu->insertSeparator();
 		back_id = right_click_menu->insertItem(
                         TDEGlobal::iconLoader()->loadIconSet(TQApplication::reverseLayout() 
@@ -224,7 +224,7 @@ namespace kt
 		right_click_menu->popup(p);
 	}
 	
-	KPopupMenu* SearchWidget::rightClickMenu()
+	TDEPopupMenu* SearchWidget::rightClickMenu()
 	{
 		return right_click_menu;
 	}

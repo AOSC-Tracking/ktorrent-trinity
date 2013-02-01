@@ -248,7 +248,7 @@ void FileSelectDlg::setupMultifileTorrent()
 void FileSelectDlg::setupSinglefileTorrent()
 {
 	m_file_view->clear();
-	KListViewItem* single_root = new KListViewItem(m_file_view);
+	TDEListViewItem* single_root = new TDEListViewItem(m_file_view);
 	single_root->setText(0,tc->getStats().torrent_name);
 	single_root->setText(1,BytesToString(tc->getStats().total_bytes));
 	single_root->setText(2,i18n("Yes"));

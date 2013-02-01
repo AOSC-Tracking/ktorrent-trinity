@@ -73,7 +73,7 @@ namespace kt
 	void UPnPPrefWidget::addDevice(UPnPRouter* r)
 	{
 		connect(r,TQT_SIGNAL(updateGUI()),this,TQT_SLOT(updatePortMappings()));
-		KListViewItem* item = new KListViewItem(m_device_list,r->getDescription().friendlyName);
+		TDEListViewItem* item = new TDEListViewItem(m_device_list,r->getDescription().friendlyName);
 		item->setMultiLinesEnabled(true);
 		itemmap[item] = r;
 		// if we have discovered the default device or there is none
@@ -107,7 +107,7 @@ namespace kt
 		
 	void UPnPPrefWidget::onForwardBtnClicked()
 	{
-		KListViewItem* item = (KListViewItem*)m_device_list->currentItem();;
+		TDEListViewItem* item = (TDEListViewItem*)m_device_list->currentItem();;
 		if (!item)
 			return;
 		
@@ -149,7 +149,7 @@ namespace kt
 	
 	void UPnPPrefWidget::onUndoForwardBtnClicked()
 	{
-		KListViewItem* item = (KListViewItem*)m_device_list->currentItem();;
+		TDEListViewItem* item = (TDEListViewItem*)m_device_list->currentItem();;
 		if (!item)
 			return;
 		
@@ -186,11 +186,11 @@ namespace kt
 	void UPnPPrefWidget::updatePortMappings()
 	{
 		// update all port mappings
-		TQMap<KListViewItem*,UPnPRouter*>::iterator i = itemmap.begin();
+		TQMap<TDEListViewItem*,UPnPRouter*>::iterator i = itemmap.begin();
 		while (i != itemmap.end())
 		{
 			UPnPRouter* r = i.data();
-			KListViewItem* item = i.key();
+			TDEListViewItem* item = i.key();
 			TQString msg,services;
 			TQValueList<UPnPRouter::Forwarding>::iterator j = r->beginPortMappings();
 			while (j != r->endPortMappings())

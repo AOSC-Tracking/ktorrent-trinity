@@ -29,7 +29,7 @@ typedef TQValueList<TQCString> QCStringList;
 
 class KURL;
 class KTorrentViewItem;
-class KPopupMenu;
+class TDEPopupMenu;
 class KTorrentCore;
 class KTorrentViewMenu;
 class KTorrentView;
@@ -45,7 +45,7 @@ namespace kt
 
 using namespace bt;
 
-class TorrentView : public KListView
+class TorrentView : public TDEListView
 {
 public:
 	TorrentView(KTorrentView* parent);
@@ -131,7 +131,7 @@ public:
 	
 	TQPtrList<TQListViewItem> selectedItems() {return view->selectedItems();}
 		
-	KListView* listView() {return view;}
+	TDEListView* listView() {return view;}
 	
 	/**
 	 * Toggle the visibility of the filter bar
@@ -165,7 +165,7 @@ public slots:
 
 private slots:
 	void onExecuted(TQListViewItem* item);
-	void showContextMenu(KListView* ,TQListViewItem* item,const TQPoint & p);
+	void showContextMenu(TDEListView* ,TQListViewItem* item,const TQPoint & p);
 	void onColumnVisibilityChange(int);
 	void gsmItemActived(const TQString & group);
 	
@@ -185,7 +185,7 @@ signals:
 	void updateActions(int flags);
 	void queue(kt::TorrentInterface* tc);
 	void needsDataCheck(kt::TorrentInterface* tc);
-	void updateGroupsSubMenu(KPopupMenu* gsm);
+	void updateGroupsSubMenu(TDEPopupMenu* gsm);
 	void groupsSubMenuItemActivated(KTorrentView* v,const TQString & group);
 
 private:
@@ -204,7 +204,7 @@ private:
 private:
 	TQMap<kt::TorrentInterface*,KTorrentViewItem*> items;
 	KTorrentViewMenu* menu;
-	KPopupMenu* m_headerMenu;
+	TDEPopupMenu* m_headerMenu;
 	kt::Group* current_group;
 	Uint32 running;
 	Uint32 total;

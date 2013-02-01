@@ -48,7 +48,7 @@ IPFilterWidget::IPFilterWidget(TQWidget *parent, const char *name)
 	
 	for (TQStringList::Iterator it = blocklist->begin(); it != blocklist->end(); ++it)
 	{
-		new KListViewItem(lstPeers, *it);
+		new TDEListViewItem(lstPeers, *it);
 	}
 	
 	delete blocklist;
@@ -66,7 +66,7 @@ void IPFilterWidget::btnAdd_clicked()
 	if(v.validate( ip, var ) == TQValidator::Acceptable)
 	{
 		if(lstPeers->findItem(ip, 0) == 0)
-			new KListViewItem(lstPeers, ip);
+			new TDEListViewItem(lstPeers, ip);
 	}
 	else
 		KMessageBox::sorry(0, i18n("You must enter IP in format 'XXX.XXX.XXX.XXX'. You can also use wildcards for ranges like '127.0.0.*'."));
@@ -181,7 +181,7 @@ void IPFilterWidget::loadFilter(TQString& fn)
 			continue;
 		}
 				
-		new KListViewItem(lstPeers, line);
+		new TDEListViewItem(lstPeers, line);
 		++i;
 	}
 	

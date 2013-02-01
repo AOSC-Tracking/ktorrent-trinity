@@ -25,7 +25,7 @@
 #include "upnprouter.h"
 #include "upnpwidget.h"
 
-class KListViewItem;
+class TDEListViewItem;
 
 namespace bt
 {
@@ -75,7 +75,7 @@ namespace kt
 		virtual void portRemoved(const net::Port & port);
 		
 	private:
-		TQMap<KListViewItem*,UPnPRouter*> itemmap;
+		TQMap<TDEListViewItem*,UPnPRouter*> itemmap;
 		UPnPRouter* def_router;
 	};
 }

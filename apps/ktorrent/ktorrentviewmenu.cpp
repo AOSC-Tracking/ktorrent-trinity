@@ -29,7 +29,7 @@
 using namespace kt;
 
 KTorrentViewMenu::KTorrentViewMenu (KTorrentView *parent, const char *name )
-		: KPopupMenu ( parent, name ),view(parent)
+		: TDEPopupMenu ( parent, name ),view(parent)
 {
 	KIconLoader* iload = TDEGlobal::iconLoader();
 	
@@ -59,7 +59,7 @@ KTorrentViewMenu::KTorrentViewMenu (KTorrentView *parent, const char *name )
 			iload->loadIconSet("add", KIcon::Small), i18n("Add Peers"),
 			parent, TQT_SLOT(showAddPeersWidget())); 
 	
-	peer_sources_menu = new KPopupMenu(this);
+	peer_sources_menu = new TDEPopupMenu(this);
 	peer_sources_id = insertItem(i18n("Additional Peer Sources"), peer_sources_menu);
 	peer_sources_menu->insertTitle(i18n("Torrent Peer Sources:"));
 	peer_sources_menu->setCheckable(true);
@@ -77,7 +77,7 @@ KTorrentViewMenu::KTorrentViewMenu (KTorrentView *parent, const char *name )
 			parent, TQT_SLOT(previewFiles()));
 	
 	insertSeparator();
-	dirs_sub_menu = new KPopupMenu(this);
+	dirs_sub_menu = new TDEPopupMenu(this);
 	dirs_id = insertItem(i18n("Open Directory"), dirs_sub_menu);
 	outputdir_id = dirs_sub_menu->insertItem(iload->loadIconSet("folder",KIcon::Small), i18n("Data Directory"), 
 											 parent, TQT_SLOT(openOutputDirectory()));
@@ -88,7 +88,7 @@ KTorrentViewMenu::KTorrentViewMenu (KTorrentView *parent, const char *name )
 	
 	insertSeparator();
 	remove_from_group_id =  insertItem(i18n("Remove From Group"),parent, TQT_SLOT(removeFromGroup()));
-	groups_sub_menu = new KPopupMenu(this);
+	groups_sub_menu = new TDEPopupMenu(this);
 	
 	add_to_group_id = insertItem(i18n("Add to Group"),groups_sub_menu);
 	

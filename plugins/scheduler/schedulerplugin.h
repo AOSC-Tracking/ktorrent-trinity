@@ -63,7 +63,7 @@ namespace kt
 		
 		/* BANDWIDTH SCHEDULE PLUGIN */
  		SchedulerPrefPage* Pref;
-		KAction* bws_action;
+		TDEAction* bws_action;
 	};
 
 }

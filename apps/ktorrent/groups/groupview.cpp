@@ -41,13 +41,13 @@ using namespace bt;
 
 namespace kt
 {
-	GroupViewItem::GroupViewItem(GroupView* parent,Group* g) : KListViewItem(parent),gview(parent)
+	GroupViewItem::GroupViewItem(GroupView* parent,Group* g) : TDEListViewItem(parent),gview(parent)
 	{
 		setText(0,g->groupName());
 		setPixmap(0,g->groupIcon());
 	}
 	
-	GroupViewItem::GroupViewItem(GroupView* gview,KListViewItem* parent,Group* g) : KListViewItem(parent),gview(gview)
+	GroupViewItem::GroupViewItem(GroupView* gview,TDEListViewItem* parent,Group* g) : TDEListViewItem(parent),gview(gview)
 	{
 		setText(0,g->groupName());
 		setPixmap(0,g->groupIcon());
@@ -65,8 +65,8 @@ namespace kt
 			return TQString::compare(text(1),i->text(1));
 	}
 
-	GroupView::GroupView(ViewManager* view,KActionCollection* col,TQWidget *parent, const char *name)
-	: KListView(parent, name),view(view),custom_root(0)
+	GroupView::GroupView(ViewManager* view,TDEActionCollection* col,TQWidget *parent, const char *name)
+	: TDEListView(parent, name),view(view),custom_root(0)
 	{
 		setFullWidth(true);
 		setRootIsDecorated(true);
@@ -81,8 +81,8 @@ namespace kt
 		current = gman->allGroup();
 		
 		connect(this,TQT_SIGNAL(clicked(TQListViewItem*)),this,TQT_SLOT(onExecuted( TQListViewItem* )));
-		connect(this,TQT_SIGNAL(contextMenu(KListView*,TQListViewItem*,const TQPoint & )),
-				this,TQT_SLOT(showContextMenu( KListView*, TQListViewItem*, const TQPoint& )));
+		connect(this,TQT_SIGNAL(contextMenu(TDEListView*,TQListViewItem*,const TQPoint & )),
+				this,TQT_SLOT(showContextMenu( TDEListView*, TQListViewItem*, const TQPoint& )));
 		connect(this,TQT_SIGNAL(dropped(TQDropEvent*,TQListViewItem*)),
 				this,TQT_SLOT(onDropped( TQDropEvent*, TQListViewItem* )));	
 		
@@ -104,7 +104,7 @@ namespace kt
 		addGroup(gman->activeDownloadsGroup(), active);
 		addGroup(gman->activeUploadsGroup(), active);
 		
-		custom_root = new KListViewItem(all,i18n("Custom Groups"));
+		custom_root = new TDEListViewItem(all,i18n("Custom Groups"));
 		custom_root->setPixmap(0,TDEGlobal::iconLoader()->loadIcon("folder",KIcon::Small));
 		setOpen(custom_root,true);
 	}
@@ -131,20 +131,20 @@ namespace kt
 		sort();
 	}
 	
-	void GroupView::createMenu(KActionCollection* col)
+	void GroupView::createMenu(TDEActionCollection* col)
 	{
-		menu = new KPopupMenu(this);
+		menu = new TDEPopupMenu(this);
 		
-		new_group = new KAction(i18n("New Group"),"filenew",0,
+		new_group = new TDEAction(i18n("New Group"),"filenew",0,
 							 TQT_TQOBJECT(this), TQT_SLOT(addGroup()),col, "New Group");
 		
-		edit_group = new KAction(i18n("Edit Name"),"edit",0,
+		edit_group = new TDEAction(i18n("Edit Name"),"edit",0,
 							 TQT_TQOBJECT(this), TQT_SLOT(editGroupName()),col,"Edit Group Name");
 		
-		remove_group = new KAction(i18n("Remove Group"),"remove",0,
+		remove_group = new TDEAction(i18n("Remove Group"),"remove",0,
 							 TQT_TQOBJECT(this), TQT_SLOT(removeGroup()),col,"Remove Group");
 		
-		open_in_new_tab = new KAction(i18n("Open Tab"),"fileopen",0,
+		open_in_new_tab = new TDEAction(i18n("Open Tab"),"fileopen",0,
 							 TQT_TQOBJECT(this) ,TQT_SLOT(openView()),col,"Open Tab");
 		
 		open_in_new_tab->plug(menu);
@@ -226,7 +226,7 @@ namespace kt
 		}
 	}
 
-	GroupViewItem* GroupView::addGroup(Group* g,KListViewItem* parent)
+	GroupViewItem* GroupView::addGroup(Group* g,TDEListViewItem* parent)
 	{
 		GroupViewItem* li = 0;
 		if (parent)
@@ -246,7 +246,7 @@ namespace kt
 		return li;
 	}
 	
-	void GroupView::showContextMenu(KListView* ,TQListViewItem* item,const TQPoint & p)
+	void GroupView::showContextMenu(TDEListView* ,TQListViewItem* item,const TQPoint & p)
 	{
 		current_item = dynamic_cast<GroupViewItem*>(item);
 		
@@ -318,7 +318,7 @@ namespace kt
 		saveGroups();
 	}
 	
-	void GroupView::updateGroupsSubMenu(KPopupMenu* gsm)
+	void GroupView::updateGroupsSubMenu(TDEPopupMenu* gsm)
 	{
 		gsm->clear();
 		for (GroupManager::iterator i = gman->begin();i != gman->end();i++)

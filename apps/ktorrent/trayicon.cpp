@@ -282,7 +282,7 @@ void TrayIcon::lowDiskSpace(kt::TorrentInterface * tc, bool stopped)
 	showPassivePopup(msg,i18n("Device running out of space"));
 }
 
-SetMaxRate::SetMaxRate( KTorrentCore* tc, int t, TQWidget *parent, const char *name):KPopupMenu(parent, name)
+SetMaxRate::SetMaxRate( KTorrentCore* tc, int t, TQWidget *parent, const char *name):TDEPopupMenu(parent, name)
 {
 	m_core = tc;
 	type=t;

@@ -44,7 +44,7 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="KListView" row="2" column="0">
+                <widget class="TDEListView" row="2" column="0">
                     <column>
                         <property name="text">
                             <string>Peer IP address</string>

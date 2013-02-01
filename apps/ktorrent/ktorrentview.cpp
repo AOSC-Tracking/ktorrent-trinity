@@ -55,7 +55,7 @@ using namespace bt;
 using namespace kt;
 
 
-TorrentView::TorrentView(KTorrentView* parent) : KListView(parent),ktview(parent)
+TorrentView::TorrentView(KTorrentView* parent) : TDEListView(parent),ktview(parent)
 {}
 	
 TorrentView::~TorrentView() 
@@ -79,7 +79,7 @@ bool TorrentView::eventFilter(TQObject* watched, TQEvent* e)
 		}
 	}
 
-	return KListView::eventFilter(watched, e);
+	return TDEListView::eventFilter(watched, e);
 }
 
 KTorrentView::KTorrentView(TQWidget *parent)
@@ -99,8 +99,8 @@ KTorrentView::KTorrentView(TQWidget *parent)
 	connect(view,TQT_SIGNAL(currentChanged(TQListViewItem* )),
 			this,TQT_SLOT(onExecuted(TQListViewItem* )));
 	
-	connect(view,TQT_SIGNAL(contextMenu(KListView*, TQListViewItem*, const TQPoint& )),
-			this,TQT_SLOT(showContextMenu(KListView*, TQListViewItem*, const TQPoint& )));
+	connect(view,TQT_SIGNAL(contextMenu(TDEListView*, TQListViewItem*, const TQPoint& )),
+			this,TQT_SLOT(showContextMenu(TDEListView*, TQListViewItem*, const TQPoint& )));
 	
 	connect(view,TQT_SIGNAL(selectionChanged()),this,TQT_SLOT(onSelectionChanged()));
 
@@ -127,7 +127,7 @@ void KTorrentView::insertColumn(TQString label, TQt::AlignmentFlags align)
 void KTorrentView::setupColumns()
 {
 		//Header menu
-	m_headerMenu = new KPopupMenu(view);
+	m_headerMenu = new TDEPopupMenu(view);
 	m_headerMenu->setCheckable(true);
 	m_headerMenu->insertTitle(i18n("Visible columns"));
 	
@@ -461,7 +461,7 @@ void KTorrentView::onExecuted(TQListViewItem* item)
 	}
 }
 
-void KTorrentView::showContextMenu(KListView* ,TQListViewItem*,const TQPoint & p)
+void KTorrentView::showContextMenu(TDEListView* ,TQListViewItem*,const TQPoint & p)
 {
 	updateGroupsSubMenu(menu->getGroupsSubMenu());
 	menu->show(p);

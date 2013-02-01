@@ -33,8 +33,8 @@
 
 typedef TQValueList<TQCString> QCStringList;
 
-class KAction;
-class KToggleAction;
+class TDEAction;
+class TDEToggleAction;
 class KURL;
 class KTorrentCore;
 class KTorrentView;
@@ -104,8 +104,8 @@ public:
 	virtual void addToolWidget(TQWidget* w,const TQString & icon,const TQString & caption,ToolDock dock);
 	virtual void removeToolWidget(TQWidget* w);
 	virtual const kt::TorrentInterface* getCurrentTorrent() const;
-	virtual KToolBar* addToolBar(const char* name);
-	virtual void removeToolBar(KToolBar* tb);
+	virtual TDEToolBar* addToolBar(const char* name);
+	virtual void removeToolBar(TDEToolBar* tb);
 	virtual KProgress* addProgressBarToStatusBar();
 	virtual void removeProgressBarFromStatusBar(KProgress* p);
 	
@@ -198,8 +198,8 @@ private:
 private:
 	kt::GroupView* m_group_view;
 	ViewManager* m_view_man;
-	KToggleAction *m_statusbarAction;
-	KToggleAction* m_menubarAction;
+	TDEToggleAction *m_statusbarAction;
+	TDEToggleAction* m_menubarAction;
 	
 	KTorrentCore* m_core;
 	TrayIcon* m_systray_icon;
@@ -219,19 +219,19 @@ private:
 	TQLabel* m_statusDHT;
 	TQLabel* m_statusFirewall;
 	
-	KAction* m_start;
-	KAction* m_stop;
-	KAction* m_remove;
-	KAction* m_startall;
-	KAction* m_startall_systray;
-	KAction* m_stopall;
-	KAction* m_stopall_systray;
-	KAction* m_pasteurl;
-	KAction* m_queuemgr; 
-	KAction* m_queueaction;
-	KAction* m_datacheck;
-	KAction* m_ipfilter;
-	KAction* m_find;
+	TDEAction* m_start;
+	TDEAction* m_stop;
+	TDEAction* m_remove;
+	TDEAction* m_startall;
+	TDEAction* m_startall_systray;
+	TDEAction* m_stopall;
+	TDEAction* m_stopall_systray;
+	TDEAction* m_pasteurl;
+	TDEAction* m_queuemgr; 
+	TDEAction* m_queueaction;
+	TDEAction* m_datacheck;
+	TDEAction* m_ipfilter;
+	TDEAction* m_find;
 	
 	KProgress* m_status_prog;
 };

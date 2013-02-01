@@ -94,7 +94,7 @@ namespace kt
 		BWScheduler::instance().trigger();
 		
 // 		updateEnabledBWS();
-		bws_action = new KAction(i18n("Open Bandwidth Scheduler" ), "clock", 0, this,
+		bws_action = new TDEAction(i18n("Open Bandwidth Scheduler" ), "clock", 0, this,
 								 TQT_SLOT(openBWS()), actionCollection(), "bwscheduler" );
 	}
 
@@ -134,7 +134,7 @@ namespace kt
 	{
 		if(SchedulerPluginSettings::enableBWS())
 		{
-			bws_action = new KAction(i18n("Open Bandwidth Scheduler" ), "clock", 0, this,
+			bws_action = new TDEAction(i18n("Open Bandwidth Scheduler" ), "clock", 0, this,
 									 TQT_SLOT(openBWS()), actionCollection(), "bwscheduler" );
 		}
 		else

@@ -25,7 +25,7 @@
 class TQWidget;
 class TQIconSet;
 class TQString;
-class KToolBar;
+class TDEToolBar;
 class KProgress;
 
 namespace kt
@@ -200,10 +200,10 @@ namespace kt
 		virtual const TorrentInterface* getCurrentTorrent() const = 0;
 		
 		/// Add a toolbar
-		virtual KToolBar* addToolBar(const char* name) = 0;
+		virtual TDEToolBar* addToolBar(const char* name) = 0;
 		
 		/// Remove a toolbar
-		virtual void removeToolBar(KToolBar* tb) = 0;
+		virtual void removeToolBar(TDEToolBar* tb) = 0;
 		
 	protected:
 		/**

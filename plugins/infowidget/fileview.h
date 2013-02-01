@@ -32,7 +32,7 @@ namespace kt
 	/**
 		@author Joris Guisson <joris.guisson@gmail.com>
 	*/
-	class FileView : public KListView
+	class FileView : public TDEListView
 	{
 		Q_OBJECT
   
@@ -44,7 +44,7 @@ namespace kt
 		void changeTC(kt::TorrentInterface* tc);
 	private slots:
 		void contextItem(int id);
-		void showContextMenu(KListView* ,TQListViewItem* item,const TQPoint & p);
+		void showContextMenu(TDEListView* ,TQListViewItem* item,const TQPoint & p);
 		void refreshFileTree(kt::TorrentInterface* tc);
 		void onDoubleClicked(TQListViewItem* item,const TQPoint & ,int );
 		void fillTreePartial();
@@ -59,7 +59,7 @@ namespace kt
 		kt::TorrentInterface* curr_tc;
 		IWFileTreeDirItem* multi_root;
 		bool pending_fill;
-		KPopupMenu* context_menu;
+		TDEPopupMenu* context_menu;
 		TQString preview_path;
 		TQTimer fill_timer;
 		int preview_id;

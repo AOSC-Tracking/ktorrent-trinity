@@ -22,7 +22,7 @@
 
 #include <interfaces/plugin.h>
 
-class KAction;
+class TDEAction;
 
 namespace kt
 {
@@ -45,7 +45,7 @@ namespace kt
 		void onImport();
 		
 	private:
-		KAction* import_action;
+		TDEAction* import_action;
 	};
 
 }

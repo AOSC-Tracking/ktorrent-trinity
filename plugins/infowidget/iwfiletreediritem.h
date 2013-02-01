@@ -49,7 +49,7 @@ namespace kt
 	class IWFileTreeDirItem : public kt::FileTreeDirItem
 	{
 	public:
-		IWFileTreeDirItem(KListView* klv,const TQString & name);
+		IWFileTreeDirItem(TDEListView* klv,const TQString & name);
 		IWFileTreeDirItem(IWFileTreeDirItem* parent,const TQString & name);
 		virtual ~IWFileTreeDirItem();
 	

@@ -117,7 +117,7 @@ static double Percentage(const TorrentStats & s)
 
 
 KTorrentViewItem::KTorrentViewItem(KTorrentView* parent,TorrentInterface* tc)
-	: KListViewItem(parent->listView()),tc(tc)
+	: TDEListViewItem(parent->listView()),tc(tc)
 {
 	m_parent = parent;
 	update();
@@ -350,5 +350,5 @@ void KTorrentViewItem::paintCell(TQPainter* p,const TQColorGroup & cg,
 		_cg.setColor(TQColorGroup::Text, ratioToColor(kt::ShareRatio(tc->getStats())));
 
 
-	KListViewItem::paintCell(p,_cg,column,width,align);
+	TDEListViewItem::paintCell(p,_cg,column,width,align);
 }

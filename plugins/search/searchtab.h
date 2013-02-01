@@ -39,11 +39,11 @@ namespace kt
   
 	
 	public:
-		SearchTab(KToolBar* toolbar);
+		SearchTab(TDEToolBar* toolbar);
 		virtual ~SearchTab();
 		
 		/// Get the tool bar
-		KToolBar* getToolBar() {return m_tool_bar;}
+		TDEToolBar* getToolBar() {return m_tool_bar;}
 	
 		/// Update the search engine list
 		void updateSearchEngines(const SearchEngineList & sl);
@@ -66,7 +66,7 @@ namespace kt
 		void saveSearchHistory();
 	
 	private:
-		KToolBar* m_tool_bar;
+		TDEToolBar* m_tool_bar;
 		KComboBox* m_search_text;
 		KComboBox* m_search_engine;
 		KPushButton* m_clear_button;

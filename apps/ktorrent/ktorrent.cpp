@@ -295,8 +295,8 @@ void KTorrent::openView(kt::Group* g)
 	connect(v, TQT_SIGNAL(queue( kt::TorrentInterface* )), 
 			m_core, TQT_SLOT(queue( kt::TorrentInterface* )));
 	
-	connect(v,TQT_SIGNAL(updateGroupsSubMenu(KPopupMenu*)),
-			m_group_view,TQT_SLOT(updateGroupsSubMenu(KPopupMenu*)));
+	connect(v,TQT_SIGNAL(updateGroupsSubMenu(TDEPopupMenu*)),
+			m_group_view,TQT_SLOT(updateGroupsSubMenu(TDEPopupMenu*)));
 	
 	connect(v,TQT_SIGNAL(groupsSubMenuItemActivated(KTorrentView*, const TQString&)),
 			m_group_view,TQT_SLOT(onGroupsSubMenuItemActivated(KTorrentView*, const TQString&)));
@@ -509,52 +509,52 @@ void KTorrent::setupActions()
 	KStdAction::keyBindings(TQT_TQOBJECT(this), TQT_SLOT(optionsConfigureKeys()), actionCollection());
 	KStdAction::configureToolbars(TQT_TQOBJECT(this), TQT_SLOT(optionsConfigureToolbars()), actionCollection());
 
-	KAction* pref = KStdAction::preferences(TQT_TQOBJECT(this), TQT_SLOT(optionsPreferences()), actionCollection());
+	TDEAction* pref = KStdAction::preferences(TQT_TQOBJECT(this), TQT_SLOT(optionsPreferences()), actionCollection());
 
-	m_start = new KAction(
+	m_start = new TDEAction(
 			i18n("to start", "Start"), "ktstart",0,TQT_TQOBJECT(this), TQT_SLOT(startDownload()),
 			actionCollection(), "Start");
 
-	m_stop = new KAction(
+	m_stop = new TDEAction(
 			i18n("to stop", "Stop"), "ktstop",0,TQT_TQOBJECT(this), TQT_SLOT(stopDownload()),
 			actionCollection(), "Stop");
 
-	m_remove = new KAction(
+	m_remove = new TDEAction(
 			i18n("Remove"), "ktremove",0,TQT_TQOBJECT(this), TQT_SLOT(removeDownload()),
 			actionCollection(), "Remove");
 	
-	m_startall = new KAction(
+	m_startall = new TDEAction(
 			i18n("to start all", "Start All"), "ktstart_all",0,TQT_TQOBJECT(this), TQT_SLOT(startAllDownloadsCurrentView()),
 			actionCollection(), "Start all");
 	
-	m_startall_systray = new KAction(i18n("to start all", "Start All"), "ktstart_all",0,TQT_TQOBJECT(this), TQT_SLOT(startAllDownloads()),actionCollection());
+	m_startall_systray = new TDEAction(i18n("to start all", "Start All"), "ktstart_all",0,TQT_TQOBJECT(this), TQT_SLOT(startAllDownloads()),actionCollection());
 	
-	m_stopall = new KAction(
+	m_stopall = new TDEAction(
 			i18n("to stop all", "Stop All"), "ktstop_all",0,TQT_TQOBJECT(this), TQT_SLOT(stopAllDownloadsCurrentView()),
 			actionCollection(), "Stop all");
 	
-	m_stopall_systray = new KAction(i18n("to stop all", "Stop All"), "ktstop_all",0,TQT_TQOBJECT(this), TQT_SLOT(stopAllDownloads()),actionCollection());
+	m_stopall_systray = new TDEAction(i18n("to stop all", "Stop All"), "ktstop_all",0,TQT_TQOBJECT(this), TQT_SLOT(stopAllDownloads()),actionCollection());
 	
-	m_pasteurl = new KAction(
+	m_pasteurl = new TDEAction(
 			i18n("to paste torrent URL", "Paste Torrent URL..."), "ktstart",0,TQT_TQOBJECT(this), TQT_SLOT(torrentPaste()),
 			actionCollection(), "paste_url");
 	
-	m_queuemgr = new KAction(
+	m_queuemgr = new TDEAction(
 			i18n("to open Queue Manager", "Open Queue Manager..."),
 			"ktqueuemanager", 0, TQT_TQOBJECT(this), TQT_SLOT(queueManagerShow()),
 			actionCollection(), "Queue manager");
 	
-	m_queueaction = new KAction(
+	m_queueaction = new TDEAction(
 			i18n("Enqueue/Dequeue"),
 			"player_playlist", 0, m_view_man, TQT_SLOT(queueAction()),
 			actionCollection(), "queue_action");
 	
-	m_ipfilter = new KAction(
+	m_ipfilter = new TDEAction(
 			i18n("IPFilter"),
 			"filter", 0, TQT_TQOBJECT(this), TQT_SLOT(showIPFilter()),
 			actionCollection(), "ipfilter_action");
 	
-	m_datacheck = new KAction(
+	m_datacheck = new TDEAction(
 			i18n("Check Data Integrity"),
 	TQString(),0,m_view_man,TQT_SLOT(checkDataIntegrity()),actionCollection(),"check_data");
 	
@@ -962,12 +962,12 @@ void KTorrent::openDefaultView()
 	openView(i18n("All Torrents"));
 }
 
-KToolBar* KTorrent::addToolBar(const char* name)
+TDEToolBar* KTorrent::addToolBar(const char* name)
 {
 	return toolBar(name);
 }
 
-void KTorrent::removeToolBar(KToolBar* tb)
+void KTorrent::removeToolBar(TDEToolBar* tb)
 {
 	delete tb;
 }

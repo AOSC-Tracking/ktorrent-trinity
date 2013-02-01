@@ -29,7 +29,7 @@ class TQWidgetStack;
 class TQPopupMenu;
 
 class KComboBox;
-class KAction;
+class TDEAction;
 
 class DMainWindow;
 
@@ -109,9 +109,9 @@ private:
     TQBoxLayout *m_internalLayout;
 
 
-    KAction * m_moveToDockLeft;
-    KAction * m_moveToDockRight;
-    KAction * m_moveToDockBottom;
+    TDEAction * m_moveToDockLeft;
+    TDEAction * m_moveToDockRight;
+    TDEAction * m_moveToDockBottom;
 };
 
 #endif

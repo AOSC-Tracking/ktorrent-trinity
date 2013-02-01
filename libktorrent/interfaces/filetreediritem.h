@@ -55,7 +55,7 @@ namespace kt
 		bool manual_change;
 		FileTreeRootListener* root_listener;
 	public:
-		FileTreeDirItem(KListView* klv,const TQString & name,FileTreeRootListener* rl = 0);
+		FileTreeDirItem(TDEListView* klv,const TQString & name,FileTreeRootListener* rl = 0);
 		FileTreeDirItem(FileTreeDirItem* parent,const TQString & name);
 		virtual ~FileTreeDirItem();
 		

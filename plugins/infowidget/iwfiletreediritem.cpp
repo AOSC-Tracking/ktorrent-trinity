@@ -33,7 +33,7 @@ using namespace kt;
 namespace kt
 {
 	
-	IWFileTreeDirItem::IWFileTreeDirItem(KListView* klv,const TQString & name)
+	IWFileTreeDirItem::IWFileTreeDirItem(TDEListView* klv,const TQString & name)
 		: kt::FileTreeDirItem(klv,name)
 	{
 	}

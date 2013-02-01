@@ -41,7 +41,7 @@ namespace kt
 {
 
 	FileView::FileView(TQWidget *parent, const char *name)
-	    : KListView(parent, name),curr_tc(0),multi_root(0),pending_fill(0),next_fill_item(0)
+	    : TDEListView(parent, name),curr_tc(0),multi_root(0),pending_fill(0),next_fill_item(0)
 	{
 		setFrameShape(TQFrame::NoFrame);
 		addColumn( i18n( "File" ) );
@@ -51,7 +51,7 @@ namespace kt
     	addColumn( i18n( "% Complete" ) );
 		setShowSortIndicator(true);
 		
-		context_menu = new KPopupMenu(this);
+		context_menu = new TDEPopupMenu(this);
 		preview_id = context_menu->insertItem(SmallIcon("fileopen"),i18n("Open"));
 	    context_menu->insertSeparator();
 		first_id = context_menu->insertItem(i18n("Download First"));
@@ -69,8 +69,8 @@ namespace kt
 		context_menu->setItemEnabled(dnd_keep_id, false);
 		context_menu->setItemEnabled(dnd_throw_away_id, false);
 
-		connect(this,TQT_SIGNAL(contextMenu(KListView*, TQListViewItem*, const TQPoint& )),
-				this,TQT_SLOT(showContextMenu(KListView*, TQListViewItem*, const TQPoint& )));
+		connect(this,TQT_SIGNAL(contextMenu(TDEListView*, TQListViewItem*, const TQPoint& )),
+				this,TQT_SLOT(showContextMenu(TDEListView*, TQListViewItem*, const TQPoint& )));
 		connect(context_menu, TQT_SIGNAL ( activated ( int ) ), this, TQT_SLOT ( contextItem ( int ) ) );
 		connect(this,TQT_SIGNAL(doubleClicked( TQListViewItem*, const TQPoint&, int )),
 				this,TQT_SLOT(onDoubleClicked(TQListViewItem*, const TQPoint&, int)));
@@ -134,7 +134,7 @@ namespace kt
 		{
 			const TorrentStats & s = curr_tc->getStats();
 			this->setRootIsDecorated(false);
-			KListViewItem* item = new KListViewItem(
+			TDEListViewItem* item = new TDEListViewItem(
 					this,
 					s.torrent_name,
 					BytesToString(s.total_bytes));
@@ -211,7 +211,7 @@ namespace kt
 		}
 	}
 	
-	void FileView::showContextMenu(KListView* ,TQListViewItem*,const TQPoint & p)
+	void FileView::showContextMenu(TDEListView* ,TQListViewItem*,const TQPoint & p)
 	{
 		const TorrentStats & s = curr_tc->getStats();
 		// don't show a menu if item is 0 or if it is a directory

@@ -25,7 +25,7 @@
 
 #include "comdefs.h"
 
-class KAction;
+class TDEAction;
 
 namespace Ideal {
 
@@ -98,8 +98,8 @@ private:
     TQString m_realText;
     TQIconSet m_realIconSet;
 
-    KAction *m_assignAccelAction;
-    KAction *m_clearAccelAction;
+    TDEAction *m_assignAccelAction;
+    TDEAction *m_clearAccelAction;
 
 friend class ButtonBar;
 };

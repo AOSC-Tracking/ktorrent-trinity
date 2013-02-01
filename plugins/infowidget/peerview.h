@@ -32,7 +32,7 @@ namespace kt
 	class PeerInterface;
 	class PeerView;
 	
-	class PeerViewItem : public KListViewItem
+	class PeerViewItem : public TDEListViewItem
 	{
 		kt::PeerInterface* peer;
 		TQString m_country;
@@ -52,7 +52,7 @@ namespace kt
 	/**
 	@author Joris Guisson
 	*/
-	class PeerView : public KListView
+	class PeerView : public TDEListView
 	{
 		Q_OBJECT
   
@@ -69,10 +69,10 @@ namespace kt
 		void kickPeer(kt::PeerInterface* peer);
 		void update();
 		void removeAll();
-		void showContextMenu(KListView* ,TQListViewItem* item,const TQPoint & p);
+		void showContextMenu(TDEListView* ,TQListViewItem* item,const TQPoint & p);
 		void contextItem(int id);
 	private:
-		KPopupMenu* menu;
+		TDEPopupMenu* menu;
 		int ban_id;
 		int kick_id;
 		PeerViewItem* curr;

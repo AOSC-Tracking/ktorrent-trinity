@@ -31,8 +31,8 @@ using namespace kt;
 namespace kt
 {
 	
-	ChunkDownloadViewItem::ChunkDownloadViewItem(KListView* cdv,kt::ChunkDownloadInterface* cd)
-		: KListViewItem(cdv),cd(cd)
+	ChunkDownloadViewItem::ChunkDownloadViewItem(TDEListView* cdv,kt::ChunkDownloadInterface* cd)
+		: TDEListViewItem(cdv),cd(cd)
 	{
 		update();
 	}

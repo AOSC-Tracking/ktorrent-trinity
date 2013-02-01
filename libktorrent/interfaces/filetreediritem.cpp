@@ -34,7 +34,7 @@ using namespace bt;
 namespace kt
 {
 
-	FileTreeDirItem::FileTreeDirItem(KListView* klv,const TQString & name,FileTreeRootListener* rl)
+	FileTreeDirItem::FileTreeDirItem(TDEListView* klv,const TQString & name,FileTreeRootListener* rl)
 	: TQCheckListItem(klv,TQString(),TQCheckListItem::CheckBox),name(name),root_listener(rl)
 	{
 		parent = 0;

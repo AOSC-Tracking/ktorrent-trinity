@@ -29,11 +29,11 @@ namespace kt
 	class ChunkDownloadInterface;
 	class ChunkDownloadView;
 	
-	class ChunkDownloadViewItem : public KListViewItem
+	class ChunkDownloadViewItem : public TDEListViewItem
 	{
 		kt::ChunkDownloadInterface* cd;
 	public:
-		ChunkDownloadViewItem(KListView* cdv,kt::ChunkDownloadInterface* cd);
+		ChunkDownloadViewItem(TDEListView* cdv,kt::ChunkDownloadInterface* cd);
 	
 		void update();
 		int compare(TQListViewItem * i,int col,bool) const;

@@ -27,7 +27,7 @@ class KTorrentView;
 /**
 	@author Joris Guisson <joris.guisson@gmail.com>
 */
-class KTorrentViewMenu : public KPopupMenu
+class KTorrentViewMenu : public TDEPopupMenu
 {
 	Q_OBJECT
   
@@ -39,7 +39,7 @@ public:
 	void show(const TQPoint & p);
 	
 	/// Get the group sub menu
-	KPopupMenu* getGroupsSubMenu() {return groups_sub_menu;}
+	TDEPopupMenu* getGroupsSubMenu() {return groups_sub_menu;}
 	
 public slots:
 	void gsmItemActived(int id);
@@ -50,9 +50,9 @@ signals:
 
 private:
 	KTorrentView* view;
-	KPopupMenu* groups_sub_menu;
-	KPopupMenu* dirs_sub_menu;
-	KPopupMenu* peer_sources_menu;
+	TDEPopupMenu* groups_sub_menu;
+	TDEPopupMenu* dirs_sub_menu;
+	TDEPopupMenu* peer_sources_menu;
 	int stop_id;
 	int start_id;
 	int remove_id;

@@ -85,9 +85,9 @@ DDockWindow::DDockWindow(DMainWindow *parent, Position position)
     m_widgetStack = new TQWidgetStack(this);
     m_internalLayout->addWidget(m_widgetStack);
 
-    m_moveToDockLeft = new KAction( i18n("Move to left dock"), 0, TQT_TQOBJECT(this), TQT_SLOT(moveToDockLeft()), TQT_TQOBJECT(this) );
-    m_moveToDockRight = new KAction( i18n("Move to right dock"), 0, TQT_TQOBJECT(this), TQT_SLOT(moveToDockRight()), TQT_TQOBJECT(this) );
-    m_moveToDockBottom = new KAction( i18n("Move to bottom dock"), 0, TQT_TQOBJECT(this), TQT_SLOT(moveToDockBottom()), TQT_TQOBJECT(this) );
+    m_moveToDockLeft = new TDEAction( i18n("Move to left dock"), 0, TQT_TQOBJECT(this), TQT_SLOT(moveToDockLeft()), TQT_TQOBJECT(this) );
+    m_moveToDockRight = new TDEAction( i18n("Move to right dock"), 0, TQT_TQOBJECT(this), TQT_SLOT(moveToDockRight()), TQT_TQOBJECT(this) );
+    m_moveToDockBottom = new TDEAction( i18n("Move to bottom dock"), 0, TQT_TQOBJECT(this), TQT_SLOT(moveToDockBottom()), TQT_TQOBJECT(this) );
 
     setVisible(m_visible);
 
@@ -320,7 +320,7 @@ void DDockWindow::showWidget(TQWidget *widget)
 
 void DDockWindow::setMovingEnabled(bool)
 {
-    //some operations on KMainWindow cause moving to be enabled
+    //some operations on TDEMainWindow cause moving to be enabled
     //but we always don't want DDockWindow instances to be movable
     TQDockWindow::setMovingEnabled(false);
 }

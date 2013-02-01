@@ -121,7 +121,7 @@ private:
 	TQPixmap m_kt_pix;
 };
 
-class SetMaxRate : public KPopupMenu
+class SetMaxRate : public TDEPopupMenu
 {
 		Q_OBJECT
   

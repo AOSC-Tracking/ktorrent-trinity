@@ -61,7 +61,7 @@ namespace kt
 	static bool geoip_db_exists = true;
 	static TQString geoip_data_file;
 		
-	PeerViewItem::PeerViewItem(PeerView* pv,kt::PeerInterface* peer) : KListViewItem(pv),peer(peer)
+	PeerViewItem::PeerViewItem(PeerView* pv,kt::PeerInterface* peer) : TDEListViewItem(pv),peer(peer)
 	{	
 		if (!yes_no_pix_loaded)
 		{
@@ -208,7 +208,7 @@ namespace kt
 	}
 	
 	PeerView::PeerView(TQWidget *parent, const char *name)
-			: KListView(parent, name)
+			: TDEListView(parent, name)
 	{
 		addColumn(i18n("IP"));
 		addColumn(i18n("Country"));
@@ -245,12 +245,12 @@ namespace kt
 			
 		setShowSortIndicator(true);
 		
-		menu = new KPopupMenu(this);
+		menu = new TDEPopupMenu(this);
 		kick_id = menu->insertItem(TDEGlobal::iconLoader()->loadIcon("delete_user", KIcon::NoGroup), i18n("to kick", "Kick peer"));
 		ban_id = menu->insertItem(TDEGlobal::iconLoader()->loadIcon("filter",KIcon::NoGroup), i18n("to ban", "Ban peer"));
 		
-		connect(this,TQT_SIGNAL(contextMenu(KListView*, TQListViewItem*, const TQPoint& )),
-				this,TQT_SLOT(showContextMenu(KListView*, TQListViewItem*, const TQPoint& )));
+		connect(this,TQT_SIGNAL(contextMenu(TDEListView*, TQListViewItem*, const TQPoint& )),
+				this,TQT_SLOT(showContextMenu(TDEListView*, TQListViewItem*, const TQPoint& )));
 		connect(menu, TQT_SIGNAL ( activated ( int ) ), this, TQT_SLOT ( contextItem ( int ) ) );
 		setFrameShape(TQFrame::NoFrame);
 	}
@@ -330,7 +330,7 @@ namespace kt
 		clear();
 	}
 	
-	void PeerView::showContextMenu( KListView*, TQListViewItem* item, const TQPoint& p)
+	void PeerView::showContextMenu( TDEListView*, TQListViewItem* item, const TQPoint& p)
 	{
 		if(!item)
 			return;

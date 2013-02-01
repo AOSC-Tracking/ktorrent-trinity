@@ -274,7 +274,7 @@
                 </spacer>
             </hbox>
         </widget>
-        <widget class="KListView">
+        <widget class="TDEListView">
             <column>
                 <property name="text">
                     <string>Chunk</string>

@@ -35,7 +35,7 @@
                         <string>Detected devices:</string>
                     </property>
                 </widget>
-                <widget class="KListView">
+                <widget class="TDEListView">
                     <column>
                         <property name="text">
                             <string>Device</string>

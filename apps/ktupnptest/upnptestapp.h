@@ -35,7 +35,7 @@ using kt::UPnPRouter;
 /**
 	@author Joris Guisson <joris.guisson@gmail.com>
 */
-class UPnPTestApp : public KMainWindow, public kt::LogMonitorInterface
+class UPnPTestApp : public TDEMainWindow, public kt::LogMonitorInterface
 {
 	Q_OBJECT
   

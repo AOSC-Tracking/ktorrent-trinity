@@ -132,7 +132,7 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="KListView" row="0" column="0" rowspan="4" colspan="1">
+                <widget class="TDEListView" row="0" column="0" rowspan="4" colspan="1">
                     <column>
                         <property name="text">
                             <string>File</string>

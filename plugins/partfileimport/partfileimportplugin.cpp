@@ -53,7 +53,7 @@ namespace kt
 
 	void PartFileImportPlugin::load()
 	{
-		import_action = new KAction(i18n("Import existing download" ), 0, this,
+		import_action = new TDEAction(i18n("Import existing download" ), 0, this,
 									 TQT_SLOT(onImport()), actionCollection(), "partfileimport" );
 	}
 

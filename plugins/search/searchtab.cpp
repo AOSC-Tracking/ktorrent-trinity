@@ -39,7 +39,7 @@ using namespace bt;
 namespace kt
 {
 
-	SearchTab::SearchTab(KToolBar* tb) : m_tool_bar(tb)
+	SearchTab::SearchTab(TDEToolBar* tb) : m_tool_bar(tb)
 	{
 		m_search_text = new KComboBox(tb);
 		m_search_text->setEditable(true);

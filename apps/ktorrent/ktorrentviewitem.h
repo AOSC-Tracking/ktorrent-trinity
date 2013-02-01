@@ -34,7 +34,7 @@ class KTorrentView;
 /**
  * @author Joris Guisson
 */
-class KTorrentViewItem : public KListViewItem
+class KTorrentViewItem : public TDEListViewItem
 {
 	kt::TorrentInterface* tc;
 	bt::Int64 eta;

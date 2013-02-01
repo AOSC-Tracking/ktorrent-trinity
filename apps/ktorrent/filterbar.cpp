@@ -45,7 +45,7 @@ FilterBar::FilterBar(TQWidget *parent, const char *name) :
 	TQHBoxLayout* layout = new TQHBoxLayout(foo);
 	layout->addSpacing(gap);
 	
-	m_close = new KToolBarButton("fileclose",0,this);
+	m_close = new TDEToolBarButton("fileclose",0,this);
 	connect(m_close,TQT_SIGNAL(clicked()),this,TQT_SLOT(hide()));
 	layout->addWidget(m_close);
 	

@@ -26,7 +26,7 @@
 
 class SearchBar;
 class KProgress;
-class KPopupMenu;
+class TDEPopupMenu;
 
 namespace KParts
 {
@@ -53,7 +53,7 @@ namespace kt
 		SearchWidget(SearchPlugin* sp);
 		virtual ~SearchWidget();
 	
-		KPopupMenu* rightClickMenu();
+		TDEPopupMenu* rightClickMenu();
 		
 		void updateSearchEngines(const SearchEngineList & sl);
 	
@@ -79,7 +79,7 @@ namespace kt
 	private:
 		HTMLPart* html_part;
 		SearchBar* sbar;
-		KPopupMenu* right_click_menu;
+		TDEPopupMenu* right_click_menu;
 		int back_id;
 		SearchPlugin* sp;
 		KProgress* prog;
