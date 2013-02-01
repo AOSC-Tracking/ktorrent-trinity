@@ -59,7 +59,7 @@ int KTorrentApp::newInstance()
 		setMainWidget(widget);
 	}
 	else
-		KStartupInfo::setNewStartupId( mainWidget(), kapp->startupId());
+		TDEStartupInfo::setNewStartupId( mainWidget(), kapp->startupId());
 
 
 	KTorrent *widget = ::tqqt_cast<KTorrent*>( mainWidget() );
