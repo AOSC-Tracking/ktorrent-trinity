@@ -52,9 +52,9 @@ namespace kt
 
 	void PluginManager::loadPluginList()
 	{
-		KTrader::OfferList offers = KTrader::self()->query("KTorrent/Plugin");
+		TDETrader::OfferList offers = TDETrader::self()->query("KTorrent/Plugin");
 
-		KTrader::OfferList::ConstIterator iter;
+		TDETrader::OfferList::ConstIterator iter;
 		for(iter = offers.begin(); iter != offers.end(); ++iter)
 		{
 			KService::Ptr service = *iter;
