@@ -20,7 +20,7 @@
 #ifndef BTCHUNKDOWNLOADVIEW_H
 #define BTCHUNKDOWNLOADVIEW_H
 
-#include <klistview.h>
+#include <tdelistview.h>
 #include <tqmap.h>
 #include "chunkdownloadviewbase.h"
 

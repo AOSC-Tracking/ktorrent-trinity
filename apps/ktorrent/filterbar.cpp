@@ -26,7 +26,7 @@
 #include <kdialog.h>
 #include <klocale.h>
 #include <kpushbutton.h>
-#include <ktoolbarbutton.h>
+#include <tdetoolbarbutton.h>
 #include <klineedit.h>
 #include <kiconloader.h>
 #include <tdeconfig.h>

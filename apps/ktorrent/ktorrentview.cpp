@@ -21,7 +21,7 @@
 #include <klocale.h>
 #include <kglobal.h>
 #include <kiconloader.h>
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 #include <krun.h>
 #include <kurl.h>
 #include <kurldrag.h>

@@ -531,6 +531,6 @@
     <includehint>klineedit.h</includehint>
     <includehint>knuminput.h</includehint>
     <includehint>knuminput.h</includehint>
-    <includehint>klistview.h</includehint>
+    <includehint>tdelistview.h</includehint>
 </includehints>
 </UI>

@@ -23,7 +23,7 @@
 #ifndef _KTORRENTVIEW_H_
 #define _KTORRENTVIEW_H_
 
-#include <klistview.h>
+#include <tdelistview.h>
 
 typedef TQValueList<TQCString> QCStringList;
 

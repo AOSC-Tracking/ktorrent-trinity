@@ -20,12 +20,12 @@
 #include <klocale.h>
 #include <kglobal.h>
 #include <kiconloader.h>
-#include <kpopupmenu.h>
-#include <kaction.h>
+#include <tdepopupmenu.h>
+#include <tdeaction.h>
 #include <kmessagebox.h>
 #include <kinputdialog.h>
 #include <kstandarddirs.h>
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 #include <tqheader.h>
 #include <util/log.h>
 #include <interfaces/torrentinterface.h>

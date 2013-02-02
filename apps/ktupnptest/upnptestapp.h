@@ -20,7 +20,7 @@
 #ifndef UPNPTESTAPP_H
 #define UPNPTESTAPP_H
 
-#include <kmainwindow.h>
+#include <tdemainwindow.h>
 #include <libktorrent/util/log.h>
 #include <libktorrent/torrent/globals.h>
 #include <plugins/upnp/upnprouter.h>

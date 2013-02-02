@@ -33,7 +33,7 @@
 #include <interfaces/functions.h>
 #include <interfaces/monitorinterface.h>
 #include "packetwriter.h"
-#include "chunkselector.h"
+#include "chuntdeselector.h"
 #include "ipblocklist.h"
 #include "ktversion.h"
 

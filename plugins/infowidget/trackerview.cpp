@@ -36,7 +36,7 @@
 #include <ksqueezedtextlabel.h>
 #include <kglobal.h>
 #include <kiconloader.h>
-#include <klistview.h>
+#include <tdelistview.h>
 
 #include <torrent/globals.h>
 #include <util/log.h>

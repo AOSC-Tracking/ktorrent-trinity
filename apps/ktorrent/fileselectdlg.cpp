@@ -19,7 +19,7 @@
  ***************************************************************************/
 #include <klocale.h>
 #include <kmessagebox.h>
-#include <klistview.h>
+#include <tdelistview.h>
 #include <kstdguiitem.h>
 #include <kpushbutton.h>
 #include <kurlrequester.h>

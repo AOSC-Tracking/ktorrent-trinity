@@ -21,7 +21,7 @@
 #ifndef SEARCHTAB_H
 #define SEARCHTAB_H
 
-#include <ktoolbar.h>
+#include <tdetoolbar.h>
 		
 class KComboBox;
 class KPushButton;

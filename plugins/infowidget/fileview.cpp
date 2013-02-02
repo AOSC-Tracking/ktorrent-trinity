@@ -20,7 +20,7 @@
 #include <klocale.h>
 #include <kiconloader.h>
 #include <kglobal.h>
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 #include <krun.h>
 #include <kmessagebox.h>
 #include <kmimetype.h>

@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 
-#include <klistview.h>
+#include <tdelistview.h>
 #include <kmessagebox.h>
 #include <kpushbutton.h>
 #include <torrent/udptrackersocket.h>

@@ -20,7 +20,7 @@
 #ifndef KTFILEVIEW_H
 #define KTFILEVIEW_H
 
-#include <klistview.h>
+#include <tdelistview.h>
 #include <util/constants.h>
 #include <tqtimer.h>
 

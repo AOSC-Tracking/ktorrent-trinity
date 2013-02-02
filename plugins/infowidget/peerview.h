@@ -21,9 +21,9 @@
 #define PEERVIEW_H
 
 #include <tqmap.h>
-#include <klistview.h>
+#include <tdelistview.h>
 #include <tqlistview.h>
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 #include <tqpoint.h>
 #include <util/constants.h>
 

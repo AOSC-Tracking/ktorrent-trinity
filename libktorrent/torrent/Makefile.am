@@ -8,7 +8,7 @@ libtorrent_la_LDFLAGS = $(all_libraries)
 noinst_HEADERS = advancedchokealgorithm.h announcelist.h authenticate.h \
 	authenticatebase.h authenticationmonitor.h bdecoder.h bencoder.h bnode.h cache.h \
 	cachefile.h cap.h choker.h chunk.h chunkcounter.h chunkdownload.h chunkmanager.h \
-	chunkselector.h dndfile.h downloadcap.h downloader.h globals.h httptracker.h \
+	chuntdeselector.h dndfile.h downloadcap.h downloader.h globals.h httptracker.h \
 	ipblocklist.h movedatafilesjob.h multifilecache.h newchokealgorithm.h \
 	oldchokealgorithm.h packet.h packetreader.h packetwriter.h peer.h peerdownloader.h peerid.h \
 	peermanager.h peersourcemanager.h peeruploader.h piece.h preallocationthread.h \
@@ -20,7 +20,7 @@ noinst_HEADERS = advancedchokealgorithm.h announcelist.h authenticate.h \
 libtorrent_la_SOURCES = advancedchokealgorithm.cpp announcelist.cpp \
 	authenticate.cpp authenticatebase.cpp authenticationmonitor.cpp bdecoder.cpp \
 	bencoder.cpp bnode.cpp cache.cpp cachefile.cpp cap.cpp choker.cpp chunk.cpp \
-	chunkcounter.cpp chunkdownload.cpp chunkmanager.cpp chunkselector.cpp dndfile.cpp \
+	chunkcounter.cpp chunkdownload.cpp chunkmanager.cpp chuntdeselector.cpp dndfile.cpp \
 	downloadcap.cpp downloader.cpp globals.cpp httptracker.cpp ipblocklist.cpp \
 	movedatafilesjob.cpp multifilecache.cpp newchokealgorithm.cpp packet.cpp packetreader.cpp \
 	packetwriter.cpp peer.cpp peerdownloader.cpp peerid.cpp peermanager.cpp \

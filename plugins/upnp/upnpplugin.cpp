@@ -23,7 +23,7 @@
 #include <kiconloader.h>
 #include <kstandarddirs.h>
 #include <kstdaction.h>
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 #include <interfaces/guiinterface.h>
 #include <util/fileops.h>
 #include "upnpplugin.h"

@@ -20,7 +20,7 @@
 #ifndef KTFILETREEITEM_H
 #define KTFILETREEITEM_H
 
-#include <klistview.h>
+#include <tdelistview.h>
 #include <util/constants.h>
 
 using namespace bt;

@@ -29,7 +29,7 @@
 #include <tqregexp.h>
 #include <tqvalidator.h>
 
-#include <klistview.h>
+#include <tdelistview.h>
 #include <klineedit.h>
 #include <tdesocketaddress.h>
 #include <tdefiledialog.h>

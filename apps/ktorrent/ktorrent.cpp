@@ -36,7 +36,7 @@
 #include <kmenubar.h>
 #include <kstatusbar.h>
 #include <kkeydialog.h>
-#include <kaccel.h>
+#include <tdeaccel.h>
 #include <kstandarddirs.h>
 #include <tdeio/netaccess.h>
 #include <tdefiledialog.h>
@@ -44,14 +44,14 @@
 #include <kurl.h>
 #include <kurldrag.h>
 #include <kprogress.h>
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 #include <ktabwidget.h>
 #include <kedittoolbar.h>
 #include <ksqueezedtextlabel.h>
 #include <kpushbutton.h>
 
-#include <kstdaccel.h>
-#include <kaction.h>
+#include <tdestdaccel.h>
+#include <tdeaction.h>
 #include <kstdaction.h>
 
 #include <interfaces/torrentinterface.h>

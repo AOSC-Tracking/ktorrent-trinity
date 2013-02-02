@@ -19,7 +19,7 @@
  ***************************************************************************/
 #include <klocale.h>
 #include <kpushbutton.h>
-#include <klistview.h>
+#include <tdelistview.h>
 #include <tqheader.h> 
 #include <kglobal.h>
 #include <kiconloader.h>

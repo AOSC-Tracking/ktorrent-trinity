@@ -22,7 +22,7 @@
 #include <klocale.h>
 #include <kiconloader.h>
 #include <kstdaction.h>
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 #include <kapplication.h>
 #include <kstandarddirs.h>
 #include <krun.h>

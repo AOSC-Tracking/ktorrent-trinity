@@ -21,7 +21,7 @@
 #include <kpushbutton.h>
 #include <tdefiledialog.h>
 #include <kprogress.h>
-#include <klistview.h>
+#include <tdelistview.h>
 #include <knuminput.h>
 #include "torrentcreatordlg.h"
 #include "ktorrentcore.h"

@@ -23,7 +23,7 @@
 
 
 #include <ksystemtray.h>
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 #include <tqpainter.h>
 
 #include "ktorrentcore.h"

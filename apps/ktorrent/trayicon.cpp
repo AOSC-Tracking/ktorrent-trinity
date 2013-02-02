@@ -18,7 +18,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 #include <klocale.h>
 #include <kapplication.h>
 #include "ktorrent.h"

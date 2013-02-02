@@ -28,8 +28,8 @@
 #include <kdebug.h>
 #include <kiconloader.h>
 #include <kxmlguiclient.h>
-#include <kaction.h>
-#include <kpopupmenu.h>
+#include <tdeaction.h>
+#include <tdepopupmenu.h>
 #include <kinputdialog.h>
 #include <klocale.h>
 #include <kapplication.h>

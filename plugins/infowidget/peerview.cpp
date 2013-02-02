@@ -29,7 +29,7 @@
 #include <tdesocketaddress.h>
 #include <tqpoint.h>
 #include <tqlistview.h>
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 #include <interfaces/peerinterface.h>
 #include <interfaces/functions.h>
 #include <torrent/ipblocklist.h>

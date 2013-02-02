@@ -20,7 +20,7 @@
 #ifndef KTORRENTVIEWMENU_H
 #define KTORRENTVIEWMENU_H
 
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 		
 class KTorrentView;
 

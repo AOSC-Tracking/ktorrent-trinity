@@ -27,7 +27,7 @@
 #include <kiconloader.h>
 #include <kactivelabel.h>
 #include <kpushbutton.h>
-#include <klistview.h>
+#include <tdelistview.h>
 #include <klineedit.h>
 #include <kmessagebox.h>
 #include <tdeio/netaccess.h>

@@ -20,7 +20,7 @@
 #ifndef KTORRENTVIEWITEM_H
 #define KTORRENTVIEWITEM_H
 
-#include <klistview.h>
+#include <tdelistview.h>
 #include <dcopclient.h>
 #include <util/constants.h>
 

@@ -33,7 +33,7 @@
 #include <kstandarddirs.h> 
 #include <kiconloader.h>
 #include <kcombobox.h>
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 #include <tdeparts/partmanager.h>
 #include <tdeio/job.h>
 #include <kmessagebox.h>

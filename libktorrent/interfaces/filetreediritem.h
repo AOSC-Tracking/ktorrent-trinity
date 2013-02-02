@@ -20,7 +20,7 @@
 #ifndef KTFILETREEDIRITEM_H
 #define KTFILETREEDIRITEM_H
 
-#include <klistview.h>
+#include <tdelistview.h>
 #include <util/constants.h>
 #include <util/ptrmap.h>
 

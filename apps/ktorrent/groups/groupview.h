@@ -20,7 +20,7 @@
 #ifndef KTGROUPVIEW_H
 #define KTGROUPVIEW_H
 
-#include <klistview.h>
+#include <tdelistview.h>
 #include <util/ptrmap.h>
 
 class TDEPopupMenu;

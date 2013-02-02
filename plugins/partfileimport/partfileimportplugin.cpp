@@ -22,7 +22,7 @@
 #include <klocale.h>
 #include <kiconloader.h>
 #include <kstdaction.h>
-#include <kpopupmenu.h>
+#include <tdepopupmenu.h>
 #include <interfaces/guiinterface.h>
 #include <interfaces/coreinterface.h>
 #include "partfileimportplugin.h"
