@@ -139,7 +139,7 @@ namespace kt
 					s.torrent_name,
 					BytesToString(s.total_bytes));
 	
-			item->setPixmap(0,KMimeType::findByPath(s.torrent_name)->pixmap(KIcon::Small));
+			item->setPixmap(0,KMimeType::findByPath(s.torrent_name)->pixmap(TDEIcon::Small));
 			setEnabled(true);
 			connect(curr_tc,TQT_SIGNAL(missingFilesMarkedDND( kt::TorrentInterface* )),
 				this,TQT_SLOT(refreshFileTree( kt::TorrentInterface* )));

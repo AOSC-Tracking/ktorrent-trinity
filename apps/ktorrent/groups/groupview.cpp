@@ -105,7 +105,7 @@ namespace kt
 		addGroup(gman->activeUploadsGroup(), active);
 		
 		custom_root = new TDEListViewItem(all,i18n("Custom Groups"));
-		custom_root->setPixmap(0,TDEGlobal::iconLoader()->loadIcon("folder",KIcon::Small));
+		custom_root->setPixmap(0,TDEGlobal::iconLoader()->loadIcon("folder",TDEIcon::Small));
 		setOpen(custom_root,true);
 	}
 

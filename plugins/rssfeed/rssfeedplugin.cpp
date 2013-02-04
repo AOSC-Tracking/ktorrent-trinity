@@ -61,10 +61,10 @@ namespace kt
 	void RssFeedPlugin::load()
 	{
 		//add the new tab to the gui
-		KIconLoader* iload = TDEGlobal::iconLoader();
+		TDEIconLoader* iload = TDEGlobal::iconLoader();
 		m_rssFeedManager = new RssFeedManager(getCore());
 		getGUI()->addTabPage(
-			m_rssFeedManager,iload->loadIconSet("player_playlist", KIcon::Small),
+			m_rssFeedManager,iload->loadIconSet("player_playlist", TDEIcon::Small),
 			i18n("RSS Feeds"));
 		
 	}

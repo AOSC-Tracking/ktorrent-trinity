@@ -68,10 +68,10 @@ namespace kt
 		right_click_menu->insertSeparator();
 		back_id = right_click_menu->insertItem(
                         TDEGlobal::iconLoader()->loadIconSet(TQApplication::reverseLayout() 
-                        ? "forward" : "back",KIcon::Small),
+                        ? "forward" : "back",TDEIcon::Small),
 				i18n("Back"),html_part,TQT_SLOT(back()));
 		right_click_menu->insertItem(
-				TDEGlobal::iconLoader()->loadIconSet("reload",KIcon::Small),
+				TDEGlobal::iconLoader()->loadIconSet("reload",TDEIcon::Small),
 				i18n("Reload"),html_part,TQT_SLOT(reload()));
 	
 		right_click_menu->setItemEnabled(back_id,false);
@@ -84,12 +84,12 @@ namespace kt
 	
 		sbar->m_clear_button->setIconSet(
 				TDEGlobal::iconLoader()->loadIconSet(TQApplication::reverseLayout() 
-                        ? "clear_left" : "locationbar_erase",KIcon::Small));
+                        ? "clear_left" : "locationbar_erase",TDEIcon::Small));
 		sbar->m_back->setIconSet(
                         TDEGlobal::iconLoader()->loadIconSet(TQApplication::reverseLayout() 
-                        ? "forward" : "back", KIcon::Small));
+                        ? "forward" : "back", TDEIcon::Small));
 		sbar->m_reload->setIconSet(
-				TDEGlobal::iconLoader()->loadIconSet("reload",KIcon::Small));
+				TDEGlobal::iconLoader()->loadIconSet("reload",TDEIcon::Small));
 		
 		
 		connect(html_part,TQT_SIGNAL(backAvailable(bool )),

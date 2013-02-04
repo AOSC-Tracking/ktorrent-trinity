@@ -252,7 +252,7 @@ void FileSelectDlg::setupSinglefileTorrent()
 	single_root->setText(0,tc->getStats().torrent_name);
 	single_root->setText(1,BytesToString(tc->getStats().total_bytes));
 	single_root->setText(2,i18n("Yes"));
-	single_root->setPixmap(0,KMimeType::findByPath(tc->getStats().torrent_name)->pixmap(KIcon::Small));
+	single_root->setPixmap(0,KMimeType::findByPath(tc->getStats().torrent_name)->pixmap(TDEIcon::Small));
 	root = 0;
 	updateSizeLabels();
 	m_select_all->setEnabled(false);

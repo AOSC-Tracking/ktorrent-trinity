@@ -60,7 +60,7 @@ namespace kt
 	};
 
 	PluginManagerPrefPage::PluginManagerPrefPage(PluginManager* pman)
-	: PrefPageInterface(i18n("Plugins"), i18n("Plugin Options"),TDEGlobal::iconLoader()->loadIcon("ktplugins",KIcon::NoGroup)),pman(pman)
+	: PrefPageInterface(i18n("Plugins"), i18n("Plugin Options"),TDEGlobal::iconLoader()->loadIcon("ktplugins",TDEIcon::NoGroup)),pman(pman)
 	{
 		pmw = 0;
 	}

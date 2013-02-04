@@ -31,7 +31,7 @@ namespace kt
 {
 
 	InfoWidgetPrefPage::InfoWidgetPrefPage(InfoWidgetPlugin* iw)
-	: PrefPageInterface(i18n("Info Widget"),i18n("Information Widget Options"),TDEGlobal::iconLoader()->loadIcon("ktinfowidget",KIcon::NoGroup)),iw(iw)
+	: PrefPageInterface(i18n("Info Widget"),i18n("Information Widget Options"),TDEGlobal::iconLoader()->loadIcon("ktinfowidget",TDEIcon::NoGroup)),iw(iw)
 	{
 		pref = 0;
 	}

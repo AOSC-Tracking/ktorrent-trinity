@@ -102,7 +102,7 @@ namespace kt
 		setText(0,name);
 		setText(1,BytesToString(file.getSize()));
 		updatePriorityText();
-		setPixmap(0,KMimeType::findByPath(name)->pixmap(KIcon::Small));
+		setPixmap(0,KMimeType::findByPath(name)->pixmap(TDEIcon::Small));
 	}
 
 	void FileTreeItem::stateChange(bool on)

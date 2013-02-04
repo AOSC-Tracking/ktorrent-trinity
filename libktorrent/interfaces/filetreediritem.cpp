@@ -39,7 +39,7 @@ namespace kt
 	{
 		parent = 0;
 		size = 0;
-		setPixmap(0,TDEGlobal::iconLoader()->loadIcon("folder",KIcon::Small));
+		setPixmap(0,TDEGlobal::iconLoader()->loadIcon("folder",TDEIcon::Small));
 		setText(0,name);
 		setText(1,BytesToString(size));
 		setText(2,i18n("Yes"));
@@ -53,7 +53,7 @@ namespace kt
 	name(name),parent(parent)
 	{
 		size = 0;
-		setPixmap(0,TDEGlobal::iconLoader()->loadIcon("folder",KIcon::Small));
+		setPixmap(0,TDEGlobal::iconLoader()->loadIcon("folder",TDEIcon::Small));
 		setText(0,name);
 		setText(1,BytesToString(size));
 		setText(2,i18n("Yes"));

@@ -59,7 +59,7 @@ namespace kt
 
 	void UPnPPlugin::load()
 	{
-		//KIconLoader* iload = TDEGlobal::iconLoader();
+		//TDEIconLoader* iload = TDEGlobal::iconLoader();
 		sock = new UPnPMCastSocket();
 		pref = new UPnPPrefPage(sock);
 		this->getGUI()->addPrefPage(pref);

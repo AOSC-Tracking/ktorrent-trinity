@@ -144,7 +144,7 @@ void KTorrentPreferences::removePrefPage(kt::PrefPageInterface* pp)
 
 ///////////////////////////////////////////////////////
 
-DownloadPrefPage::DownloadPrefPage() : kt::PrefPageInterface(i18n("Downloads"), i18n("Download Options"), TDEGlobal::iconLoader()->loadIcon("down", KIcon::NoGroup)), dp(0)
+DownloadPrefPage::DownloadPrefPage() : kt::PrefPageInterface(i18n("Downloads"), i18n("Download Options"), TDEGlobal::iconLoader()->loadIcon("down", TDEIcon::NoGroup)), dp(0)
 {}
 
 DownloadPrefPage::~ DownloadPrefPage()
@@ -214,7 +214,7 @@ void DownloadPrefPage::deleteWidget()
 //////////////////////////////////////
 GeneralPrefPage::GeneralPrefPage() :
 		kt::PrefPageInterface(i18n("General"), i18n("General Options"),
-							  TDEGlobal::iconLoader()->loadIcon("package_settings", KIcon::NoGroup)), gp(0)
+							  TDEGlobal::iconLoader()->loadIcon("package_settings", TDEIcon::NoGroup)), gp(0)
 {}
 
 GeneralPrefPage::~GeneralPrefPage()
@@ -409,7 +409,7 @@ void GeneralPrefPage::deleteWidget()
 
 AdvancedPrefPage::AdvancedPrefPage() :
 		kt::PrefPageInterface(i18n("Advanced"), i18n("Advanced Options"),
-							  TDEGlobal::iconLoader()->loadIcon("package_settings", KIcon::NoGroup)), ap(0)
+							  TDEGlobal::iconLoader()->loadIcon("package_settings", TDEIcon::NoGroup)), ap(0)
 {}
 
 AdvancedPrefPage::~AdvancedPrefPage()

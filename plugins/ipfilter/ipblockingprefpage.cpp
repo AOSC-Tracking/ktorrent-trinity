@@ -220,7 +220,7 @@ namespace kt
 	////////////////////////////////////////////////////////////////////////////////////
 
 	IPBlockingPrefPage::IPBlockingPrefPage(CoreInterface* core, IPFilterPlugin* p)
-	: PrefPageInterface(i18n("IPBlocking Filter"), i18n("IPBlocking Filter Options"), TDEGlobal::iconLoader()->loadIcon("filter",KIcon::NoGroup)), m_core(core), m_plugin(p)
+	: PrefPageInterface(i18n("IPBlocking Filter"), i18n("IPBlocking Filter Options"), TDEGlobal::iconLoader()->loadIcon("filter",TDEIcon::NoGroup)), m_core(core), m_plugin(p)
 	{
 		widget = 0;
 	}

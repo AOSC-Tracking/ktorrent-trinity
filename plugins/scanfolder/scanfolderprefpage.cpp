@@ -32,7 +32,7 @@ namespace kt
 
 	ScanFolderPrefPage::ScanFolderPrefPage(ScanFolderPlugin* plugin)
 		: PrefPageInterface(i18n("ScanFolder"), i18n("ScanFolder Options"),
-							TDEGlobal::iconLoader()->loadIcon("view_sidetree",KIcon::NoGroup)), m_plugin(plugin)
+							TDEGlobal::iconLoader()->loadIcon("view_sidetree",TDEIcon::NoGroup)), m_plugin(plugin)
 	{}
 
 

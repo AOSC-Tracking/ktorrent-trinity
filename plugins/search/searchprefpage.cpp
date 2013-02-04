@@ -245,7 +245,7 @@ namespace kt
 
 	SearchPrefPage::SearchPrefPage(SearchPlugin* plugin)
 		: PrefPageInterface(i18n("a noun", "Search"), i18n("Search Engine Options"),
-							TDEGlobal::iconLoader()->loadIcon("viewmag",KIcon::NoGroup)), m_plugin(plugin)
+							TDEGlobal::iconLoader()->loadIcon("viewmag",TDEIcon::NoGroup)), m_plugin(plugin)
 	{
 		widget = 0;
 	}

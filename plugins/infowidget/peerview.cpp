@@ -65,13 +65,13 @@ namespace kt
 	{	
 		if (!yes_no_pix_loaded)
 		{
-			KIconLoader* iload = TDEGlobal::iconLoader();
+			TDEIconLoader* iload = TDEGlobal::iconLoader();
 			/* Prefer builtin flag images to the ones provided by KDE */
 			flagDB.addFlagSource("data",  TQString("ktorrent/geoip/%1.png"));
 			flagDB.addFlagSource("locale", TQString("l10n/%1/flag.png"));
-			yes_pix = iload->loadIcon("button_ok",KIcon::Small);
-			no_pix = iload->loadIcon("button_cancel",KIcon::Small);
-			lock_pix = iload->loadIcon("ktencrypted",KIcon::Small);
+			yes_pix = iload->loadIcon("button_ok",TDEIcon::Small);
+			no_pix = iload->loadIcon("button_cancel",TDEIcon::Small);
+			lock_pix = iload->loadIcon("ktencrypted",TDEIcon::Small);
 #ifdef USE_SYSTEM_GEOIP
 			geo_ip = GeoIP_open_type(GEOIP_COUNTRY_EDITION, GEOIP_STANDARD);
 			geoip_db_exists = (geo_ip != NULL);
@@ -246,8 +246,8 @@ namespace kt
 		setShowSortIndicator(true);
 		
 		menu = new TDEPopupMenu(this);
-		kick_id = menu->insertItem(TDEGlobal::iconLoader()->loadIcon("delete_user", KIcon::NoGroup), i18n("to kick", "Kick peer"));
-		ban_id = menu->insertItem(TDEGlobal::iconLoader()->loadIcon("filter",KIcon::NoGroup), i18n("to ban", "Ban peer"));
+		kick_id = menu->insertItem(TDEGlobal::iconLoader()->loadIcon("delete_user", TDEIcon::NoGroup), i18n("to kick", "Kick peer"));
+		ban_id = menu->insertItem(TDEGlobal::iconLoader()->loadIcon("filter",TDEIcon::NoGroup), i18n("to ban", "Ban peer"));
 		
 		connect(this,TQT_SIGNAL(contextMenu(TDEListView*, TQListViewItem*, const TQPoint& )),
 				this,TQT_SLOT(showContextMenu(TDEListView*, TQListViewItem*, const TQPoint& )));

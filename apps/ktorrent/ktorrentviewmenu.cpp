@@ -31,32 +31,32 @@ using namespace kt;
 KTorrentViewMenu::KTorrentViewMenu (KTorrentView *parent, const char *name )
 		: TDEPopupMenu ( parent, name ),view(parent)
 {
-	KIconLoader* iload = TDEGlobal::iconLoader();
+	TDEIconLoader* iload = TDEGlobal::iconLoader();
 	
 	stop_id = insertItem(
-			iload->loadIconSet("ktstop",KIcon::Small),i18n("to stop", "Stop"),
+			iload->loadIconSet("ktstop",TDEIcon::Small),i18n("to stop", "Stop"),
 			parent,TQT_SLOT(stopDownloads()));
 
 	start_id = insertItem(
-			iload->loadIconSet("ktstart",KIcon::Small),i18n("to start", "Start"),
+			iload->loadIconSet("ktstart",TDEIcon::Small),i18n("to start", "Start"),
 			parent,TQT_SLOT(startDownloads()));
 
 	remove_id = insertItem(
-			iload->loadIconSet("ktremove",KIcon::Small),i18n("Remove Torrent"),
+			iload->loadIconSet("ktremove",TDEIcon::Small),i18n("Remove Torrent"),
 			parent,TQT_SLOT(removeDownloads()));
 	
 	remove_all_id = insertItem(
-			iload->loadIconSet("ktremove",KIcon::Small),i18n("Remove Torrent and Data"),
+			iload->loadIconSet("ktremove",TDEIcon::Small),i18n("Remove Torrent and Data"),
 			parent,TQT_SLOT(removeDownloadsAndData()));
 	
 	queue_id = insertItem(
-			iload->loadIconSet("player_playlist",KIcon::Small),i18n("Enqueue/Dequeue"),
+			iload->loadIconSet("player_playlist",TDEIcon::Small),i18n("Enqueue/Dequeue"),
 			parent,TQT_SLOT(queueSlot()));
 	
 	insertSeparator();
 	
 	add_peer_id = insertItem(
-			iload->loadIconSet("add", KIcon::Small), i18n("Add Peers"),
+			iload->loadIconSet("add", TDEIcon::Small), i18n("Add Peers"),
 			parent, TQT_SLOT(showAddPeersWidget())); 
 	
 	peer_sources_menu = new TDEPopupMenu(this);
@@ -69,19 +69,19 @@ KTorrentViewMenu::KTorrentViewMenu (KTorrentView *parent, const char *name )
 	insertSeparator();
 	
 	announce_id = insertItem(
-			iload->loadIconSet("apply",KIcon::Small),i18n("Manual Announce"),
+			iload->loadIconSet("apply",TDEIcon::Small),i18n("Manual Announce"),
 			parent,TQT_SLOT(manualAnnounce())); 
 	
 	preview_id = insertItem(
-			iload->loadIconSet("frame_image",KIcon::Small),i18n("Preview"), 
+			iload->loadIconSet("frame_image",TDEIcon::Small),i18n("Preview"), 
 			parent, TQT_SLOT(previewFiles()));
 	
 	insertSeparator();
 	dirs_sub_menu = new TDEPopupMenu(this);
 	dirs_id = insertItem(i18n("Open Directory"), dirs_sub_menu);
-	outputdir_id = dirs_sub_menu->insertItem(iload->loadIconSet("folder",KIcon::Small), i18n("Data Directory"), 
+	outputdir_id = dirs_sub_menu->insertItem(iload->loadIconSet("folder",TDEIcon::Small), i18n("Data Directory"), 
 											 parent, TQT_SLOT(openOutputDirectory()));
-	torxdir_id = dirs_sub_menu->insertItem(iload->loadIconSet("folder",KIcon::Small), i18n("Temporary Directory"),
+	torxdir_id = dirs_sub_menu->insertItem(iload->loadIconSet("folder",TDEIcon::Small), i18n("Temporary Directory"),
 										   parent, TQT_SLOT(openTorXDirectory()));
 	
 	downloaddir_id = insertItem(i18n("Set Download Location"), parent, TQT_SLOT(setDownloadLocationSlot()));

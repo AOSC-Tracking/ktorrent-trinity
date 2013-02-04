@@ -113,10 +113,10 @@ namespace kt
 			return;
 		}
 		
-		KIconLoader* iload = TDEGlobal::iconLoader();
+		TDEIconLoader* iload = TDEGlobal::iconLoader();
 		
 		SearchWidget* search = new SearchWidget(this);
-		getGUI()->addTabPage(search,iload->loadIconSet("viewmag", KIcon::Small),text,this);
+		getGUI()->addTabPage(search,iload->loadIconSet("viewmag", TDEIcon::Small),text,this);
 		
 		TDEAction* copy_act = KStdAction::copy(TQT_TQOBJECT(search),TQT_SLOT(copy()),actionCollection());
 		copy_act->plug(search->rightClickMenu(),0);

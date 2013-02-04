@@ -46,11 +46,11 @@ namespace kt
 	TrackerView::TrackerView(TQWidget *parent, const char *name)
 		:TrackerViewBase(parent, name), tc(0)
 	{
-		KIconLoader* iload = TDEGlobal::iconLoader();
-		btnUpdate->setIconSet(iload->loadIconSet("apply", KIcon::Small));
-		btnAdd->setIconSet(iload->loadIconSet("add", KIcon::Small));
-		btnRemove->setIconSet(iload->loadIconSet("remove", KIcon::Small));
-		btnRestore->setIconSet(iload->loadIconSet("undo", KIcon::Small));
+		TDEIconLoader* iload = TDEGlobal::iconLoader();
+		btnUpdate->setIconSet(iload->loadIconSet("apply", TDEIcon::Small));
+		btnAdd->setIconSet(iload->loadIconSet("add", TDEIcon::Small));
+		btnRemove->setIconSet(iload->loadIconSet("remove", TDEIcon::Small));
+		btnRestore->setIconSet(iload->loadIconSet("undo", TDEIcon::Small));
 		
 		TQPalette p = lblCurrent->palette();
 		p.setColor(TQPalette::Active,TQColorGroup::Base,p.color(TQPalette::Active,TQColorGroup::Background));

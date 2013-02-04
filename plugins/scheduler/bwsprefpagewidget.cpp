@@ -53,7 +53,7 @@ namespace kt
 
 		lblStatus->clear();
 
-		pix_icon->setPixmap(TDEGlobal::iconLoader()->loadIcon("clock",KIcon::NoGroup));
+		pix_icon->setPixmap(TDEGlobal::iconLoader()->loadIcon("clock",TDEIcon::NoGroup));
 		
 		btnOk->setGuiItem(KStdGuiItem::ok());
 		btnCancel->setGuiItem(KStdGuiItem::cancel());

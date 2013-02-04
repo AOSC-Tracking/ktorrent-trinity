@@ -32,7 +32,7 @@ namespace kt
 {
 
 	SchedulerPrefPage::SchedulerPrefPage(SchedulerPlugin* plugin)
-		: PrefPageInterface(i18n("Scheduler"), i18n("Scheduler plugin options"), TDEGlobal::iconLoader()->loadIcon("clock",KIcon::NoGroup)), m_plugin(plugin)
+		: PrefPageInterface(i18n("Scheduler"), i18n("Scheduler plugin options"), TDEGlobal::iconLoader()->loadIcon("clock",TDEIcon::NoGroup)), m_plugin(plugin)
 	{
 		widget = 0;
 	}

@@ -859,7 +859,7 @@ void KTorrent::addToolWidget(TQWidget* w,const TQString & icon,const TQString & 
 	
 	
 	if (!icon.isNull())
-		w->setIcon(TDEGlobal::iconLoader()->loadIcon(icon,KIcon::Small));
+		w->setIcon(TDEGlobal::iconLoader()->loadIcon(icon,TDEIcon::Small));
 	
 	switch (dock)
 	{
