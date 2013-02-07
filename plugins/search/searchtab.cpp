@@ -95,7 +95,7 @@ namespace kt
 	
 	void SearchTab::searchBoxReturn(const TQString & str)
 	{
-		KCompletion *comp = m_search_text->completionObject();
+		TDECompletion *comp = m_search_text->completionObject();
 		if (!m_search_text->contains(str))
 		{
 			comp->addItem(str);
@@ -128,7 +128,7 @@ namespace kt
 		if (!fptr.open(IO_ReadOnly))
 			return;
 		
-		KCompletion *comp = m_search_text->completionObject();
+		TDECompletion *comp = m_search_text->completionObject();
 		
 		Uint32 cnt = 0;
 		TQTextStream in(&fptr);
@@ -156,7 +156,7 @@ namespace kt
 			return;
 		
 		TQTextStream out(&fptr);
-		KCompletion *comp = m_search_text->completionObject();
+		TDECompletion *comp = m_search_text->completionObject();
 		TQStringList items = comp->items();
 		for (TQStringList::iterator i = items.begin();i != items.end();i++)
 		{
