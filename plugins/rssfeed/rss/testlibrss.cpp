@@ -9,10 +9,10 @@
 
 using namespace RSS;
 
-static const KCmdLineOptions options[] =
+static const TDECmdLineOptions options[] =
 {
   { "+url", I18N_NOOP("URL of feed"), 0 },
-  KCmdLineLastOption
+  TDECmdLineLastOption
 };
 
 

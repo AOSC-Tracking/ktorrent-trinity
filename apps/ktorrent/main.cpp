@@ -103,12 +103,12 @@ bool GrabPIDLock()
 }
 
 
-static KCmdLineOptions options[] =
+static TDECmdLineOptions options[] =
 {
 	{ "debug", I18N_NOOP("Debug mode"), 0 },
 	{ "silent",  I18N_NOOP("Silently save torrent given on URL"), 0 },
 	{ "+[URL]", I18N_NOOP( "Document to open" ), 0 },
-	KCmdLineLastOption
+	TDECmdLineLastOption
 };
 
 int main(int argc, char **argv)

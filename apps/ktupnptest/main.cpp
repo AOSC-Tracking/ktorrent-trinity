@@ -36,10 +36,10 @@ static const char description[] =
 
 static const char version[] = "1.3dev";
 
-static KCmdLineOptions options[] =
+static TDECmdLineOptions options[] =
 {
 //    { "+[URL]", I18N_NOOP( "Document to open" ), 0 },
-	KCmdLineLastOption
+	TDECmdLineLastOption
 };
 
 
