@@ -20,7 +20,7 @@
 #include <tqtimer.h>
 #include <tqcstring.h>
 #include <tqdatetime.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <kgenericfactory.h>
 #include <kglobal.h>
 #include <kstandarddirs.h>

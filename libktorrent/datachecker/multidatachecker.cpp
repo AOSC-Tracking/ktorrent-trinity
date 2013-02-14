@@ -20,7 +20,7 @@
  ***************************************************************************/
 
 #include <klocale.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <util/log.h>
 #include <util/file.h>
 #include <util/fileops.h>

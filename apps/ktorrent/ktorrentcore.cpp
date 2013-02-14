@@ -26,7 +26,7 @@
 #include <kprogress.h>
 #include <kmessagebox.h>
 #include <kstandarddirs.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <tdeio/job.h>
 #include <tdeio/netaccess.h>
 #include <tqregexp.h>

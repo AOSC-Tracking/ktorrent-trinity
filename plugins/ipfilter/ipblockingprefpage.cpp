@@ -24,7 +24,7 @@
 #include "ipfilterplugin.h"
 #include "convertdialog.h"
 
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <kglobal.h>
 #include <kstandarddirs.h>
 #include <klocale.h>

@@ -36,7 +36,7 @@
 #include <util/fileops.h>
 #include <torrent/globals.h>
 #include <interfaces/functions.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <util/log.h>
 #include <util/error.h>
 #include "cachefile.h"

@@ -26,7 +26,7 @@
 #include <config.h>
 #endif
 
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <newui/dmainwindow.h>
 #include <tqtimer.h>
 #include <interfaces/guiinterface.h>

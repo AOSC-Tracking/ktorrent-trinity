@@ -24,7 +24,7 @@
 
 #include <tdeconfig.h>
 #include <kiconloader.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 
 DTabWidget::DTabWidget(TQWidget *parent, const char *name)
     :KTabWidget(parent, name), m_closeButton(0)

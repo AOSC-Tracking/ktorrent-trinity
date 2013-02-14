@@ -22,7 +22,7 @@
 
 #include <kglobal.h>
 #include <kstartupinfo.h>
-#include <kcmdlineargs.h>
+#include <tdecmdlineargs.h>
 #include <kstandarddirs.h>
 #include <dcopclient.h>
 

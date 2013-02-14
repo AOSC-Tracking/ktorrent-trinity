@@ -23,7 +23,7 @@
 #include <kiconloader.h>
 #include <kstdaction.h>
 #include <tdepopupmenu.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <kstandarddirs.h>
 #include <krun.h>
 #include <interfaces/guiinterface.h>

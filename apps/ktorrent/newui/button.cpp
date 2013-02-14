@@ -32,7 +32,7 @@
 #include <tdepopupmenu.h>
 #include <kinputdialog.h>
 #include <klocale.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <tdeconfig.h>
 
 #include "buttonbar.h"

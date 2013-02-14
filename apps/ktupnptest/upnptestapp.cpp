@@ -19,7 +19,7 @@
  ***************************************************************************/
 #include <kpushbutton.h>
 #include <klocale.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <kmessagebox.h>
 #include <tqtextbrowser.h>
 #include <util/error.h>

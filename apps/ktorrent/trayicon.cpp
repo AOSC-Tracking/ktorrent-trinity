@@ -20,7 +20,7 @@
  ***************************************************************************/
 #include <tdepopupmenu.h>
 #include <klocale.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include "ktorrent.h"
 #include "trayicon.h"
 #include <tqtooltip.h>

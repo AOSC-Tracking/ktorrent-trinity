@@ -20,9 +20,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <klocale.h>
-#include <kaboutdata.h>
-#include <kapplication.h>
-#include <kcmdlineargs.h>
+#include <tdeaboutdata.h>
+#include <tdeapplication.h>
+#include <tdecmdlineargs.h>
 #include <libktorrent/functions.h>
 
 

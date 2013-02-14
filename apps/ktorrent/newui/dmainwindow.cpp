@@ -20,7 +20,7 @@
 #include "dmainwindow.h"
 
 #include <kdebug.h>
-#include <kapplication.h>
+#include <tdeapplication.h>
 #include <tdeconfig.h>
 #include <kiconloader.h>
 
