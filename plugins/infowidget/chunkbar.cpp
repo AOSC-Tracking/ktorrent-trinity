@@ -25,7 +25,7 @@
 #include <tqpixmap.h>
 #include <math.h>
 #include <tqtooltip.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tqmime.h>
 #include <tqimage.h>
 #include <util/log.h>

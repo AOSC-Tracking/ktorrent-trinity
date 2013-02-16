@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 #include <tdeconfig.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <ktabwidget.h>
 #include <interfaces/torrentinterface.h>
 #include <groups/group.h>

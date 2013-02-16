@@ -32,8 +32,8 @@
 #include <tqpushbutton.h>
 #include <tqlayout.h>
 
-#include <klocale.h>
-#include <kglobal.h>
+#include <tdelocale.h>
+#include <tdeglobal.h>
 #include <kurl.h>
 #include <kiconloader.h>
 #include <ksqueezedtextlabel.h>

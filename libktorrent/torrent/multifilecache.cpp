@@ -21,7 +21,7 @@
 #include <tqdir.h>
 #include <tqstringlist.h>
 #include <tqfileinfo.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdeio/netaccess.h>
 #include <util/file.h>
 #include <util/fileops.h>

@@ -21,7 +21,7 @@
 
 #include <kdirlister.h>
 #include <tdefileitem.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdeio/job.h>
 
 #include <tqstring.h>

@@ -25,8 +25,8 @@
 #include <tqcheckbox.h>
 #include <tqcombobox.h>
 
-#include <klocale.h>
-#include <kglobal.h>
+#include <tdelocale.h>
+#include <tdeglobal.h>
 #include <kiconloader.h>
 
 #include <interfaces/prefpageinterface.h>

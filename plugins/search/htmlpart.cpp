@@ -17,14 +17,14 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 #include <tdeio/job.h>
 #include <tdeio/jobclasses.h>
 //#include <tqfile.h>
 #include <tqclipboard.h>
 #include <tqapplication.h>
 #include <tdeio/netaccess.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdefiledialog.h>
 #include <tdeparts/browserextension.h>
 #include <util/constants.h>

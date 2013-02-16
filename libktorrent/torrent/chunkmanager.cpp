@@ -33,7 +33,7 @@
 #include <util/functions.h>
 #include "globals.h"
 
-#include <klocale.h>
+#include <tdelocale.h>
 
 namespace bt
 {

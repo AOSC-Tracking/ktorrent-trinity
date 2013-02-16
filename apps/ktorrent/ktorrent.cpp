@@ -28,12 +28,12 @@
 #include <tqtooltip.h>
 #include <tqtoolbutton.h>
 
-#include <kglobal.h>
-#include <klocale.h>
-#include <kmessagebox.h>
+#include <tdeglobal.h>
+#include <tdelocale.h>
+#include <tdemessagebox.h>
 #include <kiconloader.h>
 #include <tdeversion.h>
-#include <kmenubar.h>
+#include <tdemenubar.h>
 #include <kstatusbar.h>
 #include <kkeydialog.h>
 #include <tdeaccel.h>

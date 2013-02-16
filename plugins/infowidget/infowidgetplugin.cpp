@@ -19,8 +19,8 @@
  ***************************************************************************/
 #include <tqscrollview.h>
 #include <kgenericfactory.h>
-#include <kglobal.h>
-#include <klocale.h>
+#include <tdeglobal.h>
+#include <tdelocale.h>
 #include <interfaces/coreinterface.h>
 #include <interfaces/guiinterface.h>
 #include <interfaces/torrentinterface.h>

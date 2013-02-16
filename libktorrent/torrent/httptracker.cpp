@@ -20,7 +20,7 @@
 #include <config.h>
  
 #include <kurl.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tqhostaddress.h>
 #include <util/log.h>
 #include <util/functions.h>

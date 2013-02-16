@@ -22,10 +22,10 @@
 #include <tqdatetime.h>
 #include <tdeapplication.h>
 #include <kgenericfactory.h>
-#include <kglobal.h>
+#include <tdeglobal.h>
 #include <kstandarddirs.h>
 #include <kmdcodec.h>
-#include <ktempfile.h>
+#include <tdetempfile.h>
 
 #include <tqfileinfo.h>
 #include <tqsocket.h>

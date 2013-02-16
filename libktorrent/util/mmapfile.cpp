@@ -32,7 +32,7 @@
 #include <tqfile.h>
 #include <tdefileitem.h>
 #include <tdeio/netaccess.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <util/error.h>
 #include <util/log.h>
 #include <torrent/globals.h>

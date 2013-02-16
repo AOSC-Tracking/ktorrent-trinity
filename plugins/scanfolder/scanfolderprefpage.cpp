@@ -20,8 +20,8 @@
 #include "scanfolderplugin.h"
 #include "scanfolderprefpage.h"
 
-#include <klocale.h>
-#include <kglobal.h>
+#include <tdelocale.h>
+#include <tdeglobal.h>
 #include <kstandarddirs.h>
 #include <kiconloader.h>
 

@@ -19,7 +19,7 @@
  ***************************************************************************/
 #include <util/log.h>
 #include <util/error.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include "bdecoder.h"
 #include "bnode.h"
 #include "globals.h"

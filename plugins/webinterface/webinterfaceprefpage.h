@@ -23,8 +23,8 @@
 #include <interfaces/prefpageinterface.h>
 #include "webinterfaceprefwidget.h"
 
-#include <klocale.h>
-#include <kglobal.h>
+#include <tdelocale.h>
+#include <tdeglobal.h>
 #include <kiconloader.h>
 namespace kt
 {

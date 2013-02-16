@@ -32,7 +32,7 @@
 #include "bnode.h"
 #include "announcelist.h"
 
-#include <klocale.h>
+#include <tdelocale.h>
 
 namespace bt
 {

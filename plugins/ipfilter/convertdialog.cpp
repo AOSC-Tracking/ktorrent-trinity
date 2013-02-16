@@ -20,11 +20,11 @@
 #include "convertdialog.h"
 
 #include <tdeapplication.h>
-#include <kglobal.h>
+#include <tdeglobal.h>
 #include <kstandarddirs.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <kurl.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 #include <tdeio/netaccess.h>
 #include <kprogress.h>
 #include <kmimetype.h>

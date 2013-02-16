@@ -24,7 +24,7 @@
 
 #include <tqfile.h>
 #include "config.h"
-#include <klocale.h>
+#include <tdelocale.h>
 #include <string.h>
 #include <errno.h>
 #include <stdio.h>

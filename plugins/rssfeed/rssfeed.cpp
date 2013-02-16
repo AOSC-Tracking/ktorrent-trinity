@@ -19,7 +19,7 @@
  ***************************************************************************/
 #include "rssfeed.h"
 
-#include <kglobal.h>
+#include <tdeglobal.h>
 #include <kstandarddirs.h>
 #include <krfcdate.h>
 #include <tdeio/netaccess.h>

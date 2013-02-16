@@ -17,9 +17,9 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <klocale.h>
-#include <kglobal.h>
-#include <kmessagebox.h>
+#include <tdelocale.h>
+#include <tdeglobal.h>
+#include <tdemessagebox.h>
 #include <interfaces/functions.h>
 #include <interfaces/torrentinterface.h>
 #include <interfaces/torrentfileinterface.h>

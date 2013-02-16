@@ -17,10 +17,10 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <klocale.h>
+#include <tdelocale.h>
 #include <kstandarddirs.h>
 #include <kactivelabel.h>
-#include <kglobal.h>
+#include <tdeglobal.h>
 #include <kcombobox.h>
 #include <tqlayout.h>
 #include <tqlabel.h>
@@ -29,12 +29,12 @@
 #include <kurlrequester.h>
 #include <kurl.h>
 #include <tdefiledialog.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 #include <klineedit.h>
 #include <tqlistview.h>
 #include <torrent/globals.h>
 #include <util/functions.h>
-#include <kglobal.h>
+#include <tdeglobal.h>
 #include <kiconloader.h>
 #include <tqdir.h>
 #include <tqslider.h>

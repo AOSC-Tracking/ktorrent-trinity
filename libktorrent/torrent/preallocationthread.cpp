@@ -26,7 +26,7 @@
 #include <util/log.h>
 #include <util/error.h>
 #include <tqfile.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include "preallocationthread.h"
 #include "chunkmanager.h"
 #include "globals.h"

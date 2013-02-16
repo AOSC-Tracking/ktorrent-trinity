@@ -32,7 +32,7 @@
 #include <tqmime.h>
 #include <tqimage.h>
 
-#include <klocale.h>
+#include <tdelocale.h>
 
 #include <vector>
 #include <cmath>

@@ -35,7 +35,7 @@
 #include <tqfile.h>
 #include <tqptrlist.h>
 
-#include <kglobal.h>
+#include <tdeglobal.h>
 #include <kstandarddirs.h>
 
 using namespace bt;

@@ -20,7 +20,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <tqmap.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include "peerid.h"
 #include "ktversion.h"
 

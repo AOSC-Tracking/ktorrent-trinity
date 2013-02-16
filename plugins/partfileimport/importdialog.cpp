@@ -18,11 +18,11 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 #include <kurl.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <kprogress.h>
 #include <kurlrequester.h>
 #include <kpushbutton.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 #include <tdeio/job.h>
 #include <tdeio/jobclasses.h>
 #include <util/log.h>

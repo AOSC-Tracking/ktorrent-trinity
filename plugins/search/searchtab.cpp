@@ -22,13 +22,13 @@
 #include <tqapplication.h>
 #include <tqlistbox.h>
 #include <tqcheckbox.h>
-#include <kglobal.h>
+#include <tdeglobal.h>
 #include <kpushbutton.h>
 #include <kiconloader.h>
 #include <kcombobox.h>
 #include <kcompletion.h>
 #include <tqlabel.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include "searchtab.h"
 #include "searchenginelist.h"
 #include "searchpluginsettings.h"

@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 #include <kiconloader.h>
-#include <kglobal.h>
+#include <tdeglobal.h>
 #include "torrentdrag.h"
 
 namespace kt

@@ -28,10 +28,10 @@
 #include <tqpopupmenu.h>
 
 #include <kdebug.h>
-#include <kglobal.h>
+#include <tdeglobal.h>
 #include <tdeconfig.h>
 #include <kcombobox.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <kiconloader.h>
 #include <tdeapplication.h>
 

@@ -24,7 +24,7 @@
 #include <kdebug.h>
 #include <tdeconfig.h>
 #include <kstringhandler.h>
-#include <klocale.h>
+#include <tdelocale.h>
 
 #include "button.h"
 

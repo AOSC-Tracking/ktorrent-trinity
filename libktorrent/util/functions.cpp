@@ -29,9 +29,9 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <tdeio/netaccess.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <kmimetype.h>
-#include <kglobal.h>
+#include <tdeglobal.h>
 #include "functions.h"
 #include "error.h"
 #include "log.h"

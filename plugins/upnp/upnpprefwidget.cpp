@@ -19,7 +19,7 @@
  ***************************************************************************/
 
 #include <tdelistview.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 #include <kpushbutton.h>
 #include <torrent/udptrackersocket.h>
 #include <torrent/globals.h>

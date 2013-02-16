@@ -29,9 +29,9 @@
 #include <tqstring.h>
 #include <tqfile.h>
 
-#include <kmessagebox.h>
-#include <klocale.h>
-#include <kglobal.h>
+#include <tdemessagebox.h>
+#include <tdelocale.h>
+#include <tdeglobal.h>
 
 #include "rssfeedmanager.h"
 #include "rssfeedplugin.h"

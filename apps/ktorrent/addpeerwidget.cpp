@@ -22,11 +22,11 @@
 #include <util/constants.h>
 #include <interfaces/torrentinterface.h>
 
-#include <klocale.h>
+#include <tdelocale.h>
 #include <ksqueezedtextlabel.h>
 #include <klineedit.h>
 #include <knuminput.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 
 #include <tqstring.h>
 #include <tqstringlist.h>

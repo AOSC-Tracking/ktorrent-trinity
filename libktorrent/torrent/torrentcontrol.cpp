@@ -20,8 +20,8 @@
  ***************************************************************************/
 #include <tqdir.h>
 #include <tqfile.h>
-#include <klocale.h>
-#include <kmessagebox.h>
+#include <tdelocale.h>
+#include <tdemessagebox.h>
 #include <tdefiledialog.h>
 #include <tqtextstream.h>
 #include <util/log.h>

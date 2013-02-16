@@ -34,7 +34,7 @@
 #include <tqhostaddress.h>
 #include <mse/streamsocket.h> 
 #include <mse/encryptedauthenticate.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include "ipblocklist.h"
 #include "chunkcounter.h"
 #include "authenticationmonitor.h"

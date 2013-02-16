@@ -21,7 +21,7 @@
 #define KTGROUPMANAGER_H
 
 #include <tqstring.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <util/ptrmap.h>
 
 

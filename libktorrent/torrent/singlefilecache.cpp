@@ -17,7 +17,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tqfileinfo.h>
 #include <tqstringlist.h> 
 #include <util/fileops.h>

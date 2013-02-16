@@ -30,7 +30,7 @@
 #include <errno.h>
 #include <tqfile.h>
 #include <tdeio/netaccess.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdefileitem.h>
 #include <util/array.h>
 #include <util/fileops.h>

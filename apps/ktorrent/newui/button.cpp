@@ -31,7 +31,7 @@
 #include <tdeaction.h>
 #include <tdepopupmenu.h>
 #include <kinputdialog.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdeapplication.h>
 #include <tdeconfig.h>
 

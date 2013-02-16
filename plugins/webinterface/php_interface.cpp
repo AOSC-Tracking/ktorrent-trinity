@@ -19,8 +19,8 @@
  ***************************************************************************/
 
 #include <tdeio/global.h>
-#include <kglobal.h>
-#include <klocale.h>
+#include <tdeglobal.h>
+#include <tdelocale.h>
 
 #include <net/socketmonitor.h>
 #include <torrent/choker.h>

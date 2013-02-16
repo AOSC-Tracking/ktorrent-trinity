@@ -21,8 +21,8 @@
 #include <float.h>
 #include <tqdatetime.h>
 #include <tqcheckbox.h>
-#include <kglobal.h>
-#include <klocale.h>
+#include <tdeglobal.h>
+#include <tdelocale.h>
 #include <interfaces/functions.h>
 #include <interfaces/torrentinterface.h>
 

@@ -25,9 +25,9 @@
 #include <tqcheckbox.h>
 #include <tqfile.h>
 
-#include <kglobal.h>
-#include <klocale.h>
-#include <kmessagebox.h>
+#include <tdeglobal.h>
+#include <tdelocale.h>
+#include <tdemessagebox.h>
 #include <kurlrequester.h>
 
 namespace kt

@@ -17,12 +17,12 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
-#include <klocale.h>
-#include <kglobal.h>
+#include <tdelocale.h>
+#include <tdeglobal.h>
 #include <kiconloader.h>
 #include <tdepopupmenu.h>
 #include <tdeaction.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 #include <kinputdialog.h>
 #include <kstandarddirs.h>
 #include <tdepopupmenu.h>

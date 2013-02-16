@@ -20,11 +20,11 @@
  ***************************************************************************/
 #include <unistd.h>
 #include <tqdir.h>
-#include <klocale.h>
-#include <kglobal.h>
+#include <tdelocale.h>
+#include <tdeglobal.h>
 #include <tdefiledialog.h>
 #include <kprogress.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 #include <kstandarddirs.h>
 #include <tdeapplication.h>
 #include <tdeio/job.h>

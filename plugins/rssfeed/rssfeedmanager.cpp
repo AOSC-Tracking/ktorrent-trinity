@@ -21,12 +21,12 @@
 
 #include <kdirlister.h>
 #include <tdefileitem.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdeio/netaccess.h>
 #include <kstandarddirs.h>
 #include <keditlistbox.h>
 // #include <kmimetype.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 
 #include <tqstring.h>
 #include <tqobject.h>

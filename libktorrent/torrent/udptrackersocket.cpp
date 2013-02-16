@@ -27,8 +27,8 @@
 #include <net/portlist.h>
 #include <util/log.h>
 #include <util/functions.h>
-#include <klocale.h>
-#include <kmessagebox.h>
+#include <tdelocale.h>
+#include <tdemessagebox.h>
 #include "globals.h"
 #include "udptrackersocket.h"
 		

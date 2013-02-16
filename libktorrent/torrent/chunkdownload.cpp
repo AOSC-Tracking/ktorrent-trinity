@@ -30,7 +30,7 @@
 #include "piece.h"
 #include "peerdownloader.h"
 
-#include <klocale.h>
+#include <tdelocale.h>
 
 namespace bt
 {	

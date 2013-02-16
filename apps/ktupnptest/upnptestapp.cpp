@@ -18,9 +18,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 #include <kpushbutton.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdeapplication.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 #include <tqtextbrowser.h>
 #include <util/error.h>
 #include "upnptestapp.h"

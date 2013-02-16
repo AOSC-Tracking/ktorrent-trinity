@@ -19,7 +19,7 @@
  ***************************************************************************/
 #include <tqdir.h>
 #include <tqfileinfo.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <time.h>
 #include <util/error.h>
 #include <ktversion.h>

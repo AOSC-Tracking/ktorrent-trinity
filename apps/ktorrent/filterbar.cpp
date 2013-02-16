@@ -24,7 +24,7 @@
 #include <tqcheckbox.h>
 
 #include <kdialog.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <kpushbutton.h>
 #include <tdetoolbarbutton.h>
 #include <klineedit.h>

@@ -21,8 +21,8 @@
 #include "queuemanager.h"
 
 #include <tqstring.h>
-#include <kmessagebox.h>
-#include <klocale.h>
+#include <tdemessagebox.h>
+#include <tdelocale.h>
 #include <util/log.h>
 #include <util/error.h>
 #include <util/sha1hash.h>

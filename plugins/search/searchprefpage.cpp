@@ -21,15 +21,15 @@
 #include <kurl.h>
 #include <tqtooltip.h>
 #include <tqfile.h>
-#include <klocale.h>
-#include <kglobal.h>
+#include <tdelocale.h>
+#include <tdeglobal.h>
 #include <kstandarddirs.h>
 #include <kiconloader.h>
 #include <kactivelabel.h>
 #include <kpushbutton.h>
 #include <tdelistview.h>
 #include <klineedit.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 #include <tdeio/netaccess.h>
 #include <klineedit.h>
 

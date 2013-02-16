@@ -20,7 +20,7 @@
 
 #include <kurl.h>
 #include <kprocess.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tqdatetime.h>
 #include <tqtextstream.h>
 #include <tqfile.h>

@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 #include <tqtooltip.h>
-#include <klocale.h>
+#include <tdelocale.h>
 
 #include <util/bitset.h>
 #include <interfaces/torrentinterface.h>

@@ -33,8 +33,8 @@
 #include <klineedit.h>
 #include <tdesocketaddress.h>
 #include <tdefiledialog.h>
-#include <klocale.h>
-#include <kmessagebox.h>
+#include <tdelocale.h>
+#include <tdemessagebox.h>
 
 #define MAX_RANGES 500
 

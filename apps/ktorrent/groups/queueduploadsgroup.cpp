@@ -19,7 +19,7 @@
  ***************************************************************************/
 #include "queueduploadsgroup.h"
 		
-#include <klocale.h>
+#include <tdelocale.h>
 #include <interfaces/torrentinterface.h>
 
 namespace kt

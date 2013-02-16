@@ -19,8 +19,8 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
-#include <kglobal.h>
-#include <klocale.h>
+#include <tdeglobal.h>
+#include <tdelocale.h>
 #include "localefloatvalidator.h"
 
 kt::LocaleFloatValidator::LocaleFloatValidator( TQObject * parent, const char * name )

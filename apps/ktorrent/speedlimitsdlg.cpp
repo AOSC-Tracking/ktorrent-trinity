@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 #include <tqlabel.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <knuminput.h>
 #include <kpushbutton.h>
 #include <kstdguiitem.h>

@@ -21,7 +21,7 @@
 #define RSSLINKDOWNLOADER_H
 
 #include <tdeio/job.h>
-#include <ktempfile.h>
+#include <tdetempfile.h>
 
 #include <interfaces/coreinterface.h>
 #include <torrent/globals.h>

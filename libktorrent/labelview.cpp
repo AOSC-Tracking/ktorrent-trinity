@@ -21,7 +21,7 @@
 #include <tqlayout.h>
 #include <tqlabel.h>
 #include <kiconloader.h>
-#include <kglobalsettings.h>
+#include <tdeglobalsettings.h>
 #include <util/log.h>
 #include "labelview.h"
 

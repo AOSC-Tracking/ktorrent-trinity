@@ -25,7 +25,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <errno.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tdeio/netaccess.h>
 #include <sys/stat.h>
 #include <sys/types.h>

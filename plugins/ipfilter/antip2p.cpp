@@ -25,7 +25,7 @@
 #include <util/constants.h>
 #include <util/mmapfile.h>
 
-#include <kglobal.h>
+#include <tdeglobal.h>
 #include <kstandarddirs.h>
 
 #include <tqstring.h>

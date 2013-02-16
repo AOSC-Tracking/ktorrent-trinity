@@ -24,7 +24,7 @@
 #include "globals.h"
 #include <util/log.h>
 
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tqstringlist.h>
 #include <tqfile.h>
 #include <tqtextstream.h>

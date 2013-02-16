@@ -19,9 +19,9 @@
  ***************************************************************************/
 #include "rsslinkdownloader.h"
 
-#include <klocale.h>
+#include <tdelocale.h>
 #include <kmimetype.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 
 #include <tqfile.h>
 

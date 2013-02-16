@@ -20,8 +20,8 @@
 
 #include "ktorrentapp.h"
 
-#include <kglobal.h>
-#include <kstartupinfo.h>
+#include <tdeglobal.h>
+#include <tdestartupinfo.h>
 #include <tdecmdlineargs.h>
 #include <kstandarddirs.h>
 #include <dcopclient.h>

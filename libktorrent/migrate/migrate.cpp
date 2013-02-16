@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 #include <kurl.h>
-#include <klocale.h>
+#include <tdelocale.h>
 #include <util/log.h>
 #include <util/error.h>
 #include <util/fileops.h>

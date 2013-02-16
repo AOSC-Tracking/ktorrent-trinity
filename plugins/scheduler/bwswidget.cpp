@@ -20,7 +20,7 @@
 #include "bwswidget.h"
 #include "schedulerpluginsettings.h"
 
-#include <klocale.h>
+#include <tdelocale.h>
 #include <tqstringlist.h>
 #include <tqpixmap.h>
 #include <tqtable.h>
@@ -29,7 +29,7 @@
 #include <tqfont.h>
 #include <tqcolor.h>
 
-#include <kglobal.h>
+#include <tdeglobal.h>
 #include <kstandarddirs.h>
 
 namespace kt

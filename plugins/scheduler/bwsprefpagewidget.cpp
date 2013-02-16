@@ -24,11 +24,11 @@
 #include "schedulerpluginsettings.h"
 
 #include <knuminput.h>
-#include <klocale.h>
-#include <kglobal.h>
+#include <tdelocale.h>
+#include <tdeglobal.h>
 #include <kstandarddirs.h>
 #include <tdefiledialog.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 #include <kiconloader.h>
 #include <kstdguiitem.h>
 #include <kpushbutton.h>

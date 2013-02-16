@@ -28,11 +28,11 @@
 #include <tqtimer.h>
 #include <tqdatetime.h>
 
-#include <kmessagebox.h>
-#include <klocale.h>
+#include <tdemessagebox.h>
+#include <tdelocale.h>
 #include <kstdaction.h>
 #include <kiconloader.h>
-#include <kglobal.h>
+#include <tdeglobal.h>
 
 #include "schedulerplugin.h"
 #include "schedulerpluginsettings.h"

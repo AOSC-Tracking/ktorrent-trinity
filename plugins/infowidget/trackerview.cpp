@@ -29,12 +29,12 @@
 #include <tqpushbutton.h>
 #include <tqtooltip.h>
 
-#include <klocale.h>
+#include <tdelocale.h>
 #include <kurl.h>
-#include <kmessagebox.h>
+#include <tdemessagebox.h>
 #include <kpushbutton.h>
 #include <ksqueezedtextlabel.h>
-#include <kglobal.h>
+#include <tdeglobal.h>
 #include <kiconloader.h>
 #include <tdelistview.h>
 

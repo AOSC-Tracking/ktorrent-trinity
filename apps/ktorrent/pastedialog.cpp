@@ -26,8 +26,8 @@
 #include <tqapplication.h>
 #include <kurl.h>
 #include <klineedit.h>
-#include <kmessagebox.h>
-#include <klocale.h>
+#include <tdemessagebox.h>
+#include <tdelocale.h>
 
 PasteDialog::PasteDialog(KTorrentCore* core, TQWidget *parent, const char *name)
 		:PasteDlgBase(parent, name)
