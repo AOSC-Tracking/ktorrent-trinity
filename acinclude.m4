@@ -2098,7 +2098,7 @@ if test $kde_qtver = 3; then
    AC_SUBST(LIB_KJS, "-lkjs")
    AC_SUBST(LIB_SMB, "-lsmb")
    AC_SUBST(LIB_KAB, "-lkab")
-   AC_SUBST(LIB_KABC, "-ltdeabc")
+   AC_SUBST(LIB_TDEABC, "-ltdeabc")
    AC_SUBST(LIB_TDEHTML, "-ltdehtml")
    AC_SUBST(LIB_KSPELL, "-ltdespell")
    AC_SUBST(LIB_KPARTS, "-ltdeparts")
