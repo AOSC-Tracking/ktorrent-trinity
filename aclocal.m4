@@ -618,7 +618,7 @@ AC_DEFUN([KDE_SUBST_PROGRAMS],
             KDE_FIND_PATH(dcopidlng, DCOPIDLNG, [$kde_default_bindirs], [KDE_MISSING_PROG_ERROR(dcopidlng)])
         fi
         if test -n "$kde33ornewer"; then
-            KDE_FIND_PATH(makekdewidgets, MAKEKDEWIDGETS, [$kde_default_bindirs], [KDE_MISSING_PROG_ERROR(makekdewidgets)])
+            KDE_FIND_PATH(maketdewidgets, MAKEKDEWIDGETS, [$kde_default_bindirs], [KDE_MISSING_PROG_ERROR(maketdewidgets)])
             AC_SUBST(MAKEKDEWIDGETS)
         fi
         KDE_FIND_PATH(xmllint, XMLLINT, [${prefix}/bin ${exec_prefix}/bin], [XMLLINT=""])
