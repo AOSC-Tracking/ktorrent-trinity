@@ -23,7 +23,7 @@
 #include <util/log.h>
 #include <util/bitset.h>
 #include "chunkcounter.h"
-#include "chuntdeselector.h"
+#include "chunkselector.h"
 #include "chunkmanager.h"
 #include "downloader.h"
 #include "peerdownloader.h"
@@ -158,7 +158,7 @@ namespace bt
 		// lets do a safety check first
 		if (from >= cman.getNumChunks() || to >= cman.getNumChunks())
 		{
-			Out(SYS_DIO|LOG_NOTICE) << "Internal error in chuntdeselector" << endl;
+			Out(SYS_DIO|LOG_NOTICE) << "Internal error in chunkselector" << endl;
 			return;
 		}
 		
