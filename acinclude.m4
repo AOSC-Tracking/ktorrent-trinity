@@ -612,13 +612,13 @@ AC_DEFUN([KDE_SUBST_PROGRAMS],
         KDE_FIND_PATH(xmllint, XMLLINT, [${prefix}/bin ${exec_prefix}/bin], [XMLLINT=""])
 
         if test -n "$MEINPROC" -a "$MEINPROC" != "compiled"; then
- 	    kde_sharedirs="/usr/share/kde /usr/local/share /usr/share /opt/trinity/share /opt/kde/share $prefix/share"
+ 	    kde_sharedirs="$prefix/share /opt/trinity/share /opt/trinity/share /opt/kde/share /usr/share/kde /usr/local/share /usr/share"
             test -n "$TDEDIR" && kde_sharedirs="$TDEDIR/share $kde_sharedirs"
-            AC_FIND_FILE(apps/ksgmltools2/customization/kde-chunk.xsl, $kde_sharedirs, KDE_XSL_STYLESHEET)
+            AC_FIND_FILE(apps/ksgmltools2/customization/tde-chunk.xsl, $kde_sharedirs, KDE_XSL_STYLESHEET)
 	    if test "$KDE_XSL_STYLESHEET" = "NO"; then
 		KDE_XSL_STYLESHEET=""
 	    else
-                KDE_XSL_STYLESHEET="$KDE_XSL_STYLESHEET/apps/ksgmltools2/customization/kde-chunk.xsl"
+                KDE_XSL_STYLESHEET="$KDE_XSL_STYLESHEET/apps/ksgmltools2/customization/tde-chunk.xsl"
 	    fi
         fi
 
