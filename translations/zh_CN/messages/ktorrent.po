@@ -286,8 +286,8 @@ msgid "Scanning data of <b>%1</b> :"
 msgstr "扫描 <b>%1</b> 的数据："
 
 #: apps/ktorrent/main.cpp:76
-msgid "A BitTorrent program for KDE"
-msgstr "KDE 下的 BitTorrent 程序"
+msgid "A BitTorrent program for TDE"
+msgstr "TDE 下的 BitTorrent 程序"
 
 #: apps/ktorrent/main.cpp:108
 msgid "Debug mode"
@@ -956,8 +956,8 @@ msgid "Speed limits for <b>%1</b>:"
 msgstr "<b>%1</b> 的速度限制："
 
 #: apps/ktupnptest/main.cpp:35
-msgid "A KDE KPart Application"
-msgstr "KDE KPart 应用程序"
+msgid "A TDE KPart Application"
+msgstr "TDE KPart 应用程序"
 
 #: apps/ktupnptest/main.cpp:51
 msgid "KTUPnPTest"
@@ -1942,8 +1942,8 @@ msgstr "IP 数据包的 DSCP："
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 570
 #: rc.cpp:629
 #, no-c-format
-msgid "Do not use the KDE pro&xy settings for HTTP tracker connections"
-msgstr "HTTP tracker 连接时不使用 KDE 的代理设置(&X)"
+msgid "Do not use the TDE pro&xy settings for HTTP tracker connections"
+msgstr "HTTP tracker 连接时不使用 TDE 的代理设置(&X)"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 586
 #: rc.cpp:632

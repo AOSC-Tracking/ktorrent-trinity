@@ -304,8 +304,8 @@ msgid "Scanning data of <b>%1</b> :"
 msgstr "%1-ში ჩაწერის შეცდომა"
 
 #: apps/ktorrent/main.cpp:76
-msgid "A BitTorrent program for KDE"
-msgstr "BitTorrent პროგრამა KDEსთვის"
+msgid "A BitTorrent program for TDE"
+msgstr "BitTorrent პროგრამა TDEსთვის"
 
 #: apps/ktorrent/main.cpp:108
 msgid "Debug mode"
@@ -1003,7 +1003,7 @@ msgid "Speed limits for <b>%1</b>:"
 msgstr ""
 
 #: apps/ktupnptest/main.cpp:35
-msgid "A KDE KPart Application"
+msgid "A TDE KPart Application"
 msgstr ""
 
 #: apps/ktupnptest/main.cpp:51
@@ -1991,7 +1991,7 @@ msgstr ""
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 570
 #: rc.cpp:629
 #, no-c-format
-msgid "Do not use the KDE pro&xy settings for HTTP tracker connections"
+msgid "Do not use the TDE pro&xy settings for HTTP tracker connections"
 msgstr ""
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 586

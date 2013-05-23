@@ -295,8 +295,8 @@ msgid "Scanning data of <b>%1</b> :"
 msgstr "掃描區塊資料中："
 
 #: apps/ktorrent/main.cpp:76
-msgid "A BitTorrent program for KDE"
-msgstr "KDE 的 BitTorrent 軟體"
+msgid "A BitTorrent program for TDE"
+msgstr "TDE 的 BitTorrent 軟體"
 
 #: apps/ktorrent/main.cpp:108
 msgid "Debug mode"
@@ -1006,8 +1006,8 @@ msgid "Speed limits for <b>%1</b>:"
 msgstr "速度限制，以 KB/s 為單位"
 
 #: apps/ktupnptest/main.cpp:35
-msgid "A KDE KPart Application"
-msgstr "KDE KPart 應用程式"
+msgid "A TDE KPart Application"
+msgstr "TDE KPart 應用程式"
 
 #: apps/ktupnptest/main.cpp:51
 msgid "KTUPnPTest"
@@ -1994,7 +1994,7 @@ msgstr ""
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 570
 #: rc.cpp:629
 #, no-c-format
-msgid "Do not use the KDE pro&xy settings for HTTP tracker connections"
+msgid "Do not use the TDE pro&xy settings for HTTP tracker connections"
 msgstr ""
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 586

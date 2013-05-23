@@ -295,8 +295,8 @@ msgid "Scanning data of <b>%1</b> :"
 msgstr "Σάρωση δεδομένων για το <b>%1</b> :"
 
 #: apps/ktorrent/main.cpp:76
-msgid "A BitTorrent program for KDE"
-msgstr "Μία εφαρμογή BitTorrent για το KDE"
+msgid "A BitTorrent program for TDE"
+msgstr "Μία εφαρμογή BitTorrent για το TDE"
 
 #: apps/ktorrent/main.cpp:108
 msgid "Debug mode"
@@ -1009,8 +1009,8 @@ msgid "Speed limits for <b>%1</b>:"
 msgstr "Όρια ταχύτητας για το <b>%1</b>:"
 
 #: apps/ktupnptest/main.cpp:35
-msgid "A KDE KPart Application"
-msgstr "Μία εφαρμογή KPart του KDE"
+msgid "A TDE KPart Application"
+msgstr "Μία εφαρμογή KPart του TDE"
 
 #: apps/ktupnptest/main.cpp:51
 msgid "KTUPnPTest"
@@ -2041,8 +2041,8 @@ msgstr ""
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 570
 #: rc.cpp:629
 #, no-c-format
-msgid "Do not use the KDE pro&xy settings for HTTP tracker connections"
-msgstr "Αγνόηση του &διαμεσολαβητή του KDE για συνδέσεις ανιχνευτή μέσω HTTP"
+msgid "Do not use the TDE pro&xy settings for HTTP tracker connections"
+msgstr "Αγνόηση του &διαμεσολαβητή του TDE για συνδέσεις ανιχνευτή μέσω HTTP"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 586
 #: rc.cpp:632

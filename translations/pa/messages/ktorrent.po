@@ -297,7 +297,7 @@ msgid "Scanning data of <b>%1</b> :"
 msgstr "ਫਾਇਲ %1 ਖੋਲੀ ਨਹੀਂ ਜਾ ਸਕਦੀ: %2"
 
 #: apps/ktorrent/main.cpp:76
-msgid "A BitTorrent program for KDE"
+msgid "A BitTorrent program for TDE"
 msgstr "ਕੇਡੀਈ ਲਈ ਬਿੱਟਟੋਰੈਂਟ ਹੈ"
 
 #: apps/ktorrent/main.cpp:108
@@ -989,7 +989,7 @@ msgid "Speed limits for <b>%1</b>:"
 msgstr ""
 
 #: apps/ktupnptest/main.cpp:35
-msgid "A KDE KPart Application"
+msgid "A TDE KPart Application"
 msgstr ""
 
 #: apps/ktupnptest/main.cpp:51
@@ -1976,7 +1976,7 @@ msgstr ""
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 570
 #: rc.cpp:629
 #, no-c-format
-msgid "Do not use the KDE pro&xy settings for HTTP tracker connections"
+msgid "Do not use the TDE pro&xy settings for HTTP tracker connections"
 msgstr ""
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 586

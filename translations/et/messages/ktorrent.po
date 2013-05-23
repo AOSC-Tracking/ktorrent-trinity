@@ -295,8 +295,8 @@ msgid "Scanning data of <b>%1</b> :"
 msgstr "<b>%1</b> andmete uurimine: "
 
 #: apps/ktorrent/main.cpp:76
-msgid "A BitTorrent program for KDE"
-msgstr "KDE BitTorrenti programm"
+msgid "A BitTorrent program for TDE"
+msgstr "TDE BitTorrenti programm"
 
 #: apps/ktorrent/main.cpp:108
 msgid "Debug mode"
@@ -995,8 +995,8 @@ msgid "Speed limits for <b>%1</b>:"
 msgstr "<b>%1</b> kiiruse piirangud:"
 
 #: apps/ktupnptest/main.cpp:35
-msgid "A KDE KPart Application"
-msgstr "KDE KPart rakendus"
+msgid "A TDE KPart Application"
+msgstr "TDE KPart rakendus"
 
 #: apps/ktupnptest/main.cpp:51
 msgid "KTUPnPTest"
@@ -2006,8 +2006,8 @@ msgstr "IP-pakettide DSCP:"
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 570
 #: rc.cpp:629
 #, no-c-format
-msgid "Do not use the KDE pro&xy settings for HTTP tracker connections"
-msgstr "&HTTP-tracker'i ühendusteks ei kasutata KDE puhverserverit"
+msgid "Do not use the TDE pro&xy settings for HTTP tracker connections"
+msgstr "&HTTP-tracker'i ühendusteks ei kasutata TDE puhverserverit"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 586
 #: rc.cpp:632

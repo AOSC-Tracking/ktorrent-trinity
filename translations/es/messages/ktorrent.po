@@ -299,8 +299,8 @@ msgid "Scanning data of <b>%1</b> :"
 msgstr "Analizando los datos de <b>%1</b>:"
 
 #: apps/ktorrent/main.cpp:76
-msgid "A BitTorrent program for KDE"
-msgstr "Un programa de BitTorrent para KDE"
+msgid "A BitTorrent program for TDE"
+msgstr "Un programa de BitTorrent para TDE"
 
 #: apps/ktorrent/main.cpp:108
 msgid "Debug mode"
@@ -1007,8 +1007,8 @@ msgid "Speed limits for <b>%1</b>:"
 msgstr "Límites de velocidad para <b>%1</b>:"
 
 #: apps/ktupnptest/main.cpp:35
-msgid "A KDE KPart Application"
-msgstr "Una aplicación KPart de KDE"
+msgid "A TDE KPart Application"
+msgstr "Una aplicación KPart de TDE"
 
 #: apps/ktupnptest/main.cpp:51
 msgid "KTUPnPTest"
@@ -2021,9 +2021,9 @@ msgstr "DSCP para paquetes IP:"
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 570
 #: rc.cpp:629
 #, no-c-format
-msgid "Do not use the KDE pro&xy settings for HTTP tracker connections"
+msgid "Do not use the TDE pro&xy settings for HTTP tracker connections"
 msgstr ""
-"No usar las preferencias del «prox&y» de KDE para las conexiones HTTP al "
+"No usar las preferencias del «prox&y» de TDE para las conexiones HTTP al "
 "localizador"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 586

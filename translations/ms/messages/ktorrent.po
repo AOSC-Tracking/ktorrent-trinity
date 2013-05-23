@@ -307,7 +307,7 @@ msgid "Scanning data of <b>%1</b> :"
 msgstr "ralat menulis ke fail"
 
 #: apps/ktorrent/main.cpp:76
-msgid "A BitTorrent program for KDE"
+msgid "A BitTorrent program for TDE"
 msgstr ""
 
 #: apps/ktorrent/main.cpp:108
@@ -1023,8 +1023,8 @@ msgstr ""
 
 #: apps/ktupnptest/main.cpp:35
 #, fuzzy
-msgid "A KDE KPart Application"
-msgstr "Name=KDevelop: KDE/C++"
+msgid "A TDE KPart Application"
+msgstr "Name=KDevelop: TDE/C++"
 
 #: apps/ktupnptest/main.cpp:51
 msgid "KTUPnPTest"
@@ -1927,7 +1927,7 @@ msgstr "Tinggi"
 #: rc.cpp:584
 #, fuzzy, no-c-format
 msgid "GUI update interval:"
-msgstr "Pereka GUI KDE"
+msgstr "Pereka GUI TDE"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 254
 #: rc.cpp:587
@@ -2010,7 +2010,7 @@ msgstr ""
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 570
 #: rc.cpp:629
 #, no-c-format
-msgid "Do not use the KDE pro&xy settings for HTTP tracker connections"
+msgid "Do not use the TDE pro&xy settings for HTTP tracker connections"
 msgstr ""
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 586
@@ -2227,7 +2227,7 @@ msgstr "penggunaan: %s [pilihan]"
 #: rc.cpp:752
 #, fuzzy, no-c-format
 msgid "GUI update interval"
-msgstr "Pereka GUI KDE"
+msgstr "Pereka GUI TDE"
 
 #. i18n: file ./libktorrent/ktorrent.kcfg line 142
 #: rc.cpp:755
@@ -3737,7 +3737,7 @@ msgstr "Tapi_san pencarian:"
 #: rc.cpp:1856
 #, fuzzy, no-c-format
 msgid "Search engine name:"
-msgstr "Name=KDevelop: KDE/C++"
+msgstr "Name=KDevelop: TDE/C++"
 
 #. i18n: file ./plugins/search/searchpref.ui line 187
 #: rc.cpp:1862
