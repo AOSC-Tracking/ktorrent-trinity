@@ -14,7 +14,7 @@ ktupnpplugin_la_SOURCES = upnpplugin.cpp upnpprefpage.cpp upnpwidget.ui \
 
 # Libs needed by the plugin
 ktupnpplugin_la_LIBADD = libktupnp.la \
-	$(LIB_KPARTS) ../../libktorrent/libktorrent.la \
+	$(LIB_TDEPARTS) ../../libktorrent/libktorrent.la \
 	$(LIB_QT) \
 	$(LIB_TDECORE) $(LIB_TDEUI) $(LIB_TDEFILE)
 

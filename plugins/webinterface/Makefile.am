@@ -11,7 +11,7 @@ ktwebinterfaceplugin_la_SOURCES = webinterfaceplugin.cpp httpserver.cpp \
 		httpclienthandler.cpp httpresponseheader.cpp
 # Libs needed by the plugin
 ktwebinterfaceplugin_la_LIBADD = ../../libktorrent/libktorrent.la \
-			   $(LIB_TDEHTML) $(LIB_KPARTS) $(LIB_QT) \
+			   $(LIB_TDEHTML) $(LIB_TDEPARTS) $(LIB_QT) \
 			   $(LIB_TDECORE) $(LIB_TDEUI) $(LIB_TDEFILE)
 
 # LD flags for the plugin

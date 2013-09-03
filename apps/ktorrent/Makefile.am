@@ -11,11 +11,11 @@ INCLUDES = -I$(top_builddir)/ktorrent/libktorrent -I$(top_builddir)/libktorrent/
 	$(all_includes)
 
 # the library search path. 
-ktorrent_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_TDECORE) $(LIB_TDEUI) -ltdefx $(LIB_KIO) -ltdetexteditor
+ktorrent_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_TDECORE) $(LIB_TDEUI) -ltdefx $(LIB_TDEIO) -ltdetexteditor
 
 # the libraries to link against.
 ktorrent_LDADD = ../../apps/ktorrent/newui/libnewui.la $(LIB_TDEFILE) \
-	$(LIB_KIO) $(LIB_KPARTS) ../../apps/ktorrent/groups/libgroups.la \
+	$(LIB_TDEIO) $(LIB_TDEPARTS) ../../apps/ktorrent/groups/libgroups.la \
 	../../libktorrent/libktorrent.la
 
 # which sources should be compiled for ktorrent

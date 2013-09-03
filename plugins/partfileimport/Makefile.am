@@ -6,7 +6,7 @@ noinst_HEADERS = partfileimportplugin.h importdialog.h
 ktpartfileimportplugin_la_SOURCES = partfileimportplugin.cpp importdlgbase.ui importdialog.cpp
 
 # Libs needed by the plugin
-ktpartfileimportplugin_la_LIBADD = $(LIB_TDEHTML) $(LIB_KPARTS) \
+ktpartfileimportplugin_la_LIBADD = $(LIB_TDEHTML) $(LIB_TDEPARTS) \
 	../../libktorrent/libktorrent.la \
 	$(LIB_QT) $(LIB_TDECORE) $(LIB_TDEUI) $(LIB_TDEFILE)
 
