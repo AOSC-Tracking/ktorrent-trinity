@@ -618,8 +618,8 @@ AC_DEFUN([KDE_SUBST_PROGRAMS],
             KDE_FIND_PATH(dcopidlng, DCOPIDLNG, [$kde_default_bindirs], [KDE_MISSING_PROG_ERROR(dcopidlng)])
         fi
         if test -n "$kde33ornewer"; then
-            KDE_FIND_PATH(maketdewidgets, MAKEKDEWIDGETS, [$kde_default_bindirs], [KDE_MISSING_PROG_ERROR(maketdewidgets)])
-            AC_SUBST(MAKEKDEWIDGETS)
+            KDE_FIND_PATH(maketdewidgets, MAKETDEWIDGETS, [$kde_default_bindirs], [KDE_MISSING_PROG_ERROR(maketdewidgets)])
+            AC_SUBST(MAKETDEWIDGETS)
         fi
         KDE_FIND_PATH(xmllint, XMLLINT, [${prefix}/bin ${exec_prefix}/bin], [XMLLINT=""])
 
@@ -1849,7 +1849,7 @@ ac_kde_libraries="$kde_libdir"
 
 kde_widgetdir=NO
 dnl this might be somewhere else
-AC_FIND_FILE("kde3/plugins/designer/kdewidgets.la", $kde_libdirs, kde_widgetdir)
+AC_FIND_FILE("kde3/plugins/designer/tdewidgets.la", $kde_libdirs, kde_widgetdir)
 
 if test -n "$ac_kde_libraries" && test ! -r "$ac_kde_libraries/$kde_check_lib"; then
 AC_MSG_ERROR([
@@ -1857,7 +1857,7 @@ in the prefix, you've chosen, are no KDE libraries installed. This will fail.
 So, check this please and use another prefix!])
 fi
 
-if test -n "$kde_widgetdir" && test ! -r "$kde_widgetdir/kde3/plugins/designer/kdewidgets.la"; then
+if test -n "$kde_widgetdir" && test ! -r "$kde_widgetdir/kde3/plugins/designer/tdewidgets.la"; then
 AC_MSG_ERROR([
 I can't find the designer plugins. These are required and should have been installed
 by tdelibs])
