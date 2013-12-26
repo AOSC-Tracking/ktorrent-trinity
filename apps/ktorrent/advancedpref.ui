@@ -567,7 +567,7 @@
                         <cstring>do_not_use_kde_proxy</cstring>
                     </property>
                     <property name="text">
-                        <string>Do not use the KDE pro&amp;xy settings for HTTP tracker connections</string>
+                        <string>Do not use the TDE pro&amp;xy settings for HTTP tracker connections</string>
                     </property>
                 </widget>
                 <widget class="TQLayoutWidget">
