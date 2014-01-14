@@ -42,7 +42,13 @@ GenericName[zh_TW]=BitTorrent 客戶端程式
 Exec=ktorrent %i %m -caption "%c" %u
 Icon=ktorrent
 Type=Application
-DocPath=ktorrent/index.html
+# Restore the following key and remove this comment when a help handbook
+# is written. Disabling this key prevents populating the main handbook
+# table of contents with a non-existent document, which results in a
+# main handbook error message of
+# 'There is no documentation available for /xyz/index.html.'
+# Also disable this key when there exists only a useless template handbook.
+# DocPath=ktorrent/index.html
 MimeType=application/x-bittorrent;application/x-torrent;
 X-DCOP-ServiceType=Unique
 Comment=A BitTorrent program for TDE
