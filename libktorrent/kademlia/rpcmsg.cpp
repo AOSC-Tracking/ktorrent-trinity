@@ -252,7 +252,7 @@ namespace dht
 	
 	////////////////////////////////
 	
-	PingReq::PingReq(const Key & id) : MsgBase(0xFF,PING,RETQ_MSG,id)
+	PingReq::PingReq(const Key & id) : MsgBase(0xFF,PING,REQ_MSG,id)
 	{
 	}
 	
@@ -289,7 +289,7 @@ namespace dht
 	////////////////////////////////
 	
 	FindNodeReq::FindNodeReq(const Key & id,const Key & target)
-	: MsgBase(0xFF,FIND_NODE,RETQ_MSG,id),target(target)
+	: MsgBase(0xFF,FIND_NODE,REQ_MSG,id),target(target)
 	{}
 	
 	FindNodeReq::~FindNodeReq()
@@ -328,7 +328,7 @@ namespace dht
 
 	////////////////////////////////
 	GetPeersReq::GetPeersReq(const Key & id,const Key & info_hash) 
-		: MsgBase(0xFF,GET_PEERS,RETQ_MSG,id),info_hash(info_hash)
+		: MsgBase(0xFF,GET_PEERS,REQ_MSG,id),info_hash(info_hash)
 	{}
 	
 	GetPeersReq::~GetPeersReq()

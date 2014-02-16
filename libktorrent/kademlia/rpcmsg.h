@@ -40,7 +40,7 @@ namespace dht
 	
 	enum Type
 	{
-		RETQ_MSG,
+		REQ_MSG,
 		RSP_MSG,
 		ERR_MSG,
 		INVALID
