@@ -1,0 +1,50 @@
+<chapter id="introduction">
+<title>Introduction</title>
+
+<sect1 id="introduction-whatis">
+<title>What is &ktorrent;?</title>
+
+<para>
+&ktorrent; is a &tde; application for sharing files, using BitTorrent protocol. &ktorrent; allows you to create torrents, search for them and download their content.
+</para>
+
+<para>
+&ktorrent; is an advanced BitTorrent client, with extendable interface via plugin system. Useful features include file prioritization, speed capping and scheduling, torrent queue and statistics. These features, with support for DHT, PeerExchange, UDP Trackers and Encryption, make &ktorrent; a full-featured BitTorrent client.
+</para>
+
+<screenshot>
+<screeninfo>Introduction</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="introduction.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Introduction</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para>
+Please report any problems or feature requests using <guimenuitem>Report Bug...</guimenuitem> from the Help menu.
+</para>
+
+</sect1>
+
+<sect1 id="torrents">
+<title>Torrent Files</title>
+
+<para><indexterm><primary>torrent</primary></indexterm>
+Torrent is a small file that contains information about the data, but not actual data. You can not download without a torrent file! Originally they are known as BitTorrent files, but because of there extension (<literal role="extension">*.torrent</literal>), more people refer to them as torrents.
+</para>
+
+<para><indexterm><primary>search</primary></indexterm>
+Many websites provide search for torrents by searching trough information they contain. This is similar to a web search, with an exception that links in the results do not send you to other sites, but rather to torrent files.
+</para>
+
+<tip><para>
+With the Search plugin, you can search and open torrents directly from &ktorrent;.
+</para></tip>
+
+</sect1>
+
+</chapter>

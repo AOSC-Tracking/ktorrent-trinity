@@ -1,0 +1,38 @@
+<chapter id="faq">
+<title>Questions and Answers</title>
+
+<para>
+Here are some of the frequently asked questions and their corresponding answers. Chances are that you are probably looking for one of them.
+</para>
+
+<qandaset id="faqlist">
+
+<qandaentry>
+<question>
+<para>
+What is <quote>port forwarding</quote>?
+</para>
+</question>
+<answer>
+<para>
+Computers that are behind a router cannot accept incoming connections, which can hurt their download speed. Port forwarding is a solution to this problem. If you have UPnP enabled router, use UPnP plugin to forward needed ports in few mouse clicks. Otherwise visit <ulink url="http://portforward.com">http://portforward.com</ulink> to learn how to do this on your router.
+</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question>
+<para>
+What is the most common mistake of BitTorrent users?
+</para>
+</question>
+<answer>
+<para>
+Not seeding after they have finished downloading. It is important that peers with 100&percnt; of data keep torrent running for others to download. Share ratio of 1.0 is a minimum you should seed for every torrent you download. 
+</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+
+</chapter>

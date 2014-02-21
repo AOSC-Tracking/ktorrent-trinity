@@ -1,0 +1,266 @@
+<chapter id="credits">
+<title>Credits and License</title>
+
+<para>
+KTorrent &copy; 2005&ndash;2008 Joris Guisson and Ivan Vasić
+</para>
+
+<variablelist>
+
+<varlistentry>
+<term>&ktorrent; Developers:</term>
+
+<listitem>
+
+<variablelist>
+
+<varlistentry>
+<term>Joris Guisson</term>
+<listitem><para>Original author</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Ivan Vasić</term>
+<listitem><para>Original author</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Alan Jones</term>
+<listitem><para>BitFinder Plugin</para></listitem>
+</varlistentry> 
+
+<varlistentry>
+<term>Diego R. Brogna</term>
+<listitem><para>Web Interface Plugin</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Krzysztof Kundzicz</term>
+<listitem><para>Statistics Plugin</para></listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>&ktorrent; Contributors:</term>
+<listitem>
+
+<variablelist>
+
+<varlistentry>
+<term>Mladen Babic</term>
+<listitem><para>Application icon and a couple of others</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Adam Treat</term>
+<listitem><para></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Danny Allen</term>
+<listitem><para>1.0 application icon</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Vincent Wagelaar</term>
+<listitem><para></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Knut Morten Johansson</term>
+<listitem><para></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Felix Berger</term>
+<listitem><para>ChunkBar's tooltip and IWFileTreeItem sorting</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Andreas Kling</term>
+<listitem><para></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Felipe Sateler</term>
+<listitem><para></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Maxmind (http://www.maxmind.com/)</term>
+<listitem><para>Country locator for InfoWidget plugin. Flags are taken from http://flags.blogpotato.de/ so thanks to them too.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Adam Forsyth</term>
+<listitem><para>File prioritization</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Thomas Bernard (http://miniupnp.free.fr/)</term>
+<listitem><para>Miniupnp was used as an example for our own UPnP implementation</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Diego Rosario Brogna</term>
+<listitem><para>Global max share ratio patch</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Lesly Weyts</term>
+<listitem><para>Zeroconf enhancements</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Kevin Andre (http://users.edpnet.be/hyperquantum/)</term>
+<listitem><para>Zeroconf enhancements</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Dagur Valberg Johannsson</term>
+<listitem><para>Coldmilk webgui</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Alexander Dymo</term>
+<listitem><para>IDEAl code from KDevelop</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Scott Wolchok</term>
+<listitem><para>Conversion speed improvement in ipfilter plugin</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Bryan Burns of Juniper Networks</term>
+<listitem><para>Discovered 2 security vulnerabilities (both are fixed)</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Goten Xiao</term>
+<listitem><para>Patch to load silently with a save location</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Rapsys</term>
+<listitem><para>Fixes in PHP code of webinterface</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Athantor</term>
+<listitem><para>XFS specific disk preallocation</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>twisted_fall</term>
+<listitem><para>Patch to not show very low speeds</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Lucke</term>
+<listitem><para>Patch to show potentially firewalled status</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Modestas Vainius</term>
+<listitem><para>Several patches</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Stefan Monov</term>
+<listitem><para>Patch to hide menu bar</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>The_Kernel</term>
+<listitem><para>Patch to change file priorities in the webgui</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Rafał Miłecki</term>
+<listitem><para>Several webgui patches</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Ozzi</term>
+<listitem><para>Fixes for several warnings</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Markus Brueffer</term>
+<listitem><para>Patch to fix free diskspace calculation on FreeBSD</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Lukas Appelhans</term>
+<listitem><para>Patch to fix a crash in ChunkDownloadView</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Rickard Närström</term>
+<listitem><para>A couple of bugfixes</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>caruccio</term>
+<listitem><para>Patch to load torrents silently from the command line</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Lee Olson</term>
+<listitem><para>New set of icons</para></listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>&ktorrent; Documentation:</term>
+<listitem>
+
+<variablelist>
+
+<varlistentry>
+<term>Joris Guisson</term>
+<listitem><para></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Stoeptegel</term>
+<listitem><para></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Predrag Kašić</term>
+<listitem><para></para></listitem>
+</varlistentry>
+
+<!-- CREDITS FOR TRANSLATORS
+<varlistentry>
+<term>Trans Lator</term>
+<listitem><para>Translation for Language</para></listitem>
+</varlistentry>
+-->
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<para>
+&underGPL;
+</para>
+
+<para>      <!-- All documentation are licensed under the FDL  -->
+&underFDL;  <!--      regardless of applications licence       -->
+</para>     <!--             do not remove this                -->
+
+</chapter>

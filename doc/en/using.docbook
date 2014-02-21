@@ -1,0 +1,182 @@
+<chapter id="using">
+<title>Using &ktorrent;</title>
+
+<sect1 id="add-torrent">
+<title>Adding a Torrent</title>
+
+<sect2 id="open-torrent">
+<title>Opening a Torrent</title>
+
+<!--<para>
+To open a torrent located on your computer, use <menuchoice><guimenu>File</guimenu><guimenuitem>Open...</guimenuitem><shortcut><keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo></shortcut></menuchoice>. This will launch a dialog in which you will locate the torrent you wish to open.
+</para>-->
+
+<!--<screenshot>
+<screeninfo>Open Torrent Location</screeninfo>
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="opentorrent-location.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Open Torrent Location</phrase>
+</textobject>
+</inlinemediaobject>
+</screenshot>-->
+
+<para>
+To open a torrent directly from a web site, use <menuchoice><guimenu>File</guimenu><guimenuitem>Open URL</guimenuitem></menuchoice>. This will launch a dialog in which you can paste location of the torrent you wish to open.
+</para>
+
+<!--<screenshot>
+<screeninfo>Open Torrent Location</screeninfo>
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="opentorrent-url.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Open Torrent Location</phrase>
+</textobject>
+</inlinemediaobject>
+</screenshot>-->
+
+</sect2>
+
+<sect2 id="torrent-options">
+<title>Torrent and Data Options</title>
+
+<para>
+After you have opened a torrent, following dialog will appear, where you can modify default options. When you are <guilabel>OK</guilabel> to add torrent.
+</para>
+
+<!--<screenshot>
+<screeninfo>Open Torrent Files</screeninfo>
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="opentorrent-files.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Open Torrent Files</phrase>
+</textobject>
+</inlinemediaobject>
+</screenshot>-->
+
+<variablelist>
+
+<!--<varlistentry>
+<term><guilabel>Download to:</guilabel></term>
+<listitem>
+<para>
+Where to store torrents data (<link linkend="default-save-location">Default save location</link>).
+</para>
+</listitem>
+</varlistentry>-->
+
+<varlistentry>
+<term><guilabel>Group:</guilabel></term>
+<listitem>
+<para>
+With this option you can add opened torrent to a <link linkend="groups">custom group</link>.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>User controlled</guilabel></term>
+<listitem>
+<para>
+Use this option to manually start and stop this torrent. Selecting this option will not set torrent as quelled in the Queue Manager.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Start torrent</guilabel></term>
+<listitem>
+<para>
+Whether or not to start downloading a torrent.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Toplevel directory:</guilabel></term>
+<listitem>
+<para>
+Name of the directory in which to save files of a multifile torrent. Setting the same directory name, you can download two different torrents with exactly same files.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Skip data check if existing files are found</guilabel></term>
+<listitem>
+<para>
+When selected, data will not be checked for errors if files exists.
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="import-torrent">
+<title>Partialy Downloaded Torrent</title>
+
+<para>
+Partialy Downloaded Torrent
+</para>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="groups">
+<title>Grouping Torrents</title>
+
+<para>
+&ktorrent; is able to display your torrents in diffrent groups. There are several default groups which will display torrents by their state (downloading or uploading) or activity (running or not). You can also choose their sub-category groups. To display all torrents use <guilabel>All Torrents</guilabel> group.
+</para>
+
+<para>
+To create a custom group and add a torrent to that group, do following:
+</para>
+
+<!--<procedure>
+<step>
+Click with &RMB; anywhere in <guilabel>Groups</guilabel> tab, select <guilabel>New Group</guilabel> from the menu and then enter name for that group
+</step>
+<step>
+Click on a torrent you want to add with &RMB; and from the <guilabel>Add to Group</guilabel> submenu select the group
+</step>
+</procedure>-->
+
+
+<para>
+Torrents that are not in any custom group will appear under <guilabel>Ungrouped Torrents</guilabel>.
+</para>
+
+</sect1>
+
+<sect1 id="queuemanager">
+<title>Queue Manager</title>
+
+<para>
+The Queue Manager enables you to fully automatize starting and stopping of torrents. This is useful when you want to dedicate your bandwidth to few torrents and automatically start next torrent when one is finished. When a torrent is opened in &ktorrent;, it will be quelled and set as last in the list of quelled torrents.
+</para>
+
+<!--<para>
+To set the number of torrents you want to download and seed simultaneously, open configuration dialog and in the <link linkend="queuemanager-config">Queue Manager panel</link> set <guilabel>Maximum downloads</guilabel> and <guilabel>Maximum seeds</guilabel> to your preference. You can also use <link linkend="recommended-options">recommended options</link> to set this settings. If you do not want to queue your torrents set both options to <option>0</option> (unlimited).
+</para>-->
+
+<para>
+You can queue and dequeue torrents in the <guilabel>Queue Manager</guilabel> tab, located in the bottom left corner of &ktorrent; window. There you can also reorder your quelled torrents.
+</para>
+
+<note><para>
+If you manually start or stop a quelled torrent, that torrent will be dequelled.
+</para></note>
+
+</sect1>
+
+</chapter>

@@ -55,7 +55,7 @@ using namespace KNetwork;
 
 
 KTorrentPreferences::KTorrentPreferences(KTorrent & ktor)
-		: KDialogBase(IconList, i18n("Preferences"), Ok | Apply | Cancel, Ok), ktor(ktor)
+		: KDialogBase(IconList, i18n("Preferences"), Help | Ok | Apply | Cancel, Ok), ktor(ktor)
 {
 	validation_err = false;
 	enableButtonSeparator(true);

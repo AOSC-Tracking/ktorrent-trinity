@@ -1,0 +1,805 @@
+<chapter id="configure">
+<title>Configure &ktorrent;</title>
+
+<para>
+&ktorrent;'s configuration dialog can be found in the menu under <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &ktorrent;...</guimenuitem></menuchoice>.
+</para>
+
+<sect1 id="downloads-config">
+<title>Downloads</title>
+
+<screenshot>
+<screeninfo>Downloads configuration dialog</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="downloads-config.png" format="PNG" />
+</imageobject>
+<textobject>
+<phrase>Downloads configuration dialog</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term><guilabel>Queue Manager</guilabel></term>
+<listitem>
+<variablelist>
+
+<!--<varlistentry>
+<term><guilabel>Maximum downloads:</guilabel></term>
+<listitem>
+<para>
+Set here the number of torrents <link linkend="queuemanager">Queue Manager</link> will download simultaneously. When a queued torrent finished downloading, another queued torrent will be started.
+</para>
+</listitem>
+</varlistentry>-->
+
+<varlistentry>
+<term><guilabel>Maximum seeds:</guilabel></term>
+<listitem>
+<para>
+Here you can set the number of torrents Queue Manager will seed simultaneously. When a download of a queued torrent is finished and started seeding, last in the queue of the seeding torrents will be stopped.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>When disk space is running low:</guilabel></term>
+<listitem>
+<para>
+Here you can select should queued torrent be started when you are running out of disk space. You can choose one of the following options.
+</para>
+<simplelist>
+<member><guilabel>Don't start torrents</guilabel></member>
+<member><guilabel>Ask if torrents can be started</guilabel></member>
+<member><guilabel>Start torrents</guilabel></member>
+</simplelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Stop torrents when free disk space is lower then:</guilabel></term>
+<listitem>
+<para>
+Select this option to stop all torrents when there is low disk space limit is reached.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Decrease priority of torrents which are stalled for too long</guilabel></term>
+<listitem>
+<para>
+If the queued torrent has been stalled for a specified amount of time, its priority will decrease.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Stalled timer:</guilabel></term>
+<listitem>
+<para>
+Here you can set the amount of time to wait before decreasing torrents priority.
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Seeding</guilabel></term>
+<listitem>
+<variablelist>
+
+<varlistentry>
+<term><guilabel>Keep seeding after download is finished</guilabel></term>
+<listitem>
+<para>
+If this option is selected, when download of the torrent is finished &ktorrent; will continue to seed data. You should not disable this, since BitTorrent is a sharing protocol, unless you have an upload limit on your Internet connection.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Number of upload slots</guilabel></term>
+<listitem>
+<para>
+This setting determines the number of peers you will connect to upload them data.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Maximum share ratio</guilabel></term>
+<listitem>
+<para>
+This setting allows you to specify limit on how much data will you share. Ration of 1.00 means 100&percnt; will be shared, 1.25 means 125&percnt; &etc; This setting do not apply while downloading, only while seeding. When the ratio is reached, seeding of the torrent will stop.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Maximum seed time</guilabel></term>
+<listitem>
+<para>
+This setting allows you to specify limit on how long will you share. Time is set in hours, that means 1.00 is 1 hour, 1.25 is 1 hour 15 minutes &etc; This setting apply only in seeding mode, and when the time is reached, seeding of the torrent will stop.
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+
+<varlistentry>
+<term id="downloads-preferences"><guilabel>Preferences</guilabel></term>
+<listitem>
+<variablelist>
+
+<varlistentry>
+<term><guilabel>Port:</guilabel></term>
+<listitem>
+<para>
+Port configured here, is the port &ktorrent; will use to connect to other peers in the swarm. Normally, you do not need to change this setting, but some Internet Service Providers restrict traffic on known P2P ports (see <link linkend="bittorrent-encryption">Encryption</link>). Use one in range 49152 to 65535 (unregistered, dynamic and/or private ports).
+</para>
+<note><para>
+If you are behind a router, you need to forward this port to accept incoming connections. UPnP plugin can do this for you.
+</para></note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>UDP tracker port:</guilabel></term>
+<listitem>
+<para>
+Port to use for connections with UDP trackers. These trackers are rarely used because they are supported in only few BitTorrent clients.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Maximum connections per torrent:</guilabel></term>
+<listitem>
+<para>
+Here you can set maximum number of peers to connect to per single torrent. Setting 45 to 65 maximum connections per torrent is generally enough, though people with more bandwidth can configure this higher, together with a higher number of upload slots and a higher upload speed.
+</para>
+<note><para>
+Setting this high will not automatically improve your speeds. Speed is more dependent on the health of the torrent swarm and your own upload behavior.
+</para></note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Global connection limit:</guilabel></term>
+<listitem>
+<para>
+Use this setting to limit the total number of peers (all torrents combined) that &ktorrent; will connect to.
+Keep in mind that this setting should ideally be high enough for the amount of torrents you want to run, while avoiding low responsiveness of your Internet connection or even worse &mdash; capping your own bandwidth.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Maximum download speed:</guilabel></term>
+<listitem>
+<para>
+Here you can set a limit on download speed. For best BitTorrent performance, set this to 95&percnt; of your total bandwidth download speed, or lower if you want to share your bandwidth with other application.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Maximum upload speed:</guilabel></term>
+<listitem>
+<para>
+Here you can set a limit on upload speed. Set this to 85&ndash;90&percnt; of your bandwidth upload speed. Setting this too high might compromise your download speed. If in doubt use <link linkend="recommended-options">recommended setting</link>.
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Advanced</guilabel></term>
+<listitem>
+<variablelist>
+
+<varlistentry>
+<term><guilabel>DSCP value for IP pockets:</guilabel></term>
+<listitem>
+<para>
+With this setting you can prioritize your &ktorrent; Internet traffic. This is useful when you want your other applications (&ie; web browser) to have priority over &ktorrent; or vise verse. Use one of the following numbers to describe priority.
+</para>
+<informaltable>
+<tgroup cols="2">
+<tbody>
+<row>
+<entry>0</entry>
+<entry>Default</entry>
+</row>
+<row>
+<entry>1</entry>
+<entry>Low</entry>
+</row>
+<row>
+<entry>2</entry>
+<entry>Medium</entry>
+</row>
+<row>
+<entry>3</entry>
+<entry>High</entry>
+</row>
+<row>
+<entry>4</entry>
+<entry>Critical</entry>
+</row>
+<row>
+<entry>5</entry>
+<entry>Real-Time</entry>
+</row>
+<row>
+<entry>6</entry>
+<entry>Premium</entry>
+</row>
+<row>
+<entry>7</entry>
+<entry>Urgent</entry>
+</row>
+<row>
+<entry>any other number</entry>
+<entry>Can be used with routers and IP tables to map traffic in network environment</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Maximum number of connection setups:</guilabel></term>
+<listitem>
+<para>
+This option allows you to set the number of outgoing connections that will be attempted simultaneously. If you are having a problem with &ktorrent; blocking your other Internet traffic, try setting this number a bit lower.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Network Interface</guilabel></term>
+<listitem>
+<para>
+Here you can set which interface to use for Internet traffic. If you have more then one connection to Internet (&ie; Wireless, Satellite and/or Cable), you can use a specific one or all of them. 
+</para>
+<note><para>
+This option requires a restart to take effect.
+</para></note>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term id="recommended-options"><guibutton>Recommended Options</guibutton></term>
+<listitem>
+<variablelist>
+
+<para>
+The <guibutton>Recommended Options</guibutton> button will open a window where you can calculate best <link linkend="downloads-config">Downloads</link> and Queue Manager settings, based on your bandwidth. Use <guibutton>Apply</guibutton> button to automatically set the recommended options or <guibutton>Cancel</guibutton> to close the window without changing any settings.
+</para>
+
+<varlistentry>
+<term><guilabel>Available upload bandwidth:</guilabel></term>
+<listitem>
+<para>
+Here you should enter your Internet upload speed.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Available download bandwidth:</guilabel></term>
+<listitem>
+<para>
+Here you should enter your Internet download speed.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Average speed per slot:</guilabel></term>
+<listitem>
+<para>
+...
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Number of torrents you usually download simultaneously:</guilabel></term>
+<listitem>
+<para>
+If you want recommended options to be calculated based on the number of torrents that you usually download, enter that number here.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Slots per torrent:</guilabel></term>
+<listitem>
+<para>
+...
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="general-config">
+<title>General</title>
+
+<screenshot>
+<screeninfo>General configuration dialog</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="general-config.png" format="PNG" />
+</imageobject>
+<textobject>
+<phrase>General configuration dialog</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term><guilabel>Folders</guilabel></term>
+<listitem>
+<variablelist>
+
+<varlistentry>
+<term><guilabel>Folder to store torrent information:</guilabel></term>
+<listitem>
+<para>
+This folder is used to store information for all currently opened torrents. If you run two operating system, you can share this folder between two &ktorrent;'s, to allow continues download when in either of them.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term id="default-save-location"><guilabel>Default save location:</guilabel></term>
+<listitem>
+<para>
+If enabled and set, this location will be default location for saving torrents data in all dialogs. Data of <quote>silently opened torrents</quote> will be saved to this location.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Move completed downloads to:</guilabel></term>
+<listitem>
+<para>
+When completed downloading, torrents data can be moved to different folder. Use this setting to separate your finished from unfinished downloads.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Copy torrent files to:</guilabel></term>
+<listitem>
+<para>
+When opened, torrent files can be saved in specified folder for backup, record or other purposes.
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>System Tray Icon</guilabel></term>
+<listitem>
+<variablelist>
+
+<varlistentry>
+<term><guilabel>Show system tray icon</guilabel></term>
+<listitem>
+<para>
+This option, when selected, shows a &ktorrent; icon in system tray. It also changes the behavior of <guibutton>Close</guibutton> button from exiting the program to hiding it. If you do not want this kind of behavior, disable this option.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Show system tray popup messages</guilabel></term>
+<listitem>
+<para>
+Select this setting, if you want to see a small popup containing current speed and transferred data information, when your mouse is over the &ktorrent; icon in system tray.
+</para>
+
+<screenshot>
+<screeninfo>System tray popup message</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="systemtray-popup.png" format="PNG" />
+</imageobject>
+<textobject>
+<phrase>System tray popup message</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para>
+This setting also determines whether you will be notified of torrent events (&ie; download completed, share ratio reached, torrent stopped by an error &etc;).
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Miscellaneous</guilabel></term>
+<listitem>
+<variablelist>
+
+<varlistentry>
+<term><guilabel>Use a list of files when displaying files of a torrent</guilabel></term>
+<listitem>
+<para>
+When selected, this setting will show all files in a flat list, while hiding all the folders. This affects all dialogs and plugins where torrent file listing is used.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Open multiple torrents silently</guilabel></term>
+<listitem>
+<para>
+Use this setting to skip all dialogs when opening more than one torrent. Opening one torrent, will still show the dialog.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Suppress sleep when torrents are running</guilabel></term>
+<listitem>
+<para>
+Enable this option to prevent your computer from going into Hibernation or Stand by mode, when there are running torrents.
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+
+<varlistentry>
+<term><guilabel>DHT</guilabel></term>
+<listitem>
+<variablelist>
+
+<varlistentry>
+<term><guilabel>Use DHT to get addition peers</guilabel></term>
+<listitem>
+<para>
+DHT is a way of gathering additional peers from other peers in the swarm. There are some torrents that do not use trackers to get the list of peers, but rely only on DHT. These are know as Trackerless Torrents. You will be unable to download these torrents, If this option is disabled.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>UDP port for DHT communication:</guilabel></term>
+<listitem>
+<para>
+Here you can set the port on which to search for additional peers. This port can be same as the port configured in the <link linkend="downloads-preferences">Downloads tab</link>.
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term id="bittorrent-encryption"><guilabel>Encryption</guilabel></term>
+<listitem>
+<variablelist>
+
+<varlistentry>
+<term><guilabel>Use protocol encryption</guilabel></term>
+<listitem>
+<para>
+Some Internet Service Providers throttle (slowdown) their customers BitTorrent traffic. Encryption is designed to hide BitTorrent traffic so that detection and therefore throttling would fail. It is not designed to make data secure, but only to get around bandwidth throttling.
+</para>
+<note><para>
+If you select only this option, you will be unable to connect to peers that do not use protocol encryption.
+</para></note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Allow unencrypted connections</guilabel></term>
+<listitem>
+<para>
+Even if your Internet Service Provider is not throttling your connection, you may still find that enabling encryption allows some peers to send you data (peers that use encryption and do not allow unencrypted connections). Selecting this options will enable you to connect both ways.
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="advanced-config">
+<title>Advanced</title>
+
+<screenshot>
+<screeninfo>Advanced configuration dialog</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="advanced-config.png" format="PNG" />
+</imageobject>
+<textobject>
+<phrase>Advanced configuration dialog</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term><guilabel>Data Checking</guilabel></term>
+<listitem>
+
+<variablelist>
+
+<varlistentry>
+<term><guilabel>Recheck chunks during uploading</guilabel></term>
+<listitem>
+<para>
+This will verify a chunk when it is loaded into memory, preventing upload of bad data. 
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Don't recheck when chunks are bigger then:</guilabel></term>
+<listitem>
+<para>
+Here you can set maximum size of the chunk that are to be rechecked during uploading. Bigger chunks that specified will not be checked.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Do a full data check after</guilabel> <guilabel>corrupted chunks</guilabel></term>
+<listitem>
+<para>
+Full data check will be started, if the specified number of corrupted chunks has been detected. If you regularly experience errors during downloads, enable this option.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Check data when download is finished</guilabel></term>
+<listitem>
+<para>
+When torrent has finished downloading, data will be fully checked. Chunks that failed to download correctly, will be downloaded again. 
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Data Checking</guilabel></term>
+<listitem>
+
+<variablelist>
+
+<varlistentry>
+<term><guilabel>GUI update interval:</guilabel></term>
+<listitem>
+<para>
+Set here the interval of the GUI updates. If &ktorrent; is using much of your CPU, try decreasing this setting.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Downloads sleep interval:</guilabel></term>
+<listitem>
+<para>
+Here you can set the time network threads will sleep when they are speed limited. Setting this to high can lead to lower speeds in high bandwidth situations, such as Local Area Networks. Setting this to low will increase your CPU usage.
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Disk Space</guilabel></term>
+<listitem>
+
+<variablelist>
+
+<varlistentry>
+<term><guilabel>Reserve disk space before starting a download</guilabel></term>
+<listitem>
+<para>
+This will reserve disk space when starting a torrent. It is faster then full allocation but will fragment data on your disk.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Fully reserve disk space (avoids fragmentation)</guilabel></term>
+<listitem>
+<para>
+Will this setting you can fully allocate data on the disk. This is slower, but will prevent data fragmentation on the disk.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Disk space reservation method:</guilabel></term>
+<listitem>
+<para>
+Here you can select the method of allocation. <guilabel>Basic</guilabel> method will work with all file systems, but it is slow. <guilabel>Filesystem Specific</guilabel> method is faster, but will only work with some specific file systems.
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Miscellaneous</guilabel></term>
+<listitem>
+
+<variablelist>
+
+<varlistentry>
+<term><guilabel>Time estimation algorithm:</guilabel></term>
+<listitem>
+<para>
+The algorithm selected here will be used to guess how much time is left for download to finish. Choose one of the following.
+</para>
+
+<variablelist>
+
+<varlistentry>
+<term><guilabel>KTorrent</guilabel></term>
+<listitem>
+<para>
+Automatically choose appropriate algorithm based on current situation.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Current speed</guilabel></term>
+<listitem>
+<para>
+Bytes left to download divided by torrent current speed.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Average speed</guilabel></term>
+<listitem>
+<para>
+Bytes left to download divided by torrent average speed.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Moving of X</guilabel></term>
+<listitem>
+<para>
+Bytes left to download divided by average speed of the last 20 samples.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Moving average</guilabel></term>
+<listitem>
+<para>
+Bytes left to download divided by moving average speed of the last 20 samples.
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Preview size for audio files:</guilabel></term>
+<listitem>
+<para>
+Selected amount of data, at the beginning and end of the file, that will be downloaded first. This will enable you to preview audio files.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Preview size for video files:</guilabel></term>
+<listitem>
+<para>
+Selected amount of data, at the beginning and end of the file, that will be downloaded first. This will enable you to preview quality and content of video files.
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="plugins-config">
+<title>Plugins</title>
+
+<screenshot>
+<screeninfo>Plugins configuration dialog</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="plugins-config.png" format="PNG" />
+</imageobject>
+<textobject>
+<phrase>Plugins configuration dialog</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para>
+In this tab you can enable or disable plugins. Plugins that are configurable, when enabled, will add their tab in the configuration dialog.
+</para>
+
+</sect1>
+
+</chapter>

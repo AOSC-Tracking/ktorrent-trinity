@@ -1,4 +1,4 @@
-SUBDIRS = libktorrent plugins apps scripts translations
+SUBDIRS = doc libktorrent plugins apps scripts translations
 
 # $(UTESTS_DIR)
 

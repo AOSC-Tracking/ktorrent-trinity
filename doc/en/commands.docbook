@@ -1,0 +1,255 @@
+<chapter id="commands">
+<title>Command Reference</title>
+
+<para>
+Each menu item is discussed below. When there is a keyboard shortcut that performs a menu item function, the default shortcut is listed with the menu item.
+</para>
+
+<sect1 id="mainmenu">
+<title>Menus and Shortcut Keys</title>
+
+<sect2 id="mainmenu-file">
+<title>The <guimenu>File</guimenu> Menu</title>
+
+<variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo></shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>New</guimenuitem>
+</menuchoice></term>
+<listitem><para>Opens a dialog where you can <action>create a new torrent</action>.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo></shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>Open...</guimenuitem>
+</menuchoice></term>
+<listitem><para>Shows a dialog in which you can <action>open a torrent</action>.</para></listitem>
+</varlistentry>
+
+<!--<varlistentry>
+<term><menuchoice>
+<guimenu>File</guimenu>
+<guimenuitem>Open Silently</guimenuitem>
+</menuchoice></term>
+<listitem><para>Shows a dialog in which you can <action>open a torrent, but skip the following dialog</action> that asks you to select what files to download, where to save them &etc; All files will be saved to <link linkend="default-save-location">default location</link></para></listitem>
+</varlistentry>-->
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>File</guimenu>
+<guimenuitem>Open URL</guimenuitem>
+</menuchoice></term>
+<listitem><para>Allows you to <action>open a torrent by its local path (&ie; /home/user/file.torrent)</action>, or directly from Internet by its web address (&ie; http://site.com/file/torrent).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>File</guimenu>
+<guimenuitem>Import Torrent</guimenuitem>
+</menuchoice></term>
+<listitem><para>Opens a dialog where you can <action>import partially downloaded torrent</action>. This will work with any BitTorrent clients data.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>File</guimenu>
+<guimenuitem>Import &tde;3 Torrents</guimenuitem>
+</menuchoice></term>
+<listitem><para>This will start a process that will <action>import all torrents from &tde;3 folders</action> and show progress in opened window.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>File</guimenu>
+<guimenuitem>IP Filter</guimenuitem>
+</menuchoice></term>
+<listitem><para>Opens a dialog where you can <action>ban peers by there IP address</action>. This applies to current season only.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo></shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>Quit</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Exits the application</action>.</para></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="mainmenu-edit">
+<title>The <guimenu>Edit</guimenu> Menu</title>
+
+<variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;<keycap>V</keycap></keycombo></shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Paste</guimenuitem>
+</menuchoice></term>
+<listitem><para>While in the browser, copy link address of a torrent and then use this menu to <action>paste address</action> in &ktorrent; to open it.</para></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="mainmenu-downloads">
+<title>The <guimenu>Downloads</guimenu> Menu</title>
+
+<variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Downloads</guimenu>
+<guimenuitem>Start</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Starts downloading and/or seeding selected torrent(s)</action>.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Downloads</guimenu>
+<guimenuitem>Stop</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Stops downloading and/or seeding selected torrent(s)</action>.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Downloads</guimenu>
+<guimenuitem>Remove</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Removes selected torrent(s)</action>. For torrents that are not finished, dialog will open asking to delete incomplete data too.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Downloads</guimenu>
+<guimenuitem>Start All</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Starts downloading and/or seeding all torrents</action>.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Downloads</guimenu>
+<guimenuitem>Stop All</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Stops downloading and/or seeding all torrents</action>.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Downloads</guimenu>
+<guimenuitem>Check Data</guimenuitem>
+</menuchoice></term>
+<listitem><para>This will <action>scan downloaded data checking for errors</action> and missing chunks.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Downloads</guimenu>
+<guimenuitem>Enqueue/Dequeue</guimenuitem>
+</menuchoice></term>
+<listitem><para>This will <action>enqueue or dequeue selected torrent</action>(s) depending on current state of queue.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Downloads</guimenu>
+<guimenuitem>Pause</guimenuitem>
+</menuchoice></term>
+<listitem><para>This will <action>pause all torrents</action> and change this menu item to <guimenuitem>Resume</guimenuitem>.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;<keycap>L</keycap></keycombo></shortcut>
+<guimenu>Downloads</guimenu>
+<guimenuitem>Speed Limits</guimenuitem>
+</menuchoice></term>
+<listitem><para>Opens a dialog where you can <action>set speed limit for every torrent</action>, and <guilabel>Global limits</guilabel> for all torrents.</para></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="mainmenu-settings">
+<title>The <guimenu>Settings</guimenu> Menu</title>
+
+<variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;<keycap>M</keycap></keycombo></shortcut>
+<guimenu>Settings</guimenu>
+<guimenuitem>Show Menubar</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Shows or hides the menu bar</action>.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Show Statusbar</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Shows or hides the status bar</action>.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Shortcuts...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Opens keyboard shortcuts configuration dialog</action>.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Toolbars...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Opens toolbars configuration dialog</action>.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Notifications...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Opens notifications configuration dialog</action>.</para></listitem>
+</varlistentry>
+
+<!--<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure &ktorrent;...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Opens <link linkend="configure">&ktorrent; configuration</link> dialog</action> .</para></listitem>
+</varlistentry>-->
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="mainmenu-help">
+<title>The <guimenu>Help</guimenu> Menu</title>
+
+&help.menu.documentation;
+
+</sect2>
+
+</sect1>
+
+</chapter>
