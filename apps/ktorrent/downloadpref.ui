@@ -394,7 +394,7 @@
                                 <cstring>textLabel1_6</cstring>
                             </property>
                             <property name="text">
-                                <string>Number of upload Q_SLOTS:</string>
+                                <string>Number of upload slots:</string>
                             </property>
                         </widget>
                         <widget class="TQLabel" row="5" column="0">
