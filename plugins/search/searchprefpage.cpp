@@ -159,23 +159,18 @@ namespace kt
  
 	void SearchPrefPageWidget::addDefaultClicked()
 	{
-		TQListViewItem* se = new TQListViewItem(m_engines, "KTorrents", "http://www.ktorrents.com/search.php?lg=0&sourceid=ktorrent&q=FOOBAR&f=0");
-		
-		se = new TQListViewItem(m_engines, "bittorrent.com", "http://search.bittorrent.com/search.jsp?query=FOOBAR");
-     
-		se = new TQListViewItem(m_engines, "isohunt.com", "http://isohunt.com/torrents.php?ihq=FOOBAR&op=and");
-     
+		TQListViewItem* se = new TQListViewItem(m_engines, "isohunt.to", "http://isohunt.to/torrents/?ihq=FOOBAR");    
 		se = new TQListViewItem(m_engines, "mininova.org", "http://www.mininova.org/search.php?search=FOOBAR");
-     
-		se = new TQListViewItem(m_engines, "thepiratebay.org", "http://thepiratebay.org/search.php?q=FOOBAR");
-     
-		se = new TQListViewItem(m_engines, "bitoogle.com", "http://bitoogle.com/search.php?q=FOOBAR");
-     
-		se = new TQListViewItem(m_engines, "bytenova.org", "http://www.bitenova.org/search.php?search=FOOBAR&start=0&start=0&ie=utf-8&oe=utf-8");
-     
-		se = new TQListViewItem(m_engines, "torrentspy.com", "http://torrentspy.com/search.asp?query=FOOBAR");
-
-		se = new TQListViewItem(m_engines, "torrentz.com", "http://www.torrentz.com/search_FOOBAR");
+		se = new TQListViewItem(m_engines, "thepiratebay.se", "http://thepiratebay.se/search.php?q=FOOBAR");
+		se = new TQListViewItem(m_engines, "kickass.to", "http://kickass.to/usearch/FOOBAR");
+		se = new TQListViewItem(m_engines, "torrentfunk.com", "http://www.torrentfunk.com/all/torrents/FOOBAR.html");     
+		se = new TQListViewItem(m_engines, "yourbittorrent.com", "http://yourbittorrent.com/?q=FOOBAR");
+		se = new TQListViewItem(m_engines, "torlock.com", "http://www.torlock.com/all/torrents/FOOBAR.html");
+		se = new TQListViewItem(m_engines, "torrentz.eu", "http://torrentz.eu/search?f=FOOBAR");
+		se = new TQListViewItem(m_engines, "torrentcrazy.com", "http://torrentcrazy.com/s/FOOBAR");
+		se = new TQListViewItem(m_engines, "bitsnoop.com", "http://bitsnoop.com/search/all/FOOBAR/c/d/1/");
+		se = new TQListViewItem(m_engines, "torrents.net", "http://www.torrents.net/find/FOOBAR/");
+		se = new TQListViewItem(m_engines, "btmon.com", "http://www.btmon.com/torrent/?f=FOOBAR");
 	}
  
 	void SearchPrefPageWidget::removeAllClicked()

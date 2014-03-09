@@ -104,15 +104,18 @@ namespace kt
 		TQTextStream out(&fptr);
 		out << "# PLEASE DO NOT MODIFY THIS FILE. Use KTorrent configuration dialog for adding new search engines." << ::endl;
 		out << "# SEARCH ENGINES list" << ::endl;
-		out << "KTorrents http://www.ktorrents.com/search.php?lg=0&sourceid=ktorrent&q=FOOBAR&f=0" << ::endl;
-		out << "bittorrent.com http://www.bittorrent.com/search_result.myt?search=FOOBAR" << ::endl; 
-		out << "isohunt.com http://isohunt.com/torrents.php?ihq=FOOBAR&op=and" << ::endl; 
-		out << "mininova.org http://www.mininova.org/search.php?search=FOOBAR" << ::endl; 
-		out << "thepiratebay.org http://thepiratebay.org/search.php?q=FOOBAR" << ::endl; 
-		out << "bitoogle.com http://bitoogle.com/search.php?q=FOOBAR" << ::endl; 
-		out << "bytenova.org http://www.bitenova.org/search.php?search=FOOBAR&start=0&start=0&ie=utf-8&oe=utf-8" << ::endl; 
-		out << "torrentspy.com http://torrentspy.com/search.asp?query=FOOBAR" << ::endl; 
-		out << "torrentz.com http://www.torrentz.com/search_FOOBAR" << ::endl; 
+		out << "isohunt.to http://isohunt.to/torrents/?ihq=FOOBAR"               << ::endl; 
+		out << "mininova.org http://www.mininova.org/search.php?search=FOOBAR"   << ::endl; 
+		out << "thepiratebay.se http://thepiratebay.se/search.php?q=FOOBAR"      << ::endl; 
+		out << "kickass.to http://kickass.to/usearch/FOOBAR"                        << ::endl;
+		out << "torrentfunk.com http://www.torrentfunk.com/all/torrents/FOOBAR.html" << ::endl;
+		out << "yourbittorrent.com http://yourbittorrent.com/?q=FOOBAR"              << ::endl;
+		out << "torlock.com http://www.torlock.com/all/torrents/FOOBAR.html"         << ::endl;
+		out << "torrentz.eu http://torrentz.eu/search?f=FOOBAR"                     << ::endl;
+		out << "torrentcrazy.com http://torrentcrazy.com/s/FOOBAR"                   << ::endl;
+		out << "bitsnoop.com http://bitsnoop.com/search/all/FOOBAR/c/d/1/"           << ::endl;
+		out << "torrents.net http://www.torrents.net/find/FOOBAR/"                   << ::endl;
+		out << "btmon.com http://www.btmon.com/torrent/?f=FOOBAR"                    << ::endl;
 	}
 		
 	KURL SearchEngineList::getSearchURL(bt::Uint32 engine) const
