@@ -20,5 +20,5 @@ Name[xx]=xxStatsPluginxx
 Name[zh_CN]=统计插件
 Comment=
 Comment[xx]=xxxx
-ServiceTypes=KTorrent/Plugin
+X-TDE-ServiceTypes=KTorrent/Plugin
 X-TDE-Library=ktstatsplugin

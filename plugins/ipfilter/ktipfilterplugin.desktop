@@ -51,6 +51,6 @@ Comment[uk]=Втулок фільтрування IP для KTorrent
 Comment[xx]=xxIP filter plugin for KTorrentxx
 Comment[zh_CN]=KTorrent 的 IP 过滤器插件
 Comment[zh_TW]=KTorrent IP 過濾器外掛程式
-ServiceTypes=KTorrent/Plugin
+X-TDE-ServiceTypes=KTorrent/Plugin
 Type=Service
 X-TDE-Library=ktipfilterplugin

@@ -17,6 +17,6 @@ Name[tr]=Ağ Arayüzü
 Name[uk]=Веб-інтерфейс
 Name[xx]=xxWebInterfacexx
 Name[zh_CN]=Web 界面
-ServiceTypes=KTorrent/Plugin
+X-TDE-ServiceTypes=KTorrent/Plugin
 Type=Service
 X-TDE-Library=ktwebinterfaceplugin

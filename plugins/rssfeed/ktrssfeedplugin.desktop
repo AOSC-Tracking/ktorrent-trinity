@@ -17,6 +17,6 @@ Name[tr]=RSS Besleme Eklentisi
 Name[uk]=Втулок подач RSS
 Name[xx]=xxRssFeedPluginxx
 Name[zh_CN]=RSS 种子插件
-ServiceTypes=KTorrent/Plugin
+X-TDE-ServiceTypes=KTorrent/Plugin
 Type=Service
 X-TDE-Library=ktrssfeedplugin

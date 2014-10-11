@@ -17,6 +17,6 @@ Name[tr]=ZeroConf Eklentisi
 Name[uk]=Втулок ZeroConf
 Name[xx]=xxZeroConfPluginxx
 Name[zh_CN]=ZeroConf 插件
-ServiceTypes=KTorrent/Plugin
+X-TDE-ServiceTypes=KTorrent/Plugin
 Type=Service
 X-TDE-Library=ktzeroconfplugin

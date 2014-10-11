@@ -21,6 +21,6 @@ Name[tr]=UPnP Eklentisi
 Name[xx]=xxUPnPPluginxx
 Name[zh_CN]=UPnP 插件
 Name[zh_TW]=UPnP外掛程式
-ServiceTypes=KTorrent/Plugin
+X-TDE-ServiceTypes=KTorrent/Plugin
 Type=Service
 X-TDE-Library=ktupnpplugin

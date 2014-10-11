@@ -20,6 +20,6 @@ Name[tr]=Tamamlanmamış Dosya Alma Eklentisi
 Name[xx]=xxPartialFileImportPluginxx
 Name[zh_CN]=部分文件导入插件
 Name[zh_TW]=PartialFileImport外掛程式
-ServiceTypes=KTorrent/Plugin
+X-TDE-ServiceTypes=KTorrent/Plugin
 Type=Service
 X-TDE-Library=ktpartfileimportplugin
