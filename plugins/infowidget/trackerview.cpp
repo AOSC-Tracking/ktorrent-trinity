@@ -50,7 +50,7 @@ namespace kt
 		btnUpdate->setIconSet(iload->loadIconSet("apply", TDEIcon::Small));
 		btnAdd->setIconSet(iload->loadIconSet("add", TDEIcon::Small));
 		btnRemove->setIconSet(iload->loadIconSet("remove", TDEIcon::Small));
-		btnRestore->setIconSet(iload->loadIconSet("undo", TDEIcon::Small));
+		btnRestore->setIconSet(iload->loadIconSet("edit-undo", TDEIcon::Small));
 		
 		TQPalette p = lblCurrent->palette();
 		p.setColor(TQPalette::Active,TQColorGroup::Base,p.color(TQPalette::Active,TQColorGroup::Background));
