@@ -26,7 +26,7 @@ namespace kt
 
 	DownloadGroup::DownloadGroup() : Group(i18n("Downloads"),DOWNLOADS_ONLY_GROUP)
 	{
-		setIconByName("down");
+		setIconByName("go-down");
 	}
 
 
@@ -38,7 +38,7 @@ namespace kt
 	{
 		if (!tor)
 			return false;
-		
+
 		return !tor->getStats().completed;
 	}
 

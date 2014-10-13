@@ -164,7 +164,7 @@ namespace kt
 				int ret = KMessageBox::questionYesNoCancel(0,
 						i18n("Do you want to download or save the torrent?"),
 						i18n("Download Torrent"),
-						KGuiItem(i18n("to download", "Download"),"down"),
+						KGuiItem(i18n("to download", "Download"),"go-down"),
 						KStdGuiItem::save());
 			
 				if (ret == KMessageBox::Yes)

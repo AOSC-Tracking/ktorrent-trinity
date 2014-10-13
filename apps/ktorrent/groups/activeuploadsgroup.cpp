@@ -28,7 +28,7 @@ namespace kt
 	ActiveUploadsGroup::ActiveUploadsGroup()
 			: Group(i18n("Active uploads"), UPLOADS_ONLY_GROUP)
 	{
-		setIconByName("up");
+		setIconByName("go-up");
 	}
 
 

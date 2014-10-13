@@ -100,8 +100,8 @@ QueueDialog::QueueDialog(bt::QueueManager* qm, TQWidget *parent, const char *nam
 {
 	TDEIconLoader* iload = TDEGlobal::iconLoader();
 	
-	m_tabs->setTabIconSet(m_tabs->page(0), iload->loadIconSet("down", TDEIcon::Small));
-	m_tabs->setTabIconSet(m_tabs->page(1), iload->loadIconSet("up", TDEIcon::Small));
+	m_tabs->setTabIconSet(m_tabs->page(0), iload->loadIconSet("go-down", TDEIcon::Small));
+	m_tabs->setTabIconSet(m_tabs->page(1), iload->loadIconSet("go-up", TDEIcon::Small));
 	
  	logo->setPixmap(iload->loadIcon("ktqueuemanager", TDEIcon::Desktop));
 	
@@ -114,8 +114,8 @@ QueueDialog::QueueDialog(bt::QueueManager* qm, TQWidget *parent, const char *nam
 	if(seedList->firstChild())
 		seedList->setCurrentItem(seedList->firstChild());
 	
-	btnMoveUp->setPixmap(iload->loadIcon("up", TDEIcon::Small));
-	btnMoveDown->setPixmap(iload->loadIcon("down", TDEIcon::Small));
+	btnMoveUp->setPixmap(iload->loadIcon("go-up", TDEIcon::Small));
+	btnMoveDown->setPixmap(iload->loadIcon("go-down", TDEIcon::Small));
 	
 	this->qman = qm;
 

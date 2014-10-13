@@ -144,7 +144,7 @@ void KTorrentPreferences::removePrefPage(kt::PrefPageInterface* pp)
 
 ///////////////////////////////////////////////////////
 
-DownloadPrefPage::DownloadPrefPage() : kt::PrefPageInterface(i18n("Downloads"), i18n("Download Options"), TDEGlobal::iconLoader()->loadIcon("down", TDEIcon::NoGroup)), dp(0)
+DownloadPrefPage::DownloadPrefPage() : kt::PrefPageInterface(i18n("Downloads"), i18n("Download Options"), TDEGlobal::iconLoader()->loadIcon("go-down", TDEIcon::NoGroup)), dp(0)
 {}
 
 DownloadPrefPage::~ DownloadPrefPage()
