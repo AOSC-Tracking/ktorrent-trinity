@@ -52,7 +52,7 @@ namespace kt
 		setShowSortIndicator(true);
 		
 		context_menu = new TDEPopupMenu(this);
-		preview_id = context_menu->insertItem(SmallIcon("fileopen"),i18n("Open"));
+		preview_id = context_menu->insertItem(SmallIcon("document-open"),i18n("Open"));
 	    context_menu->insertSeparator();
 		first_id = context_menu->insertItem(i18n("Download First"));
 		normal_id = context_menu->insertItem(i18n("Download Normally"));
