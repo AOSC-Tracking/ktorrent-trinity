@@ -73,7 +73,7 @@ namespace kt
 		
 		pref = new InfoWidgetPrefPage(this);
 		getGUI()->addViewListener(this);
-		getGUI()->addToolWidget(status_tab,"info",i18n("Status"),GUIInterface::DOCK_BOTTOM);
+		getGUI()->addToolWidget(status_tab,"application-vnd.tde.info",i18n("Status"),GUIInterface::DOCK_BOTTOM);
 		getGUI()->addToolWidget(file_view,"folder",i18n("Files"),GUIInterface::DOCK_BOTTOM);
 		
 		showPeerView( InfoWidgetPluginSettings::showPeerView() );
