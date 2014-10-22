@@ -42,7 +42,7 @@ namespace kt
 
 	LogViewerPlugin::LogViewerPlugin(TQObject* parent, const char* qt_name, const TQStringList& args)
 	: Plugin(parent, qt_name, args, NAME,i18n("Log Viewer"), AUTHOR, EMAIL,
-			 i18n("Displays ktorrent logging output"),"log")
+			 i18n("Displays ktorrent logging output"),"text-x-log")
 	{
 		lv = 0;
 	}
@@ -55,7 +55,7 @@ namespace kt
 	void LogViewerPlugin::load()
 	{
 		lv = new LogViewer();
-		this->getGUI()->addToolWidget(lv,"log",i18n("Log Viewer"),GUIInterface::DOCK_BOTTOM);
+		this->getGUI()->addToolWidget(lv,"text-x-log",i18n("Log Viewer"),GUIInterface::DOCK_BOTTOM);
 		bt::Log & lg = Globals::instance().getLog(0);
 		lg.addMonitor(lv);
 		pref = new LogPrefPage();
