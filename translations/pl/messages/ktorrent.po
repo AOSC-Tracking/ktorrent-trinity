@@ -7,15 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
 "POT-Creation-Date: 2008-07-08 22:20+0200\n"
-"PO-Revision-Date: 2008-08-13 21:51+0200\n"
-"Last-Translator: Jerzy Trzeciak <artusek@wp.pl>\n"
+"PO-Revision-Date: 2015-03-11 13:43+0100\n"
+"Last-Translator: mcbx\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: apps/ktorrent/ktorrent.cpp:167
 msgid "No incoming connections (possibly firewalled)"
@@ -256,8 +255,7 @@ msgstr "Nie można odznaczyć brakujących plików: %1"
 msgid ""
 "The file where the data is saved of the torrent \"%1\" is missing, do you want "
 "to recreate it?"
-msgstr ""
-"Brakuje pliku z danymi dla torrenta \"%1\". Czy chcesz go utworzyć ponownie?"
+msgstr "Brakuje pliku z danymi dla torrenta \"%1\". Czy chcesz go utworzyć ponownie?"
 
 #: apps/ktorrent/ktorrentcore.cpp:1069
 msgid "Do Not Recreate"
@@ -431,11 +429,11 @@ msgstr "Poprawka paska filtrów"
 
 #: apps/ktorrent/main.cpp:164
 msgid "Non threaded fileview update patch"
-msgstr ""
+msgstr "Aktualizacja listy plików bez wątków"
 
 #: apps/ktorrent/main.cpp:165
 msgid "Optimization to SHA1 hash generation"
-msgstr ""
+msgstr "Optymalizacja generowania skrótów SHA1"
 
 #: apps/ktorrent/main.cpp:166
 msgid "Patch to fix free diskspace calculation on FreeBSD"
@@ -450,8 +448,7 @@ msgid "You must select a file or a folder."
 msgstr "Musisz wybrać plik lub katalog."
 
 #: apps/ktorrent/torrentcreatordlg.cpp:71
-msgid ""
-"You have not added a tracker, are you sure you want to create this torrent ?"
+msgid "You have not added a tracker, are you sure you want to create this torrent ?"
 msgstr "Tracker nie został dodany. Czy na pewno chcesz utworzyć ten torrent?"
 
 #: apps/ktorrent/torrentcreatordlg.cpp:79
@@ -768,8 +765,7 @@ msgstr ""
 
 #: apps/ktorrent/ktorrentview.cpp:286 apps/ktorrent/trayicon.cpp:258
 msgid "Go to Settings -> Configure KTorrent, if you want to change the limits."
-msgstr ""
-"Jeśli chcesz zmienić limity, to przejdź do Ustawienia -> Konfiguracja Ktorrent"
+msgstr "Jeśli chcesz zmienić limity, to przejdź do Ustawienia -> Konfiguracja Ktorrent"
 
 #: apps/ktorrent/ktorrentview.cpp:375
 msgid ""
@@ -792,8 +788,7 @@ msgid "Keep Data"
 msgstr "Zachowaj dane"
 
 #: apps/ktorrent/ktorrentview.cpp:395
-msgid ""
-"You will lose all the downloaded data. Are you sure you want to do this?"
+msgid "You will lose all the downloaded data. Are you sure you want to do this?"
 msgstr "Utracisz wszystkie pobrane dane. Czy na pewno chcesz to zrobić?"
 
 #: apps/ktorrent/ktorrentview.cpp:631
@@ -974,10 +969,8 @@ msgid "There is not enough diskspace available."
 msgstr "Za mało wolnego miejsca na dysku."
 
 #: apps/ktorrent/trayicon.cpp:277
-msgid ""
-"Your disk is running out of space.<br /><b>%1</b> is being downloaded to '%2'."
-msgstr ""
-"Nie ma wolnego miejsca na Twoim dysku.<br /><b>%1</b> jest pobierany do '%2'."
+msgid "Your disk is running out of space.<br /><b>%1</b> is being downloaded to '%2'."
+msgstr "Nie ma wolnego miejsca na Twoim dysku.<br /><b>%1</b> jest pobierany do '%2'."
 
 #: apps/ktorrent/trayicon.cpp:280
 msgid "Torrent has been stopped.<br />"
@@ -1140,8 +1133,7 @@ msgstr "Zezwól na połączenia nieszyfrowane"
 #. i18n: file ./apps/ktorrent/generalpref.ui line 75
 #: rc.cpp:72
 #, no-c-format
-msgid ""
-"If unchecked, you'll be able to connect only to clients supporting encryption."
+msgid "If unchecked, you'll be able to connect only to clients supporting encryption."
 msgstr ""
 "Jeśli ta opcja jest wyłączona, będzie można się łączyć tylko z klientami "
 "stosującymi szyfrowanie."
@@ -1179,8 +1171,7 @@ msgstr "Numer IP użytkownika"
 #: rc.cpp:90
 #, no-c-format
 msgid "Se&nd the tracker a custom IP address or hostname"
-msgstr ""
-"Wysyłaj ustawiony n&umer IP użytkownika lub nazwę komputera do trackera"
+msgstr "Wysyłaj ustawiony n&umer IP użytkownika lub nazwę komputera do trackera"
 
 #. i18n: file ./apps/ktorrent/generalpref.ui line 188
 #: rc.cpp:93
@@ -1412,7 +1403,7 @@ msgstr "Minimalna wielkość wolnego miejsca na dysku:"
 #: rc.cpp:255
 #, no-c-format
 msgid "Don't start"
-msgstr "NIe uruchamiaj"
+msgstr "Nie uruchamiaj"
 
 #. i18n: file ./apps/ktorrent/downloadpref.ui line 145
 #: rc.cpp:258
@@ -2020,8 +2011,7 @@ msgstr "DSCP dla pakietów IP:"
 #: rc.cpp:629
 #, no-c-format
 msgid "Do not use the TDE pro&xy settings for HTTP tracker connections"
-msgstr ""
-"Nie używaj serwera pośredniczącego (pro&xy) TDE dla połączeń HTTP trackera"
+msgstr "Nie używaj serwera pośredniczącego (pro&xy) TDE dla połączeń HTTP trackera"
 
 #. i18n: file ./apps/ktorrent/advancedpref.ui line 586
 #: rc.cpp:632
@@ -2732,8 +2722,7 @@ msgstr "Współdzielenie"
 #. i18n: file ./plugins/infowidget/statustabbase.ui line 487
 #: rc.cpp:1022
 #, no-c-format
-msgid ""
-"Your upload will stop when share ratio gets to this value. Zero means no limit."
+msgid "Your upload will stop when share ratio gets to this value. Zero means no limit."
 msgstr ""
 "Wysyłanie zostanie zatrzymane po osiągnięciu tego limitu. Zero oznacza brak "
 "limitu."
@@ -3143,8 +3132,7 @@ msgstr "Dane:"
 #. i18n: file ./plugins/partfileimport/importdlgbase.ui line 95
 #: rc.cpp:1271
 #, no-c-format
-msgid ""
-"Please specify the torrent and the data already downloaded for that torrent."
+msgid "Please specify the torrent and the data already downloaded for that torrent."
 msgstr "Proszę wskazać torrenta i dane już pobrane dla tego torrenta."
 
 #. i18n: file ./plugins/partfileimport/importdlgbase.ui line 133
@@ -4045,8 +4033,7 @@ msgstr "Nie można utworzyć %1 : %2"
 msgid ""
 "You are already downloading this torrent %1, the list of trackers of both "
 "torrents has been merged."
-msgstr ""
-"Pobierasz już torrent %1. Lista trackerów obu torrentów została połączona."
+msgstr "Pobierasz już torrent %1. Lista trackerów obu torrentów została połączona."
 
 #: libktorrent/torrent/torrentcontrol.cpp:566
 #, c-format
@@ -4542,10 +4529,8 @@ msgid "File Exists"
 msgstr "Plik istnieje"
 
 #: plugins/ipfilter/ipblockingprefpage.cpp:194
-msgid ""
-"Filter file (level1.dat) already exists, do you want to convert it again?"
-msgstr ""
-"Plik filtru (level1.dat) już istnieje. Chcesz przekonwertować go ponownie?"
+msgid "Filter file (level1.dat) already exists, do you want to convert it again?"
+msgstr "Plik filtru (level1.dat) już istnieje. Chcesz przekonwertować go ponownie?"
 
 #: plugins/ipfilter/ipblockingprefpage.cpp:223
 msgid "IPBlocking Filter"
@@ -4784,8 +4769,7 @@ msgid "Open Bandwidth Scheduler"
 msgstr "Otwórz planowanie transferu"
 
 #: plugins/scheduler/schedulerplugin.cpp:130
-msgid ""
-"Bandwidth scheduler is disabled. Go to Preferences->Scheduler to enable it."
+msgid "Bandwidth scheduler is disabled. Go to Preferences->Scheduler to enable it."
 msgstr ""
 "Planowanie transferu jest wyłączone. Ustawienia ->Konfiguracja: Ktorrent -> "
 "Planowanie transferu, żeby je włączyć."
@@ -4836,8 +4820,7 @@ msgid "You must enter the search engine's name and URL"
 msgstr "Musisz podać nazwę wyszukiwarki i URL"
 
 #: plugins/search/searchprefpage.cpp:137
-msgid ""
-"A search engine with the same name already exists. Please use a different name."
+msgid "A search engine with the same name already exists. Please use a different name."
 msgstr "Wyszukiwarka o tej nazwie już istnieje. Proszę użyć innej nazwy."
 
 #: plugins/search/searchprefpage.cpp:146
@@ -4897,7 +4880,6 @@ msgid "Zeroconf"
 msgstr "Zeroconf"
 
 #: plugins/zeroconf/zeroconfplugin.cpp:41
-msgid ""
-"Finds peers running ktorrent on the local network to share torrents with"
-msgstr ""
-"Znajduje partnerów Ktorrent-a w lokalnej sieci i współdzieli z nimi dane"
+msgid "Finds peers running ktorrent on the local network to share torrents with"
+msgstr "Znajduje partnerów Ktorrent-a w lokalnej sieci i współdzieli z nimi dane"
+
