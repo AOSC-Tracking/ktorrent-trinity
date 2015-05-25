@@ -21,7 +21,7 @@
 #include <kurl.h>
 extern "C" {
 	#include <unistd.h>
-	inline ssize_t mycread (int __fd, void *__buf, size_t __nbytes) { read(__fd, __buf, __nbytes); }
+	inline ssize_t mycread (int __fd, void *__buf, size_t __nbytes) { return read(__fd, __buf, __nbytes); }
 };
 #include <sys/socket.h>
 #include <netinet/in.h>
