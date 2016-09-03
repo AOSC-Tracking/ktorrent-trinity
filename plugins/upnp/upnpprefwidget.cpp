@@ -165,7 +165,7 @@ namespace kt
 			{
 				net::Port & p = *i;
 				if (p.forward)
-					r->undoForward(p,false);
+					r->undoForward(p, 0);
 			}
 			
 			TQString def_dev = UPnPPluginSettings::defaultDevice();
@@ -238,7 +238,7 @@ namespace kt
 		try
 		{
 			if (def_router && port.forward)
-				def_router->undoForward(port,false);
+				def_router->undoForward(port, 0);
 		}
 		catch (Error & e)
 		{
