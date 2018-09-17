@@ -12,7 +12,7 @@ ktzeroconfplugin_la_SOURCES = localbrowser.cpp avahiservice.cpp \
 	zeroconfplugin.cpp
 
 ktzeroconfplugin_la_LIBADD = $(LIB_TDECORE) $(LIB_TDEFILE) $(LIB_TDEPARTS) $(LIB_TDEUI)\
-	$(LIB_QT) ../../libktorrent/libktorrent.la
+	$(LIB_TQT) ../../libktorrent/libktorrent.la
 
 noinst_HEADERS = zeroconfplugin.h
 

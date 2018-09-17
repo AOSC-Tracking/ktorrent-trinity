@@ -3,7 +3,7 @@ METASOURCES = AUTO
 
 bin_PROGRAMS = kttorinfo
 kttorinfo_SOURCES = main.cpp
-kttorinfo_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIB_QT) -lDCOP $(LIB_TDECORE) $(LIB_TDEUI) -ltdefx $(LIB_TDEIO) -ltdetexteditor
+kttorinfo_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIB_TQT) -lDCOP $(LIB_TDECORE) $(LIB_TDEUI) -ltdefx $(LIB_TDEIO) -ltdetexteditor
 kttorinfo_LDADD = ../../libktorrent/libktorrent.la $(LIB_TDEPARTS) $(LIB_TDEFILE) \
 	$(LIB_TDEIO)
 

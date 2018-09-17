@@ -9,7 +9,7 @@ ktstatsplugin_la_LDFLAGS = -module $(KDE_PLUGIN) $(LIB_TDECORE) $(LIB_TDEUI) $(L
 ktstatsplugin_la_SOURCES = ChartDrawerData.cc ChartDrawer.cc statsspdwgt.ui statsconwgt.ui StatsSpd.cc StatsCon.cc sprefwgt.ui statspluginsettings.kcfgc \
 		 StatsPluginPrefsPage.cc StatsPluginPrefs.cc statsplugin.cc
 
-ktstatsplugin_la_LIBADD = $(LIB_QT) ../../libktorrent/libktorrent.la
+ktstatsplugin_la_LIBADD = $(LIB_TQT) ../../libktorrent/libktorrent.la
 
 noinst_HEADERS = ChartDrawerData.h ChartDrawer.h StatsSpd.h StatsCon.h StatsPluginPrefsPage.h StatsPluginPrefs.h statsplugin.h 
 

@@ -6,7 +6,7 @@ kde_module_LTLIBRARIES = ktlogviewerplugin.la
 
 # Libs needed by the plugin
 ktlogviewerplugin_la_LIBADD = $(LIB_TDEHTML) $(LIB_TDEPARTS) \
-	../../libktorrent/libktorrent.la $(LIB_QT) \
+	../../libktorrent/libktorrent.la $(LIB_TQT) \
 	$(LIB_TDECORE) $(LIB_TDEUI) $(LIB_TDEFILE)
 
 

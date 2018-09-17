@@ -1613,19 +1613,19 @@ AC_PATH_QT_MOC_UIC
 KDE_CHECK_QT_JPEG
 
 if test "x$kde_use_qt_emb" != "xyes" && test "x$kde_use_qt_mac" != "xyes"; then
-LIB_QT="$kde_int_qt $LIBJPEG_QT "'$(LIBZ) $(LIBPNG) -lXext $(LIB_X11) $(LIBSM)'
+LIB_TQT="$kde_int_qt $LIBJPEG_QT "'$(LIBZ) $(LIBPNG) -lXext $(LIB_X11) $(LIBSM)'
 else
-LIB_QT="$kde_int_qt $LIBJPEG_QT "'$(LIBZ) $(LIBPNG)'
+LIB_TQT="$kde_int_qt $LIBJPEG_QT "'$(LIBZ) $(LIBPNG)'
 fi
-test -z "$KDE_MT_LIBS" || LIB_QT="$LIB_QT $KDE_MT_LIBS"
+test -z "$KDE_MT_LIBS" || LIB_TQT="$LIB_TQT $KDE_MT_LIBS"
 for a in $qt_libdir/lib`echo ${kde_int_qt} | sed 's,^-l,,'`_incremental.*; do
   if test -e "$a"; then
-     LIB_QT="$LIB_QT ${kde_int_qt}_incremental"
+     LIB_TQT="$LIB_TQT ${kde_int_qt}_incremental"
      break
   fi
 done
 
-AC_SUBST(LIB_QT)
+AC_SUBST(LIB_TQT)
 AC_SUBST(LIB_QPE)
 
 AC_SUBST(kde_qtver)
@@ -2137,7 +2137,7 @@ elif test $kde_qtver = 2; then
    AC_SUBST(LIB_TDEPARTS, "-ltdeparts")
    AC_SUBST(LIB_TDEPRINT, "-ltdeprint")
 else
-   AC_SUBST(LIB_TDECORE, "-ltdecore -lXext $(LIB_QT)")
+   AC_SUBST(LIB_TDECORE, "-ltdecore -lXext $(LIB_TQT)")
    AC_SUBST(LIB_TDEUI, "-ltdeui $(LIB_TDECORE)")
    AC_SUBST(LIB_KFM, "-lkfm $(LIB_TDECORE)")
    AC_SUBST(LIB_TDEFILE, "-ltdefile $(LIB_KFM) $(LIB_TDEUI)")
@@ -5482,8 +5482,8 @@ AC_DEFUN([AC_PATH_QTOPIA],
 
   AC_MSG_CHECKING([for Qtopia])
 
-  LIB_QTOPIA="-lqpe"
-  AC_SUBST(LIB_QTOPIA)
+  LIB_TQTOPIA="-lqpe"
+  AC_SUBST(LIB_TQTOPIA)
 
   kde_qtopia_dirs="$QPEDIR /opt/Qtopia"
 
@@ -5530,7 +5530,7 @@ is required.])
 
   CXXFLAGS="$CXXFLAGS -I$qtopia_incdir $all_includes"
   LDFLAGS="$LDFLAGS $QT_LDFLAGS $all_libraries $USER_LDFLAGS $KDE_MT_LDFLAGS"
-  LIBS="$LIBS $LIB_QTOPIA $LIBQT"
+  LIBS="$LIBS $LIB_TQTOPIA $LIBQT"
 
   cat > conftest.$ac_ext <<EOF
 #include "confdefs.h"
