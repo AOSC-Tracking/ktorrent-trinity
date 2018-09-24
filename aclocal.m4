@@ -311,7 +311,7 @@ dnl Find the meta object compiler and the ui compiler in the PATH,
 dnl in $QTDIR/bin, and some more usual places
 dnl ------------------------------------------------------------------------
 dnl
-AC_DEFUN([AC_PATH_QT_MOC_UIC],
+AC_DEFUN([AC_PATH_TQT_MOC_UIC],
 [
    AC_REQUIRE([KDE_CHECK_PERL])
    qt_bindirs=""
@@ -1319,7 +1319,7 @@ dnl $(QT_LDFLAGS) will be -Lqtliblocation (if needed)
 dnl and $(QT_INCLUDES) will be -Iqthdrlocation (if needed)
 dnl ------------------------------------------------------------------------
 dnl
-AC_DEFUN([AC_PATH_QT_1_3],
+AC_DEFUN([AC_PATH_TQT_1_3],
 [
 AC_REQUIRE([K_PATH_X])
 AC_REQUIRE([KDE_USE_QT])
@@ -1608,7 +1608,7 @@ test -z "$KDE_MT_LDFLAGS" || all_libraries="$all_libraries $KDE_MT_LDFLAGS"
 
 AC_SUBST(QT_INCLUDES)
 AC_SUBST(QT_LDFLAGS)
-AC_PATH_QT_MOC_UIC
+AC_PATH_TQT_MOC_UIC
 
 KDE_CHECK_QT_JPEG
 
@@ -1631,14 +1631,14 @@ AC_SUBST(LIB_QPE)
 AC_SUBST(kde_qtver)
 ])
 
-AC_DEFUN([AC_PATH_QT],
+AC_DEFUN([AC_PATH_TQT],
 [
-AC_PATH_QT_1_3
+AC_PATH_TQT_1_3
 ])
 
 AC_DEFUN([KDE_CHECK_UIC_PLUGINS],
 [
-AC_REQUIRE([AC_PATH_QT_MOC_UIC])
+AC_REQUIRE([AC_PATH_TQT_MOC_UIC])
 
 if test x$ac_uic_supports_libpath = xyes; then
 
@@ -1796,7 +1796,7 @@ dnl
 AC_DEFUN([AC_BASE_PATH_KDE],
 [
 AC_REQUIRE([KDE_CHECK_STL])
-AC_REQUIRE([AC_PATH_QT])dnl
+AC_REQUIRE([AC_PATH_TQT])dnl
 AC_REQUIRE([KDE_CHECK_LIB64])
 
 AC_CHECK_RPATH
@@ -3430,7 +3430,7 @@ AC_DEFUN([KDE_CHECK_VISIBILITY_GCC_BUG],
 
 AC_DEFUN([KDE_ENABLE_HIDDEN_VISIBILITY],
 [
-  AC_BEFORE([AC_PATH_QT_1_3], [KDE_ENABLE_HIDDEN_VISIBILITY])
+  AC_BEFORE([AC_PATH_TQT_1_3], [KDE_ENABLE_HIDDEN_VISIBILITY])
 
   AC_MSG_CHECKING([grepping for visibility push/pop in headers])
 
@@ -5461,7 +5461,7 @@ fi
 AC_SUBST(LEXLIB)
 ])
 
-AC_DEFUN([AC_PATH_QTOPIA],
+AC_DEFUN([AC_PATH_TQTOPIA],
 [
   dnl TODO: use AC_CACHE_VAL
 
@@ -5478,7 +5478,7 @@ AC_DEFUN([AC_PATH_QTOPIA],
   qtopia_minver="$qtopia_minver_maj$qtopia_minver_min$qtopia_minver_pat"
   qtopia_minverstr="$qtopia_minver_maj.$qtopia_minver_min.$qtopia_minver_pat"
 
-  AC_REQUIRE([AC_PATH_QT])
+  AC_REQUIRE([AC_PATH_TQT])
 
   AC_MSG_CHECKING([for Qtopia])
 
