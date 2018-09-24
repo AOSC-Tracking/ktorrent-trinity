@@ -1089,7 +1089,7 @@ AC_SUBST(LIB_XEXT)
 
 AC_DEFUN([KDE_PRINT_QT_PROGRAM],
 [
-AC_REQUIRE([KDE_USE_QT])
+AC_REQUIRE([KDE_USE_TQT])
 cat > conftest.$ac_ext <<EOF
 #include "confdefs.h"
 #include <qglobal.h>
@@ -1150,7 +1150,7 @@ cat >> conftest.$ac_ext <<EOF
 EOF
 ])
 
-AC_DEFUN([KDE_USE_QT],
+AC_DEFUN([KDE_USE_TQT],
 [
 if test -z "$1"; then
   # Current default Qt version: 3.3
@@ -1246,7 +1246,7 @@ fi
 
 AC_DEFUN([KDE_CHECK_QT_DIRECT],
 [
-AC_REQUIRE([KDE_USE_QT])
+AC_REQUIRE([KDE_USE_TQT])
 AC_MSG_CHECKING([if Qt compiles without flags])
 AC_CACHE_VAL(kde_cv_qt_direct,
 [
@@ -1310,7 +1310,7 @@ dnl
 AC_DEFUN([AC_PATH_TQT_1_3],
 [
 AC_REQUIRE([K_PATH_X])
-AC_REQUIRE([KDE_USE_QT])
+AC_REQUIRE([KDE_USE_TQT])
 AC_REQUIRE([KDE_CHECK_LIB64])
 
 dnl ------------------------------------------------------------------------
