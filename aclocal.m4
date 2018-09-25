@@ -1270,7 +1270,7 @@ ac_cxxflags_safe="$CXXFLAGS"
 ac_ldflags_safe="$LDFLAGS"
 ac_libs_safe="$LIBS"
 
-CXXFLAGS="$CXXFLAGS -I$qt_includes"
+CXXFLAGS="$CXXFLAGS -I$tqt_includes"
 LDFLAGS="$LDFLAGS $X_LDFLAGS"
 if test "x$kde_use_qt_emb" != "xyes" && test "x$kde_use_qt_mac" != "xyes"; then
 LIBS="$LIBQT -lXext -lX11 $LIBSOCKET"
@@ -1432,12 +1432,12 @@ AC_MSG_CHECKING([for Qt])
 if test "x$kde_use_qt_emb" != "xyes" && test "x$kde_use_qt_mac" != "xyes"; then
 LIBQT="$LIBQT $X_PRE_LIBS -lXext -lX11 $LIBSM $LIBSOCKET"
 fi
-ac_qt_includes=NO ac_qt_libraries=NO ac_qt_bindir=NO
+ac_tqt_includes=NO ac_qt_libraries=NO ac_qt_bindir=NO
 qt_libraries=""
-qt_includes=""
+tqt_includes=""
 AC_ARG_WITH(qt-dir,
     AC_HELP_STRING([--with-qt-dir=DIR],[where the root of Qt is installed ]),
-    [  ac_qt_includes="$withval"/include
+    [  ac_tqt_includes="$withval"/include
        ac_qt_libraries="$withval"/lib${tdelibsuff}
        ac_qt_bindir="$withval"/bin
     ])
@@ -1445,7 +1445,7 @@ AC_ARG_WITH(qt-dir,
 AC_ARG_WITH(qt-includes,
     AC_HELP_STRING([--with-qt-includes=DIR],[where the Qt includes are. ]),
     [
-       ac_qt_includes="$withval"
+       ac_tqt_includes="$withval"
     ])
 
 kde_qt_libs_given=no
@@ -1472,8 +1472,8 @@ if test "$PKG_CONFIG" != "no" ; then
   fi
 fi
 qt_incdirs="$QTINC $qt_incdirs /usr/local/qt/include /usr/include/qt /usr/include /usr/X11R6/include/X11/qt /usr/X11R6/include/qt /usr/X11R6/include/qt2 /usr/include/qt3 $x_includes"
-if test ! "$ac_qt_includes" = "NO"; then
-   qt_incdirs="$ac_qt_includes $qt_incdirs"
+if test ! "$ac_tqt_includes" = "NO"; then
+   qt_incdirs="$ac_tqt_includes $qt_incdirs"
 fi
 
 if test "$kde_qtver" != "1"; then
@@ -1483,7 +1483,7 @@ else
 fi
 
 AC_FIND_FILE($kde_qt_header, $qt_incdirs, qt_incdir)
-ac_qt_includes="$qt_incdir"
+ac_tqt_includes="$qt_incdir"
 
 qt_libdirs=""
 for dir in $kde_qt_dirs; do
@@ -1544,11 +1544,11 @@ LDFLAGS="$ac_ldflags_safe"
 LIBS="$ac_libs_safe"
 
 AC_LANG_RESTORE
-if test "$ac_qt_includes" = NO || test "$ac_qt_libraries" = NO; then
+if test "$ac_tqt_includes" = NO || test "$ac_qt_libraries" = NO; then
   ac_cv_have_qt="have_qt=no"
   ac_qt_notfound=""
   missing_qt_mt=""
-  if test "$ac_qt_includes" = NO; then
+  if test "$ac_tqt_includes" = NO; then
     if test "$ac_qt_libraries" = NO; then
       ac_qt_notfound="(headers and libraries)";
     else
@@ -1577,11 +1577,11 @@ if test "$have_qt" != yes; then
   AC_MSG_RESULT([$have_qt]);
 else
   ac_cv_have_qt="have_qt=yes \
-    ac_qt_includes=$ac_qt_includes ac_qt_libraries=$ac_qt_libraries"
-  AC_MSG_RESULT([libraries $ac_qt_libraries, headers $ac_qt_includes $USING_QT_MT])
+    ac_tqt_includes=$ac_tqt_includes ac_qt_libraries=$ac_qt_libraries"
+  AC_MSG_RESULT([libraries $ac_qt_libraries, headers $ac_tqt_includes $USING_QT_MT])
 
   qt_libraries="$ac_qt_libraries"
-  qt_includes="$ac_qt_includes"
+  tqt_includes="$ac_tqt_includes"
 fi
 
 if test ! "$kde_qt_libs_given" = "yes" && test ! "$kde_qtver" = 3; then
@@ -1589,12 +1589,12 @@ if test ! "$kde_qt_libs_given" = "yes" && test ! "$kde_qtver" = 3; then
 fi
 
 AC_SUBST(qt_libraries)
-AC_SUBST(qt_includes)
+AC_SUBST(tqt_includes)
 
-if test "$qt_includes" = "$x_includes" || test -z "$qt_includes"; then
+if test "$tqt_includes" = "$x_includes" || test -z "$tqt_includes"; then
  TQT_INCLUDES=""
 else
- TQT_INCLUDES="-I$qt_includes"
+ TQT_INCLUDES="-I$tqt_includes"
  all_includes="$TQT_INCLUDES $all_includes"
 fi
 
@@ -1829,7 +1829,7 @@ fi
 
 if test -z "$1"; then
 
-kde_incdirs="$kde_libs_prefix/include /usr/lib/kde/include /usr/local/kde/include /usr/local/include /usr/kde/include /usr/include/tde /usr/include /opt/kde3/include /opt/kde/include $x_includes $qt_includes"
+kde_incdirs="$kde_libs_prefix/include /usr/lib/kde/include /usr/local/kde/include /usr/local/include /usr/kde/include /usr/include/tde /usr/include /opt/kde3/include /opt/kde/include $x_includes $tqt_includes"
 test -n "$TDEDIR" && kde_incdirs="$TDEDIR/include $TDEDIR/include/tde $TDEDIR $kde_incdirs"
 kde_incdirs="$ac_kde_includes $kde_incdirs"
 AC_FIND_FILE($kde_check_header, $kde_incdirs, kde_incdir)
@@ -1912,7 +1912,7 @@ fi
 AC_SUBST(kde_libraries)
 AC_SUBST(kde_includes)
 
-if test "$kde_includes" = "$x_includes" || test "$kde_includes" = "$qt_includes"  || test "$kde_includes" = "/usr/include"; then
+if test "$kde_includes" = "$x_includes" || test "$kde_includes" = "$tqt_includes"  || test "$kde_includes" = "/usr/include"; then
  KDE_INCLUDES=""
 else
  KDE_INCLUDES="-I$kde_includes"
