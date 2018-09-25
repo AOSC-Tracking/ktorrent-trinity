@@ -1304,7 +1304,7 @@ fi
 dnl ------------------------------------------------------------------------
 dnl Try to find the Qt headers and libraries.
 dnl $(QT_LDFLAGS) will be -Lqtliblocation (if needed)
-dnl and $(QT_INCLUDES) will be -Iqthdrlocation (if needed)
+dnl and $(TQT_INCLUDES) will be -Iqthdrlocation (if needed)
 dnl ------------------------------------------------------------------------
 dnl
 AC_DEFUN([AC_PATH_TQT_1_3],
@@ -1580,10 +1580,10 @@ AC_SUBST(qt_libraries)
 AC_SUBST(qt_includes)
 
 if test "$qt_includes" = "$x_includes" || test -z "$qt_includes"; then
- QT_INCLUDES=""
+ TQT_INCLUDES=""
 else
- QT_INCLUDES="-I$qt_includes"
- all_includes="$QT_INCLUDES $all_includes"
+ TQT_INCLUDES="-I$qt_includes"
+ all_includes="$TQT_INCLUDES $all_includes"
 fi
 
 if test "$qt_libraries" = "$x_libraries" || test -z "$qt_libraries"; then
@@ -1594,7 +1594,7 @@ else
 fi
 test -z "$KDE_MT_LDFLAGS" || all_libraries="$all_libraries $KDE_MT_LDFLAGS"
 
-AC_SUBST(QT_INCLUDES)
+AC_SUBST(TQT_INCLUDES)
 AC_SUBST(QT_LDFLAGS)
 AC_PATH_TQT_MOC_UIC
 
