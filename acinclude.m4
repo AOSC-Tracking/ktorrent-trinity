@@ -296,7 +296,7 @@ EOT
 
 dnl ------------------------------------------------------------------------
 dnl Find the meta object compiler and the ui compiler in the PATH,
-dnl in $QTDIR/bin, and some more usual places
+dnl in $TQTDIR/bin, and some more usual places
 dnl ------------------------------------------------------------------------
 dnl
 AC_DEFUN([AC_PATH_TQT_MOC_UIC],
@@ -1223,10 +1223,10 @@ else
 fi
 
 if test $kde_qtver = 4; then
-  kde_qt_dirs="$QTDIR /usr/lib/qt4 /usr/lib/qt /usr/share/qt4"
+  kde_qt_dirs="$TQTDIR /usr/lib/qt4 /usr/lib/qt /usr/share/qt4"
 fi
 if test $kde_qtver = 3; then
-  kde_qt_dirs="$QTDIR /usr/lib/qt3 /usr/lib/qt /usr/share/qt3 /usr/lib${tdelibsuff}/qt-3.3"
+  kde_qt_dirs="$TQTDIR /usr/lib/qt3 /usr/lib/qt /usr/share/qt3 /usr/lib${tdelibsuff}/qt-3.3"
   if test -z "$PKG_CONFIG"; then
       AC_PATH_PROG(PKG_CONFIG, pkg-config, no)
   fi
@@ -1237,10 +1237,10 @@ if test $kde_qtver = 3; then
   fi
 fi
 if test $kde_qtver = 2; then
-   kde_qt_dirs="$QTDIR /usr/lib/qt2 /usr/lib/qt"
+   kde_qt_dirs="$TQTDIR /usr/lib/qt2 /usr/lib/qt"
 fi
 if test $kde_qtver = 1; then
-   kde_qt_dirs="$QTDIR /usr/lib/qt"
+   kde_qt_dirs="$TQTDIR /usr/lib/qt"
 fi
 ])
 
@@ -5561,10 +5561,10 @@ if test "${with_qt_dir+set}" = set; then
   kde_qtdir="$with_qt_dir"
 fi
 
-AC_FIND_FILE(qsql.html, [ $kde_qtdir/doc/html $QTDIR/doc/html /usr/share/doc/packages/qt3/html /usr/lib/qt/doc /usr/lib/qt3/doc /usr/lib/qt3/doc/html /usr/doc/qt3/html /usr/doc/qt3 /usr/share/doc/qt3-doc /usr/share/qt3/doc/html /usr/X11R6/share/doc/qt/html ], QTDOCDIR)
-AC_MSG_RESULT($QTDOCDIR)
+AC_FIND_FILE(qsql.html, [ $kde_qtdir/doc/html $TQTDIR/doc/html /usr/share/doc/packages/qt3/html /usr/lib/qt/doc /usr/lib/qt3/doc /usr/lib/qt3/doc/html /usr/doc/qt3/html /usr/doc/qt3 /usr/share/doc/qt3-doc /usr/share/qt3/doc/html /usr/X11R6/share/doc/qt/html ], TQTDOCDIR)
+AC_MSG_RESULT($TQTDOCDIR)
 
-AC_SUBST(QTDOCDIR)
+AC_SUBST(TQTDOCDIR)
 
 KDE_FIND_PATH(dot, DOT, [], [])
 if test -n "$DOT"; then
@@ -5582,7 +5582,7 @@ AC_SUBST(DOXYGEN_PROJECT_NAME)
 AC_SUBST(DOXYGEN_PROJECT_NUMBER)
 
 KDE_HAS_DOXYGEN=no
-if test -n "$DOXYGEN" && test -x "$DOXYGEN" && test -f $QTDOCDIR/qsql.html; then
+if test -n "$DOXYGEN" && test -x "$DOXYGEN" && test -f $TQTDOCDIR/qsql.html; then
   KDE_HAS_DOXYGEN=yes
 fi
 AC_SUBST(KDE_HAS_DOXYGEN)
