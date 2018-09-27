@@ -371,7 +371,7 @@ AC_DEFUN([KDE_1_CHECK_PATHS],
   fi
 
 AC_MSG_CHECKING([for KDE libraries installed])
-ac_link='$LIBTOOL_SHELL --silent --mode=link ${CXX-g++} -o conftest $CXXFLAGS $all_includes $CPPFLAGS $LDFLAGS $all_libraries conftest.$ac_ext $LIBS -ltdecore $LIBQT $KDE_TEST_RPATH 1>&5'
+ac_link='$LIBTOOL_SHELL --silent --mode=link ${CXX-g++} -o conftest $CXXFLAGS $all_includes $CPPFLAGS $LDFLAGS $all_libraries conftest.$ac_ext $LIBS -ltdecore $LIBTQT $KDE_TEST_RPATH 1>&5'
 
 if AC_TRY_EVAL(ac_link) && test -s conftest; then
   AC_MSG_RESULT(yes)
@@ -1261,9 +1261,9 @@ ac_libs_safe="$LIBS"
 CXXFLAGS="$CXXFLAGS -I$tqt_includes"
 LDFLAGS="$LDFLAGS $X_LDFLAGS"
 if test "x$kde_use_qt_emb" != "xyes" && test "x$kde_use_qt_mac" != "xyes"; then
-LIBS="$LIBQT -lXext -lX11 $LIBSOCKET"
+LIBS="$LIBTQT -lXext -lX11 $LIBSOCKET"
 else
-LIBS="$LIBQT $LIBSOCKET"
+LIBS="$LIBTQT $LIBSOCKET"
 fi
 LD_LIBRARY_PATH=
 export LD_LIBRARY_PATH
@@ -1303,7 +1303,7 @@ fi
 
 dnl ------------------------------------------------------------------------
 dnl Try to find the Qt headers and libraries.
-dnl $(QT_LDFLAGS) will be -Lqtliblocation (if needed)
+dnl $(QT_LDFLAGS) will be -Ltqtliblocation (if needed)
 dnl and $(TQT_INCLUDES) will be -Iqthdrlocation (if needed)
 dnl ------------------------------------------------------------------------
 dnl
@@ -1356,11 +1356,11 @@ kde_qt_was_given=yes
 dnl ------------------------------------------------------------------------
 dnl If we haven't been told how to link to Qt, we work it out for ourselves.
 dnl ------------------------------------------------------------------------
-if test -z "$LIBQT_GLOB"; then
+if test -z "$LIBTQT_GLOB"; then
   if test "x$kde_use_qt_emb" = "xyes"; then
-    LIBQT_GLOB="libqte.*"
+    LIBTQT_GLOB="libtqte.*"
   else
-    LIBQT_GLOB="libqt.*"
+    LIBTQT_GLOB="libtqt.*"
   fi
 fi
 
@@ -1368,12 +1368,12 @@ dnl ------------------------------------------------------------
 dnl If we got --enable-embedded then adjust the Qt library name.
 dnl ------------------------------------------------------------
 if test "x$kde_use_qt_emb" = "xyes"; then
-  qtlib="qte"
+  tqtlib="qte"
 else
-  qtlib="qt"
+  tqtlib="qt"
 fi
 
-kde_int_qt="-l$qtlib"
+kde_int_qt="-l$tqtlib"
 
 if test -z "$LIBQPE"; then
 dnl ------------------------------------------------------------
@@ -1395,30 +1395,30 @@ dnl If we got --enable-qt-mt then adjust the Qt library name for the host.
 dnl ------------------------------------------------------------------------
 
 if test "x$kde_use_qt_mt" = "xyes"; then
-  LIBQT="-l$qtlib-mt"
-  kde_int_qt="-l$qtlib-mt"
-  LIBQT_GLOB="lib$qtlib-mt.*"
+  LIBTQT="-l$tqtlib-mt"
+  kde_int_qt="-l$tqtlib-mt"
+  LIBTQT_GLOB="lib$tqtlib-mt.*"
   USING_QT_MT="using -mt"
 else
-  LIBQT="-l$qtlib"
+  LIBTQT="-l$tqtlib"
 fi
 
 if test $kde_qtver != 1; then
 
   AC_REQUIRE([AC_FIND_PNG])
   AC_REQUIRE([AC_FIND_JPEG])
-  LIBQT="$LIBQT $LIBPNG $LIBJPEG"
+  LIBTQT="$LIBTQT $LIBPNG $LIBJPEG"
 fi
 
 if test $kde_qtver = 3; then
   AC_REQUIRE([KDE_CHECK_LIBDL])
-  LIBQT="$LIBQT $LIBDL"
+  LIBTQT="$LIBTQT $LIBDL"
 fi
 
 AC_MSG_CHECKING([for Qt])
 
 if test "x$kde_use_qt_emb" != "xyes" && test "x$kde_use_qt_mac" != "xyes"; then
-LIBQT="$LIBQT $X_PRE_LIBS -lXext -lX11 $LIBSM $LIBSOCKET"
+LIBTQT="$LIBTQT $X_PRE_LIBS -lXext -lX11 $LIBSM $LIBSOCKET"
 fi
 ac_tqt_includes=NO ac_qt_libraries=NO ac_qt_bindir=NO
 qt_libraries=""
@@ -1485,21 +1485,21 @@ if test "$PKG_CONFIG" != "no" ; then
       qt_libdirs="$qt_incdirs `$PKG_CONFIG --variable=libdir qt-mt`"
   fi
 fi
-qt_libdirs="$QTLIB $qt_libdirs /usr/X11R6/lib /usr/lib /usr/local/qt/lib $x_libraries"
+qt_libdirs="$TQTLIB $qt_libdirs /usr/X11R6/lib /usr/lib /usr/local/qt/lib $x_libraries"
 if test ! "$ac_qt_libraries" = "NO"; then
   qt_libdir=$ac_qt_libraries
 else
   qt_libdirs="$ac_qt_libraries $qt_libdirs"
-  # if the Qt was given, the chance is too big that libqt.* doesn't exist
+  # if the Qt was given, the chance is too big that libtqt.* doesn't exist
   qt_libdir=NONE
   for dir in $qt_libdirs; do
-    try="ls -1 $dir/${LIBQT_GLOB}"
+    try="ls -1 $dir/${LIBTQT_GLOB}"
     if test -n "`$try 2> /dev/null`"; then qt_libdir=$dir; break; else echo "tried $dir" >&AC_FD_CC ; fi
   done
 fi
 for a in $qt_libdir/lib`echo ${kde_int_qt} | sed 's,^-l,,'`_incremental.*; do
   if test -e "$a"; then
-    LIBQT="$LIBQT ${kde_int_qt}_incremental"
+    LIBTQT="$LIBTQT ${kde_int_qt}_incremental"
     break
   fi
 done
@@ -1515,7 +1515,7 @@ ac_libs_safe="$LIBS"
 
 CXXFLAGS="$CXXFLAGS -I$qt_incdir $all_includes"
 LDFLAGS="$LDFLAGS -L$qt_libdir $all_libraries $USER_LDFLAGS $KDE_MT_LDFLAGS"
-LIBS="$LIBS $LIBQT $KDE_MT_LIBS"
+LIBS="$LIBS $LIBTQT $KDE_MT_LIBS"
 
 KDE_PRINT_QT_PROGRAM
 
@@ -1546,9 +1546,9 @@ if test "$ac_tqt_includes" = NO || test "$ac_qt_libraries" = NO; then
     if test "x$kde_use_qt_mt" = "xyes"; then
        missing_qt_mt="
 Make sure that you have compiled Qt with thread support!"
-       ac_qt_notfound="(library $qtlib-mt)";
+       ac_qt_notfound="(library $tqtlib-mt)";
     else
-       ac_qt_notfound="(library $qtlib)";
+       ac_qt_notfound="(library $tqtlib)";
     fi
   fi
 
@@ -2053,7 +2053,7 @@ AC_CACHE_VAL(kde_cv_have_kdeqtaddon,
  kde_libs_safe="$LIBS"
  kde_cxxflags_safe="$CXXFLAGS"
 
- LIBS="-lkde-qt-addon $LIBQT $LIBS"
+ LIBS="-lkde-qt-addon $LIBTQT $LIBS"
  CXXFLAGS="$CXXFLAGS -I$prefix/include -I$prefix/include/tde $all_includes"
  LDFLAGS="$LDFLAGS $all_libraries $USER_LDFLAGS"
 
@@ -2614,7 +2614,7 @@ AC_CACHE_VAL(kde_cv_qt_jpeg,
 AC_LANG_SAVE
 AC_LANG_CPLUSPLUS
 ac_save_LIBS="$LIBS"
-LIBS="$all_libraries $USER_LDFLAGS $LIBQT"
+LIBS="$all_libraries $USER_LDFLAGS $LIBTQT"
 LIBS=`echo $LIBS | sed "s/$LIBJPEG//"`
 ac_save_CXXFLAGS="$CXXFLAGS"
 CXXFLAGS="$CXXFLAGS $all_includes $USER_INCLUDES"
@@ -4711,7 +4711,7 @@ AC_LANG_SAVE
 AC_LANG_CPLUSPLUS
 ac_save_LIBS="$LIBS"
 ac_save_CXXFLAGS="$CXXFLAGS"
-LIBS="$all_libraries -lqimgio -lpng -lz $LIBJPEG $LIBQT"
+LIBS="$all_libraries -lqimgio -lpng -lz $LIBJPEG $LIBTQT"
 CXXFLAGS="$CXXFLAGS -I$qt_incdir $all_includes"
 AC_TRY_RUN(dnl
 [
@@ -5518,7 +5518,7 @@ is required.])
 
   CXXFLAGS="$CXXFLAGS -I$qtopia_incdir $all_includes"
   LDFLAGS="$LDFLAGS $QT_LDFLAGS $all_libraries $USER_LDFLAGS $KDE_MT_LDFLAGS"
-  LIBS="$LIBS $LIB_TQTOPIA $LIBQT"
+  LIBS="$LIBS $LIB_TQTOPIA $LIBTQT"
 
   cat > conftest.$ac_ext <<EOF
 #include "confdefs.h"
