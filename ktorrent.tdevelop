@@ -284,7 +284,7 @@
       <inlineSet>true</inlineSet>
     </creategettersetter>
     <designerintegration>
-      <qtdesigner/>
+      <tqtdesigner/>
     </designerintegration>
     <qt>
       <used>true</used>

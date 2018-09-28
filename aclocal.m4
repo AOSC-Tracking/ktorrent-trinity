@@ -2059,7 +2059,7 @@ For more details about this problem, look at the end of config.log.])
 AC_DEFUN([KDE_CHECK_KDEQTADDON],
 [
 AC_MSG_CHECKING(for kde-qt-addon)
-AC_CACHE_VAL(kde_cv_have_kdeqtaddon,
+AC_CACHE_VAL(kde_cv_have_kdetqtaddon,
 [
  kde_ldflags_safe="$LDFLAGS"
  kde_libs_safe="$LIBS"
@@ -2075,8 +2075,8 @@ AC_CACHE_VAL(kde_cv_have_kdeqtaddon,
  [
    QDomDocument doc;
  ],
-  kde_cv_have_kdeqtaddon=yes,
-  kde_cv_have_kdeqtaddon=no
+  kde_cv_have_kdetqtaddon=yes,
+  kde_cv_have_kdetqtaddon=no
  )
 
  LDFLAGS=$kde_ldflags_safe
@@ -2084,9 +2084,9 @@ AC_CACHE_VAL(kde_cv_have_kdeqtaddon,
  CXXFLAGS=$kde_cxxflags_safe
 ])
 
-AC_MSG_RESULT($kde_cv_have_kdeqtaddon)
+AC_MSG_RESULT($kde_cv_have_kdetqtaddon)
 
-if test "$kde_cv_have_kdeqtaddon" = "no"; then
+if test "$kde_cv_have_kdetqtaddon" = "no"; then
   AC_MSG_ERROR([Can't find libkde-qt-addon. You need to install it first.
 It is a separate package (and CVS module) named kde-qt-addon.])
 fi
