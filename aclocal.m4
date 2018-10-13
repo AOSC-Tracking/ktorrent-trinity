@@ -2909,34 +2909,6 @@ AC_DEFUN([AC_CHECK_BOOL],
   AC_DEFINE_UNQUOTED(HAVE_BOOL, 1, [You _must_ have bool])
 ])
 
-AC_DEFUN([AC_CHECK_GNU_EXTENSIONS],
-[
-AC_MSG_CHECKING(if you need GNU extensions)
-AC_CACHE_VAL(ac_cv_gnu_extensions,
-[
-cat > conftest.c << EOF
-#include <features.h>
-
-#ifdef __GNU_LIBRARY__
-yes
-#endif
-EOF
-
-if (eval "$ac_cpp conftest.c") 2>&5 |
-  egrep "yes" >/dev/null 2>&1; then
-  rm -rf conftest*
-  ac_cv_gnu_extensions=yes
-else
-  ac_cv_gnu_extensions=no
-fi
-])
-
-AC_MSG_RESULT($ac_cv_gnu_extensions)
-if test "$ac_cv_gnu_extensions" = "yes"; then
-  AC_DEFINE_UNQUOTED(_GNU_SOURCE, 1, [Define if you need to use the GNU extensions])
-fi
-])
-
 AC_DEFUN([KDE_CHECK_COMPILER_FLAG],
 [
 AC_MSG_CHECKING([whether $CXX supports -$1])
@@ -3234,8 +3206,8 @@ AC_DEFUN([AC_CHECK_COMPILERS],
         CXXFLAGS="-Wall -W -Wpointer-arith $CXXFLAGS"
         case $host in
           *-*-linux-gnu)	
-            CFLAGS="-std=iso9899:1990 -W -Wall -Wchar-subscripts -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE $CFLAGS"
-            CXXFLAGS="-ansi -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -Wcast-align -Wchar-subscripts $CXXFLAGS"
+            CFLAGS="-std=iso9899:1990 -W -Wall -Wchar-subscripts -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE $CFLAGS"
+            CXXFLAGS="-ansi -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -Wcast-align -Wchar-subscripts $CXXFLAGS"
             KDE_CHECK_COMPILER_FLAG(Wmissing-format-attribute, [CXXFLAGS="$CXXFLAGS -Wformat-security -Wmissing-format-attribute"])
             KDE_CHECK_C_COMPILER_FLAG(Wmissing-format-attribute, [CFLAGS="$CFLAGS -Wformat-security -Wmissing-format-attribute"])
           ;;
