@@ -32,7 +32,7 @@ namespace kt
 	public:
 		WebInterfacePrefWidget(TQWidget *parent = 0, const char *name = 0);
 		bool apply();
-		TQCString password;
+		TQString password;
 	public slots:
 		void btnUpdate_clicked();
 		void changeLedState();

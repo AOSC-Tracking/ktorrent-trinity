@@ -92,7 +92,7 @@ bool WebInterfacePrefWidget::apply()
 	WebInterfacePluginSettings::setPhpExecutablePath(phpExecutablePath->url () );
 	if(!username->text().isEmpty() && !password.isEmpty()){
 		WebInterfacePluginSettings::setUsername(username->text() );
-		KMD5 context(password);
+		KMD5 context(password.utf8());
 		WebInterfacePluginSettings::setPassword(context.hexDigest().data());
 	}
 
@@ -102,7 +102,7 @@ bool WebInterfacePrefWidget::apply()
 
 void WebInterfacePrefWidget::btnUpdate_clicked()
 {
-	TQCString passwd;
+	TQString passwd;
  	int result = KPasswordDialog::getNewPassword(passwd, i18n("Please enter a new password for the web interface."));
  	if (result == KPasswordDialog::Accepted)
 		password=passwd;
