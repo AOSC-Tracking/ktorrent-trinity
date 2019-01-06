@@ -1,0 +1,4563 @@
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-01-06 17:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: _translatorinfo:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr ""
+
+#: _translatorinfo:2
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr ""
+
+#: apps/ktcachecheck/cachechecker.cpp:47 apps/ktcachecheck/cachechecker.cpp:76
+#: libktorrent/torrent/chunkmanager.cpp:207
+#: libktorrent/torrent/chunkmanager.cpp:432
+msgid "Cannot open index file %1 : %2"
+msgstr ""
+
+#: apps/ktorrent/addpeerwidget.cpp:67
+msgid "Torrent does not exist. Report this bug to KTorrent developers."
+msgstr ""
+
+#: apps/ktorrent/addpeerwidget.cpp:102
+msgid "Potential peer added."
+msgstr ""
+
+#: apps/ktorrent/addpeerwidget.cpp:106
+msgid "Malformed IP address."
+msgstr ""
+
+#: apps/ktorrent/fileselectdlg.cpp:120
+msgid ""
+"You have deselected the following existing files. You will lose all data in "
+"these files, are you sure you want to do this ?"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlg.cpp:124
+msgid "Yes, delete the files"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlg.cpp:125
+msgid "No, keep the files"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlg.cpp:220
+msgid " short!"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlg.cpp:254 apps/ktorrent/queuedialog.cpp:305
+#: apps/ktorrent/queuedialog.cpp:326
+#: libktorrent/interfaces/filetreediritem.cpp:45
+#: libktorrent/interfaces/filetreediritem.cpp:59
+#: libktorrent/interfaces/filetreediritem.cpp:167
+#: libktorrent/interfaces/filetreeitem.cpp:89
+#: plugins/infowidget/iwfiletreediritem.cpp:160
+#: plugins/infowidget/iwfiletreediritem.cpp:173
+#: plugins/infowidget/iwfiletreeitem.cpp:132
+#: plugins/infowidget/peerview.cpp:170 plugins/infowidget/peerview.cpp:172
+msgid "Yes"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlg.cpp:284 apps/ktorrent/groups/allgroup.cpp:26
+#: apps/ktorrent/groups/groupmanager.h:54 apps/ktorrent/ktorrent.cpp:962
+msgid "All Torrents"
+msgstr ""
+
+#: apps/ktorrent/filterbar.cpp:52
+msgid "Find:"
+msgstr ""
+
+#: apps/ktorrent/filterbar.cpp:65
+msgid "Case sensitive"
+msgstr ""
+
+#: apps/ktorrent/groups/activedownloadsgroup.cpp:28
+#: apps/ktorrent/groups/groupmanager.h:87
+msgid "Active downloads"
+msgstr ""
+
+#: apps/ktorrent/groups/activegroup.cpp:29
+#: apps/ktorrent/groups/groupmanager.h:84
+msgid "Active torrents"
+msgstr ""
+
+#: apps/ktorrent/groups/activeuploadsgroup.cpp:29
+#: apps/ktorrent/groups/groupmanager.h:90
+msgid "Active uploads"
+msgstr ""
+
+#: apps/ktorrent/groups/downloadgroup.cpp:27
+#: apps/ktorrent/groups/groupmanager.h:57
+#: apps/ktorrent/ktorrentui.rc:9 apps/ktorrent/pref.cpp:147
+#: apps/ktorrent/queuedlg.ui:31 apps/ktorrent/viewmanager.cpp:62
+#, no-c-format
+msgid "Downloads"
+msgstr ""
+
+#: apps/ktorrent/groups/groupmanager.h:60
+#: apps/ktorrent/groups/uploadgroup.cpp:27 apps/ktorrent/viewmanager.cpp:63
+msgid "Uploads"
+msgstr ""
+
+#: apps/ktorrent/groups/groupmanager.h:63
+#: apps/ktorrent/groups/queueddownloadsgroup.cpp:29
+msgid "Queued downloads"
+msgstr ""
+
+#: apps/ktorrent/groups/groupmanager.h:66
+#: apps/ktorrent/groups/queueduploadsgroup.cpp:29
+msgid "Queued uploads"
+msgstr ""
+
+#: apps/ktorrent/groups/groupmanager.h:69
+#: apps/ktorrent/groups/userdownloadsgroup.cpp:29
+msgid "User downloads"
+msgstr ""
+
+#: apps/ktorrent/groups/groupmanager.h:72
+#: apps/ktorrent/groups/useruploadsgroup.cpp:29
+msgid "User uploads"
+msgstr ""
+
+#: apps/ktorrent/groups/groupmanager.h:75
+#: apps/ktorrent/groups/inactivegroup.cpp:29
+msgid "Inactive torrents"
+msgstr ""
+
+#: apps/ktorrent/groups/groupmanager.h:78
+#: apps/ktorrent/groups/inactivedownloadsgroup.cpp:29
+msgid "Inactive downloads"
+msgstr ""
+
+#: apps/ktorrent/groups/groupmanager.h:81
+#: apps/ktorrent/groups/inactiveuploadsgroup.cpp:29
+msgid "Inactive uploads"
+msgstr ""
+
+#: apps/ktorrent/groups/groupview.cpp:76 apps/ktorrent/ktorrent.cpp:215
+msgid "Groups"
+msgstr ""
+
+#: apps/ktorrent/groups/groupview.cpp:107
+msgid "Custom Groups"
+msgstr ""
+
+#: apps/ktorrent/groups/groupview.cpp:138
+msgid "New Group"
+msgstr ""
+
+#: apps/ktorrent/groups/groupview.cpp:141
+msgid "Edit Name"
+msgstr ""
+
+#: apps/ktorrent/groups/groupview.cpp:144
+msgid "Remove Group"
+msgstr ""
+
+#: apps/ktorrent/groups/groupview.cpp:147
+msgid "Open Tab"
+msgstr ""
+
+#: apps/ktorrent/groups/groupview.cpp:159
+msgid "Please enter the group name."
+msgstr ""
+
+#: apps/ktorrent/groups/groupview.cpp:166
+#: apps/ktorrent/groups/groupview.cpp:217
+msgid "The group %1 already exists."
+msgstr ""
+
+#: apps/ktorrent/groups/groupview.cpp:207
+msgid "Please enter the new group name."
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidget.cpp:72
+msgid ""
+"You must enter IP in format 'XXX.XXX.XXX.XXX'. You can also use wildcards "
+"for ranges like '127.0.0.*'."
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidget.cpp:88
+#: plugins/scheduler/bwsprefpagewidget.cpp:129
+msgid "Choose a file"
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidget.cpp:100
+#: plugins/scheduler/bwsprefpagewidget.cpp:119
+msgid "Choose a filename to save under"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:167
+msgid "No incoming connections (possibly firewalled)"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:184 apps/ktorrent/queuedlg.ui:42
+#: apps/ktorrent/queuedlg.ui:258
+#: plugins/infowidget/statustabbase.ui:39
+#, no-c-format
+msgid "Info"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:185
+msgid "Data transferred during the current session"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:186
+msgid "Current speed of all torrents combined"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:515 apps/ktorrent/ktorrentviewmenu.cpp:41
+msgid ""
+"_: to start\n"
+"Start"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:519 apps/ktorrent/ktorrentviewmenu.cpp:37
+msgid ""
+"_: to stop\n"
+"Stop"
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidgetbase.ui:159
+#: apps/ktorrent/ktorrent.cpp:523
+#: apps/ktorrent/torrentcreatordlgbase.ui:297
+#, no-c-format
+msgid "Remove"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:527 apps/ktorrent/ktorrent.cpp:530
+msgid ""
+"_: to start all\n"
+"Start All"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:533 apps/ktorrent/ktorrent.cpp:536
+msgid ""
+"_: to stop all\n"
+"Stop All"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:539
+msgid ""
+"_: to paste torrent URL\n"
+"Paste Torrent URL..."
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:543
+msgid ""
+"_: to open Queue Manager\n"
+"Open Queue Manager..."
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:548 apps/ktorrent/ktorrentviewmenu.cpp:53
+msgid "Enqueue/Dequeue"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:553
+msgid "IPFilter"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:558 apps/ktorrent/ktorrentviewmenu.cpp:96
+msgid "Check Data Integrity"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:571
+msgid "Set max upload rate"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:574
+msgid "Set max download rate"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:626
+msgid "Torrent Files"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:626
+msgid "All Files"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:627
+msgid "Open Location"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:793
+msgid "Speed down: %1 / up: %2"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:799
+msgid "Transferred down: %1 / up: %2"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:819
+msgid "DHT: %1 nodes, %2 tasks"
+msgstr ""
+
+#: apps/ktorrent/ktorrent.cpp:823
+msgid "DHT: off"
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:115
+msgid ""
+"Specified port (%1) is unavailable or in use by another application. "
+"KTorrent is now using port %2."
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:124
+msgid ""
+"KTorrent is unable to accept connections because the ports %1 to %2 are "
+"already in use by another program."
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:767
+#, c-format
+msgid "Cannot create torrent: %1"
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:768 apps/ktorrent/pref.cpp:180
+#: apps/ktorrent/pref.cpp:285 apps/ktorrent/pref.cpp:295
+#: apps/ktorrent/torrentcreatordlg.cpp:125 apps/ktorrent/trayicon.cpp:203
+#: apps/ktorrent/trayicon.cpp:215 libktorrent/torrent/queuemanager.cpp:239
+#: libktorrent/torrent/queuemanager.cpp:748
+#: libktorrent/torrent/queuemanager.cpp:766
+#: plugins/ipfilter/ipblockingprefpage.cpp:137
+#: plugins/ipfilter/ipblockingprefpage.cpp:150
+#: plugins/partfileimport/importdialog.cpp:100
+#: plugins/partfileimport/importdialog.cpp:179
+#: plugins/partfileimport/importdialog.cpp:208
+#: plugins/partfileimport/importdialog.cpp:244
+#: plugins/scheduler/bwsprefpagewidget.cpp:174
+msgid "Error"
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:1028
+msgid ""
+"Several data files of the torrent \"%1\" are missing, do you want to "
+"recreate them, or do you want to not download them?"
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:1031 apps/ktorrent/ktorrentcore.cpp:1069
+msgid "Recreate"
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:1031 plugins/infowidget/fileview.cpp:61
+msgid "Do Not Download"
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:1041
+#, c-format
+msgid "Cannot recreate missing files: %1"
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:1042 apps/ktorrent/ktorrentcore.cpp:1056
+#: apps/ktorrent/ktorrentcore.cpp:1062
+msgid "Data files are missing"
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:1055
+#, c-format
+msgid "Cannot deselect missing files: %1"
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:1068
+msgid ""
+"The file where the data is saved of the torrent \"%1\" is missing, do you "
+"want to recreate it?"
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:1069
+msgid "Do Not Recreate"
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:1078
+#, c-format
+msgid "Cannot recreate data file: %1"
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:1079 apps/ktorrent/ktorrentcore.cpp:1085
+msgid "Data file is missing"
+msgstr ""
+
+#: apps/ktorrent/ktorrentcore.cpp:1135
+msgid "Checking Data Integrity"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:132
+msgid "Visible columns"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlgbase.ui:138
+#: apps/ktorrent/ktorrentview.cpp:134 plugins/infowidget/fileview.cpp:47
+#, no-c-format
+msgid "File"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:135
+#: plugins/infowidget/infowidgetplugin.cpp:76
+#: plugins/infowidget/statustabbase.ui:16
+#, no-c-format
+msgid "Status"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:136 plugins/infowidget/peerview.cpp:225
+msgid "Downloaded"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlgbase.ui:149
+#: apps/ktorrent/ktorrentview.cpp:137 plugins/infowidget/fileview.cpp:48
+#, no-c-format
+msgid "Size"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:138 plugins/infowidget/peerview.cpp:226
+msgid "Uploaded"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:139
+#: plugins/infowidget/chunkdownloadviewbase.ui:313
+#: plugins/infowidget/peerview.cpp:216
+#, no-c-format
+msgid "Down Speed"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:140 plugins/infowidget/peerview.cpp:217
+msgid "Up Speed"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:141
+msgid "Time Left"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:142
+msgid "Seeders"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:143
+msgid "Leechers"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:144 plugins/infowidget/fileview.cpp:51
+msgid "% Complete"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:145
+msgid "Share Ratio"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:146
+msgid "Time Downloaded"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:147
+msgid "Time Seeded"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:203 apps/ktorrent/ktorrentview.cpp:551
+#: apps/ktorrent/ktorrentview.cpp:877
+msgid "All Torrents %1/%2"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:283
+#, c-format
+msgid ""
+"_n: Cannot start more than 1 download, \n"
+"Cannot start more than %n downloads, "
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:285
+#, c-format
+msgid ""
+"_n: and 1 seed. \n"
+"and %n seeds. "
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:286 apps/ktorrent/trayicon.cpp:258
+msgid "Go to Settings -> Configure KTorrent, if you want to change the limits."
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:375
+msgid ""
+"The torrent %1 has not finished downloading, do you want to delete the "
+"incomplete data, too?"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:378
+msgid "Remove Download"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:379
+msgid "Delete Data"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:379
+msgid "Keep Data"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:395
+msgid ""
+"You will lose all the downloaded data. Are you sure you want to do this?"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:397 apps/ktorrent/ktorrentviewmenu.cpp:45
+msgid "Remove Torrent"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:397
+#: plugins/search/searchpref.ui:249
+#, no-c-format
+msgid "&Remove"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:631
+msgid "You are already checking the data of the torrent %1 !"
+msgstr ""
+
+#: apps/ktorrent/ktorrentview.cpp:751
+#, c-format
+msgid "Choose download location for %1"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewitem.cpp:153
+#: apps/ktorrent/ktorrentviewitem.cpp:159
+msgid "infinity"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewitem.cpp:255 plugins/infowidget/fileview.cpp:189
+#: plugins/infowidget/iwfiletreeitem.cpp:95
+msgid "%1 %"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:49
+msgid "Remove Torrent and Data"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:59
+msgid "Add Peers"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:63
+msgid "Additional Peer Sources"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:64
+msgid "Torrent Peer Sources:"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:85
+#: apps/ktorrent/ktorrentviewmenu.cpp:66 plugins/infowidget/peerview.cpp:221
+#: plugins/stats/sprefwgt.ui:456
+#: plugins/stats/statsconwgt.ui:40
+#, no-c-format
+msgid "DHT"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:67
+msgid "Peer Exchange"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:72
+msgid "Manual Announce"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:76 plugins/infowidget/fileview.cpp:50
+msgid "Preview"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:81
+msgid "Open Directory"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:82
+msgid "Data Directory"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:84
+msgid "Temporary Directory"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:87
+msgid "Set Download Location"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:90
+msgid "Remove From Group"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:93
+msgid "Add to Group"
+msgstr ""
+
+#: apps/ktorrent/ktorrentviewmenu.cpp:100
+#: apps/ktorrent/speedlimitsdlgbase.ui:16
+#, no-c-format
+msgid "Speed Limits"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:76
+msgid "A BitTorrent program for TDE"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:108
+msgid "Debug mode"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:109
+msgid "Silently save torrent given on URL"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:110
+msgid "Document to open"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:59 apps/ktorrent/main.cpp:120
+#, no-c-format
+msgid "KTorrent"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:125
+msgid "RSS Plugin"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:126
+msgid "Webinterface Plugin"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:127
+msgid "Statistics Plugin"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:130
+msgid "Application icon and a couple of others"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:131
+msgid "The downloads icon"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:134
+msgid "1.0 application icon"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:139
+msgid "ChunkBar's tooltip and IWFileTreeItem sorting"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:143
+msgid ""
+"Country locator for InfoWidget plugin (This product includes GeoLite data "
+"created by MaxMind, available from http://www.maxmind.com/). "
+msgstr ""
+
+#: apps/ktorrent/main.cpp:144
+msgid "Country flags"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:145
+msgid "File prioritization"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:146
+msgid "Miniupnp was used as an example for our own UPnP implementation"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:147
+msgid "Global max share ratio patch"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:148 apps/ktorrent/main.cpp:149
+msgid "Zeroconf enhancements"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:150
+msgid "Coldmilk webgui"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:151
+msgid "IDEAl code from KDevelop"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:152
+msgid "Conversion speed improvement in ipfilter plugin"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:153
+msgid "Discovered 2 security vulnerabilities (both are fixed)"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:154
+msgid "Patch to load silently with a save location"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:155
+msgid "Fixes in PHP code of webinterface"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:156
+msgid "XFS specific disk preallocation"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:157
+msgid "Patch to not show very low speeds"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:158
+msgid "Patch to show potentially firewalled status"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:159
+msgid "Several patches"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:160
+msgid "Patch to hide the menubar"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:161
+msgid "Patch to modify file priorities in the webgui"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:162
+msgid "Several webgui patches"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:163
+msgid "Filterbar patch"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:164
+msgid "Non threaded fileview update patch"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:165
+msgid "Optimization to SHA1 hash generation"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:166
+msgid "Patch to fix free diskspace calculation on FreeBSD"
+msgstr ""
+
+#: apps/ktorrent/main.cpp:167
+msgid "Patch to load torrents silently from the command line"
+msgstr ""
+
+#: apps/ktorrent/newui/button.cpp:58
+msgid "Assign Accelerator..."
+msgstr ""
+
+#: apps/ktorrent/newui/button.cpp:60
+msgid "Clear Accelerator"
+msgstr ""
+
+#: apps/ktorrent/newui/button.cpp:319
+msgid "Change Button Number"
+msgstr ""
+
+#: apps/ktorrent/newui/button.cpp:319
+msgid "New accelerator number:"
+msgstr ""
+
+#: apps/ktorrent/newui/ddockwindow.cpp:88
+msgid "Move to left dock"
+msgstr ""
+
+#: apps/ktorrent/newui/ddockwindow.cpp:89
+msgid "Move to right dock"
+msgstr ""
+
+#: apps/ktorrent/newui/ddockwindow.cpp:90
+msgid "Move to bottom dock"
+msgstr ""
+
+#: apps/ktorrent/pastedialog.cpp:56 plugins/infowidget/trackerview.cpp:78
+#: plugins/search/searchprefpage.cpp:131
+msgid "Malformed URL."
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:311 apps/ktorrent/pref.cpp:58
+#, no-c-format
+msgid "Preferences"
+msgstr ""
+
+#: apps/ktorrent/pref.cpp:147
+msgid "Download Options"
+msgstr ""
+
+#: apps/ktorrent/pref.cpp:179 apps/ktorrent/pref.cpp:294
+msgid "The DHT port needs to be different from the UDP tracker port!"
+msgstr ""
+
+#: apps/ktorrent/pref.cpp:216
+msgid "General"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:16 apps/ktorrent/pref.cpp:216
+#, no-c-format
+msgid "General Options"
+msgstr ""
+
+#: apps/ktorrent/pref.cpp:283
+msgid ""
+"Cannot lookup %1: %2\n"
+"Please provide a valid IP address or hostname."
+msgstr ""
+
+#: apps/ktorrent/pref.cpp:411
+msgid "Advanced"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:27 apps/ktorrent/pref.cpp:411
+#, no-c-format
+msgid "Advanced Options"
+msgstr ""
+
+#: apps/ktorrent/queuedialog.cpp:73
+msgid "User"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:24 apps/ktorrent/queuedialog.cpp:75
+#, no-c-format
+msgid "Queue Manager"
+msgstr ""
+
+#: apps/ktorrent/queuedialog.cpp:305 apps/ktorrent/queuedialog.cpp:326
+msgid "No (private torrent)"
+msgstr ""
+
+#: apps/ktorrent/scandialog.cpp:70
+#, c-format
+msgid "Error scanning data: %1"
+msgstr ""
+
+#: apps/ktorrent/scandialog.cpp:77
+msgid "Scanning data of <b>%1</b> :"
+msgstr ""
+
+#: apps/ktorrent/speedlimitsdlg.cpp:36
+msgid "Speed limits for <b>%1</b>:"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlg.cpp:64
+msgid "You must select a file or a folder."
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlg.cpp:71
+msgid ""
+"You have not added a tracker, are you sure you want to create this torrent ?"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlg.cpp:79
+msgid "You must add at least one node."
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlg.cpp:98
+msgid "Torrent Files (*.torrent)"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlg.cpp:99
+msgid "Choose File to Save Torrent"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlg.cpp:108
+msgid "Creating %1..."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:90
+msgid ""
+"<table cellpadding='2' cellspacing='2' "
+"align='center'><tr><td><b>Speed:</b></td><td></td></tr><tr><td>Download: "
+"<font color='#1c9a1c'>%1</font></td><td>Upload: <font "
+"color='#990000'>%2</font></td></tr><tr><td><b>Transfer:</b></td><td></td></tr"
+"><tr><td>Download: <font color='#1c9a1c'>%3</font></td><td>Upload: <font "
+"color='#990000'>%4</font></td></tr></table>"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:147
+msgid "<b>%1</b> has completed downloading.<br>Average speed: %2 DL / %3 UL."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:153 libktorrent/torrent/torrentcontrol.cpp:1366
+msgid "Download completed"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:165
+msgid ""
+"<b>%1</b> has reached its maximum share ratio of %2 and has been "
+"stopped.<br>Uploaded %3 at an average speed of %4."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:172 apps/ktorrent/trayicon.cpp:191
+#: libktorrent/torrent/torrentcontrol.cpp:1368
+msgid "Seeding completed"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:184
+msgid ""
+"<b>%1</b> has reached its maximum seed time of %2 hours and has been "
+"stopped.<br>Uploaded %3 at an average speed of %4."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:200
+msgid "<b>%1</b> has been stopped with the following error: <br>%2"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:212
+msgid ""
+"Corrupted data has been found in the torrent <b>%1</b><br>It would be a good "
+"idea to do a data integrity check on the torrent."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:229
+msgid ""
+"<b>%1</b> has reached its maximum share ratio of %2 and cannot be enqueued. "
+"Remove the limit manually if you want to continue seeding."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:232
+msgid ""
+"<b>%1</b> has reached its maximum seed time of %2 hours and cannot be "
+"enqueued. Remove the limit manually if you want to continue seeding."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:235
+msgid "Torrent cannot be enqueued."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:243
+msgid "Cannot start <b>%1</b> : <br>"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:251
+#, c-format
+msgid ""
+"_n: Cannot seed more than 1 torrent. <br>\n"
+"Cannot seed more than %n torrents. <br>"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:256
+#, c-format
+msgid ""
+"_n: Cannot download more than 1 torrent. <br>\n"
+"Cannot download more than %n torrents. <br>"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:259 apps/ktorrent/trayicon.cpp:263
+msgid "Torrent cannot be started"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:262
+msgid "There is not enough diskspace available."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:277
+msgid ""
+"Your disk is running out of space.<br /><b>%1</b> is being downloaded to "
+"'%2'."
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:280
+msgid "Torrent has been stopped.<br />"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:282
+msgid "Device running out of space"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:301
+msgid "Speed limit in KB/s"
+msgstr ""
+
+#: apps/ktorrent/trayicon.cpp:304 apps/ktorrent/trayicon.cpp:306
+#: apps/ktorrent/trayicon.cpp:359
+msgid "Unlimited"
+msgstr ""
+
+#: apps/ktupnptest/main.cpp:35
+msgid "A TDE KPart Application"
+msgstr ""
+
+#: apps/ktupnptest/main.cpp:51
+msgid "KTUPnPTest"
+msgstr ""
+
+#: libktorrent/datachecker/singledatachecker.cpp:50
+msgid "Cannot open file : %1 : %2"
+msgstr ""
+
+#: libktorrent/interfaces/filetreediritem.cpp:167
+#: libktorrent/interfaces/filetreeitem.cpp:84
+#: plugins/infowidget/fileview.cpp:209
+#: plugins/infowidget/iwfiletreediritem.cpp:156
+#: plugins/infowidget/iwfiletreediritem.cpp:168
+#: plugins/infowidget/iwfiletreeitem.cpp:79
+#: plugins/infowidget/iwfiletreeitem.cpp:111
+#: plugins/infowidget/iwfiletreeitem.cpp:127
+#: plugins/infowidget/iwfiletreeitem.cpp:142
+#: plugins/infowidget/peerview.cpp:170 plugins/infowidget/peerview.cpp:172
+msgid "No"
+msgstr ""
+
+#: libktorrent/interfaces/filetreeitem.cpp:77
+#: plugins/infowidget/iwfiletreediritem.cpp:148
+#: plugins/infowidget/iwfiletreeitem.cpp:120
+msgid "Yes, First"
+msgstr ""
+
+#: libktorrent/interfaces/filetreeitem.cpp:80
+#: plugins/infowidget/iwfiletreediritem.cpp:152
+#: plugins/infowidget/iwfiletreeitem.cpp:123
+msgid "Yes, Last"
+msgstr ""
+
+#: libktorrent/interfaces/functions.cpp:35
+msgid "%1 GB"
+msgstr ""
+
+#: libktorrent/interfaces/functions.cpp:37
+msgid "%1 MB"
+msgstr ""
+
+#: libktorrent/interfaces/functions.cpp:39
+msgid "%1 KB"
+msgstr ""
+
+#: libktorrent/interfaces/functions.cpp:41
+msgid "%1 B"
+msgstr ""
+
+#: libktorrent/interfaces/functions.cpp:47
+msgid "%1 KB/s"
+msgstr ""
+
+#: libktorrent/interfaces/functions.cpp:58
+#, c-format
+msgid ""
+"_n: 1 day \n"
+"%n days "
+msgstr ""
+
+#: libktorrent/migrate/ccmigrate.cpp:119 libktorrent/migrate/ccmigrate.cpp:125
+#: libktorrent/torrent/multifilecache.cpp:595
+#: libktorrent/torrent/multifilecache.cpp:673
+msgid "Cannot open file %1 : %2"
+msgstr ""
+
+#: libktorrent/migrate/migrate.cpp:45
+msgid "The directory %1 does not exist"
+msgstr ""
+
+#: libktorrent/pluginmanagerprefpage.cpp:54
+msgid "%1<br>Status: <b>%2</b><br>Author: %3"
+msgstr ""
+
+#: libktorrent/pluginmanagerprefpage.cpp:55
+msgid "Loaded"
+msgstr ""
+
+#: libktorrent/pluginmanagerprefpage.cpp:55
+msgid "Not loaded"
+msgstr ""
+
+#: libktorrent/pluginmanagerprefpage.cpp:63
+#: plugins/logviewer/logprefwidgetbase.ui:44
+#, no-c-format
+msgid "Plugins"
+msgstr ""
+
+#: libktorrent/pluginmanagerprefpage.cpp:63
+msgid "Plugin Options"
+msgstr ""
+
+#: libktorrent/torrent/announcelist.cpp:58
+#: libktorrent/torrent/announcelist.cpp:64 libktorrent/torrent/torrent.cpp:281
+#: libktorrent/torrent/torrent.cpp:287
+msgid "Parse Error"
+msgstr ""
+
+#: libktorrent/torrent/bdecoder.cpp:62
+#, c-format
+msgid "Illegal token: %1"
+msgstr ""
+
+#: libktorrent/torrent/bdecoder.cpp:83
+msgid "Decode error"
+msgstr ""
+
+#: libktorrent/torrent/bdecoder.cpp:144 libktorrent/torrent/bdecoder.cpp:189
+msgid "Unexpected end of input"
+msgstr ""
+
+#: libktorrent/torrent/bdecoder.cpp:164 libktorrent/torrent/bdecoder.cpp:198
+msgid "Cannot convert %1 to an int"
+msgstr ""
+
+#: libktorrent/torrent/bdecoder.cpp:203
+msgid "Torrent is incomplete!"
+msgstr ""
+
+#: libktorrent/torrent/cachefile.cpp:95 libktorrent/util/fileops.cpp:317
+#: libktorrent/util/fileops.cpp:346 libktorrent/util/fileops.cpp:405
+#: plugins/partfileimport/importdialog.cpp:257
+msgid "Cannot open %1 : %2"
+msgstr ""
+
+#: libktorrent/torrent/cachefile.cpp:121 libktorrent/torrent/cachefile.cpp:220
+#: libktorrent/torrent/cachefile.cpp:382 libktorrent/torrent/cachefile.cpp:448
+msgid "Cannot open %1 for writing : readonly filesystem"
+msgstr ""
+
+#: libktorrent/torrent/cachefile.cpp:240
+msgid "Cannot expand file %1 : %2"
+msgstr ""
+
+#: libktorrent/torrent/cachefile.cpp:242
+msgid "Cannot expand file %1 : incomplete write"
+msgstr ""
+
+#: libktorrent/torrent/cachefile.cpp:255
+#, c-format
+msgid "Cannot expand file %1"
+msgstr ""
+
+#: libktorrent/torrent/cachefile.cpp:351
+#, c-format
+msgid "Error : Reading past the end of the file %1"
+msgstr ""
+
+#: libktorrent/torrent/cachefile.cpp:361
+#, c-format
+msgid "Error reading from %1"
+msgstr ""
+
+#: libktorrent/torrent/cachefile.cpp:403
+msgid "Error writing to %1 : %2"
+msgstr ""
+
+#: libktorrent/torrent/cachefile.cpp:407
+#, c-format
+msgid "Error writing to %1"
+msgstr ""
+
+#: libktorrent/torrent/cachefile.cpp:475
+#: libktorrent/torrent/multifilecache.cpp:657
+#, c-format
+msgid "Cannot preallocate diskspace : %1"
+msgstr ""
+
+#: libktorrent/torrent/chunkdownload.cpp:339
+#, c-format
+msgid ""
+"_n: 1 peer\n"
+"%n peers"
+msgstr ""
+
+#: libktorrent/torrent/dndfile.cpp:108
+msgid "Cannot create file %1 : %2"
+msgstr ""
+
+#: libktorrent/torrent/dndfile.cpp:175
+#, c-format
+msgid "Failed to write first chunk to DND file : %1"
+msgstr ""
+
+#: libktorrent/torrent/dndfile.cpp:233
+#, c-format
+msgid "Failed to write last chunk to DND file : %1"
+msgstr ""
+
+#: libktorrent/torrent/httptracker.cpp:260
+#: libktorrent/torrent/httptracker.cpp:280
+#: libktorrent/torrent/httptracker.cpp:320
+#: libktorrent/torrent/httptracker.cpp:399
+msgid "Invalid response from tracker"
+msgstr ""
+
+#: libktorrent/torrent/httptracker.cpp:273
+msgid "Invalid data from tracker"
+msgstr ""
+
+#: libktorrent/torrent/httptracker.cpp:415
+msgid "Invalid tracker URL"
+msgstr ""
+
+#: libktorrent/torrent/peerid.cpp:203
+msgid "Unknown client"
+msgstr ""
+
+#: libktorrent/torrent/peersourcemanager.cpp:152
+#: libktorrent/torrent/torrentcontrol.cpp:1376
+msgid "Stopped"
+msgstr ""
+
+#: apps/ktorrent/speedlimitsdlgbase.ui:156
+#: libktorrent/torrent/peersourcemanager.cpp:451
+#, no-c-format
+msgid "OK"
+msgstr ""
+
+#: libktorrent/torrent/peersourcemanager.cpp:458
+msgid "Announcing"
+msgstr ""
+
+#: libktorrent/torrent/queuemanager.cpp:136
+msgid ""
+"You don't have enough disk space to download this torrent. Are you sure you "
+"want to continue?"
+msgstr ""
+
+#: libktorrent/torrent/queuemanager.cpp:136
+#, c-format
+msgid "Insufficient disk space for %1"
+msgstr ""
+
+#: libktorrent/torrent/queuemanager.cpp:158
+msgid ""
+"Torrent \"%1\" has reached its maximum share ratio. Ignore the limit and "
+"start seeding anyway?"
+msgstr ""
+
+#: libktorrent/torrent/queuemanager.cpp:158
+msgid "Maximum share ratio limit reached."
+msgstr ""
+
+#: libktorrent/torrent/queuemanager.cpp:237
+#: libktorrent/torrent/queuemanager.cpp:763
+msgid "Error stopping torrent %1 : %2"
+msgstr ""
+
+#: libktorrent/torrent/queuemanager.cpp:745
+msgid "Error starting torrent %1 : %2"
+msgstr ""
+
+#: libktorrent/torrent/torrent.cpp:63 libktorrent/torrent/torrent.cpp:116
+#: libktorrent/torrent/torrent.cpp:139 libktorrent/torrent/torrent.cpp:147
+#: libktorrent/torrent/torrent.cpp:154 libktorrent/torrent/torrent.cpp:158
+#: libktorrent/torrent/torrent.cpp:165 libktorrent/torrent/torrent.cpp:178
+#: libktorrent/torrent/torrent.cpp:182 libktorrent/torrent/torrent.cpp:195
+#: libktorrent/torrent/torrent.cpp:204 libktorrent/torrent/torrent.cpp:216
+#: libktorrent/torrent/torrent.cpp:223 libktorrent/torrent/torrent.cpp:229
+#: libktorrent/torrent/torrent.cpp:236 libktorrent/torrent/torrent.cpp:242
+#: libktorrent/torrent/torrent.cpp:258 libktorrent/torrent/torrent.cpp:304
+#: libktorrent/torrent/torrent.cpp:310 libktorrent/torrent/torrent.cpp:313
+#: libktorrent/torrent/torrent.cpp:316
+msgid "Corrupted torrent!"
+msgstr ""
+
+#: libktorrent/torrent/torrent.cpp:76
+msgid "Torrent has no announce or nodes field"
+msgstr ""
+
+#: libktorrent/torrent/torrent.cpp:103
+msgid " Unable to open torrent file %1 : %2"
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:508
+#, c-format
+msgid ""
+"An error occurred while loading the torrent. The torrent is probably corrupt "
+"or is not a torrent file.\n"
+"%1"
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:537
+msgid ""
+"An error occurred while loading the torrent. The torrent is probably corrupt "
+"or is not a torrent file."
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:546
+msgid "Unable to create %1 : %2"
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:562
+msgid ""
+"You are already downloading this torrent %1, the list of trackers of both "
+"torrents has been merged."
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:566
+#, c-format
+msgid "You are already downloading the torrent %1"
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:672
+msgid "Cannot migrate %1 : %2"
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:1273
+msgid ""
+"The torrent %1 was started with a previous version of KTorrent. To make sure "
+"this torrent still works with this version of KTorrent, we will migrate this "
+"torrent. You will be asked for a location to save the torrent to. If you "
+"press cancel, we will select your home directory."
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:1278
+msgid "Select Folder to Save To"
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:1364
+msgid "Not started"
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:1370
+msgid "Seeding"
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:1372
+msgid "Downloading"
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:1374
+msgid "Stalled"
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:1378
+msgid "Error: "
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:1380
+msgid "Allocating diskspace"
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:1382
+msgid "Queued"
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:1384
+msgid "Checking data"
+msgstr ""
+
+#: libktorrent/torrent/torrentcontrol.cpp:1386
+msgid "Stopped. No space left on device."
+msgstr ""
+
+#: libktorrent/torrent/torrentcreator.cpp:123
+#: libktorrent/torrent/torrentcreator.cpp:239
+#: libktorrent/torrent/torrentcreator.cpp:277
+msgid "Cannot open file %1: %2"
+msgstr ""
+
+#: libktorrent/torrent/torrentcreator.cpp:339
+#, c-format
+msgid "Cannot create index file: %1"
+msgstr ""
+
+#: libktorrent/torrent/udptrackersocket.cpp:62
+msgid "Cannot bind to udp port %1 or the 10 following ports."
+msgstr ""
+
+#: libktorrent/util/file.cpp:87
+msgid "Cannot write to %1 : %2"
+msgstr ""
+
+#: libktorrent/util/file.cpp:101
+#, c-format
+msgid "Cannot read from %1"
+msgstr ""
+
+#: libktorrent/util/fileops.cpp:78
+msgid "Cannot create directory %1: %2"
+msgstr ""
+
+#: libktorrent/util/fileops.cpp:92
+msgid "Cannot symlink %1 to %2: %3"
+msgstr ""
+
+#: libktorrent/util/fileops.cpp:108
+msgid "Cannot move %1 to %2: %3"
+msgstr ""
+
+#: libktorrent/util/fileops.cpp:124 libktorrent/util/fileops.cpp:140
+msgid "Cannot copy %1 to %2: %3"
+msgstr ""
+
+#: libktorrent/util/fileops.cpp:232
+msgid "Cannot delete %1: %2"
+msgstr ""
+
+#: libktorrent/util/fileops.cpp:251
+msgid "Cannot create %1: %2"
+msgstr ""
+
+#: libktorrent/util/fileops.cpp:272
+msgid "Cannot calculate the filesize of %1: %2"
+msgstr ""
+
+#: libktorrent/util/fileops.cpp:289
+#, c-format
+msgid "Cannot calculate the filesize : %2"
+msgstr ""
+
+#: libktorrent/util/fileops.cpp:367 libktorrent/util/fileops.cpp:373
+#: libktorrent/util/fileops.cpp:376 libktorrent/util/fileops.cpp:391
+#, c-format
+msgid "Cannot expand file : %1"
+msgstr ""
+
+#: libktorrent/util/fileops.cpp:393
+msgid "Cannot expand file"
+msgstr ""
+
+#: libktorrent/util/fileops.cpp:426
+#, c-format
+msgid "Cannot seek in file : %1"
+msgstr ""
+
+#: libktorrent/util/log.cpp:103
+msgid "Cannot open log file %1 : %2"
+msgstr ""
+
+#: libktorrent/util/mmapfile.cpp:166
+msgid "Cannot write beyond end of the mmap buffer!"
+msgstr ""
+
+#: plugins/infowidget/availabilitychunkbar.cpp:32
+msgid ""
+"<img src=\"available_color\">&nbsp; - Available Chunks<br><img "
+"src=\"unavailable_color\">&nbsp; - Unavailable Chunks<br><img "
+"src=\"excluded_color\">&nbsp; - Excluded Chunks"
+msgstr ""
+
+#: plugins/infowidget/chunkbar.cpp:98
+msgid ""
+"<img src=\"available_color\">&nbsp; - Downloaded Chunks<br><img "
+"src=\"unavailable_color\">&nbsp; - Chunks to Download<br><img "
+"src=\"excluded_color\">&nbsp; - Excluded Chunks"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlgbase.ui:160
+#: plugins/infowidget/fileview.cpp:49
+#: plugins/rssfeed/rssfeedwidget.ui:170
+#: plugins/rssfeed/rssfeedwidget.ui:897
+#: plugins/stats/sprefwgt.ui:328
+#: plugins/stats/statsspdwgt.ui:32
+#, no-c-format
+msgid "Download"
+msgstr ""
+
+#: plugins/infowidget/fileview.cpp:55
+msgid "Open"
+msgstr ""
+
+#: plugins/infowidget/fileview.cpp:57
+msgid "Download First"
+msgstr ""
+
+#: plugins/infowidget/fileview.cpp:58
+msgid "Download Normally"
+msgstr ""
+
+#: plugins/infowidget/fileview.cpp:59
+msgid "Download Last"
+msgstr ""
+
+#: plugins/infowidget/fileview.cpp:62
+msgid "Delete File(s)"
+msgstr ""
+
+#: plugins/infowidget/fileview.cpp:204
+#: plugins/infowidget/iwfiletreeitem.cpp:71
+#: plugins/infowidget/iwfiletreeitem.cpp:103
+msgid "Available"
+msgstr ""
+
+#: plugins/infowidget/fileview.cpp:206
+#: plugins/infowidget/iwfiletreeitem.cpp:75
+#: plugins/infowidget/iwfiletreeitem.cpp:107
+msgid "Pending"
+msgstr ""
+
+#: plugins/infowidget/fileview.cpp:343
+msgid ""
+"_n: You will lose all data in this file, are you sure you want to do this ?\n"
+"You will lose all data in these files, are you sure you want to do this ?"
+msgstr ""
+
+#: plugins/infowidget/infowidgetplugin.cpp:51
+#: plugins/infowidget/infowidgetprefpage.cpp:34
+msgid "Info Widget"
+msgstr ""
+
+#: plugins/infowidget/infowidgetplugin.cpp:52
+msgid ""
+"Shows additional information about a download. Like which chunks have been "
+"downloaded, how many seeders and leechers ..."
+msgstr ""
+
+#: apps/ktorrent/fileselectdlgbase.ui:129
+#: plugins/infowidget/infowidgetplugin.cpp:77
+#, no-c-format
+msgid "Files"
+msgstr ""
+
+#: plugins/infowidget/infowidgetplugin.cpp:173
+#: plugins/stats/statsconwgt.ui:32
+#: plugins/stats/statsspdwgt.ui:40
+#, no-c-format
+msgid "Peers"
+msgstr ""
+
+#: plugins/infowidget/chunkdownloadviewbase.ui:16
+#: plugins/infowidget/infowidgetplugin.cpp:194
+#: plugins/infowidget/statustabbase.ui:316
+#, no-c-format
+msgid "Chunks"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:275
+#: plugins/infowidget/infowidgetplugin.cpp:214
+#: plugins/infowidget/trackerviewbase.ui:111
+#, no-c-format
+msgid "Trackers"
+msgstr ""
+
+#: plugins/infowidget/infowidgetprefpage.cpp:34
+msgid "Information Widget Options"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:213
+msgid "IP"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:214
+msgid "Country"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:215
+msgid "Client"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:218
+msgid "Choked"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:219
+msgid "Snubbed"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:220
+msgid "Availability"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:222
+msgid "Score"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:223
+msgid "Upload Slot"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:224
+msgid "Requests"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:249
+msgid ""
+"_: to kick\n"
+"Kick peer"
+msgstr ""
+
+#: plugins/infowidget/peerview.cpp:250
+msgid ""
+"_: to ban\n"
+"Ban peer"
+msgstr ""
+
+#: plugins/infowidget/statustab.cpp:55
+msgid "No limit"
+msgstr ""
+
+#: plugins/infowidget/trackerview.cpp:71
+msgid "Cannot add a tracker to a private torrent."
+msgstr ""
+
+#: plugins/infowidget/trackerview.cpp:96
+msgid "Cannot remove torrent default tracker."
+msgstr ""
+
+#: plugins/infowidget/trackerview.cpp:214
+msgid "You cannot add trackers to a private torrent"
+msgstr ""
+
+#: plugins/ipfilter/convertdialog.cpp:81
+msgid "Convert"
+msgstr ""
+
+#: plugins/ipfilter/convertdialog.cpp:102
+msgid "Loading txt file..."
+msgstr ""
+
+#: plugins/ipfilter/convertdialog.cpp:103
+msgid "Please wait..."
+msgstr ""
+
+#: apps/ktorrent/addpeerwidgetbase.ui:122
+#: plugins/ipfilter/convert_dlg.ui:112
+#: plugins/ipfilter/convertdialog.cpp:145
+#: plugins/ipfilter/convertdialog.cpp:166
+#: plugins/ipfilter/convertdialog.cpp:203
+#: plugins/ipfilter/convertdialog.cpp:217
+#, no-c-format
+msgid "&Close"
+msgstr ""
+
+#: plugins/ipfilter/convert_dlg.ui:24
+#: plugins/ipfilter/convertdialog.cpp:155
+#, no-c-format
+msgid "Converting..."
+msgstr ""
+
+#: plugins/ipfilter/convertdialog.cpp:194
+msgid "File converted."
+msgstr ""
+
+#: plugins/ipfilter/convertdialog.cpp:199
+msgid "Could not load filter:"
+msgstr ""
+
+#: plugins/ipfilter/convertdialog.cpp:199
+msgid "Bad filter file. It may be corrupted or has a bad format."
+msgstr ""
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:70
+#: plugins/ipfilter/ipblockingprefpage.cpp:94
+msgid "Status: Loaded and running."
+msgstr ""
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:76
+#: plugins/ipfilter/ipblockingprefpage.cpp:99
+msgid "Status: Not loaded."
+msgstr ""
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:96
+msgid ""
+"Status: <font color=\"#ff0000\">Filter file not found.</font> Download and "
+"convert filter file."
+msgstr ""
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:117
+msgid "Selected file already exists, do you want to download it again?"
+msgstr ""
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:117
+#: plugins/ipfilter/ipblockingprefpage.cpp:194
+msgid "File Exists"
+msgstr ""
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:194
+msgid ""
+"Filter file (level1.dat) already exists, do you want to convert it again?"
+msgstr ""
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:223
+msgid "IPBlocking Filter"
+msgstr ""
+
+#: plugins/ipfilter/ipblockingprefpage.cpp:223
+msgid "IPBlocking Filter Options"
+msgstr ""
+
+#: plugins/ipfilter/ipfilterplugin.cpp:43
+msgid "Filters out unwanted peers based on their IP address"
+msgstr ""
+
+#: plugins/ipfilter/ipfilterplugin.cpp:46
+msgid "IP Filter"
+msgstr ""
+
+#: plugins/logviewer/logprefpage.cpp:31
+msgid "LogViewer"
+msgstr ""
+
+#: plugins/logviewer/logprefpage.cpp:31
+#: plugins/logviewer/logprefwidgetbase.ui:16
+#, no-c-format
+msgid "LogViewer Options"
+msgstr ""
+
+#: plugins/logviewer/logviewerplugin.cpp:44
+#: plugins/logviewer/logviewerplugin.cpp:58
+msgid "Log Viewer"
+msgstr ""
+
+#: plugins/logviewer/logviewerplugin.cpp:45
+msgid "Displays ktorrent logging output"
+msgstr ""
+
+#: plugins/partfileimport/importdialog.cpp:50
+msgid "Torrent files"
+msgstr ""
+
+#: plugins/partfileimport/importdialog.cpp:50
+msgid "All files"
+msgstr ""
+
+#: plugins/partfileimport/importdialog.cpp:100
+#, c-format
+msgid "Cannot verify data : %1"
+msgstr ""
+
+#: plugins/partfileimport/importdialog.cpp:207
+#: plugins/partfileimport/importdialog.cpp:243
+#, c-format
+msgid "Cannot load the torrent file : %1"
+msgstr ""
+
+#: plugins/partfileimport/partfileimportplugin.cpp:43
+msgid "Import"
+msgstr ""
+
+#: plugins/partfileimport/partfileimportplugin.cpp:43
+msgid "Imports partially or fully downloaded torrents from other clients"
+msgstr ""
+
+#: plugins/partfileimport/partfileimportplugin.cpp:56
+msgid "Import existing download"
+msgstr ""
+
+#: plugins/rssfeed/rss/testlibrss.cpp:14
+msgid "URL of feed"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:78
+msgid "Title"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:78
+msgid "Description"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:78 plugins/rssfeed/rssfeedmanager.cpp:87
+msgid "Link"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:87
+msgid "Season"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:87
+msgid "Episode"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedmanager.cpp:87
+msgid "Time"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedplugin.cpp:48
+msgid ""
+"Automatically scans RSS feeds for torrent matching regular expressions and "
+"loads them."
+msgstr ""
+
+#: plugins/rssfeed/rssfeedplugin.cpp:51 plugins/rssfeed/rssfeedplugin.cpp:68
+msgid "RSS Feeds"
+msgstr ""
+
+#: plugins/rssfeed/rsslinkdownloader.cpp:45
+#: plugins/rssfeed/rsslinkdownloader.cpp:183
+#, c-format
+msgid "Failed to find and download a valid torrent for %1"
+msgstr ""
+
+#: plugins/scanfolder/scanfolder.cpp:150 plugins/scanfolder/scanfolder.cpp:188
+#: plugins/scanfolder/scanfolder.cpp:189
+msgid "loaded"
+msgstr ""
+
+#: plugins/scanfolder/scanfolderplugin.cpp:49
+msgid "Automatically scans directories for torrent files and loads them."
+msgstr ""
+
+#: plugins/scanfolder/scanfolderplugin.cpp:52
+msgid "Scan Folder"
+msgstr ""
+
+#: plugins/scanfolder/scanfolderprefpage.cpp:34
+msgid "ScanFolder"
+msgstr ""
+
+#: plugins/scanfolder/scanfolderprefpage.cpp:34
+msgid "ScanFolder Options"
+msgstr ""
+
+#: plugins/scanfolder/scanfolderprefpagewidget.cpp:73
+msgid ""
+"ScanFolder - Folder %1: Invalid URL or folder does not exist. Please, choose "
+"a valid directory."
+msgstr ""
+
+#: plugins/scheduler/bwsprefpagewidget.cpp:165
+msgid "Schedule saved."
+msgstr ""
+
+#: plugins/scheduler/bwsprefpagewidget.cpp:174
+msgid "File not found."
+msgstr ""
+
+#: plugins/scheduler/bwsprefpagewidget.cpp:208
+msgid "Schedule loaded."
+msgstr ""
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "MON"
+msgstr ""
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "TUE"
+msgstr ""
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "WED"
+msgstr ""
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "THU"
+msgstr ""
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "FRI"
+msgstr ""
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "SAT"
+msgstr ""
+
+#: plugins/scheduler/bwswidget.cpp:45
+msgid "SUN"
+msgstr ""
+
+#: plugins/scheduler/schedulerplugin.cpp:56
+msgid "Bandwidth scheduling plugin"
+msgstr ""
+
+#: plugins/scheduler/schedulerpage.ui:35
+#: plugins/scheduler/schedulerplugin.cpp:59
+#, no-c-format
+msgid "Bandwidth Scheduler"
+msgstr ""
+
+#: plugins/scheduler/schedulerplugin.cpp:97
+#: plugins/scheduler/schedulerplugin.cpp:137
+msgid "Open Bandwidth Scheduler"
+msgstr ""
+
+#: plugins/scheduler/schedulerplugin.cpp:130
+msgid ""
+"Bandwidth scheduler is disabled. Go to Preferences->Scheduler to enable it."
+msgstr ""
+
+#: plugins/scheduler/schedulerprefpage.cpp:35
+msgid "Scheduler"
+msgstr ""
+
+#: plugins/scheduler/schedulerprefpage.cpp:35
+msgid "Scheduler plugin options"
+msgstr ""
+
+#: plugins/search/htmlpart.cpp:165
+msgid "Do you want to download or save the torrent?"
+msgstr ""
+
+#: plugins/search/htmlpart.cpp:166
+msgid "Download Torrent"
+msgstr ""
+
+#: plugins/search/htmlpart.cpp:167
+msgid ""
+"_: to download\n"
+"Download"
+msgstr ""
+
+#: plugins/search/searchbar.ui:53 plugins/search/searchplugin.cpp:50
+#: plugins/search/searchtab.cpp:48
+#, no-c-format
+msgid "Search"
+msgstr ""
+
+#: plugins/search/searchplugin.cpp:51
+msgid "Search for torrents on several popular torrent search engines"
+msgstr ""
+
+#: plugins/search/searchprefpage.cpp:52
+msgid ""
+"Use your web browser to search for the string %1 (capital letters) on the "
+"search engine you want to add. <br> Then copy the URL in the addressbar "
+"after the search is finished, and paste it here.<br><br>Searching for %1 on "
+"Google for example, will result in "
+"http://www.google.com/search?q=FOOBAR&ie=UTF-8&oe=UTF-8. <br> If you add "
+"this URL here, ktorrent can search using Google."
+msgstr ""
+
+#: plugins/search/searchprefpage.cpp:57
+msgid ""
+"Use your web browser to search for the string %1 (capital letters) on the "
+"search engine you want to add. Use the resulting URL below."
+msgstr ""
+
+#: plugins/search/searchprefpage.cpp:124
+msgid "You must enter the search engine's name and URL"
+msgstr ""
+
+#: plugins/search/searchprefpage.cpp:137
+msgid ""
+"A search engine with the same name already exists. Please use a different "
+"name."
+msgstr ""
+
+#: plugins/search/searchprefpage.cpp:146
+msgid ""
+"Bad URL. You should search for FOOBAR with your Internet browser and "
+"copy/paste the exact URL here."
+msgstr ""
+
+#: plugins/search/searchprefpage.cpp:242
+msgid ""
+"_: a noun\n"
+"Search"
+msgstr ""
+
+#: plugins/search/searchprefpage.cpp:242
+msgid "Search Engine Options"
+msgstr ""
+
+#: plugins/search/searchtab.cpp:65
+msgid " Engine: "
+msgstr ""
+
+#: plugins/search/searchwidget.cpp:72
+msgid "Back"
+msgstr ""
+
+#: plugins/search/searchwidget.cpp:75
+msgid "Reload"
+msgstr ""
+
+#: plugins/search/searchwidget.cpp:178
+msgid "Searching for %1..."
+msgstr ""
+
+#: plugins/search/searchwidget.cpp:209
+msgid "torrent files"
+msgstr ""
+
+#: plugins/search/searchwidget.cpp:267
+msgid "Search finished"
+msgstr ""
+
+#: plugins/stats/ChartDrawer.cc:419
+msgid "Legend"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:49
+msgid "Leechers connected"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:50
+msgid "Leechers in swarms"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:51
+msgid "Seeders connected"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:52
+msgid "Seeders in swarms"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:53
+msgid "Average connected leechers per torrent"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:54
+msgid "Average connected seeders per torrent"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:55
+msgid "Average connected leechers per running torrent"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:56
+msgid "Average connected seeders per running torrent"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:61
+msgid "Nodes"
+msgstr ""
+
+#: plugins/stats/StatsCon.cc:62
+msgid "Tasks"
+msgstr ""
+
+#: plugins/stats/StatsPluginPrefs.cc:25 plugins/stats/statsplugin.cc:29
+msgid "Statistics"
+msgstr ""
+
+#: plugins/stats/StatsPluginPrefs.cc:25
+msgid "Statistics options"
+msgstr ""
+
+#: plugins/stats/StatsSpd.cc:57 plugins/stats/StatsSpd.cc:58
+msgid "Current"
+msgstr ""
+
+#: plugins/stats/StatsSpd.cc:60 plugins/stats/StatsSpd.cc:61
+msgid "Average"
+msgstr ""
+
+#: plugins/stats/StatsSpd.cc:63 plugins/stats/StatsSpd.cc:64
+msgid "Limit"
+msgstr ""
+
+#: plugins/stats/StatsSpd.cc:71
+msgid "Average from leecher"
+msgstr ""
+
+#: plugins/stats/StatsSpd.cc:72
+msgid "Average to leecher"
+msgstr ""
+
+#: plugins/stats/StatsSpd.cc:73
+msgid "Average from seeder"
+msgstr ""
+
+#: plugins/stats/StatsSpd.cc:74
+msgid "From leechers"
+msgstr ""
+
+#: plugins/stats/StatsSpd.cc:75
+msgid "From seeders"
+msgstr ""
+
+#: plugins/stats/statsplugin.cc:29
+msgid "Shows transfers statistics"
+msgstr ""
+
+#: plugins/stats/statsplugin.cc:67
+msgid "Speed statistics"
+msgstr ""
+
+#: plugins/stats/statsplugin.cc:68
+msgid "Connection statistics"
+msgstr ""
+
+#: plugins/upnp/upnpplugin.cpp:46 plugins/upnp/upnpprefpage.cpp:31
+#: plugins/upnp/upnpwidget.ui:16
+#, no-c-format
+msgid "UPnP"
+msgstr ""
+
+#: plugins/upnp/upnpplugin.cpp:46
+msgid "Uses UPnP to automatically forward ports on your router"
+msgstr ""
+
+#: plugins/upnp/upnpprefpage.cpp:31
+msgid "UPnP Devices"
+msgstr ""
+
+#: plugins/upnp/upnprouter.cpp:418 plugins/upnp/upnprouter.cpp:431
+msgid "Cannot find port forwarding service in the device's description!"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceplugin.cpp:44
+msgid "Web Interface"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceplugin.cpp:44
+msgid "Allow to control ktorrent through browser"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefpage.cpp:27
+msgid "WebInterface"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefpage.cpp:27
+msgid "WebInterface Options"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:70
+msgid "Php executable is not in default path, please enter the path manually"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:106
+msgid "Please enter a new password for the web interface."
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:116
+msgid "%1 exists and it is executable"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:120
+msgid "%1 does not exist"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:124
+msgid "%1 is not executable"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:128
+msgid "%1 is a directory"
+msgstr ""
+
+#: plugins/webinterface/webinterfaceprefwidget.cpp:132
+msgid "%1 is not php executable path"
+msgstr ""
+
+#: plugins/zeroconf/zeroconfplugin.cpp:41
+msgid "Zeroconf"
+msgstr ""
+
+#: plugins/zeroconf/zeroconfplugin.cpp:41
+msgid ""
+"Finds peers running ktorrent on the local network to share torrents with"
+msgstr ""
+
+#: apps/ktorrent/addpeerwidgetbase.ui:16
+#, no-c-format
+msgid "Add potential peer"
+msgstr ""
+
+#: apps/ktorrent/addpeerwidgetbase.ui:35
+#, no-c-format
+msgid "Peer IP:"
+msgstr ""
+
+#: apps/ktorrent/addpeerwidgetbase.ui:43
+#: apps/ktorrent/ipfilterwidgetbase.ui:107
+#, no-c-format
+msgid "127.0.0.1"
+msgstr ""
+
+#: apps/ktorrent/addpeerwidgetbase.ui:51
+#: apps/ktorrent/downloadpref.ui:338
+#: apps/ktorrent/torrentcreatordlgbase.ui:346
+#: plugins/webinterface/webinterfacepref.ui:60
+#, no-c-format
+msgid "Port:"
+msgstr ""
+
+#: apps/ktorrent/addpeerwidgetbase.ui:100
+#, no-c-format
+msgid "Enter peer IP and port."
+msgstr ""
+
+#: apps/ktorrent/addpeerwidgetbase.ui:108
+#: apps/ktorrent/ipfilterwidgetbase.ui:125
+#: apps/ktorrent/torrentcreatordlgbase.ui:311
+#, no-c-format
+msgid "Add"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:16
+#, no-c-format
+msgid "Advanced Preferences"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:46
+#, no-c-format
+msgid "Time left estimation algorithm:"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:49
+#: apps/ktorrent/advancedpref.ui:86
+#, no-c-format
+msgid ""
+"<b>KTorrent algorithm:</b> Default algorithm using combination of other "
+"algorithms based on our tests.<br>\n"
+"<b>Current speed algorithm:</b> Simplest algorithm - "
+"BytesLeft/CurrentSpeed<br>\n"
+"<b>Global average speed algorithm:</b> BytesLeft/AverageSpeed<br>\n"
+"<b>Window of X algorithm:</b> ET calculated from X speed samples<br>\n"
+"<b>Moving average algorithm:</b> Moving average speed calculated from X "
+"samples"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:64
+#, no-c-format
+msgid "Current speed"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:69
+#, no-c-format
+msgid "Global average speed"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:74
+#, no-c-format
+msgid "Window of X"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:79
+#, no-c-format
+msgid "Moving average"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:98
+#, no-c-format
+msgid "(takes effect after restart)"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:125
+#, no-c-format
+msgid "Disa&ble diskspace preallocation"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:141
+#, no-c-format
+msgid "F&ully preallocate diskspace (avoids fragmentation)"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:147
+#, no-c-format
+msgid "Basic (slow)"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:152
+#, no-c-format
+msgid "Filesystem specific"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:174
+#, no-c-format
+msgid "Performance"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:193
+#, no-c-format
+msgid "Memory usage:"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:199
+#, no-c-format
+msgid "Low"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:204
+#, no-c-format
+msgid "Medium"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:209
+#, no-c-format
+msgid "High"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:248
+#, no-c-format
+msgid "GUI update interval:"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:254
+#, no-c-format
+msgid "500ms"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:259
+#, no-c-format
+msgid "1s"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:264
+#, no-c-format
+msgid "2s"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:269
+#, no-c-format
+msgid "5s"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:308
+#, no-c-format
+msgid "Fast CPU"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:342
+#, no-c-format
+msgid "Slow CPU"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:354
+#, no-c-format
+msgid "Data Checking"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:373
+#, no-c-format
+msgid "During uploading, do &not recheck chunks bigger than"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:395
+#: apps/ktorrent/torrentcreatordlgbase.ui:138
+#, no-c-format
+msgid "KB"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:430
+#, no-c-format
+msgid "Do a data integrit&y check after"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:449
+#, no-c-format
+msgid "corrupted chunks"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:478
+#, no-c-format
+msgid "Networking"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:505
+#, no-c-format
+msgid "Maximum number of connection setups:"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:527
+#, no-c-format
+msgid "DSCP for IP packets:"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:570
+#, no-c-format
+msgid "Do not use the TDE pro&xy settings for HTTP tracker connections"
+msgstr ""
+
+#: apps/ktorrent/advancedpref.ui:586
+#, no-c-format
+msgid "HTTP tracker proxy:"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:59
+#, no-c-format
+msgid "Maximum downloads:"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:86
+#, no-c-format
+msgid "Maximum seeds:"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:94
+#, no-c-format
+msgid "Start download on low disk space :"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:102
+#, no-c-format
+msgid "Minimum disk space:"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:140
+#, no-c-format
+msgid "Don't start"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:145
+#, no-c-format
+msgid "Always ask"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:150
+#, no-c-format
+msgid "Force start"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:208
+#, no-c-format
+msgid "MB"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:236
+#: apps/ktorrent/downloadpref.ui:263
+#: apps/ktorrent/downloadpref.ui:560
+#: apps/ktorrent/downloadpref.ui:568
+#: apps/ktorrent/downloadpref.ui:643
+#, no-c-format
+msgid "(0 is no limit)"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:330
+#, no-c-format
+msgid "Maximum download rate:"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:346
+#, no-c-format
+msgid "Global connection limit:"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:354
+#, no-c-format
+msgid "Max seed time:"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:370
+#, no-c-format
+msgid "Maximum connections per torrent:"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:397
+#, no-c-format
+msgid "Number of upload slots:"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:405
+#, no-c-format
+msgid "UDP tracker port:"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:413
+#, no-c-format
+msgid "Max share ratio:"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:421
+#, no-c-format
+msgid "Maximum upload rate:"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:576
+#: apps/ktorrent/downloadpref.ui:584
+#, no-c-format
+msgid "KB/sec (0 is no limit)"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:651
+#, no-c-format
+msgid "Hours (0 is no limit)"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:663
+#, no-c-format
+msgid "&Keep seeding after download is finished"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:674
+#, no-c-format
+msgid "Attention"
+msgstr ""
+
+#: apps/ktorrent/downloadpref.ui:685
+#, no-c-format
+msgid ""
+"The above ports must also be forwarded if you are behind a router. The UPnP "
+"plugin can do this for you."
+msgstr ""
+
+#: apps/ktorrent/fileselectdlgbase.ui:16
+#, no-c-format
+msgid "Select Which Files You Want to Download"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlgbase.ui:35
+#, no-c-format
+msgid "Download to:"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlgbase.ui:74
+#, no-c-format
+msgid "Group:"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlgbase.ui:97
+#, no-c-format
+msgid "&User controlled"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlgbase.ui:116
+#, no-c-format
+msgid "Start torrent"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlgbase.ui:181
+#, no-c-format
+msgid "Select &All"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlgbase.ui:189
+#, no-c-format
+msgid "Select &None"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlgbase.ui:197
+#, no-c-format
+msgid "Invert Selection"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlgbase.ui:224
+#, no-c-format
+msgid "Disk space"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlgbase.ui:260
+#, no-c-format
+msgid "Required disk space:"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlgbase.ui:268
+#, no-c-format
+msgid "Free disk space:"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlgbase.ui:276
+#, no-c-format
+msgid "After download:"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlgbase.ui:330
+#: apps/ktorrent/ipfilterwidgetbase.ui:249
+#: apps/ktorrent/queuedlg.ui:588
+#, no-c-format
+msgid "&OK"
+msgstr ""
+
+#: apps/ktorrent/fileselectdlgbase.ui:344
+#: apps/ktorrent/ipfilterwidgetbase.ui:271
+#: apps/ktorrent/queuedlg.ui:610
+#, no-c-format
+msgid "&Cancel"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:44
+#, no-c-format
+msgid "Encryption"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:58
+#: libktorrent/ktorrent.kcfg:158
+#, no-c-format
+msgid "Use protocol encryption"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:64
+#, no-c-format
+msgid ""
+"Protocol encryption is used to prevent ISP's from slowing down bittorrent "
+"connections."
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:72
+#: libktorrent/ktorrent.kcfg:162
+#, no-c-format
+msgid "Allow unencrypted connections"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:75
+#, no-c-format
+msgid ""
+"If unchecked, you'll be able to connect only to clients supporting "
+"encryption."
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:88
+#, no-c-format
+msgid ""
+"<b>D</b>istributed <b>H</b>ash <b>T</b>able protocol.<br>Decentralized peers "
+"exchange protocol. See manual for more info."
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:99
+#, no-c-format
+msgid "&Use DHT to get additional peers"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:118
+#, no-c-format
+msgid "UDP port for DHT communication:"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:161
+#, no-c-format
+msgid "Custom IP"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:172
+#, no-c-format
+msgid "Se&nd the tracker a custom IP address or hostname"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:188
+#, no-c-format
+msgid "Custom IP address or hostname:"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:205
+#, no-c-format
+msgid "System Tray Icon"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:216
+#, no-c-format
+msgid "Show s&ystem tray icon"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:224
+#, no-c-format
+msgid "Show speed &bar in tray icon"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:232
+#, no-c-format
+msgid "Show system tray popup messages"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:251
+#, no-c-format
+msgid "Upload bandwidth (in KB/sec):"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:276
+#, no-c-format
+msgid "Download bandwidth (in KB/sec):"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:305
+#, no-c-format
+msgid "Folders"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:324
+#, no-c-format
+msgid "Folder to store temporary files:"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:342
+#, no-c-format
+msgid "Move completed downloads to:"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:353
+#, no-c-format
+msgid "&Automatically save downloads to:"
+msgstr ""
+
+#: apps/ktorrent/generalpref.ui:395
+#, no-c-format
+msgid "Copy .torrent files to:"
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidgetbase.ui:16
+#, no-c-format
+msgid "KTorrent Blacklist"
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidgetbase.ui:30
+#, no-c-format
+msgid ""
+"Note: Blacklist applies to current session only. Use save/open to save your "
+"entries or use IPFilter plugin (PeerGuardian)."
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidgetbase.ui:41
+#, no-c-format
+msgid "Banned Peers"
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidgetbase.ui:50
+#, no-c-format
+msgid "Peer IP address"
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidgetbase.ui:96
+#, no-c-format
+msgid "Add peer:"
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidgetbase.ui:134
+#, no-c-format
+msgid "Adds a peer to blacklist"
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidgetbase.ui:168
+#, no-c-format
+msgid "Removes selected peer from blacklist"
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidgetbase.ui:176
+#, no-c-format
+msgid "C&lear"
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidgetbase.ui:182
+#, no-c-format
+msgid "Clears this list"
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidgetbase.ui:207
+#, no-c-format
+msgid "&Open..."
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidgetbase.ui:218
+#, no-c-format
+msgid "Save &As..."
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidgetbase.ui:224
+#, no-c-format
+msgid "Save this blacklist to use with KTorrent IPFilter plugin"
+msgstr ""
+
+#: apps/ktorrent/ipfilterwidgetbase.ui:260
+#: apps/ktorrent/queuedlg.ui:599
+#: plugins/scheduler/bwspage.ui:759
+#, no-c-format
+msgid "&Apply"
+msgstr ""
+
+#: apps/ktorrent/ktorrentui.rc:4
+#, no-c-format
+msgid "&File"
+msgstr ""
+
+#: apps/ktorrent/ktorrentui.rc:24
+#, no-c-format
+msgid "Main Toolbar"
+msgstr ""
+
+#: apps/ktorrent/ktorrentui.rc:34
+#, no-c-format
+msgid "Download Toolbar"
+msgstr ""
+
+#: apps/ktorrent/pastedlgbase.ui:30
+#, no-c-format
+msgid "Paste URL"
+msgstr ""
+
+#: apps/ktorrent/pastedlgbase.ui:52
+#: plugins/infowidget/trackerviewbase.ui:151
+#: plugins/search/searchpref.ui:166
+#, no-c-format
+msgid "URL:"
+msgstr ""
+
+#: apps/ktorrent/pastedlgbase.ui:106
+#, no-c-format
+msgid "O&K"
+msgstr ""
+
+#: apps/ktorrent/pastedlgbase.ui:114
+#: apps/ktorrent/scandlgbase.ui:179
+#: plugins/ipfilter/convert_dlg.ui:128
+#, no-c-format
+msgid "C&ancel"
+msgstr ""
+
+#: apps/ktorrent/queuedlg.ui:16
+#, no-c-format
+msgid "KT Queue Dialog"
+msgstr ""
+
+#: apps/ktorrent/queuedlg.ui:69
+#: apps/ktorrent/queuedlg.ui:285
+#: plugins/infowidget/trackerviewbase.ui:203
+#, no-c-format
+msgid "Status:"
+msgstr ""
+
+#: apps/ktorrent/queuedlg.ui:85
+#: apps/ktorrent/queuedlg.ui:301
+#: plugins/logviewer/logprefwidgetbase.ui:461
+#, no-c-format
+msgid "Tracker:"
+msgstr ""
+
+#: apps/ktorrent/queuedlg.ui:93
+#: apps/ktorrent/queuedlg.ui:309
+#: plugins/logviewer/logprefwidgetbase.ui:453
+#, no-c-format
+msgid "DHT:"
+msgstr ""
+
+#: apps/ktorrent/queuedlg.ui:109
+#: apps/ktorrent/queuedlg.ui:325
+#: plugins/infowidget/statustabbase.ui:495
+#, no-c-format
+msgid "Share ratio:"
+msgstr ""
+
+#: apps/ktorrent/queuedlg.ui:117
+#, no-c-format
+msgid "Bytes left:"
+msgstr ""
+
+#: apps/ktorrent/queuedlg.ui:177
+#: apps/ktorrent/queuedlg.ui:223
+#, no-c-format
+msgid "Torrent"
+msgstr ""
+
+#: apps/ktorrent/queuedlg.ui:188
+#: apps/ktorrent/queuedlg.ui:234
+#, no-c-format
+msgid "Controlled by"
+msgstr ""
+
+#: apps/ktorrent/queuedlg.ui:214
+#, no-c-format
+msgid "Upload&s"
+msgstr ""
+
+#: apps/ktorrent/queuedlg.ui:333
+#, no-c-format
+msgid "Uploaded:"
+msgstr ""
+
+#: apps/ktorrent/queuedlg.ui:486
+#, no-c-format
+msgid "M&ove up"
+msgstr ""
+
+#: apps/ktorrent/queuedlg.ui:494
+#, no-c-format
+msgid "Move dow&n"
+msgstr ""
+
+#: apps/ktorrent/queuedlg.ui:519
+#, no-c-format
+msgid "Move to top"
+msgstr ""
+
+#: apps/ktorrent/queuedlg.ui:530
+#, no-c-format
+msgid "Move to &bottom"
+msgstr ""
+
+#: apps/ktorrent/queuedlg.ui:555
+#, no-c-format
+msgid "&QM Controlled"
+msgstr ""
+
+#: apps/ktorrent/queuedlg.ui:563
+#, no-c-format
+msgid "&User Controlled"
+msgstr ""
+
+#: apps/ktorrent/scandlgbase.ui:24
+#, no-c-format
+msgid "Scanning data"
+msgstr ""
+
+#: apps/ktorrent/scandlgbase.ui:38
+#, no-c-format
+msgid "Scanning data of torrent :"
+msgstr ""
+
+#: apps/ktorrent/scandlgbase.ui:62
+#, no-c-format
+msgid "Number of chunks found :"
+msgstr ""
+
+#: apps/ktorrent/scandlgbase.ui:70
+#, no-c-format
+msgid "Number of chunks failed / not downloaded :"
+msgstr ""
+
+#: apps/ktorrent/scandlgbase.ui:97
+#: apps/ktorrent/scandlgbase.ui:120
+#, no-c-format
+msgid "0"
+msgstr ""
+
+#: apps/ktorrent/speedlimitsdlgbase.ui:27
+#, no-c-format
+msgid "Set the speed limits for torrent"
+msgstr ""
+
+#: apps/ktorrent/speedlimitsdlgbase.ui:51
+#, no-c-format
+msgid "Max upload rate:"
+msgstr ""
+
+#: apps/ktorrent/speedlimitsdlgbase.ui:59
+#, no-c-format
+msgid "Max download rate:"
+msgstr ""
+
+#: apps/ktorrent/speedlimitsdlgbase.ui:97
+#: apps/ktorrent/speedlimitsdlgbase.ui:105
+#, no-c-format
+msgid "KB/s (0 is no limit)"
+msgstr ""
+
+#: apps/ktorrent/speedlimitsdlgbase.ui:164
+#: plugins/scheduler/bwspage.ui:767
+#, no-c-format
+msgid "Cancel"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:16
+#, no-c-format
+msgid "Create Torrent"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:38
+#, no-c-format
+msgid "The file or folder of which you want to create a torrent:"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:53
+#, no-c-format
+msgid "You must add at least one tracker or node."
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:61
+#, no-c-format
+msgid "File Options"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:80
+#, no-c-format
+msgid "Size of each chunk:"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:86
+#, no-c-format
+msgid "32"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:91
+#, no-c-format
+msgid "64"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:96
+#, no-c-format
+msgid "128"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:101
+#, no-c-format
+msgid "256"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:106
+#, no-c-format
+msgid "512"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:111
+#, no-c-format
+msgid "1024"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:116
+#, no-c-format
+msgid "2048"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:121
+#, no-c-format
+msgid "4096"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:126
+#, no-c-format
+msgid "8192"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:165
+#, no-c-format
+msgid "Start seedin&g the torrent"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:176
+#, no-c-format
+msgid "Decentrali&zed (DHT only)"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:184
+#, no-c-format
+msgid "Private torrent (DHT not allowed)"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:202
+#, no-c-format
+msgid "Comments:"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:248
+#, no-c-format
+msgid "&Create"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:262
+#: plugins/partfileimport/importdlgbase.ui:141
+#, no-c-format
+msgid "Ca&ncel"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:283
+#, no-c-format
+msgid "DHT nodes"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:333
+#, no-c-format
+msgid "Node:"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:385
+#, no-c-format
+msgid "IP or hostname"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:396
+#: libktorrent/ktorrent.kcfg:54 libktorrent/ktorrent.kcfg:60
+#, no-c-format
+msgid "Port"
+msgstr ""
+
+#: apps/ktorrent/torrentcreatordlgbase.ui:437
+#, no-c-format
+msgid ""
+"NOTE: Some known good DHT nodes are already inserted. You should probably "
+"insert your own IP address and port too if you plan to seed this torrent."
+msgstr ""
+
+#: apps/ktupnptest/mainwidget.ui:54
+#, no-c-format
+msgid "Test"
+msgstr ""
+
+#: apps/ktupnptest/mainwidget.ui:62
+#, no-c-format
+msgid "Close"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:10
+#, no-c-format
+msgid "Maximum number of downloads (0 = no limit)"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:15
+#, no-c-format
+msgid "Maximum number of seeds (0 = no limit)"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:20
+#, no-c-format
+msgid "Start downloads on low disk space?"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:24
+#, no-c-format
+msgid "Maximum number of connections per torrent (0 = no limit)"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:29
+#, no-c-format
+msgid "Maximum number of connections for all torrents (0 = no limit) "
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:34
+#, no-c-format
+msgid "Maximum upload speed in KB/sec (0 = no limit)"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:39
+#, no-c-format
+msgid "Maximum download speed in KB/sec (0 = no limit)"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:44
+#, no-c-format
+msgid "Maximum share ratio(0 = no limit)"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:49
+#, no-c-format
+msgid "Maximum seed time in hours (0 = no limit)"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:66
+#, no-c-format
+msgid "Show a system tray icon"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:70
+#, no-c-format
+msgid "Show speed bar in tray icon"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:74
+#, no-c-format
+msgid "Download bandwidth (in kb/s):"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:80
+#, no-c-format
+msgid "Upload bandwidth (in kb/s):"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:86
+#, no-c-format
+msgid "Show popup messages when torrent is finished."
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:90
+#, no-c-format
+msgid "Keep seeding after download has finished"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:94
+#, no-c-format
+msgid "Folder to store temporary files"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:98
+#, no-c-format
+msgid "Whether to automatically save downloads to saveDir"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:102
+#, no-c-format
+msgid "Folder to store downloaded files"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:106
+#, no-c-format
+msgid "Whether to automatically move completed downloads to completedDir"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:110
+#, no-c-format
+msgid "Folder to move completed downloaded files to"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:114
+#, no-c-format
+msgid "Whether to automatically copy .torrent files to torrentCopyDir"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:118
+#, no-c-format
+msgid "Folder to copy .torrent files to"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:122
+#, no-c-format
+msgid "Whether to use a custom IP to pass to the tracker"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:126
+#, no-c-format
+msgid "Directory which was used as the last save directory"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:130
+#, no-c-format
+msgid "IP to pass to the tracker"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:134
+#, no-c-format
+msgid "Memory usage"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:138
+#, no-c-format
+msgid "GUI update interval"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:142
+#, no-c-format
+msgid "Support for DHT"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:146
+#, no-c-format
+msgid "DHT port"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:152
+#, no-c-format
+msgid "Number of upload slots"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:196
+#, no-c-format
+msgid "Columns shown in KTorrentView"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:205
+#, no-c-format
+msgid "ET algorithm"
+msgstr ""
+
+#: libktorrent/ktorrent.kcfg:227
+#, no-c-format
+msgid ""
+"When there's no space left to complete download and free diskspace is less "
+"than minDiskSpace, torrent will be stopped."
+msgstr ""
+
+#: libktorrent/labelviewitembase.ui:49
+#, no-c-format
+msgid "textLabel2"
+msgstr ""
+
+#: libktorrent/labelviewitembase.ui:65
+#, no-c-format
+msgid "textLabel3"
+msgstr ""
+
+#: libktorrent/pluginmanagerwidget.ui:16
+#, no-c-format
+msgid "Plugin Manager"
+msgstr ""
+
+#: libktorrent/pluginmanagerwidget.ui:48
+#, no-c-format
+msgid "Load"
+msgstr ""
+
+#: libktorrent/pluginmanagerwidget.ui:56
+#, no-c-format
+msgid "U&nload"
+msgstr ""
+
+#: libktorrent/pluginmanagerwidget.ui:64
+#, no-c-format
+msgid "Load &All"
+msgstr ""
+
+#: libktorrent/pluginmanagerwidget.ui:72
+#, no-c-format
+msgid "&Unload All"
+msgstr ""
+
+#: plugins/infowidget/chunkdownloadviewbase.ui:43
+#, no-c-format
+msgid "Total:"
+msgstr ""
+
+#: plugins/infowidget/chunkdownloadviewbase.ui:81
+#, no-c-format
+msgid "Currently downloading:"
+msgstr ""
+
+#: plugins/infowidget/chunkdownloadviewbase.ui:119
+#, no-c-format
+msgid "Downloaded:"
+msgstr ""
+
+#: plugins/infowidget/chunkdownloadviewbase.ui:157
+#, no-c-format
+msgid "Excluded:"
+msgstr ""
+
+#: plugins/infowidget/chunkdownloadviewbase.ui:195
+#, no-c-format
+msgid "Left:"
+msgstr ""
+
+#: plugins/infowidget/chunkdownloadviewbase.ui:233
+#, no-c-format
+msgid "Size:"
+msgstr ""
+
+#: plugins/infowidget/chunkdownloadviewbase.ui:280
+#, no-c-format
+msgid "Chunk"
+msgstr ""
+
+#: plugins/infowidget/chunkdownloadviewbase.ui:291
+#, no-c-format
+msgid "Progress"
+msgstr ""
+
+#: plugins/infowidget/chunkdownloadviewbase.ui:302
+#, no-c-format
+msgid "Peer"
+msgstr ""
+
+#: plugins/infowidget/chunkdownloadviewbase.ui:324
+#, no-c-format
+msgid "Assigned Peers"
+msgstr ""
+
+#: plugins/infowidget/iwpref.ui:24
+#, no-c-format
+msgid "Show list of peers"
+msgstr ""
+
+#: plugins/infowidget/iwpref.ui:35
+#, no-c-format
+msgid "Show list of chunks currentl&y downloading"
+msgstr ""
+
+#: plugins/infowidget/iwpref.ui:60
+#, no-c-format
+msgid "Show list of trackers"
+msgstr ""
+
+#: plugins/infowidget/ktinfowidgetplugin.kcfg:10
+#, no-c-format
+msgid "Show peer view tab in main window"
+msgstr ""
+
+#: plugins/infowidget/ktinfowidgetplugin.kcfg:14
+#, no-c-format
+msgid "Show chunk download view tab in main window"
+msgstr ""
+
+#: plugins/infowidget/ktinfowidgetplugin.kcfg:18
+#, no-c-format
+msgid "Show trackers view tab in main window"
+msgstr ""
+
+#: plugins/infowidget/statustabbase.ui:63
+#, no-c-format
+msgid "Seeders:"
+msgstr ""
+
+#: plugins/infowidget/statustabbase.ui:71
+#, no-c-format
+msgid "Leechers:"
+msgstr ""
+
+#: plugins/infowidget/statustabbase.ui:129
+#, no-c-format
+msgid "Average Down Speed:"
+msgstr ""
+
+#: plugins/infowidget/statustabbase.ui:177
+#, no-c-format
+msgid "Average Up Speed:"
+msgstr ""
+
+#: plugins/infowidget/statustabbase.ui:195
+#: plugins/infowidget/trackerviewbase.ui:252
+#, no-c-format
+msgid "Next update in:"
+msgstr ""
+
+#: plugins/infowidget/statustabbase.ui:203
+#, no-c-format
+msgid "Tracker Status:"
+msgstr ""
+
+#: plugins/infowidget/statustabbase.ui:332
+#, no-c-format
+msgid "Parts of the torrent which have been downloaded:"
+msgstr ""
+
+#: plugins/infowidget/statustabbase.ui:367
+#, no-c-format
+msgid "Parts of the torrent which are available:"
+msgstr ""
+
+#: plugins/infowidget/statustabbase.ui:457
+#, no-c-format
+msgid "Sharing"
+msgstr ""
+
+#: plugins/infowidget/statustabbase.ui:487
+#, no-c-format
+msgid ""
+"Your upload will stop when share ratio gets to this value. Zero means no "
+"limit."
+msgstr ""
+
+#: plugins/infowidget/statustabbase.ui:525
+#, no-c-format
+msgid "Your upload will stop when you have uploaded for this many hours."
+msgstr ""
+
+#: plugins/infowidget/statustabbase.ui:533
+#, no-c-format
+msgid "Hours"
+msgstr ""
+
+#: plugins/infowidget/statustabbase.ui:543
+#, no-c-format
+msgid "Ratio limit:"
+msgstr ""
+
+#: plugins/infowidget/statustabbase.ui:549
+#, no-c-format
+msgid "Limit works only in seed mode"
+msgstr ""
+
+#: plugins/infowidget/statustabbase.ui:557
+#, no-c-format
+msgid "Time &limit:"
+msgstr ""
+
+#: plugins/infowidget/trackerviewbase.ui:37
+#, no-c-format
+msgid "&Update Tracker"
+msgstr ""
+
+#: plugins/infowidget/trackerviewbase.ui:40
+#, no-c-format
+msgid "Minimum update interval - 60 seconds"
+msgstr ""
+
+#: plugins/infowidget/trackerviewbase.ui:48
+#, no-c-format
+msgid "Add Trac&ker"
+msgstr ""
+
+#: plugins/infowidget/trackerviewbase.ui:64
+#, no-c-format
+msgid "Remove Tracker"
+msgstr ""
+
+#: plugins/infowidget/trackerviewbase.ui:75
+#, no-c-format
+msgid "Ch&ange Tracker"
+msgstr ""
+
+#: plugins/infowidget/trackerviewbase.ui:100
+#, no-c-format
+msgid "Restore Defaults"
+msgstr ""
+
+#: plugins/ipfilter/convert_dlg.ui:41
+#, no-c-format
+msgid ""
+"Click on the 'convert' button to start converting antip2p file. NOTE: This "
+"process could take a while even on fast machines and during that time you "
+"will not be able to use KTorrent."
+msgstr ""
+
+#: plugins/ipfilter/ipblockingpref.ui:16
+#, no-c-format
+msgid "IPBlocking Preferences"
+msgstr ""
+
+#: plugins/ipfilter/ipblockingpref.ui:47
+#, no-c-format
+msgid "Select PeerGuardian Filter File "
+msgstr ""
+
+#: plugins/ipfilter/ipblockingpref.ui:58
+#, no-c-format
+msgid "Use PeerGuardian filter?"
+msgstr ""
+
+#: plugins/ipfilter/ipblockingpref.ui:77
+#, no-c-format
+msgid "IP filter file:"
+msgstr ""
+
+#: plugins/ipfilter/ipblockingpref.ui:85
+#, no-c-format
+msgid "http://www.bluetack.co.uk/modules.php?name=Downloads&d_op=getit&lid=8"
+msgstr ""
+
+#: plugins/ipfilter/ipblockingpref.ui:123
+#, no-c-format
+msgid "Dow&nload/Convert"
+msgstr ""
+
+#: plugins/ipfilter/ipblockingpref.ui:133
+#, no-c-format
+msgid ""
+"Download PeerGuardian filter from bluetack.co.uk or blocklist.org.\n"
+"NOTE: ZIP file from bluetack.co.uk is supported."
+msgstr ""
+
+#: plugins/ipfilter/ktipfilterplugin.kcfg:10
+#, no-c-format
+msgid "Level1 filter url"
+msgstr ""
+
+#: plugins/ipfilter/ktipfilterplugin.kcfg:14
+#, no-c-format
+msgid "Use level1 filter?"
+msgstr ""
+
+#: plugins/logviewer/ktlogviewerplugin.kcfg:10
+#, no-c-format
+msgid "Use rich log text"
+msgstr ""
+
+#: plugins/logviewer/ktlogviewerplugin.kcfg:15
+#, no-c-format
+msgid "General info messages flag"
+msgstr ""
+
+#: plugins/logviewer/ktlogviewerplugin.kcfg:19
+#, no-c-format
+msgid "Connections messages flag"
+msgstr ""
+
+#: plugins/logviewer/ktlogviewerplugin.kcfg:23
+#, no-c-format
+msgid "DHT messages flag"
+msgstr ""
+
+#: plugins/logviewer/ktlogviewerplugin.kcfg:27
+#, no-c-format
+msgid "Tracker info messages flag"
+msgstr ""
+
+#: plugins/logviewer/ktlogviewerplugin.kcfg:31
+#, no-c-format
+msgid "Disk IO info messages flag"
+msgstr ""
+
+#: plugins/logviewer/ktlogviewerplugin.kcfg:35
+#, no-c-format
+msgid "IPFilter plugin messages flag"
+msgstr ""
+
+#: plugins/logviewer/ktlogviewerplugin.kcfg:39
+#, no-c-format
+msgid "Search plugin messages flag"
+msgstr ""
+
+#: plugins/logviewer/ktlogviewerplugin.kcfg:43
+#, no-c-format
+msgid "PartFileImport plugin messages flag"
+msgstr ""
+
+#: plugins/logviewer/ktlogviewerplugin.kcfg:47
+#, no-c-format
+msgid "InfoWidget plugin messages flag"
+msgstr ""
+
+#: plugins/logviewer/ktlogviewerplugin.kcfg:51
+#, no-c-format
+msgid "UPnP plugin messages flag"
+msgstr ""
+
+#: plugins/logviewer/ktlogviewerplugin.kcfg:55
+#, no-c-format
+msgid "ScanFolder plugin messages flag"
+msgstr ""
+
+#: plugins/logviewer/ktlogviewerplugin.kcfg:59
+#, no-c-format
+msgid "Scheduler plugin messages flag"
+msgstr ""
+
+#: plugins/logviewer/ktlogviewerplugin.kcfg:63
+#, no-c-format
+msgid "RSS plugin messages flag"
+msgstr ""
+
+#: plugins/logviewer/ktlogviewerplugin.kcfg:67
+#, no-c-format
+msgid "WebInterface plugin messages flag"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:53
+#: plugins/logviewer/logprefwidgetbase.ui:94
+#: plugins/logviewer/logprefwidgetbase.ui:135
+#: plugins/logviewer/logprefwidgetbase.ui:187
+#: plugins/logviewer/logprefwidgetbase.ui:217
+#: plugins/logviewer/logprefwidgetbase.ui:258
+#: plugins/logviewer/logprefwidgetbase.ui:310
+#: plugins/logviewer/logprefwidgetbase.ui:351
+#: plugins/logviewer/logprefwidgetbase.ui:381
+#: plugins/logviewer/logprefwidgetbase.ui:467
+#: plugins/logviewer/logprefwidgetbase.ui:497
+#: plugins/logviewer/logprefwidgetbase.ui:527
+#: plugins/logviewer/logprefwidgetbase.ui:565
+#: plugins/logviewer/logprefwidgetbase.ui:595
+#, no-c-format
+msgid "All"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:58
+#: plugins/logviewer/logprefwidgetbase.ui:99
+#: plugins/logviewer/logprefwidgetbase.ui:140
+#: plugins/logviewer/logprefwidgetbase.ui:192
+#: plugins/logviewer/logprefwidgetbase.ui:222
+#: plugins/logviewer/logprefwidgetbase.ui:263
+#: plugins/logviewer/logprefwidgetbase.ui:315
+#: plugins/logviewer/logprefwidgetbase.ui:356
+#: plugins/logviewer/logprefwidgetbase.ui:386
+#: plugins/logviewer/logprefwidgetbase.ui:472
+#: plugins/logviewer/logprefwidgetbase.ui:502
+#: plugins/logviewer/logprefwidgetbase.ui:532
+#: plugins/logviewer/logprefwidgetbase.ui:570
+#: plugins/logviewer/logprefwidgetbase.ui:600
+#, no-c-format
+msgid "Debug"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:63
+#: plugins/logviewer/logprefwidgetbase.ui:104
+#: plugins/logviewer/logprefwidgetbase.ui:145
+#: plugins/logviewer/logprefwidgetbase.ui:197
+#: plugins/logviewer/logprefwidgetbase.ui:227
+#: plugins/logviewer/logprefwidgetbase.ui:268
+#: plugins/logviewer/logprefwidgetbase.ui:320
+#: plugins/logviewer/logprefwidgetbase.ui:361
+#: plugins/logviewer/logprefwidgetbase.ui:391
+#: plugins/logviewer/logprefwidgetbase.ui:477
+#: plugins/logviewer/logprefwidgetbase.ui:507
+#: plugins/logviewer/logprefwidgetbase.ui:537
+#: plugins/logviewer/logprefwidgetbase.ui:575
+#: plugins/logviewer/logprefwidgetbase.ui:605
+#, no-c-format
+msgid "Notice"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:68
+#: plugins/logviewer/logprefwidgetbase.ui:109
+#: plugins/logviewer/logprefwidgetbase.ui:150
+#: plugins/logviewer/logprefwidgetbase.ui:202
+#: plugins/logviewer/logprefwidgetbase.ui:232
+#: plugins/logviewer/logprefwidgetbase.ui:273
+#: plugins/logviewer/logprefwidgetbase.ui:325
+#: plugins/logviewer/logprefwidgetbase.ui:366
+#: plugins/logviewer/logprefwidgetbase.ui:396
+#: plugins/logviewer/logprefwidgetbase.ui:482
+#: plugins/logviewer/logprefwidgetbase.ui:512
+#: plugins/logviewer/logprefwidgetbase.ui:542
+#: plugins/logviewer/logprefwidgetbase.ui:580
+#: plugins/logviewer/logprefwidgetbase.ui:610
+#, no-c-format
+msgid "Important"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:73
+#: plugins/logviewer/logprefwidgetbase.ui:114
+#: plugins/logviewer/logprefwidgetbase.ui:155
+#: plugins/logviewer/logprefwidgetbase.ui:207
+#: plugins/logviewer/logprefwidgetbase.ui:237
+#: plugins/logviewer/logprefwidgetbase.ui:278
+#: plugins/logviewer/logprefwidgetbase.ui:330
+#: plugins/logviewer/logprefwidgetbase.ui:371
+#: plugins/logviewer/logprefwidgetbase.ui:401
+#: plugins/logviewer/logprefwidgetbase.ui:487
+#: plugins/logviewer/logprefwidgetbase.ui:517
+#: plugins/logviewer/logprefwidgetbase.ui:547
+#: plugins/logviewer/logprefwidgetbase.ui:585
+#: plugins/logviewer/logprefwidgetbase.ui:615
+#, no-c-format
+msgid "None"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:85
+#, no-c-format
+msgid "IPFilter:"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:126
+#, no-c-format
+msgid "Search:"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:167
+#, no-c-format
+msgid "UPnP:"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:178
+#, no-c-format
+msgid "ScanFolder:"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:249
+#, no-c-format
+msgid "Scheduler:"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:290
+#, no-c-format
+msgid "PartFileImport:"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:301
+#, no-c-format
+msgid "InfoWidget:"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:342
+#, no-c-format
+msgid "RSS plugin:"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:413
+#, no-c-format
+msgid "WebInterface plugin:"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:426
+#, no-c-format
+msgid "System"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:437
+#, no-c-format
+msgid "General:"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:445
+#, no-c-format
+msgid "Connections:"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:559
+#, no-c-format
+msgid "Disk I/O:"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:629
+#: plugins/scanfolder/sfprefwidgetbase.ui:70
+#, no-c-format
+msgid "Options"
+msgstr ""
+
+#: plugins/logviewer/logprefwidgetbase.ui:640
+#, no-c-format
+msgid "Use rich te&xt for log"
+msgstr ""
+
+#: plugins/partfileimport/importdlgbase.ui:16
+#, no-c-format
+msgid "Import an existing download"
+msgstr ""
+
+#: plugins/partfileimport/importdlgbase.ui:49
+#, no-c-format
+msgid "Torrent:"
+msgstr ""
+
+#: plugins/partfileimport/importdlgbase.ui:63
+#, no-c-format
+msgid "Data:"
+msgstr ""
+
+#: plugins/partfileimport/importdlgbase.ui:95
+#, no-c-format
+msgid ""
+"Please specify the torrent and the data already downloaded for that torrent."
+msgstr ""
+
+#: plugins/partfileimport/importdlgbase.ui:133
+#, no-c-format
+msgid "&Import"
+msgstr ""
+
+#: plugins/rssfeed/ktrssfeedplugin.kcfg:10
+#, no-c-format
+msgid "default"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:18
+#, no-c-format
+msgid "Rss Feeds"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:36
+#, no-c-format
+msgid "Feeds"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:78
+#, no-c-format
+msgid "De&lete"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:86
+#: plugins/rssfeed/rssfeedwidget.ui:419
+#: plugins/rssfeed/rssfeedwidget.ui:470
+#, no-c-format
+msgid "&New"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:117
+#, no-c-format
+msgid "&URL"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:139
+#, no-c-format
+msgid "Articles"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:216
+#, no-c-format
+msgid "Auto&refresh"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:242
+#, no-c-format
+msgid "I&gnore TTL"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:270
+#, no-c-format
+msgid "Refresh"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:299
+#: plugins/rssfeed/rssfeedwidget.ui:506
+#, no-c-format
+msgid "&Title"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:323
+#, no-c-format
+msgid "Keep Articles (days)"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:347
+#: plugins/rssfeed/rssfeedwidget.ui:522
+#, no-c-format
+msgid "&Active"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:362
+#, no-c-format
+msgid "Filters"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:389
+#, no-c-format
+msgid "Accept Filters"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:408
+#: plugins/rssfeed/rssfeedwidget.ui:459
+#: plugins/rssfeed/rssfeedwidget.ui:928
+#, no-c-format
+msgid "Delete"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:440
+#, no-c-format
+msgid "Reject Filters"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:557
+#, no-c-format
+msgid "Regular Expressions"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:587
+#, no-c-format
+msgid "Treat as &Series"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:624
+#, no-c-format
+msgid "Process"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:643
+#, no-c-format
+msgid "Series Criteria"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:679
+#, no-c-format
+msgid "Match Without Episode"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:713
+#, no-c-format
+msgid "Max Episode"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:739
+#, no-c-format
+msgid "Max Season"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:758
+#, no-c-format
+msgid "Min Season"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:782
+#, no-c-format
+msgid "Min Episode"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:814
+#, no-c-format
+msgid "Test te&xt"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:840
+#, no-c-format
+msgid "Te&st"
+msgstr ""
+
+#: plugins/rssfeed/rssfeedwidget.ui:858
+#, no-c-format
+msgid "Filter Matches"
+msgstr ""
+
+#: plugins/scanfolder/ktscanfolderplugin.kcfg:9
+#, no-c-format
+msgid "Enable scanning of folder1?"
+msgstr ""
+
+#: plugins/scanfolder/ktscanfolderplugin.kcfg:14
+#, no-c-format
+msgid "Enable scanning of folder2?"
+msgstr ""
+
+#: plugins/scanfolder/ktscanfolderplugin.kcfg:19
+#, no-c-format
+msgid "Enable scanning of folder3?"
+msgstr ""
+
+#: plugins/scanfolder/ktscanfolderplugin.kcfg:24
+#, no-c-format
+msgid "Folder1 path"
+msgstr ""
+
+#: plugins/scanfolder/ktscanfolderplugin.kcfg:29
+#, no-c-format
+msgid "Folder2 path"
+msgstr ""
+
+#: plugins/scanfolder/ktscanfolderplugin.kcfg:34
+#, no-c-format
+msgid "Folder3 path"
+msgstr ""
+
+#: plugins/scanfolder/ktscanfolderplugin.kcfg:39
+#, no-c-format
+msgid "Whether to open torrent silently or not."
+msgstr ""
+
+#: plugins/scanfolder/ktscanfolderplugin.kcfg:44
+#, no-c-format
+msgid "Delete action checked."
+msgstr ""
+
+#: plugins/scanfolder/ktscanfolderplugin.kcfg:49
+#, no-c-format
+msgid "Move action checked."
+msgstr ""
+
+#: plugins/scanfolder/sfprefwidgetbase.ui:16
+#, no-c-format
+msgid "ScanFolder Preferences"
+msgstr ""
+
+#: plugins/scanfolder/sfprefwidgetbase.ui:35
+#, no-c-format
+msgid "Scan folder &1"
+msgstr ""
+
+#: plugins/scanfolder/sfprefwidgetbase.ui:38
+#: plugins/scheduler/bwspage.ui:233
+#, no-c-format
+msgid "Alt+1"
+msgstr ""
+
+#: plugins/scanfolder/sfprefwidgetbase.ui:46
+#, no-c-format
+msgid "Scan folder &2"
+msgstr ""
+
+#: plugins/scanfolder/sfprefwidgetbase.ui:49
+#: plugins/scheduler/bwspage.ui:209
+#: plugins/scheduler/bwspage.ui:378
+#, no-c-format
+msgid "Alt+2"
+msgstr ""
+
+#: plugins/scanfolder/sfprefwidgetbase.ui:57
+#, no-c-format
+msgid "Scan folder &3"
+msgstr ""
+
+#: plugins/scanfolder/sfprefwidgetbase.ui:60
+#: plugins/scheduler/bwspage.ui:198
+#, no-c-format
+msgid "Alt+3"
+msgstr ""
+
+#: plugins/scanfolder/sfprefwidgetbase.ui:81
+#, no-c-format
+msgid "Move to \"loaded\" directory &after loading"
+msgstr ""
+
+#: plugins/scanfolder/sfprefwidgetbase.ui:84
+#, no-c-format
+msgid "Move torrent to \"loaded\" directory after loading it"
+msgstr ""
+
+#: plugins/scanfolder/sfprefwidgetbase.ui:92
+#, no-c-format
+msgid "Open torrents silentl&y"
+msgstr ""
+
+#: plugins/scanfolder/sfprefwidgetbase.ui:95
+#, no-c-format
+msgid "Do not show 'Select files to download' dialog"
+msgstr ""
+
+#: plugins/scanfolder/sfprefwidgetbase.ui:103
+#, no-c-format
+msgid "Delete after loadin&g"
+msgstr ""
+
+#: plugins/scanfolder/sfprefwidgetbase.ui:106
+#, no-c-format
+msgid "Deletes torrent after loading"
+msgstr ""
+
+#: plugins/scanfolder/sfprefwidgetbase.ui:116
+#, no-c-format
+msgid "Folders to scan"
+msgstr ""
+
+#: plugins/scanfolder/sfprefwidgetbase.ui:151
+#, no-c-format
+msgid "Folder 1:"
+msgstr ""
+
+#: plugins/scanfolder/sfprefwidgetbase.ui:162
+#, no-c-format
+msgid "Folder 2:"
+msgstr ""
+
+#: plugins/scanfolder/sfprefwidgetbase.ui:173
+#, no-c-format
+msgid "Folder 3:"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:28
+#, no-c-format
+msgid "Bandwidth scheduler"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:50
+#, no-c-format
+msgid "Left click category"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:61
+#, no-c-format
+msgid "Categor&y 1"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:157
+#: plugins/scheduler/bwspage.ui:329
+#, no-c-format
+msgid "T&urn off"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:165
+#: plugins/scheduler/bwspage.ui:337
+#, no-c-format
+msgid "&Normal"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:195
+#, no-c-format
+msgid "Category &3"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:206
+#: plugins/scheduler/bwspage.ui:375
+#, no-c-format
+msgid "Category &2"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:219
+#, no-c-format
+msgid "Right click category"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:230
+#, no-c-format
+msgid "Category &1"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:367
+#, no-c-format
+msgid "&Category 3"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:390
+#, no-c-format
+msgid "Categories"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:401
+#, no-c-format
+msgid "<b>1. Category</b>"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:409
+#, no-c-format
+msgid "<b>3. Category</b>"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:425
+#: plugins/scheduler/bwspage.ui:475
+#: plugins/scheduler/bwspage.ui:525
+#, no-c-format
+msgid "download:"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:441
+#: plugins/scheduler/bwspage.ui:491
+#: plugins/scheduler/bwspage.ui:541
+#, no-c-format
+msgid "upload:"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:457
+#: plugins/scheduler/bwspage.ui:507
+#: plugins/scheduler/bwspage.ui:557
+#, no-c-format
+msgid "KB/s *"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:567
+#, no-c-format
+msgid "<b>2. Category</b>"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:626
+#, no-c-format
+msgid "* zero means no limit"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:672
+#, no-c-format
+msgid "Save to file"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:680
+#, no-c-format
+msgid "&Load from file"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:688
+#, no-c-format
+msgid "Reset schedule"
+msgstr ""
+
+#: plugins/scheduler/bwspage.ui:751
+#, no-c-format
+msgid "O&k"
+msgstr ""
+
+#: plugins/scheduler/ktschedulerplugin.kcfg:10
+#, no-c-format
+msgid "Enable bandwidth scheduler?"
+msgstr ""
+
+#: plugins/scheduler/ktschedulerplugin.kcfg:14
+#, no-c-format
+msgid "Use colors instead of pixmaps?"
+msgstr ""
+
+#: plugins/scheduler/schedulerpage.ui:16
+#, no-c-format
+msgid "Scheduler Plugin Pref Page"
+msgstr ""
+
+#: plugins/scheduler/schedulerpage.ui:27
+#, no-c-format
+msgid "Use &bandwidth scheduler?"
+msgstr ""
+
+#: plugins/scheduler/schedulerpage.ui:46
+#, no-c-format
+msgid "Use colors instead of pi&xmaps?"
+msgstr ""
+
+#: plugins/scheduler/schedulerpage.ui:54
+#, no-c-format
+msgid "(Recommended for slower systems)"
+msgstr ""
+
+#: plugins/scheduler/schedulerpage.ui:62
+#, no-c-format
+msgid "Edit s&chedule"
+msgstr ""
+
+#: plugins/search/ktsearchplugin.kcfg:10
+#, no-c-format
+msgid "Current search engine"
+msgstr ""
+
+#: plugins/search/ktsearchplugin.kcfg:15
+#: plugins/search/searchpref.ui:60
+#, no-c-format
+msgid "Use default browser"
+msgstr ""
+
+#: plugins/search/ktsearchplugin.kcfg:19
+#, no-c-format
+msgid "Use custom browser"
+msgstr ""
+
+#: plugins/search/ktsearchplugin.kcfg:23
+#, no-c-format
+msgid "Custom browser executable path"
+msgstr ""
+
+#: plugins/search/searchbar.ui:78
+#, no-c-format
+msgid "Engine:"
+msgstr ""
+
+#: plugins/search/searchpref.ui:30
+#: plugins/webinterface/webinterfacepref.ui:30
+#, no-c-format
+msgid "Search Preferences"
+msgstr ""
+
+#: plugins/search/searchpref.ui:41
+#, no-c-format
+msgid "External Browser"
+msgstr ""
+
+#: plugins/search/searchpref.ui:52
+#, no-c-format
+msgid "Open searches in external browser"
+msgstr ""
+
+#: plugins/search/searchpref.ui:79
+#, no-c-format
+msgid "Custom browser path:"
+msgstr ""
+
+#: plugins/search/searchpref.ui:116
+#, no-c-format
+msgid "Search Engines"
+msgstr ""
+
+#: plugins/search/searchpref.ui:143
+#, no-c-format
+msgid "Search engine name:"
+msgstr ""
+
+#: plugins/search/searchpref.ui:187
+#, no-c-format
+msgid "&Add"
+msgstr ""
+
+#: plugins/search/searchpref.ui:195
+#, no-c-format
+msgid "Engines"
+msgstr ""
+
+#: plugins/search/searchpref.ui:206
+#, no-c-format
+msgid "URL"
+msgstr ""
+
+#: plugins/search/searchpref.ui:257
+#, no-c-format
+msgid "R&emove All"
+msgstr ""
+
+#: plugins/search/searchpref.ui:282
+#, no-c-format
+msgid "Add Defau&lt"
+msgstr ""
+
+#: plugins/search/searchpref.ui:290
+#, no-c-format
+msgid "Update From Internet"
+msgstr ""
+
+#: plugins/stats/ktstatsplugin.kcfg:10
+#: plugins/stats/sprefwgt.ui:46
+#, no-c-format
+msgid "Update charts every"
+msgstr ""
+
+#: plugins/stats/ktstatsplugin.kcfg:14
+#: plugins/stats/sprefwgt.ui:92
+#, no-c-format
+msgid "Gather data every"
+msgstr ""
+
+#: plugins/stats/ktstatsplugin.kcfg:18
+#, no-c-format
+msgid "Toggle peers speed charts"
+msgstr ""
+
+#: plugins/stats/ktstatsplugin.kcfg:22
+#, no-c-format
+msgid "Interval between getting data about peers speed"
+msgstr ""
+
+#: plugins/stats/ktstatsplugin.kcfg:26
+#, no-c-format
+msgid "Toggle drawing of leechers in swarms"
+msgstr ""
+
+#: plugins/stats/ktstatsplugin.kcfg:30
+#, no-c-format
+msgid "Toggle drawing of seeders in swarms"
+msgstr ""
+
+#: plugins/stats/ktstatsplugin.kcfg:35
+#, no-c-format
+msgid "Download mesurments count"
+msgstr ""
+
+#: plugins/stats/ktstatsplugin.kcfg:39
+#, no-c-format
+msgid "Peers speed mesurments count"
+msgstr ""
+
+#: plugins/stats/ktstatsplugin.kcfg:43
+#, no-c-format
+msgid "Upload mesurments count"
+msgstr ""
+
+#: plugins/stats/ktstatsplugin.kcfg:47
+#, no-c-format
+msgid "Connections mesurments count"
+msgstr ""
+
+#: plugins/stats/ktstatsplugin.kcfg:51
+#, no-c-format
+msgid "DHT mesurments count"
+msgstr ""
+
+#: plugins/stats/ktstatsplugin.kcfg:56
+#, no-c-format
+msgid "OY axis max mode"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:27
+#, no-c-format
+msgid "Update"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:71
+#, no-c-format
+msgid "GUI updates"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:120
+#, no-c-format
+msgid "miliseconds"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:135
+#, no-c-format
+msgid "Maximum"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:154
+#, no-c-format
+msgid "Maximum speed scale mode:"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:160
+#, no-c-format
+msgid "Top"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:165
+#, no-c-format
+msgid "Exact"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:175
+#, no-c-format
+msgid "See 'What's this' for more help"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:178
+#, no-c-format
+msgid ""
+"Set maximum value on OY scale as:\n"
+"- Top: Globally achieved maximum speed\n"
+"- Exact: Maximum achieved speed visible on chart"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:192
+#: plugins/stats/sprefwgt.ui:360
+#, no-c-format
+msgid "Peers speed"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:211
+#, no-c-format
+msgid "Peers speed:"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:222
+#, no-c-format
+msgid "update every"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:244
+#, no-c-format
+msgid "chart data updates"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:254
+#, no-c-format
+msgid "Gathering data about many connected peers can be CPU consuming."
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:267
+#, no-c-format
+msgid "Peers connections"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:270
+#, no-c-format
+msgid "Large values can obscure charts of connected peers"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:289
+#, no-c-format
+msgid "Show seeders in swarms"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:297
+#, no-c-format
+msgid "Show leechers in swarms"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:309
+#, no-c-format
+msgid "Measurements count"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:392
+#: plugins/stats/statsspdwgt.ui:48
+#, no-c-format
+msgid "Upload"
+msgstr ""
+
+#: plugins/stats/sprefwgt.ui:424
+#, no-c-format
+msgid "Connections"
+msgstr ""
+
+#: plugins/upnp/ktupnpplugin.kcfg:10
+#, no-c-format
+msgid "Default UPnP device to use"
+msgstr ""
+
+#: plugins/upnp/upnpwidget.ui:35
+#, no-c-format
+msgid "Detected devices:"
+msgstr ""
+
+#: plugins/upnp/upnpwidget.ui:41
+#, no-c-format
+msgid "Device"
+msgstr ""
+
+#: plugins/upnp/upnpwidget.ui:52
+#, no-c-format
+msgid "Ports Forwarded"
+msgstr ""
+
+#: plugins/upnp/upnpwidget.ui:63
+#, no-c-format
+msgid "WAN Connection"
+msgstr ""
+
+#: plugins/upnp/upnpwidget.ui:91
+#, no-c-format
+msgid "Forw&ard Ports"
+msgstr ""
+
+#: plugins/upnp/upnpwidget.ui:99
+#, no-c-format
+msgid "Undo Port Forwarding"
+msgstr ""
+
+#: plugins/upnp/upnpwidget.ui:124
+#, no-c-format
+msgid "Rescan"
+msgstr ""
+
+#: plugins/webinterface/ktwebinterfaceplugin.kcfg:10
+#, no-c-format
+msgid "Port number"
+msgstr ""
+
+#: plugins/webinterface/ktwebinterfaceplugin.kcfg:15
+#, no-c-format
+msgid "forward Port"
+msgstr ""
+
+#: plugins/webinterface/ktwebinterfaceplugin.kcfg:20
+#, no-c-format
+msgid "Session time to live"
+msgstr ""
+
+#: plugins/webinterface/ktwebinterfaceplugin.kcfg:24
+#, no-c-format
+msgid "interface skin"
+msgstr ""
+
+#: plugins/webinterface/ktwebinterfaceplugin.kcfg:28
+#, no-c-format
+msgid "php executable path"
+msgstr ""
+
+#: plugins/webinterface/ktwebinterfaceplugin.kcfg:33
+#, no-c-format
+msgid "username"
+msgstr ""
+
+#: plugins/webinterface/ktwebinterfaceplugin.kcfg:37
+#, no-c-format
+msgid "password"
+msgstr ""
+
+#: plugins/webinterface/webinterfacepref.ui:41
+#, no-c-format
+msgid "Web Server"
+msgstr ""
+
+#: plugins/webinterface/webinterfacepref.ui:82
+#, no-c-format
+msgid "Forward port"
+msgstr ""
+
+#: plugins/webinterface/webinterfacepref.ui:107
+#, no-c-format
+msgid "Session TTL (in sec):"
+msgstr ""
+
+#: plugins/webinterface/webinterfacepref.ui:142
+#, no-c-format
+msgid "Select interface:"
+msgstr ""
+
+#: plugins/webinterface/webinterfacepref.ui:173
+#, no-c-format
+msgid "Username:"
+msgstr ""
+
+#: plugins/webinterface/webinterfacepref.ui:188
+#, no-c-format
+msgid "Change password ..."
+msgstr ""
+
+#: plugins/webinterface/webinterfacepref.ui:206
+#, no-c-format
+msgid "Php executable path:"
+msgstr ""

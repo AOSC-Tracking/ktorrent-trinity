@@ -1,0 +1,23 @@
+#################################################
+#
+#  (C) 2019 Slávek Banko
+#  slavek.banko (AT) axis.cz
+#
+#  Improvements and feedback are welcome
+#
+#  This file is released under GPL >= 2
+#
+#################################################
+
+cmake_minimum_required( VERSION 2.8 )
+
+
+##### include our cmake modules #################
+
+set( CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules" )
+include( TDEL10n )
+
+
+##### create translation templates ##############
+
+tde_l10n_create_template( "ktorrent" )
