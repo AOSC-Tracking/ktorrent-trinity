@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2019-01-06 17:08+0100\n"
+"POT-Creation-Date: 2019-01-13 19:17+0100\n"
 "PO-Revision-Date: 2007-09-09 14:47+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -74,19 +74,6 @@ msgstr "Hayır, dosyaları koru"
 #: apps/ktorrent/fileselectdlg.cpp:220
 msgid " short!"
 msgstr " kısa!"
-
-#: apps/ktorrent/fileselectdlg.cpp:254 apps/ktorrent/queuedialog.cpp:305
-#: apps/ktorrent/queuedialog.cpp:326
-#: libktorrent/interfaces/filetreediritem.cpp:45
-#: libktorrent/interfaces/filetreediritem.cpp:59
-#: libktorrent/interfaces/filetreediritem.cpp:167
-#: libktorrent/interfaces/filetreeitem.cpp:89
-#: plugins/infowidget/iwfiletreediritem.cpp:160
-#: plugins/infowidget/iwfiletreediritem.cpp:173
-#: plugins/infowidget/iwfiletreeitem.cpp:132
-#: plugins/infowidget/peerview.cpp:170 plugins/infowidget/peerview.cpp:172
-msgid "Yes"
-msgstr ""
 
 #: apps/ktorrent/fileselectdlg.cpp:284 apps/ktorrent/groups/allgroup.cpp:26
 #: apps/ktorrent/groups/groupmanager.h:54 apps/ktorrent/ktorrent.cpp:962
@@ -249,12 +236,6 @@ msgid ""
 "Stop"
 msgstr "Durdur"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:159 apps/ktorrent/ktorrent.cpp:523
-#: apps/ktorrent/torrentcreatordlgbase.ui:297
-#, fuzzy, no-c-format
-msgid "Remove"
-msgstr "&Tümünü Kaldır"
-
 #: apps/ktorrent/ktorrent.cpp:527 apps/ktorrent/ktorrent.cpp:530
 msgid ""
 "_: to start all\n"
@@ -348,23 +329,6 @@ msgstr ""
 msgid "Cannot create torrent: %1"
 msgstr "Torrent oluşturulamıyor: %1"
 
-#: apps/ktorrent/ktorrentcore.cpp:768 apps/ktorrent/pref.cpp:180
-#: apps/ktorrent/pref.cpp:285 apps/ktorrent/pref.cpp:295
-#: apps/ktorrent/torrentcreatordlg.cpp:125 apps/ktorrent/trayicon.cpp:203
-#: apps/ktorrent/trayicon.cpp:215 libktorrent/torrent/queuemanager.cpp:239
-#: libktorrent/torrent/queuemanager.cpp:748
-#: libktorrent/torrent/queuemanager.cpp:766
-#: plugins/ipfilter/ipblockingprefpage.cpp:137
-#: plugins/ipfilter/ipblockingprefpage.cpp:150
-#: plugins/partfileimport/importdialog.cpp:100
-#: plugins/partfileimport/importdialog.cpp:179
-#: plugins/partfileimport/importdialog.cpp:208
-#: plugins/partfileimport/importdialog.cpp:244
-#: plugins/scheduler/bwsprefpagewidget.cpp:174
-#, fuzzy
-msgid "Error"
-msgstr "Hata: "
-
 #: apps/ktorrent/ktorrentcore.cpp:1028
 msgid ""
 "Several data files of the torrent \"%1\" are missing, do you want to "
@@ -425,12 +389,6 @@ msgstr "Veri Doğruluğu Denetleniyor"
 #: apps/ktorrent/ktorrentview.cpp:132
 msgid "Visible columns"
 msgstr "Görünen sütunlar"
-
-#: apps/ktorrent/fileselectdlgbase.ui:138 apps/ktorrent/ktorrentview.cpp:134
-#: plugins/infowidget/fileview.cpp:47
-#, fuzzy, no-c-format
-msgid "File"
-msgstr "Tüm Dosyalar"
 
 #: apps/ktorrent/ktorrentview.cpp:135
 #: plugins/infowidget/infowidgetplugin.cpp:76
@@ -545,11 +503,6 @@ msgstr ""
 #: apps/ktorrent/ktorrentview.cpp:397 apps/ktorrent/ktorrentviewmenu.cpp:45
 msgid "Remove Torrent"
 msgstr "Torrenti Kaldır"
-
-#: apps/ktorrent/ktorrentview.cpp:397 plugins/search/searchpref.ui:249
-#, fuzzy, no-c-format
-msgid "&Remove"
-msgstr "&Tümünü Kaldır"
 
 #: apps/ktorrent/ktorrentview.cpp:631
 msgid "You are already checking the data of the torrent %1 !"
@@ -1052,20 +1005,6 @@ msgstr "KTUPnPTest"
 msgid "Cannot open file : %1 : %2"
 msgstr "Dosya aöılamıyor: %1 : %2"
 
-#: libktorrent/interfaces/filetreediritem.cpp:167
-#: libktorrent/interfaces/filetreeitem.cpp:84
-#: plugins/infowidget/fileview.cpp:209
-#: plugins/infowidget/iwfiletreediritem.cpp:156
-#: plugins/infowidget/iwfiletreediritem.cpp:168
-#: plugins/infowidget/iwfiletreeitem.cpp:79
-#: plugins/infowidget/iwfiletreeitem.cpp:111
-#: plugins/infowidget/iwfiletreeitem.cpp:127
-#: plugins/infowidget/iwfiletreeitem.cpp:142
-#: plugins/infowidget/peerview.cpp:170 plugins/infowidget/peerview.cpp:172
-#, fuzzy
-msgid "No"
-msgstr "Hiçbiri"
-
 #: libktorrent/interfaces/filetreeitem.cpp:77
 #: plugins/infowidget/iwfiletreediritem.cpp:148
 #: plugins/infowidget/iwfiletreeitem.cpp:120
@@ -1259,12 +1198,6 @@ msgstr "Bilinmeyen istemci"
 #: libktorrent/torrent/torrentcontrol.cpp:1376
 msgid "Stopped"
 msgstr "Durdu"
-
-#: apps/ktorrent/speedlimitsdlgbase.ui:156
-#: libktorrent/torrent/peersourcemanager.cpp:451
-#, fuzzy, no-c-format
-msgid "OK"
-msgstr "&Tamam"
 
 #: libktorrent/torrent/peersourcemanager.cpp:458
 msgid "Announcing"
@@ -1525,11 +1458,6 @@ msgstr ""
 msgid "Download"
 msgstr "İndir"
 
-#: plugins/infowidget/fileview.cpp:55
-#, fuzzy
-msgid "Open"
-msgstr "Sekme Aç"
-
 #: plugins/infowidget/fileview.cpp:57
 msgid "Download First"
 msgstr "İlk Önce İndir"
@@ -1576,12 +1504,6 @@ msgid ""
 msgstr ""
 "İndirilen hakkında daha fazla bilgi verir. Misal: hangi parçalar indirildi, "
 "indiren ve yollayan sayıları..."
-
-#: apps/ktorrent/fileselectdlgbase.ui:129
-#: plugins/infowidget/infowidgetplugin.cpp:77
-#, fuzzy, no-c-format
-msgid "Files"
-msgstr "Tüm Dosyalar"
 
 #: plugins/infowidget/infowidgetplugin.cpp:173 plugins/stats/statsconwgt.ui:32
 #: plugins/stats/statsspdwgt.ui:40
@@ -1682,15 +1604,6 @@ msgstr "txt dosyası yükleniyor..."
 #: plugins/ipfilter/convertdialog.cpp:103
 msgid "Please wait..."
 msgstr "Lütfen bekleyin..."
-
-#: apps/ktorrent/addpeerwidgetbase.ui:122 plugins/ipfilter/convert_dlg.ui:112
-#: plugins/ipfilter/convertdialog.cpp:145
-#: plugins/ipfilter/convertdialog.cpp:166
-#: plugins/ipfilter/convertdialog.cpp:203
-#: plugins/ipfilter/convertdialog.cpp:217
-#, no-c-format
-msgid "&Close"
-msgstr ""
 
 #: plugins/ipfilter/convert_dlg.ui:24 plugins/ipfilter/convertdialog.cpp:155
 #, no-c-format
@@ -1797,11 +1710,6 @@ msgstr "Veri doğrulanamıyor: %1"
 #, c-format
 msgid "Cannot load the torrent file : %1"
 msgstr "Torrent dosyası yüklenemiyor: %1"
-
-#: plugins/partfileimport/partfileimportplugin.cpp:43
-#, fuzzy
-msgid "Import"
-msgstr "&İçeri Aktar"
 
 #: plugins/partfileimport/partfileimportplugin.cpp:43
 msgid "Imports partially or fully downloaded torrents from other clients"
@@ -2036,15 +1944,6 @@ msgstr "Arama Motoru Seçenekleri"
 msgid " Engine: "
 msgstr " Arama Motoru: "
 
-#: plugins/search/searchwidget.cpp:72
-msgid "Back"
-msgstr ""
-
-#: plugins/search/searchwidget.cpp:75
-#, fuzzy
-msgid "Reload"
-msgstr "Gönder"
-
 #: plugins/search/searchwidget.cpp:178
 msgid "Searching for %1..."
 msgstr "%1 aranıyor..."
@@ -2258,13 +2157,6 @@ msgstr "Port:"
 #, no-c-format
 msgid "Enter peer IP and port."
 msgstr "Paylaşımcının IP numarasını ve portunu girin."
-
-#: apps/ktorrent/addpeerwidgetbase.ui:108
-#: apps/ktorrent/ipfilterwidgetbase.ui:125
-#: apps/ktorrent/torrentcreatordlgbase.ui:311
-#, fuzzy, no-c-format
-msgid "Add"
-msgstr "&Ekle"
 
 #: apps/ktorrent/advancedpref.ui:16
 #, no-c-format
@@ -2621,18 +2513,6 @@ msgstr "Boş disk alanı:"
 msgid "After download:"
 msgstr "İndirdikten sonra:"
 
-#: apps/ktorrent/fileselectdlgbase.ui:330
-#: apps/ktorrent/ipfilterwidgetbase.ui:249 apps/ktorrent/queuedlg.ui:588
-#, fuzzy, no-c-format
-msgid "&OK"
-msgstr "&Tamam"
-
-#: apps/ktorrent/fileselectdlgbase.ui:344
-#: apps/ktorrent/ipfilterwidgetbase.ui:271 apps/ktorrent/queuedlg.ui:610
-#, fuzzy, no-c-format
-msgid "&Cancel"
-msgstr "İ&ptal"
-
 #: apps/ktorrent/generalpref.ui:44
 #, no-c-format
 msgid "Encryption"
@@ -2805,11 +2685,6 @@ msgstr "Temiz&le"
 msgid "Clears this list"
 msgstr "Bu listeyi temizler"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:207
-#, no-c-format
-msgid "&Open..."
-msgstr ""
-
 #: apps/ktorrent/ipfilterwidgetbase.ui:218
 #, no-c-format
 msgid "Save &As..."
@@ -2819,22 +2694,6 @@ msgstr "Farklı &Kaydet..."
 #, no-c-format
 msgid "Save this blacklist to use with KTorrent IPFilter plugin"
 msgstr "Bu karalisteyi KTorrent IPFiltre eklentisi kullanımı için kaydet"
-
-#: apps/ktorrent/ipfilterwidgetbase.ui:260 apps/ktorrent/queuedlg.ui:599
-#: plugins/scheduler/bwspage.ui:759
-#, no-c-format
-msgid "&Apply"
-msgstr ""
-
-#: apps/ktorrent/ktorrentui.rc:4
-#, no-c-format
-msgid "&File"
-msgstr ""
-
-#: apps/ktorrent/ktorrentui.rc:24
-#, fuzzy, no-c-format
-msgid "Main Toolbar"
-msgstr "İndirme Araç Çubuğu"
 
 #: apps/ktorrent/ktorrentui.rc:34
 #, no-c-format
@@ -2993,11 +2852,6 @@ msgstr "En yüksek indirme hızı limiti:"
 msgid "KB/s (0 is no limit)"
 msgstr "KB/sn (0 limit yok demektir)"
 
-#: apps/ktorrent/speedlimitsdlgbase.ui:164 plugins/scheduler/bwspage.ui:767
-#, fuzzy, no-c-format
-msgid "Cancel"
-msgstr "İ&ptal"
-
 #: apps/ktorrent/torrentcreatordlgbase.ui:16
 #, no-c-format
 msgid "Create Torrent"
@@ -3134,11 +2988,6 @@ msgstr ""
 #, no-c-format
 msgid "Test"
 msgstr "Test Et"
-
-#: apps/ktupnptest/mainwidget.ui:62
-#, no-c-format
-msgid "Close"
-msgstr ""
 
 #: libktorrent/ktorrent.kcfg:10
 #, no-c-format
@@ -3825,12 +3674,6 @@ msgstr "Bağlantılar:"
 msgid "Disk I/O:"
 msgstr "Disk Giriş/Çıkış:"
 
-#: plugins/logviewer/logprefwidgetbase.ui:629
-#: plugins/scanfolder/sfprefwidgetbase.ui:70
-#, fuzzy, no-c-format
-msgid "Options"
-msgstr "Dosya Seçenekleri"
-
 #: plugins/logviewer/logprefwidgetbase.ui:640
 #, no-c-format
 msgid "Use rich te&xt for log"
@@ -3937,12 +3780,6 @@ msgstr "Filtreler"
 #, no-c-format
 msgid "Accept Filters"
 msgstr "Filtreleri Kabul Et"
-
-#: plugins/rssfeed/rssfeedwidget.ui:408 plugins/rssfeed/rssfeedwidget.ui:459
-#: plugins/rssfeed/rssfeedwidget.ui:928
-#, fuzzy, no-c-format
-msgid "Delete"
-msgstr "Si&l"
 
 #: plugins/rssfeed/rssfeedwidget.ui:440
 #, no-c-format
@@ -4458,11 +4295,6 @@ msgstr "En fazla"
 msgid "Maximum speed scale mode:"
 msgstr "En fazla hız cetveli kipi:"
 
-#: plugins/stats/sprefwgt.ui:160
-#, no-c-format
-msgid "Top"
-msgstr ""
-
 #: plugins/stats/sprefwgt.ui:165
 #, no-c-format
 msgid "Exact"
@@ -4653,6 +4485,74 @@ msgstr "Parolayı değiştir ..."
 #, no-c-format
 msgid "Php executable path:"
 msgstr "Php çalıştırılabilr dosyasının konumu:"
+
+#, fuzzy
+#~ msgid "Remove"
+#~ msgstr "&Tümünü Kaldır"
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "Hata: "
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "Tüm Dosyalar"
+
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "&Tümünü Kaldır"
+
+#, fuzzy
+#~ msgid "No"
+#~ msgstr "Hiçbiri"
+
+#, fuzzy
+#~ msgid "OK"
+#~ msgstr "&Tamam"
+
+#, fuzzy
+#~ msgid "Open"
+#~ msgstr "Sekme Aç"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "Tüm Dosyalar"
+
+#, fuzzy
+#~ msgid "Import"
+#~ msgstr "&İçeri Aktar"
+
+#, fuzzy
+#~ msgid "Reload"
+#~ msgstr "Gönder"
+
+#, fuzzy
+#~ msgid "Add"
+#~ msgstr "&Ekle"
+
+#, fuzzy
+#~ msgid "&OK"
+#~ msgstr "&Tamam"
+
+#, fuzzy
+#~ msgid "&Cancel"
+#~ msgstr "İ&ptal"
+
+#, fuzzy
+#~ msgid "Main Toolbar"
+#~ msgstr "İndirme Araç Çubuğu"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "İ&ptal"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "Dosya Seçenekleri"
+
+#, fuzzy
+#~ msgid "Delete"
+#~ msgstr "Si&l"
 
 #~ msgid "Search engine:"
 #~ msgstr "Arama motoru:"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2019-01-06 17:08+0100\n"
+"POT-Creation-Date: 2019-01-13 19:17+0100\n"
 "PO-Revision-Date: 2007-08-12 20:48+0300\n"
 "Last-Translator: Spiros Georgaras <sng@hellug.gr>\n"
 "Language-Team: Greek <i18ngr@lists.hellug.gr>\n"
@@ -66,19 +66,6 @@ msgstr "Όχι, διατήρηση των αρχείων"
 #: apps/ktorrent/fileselectdlg.cpp:220
 msgid " short!"
 msgstr " λείπουν από το δίσκο!"
-
-#: apps/ktorrent/fileselectdlg.cpp:254 apps/ktorrent/queuedialog.cpp:305
-#: apps/ktorrent/queuedialog.cpp:326
-#: libktorrent/interfaces/filetreediritem.cpp:45
-#: libktorrent/interfaces/filetreediritem.cpp:59
-#: libktorrent/interfaces/filetreediritem.cpp:167
-#: libktorrent/interfaces/filetreeitem.cpp:89
-#: plugins/infowidget/iwfiletreediritem.cpp:160
-#: plugins/infowidget/iwfiletreediritem.cpp:173
-#: plugins/infowidget/iwfiletreeitem.cpp:132
-#: plugins/infowidget/peerview.cpp:170 plugins/infowidget/peerview.cpp:172
-msgid "Yes"
-msgstr ""
 
 #: apps/ktorrent/fileselectdlg.cpp:284 apps/ktorrent/groups/allgroup.cpp:26
 #: apps/ktorrent/groups/groupmanager.h:54 apps/ktorrent/ktorrent.cpp:962
@@ -241,12 +228,6 @@ msgid ""
 "Stop"
 msgstr "Σταμάτημα"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:159 apps/ktorrent/ktorrent.cpp:523
-#: apps/ktorrent/torrentcreatordlgbase.ui:297
-#, fuzzy, no-c-format
-msgid "Remove"
-msgstr "&Αφαίρεση όλων"
-
 #: apps/ktorrent/ktorrent.cpp:527 apps/ktorrent/ktorrent.cpp:530
 msgid ""
 "_: to start all\n"
@@ -340,23 +321,6 @@ msgstr ""
 msgid "Cannot create torrent: %1"
 msgstr "Αδύνατη η δημιουργία torrent: %1"
 
-#: apps/ktorrent/ktorrentcore.cpp:768 apps/ktorrent/pref.cpp:180
-#: apps/ktorrent/pref.cpp:285 apps/ktorrent/pref.cpp:295
-#: apps/ktorrent/torrentcreatordlg.cpp:125 apps/ktorrent/trayicon.cpp:203
-#: apps/ktorrent/trayicon.cpp:215 libktorrent/torrent/queuemanager.cpp:239
-#: libktorrent/torrent/queuemanager.cpp:748
-#: libktorrent/torrent/queuemanager.cpp:766
-#: plugins/ipfilter/ipblockingprefpage.cpp:137
-#: plugins/ipfilter/ipblockingprefpage.cpp:150
-#: plugins/partfileimport/importdialog.cpp:100
-#: plugins/partfileimport/importdialog.cpp:179
-#: plugins/partfileimport/importdialog.cpp:208
-#: plugins/partfileimport/importdialog.cpp:244
-#: plugins/scheduler/bwsprefpagewidget.cpp:174
-#, fuzzy
-msgid "Error"
-msgstr "Σφάλμα: "
-
 #: apps/ktorrent/ktorrentcore.cpp:1028
 msgid ""
 "Several data files of the torrent \"%1\" are missing, do you want to "
@@ -417,12 +381,6 @@ msgstr "Έλεγχος ακεραιότητας δεδομένων"
 #: apps/ktorrent/ktorrentview.cpp:132
 msgid "Visible columns"
 msgstr "Ορατές στήλες"
-
-#: apps/ktorrent/fileselectdlgbase.ui:138 apps/ktorrent/ktorrentview.cpp:134
-#: plugins/infowidget/fileview.cpp:47
-#, fuzzy, no-c-format
-msgid "File"
-msgstr "Όλα τα αρχεία"
 
 #: apps/ktorrent/ktorrentview.cpp:135
 #: plugins/infowidget/infowidgetplugin.cpp:76
@@ -543,11 +501,6 @@ msgstr ""
 #: apps/ktorrent/ktorrentview.cpp:397 apps/ktorrent/ktorrentviewmenu.cpp:45
 msgid "Remove Torrent"
 msgstr "Αφαίρεση Torrent"
-
-#: apps/ktorrent/ktorrentview.cpp:397 plugins/search/searchpref.ui:249
-#, fuzzy, no-c-format
-msgid "&Remove"
-msgstr "&Αφαίρεση όλων"
 
 #: apps/ktorrent/ktorrentview.cpp:631
 msgid "You are already checking the data of the torrent %1 !"
@@ -1056,20 +1009,6 @@ msgstr "KTUPnPTest"
 msgid "Cannot open file : %1 : %2"
 msgstr "Αδύνατο το άνοιγμα του αρχείου : %1 : %2"
 
-#: libktorrent/interfaces/filetreediritem.cpp:167
-#: libktorrent/interfaces/filetreeitem.cpp:84
-#: plugins/infowidget/fileview.cpp:209
-#: plugins/infowidget/iwfiletreediritem.cpp:156
-#: plugins/infowidget/iwfiletreediritem.cpp:168
-#: plugins/infowidget/iwfiletreeitem.cpp:79
-#: plugins/infowidget/iwfiletreeitem.cpp:111
-#: plugins/infowidget/iwfiletreeitem.cpp:127
-#: plugins/infowidget/iwfiletreeitem.cpp:142
-#: plugins/infowidget/peerview.cpp:170 plugins/infowidget/peerview.cpp:172
-#, fuzzy
-msgid "No"
-msgstr "Καμία"
-
 #: libktorrent/interfaces/filetreeitem.cpp:77
 #: plugins/infowidget/iwfiletreediritem.cpp:148
 #: plugins/infowidget/iwfiletreeitem.cpp:120
@@ -1269,12 +1208,6 @@ msgstr "Άγνωστος πελάτης"
 #: libktorrent/torrent/torrentcontrol.cpp:1376
 msgid "Stopped"
 msgstr "Σταμάτησε"
-
-#: apps/ktorrent/speedlimitsdlgbase.ui:156
-#: libktorrent/torrent/peersourcemanager.cpp:451
-#, fuzzy, no-c-format
-msgid "OK"
-msgstr "Ε&ντάξει"
 
 #: libktorrent/torrent/peersourcemanager.cpp:458
 msgid "Announcing"
@@ -1536,11 +1469,6 @@ msgstr ""
 msgid "Download"
 msgstr "Λήψη"
 
-#: plugins/infowidget/fileview.cpp:55
-#, fuzzy
-msgid "Open"
-msgstr "Άνοιγμα καρτέλας"
-
 #: plugins/infowidget/fileview.cpp:57
 msgid "Download First"
 msgstr "Λήψη πρώτο"
@@ -1590,12 +1518,6 @@ msgstr ""
 "Εμφάνιση πρόσθετων πληροφοριών σχετικά με μία λήψη. Όπως τα κομμάτια που "
 "έχουν ληφθεί, πόσοι χρήστες μοιράζονται και πόσοι χρήστες λειτουργούν σαν "
 "παράσιτα..."
-
-#: apps/ktorrent/fileselectdlgbase.ui:129
-#: plugins/infowidget/infowidgetplugin.cpp:77
-#, fuzzy, no-c-format
-msgid "Files"
-msgstr "Όλα τα αρχεία"
 
 #: plugins/infowidget/infowidgetplugin.cpp:173 plugins/stats/statsconwgt.ui:32
 #: plugins/stats/statsspdwgt.ui:40
@@ -1696,15 +1618,6 @@ msgstr "Φόρτωση αρχείου txt..."
 #: plugins/ipfilter/convertdialog.cpp:103
 msgid "Please wait..."
 msgstr "Παρακαλώ περιμένετε..."
-
-#: apps/ktorrent/addpeerwidgetbase.ui:122 plugins/ipfilter/convert_dlg.ui:112
-#: plugins/ipfilter/convertdialog.cpp:145
-#: plugins/ipfilter/convertdialog.cpp:166
-#: plugins/ipfilter/convertdialog.cpp:203
-#: plugins/ipfilter/convertdialog.cpp:217
-#, no-c-format
-msgid "&Close"
-msgstr ""
 
 #: plugins/ipfilter/convert_dlg.ui:24 plugins/ipfilter/convertdialog.cpp:155
 #, no-c-format
@@ -1813,11 +1726,6 @@ msgstr "Αδυναμία επαλήθευσης δεδομένων : %1"
 #, c-format
 msgid "Cannot load the torrent file : %1"
 msgstr "Αδύνατη η φόρτωση του αρχείου torrent: %1"
-
-#: plugins/partfileimport/partfileimportplugin.cpp:43
-#, fuzzy
-msgid "Import"
-msgstr "Ε&ισαγωγή"
 
 #: plugins/partfileimport/partfileimportplugin.cpp:43
 msgid "Imports partially or fully downloaded torrents from other clients"
@@ -2059,15 +1967,6 @@ msgstr "Επιλογές μηχανής αναζήτησης"
 msgid " Engine: "
 msgstr " Μηχανή: "
 
-#: plugins/search/searchwidget.cpp:72
-msgid "Back"
-msgstr ""
-
-#: plugins/search/searchwidget.cpp:75
-#, fuzzy
-msgid "Reload"
-msgstr "Αποστολή"
-
 #: plugins/search/searchwidget.cpp:178
 msgid "Searching for %1..."
 msgstr "Αναζήτηση για %1..."
@@ -2295,13 +2194,6 @@ msgstr "Θύρα:"
 #, no-c-format
 msgid "Enter peer IP and port."
 msgstr "Εισαγωγή IP και θύρας υπολογιστή."
-
-#: apps/ktorrent/addpeerwidgetbase.ui:108
-#: apps/ktorrent/ipfilterwidgetbase.ui:125
-#: apps/ktorrent/torrentcreatordlgbase.ui:311
-#, fuzzy, no-c-format
-msgid "Add"
-msgstr "&Προσθήκη"
 
 #: apps/ktorrent/advancedpref.ui:16
 #, no-c-format
@@ -2681,18 +2573,6 @@ msgstr "Ελεύθερος χώρος στο δίσκο:"
 msgid "After download:"
 msgstr "Μετά τη λήψη:"
 
-#: apps/ktorrent/fileselectdlgbase.ui:330
-#: apps/ktorrent/ipfilterwidgetbase.ui:249 apps/ktorrent/queuedlg.ui:588
-#, fuzzy, no-c-format
-msgid "&OK"
-msgstr "Ε&ντάξει"
-
-#: apps/ktorrent/fileselectdlgbase.ui:344
-#: apps/ktorrent/ipfilterwidgetbase.ui:271 apps/ktorrent/queuedlg.ui:610
-#, fuzzy, no-c-format
-msgid "&Cancel"
-msgstr "&Ακύρωση"
-
 #: apps/ktorrent/generalpref.ui:44
 #, no-c-format
 msgid "Encryption"
@@ -2866,11 +2746,6 @@ msgstr "&Καθαρισμός"
 msgid "Clears this list"
 msgstr "Καθαρισμός της λίστας"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:207
-#, no-c-format
-msgid "&Open..."
-msgstr ""
-
 #: apps/ktorrent/ipfilterwidgetbase.ui:218
 #, no-c-format
 msgid "Save &As..."
@@ -2881,22 +2756,6 @@ msgstr "Αποθήκευση &ως..."
 msgid "Save this blacklist to use with KTorrent IPFilter plugin"
 msgstr ""
 "Αποθήκευση της μαύρης λίστας για χρήση με το πρόσθετο φίλτρου IP του KTorrent"
-
-#: apps/ktorrent/ipfilterwidgetbase.ui:260 apps/ktorrent/queuedlg.ui:599
-#: plugins/scheduler/bwspage.ui:759
-#, no-c-format
-msgid "&Apply"
-msgstr ""
-
-#: apps/ktorrent/ktorrentui.rc:4
-#, no-c-format
-msgid "&File"
-msgstr ""
-
-#: apps/ktorrent/ktorrentui.rc:24
-#, fuzzy, no-c-format
-msgid "Main Toolbar"
-msgstr "Γραμμή εργαλείων λήψεων"
 
 #: apps/ktorrent/ktorrentui.rc:34
 #, no-c-format
@@ -3055,11 +2914,6 @@ msgstr "Μέγιστος ρυθμός λήψης:"
 msgid "KB/s (0 is no limit)"
 msgstr "KB/δευτ (το 0 σημαίνει απεριόριστο)"
 
-#: apps/ktorrent/speedlimitsdlgbase.ui:164 plugins/scheduler/bwspage.ui:767
-#, fuzzy, no-c-format
-msgid "Cancel"
-msgstr "&Ακύρωση"
-
 #: apps/ktorrent/torrentcreatordlgbase.ui:16
 #, no-c-format
 msgid "Create Torrent"
@@ -3197,11 +3051,6 @@ msgstr ""
 #, no-c-format
 msgid "Test"
 msgstr "Δοκιμή"
-
-#: apps/ktupnptest/mainwidget.ui:62
-#, no-c-format
-msgid "Close"
-msgstr ""
 
 #: libktorrent/ktorrent.kcfg:10
 #, no-c-format
@@ -3889,12 +3738,6 @@ msgstr "Συνδέσεις:"
 msgid "Disk I/O:"
 msgstr "Χρήση δίσκου:"
 
-#: plugins/logviewer/logprefwidgetbase.ui:629
-#: plugins/scanfolder/sfprefwidgetbase.ui:70
-#, fuzzy, no-c-format
-msgid "Options"
-msgstr "Επιλογές αρχείων"
-
 #: plugins/logviewer/logprefwidgetbase.ui:640
 #, no-c-format
 msgid "Use rich te&xt for log"
@@ -4003,12 +3846,6 @@ msgstr "Φίλτρα"
 #, no-c-format
 msgid "Accept Filters"
 msgstr "Αποδοχή φίλτρων"
-
-#: plugins/rssfeed/rssfeedwidget.ui:408 plugins/rssfeed/rssfeedwidget.ui:459
-#: plugins/rssfeed/rssfeedwidget.ui:928
-#, fuzzy, no-c-format
-msgid "Delete"
-msgstr "Δια&γραφή"
 
 #: plugins/rssfeed/rssfeedwidget.ui:440
 #, no-c-format
@@ -4527,11 +4364,6 @@ msgstr "Μέγιστο"
 msgid "Maximum speed scale mode:"
 msgstr "Μέγιστος αριθμός μοιράσματος:"
 
-#: plugins/stats/sprefwgt.ui:160
-#, no-c-format
-msgid "Top"
-msgstr ""
-
 #: plugins/stats/sprefwgt.ui:165
 #, no-c-format
 msgid "Exact"
@@ -4721,6 +4553,74 @@ msgstr "Αλλαγή κωδικού πρόσβασης..."
 #, no-c-format
 msgid "Php executable path:"
 msgstr "Διαδρομή εκτελέσιμου της Php:"
+
+#, fuzzy
+#~ msgid "Remove"
+#~ msgstr "&Αφαίρεση όλων"
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "Σφάλμα: "
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "Όλα τα αρχεία"
+
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "&Αφαίρεση όλων"
+
+#, fuzzy
+#~ msgid "No"
+#~ msgstr "Καμία"
+
+#, fuzzy
+#~ msgid "OK"
+#~ msgstr "Ε&ντάξει"
+
+#, fuzzy
+#~ msgid "Open"
+#~ msgstr "Άνοιγμα καρτέλας"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "Όλα τα αρχεία"
+
+#, fuzzy
+#~ msgid "Import"
+#~ msgstr "Ε&ισαγωγή"
+
+#, fuzzy
+#~ msgid "Reload"
+#~ msgstr "Αποστολή"
+
+#, fuzzy
+#~ msgid "Add"
+#~ msgstr "&Προσθήκη"
+
+#, fuzzy
+#~ msgid "&OK"
+#~ msgstr "Ε&ντάξει"
+
+#, fuzzy
+#~ msgid "&Cancel"
+#~ msgstr "&Ακύρωση"
+
+#, fuzzy
+#~ msgid "Main Toolbar"
+#~ msgstr "Γραμμή εργαλείων λήψεων"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "&Ακύρωση"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "Επιλογές αρχείων"
+
+#, fuzzy
+#~ msgid "Delete"
+#~ msgstr "Δια&γραφή"
 
 #~ msgid "Search engine:"
 #~ msgstr "Μηχανή αναζήτησης:"

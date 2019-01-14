@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KTorrent \n"
-"POT-Creation-Date: 2019-01-06 17:08+0100\n"
+"POT-Creation-Date: 2019-01-13 19:17+0100\n"
 "PO-Revision-Date: 2008-01-06 17:30+0100\n"
 "Last-Translator: Tamas Szanto <tszanto@interware.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -69,19 +69,6 @@ msgstr "Nem, maradjanak meg"
 #: apps/ktorrent/fileselectdlg.cpp:220
 msgid " short!"
 msgstr " hiányzik!"
-
-#: apps/ktorrent/fileselectdlg.cpp:254 apps/ktorrent/queuedialog.cpp:305
-#: apps/ktorrent/queuedialog.cpp:326
-#: libktorrent/interfaces/filetreediritem.cpp:45
-#: libktorrent/interfaces/filetreediritem.cpp:59
-#: libktorrent/interfaces/filetreediritem.cpp:167
-#: libktorrent/interfaces/filetreeitem.cpp:89
-#: plugins/infowidget/iwfiletreediritem.cpp:160
-#: plugins/infowidget/iwfiletreediritem.cpp:173
-#: plugins/infowidget/iwfiletreeitem.cpp:132
-#: plugins/infowidget/peerview.cpp:170 plugins/infowidget/peerview.cpp:172
-msgid "Yes"
-msgstr ""
 
 #: apps/ktorrent/fileselectdlg.cpp:284 apps/ktorrent/groups/allgroup.cpp:26
 #: apps/ktorrent/groups/groupmanager.h:54 apps/ktorrent/ktorrent.cpp:962
@@ -245,12 +232,6 @@ msgid ""
 "Stop"
 msgstr "Leállítás"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:159 apps/ktorrent/ktorrent.cpp:523
-#: apps/ktorrent/torrentcreatordlgbase.ui:297
-#, fuzzy, no-c-format
-msgid "Remove"
-msgstr "Az összes &eltávolítása"
-
 #: apps/ktorrent/ktorrent.cpp:527 apps/ktorrent/ktorrent.cpp:530
 msgid ""
 "_: to start all\n"
@@ -344,23 +325,6 @@ msgstr ""
 msgid "Cannot create torrent: %1"
 msgstr "Nem sikerült létrehozni ezt a torrentet: %1"
 
-#: apps/ktorrent/ktorrentcore.cpp:768 apps/ktorrent/pref.cpp:180
-#: apps/ktorrent/pref.cpp:285 apps/ktorrent/pref.cpp:295
-#: apps/ktorrent/torrentcreatordlg.cpp:125 apps/ktorrent/trayicon.cpp:203
-#: apps/ktorrent/trayicon.cpp:215 libktorrent/torrent/queuemanager.cpp:239
-#: libktorrent/torrent/queuemanager.cpp:748
-#: libktorrent/torrent/queuemanager.cpp:766
-#: plugins/ipfilter/ipblockingprefpage.cpp:137
-#: plugins/ipfilter/ipblockingprefpage.cpp:150
-#: plugins/partfileimport/importdialog.cpp:100
-#: plugins/partfileimport/importdialog.cpp:179
-#: plugins/partfileimport/importdialog.cpp:208
-#: plugins/partfileimport/importdialog.cpp:244
-#: plugins/scheduler/bwsprefpagewidget.cpp:174
-#, fuzzy
-msgid "Error"
-msgstr "Hiba: "
-
 #: apps/ktorrent/ktorrentcore.cpp:1028
 msgid ""
 "Several data files of the torrent \"%1\" are missing, do you want to "
@@ -420,12 +384,6 @@ msgstr "Az adatintegritás ellenőrzése"
 #: apps/ktorrent/ktorrentview.cpp:132
 msgid "Visible columns"
 msgstr "Látható oszlopok"
-
-#: apps/ktorrent/fileselectdlgbase.ui:138 apps/ktorrent/ktorrentview.cpp:134
-#: plugins/infowidget/fileview.cpp:47
-#, fuzzy, no-c-format
-msgid "File"
-msgstr "Minden fájl"
 
 #: apps/ktorrent/ktorrentview.cpp:135
 #: plugins/infowidget/infowidgetplugin.cpp:76
@@ -540,11 +498,6 @@ msgstr "Az összes letöltött adat elvész. Biztosan ezt szeretné?"
 #: apps/ktorrent/ktorrentview.cpp:397 apps/ktorrent/ktorrentviewmenu.cpp:45
 msgid "Remove Torrent"
 msgstr "Eltávolítás"
-
-#: apps/ktorrent/ktorrentview.cpp:397 plugins/search/searchpref.ui:249
-#, fuzzy, no-c-format
-msgid "&Remove"
-msgstr "Az összes &eltávolítása"
 
 #: apps/ktorrent/ktorrentview.cpp:631
 msgid "You are already checking the data of the torrent %1 !"
@@ -1046,20 +999,6 @@ msgstr "KTUPnPTest"
 msgid "Cannot open file : %1 : %2"
 msgstr "Nem sikerült megnyitni a(z) %1 fájlt: %2"
 
-#: libktorrent/interfaces/filetreediritem.cpp:167
-#: libktorrent/interfaces/filetreeitem.cpp:84
-#: plugins/infowidget/fileview.cpp:209
-#: plugins/infowidget/iwfiletreediritem.cpp:156
-#: plugins/infowidget/iwfiletreediritem.cpp:168
-#: plugins/infowidget/iwfiletreeitem.cpp:79
-#: plugins/infowidget/iwfiletreeitem.cpp:111
-#: plugins/infowidget/iwfiletreeitem.cpp:127
-#: plugins/infowidget/iwfiletreeitem.cpp:142
-#: plugins/infowidget/peerview.cpp:170 plugins/infowidget/peerview.cpp:172
-#, fuzzy
-msgid "No"
-msgstr "Nincs"
-
 #: libktorrent/interfaces/filetreeitem.cpp:77
 #: plugins/infowidget/iwfiletreediritem.cpp:148
 #: plugins/infowidget/iwfiletreeitem.cpp:120
@@ -1251,12 +1190,6 @@ msgstr "Ismeretlen kliens"
 #: libktorrent/torrent/torrentcontrol.cpp:1376
 msgid "Stopped"
 msgstr "Leállítva"
-
-#: apps/ktorrent/speedlimitsdlgbase.ui:156
-#: libktorrent/torrent/peersourcemanager.cpp:451
-#, fuzzy, no-c-format
-msgid "OK"
-msgstr "O&K"
 
 #: libktorrent/torrent/peersourcemanager.cpp:458
 msgid "Announcing"
@@ -1517,11 +1450,6 @@ msgstr ""
 msgid "Download"
 msgstr "Letöltés"
 
-#: plugins/infowidget/fileview.cpp:55
-#, fuzzy
-msgid "Open"
-msgstr "Lap megnyitása"
-
 #: plugins/infowidget/fileview.cpp:57
 msgid "Download First"
 msgstr "Letöltés először"
@@ -1566,12 +1494,6 @@ msgid ""
 msgstr ""
 "További adatokat mutat meg a letöltésről, például mely darabok vannak már "
 "letöltve, hány letöltő és feltöltő partner van stb."
-
-#: apps/ktorrent/fileselectdlgbase.ui:129
-#: plugins/infowidget/infowidgetplugin.cpp:77
-#, fuzzy, no-c-format
-msgid "Files"
-msgstr "Minden fájl"
 
 #: plugins/infowidget/infowidgetplugin.cpp:173 plugins/stats/statsconwgt.ui:32
 #: plugins/stats/statsspdwgt.ui:40
@@ -1672,15 +1594,6 @@ msgstr "Szöveges fájl betöltése..."
 #: plugins/ipfilter/convertdialog.cpp:103
 msgid "Please wait..."
 msgstr "Egy kis türelmet..."
-
-#: apps/ktorrent/addpeerwidgetbase.ui:122 plugins/ipfilter/convert_dlg.ui:112
-#: plugins/ipfilter/convertdialog.cpp:145
-#: plugins/ipfilter/convertdialog.cpp:166
-#: plugins/ipfilter/convertdialog.cpp:203
-#: plugins/ipfilter/convertdialog.cpp:217
-#, no-c-format
-msgid "&Close"
-msgstr ""
 
 #: plugins/ipfilter/convert_dlg.ui:24 plugins/ipfilter/convertdialog.cpp:155
 #, no-c-format
@@ -1785,11 +1698,6 @@ msgstr "Nem sikerült ellenőrizni az adatokat: %1"
 #, c-format
 msgid "Cannot load the torrent file : %1"
 msgstr "Nem sikerült betölteni ezt a torrentet: %1"
-
-#: plugins/partfileimport/partfileimportplugin.cpp:43
-#, fuzzy
-msgid "Import"
-msgstr "&Importálás"
 
 #: plugins/partfileimport/partfileimportplugin.cpp:43
 msgid "Imports partially or fully downloaded torrents from other clients"
@@ -2024,15 +1932,6 @@ msgstr "Keresési beállítások"
 msgid " Engine: "
 msgstr " Kereső: "
 
-#: plugins/search/searchwidget.cpp:72
-msgid "Back"
-msgstr ""
-
-#: plugins/search/searchwidget.cpp:75
-#, fuzzy
-msgid "Reload"
-msgstr "Feltöltés"
-
 #: plugins/search/searchwidget.cpp:178
 msgid "Searching for %1..."
 msgstr "%1 keresése..."
@@ -2241,13 +2140,6 @@ msgstr "Port:"
 #, no-c-format
 msgid "Enter peer IP and port."
 msgstr "Adja meg a partner IP-címét és portszámát."
-
-#: apps/ktorrent/addpeerwidgetbase.ui:108
-#: apps/ktorrent/ipfilterwidgetbase.ui:125
-#: apps/ktorrent/torrentcreatordlgbase.ui:311
-#, fuzzy, no-c-format
-msgid "Add"
-msgstr "&Hozzáadás"
 
 #: apps/ktorrent/advancedpref.ui:16
 #, no-c-format
@@ -2612,18 +2504,6 @@ msgstr "Szabad lemezterület:"
 msgid "After download:"
 msgstr "Letöltés után:"
 
-#: apps/ktorrent/fileselectdlgbase.ui:330
-#: apps/ktorrent/ipfilterwidgetbase.ui:249 apps/ktorrent/queuedlg.ui:588
-#, fuzzy, no-c-format
-msgid "&OK"
-msgstr "O&K"
-
-#: apps/ktorrent/fileselectdlgbase.ui:344
-#: apps/ktorrent/ipfilterwidgetbase.ui:271 apps/ktorrent/queuedlg.ui:610
-#, fuzzy, no-c-format
-msgid "&Cancel"
-msgstr "&Mégsem"
-
 #: apps/ktorrent/generalpref.ui:44
 #, no-c-format
 msgid "Encryption"
@@ -2797,11 +2677,6 @@ msgstr "Tö&rlés"
 msgid "Clears this list"
 msgstr "Lista törlése"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:207
-#, no-c-format
-msgid "&Open..."
-msgstr ""
-
 #: apps/ktorrent/ipfilterwidgetbase.ui:218
 #, no-c-format
 msgid "Save &As..."
@@ -2811,22 +2686,6 @@ msgstr "Mentés má&sként..."
 #, no-c-format
 msgid "Save this blacklist to use with KTorrent IPFilter plugin"
 msgstr "Ezen feketelista mentése a KTorrent IP szűrő bővítménye számára"
-
-#: apps/ktorrent/ipfilterwidgetbase.ui:260 apps/ktorrent/queuedlg.ui:599
-#: plugins/scheduler/bwspage.ui:759
-#, no-c-format
-msgid "&Apply"
-msgstr ""
-
-#: apps/ktorrent/ktorrentui.rc:4
-#, no-c-format
-msgid "&File"
-msgstr ""
-
-#: apps/ktorrent/ktorrentui.rc:24
-#, fuzzy, no-c-format
-msgid "Main Toolbar"
-msgstr "Letöltési eszköztár"
 
 #: apps/ktorrent/ktorrentui.rc:34
 #, no-c-format
@@ -2985,11 +2844,6 @@ msgstr "Maximális letöltési sebesség:"
 msgid "KB/s (0 is no limit)"
 msgstr "KB/mp (0 esetén nincs korlát)"
 
-#: apps/ktorrent/speedlimitsdlgbase.ui:164 plugins/scheduler/bwspage.ui:767
-#, fuzzy, no-c-format
-msgid "Cancel"
-msgstr "&Mégsem"
-
 #: apps/ktorrent/torrentcreatordlgbase.ui:16
 #, no-c-format
 msgid "Create Torrent"
@@ -3126,11 +2980,6 @@ msgstr ""
 #, no-c-format
 msgid "Test"
 msgstr "Próba"
-
-#: apps/ktupnptest/mainwidget.ui:62
-#, no-c-format
-msgid "Close"
-msgstr ""
 
 #: libktorrent/ktorrent.kcfg:10
 #, no-c-format
@@ -3816,12 +3665,6 @@ msgstr "Kapcsolatok:"
 msgid "Disk I/O:"
 msgstr "Lemezműveletek:"
 
-#: plugins/logviewer/logprefwidgetbase.ui:629
-#: plugins/scanfolder/sfprefwidgetbase.ui:70
-#, fuzzy, no-c-format
-msgid "Options"
-msgstr "Fájlbeállítások"
-
 #: plugins/logviewer/logprefwidgetbase.ui:640
 #, no-c-format
 msgid "Use rich te&xt for log"
@@ -3930,12 +3773,6 @@ msgstr "Szűrők"
 #, no-c-format
 msgid "Accept Filters"
 msgstr "Elfogadási szűrők"
-
-#: plugins/rssfeed/rssfeedwidget.ui:408 plugins/rssfeed/rssfeedwidget.ui:459
-#: plugins/rssfeed/rssfeedwidget.ui:928
-#, fuzzy, no-c-format
-msgid "Delete"
-msgstr "&Törlés"
 
 #: plugins/rssfeed/rssfeedwidget.ui:440
 #, no-c-format
@@ -4451,11 +4288,6 @@ msgstr "Maximum"
 msgid "Maximum speed scale mode:"
 msgstr "Méretezési mód a maximális sebességnél:"
 
-#: plugins/stats/sprefwgt.ui:160
-#, no-c-format
-msgid "Top"
-msgstr ""
-
 #: plugins/stats/sprefwgt.ui:165
 #, no-c-format
 msgid "Exact"
@@ -4647,6 +4479,74 @@ msgstr "Jelszó megváltoztatása..."
 #, no-c-format
 msgid "Php executable path:"
 msgstr "PHP programfájl útvonala:"
+
+#, fuzzy
+#~ msgid "Remove"
+#~ msgstr "Az összes &eltávolítása"
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "Hiba: "
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "Minden fájl"
+
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "Az összes &eltávolítása"
+
+#, fuzzy
+#~ msgid "No"
+#~ msgstr "Nincs"
+
+#, fuzzy
+#~ msgid "OK"
+#~ msgstr "O&K"
+
+#, fuzzy
+#~ msgid "Open"
+#~ msgstr "Lap megnyitása"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "Minden fájl"
+
+#, fuzzy
+#~ msgid "Import"
+#~ msgstr "&Importálás"
+
+#, fuzzy
+#~ msgid "Reload"
+#~ msgstr "Feltöltés"
+
+#, fuzzy
+#~ msgid "Add"
+#~ msgstr "&Hozzáadás"
+
+#, fuzzy
+#~ msgid "&OK"
+#~ msgstr "O&K"
+
+#, fuzzy
+#~ msgid "&Cancel"
+#~ msgstr "&Mégsem"
+
+#, fuzzy
+#~ msgid "Main Toolbar"
+#~ msgstr "Letöltési eszköztár"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "&Mégsem"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "Fájlbeállítások"
+
+#, fuzzy
+#~ msgid "Delete"
+#~ msgstr "&Törlés"
 
 #~ msgid "Search engine:"
 #~ msgstr "Kereső:"

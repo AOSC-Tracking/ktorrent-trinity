@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2019-01-06 17:08+0100\n"
+"POT-Creation-Date: 2019-01-13 19:17+0100\n"
 "PO-Revision-Date: 2006-09-02 12:55+0200\n"
 "Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
@@ -63,19 +63,6 @@ msgstr "Non, manter os ficheiros"
 
 #: apps/ktorrent/fileselectdlg.cpp:220
 msgid " short!"
-msgstr ""
-
-#: apps/ktorrent/fileselectdlg.cpp:254 apps/ktorrent/queuedialog.cpp:305
-#: apps/ktorrent/queuedialog.cpp:326
-#: libktorrent/interfaces/filetreediritem.cpp:45
-#: libktorrent/interfaces/filetreediritem.cpp:59
-#: libktorrent/interfaces/filetreediritem.cpp:167
-#: libktorrent/interfaces/filetreeitem.cpp:89
-#: plugins/infowidget/iwfiletreediritem.cpp:160
-#: plugins/infowidget/iwfiletreediritem.cpp:173
-#: plugins/infowidget/iwfiletreeitem.cpp:132
-#: plugins/infowidget/peerview.cpp:170 plugins/infowidget/peerview.cpp:172
-msgid "Yes"
 msgstr ""
 
 #: apps/ktorrent/fileselectdlg.cpp:284 apps/ktorrent/groups/allgroup.cpp:26
@@ -250,12 +237,6 @@ msgid ""
 "Stop"
 msgstr "Parar"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:159 apps/ktorrent/ktorrent.cpp:523
-#: apps/ktorrent/torrentcreatordlgbase.ui:297
-#, fuzzy, no-c-format
-msgid "Remove"
-msgstr "B&orrar todo"
-
 #: apps/ktorrent/ktorrent.cpp:527 apps/ktorrent/ktorrent.cpp:530
 msgid ""
 "_: to start all\n"
@@ -350,23 +331,6 @@ msgstr ""
 msgid "Cannot create torrent: %1"
 msgstr "Non foi posíbel criar o torrente: %1"
 
-#: apps/ktorrent/ktorrentcore.cpp:768 apps/ktorrent/pref.cpp:180
-#: apps/ktorrent/pref.cpp:285 apps/ktorrent/pref.cpp:295
-#: apps/ktorrent/torrentcreatordlg.cpp:125 apps/ktorrent/trayicon.cpp:203
-#: apps/ktorrent/trayicon.cpp:215 libktorrent/torrent/queuemanager.cpp:239
-#: libktorrent/torrent/queuemanager.cpp:748
-#: libktorrent/torrent/queuemanager.cpp:766
-#: plugins/ipfilter/ipblockingprefpage.cpp:137
-#: plugins/ipfilter/ipblockingprefpage.cpp:150
-#: plugins/partfileimport/importdialog.cpp:100
-#: plugins/partfileimport/importdialog.cpp:179
-#: plugins/partfileimport/importdialog.cpp:208
-#: plugins/partfileimport/importdialog.cpp:244
-#: plugins/scheduler/bwsprefpagewidget.cpp:174
-#, fuzzy
-msgid "Error"
-msgstr "Erro: "
-
 #: apps/ktorrent/ktorrentcore.cpp:1028
 #, fuzzy
 msgid ""
@@ -429,12 +393,6 @@ msgstr "A Verificar a Integridade dos Dados"
 #: apps/ktorrent/ktorrentview.cpp:132
 msgid "Visible columns"
 msgstr ""
-
-#: apps/ktorrent/fileselectdlgbase.ui:138 apps/ktorrent/ktorrentview.cpp:134
-#: plugins/infowidget/fileview.cpp:47
-#, fuzzy, no-c-format
-msgid "File"
-msgstr "Todos os Ficheiros"
 
 #: apps/ktorrent/ktorrentview.cpp:135
 #: plugins/infowidget/infowidgetplugin.cpp:76
@@ -564,11 +522,6 @@ msgstr ""
 #, fuzzy
 msgid "Remove Torrent"
 msgstr "Criar Torrente"
-
-#: apps/ktorrent/ktorrentview.cpp:397 plugins/search/searchpref.ui:249
-#, fuzzy, no-c-format
-msgid "&Remove"
-msgstr "B&orrar todo"
 
 #: apps/ktorrent/ktorrentview.cpp:631
 #, fuzzy
@@ -1092,20 +1045,6 @@ msgstr "KTUPnPTest"
 msgid "Cannot open file : %1 : %2"
 msgstr "Non foi posíbel aceder ao ficheiro : %1 : %2"
 
-#: libktorrent/interfaces/filetreediritem.cpp:167
-#: libktorrent/interfaces/filetreeitem.cpp:84
-#: plugins/infowidget/fileview.cpp:209
-#: plugins/infowidget/iwfiletreediritem.cpp:156
-#: plugins/infowidget/iwfiletreediritem.cpp:168
-#: plugins/infowidget/iwfiletreeitem.cpp:79
-#: plugins/infowidget/iwfiletreeitem.cpp:111
-#: plugins/infowidget/iwfiletreeitem.cpp:127
-#: plugins/infowidget/iwfiletreeitem.cpp:142
-#: plugins/infowidget/peerview.cpp:170 plugins/infowidget/peerview.cpp:172
-#, fuzzy
-msgid "No"
-msgstr "Nada"
-
 #: libktorrent/interfaces/filetreeitem.cpp:77
 #: plugins/infowidget/iwfiletreediritem.cpp:148
 #: plugins/infowidget/iwfiletreeitem.cpp:120
@@ -1306,12 +1245,6 @@ msgstr "Cliente descoñecido"
 #: libktorrent/torrent/torrentcontrol.cpp:1376
 msgid "Stopped"
 msgstr "Parado"
-
-#: apps/ktorrent/speedlimitsdlgbase.ui:156
-#: libktorrent/torrent/peersourcemanager.cpp:451
-#, fuzzy, no-c-format
-msgid "OK"
-msgstr "O&K"
 
 #: libktorrent/torrent/peersourcemanager.cpp:458
 msgid "Announcing"
@@ -1576,10 +1509,6 @@ msgstr ""
 msgid "Download"
 msgstr "Obter"
 
-#: plugins/infowidget/fileview.cpp:55
-msgid "Open"
-msgstr ""
-
 #: plugins/infowidget/fileview.cpp:57
 msgid "Download First"
 msgstr "Obter de preferéncia"
@@ -1628,12 +1557,6 @@ msgid ""
 msgstr ""
 "Mostra informazón adicional acerca dunha transferéncia, como os anacos "
 "obtidos, cantos parceiros completos e incompletos hai..."
-
-#: apps/ktorrent/fileselectdlgbase.ui:129
-#: plugins/infowidget/infowidgetplugin.cpp:77
-#, fuzzy, no-c-format
-msgid "Files"
-msgstr "Todos os Ficheiros"
 
 #: plugins/infowidget/infowidgetplugin.cpp:173 plugins/stats/statsconwgt.ui:32
 #: plugins/stats/statsspdwgt.ui:40
@@ -1736,15 +1659,6 @@ msgstr "A carregar o ficheiro TXT..."
 #: plugins/ipfilter/convertdialog.cpp:103
 msgid "Please wait..."
 msgstr "Aguarde por favor..."
-
-#: apps/ktorrent/addpeerwidgetbase.ui:122 plugins/ipfilter/convert_dlg.ui:112
-#: plugins/ipfilter/convertdialog.cpp:145
-#: plugins/ipfilter/convertdialog.cpp:166
-#: plugins/ipfilter/convertdialog.cpp:203
-#: plugins/ipfilter/convertdialog.cpp:217
-#, no-c-format
-msgid "&Close"
-msgstr ""
 
 #: plugins/ipfilter/convert_dlg.ui:24 plugins/ipfilter/convertdialog.cpp:155
 #, no-c-format
@@ -1852,11 +1766,6 @@ msgstr "Non foi posíbel verificar os dados : %1"
 #, c-format
 msgid "Cannot load the torrent file : %1"
 msgstr "Non foi posíbel carregar o torrente: %1"
-
-#: plugins/partfileimport/partfileimportplugin.cpp:43
-#, fuzzy
-msgid "Import"
-msgstr "&Importar"
 
 #: plugins/partfileimport/partfileimportplugin.cpp:43
 msgid "Imports partially or fully downloaded torrents from other clients"
@@ -2097,15 +2006,6 @@ msgstr "Opzóns de Motor de Procuras"
 msgid " Engine: "
 msgstr "Motores"
 
-#: plugins/search/searchwidget.cpp:72
-msgid "Back"
-msgstr ""
-
-#: plugins/search/searchwidget.cpp:75
-#, fuzzy
-msgid "Reload"
-msgstr "Envios"
-
 #: plugins/search/searchwidget.cpp:178
 msgid "Searching for %1..."
 msgstr "A procurar %1..."
@@ -2335,13 +2235,6 @@ msgstr "Porto:"
 #, no-c-format
 msgid "Enter peer IP and port."
 msgstr ""
-
-#: apps/ktorrent/addpeerwidgetbase.ui:108
-#: apps/ktorrent/ipfilterwidgetbase.ui:125
-#: apps/ktorrent/torrentcreatordlgbase.ui:311
-#, fuzzy, no-c-format
-msgid "Add"
-msgstr "&Engadir"
 
 #: apps/ktorrent/advancedpref.ui:16
 #, fuzzy, no-c-format
@@ -2697,18 +2590,6 @@ msgstr ""
 msgid "After download:"
 msgstr "obtenzón:"
 
-#: apps/ktorrent/fileselectdlgbase.ui:330
-#: apps/ktorrent/ipfilterwidgetbase.ui:249 apps/ktorrent/queuedlg.ui:588
-#, fuzzy, no-c-format
-msgid "&OK"
-msgstr "O&K"
-
-#: apps/ktorrent/fileselectdlgbase.ui:344
-#: apps/ktorrent/ipfilterwidgetbase.ui:271 apps/ktorrent/queuedlg.ui:610
-#, fuzzy, no-c-format
-msgid "&Cancel"
-msgstr "C&ancelar"
-
 #: apps/ktorrent/generalpref.ui:44
 #, no-c-format
 msgid "Encryption"
@@ -2879,11 +2760,6 @@ msgstr "&Limpar"
 msgid "Clears this list"
 msgstr "Valeira esta lista"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:207
-#, no-c-format
-msgid "&Open..."
-msgstr ""
-
 #: apps/ktorrent/ipfilterwidgetbase.ui:218
 #, no-c-format
 msgid "Save &As..."
@@ -2895,22 +2771,6 @@ msgid "Save this blacklist to use with KTorrent IPFilter plugin"
 msgstr ""
 "Guarda esta lista-negra para ser usada coa extensión de Filtrado de IP de "
 "KTorrent"
-
-#: apps/ktorrent/ipfilterwidgetbase.ui:260 apps/ktorrent/queuedlg.ui:599
-#: plugins/scheduler/bwspage.ui:759
-#, fuzzy, no-c-format
-msgid "&Apply"
-msgstr "A&plicar"
-
-#: apps/ktorrent/ktorrentui.rc:4
-#, no-c-format
-msgid "&File"
-msgstr ""
-
-#: apps/ktorrent/ktorrentui.rc:24
-#, fuzzy, no-c-format
-msgid "Main Toolbar"
-msgstr "Barra de Transferéncias"
 
 #: apps/ktorrent/ktorrentui.rc:34
 #, no-c-format
@@ -3069,11 +2929,6 @@ msgstr "Taxa máxima de obtenzón:"
 msgid "KB/s (0 is no limit)"
 msgstr "KB/s (0 é ilimitado)"
 
-#: apps/ktorrent/speedlimitsdlgbase.ui:164 plugins/scheduler/bwspage.ui:767
-#, fuzzy, no-c-format
-msgid "Cancel"
-msgstr "C&ancelar"
-
 #: apps/ktorrent/torrentcreatordlgbase.ui:16
 #, no-c-format
 msgid "Create Torrent"
@@ -3207,11 +3062,6 @@ msgstr ""
 #, no-c-format
 msgid "Test"
 msgstr "Verificar"
-
-#: apps/ktupnptest/mainwidget.ui:62
-#, no-c-format
-msgid "Close"
-msgstr ""
 
 #: libktorrent/ktorrent.kcfg:10
 #, no-c-format
@@ -3903,12 +3753,6 @@ msgstr "Conexóns:"
 msgid "Disk I/O:"
 msgstr "E/S Disco:"
 
-#: plugins/logviewer/logprefwidgetbase.ui:629
-#: plugins/scanfolder/sfprefwidgetbase.ui:70
-#, fuzzy, no-c-format
-msgid "Options"
-msgstr "Opzóns do Ficheiro"
-
 #: plugins/logviewer/logprefwidgetbase.ui:640
 #, no-c-format
 msgid "Use rich te&xt for log"
@@ -4015,12 +3859,6 @@ msgstr "Filtro de IP"
 #, fuzzy, no-c-format
 msgid "Accept Filters"
 msgstr "Todos os Ficheiros"
-
-#: plugins/rssfeed/rssfeedwidget.ui:408 plugins/rssfeed/rssfeedwidget.ui:459
-#: plugins/rssfeed/rssfeedwidget.ui:928
-#, fuzzy, no-c-format
-msgid "Delete"
-msgstr "Borrar após carre&gar"
 
 #: plugins/rssfeed/rssfeedwidget.ui:440
 #, no-c-format
@@ -4536,11 +4374,6 @@ msgstr "Máximo de fontes:"
 msgid "Maximum speed scale mode:"
 msgstr "Máximo de fontes:"
 
-#: plugins/stats/sprefwgt.ui:160
-#, no-c-format
-msgid "Top"
-msgstr ""
-
 #: plugins/stats/sprefwgt.ui:165
 #, no-c-format
 msgid "Exact"
@@ -4728,6 +4561,74 @@ msgstr ""
 #, no-c-format
 msgid "Php executable path:"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Remove"
+#~ msgstr "B&orrar todo"
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "Erro: "
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "Todos os Ficheiros"
+
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "B&orrar todo"
+
+#, fuzzy
+#~ msgid "No"
+#~ msgstr "Nada"
+
+#, fuzzy
+#~ msgid "OK"
+#~ msgstr "O&K"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "Todos os Ficheiros"
+
+#, fuzzy
+#~ msgid "Import"
+#~ msgstr "&Importar"
+
+#, fuzzy
+#~ msgid "Reload"
+#~ msgstr "Envios"
+
+#, fuzzy
+#~ msgid "Add"
+#~ msgstr "&Engadir"
+
+#, fuzzy
+#~ msgid "&OK"
+#~ msgstr "O&K"
+
+#, fuzzy
+#~ msgid "&Cancel"
+#~ msgstr "C&ancelar"
+
+#, fuzzy
+#~ msgid "&Apply"
+#~ msgstr "A&plicar"
+
+#, fuzzy
+#~ msgid "Main Toolbar"
+#~ msgstr "Barra de Transferéncias"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "C&ancelar"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "Opzóns do Ficheiro"
+
+#, fuzzy
+#~ msgid "Delete"
+#~ msgstr "Borrar após carre&gar"
 
 #~ msgid "Search engine:"
 #~ msgstr "Motor de pesquisas:"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2019-01-06 17:08+0100\n"
+"POT-Creation-Date: 2019-01-13 19:17+0100\n"
 "PO-Revision-Date: 2008-02-26 13:59+0100\n"
 "Last-Translator: Slobodan Simic <simicsl@verat.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -67,19 +67,6 @@ msgstr "Ne, zadrži fajlove"
 #: apps/ktorrent/fileselectdlg.cpp:220
 msgid " short!"
 msgstr " nedostaje!"
-
-#: apps/ktorrent/fileselectdlg.cpp:254 apps/ktorrent/queuedialog.cpp:305
-#: apps/ktorrent/queuedialog.cpp:326
-#: libktorrent/interfaces/filetreediritem.cpp:45
-#: libktorrent/interfaces/filetreediritem.cpp:59
-#: libktorrent/interfaces/filetreediritem.cpp:167
-#: libktorrent/interfaces/filetreeitem.cpp:89
-#: plugins/infowidget/iwfiletreediritem.cpp:160
-#: plugins/infowidget/iwfiletreediritem.cpp:173
-#: plugins/infowidget/iwfiletreeitem.cpp:132
-#: plugins/infowidget/peerview.cpp:170 plugins/infowidget/peerview.cpp:172
-msgid "Yes"
-msgstr ""
 
 #: apps/ktorrent/fileselectdlg.cpp:284 apps/ktorrent/groups/allgroup.cpp:26
 #: apps/ktorrent/groups/groupmanager.h:54 apps/ktorrent/ktorrent.cpp:962
@@ -242,12 +229,6 @@ msgid ""
 "Stop"
 msgstr "Zaustavi"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:159 apps/ktorrent/ktorrent.cpp:523
-#: apps/ktorrent/torrentcreatordlgbase.ui:297
-#, fuzzy, no-c-format
-msgid "Remove"
-msgstr "Ukloni sv&e"
-
 #: apps/ktorrent/ktorrent.cpp:527 apps/ktorrent/ktorrent.cpp:530
 msgid ""
 "_: to start all\n"
@@ -341,23 +322,6 @@ msgstr ""
 msgid "Cannot create torrent: %1"
 msgstr "Ne mogu da napravim torent: %1"
 
-#: apps/ktorrent/ktorrentcore.cpp:768 apps/ktorrent/pref.cpp:180
-#: apps/ktorrent/pref.cpp:285 apps/ktorrent/pref.cpp:295
-#: apps/ktorrent/torrentcreatordlg.cpp:125 apps/ktorrent/trayicon.cpp:203
-#: apps/ktorrent/trayicon.cpp:215 libktorrent/torrent/queuemanager.cpp:239
-#: libktorrent/torrent/queuemanager.cpp:748
-#: libktorrent/torrent/queuemanager.cpp:766
-#: plugins/ipfilter/ipblockingprefpage.cpp:137
-#: plugins/ipfilter/ipblockingprefpage.cpp:150
-#: plugins/partfileimport/importdialog.cpp:100
-#: plugins/partfileimport/importdialog.cpp:179
-#: plugins/partfileimport/importdialog.cpp:208
-#: plugins/partfileimport/importdialog.cpp:244
-#: plugins/scheduler/bwsprefpagewidget.cpp:174
-#, fuzzy
-msgid "Error"
-msgstr "Greška: "
-
 #: apps/ktorrent/ktorrentcore.cpp:1028
 msgid ""
 "Several data files of the torrent \"%1\" are missing, do you want to "
@@ -417,12 +381,6 @@ msgstr "Proveri podatke"
 #: apps/ktorrent/ktorrentview.cpp:132
 msgid "Visible columns"
 msgstr "Vidljive kolone"
-
-#: apps/ktorrent/fileselectdlgbase.ui:138 apps/ktorrent/ktorrentview.cpp:134
-#: plugins/infowidget/fileview.cpp:47
-#, fuzzy, no-c-format
-msgid "File"
-msgstr "Svi fajlovi"
 
 #: apps/ktorrent/ktorrentview.cpp:135
 #: plugins/infowidget/infowidgetplugin.cpp:76
@@ -542,11 +500,6 @@ msgstr "Izgubićete sve preuzete podatke. Želite li zaista ovo da učinite?"
 #: apps/ktorrent/ktorrentview.cpp:397 apps/ktorrent/ktorrentviewmenu.cpp:45
 msgid "Remove Torrent"
 msgstr "Ukloni torent"
-
-#: apps/ktorrent/ktorrentview.cpp:397 plugins/search/searchpref.ui:249
-#, fuzzy, no-c-format
-msgid "&Remove"
-msgstr "Ukloni sv&e"
 
 #: apps/ktorrent/ktorrentview.cpp:631
 msgid "You are already checking the data of the torrent %1 !"
@@ -1047,20 +1000,6 @@ msgstr "KTUPnPTest"
 msgid "Cannot open file : %1 : %2"
 msgstr "Ne mogu da otvorim fajl : %1 : %2"
 
-#: libktorrent/interfaces/filetreediritem.cpp:167
-#: libktorrent/interfaces/filetreeitem.cpp:84
-#: plugins/infowidget/fileview.cpp:209
-#: plugins/infowidget/iwfiletreediritem.cpp:156
-#: plugins/infowidget/iwfiletreediritem.cpp:168
-#: plugins/infowidget/iwfiletreeitem.cpp:79
-#: plugins/infowidget/iwfiletreeitem.cpp:111
-#: plugins/infowidget/iwfiletreeitem.cpp:127
-#: plugins/infowidget/iwfiletreeitem.cpp:142
-#: plugins/infowidget/peerview.cpp:170 plugins/infowidget/peerview.cpp:172
-#, fuzzy
-msgid "No"
-msgstr "Ništa"
-
 #: libktorrent/interfaces/filetreeitem.cpp:77
 #: plugins/infowidget/iwfiletreediritem.cpp:148
 #: plugins/infowidget/iwfiletreeitem.cpp:120
@@ -1258,12 +1197,6 @@ msgstr "Nepoznat program"
 #: libktorrent/torrent/torrentcontrol.cpp:1376
 msgid "Stopped"
 msgstr "Zaustavljen"
-
-#: apps/ktorrent/speedlimitsdlgbase.ui:156
-#: libktorrent/torrent/peersourcemanager.cpp:451
-#, fuzzy, no-c-format
-msgid "OK"
-msgstr "U &redu"
 
 #: libktorrent/torrent/peersourcemanager.cpp:458
 msgid "Announcing"
@@ -1522,11 +1455,6 @@ msgstr ""
 msgid "Download"
 msgstr "Preuzimanje"
 
-#: plugins/infowidget/fileview.cpp:55
-#, fuzzy
-msgid "Open"
-msgstr "Otvori jezičak"
-
 #: plugins/infowidget/fileview.cpp:57
 msgid "Download First"
 msgstr "Preuzmi prvo"
@@ -1575,12 +1503,6 @@ msgid ""
 msgstr ""
 "Prikazuje dodatne informacije o preuzimanju. Koliko parčića je preuzeto, "
 "koliko ima sejača i pijavica ..."
-
-#: apps/ktorrent/fileselectdlgbase.ui:129
-#: plugins/infowidget/infowidgetplugin.cpp:77
-#, fuzzy, no-c-format
-msgid "Files"
-msgstr "Svi fajlovi"
 
 #: plugins/infowidget/infowidgetplugin.cpp:173 plugins/stats/statsconwgt.ui:32
 #: plugins/stats/statsspdwgt.ui:40
@@ -1681,15 +1603,6 @@ msgstr "Učitavam txt fajl..."
 #: plugins/ipfilter/convertdialog.cpp:103
 msgid "Please wait..."
 msgstr "Molim sačekajte..."
-
-#: apps/ktorrent/addpeerwidgetbase.ui:122 plugins/ipfilter/convert_dlg.ui:112
-#: plugins/ipfilter/convertdialog.cpp:145
-#: plugins/ipfilter/convertdialog.cpp:166
-#: plugins/ipfilter/convertdialog.cpp:203
-#: plugins/ipfilter/convertdialog.cpp:217
-#, no-c-format
-msgid "&Close"
-msgstr ""
 
 #: plugins/ipfilter/convert_dlg.ui:24 plugins/ipfilter/convertdialog.cpp:155
 #, no-c-format
@@ -1794,11 +1707,6 @@ msgstr "Ne mogu da proverim podatke : %1"
 #, c-format
 msgid "Cannot load the torrent file : %1"
 msgstr "Ne mogu da učitam torent : %1"
-
-#: plugins/partfileimport/partfileimportplugin.cpp:43
-#, fuzzy
-msgid "Import"
-msgstr "&Uvezi"
 
 #: plugins/partfileimport/partfileimportplugin.cpp:43
 msgid "Imports partially or fully downloaded torrents from other clients"
@@ -2032,15 +1940,6 @@ msgstr "Opcije motora traženja"
 msgid " Engine: "
 msgstr " Motor: "
 
-#: plugins/search/searchwidget.cpp:72
-msgid "Back"
-msgstr ""
-
-#: plugins/search/searchwidget.cpp:75
-#, fuzzy
-msgid "Reload"
-msgstr "Slanje"
-
 #: plugins/search/searchwidget.cpp:178
 msgid "Searching for %1..."
 msgstr "Tražim %1..."
@@ -2249,13 +2148,6 @@ msgstr "Port:"
 #, no-c-format
 msgid "Enter peer IP and port."
 msgstr "Unesite IP i port vršnjaka."
-
-#: apps/ktorrent/addpeerwidgetbase.ui:108
-#: apps/ktorrent/ipfilterwidgetbase.ui:125
-#: apps/ktorrent/torrentcreatordlgbase.ui:311
-#, fuzzy, no-c-format
-msgid "Add"
-msgstr "Dod&aj"
 
 #: apps/ktorrent/advancedpref.ui:16
 #, no-c-format
@@ -2620,18 +2512,6 @@ msgstr "Slobodan prostor:"
 msgid "After download:"
 msgstr "Nakon preuzimanja:"
 
-#: apps/ktorrent/fileselectdlgbase.ui:330
-#: apps/ktorrent/ipfilterwidgetbase.ui:249 apps/ktorrent/queuedlg.ui:588
-#, fuzzy, no-c-format
-msgid "&OK"
-msgstr "U &redu"
-
-#: apps/ktorrent/fileselectdlgbase.ui:344
-#: apps/ktorrent/ipfilterwidgetbase.ui:271 apps/ktorrent/queuedlg.ui:610
-#, fuzzy, no-c-format
-msgid "&Cancel"
-msgstr "Otk&aži"
-
 #: apps/ktorrent/generalpref.ui:44
 #, no-c-format
 msgid "Encryption"
@@ -2804,11 +2684,6 @@ msgstr "Oč&isti"
 msgid "Clears this list"
 msgstr "Čisti ovu listu"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:207
-#, no-c-format
-msgid "&Open..."
-msgstr ""
-
 #: apps/ktorrent/ipfilterwidgetbase.ui:218
 #, no-c-format
 msgid "Save &As..."
@@ -2818,22 +2693,6 @@ msgstr "Sačuvaj k&ao..."
 #, no-c-format
 msgid "Save this blacklist to use with KTorrent IPFilter plugin"
 msgstr "Snima ovu crnu listu da se može koristiti sa priključkom IP filter"
-
-#: apps/ktorrent/ipfilterwidgetbase.ui:260 apps/ktorrent/queuedlg.ui:599
-#: plugins/scheduler/bwspage.ui:759
-#, no-c-format
-msgid "&Apply"
-msgstr ""
-
-#: apps/ktorrent/ktorrentui.rc:4
-#, no-c-format
-msgid "&File"
-msgstr ""
-
-#: apps/ktorrent/ktorrentui.rc:24
-#, fuzzy, no-c-format
-msgid "Main Toolbar"
-msgstr "Traka preuzimanja"
 
 #: apps/ktorrent/ktorrentui.rc:34
 #, no-c-format
@@ -2992,11 +2851,6 @@ msgstr "Najveća brzina preuzimanja:"
 msgid "KB/s (0 is no limit)"
 msgstr "KB/s (0 je bez ograničenja)"
 
-#: apps/ktorrent/speedlimitsdlgbase.ui:164 plugins/scheduler/bwspage.ui:767
-#, fuzzy, no-c-format
-msgid "Cancel"
-msgstr "Otk&aži"
-
 #: apps/ktorrent/torrentcreatordlgbase.ui:16
 #, no-c-format
 msgid "Create Torrent"
@@ -3132,11 +2986,6 @@ msgstr ""
 #, no-c-format
 msgid "Test"
 msgstr "Test"
-
-#: apps/ktupnptest/mainwidget.ui:62
-#, no-c-format
-msgid "Close"
-msgstr ""
 
 #: libktorrent/ktorrent.kcfg:10
 #, no-c-format
@@ -3824,12 +3673,6 @@ msgstr "Veze:"
 msgid "Disk I/O:"
 msgstr "Ul/Izl diska:"
 
-#: plugins/logviewer/logprefwidgetbase.ui:629
-#: plugins/scanfolder/sfprefwidgetbase.ui:70
-#, fuzzy, no-c-format
-msgid "Options"
-msgstr "Opcije fajla"
-
 #: plugins/logviewer/logprefwidgetbase.ui:640
 #, no-c-format
 msgid "Use rich te&xt for log"
@@ -3936,12 +3779,6 @@ msgstr "Filteri"
 #, no-c-format
 msgid "Accept Filters"
 msgstr "Prihvati filtere"
-
-#: plugins/rssfeed/rssfeedwidget.ui:408 plugins/rssfeed/rssfeedwidget.ui:459
-#: plugins/rssfeed/rssfeedwidget.ui:928
-#, fuzzy, no-c-format
-msgid "Delete"
-msgstr "O&briši"
 
 #: plugins/rssfeed/rssfeedwidget.ui:440
 #, no-c-format
@@ -4457,11 +4294,6 @@ msgstr "Maksimum"
 msgid "Maximum speed scale mode:"
 msgstr "Režim razmere najveće brzine:"
 
-#: plugins/stats/sprefwgt.ui:160
-#, no-c-format
-msgid "Top"
-msgstr ""
-
 #: plugins/stats/sprefwgt.ui:165
 #, no-c-format
 msgid "Exact"
@@ -4653,6 +4485,74 @@ msgstr "Izmeni lozinku ..."
 #, no-c-format
 msgid "Php executable path:"
 msgstr "Putanja do programa za PHP:"
+
+#, fuzzy
+#~ msgid "Remove"
+#~ msgstr "Ukloni sv&e"
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "Greška: "
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "Svi fajlovi"
+
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "Ukloni sv&e"
+
+#, fuzzy
+#~ msgid "No"
+#~ msgstr "Ništa"
+
+#, fuzzy
+#~ msgid "OK"
+#~ msgstr "U &redu"
+
+#, fuzzy
+#~ msgid "Open"
+#~ msgstr "Otvori jezičak"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "Svi fajlovi"
+
+#, fuzzy
+#~ msgid "Import"
+#~ msgstr "&Uvezi"
+
+#, fuzzy
+#~ msgid "Reload"
+#~ msgstr "Slanje"
+
+#, fuzzy
+#~ msgid "Add"
+#~ msgstr "Dod&aj"
+
+#, fuzzy
+#~ msgid "&OK"
+#~ msgstr "U &redu"
+
+#, fuzzy
+#~ msgid "&Cancel"
+#~ msgstr "Otk&aži"
+
+#, fuzzy
+#~ msgid "Main Toolbar"
+#~ msgstr "Traka preuzimanja"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "Otk&aži"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "Opcije fajla"
+
+#, fuzzy
+#~ msgid "Delete"
+#~ msgstr "O&briši"
 
 #~ msgid "Search engine:"
 #~ msgstr "Motor traženja:"

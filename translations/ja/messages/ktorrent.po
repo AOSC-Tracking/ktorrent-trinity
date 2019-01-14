@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2019-01-06 17:08+0100\n"
+"POT-Creation-Date: 2019-01-13 19:17+0100\n"
 "PO-Revision-Date: 2007-11-25 22:00+0900\n"
 "Last-Translator: Yukiko Bando <ybando@k6.dion.ne.jp>\n"
 "Language-Team: Japanese <Kdeveloper@kde.gr.jp>\n"
@@ -64,19 +64,6 @@ msgstr "いいえ、ファイルを保持します"
 #: apps/ktorrent/fileselectdlg.cpp:220
 msgid " short!"
 msgstr " 不足!"
-
-#: apps/ktorrent/fileselectdlg.cpp:254 apps/ktorrent/queuedialog.cpp:305
-#: apps/ktorrent/queuedialog.cpp:326
-#: libktorrent/interfaces/filetreediritem.cpp:45
-#: libktorrent/interfaces/filetreediritem.cpp:59
-#: libktorrent/interfaces/filetreediritem.cpp:167
-#: libktorrent/interfaces/filetreeitem.cpp:89
-#: plugins/infowidget/iwfiletreediritem.cpp:160
-#: plugins/infowidget/iwfiletreediritem.cpp:173
-#: plugins/infowidget/iwfiletreeitem.cpp:132
-#: plugins/infowidget/peerview.cpp:170 plugins/infowidget/peerview.cpp:172
-msgid "Yes"
-msgstr ""
 
 #: apps/ktorrent/fileselectdlg.cpp:284 apps/ktorrent/groups/allgroup.cpp:26
 #: apps/ktorrent/groups/groupmanager.h:54 apps/ktorrent/ktorrent.cpp:962
@@ -240,12 +227,6 @@ msgid ""
 "Stop"
 msgstr "停止"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:159 apps/ktorrent/ktorrent.cpp:523
-#: apps/ktorrent/torrentcreatordlgbase.ui:297
-#, fuzzy, no-c-format
-msgid "Remove"
-msgstr "すべて削除(&E)"
-
 #: apps/ktorrent/ktorrent.cpp:527 apps/ktorrent/ktorrent.cpp:530
 msgid ""
 "_: to start all\n"
@@ -339,23 +320,6 @@ msgstr ""
 msgid "Cannot create torrent: %1"
 msgstr "torrent を作成できません: %1"
 
-#: apps/ktorrent/ktorrentcore.cpp:768 apps/ktorrent/pref.cpp:180
-#: apps/ktorrent/pref.cpp:285 apps/ktorrent/pref.cpp:295
-#: apps/ktorrent/torrentcreatordlg.cpp:125 apps/ktorrent/trayicon.cpp:203
-#: apps/ktorrent/trayicon.cpp:215 libktorrent/torrent/queuemanager.cpp:239
-#: libktorrent/torrent/queuemanager.cpp:748
-#: libktorrent/torrent/queuemanager.cpp:766
-#: plugins/ipfilter/ipblockingprefpage.cpp:137
-#: plugins/ipfilter/ipblockingprefpage.cpp:150
-#: plugins/partfileimport/importdialog.cpp:100
-#: plugins/partfileimport/importdialog.cpp:179
-#: plugins/partfileimport/importdialog.cpp:208
-#: plugins/partfileimport/importdialog.cpp:244
-#: plugins/scheduler/bwsprefpagewidget.cpp:174
-#, fuzzy
-msgid "Error"
-msgstr "エラー: "
-
 #: apps/ktorrent/ktorrentcore.cpp:1028
 msgid ""
 "Several data files of the torrent \"%1\" are missing, do you want to "
@@ -415,12 +379,6 @@ msgstr "データの整合性をチェック"
 #: apps/ktorrent/ktorrentview.cpp:132
 msgid "Visible columns"
 msgstr "表示するカラム"
-
-#: apps/ktorrent/fileselectdlgbase.ui:138 apps/ktorrent/ktorrentview.cpp:134
-#: plugins/infowidget/fileview.cpp:47
-#, fuzzy, no-c-format
-msgid "File"
-msgstr "すべてのファイル"
 
 #: apps/ktorrent/ktorrentview.cpp:135
 #: plugins/infowidget/infowidgetplugin.cpp:76
@@ -533,11 +491,6 @@ msgstr "ダウンロード済みのすべてのデータが失われます。本
 #: apps/ktorrent/ktorrentview.cpp:397 apps/ktorrent/ktorrentviewmenu.cpp:45
 msgid "Remove Torrent"
 msgstr "torrent を削除"
-
-#: apps/ktorrent/ktorrentview.cpp:397 plugins/search/searchpref.ui:249
-#, fuzzy, no-c-format
-msgid "&Remove"
-msgstr "すべて削除(&E)"
 
 #: apps/ktorrent/ktorrentview.cpp:631
 msgid "You are already checking the data of the torrent %1 !"
@@ -1033,20 +986,6 @@ msgstr "KTUPnPTest"
 msgid "Cannot open file : %1 : %2"
 msgstr "ファイルを開けません: %1 : %2"
 
-#: libktorrent/interfaces/filetreediritem.cpp:167
-#: libktorrent/interfaces/filetreeitem.cpp:84
-#: plugins/infowidget/fileview.cpp:209
-#: plugins/infowidget/iwfiletreediritem.cpp:156
-#: plugins/infowidget/iwfiletreediritem.cpp:168
-#: plugins/infowidget/iwfiletreeitem.cpp:79
-#: plugins/infowidget/iwfiletreeitem.cpp:111
-#: plugins/infowidget/iwfiletreeitem.cpp:127
-#: plugins/infowidget/iwfiletreeitem.cpp:142
-#: plugins/infowidget/peerview.cpp:170 plugins/infowidget/peerview.cpp:172
-#, fuzzy
-msgid "No"
-msgstr "なし"
-
 #: libktorrent/interfaces/filetreeitem.cpp:77
 #: plugins/infowidget/iwfiletreediritem.cpp:148
 #: plugins/infowidget/iwfiletreeitem.cpp:120
@@ -1238,12 +1177,6 @@ msgstr "未知のクライアント"
 #: libktorrent/torrent/torrentcontrol.cpp:1376
 msgid "Stopped"
 msgstr "停止中"
-
-#: apps/ktorrent/speedlimitsdlgbase.ui:156
-#: libktorrent/torrent/peersourcemanager.cpp:451
-#, fuzzy, no-c-format
-msgid "OK"
-msgstr "O&K"
 
 #: libktorrent/torrent/peersourcemanager.cpp:458
 msgid "Announcing"
@@ -1503,11 +1436,6 @@ msgstr ""
 msgid "Download"
 msgstr "ダウンロード"
 
-#: plugins/infowidget/fileview.cpp:55
-#, fuzzy
-msgid "Open"
-msgstr "タブを開く"
-
 #: plugins/infowidget/fileview.cpp:57
 msgid "Download First"
 msgstr "最初にダウンロード"
@@ -1553,12 +1481,6 @@ msgid ""
 msgstr ""
 "ダウンロードに関する追加情報を表示します。ダウンロード済みのピース数、シー"
 "ダーやリーチャーの数など。"
-
-#: apps/ktorrent/fileselectdlgbase.ui:129
-#: plugins/infowidget/infowidgetplugin.cpp:77
-#, fuzzy, no-c-format
-msgid "Files"
-msgstr "すべてのファイル"
 
 #: plugins/infowidget/infowidgetplugin.cpp:173 plugins/stats/statsconwgt.ui:32
 #: plugins/stats/statsspdwgt.ui:40
@@ -1659,15 +1581,6 @@ msgstr "txt ファイルを読み込み..."
 #: plugins/ipfilter/convertdialog.cpp:103
 msgid "Please wait..."
 msgstr "お待ちください..."
-
-#: apps/ktorrent/addpeerwidgetbase.ui:122 plugins/ipfilter/convert_dlg.ui:112
-#: plugins/ipfilter/convertdialog.cpp:145
-#: plugins/ipfilter/convertdialog.cpp:166
-#: plugins/ipfilter/convertdialog.cpp:203
-#: plugins/ipfilter/convertdialog.cpp:217
-#, no-c-format
-msgid "&Close"
-msgstr ""
 
 #: plugins/ipfilter/convert_dlg.ui:24 plugins/ipfilter/convertdialog.cpp:155
 #, no-c-format
@@ -1771,11 +1684,6 @@ msgstr "データを検証できません: %1"
 #, c-format
 msgid "Cannot load the torrent file : %1"
 msgstr "torrent ファイルをロードできません: %1"
-
-#: plugins/partfileimport/partfileimportplugin.cpp:43
-#, fuzzy
-msgid "Import"
-msgstr "インポート(&I)"
 
 #: plugins/partfileimport/partfileimportplugin.cpp:43
 msgid "Imports partially or fully downloaded torrents from other clients"
@@ -2011,15 +1919,6 @@ msgstr "検索エンジンのオプション"
 msgid " Engine: "
 msgstr " エンジン: "
 
-#: plugins/search/searchwidget.cpp:72
-msgid "Back"
-msgstr ""
-
-#: plugins/search/searchwidget.cpp:75
-#, fuzzy
-msgid "Reload"
-msgstr "アップロード"
-
 #: plugins/search/searchwidget.cpp:178
 msgid "Searching for %1..."
 msgstr "%1 を検索中..."
@@ -2230,14 +2129,6 @@ msgstr "ポート:"
 #, no-c-format
 msgid "Enter peer IP and port."
 msgstr "ピアの IP とポートを入力してください。"
-
-# ACCELERATOR changed by translator
-#: apps/ktorrent/addpeerwidgetbase.ui:108
-#: apps/ktorrent/ipfilterwidgetbase.ui:125
-#: apps/ktorrent/torrentcreatordlgbase.ui:311
-#, fuzzy, no-c-format
-msgid "Add"
-msgstr "追加(&D)"
 
 #: apps/ktorrent/advancedpref.ui:16
 #, no-c-format
@@ -2599,18 +2490,6 @@ msgstr "ディスクの空き容量:"
 msgid "After download:"
 msgstr "ダウンロード後:"
 
-#: apps/ktorrent/fileselectdlgbase.ui:330
-#: apps/ktorrent/ipfilterwidgetbase.ui:249 apps/ktorrent/queuedlg.ui:588
-#, fuzzy, no-c-format
-msgid "&OK"
-msgstr "O&K"
-
-#: apps/ktorrent/fileselectdlgbase.ui:344
-#: apps/ktorrent/ipfilterwidgetbase.ui:271 apps/ktorrent/queuedlg.ui:610
-#, fuzzy, no-c-format
-msgid "&Cancel"
-msgstr "キャンセル(&A)"
-
 #: apps/ktorrent/generalpref.ui:44
 #, no-c-format
 msgid "Encryption"
@@ -2783,11 +2662,6 @@ msgstr "クリア(&L)"
 msgid "Clears this list"
 msgstr "このリストをクリア"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:207
-#, no-c-format
-msgid "&Open..."
-msgstr ""
-
 #: apps/ktorrent/ipfilterwidgetbase.ui:218
 #, no-c-format
 msgid "Save &As..."
@@ -2797,22 +2671,6 @@ msgstr "名前を付けて保存(&A)..."
 #, no-c-format
 msgid "Save this blacklist to use with KTorrent IPFilter plugin"
 msgstr "このブラックリストを KTorrent IPFilter プラグインで使用するために保存"
-
-#: apps/ktorrent/ipfilterwidgetbase.ui:260 apps/ktorrent/queuedlg.ui:599
-#: plugins/scheduler/bwspage.ui:759
-#, no-c-format
-msgid "&Apply"
-msgstr ""
-
-#: apps/ktorrent/ktorrentui.rc:4
-#, no-c-format
-msgid "&File"
-msgstr ""
-
-#: apps/ktorrent/ktorrentui.rc:24
-#, fuzzy, no-c-format
-msgid "Main Toolbar"
-msgstr "ダウンロードツールバー"
 
 #: apps/ktorrent/ktorrentui.rc:34
 #, no-c-format
@@ -2971,11 +2829,6 @@ msgstr "最大ダウンロード速度:"
 msgid "KB/s (0 is no limit)"
 msgstr "KB/秒 (0 は無制限)"
 
-#: apps/ktorrent/speedlimitsdlgbase.ui:164 plugins/scheduler/bwspage.ui:767
-#, fuzzy, no-c-format
-msgid "Cancel"
-msgstr "キャンセル(&A)"
-
 #: apps/ktorrent/torrentcreatordlgbase.ui:16
 #, no-c-format
 msgid "Create Torrent"
@@ -3112,11 +2965,6 @@ msgstr ""
 #, no-c-format
 msgid "Test"
 msgstr "テスト"
-
-#: apps/ktupnptest/mainwidget.ui:62
-#, no-c-format
-msgid "Close"
-msgstr ""
 
 #: libktorrent/ktorrent.kcfg:10
 #, no-c-format
@@ -3803,12 +3651,6 @@ msgstr "接続:"
 msgid "Disk I/O:"
 msgstr "ディスク I/O:"
 
-#: plugins/logviewer/logprefwidgetbase.ui:629
-#: plugins/scanfolder/sfprefwidgetbase.ui:70
-#, fuzzy, no-c-format
-msgid "Options"
-msgstr "ファイルのオプション"
-
 #: plugins/logviewer/logprefwidgetbase.ui:640
 #, no-c-format
 msgid "Use rich te&xt for log"
@@ -3915,12 +3757,6 @@ msgstr "フィルタ"
 #, no-c-format
 msgid "Accept Filters"
 msgstr "許可フィルタ"
-
-#: plugins/rssfeed/rssfeedwidget.ui:408 plugins/rssfeed/rssfeedwidget.ui:459
-#: plugins/rssfeed/rssfeedwidget.ui:928
-#, fuzzy, no-c-format
-msgid "Delete"
-msgstr "削除(&L)"
 
 #: plugins/rssfeed/rssfeedwidget.ui:440
 #, no-c-format
@@ -4442,11 +4278,6 @@ msgstr "最大"
 msgid "Maximum speed scale mode:"
 msgstr "速度スケールの最大モード:"
 
-#: plugins/stats/sprefwgt.ui:160
-#, no-c-format
-msgid "Top"
-msgstr ""
-
 #: plugins/stats/sprefwgt.ui:165
 #, no-c-format
 msgid "Exact"
@@ -4637,6 +4468,75 @@ msgstr "パスワードを変更..."
 #, no-c-format
 msgid "Php executable path:"
 msgstr "PHP 実行ファイルへのパス:"
+
+#, fuzzy
+#~ msgid "Remove"
+#~ msgstr "すべて削除(&E)"
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "エラー: "
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "すべてのファイル"
+
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "すべて削除(&E)"
+
+#, fuzzy
+#~ msgid "No"
+#~ msgstr "なし"
+
+#, fuzzy
+#~ msgid "OK"
+#~ msgstr "O&K"
+
+#, fuzzy
+#~ msgid "Open"
+#~ msgstr "タブを開く"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "すべてのファイル"
+
+#, fuzzy
+#~ msgid "Import"
+#~ msgstr "インポート(&I)"
+
+#, fuzzy
+#~ msgid "Reload"
+#~ msgstr "アップロード"
+
+# ACCELERATOR changed by translator
+#, fuzzy
+#~ msgid "Add"
+#~ msgstr "追加(&D)"
+
+#, fuzzy
+#~ msgid "&OK"
+#~ msgstr "O&K"
+
+#, fuzzy
+#~ msgid "&Cancel"
+#~ msgstr "キャンセル(&A)"
+
+#, fuzzy
+#~ msgid "Main Toolbar"
+#~ msgstr "ダウンロードツールバー"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "キャンセル(&A)"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "ファイルのオプション"
+
+#, fuzzy
+#~ msgid "Delete"
+#~ msgstr "削除(&L)"
 
 #~ msgid "Search engine:"
 #~ msgstr "検索エンジン:"
