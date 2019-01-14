@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2019-01-06 17:08+0100\n"
+"POT-Creation-Date: 2019-01-13 19:17+0100\n"
 "PO-Revision-Date: 2006-08-28 14:39+0800\n"
 "Last-Translator: Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv "
 "dot tw>\n"
@@ -62,19 +62,6 @@ msgstr "不要，請保留這些檔案"
 
 #: apps/ktorrent/fileselectdlg.cpp:220
 msgid " short!"
-msgstr ""
-
-#: apps/ktorrent/fileselectdlg.cpp:254 apps/ktorrent/queuedialog.cpp:305
-#: apps/ktorrent/queuedialog.cpp:326
-#: libktorrent/interfaces/filetreediritem.cpp:45
-#: libktorrent/interfaces/filetreediritem.cpp:59
-#: libktorrent/interfaces/filetreediritem.cpp:167
-#: libktorrent/interfaces/filetreeitem.cpp:89
-#: plugins/infowidget/iwfiletreediritem.cpp:160
-#: plugins/infowidget/iwfiletreediritem.cpp:173
-#: plugins/infowidget/iwfiletreeitem.cpp:132
-#: plugins/infowidget/peerview.cpp:170 plugins/infowidget/peerview.cpp:172
-msgid "Yes"
 msgstr ""
 
 #: apps/ktorrent/fileselectdlg.cpp:284 apps/ktorrent/groups/allgroup.cpp:26
@@ -251,12 +238,6 @@ msgid ""
 "Stop"
 msgstr "停止"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:159 apps/ktorrent/ktorrent.cpp:523
-#: apps/ktorrent/torrentcreatordlgbase.ui:297
-#, fuzzy, no-c-format
-msgid "Remove"
-msgstr "全部移除(&E)"
-
 #: apps/ktorrent/ktorrent.cpp:527 apps/ktorrent/ktorrent.cpp:530
 msgid ""
 "_: to start all\n"
@@ -351,23 +332,6 @@ msgstr ""
 msgid "Cannot create torrent: %1"
 msgstr "無法建立 torrent：%1"
 
-#: apps/ktorrent/ktorrentcore.cpp:768 apps/ktorrent/pref.cpp:180
-#: apps/ktorrent/pref.cpp:285 apps/ktorrent/pref.cpp:295
-#: apps/ktorrent/torrentcreatordlg.cpp:125 apps/ktorrent/trayicon.cpp:203
-#: apps/ktorrent/trayicon.cpp:215 libktorrent/torrent/queuemanager.cpp:239
-#: libktorrent/torrent/queuemanager.cpp:748
-#: libktorrent/torrent/queuemanager.cpp:766
-#: plugins/ipfilter/ipblockingprefpage.cpp:137
-#: plugins/ipfilter/ipblockingprefpage.cpp:150
-#: plugins/partfileimport/importdialog.cpp:100
-#: plugins/partfileimport/importdialog.cpp:179
-#: plugins/partfileimport/importdialog.cpp:208
-#: plugins/partfileimport/importdialog.cpp:244
-#: plugins/scheduler/bwsprefpagewidget.cpp:174
-#, fuzzy
-msgid "Error"
-msgstr "錯誤："
-
 #: apps/ktorrent/ktorrentcore.cpp:1028
 #, fuzzy
 msgid ""
@@ -427,12 +391,6 @@ msgstr "檢查資料完整性"
 #: apps/ktorrent/ktorrentview.cpp:132
 msgid "Visible columns"
 msgstr ""
-
-#: apps/ktorrent/fileselectdlgbase.ui:138 apps/ktorrent/ktorrentview.cpp:134
-#: plugins/infowidget/fileview.cpp:47
-#, fuzzy, no-c-format
-msgid "File"
-msgstr "所有檔案"
 
 #: apps/ktorrent/ktorrentview.cpp:135
 #: plugins/infowidget/infowidgetplugin.cpp:76
@@ -552,11 +510,6 @@ msgstr "若是您取消選擇檔案。您將失去所有檔案中的資料。您
 #, fuzzy
 msgid "Remove Torrent"
 msgstr "建立 Torrent"
-
-#: apps/ktorrent/ktorrentview.cpp:397 plugins/search/searchpref.ui:249
-#, fuzzy, no-c-format
-msgid "&Remove"
-msgstr "全部移除(&E)"
 
 #: apps/ktorrent/ktorrentview.cpp:631
 #, fuzzy
@@ -1062,20 +1015,6 @@ msgstr "KTUPnPTest"
 msgid "Cannot open file : %1 : %2"
 msgstr "無法開啟檔案 %1：%2"
 
-#: libktorrent/interfaces/filetreediritem.cpp:167
-#: libktorrent/interfaces/filetreeitem.cpp:84
-#: plugins/infowidget/fileview.cpp:209
-#: plugins/infowidget/iwfiletreediritem.cpp:156
-#: plugins/infowidget/iwfiletreediritem.cpp:168
-#: plugins/infowidget/iwfiletreeitem.cpp:79
-#: plugins/infowidget/iwfiletreeitem.cpp:111
-#: plugins/infowidget/iwfiletreeitem.cpp:127
-#: plugins/infowidget/iwfiletreeitem.cpp:142
-#: plugins/infowidget/peerview.cpp:170 plugins/infowidget/peerview.cpp:172
-#, fuzzy
-msgid "No"
-msgstr "無"
-
 #: libktorrent/interfaces/filetreeitem.cpp:77
 #: plugins/infowidget/iwfiletreediritem.cpp:148
 #: plugins/infowidget/iwfiletreeitem.cpp:120
@@ -1272,12 +1211,6 @@ msgstr "未知的客戶端"
 #: libktorrent/torrent/torrentcontrol.cpp:1376
 msgid "Stopped"
 msgstr "已停止"
-
-#: apps/ktorrent/speedlimitsdlgbase.ui:156
-#: libktorrent/torrent/peersourcemanager.cpp:451
-#, fuzzy, no-c-format
-msgid "OK"
-msgstr "確定(&K)"
 
 #: libktorrent/torrent/peersourcemanager.cpp:458
 msgid "Announcing"
@@ -1530,10 +1463,6 @@ msgstr ""
 msgid "Download"
 msgstr "下載"
 
-#: plugins/infowidget/fileview.cpp:55
-msgid "Open"
-msgstr ""
-
 #: plugins/infowidget/fileview.cpp:57
 msgid "Download First"
 msgstr "優先下載"
@@ -1578,12 +1507,6 @@ msgid ""
 "Shows additional information about a download. Like which chunks have been "
 "downloaded, how many seeders and leechers ..."
 msgstr "顯示關於下載的額外資訊。例如哪些區塊已下載，有多少傳送者與接受者等等。"
-
-#: apps/ktorrent/fileselectdlgbase.ui:129
-#: plugins/infowidget/infowidgetplugin.cpp:77
-#, fuzzy, no-c-format
-msgid "Files"
-msgstr "所有檔案"
 
 #: plugins/infowidget/infowidgetplugin.cpp:173 plugins/stats/statsconwgt.ui:32
 #: plugins/stats/statsspdwgt.ui:40
@@ -1686,15 +1609,6 @@ msgstr "載入文字檔中..."
 #: plugins/ipfilter/convertdialog.cpp:103
 msgid "Please wait..."
 msgstr "請稍候..."
-
-#: apps/ktorrent/addpeerwidgetbase.ui:122 plugins/ipfilter/convert_dlg.ui:112
-#: plugins/ipfilter/convertdialog.cpp:145
-#: plugins/ipfilter/convertdialog.cpp:166
-#: plugins/ipfilter/convertdialog.cpp:203
-#: plugins/ipfilter/convertdialog.cpp:217
-#, no-c-format
-msgid "&Close"
-msgstr ""
 
 #: plugins/ipfilter/convert_dlg.ui:24 plugins/ipfilter/convertdialog.cpp:155
 #, no-c-format
@@ -1799,11 +1713,6 @@ msgstr "無法檢查資料：%1"
 #, c-format
 msgid "Cannot load the torrent file : %1"
 msgstr "無法載入 torrent 檔案：%1"
-
-#: plugins/partfileimport/partfileimportplugin.cpp:43
-#, fuzzy
-msgid "Import"
-msgstr "匯入(&I)"
 
 #: plugins/partfileimport/partfileimportplugin.cpp:43
 msgid "Imports partially or fully downloaded torrents from other clients"
@@ -2035,15 +1944,6 @@ msgstr "搜尋引擎選項"
 msgid " Engine: "
 msgstr "引擎"
 
-#: plugins/search/searchwidget.cpp:72
-msgid "Back"
-msgstr ""
-
-#: plugins/search/searchwidget.cpp:75
-#, fuzzy
-msgid "Reload"
-msgstr "上傳"
-
 #: plugins/search/searchwidget.cpp:178
 msgid "Searching for %1..."
 msgstr "搜尋 %1 中..."
@@ -2271,13 +2171,6 @@ msgstr "連接埠："
 #, no-c-format
 msgid "Enter peer IP and port."
 msgstr ""
-
-#: apps/ktorrent/addpeerwidgetbase.ui:108
-#: apps/ktorrent/ipfilterwidgetbase.ui:125
-#: apps/ktorrent/torrentcreatordlgbase.ui:311
-#, fuzzy, no-c-format
-msgid "Add"
-msgstr "新增(&A)"
 
 #: apps/ktorrent/advancedpref.ui:16
 #, fuzzy, no-c-format
@@ -2633,18 +2526,6 @@ msgstr ""
 msgid "After download:"
 msgstr "下載："
 
-#: apps/ktorrent/fileselectdlgbase.ui:330
-#: apps/ktorrent/ipfilterwidgetbase.ui:249 apps/ktorrent/queuedlg.ui:588
-#, fuzzy, no-c-format
-msgid "&OK"
-msgstr "確定(&K)"
-
-#: apps/ktorrent/fileselectdlgbase.ui:344
-#: apps/ktorrent/ipfilterwidgetbase.ui:271 apps/ktorrent/queuedlg.ui:610
-#, fuzzy, no-c-format
-msgid "&Cancel"
-msgstr "取消(&A)"
-
 #: apps/ktorrent/generalpref.ui:44
 #, no-c-format
 msgid "Encryption"
@@ -2812,11 +2693,6 @@ msgstr "清除(&L)"
 msgid "Clears this list"
 msgstr "清除此清單"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:207
-#, no-c-format
-msgid "&Open..."
-msgstr ""
-
 #: apps/ktorrent/ipfilterwidgetbase.ui:218
 #, no-c-format
 msgid "Save &As..."
@@ -2826,22 +2702,6 @@ msgstr "另存為(&A)..."
 #, no-c-format
 msgid "Save this blacklist to use with KTorrent IPFilter plugin"
 msgstr "儲存此黑名單，以便在 KTorrent IPFilter 外掛程式中使用"
-
-#: apps/ktorrent/ipfilterwidgetbase.ui:260 apps/ktorrent/queuedlg.ui:599
-#: plugins/scheduler/bwspage.ui:759
-#, no-c-format
-msgid "&Apply"
-msgstr ""
-
-#: apps/ktorrent/ktorrentui.rc:4
-#, no-c-format
-msgid "&File"
-msgstr ""
-
-#: apps/ktorrent/ktorrentui.rc:24
-#, fuzzy, no-c-format
-msgid "Main Toolbar"
-msgstr "下載工具列"
 
 #: apps/ktorrent/ktorrentui.rc:34
 #, no-c-format
@@ -3000,11 +2860,6 @@ msgstr "最大下載速率："
 msgid "KB/s (0 is no limit)"
 msgstr "KB/秒（0 表示不限制）"
 
-#: apps/ktorrent/speedlimitsdlgbase.ui:164 plugins/scheduler/bwspage.ui:767
-#, fuzzy, no-c-format
-msgid "Cancel"
-msgstr "取消(&A)"
-
 #: apps/ktorrent/torrentcreatordlgbase.ui:16
 #, no-c-format
 msgid "Create Torrent"
@@ -3138,11 +2993,6 @@ msgstr ""
 #, no-c-format
 msgid "Test"
 msgstr "測試"
-
-#: apps/ktupnptest/mainwidget.ui:62
-#, no-c-format
-msgid "Close"
-msgstr ""
 
 #: libktorrent/ktorrent.kcfg:10
 #, no-c-format
@@ -3823,12 +3673,6 @@ msgstr "連線："
 msgid "Disk I/O:"
 msgstr "磁碟 I/O："
 
-#: plugins/logviewer/logprefwidgetbase.ui:629
-#: plugins/scanfolder/sfprefwidgetbase.ui:70
-#, fuzzy, no-c-format
-msgid "Options"
-msgstr "檔案選項"
-
 #: plugins/logviewer/logprefwidgetbase.ui:640
 #, no-c-format
 msgid "Use rich te&xt for log"
@@ -3935,12 +3779,6 @@ msgstr "IP 過濾器"
 #, fuzzy, no-c-format
 msgid "Accept Filters"
 msgstr "所有檔案"
-
-#: plugins/rssfeed/rssfeedwidget.ui:408 plugins/rssfeed/rssfeedwidget.ui:459
-#: plugins/rssfeed/rssfeedwidget.ui:928
-#, fuzzy, no-c-format
-msgid "Delete"
-msgstr "載入後刪除(&G)"
 
 #: plugins/rssfeed/rssfeedwidget.ui:440
 #, no-c-format
@@ -4456,11 +4294,6 @@ msgstr "最大 seed 數："
 msgid "Maximum speed scale mode:"
 msgstr "最大 seed 數："
 
-#: plugins/stats/sprefwgt.ui:160
-#, no-c-format
-msgid "Top"
-msgstr ""
-
 #: plugins/stats/sprefwgt.ui:165
 #, no-c-format
 msgid "Exact"
@@ -4648,6 +4481,70 @@ msgstr ""
 #, no-c-format
 msgid "Php executable path:"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Remove"
+#~ msgstr "全部移除(&E)"
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "錯誤："
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "所有檔案"
+
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "全部移除(&E)"
+
+#, fuzzy
+#~ msgid "No"
+#~ msgstr "無"
+
+#, fuzzy
+#~ msgid "OK"
+#~ msgstr "確定(&K)"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "所有檔案"
+
+#, fuzzy
+#~ msgid "Import"
+#~ msgstr "匯入(&I)"
+
+#, fuzzy
+#~ msgid "Reload"
+#~ msgstr "上傳"
+
+#, fuzzy
+#~ msgid "Add"
+#~ msgstr "新增(&A)"
+
+#, fuzzy
+#~ msgid "&OK"
+#~ msgstr "確定(&K)"
+
+#, fuzzy
+#~ msgid "&Cancel"
+#~ msgstr "取消(&A)"
+
+#, fuzzy
+#~ msgid "Main Toolbar"
+#~ msgstr "下載工具列"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "取消(&A)"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "檔案選項"
+
+#, fuzzy
+#~ msgid "Delete"
+#~ msgstr "載入後刪除(&G)"
 
 #~ msgid "Search engine:"
 #~ msgstr "搜尋引擎："
