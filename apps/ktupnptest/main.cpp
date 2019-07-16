@@ -49,8 +49,7 @@ int main(int argc,char** argv)
 {
 	Globals::instance().setDebugMode(true);
 	TDEAboutData about("ktupnptest", I18N_NOOP("KTUPnPTest"), version, description,
-					 TDEAboutData::License_GPL, "(C) 2005 Joris Guisson", 0,
-					 "http://ktorrent.org/");
+					 TDEAboutData::License_GPL, "(C) 2005 Joris Guisson", 0);
 	TDECmdLineArgs::init(argc, argv,&about);
 	TDECmdLineArgs::addCmdLineOptions( options );
 	TDEApplication app;
