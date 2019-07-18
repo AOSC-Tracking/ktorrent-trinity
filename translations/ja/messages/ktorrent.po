@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2019-01-13 19:17+0100\n"
+"POT-Creation-Date: 2019-07-18 00:39+0200\n"
 "PO-Revision-Date: 2007-11-25 22:00+0900\n"
 "Last-Translator: Yukiko Bando <ybando@k6.dion.ne.jp>\n"
 "Language-Team: Japanese <Kdeveloper@kde.gr.jp>\n"
@@ -597,35 +597,35 @@ msgstr "開くドキュメント"
 msgid "KTorrent"
 msgstr "KTorrent"
 
-#: apps/ktorrent/main.cpp:125
+#: apps/ktorrent/main.cpp:124
 msgid "RSS Plugin"
 msgstr "RSS プラグイン"
 
-#: apps/ktorrent/main.cpp:126
+#: apps/ktorrent/main.cpp:125
 msgid "Webinterface Plugin"
 msgstr "WebInterface プラグイン"
 
-#: apps/ktorrent/main.cpp:127
+#: apps/ktorrent/main.cpp:126
 msgid "Statistics Plugin"
 msgstr "統計プラグイン"
 
-#: apps/ktorrent/main.cpp:130
+#: apps/ktorrent/main.cpp:129
 msgid "Application icon and a couple of others"
 msgstr "アプリケーションアイコンその他"
 
-#: apps/ktorrent/main.cpp:131
+#: apps/ktorrent/main.cpp:130
 msgid "The downloads icon"
 msgstr "ダウンロードアイコン"
 
-#: apps/ktorrent/main.cpp:134
+#: apps/ktorrent/main.cpp:133
 msgid "1.0 application icon"
 msgstr "1.0 アプリケーションアイコン"
 
-#: apps/ktorrent/main.cpp:139
+#: apps/ktorrent/main.cpp:138
 msgid "ChunkBar's tooltip and IWFileTreeItem sorting"
 msgstr "ピースバーのツールチップと情報ウィジェットのファイルのツリー表示"
 
-#: apps/ktorrent/main.cpp:143
+#: apps/ktorrent/main.cpp:142
 msgid ""
 "Country locator for InfoWidget plugin (This product includes GeoLite data "
 "created by MaxMind, available from http://www.maxmind.com/). "
@@ -633,95 +633,95 @@ msgstr ""
 "情報ウィジェットプラグインの国探知機能 (これには MaxMind によって作成された "
 "GeoLite データが含まれています。入手先: http://www.maxmind.com/)。"
 
-#: apps/ktorrent/main.cpp:144
+#: apps/ktorrent/main.cpp:143
 msgid "Country flags"
 msgstr "国旗"
 
-#: apps/ktorrent/main.cpp:145
+#: apps/ktorrent/main.cpp:144
 msgid "File prioritization"
 msgstr "ファイルの優先順位"
 
-#: apps/ktorrent/main.cpp:146
+#: apps/ktorrent/main.cpp:145
 msgid "Miniupnp was used as an example for our own UPnP implementation"
 msgstr "KTorrent の UPnP 実装は Miniupnp を手本にしました"
 
-#: apps/ktorrent/main.cpp:147
+#: apps/ktorrent/main.cpp:146
 msgid "Global max share ratio patch"
 msgstr "全体の最大共有比率のパッチ"
 
-#: apps/ktorrent/main.cpp:148 apps/ktorrent/main.cpp:149
+#: apps/ktorrent/main.cpp:147 apps/ktorrent/main.cpp:148
 msgid "Zeroconf enhancements"
 msgstr "Zeroconf の強化"
 
-#: apps/ktorrent/main.cpp:150
+#: apps/ktorrent/main.cpp:149
 msgid "Coldmilk webgui"
 msgstr "Coldmilk ウェブ GUI"
 
-#: apps/ktorrent/main.cpp:151
+#: apps/ktorrent/main.cpp:150
 msgid "IDEAl code from KDevelop"
 msgstr "KDevelop の IDEAl コード"
 
-#: apps/ktorrent/main.cpp:152
+#: apps/ktorrent/main.cpp:151
 msgid "Conversion speed improvement in ipfilter plugin"
 msgstr "IPFilter プラグインの変換速度を改善"
 
-#: apps/ktorrent/main.cpp:153
+#: apps/ktorrent/main.cpp:152
 msgid "Discovered 2 security vulnerabilities (both are fixed)"
 msgstr "セキュリティ上の弱点を二つ発見 (両方とも修正済み)"
 
-#: apps/ktorrent/main.cpp:154
+#: apps/ktorrent/main.cpp:153
 msgid "Patch to load silently with a save location"
 msgstr "保存場所を尋ねずにロードするためのパッチ"
 
-#: apps/ktorrent/main.cpp:155
+#: apps/ktorrent/main.cpp:154
 msgid "Fixes in PHP code of webinterface"
 msgstr "WebInterface の PHP コードを修正"
 
-#: apps/ktorrent/main.cpp:156
+#: apps/ktorrent/main.cpp:155
 msgid "XFS specific disk preallocation"
 msgstr "XFS 専用のディスクの事前割り当て"
 
-#: apps/ktorrent/main.cpp:157
+#: apps/ktorrent/main.cpp:156
 msgid "Patch to not show very low speeds"
 msgstr "極度に遅い速度を表示しないようにするためのパッチ"
 
-#: apps/ktorrent/main.cpp:158
+#: apps/ktorrent/main.cpp:157
 msgid "Patch to show potentially firewalled status"
 msgstr "ファイアウォールで遮断されている可能性のある状態を表示するためのパッチ"
 
-#: apps/ktorrent/main.cpp:159
+#: apps/ktorrent/main.cpp:158
 msgid "Several patches"
 msgstr "いくつかのパッチ"
 
-#: apps/ktorrent/main.cpp:160
+#: apps/ktorrent/main.cpp:159
 msgid "Patch to hide the menubar"
 msgstr "メニューバーを非表示にするためのパッチ"
 
-#: apps/ktorrent/main.cpp:161
+#: apps/ktorrent/main.cpp:160
 msgid "Patch to modify file priorities in the webgui"
 msgstr "ウェブ GUI でファイルの優先順位を変更するためのパッチ"
 
-#: apps/ktorrent/main.cpp:162
+#: apps/ktorrent/main.cpp:161
 msgid "Several webgui patches"
 msgstr "ウェブ GUI のいくつかのパッチ"
 
-#: apps/ktorrent/main.cpp:163
+#: apps/ktorrent/main.cpp:162
 msgid "Filterbar patch"
 msgstr "フィルタバーのパッチ"
 
-#: apps/ktorrent/main.cpp:164
+#: apps/ktorrent/main.cpp:163
 msgid "Non threaded fileview update patch"
 msgstr ""
 
-#: apps/ktorrent/main.cpp:165
+#: apps/ktorrent/main.cpp:164
 msgid "Optimization to SHA1 hash generation"
 msgstr "SHA1 ハッシュ生成の最適化"
 
-#: apps/ktorrent/main.cpp:166
+#: apps/ktorrent/main.cpp:165
 msgid "Patch to fix free diskspace calculation on FreeBSD"
 msgstr "FreeBSD でのディスクの空き容量計算の不具合を修正するパッチ"
 
-#: apps/ktorrent/main.cpp:167
+#: apps/ktorrent/main.cpp:166
 msgid "Patch to load torrents silently from the command line"
 msgstr "コマンドラインから保存場所を尋ねずに torrent をロードするためのパッチ"
 

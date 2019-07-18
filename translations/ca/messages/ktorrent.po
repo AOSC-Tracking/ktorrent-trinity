@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2019-01-13 19:17+0100\n"
+"POT-Creation-Date: 2019-07-18 00:39+0200\n"
 "PO-Revision-Date: 2008-06-03 21:57+0200\n"
 "Last-Translator: Josep Ma. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -605,35 +605,35 @@ msgstr "Document a obrir"
 msgid "KTorrent"
 msgstr "KTorrent"
 
-#: apps/ktorrent/main.cpp:125
+#: apps/ktorrent/main.cpp:124
 msgid "RSS Plugin"
 msgstr "Endollable RSS"
 
-#: apps/ktorrent/main.cpp:126
+#: apps/ktorrent/main.cpp:125
 msgid "Webinterface Plugin"
 msgstr "Connector Interfície de web"
 
-#: apps/ktorrent/main.cpp:127
+#: apps/ktorrent/main.cpp:126
 msgid "Statistics Plugin"
 msgstr "Connector d'estadístiques"
 
-#: apps/ktorrent/main.cpp:130
+#: apps/ktorrent/main.cpp:129
 msgid "Application icon and a couple of others"
 msgstr "Icona d'aplicació i un parell més"
 
-#: apps/ktorrent/main.cpp:131
+#: apps/ktorrent/main.cpp:130
 msgid "The downloads icon"
 msgstr "La icona de baixades"
 
-#: apps/ktorrent/main.cpp:134
+#: apps/ktorrent/main.cpp:133
 msgid "1.0 application icon"
 msgstr "Icona d'aplicació 1.0"
 
-#: apps/ktorrent/main.cpp:139
+#: apps/ktorrent/main.cpp:138
 msgid "ChunkBar's tooltip and IWFileTreeItem sorting"
 msgstr "Consells ChunkBar i ordenació IWFileTreeItem"
 
-#: apps/ktorrent/main.cpp:143
+#: apps/ktorrent/main.cpp:142
 msgid ""
 "Country locator for InfoWidget plugin (This product includes GeoLite data "
 "created by MaxMind, available from http://www.maxmind.com/). "
@@ -641,95 +641,95 @@ msgstr ""
 "Localitzador de país per al connector InfoWidget (Aquest producte inclou "
 "dades GeoLite creades per MaxMind, disponible a http://www.maxmind.com/). "
 
-#: apps/ktorrent/main.cpp:144
+#: apps/ktorrent/main.cpp:143
 msgid "Country flags"
 msgstr "Banderes de país"
 
-#: apps/ktorrent/main.cpp:145
+#: apps/ktorrent/main.cpp:144
 msgid "File prioritization"
 msgstr "Priorització de fitxers"
 
-#: apps/ktorrent/main.cpp:146
+#: apps/ktorrent/main.cpp:145
 msgid "Miniupnp was used as an example for our own UPnP implementation"
 msgstr "S'ha usat Miniupnp com a exemple per a la nostra implementació UPnP"
 
-#: apps/ktorrent/main.cpp:147
+#: apps/ktorrent/main.cpp:146
 msgid "Global max share ratio patch"
 msgstr "Pedaç de ràtio màxima de compartició"
 
-#: apps/ktorrent/main.cpp:148 apps/ktorrent/main.cpp:149
+#: apps/ktorrent/main.cpp:147 apps/ktorrent/main.cpp:148
 msgid "Zeroconf enhancements"
 msgstr "Millores del Zeroconf"
 
-#: apps/ktorrent/main.cpp:150
+#: apps/ktorrent/main.cpp:149
 msgid "Coldmilk webgui"
 msgstr "Interfície web coldmilk"
 
-#: apps/ktorrent/main.cpp:151
+#: apps/ktorrent/main.cpp:150
 msgid "IDEAl code from KDevelop"
 msgstr "Codi IDEAl des del KDevelop"
 
-#: apps/ktorrent/main.cpp:152
+#: apps/ktorrent/main.cpp:151
 msgid "Conversion speed improvement in ipfilter plugin"
 msgstr "Millora en la conversió de velocitats de l'endollable ipfilter"
 
-#: apps/ktorrent/main.cpp:153
+#: apps/ktorrent/main.cpp:152
 msgid "Discovered 2 security vulnerabilities (both are fixed)"
 msgstr "Trobades 2 vulnerabilitats de seguretat (solucionades les dues)"
 
-#: apps/ktorrent/main.cpp:154
+#: apps/ktorrent/main.cpp:153
 msgid "Patch to load silently with a save location"
 msgstr "Pedaç per a carregar silenciosament a un lloc de desat"
 
-#: apps/ktorrent/main.cpp:155
+#: apps/ktorrent/main.cpp:154
 msgid "Fixes in PHP code of webinterface"
 msgstr "Millores en el codi PHP de la interfície web"
 
-#: apps/ktorrent/main.cpp:156
+#: apps/ktorrent/main.cpp:155
 msgid "XFS specific disk preallocation"
 msgstr "Reserva d'espai específica per a XFS"
 
-#: apps/ktorrent/main.cpp:157
+#: apps/ktorrent/main.cpp:156
 msgid "Patch to not show very low speeds"
 msgstr "Pedaç per a no mostrar velocitats molt baixes"
 
-#: apps/ktorrent/main.cpp:158
+#: apps/ktorrent/main.cpp:157
 msgid "Patch to show potentially firewalled status"
 msgstr "Pedaç que detecta la possibilitat d'estar darrere un tallafocs"
 
-#: apps/ktorrent/main.cpp:159
+#: apps/ktorrent/main.cpp:158
 msgid "Several patches"
 msgstr "Alguns pedaços"
 
-#: apps/ktorrent/main.cpp:160
+#: apps/ktorrent/main.cpp:159
 msgid "Patch to hide the menubar"
 msgstr "Pedaç per amagar la barra de menú"
 
-#: apps/ktorrent/main.cpp:161
+#: apps/ktorrent/main.cpp:160
 msgid "Patch to modify file priorities in the webgui"
 msgstr "Pedaç per a modificar les prioritats del fitxer en la interfície web"
 
-#: apps/ktorrent/main.cpp:162
+#: apps/ktorrent/main.cpp:161
 msgid "Several webgui patches"
 msgstr "Alguns pedaços per a la interfície"
 
-#: apps/ktorrent/main.cpp:163
+#: apps/ktorrent/main.cpp:162
 msgid "Filterbar patch"
 msgstr "Pedaç per a la barra de filtres"
 
-#: apps/ktorrent/main.cpp:164
+#: apps/ktorrent/main.cpp:163
 msgid "Non threaded fileview update patch"
 msgstr "Pedaç d'actualització de vista de fitxer sense seguir el fil"
 
-#: apps/ktorrent/main.cpp:165
+#: apps/ktorrent/main.cpp:164
 msgid "Optimization to SHA1 hash generation"
 msgstr "Optimització de la generació del resum SHA1"
 
-#: apps/ktorrent/main.cpp:166
+#: apps/ktorrent/main.cpp:165
 msgid "Patch to fix free diskspace calculation on FreeBSD"
 msgstr "Pedaç per esmenar el càlcul de l'espai lliure al disc en el FreeBSD"
 
-#: apps/ktorrent/main.cpp:167
+#: apps/ktorrent/main.cpp:166
 msgid "Patch to load torrents silently from the command line"
 msgstr ""
 "Pedaç per a carregar silenciosament els torrents des de la línia d'ordres"

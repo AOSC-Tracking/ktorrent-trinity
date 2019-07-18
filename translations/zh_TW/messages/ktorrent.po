@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2019-01-13 19:17+0100\n"
+"POT-Creation-Date: 2019-07-18 00:39+0200\n"
 "PO-Revision-Date: 2006-08-28 14:39+0800\n"
 "Last-Translator: Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv "
 "dot tw>\n"
@@ -621,135 +621,135 @@ msgstr "要開啟的文件"
 msgid "KTorrent"
 msgstr "KTorrent"
 
-#: apps/ktorrent/main.cpp:125
+#: apps/ktorrent/main.cpp:124
 #, fuzzy
 msgid "RSS Plugin"
 msgstr "外掛程式"
 
-#: apps/ktorrent/main.cpp:126
+#: apps/ktorrent/main.cpp:125
 #, fuzzy
 msgid "Webinterface Plugin"
 msgstr "一般選項"
 
-#: apps/ktorrent/main.cpp:127
+#: apps/ktorrent/main.cpp:126
 msgid "Statistics Plugin"
 msgstr ""
 
-#: apps/ktorrent/main.cpp:130
+#: apps/ktorrent/main.cpp:129
 msgid "Application icon and a couple of others"
 msgstr "應用程式圖示和一些其他的"
 
-#: apps/ktorrent/main.cpp:131
+#: apps/ktorrent/main.cpp:130
 msgid "The downloads icon"
 msgstr "下載圖示"
 
-#: apps/ktorrent/main.cpp:134
+#: apps/ktorrent/main.cpp:133
 msgid "1.0 application icon"
 msgstr "1.0 應用程式圖示"
 
-#: apps/ktorrent/main.cpp:139
+#: apps/ktorrent/main.cpp:138
 msgid "ChunkBar's tooltip and IWFileTreeItem sorting"
 msgstr "區塊列的工具提示及 IWFileTreeItem 排序"
 
-#: apps/ktorrent/main.cpp:143
+#: apps/ktorrent/main.cpp:142
 msgid ""
 "Country locator for InfoWidget plugin (This product includes GeoLite data "
 "created by MaxMind, available from http://www.maxmind.com/). "
 msgstr ""
 
-#: apps/ktorrent/main.cpp:144
+#: apps/ktorrent/main.cpp:143
 #, fuzzy
 msgid "Country flags"
 msgstr "國家"
 
-#: apps/ktorrent/main.cpp:145
+#: apps/ktorrent/main.cpp:144
 msgid "File prioritization"
 msgstr "檔案優先權"
 
-#: apps/ktorrent/main.cpp:146
+#: apps/ktorrent/main.cpp:145
 msgid "Miniupnp was used as an example for our own UPnP implementation"
 msgstr "Miniupnp 是做為我們自己的 UPnP 實作的範例"
 
-#: apps/ktorrent/main.cpp:147
+#: apps/ktorrent/main.cpp:146
 msgid "Global max share ratio patch"
 msgstr ""
 
-#: apps/ktorrent/main.cpp:148 apps/ktorrent/main.cpp:149
+#: apps/ktorrent/main.cpp:147 apps/ktorrent/main.cpp:148
 msgid "Zeroconf enhancements"
 msgstr ""
 
-#: apps/ktorrent/main.cpp:150
+#: apps/ktorrent/main.cpp:149
 msgid "Coldmilk webgui"
 msgstr ""
 
-#: apps/ktorrent/main.cpp:151
+#: apps/ktorrent/main.cpp:150
 msgid "IDEAl code from KDevelop"
 msgstr ""
 
-#: apps/ktorrent/main.cpp:152
+#: apps/ktorrent/main.cpp:151
 msgid "Conversion speed improvement in ipfilter plugin"
 msgstr ""
 
-#: apps/ktorrent/main.cpp:153
+#: apps/ktorrent/main.cpp:152
 msgid "Discovered 2 security vulnerabilities (both are fixed)"
 msgstr ""
 
-#: apps/ktorrent/main.cpp:154
+#: apps/ktorrent/main.cpp:153
 msgid "Patch to load silently with a save location"
 msgstr ""
 
-#: apps/ktorrent/main.cpp:155
+#: apps/ktorrent/main.cpp:154
 msgid "Fixes in PHP code of webinterface"
 msgstr ""
 
-#: apps/ktorrent/main.cpp:156
+#: apps/ktorrent/main.cpp:155
 msgid "XFS specific disk preallocation"
 msgstr ""
 
-#: apps/ktorrent/main.cpp:157
+#: apps/ktorrent/main.cpp:156
 msgid "Patch to not show very low speeds"
 msgstr ""
 
-#: apps/ktorrent/main.cpp:158
+#: apps/ktorrent/main.cpp:157
 msgid "Patch to show potentially firewalled status"
 msgstr ""
 
-#: apps/ktorrent/main.cpp:159
+#: apps/ktorrent/main.cpp:158
 #, fuzzy
 msgid "Several patches"
 msgstr "資料夾 1 路徑"
 
-#: apps/ktorrent/main.cpp:160
+#: apps/ktorrent/main.cpp:159
 msgid "Patch to hide the menubar"
 msgstr ""
 
-#: apps/ktorrent/main.cpp:161
+#: apps/ktorrent/main.cpp:160
 msgid "Patch to modify file priorities in the webgui"
 msgstr ""
 
-#: apps/ktorrent/main.cpp:162
+#: apps/ktorrent/main.cpp:161
 #, fuzzy
 msgid "Several webgui patches"
 msgstr "資料夾 1 路徑"
 
-#: apps/ktorrent/main.cpp:163
+#: apps/ktorrent/main.cpp:162
 #, fuzzy
 msgid "Filterbar patch"
 msgstr "資料夾 1 路徑"
 
-#: apps/ktorrent/main.cpp:164
+#: apps/ktorrent/main.cpp:163
 msgid "Non threaded fileview update patch"
 msgstr ""
 
-#: apps/ktorrent/main.cpp:165
+#: apps/ktorrent/main.cpp:164
 msgid "Optimization to SHA1 hash generation"
 msgstr ""
 
-#: apps/ktorrent/main.cpp:166
+#: apps/ktorrent/main.cpp:165
 msgid "Patch to fix free diskspace calculation on FreeBSD"
 msgstr ""
 
-#: apps/ktorrent/main.cpp:167
+#: apps/ktorrent/main.cpp:166
 #, fuzzy
 msgid "Patch to load torrents silently from the command line"
 msgstr "是否要安靜地開啟 torrent。"

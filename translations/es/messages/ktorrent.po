@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2019-01-13 19:17+0100\n"
+"POT-Creation-Date: 2019-07-18 00:39+0200\n"
 "PO-Revision-Date: 2008-09-09 14:37+0200\n"
 "Last-Translator: Enrique Matias Sanchez <cronopios@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -608,35 +608,35 @@ msgstr "Documento a abrir"
 msgid "KTorrent"
 msgstr "KTorrent"
 
-#: apps/ktorrent/main.cpp:125
+#: apps/ktorrent/main.cpp:124
 msgid "RSS Plugin"
 msgstr "Complemento de RSS"
 
-#: apps/ktorrent/main.cpp:126
+#: apps/ktorrent/main.cpp:125
 msgid "Webinterface Plugin"
 msgstr "Complemento de la interfaz web"
 
-#: apps/ktorrent/main.cpp:127
+#: apps/ktorrent/main.cpp:126
 msgid "Statistics Plugin"
 msgstr "Complemento de estadísticas"
 
-#: apps/ktorrent/main.cpp:130
+#: apps/ktorrent/main.cpp:129
 msgid "Application icon and a couple of others"
 msgstr "Icono de la aplicación y algunos otros"
 
-#: apps/ktorrent/main.cpp:131
+#: apps/ktorrent/main.cpp:130
 msgid "The downloads icon"
 msgstr "Icono de descargas"
 
-#: apps/ktorrent/main.cpp:134
+#: apps/ktorrent/main.cpp:133
 msgid "1.0 application icon"
 msgstr "Icono de la aplicación 1.0"
 
-#: apps/ktorrent/main.cpp:139
+#: apps/ktorrent/main.cpp:138
 msgid "ChunkBar's tooltip and IWFileTreeItem sorting"
 msgstr "Consejo de ChunkBar y ordenación de IWFileTreeItem"
 
-#: apps/ktorrent/main.cpp:143
+#: apps/ktorrent/main.cpp:142
 msgid ""
 "Country locator for InfoWidget plugin (This product includes GeoLite data "
 "created by MaxMind, available from http://www.maxmind.com/). "
@@ -645,97 +645,97 @@ msgstr ""
 "datos de GeoLite creados por MaxMind, disponibles en http://www.maxmind."
 "com/). "
 
-#: apps/ktorrent/main.cpp:144
+#: apps/ktorrent/main.cpp:143
 msgid "Country flags"
 msgstr "Banderas de los países"
 
-#: apps/ktorrent/main.cpp:145
+#: apps/ktorrent/main.cpp:144
 msgid "File prioritization"
 msgstr "Prioridad del fichero"
 
-#: apps/ktorrent/main.cpp:146
+#: apps/ktorrent/main.cpp:145
 msgid "Miniupnp was used as an example for our own UPnP implementation"
 msgstr ""
 "Se usó Miniupnp como ejemplo para nuestra propia implementación de UPnP"
 
-#: apps/ktorrent/main.cpp:147
+#: apps/ktorrent/main.cpp:146
 msgid "Global max share ratio patch"
 msgstr "Parche de la proporción máxima de compartición global"
 
-#: apps/ktorrent/main.cpp:148 apps/ktorrent/main.cpp:149
+#: apps/ktorrent/main.cpp:147 apps/ktorrent/main.cpp:148
 msgid "Zeroconf enhancements"
 msgstr "Mejoras de Zeroconf"
 
-#: apps/ktorrent/main.cpp:150
+#: apps/ktorrent/main.cpp:149
 msgid "Coldmilk webgui"
 msgstr "Interfaz web Coldmilk"
 
-#: apps/ktorrent/main.cpp:151
+#: apps/ktorrent/main.cpp:150
 msgid "IDEAl code from KDevelop"
 msgstr "Código de IDEAI de KDevelop"
 
-#: apps/ktorrent/main.cpp:152
+#: apps/ktorrent/main.cpp:151
 msgid "Conversion speed improvement in ipfilter plugin"
 msgstr "Mejora en la velocidad de conversión en el complemento de filtro de IP"
 
-#: apps/ktorrent/main.cpp:153
+#: apps/ktorrent/main.cpp:152
 msgid "Discovered 2 security vulnerabilities (both are fixed)"
 msgstr "Descubiertas dos vulnerabilidades de seguridad (ambas corregidas)"
 
-#: apps/ktorrent/main.cpp:154
+#: apps/ktorrent/main.cpp:153
 msgid "Patch to load silently with a save location"
 msgstr "Parche de carga silenciosas con una ubicación de grabación"
 
-#: apps/ktorrent/main.cpp:155
+#: apps/ktorrent/main.cpp:154
 msgid "Fixes in PHP code of webinterface"
 msgstr "Arreglos al código PHP de la interfaz web"
 
-#: apps/ktorrent/main.cpp:156
+#: apps/ktorrent/main.cpp:155
 msgid "XFS specific disk preallocation"
 msgstr "Preasignación de disco específica de XFS"
 
-#: apps/ktorrent/main.cpp:157
+#: apps/ktorrent/main.cpp:156
 msgid "Patch to not show very low speeds"
 msgstr "Parche para no mostrar velocidades muy bajas"
 
-#: apps/ktorrent/main.cpp:158
+#: apps/ktorrent/main.cpp:157
 msgid "Patch to show potentially firewalled status"
 msgstr "Parche para mostrar la posibilidad de estar tras un cortafuegos"
 
-#: apps/ktorrent/main.cpp:159
+#: apps/ktorrent/main.cpp:158
 msgid "Several patches"
 msgstr "Diversos parches"
 
-#: apps/ktorrent/main.cpp:160
+#: apps/ktorrent/main.cpp:159
 msgid "Patch to hide the menubar"
 msgstr "Parche para ocultar la barra de menús"
 
-#: apps/ktorrent/main.cpp:161
+#: apps/ktorrent/main.cpp:160
 msgid "Patch to modify file priorities in the webgui"
 msgstr ""
 "Parche para modificar las prioridades de los ficheros en la interfaz web"
 
-#: apps/ktorrent/main.cpp:162
+#: apps/ktorrent/main.cpp:161
 msgid "Several webgui patches"
 msgstr "Diversos parches para la interfaz web"
 
-#: apps/ktorrent/main.cpp:163
+#: apps/ktorrent/main.cpp:162
 msgid "Filterbar patch"
 msgstr "Parche para la barra de filtros"
 
-#: apps/ktorrent/main.cpp:164
+#: apps/ktorrent/main.cpp:163
 msgid "Non threaded fileview update patch"
 msgstr "Parche para la actualización de la vista de fichero no multihilo"
 
-#: apps/ktorrent/main.cpp:165
+#: apps/ktorrent/main.cpp:164
 msgid "Optimization to SHA1 hash generation"
 msgstr "Optimización de la generación del hash SHA1"
 
-#: apps/ktorrent/main.cpp:166
+#: apps/ktorrent/main.cpp:165
 msgid "Patch to fix free diskspace calculation on FreeBSD"
 msgstr "Parche para arreglar el cálculo del espacio libre en disco en FreeBSD"
 
-#: apps/ktorrent/main.cpp:167
+#: apps/ktorrent/main.cpp:166
 msgid "Patch to load torrents silently from the command line"
 msgstr "Parche para cargar torrents silenciosamente desde la línea de órdenes"
 

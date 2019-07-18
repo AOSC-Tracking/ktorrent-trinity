@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2019-01-13 19:17+0100\n"
+"POT-Creation-Date: 2019-07-18 00:39+0200\n"
 "PO-Revision-Date: 2008-03-23 22:27+0300\n"
 "Last-Translator: Marek Laane <bald@starman.ee>\n"
 "Language-Team: Estonian <kde-et@linux.ee>\n"
@@ -603,35 +603,35 @@ msgstr "Avatav dokument"
 msgid "KTorrent"
 msgstr "KTorrent"
 
-#: apps/ktorrent/main.cpp:125
+#: apps/ktorrent/main.cpp:124
 msgid "RSS Plugin"
 msgstr "RSS-plugin"
 
-#: apps/ktorrent/main.cpp:126
+#: apps/ktorrent/main.cpp:125
 msgid "Webinterface Plugin"
 msgstr "Veebiliidese plugin"
 
-#: apps/ktorrent/main.cpp:127
+#: apps/ktorrent/main.cpp:126
 msgid "Statistics Plugin"
 msgstr "Statistikaplugin"
 
-#: apps/ktorrent/main.cpp:130
+#: apps/ktorrent/main.cpp:129
 msgid "Application icon and a couple of others"
 msgstr "Rakenduse ikoon ja veel mitu ikooni"
 
-#: apps/ktorrent/main.cpp:131
+#: apps/ktorrent/main.cpp:130
 msgid "The downloads icon"
 msgstr "Allalaadimiste ikoon"
 
-#: apps/ktorrent/main.cpp:134
+#: apps/ktorrent/main.cpp:133
 msgid "1.0 application icon"
 msgstr "1.0 rakenduse ikoon"
 
-#: apps/ktorrent/main.cpp:139
+#: apps/ktorrent/main.cpp:138
 msgid "ChunkBar's tooltip and IWFileTreeItem sorting"
 msgstr "Tükiriba kohtspikrid ja IWFileTreeItemi sortimine"
 
-#: apps/ktorrent/main.cpp:143
+#: apps/ktorrent/main.cpp:142
 msgid ""
 "Country locator for InfoWidget plugin (This product includes GeoLite data "
 "created by MaxMind, available from http://www.maxmind.com/). "
@@ -639,95 +639,95 @@ msgstr ""
 "Infoplugina asukohalokaator (sisaldab MaxMindi loodud GeoLite andmeid, mille "
 "leiab aadressilt http://www.maxmind.com/)."
 
-#: apps/ktorrent/main.cpp:144
+#: apps/ktorrent/main.cpp:143
 msgid "Country flags"
 msgstr "Riigilipud"
 
-#: apps/ktorrent/main.cpp:145
+#: apps/ktorrent/main.cpp:144
 msgid "File prioritization"
 msgstr "Faili prioriteet"
 
-#: apps/ktorrent/main.cpp:146
+#: apps/ktorrent/main.cpp:145
 msgid "Miniupnp was used as an example for our own UPnP implementation"
 msgstr "Meie UPnP teostuse näites on kasutusel miniupnp"
 
-#: apps/ktorrent/main.cpp:147
+#: apps/ktorrent/main.cpp:146
 msgid "Global max share ratio patch"
 msgstr "Globaalse maks. jagamise suhte paik"
 
-#: apps/ktorrent/main.cpp:148 apps/ktorrent/main.cpp:149
+#: apps/ktorrent/main.cpp:147 apps/ktorrent/main.cpp:148
 msgid "Zeroconf enhancements"
 msgstr "Zeroconfi täiendused"
 
-#: apps/ktorrent/main.cpp:150
+#: apps/ktorrent/main.cpp:149
 msgid "Coldmilk webgui"
 msgstr "Coldmilki veebivälimus"
 
-#: apps/ktorrent/main.cpp:151
+#: apps/ktorrent/main.cpp:150
 msgid "IDEAl code from KDevelop"
 msgstr "KDevelopi IDEAl kood"
 
-#: apps/ktorrent/main.cpp:152
+#: apps/ktorrent/main.cpp:151
 msgid "Conversion speed improvement in ipfilter plugin"
 msgstr "Teisenduse kiiruse parandamine IP filtri pluginas"
 
-#: apps/ktorrent/main.cpp:153
+#: apps/ktorrent/main.cpp:152
 msgid "Discovered 2 security vulnerabilities (both are fixed)"
 msgstr "Kahe turvaprobleemi avastamine (mõlemad on parandatud)"
 
-#: apps/ktorrent/main.cpp:154
+#: apps/ktorrent/main.cpp:153
 msgid "Patch to load silently with a save location"
 msgstr "Paik vaikimisi laadimiseks salvestatud asukohaga"
 
-#: apps/ktorrent/main.cpp:155
+#: apps/ktorrent/main.cpp:154
 msgid "Fixes in PHP code of webinterface"
 msgstr "Parandused veebiliidese PHP koodis"
 
-#: apps/ktorrent/main.cpp:156
+#: apps/ktorrent/main.cpp:155
 msgid "XFS specific disk preallocation"
 msgstr "XFS-i spetsiifiline ketta eeleraldamine"
 
-#: apps/ktorrent/main.cpp:157
+#: apps/ktorrent/main.cpp:156
 msgid "Patch to not show very low speeds"
 msgstr "Väga väikese kiiruse mittenäitamise paik"
 
-#: apps/ktorrent/main.cpp:158
+#: apps/ktorrent/main.cpp:157
 msgid "Patch to show potentially firewalled status"
 msgstr "Võimaliku tulemüüri näitamise paik"
 
-#: apps/ktorrent/main.cpp:159
+#: apps/ktorrent/main.cpp:158
 msgid "Several patches"
 msgstr "Mitu paika"
 
-#: apps/ktorrent/main.cpp:160
+#: apps/ktorrent/main.cpp:159
 msgid "Patch to hide the menubar"
 msgstr "Menüüriba peitmise paik"
 
-#: apps/ktorrent/main.cpp:161
+#: apps/ktorrent/main.cpp:160
 msgid "Patch to modify file priorities in the webgui"
 msgstr "Failiprioriteetide muutmise paik veebiliideses"
 
-#: apps/ktorrent/main.cpp:162
+#: apps/ktorrent/main.cpp:161
 msgid "Several webgui patches"
 msgstr "Mitu veebiliidese paika"
 
-#: apps/ktorrent/main.cpp:163
+#: apps/ktorrent/main.cpp:162
 msgid "Filterbar patch"
 msgstr "Filtririba paik"
 
-#: apps/ktorrent/main.cpp:164
+#: apps/ktorrent/main.cpp:163
 msgid "Non threaded fileview update patch"
 msgstr "Lõimedeta failivaate uuendamise paik"
 
-#: apps/ktorrent/main.cpp:165
+#: apps/ktorrent/main.cpp:164
 msgid "Optimization to SHA1 hash generation"
 msgstr "SHA1 räsi genereerimise optimeerimine"
 
-#: apps/ktorrent/main.cpp:166
+#: apps/ktorrent/main.cpp:165
 msgid "Patch to fix free diskspace calculation on FreeBSD"
 msgstr "Paik vaba kettaruumi arvutamise parandamiseks FreeBSD-s"
 
-#: apps/ktorrent/main.cpp:167
+#: apps/ktorrent/main.cpp:166
 msgid "Patch to load torrents silently from the command line"
 msgstr "Paik torrentide vaikimisi laadimiseks käsurealt"
 
