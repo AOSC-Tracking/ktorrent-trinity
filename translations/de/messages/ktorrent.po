@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
 "POT-Creation-Date: 2019-07-18 00:39+0200\n"
-"PO-Revision-Date: 2019-08-28 21:45+0000\n"
+"PO-Revision-Date: 2019-08-31 00:45+0000\n"
 "Last-Translator: Chris <xchrisx@uber.space>\n"
 "Language-Team: German <https://mirror.git.trinitydesktop.org/weblate/"
 "projects/applications/ktorrent/de/>\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
-msgstr "Patrick Trettenbrein, Jannick Kuhr"
+msgstr "Patrick Trettenbrein, Jannick Kuhr, Chris (TDE)"
 
 #: _translatorinfo:2
 msgid ""
@@ -605,7 +605,7 @@ msgstr "Debug-Modus"
 
 #: apps/ktorrent/main.cpp:109
 msgid "Silently save torrent given on URL"
-msgstr ""
+msgstr "Den unter der Adresse angegebenen Torrent ohne Nachfrage speichern"
 
 #: apps/ktorrent/main.cpp:110
 msgid "Document to open"
@@ -733,20 +733,21 @@ msgstr "Patch für die Filterleiste"
 
 #: apps/ktorrent/main.cpp:163
 msgid "Non threaded fileview update patch"
-msgstr ""
+msgstr "Update-Patch für Dateiansicht ohne Thread"
 
 #: apps/ktorrent/main.cpp:164
 msgid "Optimization to SHA1 hash generation"
-msgstr ""
+msgstr "Optimierung der SHA1-Hash-Generierung"
 
 #: apps/ktorrent/main.cpp:165
 msgid "Patch to fix free diskspace calculation on FreeBSD"
 msgstr ""
+"Patch, um die Berechnung des freien Speicherplatzes unter FreeBSD zu "
+"korrigieren"
 
 #: apps/ktorrent/main.cpp:166
-#, fuzzy
 msgid "Patch to load torrents silently from the command line"
-msgstr "Patch zum Laden mit Speicherort ohne Nachfrage"
+msgstr "Patch zum Laden von Torrents von der Kommandozeile ohne Nachfrage"
 
 #: apps/ktorrent/newui/button.cpp:58
 msgid "Assign Accelerator..."
@@ -779,7 +780,7 @@ msgstr "In unteren Docker verschieben"
 #: apps/ktorrent/pastedialog.cpp:56 plugins/infowidget/trackerview.cpp:78
 #: plugins/search/searchprefpage.cpp:131
 msgid "Malformed URL."
-msgstr "Ungültige Adresse"
+msgstr "Ungültige Adresse."
 
 #: apps/ktorrent/downloadpref.ui:311 apps/ktorrent/pref.cpp:58
 #, no-c-format
@@ -1278,7 +1279,7 @@ msgstr "Der Torrent hat kein Ankündigungs- oder Knotenfeld"
 
 #: libktorrent/torrent/torrent.cpp:103
 msgid " Unable to open torrent file %1 : %2"
-msgstr "Torrent-Datei %1 kann nicht geöffnet werden: %2"
+msgstr " Torrent-Datei %1 kann nicht geöffnet werden: %2"
 
 #: libktorrent/torrent/torrentcontrol.cpp:508
 #, c-format
@@ -1654,12 +1655,12 @@ msgstr ""
 #: plugins/ipfilter/ipblockingprefpage.cpp:70
 #: plugins/ipfilter/ipblockingprefpage.cpp:94
 msgid "Status: Loaded and running."
-msgstr "Status: Geladen und Aktiv"
+msgstr "Status: Geladen und Aktiv."
 
 #: plugins/ipfilter/ipblockingprefpage.cpp:76
 #: plugins/ipfilter/ipblockingprefpage.cpp:99
 msgid "Status: Not loaded."
-msgstr "Status: Nicht geladen"
+msgstr "Status: Nicht geladen."
 
 #: plugins/ipfilter/ipblockingprefpage.cpp:96
 msgid ""
@@ -2201,7 +2202,7 @@ msgstr "Erweiterte Einstellungen"
 #: apps/ktorrent/advancedpref.ui:46
 #, no-c-format
 msgid "Time left estimation algorithm:"
-msgstr ""
+msgstr "Schätzalgorithmus für verbleibende Zeit:"
 
 #: apps/ktorrent/advancedpref.ui:49 apps/ktorrent/advancedpref.ui:86
 #, no-c-format
@@ -2846,7 +2847,7 @@ msgstr "Ganz nach unten"
 #: apps/ktorrent/queuedlg.ui:555
 #, no-c-format
 msgid "&QM Controlled"
-msgstr "&WV-gesteuert "
+msgstr "&WV-gesteuert"
 
 #: apps/ktorrent/queuedlg.ui:563
 #, no-c-format
@@ -3060,7 +3061,7 @@ msgstr "Maximale Anzahl der Verbindungen pro Torrent (0 = keine Begrenzung)"
 #, no-c-format
 msgid "Maximum number of connections for all torrents (0 = no limit) "
 msgstr ""
-"Maximale Anzahl der Verbindungen für alle Torrents (0 = keine Begrenzung)"
+"Maximale Anzahl der Verbindungen für alle Torrents (0 = keine Begrenzung) "
 
 #: libktorrent/ktorrent.kcfg:34
 #, no-c-format
@@ -3170,7 +3171,7 @@ msgstr "IP-Adresse, die an den Tracker gesendet wird"
 #: libktorrent/ktorrent.kcfg:134
 #, no-c-format
 msgid "Memory usage"
-msgstr "Speicherverwendung:"
+msgstr "Speicherverwendung"
 
 #: libktorrent/ktorrent.kcfg:138
 #, no-c-format
@@ -3458,7 +3459,7 @@ msgstr "IP-Blockierungseinstellungen"
 #: plugins/ipfilter/ipblockingpref.ui:47
 #, no-c-format
 msgid "Select PeerGuardian Filter File "
-msgstr "PeerGuardian-Filterdatei auswählen"
+msgstr "PeerGuardian-Filterdatei auswählen "
 
 #: plugins/ipfilter/ipblockingpref.ui:58
 #, no-c-format
@@ -4204,9 +4205,9 @@ msgid "Custom browser executable path"
 msgstr "Pfad zu benutzerdefiniertem Browser"
 
 #: plugins/search/searchbar.ui:78
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Engine:"
-msgstr " Suchmaschine: "
+msgstr "Suchmaschine:"
 
 #: plugins/search/searchpref.ui:30 plugins/webinterface/webinterfacepref.ui:30
 #, no-c-format
@@ -4524,7 +4525,7 @@ msgstr "Port weiterleiten"
 #: plugins/webinterface/webinterfacepref.ui:107
 #, no-c-format
 msgid "Session TTL (in sec):"
-msgstr "TTL der Sitzung (in Sekunden)"
+msgstr "TTL der Sitzung (in Sekunden):"
 
 #: plugins/webinterface/webinterfacepref.ui:142
 #, no-c-format
