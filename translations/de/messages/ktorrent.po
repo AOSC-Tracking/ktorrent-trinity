@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
 "POT-Creation-Date: 2019-07-18 00:39+0200\n"
-"PO-Revision-Date: 2019-11-09 18:26+0000\n"
+"PO-Revision-Date: 2019-11-10 21:04+0000\n"
 "Last-Translator: Chris <xchrisx@uber.space>\n"
 "Language-Team: German <https://mirror.git.trinitydesktop.org/weblate/"
 "projects/applications/ktorrent/de/>\n"
@@ -4157,7 +4157,7 @@ msgstr "Bandbreitenplaner aktivieren?"
 #: plugins/scheduler/ktschedulerplugin.kcfg:14
 #, no-c-format
 msgid "Use colors instead of pixmaps?"
-msgstr "Farben statt Graphiken verwenden?"
+msgstr "Farben statt Grafiken verwenden?"
 
 #: plugins/scheduler/schedulerpage.ui:16
 #, no-c-format
@@ -4172,7 +4172,7 @@ msgstr "&Bandbreitenplaner verwenden?"
 #: plugins/scheduler/schedulerpage.ui:46
 #, no-c-format
 msgid "Use colors instead of pi&xmaps?"
-msgstr "Farben statt &Graphiken verwenden?"
+msgstr "Farben statt &Grafiken verwenden?"
 
 #: plugins/scheduler/schedulerpage.ui:54
 #, no-c-format
