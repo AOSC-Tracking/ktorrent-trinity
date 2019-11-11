@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
 "POT-Creation-Date: 2019-07-18 00:39+0200\n"
-"PO-Revision-Date: 2019-08-31 00:45+0000\n"
+"PO-Revision-Date: 2019-11-10 21:04+0000\n"
 "Last-Translator: Chris <xchrisx@uber.space>\n"
 "Language-Team: German <https://mirror.git.trinitydesktop.org/weblate/"
 "projects/applications/ktorrent/de/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.8\n"
+"X-Generator: Weblate 3.9.1\n"
 
 #: _translatorinfo:1
 msgid ""
@@ -1964,7 +1964,7 @@ msgid ""
 "Bad URL. You should search for FOOBAR with your Internet browser and copy/"
 "paste the exact URL here."
 msgstr ""
-"Ungültige Adresse. Sie sollten mit Ihrem Browser nach FOOBAR suchen, die "
+"Ungültige Adresse. Sie sollten mit Ihrem Navigator nach FOOBAR suchen, die "
 "Adresse kopieren und hier einfügen."
 
 #: plugins/search/searchprefpage.cpp:242
@@ -2115,7 +2115,7 @@ msgstr "Weboberfläche"
 
 #: plugins/webinterface/webinterfaceplugin.cpp:44
 msgid "Allow to control ktorrent through browser"
-msgstr "Erlauben, dass KTorrent über einen Browser bediehnt wird"
+msgstr "Erlauben, dass KTorrent über einen Navigator bediehnt wird"
 
 #: plugins/webinterface/webinterfaceprefpage.cpp:27
 msgid "WebInterface"
@@ -4157,7 +4157,7 @@ msgstr "Bandbreitenplaner aktivieren?"
 #: plugins/scheduler/ktschedulerplugin.kcfg:14
 #, no-c-format
 msgid "Use colors instead of pixmaps?"
-msgstr "Farben statt Graphiken verwenden?"
+msgstr "Farben statt Grafiken verwenden?"
 
 #: plugins/scheduler/schedulerpage.ui:16
 #, no-c-format
@@ -4172,7 +4172,7 @@ msgstr "&Bandbreitenplaner verwenden?"
 #: plugins/scheduler/schedulerpage.ui:46
 #, no-c-format
 msgid "Use colors instead of pi&xmaps?"
-msgstr "Farben statt &Graphiken verwenden?"
+msgstr "Farben statt &Grafiken verwenden?"
 
 #: plugins/scheduler/schedulerpage.ui:54
 #, no-c-format
@@ -4192,17 +4192,17 @@ msgstr "Derzeitige Suchmaschine"
 #: plugins/search/ktsearchplugin.kcfg:15 plugins/search/searchpref.ui:60
 #, no-c-format
 msgid "Use default browser"
-msgstr "Standard-Browser verwenden"
+msgstr "Standardnavigator verwenden"
 
 #: plugins/search/ktsearchplugin.kcfg:19
 #, no-c-format
 msgid "Use custom browser"
-msgstr "Benutzerdefinierten Browser verwenden"
+msgstr "Benutzerdefinierten Navigator verwenden"
 
 #: plugins/search/ktsearchplugin.kcfg:23
 #, no-c-format
 msgid "Custom browser executable path"
-msgstr "Pfad zu benutzerdefiniertem Browser"
+msgstr "Pfad zu benutzerdefiniertem Navigator"
 
 #: plugins/search/searchbar.ui:78
 #, no-c-format
@@ -4217,17 +4217,17 @@ msgstr "Such-Einstellungen"
 #: plugins/search/searchpref.ui:41
 #, no-c-format
 msgid "External Browser"
-msgstr "Externer Browser"
+msgstr "Externer Navigator"
 
 #: plugins/search/searchpref.ui:52
 #, no-c-format
 msgid "Open searches in external browser"
-msgstr "Suche in externem Browser öffnen"
+msgstr "Suche in externem Navigator öffnen"
 
 #: plugins/search/searchpref.ui:79
 #, no-c-format
 msgid "Custom browser path:"
-msgstr "Pfad zu benutzerdefiniertem Browser:"
+msgstr "Pfad zu benutzerdefiniertem Navigator:"
 
 #: plugins/search/searchpref.ui:116
 #, no-c-format
