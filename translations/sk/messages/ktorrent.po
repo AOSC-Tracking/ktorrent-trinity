@@ -23,7 +23,7 @@ msgstr ""
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
-msgstr "Preklad SVK: Eugen Tarabčák, Marek Mlynár"
+msgstr "Eugen Tarabčák, Marek Mlynár"
 
 #: _translatorinfo:2
 msgid ""
