@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
 "POT-Creation-Date: 2019-07-18 00:39+0200\n"
-"PO-Revision-Date: 2019-11-10 21:04+0000\n"
+"PO-Revision-Date: 2019-12-17 15:56+0000\n"
 "Last-Translator: Chris <xchrisx@uber.space>\n"
 "Language-Team: German <https://mirror.git.trinitydesktop.org/weblate/"
 "projects/applications/ktorrent/de/>\n"
@@ -630,7 +630,7 @@ msgstr "Statistik-Modul"
 
 #: apps/ktorrent/main.cpp:129
 msgid "Application icon and a couple of others"
-msgstr "Anwendungssymbol und einige andere"
+msgstr "Programmsymbol und einige andere"
 
 #: apps/ktorrent/main.cpp:130
 msgid "The downloads icon"
@@ -638,7 +638,7 @@ msgstr "Das Downloadsymbol"
 
 #: apps/ktorrent/main.cpp:133
 msgid "1.0 application icon"
-msgstr "Anwendungssymbol der Version 1.0"
+msgstr "Programmsymbol der Version 1.0"
 
 #: apps/ktorrent/main.cpp:138
 msgid "ChunkBar's tooltip and IWFileTreeItem sorting"
@@ -1013,7 +1013,7 @@ msgstr "Unbegrenzt"
 
 #: apps/ktupnptest/main.cpp:35
 msgid "A TDE KPart Application"
-msgstr "Eine TDE-KPart-Anwendung"
+msgstr "Ein TDE-KPart-Programm"
 
 #: apps/ktupnptest/main.cpp:51
 msgid "KTUPnPTest"
@@ -1943,7 +1943,7 @@ msgid ""
 "Use your web browser to search for the string %1 (capital letters) on the "
 "search engine you want to add. Use the resulting URL below."
 msgstr ""
-"Benutzen Sie Ihren Webbrowser, um nach der Zeichenfolge %1 (Großbuchstaben) "
+"Verwenden Sie Ihren Webbrowser, um nach der Zeichenfolge %1 (Großbuchstaben) "
 "bei der Suchmaschine, die Sie hinzufügen wollen, zu suchen. Verwenden Sie "
 "unten die resultierende Adresse."
 
