@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
 "POT-Creation-Date: 2019-07-18 00:39+0200\n"
-"PO-Revision-Date: 2019-12-17 15:56+0000\n"
+"PO-Revision-Date: 2019-12-21 19:41+0000\n"
 "Last-Translator: Chris <xchrisx@uber.space>\n"
 "Language-Team: German <https://mirror.git.trinitydesktop.org/weblate/"
 "projects/applications/ktorrent/de/>\n"
@@ -622,7 +622,7 @@ msgstr "RSS-Modul"
 
 #: apps/ktorrent/main.cpp:125
 msgid "Webinterface Plugin"
-msgstr "Weboberflächen-Modul"
+msgstr "Internetoberflächen-Modul"
 
 #: apps/ktorrent/main.cpp:126
 msgid "Statistics Plugin"
@@ -676,7 +676,7 @@ msgstr "Zeroconf-Verbesserungen"
 
 #: apps/ktorrent/main.cpp:149
 msgid "Coldmilk webgui"
-msgstr "Coldmilk-Weboberfläche"
+msgstr "Coldmilk-Internetoberfläche"
 
 #: apps/ktorrent/main.cpp:150
 msgid "IDEAl code from KDevelop"
@@ -696,7 +696,7 @@ msgstr "Patch zum Laden mit Speicherort ohne Nachfrage"
 
 #: apps/ktorrent/main.cpp:154
 msgid "Fixes in PHP code of webinterface"
-msgstr "Fehlerbereinigungen im PHP-Code der Weboberfläche."
+msgstr "Fehlerbereinigungen im PHP-Code der Internetoberfläche."
 
 #: apps/ktorrent/main.cpp:155
 msgid "XFS specific disk preallocation"
@@ -721,11 +721,12 @@ msgstr "Patch zum Ausblenden der Menüleiste"
 
 #: apps/ktorrent/main.cpp:160
 msgid "Patch to modify file priorities in the webgui"
-msgstr "Patch zur Bearbeitung der Dateieigenschaften über die Weboberfläche"
+msgstr ""
+"Patch zur Bearbeitung der Dateieigenschaften über die Internetoberfläche"
 
 #: apps/ktorrent/main.cpp:161
 msgid "Several webgui patches"
-msgstr "Diverse Korrekturen an der Weboberfläche"
+msgstr "Diverse Korrekturen an der Internetoberfläche"
 
 #: apps/ktorrent/main.cpp:162
 msgid "Filterbar patch"
@@ -1567,7 +1568,7 @@ msgstr "Land"
 
 #: plugins/infowidget/peerview.cpp:215
 msgid "Client"
-msgstr "Client"
+msgstr "Klient"
 
 #: plugins/infowidget/peerview.cpp:218
 msgid "Choked"
@@ -1930,22 +1931,22 @@ msgid ""
 "q=FOOBAR&ie=UTF-8&oe=UTF-8. <br> If you add this URL here, ktorrent can "
 "search using Google."
 msgstr ""
-"Verwenden Sie Ihren Webbrowser, um nach der Zeichenfolge %1 (Großbuchstaben) "
-"bei der Suchmaschine, die Sie hinzufügen wollen, zu suchen. <br>Nachdem die "
-"Suche abgeschlossen ist, kopieren Sie die Adresse in der Adressleiste und "
-"fügen Sie sie hier ein.<br><br>Eine Suche nach %1 bei Google wird zum "
-"Beispiel http://www.google.com/search?q=FOOBAR&ie=UTF-8&oe=UTF-8 ergeben. "
-"<br>Wenn Sie diese Adresse hier einfügen, können Torrents mittels Google "
-"gesucht werden."
+"Verwenden Sie Ihren Internetnavigator, um nach der Zeichenfolge %1 "
+"(Großbuchstaben) bei der Suchmaschine, die Sie hinzufügen wollen, zu suchen. "
+"<br>Nachdem die Suche abgeschlossen ist, kopieren Sie die Adresse in der "
+"Adressleiste und fügen Sie sie hier ein.<br><br>Eine Suche nach %1 bei "
+"Google wird zum Beispiel http://www.google.com/"
+"search?q=FOOBAR&ie=UTF-8&oe=UTF-8 ergeben. <br>Wenn Sie diese Adresse hier "
+"einfügen, können Torrents mittels Google gesucht werden."
 
 #: plugins/search/searchprefpage.cpp:57
 msgid ""
 "Use your web browser to search for the string %1 (capital letters) on the "
 "search engine you want to add. Use the resulting URL below."
 msgstr ""
-"Verwenden Sie Ihren Webbrowser, um nach der Zeichenfolge %1 (Großbuchstaben) "
-"bei der Suchmaschine, die Sie hinzufügen wollen, zu suchen. Verwenden Sie "
-"unten die resultierende Adresse."
+"Verwenden Sie Ihren Internetnavigator, um nach der Zeichenfolge %1 "
+"(Großbuchstaben) bei der Suchmaschine, die Sie hinzufügen wollen, zu suchen. "
+"Verwenden Sie unten die resultierende Adresse."
 
 #: plugins/search/searchprefpage.cpp:124
 msgid "You must enter the search engine's name and URL"
@@ -2111,7 +2112,7 @@ msgstr ""
 
 #: plugins/webinterface/webinterfaceplugin.cpp:44
 msgid "Web Interface"
-msgstr "Weboberfläche"
+msgstr "Internetoberfläche"
 
 #: plugins/webinterface/webinterfaceplugin.cpp:44
 msgid "Allow to control ktorrent through browser"
@@ -2119,11 +2120,11 @@ msgstr "Erlauben, dass KTorrent über einen Navigator bediehnt wird"
 
 #: plugins/webinterface/webinterfaceprefpage.cpp:27
 msgid "WebInterface"
-msgstr "Weboberfläche"
+msgstr "Internetoberfläche"
 
 #: plugins/webinterface/webinterfaceprefpage.cpp:27
 msgid "WebInterface Options"
-msgstr "Einstellungen für die Weboberfläche"
+msgstr "Einstellungen für die Internetoberfläche"
 
 #: plugins/webinterface/webinterfaceprefwidget.cpp:70
 msgid "Php executable is not in default path, please enter the path manually"
@@ -2133,7 +2134,7 @@ msgstr ""
 
 #: plugins/webinterface/webinterfaceprefwidget.cpp:106
 msgid "Please enter a new password for the web interface."
-msgstr "Bitte geben Sie ein neues Passwort für die Weboberfläche ein."
+msgstr "Bitte geben Sie ein neues Passwort für die Internetoberfläche ein."
 
 #: plugins/webinterface/webinterfaceprefwidget.cpp:116
 msgid "%1 exists and it is executable"
@@ -2644,7 +2645,7 @@ msgstr "&Geschwindigkeitsbalken in Symbol anzeigen"
 #: apps/ktorrent/generalpref.ui:232
 #, no-c-format
 msgid "Show system tray popup messages"
-msgstr "Benachrichtigungen im Systemabschnitt der Kontrollleiste anzeigen"
+msgstr "Benachrichtigungen im Systembereich der Kontrollleiste anzeigen"
 
 #: apps/ktorrent/generalpref.ui:251
 #, no-c-format
@@ -3086,7 +3087,7 @@ msgstr "Maximale Verteilungszeit in Stunden (0 = keine Begrenzung)"
 #: libktorrent/ktorrent.kcfg:66
 #, no-c-format
 msgid "Show a system tray icon"
-msgstr "Symbol im Systemabschnitt der Kontrollleiste anzeigen"
+msgstr "Symbol im Systembereich der Kontrollleiste anzeigen"
 
 #: libktorrent/ktorrent.kcfg:70
 #, no-c-format
@@ -3574,7 +3575,7 @@ msgstr "Nachrichtenmarkierung vom RSS-Modul"
 #: plugins/logviewer/ktlogviewerplugin.kcfg:67
 #, no-c-format
 msgid "WebInterface plugin messages flag"
-msgstr "Nachrichtenmarkierung im Weboberflächen-Modul"
+msgstr "Nachrichtenmarkierung im Internetoberflächen-Modul"
 
 #: plugins/logviewer/logprefwidgetbase.ui:53
 #: plugins/logviewer/logprefwidgetbase.ui:94
@@ -3709,7 +3710,7 @@ msgstr "RSS-Modul:"
 #: plugins/logviewer/logprefwidgetbase.ui:413
 #, no-c-format
 msgid "WebInterface plugin:"
-msgstr "Weboberflächen-Modul:"
+msgstr "Internetoberflächen-Modul:"
 
 #: plugins/logviewer/logprefwidgetbase.ui:426
 #, no-c-format
@@ -4515,7 +4516,7 @@ msgstr "Passwort"
 #: plugins/webinterface/webinterfacepref.ui:41
 #, no-c-format
 msgid "Web Server"
-msgstr "Webserver"
+msgstr "Internetserver"
 
 #: plugins/webinterface/webinterfacepref.ui:82
 #, no-c-format
