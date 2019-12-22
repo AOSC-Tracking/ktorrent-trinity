@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
 "POT-Creation-Date: 2019-07-18 00:39+0200\n"
-"PO-Revision-Date: 2019-12-21 19:41+0000\n"
+"PO-Revision-Date: 2019-12-22 13:51+0000\n"
 "Last-Translator: Chris <xchrisx@uber.space>\n"
 "Language-Team: German <https://mirror.git.trinitydesktop.org/weblate/"
 "projects/applications/ktorrent/de/>\n"
@@ -2635,17 +2635,17 @@ msgstr "Symbol im Systembereich"
 #: apps/ktorrent/generalpref.ui:216
 #, no-c-format
 msgid "Show s&ystem tray icon"
-msgstr "&Symbol im Systembereich anzeigen"
+msgstr "&Symbol im Systembereich der Kontrollleiste anzeigen"
 
 #: apps/ktorrent/generalpref.ui:224
 #, no-c-format
 msgid "Show speed &bar in tray icon"
-msgstr "&Geschwindigkeitsbalken in Symbol anzeigen"
+msgstr "&Geschwindigkeitsbalken in Symbol im Systembereich anzeigen"
 
 #: apps/ktorrent/generalpref.ui:232
 #, no-c-format
 msgid "Show system tray popup messages"
-msgstr "Benachrichtigungen im Systembereich der Kontrollleiste anzeigen"
+msgstr "Kurzinfos im Systembereich der Kontrollleiste anzeigen"
 
 #: apps/ktorrent/generalpref.ui:251
 #, no-c-format
@@ -3092,7 +3092,7 @@ msgstr "Symbol im Systembereich der Kontrollleiste anzeigen"
 #: libktorrent/ktorrent.kcfg:70
 #, no-c-format
 msgid "Show speed bar in tray icon"
-msgstr "Geschwindigkeitsbalken im Symbol anzeigen"
+msgstr "Geschwindigkeitsbalken im Symbol des Systembereiches anzeigen"
 
 #: libktorrent/ktorrent.kcfg:74
 #, no-c-format
