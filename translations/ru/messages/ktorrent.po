@@ -6,16 +6,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
 "POT-Creation-Date: 2019-07-18 00:39+0200\n"
-"PO-Revision-Date: 2007-07-25 02:25+0300\n"
-"Last-Translator: Nick Shaforostoff\n"
-"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"PO-Revision-Date: 2020-01-04 14:07+0000\n"
+"Last-Translator: Serg Bormant <bormant@mail.ru>\n"
+"Language-Team: Russian <https://mirror.git.trinitydesktop.org/weblate/"
+"projects/applications/ktorrent/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KAider 0.1\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.10\n"
 
 #: _translatorinfo:1
 msgid ""
@@ -52,8 +53,8 @@ msgid ""
 "You have deselected the following existing files. You will lose all data in "
 "these files, are you sure you want to do this ?"
 msgstr ""
-"Вы сняли отметки с существующих файлов. Это пиведёт к потере всех данных в "
-"этих файлах. Продолжить?"
+"Вы сняли отметки с существующих файлов, это приведёт к потере всех данных в "
+"этих файлах. Действительно продолжить?"
 
 #: apps/ktorrent/fileselectdlg.cpp:124
 msgid "Yes, delete the files"
@@ -254,11 +255,11 @@ msgstr "Вставить URL торрента..."
 msgid ""
 "_: to open Queue Manager\n"
 "Open Queue Manager..."
-msgstr "Открыть менеджер очереди..."
+msgstr "Управление очередью..."
 
 #: apps/ktorrent/ktorrent.cpp:548 apps/ktorrent/ktorrentviewmenu.cpp:53
 msgid "Enqueue/Dequeue"
-msgstr "В очередь/Из очереди"
+msgstr "В/из очереди"
 
 #: apps/ktorrent/ktorrent.cpp:553
 msgid "IPFilter"
@@ -331,8 +332,8 @@ msgid ""
 "Several data files of the torrent \"%1\" are missing, do you want to "
 "recreate them, or do you want to not download them?"
 msgstr ""
-"Некоторые файлы из торрента \"%1\" отсутствуют. Создать их или запретить их "
-"загрузку?"
+"Некоторые файлы из торрента \"%1\" отсутствуют. Пересоздать их или запретить "
+"их загрузку?"
 
 #: apps/ktorrent/ktorrentcore.cpp:1031 apps/ktorrent/ktorrentcore.cpp:1069
 msgid "Recreate"
@@ -478,7 +479,9 @@ msgstr "Изменить ограничения: Настройки -> Наст�
 msgid ""
 "The torrent %1 has not finished downloading, do you want to delete the "
 "incomplete data, too?"
-msgstr "Торрент %1 не был загружен. Удалить также неполные данные?"
+msgstr ""
+"Загрузка торрента %1 не была завершена. Действительно удалить и неполные "
+"данные тоже?"
 
 #: apps/ktorrent/ktorrentview.cpp:378
 msgid "Remove Download"
@@ -495,7 +498,7 @@ msgstr "Оставить данные"
 #: apps/ktorrent/ktorrentview.cpp:395
 msgid ""
 "You will lose all the downloaded data. Are you sure you want to do this?"
-msgstr "Вы потеряете ВСЕ загруженные данные. Вы уверены?"
+msgstr "Вы потеряете все загруженные данные. Действительно продолжить?"
 
 #: apps/ktorrent/ktorrentview.cpp:397 apps/ktorrent/ktorrentviewmenu.cpp:45
 msgid "Remove Torrent"
@@ -503,7 +506,7 @@ msgstr "Удалить торрент"
 
 #: apps/ktorrent/ktorrentview.cpp:631
 msgid "You are already checking the data of the torrent %1 !"
-msgstr "Данные торрента %1 уже проверяются."
+msgstr "Данные торрента %1 уже проверяются!"
 
 #: apps/ktorrent/ktorrentview.cpp:751
 #, c-format
@@ -1217,7 +1220,7 @@ msgstr "Обновление"
 msgid ""
 "You don't have enough disk space to download this torrent. Are you sure you "
 "want to continue?"
-msgstr "Не достаточно места для загрузки торрента. Продолжить?"
+msgstr "Недостаточно места для загрузки торрента. Действительно продолжить?"
 
 #: libktorrent/torrent/queuemanager.cpp:136
 #, c-format
@@ -1643,7 +1646,7 @@ msgstr ""
 
 #: plugins/ipfilter/ipblockingprefpage.cpp:117
 msgid "Selected file already exists, do you want to download it again?"
-msgstr "Выбранный файл уже существует, загрузить его заново?"
+msgstr "Выбранный файл уже существует. Действительно загрузить его заново?"
 
 #: plugins/ipfilter/ipblockingprefpage.cpp:117
 #: plugins/ipfilter/ipblockingprefpage.cpp:194
