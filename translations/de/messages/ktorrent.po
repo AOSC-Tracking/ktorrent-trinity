@@ -1935,8 +1935,8 @@ msgstr ""
 "(Großbuchstaben) bei der Suchmaschine, die Sie hinzufügen wollen, zu suchen. "
 "<br>Nachdem die Suche abgeschlossen ist, kopieren Sie die Adresse in der "
 "Adressleiste und fügen Sie sie hier ein.<br><br>Eine Suche nach %1 bei "
-"Google wird zum Beispiel http://www.google.com/"
-"search?q=FOOBAR&ie=UTF-8&oe=UTF-8 ergeben. <br>Wenn Sie diese Adresse hier "
+"Google wird zum Beispiel http://www.google.com/search?"
+"q=FOOBAR&ie=UTF-8&oe=UTF-8 ergeben. <br>Wenn Sie diese Adresse hier "
 "einfügen, können Torrents mittels Google gesucht werden."
 
 #: plugins/search/searchprefpage.cpp:57
