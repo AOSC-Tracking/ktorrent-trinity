@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent 3.4\n"
-"POT-Creation-Date: 2019-07-18 00:39+0200\n"
+"POT-Creation-Date: 2020-05-11 04:28+0200\n"
 "PO-Revision-Date: 2005-05-25 18:43-0600\n"
 "Last-Translator: Steve Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: _translatorinfo:1
+#. Instead of a literal translation, add your name to the end of the list (separated by a comma).
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
@@ -32,7 +32,7 @@ msgstr ""
 "Viateur MUGENZI, JEAN BAPTISTE NGENDAHAYO, Augustin KIBERWA, Donatien "
 "NSENGIYUMVA"
 
-#: _translatorinfo:2
+#. Instead of a literal translation, add your email to the end of the list (separated by a comma).
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"

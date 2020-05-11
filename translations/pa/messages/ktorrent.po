@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2019-07-18 00:39+0200\n"
+"POT-Creation-Date: 2020-05-11 04:28+0200\n"
 "PO-Revision-Date: 2005-10-30 12:32+0530\n"
 "Last-Translator: Amanpreet Singh Alam <amanpreetalam@yahoo.com>\n"
 "Language-Team: Punjabi <fedora-trans-pa@redhat.com>\n"
@@ -17,13 +17,13 @@ msgstr ""
 "X-Generator: KBabel 1.9.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: _translatorinfo:1
+#. Instead of a literal translation, add your name to the end of the list (separated by a comma).
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
 msgstr "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ"
 
-#: _translatorinfo:2
+#. Instead of a literal translation, add your email to the end of the list (separated by a comma).
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"

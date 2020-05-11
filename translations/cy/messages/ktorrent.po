@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-07-18 00:39+0200\n"
+"POT-Creation-Date: 2020-05-11 04:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,13 +10,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: _translatorinfo:1
+#. Instead of a literal translation, add your name to the end of the list (separated by a comma).
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
 msgstr "KD wrth KGyfieithu"
 
-#: _translatorinfo:2
+#. Instead of a literal translation, add your email to the end of the list (separated by a comma).
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"

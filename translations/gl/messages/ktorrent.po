@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2019-07-18 00:39+0200\n"
+"POT-Creation-Date: 2020-05-11 04:28+0200\n"
 "PO-Revision-Date: 2006-09-02 12:55+0200\n"
 "Last-Translator: mvillarino <mvillarino@users.sourceforge.net>\n"
 "Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
@@ -14,13 +14,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.2\n"
 
-#: _translatorinfo:1
+#. Instead of a literal translation, add your name to the end of the list (separated by a comma).
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
 msgstr "mvillarino"
 
-#: _translatorinfo:2
+#. Instead of a literal translation, add your email to the end of the list (separated by a comma).
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
