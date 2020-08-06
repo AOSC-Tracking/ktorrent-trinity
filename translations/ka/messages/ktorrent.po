@@ -1055,7 +1055,7 @@ msgid ""
 "_n: 1 day \n"
 "%n days "
 msgstr ""
-"_n: 1 day \n"
+"1 day \n"
 "%n დღე"
 
 #: libktorrent/migrate/ccmigrate.cpp:119 libktorrent/migrate/ccmigrate.cpp:125
