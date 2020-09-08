@@ -782,7 +782,7 @@ namespace bt
 			if (!tf.isNull())
 			{
 				// numbers are to be compatible with old chunk info files
-				switch(buf[i+1])
+				switch((Int32)buf[i+1])
 				{
 				case FIRST_PRIORITY:
 				case 3:
