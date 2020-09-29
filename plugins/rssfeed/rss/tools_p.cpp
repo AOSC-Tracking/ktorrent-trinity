@@ -47,5 +47,3 @@ TQString RSS::extractNode(const TQDomNode &parent, const TQString &elemName, boo
 
 	return result;
 }
-
-// vim:noet:ts=4

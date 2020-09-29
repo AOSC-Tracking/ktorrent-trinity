@@ -340,4 +340,3 @@ namespace RSS
 }
 
 #endif // LIBRSS_LOADER_H
-// vim: noet:ts=4

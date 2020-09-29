@@ -92,5 +92,3 @@ bool TextInput::operator==(const TextInput &other) const
 		   d->name == other.name() &&
 		   d->link == other.link();
 }
-
-// vim:noet:ts=4

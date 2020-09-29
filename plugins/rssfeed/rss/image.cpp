@@ -164,4 +164,3 @@ bool Image::operator==(const Image &other) const
 }
 
 #include "image.moc"
-// vim:noet:ts=4

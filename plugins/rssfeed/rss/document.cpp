@@ -615,5 +615,3 @@ Document &Document::operator=(const Document &other)
     }
     return *this;
 }
-
-// vim:noet:ts=4
