@@ -266,5 +266,3 @@ bool Article::operator==(const Article &other) const
 {
 	return d->guid == other.guid();
 }
-
-// vim:noet:ts=4

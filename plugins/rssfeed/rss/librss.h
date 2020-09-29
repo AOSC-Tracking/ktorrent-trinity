@@ -19,4 +19,3 @@
 #include "textinput.h"
 
 #endif // LIBRSS_LIBRSS_H
-// vim: noet:ts=4

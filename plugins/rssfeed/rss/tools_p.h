@@ -31,4 +31,3 @@ namespace RSS
 }
 
 #endif // LIBRSS_TOOLS_P_H
-// vim:noet:ts=4

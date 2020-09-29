@@ -171,4 +171,3 @@ namespace RSS
 }
 
 #endif // LIBRSS_IMAGE_H
-// vim: noet:ts=4

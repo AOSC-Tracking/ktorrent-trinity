@@ -422,4 +422,3 @@ void Loader::discoverFeeds(const TQByteArray &data)
 }
     
 #include "loader.moc"
-// vim:noet:ts=4

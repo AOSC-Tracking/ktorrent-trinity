@@ -118,4 +118,3 @@ namespace RSS
 }
 
 #endif // LIBRSS_TEXTINPUT_H
-// vim: noet:ts=4
