@@ -1959,99 +1959,99 @@ msgstr "Dataflödesfiler"
 msgid "Search finished"
 msgstr "Sökning klar"
 
-#: plugins/stats/ChartDrawer.cc:419
+#: plugins/stats/ChartDrawer.cpp:419
 msgid "Legend"
 msgstr "Beteckning"
 
-#: plugins/stats/StatsCon.cc:49
+#: plugins/stats/StatsCon.cpp:49
 msgid "Leechers connected"
 msgstr "Anslutna användare med delar av flödet"
 
-#: plugins/stats/StatsCon.cc:50
+#: plugins/stats/StatsCon.cpp:50
 msgid "Leechers in swarms"
 msgstr "Användare med delar av flödet i svärmar"
 
-#: plugins/stats/StatsCon.cc:51
+#: plugins/stats/StatsCon.cpp:51
 msgid "Seeders connected"
 msgstr "Anslutna användare med hela flödet"
 
-#: plugins/stats/StatsCon.cc:52
+#: plugins/stats/StatsCon.cpp:52
 msgid "Seeders in swarms"
 msgstr "Användare med hela flödet i svärmar"
 
-#: plugins/stats/StatsCon.cc:53
+#: plugins/stats/StatsCon.cpp:53
 msgid "Average connected leechers per torrent"
 msgstr "Medeltal anslutna med delar av flödet per dataflöde"
 
-#: plugins/stats/StatsCon.cc:54
+#: plugins/stats/StatsCon.cpp:54
 msgid "Average connected seeders per torrent"
 msgstr "Medeltal anslutna med hela flödet per dataflöde"
 
-#: plugins/stats/StatsCon.cc:55
+#: plugins/stats/StatsCon.cpp:55
 msgid "Average connected leechers per running torrent"
 msgstr "Medeltal anslutna med delar av flödet per pågående dataflöde"
 
-#: plugins/stats/StatsCon.cc:56
+#: plugins/stats/StatsCon.cpp:56
 msgid "Average connected seeders per running torrent"
 msgstr "Medeltal anslutna med hela flödet per pågående dataflöde"
 
-#: plugins/stats/StatsCon.cc:61
+#: plugins/stats/StatsCon.cpp:61
 msgid "Nodes"
 msgstr "Noder"
 
-#: plugins/stats/StatsCon.cc:62
+#: plugins/stats/StatsCon.cpp:62
 msgid "Tasks"
 msgstr "Aktiviteter"
 
-#: plugins/stats/StatsPluginPrefs.cc:25 plugins/stats/statsplugin.cc:29
+#: plugins/stats/StatsPluginPrefs.cpp:25 plugins/stats/statsplugin.cpp:29
 msgid "Statistics"
 msgstr "Statistik"
 
-#: plugins/stats/StatsPluginPrefs.cc:25
+#: plugins/stats/StatsPluginPrefs.cpp:25
 msgid "Statistics options"
 msgstr "Statistikinställningar"
 
-#: plugins/stats/StatsSpd.cc:57 plugins/stats/StatsSpd.cc:58
+#: plugins/stats/StatsSpd.cpp:57 plugins/stats/StatsSpd.cpp:58
 msgid "Current"
 msgstr "Nuvarande"
 
-#: plugins/stats/StatsSpd.cc:60 plugins/stats/StatsSpd.cc:61
+#: plugins/stats/StatsSpd.cpp:60 plugins/stats/StatsSpd.cpp:61
 msgid "Average"
 msgstr "Medeltal"
 
-#: plugins/stats/StatsSpd.cc:63 plugins/stats/StatsSpd.cc:64
+#: plugins/stats/StatsSpd.cpp:63 plugins/stats/StatsSpd.cpp:64
 msgid "Limit"
 msgstr "Gräns"
 
-#: plugins/stats/StatsSpd.cc:71
+#: plugins/stats/StatsSpd.cpp:71
 msgid "Average from leecher"
 msgstr "Medeltal från användare med delar av flödet"
 
-#: plugins/stats/StatsSpd.cc:72
+#: plugins/stats/StatsSpd.cpp:72
 msgid "Average to leecher"
 msgstr "Medeltal till användare med delar av flödet"
 
-#: plugins/stats/StatsSpd.cc:73
+#: plugins/stats/StatsSpd.cpp:73
 msgid "Average from seeder"
 msgstr "Medeltal från användare med hela flödet"
 
-#: plugins/stats/StatsSpd.cc:74
+#: plugins/stats/StatsSpd.cpp:74
 msgid "From leechers"
 msgstr "Från användare med delar av flödet"
 
-#: plugins/stats/StatsSpd.cc:75
+#: plugins/stats/StatsSpd.cpp:75
 msgid "From seeders"
 msgstr "Från användare med hela flödet"
 
-#: plugins/stats/statsplugin.cc:29
+#: plugins/stats/statsplugin.cpp:29
 msgid "Shows transfers statistics"
 msgstr "Visar överföringsstatistik"
 
-#: plugins/stats/statsplugin.cc:67
+#: plugins/stats/statsplugin.cpp:67
 msgid "Speed statistics"
 msgstr "Hastighetsstatistik"
 
-#: plugins/stats/statsplugin.cc:68
+#: plugins/stats/statsplugin.cpp:68
 msgid "Connection statistics"
 msgstr "Anslutningsstatistik"
 

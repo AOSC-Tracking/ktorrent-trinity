@@ -1956,116 +1956,116 @@ msgstr "torrent 檔案"
 msgid "Search finished"
 msgstr "搜尋完成"
 
-#: plugins/stats/ChartDrawer.cc:419
+#: plugins/stats/ChartDrawer.cpp:419
 msgid "Legend"
 msgstr ""
 
-#: plugins/stats/StatsCon.cc:49
+#: plugins/stats/StatsCon.cpp:49
 #, fuzzy
 msgid "Leechers connected"
 msgstr "連線："
 
-#: plugins/stats/StatsCon.cc:50
+#: plugins/stats/StatsCon.cpp:50
 #, fuzzy
 msgid "Leechers in swarms"
 msgstr "顯示系統匣圖示(&Y)"
 
-#: plugins/stats/StatsCon.cc:51
+#: plugins/stats/StatsCon.cpp:51
 #, fuzzy
 msgid "Seeders connected"
 msgstr "連線："
 
-#: plugins/stats/StatsCon.cc:52
+#: plugins/stats/StatsCon.cpp:52
 #, fuzzy
 msgid "Seeders in swarms"
 msgstr "顯示系統匣圖示(&Y)"
 
-#: plugins/stats/StatsCon.cc:53
+#: plugins/stats/StatsCon.cpp:53
 #, fuzzy
 msgid "Average connected leechers per torrent"
 msgstr "每個 torrent 最大連線數："
 
-#: plugins/stats/StatsCon.cc:54
+#: plugins/stats/StatsCon.cpp:54
 #, fuzzy
 msgid "Average connected seeders per torrent"
 msgstr "每個 torrent 最大連線數："
 
-#: plugins/stats/StatsCon.cc:55
+#: plugins/stats/StatsCon.cpp:55
 msgid "Average connected leechers per running torrent"
 msgstr ""
 
-#: plugins/stats/StatsCon.cc:56
+#: plugins/stats/StatsCon.cpp:56
 msgid "Average connected seeders per running torrent"
 msgstr ""
 
-#: plugins/stats/StatsCon.cc:61
+#: plugins/stats/StatsCon.cpp:61
 #, fuzzy
 msgid "Nodes"
 msgstr "無"
 
-#: plugins/stats/StatsCon.cc:62
+#: plugins/stats/StatsCon.cpp:62
 #, fuzzy
 msgid "Tasks"
 msgstr "追蹤器"
 
-#: plugins/stats/StatsPluginPrefs.cc:25 plugins/stats/statsplugin.cc:29
+#: plugins/stats/StatsPluginPrefs.cpp:25 plugins/stats/statsplugin.cpp:29
 #, fuzzy
 msgid "Statistics"
 msgstr "狀態"
 
-#: plugins/stats/StatsPluginPrefs.cc:25
+#: plugins/stats/StatsPluginPrefs.cpp:25
 msgid "Statistics options"
 msgstr ""
 
-#: plugins/stats/StatsSpd.cc:57 plugins/stats/StatsSpd.cc:58
+#: plugins/stats/StatsSpd.cpp:57 plugins/stats/StatsSpd.cpp:58
 #, fuzzy
 msgid "Current"
 msgstr "Torrent"
 
-#: plugins/stats/StatsSpd.cc:60 plugins/stats/StatsSpd.cc:61
+#: plugins/stats/StatsSpd.cpp:60 plugins/stats/StatsSpd.cpp:61
 msgid "Average"
 msgstr ""
 
-#: plugins/stats/StatsSpd.cc:63 plugins/stats/StatsSpd.cc:64
+#: plugins/stats/StatsSpd.cpp:63 plugins/stats/StatsSpd.cpp:64
 #, fuzzy
 msgid "Limit"
 msgstr "要限制嗎？(&U)"
 
-#: plugins/stats/StatsSpd.cc:71
+#: plugins/stats/StatsSpd.cpp:71
 #, fuzzy
 msgid "Average from leecher"
 msgstr "平均下載速度："
 
-#: plugins/stats/StatsSpd.cc:72
+#: plugins/stats/StatsSpd.cpp:72
 #, fuzzy
 msgid "Average to leecher"
 msgstr "平均下載速度："
 
-#: plugins/stats/StatsSpd.cc:73
+#: plugins/stats/StatsSpd.cpp:73
 #, fuzzy
 msgid "Average from seeder"
 msgstr "平均下載速度："
 
-#: plugins/stats/StatsSpd.cc:74
+#: plugins/stats/StatsSpd.cpp:74
 #, fuzzy
 msgid "From leechers"
 msgstr "接收者："
 
-#: plugins/stats/StatsSpd.cc:75
+#: plugins/stats/StatsSpd.cpp:75
 #, fuzzy
 msgid "From seeders"
 msgstr "資料夾"
 
-#: plugins/stats/statsplugin.cc:29
+#: plugins/stats/statsplugin.cpp:29
 msgid "Shows transfers statistics"
 msgstr ""
 
-#: plugins/stats/statsplugin.cc:67
+#: plugins/stats/statsplugin.cpp:67
 #, fuzzy
 msgid "Speed statistics"
 msgstr "速度限制，以 KB/s 為單位"
 
-#: plugins/stats/statsplugin.cc:68
+#: plugins/stats/statsplugin.cpp:68
 #, fuzzy
 msgid "Connection statistics"
 msgstr "連線："

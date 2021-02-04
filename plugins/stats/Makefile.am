@@ -6,8 +6,8 @@ METASOURCES = AUTO
 kde_module_LTLIBRARIES = ktstatsplugin.la		
 		
 ktstatsplugin_la_LDFLAGS = -module $(KDE_PLUGIN) $(LIB_TDECORE) $(LIB_TDEUI) $(LIB_TDEPARTS) $(all_libraries)
-ktstatsplugin_la_SOURCES = ChartDrawerData.cc ChartDrawer.cc statsspdwgt.ui statsconwgt.ui StatsSpd.cc StatsCon.cc sprefwgt.ui statspluginsettings.kcfgc \
-		 StatsPluginPrefsPage.cc StatsPluginPrefs.cc statsplugin.cc
+ktstatsplugin_la_SOURCES = ChartDrawerData.cpp ChartDrawer.cpp statsspdwgt.ui statsconwgt.ui StatsSpd.cpp StatsCon.cpp sprefwgt.ui statspluginsettings.kcfgc \
+		 StatsPluginPrefsPage.cpp StatsPluginPrefs.cpp statsplugin.cpp
 
 ktstatsplugin_la_LIBADD = $(LIB_QT) ../../libktorrent/libktorrent.la
 
