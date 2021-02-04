@@ -1889,99 +1889,99 @@ msgstr "torrent 文件"
 msgid "Search finished"
 msgstr "搜索已完成"
 
-#: plugins/stats/ChartDrawer.cc:419
+#: plugins/stats/ChartDrawer.cpp:419
 msgid "Legend"
 msgstr "图例"
 
-#: plugins/stats/StatsCon.cc:49
+#: plugins/stats/StatsCon.cpp:49
 msgid "Leechers connected"
 msgstr "已连接吸血虫"
 
-#: plugins/stats/StatsCon.cc:50
+#: plugins/stats/StatsCon.cpp:50
 msgid "Leechers in swarms"
 msgstr "群集中的吸血虫"
 
-#: plugins/stats/StatsCon.cc:51
+#: plugins/stats/StatsCon.cpp:51
 msgid "Seeders connected"
 msgstr "已连接的做种者"
 
-#: plugins/stats/StatsCon.cc:52
+#: plugins/stats/StatsCon.cpp:52
 msgid "Seeders in swarms"
 msgstr "群集中的做种者"
 
-#: plugins/stats/StatsCon.cc:53
+#: plugins/stats/StatsCon.cpp:53
 msgid "Average connected leechers per torrent"
 msgstr "每个种子平均连接的吸血虫数"
 
-#: plugins/stats/StatsCon.cc:54
+#: plugins/stats/StatsCon.cpp:54
 msgid "Average connected seeders per torrent"
 msgstr "每个种子平均连接的吸血虫数"
 
-#: plugins/stats/StatsCon.cc:55
+#: plugins/stats/StatsCon.cpp:55
 msgid "Average connected leechers per running torrent"
 msgstr "每个运行中种子平均连接的吸血虫数"
 
-#: plugins/stats/StatsCon.cc:56
+#: plugins/stats/StatsCon.cpp:56
 msgid "Average connected seeders per running torrent"
 msgstr "每个运行中种子平均连接的吸血虫数"
 
-#: plugins/stats/StatsCon.cc:61
+#: plugins/stats/StatsCon.cpp:61
 msgid "Nodes"
 msgstr "结点"
 
-#: plugins/stats/StatsCon.cc:62
+#: plugins/stats/StatsCon.cpp:62
 msgid "Tasks"
 msgstr "任务"
 
-#: plugins/stats/StatsPluginPrefs.cc:25 plugins/stats/statsplugin.cc:29
+#: plugins/stats/StatsPluginPrefs.cpp:25 plugins/stats/statsplugin.cpp:29
 msgid "Statistics"
 msgstr "统计"
 
-#: plugins/stats/StatsPluginPrefs.cc:25
+#: plugins/stats/StatsPluginPrefs.cpp:25
 msgid "Statistics options"
 msgstr "统计选项"
 
-#: plugins/stats/StatsSpd.cc:57 plugins/stats/StatsSpd.cc:58
+#: plugins/stats/StatsSpd.cpp:57 plugins/stats/StatsSpd.cpp:58
 msgid "Current"
 msgstr "当前"
 
-#: plugins/stats/StatsSpd.cc:60 plugins/stats/StatsSpd.cc:61
+#: plugins/stats/StatsSpd.cpp:60 plugins/stats/StatsSpd.cpp:61
 msgid "Average"
 msgstr "平均"
 
-#: plugins/stats/StatsSpd.cc:63 plugins/stats/StatsSpd.cc:64
+#: plugins/stats/StatsSpd.cpp:63 plugins/stats/StatsSpd.cpp:64
 msgid "Limit"
 msgstr "限制"
 
-#: plugins/stats/StatsSpd.cc:71
+#: plugins/stats/StatsSpd.cpp:71
 msgid "Average from leecher"
 msgstr "来自吸血虫的平均下载速度"
 
-#: plugins/stats/StatsSpd.cc:72
+#: plugins/stats/StatsSpd.cpp:72
 msgid "Average to leecher"
 msgstr "到吸血虫的平均上传速度"
 
-#: plugins/stats/StatsSpd.cc:73
+#: plugins/stats/StatsSpd.cpp:73
 msgid "Average from seeder"
 msgstr "来自做种者的平均下载速度"
 
-#: plugins/stats/StatsSpd.cc:74
+#: plugins/stats/StatsSpd.cpp:74
 msgid "From leechers"
 msgstr "来自吸血虫"
 
-#: plugins/stats/StatsSpd.cc:75
+#: plugins/stats/StatsSpd.cpp:75
 msgid "From seeders"
 msgstr "来自做种者"
 
-#: plugins/stats/statsplugin.cc:29
+#: plugins/stats/statsplugin.cpp:29
 msgid "Shows transfers statistics"
 msgstr "显示传输统计"
 
-#: plugins/stats/statsplugin.cc:67
+#: plugins/stats/statsplugin.cpp:67
 msgid "Speed statistics"
 msgstr "速度统计"
 
-#: plugins/stats/statsplugin.cc:68
+#: plugins/stats/statsplugin.cpp:68
 msgid "Connection statistics"
 msgstr "连接统计"
 

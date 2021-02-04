@@ -1963,99 +1963,99 @@ msgstr "torrent soubory"
 msgid "Search finished"
 msgstr "Hledání dokončeno"
 
-#: plugins/stats/ChartDrawer.cc:419
+#: plugins/stats/ChartDrawer.cpp:419
 msgid "Legend"
 msgstr "Legenda"
 
-#: plugins/stats/StatsCon.cc:49
+#: plugins/stats/StatsCon.cpp:49
 msgid "Leechers connected"
 msgstr "Připojených stahovačů"
 
-#: plugins/stats/StatsCon.cc:50
+#: plugins/stats/StatsCon.cpp:50
 msgid "Leechers in swarms"
 msgstr "Stahujících v roji"
 
-#: plugins/stats/StatsCon.cc:51
+#: plugins/stats/StatsCon.cpp:51
 msgid "Seeders connected"
 msgstr "Připojeno sdílejících"
 
-#: plugins/stats/StatsCon.cc:52
+#: plugins/stats/StatsCon.cpp:52
 msgid "Seeders in swarms"
 msgstr "Sdílejících v roji"
 
-#: plugins/stats/StatsCon.cc:53
+#: plugins/stats/StatsCon.cpp:53
 msgid "Average connected leechers per torrent"
 msgstr "Průměrně připojeno stahujících na torrent"
 
-#: plugins/stats/StatsCon.cc:54
+#: plugins/stats/StatsCon.cpp:54
 msgid "Average connected seeders per torrent"
 msgstr "Průměrně připojeno sdílejících na torrent"
 
-#: plugins/stats/StatsCon.cc:55
+#: plugins/stats/StatsCon.cpp:55
 msgid "Average connected leechers per running torrent"
 msgstr "Průměrně připojených stahujících na běžící torrent"
 
-#: plugins/stats/StatsCon.cc:56
+#: plugins/stats/StatsCon.cpp:56
 msgid "Average connected seeders per running torrent"
 msgstr "Průměrně připojených sdílejících na běžící torrent"
 
-#: plugins/stats/StatsCon.cc:61
+#: plugins/stats/StatsCon.cpp:61
 msgid "Nodes"
 msgstr "Uzlů"
 
-#: plugins/stats/StatsCon.cc:62
+#: plugins/stats/StatsCon.cpp:62
 msgid "Tasks"
 msgstr "Úloh"
 
-#: plugins/stats/StatsPluginPrefs.cc:25 plugins/stats/statsplugin.cc:29
+#: plugins/stats/StatsPluginPrefs.cpp:25 plugins/stats/statsplugin.cpp:29
 msgid "Statistics"
 msgstr "Statistika"
 
-#: plugins/stats/StatsPluginPrefs.cc:25
+#: plugins/stats/StatsPluginPrefs.cpp:25
 msgid "Statistics options"
 msgstr "Statistické volby"
 
-#: plugins/stats/StatsSpd.cc:57 plugins/stats/StatsSpd.cc:58
+#: plugins/stats/StatsSpd.cpp:57 plugins/stats/StatsSpd.cpp:58
 msgid "Current"
 msgstr "Současná"
 
-#: plugins/stats/StatsSpd.cc:60 plugins/stats/StatsSpd.cc:61
+#: plugins/stats/StatsSpd.cpp:60 plugins/stats/StatsSpd.cpp:61
 msgid "Average"
 msgstr "Průměrná"
 
-#: plugins/stats/StatsSpd.cc:63 plugins/stats/StatsSpd.cc:64
+#: plugins/stats/StatsSpd.cpp:63 plugins/stats/StatsSpd.cpp:64
 msgid "Limit"
 msgstr "Omezení"
 
-#: plugins/stats/StatsSpd.cc:71
+#: plugins/stats/StatsSpd.cpp:71
 msgid "Average from leecher"
 msgstr "Průměrně od stahujících"
 
-#: plugins/stats/StatsSpd.cc:72
+#: plugins/stats/StatsSpd.cpp:72
 msgid "Average to leecher"
 msgstr "Průměrně pro stahující"
 
-#: plugins/stats/StatsSpd.cc:73
+#: plugins/stats/StatsSpd.cpp:73
 msgid "Average from seeder"
 msgstr "Průměrně od sdílejících"
 
-#: plugins/stats/StatsSpd.cc:74
+#: plugins/stats/StatsSpd.cpp:74
 msgid "From leechers"
 msgstr "Od stahujících"
 
-#: plugins/stats/StatsSpd.cc:75
+#: plugins/stats/StatsSpd.cpp:75
 msgid "From seeders"
 msgstr "Od sdílejících"
 
-#: plugins/stats/statsplugin.cc:29
+#: plugins/stats/statsplugin.cpp:29
 msgid "Shows transfers statistics"
 msgstr "Zobrazit statistiky přenosu"
 
-#: plugins/stats/statsplugin.cc:67
+#: plugins/stats/statsplugin.cpp:67
 msgid "Speed statistics"
 msgstr "Statistiky rychlosti"
 
-#: plugins/stats/statsplugin.cc:68
+#: plugins/stats/statsplugin.cpp:68
 msgid "Connection statistics"
 msgstr "Statistiky připojení"
 
