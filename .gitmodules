@@ -1,6 +1,3 @@
 [submodule "admin"]
 	path = admin
 	url = https://system@scm.trinitydesktop.org/scm/git/tde-common-admin
-[submodule "cmake"]
-	path = cmake
-	url = https://system@scm.trinitydesktop.org/scm/git/tde-common-cmake
