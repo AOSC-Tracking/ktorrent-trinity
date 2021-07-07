@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-05-11 13:18+0200\n"
+"POT-Creation-Date: 2021-07-07 22:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -92,9 +92,9 @@ msgid "Active uploads"
 msgstr ""
 
 #: apps/ktorrent/groups/downloadgroup.cpp:27
-#: apps/ktorrent/groups/groupmanager.h:57
-#: apps/ktorrent/ktorrentui.rc:9 apps/ktorrent/pref.cpp:147
-#: apps/ktorrent/queuedlg.ui:31 apps/ktorrent/viewmanager.cpp:62
+#: apps/ktorrent/groups/groupmanager.h:57 apps/ktorrent/ktorrentui.rc:9
+#: apps/ktorrent/pref.cpp:147 apps/ktorrent/queuedlg.ui:31
+#: apps/ktorrent/viewmanager.cpp:62
 #, no-c-format
 msgid "Downloads"
 msgstr ""
@@ -197,8 +197,7 @@ msgid "No incoming connections (possibly firewalled)"
 msgstr ""
 
 #: apps/ktorrent/ktorrent.cpp:184 apps/ktorrent/queuedlg.ui:42
-#: apps/ktorrent/queuedlg.ui:258
-#: plugins/infowidget/statustabbase.ui:39
+#: apps/ktorrent/queuedlg.ui:258 plugins/infowidget/statustabbase.ui:39
 #, no-c-format
 msgid "Info"
 msgstr ""
@@ -379,8 +378,8 @@ msgstr ""
 msgid "Downloaded"
 msgstr ""
 
-#: apps/ktorrent/fileselectdlgbase.ui:149
-#: apps/ktorrent/ktorrentview.cpp:137 plugins/infowidget/fileview.cpp:48
+#: apps/ktorrent/fileselectdlgbase.ui:149 apps/ktorrent/ktorrentview.cpp:137
+#: plugins/infowidget/fileview.cpp:48
 #, no-c-format
 msgid "Size"
 msgstr ""
@@ -513,9 +512,8 @@ msgstr ""
 msgid "Torrent Peer Sources:"
 msgstr ""
 
-#: apps/ktorrent/generalpref.ui:85
-#: apps/ktorrent/ktorrentviewmenu.cpp:66 plugins/infowidget/peerview.cpp:221
-#: plugins/stats/sprefwgt.ui:456
+#: apps/ktorrent/generalpref.ui:85 apps/ktorrent/ktorrentviewmenu.cpp:66
+#: plugins/infowidget/peerview.cpp:221 plugins/stats/sprefwgt.ui:456
 #: plugins/stats/statsconwgt.ui:40
 #, no-c-format
 msgid "DHT"
@@ -833,12 +831,11 @@ msgstr ""
 
 #: apps/ktorrent/trayicon.cpp:90
 msgid ""
-"<table cellpadding='2' cellspacing='2' "
-"align='center'><tr><td><b>Speed:</b></td><td></td></tr><tr><td>Download: "
-"<font color='#1c9a1c'>%1</font></td><td>Upload: <font "
-"color='#990000'>%2</font></td></tr><tr><td><b>Transfer:</b></td><td></td></tr"
-"><tr><td>Download: <font color='#1c9a1c'>%3</font></td><td>Upload: <font "
-"color='#990000'>%4</font></td></tr></table>"
+"<table cellpadding='2' cellspacing='2' align='center'><tr><td><b>Speed:</b></"
+"td><td></td></tr><tr><td>Download: <font color='#1c9a1c'>%1</font></"
+"td><td>Upload: <font color='#990000'>%2</font></td></tr><tr><td><b>Transfer:"
+"</b></td><td></td></tr><tr><td>Download: <font color='#1c9a1c'>%3</font></"
+"td><td>Upload: <font color='#990000'>%4</font></td></tr></table>"
 msgstr ""
 
 #: apps/ktorrent/trayicon.cpp:147
@@ -851,8 +848,8 @@ msgstr ""
 
 #: apps/ktorrent/trayicon.cpp:165
 msgid ""
-"<b>%1</b> has reached its maximum share ratio of %2 and has been "
-"stopped.<br>Uploaded %3 at an average speed of %4."
+"<b>%1</b> has reached its maximum share ratio of %2 and has been stopped."
+"<br>Uploaded %3 at an average speed of %4."
 msgstr ""
 
 #: apps/ktorrent/trayicon.cpp:172 apps/ktorrent/trayicon.cpp:191
@@ -862,8 +859,8 @@ msgstr ""
 
 #: apps/ktorrent/trayicon.cpp:184
 msgid ""
-"<b>%1</b> has reached its maximum seed time of %2 hours and has been "
-"stopped.<br>Uploaded %3 at an average speed of %4."
+"<b>%1</b> has reached its maximum seed time of %2 hours and has been stopped."
+"<br>Uploaded %3 at an average speed of %4."
 msgstr ""
 
 #: apps/ktorrent/trayicon.cpp:200
@@ -1364,24 +1361,21 @@ msgstr ""
 
 #: plugins/infowidget/availabilitychunkbar.cpp:32
 msgid ""
-"<img src=\"available_color\">&nbsp; - Available Chunks<br><img "
-"src=\"unavailable_color\">&nbsp; - Unavailable Chunks<br><img "
-"src=\"excluded_color\">&nbsp; - Excluded Chunks"
+"<img src=\"available_color\">&nbsp; - Available Chunks<br><img src="
+"\"unavailable_color\">&nbsp; - Unavailable Chunks<br><img src="
+"\"excluded_color\">&nbsp; - Excluded Chunks"
 msgstr ""
 
 #: plugins/infowidget/chunkbar.cpp:98
 msgid ""
-"<img src=\"available_color\">&nbsp; - Downloaded Chunks<br><img "
-"src=\"unavailable_color\">&nbsp; - Chunks to Download<br><img "
-"src=\"excluded_color\">&nbsp; - Excluded Chunks"
+"<img src=\"available_color\">&nbsp; - Downloaded Chunks<br><img src="
+"\"unavailable_color\">&nbsp; - Chunks to Download<br><img src="
+"\"excluded_color\">&nbsp; - Excluded Chunks"
 msgstr ""
 
-#: apps/ktorrent/fileselectdlgbase.ui:160
-#: plugins/infowidget/fileview.cpp:49
-#: plugins/rssfeed/rssfeedwidget.ui:170
-#: plugins/rssfeed/rssfeedwidget.ui:897
-#: plugins/stats/sprefwgt.ui:328
-#: plugins/stats/statsspdwgt.ui:32
+#: apps/ktorrent/fileselectdlgbase.ui:160 plugins/infowidget/fileview.cpp:49
+#: plugins/rssfeed/rssfeedwidget.ui:170 plugins/rssfeed/rssfeedwidget.ui:897
+#: plugins/stats/sprefwgt.ui:328 plugins/stats/statsspdwgt.ui:32
 #, no-c-format
 msgid "Download"
 msgstr ""
@@ -1402,14 +1396,12 @@ msgstr ""
 msgid "Delete File(s)"
 msgstr ""
 
-#: plugins/infowidget/fileview.cpp:204
-#: plugins/infowidget/iwfiletreeitem.cpp:71
+#: plugins/infowidget/fileview.cpp:204 plugins/infowidget/iwfiletreeitem.cpp:71
 #: plugins/infowidget/iwfiletreeitem.cpp:103
 msgid "Available"
 msgstr ""
 
-#: plugins/infowidget/fileview.cpp:206
-#: plugins/infowidget/iwfiletreeitem.cpp:75
+#: plugins/infowidget/fileview.cpp:206 plugins/infowidget/iwfiletreeitem.cpp:75
 #: plugins/infowidget/iwfiletreeitem.cpp:107
 msgid "Pending"
 msgstr ""
@@ -1431,8 +1423,7 @@ msgid ""
 "downloaded, how many seeders and leechers ..."
 msgstr ""
 
-#: plugins/infowidget/infowidgetplugin.cpp:173
-#: plugins/stats/statsconwgt.ui:32
+#: plugins/infowidget/infowidgetplugin.cpp:173 plugins/stats/statsconwgt.ui:32
 #: plugins/stats/statsspdwgt.ui:40
 #, no-c-format
 msgid "Peers"
@@ -1532,8 +1523,7 @@ msgstr ""
 msgid "Please wait..."
 msgstr ""
 
-#: plugins/ipfilter/convert_dlg.ui:24
-#: plugins/ipfilter/convertdialog.cpp:155
+#: plugins/ipfilter/convert_dlg.ui:24 plugins/ipfilter/convertdialog.cpp:155
 #, no-c-format
 msgid "Converting..."
 msgstr ""
@@ -1810,9 +1800,9 @@ msgid ""
 "Use your web browser to search for the string %1 (capital letters) on the "
 "search engine you want to add. <br> Then copy the URL in the addressbar "
 "after the search is finished, and paste it here.<br><br>Searching for %1 on "
-"Google for example, will result in "
-"http://www.google.com/search?q=FOOBAR&ie=UTF-8&oe=UTF-8. <br> If you add "
-"this URL here, ktorrent can search using Google."
+"Google for example, will result in http://www.google.com/search?"
+"q=FOOBAR&ie=UTF-8&oe=UTF-8. <br> If you add this URL here, ktorrent can "
+"search using Google."
 msgstr ""
 
 #: plugins/search/searchprefpage.cpp:57
@@ -1833,8 +1823,8 @@ msgstr ""
 
 #: plugins/search/searchprefpage.cpp:146
 msgid ""
-"Bad URL. You should search for FOOBAR with your Internet browser and "
-"copy/paste the exact URL here."
+"Bad URL. You should search for FOOBAR with your Internet browser and copy/"
+"paste the exact URL here."
 msgstr ""
 
 #: plugins/search/searchprefpage.cpp:242
@@ -2046,8 +2036,7 @@ msgstr ""
 msgid "127.0.0.1"
 msgstr ""
 
-#: apps/ktorrent/addpeerwidgetbase.ui:51
-#: apps/ktorrent/downloadpref.ui:338
+#: apps/ktorrent/addpeerwidgetbase.ui:51 apps/ktorrent/downloadpref.ui:338
 #: apps/ktorrent/torrentcreatordlgbase.ui:346
 #: plugins/webinterface/webinterfacepref.ui:60
 #, no-c-format
@@ -2069,14 +2058,13 @@ msgstr ""
 msgid "Time left estimation algorithm:"
 msgstr ""
 
-#: apps/ktorrent/advancedpref.ui:49
-#: apps/ktorrent/advancedpref.ui:86
+#: apps/ktorrent/advancedpref.ui:49 apps/ktorrent/advancedpref.ui:86
 #, no-c-format
 msgid ""
 "<b>KTorrent algorithm:</b> Default algorithm using combination of other "
 "algorithms based on our tests.<br>\n"
-"<b>Current speed algorithm:</b> Simplest algorithm - "
-"BytesLeft/CurrentSpeed<br>\n"
+"<b>Current speed algorithm:</b> Simplest algorithm - BytesLeft/"
+"CurrentSpeed<br>\n"
 "<b>Global average speed algorithm:</b> BytesLeft/AverageSpeed<br>\n"
 "<b>Window of X algorithm:</b> ET calculated from X speed samples<br>\n"
 "<b>Moving average algorithm:</b> Moving average speed calculated from X "
@@ -2198,8 +2186,7 @@ msgstr ""
 msgid "During uploading, do &not recheck chunks bigger than"
 msgstr ""
 
-#: apps/ktorrent/advancedpref.ui:395
-#: apps/ktorrent/torrentcreatordlgbase.ui:138
+#: apps/ktorrent/advancedpref.ui:395 apps/ktorrent/torrentcreatordlgbase.ui:138
 #, no-c-format
 msgid "KB"
 msgstr ""
@@ -2279,10 +2266,8 @@ msgstr ""
 msgid "MB"
 msgstr ""
 
-#: apps/ktorrent/downloadpref.ui:236
-#: apps/ktorrent/downloadpref.ui:263
-#: apps/ktorrent/downloadpref.ui:560
-#: apps/ktorrent/downloadpref.ui:568
+#: apps/ktorrent/downloadpref.ui:236 apps/ktorrent/downloadpref.ui:263
+#: apps/ktorrent/downloadpref.ui:560 apps/ktorrent/downloadpref.ui:568
 #: apps/ktorrent/downloadpref.ui:643
 #, no-c-format
 msgid "(0 is no limit)"
@@ -2328,8 +2313,7 @@ msgstr ""
 msgid "Maximum upload rate:"
 msgstr ""
 
-#: apps/ktorrent/downloadpref.ui:576
-#: apps/ktorrent/downloadpref.ui:584
+#: apps/ktorrent/downloadpref.ui:576 apps/ktorrent/downloadpref.ui:584
 #, no-c-format
 msgid "KB/sec (0 is no limit)"
 msgstr ""
@@ -2421,8 +2405,7 @@ msgstr ""
 msgid "Encryption"
 msgstr ""
 
-#: apps/ktorrent/generalpref.ui:58
-#: libktorrent/ktorrent.kcfg:158
+#: apps/ktorrent/generalpref.ui:58 libktorrent/ktorrent.kcfg:158
 #, no-c-format
 msgid "Use protocol encryption"
 msgstr ""
@@ -2434,8 +2417,7 @@ msgid ""
 "connections."
 msgstr ""
 
-#: apps/ktorrent/generalpref.ui:72
-#: libktorrent/ktorrent.kcfg:162
+#: apps/ktorrent/generalpref.ui:72 libktorrent/ktorrent.kcfg:162
 #, no-c-format
 msgid "Allow unencrypted connections"
 msgstr ""
@@ -2601,8 +2583,7 @@ msgstr ""
 msgid "Paste URL"
 msgstr ""
 
-#: apps/ktorrent/pastedlgbase.ui:52
-#: plugins/infowidget/trackerviewbase.ui:151
+#: apps/ktorrent/pastedlgbase.ui:52 plugins/infowidget/trackerviewbase.ui:151
 #: plugins/search/searchpref.ui:166
 #, no-c-format
 msgid "URL:"
@@ -2613,8 +2594,7 @@ msgstr ""
 msgid "O&K"
 msgstr ""
 
-#: apps/ktorrent/pastedlgbase.ui:114
-#: apps/ktorrent/scandlgbase.ui:179
+#: apps/ktorrent/pastedlgbase.ui:114 apps/ktorrent/scandlgbase.ui:179
 #: plugins/ipfilter/convert_dlg.ui:128
 #, no-c-format
 msgid "C&ancel"
@@ -2625,29 +2605,25 @@ msgstr ""
 msgid "KT Queue Dialog"
 msgstr ""
 
-#: apps/ktorrent/queuedlg.ui:69
-#: apps/ktorrent/queuedlg.ui:285
+#: apps/ktorrent/queuedlg.ui:69 apps/ktorrent/queuedlg.ui:285
 #: plugins/infowidget/trackerviewbase.ui:203
 #, no-c-format
 msgid "Status:"
 msgstr ""
 
-#: apps/ktorrent/queuedlg.ui:85
-#: apps/ktorrent/queuedlg.ui:301
+#: apps/ktorrent/queuedlg.ui:85 apps/ktorrent/queuedlg.ui:301
 #: plugins/logviewer/logprefwidgetbase.ui:461
 #, no-c-format
 msgid "Tracker:"
 msgstr ""
 
-#: apps/ktorrent/queuedlg.ui:93
-#: apps/ktorrent/queuedlg.ui:309
+#: apps/ktorrent/queuedlg.ui:93 apps/ktorrent/queuedlg.ui:309
 #: plugins/logviewer/logprefwidgetbase.ui:453
 #, no-c-format
 msgid "DHT:"
 msgstr ""
 
-#: apps/ktorrent/queuedlg.ui:109
-#: apps/ktorrent/queuedlg.ui:325
+#: apps/ktorrent/queuedlg.ui:109 apps/ktorrent/queuedlg.ui:325
 #: plugins/infowidget/statustabbase.ui:495
 #, no-c-format
 msgid "Share ratio:"
@@ -2658,14 +2634,12 @@ msgstr ""
 msgid "Bytes left:"
 msgstr ""
 
-#: apps/ktorrent/queuedlg.ui:177
-#: apps/ktorrent/queuedlg.ui:223
+#: apps/ktorrent/queuedlg.ui:177 apps/ktorrent/queuedlg.ui:223
 #, no-c-format
 msgid "Torrent"
 msgstr ""
 
-#: apps/ktorrent/queuedlg.ui:188
-#: apps/ktorrent/queuedlg.ui:234
+#: apps/ktorrent/queuedlg.ui:188 apps/ktorrent/queuedlg.ui:234
 #, no-c-format
 msgid "Controlled by"
 msgstr ""
@@ -2730,8 +2704,7 @@ msgstr ""
 msgid "Number of chunks failed / not downloaded :"
 msgstr ""
 
-#: apps/ktorrent/scandlgbase.ui:97
-#: apps/ktorrent/scandlgbase.ui:120
+#: apps/ktorrent/scandlgbase.ui:97 apps/ktorrent/scandlgbase.ui:120
 #, no-c-format
 msgid "0"
 msgstr ""
@@ -2873,8 +2846,8 @@ msgstr ""
 msgid "IP or hostname"
 msgstr ""
 
-#: apps/ktorrent/torrentcreatordlgbase.ui:396
-#: libktorrent/ktorrent.kcfg:54 libktorrent/ktorrent.kcfg:60
+#: apps/ktorrent/torrentcreatordlgbase.ui:396 libktorrent/ktorrent.kcfg:54
+#: libktorrent/ktorrent.kcfg:60
 #, no-c-format
 msgid "Port"
 msgstr ""
@@ -3617,8 +3590,7 @@ msgstr ""
 msgid "De&lete"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:86
-#: plugins/rssfeed/rssfeedwidget.ui:419
+#: plugins/rssfeed/rssfeedwidget.ui:86 plugins/rssfeed/rssfeedwidget.ui:419
 #: plugins/rssfeed/rssfeedwidget.ui:470
 #, no-c-format
 msgid "&New"
@@ -3649,8 +3621,7 @@ msgstr ""
 msgid "Refresh"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:299
-#: plugins/rssfeed/rssfeedwidget.ui:506
+#: plugins/rssfeed/rssfeedwidget.ui:299 plugins/rssfeed/rssfeedwidget.ui:506
 #, no-c-format
 msgid "&Title"
 msgstr ""
@@ -3660,8 +3631,7 @@ msgstr ""
 msgid "Keep Articles (days)"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:347
-#: plugins/rssfeed/rssfeedwidget.ui:522
+#: plugins/rssfeed/rssfeedwidget.ui:347 plugins/rssfeed/rssfeedwidget.ui:522
 #, no-c-format
 msgid "&Active"
 msgstr ""
@@ -3796,8 +3766,7 @@ msgstr ""
 msgid "Scan folder &1"
 msgstr ""
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:38
-#: plugins/scheduler/bwspage.ui:233
+#: plugins/scanfolder/sfprefwidgetbase.ui:38 plugins/scheduler/bwspage.ui:233
 #, no-c-format
 msgid "Alt+1"
 msgstr ""
@@ -3807,8 +3776,7 @@ msgstr ""
 msgid "Scan folder &2"
 msgstr ""
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:49
-#: plugins/scheduler/bwspage.ui:209
+#: plugins/scanfolder/sfprefwidgetbase.ui:49 plugins/scheduler/bwspage.ui:209
 #: plugins/scheduler/bwspage.ui:378
 #, no-c-format
 msgid "Alt+2"
@@ -3819,8 +3787,7 @@ msgstr ""
 msgid "Scan folder &3"
 msgstr ""
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:60
-#: plugins/scheduler/bwspage.ui:198
+#: plugins/scanfolder/sfprefwidgetbase.ui:60 plugins/scheduler/bwspage.ui:198
 #, no-c-format
 msgid "Alt+3"
 msgstr ""
@@ -3890,14 +3857,12 @@ msgstr ""
 msgid "Categor&y 1"
 msgstr ""
 
-#: plugins/scheduler/bwspage.ui:157
-#: plugins/scheduler/bwspage.ui:329
+#: plugins/scheduler/bwspage.ui:157 plugins/scheduler/bwspage.ui:329
 #, no-c-format
 msgid "T&urn off"
 msgstr ""
 
-#: plugins/scheduler/bwspage.ui:165
-#: plugins/scheduler/bwspage.ui:337
+#: plugins/scheduler/bwspage.ui:165 plugins/scheduler/bwspage.ui:337
 #, no-c-format
 msgid "&Normal"
 msgstr ""
@@ -3907,8 +3872,7 @@ msgstr ""
 msgid "Category &3"
 msgstr ""
 
-#: plugins/scheduler/bwspage.ui:206
-#: plugins/scheduler/bwspage.ui:375
+#: plugins/scheduler/bwspage.ui:206 plugins/scheduler/bwspage.ui:375
 #, no-c-format
 msgid "Category &2"
 msgstr ""
@@ -3943,22 +3907,19 @@ msgstr ""
 msgid "<b>3. Category</b>"
 msgstr ""
 
-#: plugins/scheduler/bwspage.ui:425
-#: plugins/scheduler/bwspage.ui:475
+#: plugins/scheduler/bwspage.ui:425 plugins/scheduler/bwspage.ui:475
 #: plugins/scheduler/bwspage.ui:525
 #, no-c-format
 msgid "download:"
 msgstr ""
 
-#: plugins/scheduler/bwspage.ui:441
-#: plugins/scheduler/bwspage.ui:491
+#: plugins/scheduler/bwspage.ui:441 plugins/scheduler/bwspage.ui:491
 #: plugins/scheduler/bwspage.ui:541
 #, no-c-format
 msgid "upload:"
 msgstr ""
 
-#: plugins/scheduler/bwspage.ui:457
-#: plugins/scheduler/bwspage.ui:507
+#: plugins/scheduler/bwspage.ui:457 plugins/scheduler/bwspage.ui:507
 #: plugins/scheduler/bwspage.ui:557
 #, no-c-format
 msgid "KB/s *"
@@ -4034,8 +3995,7 @@ msgstr ""
 msgid "Current search engine"
 msgstr ""
 
-#: plugins/search/ktsearchplugin.kcfg:15
-#: plugins/search/searchpref.ui:60
+#: plugins/search/ktsearchplugin.kcfg:15 plugins/search/searchpref.ui:60
 #, no-c-format
 msgid "Use default browser"
 msgstr ""
@@ -4055,8 +4015,7 @@ msgstr ""
 msgid "Engine:"
 msgstr ""
 
-#: plugins/search/searchpref.ui:30
-#: plugins/webinterface/webinterfacepref.ui:30
+#: plugins/search/searchpref.ui:30 plugins/webinterface/webinterfacepref.ui:30
 #, no-c-format
 msgid "Search Preferences"
 msgstr ""
@@ -4116,14 +4075,12 @@ msgstr ""
 msgid "Update From Internet"
 msgstr ""
 
-#: plugins/stats/ktstatsplugin.kcfg:10
-#: plugins/stats/sprefwgt.ui:46
+#: plugins/stats/ktstatsplugin.kcfg:10 plugins/stats/sprefwgt.ui:46
 #, no-c-format
 msgid "Update charts every"
 msgstr ""
 
-#: plugins/stats/ktstatsplugin.kcfg:14
-#: plugins/stats/sprefwgt.ui:92
+#: plugins/stats/ktstatsplugin.kcfg:14 plugins/stats/sprefwgt.ui:92
 #, no-c-format
 msgid "Gather data every"
 msgstr ""
@@ -4221,8 +4178,7 @@ msgid ""
 "- Exact: Maximum achieved speed visible on chart"
 msgstr ""
 
-#: plugins/stats/sprefwgt.ui:192
-#: plugins/stats/sprefwgt.ui:360
+#: plugins/stats/sprefwgt.ui:192 plugins/stats/sprefwgt.ui:360
 #, no-c-format
 msgid "Peers speed"
 msgstr ""
@@ -4272,8 +4228,7 @@ msgstr ""
 msgid "Measurements count"
 msgstr ""
 
-#: plugins/stats/sprefwgt.ui:392
-#: plugins/stats/statsspdwgt.ui:48
+#: plugins/stats/sprefwgt.ui:392 plugins/stats/statsspdwgt.ui:48
 #, no-c-format
 msgid "Upload"
 msgstr ""
