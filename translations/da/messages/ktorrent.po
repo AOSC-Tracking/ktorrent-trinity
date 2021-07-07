@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2020-05-11 04:28+0200\n"
+"POT-Creation-Date: 2021-07-07 18:27+0000\n"
 "PO-Revision-Date: 2008-01-24 16:36+0100\n"
 "Last-Translator: Martin Schlander <suse@linuxin.dk>\n"
 "Language-Team:  <dansk@dansk-gruppen.dk>\n"

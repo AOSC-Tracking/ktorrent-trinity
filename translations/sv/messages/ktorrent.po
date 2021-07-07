@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2020-05-11 04:28+0200\n"
+"POT-Creation-Date: 2021-07-07 18:27+0000\n"
 "PO-Revision-Date: 2008-02-25 22:20+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@comhem.se>\n"
 "Language-Team: Swedish <sv@li.org>\n"

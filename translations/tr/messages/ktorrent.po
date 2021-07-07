@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2020-05-11 04:28+0200\n"
+"POT-Creation-Date: 2021-07-07 18:27+0000\n"
 "PO-Revision-Date: 2007-09-09 14:47+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2020-05-11 04:28+0200\n"
+"POT-Creation-Date: 2021-07-07 18:27+0000\n"
 "PO-Revision-Date: 2007-08-12 20:48+0300\n"
 "Last-Translator: Spiros Georgaras <sng@hellug.gr>\n"
 "Language-Team: Greek <i18ngr@lists.hellug.gr>\n"
