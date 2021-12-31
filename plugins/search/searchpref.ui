@@ -310,11 +310,9 @@
     <slot>btnUpdate_clicked()</slot>
 </Q_SLOTS>
 <layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>klineedit.h</includehint>
-    <includehint>kactivelabel.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-</includehints>
+<includes>
+    <include location="global" impldecl="in implementation">kactivelabel.h</include>
+    <include location="global" impldecl="in implementation">klineedit.h</include>
+    <include location="global" impldecl="in implementation">kpushbutton.h</include>
+</includes>
 </UI>

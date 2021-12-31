@@ -658,10 +658,9 @@
     </image>
 </images>
 <layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>downloadedchunkbar.h</includehint>
-    <includehint>availabilitychunkbar.h</includehint>
-    <includehint>floatspinbox.h</includehint>
-    <includehint>floatspinbox.h</includehint>
-</includehints>
+<includes>
+    <include location="global" impldecl="in implementation">availabilitychunkbar.h</include>
+    <include location="global" impldecl="in implementation">downloadedchunkbar.h</include>
+    <include location="global" impldecl="in implementation">floatspinbox.h</include>
+</includes>
 </UI>

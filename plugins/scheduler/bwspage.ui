@@ -859,19 +859,9 @@
     <slot>btnReset_clicked()</slot>
 </Q_SLOTS>
 <layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>knuminput.h</includehint>
-    <includehint>knuminput.h</includehint>
-    <includehint>knuminput.h</includehint>
-    <includehint>knuminput.h</includehint>
-    <includehint>knuminput.h</includehint>
-    <includehint>knuminput.h</includehint>
-    <includehint>bwswidget.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-</includehints>
+<includes>
+    <include location="global" impldecl="in implementation">bwswidget.h</include>
+    <include location="global" impldecl="in implementation">knuminput.h</include>
+    <include location="global" impldecl="in implementation">kpushbutton.h</include>
+</includes>
 </UI>
