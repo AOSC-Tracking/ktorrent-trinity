@@ -136,7 +136,7 @@
     <slot>btnOK_clicked()</slot>
 </Q_SLOTS>
 <layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>klineedit.h</includehint>
-</includehints>
+<includes>
+    <include location="global" impldecl="in implementation">klineedit.h</include>
+</includes>
 </UI>
