@@ -2,20 +2,22 @@
 #
 # Ivan Petrouchtchak <ivanpetrouchtchak@yahoo.com>, 2005, 2006, 2007.
 # Ivan Petrouchtchak <fr.ivan@ukrainian-orthodox.org>, 2007.
+# Roman Savochenko <roman@oscada.org>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
 "POT-Creation-Date: 2021-07-07 18:27+0000\n"
-"PO-Revision-Date: 2007-11-06 21:01-0800\n"
-"Last-Translator: Ivan Petrouchtchak <fr.ivan@ukrainian-orthodox.org>\n"
-"Language-Team: Ukrainian <translation@linux.org.ua>\n"
+"PO-Revision-Date: 2022-04-24 17:21+0000\n"
+"Last-Translator: Roman Savochenko <roman@oscada.org>\n"
+"Language-Team: Ukrainian <https://mirror.git.trinitydesktop.org/weblate/"
+"projects/applications/ktorrent/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.11.2\n"
 
 #. Instead of a literal translation, add your name to the end of the list (separated by a comma).
 msgid ""
@@ -430,7 +432,7 @@ msgstr "% завершено"
 
 #: apps/ktorrent/ktorrentview.cpp:145
 msgid "Share Ratio"
-msgstr "Коефіцієнт звант./вивант."
+msgstr "Рейтинг Роздавання"
 
 #: apps/ktorrent/ktorrentview.cpp:146
 msgid "Time Downloaded"
@@ -451,7 +453,7 @@ msgid ""
 "_n: Cannot start more than 1 download, \n"
 "Cannot start more than %n downloads, "
 msgstr ""
-"Неможливо запустити більше, ніж %n звантаження, \n"
+"Неможливо запустити більше, ніж 1 звантаження, \n"
 "Неможливо запустити більше, ніж %n звантаження, \n"
 "Неможливо запустити більше, ніж %n звантажень, "
 
@@ -461,7 +463,7 @@ msgid ""
 "_n: and 1 seed. \n"
 "and %n seeds. "
 msgstr ""
-"і %n поширення. \n"
+"і 1 поширення. \n"
 "і %n поширення. \n"
 "і %n поширень. "
 
@@ -593,7 +595,7 @@ msgstr "Режим зневадження"
 
 #: apps/ktorrent/main.cpp:109
 msgid "Silently save torrent given on URL"
-msgstr ""
+msgstr "Мовчки зберігати torrent отриманий за URL"
 
 #: apps/ktorrent/main.cpp:110
 msgid "Document to open"
@@ -718,20 +720,19 @@ msgstr "Латка панелі фільтрів"
 
 #: apps/ktorrent/main.cpp:163
 msgid "Non threaded fileview update patch"
-msgstr ""
+msgstr "Непотокова латка оновлення файлового перегляду"
 
 #: apps/ktorrent/main.cpp:164
 msgid "Optimization to SHA1 hash generation"
-msgstr ""
+msgstr "Оптимізація до генерації SHA1 хешу"
 
 #: apps/ktorrent/main.cpp:165
 msgid "Patch to fix free diskspace calculation on FreeBSD"
-msgstr ""
+msgstr "Латка до виправлення обрахунку вільного простору диску на FreeBSD"
 
 #: apps/ktorrent/main.cpp:166
-#, fuzzy
 msgid "Patch to load torrents silently from the command line"
-msgstr "Латка для тихого завантаження з адресою збереження"
+msgstr "Латка до тихого завантаження торентів із командного рядку"
 
 #: apps/ktorrent/newui/button.cpp:58
 msgid "Assign Accelerator..."
@@ -946,7 +947,7 @@ msgid ""
 "_n: Cannot seed more than 1 torrent. <br>\n"
 "Cannot seed more than %n torrents. <br>"
 msgstr ""
-"Неможливо поширювати більше, ніж %n торент. <br>\n"
+"Неможливо поширювати більше, ніж 1 торент. <br>\n"
 "Неможливо поширювати більше, ніж %n торенти. <br>\n"
 "Неможливо поширювати більше, ніж %n торентів. <br>"
 
@@ -956,7 +957,7 @@ msgid ""
 "_n: Cannot download more than 1 torrent. <br>\n"
 "Cannot download more than %n torrents. <br>"
 msgstr ""
-"Неможливо звантажувати більше, ніж %n торент. <br>\n"
+"Неможливо звантажувати більше, ніж 1 торент. <br>\n"
 "Неможливо звантажувати більше, ніж %n торенти. <br>\n"
 "Неможливо звантажувати більше, ніж %n торентів. <br>"
 
@@ -1042,9 +1043,9 @@ msgid ""
 "_n: 1 day \n"
 "%n days "
 msgstr ""
-"%n день\n"
-"%n дні\n"
-"%n днів"
+"1 день \n"
+"%n дні \n"
+"%n днів "
 
 #: libktorrent/migrate/ccmigrate.cpp:119 libktorrent/migrate/ccmigrate.cpp:125
 #: libktorrent/torrent/multifilecache.cpp:595
@@ -1160,7 +1161,7 @@ msgid ""
 "_n: 1 peer\n"
 "%n peers"
 msgstr ""
-"%n вузол\n"
+"1 вузол\n"
 "%n вузли\n"
 "%n вузлів"
 
@@ -1492,9 +1493,9 @@ msgid ""
 "_n: You will lose all data in this file, are you sure you want to do this ?\n"
 "You will lose all data in these files, are you sure you want to do this ?"
 msgstr ""
-"Ви втратите всі дані в цьому файлі. Ви дійсно хочете це робити?\n"
-"Ви втратите всі дані в цих файлах. Ви дійсно хочете це робити?\n"
-"Ви втратите всі дані в цих файлах. Ви дійсно хочете це робити?"
+"Ви втратите всі дані у цьому файлі. Ви дійсно бажаєте це зробити?\n"
+"Ви втратите всі дані у цих файлах. Ви дійсно бажаєте це зробити?\n"
+"Ви втратите всі дані у цих файлах. Ви дійсно бажаєте це зробити?"
 
 #: plugins/infowidget/infowidgetplugin.cpp:51
 #: plugins/infowidget/infowidgetprefpage.cpp:34
@@ -2168,7 +2169,7 @@ msgstr "Додаткові параметри"
 #: apps/ktorrent/advancedpref.ui:46
 #, no-c-format
 msgid "Time left estimation algorithm:"
-msgstr ""
+msgstr "Алгоритм оцінки залишку часу:"
 
 #: apps/ktorrent/advancedpref.ui:49 apps/ktorrent/advancedpref.ui:86
 #, no-c-format
@@ -3022,7 +3023,7 @@ msgstr "Максимальна кількість з'єднань на торе�
 #: libktorrent/ktorrent.kcfg:29
 #, no-c-format
 msgid "Maximum number of connections for all torrents (0 = no limit) "
-msgstr "Макс. кількість з'єднань для всіх торентів (0 = без обмеження)"
+msgstr "Макс. кількість з'єднань для всіх торентів (0 = без обмеження) "
 
 #: libktorrent/ktorrent.kcfg:34
 #, no-c-format
@@ -3348,7 +3349,7 @@ msgstr ""
 #: plugins/infowidget/statustabbase.ui:533
 #, no-c-format
 msgid "Hours"
-msgstr "год."
+msgstr "Години"
 
 #: plugins/infowidget/statustabbase.ui:543
 #, no-c-format
@@ -4157,9 +4158,9 @@ msgid "Custom browser executable path"
 msgstr "Шлях до програми нетипового навігатора"
 
 #: plugins/search/searchbar.ui:78
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Engine:"
-msgstr " Рушій: "
+msgstr "Рушій:"
 
 #: plugins/search/searchpref.ui:30 plugins/webinterface/webinterfacepref.ui:30
 #, no-c-format
@@ -4299,7 +4300,7 @@ msgstr "мс"
 #: plugins/stats/sprefwgt.ui:135
 #, no-c-format
 msgid "Maximum"
-msgstr "Макс."
+msgstr "Максимум"
 
 #: plugins/stats/sprefwgt.ui:154
 #, no-c-format
