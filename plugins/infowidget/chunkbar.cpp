@@ -207,7 +207,7 @@ namespace kt
 			
 			if (rs.empty())
 			{
-				Range r = {i,i,0};
+				Range r = {(int)i,(int)i,0};
 				rs.append(r);
 			}
 			else
@@ -219,7 +219,7 @@ namespace kt
 				}
 				else
 				{
-					Range r = {i,i,0};
+					Range r = {(int)i,(int)i,0};
 					rs.append(r);
 				}
 			}
@@ -256,7 +256,7 @@ namespace kt
 			int fac = int(100*((double)num_dl / (jEnd - jStart)) + 0.5);
 			if (rs.empty())
 			{
-				Range r = {i,i,fac};
+				Range r = {(int)i,(int)i,fac};
 				rs.append(r);
 			}
 			else
@@ -268,7 +268,7 @@ namespace kt
 				}
 				else
 				{
-					Range r = {i,i,fac};
+					Range r = {(int)i,(int)i,fac};
 					rs.append(r);
 				}
 			}
