@@ -57,9 +57,6 @@
                     <property name="text">
                         <string>Use PeerGuardian filter?</string>
                     </property>
-                    <property name="accel">
-                        <string></string>
-                    </property>
                 </widget>
                 <widget class="TQLayoutWidget" row="1" column="0">
                     <property name="name">

@@ -59,9 +59,6 @@
                     <property name="text">
                         <string>Use default browser</string>
                     </property>
-                    <property name="accel">
-                        <string></string>
-                    </property>
                 </widget>
                 <widget class="TQLayoutWidget">
                     <property name="name">
@@ -77,9 +74,6 @@
                             </property>
                             <property name="text">
                                 <string>Custom browser path:</string>
-                            </property>
-                            <property name="accel">
-                                <string></string>
                             </property>
                         </widget>
                         <widget class="KLineEdit">

@@ -542,9 +542,6 @@
                                     <property name="text">
                                         <string>Ratio limit:</string>
                                     </property>
-                                    <property name="accel">
-                                        <string></string>
-                                    </property>
                                     <property name="toolTip" stdset="0">
                                         <string>Limit works only in seed mode</string>
                                     </property>

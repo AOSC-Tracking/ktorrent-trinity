@@ -169,9 +169,6 @@
                                             <property name="text">
                                                 <string>Download</string>
                                             </property>
-                                            <property name="accel">
-                                                <string></string>
-                                            </property>
                                         </widget>
                                         <widget class="TQTable" row="0" column="0" rowspan="1" colspan="3">
                                             <property name="name">
@@ -268,9 +265,6 @@
                                             </property>
                                             <property name="text">
                                                 <string>Refresh</string>
-                                            </property>
-                                            <property name="accel">
-                                                <string></string>
                                             </property>
                                         </widget>
                                     </hbox>
@@ -407,9 +401,6 @@
                                         <property name="text">
                                             <string>Delete</string>
                                         </property>
-                                        <property name="accel">
-                                            <string></string>
-                                        </property>
                                     </widget>
                                     <widget class="TQPushButton" row="1" column="0">
                                         <property name="name">
@@ -457,9 +448,6 @@
                                         </property>
                                         <property name="text">
                                             <string>Delete</string>
-                                        </property>
-                                        <property name="accel">
-                                            <string></string>
                                         </property>
                                     </widget>
                                     <widget class="TQPushButton" row="1" column="0">
@@ -623,9 +611,6 @@
                                                         <property name="text">
                                                             <string>Process</string>
                                                         </property>
-                                                        <property name="accel">
-                                                            <string></string>
-                                                        </property>
                                                     </widget>
                                                 </hbox>
                                             </widget>
@@ -677,9 +662,6 @@
                                                                 </property>
                                                                 <property name="text">
                                                                     <string>Match Without Episode</string>
-                                                                </property>
-                                                                <property name="accel">
-                                                                    <string></string>
                                                                 </property>
                                                             </widget>
                                                         </hbox>
@@ -896,9 +878,6 @@
                                                 <property name="text">
                                                     <string>Download</string>
                                                 </property>
-                                                <property name="accel">
-                                                    <string></string>
-                                                </property>
                                             </widget>
                                             <spacer>
                                                 <property name="name">
@@ -926,9 +905,6 @@
                                                 </property>
                                                 <property name="text">
                                                     <string>Delete</string>
-                                                </property>
-                                                <property name="accel">
-                                                    <string></string>
                                                 </property>
                                             </widget>
                                         </hbox>

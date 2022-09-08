@@ -34,9 +34,6 @@
                     <property name="text">
                         <string>Scan folder &amp;1</string>
                     </property>
-                    <property name="accel">
-                        <string>Alt+1</string>
-                    </property>
                 </widget>
                 <widget class="TQCheckBox">
                     <property name="name">
@@ -45,9 +42,6 @@
                     <property name="text">
                         <string>Scan folder &amp;2</string>
                     </property>
-                    <property name="accel">
-                        <string>Alt+2</string>
-                    </property>
                 </widget>
                 <widget class="TQCheckBox">
                     <property name="name">
@@ -55,9 +49,6 @@
                     </property>
                     <property name="text">
                         <string>Scan folder &amp;3</string>
-                    </property>
-                    <property name="accel">
-                        <string>Alt+3</string>
                     </property>
                 </widget>
             </vbox>
