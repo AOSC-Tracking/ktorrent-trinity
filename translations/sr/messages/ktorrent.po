@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2020-05-11 04:28+0200\n"
+"POT-Creation-Date: 2022-09-08 18:28+0000\n"
 "PO-Revision-Date: 2008-02-26 13:59+0100\n"
 "Last-Translator: Slobodan Simic <simicsl@verat.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -536,7 +536,7 @@ msgstr "Додатни извори вршњака"
 msgid "Torrent Peer Sources:"
 msgstr "Извори вршњака за торент:"
 
-#: apps/ktorrent/generalpref.ui:85 apps/ktorrent/ktorrentviewmenu.cpp:66
+#: apps/ktorrent/generalpref.ui:82 apps/ktorrent/ktorrentviewmenu.cpp:66
 #: plugins/infowidget/peerview.cpp:221 plugins/stats/sprefwgt.ui:456
 #: plugins/stats/statsconwgt.ui:40
 #, no-c-format
@@ -1449,7 +1449,7 @@ msgstr ""
 "\"excluded_color\">&nbsp; - Изузети парчићи"
 
 #: apps/ktorrent/fileselectdlgbase.ui:160 plugins/infowidget/fileview.cpp:49
-#: plugins/rssfeed/rssfeedwidget.ui:170 plugins/rssfeed/rssfeedwidget.ui:897
+#: plugins/rssfeed/rssfeedwidget.ui:170 plugins/rssfeed/rssfeedwidget.ui:879
 #: plugins/stats/sprefwgt.ui:328 plugins/stats/statsspdwgt.ui:32
 #, no-c-format
 msgid "Download"
@@ -1519,7 +1519,7 @@ msgstr "Парчићи"
 
 #: apps/ktorrent/torrentcreatordlgbase.ui:275
 #: plugins/infowidget/infowidgetplugin.cpp:214
-#: plugins/infowidget/trackerviewbase.ui:111
+#: plugins/infowidget/trackerviewbase.ui:105
 #, no-c-format
 msgid "Trackers"
 msgstr "Пратиоци"
@@ -2138,7 +2138,7 @@ msgid "127.0.0.1"
 msgstr "127.0.0.1"
 
 #: apps/ktorrent/addpeerwidgetbase.ui:51 apps/ktorrent/downloadpref.ui:338
-#: apps/ktorrent/torrentcreatordlgbase.ui:346
+#: apps/ktorrent/torrentcreatordlgbase.ui:343
 #: plugins/webinterface/webinterfacepref.ui:60
 #, no-c-format
 msgid "Port:"
@@ -2522,7 +2522,7 @@ msgstr "Шифровање"
 msgid "Use protocol encryption"
 msgstr "Користи шифровање протокола"
 
-#: apps/ktorrent/generalpref.ui:64
+#: apps/ktorrent/generalpref.ui:61
 #, no-c-format
 msgid ""
 "Protocol encryption is used to prevent ISP's from slowing down bittorrent "
@@ -2531,12 +2531,12 @@ msgstr ""
 "Шифровање протокола се користи да онемогући успоравање торент веза од стране "
 "вашег интернет провајдера."
 
-#: apps/ktorrent/generalpref.ui:72 libktorrent/ktorrent.kcfg:162
+#: apps/ktorrent/generalpref.ui:69 libktorrent/ktorrent.kcfg:162
 #, no-c-format
 msgid "Allow unencrypted connections"
 msgstr "Дозволи не-шифроване везе"
 
-#: apps/ktorrent/generalpref.ui:75
+#: apps/ktorrent/generalpref.ui:72
 #, no-c-format
 msgid ""
 "If unchecked, you'll be able to connect only to clients supporting "
@@ -2545,7 +2545,7 @@ msgstr ""
 "Ако није означено, моћи ћете да се повежете само са рачунарима који "
 "подржавају шифровање."
 
-#: apps/ktorrent/generalpref.ui:88
+#: apps/ktorrent/generalpref.ui:85
 #, no-c-format
 msgid ""
 "<b>D</b>istributed <b>H</b>ash <b>T</b>able protocol.<br>Decentralized peers "
@@ -2554,82 +2554,82 @@ msgstr ""
 "Протокол <b>Д</b>истрибуиране <b>Х</b>еш <b>Т</b>абеле.<br>Децентрализовани "
 "протокол размене вршњака. Погледајте приручник за више детаља."
 
-#: apps/ktorrent/generalpref.ui:99
+#: apps/ktorrent/generalpref.ui:96
 #, no-c-format
 msgid "&Use DHT to get additional peers"
 msgstr "&Користи DHT да добијеш више вршњака"
 
-#: apps/ktorrent/generalpref.ui:118
+#: apps/ktorrent/generalpref.ui:115
 #, no-c-format
 msgid "UDP port for DHT communication:"
 msgstr "UDP порт за DHT комуникацију:"
 
-#: apps/ktorrent/generalpref.ui:161
+#: apps/ktorrent/generalpref.ui:158
 #, no-c-format
 msgid "Custom IP"
 msgstr "Посебан IP"
 
-#: apps/ktorrent/generalpref.ui:172
+#: apps/ktorrent/generalpref.ui:169
 #, no-c-format
 msgid "Se&nd the tracker a custom IP address or hostname"
 msgstr "&Пошаљи пратиоцу посебан ИП или име домаћина"
 
-#: apps/ktorrent/generalpref.ui:188
+#: apps/ktorrent/generalpref.ui:185
 #, no-c-format
 msgid "Custom IP address or hostname:"
 msgstr "Посебан IP или име домаћина:"
 
-#: apps/ktorrent/generalpref.ui:205
+#: apps/ktorrent/generalpref.ui:202
 #, no-c-format
 msgid "System Tray Icon"
 msgstr "Икона системске касете"
 
-#: apps/ktorrent/generalpref.ui:216
+#: apps/ktorrent/generalpref.ui:213
 #, no-c-format
 msgid "Show s&ystem tray icon"
 msgstr "Прикажи икону с&истемске касете"
 
-#: apps/ktorrent/generalpref.ui:224
+#: apps/ktorrent/generalpref.ui:221
 #, no-c-format
 msgid "Show speed &bar in tray icon"
 msgstr "Прикажи &брзиномер у икони"
 
-#: apps/ktorrent/generalpref.ui:232
+#: apps/ktorrent/generalpref.ui:229
 #, no-c-format
 msgid "Show system tray popup messages"
 msgstr "Прикажи искачуће поруке системске касете"
 
-#: apps/ktorrent/generalpref.ui:251
+#: apps/ktorrent/generalpref.ui:245
 #, no-c-format
 msgid "Upload bandwidth (in KB/sec):"
 msgstr "Проток слања (у KB/s):"
 
-#: apps/ktorrent/generalpref.ui:276
+#: apps/ktorrent/generalpref.ui:270
 #, no-c-format
 msgid "Download bandwidth (in KB/sec):"
 msgstr "Проток преузимања (у KB/s):"
 
-#: apps/ktorrent/generalpref.ui:305
+#: apps/ktorrent/generalpref.ui:299
 #, no-c-format
 msgid "Folders"
 msgstr "Фасцикле"
 
-#: apps/ktorrent/generalpref.ui:324
+#: apps/ktorrent/generalpref.ui:318
 #, no-c-format
 msgid "Folder to store temporary files:"
 msgstr "Фасцикла за привремене фајлове:"
 
-#: apps/ktorrent/generalpref.ui:342
+#: apps/ktorrent/generalpref.ui:336
 #, no-c-format
 msgid "Move completed downloads to:"
 msgstr "Премести завршена преузимања у:"
 
-#: apps/ktorrent/generalpref.ui:353
+#: apps/ktorrent/generalpref.ui:344
 #, no-c-format
 msgid "&Automatically save downloads to:"
 msgstr "&Аутоматски сними преузимања у:"
 
-#: apps/ktorrent/generalpref.ui:395
+#: apps/ktorrent/generalpref.ui:386
 #, no-c-format
 msgid "Copy .torrent files to:"
 msgstr "Копирај .torrent фајлове у:"
@@ -2664,32 +2664,32 @@ msgstr "IP адреса вршњака"
 msgid "Add peer:"
 msgstr "Додај вршњака:"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:134
+#: apps/ktorrent/ipfilterwidgetbase.ui:131
 #, no-c-format
 msgid "Adds a peer to blacklist"
 msgstr "Додаје вршњака на црну листу"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:168
+#: apps/ktorrent/ipfilterwidgetbase.ui:162
 #, no-c-format
 msgid "Removes selected peer from blacklist"
 msgstr "Уклања изабраног вршњака са црне листе"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:176
+#: apps/ktorrent/ipfilterwidgetbase.ui:170
 #, no-c-format
 msgid "C&lear"
 msgstr "Оч&исти"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:182
+#: apps/ktorrent/ipfilterwidgetbase.ui:176
 #, no-c-format
 msgid "Clears this list"
 msgstr "Чисти ову листу"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:218
+#: apps/ktorrent/ipfilterwidgetbase.ui:212
 #, no-c-format
 msgid "Save &As..."
 msgstr "Сачувај к&ао..."
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:224
+#: apps/ktorrent/ipfilterwidgetbase.ui:218
 #, no-c-format
 msgid "Save this blacklist to use with KTorrent IPFilter plugin"
 msgstr "Снима ову црну листу да се може користити са прикључком ИП филтер"
@@ -2704,8 +2704,8 @@ msgstr "Трака преузимања"
 msgid "Paste URL"
 msgstr "Пренеси URL"
 
-#: apps/ktorrent/pastedlgbase.ui:52 plugins/infowidget/trackerviewbase.ui:151
-#: plugins/search/searchpref.ui:166
+#: apps/ktorrent/pastedlgbase.ui:52 plugins/infowidget/trackerviewbase.ui:145
+#: plugins/search/searchpref.ui:160
 #, no-c-format
 msgid "URL:"
 msgstr "URL:"
@@ -2727,7 +2727,7 @@ msgid "KT Queue Dialog"
 msgstr "KT прозор редоследа"
 
 #: apps/ktorrent/queuedlg.ui:69 apps/ktorrent/queuedlg.ui:285
-#: plugins/infowidget/trackerviewbase.ui:203
+#: plugins/infowidget/trackerviewbase.ui:197
 #, no-c-format
 msgid "Status:"
 msgstr "Стање:"
@@ -2790,17 +2790,17 @@ msgstr "Помери до&ле"
 msgid "Move to top"
 msgstr "Помери на врх"
 
-#: apps/ktorrent/queuedlg.ui:530
+#: apps/ktorrent/queuedlg.ui:527
 #, no-c-format
 msgid "Move to &bottom"
 msgstr "Помери на &дно"
 
-#: apps/ktorrent/queuedlg.ui:555
+#: apps/ktorrent/queuedlg.ui:552
 #, no-c-format
 msgid "&QM Controlled"
 msgstr "&Контролише управник"
 
-#: apps/ktorrent/queuedlg.ui:563
+#: apps/ktorrent/queuedlg.ui:560
 #, no-c-format
 msgid "&User Controlled"
 msgstr "Контролише ко&рисник"
@@ -2957,23 +2957,23 @@ msgstr "О&ткажи"
 msgid "DHT nodes"
 msgstr "DHT чворишта"
 
-#: apps/ktorrent/torrentcreatordlgbase.ui:333
+#: apps/ktorrent/torrentcreatordlgbase.ui:330
 #, no-c-format
 msgid "Node:"
 msgstr "Чвор:"
 
-#: apps/ktorrent/torrentcreatordlgbase.ui:385
+#: apps/ktorrent/torrentcreatordlgbase.ui:382
 #, no-c-format
 msgid "IP or hostname"
 msgstr "IP или име домаћина"
 
-#: apps/ktorrent/torrentcreatordlgbase.ui:396 libktorrent/ktorrent.kcfg:54
+#: apps/ktorrent/torrentcreatordlgbase.ui:393 libktorrent/ktorrent.kcfg:54
 #: libktorrent/ktorrent.kcfg:60
 #, no-c-format
 msgid "Port"
 msgstr "Порт"
 
-#: apps/ktorrent/torrentcreatordlgbase.ui:437
+#: apps/ktorrent/torrentcreatordlgbase.ui:434
 #, no-c-format
 msgid ""
 "NOTE: Some known good DHT nodes are already inserted. You should probably "
@@ -3248,12 +3248,12 @@ msgstr "Додељени вршњаци"
 msgid "Show list of peers"
 msgstr "Прикажи листу вршњака"
 
-#: plugins/infowidget/iwpref.ui:35
+#: plugins/infowidget/iwpref.ui:32
 #, no-c-format
 msgid "Show list of chunks currentl&y downloading"
 msgstr "Прикажи листу парчића који се трен&утно преузимају"
 
-#: plugins/infowidget/iwpref.ui:60
+#: plugins/infowidget/iwpref.ui:57
 #, no-c-format
 msgid "Show list of trackers"
 msgstr "Прикажи листу пратилаца"
@@ -3294,7 +3294,7 @@ msgid "Average Up Speed:"
 msgstr "Просечна брзина слања:"
 
 #: plugins/infowidget/statustabbase.ui:195
-#: plugins/infowidget/trackerviewbase.ui:252
+#: plugins/infowidget/trackerviewbase.ui:246
 #, no-c-format
 msgid "Next update in:"
 msgstr "Освежавам за:"
@@ -3343,12 +3343,12 @@ msgstr "Часова"
 msgid "Ratio limit:"
 msgstr "Ограничење односа:"
 
-#: plugins/infowidget/statustabbase.ui:549
+#: plugins/infowidget/statustabbase.ui:546
 #, no-c-format
 msgid "Limit works only in seed mode"
 msgstr "Ограничење ради само при сејању"
 
-#: plugins/infowidget/statustabbase.ui:557
+#: plugins/infowidget/statustabbase.ui:554
 #, no-c-format
 msgid "Time &limit:"
 msgstr "Временско &ограничење:"
@@ -3373,12 +3373,12 @@ msgstr "Додај п&ратиоца"
 msgid "Remove Tracker"
 msgstr "Уклони пратиоца"
 
-#: plugins/infowidget/trackerviewbase.ui:75
+#: plugins/infowidget/trackerviewbase.ui:72
 #, no-c-format
 msgid "Ch&ange Tracker"
 msgstr "Проме&ни пратиоца"
 
-#: plugins/infowidget/trackerviewbase.ui:100
+#: plugins/infowidget/trackerviewbase.ui:97
 #, no-c-format
 msgid "Restore Defaults"
 msgstr "Врати подразумевано"
@@ -3409,22 +3409,22 @@ msgstr "Изаберите филтерски фајл PeerGuardian-а "
 msgid "Use PeerGuardian filter?"
 msgstr "Користи PeerGuardian филтер?"
 
-#: plugins/ipfilter/ipblockingpref.ui:77
+#: plugins/ipfilter/ipblockingpref.ui:74
 #, no-c-format
 msgid "IP filter file:"
 msgstr "Фајл IP филтера:"
 
-#: plugins/ipfilter/ipblockingpref.ui:85
+#: plugins/ipfilter/ipblockingpref.ui:82
 #, no-c-format
 msgid "http://www.bluetack.co.uk/modules.php?name=Downloads&d_op=getit&lid=8"
 msgstr "http://www.bluetack.co.uk/modules.php?name=Downloads&d_op=getit&lid=8"
 
-#: plugins/ipfilter/ipblockingpref.ui:123
+#: plugins/ipfilter/ipblockingpref.ui:120
 #, no-c-format
 msgid "Dow&nload/Convert"
 msgstr "Преуз&ми/Претвори"
 
-#: plugins/ipfilter/ipblockingpref.ui:133
+#: plugins/ipfilter/ipblockingpref.ui:130
 #, no-c-format
 msgid ""
 "Download PeerGuardian filter from bluetack.co.uk or blocklist.org.\n"
@@ -3724,8 +3724,8 @@ msgstr "Доводи"
 msgid "De&lete"
 msgstr "О&бриши"
 
-#: plugins/rssfeed/rssfeedwidget.ui:86 plugins/rssfeed/rssfeedwidget.ui:419
-#: plugins/rssfeed/rssfeedwidget.ui:470
+#: plugins/rssfeed/rssfeedwidget.ui:86 plugins/rssfeed/rssfeedwidget.ui:410
+#: plugins/rssfeed/rssfeedwidget.ui:458
 #, no-c-format
 msgid "&New"
 msgstr "&Нов"
@@ -3740,107 +3740,107 @@ msgstr "&URL"
 msgid "Articles"
 msgstr "Чланци"
 
-#: plugins/rssfeed/rssfeedwidget.ui:216
+#: plugins/rssfeed/rssfeedwidget.ui:213
 #, no-c-format
 msgid "Auto&refresh"
 msgstr "Ауто&освежавање"
 
-#: plugins/rssfeed/rssfeedwidget.ui:242
+#: plugins/rssfeed/rssfeedwidget.ui:239
 #, no-c-format
 msgid "I&gnore TTL"
 msgstr "Зане&мари TTL"
 
-#: plugins/rssfeed/rssfeedwidget.ui:270
+#: plugins/rssfeed/rssfeedwidget.ui:267
 #, no-c-format
 msgid "Refresh"
 msgstr "Освежи"
 
-#: plugins/rssfeed/rssfeedwidget.ui:299 plugins/rssfeed/rssfeedwidget.ui:506
+#: plugins/rssfeed/rssfeedwidget.ui:293 plugins/rssfeed/rssfeedwidget.ui:494
 #, no-c-format
 msgid "&Title"
 msgstr "&Наслов"
 
-#: plugins/rssfeed/rssfeedwidget.ui:323
+#: plugins/rssfeed/rssfeedwidget.ui:317
 #, no-c-format
 msgid "Keep Articles (days)"
 msgstr "Чувај чланке (дана)"
 
-#: plugins/rssfeed/rssfeedwidget.ui:347 plugins/rssfeed/rssfeedwidget.ui:522
+#: plugins/rssfeed/rssfeedwidget.ui:341 plugins/rssfeed/rssfeedwidget.ui:510
 #, no-c-format
 msgid "&Active"
 msgstr "&Активан"
 
-#: plugins/rssfeed/rssfeedwidget.ui:362
+#: plugins/rssfeed/rssfeedwidget.ui:356
 #, no-c-format
 msgid "Filters"
 msgstr "Филтери"
 
-#: plugins/rssfeed/rssfeedwidget.ui:389
+#: plugins/rssfeed/rssfeedwidget.ui:383
 #, no-c-format
 msgid "Accept Filters"
 msgstr "Прихвати филтере"
 
-#: plugins/rssfeed/rssfeedwidget.ui:440
+#: plugins/rssfeed/rssfeedwidget.ui:431
 #, no-c-format
 msgid "Reject Filters"
 msgstr "Одбиј филтере"
 
-#: plugins/rssfeed/rssfeedwidget.ui:557
+#: plugins/rssfeed/rssfeedwidget.ui:545
 #, no-c-format
 msgid "Regular Expressions"
 msgstr "Регуларни израз"
 
-#: plugins/rssfeed/rssfeedwidget.ui:587
+#: plugins/rssfeed/rssfeedwidget.ui:575
 #, no-c-format
 msgid "Treat as &Series"
 msgstr "Третирај као &серије"
 
-#: plugins/rssfeed/rssfeedwidget.ui:624
+#: plugins/rssfeed/rssfeedwidget.ui:612
 #, no-c-format
 msgid "Process"
 msgstr "Процес"
 
-#: plugins/rssfeed/rssfeedwidget.ui:643
+#: plugins/rssfeed/rssfeedwidget.ui:628
 #, no-c-format
 msgid "Series Criteria"
 msgstr "Критеријум серије"
 
-#: plugins/rssfeed/rssfeedwidget.ui:679
+#: plugins/rssfeed/rssfeedwidget.ui:664
 #, no-c-format
 msgid "Match Without Episode"
 msgstr "Поклапања без епизоде"
 
-#: plugins/rssfeed/rssfeedwidget.ui:713
+#: plugins/rssfeed/rssfeedwidget.ui:695
 #, no-c-format
 msgid "Max Episode"
 msgstr "Макс. епизода"
 
-#: plugins/rssfeed/rssfeedwidget.ui:739
+#: plugins/rssfeed/rssfeedwidget.ui:721
 #, no-c-format
 msgid "Max Season"
 msgstr "Макс. сезона"
 
-#: plugins/rssfeed/rssfeedwidget.ui:758
+#: plugins/rssfeed/rssfeedwidget.ui:740
 #, no-c-format
 msgid "Min Season"
 msgstr "Мин. сезона"
 
-#: plugins/rssfeed/rssfeedwidget.ui:782
+#: plugins/rssfeed/rssfeedwidget.ui:764
 #, no-c-format
 msgid "Min Episode"
 msgstr "Мин. епизода"
 
-#: plugins/rssfeed/rssfeedwidget.ui:814
+#: plugins/rssfeed/rssfeedwidget.ui:796
 #, no-c-format
 msgid "Test te&xt"
 msgstr "Тестирај те&кст"
 
-#: plugins/rssfeed/rssfeedwidget.ui:840
+#: plugins/rssfeed/rssfeedwidget.ui:822
 #, no-c-format
 msgid "Te&st"
 msgstr "Те&ст"
 
-#: plugins/rssfeed/rssfeedwidget.ui:858
+#: plugins/rssfeed/rssfeedwidget.ui:840
 #, no-c-format
 msgid "Filter Matches"
 msgstr "Филтрирај поклапања"
@@ -3900,78 +3900,62 @@ msgstr "Подешавања прегледа фасцикле"
 msgid "Scan folder &1"
 msgstr "Прегледај фасциклу &1"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:38 plugins/scheduler/bwspage.ui:233
-#, no-c-format
-msgid "Alt+1"
-msgstr "Alt+1"
-
-#: plugins/scanfolder/sfprefwidgetbase.ui:46
+#: plugins/scanfolder/sfprefwidgetbase.ui:43
 #, no-c-format
 msgid "Scan folder &2"
 msgstr "Прегледај фасциклу &2"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:49 plugins/scheduler/bwspage.ui:209
-#: plugins/scheduler/bwspage.ui:378
-#, no-c-format
-msgid "Alt+2"
-msgstr "Alt+2"
-
-#: plugins/scanfolder/sfprefwidgetbase.ui:57
+#: plugins/scanfolder/sfprefwidgetbase.ui:51
 #, no-c-format
 msgid "Scan folder &3"
 msgstr "Прегледај фасциклу &3"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:60 plugins/scheduler/bwspage.ui:198
-#, no-c-format
-msgid "Alt+3"
-msgstr "Alt+3"
-
-#: plugins/scanfolder/sfprefwidgetbase.ui:81
+#: plugins/scanfolder/sfprefwidgetbase.ui:72
 #, no-c-format
 msgid "Move to \"loaded\" directory &after loading"
 msgstr "Премести у директоријум „учитано“ н&акон учитавања"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:84
+#: plugins/scanfolder/sfprefwidgetbase.ui:75
 #, no-c-format
 msgid "Move torrent to \"loaded\" directory after loading it"
 msgstr "Премешта торент у директоријум „учитано“ након што га учита"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:92
+#: plugins/scanfolder/sfprefwidgetbase.ui:83
 #, no-c-format
 msgid "Open torrents silentl&y"
 msgstr "Отвори торенте ти&хо"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:95
+#: plugins/scanfolder/sfprefwidgetbase.ui:86
 #, no-c-format
 msgid "Do not show 'Select files to download' dialog"
 msgstr "Не приказуј прозор „Изаберите фајлове за преузимање“"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:103
+#: plugins/scanfolder/sfprefwidgetbase.ui:94
 #, no-c-format
 msgid "Delete after loadin&g"
 msgstr "Обриши након учита&вања"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:106
+#: plugins/scanfolder/sfprefwidgetbase.ui:97
 #, no-c-format
 msgid "Deletes torrent after loading"
 msgstr "Брише торенте након учитавања"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:116
+#: plugins/scanfolder/sfprefwidgetbase.ui:107
 #, no-c-format
 msgid "Folders to scan"
 msgstr "Фасцикле за преглед"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:151
+#: plugins/scanfolder/sfprefwidgetbase.ui:142
 #, no-c-format
 msgid "Folder 1:"
 msgstr "Фасцикла 1:"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:162
+#: plugins/scanfolder/sfprefwidgetbase.ui:153
 #, no-c-format
 msgid "Folder 2:"
 msgstr "Фасцикла 2:"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:173
+#: plugins/scanfolder/sfprefwidgetbase.ui:164
 #, no-c-format
 msgid "Folder 3:"
 msgstr "Фасцикла 3:"
@@ -3991,12 +3975,12 @@ msgstr "Категорија за леви клик"
 msgid "Categor&y 1"
 msgstr "Категор&ија 1"
 
-#: plugins/scheduler/bwspage.ui:157 plugins/scheduler/bwspage.ui:329
+#: plugins/scheduler/bwspage.ui:157 plugins/scheduler/bwspage.ui:320
 #, no-c-format
 msgid "T&urn off"
 msgstr "И&скључи"
 
-#: plugins/scheduler/bwspage.ui:165 plugins/scheduler/bwspage.ui:337
+#: plugins/scheduler/bwspage.ui:165 plugins/scheduler/bwspage.ui:328
 #, no-c-format
 msgid "&Normal"
 msgstr "&Нормално"
@@ -4006,85 +3990,85 @@ msgstr "&Нормално"
 msgid "Category &3"
 msgstr "Категорија &3"
 
-#: plugins/scheduler/bwspage.ui:206 plugins/scheduler/bwspage.ui:375
+#: plugins/scheduler/bwspage.ui:203 plugins/scheduler/bwspage.ui:366
 #, no-c-format
 msgid "Category &2"
 msgstr "Категорија &2"
 
-#: plugins/scheduler/bwspage.ui:219
+#: plugins/scheduler/bwspage.ui:213
 #, no-c-format
 msgid "Right click category"
 msgstr "Категорија за десни клик"
 
-#: plugins/scheduler/bwspage.ui:230
+#: plugins/scheduler/bwspage.ui:224
 #, no-c-format
 msgid "Category &1"
 msgstr "Категорија &1"
 
-#: plugins/scheduler/bwspage.ui:367
+#: plugins/scheduler/bwspage.ui:358
 #, no-c-format
 msgid "&Category 3"
 msgstr "&Категорија 3"
 
-#: plugins/scheduler/bwspage.ui:390
+#: plugins/scheduler/bwspage.ui:378
 #, no-c-format
 msgid "Categories"
 msgstr "Категорије"
 
-#: plugins/scheduler/bwspage.ui:401
+#: plugins/scheduler/bwspage.ui:389
 #, no-c-format
 msgid "<b>1. Category</b>"
 msgstr "<b>1. категорија</b>"
 
-#: plugins/scheduler/bwspage.ui:409
+#: plugins/scheduler/bwspage.ui:397
 #, no-c-format
 msgid "<b>3. Category</b>"
 msgstr "<b>3. категорија</b>"
 
-#: plugins/scheduler/bwspage.ui:425 plugins/scheduler/bwspage.ui:475
-#: plugins/scheduler/bwspage.ui:525
+#: plugins/scheduler/bwspage.ui:413 plugins/scheduler/bwspage.ui:463
+#: plugins/scheduler/bwspage.ui:513
 #, no-c-format
 msgid "download:"
 msgstr "преузимање:"
 
-#: plugins/scheduler/bwspage.ui:441 plugins/scheduler/bwspage.ui:491
-#: plugins/scheduler/bwspage.ui:541
+#: plugins/scheduler/bwspage.ui:429 plugins/scheduler/bwspage.ui:479
+#: plugins/scheduler/bwspage.ui:529
 #, no-c-format
 msgid "upload:"
 msgstr "слање:"
 
-#: plugins/scheduler/bwspage.ui:457 plugins/scheduler/bwspage.ui:507
-#: plugins/scheduler/bwspage.ui:557
+#: plugins/scheduler/bwspage.ui:445 plugins/scheduler/bwspage.ui:495
+#: plugins/scheduler/bwspage.ui:545
 #, no-c-format
 msgid "KB/s *"
 msgstr "KB/s *"
 
-#: plugins/scheduler/bwspage.ui:567
+#: plugins/scheduler/bwspage.ui:555
 #, no-c-format
 msgid "<b>2. Category</b>"
 msgstr "<b>2. категорија</b>"
 
-#: plugins/scheduler/bwspage.ui:626
+#: plugins/scheduler/bwspage.ui:614
 #, no-c-format
 msgid "* zero means no limit"
 msgstr "* нула је без ограничења"
 
-#: plugins/scheduler/bwspage.ui:672
+#: plugins/scheduler/bwspage.ui:660
 #, no-c-format
 msgid "Save to file"
 msgstr "Сними у фајл"
 
-#: plugins/scheduler/bwspage.ui:680
+#: plugins/scheduler/bwspage.ui:668
 #, no-c-format
 msgid "&Load from file"
 msgstr "&Учитај из фајла"
 
-#: plugins/scheduler/bwspage.ui:688
+#: plugins/scheduler/bwspage.ui:676
 #, no-c-format
 msgid "Reset schedule"
 msgstr "Ресетуј распоред"
 
-#: plugins/scheduler/bwspage.ui:751
+#: plugins/scheduler/bwspage.ui:739
 #, no-c-format
 msgid "O&k"
 msgstr "У &реду"
@@ -4164,47 +4148,47 @@ msgstr "Спољни прегледач"
 msgid "Open searches in external browser"
 msgstr "Отвори резултате претраге у спољном прегледачу"
 
-#: plugins/search/searchpref.ui:79
+#: plugins/search/searchpref.ui:76
 #, no-c-format
 msgid "Custom browser path:"
 msgstr "Путања до прегледача:"
 
-#: plugins/search/searchpref.ui:116
+#: plugins/search/searchpref.ui:110
 #, no-c-format
 msgid "Search Engines"
 msgstr "Мотори претраге"
 
-#: plugins/search/searchpref.ui:143
+#: plugins/search/searchpref.ui:137
 #, no-c-format
 msgid "Search engine name:"
 msgstr "Име мотора тражења:"
 
-#: plugins/search/searchpref.ui:187
+#: plugins/search/searchpref.ui:181
 #, no-c-format
 msgid "&Add"
 msgstr "Дод&ај"
 
-#: plugins/search/searchpref.ui:195
+#: plugins/search/searchpref.ui:189
 #, no-c-format
 msgid "Engines"
 msgstr "Мотори"
 
-#: plugins/search/searchpref.ui:206
+#: plugins/search/searchpref.ui:200
 #, no-c-format
 msgid "URL"
 msgstr "URL"
 
-#: plugins/search/searchpref.ui:257
+#: plugins/search/searchpref.ui:251
 #, no-c-format
 msgid "R&emove All"
 msgstr "Уклони св&е"
 
-#: plugins/search/searchpref.ui:282
+#: plugins/search/searchpref.ui:276
 #, no-c-format
 msgid "Add Defau&lt"
 msgstr "Додај под&разумевано"
 
-#: plugins/search/searchpref.ui:290
+#: plugins/search/searchpref.ui:284
 #, no-c-format
 msgid "Update From Internet"
 msgstr "Освежи са интернета"
@@ -4485,6 +4469,15 @@ msgstr "Измени лозинку ..."
 #, no-c-format
 msgid "Php executable path:"
 msgstr "Путања до програма за PHP:"
+
+#~ msgid "Alt+1"
+#~ msgstr "Alt+1"
+
+#~ msgid "Alt+2"
+#~ msgstr "Alt+2"
+
+#~ msgid "Alt+3"
+#~ msgstr "Alt+3"
 
 #, fuzzy
 #~ msgid "Remove"

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2020-05-11 04:28+0200\n"
+"POT-Creation-Date: 2022-09-08 18:28+0000\n"
 "PO-Revision-Date: 2019-12-04 23:59+0000\n"
 "Last-Translator: Marek Mlynar <marek.inq.mlynar@gmail.com>\n"
 "Language-Team: Slovak <https://mirror.git.trinitydesktop.org/weblate/"
@@ -565,7 +565,7 @@ msgstr ""
 msgid "Torrent Peer Sources:"
 msgstr ""
 
-#: apps/ktorrent/generalpref.ui:85 apps/ktorrent/ktorrentviewmenu.cpp:66
+#: apps/ktorrent/generalpref.ui:82 apps/ktorrent/ktorrentviewmenu.cpp:66
 #: plugins/infowidget/peerview.cpp:221 plugins/stats/sprefwgt.ui:456
 #: plugins/stats/statsconwgt.ui:40
 #, no-c-format
@@ -1489,7 +1489,7 @@ msgstr ""
 "\"excluded_color\">&nbsp; - Vylúčené kúsky"
 
 #: apps/ktorrent/fileselectdlgbase.ui:160 plugins/infowidget/fileview.cpp:49
-#: plugins/rssfeed/rssfeedwidget.ui:170 plugins/rssfeed/rssfeedwidget.ui:897
+#: plugins/rssfeed/rssfeedwidget.ui:170 plugins/rssfeed/rssfeedwidget.ui:879
 #: plugins/stats/sprefwgt.ui:328 plugins/stats/statsspdwgt.ui:32
 #, no-c-format
 msgid "Download"
@@ -1559,7 +1559,7 @@ msgstr "Diely"
 
 #: apps/ktorrent/torrentcreatordlgbase.ui:275
 #: plugins/infowidget/infowidgetplugin.cpp:214
-#: plugins/infowidget/trackerviewbase.ui:111
+#: plugins/infowidget/trackerviewbase.ui:105
 #, no-c-format
 msgid "Trackers"
 msgstr "Trackery"
@@ -2206,7 +2206,7 @@ msgid "127.0.0.1"
 msgstr ""
 
 #: apps/ktorrent/addpeerwidgetbase.ui:51 apps/ktorrent/downloadpref.ui:338
-#: apps/ktorrent/torrentcreatordlgbase.ui:346
+#: apps/ktorrent/torrentcreatordlgbase.ui:343
 #: plugins/webinterface/webinterfacepref.ui:60
 #, no-c-format
 msgid "Port:"
@@ -2581,19 +2581,19 @@ msgstr "Šifrovanie"
 msgid "Use protocol encryption"
 msgstr "Použiť šifrovanie"
 
-#: apps/ktorrent/generalpref.ui:64
+#: apps/ktorrent/generalpref.ui:61
 #, no-c-format
 msgid ""
 "Protocol encryption is used to prevent ISP's from slowing down bittorrent "
 "connections."
 msgstr ""
 
-#: apps/ktorrent/generalpref.ui:72 libktorrent/ktorrent.kcfg:162
+#: apps/ktorrent/generalpref.ui:69 libktorrent/ktorrent.kcfg:162
 #, no-c-format
 msgid "Allow unencrypted connections"
 msgstr "Povoliť nešifrované spojenia"
 
-#: apps/ktorrent/generalpref.ui:75
+#: apps/ktorrent/generalpref.ui:72
 #, no-c-format
 msgid ""
 "If unchecked, you'll be able to connect only to clients supporting "
@@ -2602,7 +2602,7 @@ msgstr ""
 "Ak voľbu odškrtnete, budete sa môcť pripojiť iba ku klientom podporujúcim "
 "šifrovanie."
 
-#: apps/ktorrent/generalpref.ui:88
+#: apps/ktorrent/generalpref.ui:85
 #, no-c-format
 msgid ""
 "<b>D</b>istributed <b>H</b>ash <b>T</b>able protocol.<br>Decentralized peers "
@@ -2611,82 +2611,82 @@ msgstr ""
 "<b>D</b>istributed <b>H</b>ash <b>T</b>able protokol.<br>Protokol "
 "komunikácie decentralizovaných peerov."
 
-#: apps/ktorrent/generalpref.ui:99
+#: apps/ktorrent/generalpref.ui:96
 #, no-c-format
 msgid "&Use DHT to get additional peers"
 msgstr "&Použiť DHT pre získanie ďalších zdrojov"
 
-#: apps/ktorrent/generalpref.ui:118
+#: apps/ktorrent/generalpref.ui:115
 #, no-c-format
 msgid "UDP port for DHT communication:"
 msgstr "UDP port pre komunikáciu s DHT:"
 
-#: apps/ktorrent/generalpref.ui:161
+#: apps/ktorrent/generalpref.ui:158
 #, no-c-format
 msgid "Custom IP"
 msgstr "Vlastná IP"
 
-#: apps/ktorrent/generalpref.ui:172
+#: apps/ktorrent/generalpref.ui:169
 #, fuzzy, no-c-format
 msgid "Se&nd the tracker a custom IP address or hostname"
 msgstr "Po&slať trackeru vlastnú IP alebo hostiteľa"
 
-#: apps/ktorrent/generalpref.ui:188
+#: apps/ktorrent/generalpref.ui:185
 #, fuzzy, no-c-format
 msgid "Custom IP address or hostname:"
 msgstr "Vlastná IP alebo hostiteľ:"
 
-#: apps/ktorrent/generalpref.ui:205
+#: apps/ktorrent/generalpref.ui:202
 #, fuzzy, no-c-format
 msgid "System Tray Icon"
 msgstr "Ukázať i&konu v tray paneli"
 
-#: apps/ktorrent/generalpref.ui:216
+#: apps/ktorrent/generalpref.ui:213
 #, no-c-format
 msgid "Show s&ystem tray icon"
 msgstr "Ukázať i&konu v tray paneli"
 
-#: apps/ktorrent/generalpref.ui:224
+#: apps/ktorrent/generalpref.ui:221
 #, fuzzy, no-c-format
 msgid "Show speed &bar in tray icon"
 msgstr "Ukázať i&konu v tray paneli"
 
-#: apps/ktorrent/generalpref.ui:232
+#: apps/ktorrent/generalpref.ui:229
 #, fuzzy, no-c-format
 msgid "Show system tray popup messages"
 msgstr "Ukázať i&konu v tray paneli"
 
-#: apps/ktorrent/generalpref.ui:251
+#: apps/ktorrent/generalpref.ui:245
 #, no-c-format
 msgid "Upload bandwidth (in KB/sec):"
 msgstr ""
 
-#: apps/ktorrent/generalpref.ui:276
+#: apps/ktorrent/generalpref.ui:270
 #, no-c-format
 msgid "Download bandwidth (in KB/sec):"
 msgstr ""
 
-#: apps/ktorrent/generalpref.ui:305
+#: apps/ktorrent/generalpref.ui:299
 #, no-c-format
 msgid "Folders"
 msgstr "Priečinky"
 
-#: apps/ktorrent/generalpref.ui:324
+#: apps/ktorrent/generalpref.ui:318
 #, no-c-format
 msgid "Folder to store temporary files:"
 msgstr "Priečinok pre uloženie dočasných súborov:"
 
-#: apps/ktorrent/generalpref.ui:342
+#: apps/ktorrent/generalpref.ui:336
 #, fuzzy, no-c-format
 msgid "Move completed downloads to:"
 msgstr "Nestiahnuť"
 
-#: apps/ktorrent/generalpref.ui:353
+#: apps/ktorrent/generalpref.ui:344
 #, no-c-format
 msgid "&Automatically save downloads to:"
 msgstr "&Automaticky uložiť sťahované súbory sem:"
 
-#: apps/ktorrent/generalpref.ui:395
+#: apps/ktorrent/generalpref.ui:386
 #, fuzzy, no-c-format
 msgid "Copy .torrent files to:"
 msgstr "torrent súbory"
@@ -2718,32 +2718,32 @@ msgstr ""
 msgid "Add peer:"
 msgstr ""
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:134
+#: apps/ktorrent/ipfilterwidgetbase.ui:131
 #, no-c-format
 msgid "Adds a peer to blacklist"
 msgstr ""
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:168
+#: apps/ktorrent/ipfilterwidgetbase.ui:162
 #, no-c-format
 msgid "Removes selected peer from blacklist"
 msgstr ""
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:176
+#: apps/ktorrent/ipfilterwidgetbase.ui:170
 #, no-c-format
 msgid "C&lear"
 msgstr ""
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:182
+#: apps/ktorrent/ipfilterwidgetbase.ui:176
 #, no-c-format
 msgid "Clears this list"
 msgstr ""
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:218
+#: apps/ktorrent/ipfilterwidgetbase.ui:212
 #, no-c-format
 msgid "Save &As..."
 msgstr ""
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:224
+#: apps/ktorrent/ipfilterwidgetbase.ui:218
 #, no-c-format
 msgid "Save this blacklist to use with KTorrent IPFilter plugin"
 msgstr ""
@@ -2758,8 +2758,8 @@ msgstr "Panel sťahovania"
 msgid "Paste URL"
 msgstr "Vložiť URL"
 
-#: apps/ktorrent/pastedlgbase.ui:52 plugins/infowidget/trackerviewbase.ui:151
-#: plugins/search/searchpref.ui:166
+#: apps/ktorrent/pastedlgbase.ui:52 plugins/infowidget/trackerviewbase.ui:145
+#: plugins/search/searchpref.ui:160
 #, no-c-format
 msgid "URL:"
 msgstr "URL:"
@@ -2781,7 +2781,7 @@ msgid "KT Queue Dialog"
 msgstr "KT dialóg frontu"
 
 #: apps/ktorrent/queuedlg.ui:69 apps/ktorrent/queuedlg.ui:285
-#: plugins/infowidget/trackerviewbase.ui:203
+#: plugins/infowidget/trackerviewbase.ui:197
 #, no-c-format
 msgid "Status:"
 msgstr "Stav:"
@@ -2844,17 +2844,17 @@ msgstr "Pos&uň dole:"
 msgid "Move to top"
 msgstr "Po&suň hore:"
 
-#: apps/ktorrent/queuedlg.ui:530
+#: apps/ktorrent/queuedlg.ui:527
 #, no-c-format
 msgid "Move to &bottom"
 msgstr ""
 
-#: apps/ktorrent/queuedlg.ui:555
+#: apps/ktorrent/queuedlg.ui:552
 #, no-c-format
 msgid "&QM Controlled"
 msgstr "&QM Kontrolované"
 
-#: apps/ktorrent/queuedlg.ui:563
+#: apps/ktorrent/queuedlg.ui:560
 #, no-c-format
 msgid "&User Controlled"
 msgstr "&Používateľom kontrolované"
@@ -3011,23 +3011,23 @@ msgstr "Z&rušiť"
 msgid "DHT nodes"
 msgstr ""
 
-#: apps/ktorrent/torrentcreatordlgbase.ui:333
+#: apps/ktorrent/torrentcreatordlgbase.ui:330
 #, fuzzy, no-c-format
 msgid "Node:"
 msgstr "Žiadne"
 
-#: apps/ktorrent/torrentcreatordlgbase.ui:385
+#: apps/ktorrent/torrentcreatordlgbase.ui:382
 #, fuzzy, no-c-format
 msgid "IP or hostname"
 msgstr "Vlastná IP alebo hostiteľ:"
 
-#: apps/ktorrent/torrentcreatordlgbase.ui:396 libktorrent/ktorrent.kcfg:54
+#: apps/ktorrent/torrentcreatordlgbase.ui:393 libktorrent/ktorrent.kcfg:54
 #: libktorrent/ktorrent.kcfg:60
 #, no-c-format
 msgid "Port"
 msgstr "Port"
 
-#: apps/ktorrent/torrentcreatordlgbase.ui:437
+#: apps/ktorrent/torrentcreatordlgbase.ui:434
 #, no-c-format
 msgid ""
 "NOTE: Some known good DHT nodes are already inserted. You should probably "
@@ -3302,12 +3302,12 @@ msgstr "Pridelený peerovia"
 msgid "Show list of peers"
 msgstr "Ukázať zoznam peerov"
 
-#: plugins/infowidget/iwpref.ui:35
+#: plugins/infowidget/iwpref.ui:32
 #, no-c-format
 msgid "Show list of chunks currentl&y downloading"
 msgstr "Ukázať zoznam práve sťahovaných &kúskov"
 
-#: plugins/infowidget/iwpref.ui:60
+#: plugins/infowidget/iwpref.ui:57
 #, no-c-format
 msgid "Show list of trackers"
 msgstr "Ukázať zoznam trackerov"
@@ -3348,7 +3348,7 @@ msgid "Average Up Speed:"
 msgstr "Priem. rýchl. odosielania:"
 
 #: plugins/infowidget/statustabbase.ui:195
-#: plugins/infowidget/trackerviewbase.ui:252
+#: plugins/infowidget/trackerviewbase.ui:246
 #, no-c-format
 msgid "Next update in:"
 msgstr "Ďalšia obnova o:"
@@ -3399,12 +3399,12 @@ msgstr ""
 msgid "Ratio limit:"
 msgstr "Globálny limit spojení"
 
-#: plugins/infowidget/statustabbase.ui:549
+#: plugins/infowidget/statustabbase.ui:546
 #, no-c-format
 msgid "Limit works only in seed mode"
 msgstr "Limit je funkčný iba v móde seed"
 
-#: plugins/infowidget/statustabbase.ui:557
+#: plugins/infowidget/statustabbase.ui:554
 #, fuzzy, no-c-format
 msgid "Time &limit:"
 msgstr "P&oužiť limit?"
@@ -3429,12 +3429,12 @@ msgstr "Pridať &tracker"
 msgid "Remove Tracker"
 msgstr "Odobrať tracker"
 
-#: plugins/infowidget/trackerviewbase.ui:75
+#: plugins/infowidget/trackerviewbase.ui:72
 #, fuzzy, no-c-format
 msgid "Ch&ange Tracker"
 msgstr "Z&meniť tracker"
 
-#: plugins/infowidget/trackerviewbase.ui:100
+#: plugins/infowidget/trackerviewbase.ui:97
 #, fuzzy, no-c-format
 msgid "Restore Defaults"
 msgstr "Obnoviť pôvodné"
@@ -3465,22 +3465,22 @@ msgstr "Použiť filter KTorrent?"
 msgid "Use PeerGuardian filter?"
 msgstr "Použiť filter KTorrent?"
 
-#: plugins/ipfilter/ipblockingpref.ui:77
+#: plugins/ipfilter/ipblockingpref.ui:74
 #, no-c-format
 msgid "IP filter file:"
 msgstr "Súbor s IP filtrom:"
 
-#: plugins/ipfilter/ipblockingpref.ui:85
+#: plugins/ipfilter/ipblockingpref.ui:82
 #, no-c-format
 msgid "http://www.bluetack.co.uk/modules.php?name=Downloads&d_op=getit&lid=8"
 msgstr "http://www.bluetack.co.uk/modules.php?name=Downloads&d_op=getit&lid=8"
 
-#: plugins/ipfilter/ipblockingpref.ui:123
+#: plugins/ipfilter/ipblockingpref.ui:120
 #, no-c-format
 msgid "Dow&nload/Convert"
 msgstr "Stiahnuť/&Konvertovať"
 
-#: plugins/ipfilter/ipblockingpref.ui:133
+#: plugins/ipfilter/ipblockingpref.ui:130
 #, no-c-format
 msgid ""
 "Download PeerGuardian filter from bluetack.co.uk or blocklist.org.\n"
@@ -3778,8 +3778,8 @@ msgstr "Seederov:"
 msgid "De&lete"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:86 plugins/rssfeed/rssfeedwidget.ui:419
-#: plugins/rssfeed/rssfeedwidget.ui:470
+#: plugins/rssfeed/rssfeedwidget.ui:86 plugins/rssfeed/rssfeedwidget.ui:410
+#: plugins/rssfeed/rssfeedwidget.ui:458
 #, no-c-format
 msgid "&New"
 msgstr ""
@@ -3794,107 +3794,107 @@ msgstr "URL"
 msgid "Articles"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:216
+#: plugins/rssfeed/rssfeedwidget.ui:213
 #, no-c-format
 msgid "Auto&refresh"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:242
+#: plugins/rssfeed/rssfeedwidget.ui:239
 #, no-c-format
 msgid "I&gnore TTL"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:270
+#: plugins/rssfeed/rssfeedwidget.ui:267
 #, no-c-format
 msgid "Refresh"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:299 plugins/rssfeed/rssfeedwidget.ui:506
+#: plugins/rssfeed/rssfeedwidget.ui:293 plugins/rssfeed/rssfeedwidget.ui:494
 #, no-c-format
 msgid "&Title"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:323
+#: plugins/rssfeed/rssfeedwidget.ui:317
 #, no-c-format
 msgid "Keep Articles (days)"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:347 plugins/rssfeed/rssfeedwidget.ui:522
+#: plugins/rssfeed/rssfeedwidget.ui:341 plugins/rssfeed/rssfeedwidget.ui:510
 #, no-c-format
 msgid "&Active"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:362
+#: plugins/rssfeed/rssfeedwidget.ui:356
 #, fuzzy, no-c-format
 msgid "Filters"
 msgstr "IPFilter:"
 
-#: plugins/rssfeed/rssfeedwidget.ui:389
+#: plugins/rssfeed/rssfeedwidget.ui:383
 #, fuzzy, no-c-format
 msgid "Accept Filters"
 msgstr "Všetky súbory"
 
-#: plugins/rssfeed/rssfeedwidget.ui:440
+#: plugins/rssfeed/rssfeedwidget.ui:431
 #, no-c-format
 msgid "Reject Filters"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:557
+#: plugins/rssfeed/rssfeedwidget.ui:545
 #, no-c-format
 msgid "Regular Expressions"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:587
+#: plugins/rssfeed/rssfeedwidget.ui:575
 #, no-c-format
 msgid "Treat as &Series"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:624
+#: plugins/rssfeed/rssfeedwidget.ui:612
 #, fuzzy, no-c-format
 msgid "Process"
 msgstr "Priebeh"
 
-#: plugins/rssfeed/rssfeedwidget.ui:643
+#: plugins/rssfeed/rssfeedwidget.ui:628
 #, no-c-format
 msgid "Series Criteria"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:679
+#: plugins/rssfeed/rssfeedwidget.ui:664
 #, no-c-format
 msgid "Match Without Episode"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:713
+#: plugins/rssfeed/rssfeedwidget.ui:695
 #, no-c-format
 msgid "Max Episode"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:739
+#: plugins/rssfeed/rssfeedwidget.ui:721
 #, fuzzy, no-c-format
 msgid "Max Season"
 msgstr "Max ratio:"
 
-#: plugins/rssfeed/rssfeedwidget.ui:758
+#: plugins/rssfeed/rssfeedwidget.ui:740
 #, no-c-format
 msgid "Min Season"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:782
+#: plugins/rssfeed/rssfeedwidget.ui:764
 #, no-c-format
 msgid "Min Episode"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:814
+#: plugins/rssfeed/rssfeedwidget.ui:796
 #, no-c-format
 msgid "Test te&xt"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:840
+#: plugins/rssfeed/rssfeedwidget.ui:822
 #, fuzzy, no-c-format
 msgid "Te&st"
 msgstr "Test"
 
-#: plugins/rssfeed/rssfeedwidget.ui:858
+#: plugins/rssfeed/rssfeedwidget.ui:840
 #, fuzzy, no-c-format
 msgid "Filter Matches"
 msgstr "Cesta k priečinku1"
@@ -3954,78 +3954,62 @@ msgstr "Nastavenia Priečinku vyhľadávania"
 msgid "Scan folder &1"
 msgstr "Prehľadať priečinok %1"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:38 plugins/scheduler/bwspage.ui:233
-#, no-c-format
-msgid "Alt+1"
-msgstr "Alt+1"
-
-#: plugins/scanfolder/sfprefwidgetbase.ui:46
+#: plugins/scanfolder/sfprefwidgetbase.ui:43
 #, no-c-format
 msgid "Scan folder &2"
 msgstr "Prehľadať priečinok %1"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:49 plugins/scheduler/bwspage.ui:209
-#: plugins/scheduler/bwspage.ui:378
-#, no-c-format
-msgid "Alt+2"
-msgstr "Alt+2"
-
-#: plugins/scanfolder/sfprefwidgetbase.ui:57
+#: plugins/scanfolder/sfprefwidgetbase.ui:51
 #, no-c-format
 msgid "Scan folder &3"
 msgstr "Prehľadať priečinok %1"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:60 plugins/scheduler/bwspage.ui:198
-#, no-c-format
-msgid "Alt+3"
-msgstr "Alt+3"
-
-#: plugins/scanfolder/sfprefwidgetbase.ui:81
+#: plugins/scanfolder/sfprefwidgetbase.ui:72
 #, no-c-format
 msgid "Move to \"loaded\" directory &after loading"
 msgstr "Presunúť do adresára \"načítané\" po &načítaní"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:84
+#: plugins/scanfolder/sfprefwidgetbase.ui:75
 #, no-c-format
 msgid "Move torrent to \"loaded\" directory after loading it"
 msgstr "Presunúť torrent do adresára \"načítané\" po &načítaní"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:92
+#: plugins/scanfolder/sfprefwidgetbase.ui:83
 #, no-c-format
 msgid "Open torrents silentl&y"
 msgstr "Otvoriť torrenty poti&chu"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:95
+#: plugins/scanfolder/sfprefwidgetbase.ui:86
 #, fuzzy, no-c-format
 msgid "Do not show 'Select files to download' dialog"
 msgstr "Nezobrazovať dialóg 'Vyberanie súborov na stiahnutie'"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:103
+#: plugins/scanfolder/sfprefwidgetbase.ui:94
 #, no-c-format
 msgid "Delete after loadin&g"
 msgstr "Zmazať po načí&taní"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:106
+#: plugins/scanfolder/sfprefwidgetbase.ui:97
 #, no-c-format
 msgid "Deletes torrent after loading"
 msgstr "Zmaže torrent po načítaní"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:116
+#: plugins/scanfolder/sfprefwidgetbase.ui:107
 #, no-c-format
 msgid "Folders to scan"
 msgstr "Priečinky na vyhľadávanie"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:151
+#: plugins/scanfolder/sfprefwidgetbase.ui:142
 #, no-c-format
 msgid "Folder 1:"
 msgstr "Priečinok 1:"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:162
+#: plugins/scanfolder/sfprefwidgetbase.ui:153
 #, no-c-format
 msgid "Folder 2:"
 msgstr "Priečinok 2:"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:173
+#: plugins/scanfolder/sfprefwidgetbase.ui:164
 #, no-c-format
 msgid "Folder 3:"
 msgstr "Priečinok 3:"
@@ -4045,12 +4029,12 @@ msgstr "Kategória ľavého kliknutia"
 msgid "Categor&y 1"
 msgstr "Kategó&ria 1"
 
-#: plugins/scheduler/bwspage.ui:157 plugins/scheduler/bwspage.ui:329
+#: plugins/scheduler/bwspage.ui:157 plugins/scheduler/bwspage.ui:320
 #, no-c-format
 msgid "T&urn off"
 msgstr "V&ypnúť"
 
-#: plugins/scheduler/bwspage.ui:165 plugins/scheduler/bwspage.ui:337
+#: plugins/scheduler/bwspage.ui:165 plugins/scheduler/bwspage.ui:328
 #, no-c-format
 msgid "&Normal"
 msgstr "&Normálna"
@@ -4060,85 +4044,85 @@ msgstr "&Normálna"
 msgid "Category &3"
 msgstr "Kategória &3"
 
-#: plugins/scheduler/bwspage.ui:206 plugins/scheduler/bwspage.ui:375
+#: plugins/scheduler/bwspage.ui:203 plugins/scheduler/bwspage.ui:366
 #, no-c-format
 msgid "Category &2"
 msgstr "Kategória &2"
 
-#: plugins/scheduler/bwspage.ui:219
+#: plugins/scheduler/bwspage.ui:213
 #, no-c-format
 msgid "Right click category"
 msgstr "Kategória pravého kliknutia"
 
-#: plugins/scheduler/bwspage.ui:230
+#: plugins/scheduler/bwspage.ui:224
 #, no-c-format
 msgid "Category &1"
 msgstr "Kategória &1"
 
-#: plugins/scheduler/bwspage.ui:367
+#: plugins/scheduler/bwspage.ui:358
 #, no-c-format
 msgid "&Category 3"
 msgstr "&Kategória 3"
 
-#: plugins/scheduler/bwspage.ui:390
+#: plugins/scheduler/bwspage.ui:378
 #, no-c-format
 msgid "Categories"
 msgstr "Kategórie"
 
-#: plugins/scheduler/bwspage.ui:401
+#: plugins/scheduler/bwspage.ui:389
 #, no-c-format
 msgid "<b>1. Category</b>"
 msgstr "<b>1. Kategória</b>"
 
-#: plugins/scheduler/bwspage.ui:409
+#: plugins/scheduler/bwspage.ui:397
 #, no-c-format
 msgid "<b>3. Category</b>"
 msgstr "<b>3. Kategória</b>"
 
-#: plugins/scheduler/bwspage.ui:425 plugins/scheduler/bwspage.ui:475
-#: plugins/scheduler/bwspage.ui:525
+#: plugins/scheduler/bwspage.ui:413 plugins/scheduler/bwspage.ui:463
+#: plugins/scheduler/bwspage.ui:513
 #, no-c-format
 msgid "download:"
 msgstr "sťahovanie:"
 
-#: plugins/scheduler/bwspage.ui:441 plugins/scheduler/bwspage.ui:491
-#: plugins/scheduler/bwspage.ui:541
+#: plugins/scheduler/bwspage.ui:429 plugins/scheduler/bwspage.ui:479
+#: plugins/scheduler/bwspage.ui:529
 #, no-c-format
 msgid "upload:"
 msgstr "odosielanie:"
 
-#: plugins/scheduler/bwspage.ui:457 plugins/scheduler/bwspage.ui:507
-#: plugins/scheduler/bwspage.ui:557
+#: plugins/scheduler/bwspage.ui:445 plugins/scheduler/bwspage.ui:495
+#: plugins/scheduler/bwspage.ui:545
 #, no-c-format
 msgid "KB/s *"
 msgstr "kB/s *"
 
-#: plugins/scheduler/bwspage.ui:567
+#: plugins/scheduler/bwspage.ui:555
 #, no-c-format
 msgid "<b>2. Category</b>"
 msgstr "<b>2. Kategória</b>"
 
-#: plugins/scheduler/bwspage.ui:626
+#: plugins/scheduler/bwspage.ui:614
 #, no-c-format
 msgid "* zero means no limit"
 msgstr "* nula znamená bez limitu"
 
-#: plugins/scheduler/bwspage.ui:672
+#: plugins/scheduler/bwspage.ui:660
 #, no-c-format
 msgid "Save to file"
 msgstr "Uložiť do súboru"
 
-#: plugins/scheduler/bwspage.ui:680
+#: plugins/scheduler/bwspage.ui:668
 #, no-c-format
 msgid "&Load from file"
 msgstr "&Načítať zo súboru"
 
-#: plugins/scheduler/bwspage.ui:688
+#: plugins/scheduler/bwspage.ui:676
 #, no-c-format
 msgid "Reset schedule"
 msgstr "Zrušiť plán"
 
-#: plugins/scheduler/bwspage.ui:751
+#: plugins/scheduler/bwspage.ui:739
 #, no-c-format
 msgid "O&k"
 msgstr "O&k"
@@ -4218,47 +4202,47 @@ msgstr ""
 msgid "Open searches in external browser"
 msgstr ""
 
-#: plugins/search/searchpref.ui:79
+#: plugins/search/searchpref.ui:76
 #, fuzzy, no-c-format
 msgid "Custom browser path:"
 msgstr "Vlastná IP"
 
-#: plugins/search/searchpref.ui:116
+#: plugins/search/searchpref.ui:110
 #, no-c-format
 msgid "Search Engines"
 msgstr "Vyhľadávacie stroje"
 
-#: plugins/search/searchpref.ui:143
+#: plugins/search/searchpref.ui:137
 #, no-c-format
 msgid "Search engine name:"
 msgstr "Meno vyhľadávacieho stroja:"
 
-#: plugins/search/searchpref.ui:187
+#: plugins/search/searchpref.ui:181
 #, no-c-format
 msgid "&Add"
 msgstr "&Pridať"
 
-#: plugins/search/searchpref.ui:195
+#: plugins/search/searchpref.ui:189
 #, no-c-format
 msgid "Engines"
 msgstr "Stroje"
 
-#: plugins/search/searchpref.ui:206
+#: plugins/search/searchpref.ui:200
 #, no-c-format
 msgid "URL"
 msgstr "URL"
 
-#: plugins/search/searchpref.ui:257
+#: plugins/search/searchpref.ui:251
 #, no-c-format
 msgid "R&emove All"
 msgstr "O&dobrať všetky"
 
-#: plugins/search/searchpref.ui:282
+#: plugins/search/searchpref.ui:276
 #, no-c-format
 msgid "Add Defau&lt"
 msgstr "Pridať pred&volený"
 
-#: plugins/search/searchpref.ui:290
+#: plugins/search/searchpref.ui:284
 #, fuzzy, no-c-format
 msgid "Update From Internet"
 msgstr "Obnoviť z internetu"
@@ -4535,6 +4519,15 @@ msgstr ""
 #, no-c-format
 msgid "Php executable path:"
 msgstr ""
+
+#~ msgid "Alt+1"
+#~ msgstr "Alt+1"
+
+#~ msgid "Alt+2"
+#~ msgstr "Alt+2"
+
+#~ msgid "Alt+3"
+#~ msgstr "Alt+3"
 
 #, fuzzy
 #~ msgid "Remove"

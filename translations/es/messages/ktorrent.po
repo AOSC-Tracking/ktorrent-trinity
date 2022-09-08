@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
-"POT-Creation-Date: 2020-05-11 04:28+0200\n"
+"POT-Creation-Date: 2022-09-08 18:28+0000\n"
 "PO-Revision-Date: 2008-09-09 14:37+0200\n"
 "Last-Translator: Enrique Matias Sanchez <cronopios@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -538,7 +538,7 @@ msgstr "Fuentes de compañeros adicionales"
 msgid "Torrent Peer Sources:"
 msgstr "Fuentes de compañeros del torrent:"
 
-#: apps/ktorrent/generalpref.ui:85 apps/ktorrent/ktorrentviewmenu.cpp:66
+#: apps/ktorrent/generalpref.ui:82 apps/ktorrent/ktorrentviewmenu.cpp:66
 #: plugins/infowidget/peerview.cpp:221 plugins/stats/sprefwgt.ui:456
 #: plugins/stats/statsconwgt.ui:40
 #, no-c-format
@@ -1458,7 +1458,7 @@ msgstr ""
 "\"excluded_color\">&nbsp; - Bloques excluidos"
 
 #: apps/ktorrent/fileselectdlgbase.ui:160 plugins/infowidget/fileview.cpp:49
-#: plugins/rssfeed/rssfeedwidget.ui:170 plugins/rssfeed/rssfeedwidget.ui:897
+#: plugins/rssfeed/rssfeedwidget.ui:170 plugins/rssfeed/rssfeedwidget.ui:879
 #: plugins/stats/sprefwgt.ui:328 plugins/stats/statsspdwgt.ui:32
 #, no-c-format
 msgid "Download"
@@ -1526,7 +1526,7 @@ msgstr "Bloques"
 
 #: apps/ktorrent/torrentcreatordlgbase.ui:275
 #: plugins/infowidget/infowidgetplugin.cpp:214
-#: plugins/infowidget/trackerviewbase.ui:111
+#: plugins/infowidget/trackerviewbase.ui:105
 #, no-c-format
 msgid "Trackers"
 msgstr "Sistemas de localización"
@@ -2155,7 +2155,7 @@ msgid "127.0.0.1"
 msgstr "127.0.0.1"
 
 #: apps/ktorrent/addpeerwidgetbase.ui:51 apps/ktorrent/downloadpref.ui:338
-#: apps/ktorrent/torrentcreatordlgbase.ui:346
+#: apps/ktorrent/torrentcreatordlgbase.ui:343
 #: plugins/webinterface/webinterfacepref.ui:60
 #, no-c-format
 msgid "Port:"
@@ -2542,7 +2542,7 @@ msgstr "Cifrado"
 msgid "Use protocol encryption"
 msgstr "Usar cifrado del protocolo"
 
-#: apps/ktorrent/generalpref.ui:64
+#: apps/ktorrent/generalpref.ui:61
 #, no-c-format
 msgid ""
 "Protocol encryption is used to prevent ISP's from slowing down bittorrent "
@@ -2551,12 +2551,12 @@ msgstr ""
 "El cifrado del protocolo se utiliza para evitar que los ISP ralenticen las "
 "conexiones bittorrent."
 
-#: apps/ktorrent/generalpref.ui:72 libktorrent/ktorrent.kcfg:162
+#: apps/ktorrent/generalpref.ui:69 libktorrent/ktorrent.kcfg:162
 #, no-c-format
 msgid "Allow unencrypted connections"
 msgstr "Permitir conexiones no cifradas"
 
-#: apps/ktorrent/generalpref.ui:75
+#: apps/ktorrent/generalpref.ui:72
 #, no-c-format
 msgid ""
 "If unchecked, you'll be able to connect only to clients supporting "
@@ -2564,7 +2564,7 @@ msgid ""
 msgstr ""
 "Si no está marcado, sólo podrá conectarse a clientes que admitan cifrado."
 
-#: apps/ktorrent/generalpref.ui:88
+#: apps/ktorrent/generalpref.ui:85
 #, no-c-format
 msgid ""
 "<b>D</b>istributed <b>H</b>ash <b>T</b>able protocol.<br>Decentralized peers "
@@ -2574,83 +2574,83 @@ msgstr ""
 "intercambio entre compañeros descentralizado. Vea más información en el "
 "manual."
 
-#: apps/ktorrent/generalpref.ui:99
+#: apps/ktorrent/generalpref.ui:96
 #, no-c-format
 msgid "&Use DHT to get additional peers"
 msgstr "&Usar DHT para obtener compañeros adicionales"
 
-#: apps/ktorrent/generalpref.ui:118
+#: apps/ktorrent/generalpref.ui:115
 #, no-c-format
 msgid "UDP port for DHT communication:"
 msgstr "Puerto UDP para la comunicación de DHT:"
 
-#: apps/ktorrent/generalpref.ui:161
+#: apps/ktorrent/generalpref.ui:158
 #, no-c-format
 msgid "Custom IP"
 msgstr "IP personalizada"
 
-#: apps/ktorrent/generalpref.ui:172
+#: apps/ktorrent/generalpref.ui:169
 #, no-c-format
 msgid "Se&nd the tracker a custom IP address or hostname"
 msgstr ""
 "E&nviar al localizador una dirección IP o nombre de máquina personalizado"
 
-#: apps/ktorrent/generalpref.ui:188
+#: apps/ktorrent/generalpref.ui:185
 #, no-c-format
 msgid "Custom IP address or hostname:"
 msgstr "Dirección IP o nombre de máquina personalizado:"
 
-#: apps/ktorrent/generalpref.ui:205
+#: apps/ktorrent/generalpref.ui:202
 #, no-c-format
 msgid "System Tray Icon"
 msgstr "Icono de la bandeja del sistema"
 
-#: apps/ktorrent/generalpref.ui:216
+#: apps/ktorrent/generalpref.ui:213
 #, no-c-format
 msgid "Show s&ystem tray icon"
 msgstr "Mostrar el icono en la bandeja del &sistema"
 
-#: apps/ktorrent/generalpref.ui:224
+#: apps/ktorrent/generalpref.ui:221
 #, no-c-format
 msgid "Show speed &bar in tray icon"
 msgstr "Mostrar la &barra de velocidad en la bandeja del sistema"
 
-#: apps/ktorrent/generalpref.ui:232
+#: apps/ktorrent/generalpref.ui:229
 #, no-c-format
 msgid "Show system tray popup messages"
 msgstr "Mostrar mensajes emergentes en la bandeja del sistema"
 
-#: apps/ktorrent/generalpref.ui:251
+#: apps/ktorrent/generalpref.ui:245
 #, no-c-format
 msgid "Upload bandwidth (in KB/sec):"
 msgstr "Ancho de banda de envío (en kB/s):"
 
-#: apps/ktorrent/generalpref.ui:276
+#: apps/ktorrent/generalpref.ui:270
 #, no-c-format
 msgid "Download bandwidth (in KB/sec):"
 msgstr "Ancho de banda de descarga (en kB/s):"
 
-#: apps/ktorrent/generalpref.ui:305
+#: apps/ktorrent/generalpref.ui:299
 #, no-c-format
 msgid "Folders"
 msgstr "Carpetas"
 
-#: apps/ktorrent/generalpref.ui:324
+#: apps/ktorrent/generalpref.ui:318
 #, no-c-format
 msgid "Folder to store temporary files:"
 msgstr "Carpeta en la que guardar los ficheros temporales:"
 
-#: apps/ktorrent/generalpref.ui:342
+#: apps/ktorrent/generalpref.ui:336
 #, no-c-format
 msgid "Move completed downloads to:"
 msgstr "Mover las descargas finalizadas a:"
 
-#: apps/ktorrent/generalpref.ui:353
+#: apps/ktorrent/generalpref.ui:344
 #, no-c-format
 msgid "&Automatically save downloads to:"
 msgstr "Guardar &automáticamente las descargas en:"
 
-#: apps/ktorrent/generalpref.ui:395
+#: apps/ktorrent/generalpref.ui:386
 #, no-c-format
 msgid "Copy .torrent files to:"
 msgstr "Copiar los ficheros .torrent a:"
@@ -2684,32 +2684,32 @@ msgstr "Dirección IP del compañero"
 msgid "Add peer:"
 msgstr "Añadir un compañero:"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:134
+#: apps/ktorrent/ipfilterwidgetbase.ui:131
 #, no-c-format
 msgid "Adds a peer to blacklist"
 msgstr "Añade un compañero a la lista negra"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:168
+#: apps/ktorrent/ipfilterwidgetbase.ui:162
 #, no-c-format
 msgid "Removes selected peer from blacklist"
 msgstr "Elimina el compañero seleccionado de la lista negra"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:176
+#: apps/ktorrent/ipfilterwidgetbase.ui:170
 #, no-c-format
 msgid "C&lear"
 msgstr "&Limpiar"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:182
+#: apps/ktorrent/ipfilterwidgetbase.ui:176
 #, no-c-format
 msgid "Clears this list"
 msgstr "Limpia esta lista"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:218
+#: apps/ktorrent/ipfilterwidgetbase.ui:212
 #, no-c-format
 msgid "Save &As..."
 msgstr "Gu&ardar como..."
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:224
+#: apps/ktorrent/ipfilterwidgetbase.ui:218
 #, no-c-format
 msgid "Save this blacklist to use with KTorrent IPFilter plugin"
 msgstr ""
@@ -2726,8 +2726,8 @@ msgstr "Barra de descargas"
 msgid "Paste URL"
 msgstr "Pegar URL"
 
-#: apps/ktorrent/pastedlgbase.ui:52 plugins/infowidget/trackerviewbase.ui:151
-#: plugins/search/searchpref.ui:166
+#: apps/ktorrent/pastedlgbase.ui:52 plugins/infowidget/trackerviewbase.ui:145
+#: plugins/search/searchpref.ui:160
 #, no-c-format
 msgid "URL:"
 msgstr "URL:"
@@ -2749,7 +2749,7 @@ msgid "KT Queue Dialog"
 msgstr "Ventana de cola de KT"
 
 #: apps/ktorrent/queuedlg.ui:69 apps/ktorrent/queuedlg.ui:285
-#: plugins/infowidget/trackerviewbase.ui:203
+#: plugins/infowidget/trackerviewbase.ui:197
 #, no-c-format
 msgid "Status:"
 msgstr "Estado:"
@@ -2812,17 +2812,17 @@ msgstr "&Bajar"
 msgid "Move to top"
 msgstr "Mover arriba del todo"
 
-#: apps/ktorrent/queuedlg.ui:530
+#: apps/ktorrent/queuedlg.ui:527
 #, no-c-format
 msgid "Move to &bottom"
 msgstr "Mover a&bajo del todo"
 
-#: apps/ktorrent/queuedlg.ui:555
+#: apps/ktorrent/queuedlg.ui:552
 #, no-c-format
 msgid "&QM Controlled"
 msgstr "Controlado por el &GC"
 
-#: apps/ktorrent/queuedlg.ui:563
+#: apps/ktorrent/queuedlg.ui:560
 #, no-c-format
 msgid "&User Controlled"
 msgstr "Controlado por el &usuario"
@@ -2979,23 +2979,23 @@ msgstr "Ca&ncelar"
 msgid "DHT nodes"
 msgstr "Nodos DHT"
 
-#: apps/ktorrent/torrentcreatordlgbase.ui:333
+#: apps/ktorrent/torrentcreatordlgbase.ui:330
 #, no-c-format
 msgid "Node:"
 msgstr "Nodo:"
 
-#: apps/ktorrent/torrentcreatordlgbase.ui:385
+#: apps/ktorrent/torrentcreatordlgbase.ui:382
 #, no-c-format
 msgid "IP or hostname"
 msgstr "IP o nombre de máquina"
 
-#: apps/ktorrent/torrentcreatordlgbase.ui:396 libktorrent/ktorrent.kcfg:54
+#: apps/ktorrent/torrentcreatordlgbase.ui:393 libktorrent/ktorrent.kcfg:54
 #: libktorrent/ktorrent.kcfg:60
 #, no-c-format
 msgid "Port"
 msgstr "Puerto"
 
-#: apps/ktorrent/torrentcreatordlgbase.ui:437
+#: apps/ktorrent/torrentcreatordlgbase.ui:434
 #, no-c-format
 msgid ""
 "NOTE: Some known good DHT nodes are already inserted. You should probably "
@@ -3270,12 +3270,12 @@ msgstr "Compañeros asignados"
 msgid "Show list of peers"
 msgstr "Mostrar lista de compañeros"
 
-#: plugins/infowidget/iwpref.ui:35
+#: plugins/infowidget/iwpref.ui:32
 #, no-c-format
 msgid "Show list of chunks currentl&y downloading"
 msgstr "Mostrar la lista de bloques descargándose &actualmente"
 
-#: plugins/infowidget/iwpref.ui:60
+#: plugins/infowidget/iwpref.ui:57
 #, no-c-format
 msgid "Show list of trackers"
 msgstr "Mostrar lista de localizadores"
@@ -3316,7 +3316,7 @@ msgid "Average Up Speed:"
 msgstr "Velocidad media de envío:"
 
 #: plugins/infowidget/statustabbase.ui:195
-#: plugins/infowidget/trackerviewbase.ui:252
+#: plugins/infowidget/trackerviewbase.ui:246
 #, no-c-format
 msgid "Next update in:"
 msgstr "Siguiente actualización en:"
@@ -3367,12 +3367,12 @@ msgstr "Horas"
 msgid "Ratio limit:"
 msgstr "Límite de proporciones:"
 
-#: plugins/infowidget/statustabbase.ui:549
+#: plugins/infowidget/statustabbase.ui:546
 #, no-c-format
 msgid "Limit works only in seed mode"
 msgstr "El límite sólo funciona en el modo semilla"
 
-#: plugins/infowidget/statustabbase.ui:557
+#: plugins/infowidget/statustabbase.ui:554
 #, no-c-format
 msgid "Time &limit:"
 msgstr "&Límite de tiempo:"
@@ -3397,12 +3397,12 @@ msgstr "Añadir un lo&calizador"
 msgid "Remove Tracker"
 msgstr "Eliminar el localizador"
 
-#: plugins/infowidget/trackerviewbase.ui:75
+#: plugins/infowidget/trackerviewbase.ui:72
 #, no-c-format
 msgid "Ch&ange Tracker"
 msgstr "C&ambiar el localizador"
 
-#: plugins/infowidget/trackerviewbase.ui:100
+#: plugins/infowidget/trackerviewbase.ui:97
 #, no-c-format
 msgid "Restore Defaults"
 msgstr "Restaurar los valores predefinidos"
@@ -3433,22 +3433,22 @@ msgstr "Seleccione el fichero del filtro de PeerGuardian "
 msgid "Use PeerGuardian filter?"
 msgstr "¿Usar el filtro de PeerGuardian?"
 
-#: plugins/ipfilter/ipblockingpref.ui:77
+#: plugins/ipfilter/ipblockingpref.ui:74
 #, no-c-format
 msgid "IP filter file:"
 msgstr "Fichero de filtro de IP:"
 
-#: plugins/ipfilter/ipblockingpref.ui:85
+#: plugins/ipfilter/ipblockingpref.ui:82
 #, no-c-format
 msgid "http://www.bluetack.co.uk/modules.php?name=Downloads&d_op=getit&lid=8"
 msgstr "http://www.bluetack.co.uk/modules.php?name=Downloads&d_op=getit&lid=8"
 
-#: plugins/ipfilter/ipblockingpref.ui:123
+#: plugins/ipfilter/ipblockingpref.ui:120
 #, no-c-format
 msgid "Dow&nload/Convert"
 msgstr "&Descargar/Convertir"
 
-#: plugins/ipfilter/ipblockingpref.ui:133
+#: plugins/ipfilter/ipblockingpref.ui:130
 #, no-c-format
 msgid ""
 "Download PeerGuardian filter from bluetack.co.uk or blocklist.org.\n"
@@ -3748,8 +3748,8 @@ msgstr "Fuentes"
 msgid "De&lete"
 msgstr "&Borrar"
 
-#: plugins/rssfeed/rssfeedwidget.ui:86 plugins/rssfeed/rssfeedwidget.ui:419
-#: plugins/rssfeed/rssfeedwidget.ui:470
+#: plugins/rssfeed/rssfeedwidget.ui:86 plugins/rssfeed/rssfeedwidget.ui:410
+#: plugins/rssfeed/rssfeedwidget.ui:458
 #, no-c-format
 msgid "&New"
 msgstr "&Nuevo"
@@ -3764,107 +3764,107 @@ msgstr "&URL"
 msgid "Articles"
 msgstr "Artículos"
 
-#: plugins/rssfeed/rssfeedwidget.ui:216
+#: plugins/rssfeed/rssfeedwidget.ui:213
 #, no-c-format
 msgid "Auto&refresh"
 msgstr "Actualiza&r automáticamente"
 
-#: plugins/rssfeed/rssfeedwidget.ui:242
+#: plugins/rssfeed/rssfeedwidget.ui:239
 #, no-c-format
 msgid "I&gnore TTL"
 msgstr "I&gnorar el TTL"
 
-#: plugins/rssfeed/rssfeedwidget.ui:270
+#: plugins/rssfeed/rssfeedwidget.ui:267
 #, no-c-format
 msgid "Refresh"
 msgstr "Actualizar"
 
-#: plugins/rssfeed/rssfeedwidget.ui:299 plugins/rssfeed/rssfeedwidget.ui:506
+#: plugins/rssfeed/rssfeedwidget.ui:293 plugins/rssfeed/rssfeedwidget.ui:494
 #, no-c-format
 msgid "&Title"
 msgstr "&Título"
 
-#: plugins/rssfeed/rssfeedwidget.ui:323
+#: plugins/rssfeed/rssfeedwidget.ui:317
 #, no-c-format
 msgid "Keep Articles (days)"
 msgstr "Mantener los artículos (días)"
 
-#: plugins/rssfeed/rssfeedwidget.ui:347 plugins/rssfeed/rssfeedwidget.ui:522
+#: plugins/rssfeed/rssfeedwidget.ui:341 plugins/rssfeed/rssfeedwidget.ui:510
 #, no-c-format
 msgid "&Active"
 msgstr "&Activo"
 
-#: plugins/rssfeed/rssfeedwidget.ui:362
+#: plugins/rssfeed/rssfeedwidget.ui:356
 #, no-c-format
 msgid "Filters"
 msgstr "Filtros"
 
-#: plugins/rssfeed/rssfeedwidget.ui:389
+#: plugins/rssfeed/rssfeedwidget.ui:383
 #, no-c-format
 msgid "Accept Filters"
 msgstr "Aceptar los filtros"
 
-#: plugins/rssfeed/rssfeedwidget.ui:440
+#: plugins/rssfeed/rssfeedwidget.ui:431
 #, no-c-format
 msgid "Reject Filters"
 msgstr "Rechazar los filtros"
 
-#: plugins/rssfeed/rssfeedwidget.ui:557
+#: plugins/rssfeed/rssfeedwidget.ui:545
 #, no-c-format
 msgid "Regular Expressions"
 msgstr "Expresiones regulares"
 
-#: plugins/rssfeed/rssfeedwidget.ui:587
+#: plugins/rssfeed/rssfeedwidget.ui:575
 #, no-c-format
 msgid "Treat as &Series"
 msgstr "Tratar como &serie"
 
-#: plugins/rssfeed/rssfeedwidget.ui:624
+#: plugins/rssfeed/rssfeedwidget.ui:612
 #, no-c-format
 msgid "Process"
 msgstr "Proceso"
 
-#: plugins/rssfeed/rssfeedwidget.ui:643
+#: plugins/rssfeed/rssfeedwidget.ui:628
 #, no-c-format
 msgid "Series Criteria"
 msgstr "Criterio de la serie"
 
-#: plugins/rssfeed/rssfeedwidget.ui:679
+#: plugins/rssfeed/rssfeedwidget.ui:664
 #, no-c-format
 msgid "Match Without Episode"
 msgstr "Coincidencia sin episodio"
 
-#: plugins/rssfeed/rssfeedwidget.ui:713
+#: plugins/rssfeed/rssfeedwidget.ui:695
 #, no-c-format
 msgid "Max Episode"
 msgstr "Episodio mínimo"
 
-#: plugins/rssfeed/rssfeedwidget.ui:739
+#: plugins/rssfeed/rssfeedwidget.ui:721
 #, no-c-format
 msgid "Max Season"
 msgstr "Temporada máxima"
 
-#: plugins/rssfeed/rssfeedwidget.ui:758
+#: plugins/rssfeed/rssfeedwidget.ui:740
 #, no-c-format
 msgid "Min Season"
 msgstr "Temporada mínima"
 
-#: plugins/rssfeed/rssfeedwidget.ui:782
+#: plugins/rssfeed/rssfeedwidget.ui:764
 #, no-c-format
 msgid "Min Episode"
 msgstr "Episodio mínimo"
 
-#: plugins/rssfeed/rssfeedwidget.ui:814
+#: plugins/rssfeed/rssfeedwidget.ui:796
 #, no-c-format
 msgid "Test te&xt"
 msgstr "Probar el te&xto"
 
-#: plugins/rssfeed/rssfeedwidget.ui:840
+#: plugins/rssfeed/rssfeedwidget.ui:822
 #, no-c-format
 msgid "Te&st"
 msgstr "&Probar"
 
-#: plugins/rssfeed/rssfeedwidget.ui:858
+#: plugins/rssfeed/rssfeedwidget.ui:840
 #, no-c-format
 msgid "Filter Matches"
 msgstr "Coincidencias del filtro"
@@ -3924,78 +3924,62 @@ msgstr "Preferencias de la búsqueda de carpetas"
 msgid "Scan folder &1"
 msgstr "Buscar la carpeta &1"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:38 plugins/scheduler/bwspage.ui:233
-#, no-c-format
-msgid "Alt+1"
-msgstr "Alt+1"
-
-#: plugins/scanfolder/sfprefwidgetbase.ui:46
+#: plugins/scanfolder/sfprefwidgetbase.ui:43
 #, no-c-format
 msgid "Scan folder &2"
 msgstr "Buscar la carpeta &2"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:49 plugins/scheduler/bwspage.ui:209
-#: plugins/scheduler/bwspage.ui:378
-#, no-c-format
-msgid "Alt+2"
-msgstr "Alt+2"
-
-#: plugins/scanfolder/sfprefwidgetbase.ui:57
+#: plugins/scanfolder/sfprefwidgetbase.ui:51
 #, no-c-format
 msgid "Scan folder &3"
 msgstr "Buscar la carpeta &3"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:60 plugins/scheduler/bwspage.ui:198
-#, no-c-format
-msgid "Alt+3"
-msgstr "Alt+3"
-
-#: plugins/scanfolder/sfprefwidgetbase.ui:81
+#: plugins/scanfolder/sfprefwidgetbase.ui:72
 #, no-c-format
 msgid "Move to \"loaded\" directory &after loading"
 msgstr "Mover al directorio «loaded» tr&as la carga"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:84
+#: plugins/scanfolder/sfprefwidgetbase.ui:75
 #, no-c-format
 msgid "Move torrent to \"loaded\" directory after loading it"
 msgstr "Mover el torrent al directorio «loaded» después de cargarlo"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:92
+#: plugins/scanfolder/sfprefwidgetbase.ui:83
 #, no-c-format
 msgid "Open torrents silentl&y"
 msgstr "Abrir los torrents &silenciosamente"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:95
+#: plugins/scanfolder/sfprefwidgetbase.ui:86
 #, no-c-format
 msgid "Do not show 'Select files to download' dialog"
 msgstr "No mostrar la ventana «Seleccionar los ficheros a descargar»"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:103
+#: plugins/scanfolder/sfprefwidgetbase.ui:94
 #, no-c-format
 msgid "Delete after loadin&g"
 msgstr "Borrar tras la &carga"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:106
+#: plugins/scanfolder/sfprefwidgetbase.ui:97
 #, no-c-format
 msgid "Deletes torrent after loading"
 msgstr "Borra el torrent después de la carga"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:116
+#: plugins/scanfolder/sfprefwidgetbase.ui:107
 #, no-c-format
 msgid "Folders to scan"
 msgstr "Carpetas a buscar"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:151
+#: plugins/scanfolder/sfprefwidgetbase.ui:142
 #, no-c-format
 msgid "Folder 1:"
 msgstr "Carpeta 1:"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:162
+#: plugins/scanfolder/sfprefwidgetbase.ui:153
 #, no-c-format
 msgid "Folder 2:"
 msgstr "Carpeta 2:"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:173
+#: plugins/scanfolder/sfprefwidgetbase.ui:164
 #, no-c-format
 msgid "Folder 3:"
 msgstr "Carpeta 3:"
@@ -4015,12 +3999,12 @@ msgstr "Categoría del botón izquierdo"
 msgid "Categor&y 1"
 msgstr "&Categoría 1"
 
-#: plugins/scheduler/bwspage.ui:157 plugins/scheduler/bwspage.ui:329
+#: plugins/scheduler/bwspage.ui:157 plugins/scheduler/bwspage.ui:320
 #, no-c-format
 msgid "T&urn off"
 msgstr "&Desconectar"
 
-#: plugins/scheduler/bwspage.ui:165 plugins/scheduler/bwspage.ui:337
+#: plugins/scheduler/bwspage.ui:165 plugins/scheduler/bwspage.ui:328
 #, no-c-format
 msgid "&Normal"
 msgstr "&Normal"
@@ -4030,85 +4014,85 @@ msgstr "&Normal"
 msgid "Category &3"
 msgstr "Categoría &3"
 
-#: plugins/scheduler/bwspage.ui:206 plugins/scheduler/bwspage.ui:375
+#: plugins/scheduler/bwspage.ui:203 plugins/scheduler/bwspage.ui:366
 #, no-c-format
 msgid "Category &2"
 msgstr "Categoría &2"
 
-#: plugins/scheduler/bwspage.ui:219
+#: plugins/scheduler/bwspage.ui:213
 #, no-c-format
 msgid "Right click category"
 msgstr "Categoría del botón derecho"
 
-#: plugins/scheduler/bwspage.ui:230
+#: plugins/scheduler/bwspage.ui:224
 #, no-c-format
 msgid "Category &1"
 msgstr "Categoría &1"
 
-#: plugins/scheduler/bwspage.ui:367
+#: plugins/scheduler/bwspage.ui:358
 #, no-c-format
 msgid "&Category 3"
 msgstr "&Categoría 3"
 
-#: plugins/scheduler/bwspage.ui:390
+#: plugins/scheduler/bwspage.ui:378
 #, no-c-format
 msgid "Categories"
 msgstr "Categorías"
 
-#: plugins/scheduler/bwspage.ui:401
+#: plugins/scheduler/bwspage.ui:389
 #, no-c-format
 msgid "<b>1. Category</b>"
 msgstr "<b>1. Categoría</b>"
 
-#: plugins/scheduler/bwspage.ui:409
+#: plugins/scheduler/bwspage.ui:397
 #, no-c-format
 msgid "<b>3. Category</b>"
 msgstr "<b>3. Categoría</b>"
 
-#: plugins/scheduler/bwspage.ui:425 plugins/scheduler/bwspage.ui:475
-#: plugins/scheduler/bwspage.ui:525
+#: plugins/scheduler/bwspage.ui:413 plugins/scheduler/bwspage.ui:463
+#: plugins/scheduler/bwspage.ui:513
 #, no-c-format
 msgid "download:"
 msgstr "descarga:"
 
-#: plugins/scheduler/bwspage.ui:441 plugins/scheduler/bwspage.ui:491
-#: plugins/scheduler/bwspage.ui:541
+#: plugins/scheduler/bwspage.ui:429 plugins/scheduler/bwspage.ui:479
+#: plugins/scheduler/bwspage.ui:529
 #, no-c-format
 msgid "upload:"
 msgstr "envío:"
 
-#: plugins/scheduler/bwspage.ui:457 plugins/scheduler/bwspage.ui:507
-#: plugins/scheduler/bwspage.ui:557
+#: plugins/scheduler/bwspage.ui:445 plugins/scheduler/bwspage.ui:495
+#: plugins/scheduler/bwspage.ui:545
 #, no-c-format
 msgid "KB/s *"
 msgstr "kB/s *"
 
-#: plugins/scheduler/bwspage.ui:567
+#: plugins/scheduler/bwspage.ui:555
 #, no-c-format
 msgid "<b>2. Category</b>"
 msgstr "<b>2. Categoría</b>"
 
-#: plugins/scheduler/bwspage.ui:626
+#: plugins/scheduler/bwspage.ui:614
 #, no-c-format
 msgid "* zero means no limit"
 msgstr "* el cero significa ilimitado"
 
-#: plugins/scheduler/bwspage.ui:672
+#: plugins/scheduler/bwspage.ui:660
 #, no-c-format
 msgid "Save to file"
 msgstr "Guardar en un fichero"
 
-#: plugins/scheduler/bwspage.ui:680
+#: plugins/scheduler/bwspage.ui:668
 #, no-c-format
 msgid "&Load from file"
 msgstr "&Cargar de un fichero"
 
-#: plugins/scheduler/bwspage.ui:688
+#: plugins/scheduler/bwspage.ui:676
 #, no-c-format
 msgid "Reset schedule"
 msgstr "Reiniciar la planificación"
 
-#: plugins/scheduler/bwspage.ui:751
+#: plugins/scheduler/bwspage.ui:739
 #, no-c-format
 msgid "O&k"
 msgstr "&Aceptar"
@@ -4188,47 +4172,47 @@ msgstr "Navegador externo"
 msgid "Open searches in external browser"
 msgstr "Abrir las búsquedas en un navegador externo"
 
-#: plugins/search/searchpref.ui:79
+#: plugins/search/searchpref.ui:76
 #, no-c-format
 msgid "Custom browser path:"
 msgstr "Ruta al navegador personalizado:"
 
-#: plugins/search/searchpref.ui:116
+#: plugins/search/searchpref.ui:110
 #, no-c-format
 msgid "Search Engines"
 msgstr "Motores de búsqueda"
 
-#: plugins/search/searchpref.ui:143
+#: plugins/search/searchpref.ui:137
 #, no-c-format
 msgid "Search engine name:"
 msgstr "Nombre del motor de búsqueda:"
 
-#: plugins/search/searchpref.ui:187
+#: plugins/search/searchpref.ui:181
 #, no-c-format
 msgid "&Add"
 msgstr "&Añadir"
 
-#: plugins/search/searchpref.ui:195
+#: plugins/search/searchpref.ui:189
 #, no-c-format
 msgid "Engines"
 msgstr "Motores"
 
-#: plugins/search/searchpref.ui:206
+#: plugins/search/searchpref.ui:200
 #, no-c-format
 msgid "URL"
 msgstr "URL"
 
-#: plugins/search/searchpref.ui:257
+#: plugins/search/searchpref.ui:251
 #, no-c-format
 msgid "R&emove All"
 msgstr "&Eliminar todo"
 
-#: plugins/search/searchpref.ui:282
+#: plugins/search/searchpref.ui:276
 #, no-c-format
 msgid "Add Defau&lt"
 msgstr "Añadir &predeterminado"
 
-#: plugins/search/searchpref.ui:290
+#: plugins/search/searchpref.ui:284
 #, no-c-format
 msgid "Update From Internet"
 msgstr "Actualizar por Internet"
@@ -4512,6 +4496,15 @@ msgstr "Cambiar la contraseña..."
 #, no-c-format
 msgid "Php executable path:"
 msgstr "Ruta del ejecutable «php»:"
+
+#~ msgid "Alt+1"
+#~ msgstr "Alt+1"
+
+#~ msgid "Alt+2"
+#~ msgstr "Alt+2"
+
+#~ msgid "Alt+3"
+#~ msgstr "Alt+3"
 
 #, fuzzy
 #~ msgid "Remove"

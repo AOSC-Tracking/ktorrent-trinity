@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent 1.1rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-11 04:28+0200\n"
+"POT-Creation-Date: 2022-09-08 18:28+0000\n"
 "PO-Revision-Date: 2008-01-21 15:13+0800\n"
 "Last-Translator: Lie_Ex <lilith.ex@gmail.com>\n"
 "Language-Team: zh_CN <kde-china@kde.org>\n"
@@ -518,7 +518,7 @@ msgstr "额外对等点来源"
 msgid "Torrent Peer Sources:"
 msgstr "种子对等点来源："
 
-#: apps/ktorrent/generalpref.ui:85 apps/ktorrent/ktorrentviewmenu.cpp:66
+#: apps/ktorrent/generalpref.ui:82 apps/ktorrent/ktorrentviewmenu.cpp:66
 #: plugins/infowidget/peerview.cpp:221 plugins/stats/sprefwgt.ui:456
 #: plugins/stats/statsconwgt.ui:40
 #, no-c-format
@@ -1401,7 +1401,7 @@ msgstr ""
 "\">&nbsp; - 要下载的块<br><img src=\"excluded_color\">&nbsp; - 排除的块"
 
 #: apps/ktorrent/fileselectdlgbase.ui:160 plugins/infowidget/fileview.cpp:49
-#: plugins/rssfeed/rssfeedwidget.ui:170 plugins/rssfeed/rssfeedwidget.ui:897
+#: plugins/rssfeed/rssfeedwidget.ui:170 plugins/rssfeed/rssfeedwidget.ui:879
 #: plugins/stats/sprefwgt.ui:328 plugins/stats/statsspdwgt.ui:32
 #, no-c-format
 msgid "Download"
@@ -1465,7 +1465,7 @@ msgstr "块"
 
 #: apps/ktorrent/torrentcreatordlgbase.ui:275
 #: plugins/infowidget/infowidgetplugin.cpp:214
-#: plugins/infowidget/trackerviewbase.ui:111
+#: plugins/infowidget/trackerviewbase.ui:105
 #, no-c-format
 msgid "Trackers"
 msgstr "Trackers"
@@ -2073,7 +2073,7 @@ msgid "127.0.0.1"
 msgstr "127.0.0.1"
 
 #: apps/ktorrent/addpeerwidgetbase.ui:51 apps/ktorrent/downloadpref.ui:338
-#: apps/ktorrent/torrentcreatordlgbase.ui:346
+#: apps/ktorrent/torrentcreatordlgbase.ui:343
 #: plugins/webinterface/webinterfacepref.ui:60
 #, no-c-format
 msgid "Port:"
@@ -2446,108 +2446,108 @@ msgstr "加密"
 msgid "Use protocol encryption"
 msgstr "使用协议加密"
 
-#: apps/ktorrent/generalpref.ui:64
+#: apps/ktorrent/generalpref.ui:61
 #, no-c-format
 msgid ""
 "Protocol encryption is used to prevent ISP's from slowing down bittorrent "
 "connections."
 msgstr "协议加密可让您的 ISP 不能减慢您的 BT 下载连接速度。"
 
-#: apps/ktorrent/generalpref.ui:72 libktorrent/ktorrent.kcfg:162
+#: apps/ktorrent/generalpref.ui:69 libktorrent/ktorrent.kcfg:162
 #, no-c-format
 msgid "Allow unencrypted connections"
 msgstr "允许不加密的连接"
 
-#: apps/ktorrent/generalpref.ui:75
+#: apps/ktorrent/generalpref.ui:72
 #, no-c-format
 msgid ""
 "If unchecked, you'll be able to connect only to clients supporting "
 "encryption."
 msgstr ""
 
-#: apps/ktorrent/generalpref.ui:88
+#: apps/ktorrent/generalpref.ui:85
 #, no-c-format
 msgid ""
 "<b>D</b>istributed <b>H</b>ash <b>T</b>able protocol.<br>Decentralized peers "
 "exchange protocol. See manual for more info."
 msgstr ""
 
-#: apps/ktorrent/generalpref.ui:99
+#: apps/ktorrent/generalpref.ui:96
 #, no-c-format
 msgid "&Use DHT to get additional peers"
 msgstr "使用 DHT 获得额外的下载者(&U)"
 
-#: apps/ktorrent/generalpref.ui:118
+#: apps/ktorrent/generalpref.ui:115
 #, no-c-format
 msgid "UDP port for DHT communication:"
 msgstr "DHT 通讯的 UDP 端口："
 
-#: apps/ktorrent/generalpref.ui:161
+#: apps/ktorrent/generalpref.ui:158
 #, no-c-format
 msgid "Custom IP"
 msgstr "自定义 IP"
 
-#: apps/ktorrent/generalpref.ui:172
+#: apps/ktorrent/generalpref.ui:169
 #, no-c-format
 msgid "Se&nd the tracker a custom IP address or hostname"
 msgstr "向 tracker 发送自定义 IP 或主机名(&N)"
 
-#: apps/ktorrent/generalpref.ui:188
+#: apps/ktorrent/generalpref.ui:185
 #, no-c-format
 msgid "Custom IP address or hostname:"
 msgstr "自定义 IP 或主机名："
 
-#: apps/ktorrent/generalpref.ui:205
+#: apps/ktorrent/generalpref.ui:202
 #, no-c-format
 msgid "System Tray Icon"
 msgstr "系统托盘图标"
 
-#: apps/ktorrent/generalpref.ui:216
+#: apps/ktorrent/generalpref.ui:213
 #, no-c-format
 msgid "Show s&ystem tray icon"
 msgstr "显示系统托盘图标(&Y)"
 
-#: apps/ktorrent/generalpref.ui:224
+#: apps/ktorrent/generalpref.ui:221
 #, no-c-format
 msgid "Show speed &bar in tray icon"
 msgstr "在托盘图标中显示速度栏(&B)"
 
-#: apps/ktorrent/generalpref.ui:232
+#: apps/ktorrent/generalpref.ui:229
 #, no-c-format
 msgid "Show system tray popup messages"
 msgstr "显示系统托盘弹出消息"
 
-#: apps/ktorrent/generalpref.ui:251
+#: apps/ktorrent/generalpref.ui:245
 #, no-c-format
 msgid "Upload bandwidth (in KB/sec):"
 msgstr "上传带宽(KB/秒)："
 
-#: apps/ktorrent/generalpref.ui:276
+#: apps/ktorrent/generalpref.ui:270
 #, no-c-format
 msgid "Download bandwidth (in KB/sec):"
 msgstr "下载带宽(KB/秒)："
 
-#: apps/ktorrent/generalpref.ui:305
+#: apps/ktorrent/generalpref.ui:299
 #, no-c-format
 msgid "Folders"
 msgstr "文件夹"
 
-#: apps/ktorrent/generalpref.ui:324
+#: apps/ktorrent/generalpref.ui:318
 #, no-c-format
 msgid "Folder to store temporary files:"
 msgstr "保存临时文件的文件夹："
 
-#: apps/ktorrent/generalpref.ui:342
+#: apps/ktorrent/generalpref.ui:336
 #, no-c-format
 msgid "Move completed downloads to:"
 msgstr "将已完成的下载移动到："
 
-#: apps/ktorrent/generalpref.ui:353
+#: apps/ktorrent/generalpref.ui:344
 #, no-c-format
 msgid "&Automatically save downloads to:"
 msgstr "自动保存下载到(&A)："
 
-#: apps/ktorrent/generalpref.ui:395
+#: apps/ktorrent/generalpref.ui:386
 #, no-c-format
 msgid "Copy .torrent files to:"
 msgstr "复制 .torrent 文件到："
@@ -2579,32 +2579,32 @@ msgstr "对等点 IP 地址"
 msgid "Add peer:"
 msgstr "添加对等点："
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:134
+#: apps/ktorrent/ipfilterwidgetbase.ui:131
 #, no-c-format
 msgid "Adds a peer to blacklist"
 msgstr "添加对等点到黑名单"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:168
+#: apps/ktorrent/ipfilterwidgetbase.ui:162
 #, no-c-format
 msgid "Removes selected peer from blacklist"
 msgstr "从黑名单中删除选中的对等点"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:176
+#: apps/ktorrent/ipfilterwidgetbase.ui:170
 #, no-c-format
 msgid "C&lear"
 msgstr "清除(&L)"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:182
+#: apps/ktorrent/ipfilterwidgetbase.ui:176
 #, no-c-format
 msgid "Clears this list"
 msgstr "清除此列表"
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:218
+#: apps/ktorrent/ipfilterwidgetbase.ui:212
 #, no-c-format
 msgid "Save &As..."
 msgstr "另存为(&A)..."
 
-#: apps/ktorrent/ipfilterwidgetbase.ui:224
+#: apps/ktorrent/ipfilterwidgetbase.ui:218
 #, no-c-format
 msgid "Save this blacklist to use with KTorrent IPFilter plugin"
 msgstr ""
@@ -2619,8 +2619,8 @@ msgstr "下载工具栏"
 msgid "Paste URL"
 msgstr "粘贴 URL"
 
-#: apps/ktorrent/pastedlgbase.ui:52 plugins/infowidget/trackerviewbase.ui:151
-#: plugins/search/searchpref.ui:166
+#: apps/ktorrent/pastedlgbase.ui:52 plugins/infowidget/trackerviewbase.ui:145
+#: plugins/search/searchpref.ui:160
 #, no-c-format
 msgid "URL:"
 msgstr "URL："
@@ -2642,7 +2642,7 @@ msgid "KT Queue Dialog"
 msgstr "KT 队列对话框"
 
 #: apps/ktorrent/queuedlg.ui:69 apps/ktorrent/queuedlg.ui:285
-#: plugins/infowidget/trackerviewbase.ui:203
+#: plugins/infowidget/trackerviewbase.ui:197
 #, no-c-format
 msgid "Status:"
 msgstr "状态："
@@ -2705,17 +2705,17 @@ msgstr "下移(&N)"
 msgid "Move to top"
 msgstr "移到顶端"
 
-#: apps/ktorrent/queuedlg.ui:530
+#: apps/ktorrent/queuedlg.ui:527
 #, no-c-format
 msgid "Move to &bottom"
 msgstr "移到底端(&B)"
 
-#: apps/ktorrent/queuedlg.ui:555
+#: apps/ktorrent/queuedlg.ui:552
 #, no-c-format
 msgid "&QM Controlled"
 msgstr "队列管理器控制(&Q)"
 
-#: apps/ktorrent/queuedlg.ui:563
+#: apps/ktorrent/queuedlg.ui:560
 #, no-c-format
 msgid "&User Controlled"
 msgstr "用户控制(&U)"
@@ -2872,23 +2872,23 @@ msgstr "取消(&N)"
 msgid "DHT nodes"
 msgstr "DHT 结点"
 
-#: apps/ktorrent/torrentcreatordlgbase.ui:333
+#: apps/ktorrent/torrentcreatordlgbase.ui:330
 #, no-c-format
 msgid "Node:"
 msgstr "结点："
 
-#: apps/ktorrent/torrentcreatordlgbase.ui:385
+#: apps/ktorrent/torrentcreatordlgbase.ui:382
 #, no-c-format
 msgid "IP or hostname"
 msgstr "IP 或主机名"
 
-#: apps/ktorrent/torrentcreatordlgbase.ui:396 libktorrent/ktorrent.kcfg:54
+#: apps/ktorrent/torrentcreatordlgbase.ui:393 libktorrent/ktorrent.kcfg:54
 #: libktorrent/ktorrent.kcfg:60
 #, no-c-format
 msgid "Port"
 msgstr "端口"
 
-#: apps/ktorrent/torrentcreatordlgbase.ui:437
+#: apps/ktorrent/torrentcreatordlgbase.ui:434
 #, no-c-format
 msgid ""
 "NOTE: Some known good DHT nodes are already inserted. You should probably "
@@ -3157,12 +3157,12 @@ msgstr "指派的下载者"
 msgid "Show list of peers"
 msgstr "显示下载者列表"
 
-#: plugins/infowidget/iwpref.ui:35
+#: plugins/infowidget/iwpref.ui:32
 #, no-c-format
 msgid "Show list of chunks currentl&y downloading"
 msgstr "显示当前正在下载的块列表(&Y)"
 
-#: plugins/infowidget/iwpref.ui:60
+#: plugins/infowidget/iwpref.ui:57
 #, no-c-format
 msgid "Show list of trackers"
 msgstr "显示 tracker 列表"
@@ -3203,7 +3203,7 @@ msgid "Average Up Speed:"
 msgstr "平均上传速度："
 
 #: plugins/infowidget/statustabbase.ui:195
-#: plugins/infowidget/trackerviewbase.ui:252
+#: plugins/infowidget/trackerviewbase.ui:246
 #, no-c-format
 msgid "Next update in:"
 msgstr "下次更新于："
@@ -3250,12 +3250,12 @@ msgstr "小时"
 msgid "Ratio limit:"
 msgstr "比率限制："
 
-#: plugins/infowidget/statustabbase.ui:549
+#: plugins/infowidget/statustabbase.ui:546
 #, no-c-format
 msgid "Limit works only in seed mode"
 msgstr "限制只在种子模式中有效"
 
-#: plugins/infowidget/statustabbase.ui:557
+#: plugins/infowidget/statustabbase.ui:554
 #, no-c-format
 msgid "Time &limit:"
 msgstr "时间限制(&L)"
@@ -3280,12 +3280,12 @@ msgstr "添加 tracker(&K)"
 msgid "Remove Tracker"
 msgstr "删除 Tracker"
 
-#: plugins/infowidget/trackerviewbase.ui:75
+#: plugins/infowidget/trackerviewbase.ui:72
 #, no-c-format
 msgid "Ch&ange Tracker"
 msgstr "更改 tracker(&A)"
 
-#: plugins/infowidget/trackerviewbase.ui:100
+#: plugins/infowidget/trackerviewbase.ui:97
 #, no-c-format
 msgid "Restore Defaults"
 msgstr "恢复默认值"
@@ -3313,22 +3313,22 @@ msgstr "使用 KTorrent 过滤器吗？"
 msgid "Use PeerGuardian filter?"
 msgstr "使用 KTorrent 过滤器吗？"
 
-#: plugins/ipfilter/ipblockingpref.ui:77
+#: plugins/ipfilter/ipblockingpref.ui:74
 #, no-c-format
 msgid "IP filter file:"
 msgstr "IP 过滤器文件："
 
-#: plugins/ipfilter/ipblockingpref.ui:85
+#: plugins/ipfilter/ipblockingpref.ui:82
 #, no-c-format
 msgid "http://www.bluetack.co.uk/modules.php?name=Downloads&d_op=getit&lid=8"
 msgstr "http://www.bluetack.co.uk/modules.php?name=Downloads&d_op=getit&lid=8"
 
-#: plugins/ipfilter/ipblockingpref.ui:123
+#: plugins/ipfilter/ipblockingpref.ui:120
 #, no-c-format
 msgid "Dow&nload/Convert"
 msgstr "下载/转换(&N)"
 
-#: plugins/ipfilter/ipblockingpref.ui:133
+#: plugins/ipfilter/ipblockingpref.ui:130
 #, no-c-format
 msgid ""
 "Download PeerGuardian filter from bluetack.co.uk or blocklist.org.\n"
@@ -3626,8 +3626,8 @@ msgstr "种子"
 msgid "De&lete"
 msgstr "删除(&L)"
 
-#: plugins/rssfeed/rssfeedwidget.ui:86 plugins/rssfeed/rssfeedwidget.ui:419
-#: plugins/rssfeed/rssfeedwidget.ui:470
+#: plugins/rssfeed/rssfeedwidget.ui:86 plugins/rssfeed/rssfeedwidget.ui:410
+#: plugins/rssfeed/rssfeedwidget.ui:458
 #, no-c-format
 msgid "&New"
 msgstr "新建(&N)"
@@ -3642,107 +3642,107 @@ msgstr "&URL"
 msgid "Articles"
 msgstr "文章数"
 
-#: plugins/rssfeed/rssfeedwidget.ui:216
+#: plugins/rssfeed/rssfeedwidget.ui:213
 #, no-c-format
 msgid "Auto&refresh"
 msgstr "自动刷新(&R)"
 
-#: plugins/rssfeed/rssfeedwidget.ui:242
+#: plugins/rssfeed/rssfeedwidget.ui:239
 #, no-c-format
 msgid "I&gnore TTL"
 msgstr "忽略 TTL(&G)"
 
-#: plugins/rssfeed/rssfeedwidget.ui:270
+#: plugins/rssfeed/rssfeedwidget.ui:267
 #, no-c-format
 msgid "Refresh"
 msgstr "刷新"
 
-#: plugins/rssfeed/rssfeedwidget.ui:299 plugins/rssfeed/rssfeedwidget.ui:506
+#: plugins/rssfeed/rssfeedwidget.ui:293 plugins/rssfeed/rssfeedwidget.ui:494
 #, no-c-format
 msgid "&Title"
 msgstr "标题(&T)"
 
-#: plugins/rssfeed/rssfeedwidget.ui:323
+#: plugins/rssfeed/rssfeedwidget.ui:317
 #, no-c-format
 msgid "Keep Articles (days)"
 msgstr "保留文章(天)"
 
-#: plugins/rssfeed/rssfeedwidget.ui:347 plugins/rssfeed/rssfeedwidget.ui:522
+#: plugins/rssfeed/rssfeedwidget.ui:341 plugins/rssfeed/rssfeedwidget.ui:510
 #, no-c-format
 msgid "&Active"
 msgstr "活动(&A)"
 
-#: plugins/rssfeed/rssfeedwidget.ui:362
+#: plugins/rssfeed/rssfeedwidget.ui:356
 #, no-c-format
 msgid "Filters"
 msgstr "过滤器"
 
-#: plugins/rssfeed/rssfeedwidget.ui:389
+#: plugins/rssfeed/rssfeedwidget.ui:383
 #, no-c-format
 msgid "Accept Filters"
 msgstr "接受过滤器"
 
-#: plugins/rssfeed/rssfeedwidget.ui:440
+#: plugins/rssfeed/rssfeedwidget.ui:431
 #, no-c-format
 msgid "Reject Filters"
 msgstr "拒绝过滤器"
 
-#: plugins/rssfeed/rssfeedwidget.ui:557
+#: plugins/rssfeed/rssfeedwidget.ui:545
 #, no-c-format
 msgid "Regular Expressions"
 msgstr "正则表达式"
 
-#: plugins/rssfeed/rssfeedwidget.ui:587
+#: plugins/rssfeed/rssfeedwidget.ui:575
 #, no-c-format
 msgid "Treat as &Series"
 msgstr "串行处理(&S)"
 
-#: plugins/rssfeed/rssfeedwidget.ui:624
+#: plugins/rssfeed/rssfeedwidget.ui:612
 #, no-c-format
 msgid "Process"
 msgstr "处理"
 
-#: plugins/rssfeed/rssfeedwidget.ui:643
+#: plugins/rssfeed/rssfeedwidget.ui:628
 #, no-c-format
 msgid "Series Criteria"
 msgstr "串行条件"
 
-#: plugins/rssfeed/rssfeedwidget.ui:679
+#: plugins/rssfeed/rssfeedwidget.ui:664
 #, no-c-format
 msgid "Match Without Episode"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:713
+#: plugins/rssfeed/rssfeedwidget.ui:695
 #, no-c-format
 msgid "Max Episode"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:739
+#: plugins/rssfeed/rssfeedwidget.ui:721
 #, fuzzy, no-c-format
 msgid "Max Season"
 msgstr "最大比率："
 
-#: plugins/rssfeed/rssfeedwidget.ui:758
+#: plugins/rssfeed/rssfeedwidget.ui:740
 #, no-c-format
 msgid "Min Season"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:782
+#: plugins/rssfeed/rssfeedwidget.ui:764
 #, no-c-format
 msgid "Min Episode"
 msgstr ""
 
-#: plugins/rssfeed/rssfeedwidget.ui:814
+#: plugins/rssfeed/rssfeedwidget.ui:796
 #, no-c-format
 msgid "Test te&xt"
 msgstr "测试文本(&X)"
 
-#: plugins/rssfeed/rssfeedwidget.ui:840
+#: plugins/rssfeed/rssfeedwidget.ui:822
 #, no-c-format
 msgid "Te&st"
 msgstr "测试(&S)"
 
-#: plugins/rssfeed/rssfeedwidget.ui:858
+#: plugins/rssfeed/rssfeedwidget.ui:840
 #, no-c-format
 msgid "Filter Matches"
 msgstr "过滤器匹配"
@@ -3802,78 +3802,62 @@ msgstr "扫描文件夹首选项"
 msgid "Scan folder &1"
 msgstr "扫描文件夹 &1"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:38 plugins/scheduler/bwspage.ui:233
-#, no-c-format
-msgid "Alt+1"
-msgstr "Alt+1"
-
-#: plugins/scanfolder/sfprefwidgetbase.ui:46
+#: plugins/scanfolder/sfprefwidgetbase.ui:43
 #, no-c-format
 msgid "Scan folder &2"
 msgstr "扫描文件夹 &2"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:49 plugins/scheduler/bwspage.ui:209
-#: plugins/scheduler/bwspage.ui:378
-#, no-c-format
-msgid "Alt+2"
-msgstr "Alt+2"
-
-#: plugins/scanfolder/sfprefwidgetbase.ui:57
+#: plugins/scanfolder/sfprefwidgetbase.ui:51
 #, no-c-format
 msgid "Scan folder &3"
 msgstr "扫描文件夹 &3"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:60 plugins/scheduler/bwspage.ui:198
-#, no-c-format
-msgid "Alt+3"
-msgstr "Alt+3"
-
-#: plugins/scanfolder/sfprefwidgetbase.ui:81
+#: plugins/scanfolder/sfprefwidgetbase.ui:72
 #, no-c-format
 msgid "Move to \"loaded\" directory &after loading"
 msgstr "装入后移动到“已装入”目录(&A)"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:84
+#: plugins/scanfolder/sfprefwidgetbase.ui:75
 #, no-c-format
 msgid "Move torrent to \"loaded\" directory after loading it"
 msgstr ""
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:92
+#: plugins/scanfolder/sfprefwidgetbase.ui:83
 #, no-c-format
 msgid "Open torrents silentl&y"
 msgstr "以静默方式打开 torrent(&Y)"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:95
+#: plugins/scanfolder/sfprefwidgetbase.ui:86
 #, no-c-format
 msgid "Do not show 'Select files to download' dialog"
 msgstr "不显示“选择要下载的文件”对话框"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:103
+#: plugins/scanfolder/sfprefwidgetbase.ui:94
 #, no-c-format
 msgid "Delete after loadin&g"
 msgstr "装入后删除(&G)"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:106
+#: plugins/scanfolder/sfprefwidgetbase.ui:97
 #, no-c-format
 msgid "Deletes torrent after loading"
 msgstr "装入后删除 torrent"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:116
+#: plugins/scanfolder/sfprefwidgetbase.ui:107
 #, no-c-format
 msgid "Folders to scan"
 msgstr "要扫描的文件夹"
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:151
+#: plugins/scanfolder/sfprefwidgetbase.ui:142
 #, no-c-format
 msgid "Folder 1:"
 msgstr "文件夹 1："
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:162
+#: plugins/scanfolder/sfprefwidgetbase.ui:153
 #, no-c-format
 msgid "Folder 2:"
 msgstr "文件夹 2："
 
-#: plugins/scanfolder/sfprefwidgetbase.ui:173
+#: plugins/scanfolder/sfprefwidgetbase.ui:164
 #, no-c-format
 msgid "Folder 3:"
 msgstr "文件夹 3："
@@ -3893,12 +3877,12 @@ msgstr "左键单击类别"
 msgid "Categor&y 1"
 msgstr "类别 1(&Y)"
 
-#: plugins/scheduler/bwspage.ui:157 plugins/scheduler/bwspage.ui:329
+#: plugins/scheduler/bwspage.ui:157 plugins/scheduler/bwspage.ui:320
 #, no-c-format
 msgid "T&urn off"
 msgstr "关闭(&U)"
 
-#: plugins/scheduler/bwspage.ui:165 plugins/scheduler/bwspage.ui:337
+#: plugins/scheduler/bwspage.ui:165 plugins/scheduler/bwspage.ui:328
 #, no-c-format
 msgid "&Normal"
 msgstr "普通(&N)"
@@ -3908,85 +3892,85 @@ msgstr "普通(&N)"
 msgid "Category &3"
 msgstr "类别 &3"
 
-#: plugins/scheduler/bwspage.ui:206 plugins/scheduler/bwspage.ui:375
+#: plugins/scheduler/bwspage.ui:203 plugins/scheduler/bwspage.ui:366
 #, no-c-format
 msgid "Category &2"
 msgstr "类别 &2"
 
-#: plugins/scheduler/bwspage.ui:219
+#: plugins/scheduler/bwspage.ui:213
 #, no-c-format
 msgid "Right click category"
 msgstr "右键单击类别"
 
-#: plugins/scheduler/bwspage.ui:230
+#: plugins/scheduler/bwspage.ui:224
 #, no-c-format
 msgid "Category &1"
 msgstr "类别 &1"
 
-#: plugins/scheduler/bwspage.ui:367
+#: plugins/scheduler/bwspage.ui:358
 #, no-c-format
 msgid "&Category 3"
 msgstr "类别 3(&C)"
 
-#: plugins/scheduler/bwspage.ui:390
+#: plugins/scheduler/bwspage.ui:378
 #, no-c-format
 msgid "Categories"
 msgstr "类别"
 
-#: plugins/scheduler/bwspage.ui:401
+#: plugins/scheduler/bwspage.ui:389
 #, no-c-format
 msgid "<b>1. Category</b>"
 msgstr "<b>1. 类别</b>"
 
-#: plugins/scheduler/bwspage.ui:409
+#: plugins/scheduler/bwspage.ui:397
 #, no-c-format
 msgid "<b>3. Category</b>"
 msgstr "<b>3. 类别</b>"
 
-#: plugins/scheduler/bwspage.ui:425 plugins/scheduler/bwspage.ui:475
-#: plugins/scheduler/bwspage.ui:525
+#: plugins/scheduler/bwspage.ui:413 plugins/scheduler/bwspage.ui:463
+#: plugins/scheduler/bwspage.ui:513
 #, no-c-format
 msgid "download:"
 msgstr "下载："
 
-#: plugins/scheduler/bwspage.ui:441 plugins/scheduler/bwspage.ui:491
-#: plugins/scheduler/bwspage.ui:541
+#: plugins/scheduler/bwspage.ui:429 plugins/scheduler/bwspage.ui:479
+#: plugins/scheduler/bwspage.ui:529
 #, no-c-format
 msgid "upload:"
 msgstr "上传："
 
-#: plugins/scheduler/bwspage.ui:457 plugins/scheduler/bwspage.ui:507
-#: plugins/scheduler/bwspage.ui:557
+#: plugins/scheduler/bwspage.ui:445 plugins/scheduler/bwspage.ui:495
+#: plugins/scheduler/bwspage.ui:545
 #, no-c-format
 msgid "KB/s *"
 msgstr "KB/s *"
 
-#: plugins/scheduler/bwspage.ui:567
+#: plugins/scheduler/bwspage.ui:555
 #, no-c-format
 msgid "<b>2. Category</b>"
 msgstr "<b>2. 类别</b>"
 
-#: plugins/scheduler/bwspage.ui:626
+#: plugins/scheduler/bwspage.ui:614
 #, no-c-format
 msgid "* zero means no limit"
 msgstr "* 0 为无限制"
 
-#: plugins/scheduler/bwspage.ui:672
+#: plugins/scheduler/bwspage.ui:660
 #, no-c-format
 msgid "Save to file"
 msgstr "保存到文件"
 
-#: plugins/scheduler/bwspage.ui:680
+#: plugins/scheduler/bwspage.ui:668
 #, no-c-format
 msgid "&Load from file"
 msgstr "从文件装入(&L)"
 
-#: plugins/scheduler/bwspage.ui:688
+#: plugins/scheduler/bwspage.ui:676
 #, no-c-format
 msgid "Reset schedule"
 msgstr "重置规划"
 
-#: plugins/scheduler/bwspage.ui:751
+#: plugins/scheduler/bwspage.ui:739
 #, no-c-format
 msgid "O&k"
 msgstr "确定(&K)"
@@ -4066,47 +4050,47 @@ msgstr "外部浏览器"
 msgid "Open searches in external browser"
 msgstr "在外部浏览器中打开搜索"
 
-#: plugins/search/searchpref.ui:79
+#: plugins/search/searchpref.ui:76
 #, no-c-format
 msgid "Custom browser path:"
 msgstr "自定义浏览器路径："
 
-#: plugins/search/searchpref.ui:116
+#: plugins/search/searchpref.ui:110
 #, no-c-format
 msgid "Search Engines"
 msgstr "搜索引擎"
 
-#: plugins/search/searchpref.ui:143
+#: plugins/search/searchpref.ui:137
 #, no-c-format
 msgid "Search engine name:"
 msgstr "搜索引擎名称："
 
-#: plugins/search/searchpref.ui:187
+#: plugins/search/searchpref.ui:181
 #, no-c-format
 msgid "&Add"
 msgstr "添加(&A)"
 
-#: plugins/search/searchpref.ui:195
+#: plugins/search/searchpref.ui:189
 #, no-c-format
 msgid "Engines"
 msgstr "引擎"
 
-#: plugins/search/searchpref.ui:206
+#: plugins/search/searchpref.ui:200
 #, no-c-format
 msgid "URL"
 msgstr "URL"
 
-#: plugins/search/searchpref.ui:257
+#: plugins/search/searchpref.ui:251
 #, no-c-format
 msgid "R&emove All"
 msgstr "全部删除(&E)"
 
-#: plugins/search/searchpref.ui:282
+#: plugins/search/searchpref.ui:276
 #, no-c-format
 msgid "Add Defau&lt"
 msgstr "添加默认(&L)"
 
-#: plugins/search/searchpref.ui:290
+#: plugins/search/searchpref.ui:284
 #, no-c-format
 msgid "Update From Internet"
 msgstr "从 Internet 上更新"
@@ -4383,6 +4367,15 @@ msgstr "更改密码..."
 #, no-c-format
 msgid "Php executable path:"
 msgstr "PHP 可执行文件路径："
+
+#~ msgid "Alt+1"
+#~ msgstr "Alt+1"
+
+#~ msgid "Alt+2"
+#~ msgstr "Alt+2"
+
+#~ msgid "Alt+3"
+#~ msgstr "Alt+3"
 
 #, fuzzy
 #~ msgid "Remove"
