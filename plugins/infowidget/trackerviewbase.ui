@@ -63,9 +63,6 @@
                     <property name="text">
                         <string>Remove Tracker</string>
                     </property>
-                    <property name="accel">
-                        <string></string>
-                    </property>
                 </widget>
                 <widget class="TQPushButton">
                     <property name="name">
@@ -98,9 +95,6 @@
                     </property>
                     <property name="text">
                         <string>Restore Defaults</string>
-                    </property>
-                    <property name="accel">
-                        <string></string>
                     </property>
                 </widget>
             </vbox>

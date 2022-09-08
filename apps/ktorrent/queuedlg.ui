@@ -518,9 +518,6 @@
                     <property name="text">
                         <string>Move to top</string>
                     </property>
-                    <property name="accel">
-                        <string></string>
-                    </property>
                 </widget>
                 <widget class="TQPushButton">
                     <property name="name">

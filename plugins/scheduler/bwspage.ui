@@ -194,9 +194,6 @@
                             <property name="text">
                                 <string>Category &amp;3</string>
                             </property>
-                            <property name="accel">
-                                <string>Alt+3</string>
-                            </property>
                         </widget>
                         <widget class="TQRadioButton" row="2" column="1">
                             <property name="name">
@@ -204,9 +201,6 @@
                             </property>
                             <property name="text">
                                 <string>Category &amp;2</string>
-                            </property>
-                            <property name="accel">
-                                <string>Alt+2</string>
                             </property>
                         </widget>
                     </grid>
@@ -228,9 +222,6 @@
                             </property>
                             <property name="text">
                                 <string>Category &amp;1</string>
-                            </property>
-                            <property name="accel">
-                                <string>Alt+1</string>
                             </property>
                         </widget>
                         <widget class="TQLabel" row="0" column="0">
@@ -373,9 +364,6 @@
                             </property>
                             <property name="text">
                                 <string>Category &amp;2</string>
-                            </property>
-                            <property name="accel">
-                                <string>Alt+2</string>
                             </property>
                         </widget>
                     </grid>

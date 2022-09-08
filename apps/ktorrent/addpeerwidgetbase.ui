@@ -107,9 +107,6 @@
                     <property name="text">
                         <string>Add</string>
                     </property>
-                    <property name="accel">
-                        <string></string>
-                    </property>
                     <property name="stdItem" stdset="0">
                         <number>27</number>
                     </property>
