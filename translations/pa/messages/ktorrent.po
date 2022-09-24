@@ -4459,18 +4459,6 @@ msgid "Php executable path:"
 msgstr ""
 
 #, fuzzy
-#~ msgid "Alt+1"
-#~ msgstr "Alt+Y"
-
-#, fuzzy
-#~ msgid "Alt+2"
-#~ msgstr "Alt+Y"
-
-#, fuzzy
-#~ msgid "Alt+3"
-#~ msgstr "Alt+Y"
-
-#, fuzzy
 #~ msgid "Yes"
 #~ msgstr "ਹਾਂ"
 
@@ -4515,20 +4503,8 @@ msgstr ""
 #~ msgstr "ਟੋਰੈਂਟ ਬਣਾਈ ਨਹੀਂ ਜਾ ਸਕਦੀ: %1"
 
 #, fuzzy
-#~ msgid "Alt+X"
-#~ msgstr "Alt+Y"
-
-#, fuzzy
 #~ msgid "TrackerViewBase"
 #~ msgstr "ਟਰੈਕਰ"
-
-#, fuzzy
-#~ msgid "Alt+N"
-#~ msgstr "Alt+Y"
-
-#, fuzzy
-#~ msgid "Alt+S"
-#~ msgstr "Alt+Y"
 
 #~ msgid "You must add at least one tracker."
 #~ msgstr "ਤੁਹਾਨੂੰ ਘੱਟੋ-ਘੱਟ ਇੱਕ ਟਰੈਕਰ ਜੋੜਨਾ ਚਾਹੀਦਾ ਹੈ।"
@@ -4537,28 +4513,8 @@ msgstr ""
 #~ msgid "DownloadPref"
 #~ msgstr "ਡਾਊਨਲੋਡ"
 
-#, fuzzy
-#~ msgid "Alt+K"
-#~ msgstr "Alt+Y"
-
-#, fuzzy
-#~ msgid "Alt+B"
-#~ msgstr "Alt+Y"
-
-#, fuzzy
-#~ msgid "Alt+U"
-#~ msgstr "Alt+Y"
-
-#, fuzzy
-#~ msgid "Alt+A"
-#~ msgstr "Alt+Y"
-
 #~ msgid "Form1"
 #~ msgstr "Form1"
-
-#, fuzzy
-#~ msgid "Alt+L"
-#~ msgstr "Alt+Y"
 
 #, fuzzy
 #~ msgid "Form2"
@@ -4605,20 +4561,8 @@ msgstr ""
 #~ msgstr "ਸਥਿਤੀ"
 
 #, fuzzy
-#~ msgid "Alt+Y"
-#~ msgstr "Alt+Y"
-
-#, fuzzy
 #~ msgid "Tracker request timed out"
 #~ msgstr "ਟਰੈਕਰ"
-
-#, fuzzy
-#~ msgid "Alt+G"
-#~ msgstr "Alt+Y"
-
-#, fuzzy
-#~ msgid "Alt+Z"
-#~ msgstr "Alt+Y"
 
 #~ msgid "finished"
 #~ msgstr "ਮੁਕੰਮਲ"
@@ -4640,16 +4584,8 @@ msgstr ""
 #~ msgstr "% ਮੁਕੰਮਲ"
 
 #, fuzzy
-#~ msgid "Alt+C"
-#~ msgstr "Alt+Y"
-
-#, fuzzy
 #~ msgid "SearchBar"
 #~ msgstr "ਖੋਜ"
-
-#, fuzzy
-#~ msgid "Alt+O"
-#~ msgstr "Alt+Y"
 
 #, fuzzy
 #~ msgid "Use &KTorrent filter?"
@@ -4657,10 +4593,6 @@ msgstr ""
 
 #~ msgid "You must fill in the name field."
 #~ msgstr "ਤੁਹਾਨੂੰ ਨਾਂ ਖੇਤਰ ਭਰਨਾ ਪਵੇਗਾ।"
-
-#, fuzzy
-#~ msgid "Alt+R"
-#~ msgstr "Alt+Y"
 
 #, fuzzy
 #~ msgid "Down:"
@@ -4683,20 +4615,12 @@ msgstr ""
 #~ msgstr "ਟੋਰੈਂਟ ਖੋਜ ਇੰਜਣ"
 
 #, fuzzy
-#~ msgid "Alt+Q"
-#~ msgstr "Alt+Y"
-
-#, fuzzy
 #~ msgid "Downlo&ad"
 #~ msgstr "ਡਾਊਨਲੋਡ"
 
 #, fuzzy
 #~ msgid "&Seed"
 #~ msgstr "ਉੱਪਰ ਗਤੀ"
-
-#, fuzzy
-#~ msgid "Alt+E"
-#~ msgstr "Alt+Y"
 
 #~ msgid "no"
 #~ msgstr "ਨਹੀਂ"

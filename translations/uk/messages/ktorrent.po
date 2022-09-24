@@ -4484,15 +4484,6 @@ msgstr "Змінити пароль ..."
 msgid "Php executable path:"
 msgstr "Шлях до програми php:"
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "Ви&лучити всі"
@@ -4572,9 +4563,6 @@ msgstr "Шлях до програми php:"
 
 #~ msgid "Patch to update the FileView in a separate thread"
 #~ msgstr "Латка для оновлення FileView в окремій нитці"
-
-#~ msgid "Alt+X"
-#~ msgstr "Alt+X"
 
 #~ msgid "TrackerViewBase"
 #~ msgstr "TrackerViewBase"

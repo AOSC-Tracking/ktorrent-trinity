@@ -4466,15 +4466,6 @@ msgstr ""
 msgid "Php executable path:"
 msgstr ""
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "全部移除(&E)"
@@ -4546,20 +4537,8 @@ msgstr ""
 #~ msgstr "無法載入區塊 %1"
 
 #, fuzzy
-#~ msgid "Alt+X"
-#~ msgstr "Alt+1"
-
-#, fuzzy
 #~ msgid "TrackerViewBase"
 #~ msgstr "追蹤器"
-
-#, fuzzy
-#~ msgid "Alt+N"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+S"
-#~ msgstr "Alt+1"
 
 #~ msgid ""
 #~ "Country locator for InfoWidget plugin. Flags are taken from http://flags."
@@ -4574,26 +4553,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "DownloadPref"
 #~ msgstr "已下載"
-
-#, fuzzy
-#~ msgid "Alt+K"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+B"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+U"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+A"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+L"
-#~ msgstr "Alt+1"
 
 #~ msgid "Max ratio:"
 #~ msgstr "最大比例："
@@ -4658,10 +4617,6 @@ msgstr ""
 #~ msgstr "您必須選擇預設的儲存目錄才能安靜地載入 torrent。"
 
 #, fuzzy
-#~ msgid "Alt+Y"
-#~ msgstr "Alt+1"
-
-#, fuzzy
 #~ msgid "InfoWidgetBase"
 #~ msgstr "資訊元件："
 
@@ -4677,14 +4632,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Tracker request timed out"
 #~ msgstr "追蹤器狀態："
-
-#, fuzzy
-#~ msgid "Alt+G"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+Z"
-#~ msgstr "Alt+1"
 
 #~ msgid "finished"
 #~ msgstr "已完成"
@@ -4724,10 +4671,6 @@ msgstr ""
 
 #~ msgid "<b>%1</b> torrent has been moved to download panel."
 #~ msgstr "<b>%1</b> torrent 已被移到下載面板。"
-
-#, fuzzy
-#~ msgid "Alt+C"
-#~ msgstr "Alt+1"
 
 #~ msgid "Unreachable"
 #~ msgstr "無法到達"

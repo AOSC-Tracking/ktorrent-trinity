@@ -4483,15 +4483,6 @@ msgstr "Canvia la contrasenya ..."
 msgid "Php executable path:"
 msgstr "Camí de l'executable php:"
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "&Elimina-ho tot"

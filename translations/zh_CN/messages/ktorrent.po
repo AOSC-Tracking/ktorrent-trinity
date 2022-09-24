@@ -4368,15 +4368,6 @@ msgstr "更改密码..."
 msgid "Php executable path:"
 msgstr "PHP 可执行文件路径："
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "全部删除(&E)"
@@ -4455,20 +4446,8 @@ msgstr "PHP 可执行文件路径："
 #~ msgstr "无法装入块 %1"
 
 #, fuzzy
-#~ msgid "Alt+X"
-#~ msgstr "Alt+1"
-
-#, fuzzy
 #~ msgid "TrackerViewBase"
 #~ msgstr "Trackers"
-
-#, fuzzy
-#~ msgid "Alt+N"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+S"
-#~ msgstr "Alt+1"
 
 #~ msgid ""
 #~ "Country locator for InfoWidget plugin. Flags are taken from http://flags."
@@ -4482,22 +4461,6 @@ msgstr "PHP 可执行文件路径："
 #, fuzzy
 #~ msgid "DownloadPref"
 #~ msgstr "已下载"
-
-#, fuzzy
-#~ msgid "Alt+B"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+U"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+A"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+L"
-#~ msgstr "Alt+1"
 
 #~ msgid "Max ratio:"
 #~ msgstr "最大比率："

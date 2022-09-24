@@ -4503,15 +4503,6 @@ msgstr "Alterar senha..."
 msgid "Php executable path:"
 msgstr "Caminho do executável do php:"
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "R&emover Todos"
@@ -4589,20 +4580,11 @@ msgstr "Caminho do executável do php:"
 #~ msgid "Cannot load chunk %1"
 #~ msgstr "Não foi possível carregar o bloco %1"
 
-#~ msgid "Alt+X"
-#~ msgstr "Alt+X"
-
 #~ msgid "TrackerViewBase"
 #~ msgstr "TrackerViewBase"
 
 #~ msgid "Type of service field of IP packets"
 #~ msgstr "Tipo do campo de serviço dos pacotes IP"
-
-#~ msgid "Alt+N"
-#~ msgstr "Alt+N"
-
-#~ msgid "Alt+S"
-#~ msgstr "Alt+S"
 
 #~ msgid ""
 #~ "Country locator for InfoWidget plugin. Flags are taken from http://flags."
@@ -4616,21 +4598,6 @@ msgstr "Caminho do executável do php:"
 
 #~ msgid "DownloadPref"
 #~ msgstr "DownloadPref"
-
-#~ msgid "Alt+K"
-#~ msgstr "Alt+K"
-
-#~ msgid "Alt+B"
-#~ msgstr "Alt+B"
-
-#~ msgid "Alt+U"
-#~ msgstr "Alt+U"
-
-#~ msgid "Alt+A"
-#~ msgstr "Alt+A"
-
-#~ msgid "Alt+L"
-#~ msgstr "Alt+L"
 
 #~ msgid "Max ratio:"
 #~ msgstr "Taxa máx.:"
@@ -4694,9 +4661,6 @@ msgstr "Caminho do executável do php:"
 #~ "É preciso que você selecione um diretório padrão, para que os torrents "
 #~ "sejam carregados silenciosamente."
 
-#~ msgid "Alt+Y"
-#~ msgstr "Alt+Y"
-
 #~ msgid "InfoWidgetBase"
 #~ msgstr "InfoWidgetBase"
 
@@ -4715,12 +4679,6 @@ msgstr "Caminho do executável do php:"
 
 #~ msgid "Tracker request timed out"
 #~ msgstr "Timeout na requisição do tracker"
-
-#~ msgid "Alt+G"
-#~ msgstr "Alt+G"
-
-#~ msgid "Alt+Z"
-#~ msgstr "Alt+Z"
 
 #~ msgid "finished"
 #~ msgstr "concluído"

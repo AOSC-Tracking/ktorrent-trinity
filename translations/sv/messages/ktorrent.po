@@ -4483,15 +4483,6 @@ msgstr "Ändra lösenord..."
 msgid "Php executable path:"
 msgstr "Sökväg till körbar fil för PHP:"
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "&Ta bort alla"

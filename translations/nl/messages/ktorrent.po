@@ -4509,15 +4509,6 @@ msgstr "Wachtwoord aanpassen..."
 msgid "Php executable path:"
 msgstr "Uitvoerbaar pad naar php:"
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "All&es verwijderen"

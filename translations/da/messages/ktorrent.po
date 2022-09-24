@@ -4467,15 +4467,6 @@ msgstr "Ændr kodeord..."
 msgid "Php executable path:"
 msgstr "Søgesti til kørbar fil for PHP:"
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "&Fjern alt"

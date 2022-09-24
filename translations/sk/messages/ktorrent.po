@@ -4520,15 +4520,6 @@ msgstr ""
 msgid "Php executable path:"
 msgstr ""
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "O&dobrať všetky"
@@ -4599,19 +4590,8 @@ msgstr ""
 #~ msgid "Cannot load chunk %1"
 #~ msgstr "Nepodarilo sa načítať kúsok %1"
 
-#, fuzzy
-#~ msgid "Alt+X"
-#~ msgstr "Alt+1"
-
 #~ msgid "TrackerViewBase"
 #~ msgstr "TrackerViewBase"
-
-#~ msgid "Alt+N"
-#~ msgstr "Alt+N"
-
-#, fuzzy
-#~ msgid "Alt+S"
-#~ msgstr "Alt+1"
 
 #~ msgid ""
 #~ "Country locator for InfoWidget plugin. Flags are taken from http://flags."
@@ -4626,24 +4606,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "DownloadPref"
 #~ msgstr "Stiahnuté"
-
-#, fuzzy
-#~ msgid "Alt+K"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+B"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+U"
-#~ msgstr "Alt+U"
-
-#~ msgid "Alt+A"
-#~ msgstr "Alt+A"
-
-#, fuzzy
-#~ msgid "Alt+L"
-#~ msgstr "Alt+1"
 
 #~ msgid "Max ratio:"
 #~ msgstr "Max ratio:"
@@ -4709,10 +4671,6 @@ msgstr ""
 #~ "Je nutné nastaviť predvolený adresár na uloženie, aby ste mohli nahrávať "
 #~ "torrenty potichu."
 
-#, fuzzy
-#~ msgid "Alt+Y"
-#~ msgstr "Alt+1"
-
 #~ msgid "InfoWidgetBase"
 #~ msgstr "InfoWidgetBase"
 
@@ -4727,14 +4685,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Tracker request timed out"
 #~ msgstr "Stav trackera:"
-
-#, fuzzy
-#~ msgid "Alt+G"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+Z"
-#~ msgstr "Alt+1"
 
 #~ msgid "finished"
 #~ msgstr "ukončené"
@@ -4835,6 +4785,3 @@ msgstr ""
 
 #~ msgid "Parse error"
 #~ msgstr "Chyba pri rozdeľovaní"
-
-#~ msgid "Alt+R"
-#~ msgstr "Alt+R"

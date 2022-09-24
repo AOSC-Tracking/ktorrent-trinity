@@ -4538,15 +4538,6 @@ msgstr "Αλλαγή κωδικού πρόσβασης..."
 msgid "Php executable path:"
 msgstr "Διαδρομή εκτελέσιμου της Php:"
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "&Αφαίρεση όλων"
@@ -4625,18 +4616,8 @@ msgstr "Διαδρομή εκτελέσιμου της Php:"
 #~ msgstr "Αδύνατη φόρτωση του κομματιού %1"
 
 #, fuzzy
-#~ msgid "Alt+X"
-#~ msgstr "Alt+1"
-
-#, fuzzy
 #~ msgid "TrackerViewBase"
 #~ msgstr "Ανιχνευτές"
 
 #~ msgid "Type of service field of IP packets"
 #~ msgstr "Τύπος πεδίου υπηρεσίας των πακέτων IP"
-
-#~ msgid "Alt+N"
-#~ msgstr "Alt+Ν"
-
-#~ msgid "Alt+S"
-#~ msgstr "Alt+Σ"
