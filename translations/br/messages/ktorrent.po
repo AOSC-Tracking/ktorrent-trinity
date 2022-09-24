@@ -4413,15 +4413,6 @@ msgstr "Tremenger :"
 msgid "Php executable path:"
 msgstr ""
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Yes"
 #~ msgstr "ya"
@@ -4500,39 +4491,15 @@ msgstr ""
 #~ msgid "Cannot load chunk %1"
 #~ msgstr "N'hell ket bet karget ar pezh %1"
 
-#~ msgid "Alt+X"
-#~ msgstr "Alt+X"
-
 #, fuzzy
 #~ msgid "TrackerViewBase"
 #~ msgstr "Stad :"
 
-#~ msgid "Alt+N"
-#~ msgstr "Alt+N"
-
-#~ msgid "Alt+S"
-#~ msgstr "Alt+S"
-
 #~ msgid "DownloadPref"
 #~ msgstr "Dibarzhoù enkargañ"
 
-#~ msgid "Alt+K"
-#~ msgstr "Alt+K"
-
-#~ msgid "Alt+B"
-#~ msgstr "Alt+B"
-
-#~ msgid "Alt+U"
-#~ msgstr "Alt+U"
-
-#~ msgid "Alt+A"
-#~ msgstr "Alt+A"
-
 #~ msgid "Form1"
 #~ msgstr "Paperenn-reol 1"
-
-#~ msgid "Alt+L"
-#~ msgstr "Alt+L"
 
 #, fuzzy
 #~ msgid "Form2"
@@ -4567,18 +4534,8 @@ msgstr ""
 #~ msgid "St&atus"
 #~ msgstr "St&ad"
 
-#~ msgid "Alt+Y"
-#~ msgstr "Alt+Y"
-
 #~ msgid "New"
 #~ msgstr "Nevez"
-
-#~ msgid "Alt+G"
-#~ msgstr "Alt+G"
-
-#, fuzzy
-#~ msgid "Alt+Z"
-#~ msgstr "Alt+1"
 
 #~ msgid "finished"
 #~ msgstr "disoc'het"
@@ -4597,18 +4554,12 @@ msgstr ""
 #~ msgid "Completed"
 #~ msgstr "Echuet"
 
-#~ msgid "Alt+C"
-#~ msgstr "Alt+C"
-
 #~ msgid "Parse error"
 #~ msgstr "Fazi en ur lenn"
 
 #, fuzzy
 #~ msgid "SearchBar"
 #~ msgstr "Klask"
-
-#~ msgid "Alt+O"
-#~ msgstr "Alt+O"
 
 #~ msgid "Use &KTorrent filter?"
 #~ msgstr "Implij sil &KTorrent ?"
@@ -4621,10 +4572,6 @@ msgstr ""
 
 #~ msgid "Name:"
 #~ msgstr "Anv :"
-
-#, fuzzy
-#~ msgid "Alt+R"
-#~ msgstr "Alt+1"
 
 #, fuzzy
 #~ msgid "Available trackers:"
@@ -4651,15 +4598,8 @@ msgstr ""
 #~ msgid "KTorrent's search plugin"
 #~ msgstr "Lugent klask KTorrent"
 
-#~ msgid "Alt+Q"
-#~ msgstr "Alt+Q"
-
 #~ msgid "Downlo&ad"
 #~ msgstr "Enk&argañ"
-
-#, fuzzy
-#~ msgid "Alt+E"
-#~ msgstr "Alt+1"
 
 #~ msgid "IWPref"
 #~ msgstr "IWPref"

@@ -4530,15 +4530,6 @@ msgstr ""
 msgid "Php executable path:"
 msgstr ""
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr ""
@@ -4622,10 +4613,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Cannot load chunk %1"
 #~ msgstr "Nepavyko sukurti aplanko %1"
-
-#, fuzzy
-#~ msgid "Alt+X"
-#~ msgstr "Alt+1"
 
 #, fuzzy
 #~ msgid "TrackerViewBase"

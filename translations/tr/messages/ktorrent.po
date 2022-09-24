@@ -4470,15 +4470,6 @@ msgstr "Parolayı değiştir ..."
 msgid "Php executable path:"
 msgstr "Php çalıştırılabilr dosyasının konumu:"
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "&Tümünü Kaldır"
@@ -4555,10 +4546,6 @@ msgstr "Php çalıştırılabilr dosyasının konumu:"
 
 #~ msgid "Cannot load chunk %1"
 #~ msgstr "%1 parçası yüklenemedi"
-
-#, fuzzy
-#~ msgid "Alt+X"
-#~ msgstr "Alt+1"
 
 #, fuzzy
 #~ msgid "TrackerViewBase"

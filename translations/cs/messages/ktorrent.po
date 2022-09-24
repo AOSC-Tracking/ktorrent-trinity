@@ -4486,15 +4486,6 @@ msgstr "Změnit heslo ..."
 msgid "Php executable path:"
 msgstr "Cesta k php:"
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "Odstranit vš&e"
@@ -4573,15 +4564,5 @@ msgstr "Cesta k php:"
 #~ msgstr "Nelze načíst blok %1"
 
 #, fuzzy
-#~ msgid "Alt+X"
-#~ msgstr "Alt+1"
-
-#, fuzzy
 #~ msgid "TrackerViewBase"
 #~ msgstr "Trackery"
-
-#~ msgid "Alt+N"
-#~ msgstr "Alt+N"
-
-#~ msgid "Alt+S"
-#~ msgstr "Alt+S"

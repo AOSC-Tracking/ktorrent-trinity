@@ -4477,15 +4477,6 @@ msgstr "Промяна на паролата..."
 msgid "Php executable path:"
 msgstr "Изпълним път за РНР:"
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "&Премахване на всички"

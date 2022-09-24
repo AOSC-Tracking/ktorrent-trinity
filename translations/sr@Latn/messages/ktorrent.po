@@ -4470,15 +4470,6 @@ msgstr "Izmeni lozinku ..."
 msgid "Php executable path:"
 msgstr "Putanja do programa za PHP:"
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "Ukloni sv&e"

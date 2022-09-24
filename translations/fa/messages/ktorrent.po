@@ -4496,15 +4496,6 @@ msgstr ""
 msgid "Php executable path:"
 msgstr ""
 
-#~ msgid "Alt+1"
-#~ msgstr "دگرساز+۱"
-
-#~ msgid "Alt+2"
-#~ msgstr "دگرساز+۲"
-
-#~ msgid "Alt+3"
-#~ msgstr "دگرساز+۳"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "&حذف همه‌"
@@ -4576,20 +4567,8 @@ msgstr ""
 #~ msgstr "توده %1 را نمی‌توان بار کرد"
 
 #, fuzzy
-#~ msgid "Alt+X"
-#~ msgstr "دگرساز+۱"
-
-#, fuzzy
 #~ msgid "TrackerViewBase"
 #~ msgstr "ردیابها"
-
-#, fuzzy
-#~ msgid "Alt+N"
-#~ msgstr "دگرساز+۱"
-
-#, fuzzy
-#~ msgid "Alt+S"
-#~ msgstr "دگرساز+۱"
 
 #~ msgid ""
 #~ "Country locator for InfoWidget plugin. Flags are taken from http://flags."
@@ -4604,22 +4583,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "DownloadPref"
 #~ msgstr "بارگیری‌شده"
-
-#, fuzzy
-#~ msgid "Alt+B"
-#~ msgstr "دگرساز+۱"
-
-#, fuzzy
-#~ msgid "Alt+U"
-#~ msgstr "دگرساز+۱"
-
-#, fuzzy
-#~ msgid "Alt+A"
-#~ msgstr "دگرساز+۱"
-
-#, fuzzy
-#~ msgid "Alt+L"
-#~ msgstr "دگرساز+۱"
 
 #~ msgid "Max ratio:"
 #~ msgstr "ضریب بیشینه:"

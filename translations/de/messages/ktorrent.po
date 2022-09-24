@@ -4532,15 +4532,6 @@ msgstr "Passwort ändern ..."
 msgid "Php executable path:"
 msgstr "Pfad zur PHP-Programmdatei:"
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "Alle &entfernen"
@@ -4620,9 +4611,6 @@ msgstr "Pfad zur PHP-Programmdatei:"
 
 #~ msgid "Patch to update the FileView in a separate thread"
 #~ msgstr "Patch zur Aktualisierung der Dateiansicht in einem eigenen Thread"
-
-#~ msgid "Alt+X"
-#~ msgstr "Alt+X"
 
 #~ msgid "TrackerViewBase"
 #~ msgstr "TrackerViewBase"

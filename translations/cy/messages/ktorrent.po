@@ -4428,15 +4428,6 @@ msgstr ""
 msgid "Php executable path:"
 msgstr ""
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Yes"
 #~ msgstr "ie"
@@ -4509,46 +4500,14 @@ msgstr ""
 #~ msgstr "Methu creu %1: %2"
 
 #, fuzzy
-#~ msgid "Alt+X"
-#~ msgstr "Alt+1"
-
-#, fuzzy
 #~ msgid "TrackerViewBase"
 #~ msgstr "Cyflwr:"
-
-#, fuzzy
-#~ msgid "Alt+N"
-#~ msgstr "Alt+A"
-
-#, fuzzy
-#~ msgid "Alt+S"
-#~ msgstr "Alt+1"
 
 #, fuzzy
 #~ msgid "DownloadPref"
 #~ msgstr "Lawrlwytho"
 
-#, fuzzy
-#~ msgid "Alt+K"
-#~ msgstr "Alt+A"
-
-#, fuzzy
-#~ msgid "Alt+B"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+U"
-#~ msgstr "Alt+A"
-
-#~ msgid "Alt+A"
-#~ msgstr "Alt+A"
-
-#~ msgid "Form1"
 #~ msgstr "Ffurf1"
-
-#, fuzzy
-#~ msgid "Alt+L"
-#~ msgstr "Alt+A"
 
 #, fuzzy
 #~ msgid "Form2"
@@ -4579,18 +4538,6 @@ msgstr ""
 #~ msgid "St&atus"
 #~ msgstr "Cy&flwr"
 
-#, fuzzy
-#~ msgid "Alt+Y"
-#~ msgstr "Alt+A"
-
-#, fuzzy
-#~ msgid "Alt+G"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+Z"
-#~ msgstr "Alt+1"
-
 #~ msgid "finished"
 #~ msgstr "wedi Gorffen"
 
@@ -4609,16 +4556,9 @@ msgstr ""
 #~ msgid "Completed"
 #~ msgstr "Gorffenwyd"
 
-#~ msgid "Alt+C"
-#~ msgstr "Alt+C"
-
 #, fuzzy
 #~ msgid "SearchBar"
 #~ msgstr "Chwilio"
-
-#, fuzzy
-#~ msgid "Alt+O"
-#~ msgstr "Alt+A"
 
 #, fuzzy
 #~ msgid "Use &KTorrent filter?"
@@ -4626,10 +4566,6 @@ msgstr ""
 
 #~ msgid "Name:"
 #~ msgstr "Enw:"
-
-#, fuzzy
-#~ msgid "Alt+R"
-#~ msgstr "Alt+1"
 
 #, fuzzy
 #~ msgid "Available trackers:"
@@ -4648,16 +4584,8 @@ msgstr ""
 #~ msgstr "."
 
 #, fuzzy
-#~ msgid "Alt+Q"
-#~ msgstr "Alt+A"
-
-#, fuzzy
 #~ msgid "Downlo&ad"
 #~ msgstr "Lawrlwytho"
-
-#, fuzzy
-#~ msgid "Alt+E"
-#~ msgstr "Alt+1"
 
 #~ msgid "no"
 #~ msgstr "nage"

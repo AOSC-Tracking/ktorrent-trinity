@@ -4485,15 +4485,6 @@ msgstr "Passwoort ännern..."
 msgid "Php executable path:"
 msgstr "Padd na dat PHP-Programm:"
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "All &wegmaken"
@@ -4571,20 +4562,11 @@ msgstr "Padd na dat PHP-Programm:"
 #~ msgid "Cannot load chunk %1"
 #~ msgstr "Stück %1 lett sik nich laden"
 
-#~ msgid "Alt+X"
-#~ msgstr "Alt+X"
-
 #~ msgid "TrackerViewBase"
 #~ msgstr "TrackerViewBase"
 
 #~ msgid "Type of service field of IP packets"
 #~ msgstr "Deenstfeld vun IP-Paketen"
-
-#~ msgid "Alt+N"
-#~ msgstr "Alt+S"
-
-#~ msgid "Alt+S"
-#~ msgstr "Alt+R"
 
 #~ msgid ""
 #~ "Country locator for InfoWidget plugin. Flags are taken from http://flags."
@@ -4599,21 +4581,8 @@ msgstr "Padd na dat PHP-Programm:"
 #~ msgid "DownloadPref"
 #~ msgstr "Daallaad-Instellen"
 
-#~ msgid "Alt+B"
-#~ msgstr "Alt+P"
-
-#~ msgid "Alt+U"
-#~ msgstr "Alt+O"
-
-#~ msgid "Alt+A"
-#~ msgstr "Alt+A"
-
 #~ msgid "Form1"
 #~ msgstr "Form1"
-
-#, fuzzy
-#~ msgid "Alt+L"
-#~ msgstr "Alt+P"
 
 #~ msgid "Form2"
 #~ msgstr "Form2"

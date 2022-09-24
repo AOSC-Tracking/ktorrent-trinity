@@ -4546,15 +4546,6 @@ msgstr ""
 msgid "Php executable path:"
 msgstr ""
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "B&orrar todo"
@@ -4630,20 +4621,8 @@ msgstr ""
 #~ msgstr "Non foi posíbel carregar o anaco %1"
 
 #, fuzzy
-#~ msgid "Alt+X"
-#~ msgstr "Alt+1"
-
-#, fuzzy
 #~ msgid "TrackerViewBase"
 #~ msgstr "Localizadores"
-
-#, fuzzy
-#~ msgid "Alt+N"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+S"
-#~ msgstr "Alt+1"
 
 #~ msgid ""
 #~ "Country locator for InfoWidget plugin. Flags are taken from http://flags."
@@ -4658,26 +4637,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "DownloadPref"
 #~ msgstr "Obtido"
-
-#, fuzzy
-#~ msgid "Alt+K"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+B"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+U"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+A"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+L"
-#~ msgstr "Alt+1"
 
 #~ msgid "Max ratio:"
 #~ msgstr "Proporzón máxima:"
@@ -4744,10 +4703,6 @@ msgstr ""
 #~ "torrentes silenciosamente."
 
 #, fuzzy
-#~ msgid "Alt+Y"
-#~ msgstr "Alt+1"
-
-#, fuzzy
 #~ msgid "InfoWidgetBase"
 #~ msgstr "InfoWidget:"
 
@@ -4764,14 +4719,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Tracker request timed out"
 #~ msgstr "Estado do localizador:"
-
-#, fuzzy
-#~ msgid "Alt+G"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+Z"
-#~ msgstr "Alt+1"
 
 #~ msgid "finished"
 #~ msgstr "finalizado"
@@ -4815,10 +4762,6 @@ msgstr ""
 #~ msgid "<b>%1</b> torrent has been moved to download panel."
 #~ msgstr "O torrente <b>%1</b> foi movido para o panel de transferéncias."
 
-#, fuzzy
-#~ msgid "Alt+C"
-#~ msgstr "Alt+1"
-
 #~ msgid "Unreachable"
 #~ msgstr "Non alcanzábel"
 
@@ -4850,7 +4793,3 @@ msgstr ""
 #~ "KTorrent se quer mudar o limite.\n"
 #~ "Non é posíbel iniciar máis de %n fontes. Vaia a Configurazón -> "
 #~ "Configurar KTorrent se quer mudar o limite."
-
-#, fuzzy
-#~ msgid "Alt+O"
-#~ msgstr "Alt+1"

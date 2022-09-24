@@ -4518,15 +4518,6 @@ msgstr "Tukar Susunan Tab"
 msgid "Php executable path:"
 msgstr ""
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "Laras Semua..."
@@ -4595,20 +4586,9 @@ msgstr ""
 #~ msgid "Cannot load chunk %1"
 #~ msgstr "Muatkan cakera lain"
 
-#~ msgid "Alt+X"
-#~ msgstr "Alt+X"
-
 #, fuzzy
 #~ msgid "TrackerViewBase"
 #~ msgstr "Maklumat penjejak"
-
-#, fuzzy
-#~ msgid "Alt+N"
-#~ msgstr "Alt+K"
-
-#, fuzzy
-#~ msgid "Alt+S"
-#~ msgstr "Alt+1"
 
 #, fuzzy
 #~ msgid "You must add at least one tracker."
@@ -4617,21 +4597,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "DownloadPref"
 #~ msgstr "Pakej sudah dimuatturun"
-
-#, fuzzy
-#~ msgid "Alt+B"
-#~ msgstr "Alt+K"
-
-#~ msgid "Alt+U"
-#~ msgstr "Alt+U"
-
-#, fuzzy
-#~ msgid "Alt+A"
-#~ msgstr "Alt+K"
-
-#, fuzzy
-#~ msgid "Alt+L"
-#~ msgstr "Alt+K"
 
 #, fuzzy
 #~ msgid "Max ratio:"

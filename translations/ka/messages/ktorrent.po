@@ -4484,17 +4484,6 @@ msgstr ""
 msgid "Php executable path:"
 msgstr ""
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+2"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+3"
-#~ msgstr "Alt+1"
-
 #, fuzzy
 #~ msgid "Yes"
 #~ msgstr "დიახ"
@@ -4566,42 +4555,14 @@ msgstr ""
 #~ msgstr "ჯაჭვის ჩატვირთვა ვერ მოხერხდა %1"
 
 #, fuzzy
-#~ msgid "Alt+X"
-#~ msgstr "Alt+1"
-
-#, fuzzy
 #~ msgid "TrackerViewBase"
 #~ msgstr "მდგომარეობა:"
-
-#~ msgid "Alt+N"
-#~ msgstr "Alt+N"
-
-#, fuzzy
-#~ msgid "Alt+S"
-#~ msgstr "Alt+1"
 
 #~ msgid "You must add at least one tracker."
 #~ msgstr "თქვენ ერთი ძაფი მაინც უნდა დაამატოთ."
 
 #~ msgid "DownloadPref"
 #~ msgstr "DownloadPref"
-
-#~ msgid "Alt+K"
-#~ msgstr "Alt+K"
-
-#, fuzzy
-#~ msgid "Alt+B"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+U"
-#~ msgstr "Alt+U"
-
-#~ msgid "Alt+A"
-#~ msgstr "Alt+A"
-
-#, fuzzy
-#~ msgid "Alt+L"
-#~ msgstr "Alt+U"
 
 #, fuzzy
 #~ msgid "Max ratio:"
@@ -4648,19 +4609,8 @@ msgstr ""
 #~ msgid "St&atus"
 #~ msgstr "სტ&ატუსი"
 
-#~ msgid "Alt+Y"
-#~ msgstr "Alt+Y"
-
 #~ msgid "InfoWidgetBase"
 #~ msgstr "InfoWidgetBase"
-
-#, fuzzy
-#~ msgid "Alt+G"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+Z"
-#~ msgstr "Alt+1"
 
 #~ msgid "finished"
 #~ msgstr "დასრულდა"
@@ -4682,9 +4632,6 @@ msgstr ""
 
 #~ msgid "Completed"
 #~ msgstr "დასრულებულია"
-
-#~ msgid "Alt+C"
-#~ msgstr "Alt+C"
 
 #~ msgid "Unreachable"
 #~ msgstr "მიუწვდომელი"
@@ -4714,9 +4661,6 @@ msgstr ""
 #~ "%n-ზე მეტი მარცვლის დაწყება შეუძლებელია. მიდით პარამეტრებში -> KTorrent-"
 #~ "ის კონფიგურაციაში, თუ გსურთ შეზღუდვის შეცვლა."
 
-#~ msgid "Alt+O"
-#~ msgstr "Alt+O"
-
 #~ msgid "Select Filter File with IP Ranges in KTorrent Format"
 #~ msgstr "ამოირჩიეთ ფილტრის ფაილი IP შუალედებით KTorrent-ის ფორმატში"
 
@@ -4735,10 +4679,6 @@ msgstr ""
 
 #~ msgid "You must fill in the name field."
 #~ msgstr "თქვენ უნდა შეავსოთ სახელის ველი."
-
-#, fuzzy
-#~ msgid "Alt+R"
-#~ msgstr "Alt+1"
 
 #, fuzzy
 #~ msgid "Available trackers:"
@@ -4777,9 +4717,6 @@ msgstr ""
 #~ msgid "Re&store default."
 #~ msgstr "ნაგულისხმევის &დამატება"
 
-#~ msgid "Alt+Q"
-#~ msgstr "Alt+Q"
-
 #, fuzzy
 #~ msgid "Downlo&ad"
 #~ msgstr "ჩამოტვირთვა"
@@ -4787,10 +4724,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "&Seed"
 #~ msgstr "დამარცვლა"
-
-#, fuzzy
-#~ msgid "Alt+E"
-#~ msgstr "Alt+1"
 
 #~ msgid "no"
 #~ msgstr "არა"

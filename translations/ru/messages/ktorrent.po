@@ -4503,15 +4503,6 @@ msgstr "Изменить пароль ..."
 msgid "Php executable path:"
 msgstr "Путь к PHP:"
 
-#~ msgid "Alt+1"
-#~ msgstr "Alt+1"
-
-#~ msgid "Alt+2"
-#~ msgstr "Alt+2"
-
-#~ msgid "Alt+3"
-#~ msgstr "Alt+3"
-
 #, fuzzy
 #~ msgid "Remove"
 #~ msgstr "Удалит&ь все"
@@ -4590,21 +4581,11 @@ msgstr "Путь к PHP:"
 #~ msgstr "Не удалось загрузить часть %1"
 
 #, fuzzy
-#~ msgid "Alt+X"
-#~ msgstr "Alt+1"
-
-#, fuzzy
 #~ msgid "TrackerViewBase"
 #~ msgstr "Трекеры"
 
 #~ msgid "Type of service field of IP packets"
 #~ msgstr "Поле TOS для пакетов IP (для определения приоритета)"
-
-#~ msgid "Alt+N"
-#~ msgstr "Alt+N"
-
-#~ msgid "Alt+S"
-#~ msgstr "Alt+S"
 
 #~ msgid "You must add at least one tracker."
 #~ msgstr "Добавьте хотя бы один трекер."
@@ -4612,22 +4593,6 @@ msgstr "Путь к PHP:"
 #, fuzzy
 #~ msgid "DownloadPref"
 #~ msgstr "Получено"
-
-#, fuzzy
-#~ msgid "Alt+B"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+U"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+A"
-#~ msgstr "Alt+1"
-
-#, fuzzy
-#~ msgid "Alt+L"
-#~ msgstr "Alt+1"
 
 #~ msgid "Max ratio:"
 #~ msgstr "Коэффициент передачи:"
