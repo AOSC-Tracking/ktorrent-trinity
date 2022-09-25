@@ -4507,6 +4507,7 @@ msgstr ""
 #~ msgid "DownloadPref"
 #~ msgstr "Lawrlwytho"
 
+#~ msgid "Form1"
 #~ msgstr "Ffurf1"
 
 #, fuzzy
