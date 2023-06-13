@@ -1919,7 +1919,7 @@ else
  all_includes="$KDE_INCLUDES $all_includes"
 fi
 
-KDE_DEFAULT_CXXFLAGS="-DTQT_NO_ASCII_CAST -DTQT_NO_STL -DTQT_NO_COMPAT -DTQT_NO_TRANSLATION"
+KDE_DEFAULT_CXXFLAGS="-DTQT_NO_ASCII_CAST -DTQT_NO_STL -DTQT_NO_TRANSLATION"
  
 KDE_LDFLAGS="-L$kde_libraries"
 if test ! "$kde_libraries" = "$x_libraries" && test ! "$kde_libraries" = "$qt_libraries" ; then 
