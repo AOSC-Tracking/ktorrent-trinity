@@ -32,7 +32,7 @@ namespace Ideal {
 
 /**Main window which provides simplified IDEA mode.*/
 class DMainWindow: public KParts::MainWindow {
-    Q_OBJECT
+    TQ_OBJECT
   
 public:
     DMainWindow(TQWidget *parent = 0, const char *name = 0);

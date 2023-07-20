@@ -29,7 +29,7 @@ namespace kt
 	
 	class StatusTab : public StatusTabBase
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	
 	public:

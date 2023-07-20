@@ -33,7 +33,7 @@ namespace kt
 	 */
 	class BWSPrefPageWidget : public BWSPage
 	{
-			Q_OBJECT
+			TQ_OBJECT
   
 		public:
 			BWSPrefPageWidget(TQWidget* parent = 0, const char* name = 0, WFlags fl = 0 );

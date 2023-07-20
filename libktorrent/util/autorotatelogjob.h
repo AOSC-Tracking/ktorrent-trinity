@@ -35,7 +35,7 @@ namespace bt
 	*/
 	class AutoRotateLogJob : public TDEIO::Job
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		AutoRotateLogJob(const TQString & file,Log* lg);

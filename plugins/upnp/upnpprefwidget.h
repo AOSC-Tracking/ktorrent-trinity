@@ -40,7 +40,7 @@ namespace kt
 	 */
 	class UPnPPrefWidget : public UPnPWidget,public net::PortListener
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	
 	public:

@@ -30,7 +30,7 @@ namespace kt
 
 class SpeedLimitsDlg : public SpeedLimitsDlgBase
 {
-	Q_OBJECT
+	TQ_OBJECT
   
 
 	kt::TorrentInterface* tor;

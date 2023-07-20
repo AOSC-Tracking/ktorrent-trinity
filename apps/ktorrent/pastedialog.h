@@ -30,7 +30,7 @@ class KTorrentCore;
  **/
 class PasteDialog: public PasteDlgBase
 {
-		Q_OBJECT
+		TQ_OBJECT
   
 public slots:
     virtual void btnOK_clicked();

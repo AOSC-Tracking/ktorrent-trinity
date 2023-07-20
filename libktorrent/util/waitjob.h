@@ -37,7 +37,7 @@ namespace bt
 	*/
 	class WaitJob : public TDEIO::Job
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		WaitJob(Uint32 millis);

@@ -61,7 +61,7 @@ namespace bt
 	*/
 	class ChunkDownload : public TQObject,public kt::ChunkDownloadInterface 
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		/**

@@ -47,7 +47,7 @@ namespace bt
 	 */
 	class AuthenticateBase : public TQObject
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		AuthenticateBase(mse::StreamSocket* s = 0);

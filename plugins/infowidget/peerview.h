@@ -54,7 +54,7 @@ namespace kt
 	*/
 	class PeerView : public TDEListView
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 		
 		TQMap<kt::PeerInterface*,PeerViewItem*> items;

@@ -46,7 +46,7 @@ namespace kt
 	*/
 	class RssFeedManager : public RssFeedWidget
 	{
-			Q_OBJECT
+			TQ_OBJECT
   
 		public:
 			

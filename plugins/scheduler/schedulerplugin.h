@@ -42,7 +42,7 @@ namespace kt
 	 */
 	class SchedulerPlugin : public Plugin
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		SchedulerPlugin(TQObject* parent, const char* name, const TQStringList& args);

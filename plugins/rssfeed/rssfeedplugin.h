@@ -36,7 +36,7 @@ namespace kt
 	 */
 	class RssFeedPlugin : public Plugin
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		RssFeedPlugin(TQObject* parent, const char* name, const TQStringList& args);

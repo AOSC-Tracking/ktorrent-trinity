@@ -55,7 +55,7 @@ namespace bt
 	 */
 	class QueueManager : public TQObject
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 				
 		public:

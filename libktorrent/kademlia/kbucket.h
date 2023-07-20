@@ -142,7 +142,7 @@ namespace dht
 	 */
 	class KBucket : public RPCCallListener
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 				
 		Uint32 idx;

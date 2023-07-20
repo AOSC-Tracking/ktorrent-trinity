@@ -36,7 +36,7 @@ namespace kt
 	*/
 	class SearchPlugin : public Plugin, public kt::CloseTabListener
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		SearchPlugin(TQObject* parent, const char* name, const TQStringList& args);

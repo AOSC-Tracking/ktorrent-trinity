@@ -67,7 +67,7 @@ namespace bt
 	class Peer : public TQObject, public kt::PeerInterface
 			  //,public Object
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		/**

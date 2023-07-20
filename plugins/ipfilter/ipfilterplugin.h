@@ -41,7 +41,7 @@ namespace kt
 	 */
 	class IPFilterPlugin : public Plugin, public kt::IPBlockingInterface
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		IPFilterPlugin(TQObject* parent, const char* name, const TQStringList& args);

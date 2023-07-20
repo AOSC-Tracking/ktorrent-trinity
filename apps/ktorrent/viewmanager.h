@@ -34,7 +34,7 @@ class KTorrent;
 */
 class ViewManager : public TQObject, public kt::CloseTabListener
 {
-	Q_OBJECT
+	TQ_OBJECT
   
 public:
 	ViewManager(TQObject *parent = 0, const char *name = 0);

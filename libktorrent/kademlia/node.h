@@ -44,7 +44,7 @@ namespace dht
 	*/
 	class Node : public TQObject
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		Node(RPCServer* srv,const TQString & key_file);

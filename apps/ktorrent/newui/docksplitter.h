@@ -31,7 +31,7 @@ class DockWidget;
 @short Splitter for docks
 */
 class DockSplitter: public TQSplitter {
-    Q_OBJECT
+    TQ_OBJECT
   
 public:
     DockSplitter(Qt::Orientation orientation, TQWidget *parent = 0, const char *name = 0);

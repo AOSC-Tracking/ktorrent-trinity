@@ -32,7 +32,7 @@ namespace kt
 	*/
 	class UPnPPlugin : public Plugin
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		UPnPPlugin(TQObject* parent, const char* name, const TQStringList& args);

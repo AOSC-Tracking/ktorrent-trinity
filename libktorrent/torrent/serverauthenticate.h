@@ -37,7 +37,7 @@ namespace bt
 	*/
 	class ServerAuthenticate : public AuthenticateBase
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		ServerAuthenticate(mse::StreamSocket* sock,Server* server);

@@ -33,7 +33,7 @@ namespace kt
 	
 	class SearchPrefPageWidget : public SEPreferences
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		SearchPrefPageWidget(TQWidget *parent = 0);

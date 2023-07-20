@@ -93,7 +93,7 @@ namespace bt
 	*/
 	class PeerDownloader : public TQObject
 	{
-		Q_OBJECT
+		TQ_OBJECT
 		
 	public:
 		/**

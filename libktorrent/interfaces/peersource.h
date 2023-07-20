@@ -49,7 +49,7 @@ namespace kt
 	*/
 	class PeerSource : public TQObject
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		PeerSource();

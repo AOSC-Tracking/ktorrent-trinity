@@ -47,7 +47,7 @@ namespace kt
 	 */
 	class Plugin : public KParts::Plugin
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		/**

@@ -14,7 +14,7 @@ using RSS::Status;
 
 class Tester : public TQObject
 {
-	Q_OBJECT
+	TQ_OBJECT
   
 	public:
 		void test( const TQString &url );

@@ -37,7 +37,7 @@ namespace kt
 	*/
 	class ExitOperation : public TQObject
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		ExitOperation();
@@ -54,7 +54,7 @@ namespace kt
 	 */
 	class ExitJobOperation : public ExitOperation
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		ExitJobOperation(TDEIO::Job* j);

@@ -29,7 +29,7 @@ namespace kt
 {
 	class ConvertDialog: public ConvertingDlg
 	{
-			Q_OBJECT
+			TQ_OBJECT
   
 
 		public:

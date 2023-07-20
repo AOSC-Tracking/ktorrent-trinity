@@ -45,7 +45,7 @@ namespace kt
 	
 	class ImportDialog : public ImportDlgBase,public bt::DataCheckerListener
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	
 	public:

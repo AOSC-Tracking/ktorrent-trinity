@@ -42,7 +42,7 @@ namespace kt {
 */
 class StatsPluginPrefs : public TQObject, public PrefPageInterface
 {
-	Q_OBJECT
+	TQ_OBJECT
   
 	
 	private:

@@ -66,7 +66,7 @@ namespace bt
 	*/
 	class Downloader : public TQObject
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 		
 	public:
