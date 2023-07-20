@@ -38,7 +38,7 @@ A TQPushButton derivative with a size of a TQToolBar. Button can be rotated
 (placed onto different places in ideal mode).
 */
 class Button : public TQPushButton {
-    Q_OBJECT
+    TQ_OBJECT
   
 public:
     Button(ButtonBar *parent, const TQString text, const TQIconSet &icon = TQIconSet(),

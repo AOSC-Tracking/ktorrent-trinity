@@ -50,7 +50,7 @@ public:
 
 class GeneralPrefPage : public TQObject,public kt::PrefPageInterface
 {
-	Q_OBJECT
+	TQ_OBJECT
 	
 	GeneralPref* gp;
 public:
@@ -71,7 +71,7 @@ private slots:
 
 class AdvancedPrefPage : public TQObject,public kt::PrefPageInterface
 {
-	Q_OBJECT
+	TQ_OBJECT
 	
 	 
 	AdvancedPref* ap;
@@ -94,7 +94,7 @@ private slots:
  
 class KTorrentPreferences : public KDialogBase
 {
-	Q_OBJECT
+	TQ_OBJECT
 	
 public:
 	KTorrentPreferences(KTorrent & ktor);

@@ -65,7 +65,7 @@ namespace kt
  */
 class KTorrent : public DMainWindow, public kt::GUIInterface
 {
-	Q_OBJECT
+	TQ_OBJECT
   
 public:
 	/**

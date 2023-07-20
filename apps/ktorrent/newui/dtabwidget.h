@@ -25,7 +25,7 @@
 class TQToolButton;
 
 class DTabWidget: public KTabWidget {
-    Q_OBJECT
+    TQ_OBJECT
   
 public:
     DTabWidget(TQWidget *parent=0, const char *name=0);

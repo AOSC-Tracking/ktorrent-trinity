@@ -40,7 +40,7 @@ namespace kt
 	*/
 	class HttpClientHandler : public TQObject
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 		enum State
 		{

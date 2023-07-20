@@ -37,7 +37,7 @@ using kt::UPnPRouter;
 */
 class UPnPTestApp : public TDEMainWindow, public kt::LogMonitorInterface
 {
-	Q_OBJECT
+	TQ_OBJECT
   
 public:
 	UPnPTestApp(TQWidget *parent = 0, const char *name = 0);

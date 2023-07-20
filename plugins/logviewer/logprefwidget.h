@@ -26,7 +26,7 @@ namespace kt
 {
 	class LogPrefWidget: public LogPrefWidgetBase
 	{
-			Q_OBJECT
+			TQ_OBJECT
   
 		public:
 			LogPrefWidget(TQWidget *parent = 0, const char *name = 0);

@@ -50,7 +50,7 @@ class QueueItem: public TQListViewItem
 
 class QueueDialog: public QueueDlg 
 {
-	Q_OBJECT
+	TQ_OBJECT
   
 	public:
 		QueueDialog(bt::QueueManager* qm, TQWidget *parent = 0, const char *name = 0);

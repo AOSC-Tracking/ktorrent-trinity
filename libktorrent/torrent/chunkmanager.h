@@ -60,7 +60,7 @@ namespace bt
 	 */
 	class ChunkManager : public TQObject
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 				
 		Torrent & tor;

@@ -37,7 +37,7 @@ namespace bt
 	 */
 	class TorrentFile : public kt::TorrentFileInterface
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 
 		Uint32 index;

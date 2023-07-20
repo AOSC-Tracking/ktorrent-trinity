@@ -46,7 +46,7 @@ namespace kt
 	
 	class RssLinkDownloader : public TQObject
 	{
-			Q_OBJECT
+			TQ_OBJECT
   
 		public:
 			

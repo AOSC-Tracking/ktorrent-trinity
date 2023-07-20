@@ -52,7 +52,7 @@ namespace kt
 	*/
 	class GroupView : public TDEListView
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		GroupView(ViewManager* view,TDEActionCollection* col,TQWidget *parent = 0, const char *name = 0);

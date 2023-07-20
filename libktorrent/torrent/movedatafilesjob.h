@@ -31,7 +31,7 @@ namespace bt
 	*/
 	class MoveDataFilesJob : public TDEIO::Job
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		MoveDataFilesJob();

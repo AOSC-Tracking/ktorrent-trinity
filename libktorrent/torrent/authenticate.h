@@ -43,7 +43,7 @@ namespace bt
 	 */
 	class Authenticate : public AuthenticateBase
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 

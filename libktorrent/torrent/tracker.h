@@ -43,7 +43,7 @@ namespace bt
 	*/
 	class Tracker : public kt::PeerSource
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		Tracker(const KURL & url,kt::TorrentInterface* tor,const PeerID & id,int tier);

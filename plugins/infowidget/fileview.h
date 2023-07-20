@@ -34,7 +34,7 @@ namespace kt
 	*/
 	class FileView : public TDEListView
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		FileView(TQWidget *parent = 0, const char *name = 0);

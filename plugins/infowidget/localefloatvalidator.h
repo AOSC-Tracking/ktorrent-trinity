@@ -32,7 +32,7 @@ namespace kt{
 	*/
 	class LocaleFloatValidator : public TQValidator
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		LocaleFloatValidator( TQObject * parent, const char *name = 0 );

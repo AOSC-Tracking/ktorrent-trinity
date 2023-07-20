@@ -54,7 +54,7 @@ namespace mse
 	*/
 	class StreamSocket : public TQObject,public net::SocketReader,public net::SocketWriter
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		StreamSocket();

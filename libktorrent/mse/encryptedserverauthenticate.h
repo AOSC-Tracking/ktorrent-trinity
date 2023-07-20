@@ -35,7 +35,7 @@ namespace mse
 	*/
 	class EncryptedServerAuthenticate : public bt::ServerAuthenticate
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		EncryptedServerAuthenticate(mse::StreamSocket* sock, bt::Server* server);

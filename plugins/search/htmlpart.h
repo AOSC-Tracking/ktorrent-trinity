@@ -36,7 +36,7 @@ namespace kt
 	*/
 	class HTMLPart : public TDEHTMLPart
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		HTMLPart(TQWidget *parent = 0);

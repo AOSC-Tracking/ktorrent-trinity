@@ -31,7 +31,7 @@ namespace kt
 	*/
 	class LogViewer : public KTextBrowser, public LogMonitorInterface
 	{
-			Q_OBJECT
+			TQ_OBJECT
   
 		public:
 			LogViewer(TQWidget *parent = 0, const char *name = 0);

@@ -62,7 +62,7 @@ class KProgress;
  */
 class KTorrentCore : public kt::CoreInterface
 {
-	Q_OBJECT
+	TQ_OBJECT
   
 public:
 	KTorrentCore(kt::GUIInterface* gui);

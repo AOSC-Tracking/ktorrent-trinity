@@ -29,7 +29,7 @@ namespace kt
 	*/
 	class DownloadedChunkBar : public ChunkBar
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		DownloadedChunkBar(TQWidget* parent, const char* name);

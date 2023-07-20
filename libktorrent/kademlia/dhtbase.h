@@ -50,7 +50,7 @@ namespace dht
 	 */
 	class DHTBase : public TQObject
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		DHTBase();

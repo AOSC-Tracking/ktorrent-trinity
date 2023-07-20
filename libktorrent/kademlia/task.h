@@ -48,7 +48,7 @@ namespace dht
 	 */
 	class Task : public RPCCallListener
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		/**

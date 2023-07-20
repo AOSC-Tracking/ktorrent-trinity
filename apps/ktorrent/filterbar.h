@@ -41,7 +41,7 @@ namespace kt
  */
 class FilterBar : public TQWidget
 {
-	Q_OBJECT
+	TQ_OBJECT
   
 
 public:

@@ -36,7 +36,7 @@ class KTorrentCore;
 
 class ScanDialog : public ScanDlgBase, public bt::DataCheckerListener
 {
-	Q_OBJECT
+	TQ_OBJECT
   
 public:
 	ScanDialog(KTorrentCore* core,bool auto_import,TQWidget* parent = 0, const char* name = 0, bool modal = false, WFlags fl = WDestructiveClose  );

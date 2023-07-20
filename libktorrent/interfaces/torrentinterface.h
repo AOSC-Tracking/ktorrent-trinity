@@ -181,7 +181,7 @@ namespace kt
 	*/
 	class TorrentInterface : public TQObject
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		TorrentInterface();

@@ -51,7 +51,7 @@ namespace kt {
 */
 class StatsPlugin : public Plugin
 {
-	Q_OBJECT
+	TQ_OBJECT
   
 
 	private:

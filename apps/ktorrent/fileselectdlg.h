@@ -42,7 +42,7 @@ namespace kt
 
 class FileSelectDlg : public FileSelectDlgBase, public kt::FileTreeRootListener
 {
-		Q_OBJECT
+		TQ_OBJECT
   
 
 		kt::TorrentInterface* tc;

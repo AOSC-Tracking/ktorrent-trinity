@@ -34,7 +34,7 @@ namespace dht
 	*/
 	class RPCCallListener : public TQObject
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		RPCCallListener();
@@ -61,7 +61,7 @@ namespace dht
 	 */
 	class RPCCall : public TQObject
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		RPCCall(RPCServer* rpc,MsgBase* msg,bool queued);

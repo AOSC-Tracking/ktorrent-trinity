@@ -39,7 +39,7 @@ namespace kt
 	*/
 	class UPnPMCastSocket : public KNetwork::KDatagramSocket
 	{
-	Q_OBJECT
+	TQ_OBJECT
   
 	public:
 		UPnPMCastSocket(bool verbose = false);

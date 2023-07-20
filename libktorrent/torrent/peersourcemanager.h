@@ -50,7 +50,7 @@ namespace bt
 	*/
 	class PeerSourceManager : public TQObject, public kt::TrackersList
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 				
 		TorrentControl* tor;

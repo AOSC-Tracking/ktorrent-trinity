@@ -35,7 +35,7 @@ namespace kt
 	 */
 	class ZeroConfPlugin : public Plugin
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		ZeroConfPlugin(TQObject* parent, const char* name, const TQStringList& args);

@@ -52,7 +52,7 @@ namespace kt
 	*/
 	class CoreInterface : public TQObject
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	public:
 		CoreInterface();

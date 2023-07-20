@@ -35,7 +35,7 @@ namespace kt
 	*/
 	class SearchTab : public TQObject
 	{
-		Q_OBJECT
+		TQ_OBJECT
   
 	
 	public:
