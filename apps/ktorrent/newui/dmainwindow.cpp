@@ -306,7 +306,7 @@ DDockWindow::Position DMainWindow::dockWidgetPosition(TQWidget *view)
 
 void DMainWindow::widgetDestroyed()
 {
-    TQWidget *w = TQT_TQWIDGET(const_cast<TQT_BASE_OBJECT_NAME*>(sender()));
+    TQWidget *w = TQT_TQWIDGET(const_cast<TQObject*>(sender()));
 
     if (m_docks.contains(w))
     {

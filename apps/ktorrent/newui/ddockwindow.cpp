@@ -294,7 +294,7 @@ void DDockWindow::selectWidget(Ideal::Button *button)
 
 void DDockWindow::selectWidget()
 {
-    selectWidget((Ideal::Button*)TQT_TQOBJECT(const_cast<TQT_BASE_OBJECT_NAME*>(sender())));
+    selectWidget((Ideal::Button*)sender());
 }
 
 void DDockWindow::hideWidget(TQWidget *widget)
@@ -375,7 +375,7 @@ void DDockWindow::selectPrevWidget()
 
 void DDockWindow::contextMenu(TQPopupMenu * menu)
 {
-    m_lastContextMenuButton = static_cast<Ideal::Button*>( TQT_TQWIDGET(const_cast<TQT_BASE_OBJECT_NAME*>(sender())) );
+    m_lastContextMenuButton = static_cast<Ideal::Button*>( const_cast<TQObject*>( sender() ) );
 
     menu->insertSeparator();
 
