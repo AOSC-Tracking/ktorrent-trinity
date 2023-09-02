@@ -47,7 +47,7 @@ Button::Button(ButtonBar *parent, const TQString text, const TQIconSet &icon,
     hide();
     setFlat(true);
     setToggleButton(true);
-    setFocusPolicy(TQ_NoFocus);
+    setFocusPolicy(TQWidget::NoFocus);
     setDescription(m_description);
     setSizePolicy(TQSizePolicy::Minimum, TQSizePolicy::Minimum);
     resize(sizeHint());

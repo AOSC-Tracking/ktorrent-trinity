@@ -100,7 +100,7 @@ const TQPixmap& kt::FlagDB::getFlag(const TQString& country)
 			if (TQFile::exists(path)) {
 				if (img.load(path)) {
 					if (img.width() != preferredWidth || img.height() != preferredHeight) {
-						const TQImage& imgScaled = img.smoothScale(preferredWidth, preferredHeight, TQ_ScaleMin);
+						const TQImage& imgScaled = img.smoothScale(preferredWidth, preferredHeight, TQImage::ScaleMin);
 						if (!imgScaled.isNull()) {
 							pixmap.convertFromImage(imgScaled);
 							break;

@@ -63,7 +63,7 @@ namespace kt
 		setColumnLabels(days);
 		setRowLabels(hours);
 		
-		setFocusPolicy(TQ_StrongFocus);
+		setFocusPolicy(TQWidget::StrongFocus);
 
 		TQFont f;
 		f.setPointSize(8);
