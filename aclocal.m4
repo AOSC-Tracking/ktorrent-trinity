@@ -3449,9 +3449,9 @@ AC_DEFUN([KDE_ENABLE_HIDDEN_VISIBILITY],
           AC_TRY_COMPILE(
           [
 #include <qglobal.h>
-#if Q_EXPORT - 0 != 0
-/* if this compiles, then Q_EXPORT is undefined */
-/* if Q_EXPORT is nonempty, this will break compilation */
+#if TQ_EXPORT - 0 != 0
+/* if this compiles, then TQ_EXPORT is undefined */
+/* if TQ_EXPORT is nonempty, this will break compilation */
 #endif
           ], [/* elvis is alive */],
           kde_cv_val_qt_gcc_visibility_patched=no, kde_cv_val_qt_gcc_visibility_patched=yes)
