@@ -48,7 +48,7 @@ namespace kt
 		void finished();
 
 	private:
-		bool containsDelimiters(const QString & str);
+		bool containsDelimiters(const TQString & str);
 		
 	private:
 		TQByteArray output;

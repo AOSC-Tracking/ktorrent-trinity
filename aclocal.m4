@@ -1145,14 +1145,14 @@ cat >> conftest.$ac_ext <<EOF
 EOF
 if test $kde_qtsubver -gt 0; then
 cat >> conftest.$ac_ext <<EOF
-    QString s;
+    TQString s;
     s.setLatin1("Elvis is alive", 14);
 EOF
 fi
 fi
 if test "$kde_qtver" = "3"; then
 cat >> conftest.$ac_ext <<EOF
-    (void)QStyleFactory::create(QString::null);
+    (void)QStyleFactory::create(TQString::null);
     QCursor c(Qt::WhatsThisCursor);
 EOF
 fi
@@ -4702,7 +4702,7 @@ AC_TRY_RUN(dnl
 #include <qimageio.h>
 #include <qstring.h>
 int main() {
-		QString t = "hallo";
+		TQString t = "hallo";
 		t.fill('t');
 		qInitImageIO();
 }

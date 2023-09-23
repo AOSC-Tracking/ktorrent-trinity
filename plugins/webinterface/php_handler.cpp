@@ -101,7 +101,7 @@ namespace kt
 		return launch(data);
 	}
 
-	bool PhpHandler::containsDelimiters(const QString & str)
+	bool PhpHandler::containsDelimiters(const TQString & str)
 	{
 		return str.contains("\"") || str.contains("'");
 	}
