@@ -69,7 +69,7 @@ bool TorrentView::eventFilter(TQObject* watched, TQEvent* e)
 		{
 			case TQEvent::MouseButtonPress:
 			{
-				if(TQT_TQMOUSEEVENT(e)->button() == Qt::RightButton)
+				if(TQT_TQMOUSEEVENT(e)->button() == TQt::RightButton)
 					ktview->m_headerMenu->popup(TQCursor::pos());
 
 				break;

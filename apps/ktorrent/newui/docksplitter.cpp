@@ -23,16 +23,16 @@
 
 namespace Ideal {
 
-DockSplitter::DockSplitter(Qt::Orientation orientation, TQWidget *parent, const char *name)
+DockSplitter::DockSplitter(TQt::Orientation orientation, TQWidget *parent, const char *name)
     :TQSplitter(parent, name), m_orientation(orientation)
 {
     switch (m_orientation)
     {
-        case Qt::Horizontal:
-            setOrientation(Qt::Vertical);
+        case TQt::Horizontal:
+            setOrientation(TQt::Vertical);
             break;
-        case Qt::Vertical:
-            setOrientation(Qt::Horizontal);
+        case TQt::Vertical:
+            setOrientation(TQt::Horizontal);
             break;
     }
     setOpaqueResize(true);
@@ -73,11 +73,11 @@ void DockSplitter::appendSplitter()
 {
     switch (m_orientation)
     {
-        case Qt::Horizontal:
-            m_splitters.append(new TQSplitter(Qt::Horizontal, this));
+        case TQt::Horizontal:
+            m_splitters.append(new TQSplitter(TQt::Horizontal, this));
             break;
-        case Qt::Vertical:
-            m_splitters.append(new TQSplitter(Qt::Vertical, this));
+        case TQt::Vertical:
+            m_splitters.append(new TQSplitter(TQt::Vertical, this));
             break;
     }
     m_splitters[m_splitters.size()-1]->setOpaqueResize(true);

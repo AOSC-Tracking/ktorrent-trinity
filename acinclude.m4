@@ -1141,7 +1141,7 @@ fi
 if test "$kde_qtver" = "3"; then
 cat >> conftest.$ac_ext <<EOF
     (void)QStyleFactory::create(TQString::null);
-    QCursor c(Qt::WhatsThisCursor);
+    QCursor c(TQt::WhatsThisCursor);
 EOF
 fi
 cat >> conftest.$ac_ext <<EOF

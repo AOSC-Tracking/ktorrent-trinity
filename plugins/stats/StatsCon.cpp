@@ -25,13 +25,13 @@ namespace kt {
 StatsCon::StatsCon(TQWidget * p) :  StatsConWgt(p), pmPeersConCht(new ChartDrawer(PeersConGbw, StatsPluginSettings::connectionsMeasurements())), 
 				pmDHTCht(new ChartDrawer(DHTGbw, StatsPluginSettings::dHTMeasurements()))
 {
-	PeersConGbw->setColumnLayout(0, Qt::Vertical );
+	PeersConGbw->setColumnLayout(0, TQt::Vertical );
 	PeersConGbw->layout()->setSpacing( 6 );
 	PeersConGbw->layout()->setMargin( 11 );
 	
 	pmPeersConLay = new TQVBoxLayout(PeersConGbw -> layout());
 	
-	DHTGbw->setColumnLayout(0, Qt::Vertical );
+	DHTGbw->setColumnLayout(0, TQt::Vertical );
 	DHTGbw->layout()->setSpacing( 6 );
 	DHTGbw->layout()->setMargin( 11 );
 	

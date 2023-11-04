@@ -190,7 +190,7 @@ void ChartDrawer::DrawChart(TQPainter & rPnt)
 		// ------------
 		TQPen myop(rPnt.pen());
 		TQPen topl(myop);
-		topl.setStyle(Qt::DotLine);	
+		topl.setStyle(TQt::DotLine);	
 		rPnt.setPen(topl);
 		rPnt.drawLine(0, TrY(FindYScreenCoords(mEls[i].pmVals -> at(mEls[i].pmVals -> size() - 1))), width(), TrY(FindYScreenCoords(mEls[i].pmVals -> at(mEls[i].pmVals -> size() - 1))) );
 		rPnt.setPen(myop);
