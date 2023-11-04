@@ -248,7 +248,7 @@ namespace kt
 	void HttpServer::setDefaultResponseHeaders(HttpResponseHeader & hdr,const TQString & content_type,bool with_session_info)
 	{
 		hdr.setValue("Server","KTorrent/" KT_VERSION_MACRO);
-		hdr.setValue("Date",DateTimeToString(TQDateTime::currentDateTime(Qt::UTC),false));
+		hdr.setValue("Date",DateTimeToString(TQDateTime::currentDateTime(TQt::UTC),false));
 		hdr.setValue("Content-Type",content_type);
 		hdr.setValue("Connection","keep-alive");
 		if (with_session_info && session.sessionId && session.logged_in)
@@ -351,7 +351,7 @@ namespace kt
 					setDefaultResponseHeaders(rhdr,"text/html",true);
 					rhdr.setValue("Cache-Control","max-age=0");
 					rhdr.setValue("Last-Modified",DateTimeToString(fi.lastModified(),false));
-					rhdr.setValue("Expires",DateTimeToString(TQDateTime::currentDateTime(Qt::UTC).addSecs(3600),false));
+					rhdr.setValue("Expires",DateTimeToString(TQDateTime::currentDateTime(TQt::UTC).addSecs(3600),false));
 					hdlr->sendResponse(rhdr);
 					return;
 				}
@@ -361,7 +361,7 @@ namespace kt
 			HttpResponseHeader rhdr(200);
 			setDefaultResponseHeaders(rhdr,ExtensionToContentType(ext),true);
 			rhdr.setValue("Last-Modified",DateTimeToString(fi.lastModified(),false));
-			rhdr.setValue("Expires",DateTimeToString(TQDateTime::currentDateTime(Qt::UTC).addSecs(3600),false));
+			rhdr.setValue("Expires",DateTimeToString(TQDateTime::currentDateTime(TQt::UTC).addSecs(3600),false));
 			rhdr.setValue("Cache-Control","private");
 			if (!hdlr->sendFile(rhdr,path))
 			{
@@ -505,7 +505,7 @@ namespace kt
 			
 			d.setYMD(sl[3].toInt(),m,sl[1].toInt());
 			
-			TQTime t = TQTime::fromString(sl[4],Qt::ISODate);
+			TQTime t = TQTime::fromString(sl[4],TQt::ISODate);
 			return TQDateTime(d,t);
 		}
 		else if (sl.count() == 4)
@@ -524,7 +524,7 @@ namespace kt
 			
 			d.setYMD(2000 + dl[2].toInt(),m,dl[0].toInt());
 			
-			TQTime t = TQTime::fromString(sl[2],Qt::ISODate);
+			TQTime t = TQTime::fromString(sl[2],TQt::ISODate);
 			return TQDateTime(d,t);
 		}
 		else if (sl.count() == 5)
@@ -539,7 +539,7 @@ namespace kt
 			
 			d.setYMD(sl[4].toInt(),m,sl[2].toInt());
 			
-			TQTime t = TQTime::fromString(sl[3],Qt::ISODate);
+			TQTime t = TQTime::fromString(sl[3],TQt::ISODate);
 			return TQDateTime(d,t);
 		}
 		else

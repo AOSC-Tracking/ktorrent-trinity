@@ -34,7 +34,7 @@ class DockSplitter: public TQSplitter {
     TQ_OBJECT
   
 public:
-    DockSplitter(Qt::Orientation orientation, TQWidget *parent = 0, const char *name = 0);
+    DockSplitter(TQt::Orientation orientation, TQWidget *parent = 0, const char *name = 0);
     ~DockSplitter();
     
     void addDock(uint row, uint col, TQWidget *dock);
@@ -53,7 +53,7 @@ protected:
     bool isRowEmpty(int row);
     
 private:
-    Qt::Orientation m_orientation;
+    TQt::Orientation m_orientation;
     TQValueList<TQSplitter*> m_splitters;
     TQValueList<TQValueList<TQWidget*> > m_docks;
 };

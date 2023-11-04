@@ -28,19 +28,19 @@ StatsSpd::StatsSpd(TQWidget *p) : StatsSpdWgt(p),
 				pmUpCht(new ChartDrawer(UpSpeedGbw, StatsPluginSettings::uploadMeasurements()))
 {
 
-	DownSpeedGbw->setColumnLayout(0, Qt::Vertical );
+	DownSpeedGbw->setColumnLayout(0, TQt::Vertical );
 	DownSpeedGbw->layout()->setSpacing( 6 );
 	DownSpeedGbw->layout()->setMargin( 11 );
 	
 	pmDSpdLay = new TQVBoxLayout(DownSpeedGbw -> layout());
 	
-	UpSpeedGbw->setColumnLayout(0, Qt::Vertical );
+	UpSpeedGbw->setColumnLayout(0, TQt::Vertical );
 	UpSpeedGbw->layout()->setSpacing( 6 );
 	UpSpeedGbw->layout()->setMargin( 11 );
 	
 	pmUSpdLay = new TQVBoxLayout(UpSpeedGbw -> layout());
 	
-	PeersSpdGbw->setColumnLayout(0, Qt::Vertical );
+	PeersSpdGbw->setColumnLayout(0, TQt::Vertical );
 	PeersSpdGbw->layout()->setSpacing( 6 );
 	PeersSpdGbw->layout()->setMargin( 11 );
 	

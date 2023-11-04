@@ -34,7 +34,7 @@ DMainWindow::DMainWindow(TQWidget *parent, const char *name)
 {
     loadSettings();
     createToolWindows();
-    m_central = new Ideal::DockSplitter(Qt::Horizontal, this);
+    m_central = new Ideal::DockSplitter(TQt::Horizontal, this);
     m_activeTabWidget = createTab();
     m_central->addDock(0, 0, m_activeTabWidget);
     setCentralWidget(m_central);

@@ -57,7 +57,7 @@ namespace kt
 		top_layout->remove(begin->w);
 			
 		// create new toplevel splitter
-		Qt::Orientation orientation = (pos == RIGHT || pos == LEFT) ? Qt::Horizontal : Qt::Vertical;
+		TQt::Orientation orientation = (pos == RIGHT || pos == LEFT) ? TQt::Horizontal : TQt::Vertical;
 		TQSplitter* s =  new TQSplitter(orientation,this);;
 		se->s = s;
 		

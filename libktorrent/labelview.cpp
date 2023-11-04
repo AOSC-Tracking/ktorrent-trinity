@@ -91,7 +91,7 @@ namespace kt
 	
 	void LabelViewItem::mousePressEvent(TQMouseEvent *e)
 	{
-		if (e->button() == Qt::LeftButton)
+		if (e->button() == TQt::LeftButton)
 		{
 			clicked(this);
 		}
