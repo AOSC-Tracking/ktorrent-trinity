@@ -36,7 +36,7 @@ namespace bt
 		
 		void data(Uint32 bytes)
 		{
-			dlrate.append(tqMakePair(bytes,GetCurrentTime()));
+			dlrate.append(qMakePair(bytes,GetCurrentTime()));
 		}
 		
 		void update()

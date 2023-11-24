@@ -229,7 +229,7 @@ TQSize Button::sizeHint(const TQString &text) const
             h = TQMAX(h, sz.height());
     }
 
-    return (style().tqsizeFromContents(TQStyle::CT_ToolButton, this, TQSize(w, h)).
+    return (style().sizeFromContents(TQStyle::CT_ToolButton, this, TQSize(w, h)).
             expandedTo(TQApplication::globalStrut()));
 }
 

@@ -166,8 +166,8 @@ TQPair<uint, uint> DockSplitter::indexOf(TQWidget *dock)
     for (uint i = 0; i < m_docks.count(); ++i)
         for (uint j = 0; j < m_docks[i].count(); ++j)
             if (dock == m_docks[i][j])
-                return tqMakePair(i, j);
-    return tqMakePair(0u, 0u);
+                return qMakePair(i, j);
+    return qMakePair(0u, 0u);
 }
 
 }
