@@ -102,7 +102,7 @@ namespace bt
 			if (!fptr.open(IO_WriteOnly))
 				throw Error(i18n("Cannot open log file %1 : %2").arg(file).arg(fptr.errorString()));
 
-			out->setDevice(TQT_TQIODEVICE(&fptr));
+			out->setDevice(&fptr);
 		}
 
 		void write(const TQString & line)
@@ -153,7 +153,7 @@ namespace bt
 		void logRotateDone()
 		{
 			fptr.open(IO_WriteOnly);
-			out->setDevice(TQT_TQIODEVICE(&fptr));
+			out->setDevice(&fptr);
 			rotate_job = 0;
 		}
 	};

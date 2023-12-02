@@ -73,7 +73,7 @@ namespace kt
 			if (!fptr.open(IO_ReadOnly))
 				return false;
 
-			TQXmlInputSource input(TQT_TQIODEVICE(&fptr));
+			TQXmlInputSource input(&fptr);
 			XMLContentHandler chandler(router);
 			TQXmlSimpleReader reader;
 
