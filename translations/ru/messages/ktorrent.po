@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
 "POT-Creation-Date: 2022-09-08 18:28+0000\n"
-"PO-Revision-Date: 2023-11-30 10:14+0000\n"
+"PO-Revision-Date: 2023-12-03 16:14+0000\n"
 "Last-Translator: Andrei Stepanov <adem4ik@gmail.com>\n"
 "Language-Team: Russian <https://mirror.git.trinitydesktop.org/weblate/"
 "projects/applications/ktorrent/ru/>\n"
@@ -23,13 +23,13 @@ msgstr ""
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
-msgstr "Николай Шафоростов,Станислав Ланин"
+msgstr "Николай Шафоростов,Станислав Ланин,Андрей Степанов"
 
 #. Instead of a literal translation, add your email to the end of the list (separated by a comma).
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
-msgstr "shafff@ukr.net,SSTL@inbox.ru"
+msgstr "shafff@ukr.net,SSTL@inbox.ru,adem4ik@gmail.com"
 
 #: apps/ktcachecheck/cachechecker.cpp:47 apps/ktcachecheck/cachechecker.cpp:76
 #: libktorrent/torrent/chunkmanager.cpp:207
@@ -67,7 +67,7 @@ msgstr "Нет, оставить файлы"
 
 #: apps/ktorrent/fileselectdlg.cpp:220
 msgid " short!"
-msgstr ""
+msgstr " короткий!"
 
 #: apps/ktorrent/fileselectdlg.cpp:284 apps/ktorrent/groups/allgroup.cpp:26
 #: apps/ktorrent/groups/groupmanager.h:54 apps/ktorrent/ktorrent.cpp:962
@@ -76,11 +76,11 @@ msgstr "Все торренты"
 
 #: apps/ktorrent/filterbar.cpp:52
 msgid "Find:"
-msgstr ""
+msgstr "Найти:"
 
 #: apps/ktorrent/filterbar.cpp:65
 msgid "Case sensitive"
-msgstr ""
+msgstr "С учётом регистра"
 
 #: apps/ktorrent/groups/activedownloadsgroup.cpp:28
 #: apps/ktorrent/groups/groupmanager.h:87
@@ -122,15 +122,13 @@ msgstr "Раздачи в очереди"
 
 #: apps/ktorrent/groups/groupmanager.h:69
 #: apps/ktorrent/groups/userdownloadsgroup.cpp:29
-#, fuzzy
 msgid "User downloads"
-msgstr "Ваши загрузки"
+msgstr "Загрузки пользователя"
 
 #: apps/ktorrent/groups/groupmanager.h:72
 #: apps/ktorrent/groups/useruploadsgroup.cpp:29
-#, fuzzy
 msgid "User uploads"
-msgstr "Ваши раздачи"
+msgstr "Раздачи пользователя"
 
 #: apps/ktorrent/groups/groupmanager.h:75
 #: apps/ktorrent/groups/inactivegroup.cpp:29
@@ -152,9 +150,8 @@ msgid "Groups"
 msgstr "Группы"
 
 #: apps/ktorrent/groups/groupview.cpp:107
-#, fuzzy
 msgid "Custom Groups"
-msgstr "Свои Группы"
+msgstr "Свои группы"
 
 #: apps/ktorrent/groups/groupview.cpp:138
 msgid "New Group"
@@ -200,9 +197,8 @@ msgstr "Выберите файл"
 
 #: apps/ktorrent/ipfilterwidget.cpp:100
 #: plugins/scheduler/bwsprefpagewidget.cpp:119
-#, fuzzy
 msgid "Choose a filename to save under"
-msgstr "Выберите имя сохраняемого файла"
+msgstr "Выберите имя файла для сохранения"
 
 #: apps/ktorrent/ktorrent.cpp:167
 msgid "No incoming connections (possibly firewalled)"
@@ -291,9 +287,8 @@ msgid "Open Location"
 msgstr "Открыть расположение"
 
 #: apps/ktorrent/ktorrent.cpp:793
-#, fuzzy
 msgid "Speed down: %1 / up: %2"
-msgstr "Отдача: %1 / Приём: %2"
+msgstr "Загрузка: %1 / отдача: %2"
 
 #: apps/ktorrent/ktorrent.cpp:799
 msgid "Transferred down: %1 / up: %2"
@@ -308,7 +303,6 @@ msgid "DHT: off"
 msgstr "DHT: выкл"
 
 #: apps/ktorrent/ktorrentcore.cpp:115
-#, fuzzy
 msgid ""
 "Specified port (%1) is unavailable or in use by another application. "
 "KTorrent is now using port %2."
@@ -324,16 +318,16 @@ msgstr ""
 "Не удалось получить в использование порты с %1 по %2 так как они уже заняты."
 
 #: apps/ktorrent/ktorrentcore.cpp:767
-#, fuzzy, c-format
+#, c-format
 msgid "Cannot create torrent: %1"
-msgstr "Не удалось создать торрент %1: %2"
+msgstr "Не удаётся создать торрент: %1"
 
 #: apps/ktorrent/ktorrentcore.cpp:1028
 msgid ""
 "Several data files of the torrent \"%1\" are missing, do you want to "
 "recreate them, or do you want to not download them?"
 msgstr ""
-"Некоторые файлы из торрента \"%1\" отсутствуют. Пересоздать их или запретить "
+"Некоторые файлы из торрента «%1» отсутствуют. Пересоздать их или запретить "
 "их загрузку?"
 
 #: apps/ktorrent/ktorrentcore.cpp:1031 apps/ktorrent/ktorrentcore.cpp:1069
@@ -345,7 +339,7 @@ msgid "Do Not Download"
 msgstr "Не загружать"
 
 #: apps/ktorrent/ktorrentcore.cpp:1041
-#, fuzzy, c-format
+#, c-format
 msgid "Cannot recreate missing files: %1"
 msgstr "Не удаётся пересоздать недостающие файлы: %1"
 
@@ -355,9 +349,9 @@ msgid "Data files are missing"
 msgstr "Файлы данных отсутствуют"
 
 #: apps/ktorrent/ktorrentcore.cpp:1055
-#, fuzzy, c-format
+#, c-format
 msgid "Cannot deselect missing files: %1"
-msgstr "Не удаётся отменить загрузку недостающих файлов: %1"
+msgstr "Не удаётся отменить выбор недостающих файлов: %1"
 
 #: apps/ktorrent/ktorrentcore.cpp:1068
 msgid ""
@@ -366,12 +360,11 @@ msgid ""
 msgstr "Файл хранящий данные торрента \"%1\" отсутствует. Пересоздать его?"
 
 #: apps/ktorrent/ktorrentcore.cpp:1069
-#, fuzzy
 msgid "Do Not Recreate"
-msgstr "Пересоздать"
+msgstr "Не пересоздавать"
 
 #: apps/ktorrent/ktorrentcore.cpp:1078
-#, fuzzy, c-format
+#, c-format
 msgid "Cannot recreate data file: %1"
 msgstr "Не удаётся пересоздать файл данных: %1"
 
@@ -529,18 +522,16 @@ msgid "Remove Torrent and Data"
 msgstr "Удалить торрент и данные"
 
 #: apps/ktorrent/ktorrentviewmenu.cpp:59
-#, fuzzy
 msgid "Add Peers"
-msgstr "Добавить адреса источников..."
+msgstr "Добавить пиров"
 
 #: apps/ktorrent/ktorrentviewmenu.cpp:63
 msgid "Additional Peer Sources"
 msgstr "Дополнительные источники"
 
 #: apps/ktorrent/ktorrentviewmenu.cpp:64
-#, fuzzy
 msgid "Torrent Peer Sources:"
-msgstr "Торрентов на источники:"
+msgstr "Источник пиров торрента:"
 
 #: apps/ktorrent/generalpref.ui:82 apps/ktorrent/ktorrentviewmenu.cpp:66
 #: plugins/infowidget/peerview.cpp:221 plugins/stats/sprefwgt.ui:456
@@ -562,9 +553,8 @@ msgid "Preview"
 msgstr "Просмотр"
 
 #: apps/ktorrent/ktorrentviewmenu.cpp:81
-#, fuzzy
 msgid "Open Directory"
-msgstr "Открыть папку..."
+msgstr "Открыть каталог"
 
 #: apps/ktorrent/ktorrentviewmenu.cpp:82
 msgid "Data Directory"
@@ -575,9 +565,8 @@ msgid "Temporary Directory"
 msgstr "Временная папка"
 
 #: apps/ktorrent/ktorrentviewmenu.cpp:87
-#, fuzzy
 msgid "Set Download Location"
-msgstr "Каталог загрузки..."
+msgstr "Указать место загрузки"
 
 #: apps/ktorrent/ktorrentviewmenu.cpp:90
 msgid "Remove From Group"
@@ -603,7 +592,7 @@ msgstr "Режим отладки"
 
 #: apps/ktorrent/main.cpp:109
 msgid "Silently save torrent given on URL"
-msgstr ""
+msgstr "Тихо сохранить торрент с указанной ссылки"
 
 #: apps/ktorrent/main.cpp:110
 msgid "Document to open"
@@ -649,11 +638,12 @@ msgid ""
 "Country locator for InfoWidget plugin (This product includes GeoLite data "
 "created by MaxMind, available from http://www.maxmind.com/). "
 msgstr ""
+"Обнаружитель стран для плагина InfoWidget (этот продукт включает данные "
+"GeoLite, созданные MaxMind и доступные на сайте http://www.maxmind.com/). "
 
 #: apps/ktorrent/main.cpp:143
-#, fuzzy
 msgid "Country flags"
-msgstr "Страна"
+msgstr "Флаги стран"
 
 #: apps/ktorrent/main.cpp:144
 msgid "File prioritization"
@@ -713,38 +703,36 @@ msgstr "Несколько патчей."
 
 #: apps/ktorrent/main.cpp:159
 msgid "Patch to hide the menubar"
-msgstr ""
+msgstr "Патч для скрытия меню"
 
 #: apps/ktorrent/main.cpp:160
 msgid "Patch to modify file priorities in the webgui"
-msgstr ""
+msgstr "Патч для смены приоритетов файлов в веб-интерфейсе"
 
 #: apps/ktorrent/main.cpp:161
-#, fuzzy
 msgid "Several webgui patches"
-msgstr "Несколько патчей."
+msgstr "Несколько патчей веб-интерфейса"
 
 #: apps/ktorrent/main.cpp:162
-#, fuzzy
 msgid "Filterbar patch"
-msgstr "Путь Folder1"
+msgstr "Патч панели фильтров"
 
 #: apps/ktorrent/main.cpp:163
 msgid "Non threaded fileview update patch"
-msgstr ""
+msgstr "Патч для обновления непотокового просмотра файлов"
 
 #: apps/ktorrent/main.cpp:164
 msgid "Optimization to SHA1 hash generation"
-msgstr ""
+msgstr "Оптимизация генерации хеша SHA1"
 
 #: apps/ktorrent/main.cpp:165
 msgid "Patch to fix free diskspace calculation on FreeBSD"
 msgstr ""
+"Патч для исправления вычисления свободного дискового пространства на FreeBSD"
 
 #: apps/ktorrent/main.cpp:166
-#, fuzzy
 msgid "Patch to load torrents silently from the command line"
-msgstr "Патч для загрузки в стандартное место сохранения."
+msgstr "Патч для тихой загрузки торрентов из командной строки"
 
 #: apps/ktorrent/newui/button.cpp:58
 msgid "Assign Accelerator..."
@@ -832,9 +820,9 @@ msgid "No (private torrent)"
 msgstr "Нет (частный торрент)"
 
 #: apps/ktorrent/scandialog.cpp:70
-#, fuzzy, c-format
+#, c-format
 msgid "Error scanning data: %1"
-msgstr "Ошибка при сканировании данных: %1"
+msgstr "Ошибка сканирования данных: %1"
 
 #: apps/ktorrent/scandialog.cpp:77
 msgid "Scanning data of <b>%1</b> :"
@@ -854,9 +842,8 @@ msgid ""
 msgstr "Вы не указали трекер. Создать торрент без трекера?"
 
 #: apps/ktorrent/torrentcreatordlg.cpp:79
-#, fuzzy
 msgid "You must add at least one node."
-msgstr "Добавьте хотя бы один трекер."
+msgstr "Вы должны добавить хотя бы один узел."
 
 #: apps/ktorrent/torrentcreatordlg.cpp:98
 msgid "Torrent Files (*.torrent)"
@@ -1027,11 +1014,11 @@ msgstr "Да, последний"
 
 #: libktorrent/interfaces/functions.cpp:35
 msgid "%1 GB"
-msgstr "%1 Гб"
+msgstr "%1 ГБ"
 
 #: libktorrent/interfaces/functions.cpp:37
 msgid "%1 MB"
-msgstr "%1 Мб"
+msgstr "%1 МБ"
 
 #: libktorrent/interfaces/functions.cpp:39
 msgid "%1 KB"
@@ -1126,14 +1113,12 @@ msgid "Cannot open %1 for writing : readonly filesystem"
 msgstr "Не удалось открыть %1 для записи: файловая система только для чтения."
 
 #: libktorrent/torrent/cachefile.cpp:240
-#, fuzzy
 msgid "Cannot expand file %1 : %2"
-msgstr "Не удалось увеличить размер файла: %1"
+msgstr "Не удалось увеличить файл %1: %2"
 
 #: libktorrent/torrent/cachefile.cpp:242
-#, fuzzy
 msgid "Cannot expand file %1 : incomplete write"
-msgstr "Не удалось увеличить размер файла %1"
+msgstr "Не удалось увеличить файла %1: неполная запись"
 
 #: libktorrent/torrent/cachefile.cpp:255
 #, c-format
@@ -1229,18 +1214,16 @@ msgid "Insufficient disk space for %1"
 msgstr "Недостаточно дискового пространства для %1"
 
 #: libktorrent/torrent/queuemanager.cpp:158
-#, fuzzy
 msgid ""
 "Torrent \"%1\" has reached its maximum share ratio. Ignore the limit and "
 "start seeding anyway?"
 msgstr ""
-"Торрент \"%1\" достиг своего максимума ратио. Игнорировать и продолжить "
-"сидирование?"
+"Торрент «%1» достиг своего максимума рейтинга раздачи. Игнорировать предел и "
+"начать раздачу всё равно?"
 
 #: libktorrent/torrent/queuemanager.cpp:158
-#, fuzzy
 msgid "Maximum share ratio limit reached."
-msgstr "Максимум ратио достигнут."
+msgstr "Достигнут максимум рейтинга раздачи."
 
 #: libktorrent/torrent/queuemanager.cpp:237
 #: libktorrent/torrent/queuemanager.cpp:763
@@ -1449,6 +1432,9 @@ msgid ""
 "\"unavailable_color\">&nbsp; - Unavailable Chunks<br><img src="
 "\"excluded_color\">&nbsp; - Excluded Chunks"
 msgstr ""
+"<img src=\"available_color\">&nbsp; - Доступные части<br><img src="
+"\"unavailable_color\">&nbsp; - Недоступные части<br><img src=\"excluded_color"
+"\">&nbsp; - Исключённые части"
 
 #: plugins/infowidget/chunkbar.cpp:98
 msgid ""
@@ -1456,6 +1442,9 @@ msgid ""
 "\"unavailable_color\">&nbsp; - Chunks to Download<br><img src="
 "\"excluded_color\">&nbsp; - Excluded Chunks"
 msgstr ""
+"<img src=\"available_color\">&nbsp; - Загруженные части<br><img src="
+"\"unavailable_color\">&nbsp; - Части для загрузки<br><img src="
+"\"excluded_color\">&nbsp; - Исключённые части"
 
 #: apps/ktorrent/fileselectdlgbase.ui:160 plugins/infowidget/fileview.cpp:49
 #: plugins/rssfeed/rssfeedwidget.ui:170 plugins/rssfeed/rssfeedwidget.ui:879
@@ -1495,6 +1484,9 @@ msgid ""
 "_n: You will lose all data in this file, are you sure you want to do this ?\n"
 "You will lose all data in these files, are you sure you want to do this ?"
 msgstr ""
+"Вы потеряете все данные в этом файле, уверены, что хотите этого?\n"
+"Вы потеряете все данные в этих файлах, уверены, что хотите этого?\n"
+"Вы потеряете все данные в этих файлах, уверены, что хотите этого?"
 
 #: plugins/infowidget/infowidgetplugin.cpp:51
 #: plugins/infowidget/infowidgetprefpage.cpp:34
@@ -1506,6 +1498,8 @@ msgid ""
 "Shows additional information about a download. Like which chunks have been "
 "downloaded, how many seeders and leechers ..."
 msgstr ""
+"Показывает дополнительные сведения о загрузке. Например, какие фрагменты "
+"были загружены, сколько сидов и личей…"
 
 #: plugins/infowidget/infowidgetplugin.cpp:173 plugins/stats/statsconwgt.ui:32
 #: plugins/stats/statsspdwgt.ui:40
@@ -1529,7 +1523,7 @@ msgstr "Трекеры"
 
 #: plugins/infowidget/infowidgetprefpage.cpp:34
 msgid "Information Widget Options"
-msgstr ""
+msgstr "Параметры виджета информации"
 
 #: plugins/infowidget/peerview.cpp:213
 msgid "IP"
@@ -1571,7 +1565,7 @@ msgstr "Запросы"
 msgid ""
 "_: to kick\n"
 "Kick peer"
-msgstr ""
+msgstr "Выкинуть пира"
 
 #: plugins/infowidget/peerview.cpp:250
 msgid ""
@@ -1580,22 +1574,20 @@ msgid ""
 msgstr "Блокировать участника"
 
 #: plugins/infowidget/statustab.cpp:55
-#, fuzzy
 msgid "No limit"
-msgstr "&Включить ограничение?"
+msgstr "Без ограничений"
 
 #: plugins/infowidget/trackerview.cpp:71
 msgid "Cannot add a tracker to a private torrent."
-msgstr ""
+msgstr "Не удаётся добавить трекер в частный торрент."
 
 #: plugins/infowidget/trackerview.cpp:96
-#, fuzzy
 msgid "Cannot remove torrent default tracker."
-msgstr "Не удаётся создать каталог %1: %2"
+msgstr "Невозможно удалить стандартный трекер торрента."
 
 #: plugins/infowidget/trackerview.cpp:214
 msgid "You cannot add trackers to a private torrent"
-msgstr ""
+msgstr "Вы не можете добавлять трекеры в частный торрент"
 
 #: plugins/ipfilter/convertdialog.cpp:81
 msgid "Convert"
@@ -1669,10 +1661,9 @@ msgstr "Параметры IP-фильтра"
 
 #: plugins/ipfilter/ipfilterplugin.cpp:43
 msgid "Filters out unwanted peers based on their IP address"
-msgstr ""
+msgstr "Отсеивает нежелательных пиров на основе их адресов IP"
 
 #: plugins/ipfilter/ipfilterplugin.cpp:46
-#, fuzzy
 msgid "IP Filter"
 msgstr "Фильтр IP"
 
@@ -1684,17 +1675,16 @@ msgstr "Просмотр протоколов"
 #: plugins/logviewer/logprefwidgetbase.ui:16
 #, no-c-format
 msgid "LogViewer Options"
-msgstr ""
+msgstr "Параметры просмотра журнала"
 
 #: plugins/logviewer/logviewerplugin.cpp:44
 #: plugins/logviewer/logviewerplugin.cpp:58
-#, fuzzy
 msgid "Log Viewer"
-msgstr "Просмотр протоколов"
+msgstr "Просмотр журнала"
 
 #: plugins/logviewer/logviewerplugin.cpp:45
 msgid "Displays ktorrent logging output"
-msgstr ""
+msgstr "Отображает вывод журнала kTorrent"
 
 #: plugins/partfileimport/importdialog.cpp:50
 msgid "Torrent files"
@@ -1705,9 +1695,9 @@ msgid "All files"
 msgstr "Все файлы"
 
 #: plugins/partfileimport/importdialog.cpp:100
-#, fuzzy, c-format
+#, c-format
 msgid "Cannot verify data : %1"
-msgstr "Не удалось проверить данные %1: %2"
+msgstr "Не удаётся проверить данные: %1"
 
 #: plugins/partfileimport/importdialog.cpp:207
 #: plugins/partfileimport/importdialog.cpp:243
@@ -1718,19 +1708,19 @@ msgstr "Не удалось загрузить торрент: %1"
 #: plugins/partfileimport/partfileimportplugin.cpp:43
 msgid "Imports partially or fully downloaded torrents from other clients"
 msgstr ""
+"Импортирует частично или полностью загруженные торренты из других клиентов"
 
 #: plugins/partfileimport/partfileimportplugin.cpp:56
-#, fuzzy
 msgid "Import existing download"
-msgstr "Импортировать существующую закачку"
+msgstr "Импорт существующей загрузки"
 
 #: plugins/rssfeed/rss/testlibrss.cpp:14
 msgid "URL of feed"
-msgstr ""
+msgstr "Адрес ленты"
 
 #: plugins/rssfeed/rssfeedmanager.cpp:78
 msgid "Title"
-msgstr ""
+msgstr "Заголовок"
 
 #: plugins/rssfeed/rssfeedmanager.cpp:78
 msgid "Description"
@@ -1738,37 +1728,37 @@ msgstr "Описание"
 
 #: plugins/rssfeed/rssfeedmanager.cpp:78 plugins/rssfeed/rssfeedmanager.cpp:87
 msgid "Link"
-msgstr ""
+msgstr "Ссылка"
 
 #: plugins/rssfeed/rssfeedmanager.cpp:87
-#, fuzzy
 msgid "Season"
-msgstr "Коэффициент передачи:"
+msgstr "Сезон"
 
 #: plugins/rssfeed/rssfeedmanager.cpp:87
 msgid "Episode"
-msgstr ""
+msgstr "Эпизод"
 
 #: plugins/rssfeed/rssfeedmanager.cpp:87
-#, fuzzy
 msgid "Time"
-msgstr "Осталось"
+msgstr "Время"
 
 #: plugins/rssfeed/rssfeedplugin.cpp:48
 msgid ""
 "Automatically scans RSS feeds for torrent matching regular expressions and "
 "loads them."
 msgstr ""
+"Автоматически сканирует RSS-ленты на наличие торрентов по регулярным "
+"выражениям и загружает их."
 
 #: plugins/rssfeed/rssfeedplugin.cpp:51 plugins/rssfeed/rssfeedplugin.cpp:68
 msgid "RSS Feeds"
-msgstr ""
+msgstr "Ленты RSS"
 
 #: plugins/rssfeed/rsslinkdownloader.cpp:45
 #: plugins/rssfeed/rsslinkdownloader.cpp:183
 #, c-format
 msgid "Failed to find and download a valid torrent for %1"
-msgstr ""
+msgstr "Не удалось найти и загрузить действительный торрент для %1"
 
 #: plugins/scanfolder/scanfolder.cpp:150 plugins/scanfolder/scanfolder.cpp:188
 #: plugins/scanfolder/scanfolder.cpp:189
@@ -1780,9 +1770,8 @@ msgid "Automatically scans directories for torrent files and loads them."
 msgstr "Автоматически сканирует каталоги в поисках торрентов и загружает их."
 
 #: plugins/scanfolder/scanfolderplugin.cpp:52
-#, fuzzy
 msgid "Scan Folder"
-msgstr "Сканнер каталогов"
+msgstr "Сканировать каталог"
 
 #: plugins/scanfolder/scanfolderprefpage.cpp:34
 msgid "ScanFolder"
@@ -1802,15 +1791,15 @@ msgstr ""
 
 #: plugins/scheduler/bwsprefpagewidget.cpp:165
 msgid "Schedule saved."
-msgstr ""
+msgstr "Расписание сохранено."
 
 #: plugins/scheduler/bwsprefpagewidget.cpp:174
 msgid "File not found."
-msgstr ""
+msgstr "Файл не найден."
 
 #: plugins/scheduler/bwsprefpagewidget.cpp:208
 msgid "Schedule loaded."
-msgstr ""
+msgstr "Расписание загружено."
 
 #: plugins/scheduler/bwswidget.cpp:45
 msgid "MON"
@@ -1892,10 +1881,9 @@ msgstr "Поиск"
 
 #: plugins/search/searchplugin.cpp:51
 msgid "Search for torrents on several popular torrent search engines"
-msgstr ""
+msgstr "Поиск торрентов в нескольких популярных поисковых системах торрентов"
 
 #: plugins/search/searchprefpage.cpp:52
-#, fuzzy
 msgid ""
 "Use your web browser to search for the string %1 (capital letters) on the "
 "search engine you want to add. <br> Then copy the URL in the addressbar "
@@ -1905,16 +1893,19 @@ msgid ""
 "search using Google."
 msgstr ""
 "В браузере запустите поиск строки %1 (заглавными буквами) в поисковике, "
-"который вы хотите добавить. Затем, когда поиск завершится, скопируйте URL из "
-"адресной строки и вставьте его сюда. <br>Поиск %2 в Google, например, даст "
-"результат в виде http://www.google.com/search?q=FOOBAR&ie=UTF-8&oe=UTF-8. "
-"Если вы вставите сюда этот URL, KTorrent будет искать через Google."
+"который вы хотите добавить. <br> Затем, когда поиск завершится, скопируйте "
+"ссылку из адресной строки и вставьте её сюда.<br><br>Поиск %2 в Google, "
+"например, даст результат в виде http://www.google.com/search?"
+"q=FOOBAR&ie=UTF-8&oe=UTF-8. <br> Если вы добавите сюда эту ссылку, то "
+"KTorrent сможет искать в Google."
 
 #: plugins/search/searchprefpage.cpp:57
 msgid ""
 "Use your web browser to search for the string %1 (capital letters) on the "
 "search engine you want to add. Use the resulting URL below."
 msgstr ""
+"С помощью веб-браузера найдите строку %1 (заглавными буквами) в поисковой "
+"системе, которую вы хотите добавить. Используйте полученный адрес ниже."
 
 #: plugins/search/searchprefpage.cpp:124
 msgid "You must enter the search engine's name and URL"
@@ -1944,9 +1935,8 @@ msgid "Search Engine Options"
 msgstr "Параметры поиска"
 
 #: plugins/search/searchtab.cpp:65
-#, fuzzy
 msgid " Engine: "
-msgstr "Поисковики"
+msgstr " Движок "
 
 #: plugins/search/searchwidget.cpp:178
 msgid "Searching for %1..."
@@ -1962,117 +1952,99 @@ msgstr "Поиск окончен"
 
 #: plugins/stats/ChartDrawer.cpp:419
 msgid "Legend"
-msgstr ""
+msgstr "Легенда"
 
 #: plugins/stats/StatsCon.cpp:49
-#, fuzzy
 msgid "Leechers connected"
-msgstr "Соединения:"
+msgstr "Подключённые личи"
 
 #: plugins/stats/StatsCon.cpp:50
-#, fuzzy
 msgid "Leechers in swarms"
-msgstr "Выводить &значок в системном лотке"
+msgstr "Личи в роях"
 
 #: plugins/stats/StatsCon.cpp:51
-#, fuzzy
 msgid "Seeders connected"
-msgstr "Соединения:"
+msgstr "Подключённые сиды"
 
 #: plugins/stats/StatsCon.cpp:52
-#, fuzzy
 msgid "Seeders in swarms"
-msgstr "Выводить &значок в системном лотке"
+msgstr "Сиды в роях"
 
 #: plugins/stats/StatsCon.cpp:53
-#, fuzzy
 msgid "Average connected leechers per torrent"
-msgstr "Максимум соединений на один торрент:"
+msgstr "Подключённые личи в среднем на торрент"
 
 #: plugins/stats/StatsCon.cpp:54
-#, fuzzy
 msgid "Average connected seeders per torrent"
-msgstr "Максимум соединений на один торрент:"
+msgstr "Подключённые сиды в среднем на торрент"
 
 #: plugins/stats/StatsCon.cpp:55
 msgid "Average connected leechers per running torrent"
-msgstr ""
+msgstr "Подключённые личи в среднем на запущенный торрент"
 
 #: plugins/stats/StatsCon.cpp:56
 msgid "Average connected seeders per running torrent"
-msgstr ""
+msgstr "Подключённые сиды в среднем на запущенный торрент"
 
 #: plugins/stats/StatsCon.cpp:61
-#, fuzzy
 msgid "Nodes"
-msgstr "Папки"
+msgstr "Узлы"
 
 #: plugins/stats/StatsCon.cpp:62
-#, fuzzy
 msgid "Tasks"
-msgstr "Трекеры"
+msgstr "Задания"
 
 #: plugins/stats/StatsPluginPrefs.cpp:25 plugins/stats/statsplugin.cpp:29
-#, fuzzy
 msgid "Statistics"
-msgstr "Статус"
+msgstr "Статистика"
 
 #: plugins/stats/StatsPluginPrefs.cpp:25
 msgid "Statistics options"
-msgstr ""
+msgstr "Параметры статистики"
 
 #: plugins/stats/StatsSpd.cpp:57 plugins/stats/StatsSpd.cpp:58
-#, fuzzy
 msgid "Current"
-msgstr "Торрент"
+msgstr "Текущий"
 
 #: plugins/stats/StatsSpd.cpp:60 plugins/stats/StatsSpd.cpp:61
 msgid "Average"
-msgstr ""
+msgstr "Средняя"
 
 #: plugins/stats/StatsSpd.cpp:63 plugins/stats/StatsSpd.cpp:64
-#, fuzzy
 msgid "Limit"
-msgstr "&Включить ограничение?"
+msgstr "Ограничение"
 
 #: plugins/stats/StatsSpd.cpp:71
-#, fuzzy
 msgid "Average from leecher"
-msgstr "Средняя скорость загрузки:"
+msgstr "В среднем к личу"
 
 #: plugins/stats/StatsSpd.cpp:72
-#, fuzzy
 msgid "Average to leecher"
-msgstr "Средняя скорость загрузки:"
+msgstr "В среднем от лича"
 
 #: plugins/stats/StatsSpd.cpp:73
-#, fuzzy
 msgid "Average from seeder"
-msgstr "Средняя скорость загрузки:"
+msgstr "В среднем от сида"
 
 #: plugins/stats/StatsSpd.cpp:74
-#, fuzzy
 msgid "From leechers"
-msgstr "Загружающие:"
+msgstr "От личей"
 
 #: plugins/stats/StatsSpd.cpp:75
-#, fuzzy
 msgid "From seeders"
-msgstr "Папки"
+msgstr "От сидов"
 
 #: plugins/stats/statsplugin.cpp:29
 msgid "Shows transfers statistics"
-msgstr ""
+msgstr "Показывает статистику передачи"
 
 #: plugins/stats/statsplugin.cpp:67
-#, fuzzy
 msgid "Speed statistics"
-msgstr "Ограничение скорости, кб/с"
+msgstr "Статистика скорости"
 
 #: plugins/stats/statsplugin.cpp:68
-#, fuzzy
 msgid "Connection statistics"
-msgstr "Соединения:"
+msgstr "Статистика связи"
 
 #: plugins/upnp/upnpplugin.cpp:46 plugins/upnp/upnpprefpage.cpp:31
 #: plugins/upnp/upnpwidget.ui:16
@@ -2094,9 +2066,8 @@ msgid "Cannot find port forwarding service in the device's description!"
 msgstr "Не удалось найти сервис транслирования в описании устройства."
 
 #: plugins/webinterface/webinterfaceplugin.cpp:44
-#, fuzzy
 msgid "Web Interface"
-msgstr "Модуль Веб-интерфейса"
+msgstr "Веб-интерфейс"
 
 #: plugins/webinterface/webinterfaceplugin.cpp:44
 msgid "Allow to control ktorrent through browser"
@@ -2104,16 +2075,17 @@ msgstr "Позволять контролировать KTorrent из брауз
 
 #: plugins/webinterface/webinterfaceprefpage.cpp:27
 msgid "WebInterface"
-msgstr ""
+msgstr "Веб-интерфейс"
 
 #: plugins/webinterface/webinterfaceprefpage.cpp:27
 msgid "WebInterface Options"
 msgstr "Параметры Web-интерфейса"
 
 #: plugins/webinterface/webinterfaceprefwidget.cpp:70
-#, fuzzy
 msgid "Php executable is not in default path, please enter the path manually"
-msgstr "Нестандартный путь к PHP. Введите путь вручную."
+msgstr ""
+"Исполняемого файла PHP нет в пути по умолчанию, пожалуйста, укажите путь "
+"вручную"
 
 #: plugins/webinterface/webinterfaceprefwidget.cpp:106
 msgid "Please enter a new password for the web interface."
@@ -2124,12 +2096,10 @@ msgid "%1 exists and it is executable"
 msgstr "%1 существует и является исполняемым"
 
 #: plugins/webinterface/webinterfaceprefwidget.cpp:120
-#, fuzzy
 msgid "%1 does not exist"
 msgstr "%1 не существует"
 
 #: plugins/webinterface/webinterfaceprefwidget.cpp:124
-#, fuzzy
 msgid "%1 is not executable"
 msgstr "%1 не является исполняемым"
 
@@ -2138,18 +2108,17 @@ msgid "%1 is a directory"
 msgstr "%1 - каталог"
 
 #: plugins/webinterface/webinterfaceprefwidget.cpp:132
-#, fuzzy
 msgid "%1 is not php executable path"
-msgstr "%1 не исполняемый файл PHP"
+msgstr "%1 не путь исполняемого файла PHP"
 
 #: plugins/zeroconf/zeroconfplugin.cpp:41
 msgid "Zeroconf"
-msgstr ""
+msgstr "Zeroconf"
 
 #: plugins/zeroconf/zeroconfplugin.cpp:41
 msgid ""
 "Finds peers running ktorrent on the local network to share torrents with"
-msgstr ""
+msgstr "Находит в локальной сети пиров с KTorrent для обмена торрентами"
 
 #: apps/ktorrent/addpeerwidgetbase.ui:16
 #, no-c-format
@@ -2187,10 +2156,10 @@ msgstr "Дополнительные параметры"
 #: apps/ktorrent/advancedpref.ui:46
 #, no-c-format
 msgid "Time left estimation algorithm:"
-msgstr ""
+msgstr "Алгоритм оценки оставшегося времени:"
 
 #: apps/ktorrent/advancedpref.ui:49 apps/ktorrent/advancedpref.ui:86
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "<b>KTorrent algorithm:</b> Default algorithm using combination of other "
 "algorithms based on our tests.<br>\n"
@@ -2201,15 +2170,15 @@ msgid ""
 "<b>Moving average algorithm:</b> Moving average speed calculated from X "
 "samples"
 msgstr ""
-"<b>Стандартный метод:</b> алгоритм по-умолчанию, использующий эмпирическую "
-"комбинацию нескольких методов<br>\n"
-"<b>Вычисление по текущей скорости:</b> отношение оставшегося размера и "
-"текущей скорости. <br>\n"
-"<b>Вычисление по общей средней скорости:</b> отношение оставшегося размера и "
-"средней скорости. <br>\n"
-"<b>Window of X алгоритм:</b> ET вычисленный из X образцов скорости. <br>\n"
-"<b>Усредненная скорость перемещения:</b> Вычисленная усредненная скорость из "
-"X образцов."
+"<b>Алгоритм KTorrent:</b> способ по-умолчанию, использующий эмпирическую "
+"комбинацию нескольких алгоритмов.br>\n"
+"<b>Алгоритм текущей скорости:</b> простейший алгоритм — отношение оставшихся "
+"байтов к текущей скорости<br>\n"
+"<b>Алгоритм общей средней скорости:</b> отношение оставшихся байт к средней "
+"скорости <br>\n"
+"<b>Алгоритм окна по X:</b> ET вычисляется из X образцов скорости<br>\n"
+"<b>Алгоритм скользящего среднего:</b> Скорость скользящего среднего "
+"вычисляется по X образцам"
 
 #: apps/ktorrent/advancedpref.ui:64
 #, no-c-format
@@ -2224,12 +2193,12 @@ msgstr "По общей средней скорости"
 #: apps/ktorrent/advancedpref.ui:74
 #, no-c-format
 msgid "Window of X"
-msgstr ""
+msgstr "Окно по X"
 
 #: apps/ktorrent/advancedpref.ui:79
 #, no-c-format
 msgid "Moving average"
-msgstr ""
+msgstr "Скользящая средняя"
 
 #: apps/ktorrent/advancedpref.ui:98
 #, no-c-format
@@ -2347,15 +2316,14 @@ msgid "Networking"
 msgstr "Сеть"
 
 #: apps/ktorrent/advancedpref.ui:505
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Maximum number of connection setups:"
-msgstr ""
-"Максимальное количество соединений на один торрент (0 - без ограничений)"
+msgstr "Максимум установленных соединений:"
 
 #: apps/ktorrent/advancedpref.ui:527
 #, no-c-format
 msgid "DSCP for IP packets:"
-msgstr ""
+msgstr "DSCP для пакетов IP:"
 
 #: apps/ktorrent/advancedpref.ui:570
 #, no-c-format
@@ -2476,13 +2444,13 @@ msgid "Attention"
 msgstr "Внимание"
 
 #: apps/ktorrent/downloadpref.ui:685
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "The above ports must also be forwarded if you are behind a router. The UPnP "
 "plugin can do this for you."
 msgstr ""
 "Ели вы работаете через маршрутизатор, указанные порты должны быть "
-"перенаправлены, .Это может выполнить автоматически модуль UPnP."
+"перенаправлены. Это может выполнить автоматически модуль UPnP."
 
 #: apps/ktorrent/fileselectdlgbase.ui:16
 #, no-c-format
@@ -2500,9 +2468,9 @@ msgid "Group:"
 msgstr "Группа:"
 
 #: apps/ktorrent/fileselectdlgbase.ui:97
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "&User controlled"
-msgstr "&Управляется пользователем"
+msgstr "Уп&равляется пользователем"
 
 #: apps/ktorrent/fileselectdlgbase.ui:116
 #, no-c-format
@@ -2608,9 +2576,9 @@ msgid "Se&nd the tracker a custom IP address or hostname"
 msgstr "Посылать трекеру указанный вручную IP-адрес или имя хоста."
 
 #: apps/ktorrent/generalpref.ui:185
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Custom IP address or hostname:"
-msgstr "Особый IP или имя хоста:"
+msgstr "Настраиваемые адрес IP или имя хоста:"
 
 #: apps/ktorrent/generalpref.ui:202
 #, no-c-format
@@ -2694,7 +2662,7 @@ msgstr "IP-адрес клиента"
 #: apps/ktorrent/ipfilterwidgetbase.ui:96
 #, no-c-format
 msgid "Add peer:"
-msgstr "Добавить источник:"
+msgstr "Добавить пира:"
 
 #: apps/ktorrent/ipfilterwidgetbase.ui:131
 #, no-c-format
@@ -2828,7 +2796,7 @@ msgid "Move to &bottom"
 msgstr "В конец"
 
 #: apps/ktorrent/queuedlg.ui:552
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "&QM Controlled"
 msgstr "&Управляется автоматически"
 
@@ -2974,7 +2942,7 @@ msgid "Comments:"
 msgstr "Комментарии:"
 
 #: apps/ktorrent/torrentcreatordlgbase.ui:248
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "&Create"
 msgstr "&Создать"
 
@@ -3056,14 +3024,14 @@ msgid "Maximum download speed in KB/sec (0 = no limit)"
 msgstr "Максимальная скорость приёма, КБ/с (0 - без ограничений)"
 
 #: libktorrent/ktorrent.kcfg:44
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Maximum share ratio(0 = no limit)"
-msgstr "Максимальное количество полных источников (0 - без ограничений)"
+msgstr "Максимум рейтинга раздачи (0 — без ограничений)"
 
 #: libktorrent/ktorrent.kcfg:49
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Maximum seed time in hours (0 = no limit)"
-msgstr "Максимальное количество полных источников (0 - без ограничений)"
+msgstr "Максимальное время сида в часах (0 — без ограничений)"
 
 #: libktorrent/ktorrent.kcfg:66
 #, no-c-format
@@ -3191,12 +3159,12 @@ msgstr ""
 #: libktorrent/labelviewitembase.ui:49
 #, no-c-format
 msgid "textLabel2"
-msgstr ""
+msgstr "textLabel2"
 
 #: libktorrent/labelviewitembase.ui:65
 #, no-c-format
 msgid "textLabel3"
-msgstr ""
+msgstr "textLabel3"
 
 #: libktorrent/pluginmanagerwidget.ui:16
 #, no-c-format
@@ -3209,19 +3177,19 @@ msgid "Load"
 msgstr "Включить"
 
 #: libktorrent/pluginmanagerwidget.ui:56
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "U&nload"
-msgstr "&Отключить"
+msgstr "Выгрузи&ть"
 
 #: libktorrent/pluginmanagerwidget.ui:64
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Load &All"
-msgstr "Включить все"
+msgstr "&Прогрузить все"
 
 #: libktorrent/pluginmanagerwidget.ui:72
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "&Unload All"
-msgstr "Отключить все"
+msgstr "Вы&грузить все"
 
 #: plugins/infowidget/chunkdownloadviewbase.ui:43
 #, no-c-format
@@ -3330,9 +3298,9 @@ msgid "Next update in:"
 msgstr "Следующее обновление:"
 
 #: plugins/infowidget/statustabbase.ui:203
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Tracker Status:"
-msgstr "Взаимодействие с трекером"
+msgstr "Состояние трекера:"
 
 #: plugins/infowidget/statustabbase.ui:332
 #, no-c-format
@@ -3370,9 +3338,9 @@ msgid "Hours"
 msgstr "ч"
 
 #: plugins/infowidget/statustabbase.ui:543
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Ratio limit:"
-msgstr "Общее ограничение на число соединений"
+msgstr "Ограничение рейтинга:"
 
 #: plugins/infowidget/statustabbase.ui:546
 #, no-c-format
@@ -3415,15 +3383,15 @@ msgid "Restore Defaults"
 msgstr "Сбросить"
 
 #: plugins/ipfilter/convert_dlg.ui:41
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "Click on the 'convert' button to start converting antip2p file. NOTE: This "
 "process could take a while even on fast machines and during that time you "
 "will not be able to use KTorrent."
 msgstr ""
-"Нажмите на кнопку \"Преобразовать\", чтобы начать преобразование antip2p "
-"файл. ЗАМЕТКА: Процесс может занять некоторое время даже на быстрых "
-"компьютерах и в это время вы не сможете пользоваться KTorrent."
+"Щёлкните кнопку «Преобразовать», чтобы начать конвертацию файла antip2p. "
+"ЗАМЕТКА: Этот процесс может занять некоторое время даже на быстрых "
+"компьютерах, и в это время вы не сможете использовать KTorrent."
 
 #: plugins/ipfilter/ipblockingpref.ui:16
 #, no-c-format
@@ -3477,77 +3445,77 @@ msgstr "Использовать фильтр первого уровня?"
 #: plugins/logviewer/ktlogviewerplugin.kcfg:10
 #, no-c-format
 msgid "Use rich log text"
-msgstr ""
+msgstr "Использовать расширенный текст журнала"
 
 #: plugins/logviewer/ktlogviewerplugin.kcfg:15
 #, no-c-format
 msgid "General info messages flag"
-msgstr ""
+msgstr "Флаг общих информационных сообщений"
 
 #: plugins/logviewer/ktlogviewerplugin.kcfg:19
 #, no-c-format
 msgid "Connections messages flag"
-msgstr ""
+msgstr "Флаг сообщений о соединениях"
 
 #: plugins/logviewer/ktlogviewerplugin.kcfg:23
 #, no-c-format
 msgid "DHT messages flag"
-msgstr ""
+msgstr "Флаг сообщений DHT"
 
 #: plugins/logviewer/ktlogviewerplugin.kcfg:27
 #, no-c-format
 msgid "Tracker info messages flag"
-msgstr ""
+msgstr "Флаг информационных сообщений трекера"
 
 #: plugins/logviewer/ktlogviewerplugin.kcfg:31
 #, no-c-format
 msgid "Disk IO info messages flag"
-msgstr ""
+msgstr "Флаг информационных сообщений дискового ввода-вывода"
 
 #: plugins/logviewer/ktlogviewerplugin.kcfg:35
 #, no-c-format
 msgid "IPFilter plugin messages flag"
-msgstr ""
+msgstr "Флаг сообщений модуля IP-фильтра"
 
 #: plugins/logviewer/ktlogviewerplugin.kcfg:39
 #, no-c-format
 msgid "Search plugin messages flag"
-msgstr ""
+msgstr "Флаг сообщений модуля поиска"
 
 #: plugins/logviewer/ktlogviewerplugin.kcfg:43
 #, no-c-format
 msgid "PartFileImport plugin messages flag"
-msgstr ""
+msgstr "Флаг сообщений модуля PartFileImport"
 
 #: plugins/logviewer/ktlogviewerplugin.kcfg:47
 #, no-c-format
 msgid "InfoWidget plugin messages flag"
-msgstr ""
+msgstr "Флаг сообщений модуля InfoWidget"
 
 #: plugins/logviewer/ktlogviewerplugin.kcfg:51
 #, no-c-format
 msgid "UPnP plugin messages flag"
-msgstr ""
+msgstr "Флаг сообщений модуля UPnP"
 
 #: plugins/logviewer/ktlogviewerplugin.kcfg:55
 #, no-c-format
 msgid "ScanFolder plugin messages flag"
-msgstr ""
+msgstr "Флаг сообщений модуля ScanFolder"
 
 #: plugins/logviewer/ktlogviewerplugin.kcfg:59
 #, no-c-format
 msgid "Scheduler plugin messages flag"
-msgstr ""
+msgstr "Флаг сообщений модуля планировщика"
 
 #: plugins/logviewer/ktlogviewerplugin.kcfg:63
 #, no-c-format
 msgid "RSS plugin messages flag"
-msgstr ""
+msgstr "Флаг сообщений модуля RSS"
 
 #: plugins/logviewer/ktlogviewerplugin.kcfg:67
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "WebInterface plugin messages flag"
-msgstr "Общие параметры"
+msgstr "Флаг сообщений модуля веб-интерфейса"
 
 #: plugins/logviewer/logprefwidgetbase.ui:53
 #: plugins/logviewer/logprefwidgetbase.ui:94
@@ -3682,7 +3650,7 @@ msgstr "Модуль RSS:"
 #: plugins/logviewer/logprefwidgetbase.ui:413
 #, no-c-format
 msgid "WebInterface plugin:"
-msgstr "Модуль Веб-интерфейса"
+msgstr "Модуль веб-интерфейса:"
 
 #: plugins/logviewer/logprefwidgetbase.ui:426
 #, no-c-format
@@ -3759,14 +3727,14 @@ msgstr "Удалить"
 
 #: plugins/rssfeed/rssfeedwidget.ui:86 plugins/rssfeed/rssfeedwidget.ui:410
 #: plugins/rssfeed/rssfeedwidget.ui:458
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "&New"
-msgstr "Добавить"
+msgstr "&Новый"
 
 #: plugins/rssfeed/rssfeedwidget.ui:117
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "&URL"
-msgstr "URL"
+msgstr "Ссы&лка"
 
 #: plugins/rssfeed/rssfeedwidget.ui:139
 #, no-c-format
@@ -3809,14 +3777,14 @@ msgid "Filters"
 msgstr "Фильтры"
 
 #: plugins/rssfeed/rssfeedwidget.ui:383
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Accept Filters"
-msgstr "Принимать фильтры"
+msgstr "Принять фильтры"
 
 #: plugins/rssfeed/rssfeedwidget.ui:431
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Reject Filters"
-msgstr "Отклонять фильтры"
+msgstr "Отклонить фильтры"
 
 #: plugins/rssfeed/rssfeedwidget.ui:545
 #, no-c-format
@@ -3829,54 +3797,54 @@ msgid "Treat as &Series"
 msgstr "Рассматривать как серию"
 
 #: plugins/rssfeed/rssfeedwidget.ui:612
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Process"
 msgstr "Выполнение"
 
 #: plugins/rssfeed/rssfeedwidget.ui:628
 #, no-c-format
 msgid "Series Criteria"
-msgstr ""
+msgstr "Критерии серий"
 
 #: plugins/rssfeed/rssfeedwidget.ui:664
 #, no-c-format
 msgid "Match Without Episode"
-msgstr ""
+msgstr "Совпадение без эпизода"
 
 #: plugins/rssfeed/rssfeedwidget.ui:695
 #, no-c-format
 msgid "Max Episode"
-msgstr ""
+msgstr "Максимальный эпизод"
 
 #: plugins/rssfeed/rssfeedwidget.ui:721
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Max Season"
-msgstr "Коэффициент передачи:"
+msgstr "Максимальный сезон"
 
 #: plugins/rssfeed/rssfeedwidget.ui:740
 #, no-c-format
 msgid "Min Season"
-msgstr ""
+msgstr "Минимальный сезон"
 
 #: plugins/rssfeed/rssfeedwidget.ui:764
 #, no-c-format
 msgid "Min Episode"
-msgstr ""
+msgstr "Минимальный эпизод"
 
 #: plugins/rssfeed/rssfeedwidget.ui:796
 #, no-c-format
 msgid "Test te&xt"
-msgstr ""
+msgstr "Тек&ст проверки"
 
 #: plugins/rssfeed/rssfeedwidget.ui:822
 #, no-c-format
 msgid "Te&st"
-msgstr ""
+msgstr "Про&верка"
 
 #: plugins/rssfeed/rssfeedwidget.ui:840
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Filter Matches"
-msgstr "Путь Folder1"
+msgstr "Совпадения фильтра"
 
 #: plugins/scanfolder/ktscanfolderplugin.kcfg:9
 #, no-c-format
@@ -3909,9 +3877,9 @@ msgid "Folder3 path"
 msgstr "Путь Folder3"
 
 #: plugins/scanfolder/ktscanfolderplugin.kcfg:39
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Whether to open torrent silently or not."
-msgstr "Предлагать ли выборочную загрузку открываемых торрентов"
+msgstr "Открывать ли торрент тихо или нет."
 
 #: plugins/scanfolder/ktscanfolderplugin.kcfg:44
 #, no-c-format
@@ -3959,9 +3927,9 @@ msgid "Open torrents silentl&y"
 msgstr "&Не предлагать выборочную загрузку открываемых торрентов"
 
 #: plugins/scanfolder/sfprefwidgetbase.ui:86
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Do not show 'Select files to download' dialog"
-msgstr "Не показывать диалог выбора файлов в торренте для загрузки"
+msgstr "Не показывать окно «Выбрать файлы для загрузки»"
 
 #: plugins/scanfolder/sfprefwidgetbase.ui:94
 #, no-c-format
@@ -4001,7 +3969,7 @@ msgstr "Планирование использования канала"
 #: plugins/scheduler/bwspage.ui:50
 #, no-c-format
 msgid "Left click category"
-msgstr ""
+msgstr "Категория левого щелчка"
 
 #: plugins/scheduler/bwspage.ui:61
 #, no-c-format
@@ -4031,7 +3999,7 @@ msgstr "Категория &2"
 #: plugins/scheduler/bwspage.ui:213
 #, no-c-format
 msgid "Right click category"
-msgstr ""
+msgstr "Категория правого щелчка"
 
 #: plugins/scheduler/bwspage.ui:224
 #, no-c-format
@@ -4097,7 +4065,7 @@ msgid "&Load from file"
 msgstr "&Загрузить из файла"
 
 #: plugins/scheduler/bwspage.ui:676
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Reset schedule"
 msgstr "Сбросить задание"
 
@@ -4117,9 +4085,9 @@ msgid "Use colors instead of pixmaps?"
 msgstr "Использовать цвета вместо изображений?"
 
 #: plugins/scheduler/schedulerpage.ui:16
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Scheduler Plugin Pref Page"
-msgstr "Страница параметров модуля задач"
+msgstr "Страница параметров модуля заданий"
 
 #: plugins/scheduler/schedulerpage.ui:27
 #, no-c-format
@@ -4137,9 +4105,9 @@ msgid "(Recommended for slower systems)"
 msgstr "(рекомендуется для медленных компьютеров)"
 
 #: plugins/scheduler/schedulerpage.ui:62
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Edit s&chedule"
-msgstr "Изменить задание"
+msgstr "Из&менить задание"
 
 #: plugins/search/ktsearchplugin.kcfg:10
 #, no-c-format
@@ -4162,9 +4130,9 @@ msgid "Custom browser executable path"
 msgstr "Путь к браузеру"
 
 #: plugins/search/searchbar.ui:78
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Engine:"
-msgstr "Поисковики"
+msgstr "Движок:"
 
 #: plugins/search/searchpref.ui:30 plugins/webinterface/webinterfacepref.ui:30
 #, no-c-format
@@ -4209,7 +4177,7 @@ msgstr "Поисковики"
 #: plugins/search/searchpref.ui:200
 #, no-c-format
 msgid "URL"
-msgstr "URL"
+msgstr "Ссылка"
 
 #: plugins/search/searchpref.ui:251
 #, no-c-format
@@ -4237,9 +4205,9 @@ msgid "Gather data every"
 msgstr "Собирать данные каждые"
 
 #: plugins/stats/ktstatsplugin.kcfg:18
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Toggle peers speed charts"
-msgstr "Переключение таблиц скоростей клиентов"
+msgstr "Переключить таблицы скоростей пиров"
 
 #: plugins/stats/ktstatsplugin.kcfg:22
 #, no-c-format
@@ -4247,39 +4215,39 @@ msgid "Interval between getting data about peers speed"
 msgstr "Интервал между получением данных о скорости у участников"
 
 #: plugins/stats/ktstatsplugin.kcfg:26
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Toggle drawing of leechers in swarms"
-msgstr "Переключение прорисовки скачивающих в списке"
+msgstr "Переключить отрисовку личей в роях"
 
 #: plugins/stats/ktstatsplugin.kcfg:30
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Toggle drawing of seeders in swarms"
-msgstr "Переключение прорисовки сидов в списке"
+msgstr "Переключить отрисовку сидов в роях"
 
 #: plugins/stats/ktstatsplugin.kcfg:35
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Download mesurments count"
-msgstr "Расчет значения загрузки"
+msgstr "Расчёт измерений загрузки"
 
 #: plugins/stats/ktstatsplugin.kcfg:39
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Peers speed mesurments count"
-msgstr "Расчет значения скорости клиентов"
+msgstr "Расчёт измерений скорости пиров"
 
 #: plugins/stats/ktstatsplugin.kcfg:43
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Upload mesurments count"
-msgstr "Расчет значения отдачи"
+msgstr "Расчёт измерений отдачи"
 
 #: plugins/stats/ktstatsplugin.kcfg:47
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Connections mesurments count"
-msgstr "Расчет значения соединений"
+msgstr "Расчёт измерений соединений"
 
 #: plugins/stats/ktstatsplugin.kcfg:51
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "DHT mesurments count"
-msgstr "Расчет значений DHT"
+msgstr "Расчёт измерений DHT"
 
 #: plugins/stats/ktstatsplugin.kcfg:56
 #, no-c-format
@@ -4365,19 +4333,19 @@ msgid "Peers connections"
 msgstr "Соединения с участниками:"
 
 #: plugins/stats/sprefwgt.ui:270
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Large values can obscure charts of connected peers"
-msgstr "Большие значения могут заслонять колонки с соединенными клиентами"
+msgstr "Большие значения могут исказить графики подключённых пиров"
 
 #: plugins/stats/sprefwgt.ui:289
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Show seeders in swarms"
-msgstr "Показывать сидов в списке"
+msgstr "Показывать сидов в роях"
 
 #: plugins/stats/sprefwgt.ui:297
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Show leechers in swarms"
-msgstr "Показывать скачивающих в списке"
+msgstr "Показывать личей в роях"
 
 #: plugins/stats/sprefwgt.ui:309
 #, no-c-format
@@ -4440,9 +4408,9 @@ msgid "Port number"
 msgstr "Номер порта:"
 
 #: plugins/webinterface/ktwebinterfaceplugin.kcfg:15
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "forward Port"
-msgstr "Перенаправление портов"
+msgstr "проброшенный порт"
 
 #: plugins/webinterface/ktwebinterfaceplugin.kcfg:20
 #, no-c-format
@@ -4450,9 +4418,9 @@ msgid "Session time to live"
 msgstr "Время жизни сеанса"
 
 #: plugins/webinterface/ktwebinterfaceplugin.kcfg:24
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "interface skin"
-msgstr "Общие параметры"
+msgstr "обложка интерфейса"
 
 #: plugins/webinterface/ktwebinterfaceplugin.kcfg:28
 #, no-c-format
@@ -4475,9 +4443,9 @@ msgid "Web Server"
 msgstr "Веб-сервер"
 
 #: plugins/webinterface/webinterfacepref.ui:82
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Forward port"
-msgstr "Перенаправление портов"
+msgstr "Пробросить порт"
 
 #: plugins/webinterface/webinterfacepref.ui:107
 #, no-c-format
