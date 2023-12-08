@@ -70,7 +70,7 @@ KTorrentCore::KTorrentCore(kt::GUIInterface* gui) : max_downloads(0),keep_seedin
 	UpdateCurrentTime();
 	
 	qman = new QueueManager();
-	connect(qman, TQT_SIGNAL(lowDiskSpace(kt::TorrentInterface*,bool)), TQT_TQOBJECT(this), TQT_SLOT(onLowDiskSpace(kt::TorrentInterface*,bool)));
+	connect(qman, TQT_SIGNAL(lowDiskSpace(kt::TorrentInterface*,bool)), this, TQT_SLOT(onLowDiskSpace(kt::TorrentInterface*,bool)));
 	
 	
 	data_dir = Settings::tempDir();
@@ -1100,17 +1100,17 @@ void KTorrentCore::connectSignals(kt::TorrentInterface* tc)
 	connect(tc,TQT_SIGNAL(finished(kt::TorrentInterface*)),
 			this,TQT_SLOT(torrentFinished(kt::TorrentInterface* )));
 	connect(tc, TQT_SIGNAL(stoppedByError(kt::TorrentInterface*, TQString )),
-			TQT_TQOBJECT(this), TQT_SLOT(slotStoppedByError(kt::TorrentInterface*, TQString )));
+			this, TQT_SLOT(slotStoppedByError(kt::TorrentInterface*, TQString )));
 	connect(tc, TQT_SIGNAL(seedingAutoStopped(kt::TorrentInterface*, kt::AutoStopReason)),
-			TQT_TQOBJECT(this), TQT_SLOT(torrentSeedAutoStopped(kt::TorrentInterface*, kt::AutoStopReason)));
+			this, TQT_SLOT(torrentSeedAutoStopped(kt::TorrentInterface*, kt::AutoStopReason)));
 	connect(tc,TQT_SIGNAL(aboutToBeStarted( kt::TorrentInterface*,bool & )),
-			TQT_TQOBJECT(this), TQT_SLOT(aboutToBeStarted( kt::TorrentInterface*,bool & )));
+			this, TQT_SLOT(aboutToBeStarted( kt::TorrentInterface*,bool & )));
 	connect(tc,TQT_SIGNAL(corruptedDataFound( kt::TorrentInterface* )),
-			TQT_TQOBJECT(this), TQT_SLOT(emitCorruptedData( kt::TorrentInterface* )));
+			this, TQT_SLOT(emitCorruptedData( kt::TorrentInterface* )));
 	connect(qman, TQT_SIGNAL(queuingNotPossible(kt::TorrentInterface*)),
-			TQT_TQOBJECT(this), TQT_SLOT(enqueueTorrentOverMaxRatio( kt::TorrentInterface* )));
+			this, TQT_SLOT(enqueueTorrentOverMaxRatio( kt::TorrentInterface* )));
 	connect(qman, TQT_SIGNAL(lowDiskSpace(kt::TorrentInterface*, bool)),
-			TQT_TQOBJECT(this), TQT_SLOT(onLowDiskSpace(kt::TorrentInterface*, bool)));
+			this, TQT_SLOT(onLowDiskSpace(kt::TorrentInterface*, bool)));
 	
 }
 

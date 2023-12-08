@@ -136,16 +136,16 @@ namespace kt
 		menu = new TDEPopupMenu(this);
 		
 		new_group = new TDEAction(i18n("New Group"),"document-new",0,
-							 TQT_TQOBJECT(this), TQT_SLOT(addGroup()),col, "New Group");
+							 this, TQT_SLOT(addGroup()),col, "New Group");
 		
 		edit_group = new TDEAction(i18n("Edit Name"),"edit",0,
-							 TQT_TQOBJECT(this), TQT_SLOT(editGroupName()),col,"Edit Group Name");
+							 this, TQT_SLOT(editGroupName()),col,"Edit Group Name");
 		
 		remove_group = new TDEAction(i18n("Remove Group"),"remove",0,
-							 TQT_TQOBJECT(this), TQT_SLOT(removeGroup()),col,"Remove Group");
+							 this, TQT_SLOT(removeGroup()),col,"Remove Group");
 		
 		open_in_new_tab = new TDEAction(i18n("Open Tab"),"document-open",0,
-							 TQT_TQOBJECT(this) ,TQT_SLOT(openView()),col,"Open Tab");
+							 this ,TQT_SLOT(openView()),col,"Open Tab");
 		
 		open_in_new_tab->plug(menu);
 		menu->insertSeparator();

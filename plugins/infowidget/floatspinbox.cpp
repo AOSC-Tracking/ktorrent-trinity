@@ -42,7 +42,7 @@ kt::FloatSpinBox::FloatSpinBox(
 	TQSpinBox::setValue(0);
 	setStep( 0.25f );
 	connect(this, TQT_SIGNAL(valueChanged ( int )), this, TQT_SLOT(internalValueChanged( int )));
-	setValidator( new LocaleFloatValidator( TQT_TQOBJECT(dynamic_cast<TQSpinBox * > (this)) ));
+	setValidator( new LocaleFloatValidator( dynamic_cast<TQSpinBox * > (this) ));
 	editor()->setAlignment(TQt::AlignRight);
 }
 
@@ -62,7 +62,7 @@ kt::FloatSpinBox::FloatSpinBox(
 	TQSpinBox::setValue(0);
 	setStep( 0.25 );
 	connect(this, TQT_SIGNAL(valueChanged ( int )), this, TQT_SLOT(internalValueChanged( int )));
-	setValidator( new LocaleFloatValidator( TQT_TQOBJECT(dynamic_cast<TQSpinBox * > (this)) ));
+	setValidator( new LocaleFloatValidator( dynamic_cast<TQSpinBox * > (this) ));
 }
 
 
@@ -86,7 +86,7 @@ kt::FloatSpinBox::FloatSpinBox(
 	setValue(0.0f);
 	setStep( step );
 	connect(this, TQT_SIGNAL(valueChanged ( int )), this, TQT_SLOT(internalValueChanged( int )));
-	setValidator( new LocaleFloatValidator( TQT_TQOBJECT(this) ));
+	setValidator( new LocaleFloatValidator( this ));
 
 }
 
