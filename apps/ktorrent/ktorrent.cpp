@@ -119,7 +119,7 @@ KTorrent::KTorrent()
 	//setToolviewStyle(KMdi::TextAndIcon);
 	connect(this,TQT_SIGNAL(widgetChanged(TQWidget*)),this,TQT_SLOT(currentTabChanged(TQWidget*)));
 	
-	m_view_man = new ViewManager(TQT_TQOBJECT(this));
+	m_view_man = new ViewManager(this);
 	m_group_view = new kt::GroupView(m_view_man,actionCollection());
 	connect(m_group_view,TQT_SIGNAL(openNewTab(kt::Group*)),this,TQT_SLOT(openView(kt::Group*)));
 	
@@ -191,7 +191,7 @@ KTorrent::KTorrent()
 	m_core->loadTorrents();
 	m_core->loadPlugins();
 
-	connect(&m_gui_update_timer, TQT_SIGNAL(timeout()), TQT_TQOBJECT(this), TQT_SLOT(updatedStats()));
+	connect(&m_gui_update_timer, TQT_SIGNAL(timeout()), this, TQT_SLOT(updatedStats()));
 	//Apply GUI update interval
 	int val = 500;
 	switch(Settings::guiUpdateInterval())
@@ -497,51 +497,51 @@ void KTorrent::currentTorrentChanged(kt::TorrentInterface* tc)
 
 void KTorrent::setupActions()
 {
-	KStdAction::openNew(TQT_TQOBJECT(this),TQT_SLOT(fileNew()),actionCollection());
-	KStdAction::open(TQT_TQOBJECT(this), TQT_SLOT(fileOpen()), actionCollection());
-	KStdAction::quit(TQT_TQOBJECT(kapp), TQT_SLOT(quit()), actionCollection());
+	KStdAction::openNew(this,TQT_SLOT(fileNew()),actionCollection());
+	KStdAction::open(this, TQT_SLOT(fileOpen()), actionCollection());
+	KStdAction::quit(kapp, TQT_SLOT(quit()), actionCollection());
 	
-	KStdAction::paste(TQT_TQOBJECT(kapp),TQT_SLOT(paste()),actionCollection());
+	KStdAction::paste(kapp,TQT_SLOT(paste()),actionCollection());
 
-	m_statusbarAction = KStdAction::showStatusbar(TQT_TQOBJECT(this), TQT_SLOT(optionsShowStatusbar()), actionCollection());
-	m_menubarAction = KStdAction::showMenubar(TQT_TQOBJECT(this), TQT_SLOT(optionsShowMenubar()), actionCollection()); 
+	m_statusbarAction = KStdAction::showStatusbar(this, TQT_SLOT(optionsShowStatusbar()), actionCollection());
+	m_menubarAction = KStdAction::showMenubar(this, TQT_SLOT(optionsShowMenubar()), actionCollection()); 
 
-	KStdAction::keyBindings(TQT_TQOBJECT(this), TQT_SLOT(optionsConfigureKeys()), actionCollection());
-	KStdAction::configureToolbars(TQT_TQOBJECT(this), TQT_SLOT(optionsConfigureToolbars()), actionCollection());
+	KStdAction::keyBindings(this, TQT_SLOT(optionsConfigureKeys()), actionCollection());
+	KStdAction::configureToolbars(this, TQT_SLOT(optionsConfigureToolbars()), actionCollection());
 
-	TDEAction* pref = KStdAction::preferences(TQT_TQOBJECT(this), TQT_SLOT(optionsPreferences()), actionCollection());
+	TDEAction* pref = KStdAction::preferences(this, TQT_SLOT(optionsPreferences()), actionCollection());
 
 	m_start = new TDEAction(
-			i18n("to start", "Start"), "ktstart",0,TQT_TQOBJECT(this), TQT_SLOT(startDownload()),
+			i18n("to start", "Start"), "ktstart",0,this, TQT_SLOT(startDownload()),
 			actionCollection(), "Start");
 
 	m_stop = new TDEAction(
-			i18n("to stop", "Stop"), "ktstop",0,TQT_TQOBJECT(this), TQT_SLOT(stopDownload()),
+			i18n("to stop", "Stop"), "ktstop",0,this, TQT_SLOT(stopDownload()),
 			actionCollection(), "Stop");
 
 	m_remove = new TDEAction(
-			i18n("Remove"), "ktremove",0,TQT_TQOBJECT(this), TQT_SLOT(removeDownload()),
+			i18n("Remove"), "ktremove",0,this, TQT_SLOT(removeDownload()),
 			actionCollection(), "Remove");
 	
 	m_startall = new TDEAction(
-			i18n("to start all", "Start All"), "ktstart_all",0,TQT_TQOBJECT(this), TQT_SLOT(startAllDownloadsCurrentView()),
+			i18n("to start all", "Start All"), "ktstart_all",0,this, TQT_SLOT(startAllDownloadsCurrentView()),
 			actionCollection(), "Start all");
 	
-	m_startall_systray = new TDEAction(i18n("to start all", "Start All"), "ktstart_all",0,TQT_TQOBJECT(this), TQT_SLOT(startAllDownloads()),actionCollection());
+	m_startall_systray = new TDEAction(i18n("to start all", "Start All"), "ktstart_all",0,this, TQT_SLOT(startAllDownloads()),actionCollection());
 	
 	m_stopall = new TDEAction(
-			i18n("to stop all", "Stop All"), "ktstop_all",0,TQT_TQOBJECT(this), TQT_SLOT(stopAllDownloadsCurrentView()),
+			i18n("to stop all", "Stop All"), "ktstop_all",0,this, TQT_SLOT(stopAllDownloadsCurrentView()),
 			actionCollection(), "Stop all");
 	
-	m_stopall_systray = new TDEAction(i18n("to stop all", "Stop All"), "ktstop_all",0,TQT_TQOBJECT(this), TQT_SLOT(stopAllDownloads()),actionCollection());
+	m_stopall_systray = new TDEAction(i18n("to stop all", "Stop All"), "ktstop_all",0,this, TQT_SLOT(stopAllDownloads()),actionCollection());
 	
 	m_pasteurl = new TDEAction(
-			i18n("to paste torrent URL", "Paste Torrent URL..."), "ktstart",0,TQT_TQOBJECT(this), TQT_SLOT(torrentPaste()),
+			i18n("to paste torrent URL", "Paste Torrent URL..."), "ktstart",0,this, TQT_SLOT(torrentPaste()),
 			actionCollection(), "paste_url");
 	
 	m_queuemgr = new TDEAction(
 			i18n("to open Queue Manager", "Open Queue Manager..."),
-			"ktqueuemanager", 0, TQT_TQOBJECT(this), TQT_SLOT(queueManagerShow()),
+			"ktqueuemanager", 0, this, TQT_SLOT(queueManagerShow()),
 			actionCollection(), "Queue manager");
 	
 	m_queueaction = new TDEAction(
@@ -551,14 +551,14 @@ void KTorrent::setupActions()
 	
 	m_ipfilter = new TDEAction(
 			i18n("IPFilter"),
-			"filter", 0, TQT_TQOBJECT(this), TQT_SLOT(showIPFilter()),
+			"filter", 0, this, TQT_SLOT(showIPFilter()),
 			actionCollection(), "ipfilter_action");
 	
 	m_datacheck = new TDEAction(
 			i18n("Check Data Integrity"),
 	TQString(),0,m_view_man,TQT_SLOT(checkDataIntegrity()),actionCollection(),"check_data");
 	
-	m_find = KStdAction::find(TQT_TQOBJECT(this),TQT_SLOT(find()),actionCollection());
+	m_find = KStdAction::find(this,TQT_SLOT(find()),actionCollection());
 	
 	//Plug actions to systemtray context menu
 	m_startall_systray->plug(m_systray_icon->contextMenu());

@@ -118,7 +118,7 @@ namespace kt
 		SearchWidget* search = new SearchWidget(this);
 		getGUI()->addTabPage(search,iload->loadIconSet("viewmag", TDEIcon::Small),text,this);
 		
-		TDEAction* copy_act = KStdAction::copy(TQT_TQOBJECT(search),TQT_SLOT(copy()),actionCollection());
+		TDEAction* copy_act = KStdAction::copy(search,TQT_SLOT(copy()),actionCollection());
 		copy_act->plug(search->rightClickMenu(),0);
 		searches.append(search);
 		
