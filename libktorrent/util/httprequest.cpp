@@ -34,11 +34,11 @@ namespace bt
 		sock->enableWrite(true);
 		sock->setTimeout(30000);
 		sock->setBlocking(false);
-		connect(sock,TQT_SIGNAL(readyRead()),this,TQT_SLOT(onReadyRead()));
-		connect(sock,TQT_SIGNAL(gotError(int)),this,TQT_SLOT(onError(int )));
-		connect(sock,TQT_SIGNAL(timedOut()),this,TQT_SLOT(onTimeout()));
-		connect(sock,TQT_SIGNAL(connected(const KResolverEntry&)),
-				this, TQT_SLOT(onConnect( const KResolverEntry& )));
+		connect(sock,TQ_SIGNAL(readyRead()),this,TQ_SLOT(onReadyRead()));
+		connect(sock,TQ_SIGNAL(gotError(int)),this,TQ_SLOT(onError(int )));
+		connect(sock,TQ_SIGNAL(timedOut()),this,TQ_SLOT(onTimeout()));
+		connect(sock,TQ_SIGNAL(connected(const KResolverEntry&)),
+				this, TQ_SLOT(onConnect( const KResolverEntry& )));
 	}
 	
 	

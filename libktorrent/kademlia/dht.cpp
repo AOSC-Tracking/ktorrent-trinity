@@ -46,7 +46,7 @@ namespace dht
 
 	DHT::DHT() : node(0),srv(0),db(0),tman(0)
 	{
-		connect(&update_timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(update()));
+		connect(&update_timer,TQ_SIGNAL(timeout()),this,TQ_SLOT(update()));
 	}
 
 

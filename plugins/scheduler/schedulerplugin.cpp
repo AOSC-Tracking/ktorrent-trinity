@@ -60,7 +60,7 @@ namespace kt
 	{
 		setXMLFile("ktschedulerpluginui.rc");
 		bws_action = 0;
-		connect(&m_timer, TQT_SIGNAL(timeout()), this, TQT_SLOT(timer_triggered()));
+		connect(&m_timer, TQ_SIGNAL(timeout()), this, TQ_SLOT(timer_triggered()));
 	}
 
 
@@ -95,7 +95,7 @@ namespace kt
 		
 // 		updateEnabledBWS();
 		bws_action = new TDEAction(i18n("Open Bandwidth Scheduler" ), "clock", 0, this,
-								 TQT_SLOT(openBWS()), actionCollection(), "bwscheduler" );
+								 TQ_SLOT(openBWS()), actionCollection(), "bwscheduler" );
 	}
 
 	void SchedulerPlugin::unload()
@@ -135,7 +135,7 @@ namespace kt
 		if(SchedulerPluginSettings::enableBWS())
 		{
 			bws_action = new TDEAction(i18n("Open Bandwidth Scheduler" ), "clock", 0, this,
-									 TQT_SLOT(openBWS()), actionCollection(), "bwscheduler" );
+									 TQ_SLOT(openBWS()), actionCollection(), "bwscheduler" );
 		}
 		else
 		{

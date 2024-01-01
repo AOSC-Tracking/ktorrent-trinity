@@ -613,8 +613,8 @@ namespace bt
 		pman = new PeerManager(*tor);
 		//Out() << "Tracker url " << url << " " << url.protocol() << " " << url.prettyURL() << endl;
 		psman = new PeerSourceManager(this,pman);
-		connect(psman,TQT_SIGNAL(statusChanged( const TQString& )),
-				this,TQT_SLOT(trackerStatusChanged( const TQString& )));
+		connect(psman,TQ_SIGNAL(statusChanged( const TQString& )),
+				this,TQ_SLOT(trackerStatusChanged( const TQString& )));
 
 
 		// Create chunkmanager, load the index file if it exists
@@ -626,7 +626,7 @@ namespace bt
 		
 		// store the outputdir into the output_path variable, so others can access it	
 		
-		connect(cman,TQT_SIGNAL(updateStats()),this,TQT_SLOT(updateStats()));
+		connect(cman,TQ_SIGNAL(updateStats()),this,TQ_SLOT(updateStats()));
 		if (bt::Exists(datadir + "index"))
 			cman->loadIndexFile();
 
@@ -634,17 +634,17 @@ namespace bt
 
 		// create downloader,uploader and choker
 		down = new Downloader(*tor,*pman,*cman);
-		connect(down,TQT_SIGNAL(ioError(const TQString& )),
-				this,TQT_SLOT(onIOError(const TQString& )));
+		connect(down,TQ_SIGNAL(ioError(const TQString& )),
+				this,TQ_SLOT(onIOError(const TQString& )));
 		up = new Uploader(*cman,*pman);
 		choke = new Choker(*pman,*cman);
 
 
-		connect(pman,TQT_SIGNAL(newPeer(Peer* )),this,TQT_SLOT(onNewPeer(Peer* )));
-		connect(pman,TQT_SIGNAL(peerKilled(Peer* )),this,TQT_SLOT(onPeerRemoved(Peer* )));
-		connect(cman,TQT_SIGNAL(excluded(Uint32, Uint32 )),down,TQT_SLOT(onExcluded(Uint32, Uint32 )));
-		connect(cman,TQT_SIGNAL(included( Uint32, Uint32 )),down,TQT_SLOT(onIncluded( Uint32, Uint32 )));
-		connect(cman,TQT_SIGNAL(corrupted( Uint32 )),this,TQT_SLOT(corrupted( Uint32 )));
+		connect(pman,TQ_SIGNAL(newPeer(Peer* )),this,TQ_SLOT(onNewPeer(Peer* )));
+		connect(pman,TQ_SIGNAL(peerKilled(Peer* )),this,TQ_SLOT(onPeerRemoved(Peer* )));
+		connect(cman,TQ_SIGNAL(excluded(Uint32, Uint32 )),down,TQ_SLOT(onExcluded(Uint32, Uint32 )));
+		connect(cman,TQ_SIGNAL(included( Uint32, Uint32 )),down,TQ_SLOT(onIncluded( Uint32, Uint32 )));
+		connect(cman,TQ_SIGNAL(corrupted( Uint32 )),this,TQ_SLOT(corrupted( Uint32 )));
 	}
 	
 	void TorrentControl::initInternal(QueueManager* qman,
@@ -731,8 +731,8 @@ namespace bt
 
 	void TorrentControl::onNewPeer(Peer* p)
 	{
-		connect(p,TQT_SIGNAL(gotPortPacket( const TQString&, Uint16 )),
-				this,TQT_SLOT(onPortPacket( const TQString&, Uint16 )));
+		connect(p,TQ_SIGNAL(gotPortPacket( const TQString&, Uint16 )),
+				this,TQ_SLOT(onPortPacket( const TQString&, Uint16 )));
 		
 		if (p->getStats().fast_extensions)
 		{
@@ -772,8 +772,8 @@ namespace bt
 
 	void TorrentControl::onPeerRemoved(Peer* p)
 	{
-		disconnect(p,TQT_SIGNAL(gotPortPacket( const TQString&, Uint16 )),
-				this,TQT_SLOT(onPortPacket( const TQString&, Uint16 )));
+		disconnect(p,TQ_SIGNAL(gotPortPacket( const TQString&, Uint16 )),
+				this,TQ_SLOT(onPortPacket( const TQString&, Uint16 )));
 		if (tmon)
 			tmon->peerRemoved(p);
 	}
@@ -855,7 +855,7 @@ namespace bt
 				move_data_files_destination_path = nd;
 				if (j)
 				{
-					connect(j,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(moveDataFilesJobDone(TDEIO::Job*)));
+					connect(j,TQ_SIGNAL(result(TDEIO::Job*)),this,TQ_SLOT(moveDataFilesJobDone(TDEIO::Job*)));
 					return true;
 				}
 				else

@@ -56,9 +56,9 @@ Button::Button(ButtonBar *parent, const TQString text, const TQIconSet &icon,
     TQToolTip::add(this, m_realText);
 
     m_assignAccelAction = new TDEAction(i18n("Assign Accelerator..."), 0,
-        this, TQT_SLOT(assignAccel()), this);
+        this, TQ_SLOT(assignAccel()), this);
     m_clearAccelAction = new TDEAction(i18n("Clear Accelerator"), 0,
-        this, TQT_SLOT(clearAccel()), this);
+        this, TQ_SLOT(clearAccel()), this);
 
     TDEConfig *config = kapp->config();
     config->setGroup("UI");

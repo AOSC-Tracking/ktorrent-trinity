@@ -41,9 +41,9 @@ namespace kt
 			: UPnPWidget(parent,name,fl)
 	{
 		def_router = 0;
-		connect(m_forward_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onForwardBtnClicked()));
-		connect(m_undo_forward_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onUndoForwardBtnClicked()));
-		connect(m_rescan,TQT_SIGNAL(clicked()),this,TQT_SLOT(onRescanClicked()));
+		connect(m_forward_btn,TQ_SIGNAL(clicked()),this,TQ_SLOT(onForwardBtnClicked()));
+		connect(m_undo_forward_btn,TQ_SIGNAL(clicked()),this,TQ_SLOT(onUndoForwardBtnClicked()));
+		connect(m_rescan,TQ_SIGNAL(clicked()),this,TQ_SLOT(onRescanClicked()));
 		bt::Globals::instance().getPortList().setListener(this);
 	}
 	
@@ -72,7 +72,7 @@ namespace kt
 	
 	void UPnPPrefWidget::addDevice(UPnPRouter* r)
 	{
-		connect(r,TQT_SIGNAL(updateGUI()),this,TQT_SLOT(updatePortMappings()));
+		connect(r,TQ_SIGNAL(updateGUI()),this,TQ_SLOT(updatePortMappings()));
 		TDEListViewItem* item = new TDEListViewItem(m_device_list,r->getDescription().friendlyName);
 		item->setMultiLinesEnabled(true);
 		itemmap[item] = r;

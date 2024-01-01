@@ -165,8 +165,8 @@ namespace kt
 		items.push_back(item);
 		item->setOdd(items.size() % 2 == 1);
 		
-		connect(item, TQT_SIGNAL(clicked(LabelViewItem*)),
-				this, TQT_SLOT(onItemClicked(LabelViewItem*)));
+		connect(item, TQ_SIGNAL(clicked(LabelViewItem*)),
+				this, TQ_SLOT(onItemClicked(LabelViewItem*)));
 	}
 	
 	void LabelView::removeItem(LabelViewItem* item)
@@ -176,8 +176,8 @@ namespace kt
 		{
 			item_box->remove(item);
 			items.erase(i);
-			disconnect(item, TQT_SIGNAL(clicked(LabelViewItem*)),
-					this, TQT_SLOT(onItemClicked(LabelViewItem*)));
+			disconnect(item, TQ_SIGNAL(clicked(LabelViewItem*)),
+					this, TQ_SLOT(onItemClicked(LabelViewItem*)));
 			
 			// check for selected being equal to item
 			if (item == selected)

@@ -81,8 +81,8 @@ namespace bt
 		active_src = i.key();
 		active_dst = i.data();
 		Out(SYS_GEN|LOG_DEBUG) << "Moving " << active_src << " -> " << active_dst << endl;
-		connect(active_job,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(onJobDone(TDEIO::Job*)));
-		connect(active_job,TQT_SIGNAL(canceled(TDEIO::Job*)),this,TQT_SLOT(onCanceled(TDEIO::Job*)));
+		connect(active_job,TQ_SIGNAL(result(TDEIO::Job*)),this,TQ_SLOT(onJobDone(TDEIO::Job*)));
+		connect(active_job,TQ_SIGNAL(canceled(TDEIO::Job*)),this,TQ_SLOT(onCanceled(TDEIO::Job*)));
 		todo.erase(i);
 	}
 	
@@ -95,8 +95,8 @@ namespace bt
 		}
 		TQMap<TQString,TQString>::iterator i = success.begin();	
 		active_job = TDEIO::move(KURL::fromPathOrURL(i.data()),KURL::fromPathOrURL(i.key()),false);
-		connect(active_job,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(onJobDone(TDEIO::Job*)));
-		connect(active_job,TQT_SIGNAL(canceled(TDEIO::Job*)),this,TQT_SLOT(onCanceled(TDEIO::Job*)));
+		connect(active_job,TQ_SIGNAL(result(TDEIO::Job*)),this,TQ_SLOT(onJobDone(TDEIO::Job*)));
+		connect(active_job,TQ_SIGNAL(canceled(TDEIO::Job*)),this,TQ_SLOT(onCanceled(TDEIO::Job*)));
 		success.erase(i);
 	}
 }

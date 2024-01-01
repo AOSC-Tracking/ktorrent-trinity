@@ -58,9 +58,9 @@ namespace kt
 
 		m_dir->setShowingDotFiles(true);
 
-		connect(m_dir, TQT_SIGNAL(newItems( const KFileItemList& )), this, TQT_SLOT(onNewItems( const KFileItemList& )));
-		connect(m_core, TQT_SIGNAL(loadingFinished( const KURL&, bool, bool )), this, TQT_SLOT(onLoadingFinished( const KURL&, bool, bool )));
-		connect(&m_incomplePollingTimer,TQT_SIGNAL(timeout()),this,TQT_SLOT(onIncompletePollingTimeout()));
+		connect(m_dir, TQ_SIGNAL(newItems( const KFileItemList& )), this, TQ_SLOT(onNewItems( const KFileItemList& )));
+		connect(m_core, TQ_SIGNAL(loadingFinished( const KURL&, bool, bool )), this, TQ_SLOT(onLoadingFinished( const KURL&, bool, bool )));
+		connect(&m_incomplePollingTimer,TQ_SIGNAL(timeout()),this,TQ_SLOT(onIncompletePollingTimeout()));
 	}
 
 

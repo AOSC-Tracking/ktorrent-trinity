@@ -60,12 +60,12 @@ namespace kt
 		TQToolTip::add(m_infoLabel,info);
 		TQToolTip::add(m_engine_name,info);
 		
-		connect(btnAdd, TQT_SIGNAL(clicked()), this, TQT_SLOT(addClicked()));
-		connect(btnRemove, TQT_SIGNAL(clicked()), this, TQT_SLOT(removeClicked()));
-		connect(btn_add_default, TQT_SIGNAL(clicked()), this, TQT_SLOT(addDefaultClicked()));
-		connect(btnRemoveAll, TQT_SIGNAL(clicked()), this, TQT_SLOT(removeAllClicked()));
+		connect(btnAdd, TQ_SIGNAL(clicked()), this, TQ_SLOT(addClicked()));
+		connect(btnRemove, TQ_SIGNAL(clicked()), this, TQ_SLOT(removeClicked()));
+		connect(btn_add_default, TQ_SIGNAL(clicked()), this, TQ_SLOT(addDefaultClicked()));
+		connect(btnRemoveAll, TQ_SIGNAL(clicked()), this, TQ_SLOT(removeAllClicked()));
 		
-		connect(useCustomBrowser, TQT_SIGNAL(toggled(bool)), this, TQT_SLOT(customToggled( bool )));
+		connect(useCustomBrowser, TQ_SIGNAL(toggled(bool)), this, TQ_SLOT(customToggled( bool )));
 		
 		useCustomBrowser->setChecked(SearchPluginSettings::useCustomBrowser());
 		useDefaultBrowser->setChecked(SearchPluginSettings::useDefaultBrowser());

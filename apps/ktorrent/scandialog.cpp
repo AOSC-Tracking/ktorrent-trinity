@@ -40,8 +40,8 @@ ScanDialog::ScanDialog(KTorrentCore* core,bool auto_import,
 	: ScanDlgBase(parent,name, modal,fl),DataCheckerListener(auto_import),mutex(true),core(core)
 {
 	m_cancel->setGuiItem(KStdGuiItem::cancel());
-	connect(m_cancel,TQT_SIGNAL(clicked()),this,TQT_SLOT(onCancelPressed()));
-	connect(&timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(update()));
+	connect(m_cancel,TQ_SIGNAL(clicked()),this,TQ_SLOT(onCancelPressed()));
+	connect(&timer,TQ_SIGNAL(timeout()),this,TQ_SLOT(update()));
 	tc = 0;
 	silently = false;
 	restart = false;
@@ -127,8 +127,8 @@ void ScanDialog::finished()
 		{
 			// cancel now becomes a close button
 			m_cancel->setGuiItem(KStdGuiItem::close()); 
-			disconnect(m_cancel,TQT_SIGNAL(clicked()),this,TQT_SLOT(onCancelPressed()));
-			connect(m_cancel,TQT_SIGNAL(clicked()),this,TQT_SLOT(accept()));
+			disconnect(m_cancel,TQ_SIGNAL(clicked()),this,TQ_SLOT(onCancelPressed()));
+			connect(m_cancel,TQ_SIGNAL(clicked()),this,TQ_SLOT(accept()));
 		}
 	}
 	else

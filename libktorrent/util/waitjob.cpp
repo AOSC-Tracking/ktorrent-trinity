@@ -27,7 +27,7 @@ namespace bt
 
 	WaitJob::WaitJob(Uint32 millis) : TDEIO::Job(false)
 	{
-		connect(&timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(timerDone()));
+		connect(&timer,TQ_SIGNAL(timeout()),this,TQ_SLOT(timerDone()));
 		timer.start(millis,true);
 	}
 
@@ -51,8 +51,8 @@ namespace bt
 	void WaitJob::addExitOperation(kt::ExitOperation* op)
 	{
 		exit_ops.append(op);
-		connect(op,TQT_SIGNAL(operationFinished( kt::ExitOperation* )),
-				this,TQT_SLOT(operationFinished( kt::ExitOperation* )));
+		connect(op,TQ_SIGNAL(operationFinished( kt::ExitOperation* )),
+				this,TQ_SLOT(operationFinished( kt::ExitOperation* )));
 	}
 	
 	void WaitJob::operationFinished(kt::ExitOperation* op)

@@ -65,8 +65,8 @@ namespace kt
 		engines.load(TDEGlobal::dirs()->saveLocation("data","ktorrent") + "search_engines");
 		TDEToolBar* tb = getGUI()->addToolBar("search");
 		tab = new SearchTab(tb);
-		connect(tab,TQT_SIGNAL(search( const TQString&, int, bool )),
-				this,TQT_SLOT(search( const TQString&, int, bool )));
+		connect(tab,TQ_SIGNAL(search( const TQString&, int, bool )),
+				this,TQ_SLOT(search( const TQString&, int, bool )));
 		 
 		pref = new SearchPrefPage(this);
 		getGUI()->addPrefPage(pref);
@@ -118,7 +118,7 @@ namespace kt
 		SearchWidget* search = new SearchWidget(this);
 		getGUI()->addTabPage(search,iload->loadIconSet("viewmag", TDEIcon::Small),text,this);
 		
-		TDEAction* copy_act = KStdAction::copy(search,TQT_SLOT(copy()),actionCollection());
+		TDEAction* copy_act = KStdAction::copy(search,TQ_SLOT(copy()),actionCollection());
 		copy_act->plug(search->rightClickMenu(),0);
 		searches.append(search);
 		

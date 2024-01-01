@@ -69,18 +69,18 @@ namespace kt
 		back_id = right_click_menu->insertItem(
                         TDEGlobal::iconLoader()->loadIconSet(TQApplication::reverseLayout() 
                         ? "forward" : "back",TDEIcon::Small),
-				i18n("Back"),html_part,TQT_SLOT(back()));
+				i18n("Back"),html_part,TQ_SLOT(back()));
 		right_click_menu->insertItem(
 				TDEGlobal::iconLoader()->loadIconSet("reload",TDEIcon::Small),
-				i18n("Reload"),html_part,TQT_SLOT(reload()));
+				i18n("Reload"),html_part,TQ_SLOT(reload()));
 	
 		right_click_menu->setItemEnabled(back_id,false);
 		sbar->m_back->setEnabled(false);
-		connect(sbar->m_search_button,TQT_SIGNAL(clicked()),this,TQT_SLOT(searchPressed()));
-		connect(sbar->m_clear_button,TQT_SIGNAL(clicked()),this,TQT_SLOT(clearPressed()));
-		connect(sbar->m_search_text,TQT_SIGNAL(returnPressed()),this,TQT_SLOT(searchPressed()));
-		connect(sbar->m_back,TQT_SIGNAL(clicked()),html_part,TQT_SLOT(back()));
-		connect(sbar->m_reload,TQT_SIGNAL(clicked()),html_part,TQT_SLOT(reload()));
+		connect(sbar->m_search_button,TQ_SIGNAL(clicked()),this,TQ_SLOT(searchPressed()));
+		connect(sbar->m_clear_button,TQ_SIGNAL(clicked()),this,TQ_SLOT(clearPressed()));
+		connect(sbar->m_search_text,TQ_SIGNAL(returnPressed()),this,TQ_SLOT(searchPressed()));
+		connect(sbar->m_back,TQ_SIGNAL(clicked()),html_part,TQ_SLOT(back()));
+		connect(sbar->m_reload,TQ_SIGNAL(clicked()),html_part,TQ_SLOT(reload()));
 	
 		sbar->m_clear_button->setIconSet(
 				TDEGlobal::iconLoader()->loadIconSet(TQApplication::reverseLayout() 
@@ -92,22 +92,22 @@ namespace kt
 				TDEGlobal::iconLoader()->loadIconSet("reload",TDEIcon::Small));
 		
 		
-		connect(html_part,TQT_SIGNAL(backAvailable(bool )),
-				this,TQT_SLOT(onBackAvailable(bool )));
-		connect(html_part,TQT_SIGNAL(onURL(const TQString& )),
-				this,TQT_SLOT(onURLHover(const TQString& )));
-		connect(html_part,TQT_SIGNAL(openTorrent(const KURL& )),
-				this,TQT_SLOT(onOpenTorrent(const KURL& )));
-		connect(html_part,TQT_SIGNAL(popupMenu(const TQString&, const TQPoint& )),
-				this,TQT_SLOT(showPopupMenu(const TQString&, const TQPoint& )));
-		connect(html_part,TQT_SIGNAL(searchFinished()),this,TQT_SLOT(onFinished()));
-		connect(html_part,TQT_SIGNAL(saveTorrent(const KURL& )),
-				this,TQT_SLOT(onSaveTorrent(const KURL& )));
+		connect(html_part,TQ_SIGNAL(backAvailable(bool )),
+				this,TQ_SLOT(onBackAvailable(bool )));
+		connect(html_part,TQ_SIGNAL(onURL(const TQString& )),
+				this,TQ_SLOT(onURLHover(const TQString& )));
+		connect(html_part,TQ_SIGNAL(openTorrent(const KURL& )),
+				this,TQ_SLOT(onOpenTorrent(const KURL& )));
+		connect(html_part,TQ_SIGNAL(popupMenu(const TQString&, const TQPoint& )),
+				this,TQ_SLOT(showPopupMenu(const TQString&, const TQPoint& )));
+		connect(html_part,TQ_SIGNAL(searchFinished()),this,TQ_SLOT(onFinished()));
+		connect(html_part,TQ_SIGNAL(saveTorrent(const KURL& )),
+				this,TQ_SLOT(onSaveTorrent(const KURL& )));
 	
 		KParts::PartManager* pman = html_part->partManager();
-		connect(pman,TQT_SIGNAL(partAdded(KParts::Part*)),this,TQT_SLOT(onFrameAdded(KParts::Part* )));
+		connect(pman,TQ_SIGNAL(partAdded(KParts::Part*)),this,TQ_SLOT(onFrameAdded(KParts::Part* )));
 		
-		connect(html_part->browserExtension(),TQT_SIGNAL(loadingProgress(int)),this,TQT_SLOT(loadingProgress(int)));
+		connect(html_part->browserExtension(),TQ_SIGNAL(loadingProgress(int)),this,TQ_SLOT(loadingProgress(int)));
 		prog = 0;
 	}
 	
@@ -143,8 +143,8 @@ namespace kt
 		TDEHTMLPart* frame = dynamic_cast<TDEHTMLPart*>(p);
 		if (frame)
 		{
-			connect(frame,TQT_SIGNAL(popupMenu(const TQString&, const TQPoint& )),
-					this,TQT_SLOT(showPopupMenu(const TQString&, const TQPoint& )));
+			connect(frame,TQ_SIGNAL(popupMenu(const TQString&, const TQPoint& )),
+					this,TQ_SLOT(showPopupMenu(const TQString&, const TQPoint& )));
 		}
 	}
 	

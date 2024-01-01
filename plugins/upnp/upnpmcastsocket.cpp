@@ -47,8 +47,8 @@ namespace kt
 	UPnPMCastSocket::UPnPMCastSocket(bool verbose) : verbose(verbose)
 	{
 		routers.setAutoDelete(true);
-		TQObject::connect(this,TQT_SIGNAL(readyRead()),this,TQT_SLOT(onReadyRead()));
-		TQObject::connect(this,TQT_SIGNAL(gotError(int)),this,TQT_SLOT(onError(int)));
+		TQObject::connect(this,TQ_SIGNAL(readyRead()),this,TQ_SLOT(onReadyRead()));
+		TQObject::connect(this,TQ_SIGNAL(gotError(int)),this,TQ_SLOT(onError(int)));
 		setAddressReuseable(true);
 		setFamily(KNetwork::KResolver::IPv4Family);
 		setBlocking(true);
@@ -67,8 +67,8 @@ namespace kt
 	UPnPMCastSocket::~UPnPMCastSocket()
 	{
 		leaveUPnPMCastGroup();
-		TQObject::disconnect(this,TQT_SIGNAL(readyRead()),this,TQT_SLOT(onReadyRead()));
-		TQObject::disconnect(this,TQT_SIGNAL(gotError(int)),this,TQT_SLOT(onError(int)));
+		TQObject::disconnect(this,TQ_SIGNAL(readyRead()),this,TQ_SLOT(onReadyRead()));
+		TQObject::disconnect(this,TQ_SIGNAL(gotError(int)),this,TQ_SLOT(onError(int)));
 	}
 	
 	void UPnPMCastSocket::discover()
@@ -142,8 +142,8 @@ namespace kt
 		UPnPRouter* r = parseResponse(p.data());
 		if (r)
 		{
-			TQObject::connect(r,TQT_SIGNAL(xmlFileDownloaded( UPnPRouter*, bool )),
-					this,TQT_SLOT(onXmlFileDownloaded( UPnPRouter*, bool )));
+			TQObject::connect(r,TQ_SIGNAL(xmlFileDownloaded( UPnPRouter*, bool )),
+					this,TQ_SLOT(onXmlFileDownloaded( UPnPRouter*, bool )));
 			
 			// download it's xml file
 			r->downloadXMLFile();
@@ -269,7 +269,7 @@ namespace kt
 			{
 				UPnPRouter* r = new UPnPRouter(server,location);
 				// download it's xml file
-				TQObject::connect(r,TQT_SIGNAL(xmlFileDownloaded( UPnPRouter*, bool )),this,TQT_SLOT(onXmlFileDownloaded( UPnPRouter*, bool )));
+				TQObject::connect(r,TQ_SIGNAL(xmlFileDownloaded( UPnPRouter*, bool )),this,TQ_SLOT(onXmlFileDownloaded( UPnPRouter*, bool )));
 				r->downloadXMLFile();
 			}
 		}

@@ -213,10 +213,10 @@ DTabWidget *DMainWindow::createTab()
     DTabWidget *tab = new DTabWidget(m_central);
     m_tabs.append(tab);
     if (tab->closeButton())
-        connect(tab->closeButton(), TQT_SIGNAL(clicked()), this, TQT_SLOT(closeTab()));
-    connect(tab, TQT_SIGNAL(closeRequest(TQWidget*)), this, TQT_SLOT(closeTab(TQWidget*)));
-    connect(tab, TQT_SIGNAL(contextMenu(TQWidget*,const TQPoint &)),
-        this, TQT_SLOT(tabContext(TQWidget*,const TQPoint &)));
+        connect(tab->closeButton(), TQ_SIGNAL(clicked()), this, TQ_SLOT(closeTab()));
+    connect(tab, TQ_SIGNAL(closeRequest(TQWidget*)), this, TQ_SLOT(closeTab(TQWidget*)));
+    connect(tab, TQ_SIGNAL(contextMenu(TQWidget*,const TQPoint &)),
+        this, TQ_SLOT(tabContext(TQWidget*,const TQPoint &)));
     return tab;
 }
 
@@ -280,7 +280,7 @@ void DMainWindow::addDockWidget(DDockWindow::Position position, TQWidget *view, 
     DDockWindow* dock = toolWindow(position);
     dock->addWidget(title, view);
     m_docks[view] = position;
-    connect(view, TQT_SIGNAL(destroyed()), this, TQT_SLOT(widgetDestroyed()));
+    connect(view, TQ_SIGNAL(destroyed()), this, TQ_SLOT(widgetDestroyed()));
     if (dock->isHidden())
         dock->show();
 }

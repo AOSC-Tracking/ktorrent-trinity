@@ -83,13 +83,13 @@ void FileRetriever::retrieveData(const KURL &url)
    d->job = TDEIO::get(u, !m_useCache, false);
 
    
-   TQTimer::singleShot(1000*90, this, TQT_SLOT(slotTimeout()));
+   TQTimer::singleShot(1000*90, this, TQ_SLOT(slotTimeout()));
    
-   connect(d->job, TQT_SIGNAL(data(TDEIO::Job *, const TQByteArray &)),
-                TQT_SLOT(slotData(TDEIO::Job *, const TQByteArray &)));
-   connect(d->job, TQT_SIGNAL(result(TDEIO::Job *)), TQT_SLOT(slotResult(TDEIO::Job *)));
-   connect(d->job, TQT_SIGNAL(permanentRedirection(TDEIO::Job *, const KURL &, const KURL &)),
-                TQT_SLOT(slotPermanentRedirection(TDEIO::Job *, const KURL &, const KURL &)));
+   connect(d->job, TQ_SIGNAL(data(TDEIO::Job *, const TQByteArray &)),
+                TQ_SLOT(slotData(TDEIO::Job *, const TQByteArray &)));
+   connect(d->job, TQ_SIGNAL(result(TDEIO::Job *)), TQ_SLOT(slotResult(TDEIO::Job *)));
+   connect(d->job, TQ_SIGNAL(permanentRedirection(TDEIO::Job *, const KURL &, const KURL &)),
+                TQ_SLOT(slotPermanentRedirection(TDEIO::Job *, const KURL &, const KURL &)));
 }
 
 void FileRetriever::slotTimeout()
@@ -179,10 +179,10 @@ void OutputRetriever::retrieveData(const KURL &url)
    d->buffer->open(IO_WriteOnly);
 
    d->process = new KShellProcess();
-   connect(d->process, TQT_SIGNAL(processExited(TDEProcess *)),
-                       TQT_SLOT(slotExited(TDEProcess *)));
-   connect(d->process, TQT_SIGNAL(receivedStdout(TDEProcess *, char *, int)),
-                       TQT_SLOT(slotOutput(TDEProcess *, char *, int)));
+   connect(d->process, TQ_SIGNAL(processExited(TDEProcess *)),
+                       TQ_SLOT(slotExited(TDEProcess *)));
+   connect(d->process, TQ_SIGNAL(receivedStdout(TDEProcess *, char *, int)),
+                       TQ_SLOT(slotOutput(TDEProcess *, char *, int)));
    *d->process << url.path();
    d->process->start(TDEProcess::NotifyOnExit, TDEProcess::Stdout);
 }
@@ -240,7 +240,7 @@ Loader *Loader::create()
 Loader *Loader::create(TQObject *object, const char *slot)
 {
    Loader *loader = create();
-   connect(loader, TQT_SIGNAL(loadingComplete(Loader *, Document, Status)),
+   connect(loader, TQ_SIGNAL(loadingComplete(Loader *, Document, Status)),
            object, slot);
    return loader;
 }
@@ -262,8 +262,8 @@ void Loader::loadFrom(const KURL &url, DataRetriever *retriever)
    d->url=url;
    d->retriever = retriever;
 
-   connect(d->retriever, TQT_SIGNAL(dataRetrieved(const TQByteArray &, bool)),
-           this, TQT_SLOT(slotRetrieverDone(const TQByteArray &, bool)));
+   connect(d->retriever, TQ_SIGNAL(dataRetrieved(const TQByteArray &, bool)),
+           this, TQ_SLOT(slotRetrieverDone(const TQByteArray &, bool)));
 
    d->retriever->retrieveData(url);
 }

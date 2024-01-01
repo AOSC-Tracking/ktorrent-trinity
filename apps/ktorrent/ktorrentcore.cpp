@@ -70,7 +70,7 @@ KTorrentCore::KTorrentCore(kt::GUIInterface* gui) : max_downloads(0),keep_seedin
 	UpdateCurrentTime();
 	
 	qman = new QueueManager();
-	connect(qman, TQT_SIGNAL(lowDiskSpace(kt::TorrentInterface*,bool)), this, TQT_SLOT(onLowDiskSpace(kt::TorrentInterface*,bool)));
+	connect(qman, TQ_SIGNAL(lowDiskSpace(kt::TorrentInterface*,bool)), this, TQ_SLOT(onLowDiskSpace(kt::TorrentInterface*,bool)));
 	
 	
 	data_dir = Settings::tempDir();
@@ -91,7 +91,7 @@ KTorrentCore::KTorrentCore(kt::GUIInterface* gui) : max_downloads(0),keep_seedin
 		data_dir += bt::DirSeparator();
 	// 	downloads.setAutoDelete(true);
 
-	connect(&update_timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(update()));
+	connect(&update_timer,TQ_SIGNAL(timeout()),this,TQ_SLOT(update()));
 	update_timer.start(CORE_UPDATE_INTERVAL);
 	
 	Uint16 port = Settings::port();
@@ -328,7 +328,7 @@ void KTorrentCore::load(const KURL& url)
 	else
 	{
 		TDEIO::Job* j = TDEIO::storedGet(url,false,true);
-		connect(j,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(downloadFinished( TDEIO::Job* )));
+		connect(j,TQ_SIGNAL(result(TDEIO::Job*)),this,TQ_SLOT(downloadFinished( TDEIO::Job* )));
 	}
 }
 
@@ -395,7 +395,7 @@ void KTorrentCore::loadSilently(const KURL& url)
 	{
 		// download to a random file in tmp
 		TDEIO::Job* j = TDEIO::storedGet(url,false,true);
-		connect(j,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(downloadFinishedSilently( TDEIO::Job* )));
+		connect(j,TQ_SIGNAL(result(TDEIO::Job*)),this,TQ_SLOT(downloadFinishedSilently( TDEIO::Job* )));
 	}
 }
 
@@ -427,7 +427,7 @@ void KTorrentCore::loadSilentlyDir(const KURL& url, const KURL& savedir)
 		// download to a random file in tmp
 		TDEIO::Job* j = TDEIO::storedGet(url,false,true);
 		custom_save_locations.insert(j,savedir); // keep track of save location
-		connect(j,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(downloadFinishedSilently( TDEIO::Job* )));
+		connect(j,TQ_SIGNAL(result(TDEIO::Job*)),this,TQ_SLOT(downloadFinishedSilently( TDEIO::Job* )));
 	}
 }
 
@@ -1097,20 +1097,20 @@ void KTorrentCore::emitCorruptedData(kt::TorrentInterface* tc)
 
 void KTorrentCore::connectSignals(kt::TorrentInterface* tc)
 {
-	connect(tc,TQT_SIGNAL(finished(kt::TorrentInterface*)),
-			this,TQT_SLOT(torrentFinished(kt::TorrentInterface* )));
-	connect(tc, TQT_SIGNAL(stoppedByError(kt::TorrentInterface*, TQString )),
-			this, TQT_SLOT(slotStoppedByError(kt::TorrentInterface*, TQString )));
-	connect(tc, TQT_SIGNAL(seedingAutoStopped(kt::TorrentInterface*, kt::AutoStopReason)),
-			this, TQT_SLOT(torrentSeedAutoStopped(kt::TorrentInterface*, kt::AutoStopReason)));
-	connect(tc,TQT_SIGNAL(aboutToBeStarted( kt::TorrentInterface*,bool & )),
-			this, TQT_SLOT(aboutToBeStarted( kt::TorrentInterface*,bool & )));
-	connect(tc,TQT_SIGNAL(corruptedDataFound( kt::TorrentInterface* )),
-			this, TQT_SLOT(emitCorruptedData( kt::TorrentInterface* )));
-	connect(qman, TQT_SIGNAL(queuingNotPossible(kt::TorrentInterface*)),
-			this, TQT_SLOT(enqueueTorrentOverMaxRatio( kt::TorrentInterface* )));
-	connect(qman, TQT_SIGNAL(lowDiskSpace(kt::TorrentInterface*, bool)),
-			this, TQT_SLOT(onLowDiskSpace(kt::TorrentInterface*, bool)));
+	connect(tc,TQ_SIGNAL(finished(kt::TorrentInterface*)),
+			this,TQ_SLOT(torrentFinished(kt::TorrentInterface* )));
+	connect(tc, TQ_SIGNAL(stoppedByError(kt::TorrentInterface*, TQString )),
+			this, TQ_SLOT(slotStoppedByError(kt::TorrentInterface*, TQString )));
+	connect(tc, TQ_SIGNAL(seedingAutoStopped(kt::TorrentInterface*, kt::AutoStopReason)),
+			this, TQ_SLOT(torrentSeedAutoStopped(kt::TorrentInterface*, kt::AutoStopReason)));
+	connect(tc,TQ_SIGNAL(aboutToBeStarted( kt::TorrentInterface*,bool & )),
+			this, TQ_SLOT(aboutToBeStarted( kt::TorrentInterface*,bool & )));
+	connect(tc,TQ_SIGNAL(corruptedDataFound( kt::TorrentInterface* )),
+			this, TQ_SLOT(emitCorruptedData( kt::TorrentInterface* )));
+	connect(qman, TQ_SIGNAL(queuingNotPossible(kt::TorrentInterface*)),
+			this, TQ_SLOT(enqueueTorrentOverMaxRatio( kt::TorrentInterface* )));
+	connect(qman, TQ_SIGNAL(lowDiskSpace(kt::TorrentInterface*, bool)),
+			this, TQ_SLOT(onLowDiskSpace(kt::TorrentInterface*, bool)));
 	
 }
 

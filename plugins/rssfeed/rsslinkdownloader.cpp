@@ -43,14 +43,14 @@ namespace kt
 			{
 				// no valid URL, so just display an error message
 				KMessageBox::error(0,i18n("Failed to find and download a valid torrent for %1").arg(curLink));
-				TQTimer::singleShot(50,this,TQT_SLOT(suicide()));
+				TQTimer::singleShot(50,this,TQ_SLOT(suicide()));
 			}
 			else
 			{
 				//first let's download the link so we can process it to check for the actual torrent
 				curLink = curSubLink = link;
 				curFile = TDEIO::storedGet(link,false,false);
-				connect(curFile, TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(processLink( TDEIO::Job* )));
+				connect(curFile, TQ_SIGNAL(result(TDEIO::Job*)),this,TQ_SLOT(processLink( TDEIO::Job* )));
 			}
 		}
 	
@@ -189,7 +189,7 @@ namespace kt
 			curSubLink = subLinks.first();
 			subLinks.pop_front();
 			curFile = TDEIO::storedGet(curSubLink,false,false);
-			connect(curFile, TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(processLink( TDEIO::Job* )));
+			connect(curFile, TQ_SIGNAL(result(TDEIO::Job*)),this,TQ_SLOT(processLink( TDEIO::Job* )));
 			}
 		}
 	

@@ -35,69 +35,69 @@ KTorrentViewMenu::KTorrentViewMenu (KTorrentView *parent, const char *name )
 	
 	stop_id = insertItem(
 			iload->loadIconSet("ktstop",TDEIcon::Small),i18n("to stop", "Stop"),
-			parent,TQT_SLOT(stopDownloads()));
+			parent,TQ_SLOT(stopDownloads()));
 
 	start_id = insertItem(
 			iload->loadIconSet("ktstart",TDEIcon::Small),i18n("to start", "Start"),
-			parent,TQT_SLOT(startDownloads()));
+			parent,TQ_SLOT(startDownloads()));
 
 	remove_id = insertItem(
 			iload->loadIconSet("ktremove",TDEIcon::Small),i18n("Remove Torrent"),
-			parent,TQT_SLOT(removeDownloads()));
+			parent,TQ_SLOT(removeDownloads()));
 	
 	remove_all_id = insertItem(
 			iload->loadIconSet("ktremove",TDEIcon::Small),i18n("Remove Torrent and Data"),
-			parent,TQT_SLOT(removeDownloadsAndData()));
+			parent,TQ_SLOT(removeDownloadsAndData()));
 	
 	queue_id = insertItem(
 			iload->loadIconSet("player_playlist",TDEIcon::Small),i18n("Enqueue/Dequeue"),
-			parent,TQT_SLOT(queueSlot()));
+			parent,TQ_SLOT(queueSlot()));
 	
 	insertSeparator();
 	
 	add_peer_id = insertItem(
 			iload->loadIconSet("add", TDEIcon::Small), i18n("Add Peers"),
-			parent, TQT_SLOT(showAddPeersWidget())); 
+			parent, TQ_SLOT(showAddPeersWidget())); 
 	
 	peer_sources_menu = new TDEPopupMenu(this);
 	peer_sources_id = insertItem(i18n("Additional Peer Sources"), peer_sources_menu);
 	peer_sources_menu->insertTitle(i18n("Torrent Peer Sources:"));
 	peer_sources_menu->setCheckable(true);
-	dht_id = peer_sources_menu->insertItem(i18n("DHT"), parent, TQT_SLOT(dhtSlot()));
-	ut_pex_id = peer_sources_menu->insertItem(i18n("Peer Exchange"), parent, TQT_SLOT(utPexSlot()));
+	dht_id = peer_sources_menu->insertItem(i18n("DHT"), parent, TQ_SLOT(dhtSlot()));
+	ut_pex_id = peer_sources_menu->insertItem(i18n("Peer Exchange"), parent, TQ_SLOT(utPexSlot()));
 	
 	insertSeparator();
 	
 	announce_id = insertItem(
 			iload->loadIconSet("apply",TDEIcon::Small),i18n("Manual Announce"),
-			parent,TQT_SLOT(manualAnnounce())); 
+			parent,TQ_SLOT(manualAnnounce())); 
 	
 	preview_id = insertItem(
 			iload->loadIconSet("frame_image",TDEIcon::Small),i18n("Preview"), 
-			parent, TQT_SLOT(previewFiles()));
+			parent, TQ_SLOT(previewFiles()));
 	
 	insertSeparator();
 	dirs_sub_menu = new TDEPopupMenu(this);
 	dirs_id = insertItem(i18n("Open Directory"), dirs_sub_menu);
 	outputdir_id = dirs_sub_menu->insertItem(iload->loadIconSet("folder",TDEIcon::Small), i18n("Data Directory"), 
-											 parent, TQT_SLOT(openOutputDirectory()));
+											 parent, TQ_SLOT(openOutputDirectory()));
 	torxdir_id = dirs_sub_menu->insertItem(iload->loadIconSet("folder",TDEIcon::Small), i18n("Temporary Directory"),
-										   parent, TQT_SLOT(openTorXDirectory()));
+										   parent, TQ_SLOT(openTorXDirectory()));
 	
-	downloaddir_id = insertItem(i18n("Set Download Location"), parent, TQT_SLOT(setDownloadLocationSlot()));
+	downloaddir_id = insertItem(i18n("Set Download Location"), parent, TQ_SLOT(setDownloadLocationSlot()));
 	
 	insertSeparator();
-	remove_from_group_id =  insertItem(i18n("Remove From Group"),parent, TQT_SLOT(removeFromGroup()));
+	remove_from_group_id =  insertItem(i18n("Remove From Group"),parent, TQ_SLOT(removeFromGroup()));
 	groups_sub_menu = new TDEPopupMenu(this);
 	
 	add_to_group_id = insertItem(i18n("Add to Group"),groups_sub_menu);
 	
 	insertSeparator();
-	scan_id = insertItem(i18n("Check Data Integrity"),parent, TQT_SLOT(checkDataIntegrity()));	
+	scan_id = insertItem(i18n("Check Data Integrity"),parent, TQ_SLOT(checkDataIntegrity()));	
 	
-	connect(groups_sub_menu,TQT_SIGNAL(activated(int)),this,TQT_SLOT(gsmItemActived(int)));
+	connect(groups_sub_menu,TQ_SIGNAL(activated(int)),this,TQ_SLOT(gsmItemActived(int)));
 	
-	traffic_lim_id = insertItem(i18n("Speed Limits"),parent,TQT_SLOT(speedLimits()));
+	traffic_lim_id = insertItem(i18n("Speed Limits"),parent,TQ_SLOT(speedLimits()));
 }
 
 

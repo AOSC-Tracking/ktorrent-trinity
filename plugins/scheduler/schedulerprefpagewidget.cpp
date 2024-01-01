@@ -61,7 +61,7 @@ namespace kt
 		/* force trigger since the schedule has changed but after KTorrent::apply()
 		* Used TQTimer with fixed interval - not very nice solution... */
 		if(useBS->isChecked())
-			TQTimer::singleShot(1000, this, TQT_SLOT(scheduler_trigger()));
+			TQTimer::singleShot(1000, this, TQ_SLOT(scheduler_trigger()));
 		
 		BWScheduler::instance().setEnabled(use_bws);
 	}

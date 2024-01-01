@@ -209,8 +209,8 @@ namespace RSS
 	 *
 	 * \code
 	 * Loader *loader = Loader::create();
-	 * connect(loader, TQT_SIGNAL(loadingComplete(Loader *, Document, Status)),
-	 *         this, TQT_SLOT(slotLoadingComplete(Loader *, Document, Status)));
+	 * connect(loader, TQ_SIGNAL(loadingComplete(Loader *, Document, Status)),
+	 *         this, TQ_SLOT(slotLoadingComplete(Loader *, Document, Status)));
 	 * loader->loadFrom("http://www.blah.org/foobar.rdf", new FileRetriever);
 	 * \endcode
 	 *

@@ -249,9 +249,9 @@ namespace kt
 		kick_id = menu->insertItem(TDEGlobal::iconLoader()->loadIcon("delete_user", TDEIcon::NoGroup), i18n("to kick", "Kick peer"));
 		ban_id = menu->insertItem(TDEGlobal::iconLoader()->loadIcon("filter",TDEIcon::NoGroup), i18n("to ban", "Ban peer"));
 		
-		connect(this,TQT_SIGNAL(contextMenu(TDEListView*, TQListViewItem*, const TQPoint& )),
-				this,TQT_SLOT(showContextMenu(TDEListView*, TQListViewItem*, const TQPoint& )));
-		connect(menu, TQT_SIGNAL ( activated ( int ) ), this, TQT_SLOT ( contextItem ( int ) ) );
+		connect(this,TQ_SIGNAL(contextMenu(TDEListView*, TQListViewItem*, const TQPoint& )),
+				this,TQ_SLOT(showContextMenu(TDEListView*, TQListViewItem*, const TQPoint& )));
+		connect(menu, TQ_SIGNAL ( activated ( int ) ), this, TQ_SLOT ( contextItem ( int ) ) );
 		setFrameShape(TQFrame::NoFrame);
 	}
 	

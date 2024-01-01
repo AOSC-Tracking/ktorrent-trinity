@@ -117,7 +117,7 @@ namespace dht
 	
 	void Task::addDHTNode(const TQString & ip,bt::Uint16 port)
 	{
-		KResolver::resolveAsync(this,TQT_SLOT(onResolverResults(KResolverResults )),
+		KResolver::resolveAsync(this,TQ_SLOT(onResolverResults(KResolverResults )),
 								ip,TQString::number(port));
 	}
 	

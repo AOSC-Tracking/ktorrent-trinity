@@ -51,7 +51,7 @@ namespace bt
 			if (bt::Exists(prev)) // if file exists start the move job
 			{
 				TDEIO::Job* sj = TDEIO::file_move(KURL::fromPathOrURL(prev),KURL::fromPathOrURL(curr),-1,true,false,false);
-				connect(sj,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(moveJobDone(TDEIO::Job* )));	
+				connect(sj,TQ_SIGNAL(result(TDEIO::Job*)),this,TQ_SLOT(moveJobDone(TDEIO::Job* )));	
 				return;
 			}
 			else
@@ -65,7 +65,7 @@ namespace bt
 				// move current log to 1 and zip it
 			bt::Move(file,file + "-1",true);
 			TDEIO::Job* sj = TDEIO::file_move(KURL::fromPathOrURL(file),KURL::fromPathOrURL(file + "-1"),-1,true,false,false);
-			connect(sj,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(moveJobDone(TDEIO::Job* )));
+			connect(sj,TQ_SIGNAL(result(TDEIO::Job*)),this,TQ_SLOT(moveJobDone(TDEIO::Job* )));
 		}
 		else
 		{

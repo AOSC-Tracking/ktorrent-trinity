@@ -31,7 +31,7 @@ namespace kt
 
 	ExitJobOperation::ExitJobOperation(TDEIO::Job* j)
 	{
-		connect(j,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(onResult( TDEIO::Job* )));
+		connect(j,TQ_SIGNAL(result(TDEIO::Job*)),this,TQ_SLOT(onResult( TDEIO::Job* )));
 	}
 	
 	ExitJobOperation::~ExitJobOperation()

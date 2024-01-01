@@ -124,7 +124,7 @@ namespace bt
 		j->setMetaData(md);
 		TDEIO::Scheduler::scheduleJob(j);
 		
-		connect(j,TQT_SIGNAL(result(TDEIO::Job* )),this,TQT_SLOT(onScrapeResult( TDEIO::Job* )));
+		connect(j,TQ_SIGNAL(result(TDEIO::Job* )),this,TQ_SLOT(onScrapeResult( TDEIO::Job* )));
 	}
 	
 	void HTTPTracker::onScrapeResult(TDEIO::Job* j)
@@ -188,7 +188,7 @@ namespace bt
 		if (!url.isValid())
 		{
 			requestPending();
-			TQTimer::singleShot(500,this,TQT_SLOT(emitInvalidURLFailure()));
+			TQTimer::singleShot(500,this,TQ_SLOT(emitInvalidURLFailure()));
 			return;
 		}
 
@@ -453,7 +453,7 @@ namespace bt
 		j->setMetaData(md);
 		TDEIO::Scheduler::scheduleJob(j);
 		
-		connect(j,TQT_SIGNAL(result(TDEIO::Job* )),this,TQT_SLOT(onAnnounceResult( TDEIO::Job* )));
+		connect(j,TQ_SIGNAL(result(TDEIO::Job* )),this,TQ_SLOT(onAnnounceResult( TDEIO::Job* )));
 		
 		active_job = j;
 		requestPending();

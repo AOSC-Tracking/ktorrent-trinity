@@ -101,8 +101,8 @@ namespace kt
 		setHScrollBarMode(TQTable::AlwaysOff);
 		setVScrollBarMode(TQTable::AlwaysOff);
 
-		connect(this, TQT_SIGNAL(currentChanged( int, int )), this, TQT_SLOT(cellSelectionChanged( int, int )));
-		connect(this, TQT_SIGNAL(pressed(int, int, int, const TQPoint&)), this, TQT_SLOT(cellMouseDown(int, int, int, const TQPoint& )));
+		connect(this, TQ_SIGNAL(currentChanged( int, int )), this, TQ_SLOT(cellSelectionChanged( int, int )));
+		connect(this, TQ_SIGNAL(pressed(int, int, int, const TQPoint&)), this, TQ_SLOT(cellMouseDown(int, int, int, const TQPoint& )));
 	}
 
 	BWSWidget::~BWSWidget()

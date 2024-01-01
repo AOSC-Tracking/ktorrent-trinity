@@ -78,12 +78,12 @@ namespace kt
 	{
 		pmw = new PluginManagerWidget(parent);
 
-		connect(pmw->load_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onLoad()));
-		connect(pmw->unload_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onUnload()));
-		connect(pmw->load_all_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onLoadAll()));
-		connect(pmw->unload_all_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onUnloadAll()));
+		connect(pmw->load_btn,TQ_SIGNAL(clicked()),this,TQ_SLOT(onLoad()));
+		connect(pmw->unload_btn,TQ_SIGNAL(clicked()),this,TQ_SLOT(onUnload()));
+		connect(pmw->load_all_btn,TQ_SIGNAL(clicked()),this,TQ_SLOT(onLoadAll()));
+		connect(pmw->unload_all_btn,TQ_SIGNAL(clicked()),this,TQ_SLOT(onUnloadAll()));
 		LabelView* lv = pmw->plugin_view;
-		connect(lv,TQT_SIGNAL(currentChanged(LabelViewItem * )),this,TQT_SLOT(onCurrentChanged( LabelViewItem* )));
+		connect(lv,TQ_SIGNAL(currentChanged(LabelViewItem * )),this,TQ_SLOT(onCurrentChanged( LabelViewItem* )));
 	}
 	
 	void PluginManagerPrefPage::updatePluginList()

@@ -49,26 +49,26 @@ TrayIcon::TrayIcon( KTorrentCore* tc, TQWidget *parent, const char *name)
 	
 	m_hover_popup = new TrayHoverPopup(m_kt_pix,this);
 
-	connect(this,TQT_SIGNAL(quitSelected()),kapp,TQT_SLOT(quit()));
-	connect(m_core, TQT_SIGNAL(finished(kt::TorrentInterface* )),
-	        this, TQT_SLOT(finished(kt::TorrentInterface* )));
-	connect(m_core,TQT_SIGNAL(torrentStoppedByError(kt::TorrentInterface*, TQString )),
-	        this,TQT_SLOT(torrentStoppedByError(kt::TorrentInterface*, TQString )));
-	connect(m_core,TQT_SIGNAL(maxShareRatioReached( kt::TorrentInterface* )),
-			this,TQT_SLOT(maxShareRatioReached( kt::TorrentInterface* )));
-	connect(m_core,TQT_SIGNAL(maxSeedTimeReached(kt::TorrentInterface*)),
-			this, TQT_SLOT(maxSeedTimeReached(kt::TorrentInterface*)));
-	connect(m_core,TQT_SIGNAL(corruptedData( kt::TorrentInterface* )),
-			this,TQT_SLOT(corruptedData( kt::TorrentInterface* )));
-	connect(m_core, TQT_SIGNAL(queuingNotPossible( kt::TorrentInterface* )),
-			this, TQT_SLOT(queuingNotPossible( kt::TorrentInterface* )));
-	connect(m_core,TQT_SIGNAL(canNotStart(kt::TorrentInterface*, kt::TorrentStartResponse)),
-			this,TQT_SLOT(canNotStart(kt::TorrentInterface*, kt::TorrentStartResponse)));
-	connect(m_core, TQT_SIGNAL(lowDiskSpace(kt::TorrentInterface*, bool)),
-			this, TQT_SLOT(lowDiskSpace(kt::TorrentInterface*, bool)));
+	connect(this,TQ_SIGNAL(quitSelected()),kapp,TQ_SLOT(quit()));
+	connect(m_core, TQ_SIGNAL(finished(kt::TorrentInterface* )),
+	        this, TQ_SLOT(finished(kt::TorrentInterface* )));
+	connect(m_core,TQ_SIGNAL(torrentStoppedByError(kt::TorrentInterface*, TQString )),
+	        this,TQ_SLOT(torrentStoppedByError(kt::TorrentInterface*, TQString )));
+	connect(m_core,TQ_SIGNAL(maxShareRatioReached( kt::TorrentInterface* )),
+			this,TQ_SLOT(maxShareRatioReached( kt::TorrentInterface* )));
+	connect(m_core,TQ_SIGNAL(maxSeedTimeReached(kt::TorrentInterface*)),
+			this, TQ_SLOT(maxSeedTimeReached(kt::TorrentInterface*)));
+	connect(m_core,TQ_SIGNAL(corruptedData( kt::TorrentInterface* )),
+			this,TQ_SLOT(corruptedData( kt::TorrentInterface* )));
+	connect(m_core, TQ_SIGNAL(queuingNotPossible( kt::TorrentInterface* )),
+			this, TQ_SLOT(queuingNotPossible( kt::TorrentInterface* )));
+	connect(m_core,TQ_SIGNAL(canNotStart(kt::TorrentInterface*, kt::TorrentStartResponse)),
+			this,TQ_SLOT(canNotStart(kt::TorrentInterface*, kt::TorrentStartResponse)));
+	connect(m_core, TQ_SIGNAL(lowDiskSpace(kt::TorrentInterface*, bool)),
+			this, TQ_SLOT(lowDiskSpace(kt::TorrentInterface*, bool)));
 	
-	connect(this->contextMenu(),TQT_SIGNAL(aboutToShow()),m_hover_popup,TQT_SLOT(contextMenuAboutToShow()));
-	connect(this->contextMenu(),TQT_SIGNAL(aboutToHide()),m_hover_popup,TQT_SLOT(contextMenuAboutToHide()));
+	connect(this->contextMenu(),TQ_SIGNAL(aboutToShow()),m_hover_popup,TQ_SLOT(contextMenuAboutToShow()));
+	connect(this->contextMenu(),TQ_SIGNAL(aboutToHide()),m_hover_popup,TQ_SLOT(contextMenuAboutToHide()));
 }
 
 TrayIcon::~TrayIcon()
@@ -287,7 +287,7 @@ SetMaxRate::SetMaxRate( KTorrentCore* tc, int t, TQWidget *parent, const char *n
 	m_core = tc;
 	type=t;
 	makeMenu();
-	connect(this,TQT_SIGNAL(activated (int)),this,TQT_SLOT(rateSelected(int )));
+	connect(this,TQ_SIGNAL(activated (int)),this,TQ_SLOT(rateSelected(int )));
 }
 void SetMaxRate::makeMenu()
 {

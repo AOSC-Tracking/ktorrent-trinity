@@ -50,10 +50,10 @@ namespace kt
 	void ZeroConfPlugin::load()
 	{
 		CoreInterface* core = getCore();
-		connect(core,TQT_SIGNAL(torrentAdded( kt::TorrentInterface* )),
-				this,TQT_SLOT(torrentAdded( kt::TorrentInterface* )));
-		connect(core,TQT_SIGNAL(torrentRemoved( kt::TorrentInterface* )),
-				this,TQT_SLOT(torrentRemoved( kt::TorrentInterface* )));
+		connect(core,TQ_SIGNAL(torrentAdded( kt::TorrentInterface* )),
+				this,TQ_SLOT(torrentAdded( kt::TorrentInterface* )));
+		connect(core,TQ_SIGNAL(torrentRemoved( kt::TorrentInterface* )),
+				this,TQ_SLOT(torrentRemoved( kt::TorrentInterface* )));
 		
 		// go over existing torrents and add them
 		bt::QueueManager* qman = core->getQueueManager();
@@ -66,10 +66,10 @@ namespace kt
 	void ZeroConfPlugin::unload()
 	{
 		CoreInterface* core = getCore();
-		disconnect(core,TQT_SIGNAL(torrentAdded( kt::TorrentInterface* )),
-				   this,TQT_SLOT(torrentAdded( kt::TorrentInterface* )));
-		disconnect(core,TQT_SIGNAL(torrentRemoved( kt::TorrentInterface* )),
-				   this,TQT_SLOT(torrentRemoved( kt::TorrentInterface*)));
+		disconnect(core,TQ_SIGNAL(torrentAdded( kt::TorrentInterface* )),
+				   this,TQ_SLOT(torrentAdded( kt::TorrentInterface* )));
+		disconnect(core,TQ_SIGNAL(torrentRemoved( kt::TorrentInterface* )),
+				   this,TQ_SLOT(torrentRemoved( kt::TorrentInterface*)));
 		
 		bt::PtrMap<kt::TorrentInterface*,AvahiService>::iterator i = services.begin();
 		while (i != services.end())
@@ -93,8 +93,8 @@ namespace kt
 		tc->addPeerSource(av);
 		Out(SYS_ZCO|LOG_NOTICE) << "ZeroConf service added for " 
 				<< tc->getStats().torrent_name << endl;
-		connect(av,TQT_SIGNAL(serviceDestroyed( AvahiService* )),
-				this,TQT_SLOT(avahiServiceDestroyed( AvahiService* )));
+		connect(av,TQ_SIGNAL(serviceDestroyed( AvahiService* )),
+				this,TQ_SLOT(avahiServiceDestroyed( AvahiService* )));
 	}
 
 		

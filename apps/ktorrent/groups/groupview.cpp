@@ -80,11 +80,11 @@ namespace kt
 	
 		current = gman->allGroup();
 		
-		connect(this,TQT_SIGNAL(clicked(TQListViewItem*)),this,TQT_SLOT(onExecuted( TQListViewItem* )));
-		connect(this,TQT_SIGNAL(contextMenu(TDEListView*,TQListViewItem*,const TQPoint & )),
-				this,TQT_SLOT(showContextMenu( TDEListView*, TQListViewItem*, const TQPoint& )));
-		connect(this,TQT_SIGNAL(dropped(TQDropEvent*,TQListViewItem*)),
-				this,TQT_SLOT(onDropped( TQDropEvent*, TQListViewItem* )));	
+		connect(this,TQ_SIGNAL(clicked(TQListViewItem*)),this,TQ_SLOT(onExecuted( TQListViewItem* )));
+		connect(this,TQ_SIGNAL(contextMenu(TDEListView*,TQListViewItem*,const TQPoint & )),
+				this,TQ_SLOT(showContextMenu( TDEListView*, TQListViewItem*, const TQPoint& )));
+		connect(this,TQ_SIGNAL(dropped(TQDropEvent*,TQListViewItem*)),
+				this,TQ_SLOT(onDropped( TQDropEvent*, TQListViewItem* )));	
 		
 		current_item = 0;
 		menu = 0;
@@ -136,16 +136,16 @@ namespace kt
 		menu = new TDEPopupMenu(this);
 		
 		new_group = new TDEAction(i18n("New Group"),"document-new",0,
-							 this, TQT_SLOT(addGroup()),col, "New Group");
+							 this, TQ_SLOT(addGroup()),col, "New Group");
 		
 		edit_group = new TDEAction(i18n("Edit Name"),"edit",0,
-							 this, TQT_SLOT(editGroupName()),col,"Edit Group Name");
+							 this, TQ_SLOT(editGroupName()),col,"Edit Group Name");
 		
 		remove_group = new TDEAction(i18n("Remove Group"),"remove",0,
-							 this, TQT_SLOT(removeGroup()),col,"Remove Group");
+							 this, TQ_SLOT(removeGroup()),col,"Remove Group");
 		
 		open_in_new_tab = new TDEAction(i18n("Open Tab"),"document-open",0,
-							 this ,TQT_SLOT(openView()),col,"Open Tab");
+							 this ,TQ_SLOT(openView()),col,"Open Tab");
 		
 		open_in_new_tab->plug(menu);
 		menu->insertSeparator();

@@ -93,21 +93,21 @@ KTorrentView::KTorrentView(TQWidget *parent)
 	
 	setupColumns();
 	
-	connect(view,TQT_SIGNAL(executed(TQListViewItem* )),
-			this,TQT_SLOT(onExecuted(TQListViewItem* )));
+	connect(view,TQ_SIGNAL(executed(TQListViewItem* )),
+			this,TQ_SLOT(onExecuted(TQListViewItem* )));
 	
-	connect(view,TQT_SIGNAL(currentChanged(TQListViewItem* )),
-			this,TQT_SLOT(onExecuted(TQListViewItem* )));
+	connect(view,TQ_SIGNAL(currentChanged(TQListViewItem* )),
+			this,TQ_SLOT(onExecuted(TQListViewItem* )));
 	
-	connect(view,TQT_SIGNAL(contextMenu(TDEListView*, TQListViewItem*, const TQPoint& )),
-			this,TQT_SLOT(showContextMenu(TDEListView*, TQListViewItem*, const TQPoint& )));
+	connect(view,TQ_SIGNAL(contextMenu(TDEListView*, TQListViewItem*, const TQPoint& )),
+			this,TQ_SLOT(showContextMenu(TDEListView*, TQListViewItem*, const TQPoint& )));
 	
-	connect(view,TQT_SIGNAL(selectionChanged()),this,TQT_SLOT(onSelectionChanged()));
+	connect(view,TQ_SIGNAL(selectionChanged()),this,TQ_SLOT(onSelectionChanged()));
 
 	menu = new KTorrentViewMenu(this);
-	connect(menu,TQT_SIGNAL(groupItemActivated(const TQString&)),this,TQT_SLOT(gsmItemActived(const TQString&)));
+	connect(menu,TQ_SIGNAL(groupItemActivated(const TQString&)),this,TQ_SLOT(gsmItemActived(const TQString&)));
 	
-	connect(m_headerMenu, TQT_SIGNAL(activated(int)), this, TQT_SLOT(onColumnVisibilityChange( int )));
+	connect(m_headerMenu, TQ_SIGNAL(activated(int)), this, TQ_SLOT(onColumnVisibilityChange( int )));
 
 	view->setFrameShape(TQFrame::NoFrame);
 }

@@ -37,9 +37,9 @@ namespace dht
 	DHTTrackerBackend::DHTTrackerBackend(DHTBase & dh_table,kt::TorrentInterface* tor) 
 		: dh_table(dh_table),curr_task(0),tor(tor)
 	{
-		connect(&timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(onTimeout()));
-		connect(&dh_table,TQT_SIGNAL(started()),this,TQT_SLOT(manualUpdate()));
-		connect(&dh_table,TQT_SIGNAL(stopped()),this,TQT_SLOT(dhtStopped()));
+		connect(&timer,TQ_SIGNAL(timeout()),this,TQ_SLOT(onTimeout()));
+		connect(&dh_table,TQ_SIGNAL(started()),this,TQ_SLOT(manualUpdate()));
+		connect(&dh_table,TQ_SIGNAL(stopped()),this,TQ_SLOT(dhtStopped()));
 		started = false;
 	}
 
@@ -98,8 +98,8 @@ namespace dht
 				const kt::DHTNode & n = tor->getDHTNode(i);
 				curr_task->addDHTNode(n.ip,n.port);
 			}
-			connect(curr_task,TQT_SIGNAL(dataReady( Task* )),this,TQT_SLOT(onDataReady( Task* )));
-			connect(curr_task,TQT_SIGNAL(finished( Task* )),this,TQT_SLOT(onFinished( Task* )));
+			connect(curr_task,TQ_SIGNAL(dataReady( Task* )),this,TQ_SLOT(onDataReady( Task* )));
+			connect(curr_task,TQ_SIGNAL(finished( Task* )),this,TQ_SLOT(onFinished( Task* )));
 
 			return true;
 		}
