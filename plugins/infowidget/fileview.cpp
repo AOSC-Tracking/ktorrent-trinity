@@ -69,13 +69,13 @@ namespace kt
 		context_menu->setItemEnabled(dnd_keep_id, false);
 		context_menu->setItemEnabled(dnd_throw_away_id, false);
 
-		connect(this,TQT_SIGNAL(contextMenu(TDEListView*, TQListViewItem*, const TQPoint& )),
-				this,TQT_SLOT(showContextMenu(TDEListView*, TQListViewItem*, const TQPoint& )));
-		connect(context_menu, TQT_SIGNAL ( activated ( int ) ), this, TQT_SLOT ( contextItem ( int ) ) );
-		connect(this,TQT_SIGNAL(doubleClicked( TQListViewItem*, const TQPoint&, int )),
-				this,TQT_SLOT(onDoubleClicked(TQListViewItem*, const TQPoint&, int)));
+		connect(this,TQ_SIGNAL(contextMenu(TDEListView*, TQListViewItem*, const TQPoint& )),
+				this,TQ_SLOT(showContextMenu(TDEListView*, TQListViewItem*, const TQPoint& )));
+		connect(context_menu, TQ_SIGNAL ( activated ( int ) ), this, TQ_SLOT ( contextItem ( int ) ) );
+		connect(this,TQ_SIGNAL(doubleClicked( TQListViewItem*, const TQPoint&, int )),
+				this,TQ_SLOT(onDoubleClicked(TQListViewItem*, const TQPoint&, int)));
 		
-		connect(&fill_timer, TQT_SIGNAL(timeout()), this, TQT_SLOT( fillTreePartial() ) );
+		connect(&fill_timer, TQ_SIGNAL(timeout()), this, TQ_SLOT( fillTreePartial() ) );
 
 		setEnabled(false);
 		
@@ -108,8 +108,8 @@ namespace kt
 			multi_root->updatePercentageInformation();
 			multi_root->updatePreviewInformation(curr_tc);
 			fill_timer.stop();
-			connect(curr_tc,TQT_SIGNAL(missingFilesMarkedDND( kt::TorrentInterface* )),
-				this,TQT_SLOT(refreshFileTree( kt::TorrentInterface* )));
+			connect(curr_tc,TQ_SIGNAL(missingFilesMarkedDND( kt::TorrentInterface* )),
+				this,TQ_SLOT(refreshFileTree( kt::TorrentInterface* )));
 		}
 		else
 			fill_timer.start(0,true);
@@ -141,8 +141,8 @@ namespace kt
 	
 			item->setPixmap(0,KMimeType::findByPath(s.torrent_name)->pixmap(TDEIcon::Small));
 			setEnabled(true);
-			connect(curr_tc,TQT_SIGNAL(missingFilesMarkedDND( kt::TorrentInterface* )),
-				this,TQT_SLOT(refreshFileTree( kt::TorrentInterface* )));
+			connect(curr_tc,TQ_SIGNAL(missingFilesMarkedDND( kt::TorrentInterface* )),
+				this,TQ_SLOT(refreshFileTree( kt::TorrentInterface* )));
 		}
 	}
 

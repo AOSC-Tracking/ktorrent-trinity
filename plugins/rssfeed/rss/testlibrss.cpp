@@ -19,8 +19,8 @@ static const TDECmdLineOptions options[] =
 void Tester::test( const TQString &url )
 {
 	Loader *loader = Loader::create();
-	connect( loader, TQT_SIGNAL( loadingComplete( Loader *, Document, Status ) ),
-	         this, TQT_SLOT( slotLoadingComplete( Loader *, Document, Status ) ) );
+	connect( loader, TQ_SIGNAL( loadingComplete( Loader *, Document, Status ) ),
+	         this, TQ_SLOT( slotLoadingComplete( Loader *, Document, Status ) ) );
 	loader->loadFrom( url, new FileRetriever );
 }
 

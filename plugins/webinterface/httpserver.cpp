@@ -75,9 +75,9 @@ namespace kt
 		TQSocket* socket = new TQSocket(this);
 		socket->setSocket(s);
 	
-		connect(socket, TQT_SIGNAL(readyRead()), this, TQT_SLOT(slotSocketReadyToRead()));
-		connect(socket, TQT_SIGNAL(delayedCloseFinished()), this, TQT_SLOT(slotConnectionClosed()));
-		connect(socket, TQT_SIGNAL(connectionClosed()), this, TQT_SLOT(slotConnectionClosed()));
+		connect(socket, TQ_SIGNAL(readyRead()), this, TQ_SLOT(slotSocketReadyToRead()));
+		connect(socket, TQ_SIGNAL(delayedCloseFinished()), this, TQ_SLOT(slotConnectionClosed()));
+		connect(socket, TQ_SIGNAL(connectionClosed()), this, TQ_SLOT(slotConnectionClosed()));
 	
 		HttpClientHandler* handler = new HttpClientHandler(this,socket);
 		clients.insert(socket,handler);
@@ -381,7 +381,7 @@ namespace kt
 			{
 				// first send back login page
 				redirectToLoginPage(hdlr);
-				TQTimer::singleShot(1000,kapp,TQT_SLOT(quit()));
+				TQTimer::singleShot(1000,kapp,TQ_SLOT(quit()));
 			}
 			else if (redirect)
 			{

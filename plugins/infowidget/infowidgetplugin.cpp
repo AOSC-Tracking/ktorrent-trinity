@@ -216,8 +216,8 @@ namespace kt
 			tracker_view->changeTC(const_cast<kt::TorrentInterface*>(getGUI()->getCurrentTorrent()));
 			// seeing that a merge of the trackers might happen after a torrent has been loaded
 			// we need to update the tracker_view 
-			connect(getCore(),TQT_SIGNAL(loadingFinished(const KURL&, bool, bool)),
-					tracker_view,TQT_SLOT(onLoadingFinished(const KURL&, bool, bool)));
+			connect(getCore(),TQ_SIGNAL(loadingFinished(const KURL&, bool, bool)),
+					tracker_view,TQ_SLOT(onLoadingFinished(const KURL&, bool, bool)));
 		}
 		else if (!show && tracker_view)
 		{

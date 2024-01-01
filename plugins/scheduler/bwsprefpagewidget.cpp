@@ -93,16 +93,16 @@ namespace kt
 			pix52->setPixmap(TQPixmap(locate("data", TQString("ktorrent/icons/cell-a-0004.png"))));
 		}
 
-		connect(radio1, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
-		connect(radio2, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
-		connect(radio3, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
-		connect(radio4, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
-		connect(radio5, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
-		connect(radio12, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
-		connect(radio22, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
-		connect(radio32, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
-		connect(radio42, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
-		connect(radio52, TQT_SIGNAL(stateChanged(int)), this, TQT_SLOT(categoryChanged(int)));
+		connect(radio1, TQ_SIGNAL(stateChanged(int)), this, TQ_SLOT(categoryChanged(int)));
+		connect(radio2, TQ_SIGNAL(stateChanged(int)), this, TQ_SLOT(categoryChanged(int)));
+		connect(radio3, TQ_SIGNAL(stateChanged(int)), this, TQ_SLOT(categoryChanged(int)));
+		connect(radio4, TQ_SIGNAL(stateChanged(int)), this, TQ_SLOT(categoryChanged(int)));
+		connect(radio5, TQ_SIGNAL(stateChanged(int)), this, TQ_SLOT(categoryChanged(int)));
+		connect(radio12, TQ_SIGNAL(stateChanged(int)), this, TQ_SLOT(categoryChanged(int)));
+		connect(radio22, TQ_SIGNAL(stateChanged(int)), this, TQ_SLOT(categoryChanged(int)));
+		connect(radio32, TQ_SIGNAL(stateChanged(int)), this, TQ_SLOT(categoryChanged(int)));
+		connect(radio42, TQ_SIGNAL(stateChanged(int)), this, TQ_SLOT(categoryChanged(int)));
+		connect(radio52, TQ_SIGNAL(stateChanged(int)), this, TQ_SLOT(categoryChanged(int)));
 
 		//pre-check default categories (say 1 for left and 0 for right)
 		radio2->setChecked(true);

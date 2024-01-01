@@ -171,7 +171,7 @@ namespace kt
 	{
 		// downlaod XML description into a temporary file in /tmp
 		TDEIO::Job* job = TDEIO::file_copy(location,tmp_file,-1,true,false,false);
-		connect(job,TQT_SIGNAL(result(TDEIO::Job *)),this,TQT_SLOT(downloadFinished( TDEIO::Job* )));
+		connect(job,TQ_SIGNAL(result(TDEIO::Job *)),this,TQ_SLOT(downloadFinished( TDEIO::Job* )));
 	}
 	
 	void UPnPRouter::debugPrintData()
@@ -339,12 +339,12 @@ namespace kt
 
 		
 		HTTPRequest* r = new HTTPRequest(http_hdr,query,location.host(),location.port(),verbose);
-		connect(r,TQT_SIGNAL(replyError(bt::HTTPRequest* ,const TQString& )),
-				this,TQT_SLOT(onReplyError(bt::HTTPRequest* ,const TQString& )));
-		connect(r,TQT_SIGNAL(replyOK(bt::HTTPRequest* ,const TQString& )),
-				this,TQT_SLOT(onReplyOK(bt::HTTPRequest* ,const TQString& )));
-		connect(r,TQT_SIGNAL(error(bt::HTTPRequest*, bool )),
-				this,TQT_SLOT(onError(bt::HTTPRequest*, bool )));
+		connect(r,TQ_SIGNAL(replyError(bt::HTTPRequest* ,const TQString& )),
+				this,TQ_SLOT(onReplyError(bt::HTTPRequest* ,const TQString& )));
+		connect(r,TQ_SIGNAL(replyOK(bt::HTTPRequest* ,const TQString& )),
+				this,TQ_SLOT(onReplyOK(bt::HTTPRequest* ,const TQString& )));
+		connect(r,TQ_SIGNAL(error(bt::HTTPRequest*, bool )),
+				this,TQ_SLOT(onError(bt::HTTPRequest*, bool )));
 		r->start();
 		if (!at_exit)
 			active_reqs.append(r);

@@ -42,7 +42,7 @@ namespace bt
 	{
 		sock = new KNetwork::KDatagramSocket(this);
 		sock->setAddressReuseable(true);
-		connect(sock,TQT_SIGNAL(readyRead()),this,TQT_SLOT(dataReceived()));
+		connect(sock,TQ_SIGNAL(readyRead()),this,TQ_SLOT(dataReceived()));
 		int i = 0;
 		if (port == 0)
 			port = 4444;

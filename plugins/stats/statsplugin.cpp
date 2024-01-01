@@ -51,13 +51,13 @@ void StatsPlugin::load()
 	pmPrefsUi = new StatsPluginPrefs();
 	pmUpdTmr = new TQTimer(this);
 	
-	connect(pmUpdTmr, TQT_SIGNAL(timeout () ), this, TQT_SLOT(UpdateData()));
-	connect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(RestartTimer()));
-	connect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(TogglePeersSpdCht()));
-	connect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(ToggleLchInSwmDrawing()));
-	connect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(ToggleSdrInSwmDrawing()));
-	connect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(ChangeMsmtsCounts()));
-	connect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(ChangeMaxMode()));
+	connect(pmUpdTmr, TQ_SIGNAL(timeout () ), this, TQ_SLOT(UpdateData()));
+	connect(pmPrefsUi, TQ_SIGNAL(Applied()), this, TQ_SLOT(RestartTimer()));
+	connect(pmPrefsUi, TQ_SIGNAL(Applied()), this, TQ_SLOT(TogglePeersSpdCht()));
+	connect(pmPrefsUi, TQ_SIGNAL(Applied()), this, TQ_SLOT(ToggleLchInSwmDrawing()));
+	connect(pmPrefsUi, TQ_SIGNAL(Applied()), this, TQ_SLOT(ToggleSdrInSwmDrawing()));
+	connect(pmPrefsUi, TQ_SIGNAL(Applied()), this, TQ_SLOT(ChangeMsmtsCounts()));
+	connect(pmPrefsUi, TQ_SIGNAL(Applied()), this, TQ_SLOT(ChangeMaxMode()));
 	
 	TogglePeersSpdCht();
 	ChangeMaxMode();
@@ -76,13 +76,13 @@ void StatsPlugin::unload()
 	getGUI() -> removeToolWidget(pmUiCon);
 	getGUI() -> removePrefPage(pmPrefsUi);
 	
-	disconnect(pmUpdTmr, TQT_SIGNAL(timeout()), this, TQT_SLOT(UpdateData()));
-	disconnect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(RestartTimer()));
-	disconnect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(TogglePeersSpdCht()));
-	disconnect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(ToggleLchInSwmDrawing()));
-	disconnect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(ToggleSdrInSwmDrawing()));
-	disconnect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(ChangeMsmtsCounts()));
-	disconnect(pmPrefsUi, TQT_SIGNAL(Applied()), this, TQT_SLOT(ChangeMaxMode()));
+	disconnect(pmUpdTmr, TQ_SIGNAL(timeout()), this, TQ_SLOT(UpdateData()));
+	disconnect(pmPrefsUi, TQ_SIGNAL(Applied()), this, TQ_SLOT(RestartTimer()));
+	disconnect(pmPrefsUi, TQ_SIGNAL(Applied()), this, TQ_SLOT(TogglePeersSpdCht()));
+	disconnect(pmPrefsUi, TQ_SIGNAL(Applied()), this, TQ_SLOT(ToggleLchInSwmDrawing()));
+	disconnect(pmPrefsUi, TQ_SIGNAL(Applied()), this, TQ_SLOT(ToggleSdrInSwmDrawing()));
+	disconnect(pmPrefsUi, TQ_SIGNAL(Applied()), this, TQ_SLOT(ChangeMsmtsCounts()));
+	disconnect(pmPrefsUi, TQ_SIGNAL(Applied()), this, TQ_SLOT(ChangeMaxMode()));
 	
 	delete pmUiSpd;
 	delete pmUiCon;

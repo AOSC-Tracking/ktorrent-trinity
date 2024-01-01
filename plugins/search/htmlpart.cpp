@@ -45,8 +45,8 @@ namespace kt
 		setPluginsEnabled(false);
 		setStatusMessagesEnabled(false);
 		KParts::BrowserExtension* ext = this->browserExtension();
-		connect(ext,TQT_SIGNAL(openURLRequest(const KURL&,const KParts::URLArgs&)),
-				this,TQT_SLOT(openURLRequest(const KURL&, const KParts::URLArgs& )));
+		connect(ext,TQ_SIGNAL(openURLRequest(const KURL&,const KParts::URLArgs&)),
+				this,TQ_SLOT(openURLRequest(const KURL&, const KParts::URLArgs& )));
 	
 		ext->enableAction("copy",true);
 		ext->enableAction("paste",true);
@@ -75,11 +75,11 @@ namespace kt
 		}
 		
 		TDEIO::TransferJob* j = TDEIO::get(u,false,false);
-		connect(j,TQT_SIGNAL(data(TDEIO::Job*,const TQByteArray &)),
-				this,TQT_SLOT(dataRecieved(TDEIO::Job*, const TQByteArray& )));
-		connect(j,TQT_SIGNAL(result(TDEIO::Job*)),this,TQT_SLOT(jobDone(TDEIO::Job* )));
-		connect(j,TQT_SIGNAL(mimetype(TDEIO::Job*, const TQString &)),
-				this,TQT_SLOT(mimetype(TDEIO::Job*, const TQString& )));
+		connect(j,TQ_SIGNAL(data(TDEIO::Job*,const TQByteArray &)),
+				this,TQ_SLOT(dataRecieved(TDEIO::Job*, const TQByteArray& )));
+		connect(j,TQ_SIGNAL(result(TDEIO::Job*)),this,TQ_SLOT(jobDone(TDEIO::Job* )));
+		connect(j,TQ_SIGNAL(mimetype(TDEIO::Job*, const TQString &)),
+				this,TQ_SLOT(mimetype(TDEIO::Job*, const TQString& )));
 	
 		active_job = j;
 		curr_data.resize(0);

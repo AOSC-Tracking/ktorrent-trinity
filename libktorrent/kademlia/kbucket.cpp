@@ -345,8 +345,8 @@ namespace dht
 		refresh_task = t;
 		if (refresh_task)
 		{
-			connect(refresh_task,TQT_SIGNAL(finished( Task* )),
-					this,TQT_SLOT(onFinished( Task* )));
+			connect(refresh_task,TQ_SIGNAL(finished( Task* )),
+					this,TQ_SLOT(onFinished( Task* )));
 		}
 	}
 	

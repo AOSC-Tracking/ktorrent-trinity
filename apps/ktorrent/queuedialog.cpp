@@ -105,8 +105,8 @@ QueueDialog::QueueDialog(bt::QueueManager* qm, TQWidget *parent, const char *nam
 	
  	logo->setPixmap(iload->loadIcon("ktqueuemanager", TDEIcon::Desktop));
 	
-	connect(downloadList, TQT_SIGNAL(selectionChanged(TQListViewItem*)), this, TQT_SLOT(downloadList_currentChanged( TQListViewItem* )));
-	connect(seedList, TQT_SIGNAL(selectionChanged(TQListViewItem*)), this, TQT_SLOT(seedList_currentChanged( TQListViewItem* )));
+	connect(downloadList, TQ_SIGNAL(selectionChanged(TQListViewItem*)), this, TQ_SLOT(downloadList_currentChanged( TQListViewItem* )));
+	connect(seedList, TQ_SIGNAL(selectionChanged(TQListViewItem*)), this, TQ_SLOT(seedList_currentChanged( TQListViewItem* )));
 	
 	if(downloadList->firstChild())
 		downloadList->setCurrentItem(downloadList->firstChild());

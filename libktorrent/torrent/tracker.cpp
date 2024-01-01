@@ -84,8 +84,8 @@ namespace bt
 	
 	void Tracker::timedDelete(int ms)
 	{
-		TQTimer::singleShot(ms,this,TQT_SLOT(deleteLater()));
-		connect(this,TQT_SIGNAL(stopDone()),this,TQT_SLOT(deleteLater()));
+		TQTimer::singleShot(ms,this,TQ_SLOT(deleteLater()));
+		connect(this,TQ_SIGNAL(stopDone()),this,TQ_SLOT(deleteLater()));
 	}
 	
 }

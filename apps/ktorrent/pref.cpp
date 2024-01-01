@@ -226,12 +226,12 @@ void GeneralPrefPage::createWidget(TQWidget* parent)
 {
 	gp = new GeneralPref(parent);
 	updateData();
-	connect(gp->custom_ip_check, TQT_SIGNAL(toggled(bool)),
-			this, TQT_SLOT(customIPChecked(bool)));
-	connect(gp->use_dht, TQT_SIGNAL(toggled(bool)),
-			this, TQT_SLOT(dhtChecked(bool)));
-	connect(gp->use_encryption, TQT_SIGNAL(toggled(bool)),
-			this, TQT_SLOT(useEncryptionChecked(bool)));
+	connect(gp->custom_ip_check, TQ_SIGNAL(toggled(bool)),
+			this, TQ_SLOT(customIPChecked(bool)));
+	connect(gp->use_dht, TQ_SIGNAL(toggled(bool)),
+			this, TQ_SLOT(dhtChecked(bool)));
+	connect(gp->use_encryption, TQ_SIGNAL(toggled(bool)),
+			this, TQ_SLOT(useEncryptionChecked(bool)));
 }
 
 bool GeneralPrefPage::apply()
@@ -463,14 +463,14 @@ void AdvancedPrefPage::createWidget(TQWidget* parent)
 {
 	ap = new AdvancedPref(parent);
 	updateData();
-	connect(ap->no_recheck, TQT_SIGNAL(toggled(bool)),
-			this, TQT_SLOT(noDataCheckChecked(bool)));
-	connect(ap->auto_recheck, TQT_SIGNAL(toggled(bool)),
-			this, TQT_SLOT(autoRecheckChecked(bool)));
-	connect(ap->do_not_use_kde_proxy, TQT_SIGNAL(toggled(bool)),
-			this, TQT_SLOT(doNotUseKDEProxyChecked(bool)));
-	connect(ap->prealloc_disabled,TQT_SIGNAL(toggled(bool)),
-			this,TQT_SLOT(preallocDisabledChecked(bool)));
+	connect(ap->no_recheck, TQ_SIGNAL(toggled(bool)),
+			this, TQ_SLOT(noDataCheckChecked(bool)));
+	connect(ap->auto_recheck, TQ_SIGNAL(toggled(bool)),
+			this, TQ_SLOT(autoRecheckChecked(bool)));
+	connect(ap->do_not_use_kde_proxy, TQ_SIGNAL(toggled(bool)),
+			this, TQ_SLOT(doNotUseKDEProxyChecked(bool)));
+	connect(ap->prealloc_disabled,TQ_SIGNAL(toggled(bool)),
+			this,TQ_SLOT(preallocDisabledChecked(bool)));
 	
 	preallocDisabledChecked(ap->prealloc_disabled->isChecked());
 }

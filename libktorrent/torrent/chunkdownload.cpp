@@ -155,8 +155,8 @@ namespace bt
 		{
 			PeerDownloader* pd = pdown.at(i);
 			pd->release();
-			disconnect(pd,TQT_SIGNAL(timedout(const Request& )),this,TQT_SLOT(onTimeout(const Request& )));
-			disconnect(pd,TQT_SIGNAL(rejected( const Request& )),this,TQT_SLOT(onRejected( const Request& )));
+			disconnect(pd,TQ_SIGNAL(timedout(const Request& )),this,TQ_SLOT(onTimeout(const Request& )));
+			disconnect(pd,TQ_SIGNAL(rejected( const Request& )),this,TQ_SLOT(onRejected( const Request& )));
 		}
 		dstatus.clear();
 		pdown.clear();
@@ -171,8 +171,8 @@ namespace bt
 		pdown.append(pd);
 		dstatus.insert(pd->getPeer()->getID(),new DownloadStatus());
 		sendRequests(pd);
-		connect(pd,TQT_SIGNAL(timedout(const Request& )),this,TQT_SLOT(onTimeout(const Request& )));
-		connect(pd,TQT_SIGNAL(rejected( const Request& )),this,TQT_SLOT(onRejected( const Request& )));
+		connect(pd,TQ_SIGNAL(timedout(const Request& )),this,TQ_SLOT(onTimeout(const Request& )));
+		connect(pd,TQ_SIGNAL(rejected( const Request& )),this,TQ_SLOT(onRejected( const Request& )));
 		return true;
 	}
 	
@@ -305,8 +305,8 @@ namespace bt
 
 		dstatus.erase(pd->getPeer()->getID());
 		pdown.remove(pd);
-		disconnect(pd,TQT_SIGNAL(timedout(const Request& )),this,TQT_SLOT(onTimeout(const Request& )));
-		disconnect(pd,TQT_SIGNAL(rejected( const Request& )),this,TQT_SLOT(onRejected( const Request& )));
+		disconnect(pd,TQ_SIGNAL(timedout(const Request& )),this,TQ_SLOT(onTimeout(const Request& )));
+		disconnect(pd,TQ_SIGNAL(rejected( const Request& )),this,TQ_SLOT(onRejected( const Request& )));
 	}
 	
 	

@@ -52,8 +52,8 @@ namespace bt
 		unnecessary_data = 0;
 	
 		current_chunks.setAutoDelete(true);
-		connect(&pman,TQT_SIGNAL(newPeer(Peer* )),this,TQT_SLOT(onNewPeer(Peer* )));
-		connect(&pman,TQT_SIGNAL(peerKilled(Peer* )),this,TQT_SLOT(onPeerKilled(Peer*)));
+		connect(&pman,TQ_SIGNAL(newPeer(Peer* )),this,TQ_SLOT(onNewPeer(Peer* )));
+		connect(&pman,TQ_SIGNAL(peerKilled(Peer* )),this,TQ_SLOT(onPeerKilled(Peer*)));
 	}
 
 
@@ -360,8 +360,8 @@ namespace bt
 	void Downloader::onNewPeer(Peer* peer)
 	{		
 		PeerDownloader* pd = peer->getPeerDownloader();
-		connect(pd,TQT_SIGNAL(downloaded(const Piece& )),
-				this,TQT_SLOT(pieceRecieved(const Piece& )));
+		connect(pd,TQ_SIGNAL(downloaded(const Piece& )),
+				this,TQ_SLOT(pieceRecieved(const Piece& )));
 	}
 
 	void Downloader::onPeerKilled(Peer* peer)

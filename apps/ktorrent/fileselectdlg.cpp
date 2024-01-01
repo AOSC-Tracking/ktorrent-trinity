@@ -53,12 +53,12 @@ FileSelectDlg::FileSelectDlg(GroupManager* gm, bool* user, bool* start, TQWidget
 		: FileSelectDlgBase(parent, name, modal, fl), m_gman(gm), m_user(user), m_start(start)
 {
 	root = 0;
-	connect(m_select_all, TQT_SIGNAL(clicked()), this, TQT_SLOT(selectAll()));
-	connect(m_select_none, TQT_SIGNAL(clicked()), this, TQT_SLOT(selectNone()));
-	connect(m_invert_selection, TQT_SIGNAL(clicked()), this, TQT_SLOT(invertSelection()));
-	connect(m_ok, TQT_SIGNAL(clicked()), this, TQT_SLOT(accept()));
-	connect(m_cancel, TQT_SIGNAL(clicked()), this, TQT_SLOT(reject()));
-	connect(m_downloadLocation, TQT_SIGNAL(textChanged (const TQString &)), this, TQT_SLOT(updateSizeLabels()));
+	connect(m_select_all, TQ_SIGNAL(clicked()), this, TQ_SLOT(selectAll()));
+	connect(m_select_none, TQ_SIGNAL(clicked()), this, TQ_SLOT(selectNone()));
+	connect(m_invert_selection, TQ_SIGNAL(clicked()), this, TQ_SLOT(invertSelection()));
+	connect(m_ok, TQ_SIGNAL(clicked()), this, TQ_SLOT(accept()));
+	connect(m_cancel, TQ_SIGNAL(clicked()), this, TQ_SLOT(reject()));
+	connect(m_downloadLocation, TQ_SIGNAL(textChanged (const TQString &)), this, TQ_SLOT(updateSizeLabels()));
 	
 	m_downloadLocation->setMode(KFile::Directory);
 }

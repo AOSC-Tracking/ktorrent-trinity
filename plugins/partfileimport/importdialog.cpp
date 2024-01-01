@@ -52,8 +52,8 @@ namespace kt
 		r = m_data_url;
 		r->setMode(KFile::File|KFile::Directory|KFile::LocalOnly);
 	
-		connect(m_import_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onImport()));
-		connect(m_cancel_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(reject()));
+		connect(m_import_btn,TQ_SIGNAL(clicked()),this,TQ_SLOT(onImport()));
+		connect(m_cancel_btn,TQ_SIGNAL(clicked()),this,TQ_SLOT(reject()));
 		m_progress->setEnabled(false);
 	}
 	
@@ -226,7 +226,7 @@ namespace kt
 		{
 			// download the torrent file
 			TDEIO::StoredTransferJob* j = TDEIO::storedGet(tor_url);
-			connect(j,TQT_SIGNAL(result(TDEIO::Job* )),this,TQT_SLOT(onTorrentGetReult(TDEIO::Job*)));
+			connect(j,TQ_SIGNAL(result(TDEIO::Job* )),this,TQ_SLOT(onTorrentGetReult(TDEIO::Job*)));
 		}
 		else
 		{

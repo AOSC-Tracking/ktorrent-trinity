@@ -37,8 +37,8 @@ namespace kt
 		: FileTreeItem(item,name,file)
 	{
 		perc_complete = 0.0;
-		connect(&file,TQT_SIGNAL(downloadPercentageChanged( float )),this,TQT_SLOT(onPercentageUpdated( float )));
-		connect(&file,TQT_SIGNAL(previewAvailable( bool )),this,TQT_SLOT(onPreviewAvailable( bool )));
+		connect(&file,TQ_SIGNAL(downloadPercentageChanged( float )),this,TQ_SLOT(onPercentageUpdated( float )));
+		connect(&file,TQ_SIGNAL(previewAvailable( bool )),this,TQ_SLOT(onPreviewAvailable( bool )));
 	}
 	
 	IWFileTreeItem::~IWFileTreeItem()

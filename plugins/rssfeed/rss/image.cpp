@@ -112,9 +112,9 @@ void Image::getPixmap()
 	d->pixmapBuffer->open(IO_WriteOnly);
 
 	d->job = TDEIO::get(d->url, false, false);
-	connect(d->job, TQT_SIGNAL(data(TDEIO::Job *, const TQByteArray &)),
-	        this, TQT_SLOT(slotData(TDEIO::Job *, const TQByteArray &)));
-	connect(d->job, TQT_SIGNAL(result(TDEIO::Job *)), this, TQT_SLOT(slotResult(TDEIO::Job *)));
+	connect(d->job, TQ_SIGNAL(data(TDEIO::Job *, const TQByteArray &)),
+	        this, TQ_SLOT(slotData(TDEIO::Job *, const TQByteArray &)));
+	connect(d->job, TQ_SIGNAL(result(TDEIO::Job *)), this, TQ_SLOT(slotResult(TDEIO::Job *)));
 }
 
 void Image::slotData(TDEIO::Job *, const TQByteArray &data)

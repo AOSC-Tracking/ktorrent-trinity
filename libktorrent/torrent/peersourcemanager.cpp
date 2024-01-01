@@ -65,7 +65,7 @@ namespace bt
 		//load custom trackers
 		loadCustomURLs();
 				
-		connect(&timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(updateCurrentManually()));
+		connect(&timer,TQ_SIGNAL(timeout()),this,TQ_SLOT(updateCurrentManually()));
 	}
 	
 	PeerSourceManager::~PeerSourceManager()
@@ -85,21 +85,21 @@ namespace bt
 	void PeerSourceManager::addTracker(Tracker* trk)
 	{
 		trackers.insert(trk->trackerURL(),trk);
-		connect(trk,TQT_SIGNAL(peersReady( kt::PeerSource* )),
-				 pman,TQT_SLOT(peerSourceReady( kt::PeerSource* )));
+		connect(trk,TQ_SIGNAL(peersReady( kt::PeerSource* )),
+				 pman,TQ_SLOT(peerSourceReady( kt::PeerSource* )));
 	}
 		
 	void PeerSourceManager::addPeerSource(kt::PeerSource* ps)
 	{
 		additional.append(ps);
-		connect(ps,TQT_SIGNAL(peersReady( kt::PeerSource* )),
-						 pman,TQT_SLOT(peerSourceReady( kt::PeerSource* )));
+		connect(ps,TQ_SIGNAL(peersReady( kt::PeerSource* )),
+						 pman,TQ_SLOT(peerSourceReady( kt::PeerSource* )));
 	}
 	
 	void PeerSourceManager::removePeerSource(kt::PeerSource* ps)
 	{
-		disconnect(ps,TQT_SIGNAL(peersReady( kt::PeerSource* )),
-				pman,TQT_SLOT(peerSourceReady( kt::PeerSource* )));
+		disconnect(ps,TQ_SIGNAL(peersReady( kt::PeerSource* )),
+				pman,TQ_SLOT(peerSourceReady( kt::PeerSource* )));
 		additional.remove(ps);
 	}
 
@@ -477,10 +477,10 @@ namespace bt
 	
 		if (curr)
 		{
-			disconnect(curr,TQT_SIGNAL(requestFailed( const TQString& )),
-					   this,TQT_SLOT(onTrackerError( const TQString& )));
-			disconnect(curr,TQT_SIGNAL(requestOK()),this,TQT_SLOT(onTrackerOK()));
-			disconnect(curr,TQT_SIGNAL(requestPending()),this,TQT_SLOT(onTrackerRequestPending()));
+			disconnect(curr,TQ_SIGNAL(requestFailed( const TQString& )),
+					   this,TQ_SLOT(onTrackerError( const TQString& )));
+			disconnect(curr,TQ_SIGNAL(requestOK()),this,TQ_SLOT(onTrackerOK()));
+			disconnect(curr,TQ_SIGNAL(requestPending()),this,TQ_SLOT(onTrackerRequestPending()));
 			curr = 0;
 		}
 		
@@ -488,14 +488,14 @@ namespace bt
 		if (curr)
 		{
 			Out(SYS_TRK|LOG_NOTICE) << "Switching to tracker " << trk->trackerURL() << endl;
-			TQObject::connect(curr,TQT_SIGNAL(requestFailed( const TQString& )),
-					this,TQT_SLOT(onTrackerError( const TQString& )));
+			TQObject::connect(curr,TQ_SIGNAL(requestFailed( const TQString& )),
+					this,TQ_SLOT(onTrackerError( const TQString& )));
 			
-			TQObject::connect(curr,TQT_SIGNAL(requestOK()),
-					this,TQT_SLOT(onTrackerOK()));
+			TQObject::connect(curr,TQ_SIGNAL(requestOK()),
+					this,TQ_SLOT(onTrackerOK()));
 			
-			TQObject::connect(curr,TQT_SIGNAL(requestPending()),
-					this,TQT_SLOT(onTrackerRequestPending()));
+			TQObject::connect(curr,TQ_SIGNAL(requestPending()),
+					this,TQ_SLOT(onTrackerRequestPending()));
 		}
 	}
 	

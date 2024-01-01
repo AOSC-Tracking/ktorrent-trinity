@@ -79,8 +79,8 @@ namespace bt
 		for (Uint32 i = 0;i < tor.getNumFiles();i++)
 		{
 			TorrentFile & tf = tor.getFile(i);
-			connect(&tf,TQT_SIGNAL(downloadPriorityChanged(TorrentFile*, Priority, Priority )),
-					 this,TQT_SLOT(downloadPriorityChanged(TorrentFile*, Priority, Priority )));
+			connect(&tf,TQ_SIGNAL(downloadPriorityChanged(TorrentFile*, Priority, Priority )),
+					 this,TQ_SLOT(downloadPriorityChanged(TorrentFile*, Priority, Priority )));
 			
 			if (tf.getPriority() != NORMAL_PRIORITY)
 			{
@@ -232,8 +232,8 @@ namespace bt
 			for (Uint32 i = 0;i < tor.getNumFiles();i++)
 			{
 				TorrentFile & tf = tor.getFile(i);
-				connect(&tf,TQT_SIGNAL(downloadPriorityChanged(TorrentFile*, Priority, Priority )),
-						this,TQT_SLOT(downloadPriorityChanged(TorrentFile*, Priority, Priority )));
+				connect(&tf,TQ_SIGNAL(downloadPriorityChanged(TorrentFile*, Priority, Priority )),
+						this,TQ_SLOT(downloadPriorityChanged(TorrentFile*, Priority, Priority )));
 				
 				if (tf.getPriority() != NORMAL_PRIORITY)
 				{

@@ -61,8 +61,8 @@ namespace bt
 		downloads.append(tc);
 		downloads.sort();
 		
-		connect(tc, TQT_SIGNAL(diskSpaceLow(kt::TorrentInterface*, bool)), this, TQT_SLOT(onLowDiskSpace(kt::TorrentInterface*, bool)));
-		connect(tc, TQT_SIGNAL(torrentStopped(kt::TorrentInterface*)), this, TQT_SLOT(torrentStopped(kt::TorrentInterface*)));
+		connect(tc, TQ_SIGNAL(diskSpaceLow(kt::TorrentInterface*, bool)), this, TQ_SLOT(onLowDiskSpace(kt::TorrentInterface*, bool)));
+		connect(tc, TQ_SIGNAL(torrentStopped(kt::TorrentInterface*)), this, TQ_SLOT(torrentStopped(kt::TorrentInterface*)));
 	}
 
 	void QueueManager::remove(kt::TorrentInterface* tc)

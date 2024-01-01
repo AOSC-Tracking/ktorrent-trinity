@@ -239,7 +239,7 @@ namespace bt
 				if (auth->isLocal())
 					st->setLocal(true);
 				
-				connect(this,TQT_SIGNAL(stopped()),st,TQT_SLOT(onPeerManagerDestroyed()));
+				connect(this,TQ_SIGNAL(stopped()),st,TQ_SLOT(onPeerManagerDestroyed()));
 				AuthenticationMonitor::instance().add(st);
 				num_pending++;
 				total_connections++;
@@ -259,11 +259,11 @@ namespace bt
 	{
 		Peer* peer = new Peer(sock,peer_id,tor.getNumChunks(),tor.getChunkSize(),support,local);
 		
-		connect(peer,TQT_SIGNAL(haveChunk(Peer*, Uint32 )),this,TQT_SLOT(onHave(Peer*, Uint32 )));
-		connect(peer,TQT_SIGNAL(bitSetRecieved(const BitSet& )),
-				this,TQT_SLOT(onBitSetRecieved(const BitSet& )));
-		connect(peer,TQT_SIGNAL(rerunChoker()),this,TQT_SLOT(onRerunChoker()));
-		connect(peer,TQT_SIGNAL(pex( const TQByteArray& )),this,TQT_SLOT(pex( const TQByteArray& )));
+		connect(peer,TQ_SIGNAL(haveChunk(Peer*, Uint32 )),this,TQ_SLOT(onHave(Peer*, Uint32 )));
+		connect(peer,TQ_SIGNAL(bitSetRecieved(const BitSet& )),
+				this,TQ_SLOT(onBitSetRecieved(const BitSet& )));
+		connect(peer,TQ_SIGNAL(rerunChoker()),this,TQ_SLOT(onRerunChoker()));
+		connect(peer,TQ_SIGNAL(pex( const TQByteArray& )),this,TQ_SLOT(pex( const TQByteArray& )));
 		
 		peer_list.append(peer);
 		peer_map.insert(peer->getID(),peer);
@@ -356,7 +356,7 @@ namespace bt
 				if (pp.local)
 					auth->setLocal(true);
 				
-				connect(this,TQT_SIGNAL(stopped()),auth,TQT_SLOT(onPeerManagerDestroyed()));
+				connect(this,TQ_SIGNAL(stopped()),auth,TQ_SLOT(onPeerManagerDestroyed()));
 				
 				AuthenticationMonitor::instance().add(auth);
 				num_pending++;

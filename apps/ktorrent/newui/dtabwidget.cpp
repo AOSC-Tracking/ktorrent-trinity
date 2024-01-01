@@ -49,8 +49,8 @@ DTabWidget::DTabWidget(TQWidget *parent, const char *name)
         setTabReorderingEnabled(true);
     }
     
-    connect(this, TQT_SIGNAL(currentChanged(TQWidget*)), this, TQT_SLOT(setFocus(TQWidget*)));
-//    connect(this, TQT_SIGNAL(currentChanged(TQWidget*)), this, TQT_SLOT(updateHistory(TQWidget*)));
+    connect(this, TQ_SIGNAL(currentChanged(TQWidget*)), this, TQ_SLOT(setFocus(TQWidget*)));
+//    connect(this, TQ_SIGNAL(currentChanged(TQWidget*)), this, TQ_SLOT(updateHistory(TQWidget*)));
 }
 
 void DTabWidget::loadSettings()

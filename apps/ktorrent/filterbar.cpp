@@ -46,7 +46,7 @@ FilterBar::FilterBar(TQWidget *parent, const char *name) :
 	layout->addSpacing(gap);
 	
 	m_close = new TDEToolBarButton("window-close",0,this);
-	connect(m_close,TQT_SIGNAL(clicked()),this,TQT_SLOT(hide()));
+	connect(m_close,TQ_SIGNAL(clicked()),this,TQ_SLOT(hide()));
 	layout->addWidget(m_close);
 	
 	m_filter = new TQLabel(i18n("Find:"), this);
@@ -67,9 +67,9 @@ FilterBar::FilterBar(TQWidget *parent, const char *name) :
 	layout->addWidget(m_case_sensitive);
 	layout->addItem(new TQSpacerItem(10,10,TQSizePolicy::Expanding));
 		
-	connect(m_filterInput, TQT_SIGNAL(textChanged(const TQString&)),
-		this, TQT_SLOT(slotChangeFilter(const TQString&)));
-	connect(m_clear, TQT_SIGNAL(clicked()), m_filterInput, TQT_SLOT(clear()));
+	connect(m_filterInput, TQ_SIGNAL(textChanged(const TQString&)),
+		this, TQ_SLOT(slotChangeFilter(const TQString&)));
+	connect(m_clear, TQ_SIGNAL(clicked()), m_filterInput, TQ_SLOT(clear()));
 }
 
 FilterBar::~FilterBar()

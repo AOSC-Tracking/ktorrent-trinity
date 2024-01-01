@@ -46,15 +46,15 @@ namespace kt
 		maxRatio->setMinValue(0.0f);
 		maxRatio->setMaxValue(100.0f);
 		maxRatio->setStep(0.1f);
-		connect(maxRatio, TQT_SIGNAL(valueHasChanged()), this, TQT_SLOT(maxRatioReturnPressed()));
-		connect(useLimit, TQT_SIGNAL( toggled(bool) ), this, TQT_SLOT( useLimitToggled(bool) ) );
+		connect(maxRatio, TQ_SIGNAL(valueHasChanged()), this, TQ_SLOT(maxRatioReturnPressed()));
+		connect(useLimit, TQ_SIGNAL( toggled(bool) ), this, TQ_SLOT( useLimitToggled(bool) ) );
 		
 		maxTime->setMinValue(0.0f);
 		maxTime->setMaxValue(10000000.0f);
 		maxTime->setStep(0.05f);
 		maxTime->setSpecialValueText(i18n("No limit"));
-		connect(useTimeLimit,TQT_SIGNAL(toggled(bool)), this,TQT_SLOT(useTimeLimitToggled(bool)));
-		connect(maxTime,TQT_SIGNAL(valueHasChanged()), this, TQT_SLOT(timeValueChanged()));
+		connect(useTimeLimit,TQ_SIGNAL(toggled(bool)), this,TQ_SLOT(useTimeLimitToggled(bool)));
+		connect(maxTime,TQ_SIGNAL(valueHasChanged()), this, TQ_SLOT(timeValueChanged()));
 		
 		int h = (int)ceil(fontMetrics().height()*1.25);
 		m_chunk_bar->setFixedHeight(h);

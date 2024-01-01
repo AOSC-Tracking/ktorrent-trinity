@@ -33,8 +33,8 @@ TrayHoverPopup::TrayHoverPopup(const TQPixmap & pix,TQWidget *parent, const char
 {
 	setTimeout(0);
 	setAutoDelete(false);
-	connect(&hover_timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(onHoverTimeout()));
-	connect(&show_timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(onShowTimeout()));
+	connect(&hover_timer,TQ_SIGNAL(timeout()),this,TQ_SLOT(onHoverTimeout()));
+	connect(&show_timer,TQ_SIGNAL(timeout()),this,TQ_SLOT(onShowTimeout()));
 	create();
 	setPalette(TQToolTip::palette());
 	setLineWidth(1);

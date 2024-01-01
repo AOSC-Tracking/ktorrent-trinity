@@ -37,8 +37,8 @@ namespace kt
 
 	PhpHandler::PhpHandler(const TQString & php_exe,PhpInterface *php) : TQProcess(php_exe),php_i(php)
 	{
-		connect(this,TQT_SIGNAL(readyReadStdout()),this,TQT_SLOT(onReadyReadStdout()));
-		connect(this,TQT_SIGNAL(processExited()),this,TQT_SLOT(onExited()));
+		connect(this,TQ_SIGNAL(readyReadStdout()),this,TQ_SLOT(onReadyReadStdout()));
+		connect(this,TQ_SIGNAL(processExited()),this,TQ_SLOT(onExited()));
 	}
 	
 	PhpHandler::~PhpHandler()

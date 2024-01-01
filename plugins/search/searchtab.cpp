@@ -51,10 +51,10 @@ namespace kt
 		m_clear_button->setIconSet(SmallIconSet(TQApplication::reverseLayout() ? "clear_left" : "locationbar_erase"));
 		m_clear_button->setEnabled(false);
 
-		connect(m_search_new_tab,TQT_SIGNAL(clicked()),this,TQT_SLOT(searchNewTabPressed()));
-		connect(m_search_text,TQT_SIGNAL(returnPressed(const TQString&)),this,TQT_SLOT(searchBoxReturn( const TQString& )));
-		connect(m_search_text,TQT_SIGNAL(textChanged(const TQString &)),this,TQT_SLOT(textChanged( const TQString& )));
-		connect(m_clear_button,TQT_SIGNAL(clicked()),this,TQT_SLOT(clearButtonPressed()));
+		connect(m_search_new_tab,TQ_SIGNAL(clicked()),this,TQ_SLOT(searchNewTabPressed()));
+		connect(m_search_text,TQ_SIGNAL(returnPressed(const TQString&)),this,TQ_SLOT(searchBoxReturn( const TQString& )));
+		connect(m_search_text,TQ_SIGNAL(textChanged(const TQString &)),this,TQ_SLOT(textChanged( const TQString& )));
+		connect(m_clear_button,TQ_SIGNAL(clicked()),this,TQ_SLOT(clearButtonPressed()));
 		m_search_text->setMaxCount(20);
 		m_search_new_tab->setEnabled(false);
 		m_search_text->setInsertionPolicy(TQComboBox::NoInsertion);

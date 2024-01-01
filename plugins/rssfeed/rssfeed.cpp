@@ -48,8 +48,8 @@ namespace kt
 		feedLoading = false;
 		loadArticles();
 		
-		connect(&refreshTimer, TQT_SIGNAL(timeout()), this, TQT_SLOT( refreshFeed() ) );
-		connect(this, TQT_SIGNAL(articlesChanged(const RssArticle::List&)), this, TQT_SLOT( saveArticles() ) );
+		connect(&refreshTimer, TQ_SIGNAL(timeout()), this, TQ_SLOT( refreshFeed() ) );
+		connect(this, TQ_SIGNAL(articlesChanged(const RssArticle::List&)), this, TQ_SLOT( saveArticles() ) );
 		
 		startFeed();
 	}
@@ -261,8 +261,8 @@ namespace kt
 		feedLoading = true;
 		cleanArticles();
 		Loader * feedLoader = Loader::create();
-		connect( feedLoader, TQT_SIGNAL( loadingComplete( Loader *, Document, Status ) ),
-			this, TQT_SLOT( feedLoaded( Loader *, Document, Status ) ) );
+		connect( feedLoader, TQ_SIGNAL( loadingComplete( Loader *, Document, Status ) ),
+			this, TQ_SLOT( feedLoaded( Loader *, Document, Status ) ) );
 		feedLoader->loadFrom( m_feedUrl, new FileRetriever );
 	}
 	
@@ -313,8 +313,8 @@ namespace kt
 			tqDebug( "There was and error loading the feed\n");
 		}
 		
-		disconnect( feedLoader, TQT_SIGNAL( loadingComplete( Loader *, Document, Status ) ),
-			this, TQT_SLOT( feedLoaded( Loader *, Document, Status ) ) );
+		disconnect( feedLoader, TQ_SIGNAL( loadingComplete( Loader *, Document, Status ) ),
+			this, TQ_SLOT( feedLoaded( Loader *, Document, Status ) ) );
 		feedLoader->deleteLater();
 
 	}

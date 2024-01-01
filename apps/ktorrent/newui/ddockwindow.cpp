@@ -85,9 +85,9 @@ DDockWindow::DDockWindow(DMainWindow *parent, Position position)
     m_widgetStack = new TQWidgetStack(this);
     m_internalLayout->addWidget(m_widgetStack);
 
-    m_moveToDockLeft = new TDEAction( i18n("Move to left dock"), 0, this, TQT_SLOT(moveToDockLeft()), this );
-    m_moveToDockRight = new TDEAction( i18n("Move to right dock"), 0, this, TQT_SLOT(moveToDockRight()), this );
-    m_moveToDockBottom = new TDEAction( i18n("Move to bottom dock"), 0, this, TQT_SLOT(moveToDockBottom()), this );
+    m_moveToDockLeft = new TDEAction( i18n("Move to left dock"), 0, this, TQ_SLOT(moveToDockLeft()), this );
+    m_moveToDockRight = new TDEAction( i18n("Move to right dock"), 0, this, TQ_SLOT(moveToDockRight()), this );
+    m_moveToDockBottom = new TDEAction( i18n("Move to bottom dock"), 0, this, TQ_SLOT(moveToDockBottom()), this );
 
     setVisible(m_visible);
 
@@ -192,8 +192,8 @@ void DDockWindow::addWidget(const TQString &title, TQWidget *widget, bool skipAc
     m_bar->addButton(button);
 
     m_widgetStack->addWidget(widget);
-    connect(button, TQT_SIGNAL(clicked()), this, TQT_SLOT(selectWidget()));
-    connect(button, TQT_SIGNAL(contextMenu(TQPopupMenu*)), this, TQT_SLOT(contextMenu(TQPopupMenu*)) );
+    connect(button, TQ_SIGNAL(clicked()), this, TQ_SLOT(selectWidget()));
+    connect(button, TQ_SIGNAL(contextMenu(TQPopupMenu*)), this, TQ_SLOT(contextMenu(TQPopupMenu*)) );
 
     if (!skipActivation)
     {

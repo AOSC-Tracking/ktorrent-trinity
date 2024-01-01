@@ -33,7 +33,7 @@ namespace dht
 
 	RPCCall::RPCCall(RPCServer* rpc,MsgBase* msg,bool queued) : msg(msg),rpc(rpc),queued(queued)
 	{
-		connect(&timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(onTimeout()));
+		connect(&timer,TQ_SIGNAL(timeout()),this,TQ_SLOT(onTimeout()));
 		if (!queued)
 			timer.start(30*1000,true);
 	}
@@ -71,8 +71,8 @@ namespace dht
 	
 	void RPCCall::addListener(RPCCallListener* cl)
 	{
-		connect(this,TQT_SIGNAL(onCallResponse( RPCCall*, MsgBase* )),cl,TQT_SLOT(onResponse( RPCCall*, MsgBase* )));
-		connect(this,TQT_SIGNAL(onCallTimeout( RPCCall* )),cl,TQT_SLOT(onTimeout( RPCCall* )));
+		connect(this,TQ_SIGNAL(onCallResponse( RPCCall*, MsgBase* )),cl,TQ_SLOT(onResponse( RPCCall*, MsgBase* )));
+		connect(this,TQ_SIGNAL(onCallTimeout( RPCCall* )),cl,TQ_SLOT(onTimeout( RPCCall* )));
 	}
 
 }

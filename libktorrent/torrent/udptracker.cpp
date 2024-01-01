@@ -51,15 +51,15 @@ namespace bt
 		transaction_id = 0;
 		interval = 0;
 		
-		connect(&conn_timer,TQT_SIGNAL(timeout()),this,TQT_SLOT(onConnTimeout()));
-		connect(socket,TQT_SIGNAL(announceRecieved(Int32, const TQByteArray &)),
-				this,TQT_SLOT(announceRecieved(Int32, const TQByteArray& )));
-		connect(socket,TQT_SIGNAL(connectRecieved(Int32, Int64 )),
-				this,TQT_SLOT(connectRecieved(Int32, Int64 )));
-		connect(socket,TQT_SIGNAL(error(Int32, const TQString& )),
-				this,TQT_SLOT(onError(Int32, const TQString& )));
+		connect(&conn_timer,TQ_SIGNAL(timeout()),this,TQ_SLOT(onConnTimeout()));
+		connect(socket,TQ_SIGNAL(announceRecieved(Int32, const TQByteArray &)),
+				this,TQ_SLOT(announceRecieved(Int32, const TQByteArray& )));
+		connect(socket,TQ_SIGNAL(connectRecieved(Int32, Int64 )),
+				this,TQ_SLOT(connectRecieved(Int32, Int64 )));
+		connect(socket,TQ_SIGNAL(error(Int32, const TQString& )),
+				this,TQ_SLOT(onError(Int32, const TQString& )));
 		
-		KResolver::resolveAsync(this,TQT_SLOT(onResolverResults(KResolverResults )),
+		KResolver::resolveAsync(this,TQ_SLOT(onResolverResults(KResolverResults )),
 									   url.host(),TQString::number(url.port()));
 	}
 

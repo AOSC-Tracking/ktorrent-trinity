@@ -33,11 +33,11 @@ UPnPTestApp::UPnPTestApp(TQWidget *parent, const char *name)
 		: TDEMainWindow(parent, name)
 {
 	sock = new UPnPMCastSocket(true);
-	connect(sock,TQT_SIGNAL(discovered( UPnPRouter* )),this,TQT_SLOT(discovered( UPnPRouter* )));
+	connect(sock,TQ_SIGNAL(discovered( UPnPRouter* )),this,TQ_SLOT(discovered( UPnPRouter* )));
 	mwnd = new MainWidget(this);
 	setCentralWidget(mwnd);
-	connect(mwnd->test_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onTestBtn()));
-	connect(mwnd->close_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onCloseBtn()));
+	connect(mwnd->test_btn,TQ_SIGNAL(clicked()),this,TQ_SLOT(onTestBtn()));
+	connect(mwnd->close_btn,TQ_SIGNAL(clicked()),this,TQ_SLOT(onCloseBtn()));
 	bt::Log & lg = bt::Globals::instance().getLog(0);
 	lg.addMonitor(this);
 	Out() << "UPnPTestApp started up !" << endl;

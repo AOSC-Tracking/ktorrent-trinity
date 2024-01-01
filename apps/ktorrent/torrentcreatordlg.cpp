@@ -38,8 +38,8 @@ TorrentCreatorDlg::TorrentCreatorDlg(KTorrentCore* core,TQWidget *parent, const 
 	KComboBox* cb = m_chunk_size;
 	cb->setCurrentItem(3);
 	
-	connect(m_create_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(onCreate()));
-	connect(m_cancel_btn,TQT_SIGNAL(clicked()),this,TQT_SLOT(reject()));
+	connect(m_create_btn,TQ_SIGNAL(clicked()),this,TQ_SLOT(onCreate()));
+	connect(m_cancel_btn,TQ_SIGNAL(clicked()),this,TQ_SLOT(reject()));
 	
 	m_nodes->setHidden(true);
 	

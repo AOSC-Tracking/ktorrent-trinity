@@ -72,7 +72,7 @@ namespace dht
 			bt::Globals::instance().getPortList().addNewPort(port,net::UDP,true);
 		}
 		sock->setBlocking(false);
-		connect(sock,TQT_SIGNAL(readyRead()),this,TQT_SLOT(readPacket()));
+		connect(sock,TQ_SIGNAL(readyRead()),this,TQ_SLOT(readPacket()));
 	}
 		
 	void RPCServer::stop()

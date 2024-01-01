@@ -212,7 +212,7 @@ namespace kt
 		else
 		{
 			php_response_hdr = hdr;
-			connect(php,TQT_SIGNAL(finished()),this,TQT_SLOT(onPHPFinished()));
+			connect(php,TQ_SIGNAL(finished()),this,TQ_SLOT(onPHPFinished()));
 			state = PROCESSING_PHP;
 		}
 	}
