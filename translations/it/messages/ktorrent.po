@@ -2,18 +2,21 @@
 #
 # Nicola Ruggero <nixprog.adsl@tiscali.it>, 2005, 2006.
 # Nicola Ruggero <nicola@nxnt.org>, 2006, 2007, 2008.
+# Michele Calgaro <michele.calgaro@yahoo.it>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
 "POT-Creation-Date: 2022-09-08 18:28+0000\n"
-"PO-Revision-Date: 2008-08-18 14:39+0200\n"
-"Last-Translator: Nicola Ruggero <nicola@nxnt.org>\n"
-"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"PO-Revision-Date: 2024-01-16 03:06+0000\n"
+"Last-Translator: Michele Calgaro <michele.calgaro@yahoo.it>\n"
+"Language-Team: Italian <https://mirror.git.trinitydesktop.org/weblate/"
+"projects/applications/ktorrent/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. Instead of a literal translation, add your name to the end of the list (separated by a comma).
 msgid ""
@@ -459,8 +462,8 @@ msgid ""
 "_n: and 1 seed. \n"
 "and %n seeds. "
 msgstr ""
-" e 1 nodo. \n"
-" e %n nodi. "
+"e 1 nodo. \n"
+"e %n nodi. "
 
 #: apps/ktorrent/ktorrentview.cpp:286 apps/ktorrent/trayicon.cpp:258
 msgid "Go to Settings -> Configure KTorrent, if you want to change the limits."
@@ -1258,7 +1261,7 @@ msgstr "Il torrent non ha il campo annuncio o il campo nodi"
 
 #: libktorrent/torrent/torrent.cpp:103
 msgid " Unable to open torrent file %1 : %2"
-msgstr "Impossibile aprire il file torrent %1: %2"
+msgstr " Impossibile aprire il file torrent %1: %2"
 
 #: libktorrent/torrent/torrentcontrol.cpp:508
 #, c-format
@@ -1351,7 +1354,7 @@ msgstr "Controllo dati"
 
 #: libktorrent/torrent/torrentcontrol.cpp:1386
 msgid "Stopped. No space left on device."
-msgstr "Fermato. Non c'è spazio rimanente sul dispositivo"
+msgstr "Fermato. Non c'è spazio rimanente sul dispositivo."
 
 #: libktorrent/torrent/torrentcreator.cpp:123
 #: libktorrent/torrent/torrentcreator.cpp:239
@@ -1891,7 +1894,6 @@ msgid "Search for torrents on several popular torrent search engines"
 msgstr "Cerca i torrent in diversi motori di ricerca per torrent famosi"
 
 #: plugins/search/searchprefpage.cpp:52
-#, fuzzy
 msgid ""
 "Use your web browser to search for the string %1 (capital letters) on the "
 "search engine you want to add. <br> Then copy the URL in the addressbar "
@@ -2188,11 +2190,11 @@ msgstr ""
 "degli altri algoritmi sulla base di alcune nostre prove.<br>\n"
 "<b>Algoritmo velocità attuale:</b> Algoritmo più semplice - Byte rimanenti / "
 "Velocità attuale<br>\n"
-"<b>Algoritmo velocità media globale:</b> Byte rimanenti / Velocità "
-"media<br>\n"
+"<b>Algoritmo velocità media globale:</b> Byte rimanenti / Velocità media<br>"
+"\n"
 "<b>Algoritmo finestra di X:</b> Tempo trascorso calcolato da X campioni di "
 "velocità<br>\n"
-"<b>Algoritmo media commovente:</b> Media commovente velocità  calcolata da X "
+"<b>Algoritmo media commovente:</b> Media commovente velocità calcolata da X "
 "campioni"
 
 #: apps/ktorrent/advancedpref.ui:64
@@ -3028,7 +3030,7 @@ msgstr "Numero massimo di connessioni per torrent (0 = illimitate)"
 #: libktorrent/ktorrent.kcfg:29
 #, no-c-format
 msgid "Maximum number of connections for all torrents (0 = no limit) "
-msgstr "Numero massimo di connessioni per tutti i torrent (0 = illimitate)"
+msgstr "Numero massimo di connessioni per tutti i torrent (0 = illimitate) "
 
 #: libktorrent/ktorrent.kcfg:34
 #, no-c-format
@@ -4151,9 +4153,9 @@ msgid "Custom browser executable path"
 msgstr "Percorso eseguibile browser personalizzato"
 
 #: plugins/search/searchbar.ui:78
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Engine:"
-msgstr " Motore: "
+msgstr "Motore:"
 
 #: plugins/search/searchpref.ui:30 plugins/webinterface/webinterfacepref.ui:30
 #, no-c-format
