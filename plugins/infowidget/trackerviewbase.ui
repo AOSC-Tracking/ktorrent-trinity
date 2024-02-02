@@ -295,14 +295,14 @@
 <forwards>
     <forward>class TQListViewItem;</forward>
 </forwards>
-<Q_SLOTS>
+<slots>
     <slot>btnChange_clicked()</slot>
     <slot>listTrackers_currentChanged(TQListViewItem*)</slot>
     <slot>btnUpdate_clicked()</slot>
     <slot>btnAdd_clicked()</slot>
     <slot>btnRemove_clicked()</slot>
     <slot>btnRestore_clicked()</slot>
-</Q_SLOTS>
+</slots>
 <layoutdefaults spacing="6" margin="11"/>
 <includes>
     <include location="global" impldecl="in implementation">kpushbutton.h</include>

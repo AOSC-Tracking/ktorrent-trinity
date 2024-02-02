@@ -508,12 +508,12 @@
 <forwards>
     <forward>class TQListViewItem;</forward>
 </forwards>
-<Q_SLOTS>
+<slots>
     <slot>btnRemoveNode_clicked()</slot>
     <slot>btnAddNode_clicked()</slot>
     <slot>m_node_textChanged(const TQString&amp;)</slot>
     <slot>m_nodeList_selectionChanged(TQListViewItem*)</slot>
-</Q_SLOTS>
+</slots>
 <layoutdefaults spacing="6" margin="11"/>
 <includes>
     <include location="global" impldecl="in implementation">kcombobox.h</include>

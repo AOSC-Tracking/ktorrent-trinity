@@ -338,7 +338,7 @@
     <tabstop>peerIP</tabstop>
     <tabstop>btnAdd</tabstop>
 </tabstops>
-<Q_SLOTS>
+<slots>
     <slot>btnAdd_clicked()</slot>
     <slot>btnRemove_clicked()</slot>
     <slot>btnClear_clicked()</slot>
@@ -346,7 +346,7 @@
     <slot>btnSave_clicked()</slot>
     <slot>btnOk_clicked()</slot>
     <slot>btnApply_clicked()</slot>
-</Q_SLOTS>
+</slots>
 <layoutdefaults spacing="6" margin="11"/>
 <includes>
     <include location="global" impldecl="in implementation">kpushbutton.h</include>
