@@ -137,10 +137,10 @@
         <slot>useColors_toggled(bool)</slot>
     </connection>
 </connections>
-<Q_SLOTS>
+<slots>
     <slot>btnEditBWS_toggled(bool)</slot>
     <slot>btnEditBWS_clicked()</slot>
     <slot>useColors_toggled(bool)</slot>
-</Q_SLOTS>
+</slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

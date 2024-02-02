@@ -239,10 +239,10 @@
         <slot>changeLedState()</slot>
     </connection>
 </connections>
-<Q_SLOTS>
+<slots>
     <slot>btnUpdate_clicked()</slot>
     <slot>changeLedState()</slot>
-</Q_SLOTS>
+</slots>
 <layoutdefaults spacing="6" margin="11"/>
 <includes>
     <include location="global" impldecl="in implementation">kled.h</include>

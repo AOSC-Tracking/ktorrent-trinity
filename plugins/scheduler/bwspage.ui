@@ -838,14 +838,14 @@
     <tabstop>dlCat3</tabstop>
     <tabstop>ulCat3</tabstop>
 </tabstops>
-<Q_SLOTS>
+<slots>
     <slot>btnOk_clicked()</slot>
     <slot>btnApply_clicked()</slot>
     <slot>btnCancel_clicked()</slot>
     <slot>btnSave_clicked()</slot>
     <slot>btnLoad_clicked()</slot>
     <slot>btnReset_clicked()</slot>
-</Q_SLOTS>
+</slots>
 <layoutdefaults spacing="6" margin="11"/>
 <includes>
     <include location="global" impldecl="in implementation">bwswidget.h</include>

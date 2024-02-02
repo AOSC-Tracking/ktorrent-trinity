@@ -699,7 +699,7 @@
     <tabstop>btnDequeue</tabstop>
     <tabstop>seedList</tabstop>
 </tabstops>
-<Q_SLOTS>
+<slots>
     <slot>btnMoveUp_clicked()</slot>
     <slot>btnMoveDown_clicked()</slot>
     <slot>btnEnqueue_clicked()</slot>
@@ -711,7 +711,7 @@
     <slot>btnClose_clicked()</slot>
     <slot>btnMoveTop_clicked()</slot>
     <slot>btnMoveBottom_clicked()</slot>
-</Q_SLOTS>
+</slots>
 <layoutdefaults spacing="6" margin="11"/>
 <includes>
     <include location="global" impldecl="in implementation">kpushbutton.h</include>
