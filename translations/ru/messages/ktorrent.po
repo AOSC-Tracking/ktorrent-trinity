@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.17\n"
 
 #. Instead of a literal translation, add your name to the end of the list (separated by a comma).
@@ -1895,8 +1895,8 @@ msgstr ""
 "В браузере запустите поиск строки %1 (заглавными буквами) в поисковике, "
 "который вы хотите добавить. <br> Затем, когда поиск завершится, скопируйте "
 "ссылку из адресной строки и вставьте её сюда.<br><br>Поиск %2 в Google, "
-"например, даст результат в виде http://www.google.com/"
-"search?q=FOOBAR&ie=UTF-8&oe=UTF-8. <br> Если вы добавите сюда эту ссылку, то "
+"например, даст результат в виде http://www.google.com/search?"
+"q=FOOBAR&ie=UTF-8&oe=UTF-8. <br> Если вы добавите сюда эту ссылку, то "
 "KTorrent сможет искать в Google."
 
 #: plugins/search/searchprefpage.cpp:57
