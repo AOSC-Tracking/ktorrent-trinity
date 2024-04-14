@@ -20,6 +20,7 @@
 #include <stdlib.h>
 #include <vector>
 #include <algorithm>
+#include <random>
 #include <util/log.h>
 #include <util/bitset.h>
 #include "chunkcounter.h"
@@ -79,7 +80,9 @@ namespace bt
 				tmp.push_back(i);
 			}
 		}
-		std::random_shuffle(tmp.begin(),tmp.end());
+		std::random_device randomDev;
+		std::mt19937       randomGenerator(randomDev());
+		std::shuffle(tmp.begin(), tmp.end(), randomGenerator);
 		// std::list does not support random_shuffle so we use a vector as a temporary storage
 		// for the random_shuffle
 		chunks.insert(chunks.begin(),tmp.begin(),tmp.end());
